@@ -163,3 +163,7 @@ cython_debug/
 dataset/
 CodeGeeX/
 huggingface/
+
+fix_reports/
+logs/
+output/
