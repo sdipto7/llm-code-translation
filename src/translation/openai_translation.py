@@ -12,14 +12,13 @@ os.makedirs(f'logs', exist_ok=True)
 logging.basicConfig(filename=f"logs/translation.log", level=logging.INFO, format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 
 
-class Translate:
+class Translator:
     EXTENSTIONS = {
         "Java": "java",
         "Python": "py"
     }
 
     def __init__(self, dataset) -> None:
-        # Set up OpenAI API key
         self.api_key = os.getenv("OPENAI_API_KEY")
         self.model = os.getenv("GPT_MODEL")
         self.dataset = dataset
@@ -28,12 +27,8 @@ class Translate:
         logging.info(f"successfully set up openai api key")
 
         self.main_dir = os.getcwd()
-        self.output_dir = os.path.join(self.main_dir, "output")
-
-        # Find the input directory with all the code examples
         self.input_dir = Path(self.main_dir).joinpath("dataset", self.dataset)
-
-        # self.hf_cache_dir = os.path.join(self.main_dir, "hf_cache_dir")
+        self.output_dir = os.path.join(self.main_dir, "output")
 
         if not self.input_dir.exists():
             logging.error(f"directory {str(self.input_dir)} does not exist. raising FileNotFoundError")
@@ -45,10 +40,9 @@ class Translate:
 
         return self
 
-    def send_message_to_openai(self, message_log):
-        "Use OpenAI's ChatCompletion API to get the chatbot's response"
-        encoding = tiktoken.encoding_for_model("gpt-4o")
-        num_tokens = len(encoding.encode(message_log[1]["content"]))
+    def generate_response_with_openai(self, message_log):
+        # encoding = tiktoken.encoding_for_model("gpt-4o")
+        # num_tokens = len(encoding.encode(message_log[1]["content"]))
 
         endpoint = "https://models.inference.ai.azure.com"
 
@@ -63,10 +57,8 @@ class Translate:
         while max_attempts > 0:
             try:
                 response = client.chat.completions.create(
-                    model=self.model,  # The name of the OpenAI chatbot model to use
-                    # The conversation history up to this point, as a list of dictionaries
+                    model=self.model,
                     messages=message_log,
-                    # The "creativity" of the generated response (higher temperature = more creative)
                     temperature=0.7,
                 )
                 is_success = True
@@ -88,13 +80,16 @@ class Translate:
         # If no response with text is found, return the first response's content (which may be empty)
         return response.choices[0].message.content
 
-    def translate_with_OPENAI(self, source, code_as_str, to):
+    def get_translated_code(self, source, code_as_str, to):
         content = code_as_str + f"\n# Translate the above {source} code to {to}. Print only the {to} code and end with the comment \"End of Code\".\n"
 
         message = [
             {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": content}]
-        response = self.send_message_to_openai(message)
+            {"role": "user", "content": content}
+        ]
+        
+        response = self.generate_response_with_openai(message)
+
         return response.replace(f"```{to.lower()}", "").replace("```", "")
 
     def translate(self, source, target):
@@ -108,13 +103,13 @@ class Translate:
             if not target_dir.exists():
                 target_dir.mkdir(parents=True)
 
-            filename_of_translated_code = target_dir.joinpath(f"{code_id}.{Translate.EXTENSTIONS[target]}")
+            filename_of_translated_code = target_dir.joinpath(f"{code_id}.{Translator.EXTENSTIONS[target]}")
 
             translated_code_fp = Path(filename_of_translated_code)
             if translated_code_fp.exists():
                 continue
 
-            translated_code = self.translate_with_OPENAI(source, code_as_str, target)
+            translated_code = self.get_translated_code(source, code_as_str, target)
             translated_code = re.sub('public\s*class\s*.+', 'public class ' + code_id + ' {', translated_code)
 
             if self.dataset == 'evalplus' and target == 'Java':
@@ -140,8 +135,8 @@ if __name__ == "__main__":
     parser.add_argument('--temperature', help='A value used to warp next-token probabilities in sampling mode. Values less than 1.0 sharpen the probability distribution, resulting in "less random" output. Values greater than 1.0 flatten the probability distribution, resulting in "more random" output. A value of 1.0 has no effect and is the default. The allowed range is 0.0 to 2.0.', required=True, type=float)
     args = parser.parse_args()
 
-    source = args.source_lang #python or java
-    target = args.target_lang #java or python
-    with Translate(args.dataset) as translator: #args.dataset = avatar, codenet, evalplus
+    source = args.source_lang
+    target = args.target_lang
+    with Translator(args.dataset) as translator:
         logging.info(f"translating examples from {source} to {target} using GPT-4 and {args.dataset} dataset")
         translator.translate(source, target)
