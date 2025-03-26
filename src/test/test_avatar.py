@@ -2,6 +2,7 @@ import os
 import subprocess
 import pandas as pd
 from pathlib import Path
+from dotenv import load_dotenv
 from subprocess import Popen, PIPE
 import argparse
 
@@ -9,7 +10,8 @@ import argparse
 def main(args):
     print('testing translations')
     dataset = 'avatar'
-    translation_dir = f"output/{args.model}/{dataset}/{args.source_lang}/{args.target_lang}"
+    model = os.getenv("GPT_MODEL")
+    translation_dir = f"output/{model}/{dataset}/{args.source_lang}/{args.target_lang}"
     test_dir = f"dataset/{dataset}/{args.source_lang}/TestCases"
     os.makedirs(args.report_dir, exist_ok=True)
     files = [f for f in os.listdir(translation_dir) if f.split(".")[-1] in ["py", "java"]]
@@ -170,7 +172,7 @@ def main(args):
         if instance in test_failed:
             infinite_loop.remove(instance)
 
-    txt_fp = Path(args.report_dir).joinpath(f"{args.model}_{dataset}_compileReport_from_"+str(args.source_lang)+"_to_"+str(args.target_lang)+".txt")
+    txt_fp = Path(args.report_dir).joinpath(f"{model}_{dataset}_compileReport_from_"+str(args.source_lang)+"_to_"+str(args.target_lang)+".txt")
     with open(txt_fp, "w", encoding="utf-8") as report:
         report.writelines("Total Instances: {}\n\n".format(len(test_passed)+len(compile_failed)+len(runtime_failed)+len(test_failed)+len(infinite_loop)))
         report.writelines("Total Correct: {}\n".format(len(test_passed)))
@@ -210,10 +212,10 @@ def main(args):
         df.loc[index] = list_row
         index+=1
     
-    excel_fp = Path(args.report_dir).joinpath(f"{args.model}_{dataset}_compileReport_from_"+str(args.source_lang)+"_to_"+str(args.target_lang)+".xlsx")
+    excel_fp = Path(args.report_dir).joinpath(f"{model}_{dataset}_compileReport_from_"+str(args.source_lang)+"_to_"+str(args.target_lang)+".xlsx")
     df.to_excel(excel_fp, sheet_name='Sheet1')
 
-    ordered_unsuccessful_fp = Path(args.report_dir).joinpath(f"{args.model}_{dataset}_compileReport_from_"+str(args.source_lang)+"_to_"+str(args.target_lang)+"_ordered_unsuccessful.txt")
+    ordered_unsuccessful_fp = Path(args.report_dir).joinpath(f"{model}_{dataset}_compileReport_from_"+str(args.source_lang)+"_to_"+str(args.target_lang)+"_ordered_unsuccessful.txt")
     with open(ordered_unsuccessful_fp, 'w') as f:
         for unsuccessful_instance in compile_failed + runtime_failed + test_failed + infinite_loop:
             f.write(f"{unsuccessful_instance}\n")
@@ -221,11 +223,12 @@ def main(args):
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description='execute avatar tests')
-    parser.add_argument('--source_lang', help='source language to use for code translation. should be one of [Python,Java,C,C++,Go]', required=True, type=str) #source_lang -> Python
-    parser.add_argument('--target_lang', help='target language to use for code translation. should be one of [Python,Java,C,C++,Go]', required=True, type=str) #target_lang -> Java
-    parser.add_argument('--model', help='model to use for code translation.', required=True, type=str) #model -> gpt-4
-    parser.add_argument('--report_dir', help='path to directory to store report', required=True, type=str) #report_dir -> fix_reports 1
+    load_dotenv()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--source_lang', help='source language to use for code translation. should be one of [Python,Java]', required=True, type=str)
+    parser.add_argument('--target_lang', help='target language to use for code translation. should be one of [Python,Java]', required=True, type=str)
+    parser.add_argument('--report_dir', help='path to directory to store report', required=True, type=str)
     args = parser.parse_args()
 
     main(args)

@@ -4,15 +4,10 @@ export PYTHONIOENCODING=utf-8;
 
 function prompt() {
     echo;
-    echo "Syntax: bash scripts/translate.sh MODEL DATASET SRC_LANG TRG_LANG K P TEMPERATURE GPU_ID";
-    echo "MODEL: name of the model to use";
+    echo "Syntax: bash scripts/translate.sh DATASET SRC_LANG TRG_LANG";
     echo "DATASET: name of the dataset to use";
     echo "SRC_LANG: source language";
     echo "TRG_LANG: target language";
-    echo "K: top-k sampling";
-    echo "P: top-p sampling";
-    echo "TEMPERATURE: temperature for sampling";
-    echo "GPU_ID: GPU to use";
     exit;
 }
 
@@ -23,22 +18,12 @@ while getopts ":h" option; do
     esac
 done
 
-if [[ $# < 8 ]]; then
+if [[ $# < 3 ]]; then
   prompt;
 fi
 
-MODEL=$1;
-DATASET=$2;
-SRC_LANG=$3;
-TRG_LANG=$4;
-K=$5;
-P=$6;
-TEMPERATURE=$7;
-GPU_ID=$8;
+DATASET=$1;
+SRC_LANG=$2;
+TRG_LANG=$3;
 
-# need changes based on future requirements
-if [[ $MODEL == "gpt-4o" ]]; then
-  python3 src/translation/openai_translation.py --dataset $DATASET --source_lang $SRC_LANG --target_lang $TRG_LANG --k $K --p $P --temperature $TEMPERATURE;
-else
-  echo "Model not supported";
-fi
+python3 src/translation/openai_translation.py --dataset $DATASET --source_lang $SRC_LANG --target_lang $TRG_LANG;

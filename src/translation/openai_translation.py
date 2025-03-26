@@ -1,7 +1,7 @@
 import os
 from openai import OpenAI
 import logging
-import tiktoken
+# import tiktoken
 from pathlib import Path
 from dotenv import load_dotenv
 import re
@@ -80,8 +80,18 @@ class Translator:
         # If no response with text is found, return the first response's content (which may be empty)
         return response.choices[0].message.content
 
-    def get_translated_code(self, source, code_as_str, to):
-        content = code_as_str + f"\n# Translate the above {source} code to {to}. Print only the {to} code and end with the comment \"End of Code\".\n"
+    def get_algorithm_from_source_code(self, code_as_str, source_lang):
+        content = code_as_str + f"\n# Generate only the step by step algorithm for the above {source_lang} code. Print only the steps and exclude comments, headers, explanation and examples.\n"
+
+        message = [
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": content}
+        ]
+        
+        return self.generate_response_with_openai(message)
+    
+    def get_translated_code_from_algorithm(self, algorithm, target_lang):
+        content = algorithm + f"\n# Using the above algorithm, generate the equivalent {target_lang} code. Exclude any comments, headers, explanation and examples.\n"
 
         message = [
             {"role": "system", "content": "You are a helpful assistant."},
@@ -90,29 +100,32 @@ class Translator:
         
         response = self.generate_response_with_openai(message)
 
-        return response.replace(f"```{to.lower()}", "").replace("```", "")
+        return response.replace(f"```{target_lang.lower()}", "").replace("```", "")
 
-    def translate(self, source, target):
-        snippets = list(self.input_dir.joinpath(str(source), "Code").iterdir())
+    def translate(self, source_lang, target_lang):
+        snippets = list(self.input_dir.joinpath(str(source_lang), "Code").iterdir())
 
         for source_file in tqdm(snippets, total=len(snippets), bar_format="{desc:<5.5}{percentage:3.0f}%|{bar:10}{r_bar}"):
-            code_id = source_file.stem
-            code_as_str = source_file.read_text(encoding="utf-8")
+            source_code_id = source_file.stem
+            source_code_as_str = source_file.read_text(encoding="utf-8")
 
-            target_dir = self.out_dir.joinpath(f"{source}", f"{target}")
+            target_dir = self.out_dir.joinpath(f"{source_lang}", f"{target_lang}")
             if not target_dir.exists():
                 target_dir.mkdir(parents=True)
 
-            filename_of_translated_code = target_dir.joinpath(f"{code_id}.{Translator.EXTENSTIONS[target]}")
+            filename_of_translated_code = target_dir.joinpath(f"{source_code_id}.{Translator.EXTENSTIONS[target_lang]}")
 
             translated_code_fp = Path(filename_of_translated_code)
             if translated_code_fp.exists():
                 continue
 
-            translated_code = self.get_translated_code(source, code_as_str, target)
-            translated_code = re.sub('public\s*class\s*.+', 'public class ' + code_id + ' {', translated_code)
+            algorithm = self.get_algorithm_from_source_code(source_code_as_str, source_lang)
 
-            if self.dataset == 'evalplus' and target == 'Java':
+            translated_code = self.get_translated_code_from_algorithm(algorithm, target_lang)
+
+            translated_code = re.sub('public\s*class\s*.+', 'public class ' + source_code_id + ' {', translated_code)
+
+            if self.dataset == 'evalplus' and target_lang == 'Java':
                 translated_code = 'package com.example;\n' + translated_code
 
             with open(filename_of_translated_code, "w") as f:
@@ -126,17 +139,14 @@ if __name__ == "__main__":
 
     load_dotenv()
 
-    parser = argparse.ArgumentParser(description='run translation with GPT-4 with a given dataset and languages')
+    parser = argparse.ArgumentParser()
     parser.add_argument('--dataset', help='dataset to use for code translation. should be one of [codenet,avatar,evalplus]', required=True, type=str)
-    parser.add_argument('--source_lang', help='source language to use for code translation. should be one of [Python,Java,C,C++,Go]', required=True, type=str)
-    parser.add_argument('--target_lang', help='target language to use for code translation. should be one of [Python,Java,C,C++,Go]', required=True, type=str)
-    parser.add_argument('--k', help='The number of highest probability vocabulary tokens to keep for top-k-filtering. Only applies for sampling mode, with range from 1 to 100.', required=True, type=int)
-    parser.add_argument('--p', help='Only the most probable tokens with probabilities that add up to top_p or higher are considered during decoding. The valid range is 0.0 to 1.0. 1.0 is equivalent to disabled and is the default. Only applies to sampling mode. Also known as nucleus sampling.', required=True, type=float)
-    parser.add_argument('--temperature', help='A value used to warp next-token probabilities in sampling mode. Values less than 1.0 sharpen the probability distribution, resulting in "less random" output. Values greater than 1.0 flatten the probability distribution, resulting in "more random" output. A value of 1.0 has no effect and is the default. The allowed range is 0.0 to 2.0.', required=True, type=float)
+    parser.add_argument('--source_lang', help='source language to use for code translation. should be one of [Python,Java]', required=True, type=str)
+    parser.add_argument('--target_lang', help='target language to use for code translation. should be one of [Python,Java]', required=True, type=str)
     args = parser.parse_args()
 
-    source = args.source_lang
-    target = args.target_lang
+    source_lang = args.source_lang
+    target_lang = args.target_lang
     with Translator(args.dataset) as translator:
-        logging.info(f"translating examples from {source} to {target} using GPT-4 and {args.dataset} dataset")
-        translator.translate(source, target)
+        logging.info(f"translating examples from {source_lang} to {target_lang} using GPT-4 and {args.dataset} dataset")
+        translator.translate(source_lang, target_lang)

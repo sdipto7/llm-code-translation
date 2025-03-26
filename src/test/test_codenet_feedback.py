@@ -4,12 +4,13 @@ import argparse
 from subprocess import Popen, PIPE, STDOUT
 import json
 from pathlib import Path
-
+from dotenv import load_dotenv
 
 def main(args):
     print('exporting reports')
     dataset = 'codenet'
-    translation_dir = f"output/{args.model}/{dataset}/{args.source_lang}/{args.target_lang}"
+    model = os.getenv("GPT_MODEL")
+    translation_dir = f"output/{model}/{dataset}/{args.source_lang}/{args.target_lang}"
     test_dir = f"dataset/{dataset}/{args.source_lang}/TestCases"
     os.makedirs(args.report_dir, exist_ok=True)
     files = [f for f in os.listdir(translation_dir) if f != '.DS_Store']
@@ -23,7 +24,7 @@ def main(args):
     token_exceeded = []
     infinite_loop = []
 
-    ordered_unsuccessful_fp = Path(args.report_dir).joinpath(f"{args.model}_{dataset}_compileReport_from_"+str(args.source_lang)+"_to_"+str(args.target_lang)+"_ordered_unsuccessful.txt")    
+    ordered_unsuccessful_fp = Path(args.report_dir).joinpath(f"{model}_{dataset}_compileReport_from_"+str(args.source_lang)+"_to_"+str(args.target_lang)+"_ordered_unsuccessful.txt")    
     ordered_files = [x.strip() for x in open(ordered_unsuccessful_fp, "r").readlines()]
 
     if args.target_lang =="Python":
@@ -109,13 +110,13 @@ def main(args):
         return
 
     attempt = args.attempt
-    json_fp = Path(args.report_dir).joinpath(f"{args.model}_codenet_errors_from_{args.source_lang}_to_{args.target_lang}_{attempt}.json")
+    json_fp = Path(args.report_dir).joinpath(f"{model}_codenet_errors_from_{args.source_lang}_to_{args.target_lang}_{attempt}.json")
     with open(json_fp, "w", encoding="utf-8") as report:
         error_files = {'compile': compile_failed, 'runtime': runtime_failed + infinite_loop, 'incorrect': test_failed}
         json.dump(error_files, report)
         report.close()
 
-    txt_fp = Path(args.report_dir).joinpath(f"{args.model}_codenet_errors_from_{args.source_lang}_to_{args.target_lang}_{attempt}.txt")
+    txt_fp = Path(args.report_dir).joinpath(f"{model}_codenet_errors_from_{args.source_lang}_to_{args.target_lang}_{attempt}.txt")
     report = open(txt_fp, 'w')
     for i in range(len(ordered_files)):
         if ordered_files[i] in [x[0] for x in compile_failed]:
@@ -136,10 +137,11 @@ def main(args):
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description='execute codenet tests')
-    parser.add_argument('--source_lang', help='source language to use for code translation. should be one of [Python,Java,C,C++,Go]', required=True, type=str)
-    parser.add_argument('--target_lang', help='target language to use for code translation. should be one of [Python,Java,C,C++,Go]', required=True, type=str)
-    parser.add_argument('--model', help='args.model to use for code translation.', required=True, type=str)
+    load_dotenv()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--source_lang', help='source language to use for code translation. should be one of [Python,Java]', required=True, type=str)
+    parser.add_argument('--target_lang', help='target language to use for code translation. should be one of [Python,Java]', required=True, type=str)
     parser.add_argument('--report_dir', help='path to directory to store report', required=True, type=str)
     parser.add_argument('--attempt', help='attempt number', required=True, type=int)
     args = parser.parse_args()
