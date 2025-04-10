@@ -19,9 +19,10 @@ class Translator:
     }
 
     def __init__(self, dataset) -> None:
-        self.api_key = os.getenv("OPENAI_API_KEY")
-        self.model = os.getenv("GPT_MODEL")
         self.dataset = dataset
+        self.base_url = os.getenv("BASE_URL")
+        self.api_key = os.getenv("API_KEY")
+        self.model = os.getenv("MODEL")
 
     def __enter__(self):
         logging.info(f"successfully set up openai api key")
@@ -44,10 +45,8 @@ class Translator:
         # encoding = tiktoken.encoding_for_model("gpt-4o")
         # num_tokens = len(encoding.encode(message_log[1]["content"]))
 
-        endpoint = "https://models.inference.ai.azure.com"
-
         client = OpenAI(
-            base_url=endpoint,
+            base_url=self.base_url,
             api_key=self.api_key,
         )
 
