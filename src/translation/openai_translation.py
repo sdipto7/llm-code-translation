@@ -163,7 +163,7 @@ class Translator:
 
 if __name__ == "__main__":
 
-    load_dotenv()
+    load_dotenv(override=True)
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset', help='dataset to use for code translation. should be one of [codenet,avatar,evalplus]', required=True, type=str)

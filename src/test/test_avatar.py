@@ -10,7 +10,7 @@ import argparse
 def main(args):
     print('testing translations')
     dataset = 'avatar'
-    model = os.getenv("GPT_MODEL")
+    model = os.getenv("MODEL")
     translation_dir = f"output/{model}/{dataset}/{args.source_lang}/{args.target_lang}"
     test_dir = f"dataset/{dataset}/{args.source_lang}/TestCases"
     os.makedirs(args.report_dir, exist_ok=True)
@@ -223,7 +223,7 @@ def main(args):
 
 if __name__ == "__main__":
 
-    load_dotenv()
+    load_dotenv(override=True)
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--source_lang', help='source language to use for code translation. should be one of [Python,Java]', required=True, type=str)

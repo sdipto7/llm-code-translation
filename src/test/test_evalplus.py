@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 
 def main(args):
-    model = os.getenv("GPT_MODEL")
+    model = os.getenv("MODEL")
 
     ordered_files = [x.strip() for x in open("evalplus_target_files.txt", "r").readlines()]
     os.makedirs(args.report_dir, exist_ok=True)
@@ -45,7 +45,7 @@ def main(args):
 
 if __name__ == "__main__":
 
-    load_dotenv()
+    load_dotenv(override=True)
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--source_lang', help='source language to use for code translation. should be one of [Python,Java]', required=True, type=str)
