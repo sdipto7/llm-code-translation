@@ -23,7 +23,9 @@ def main(args):
     infinite_loop = []
     token_exceeded = []
 
-    ordered_unsuccessful_fp = Path(args.report_dir).joinpath(f"{model}_{dataset}_compileReport_from_"+str(args.source_lang)+"_to_"+str(args.target_lang)+"_ordered_unsuccessful.txt")
+    model_path_for_report = model.replace('/', '_').replace('-', '_')
+
+    ordered_unsuccessful_fp = Path(args.report_dir).joinpath(f"{model_path_for_report}_{dataset}_compileReport_from_"+str(args.source_lang)+"_to_"+str(args.target_lang)+"_ordered_unsuccessful.txt")
     ordered_files = [x.strip() for x in open(ordered_unsuccessful_fp, "r").readlines()]
 
     if args.target_lang =="Python":
@@ -169,13 +171,13 @@ def main(args):
         print("language:{} is not yet supported. select from the following languages[Python,Java,C++,C,Go]".format(args.target_lang))
         return
 
-    json_fp = Path(args.report_dir).joinpath(f"{model}_avatar_errors_from_{args.source_lang}_to_{args.target_lang}_{args.attempt}.json")
+    json_fp = Path(args.report_dir).joinpath(f"{model_path_for_report}_avatar_errors_from_{args.source_lang}_to_{args.target_lang}_{args.attempt}.json")
     with open(json_fp, "w", encoding="utf-8") as report:
         error_files = {'compile': compile_failed, 'runtime': runtime_failed + infinite_loop, 'incorrect': test_failed}
         json.dump(error_files, report)
         report.close()
 
-    txt_fp = Path(args.report_dir).joinpath(f"{model}_avatar_errors_from_{args.source_lang}_to_{args.target_lang}_{args.attempt}.txt")
+    txt_fp = Path(args.report_dir).joinpath(f"{model_path_for_report}_avatar_errors_from_{args.source_lang}_to_{args.target_lang}_{args.attempt}.txt")
     report = open(txt_fp, 'w')
     for i in range(len(ordered_files)):
         if ordered_files[i] in [x[0] for x in compile_failed]:

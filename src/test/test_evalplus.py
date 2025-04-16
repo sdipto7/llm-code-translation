@@ -36,7 +36,9 @@ def main(args):
             
             os.remove('compile_out.txt')
 
-    json_fp = Path(args.report_dir).joinpath(f"{model}_evalplus_errors_from_{args.source_lang}_to_{args.target_lang}_{args.attempt}.json")
+    model_path_for_report = model.replace('/', '_').replace('-', '_')
+
+    json_fp = Path(args.report_dir).joinpath(f"{model_path_for_report}_evalplus_errors_from_{args.source_lang}_to_{args.target_lang}_{args.attempt}.json")
     with open(json_fp, "w", encoding="utf-8") as report:
         error_files = {'compile': compile_failed, 'runtime': runtime_failed, 'incorrect': test_failed}
         json.dump(error_files, report)

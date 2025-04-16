@@ -172,7 +172,9 @@ def main(args):
         if instance in test_failed:
             infinite_loop.remove(instance)
 
-    txt_fp = Path(args.report_dir).joinpath(f"{model}_{dataset}_compileReport_from_"+str(args.source_lang)+"_to_"+str(args.target_lang)+".txt")
+    model_path_for_report = model.replace('/', '_').replace('-', '_')
+    
+    txt_fp = Path(args.report_dir).joinpath(f"{model_path_for_report}_{dataset}_compileReport_from_"+str(args.source_lang)+"_to_"+str(args.target_lang)+".txt")
     with open(txt_fp, "w", encoding="utf-8") as report:
         report.writelines("Total Instances: {}\n\n".format(len(test_passed)+len(compile_failed)+len(runtime_failed)+len(test_failed)+len(infinite_loop)))
         report.writelines("Total Correct: {}\n".format(len(test_passed)))
@@ -212,10 +214,10 @@ def main(args):
         df.loc[index] = list_row
         index+=1
     
-    excel_fp = Path(args.report_dir).joinpath(f"{model}_{dataset}_compileReport_from_"+str(args.source_lang)+"_to_"+str(args.target_lang)+".xlsx")
+    excel_fp = Path(args.report_dir).joinpath(f"{model_path_for_report}_{dataset}_compileReport_from_"+str(args.source_lang)+"_to_"+str(args.target_lang)+".xlsx")
     df.to_excel(excel_fp, sheet_name='Sheet1')
 
-    ordered_unsuccessful_fp = Path(args.report_dir).joinpath(f"{model}_{dataset}_compileReport_from_"+str(args.source_lang)+"_to_"+str(args.target_lang)+"_ordered_unsuccessful.txt")
+    ordered_unsuccessful_fp = Path(args.report_dir).joinpath(f"{model_path_for_report}_{dataset}_compileReport_from_"+str(args.source_lang)+"_to_"+str(args.target_lang)+"_ordered_unsuccessful.txt")
     with open(ordered_unsuccessful_fp, 'w') as f:
         for unsuccessful_instance in compile_failed + runtime_failed + test_failed + infinite_loop:
             f.write(f"{unsuccessful_instance}\n")

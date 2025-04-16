@@ -43,11 +43,3 @@ bash scripts/translate.sh evalplus Python Java
 ```
 bash scripts/test.sh evalplus Python Java fix_reports 1
 ```
-#### Translate Java to Python translation for evalplus
-```
-bash scripts/translate.sh evalplus Java Python
-```
-#### Test Java to Python translation for evalplus
-```
-bash scripts/test.sh evalplus Java Python fix_reports 1
-```
