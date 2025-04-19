@@ -56,7 +56,6 @@ def main(args):
                             stdout = str(int(float(stdout.decode())))
                             f_out = str(int(float(f_out)))
                         else:
-                            # find how many decimal points are there in the output
                             stdout_temp = stdout.decode().strip()
                             f_out_temp = f_out.strip()
                             f_out_total_dec_points = len(f_out_temp.split(".")[1])
@@ -67,7 +66,7 @@ def main(args):
                             f_out = str(round(float(f_out), min_dec_points))
 
                     except:
-                        try: # if stdout is already decoded as String, then pass
+                        try: 
                             stdout = stdout.decode()
                         except:
                             pass
@@ -119,7 +118,6 @@ def main(args):
                             stdout = str(int(float(stdout.decode())))
                             f_out = str(int(float(f_out)))
                         else:
-                            # find how many decimal points are there in the output
                             stdout_temp = stdout.decode().strip()
                             f_out_temp = f_out.strip()
                             f_out_total_dec_points = len(f_out_temp.split(".")[1])
@@ -150,7 +148,6 @@ def main(args):
             except Exception as e:
                 compile_failed.append(files[i])
 
-        #remove all .class files generated
         dir_files = os.listdir(translation_dir)
         for fil in dir_files:
             if ".class" in fil: os.remove(translation_dir +"/"+ fil)
@@ -167,7 +164,6 @@ def main(args):
     infinite_loop = list(set(infinite_loop))
     test_passed = list(set(test_passed))
 
-    # To avoid the total sum is higher than 100%, if an instance is in infinite_loop and test_failed at the same time, then it will be counted as test_failed
     for instance in infinite_loop[:]:
         if instance in test_failed:
             infinite_loop.remove(instance)

@@ -1,7 +1,6 @@
 import os
 from openai import OpenAI
 import logging
-# import tiktoken
 from pathlib import Path
 from dotenv import load_dotenv
 import re
@@ -42,9 +41,6 @@ class Translator:
         return self
 
     def generate_response_with_openai(self, message_log):
-        # encoding = tiktoken.encoding_for_model("gpt-4o")
-        # num_tokens = len(encoding.encode(message_log[1]["content"]))
-
         client = OpenAI(
             base_url=self.base_url,
             api_key=self.api_key,
@@ -71,12 +67,10 @@ class Translator:
         if not is_success:
             return response
 
-        # Find the first response from the chatbot that has text in it (some responses may not have text)
         for choice in response.choices:
             if "text" in choice:
                 return choice.text
 
-        # If no response with text is found, return the first response's content (which may be empty)
         return response.choices[0].message.content
 
     def get_algorithm_from_source_code(self, source_code_as_str, source_lang):

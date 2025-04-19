@@ -26,7 +26,7 @@ def main(args):
                 else:
                     test_failed.append([fname, content])
 
-        elif f in []: # infinite loop
+        elif f in []: 
             runtime_failed.append([fname, 'the program enters an infinite loop'])
 
         else:

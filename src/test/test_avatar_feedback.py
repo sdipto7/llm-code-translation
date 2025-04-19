@@ -63,7 +63,6 @@ def main(args):
                             stdout = str(int(float(stdout.decode(errors="ignore"))))
                             f_out = str(int(float(f_out)))
                         else:
-                            # find how many decimal points are there in the output
                             stdout_temp = stdout.decode(errors="ignore").strip()
                             f_out_temp = f_out.strip()
                             f_out_total_dec_points = len(f_out_temp.split(".")[1])
@@ -130,7 +129,6 @@ def main(args):
                             stdout = str(int(float(stdout.decode(errors="ignore"))))
                             f_out = str(int(float(f_out)))
                         else:
-                            # find how many decimal points are there in the output
                             stdout_temp = stdout.decode(errors="ignore").strip()
                             f_out_temp = f_out.strip()
                             f_out_total_dec_points = len(f_out_temp.split(".")[1])
@@ -162,7 +160,6 @@ def main(args):
                 else:
                     compile_failed.append((files[i], e.stderr.decode()))
 
-        #remove all .class files generated
         dir_files = os.listdir(translation_dir)
         for fil in dir_files:
             if ".class" in fil: os.remove(translation_dir +"/"+ fil)

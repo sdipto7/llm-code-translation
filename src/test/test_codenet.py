@@ -76,7 +76,7 @@ def main(args):
                     infinite_loop.append(files[i])
                     continue
 
-                if(stdout.decode().strip()==f_out.strip()): # stdout is from the translated code , f_out test data from original language 
+                if(stdout.decode().strip()==f_out.strip()): 
                     test_passed.append(files[i])
                 else:
                     if stderr_data.decode()=='':
@@ -89,7 +89,6 @@ def main(args):
             except Exception as e:
                 compile_failed.append(files[i])
 
-        #remove all .class files generated
         dir_files = os.listdir(translation_dir)
         for fil in dir_files:
             if ".class" in fil: os.remove(translation_dir +"/"+ fil)
