@@ -168,3 +168,5 @@ fix_reports/
 logs/
 output/
 output_bk/
+src/plots.ipynb
+figures/
