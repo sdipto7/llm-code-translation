@@ -4,7 +4,8 @@ export PYTHONIOENCODING=utf-8;
 
 function prompt() {
     echo;
-    echo "Syntax: bash scripts/translate.sh DATASET SRC_LANG TRG_LANG";
+    echo "Syntax: bash scripts/translate.sh MODEL DATASET SRC_LANG TRG_LANG";
+    echo "MODEL: name of the model to use";
     echo "DATASET: name of the dataset to use";
     echo "SRC_LANG: source language";
     echo "TRG_LANG: target language";
@@ -18,12 +19,13 @@ while getopts ":h" option; do
     esac
 done
 
-if [[ $# < 3 ]]; then
+if [[ $# < 4 ]]; then
   prompt;
 fi
 
-DATASET=$1;
-SRC_LANG=$2;
-TRG_LANG=$3;
+MODEL=$1;
+DATASET=$2;
+SRC_LANG=$3;
+TRG_LANG=$4;
 
-python3 src/translation/openai_translation.py --dataset $DATASET --source_lang $SRC_LANG --target_lang $TRG_LANG;
+python3 src/translation/llm_translation.py --model $MODEL --dataset $DATASET --source_lang $SRC_LANG --target_lang $TRG_LANG;

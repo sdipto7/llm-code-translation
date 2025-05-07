@@ -17,11 +17,21 @@ class Translator:
         "Python": "py"
     }
 
-    def __init__(self, dataset) -> None:
+    MODEL_ENV_MAP = {
+        "gpt-4o": "GPT_MODEL",
+        "llama-4-maverick": "LLAMA_MODEL",
+        "gemini-flash-1.5": "GEMINI_MODEL",
+        "deepseek-r1": "DEEPSEEK_MODEL"
+    }
+
+    def __init__(self, model, dataset) -> None:
         self.dataset = dataset
         self.base_url = os.getenv("BASE_URL")
         self.api_key = os.getenv("API_KEY")
-        self.model = os.getenv("MODEL")
+        self.model = os.getenv(MODEL_ENV_MAP.get(model))
+        
+        if self.model is None:
+            raise ValueError(f"model {model} is not supported. should be one of [gpt-4o, deepseek-r1, gemini-flash-1.5, llama-4-maverick]")
 
     def __enter__(self):
         logging.info(f"successfully set up openai api key")
@@ -160,13 +170,17 @@ if __name__ == "__main__":
     load_dotenv(override=True)
 
     parser = argparse.ArgumentParser()
+    parser.add_argument('--model', help='model to use for code translation. should be one of [gpt-4o, deepseek-r1, gemini-flash-1.5, llama-4-maverick]', required=True, type=str)
     parser.add_argument('--dataset', help='dataset to use for code translation. should be one of [codenet,avatar,evalplus]', required=True, type=str)
     parser.add_argument('--source_lang', help='source language to use for code translation. should be one of [Python,Java]', required=True, type=str)
     parser.add_argument('--target_lang', help='target language to use for code translation. should be one of [Python,Java]', required=True, type=str)
     args = parser.parse_args()
 
+    model = args.model
+    dataset = args.dataset
     source_lang = args.source_lang
     target_lang = args.target_lang
-    with Translator(args.dataset) as translator:
-        logging.info(f"translating examples from {source_lang} to {target_lang} using {args.dataset} dataset")
+
+    with Translator(model, dataset) as translator:
+        logging.info(f"translating examples with {model} from {source_lang} to {target_lang} using {dataset} dataset")
         translator.translate(source_lang, target_lang, is_algorithm_based_translation=True)
