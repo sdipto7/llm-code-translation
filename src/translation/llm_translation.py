@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import re
 import argparse
 from tqdm import tqdm
+import pandas as pd
 from arg_validator import validate_arguments
 
 os.makedirs(f'logs', exist_ok=True)
@@ -134,8 +135,11 @@ class Translator:
 
     def write_to_file(self, file_name, content):
         logging.info(f"Writing to file {file_name}")
+
         with open(file_name, "w") as f:
             print(content, file=f)
+
+        logging.info(f"File {file_name} created successfully")
 
     def replace_class_name(self, translated_code, source_code_id):
         return re.sub('public\s*class\s*.+', 'public class ' + source_code_id + ' {', translated_code)
@@ -149,6 +153,14 @@ class Translator:
         
         return translated_code
 
+    def write_to_csv(self, path, columns, data):
+        logging.info(f"Writing to csv file {path}")
+        
+        df = pd.DataFrame(data, columns=columns)
+        df.to_csv(path, index=False)
+
+        logging.info(f"CSV file {path} created successfully")
+
     def translate(self, source_lang, target_lang, is_algorithm_based_translation):
         snippets = list(self.input_dir.joinpath(str(source_lang), "Code").iterdir())
 
@@ -157,12 +169,16 @@ class Translator:
 
         logging.info(f"Executing {'algorithm-based' if is_algorithm_based_translation else 'direct'} source code translation")
 
+        csv_data = []
+
         for source_file in tqdm(snippets, total=len(snippets), bar_format="{desc:<5.5}{percentage:3.0f}%|{bar:10}{r_bar}"):
             source_code_id = source_file.stem
             source_code_as_str = source_file.read_text(encoding="utf-8")
 
             translated_code_dir = self.get_translated_code_dir(base_dir_path, target_lang)
             filename_of_translated_code = translated_code_dir.joinpath(f"{source_code_id}.{Translator.EXTENSTIONS.get(target_lang)}")
+
+            row_data = {"source_lang": source_lang, "source_code_id": source_code_id, "source_code": source_code_as_str}
 
             if is_algorithm_based_translation:
                 algorithm_dir = self.get_algorithm_dir(base_dir_path)
@@ -173,7 +189,8 @@ class Translator:
                     continue
 
                 algorithm, translated_code = self.get_algorithm_based_translated_code(source_code_as_str, source_lang, target_lang)
-
+                row_data["algorithm"] = algorithm
+                
                 self.write_to_file(filename_of_algorithm, algorithm)
             
             else:
@@ -184,8 +201,17 @@ class Translator:
                 translated_code = self.get_direct_translated_code(source_code_as_str, source_lang, target_lang)
 
             translated_code = self.refine_translated_code(translated_code, source_code_id, target_lang)
+            row_data.update({"target_lang": target_lang, "translated_code": translated_code})
 
+            csv_data.append(row_data)
             self.write_to_file(filename_of_translated_code, translated_code)
+
+        csv_file_path = base_dir_path.joinpath(f"{source_lang}_to_{target_lang}_translation.csv")
+        columns = ["source_lang", "source_code_id", "source_code", "target_lang", "translated_code"]
+        if is_algorithm_based_translation:
+            columns.insert(3, "algorithm")
+
+        self.write_to_csv(csv_file_path, columns, csv_data)
         
         logging.info("Translation process completed.")
 
