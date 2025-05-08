@@ -39,10 +39,6 @@ class Translator:
             logging.error(f"directory {str(self.input_dir)} does not exist. raising FileNotFoundError")
             raise FileNotFoundError(f"Directory {str(self.input_dir)} does not exist.")
 
-        self.out_dir = Path(self.output_dir).joinpath(self.model, self.dataset)
-        if not self.out_dir.exists():
-            self.out_dir.mkdir(parents=True)
-
         return self
 
     def generate_response_with_openai(self, message_log):
@@ -108,9 +104,9 @@ class Translator:
         algorithm = self.get_algorithm_from_source_code(source_code_as_str, source_lang)
         translated_code = self.get_translated_code_from_algorithm(algorithm, target_lang)
 
-        return translated_code
+        return algorithm, translated_code
     
-    def get_translated_code_from_source_code(self, source_code_as_str, source_lang, target_lang):
+    def get_direct_translated_code(self, source_code_as_str, source_lang, target_lang):
         logging.info(f"Generating {target_lang} code based on the given {source_lang} code using openai")
 
         content = source_code_as_str + f"\n# Translate the above {source_lang} code to {target_lang}. Print only the {target_lang} code and end with the comment \"End of Code\".\n"
@@ -124,38 +120,75 @@ class Translator:
 
         return response.replace(f"```{target_lang.lower()}", "").replace("```", "")
 
+    def get_algorithm_dir(self, base_dir_path):
+        algorithm_dir = Path(base_dir_path).joinpath("algorithm")
+        algorithm_dir.mkdir(parents=True, exist_ok=True)        
+        
+        return algorithm_dir
+
+    def get_translated_code_dir(self, base_dir_path, target_lang):
+        translated_code_dir = Path(base_dir_path).joinpath(f"{target_lang}")
+        translated_code_dir.mkdir(parents=True, exist_ok=True)
+        
+        return translated_code_dir
+
+    def write_to_file(self, file_name, content):
+        logging.info(f"Writing to file {file_name}")
+        with open(file_name, "w") as f:
+            print(content, file=f)
+
+    def replace_class_name(self, translated_code, source_code_id):
+        return re.sub('public\s*class\s*.+', 'public class ' + source_code_id + ' {', translated_code)
+
+    def prepend_package_name_for_evalplus_dataset(self, translated_code, target_lang):
+        return 'package com.example;\n' + translated_code if self.dataset == 'evalplus' and target_lang == 'Java' else translated_code
+
+    def refine_translated_code(self, translated_code, source_code_id, target_lang):
+        translated_code = self.replace_class_name(translated_code, source_code_id)
+        translated_code = self.prepend_package_name_for_evalplus_dataset(translated_code, target_lang)
+        
+        return translated_code
+
     def translate(self, source_lang, target_lang, is_algorithm_based_translation):
         snippets = list(self.input_dir.joinpath(str(source_lang), "Code").iterdir())
+
+        base_dir_path_name = "algo_based_translation" if is_algorithm_based_translation else "direct_translation"
+        base_dir_path = Path(self.output_dir).joinpath(base_dir_path_name, self.model, self.dataset, f"{source_lang}")
+
+        logging.info(f"Executing {'algorithm-based' if is_algorithm_based_translation else 'direct'} source code translation")
 
         for source_file in tqdm(snippets, total=len(snippets), bar_format="{desc:<5.5}{percentage:3.0f}%|{bar:10}{r_bar}"):
             source_code_id = source_file.stem
             source_code_as_str = source_file.read_text(encoding="utf-8")
 
-            target_dir = self.out_dir.joinpath(f"{source_lang}", f"{target_lang}")
-            if not target_dir.exists():
-                target_dir.mkdir(parents=True)
-
-            filename_of_translated_code = target_dir.joinpath(f"{source_code_id}.{Translator.EXTENSTIONS[target_lang]}")
-
-            translated_code_fp = Path(filename_of_translated_code)
-            if translated_code_fp.exists():
-                continue
+            translated_code_dir = self.get_translated_code_dir(base_dir_path, target_lang)
+            filename_of_translated_code = translated_code_dir.joinpath(f"{source_code_id}.{Translator.EXTENSTIONS[target_lang]}")
 
             if is_algorithm_based_translation:
-                logging.info(f"Executing algorithm based translation")
-                translated_code = self.get_algorithm_based_translated_code(source_code_as_str, source_lang, target_lang)
+                algorithm_dir = self.get_algorithm_dir(base_dir_path)
+                filename_of_algorithm = algorithm_dir.joinpath(f"{source_code_id}.txt")
+
+                if any(Path(file).exists() for file in [filename_of_algorithm, filename_of_translated_code]):
+                    logging.info(f"Algorithm or translated code already exists for {source_code_id}. Moving to next program.")
+                    continue
+
+                algorithm, translated_code = self.get_algorithm_based_translated_code(source_code_as_str, source_lang, target_lang)
+
+                self.write_to_file(filename_of_algorithm, algorithm)
+            
             else:
-                logging.info(f"Executing direct source code translation")
-                translated_code = self.get_translated_code_from_source_code(source_code_as_str, source_lang, target_lang)
+                if Path(filename_of_translated_code).exists():
+                    logging.info(f"Translated code already exists for {source_code_id}. Moving to next program.")                    
+                    continue
+                
+                translated_code = self.get_direct_translated_code(source_code_as_str, source_lang, target_lang)
 
-            translated_code = re.sub('public\s*class\s*.+', 'public class ' + source_code_id + ' {', translated_code)
+            translated_code = self.refine_translated_code(translated_code, source_code_id, target_lang)
 
-            if self.dataset == 'evalplus' and target_lang == 'Java':
-                translated_code = 'package com.example;\n' + translated_code
+            self.write_to_file(filename_of_translated_code, translated_code)
+        
+        logging.info("Translation process completed.")
 
-            with open(filename_of_translated_code, "w") as f:
-                print(translated_code, file=f)
-                    
     def __exit__(self, exception, _, __):
         print(exception)
 
