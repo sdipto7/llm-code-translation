@@ -31,8 +31,6 @@ class Translator:
         self.model = os.getenv(MODEL_ENV_MAP.get(model))
 
     def __enter__(self):
-        logging.info(f"successfully set up openai api key")
-
         self.main_dir = os.getcwd()
         self.input_dir = Path(self.main_dir).joinpath("dataset", self.dataset)
         self.output_dir = os.path.join(self.main_dir, "output")
