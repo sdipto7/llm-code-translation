@@ -6,10 +6,10 @@ from dotenv import load_dotenv
 import re
 import argparse
 from tqdm import tqdm
+from arg_validator import validate_arguments
 
 os.makedirs(f'logs', exist_ok=True)
 logging.basicConfig(filename=f"logs/translation.log", level=logging.INFO, format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
-
 
 class Translator:
     EXTENSTIONS = {
@@ -29,9 +29,6 @@ class Translator:
         self.base_url = os.getenv("BASE_URL")
         self.api_key = os.getenv("API_KEY")
         self.model = os.getenv(MODEL_ENV_MAP.get(model))
-        
-        if self.model is None:
-            raise ValueError(f"model {model} is not supported. should be one of [gpt-4o, deepseek-r1, gemini-flash-1.5, llama-4-maverick]")
 
     def __enter__(self):
         logging.info(f"successfully set up openai api key")
@@ -174,7 +171,9 @@ if __name__ == "__main__":
     parser.add_argument('--dataset', help='dataset to use for code translation. should be one of [codenet,avatar,evalplus]', required=True, type=str)
     parser.add_argument('--source_lang', help='source language to use for code translation. should be one of [Python,Java]', required=True, type=str)
     parser.add_argument('--target_lang', help='target language to use for code translation. should be one of [Python,Java]', required=True, type=str)
+    
     args = parser.parse_args()
+    validate_arguments(args)
 
     model = args.model
     dataset = args.dataset
