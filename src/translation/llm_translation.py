@@ -28,7 +28,7 @@ class Translator:
         self.dataset = dataset
         self.base_url = os.getenv("BASE_URL")
         self.api_key = os.getenv("API_KEY")
-        self.model = os.getenv(MODEL_ENV_MAP.get(model))
+        self.model = os.getenv(Translator.MODEL_ENV_MAP.get(model))
 
     def __enter__(self):
         self.main_dir = os.getcwd()
@@ -162,7 +162,7 @@ class Translator:
             source_code_as_str = source_file.read_text(encoding="utf-8")
 
             translated_code_dir = self.get_translated_code_dir(base_dir_path, target_lang)
-            filename_of_translated_code = translated_code_dir.joinpath(f"{source_code_id}.{Translator.EXTENSTIONS[target_lang]}")
+            filename_of_translated_code = translated_code_dir.joinpath(f"{source_code_id}.{Translator.EXTENSTIONS.get(target_lang)}")
 
             if is_algorithm_based_translation:
                 algorithm_dir = self.get_algorithm_dir(base_dir_path)
