@@ -32,10 +32,8 @@ ATTEMPT=$5;
 
 if [[ $DATASET == "avatar" ]]; then
     python3 src/test/test_avatar.py --source_lang $SRC_LANG --target_lang $TRG_LANG --report_dir $OUTPUT_DIR;
-    python3 src/test/test_avatar_feedback.py --source_lang $SRC_LANG --target_lang $TRG_LANG --report_dir $OUTPUT_DIR --attempt $ATTEMPT;
 elif [[ $DATASET == "codenet" ]]; then
     python3 src/test/test_codenet.py --source_lang $SRC_LANG --target_lang $TRG_LANG --report_dir $OUTPUT_DIR;
-    python3 src/test/test_codenet_feedback.py --source_lang $SRC_LANG --target_lang $TRG_LANG --report_dir $OUTPUT_DIR --attempt $ATTEMPT;
 elif [[ $DATASET == "evalplus" ]]; then
     python3 src/test/test_evalplus.py --source_lang $SRC_LANG --target_lang $TRG_LANG --report_dir $OUTPUT_DIR --attempt $ATTEMPT;
 else
