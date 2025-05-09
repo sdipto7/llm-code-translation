@@ -3,7 +3,9 @@ import os
 import argparse
 from pathlib import Path
 from dotenv import load_dotenv
-
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+from src.validator.arg_validator import validate_arguments
 
 def main(args):
     model = os.getenv("MODEL")
@@ -54,6 +56,8 @@ if __name__ == "__main__":
     parser.add_argument('--source_lang', help='source language of the translated code. should be one of [Python,Java]', required=True, type=str)
     parser.add_argument('--target_lang', help='target language of the translated code. should be one of [Python,Java]', required=True, type=str)
     parser.add_argument('--result_dir', help='path to directory to store result', required=True, type=str)
+
     args = parser.parse_args()
+    validate_arguments(args, is_test=True)
 
     main(args)

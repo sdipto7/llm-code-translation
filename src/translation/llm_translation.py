@@ -7,7 +7,9 @@ import re
 import argparse
 from tqdm import tqdm
 import pandas as pd
-from arg_validator import validate_arguments
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+from src.validator.arg_validator import validate_arguments
 
 os.makedirs(f'logs', exist_ok=True)
 logging.basicConfig(filename=f"logs/translation.log", level=logging.INFO, format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')

@@ -59,11 +59,14 @@ def validate_language_pair(source_lang, target_lang):
 
     loggin.info("language pair validated successfully")
 
-def validate_arguments(args):
+def validate_arguments(args, is_test=False):
     logging.info(f"validating arguments for the model {args.model}, dataset {args.dataset}, source language {args.source_lang} and target language {args.target_lang}")
 
     validate_model(args.model)
-    validate_dataset(args.dataset)
+
+    if not is_test:
+        validate_dataset(args.dataset)
+
     validate_source_language(args.source_lang)
     validate_target_language(args.target_lang)
     validate_language_pair(args.source_lang, args.target_lang)
