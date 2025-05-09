@@ -4,11 +4,12 @@ export PYTHONIOENCODING=utf-8;
 
 function prompt() {
     echo;
-    echo "Syntax: bash scripts/test.sh DATASET SRC_LANG TRG_LANG OUTPUT_DIR ATTEMPT";
+    echo "Syntax: bash scripts/test.sh DATASET SRC_LANG TRG_LANG RESULT_DIR ATTEMPT";
+    echo "MODEL: name of the model to use";
     echo "DATASET: name of the dataset to use";
     echo "SRC_LANG: source language";
     echo "TRG_LANG: target language";
-    echo "OUTPUT_DIR: path to the output directory";
+    echo "RESULT_DIR: path to the output directory";
     echo "ATTEMPT: attempt number";
     exit;
 }
@@ -20,22 +21,22 @@ while getopts ":h" option; do
     esac
 done
 
-if [[ $# < 4 ]]; then
+if [[ $# < 5 ]]; then
   prompt;
 fi
 
-DATASET=$1;
-SRC_LANG=$2;
-TRG_LANG=$3;
-OUTPUT_DIR=$4;
-ATTEMPT=$5;
+MODEL=$1;
+DATASET=$2;
+SRC_LANG=$3;
+TRG_LANG=$4;
+RESULT_DIR=$5;
 
 if [[ $DATASET == "avatar" ]]; then
-    python3 src/test/test_avatar.py --source_lang $SRC_LANG --target_lang $TRG_LANG --report_dir $OUTPUT_DIR;
+    python3 src/test/test_avatar.py --model $MODEL --source_lang $SRC_LANG --target_lang $TRG_LANG --result_dir $RESULT_DIR;
 elif [[ $DATASET == "codenet" ]]; then
-    python3 src/test/test_codenet.py --source_lang $SRC_LANG --target_lang $TRG_LANG --report_dir $OUTPUT_DIR;
+    python3 src/test/test_codenet.py --model $MODEL --source_lang $SRC_LANG --target_lang $TRG_LANG --result_dir $RESULT_DIR;
 elif [[ $DATASET == "evalplus" ]]; then
-    python3 src/test/test_evalplus.py --source_lang $SRC_LANG --target_lang $TRG_LANG --report_dir $OUTPUT_DIR --attempt $ATTEMPT;
+    python3 src/test/test_evalplus.py --model $MODEL --source_lang $SRC_LANG --target_lang $TRG_LANG --result_dir $RESULT_DIR;
 else
     echo "Dataset not supported";
 fi

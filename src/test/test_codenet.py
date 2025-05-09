@@ -160,9 +160,10 @@ if __name__ == "__main__":
     load_dotenv(override=True)
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--source_lang', help='source language to use for code translation. should be one of [Python,Java]', required=True, type=str)
-    parser.add_argument('--target_lang', help='target language to use for code translation. should be one of [Python,Java]', required=True, type=str)
-    parser.add_argument('--report_dir', help='path to directory to store report', required=True, type=str)
+    parser.add_argument('--model', help='model used for code translation. should be one of [gpt-4o, deepseek-r1, gemini-flash-1.5, llama-4-maverick]', required=True, type=str)
+    parser.add_argument('--source_lang', help='source language of the translated code. should be one of [Python,Java]', required=True, type=str)
+    parser.add_argument('--target_lang', help='target language of the translated code. should be one of [Python,Java]', required=True, type=str)
+    parser.add_argument('--result_dir', help='path to directory to store result', required=True, type=str)
     args = parser.parse_args()
 
     main(args)
