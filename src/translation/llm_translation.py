@@ -10,6 +10,7 @@ import pandas as pd
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from src.validator.arg_validator import validate_arguments
+from src.helper.model_path_helper import resolve_model_name_for_path
 
 os.makedirs(f'logs', exist_ok=True)
 logging.basicConfig(filename=f"logs/translation.log", level=logging.INFO, format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
@@ -166,8 +167,9 @@ class Translator:
     def translate(self, source_lang, target_lang, is_algorithm_based_translation):
         snippets = list(self.input_dir.joinpath(str(source_lang), "Code").iterdir())
 
-        base_dir_path_name = "algo_based_translation" if is_algorithm_based_translation else "direct_translation"
-        base_dir_path = Path(self.output_dir).joinpath(base_dir_path_name, self.model, self.dataset, f"{source_lang}")
+        translation_type_for_path = "algo_based_translation" if is_algorithm_based_translation else "direct_translation"
+        model_name_for_path = resolve_model_name_for_path(self.model)
+        base_dir_path = Path(self.output_dir).joinpath(translation_type_for_path, model_name_for_path, self.dataset, f"{source_lang}")
 
         logging.info(f"Executing {'algorithm-based' if is_algorithm_based_translation else 'direct'} source code translation")
 
