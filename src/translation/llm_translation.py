@@ -11,28 +11,17 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from src.validator.arg_validator import validate_arguments
 from src.helper.model_path_helper import resolve_model_name_for_path
+from src.util.constants import get_extension_map, get_model_env_map
 
 os.makedirs(f'logs', exist_ok=True)
 logging.basicConfig(filename=f"logs/translation.log", level=logging.INFO, format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 
 class Translator:
-    EXTENSTIONS = {
-        "Java": "java",
-        "Python": "py"
-    }
-
-    MODEL_ENV_MAP = {
-        "gpt-4o": "GPT_MODEL",
-        "llama-4-maverick": "LLAMA_MODEL",
-        "gemini-flash-1.5": "GEMINI_MODEL",
-        "deepseek-r1": "DEEPSEEK_MODEL"
-    }
-
     def __init__(self, model, dataset) -> None:
         self.dataset = dataset
         self.base_url = os.getenv("BASE_URL")
         self.api_key = os.getenv("API_KEY")
-        self.model = os.getenv(Translator.MODEL_ENV_MAP.get(model))
+        self.model = os.getenv(get_model_env_map().get(model))
 
     def __enter__(self):
         self.main_dir = os.getcwd()
@@ -180,7 +169,7 @@ class Translator:
             source_code_as_str = source_file.read_text(encoding="utf-8")
 
             translated_code_dir = self.get_translated_code_dir(base_dir_path, target_lang)
-            filename_of_translated_code = translated_code_dir.joinpath(f"{source_code_id}.{Translator.EXTENSTIONS.get(target_lang)}")
+            filename_of_translated_code = translated_code_dir.joinpath(f"{source_code_id}.{get_extension_map().get(target_lang)}")
 
             row_data = {"source_lang": source_lang, "source_code_id": source_code_id, "source_code": source_code_as_str}
 
