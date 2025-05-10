@@ -229,6 +229,7 @@ if __name__ == "__main__":
     parser.add_argument('--model', help='model used for code translation. should be one of [gpt-4o, deepseek-r1, gemini-flash-1.5, llama-4-maverick]', required=True, type=str)
     parser.add_argument('--source_lang', help='source language of the translated code. should be one of [Python,Java]', required=True, type=str)
     parser.add_argument('--target_lang', help='target language of the translated code. should be one of [Python,Java]', required=True, type=str)
+    parser.add_argument('--translation_type', help='type of translation to use. should be one of [algorithm,direct]', required=True, type=str)
     parser.add_argument('--result_dir', help='path to directory to store result', required=True, type=str)
 
     args = parser.parse_args()
