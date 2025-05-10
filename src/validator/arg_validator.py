@@ -59,8 +59,19 @@ def validate_language_pair(source_lang, target_lang):
 
     loggin.info("language pair validated successfully")
 
+def validate_translation_type(translation_type):
+    logging.info("validating translation type")
+
+    if translation_type is None:
+        raise ValueError("Translation type is not provided")
+
+    if translation_type not in ["algorithm", "direct"]:
+        raise ValueError(f"translation type {translation_type} is not supported. should be one of [algorithm, direct]")
+
+    logging.info("translation type validated successfully")
+
 def validate_arguments(args, is_test=False):
-    logging.info(f"validating arguments for the model {args.model}, dataset {args.dataset}, source language {args.source_lang} and target language {args.target_lang}")
+    logging.info(f"validating arguments for the model {args.model}, dataset {args.dataset}, source language {args.source_lang}, target language {args.target_lang} and translation type {args.translation_type}")
 
     validate_model(args.model)
 
@@ -70,5 +81,6 @@ def validate_arguments(args, is_test=False):
     validate_source_language(args.source_lang)
     validate_target_language(args.target_lang)
     validate_language_pair(args.source_lang, args.target_lang)
+    validate_translation_type(args.translation_type)
 
-    logging.info(f"arguments validated successfully with model: {args.model}, dataset: {args.dataset}, source language: {args.source_lang} and target language: {args.target_lang}")
+    logging.info(f"arguments validated successfully with model: {args.model}, dataset: {args.dataset}, source language: {args.source_lang}, target language: {args.target_lang} and translation type: {args.translation_type}")

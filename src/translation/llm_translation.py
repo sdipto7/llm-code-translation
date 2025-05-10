@@ -206,6 +206,7 @@ if __name__ == "__main__":
     parser.add_argument('--dataset', help='dataset to use for code translation. should be one of [codenet,avatar,evalplus]', required=True, type=str)
     parser.add_argument('--source_lang', help='source language to use for code translation. should be one of [Python,Java]', required=True, type=str)
     parser.add_argument('--target_lang', help='target language to use for code translation. should be one of [Python,Java]', required=True, type=str)
+    parser.add_argument('--translation_type', help='type of translation to use. should be one of [algorithm,direct]', required=True, type=str)
     
     args = parser.parse_args()
     validate_arguments(args)
@@ -214,7 +215,10 @@ if __name__ == "__main__":
     dataset = args.dataset
     source_lang = args.source_lang
     target_lang = args.target_lang
+    translation_type = args.translation_type
+
+    is_algorithm_based_translation = translation_type == "algorithm"
 
     with Translator(model, dataset) as translator:
-        logging.info(f"translating examples with {model} from {source_lang} to {target_lang} using {dataset} dataset")
-        translator.translate(source_lang, target_lang, is_algorithm_based_translation=True)
+        logging.info(f"translating examples by {'algorithm-based approach' if is_algorithm_based_translation else 'direct approach'} with {model} from {source_lang} to {target_lang} using {dataset} dataset")
+        translator.translate(source_lang, target_lang, is_algorithm_based_translation)

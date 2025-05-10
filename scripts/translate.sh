@@ -9,6 +9,7 @@ function prompt() {
     echo "DATASET: name of the dataset to use";
     echo "SRC_LANG: source language";
     echo "TRG_LANG: target language";
+    echo "TYPE: translation type";
     exit;
 }
 
@@ -19,7 +20,7 @@ while getopts ":h" option; do
     esac
 done
 
-if [[ $# < 4 ]]; then
+if [[ $# < 5 ]]; then
   prompt;
 fi
 
@@ -27,5 +28,6 @@ MODEL=$1;
 DATASET=$2;
 SRC_LANG=$3;
 TRG_LANG=$4;
+TYPE=$5;
 
-python3 src/translation/llm_translation.py --model $MODEL --dataset $DATASET --source_lang $SRC_LANG --target_lang $TRG_LANG;
+python3 src/translation/llm_translation.py --model $MODEL --dataset $DATASET --source_lang $SRC_LANG --target_lang $TRG_LANG --translation_type $TYPE;
