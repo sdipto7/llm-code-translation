@@ -12,6 +12,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from src.validator.arg_validator import validate_arguments
 from src.helper.model_path_helper import resolve_model_name_for_path
 from src.util.constants import get_extension_map, get_model_env_map
+from src.util.io_utils import write_to_file, write_to_csv
 
 os.makedirs(f'logs', exist_ok=True)
 logging.basicConfig(filename=f"logs/translation.log", level=logging.INFO, format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
@@ -125,14 +126,6 @@ class Translator:
         
         return translated_code_dir
 
-    def write_to_file(self, file_name, content):
-        logging.info(f"Writing to file {file_name}")
-
-        with open(file_name, "w") as f:
-            print(content, file=f)
-
-        logging.info(f"File {file_name} created successfully")
-
     def replace_class_name(self, translated_code, source_code_id):
         return re.sub('public\s*class\s*.+', 'public class ' + source_code_id + ' {', translated_code)
 
@@ -144,14 +137,6 @@ class Translator:
         translated_code = self.prepend_package_name_for_evalplus_dataset(translated_code, target_lang)
         
         return translated_code
-
-    def write_to_csv(self, path, columns, data):
-        logging.info(f"Writing to csv file {path}")
-        
-        df = pd.DataFrame(data, columns=columns)
-        df.to_csv(path, index=False)
-
-        logging.info(f"CSV file {path} created successfully")
 
     def translate(self, source_lang, target_lang, is_algorithm_based_translation):
         snippets = list(self.input_dir.joinpath(str(source_lang), "Code").iterdir())
@@ -184,7 +169,7 @@ class Translator:
                 algorithm, translated_code = self.get_algorithm_based_translated_code(source_code_as_str, source_lang, target_lang)
                 row_data["algorithm"] = algorithm
                 
-                self.write_to_file(filename_of_algorithm, algorithm)
+                write_to_file(filename_of_algorithm, algorithm)
             
             else:
                 if Path(filename_of_translated_code).exists():
@@ -197,14 +182,14 @@ class Translator:
             row_data.update({"target_lang": target_lang, "translated_code": translated_code})
 
             csv_data.append(row_data)
-            self.write_to_file(filename_of_translated_code, translated_code)
+            write_to_file(filename_of_translated_code, translated_code)
 
         csv_file_path = base_dir_path.joinpath(f"{source_lang}_to_{target_lang}_translation.csv")
         columns = ["source_lang", "source_code_id", "source_code", "target_lang", "translated_code"]
         if is_algorithm_based_translation:
             columns.insert(3, "algorithm")
 
-        self.write_to_csv(csv_file_path, columns, csv_data)
+        write_to_csv(csv_file_path, columns, csv_data)
         
         logging.info("Translation process completed.")
 
