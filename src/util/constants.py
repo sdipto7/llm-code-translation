@@ -1,7 +1,7 @@
 def get_extension_map():
     return {
-        "Java": "java",
-        "Python": "py"
+        "java": "java",
+        "python": "py"
     }
 
 def get_model_env_map():   

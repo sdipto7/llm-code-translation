@@ -36,7 +36,7 @@ def main(args, is_algorithm_based_translation):
     test_failed_details = []
     runtime_failed_details= []
 
-    if args.target_lang == "Python":
+    if args.target_lang == "python":
         for i in range(len(files)):
 
             try:
@@ -92,7 +92,7 @@ def main(args, is_algorithm_based_translation):
             except Exception as e:
                 compile_failed.append(files[i])
 
-    elif args.target_lang == "Java":
+    elif args.target_lang == "java":
         for i in range(len(files)):
 
             try:
@@ -153,7 +153,7 @@ def main(args, is_algorithm_based_translation):
                 os.remove(translation_dir + "/" + file)
 
     else:
-        print(f"language:{args.target_lang} is not yet supported. select from the following languages[Python,Java]")
+        print(f"language:{args.target_lang} is not yet supported. select from the following languages[python,java]")
         return
 
     test_passed = list(set(test_passed))
@@ -191,8 +191,8 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', help='model used for code translation. should be one of [gpt-4o, deepseek-r1, gemini-flash-1.5, llama-4-maverick]', required=True, type=str)
-    parser.add_argument('--source_lang', help='source language of the translated code. should be one of [Python,Java]', required=True, type=str)
-    parser.add_argument('--target_lang', help='target language of the translated code. should be one of [Python,Java]', required=True, type=str)
+    parser.add_argument('--source_lang', help='source language of the translated code. should be one of [python,java]', required=True, type=str)
+    parser.add_argument('--target_lang', help='target language of the translated code. should be one of [python,java]', required=True, type=str)
     parser.add_argument('--translation_type', help='type of translation to use. should be one of [algorithm,direct]', required=True, type=str)
     parser.add_argument('--report_dir', help='path to directory to store report', required=True, type=str)
 

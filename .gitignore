@@ -161,12 +161,8 @@ cython_debug/
 
 # ignoring big directories
 dataset/
-CodeGeeX/
-huggingface/
-
-fix_reports/
+reports/
 logs/
 output/
-output_bk/
 src/plots.ipynb
 figures/

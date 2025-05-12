@@ -32,8 +32,8 @@ def validate_source_language(source_lang):
     if source_lang is None:
         raise ValueError("Source language is not provided")
 
-    if source_lang not in ["Python", "Java"]:
-        raise ValueError(f"source language {source_lang} is not supported. should be one of [Python, Java]")
+    if source_lang not in ["python", "java"]:
+        raise ValueError(f"source language {source_lang} is not supported. should be one of [python, java]")
 
     logging.info("source language validated successfully")
 
@@ -43,8 +43,8 @@ def validate_target_language(target_lang):
     if target_lang is None:
         raise ValueError("Target language is not provided")
 
-    if target_lang not in ["Python", "Java"]:
-        raise ValueError(f"target language {target_lang} is not supported. should be one of [Python, Java]")
+    if target_lang not in ["python", "java"]:
+        raise ValueError(f"target language {target_lang} is not supported. should be one of [python, java]")
 
     logging.info("target language validated successfully")
 
@@ -54,7 +54,7 @@ def validate_language_pair(source_lang, target_lang):
     if source_lang is None or target_lang is None:
         raise ValueError("Source language or target language is not provided")
 
-    if source_lang in ["Python", "Java"] and target_lang in ["Python", "Java"] and source_lang == target_lang:
+    if source_lang in ["python", "java"] and target_lang in ["python", "java"] and source_lang == target_lang:
         raise ValueError(f"source language {source_lang} and target language {target_lang} should not be same")
 
     loggin.info("language pair validated successfully")

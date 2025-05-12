@@ -130,7 +130,7 @@ class Translator:
         return re.sub('public\s*class\s*.+', 'public class ' + source_code_id + ' {', translated_code)
 
     def prepend_package_name_for_evalplus_dataset(self, translated_code, target_lang):
-        return 'package com.example;\n' + translated_code if self.dataset == 'evalplus' and target_lang == 'Java' else translated_code
+        return "package com.pseudocraft;\n" + translated_code if self.dataset == "evalplus" and target_lang == "java" else translated_code
 
     def refine_translated_code(self, translated_code, source_code_id, target_lang):
         translated_code = self.replace_class_name(translated_code, source_code_id)
@@ -204,8 +204,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', help='model to use for code translation. should be one of [gpt-4o, deepseek-r1, gemini-flash-1.5, llama-4-maverick]', required=True, type=str)
     parser.add_argument('--dataset', help='dataset to use for code translation. should be one of [codenet,avatar,evalplus]', required=True, type=str)
-    parser.add_argument('--source_lang', help='source language to use for code translation. should be one of [Python,Java]', required=True, type=str)
-    parser.add_argument('--target_lang', help='target language to use for code translation. should be one of [Python,Java]', required=True, type=str)
+    parser.add_argument('--source_lang', help='source language to use for code translation. should be one of [python,java]', required=True, type=str)
+    parser.add_argument('--target_lang', help='target language to use for code translation. should be one of [python,java]', required=True, type=str)
     parser.add_argument('--translation_type', help='type of translation to use. should be one of [algorithm,direct]', required=True, type=str)
     
     args = parser.parse_args()
