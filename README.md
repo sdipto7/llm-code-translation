@@ -1,45 +1,40 @@
-#### Translate Python to Java translation for avatar
+## Models
 ```
-bash scripts/translate.sh avatar Python Java
-```
-#### Test Python to Java translation for avatar
-```
-bash scripts/test.sh avatar Python Java fix_reports 1
-```
-#### Translate Java to Python translation for avatar
-```
-bash scripts/translate.sh avatar Java Python
-```
-#### Test Java to Python translation for avatar
-```
-bash scripts/test.sh avatar Java Python fix_reports 1
+[gpt-4o, llama-4-maverick, gemini-flash-1.5, deepseek-r1]
 ```
 
-#### Translate Python to Java translation for codenet
+## Datasets
 ```
-bash scripts/translate.sh codenet Python Java
-```
-
-#### Test Python to Java translation for codenet
-```
-bash scripts/test.sh codenet Python Java fix_reports 1
+[avatar, codenet, evalplus]
 ```
 
-#### Translate Java to Python translation for codenet
+## Source Languages
 ```
-bash scripts/translate.sh codenet Java Python
-```
-#### Test Java to Python translation for codenet
-```
-bash scripts/test.sh codenet Java Python fix_reports 1
+[python, java]
 ```
 
-#### Translate Python to Java translation for evalplus
+## Target Languages
 ```
-bash scripts/translate.sh evalplus Python Java
+[java, python]
 ```
 
-#### Test Python to Java translation for evalplus
+## Translation Types
 ```
-bash scripts/test.sh evalplus Python Java fix_reports 1
+[direct, algorithm]
 ```
+
+## Command Syntax
+### Translation Command
+Translate from source language to target language using a specific translation type, dataset, and model.
+```
+bash scripts/translate.sh ${model} ${dataset} ${source_lang} ${target_lang} ${translation_type}
+```
+
+### Testing Command
+Test the translated code for a specific translation type, dataset, and model, and store the report in a specified directory.
+```
+bash scripts/test.sh ${model} ${dataset} ${source_lang} ${target_lang} ${translation_type} ${report_directory}
+```
+
+## Note: 
+Substitute ${model} with a supported model (e.g., gpt-4o), ${dataset} with a dataset name (e.g., avatar), ${source_lang} with a source language (e.g., python), ${target_lang} with a target language (e.g., java), and ${translation_type} with the desired translation type (e.g., direct).
