@@ -3,7 +3,7 @@
 ```
 $SOURCE_CODE
 
-Translate the above $SOURCE_LANG code to $TARGET_LANG code. Print only the $TARGET_LANG code and exclude comments, headers, explanation and examples.
+# Translate the above $SOURCE_LANG code to equivalent $TARGET_LANG code. Print only the $TARGET_LANG code and exclude any comments, headers, explanations and examples.
 ```
 
 
@@ -14,7 +14,7 @@ Translate the above $SOURCE_LANG code to $TARGET_LANG code. Print only the $TARG
 ```
 $SOURCE_CODE
 
-Generate only the step by step algorithm for the above $SOURCE_LANG code. Print only the steps and exclude comments, headers, explanation and examples.
+# Generate only the step by step algorithm for the above $SOURCE_LANG code. Print only the steps and exclude any comments, headers, explanations and examples.
 ```
 
 #### Generate translated code from generated algorithm
@@ -22,5 +22,5 @@ Generate only the step by step algorithm for the above $SOURCE_LANG code. Print 
 ```
 $GENERATED_ALGORITHM 
 
-Using the above algorithm, generate the equivalent $TARGET_LANG code. Exclude any comments, headers, explanation and examples.
+# Using the above algorithm, generate the $TARGET_LANG code only. Exclude any comments, headers, explanations and examples.
 ```
