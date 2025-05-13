@@ -25,7 +25,7 @@ def main(args, is_algorithm_based_translation):
     translation_dir = f"output/{translation_type_for_path}/{model_name_for_path}/{dataset}/{args.source_lang}/{args.target_lang}"
     files = [f for f in os.listdir(translation_dir) if f.split(".")[-1] in list(get_extension_map().values())]
     
-    test_dir = f"dataset/{dataset}/{args.source_lang}/TestCases"
+    test_dir = f"dataset/{dataset}/{args.source_lang.capitalize()}/TestCases"
     os.makedirs(args.report_dir, exist_ok=True)
 
     test_passed =[]
