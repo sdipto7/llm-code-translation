@@ -25,8 +25,7 @@ def main(args, is_algorithm_based_translation):
     translation_dir = f"output/{translation_type_for_path}/{model_name_for_path}/{dataset}/{args.source_lang}/{args.target_lang}"
     files = [f for f in os.listdir(translation_dir) if f.split(".")[-1] in list(get_extension_map().values())]
     
-    test_dir = f"dataset/{dataset}/{args.source_lang.capitalize()}/TestCases"
-    os.makedirs(args.report_dir, exist_ok=True)
+    test_cases_dir = f"dataset/{dataset}/{args.source_lang.capitalize()}/TestCases"
 
     test_passed =[]
     compile_failed = []
@@ -37,22 +36,21 @@ def main(args, is_algorithm_based_translation):
     runtime_failed_details= []
     
     if args.target_lang == "python":
-        for i in range(len(files)):
+        for file in files:
 
             try:
-                print("Filename: ", files[i])
-                subprocess.run("python3 -m py_compile " + translation_dir + "/" + files[i], check=True, capture_output=True, shell=True, timeout=30)
+                print(f"Filename: {file}")
+                subprocess.run(f"python3 -m py_compile {translation_dir}/{file}", check=True, capture_output=True, shell=True, timeout=30)
 
-                test_case_path = f"{test_dir}/{files[i].split(".")[0]}"
+                test_case_path = f"{test_cases_dir}/{file.split(".")[0]}"
                 test_input = read_file(f"{test_case_path}_in.txt")
                 expected_output = read_file(f"{test_case_path}_out.txt")
 
-                p = Popen(['python3', translation_dir+"/"+ files[i]], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
+                p = Popen(["python3", f"{translation_dir}/{file}"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                 try:
                     output, error_data = p.communicate(input=test_input.encode(), timeout=100)
                 except subprocess.TimeoutExpired:
-                    infinite_loop.append(files[i])
+                    infinite_loop.append(file)
                     continue
 
                 try:
@@ -67,7 +65,7 @@ def main(args, is_algorithm_based_translation):
                         pass                
 
                 if(output.strip() == expected_output.strip()):
-                    test_passed.append(files[i])
+                    test_passed.append(file)
                 else:
                     try:
                         error_data = error_data.decode()
@@ -75,32 +73,31 @@ def main(args, is_algorithm_based_translation):
                         pass
 
                     if not error_data.strip():
-                        test_failed.append(files[i])
-                        test_failed_details.append("Filename: " + files[i] + " Actual: " + str(expected_output) + " Generated: " + str(output))  
+                        test_failed.append(file)
+                        test_failed_details.append(f"Filename: {file} Actual: {str(expected_output)} Generated: {str(output)}")  
                     else:
-                        runtime_failed.append(files[i])
-                        runtime_failed_details.append("Filename: " + files[i] + " Error_type: " + str(error_data)) 
+                        runtime_failed.append(file)
+                        runtime_failed_details.append(f"Filename: {file} Error_type: {str(error_data)}") 
 
             except Exception as e:
-                compile_failed.append(files[i])
+                compile_failed.append(file)
 
-    elif args.target_lang =="java":
-        for i in range(len(files)):
+    elif args.target_lang == "java":
+        for file in files:
 
             try:
-                print("Filename: ", files[i])
-                subprocess.run("javac " + translation_dir + "/" + files[i], check=True, capture_output=True, shell=True, timeout=30)
+                print(f"Filename: {file}")
+                subprocess.run(f"javac {translation_dir}/{file}", check=True, capture_output=True, shell=True, timeout=30)
 
-                test_case_path = f"{test_dir}/{files[i].split(".")[0]}"
+                test_case_path = f"{test_cases_dir}/{file.split(".")[0]}"
                 test_input = read_file(f"{test_case_path}_in.txt")
                 expected_output = read_file(f"{test_case_path}_out.txt")
 
-                p = Popen(["java", files[i].split(".")[0]], cwd=translation_dir, stdin=PIPE, stdout=PIPE, stderr=PIPE)    
-
+                p = Popen(["java", file.split(".")[0]], cwd=translation_dir, stdin=PIPE, stdout=PIPE, stderr=PIPE)    
                 try:
                     output, error_data = p.communicate(input=test_input.encode(), timeout=100)
                 except subprocess.TimeoutExpired:
-                    infinite_loop.append(files[i])
+                    infinite_loop.append(file)
                     continue
 
                 try:
@@ -115,7 +112,7 @@ def main(args, is_algorithm_based_translation):
                         pass                   
 
                 if(output.strip() == expected_output.strip()): 
-                    test_passed.append(files[i])
+                    test_passed.append(file)
                 else:
                     try:
                         error_data = error_data.decode()
@@ -123,21 +120,21 @@ def main(args, is_algorithm_based_translation):
                         pass
 
                     if not error_data.strip():
-                        test_failed.append(files[i])
-                        test_failed_details.append("Filename: " + files[i] + " Actual: " + str(expected_output) + " Generated: " + str(output))  
+                        test_failed.append(file)
+                        test_failed_details.append(f"Filename: {file} Actual: {str(expected_output)} Generated: {str(output)}")  
                     else:
-                        runtime_failed.append(files[i])
-                        runtime_failed_details.append("Filename: " + files[i] + " Error_type: " + str(error_data)) 
+                        runtime_failed.append(file)
+                        runtime_failed_details.append(f"Filename: {file} Error_type: {str(error_data)}") 
             
             except Exception as e:
-                compile_failed.append(files[i])
+                compile_failed.append(file)
 
         for file in os.listdir(translation_dir):
             if ".class" in file: 
                 os.remove(translation_dir + "/" + file)
 
     else:
-        print("language:{} is not yet supported. select from the following languages[python,java]".format(args.target_lang))
+        print(f"language:{args.target_lang} is not yet supported")
         return
 
     test_passed = list(set(test_passed))
@@ -153,15 +150,16 @@ def main(args, is_algorithm_based_translation):
             infinite_loop.remove(instance)
 
     result_map = {
-        'test_passed': test_passed,
-        'compile_failed': compile_failed,
-        'runtime_failed': runtime_failed,
-        'test_failed': test_failed,
-        'infinite_loop': infinite_loop,
-        'test_failed_details': test_failed_details,
-        'runtime_failed_details': runtime_failed_details
+        "test_passed": test_passed,
+        "compile_failed": compile_failed,
+        "runtime_failed": runtime_failed,
+        "test_failed": test_failed,
+        "infinite_loop": infinite_loop,
+        "test_failed_details": test_failed_details,
+        "runtime_failed_details": runtime_failed_details
     }
 
+    os.makedirs(args.report_dir, exist_ok=True)
     report_file_path = Path(args.report_dir).joinpath(f"{translation_type_for_path}_{model_name_for_path}_{dataset}_from_{args.source_lang}_to_{args.target_lang}.txt")
     generate_test_report(report_file_path, result_map)
 
@@ -174,11 +172,11 @@ if __name__ == "__main__":
     load_dotenv(override=True)
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model', help='model used for code translation. should be one of [gpt-4o, deepseek-r1, gemini-flash-1.5, llama-4-maverick]', required=True, type=str)
-    parser.add_argument('--source_lang', help='source language of the translated code. should be one of [python,java]', required=True, type=str)
-    parser.add_argument('--target_lang', help='target language of the translated code. should be one of [python,java]', required=True, type=str)
-    parser.add_argument('--translation_type', help='type of translation to use. should be one of [algorithm,direct]', required=True, type=str)
-    parser.add_argument('--report_dir', help='path to directory to store report', required=True, type=str)
+    parser.add_argument("--model", help="model used for code translation", required=True, type=str)
+    parser.add_argument("--source_lang", help="source language of the translated code", required=True, type=str)
+    parser.add_argument("--target_lang", help="target language of the translated code", required=True, type=str)
+    parser.add_argument("--translation_type", help="type of translation to use", required=True, type=str)
+    parser.add_argument("--report_dir", help="path to directory to store report", required=True, type=str)
 
     args = parser.parse_args()
     validate_arguments(args, is_test=True)

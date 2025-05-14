@@ -202,11 +202,11 @@ if __name__ == "__main__":
     load_dotenv(override=True)
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model', help='model to use for code translation. should be one of [gpt-4o, deepseek-r1, gemini-flash-1.5, llama-4-maverick]', required=True, type=str)
-    parser.add_argument('--dataset', help='dataset to use for code translation. should be one of [codenet,avatar,evalplus]', required=True, type=str)
-    parser.add_argument('--source_lang', help='source language to use for code translation. should be one of [python,java]', required=True, type=str)
-    parser.add_argument('--target_lang', help='target language to use for code translation. should be one of [python,java]', required=True, type=str)
-    parser.add_argument('--translation_type', help='type of translation to use. should be one of [algorithm,direct]', required=True, type=str)
+    parser.add_argument("--model", help="model to use for code translation", required=True, type=str)
+    parser.add_argument("--dataset", help="dataset to use for code translation", required=True, type=str)
+    parser.add_argument("--source_lang", help="source language to use for code translation", required=True, type=str)
+    parser.add_argument("--target_lang", help="target language to use for code translation", required=True, type=str)
+    parser.add_argument("--translation_type", help="type of translation to use", required=True, type=str)
     
     args = parser.parse_args()
     validate_arguments(args)
