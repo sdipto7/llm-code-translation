@@ -22,7 +22,7 @@ def main(args, is_algorithm_based_translation):
     model_name_for_path = resolve_model_name_for_path(model)
 
     translation_type_for_path = "algo_based_translation" if is_algorithm_based_translation else "direct_translation"
-    translation_dir = f"output/{translation_type_for_path}/{model_name_for_path}/{dataset}/{args.source_lang}/{args.target_lang}"
+    translation_dir = f"output/{model_name_for_path}/{dataset}/{translation_type_for_path}/{args.source_lang}/{args.target_lang}"
     files = [f for f in os.listdir(translation_dir) if f.split(".")[-1] in list(get_extension_map().values())]
     
     test_cases_dir = f"dataset/{dataset}/{args.source_lang.capitalize()}/TestCases"
@@ -160,10 +160,10 @@ def main(args, is_algorithm_based_translation):
     }
 
     os.makedirs(args.report_dir, exist_ok=True)
-    report_file_path = Path(args.report_dir).joinpath(f"{translation_type_for_path}_{model_name_for_path}_{dataset}_from_{args.source_lang}_to_{args.target_lang}.txt")
+    report_file_path = Path(args.report_dir).joinpath(f"{model_name_for_path}_{dataset}_from_{args.source_lang}_to_{args.target_lang}_for_{translation_type_for_path}.txt")
     generate_test_report(report_file_path, result_map)
 
-    csv_report_file_path = Path(args.report_dir).joinpath(f"{translation_type_for_path}_{model_name_for_path}_{dataset}_error_type_report_from_{args.source_lang}_to_{args.target_lang}.csv")
+    csv_report_file_path = Path(args.report_dir).joinpath(f"{model_name_for_path}_{dataset}_error_type_report_from_{args.source_lang}_to_{args.target_lang}_for_{translation_type_for_path}.csv")
     generate_error_type_csv_report(csv_report_file_path, result_map, args.source_lang, args.target_lang)
 
 

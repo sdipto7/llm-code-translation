@@ -143,7 +143,7 @@ class Translator:
 
         translation_type_for_path = "algo_based_translation" if is_algorithm_based_translation else "direct_translation"
         model_name_for_path = resolve_model_name_for_path(self.model)
-        base_dir_path = Path(self.output_dir).joinpath(translation_type_for_path, model_name_for_path, self.dataset, f"{source_lang}")
+        base_dir_path = Path(self.output_dir).joinpath(model_name_for_path, self.dataset, translation_type_for_path, source_lang)
 
         logging.info(f"Executing {'algorithm-based' if is_algorithm_based_translation else 'direct'} source code translation")
 
