@@ -155,7 +155,7 @@ class Translator:
             translated_code_dir = self.get_translated_code_dir(base_dir_path, target_lang)
             filename_of_translated_code = translated_code_dir.joinpath(f"{source_code_id}.{get_extension_map().get(target_lang)}")
 
-            row_data = {"dataset": self.dataset, "model": self.model, "source_lang": source_lang, "source_code_id": source_code_id, "source_code": source_code_as_str}
+            row_data = {"dataset": self.dataset, "model": self.model, "source_lang": source_lang, "target_lang": target_lang, "source_code_id": source_code_id, "source_code": source_code_as_str}
 
             if is_algorithm_based_translation:
                 algorithm_dir = self.get_algorithm_dir(base_dir_path)
@@ -178,22 +178,22 @@ class Translator:
                 translated_code = self.get_direct_translated_code(source_code_as_str, source_lang, target_lang)
 
             translated_code = self.refine_translated_code(translated_code, source_code_id, target_lang)
-            row_data.update({"target_lang": target_lang, "translated_code": translated_code})
+            row_data["translated_code"] = translated_code
 
             data.append(row_data)
             write_to_file(filename_of_translated_code, translated_code)
 
         xlsx_file_path = base_dir_path.joinpath(f"{translation_type_for_path}_{model_name_for_path}_{self.dataset}_{source_lang}_to_{target_lang}_translation_data.xlsx")
-        columns = ["dataset", "model", "source_lang", "source_code_id", "source_code", "target_lang", "translated_code"]
+        columns = ["dataset", "model", "source_lang", "target_lang", "source_code_id", "source_code", "translated_code"]
         if is_algorithm_based_translation:
-            columns.insert(5, "algorithm")
+            columns.insert(6, "algorithm")
 
         write_translation_data_to_xlsx(xlsx_file_path, columns, data)
         
         logging.info("Translation process completed.")
 
     def __exit__(self, exception, _, __):
-        print(exception)
+        print("Translation process completed successfully" if exception is None else f"Translation process failed due to {exception}")
 
 
 if __name__ == "__main__":
