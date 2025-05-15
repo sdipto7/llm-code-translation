@@ -139,7 +139,7 @@ class Translator:
         return translated_code
 
     def translate(self, source_lang, target_lang, is_algorithm_based_translation):
-        snippets = list(self.input_dir.joinpath(str(source_lang), "Code").iterdir())
+        snippets = list(self.input_dir.joinpath(source_lang.capitalize(), "Code").iterdir())
 
         translation_type_for_path = "algo_based_translation" if is_algorithm_based_translation else "direct_translation"
         model_name_for_path = resolve_model_name_for_path(self.model)
