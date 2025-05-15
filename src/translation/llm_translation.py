@@ -12,7 +12,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from src.validator.arg_validator import validate_arguments
 from src.helper.model_path_helper import resolve_model_name_for_path
 from src.util.constants import get_extension_map, get_model_env_map
-from src.util.io_utils import write_to_file, write_to_csv
+from src.util.io_utils import write_to_file, write_translation_data_to_xlsx
 
 os.makedirs(f'logs', exist_ok=True)
 logging.basicConfig(filename=f"logs/translation.log", level=logging.INFO, format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
@@ -127,7 +127,7 @@ class Translator:
         return translated_code_dir
 
     def replace_class_name(self, translated_code, source_code_id):
-        return re.sub('public\s*class\s*.+', 'public class ' + source_code_id + ' {', translated_code)
+        return re.sub(r"public\s*class\s*.+", "public class " + source_code_id + " {", translated_code)
 
     def prepend_package_name_for_evalplus_dataset(self, translated_code, target_lang):
         return "package com.pseudocraft;\n" + translated_code if self.dataset == "evalplus" and target_lang == "java" else translated_code
@@ -147,8 +147,7 @@ class Translator:
 
         logging.info(f"Executing {'algorithm-based' if is_algorithm_based_translation else 'direct'} source code translation")
 
-        csv_data = []
-
+        data = []
         for source_file in tqdm(snippets, total=len(snippets), bar_format="{desc:<5.5}{percentage:3.0f}%|{bar:10}{r_bar}"):
             source_code_id = source_file.stem
             source_code_as_str = source_file.read_text(encoding="utf-8")
@@ -181,15 +180,15 @@ class Translator:
             translated_code = self.refine_translated_code(translated_code, source_code_id, target_lang)
             row_data.update({"target_lang": target_lang, "translated_code": translated_code})
 
-            csv_data.append(row_data)
+            data.append(row_data)
             write_to_file(filename_of_translated_code, translated_code)
 
-        csv_file_path = base_dir_path.joinpath(f"{source_lang}_to_{target_lang}_translation.csv")
+        xlsx_file_path = base_dir_path.joinpath(f"{source_lang}_to_{target_lang}_translation.xlsx")
         columns = ["source_lang", "source_code_id", "source_code", "target_lang", "translated_code"]
         if is_algorithm_based_translation:
             columns.insert(3, "algorithm")
 
-        write_to_csv(csv_file_path, columns, csv_data)
+        write_translation_data_to_xlsx(xlsx_file_path, columns, data)
         
         logging.info("Translation process completed.")
 
