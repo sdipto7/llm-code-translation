@@ -155,7 +155,7 @@ class Translator:
             translated_code_dir = self.get_translated_code_dir(base_dir_path, target_lang)
             filename_of_translated_code = translated_code_dir.joinpath(f"{source_code_id}.{get_extension_map().get(target_lang)}")
 
-            row_data = {"source_lang": source_lang, "source_code_id": source_code_id, "source_code": source_code_as_str}
+            row_data = {"dataset": self.dataset, "model": self.model, "source_lang": source_lang, "source_code_id": source_code_id, "source_code": source_code_as_str}
 
             if is_algorithm_based_translation:
                 algorithm_dir = self.get_algorithm_dir(base_dir_path)
@@ -183,10 +183,10 @@ class Translator:
             data.append(row_data)
             write_to_file(filename_of_translated_code, translated_code)
 
-        xlsx_file_path = base_dir_path.joinpath(f"{source_lang}_to_{target_lang}_translation.xlsx")
-        columns = ["source_lang", "source_code_id", "source_code", "target_lang", "translated_code"]
+        xlsx_file_path = base_dir_path.joinpath(f"{translation_type_for_path}_{model_name_for_path}_{self.dataset}_{source_lang}_to_{target_lang}_translation_data.xlsx")
+        columns = ["dataset", "model", "source_lang", "source_code_id", "source_code", "target_lang", "translated_code"]
         if is_algorithm_based_translation:
-            columns.insert(3, "algorithm")
+            columns.insert(5, "algorithm")
 
         write_translation_data_to_xlsx(xlsx_file_path, columns, data)
         
