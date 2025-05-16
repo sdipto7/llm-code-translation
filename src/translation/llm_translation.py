@@ -11,7 +11,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from src.validator.arg_validator import validate_arguments
 from src.helper.model_path_helper import resolve_model_name_for_path
-from src.util.constants import get_extension_map, get_model_env_map
+from src.util.constants import get_extension_map, get_model_map
 from src.util.io_utils import write_to_file, write_translation_data_to_xlsx
 
 os.makedirs(f'logs', exist_ok=True)
@@ -22,7 +22,7 @@ class Translator:
         self.dataset = dataset
         self.base_url = os.getenv("BASE_URL")
         self.api_key = os.getenv("API_KEY")
-        self.model = os.getenv(get_model_env_map().get(model))
+        self.model = get_model_map().get(model)
 
     def __enter__(self):
         self.main_dir = os.getcwd()

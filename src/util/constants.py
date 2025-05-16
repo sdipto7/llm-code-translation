@@ -4,10 +4,13 @@ def get_extension_map():
         "python": "py"
     }
 
-def get_model_env_map():   
+def get_model_map():   
     return {
-        "gpt-4o": "GPT_MODEL",
-        "llama-4-maverick": "LLAMA_MODEL",
-        "gemini-flash-1.5": "GEMINI_MODEL",
-        "deepseek-r1": "DEEPSEEK_MODEL"
+        "gpt-4o": "openai/gpt-4o",
+        "gemini-flash-2.5": "google/gemini-2.5-flash-preview",
+        "llama-4-maverick": "meta-llama/llama-4-maverick:free",
+        "qwen-2.5-coder": "qwen/qwen-2.5-coder-32b-instruct:free",
+        "qwen-2.5": "qwen/qwen-2.5-72b-instruct:free",
+        "deepseek-r1": "deepseek/deepseek-r1:free",
+        "deepseek-v3": "deepseek/deepseek-chat:free"
     }   

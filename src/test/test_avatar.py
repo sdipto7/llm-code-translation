@@ -2,13 +2,12 @@ import os
 import subprocess
 import pandas as pd
 from pathlib import Path
-from dotenv import load_dotenv
 from subprocess import Popen, PIPE
 import argparse
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from src.validator.arg_validator import validate_arguments
-from src.util.constants import get_model_env_map, get_extension_map
+from src.util.constants import get_model_map, get_extension_map
 from src.helper.model_path_helper import resolve_model_name_for_path
 from src.helper.numeric_helper import normalize_integer_output, normalize_decimal_output
 from src.util.io_utils import read_file
@@ -18,7 +17,7 @@ def main(args, is_algorithm_based_translation):
     dataset = "avatar"
     print(f"testing translations for {'algorithm-based approach' if is_algorithm_based_translation else 'direct approach'} with {args.model} from {args.source_lang} to {args.target_lang} using {dataset} dataset")
 
-    model = os.getenv(get_model_env_map().get(args.model))
+    model = get_model_map().get(args.model)
     model_name_for_path = resolve_model_name_for_path(model)
 
     translation_type_for_path = "algo_based_translation" if is_algorithm_based_translation else "direct_translation"
@@ -186,9 +185,6 @@ def main(args, is_algorithm_based_translation):
 
 
 if __name__ == "__main__":
-
-    load_dotenv(override=True)
-
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", help="model used for code translation", required=True, type=str)
     parser.add_argument("--source_lang", help="source language of the translated code", required=True, type=str)

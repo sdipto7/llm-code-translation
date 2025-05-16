@@ -10,8 +10,8 @@ def validate_model(model):
     if model is None:
         raise ValueError("Model is not provided")
     
-    if model not in ["gpt-4o", "deepseek-r1", "gemini-flash-1.5", "llama-4-maverick"]:
-        raise ValueError(f"model {model} is not supported. should be one of [gpt-4o, deepseek-r1, gemini-flash-1.5, llama-4-maverick]")
+    if model not in ["gpt-4o", "gemini-flash-2.5", "llama-4-maverick", "qwen-2.5-coder", "qwen-2.5", "deepseek-v3", "deepseek-r1"]:
+        raise ValueError(f"model {model} is not supported. should be one of [gpt-4o, gemini-flash-2.5, llama-4-maverick, qwen-2.5-coder, qwen-2.5, deepseek-v3, deepseek-r1]")
 
     logging.info("model validated successfully")
 
