@@ -11,6 +11,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from src.validator.arg_validator import validate_arguments
 from src.helper.model_path_helper import resolve_model_name_for_path
+from src.helper.cache_helper import check_and_load_cache
 from src.util.constants import get_extension_map, get_model_map
 from src.util.io_utils import write_to_file, write_translation_data_to_xlsx
 
@@ -109,7 +110,7 @@ class Translator:
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": content}
         ]
-        
+
         response = self.generate_response_using_llm(message)
 
         return response.replace(f"```{target_lang.lower()}", "").replace("```", "")
@@ -154,34 +155,44 @@ class Translator:
 
             translated_code_dir = self.get_translated_code_dir(base_dir_path, target_lang)
             filename_of_translated_code = translated_code_dir.joinpath(f"{source_code_id}.{get_extension_map().get(target_lang)}")
+            has_translated_code, cached_translated_code = check_and_load_cache(filename_of_translated_code)
 
             row_data = {"dataset": self.dataset, "model": self.model, "source_lang": source_lang, "target_lang": target_lang, "source_code_id": source_code_id, "source_code": source_code_as_str}
 
             if is_algorithm_based_translation:
                 algorithm_dir = self.get_algorithm_dir(base_dir_path)
                 filename_of_algorithm = algorithm_dir.joinpath(f"{source_code_id}.txt")
+                has_algorithm, cached_algorithm = check_and_load_cache(filename_of_algorithm)
 
-                if any(Path(file).exists() for file in [filename_of_algorithm, filename_of_translated_code]):
-                    logging.info(f"Algorithm or translated code already exists for {source_code_id}. Moving to next program.")
+                if has_algorithm and has_translated_code:
+                    logging.info(f"Algorithm and translated code already exists and using cache for {source_code_id}")
+                    
+                    row_data.update({
+                        "algorithm": cached_algorithm,
+                        "translated_code": cached_translated_code
+                    })
+                    data.append(row_data)
                     continue
 
                 algorithm, translated_code = self.get_algorithm_based_translated_code(source_code_as_str, source_lang, target_lang)
-                row_data["algorithm"] = algorithm
-                
                 write_to_file(filename_of_algorithm, algorithm)
-            
+                
+                row_data["algorithm"] = algorithm
             else:
-                if Path(filename_of_translated_code).exists():
-                    logging.info(f"Translated code already exists for {source_code_id}. Moving to next program.")                    
+                if has_translated_code:
+                    logging.info(f"Translated code already exists and using cache for {source_code_id}")
+
+                    row_data["translated_code"] = cached_translated_code
+                    data.append(row_data)
                     continue
                 
                 translated_code = self.get_direct_translated_code(source_code_as_str, source_lang, target_lang)
 
             translated_code = self.refine_translated_code(translated_code, source_code_id, target_lang)
-            row_data["translated_code"] = translated_code
-
-            data.append(row_data)
             write_to_file(filename_of_translated_code, translated_code)
+
+            row_data["translated_code"] = translated_code
+            data.append(row_data)
 
         xlsx_file_path = base_dir_path.joinpath(f"{translation_type_for_path}_{model_name_for_path}_{self.dataset}_{source_lang}_to_{target_lang}_translation_data.xlsx")
         columns = ["dataset", "model", "source_lang", "target_lang", "source_code_id", "source_code", "translated_code"]

@@ -7,7 +7,7 @@ from openpyxl.styles import Alignment
 os.makedirs(f'logs', exist_ok=True)
 logging.basicConfig(filename=f"logs/translation.log", level=logging.INFO, format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 
-def read_file(file_name):
+def read_file(file_name, encoding="utf-8"):
     logging.info(f"Reading file {file_name}")
 
     with open(file_name, "r") as f:
@@ -31,6 +31,8 @@ def write_translation_data_to_xlsx(path, columns, data):
     df = pd.DataFrame(data, columns=columns)
     
     with pd.ExcelWriter(str(path), engine="openpyxl") as writer:
+        logging.info(f"Writing data to xlsx file: {path}")
+        
         df.to_excel(writer, index=False, sheet_name="translation_data")
 
         worksheet = writer.sheets["translation_data"]
