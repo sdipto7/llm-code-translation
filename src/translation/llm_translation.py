@@ -82,18 +82,15 @@ class Translator:
                 )
                 is_success = True
                 break
-            except Exception as e:
-                return "# Token size exceeded."
             except:
                 max_attempts -= 1
-                continue
+                logging.info(f"Attempt {5 - max_attempts} failed. Retrying...")
+                if max_attempts == 0:
+                    logging.info("Maximum retry attempts reached")
+                    raise
 
         if not is_success:
             return response
-
-        for choice in response.choices:
-            if "text" in choice:
-                return choice.text
 
         return response.choices[0].message.content
 
