@@ -12,6 +12,7 @@ from src.util.constants import get_model_map, get_extension_map
 from src.util.io_utils import read_file
 from src.helper.numeric_helper import normalize_integer_output, normalize_decimal_output
 from src.helper.report_helper import generate_test_report, generate_error_type_csv_report
+from src.helper.result_organizer_helper import organize_translated_codes_by_result
 
 def main(args, is_algorithm_based_translation):
     dataset = "codenet"
@@ -157,6 +158,7 @@ def main(args, is_algorithm_based_translation):
         "test_failed_details": test_failed_details,
         "runtime_failed_details": runtime_failed_details
     }
+    organize_translated_codes_by_result(result_map, translation_dir)    
 
     os.makedirs(args.report_dir, exist_ok=True)
     report_file_path = Path(args.report_dir).joinpath(f"{model_name_for_path}_{dataset}_from_{args.source_lang}_to_{args.target_lang}_for_{translation_type_for_path}.txt")

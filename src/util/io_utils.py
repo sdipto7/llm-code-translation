@@ -1,5 +1,7 @@
 import os
 import logging
+from pathlib import Path
+import shutil
 import pandas as pd
 import openpyxl
 from openpyxl.styles import Alignment
@@ -49,3 +51,14 @@ def write_translation_data_to_xlsx(path, columns, data):
                 cell.alignment = openpyxl.styles.Alignment(wrap_text=True, vertical='top')
 
     logging.info(f"xlsx file: {path} created successfully")
+
+def copy_files_to_directories(files, source_dir, target_dir):
+    for file in files:
+        source_file = Path(source_dir).joinpath(file)
+        target_file = target_dir.joinpath(file)
+        if source_file.exists():
+            try:
+                shutil.copy2(source_file, target_file)
+                logging.info(f"Copied {file} to {target_dir}")
+            except Exception as e:
+                logging.info(f"Error copying {file} to {target_dir}: {e}")
