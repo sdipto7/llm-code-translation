@@ -29,6 +29,7 @@ def generate_test_report(report_file_path, result_map):
         report.writelines(f"Runtime Error Details: {result_map.get("runtime_failed_details")} \n")
         report.writelines("=================================================================================================\n")
         report.writelines(f"Compilation Error Files: {result_map.get("compile_failed")} \n")
+        report.writelines(f"Compilation Error Details: {result_map.get("compile_failed_details")} \n")
         report.writelines("=================================================================================================\n")    
         report.writelines(f"Infinite Loop Files: {result_map.get("infinite_loop")} \n")
         report.writelines("=================================================================================================\n")

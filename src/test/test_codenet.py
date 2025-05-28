@@ -32,8 +32,9 @@ def main(args, is_algorithm_based_translation):
     runtime_failed = []
     test_failed =[]
     infinite_loop = []
-    test_failed_details = []
-    runtime_failed_details= []
+    test_failed_details = {}
+    compile_failed_details = {}
+    runtime_failed_details= {}
     
     if args.target_lang == "python":
         for file in files:
@@ -74,10 +75,23 @@ def main(args, is_algorithm_based_translation):
 
                     if not error_data.strip():
                         test_failed.append(file)
-                        test_failed_details.append(f"Filename: {file} Actual: {str(expected_output)} Generated: {str(output)}")  
+
+                        if file not in test_failed_details:
+                            test_failed_details[file] = []
+                        test_failed_details[file].append(f"Actual: {str(expected_output)} Generated: {str(output)}")  
                     else:
                         runtime_failed.append(file)
-                        runtime_failed_details.append(f"Filename: {file} Error_type: {str(error_data)}") 
+
+                        if file not in runtime_failed_details:
+                            runtime_failed_details[file] = []
+                        runtime_failed_details[file].append(f"Error_type: {str(error_data)}") 
+
+            except subprocess.CalledProcessError as e:
+                compile_failed.append(file)
+
+                if file not in compile_failed_details:
+                    compile_failed_details[file] = []
+                compile_failed_details[file].append(f"Error_type: {str(e.stderr.decode('utf-8'))}")
 
             except Exception as e:
                 compile_failed.append(file)
@@ -121,11 +135,24 @@ def main(args, is_algorithm_based_translation):
 
                     if not error_data.strip():
                         test_failed.append(file)
-                        test_failed_details.append(f"Filename: {file} Actual: {str(expected_output)} Generated: {str(output)}")  
+
+                        if file not in test_failed_details:
+                            test_failed_details[file] = []
+                        test_failed_details[file].append(f"Actual: {str(expected_output)} Generated: {str(output)}")  
                     else:
                         runtime_failed.append(file)
-                        runtime_failed_details.append(f"Filename: {file} Error_type: {str(error_data)}") 
-            
+
+                        if file not in runtime_failed_details:
+                            runtime_failed_details[file] = []
+                        runtime_failed_details[file].append(f"Error_type: {str(error_data)}") 
+
+            except subprocess.CalledProcessError as e:
+                compile_failed.append(file)
+
+                if file not in compile_failed_details:
+                    compile_failed_details[file] = []
+                compile_failed_details[file].append(f"Error_type: {str(e.stderr.decode('utf-8'))}")
+
             except Exception as e:
                 compile_failed.append(file)
 
@@ -142,8 +169,15 @@ def main(args, is_algorithm_based_translation):
     runtime_failed = list(set(runtime_failed))
     test_failed = list(set(test_failed))
     infinite_loop = list(set(infinite_loop))
-    test_failed_details = list(set(test_failed_details))
-    runtime_failed_details = list(set(runtime_failed_details))
+
+    for file in test_failed_details:
+        test_failed_details[file] = list(set(test_failed_details[file]))
+
+    for file in compile_failed_details:
+        compile_failed_details[file] = list(set(compile_failed_details[file]))
+
+    for file in runtime_failed_details:
+        runtime_failed_details[file] = list(set(runtime_failed_details[file]))
 
     for instance in infinite_loop[:]:
         if instance in test_failed:
@@ -156,6 +190,7 @@ def main(args, is_algorithm_based_translation):
         "test_failed": test_failed,
         "infinite_loop": infinite_loop,
         "test_failed_details": test_failed_details,
+        "compile_failed_details": compile_failed_details,
         "runtime_failed_details": runtime_failed_details
     }
     organize_translated_codes_by_result(result_map, translation_dir)    
