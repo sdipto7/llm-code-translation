@@ -17,15 +17,15 @@ def setup_test_environment(args, dataset, is_algorithm_based_translation):
     model = get_model_map().get(args.model)
     model_name_for_path = resolve_model_name_for_path(model)
 
-    translation_type_for_path = "algo_based_translation" if is_algorithm_based_translation else "direct_translation"
-    translation_dir = f"output/{model_name_for_path}/{dataset}/{translation_type_for_path}/{args.source_lang}/{args.target_lang}"
+    translation_type = "algo_based_translation" if is_algorithm_based_translation else "direct_translation"
+    translation_dir = f"output/{model_name_for_path}/{dataset}/{translation_type}/{args.source_lang}/{args.target_lang}"
     files = [f for f in os.listdir(translation_dir) if f.split(".")[-1] in list(get_extension_map().values())]
 
     test_cases_dir = f"dataset/{dataset}/{args.source_lang.capitalize()}/TestCases"
     reports_dir = f"reports/{model_name_for_path}/{dataset}"
 
     return {
-        "translation_type_for_path": translation_type_for_path,
+        "translation_type": translation_type,
         "translation_dir": translation_dir,
         "files": files,
         "test_cases_dir": test_cases_dir,
@@ -119,11 +119,11 @@ def cleanup_results_and_get_result_map(result):
 
     return result.get_result_map()
 
-def prepare_test_reports(args, reports_dir, translation_type_for_path, result_map):
+def prepare_test_reports(args, reports_dir, translation_type, result_map):
     os.makedirs(reports_dir, exist_ok=True)
 
-    report_file_path = Path(reports_dir).joinpath(f"{args.source_lang}_to_{args.target_lang}_for_{translation_type_for_path}.txt")
+    report_file_path = Path(reports_dir).joinpath(f"{args.source_lang}_to_{args.target_lang}_for_{translation_type}.txt")
     generate_test_report(report_file_path, result_map)
 
-    csv_report_file_path = Path(reports_dir).joinpath(f"error_type_report_from_{args.source_lang}_to_{args.target_lang}_for_{translation_type_for_path}.csv")
+    csv_report_file_path = Path(reports_dir).joinpath(f"error_type_report_from_{args.source_lang}_to_{args.target_lang}_for_{translation_type}.csv")
     generate_error_type_csv_report(csv_report_file_path, result_map, args.source_lang, args.target_lang)

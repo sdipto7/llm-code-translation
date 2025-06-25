@@ -21,7 +21,7 @@ from src.test.test_utils import (
 def main(args, is_algorithm_based_translation, dataset="avatar"):
     test_env = setup_test_environment(args, dataset, is_algorithm_based_translation)
 
-    translation_type_for_path = test_env["translation_type_for_path"]
+    translation_type = test_env["translation_type"]
     translation_dir = test_env["translation_dir"]
     files = test_env["files"]
     test_cases_dir = test_env["test_cases_dir"]
@@ -77,7 +77,7 @@ def main(args, is_algorithm_based_translation, dataset="avatar"):
 
     organize_translated_codes_by_result(result_map, translation_dir)
 
-    prepare_test_reports(args, reports_dir, translation_type_for_path, result_map)
+    prepare_test_reports(args, reports_dir, translation_type, result_map)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
