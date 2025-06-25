@@ -33,7 +33,7 @@ bash scripts/translate.sh ${model} ${dataset} ${source_lang} ${target_lang} ${tr
 ### Testing Command
 Test the translated code for a specific translation type, dataset, and model, and store the report in a specified directory.
 ```
-bash scripts/test.sh ${model} ${dataset} ${source_lang} ${target_lang} ${translation_type} ${report_directory}
+bash scripts/test.sh ${model} ${dataset} ${source_lang} ${target_lang} ${translation_type}
 ```
 
 ## Note: 

@@ -44,7 +44,6 @@ if __name__ == "__main__":
     parser.add_argument("--source_lang", help="source language of the translated code", required=True, type=str)
     parser.add_argument("--target_lang", help="target language of the translated code", required=True, type=str)
     parser.add_argument("--translation_type", help="type of translation to use", required=True, type=str)
-    parser.add_argument("--report_dir", help="path to directory to store report", required=True, type=str)
 
     args = parser.parse_args()
     validate_arguments(args, is_test=True)

@@ -21,11 +21,11 @@ from src.test.test_utils import (
 def main(args, is_algorithm_based_translation, dataset="codenet"):
     test_env = setup_test_environment(args, dataset, is_algorithm_based_translation)
 
-    model_name_for_path = test_env["model_name_for_path"]
     translation_type_for_path = test_env["translation_type_for_path"]
     translation_dir = test_env["translation_dir"]
     files = test_env["files"]
     test_cases_dir = test_env["test_cases_dir"]
+    reports_dir = test_env["reports_dir"]
     result = test_env["result"]
 
     if args.target_lang in ["python", "java"]:
@@ -60,7 +60,7 @@ def main(args, is_algorithm_based_translation, dataset="codenet"):
 
     organize_translated_codes_by_result(result_map, translation_dir)
 
-    prepare_test_reports(args, model_name_for_path, dataset, translation_type_for_path, result_map)
+    prepare_test_reports(args, reports_dir, translation_type_for_path, result_map)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -68,7 +68,6 @@ if __name__ == "__main__":
     parser.add_argument("--source_lang", help="source language of the translated code", required=True, type=str)
     parser.add_argument("--target_lang", help="target language of the translated code", required=True, type=str)
     parser.add_argument("--translation_type", help="type of translation to use", required=True, type=str)
-    parser.add_argument("--report_dir", help="path to directory to store report", required=True, type=str)
 
     args = parser.parse_args()
     validate_arguments(args, is_test=True)
