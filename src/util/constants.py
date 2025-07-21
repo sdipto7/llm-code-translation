@@ -13,4 +13,4 @@ def get_model_map():
         "qwen-2.5": "qwen/qwen-2.5-72b-instruct:free",
         "deepseek-r1": "deepseek/deepseek-r1:free",
         "deepseek-v3": "deepseek/deepseek-chat:free"
-    }   
+    }
