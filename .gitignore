@@ -166,3 +166,8 @@ logs/
 output/
 src/plots.ipynb
 figures/
+
+
+
+exp_v1_output/
+exp_v1_reports/
