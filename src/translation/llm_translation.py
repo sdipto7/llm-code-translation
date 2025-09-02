@@ -17,7 +17,8 @@ from src.helper.model_path_helper import resolve_model_name_for_path
 from src.helper.cache_helper import check_and_load_cache
 from src.util.constants import get_extension_map, get_model_map
 from src.util.llm_prompts import (
-    get_system_prompt,
+    get_direct_translation_system_prompt,
+    get_algorithm_based_system_prompt,
     get_direct_translation_prompt,
     get_algorithm_from_source_code_prompt,
     get_translated_code_from_algorithm_prompt
@@ -121,7 +122,7 @@ class Translator:
         return response.replace(f"```{target_lang.lower()}", "").replace("```", "")
     
     def get_algorithm_based_translated_code(self, source_code_as_str, source_lang, target_lang):
-        message = [{"role": "system", "content": get_system_prompt()}]
+        message = [{"role": "system", "content": get_algorithm_based_system_prompt()}]
 
         algorithm = self.get_algorithm_from_source_code(source_code_as_str, source_lang, message)
         translated_code = self.get_translated_code_from_algorithm(algorithm, target_lang, message)
@@ -132,7 +133,7 @@ class Translator:
         logging.info(f"Generating {target_lang} code based on the given {source_lang} code using {self.model}")
 
         message = [
-            {"role": "system", "content": get_system_prompt()},
+            {"role": "system", "content": get_direct_translation_system_prompt()},
             {"role": "user", "content": get_direct_translation_prompt(source_code_as_str, source_lang, target_lang)}
         ]
 
