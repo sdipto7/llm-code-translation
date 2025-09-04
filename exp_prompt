@@ -1,0 +1,23 @@
+
+# Use consistent variable names, explicit initialization, and describe input/output handling in detail, including cases with multiple values on a single line.
+# Ensure each step in the algorithm is precise so that it can be implemented without ambiguity in any programming language.
+
+
+{algorithm}
+# Using the above algorithm, generate complete {target_lang} code.
+# Ensure the code is self-contained, syntactically correct, and consistent with the variable names and structures in the algorithm.
+# Preserve the exact input/output format and data flow described in the algorithm, including proper handling of multiple values per line and correct ordering of outputs.
+# Avoid using variable names that shadow built-in functions or types in the target language.
+# Before finalizing, verify that the code can run as-is without syntax errors and that it produces outputs exactly as described in the algorithm.
+# Provide only the {target_lang} code, without comments, headers, explanations, or examples.
+
+
+
+
+
+
+
+
+
+
+

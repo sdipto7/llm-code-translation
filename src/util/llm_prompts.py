@@ -23,18 +23,18 @@ def get_direct_translation_prompt(source_code_as_str, source_lang, target_lang):
         - Maintain equivalent functionality, performance characteristics, and behavior
         - Preserve the same input/output interface and data processing logic
         
-        # Provide only the {target_lang} code without any additional texts, comments, headers, or explanations.
+        # Provide only the {target_lang} code without any headers, comments, explanations, or examples.
     """).strip()
 
     return prompt
 
 def get_algorithm_based_system_prompt():
     return textwrap.dedent("""
-        You are an expert transcompiler or source-to-source code translator specializing in algorithm-based code translation between programming languages.
-        Your methodology (algorithm-based code translation) involves two distinct phases: first extracting detailed algorithmic specifications from source code,
-        then generating clean, efficient target code from these specifications. You excel at creating language-agnostic
-        algorithmic representations that capture all implementation details, control flows, and dependencies necessary
-        for accurate cross-language translation while maintaining semantic equivalence across different programming paradigms.
+        You are an expert code translator. You work in two phases:
+        1. Extract detailed algorithms from source code, capturing all logic and control flow
+        2. Generate complete and executable code from algorithms in the target language
+        
+        Focus on accuracy, preserving functionality, and generating working code.
     """).strip()
 
 def get_algorithm_from_source_code_prompt(source_code_as_str, source_lang):
@@ -42,16 +42,15 @@ def get_algorithm_from_source_code_prompt(source_code_as_str, source_lang):
         {source_lang} code:
         {source_code_as_str}
 
-        # Analyze the {source_lang} code and create a detailed step-by-step algorithm with:
-        - Function/method signatures with parameter types and return types
-        - Variable declarations and data types used
-        - Step-by-step logic flow with numbered sequential steps
-        - Control flow structures (loops, conditionals) with exact conditions and exit criteria
-        - Input/output operations and data processing logic
-        - Error handling mechanisms and edge case handling
-        - External dependencies, imports, and library function calls
+        Extract a detailed algorithm from this code including:
+        - function signatures with parameter and return types
+        - variable declarations and data types
+        - complete logic flow in execution order
+        - all control structures (loops, conditionals) with exact conditions
+        - input/output operations and data processing logic
+        - required libraries, modules, or dependencies
         
-        # Provide only the structured algorithm specification without any additional texts, comments, explanations, or examples.
+        # Provide only the algorithm without any headers, comments, explanations, or examples.
     """).strip()
 
     return prompt
@@ -61,19 +60,14 @@ def get_translated_code_from_algorithm_prompt(algorithm, target_lang):
         algorithm:
         {algorithm}
         
-        # Translate the algorithm into syntactically correct {target_lang} code following these requirements:
-        - Create complete, executable code with {target_lang}'s proper structure
-        - Use correct {target_lang} syntax and data types
-        - Implement exact same logic and control flow as specified in the algorithm
-        - Handle input/output operations appropriately for {target_lang}
-        - Apply all function/variable names as per {target_lang}'s naming conventions
-        - Convert external dependencies to appropriate {target_lang} libraries or modules
-        - Follow {target_lang}'s best practices and coding conventions
-        - Ensure the code is syntactically correct, executable, and efficient
-        - Include necessary imports, includes, or module declarations for {target_lang}
-        - Maintain semantic equivalence with the original algorithm
+        Generate complete, executable {target_lang} code from this algorithm by:
+        - creating proper {target_lang} program structure (classes, main method if needed)
+        - using correct {target_lang} syntax, data types, and language constructs
+        - implementing exact same logic flow as specified in the algorithm
+        - handling input/output operations correctly for {target_lang}
+        - including all necessary imports, libraries, and dependencies
 
-        # Provide only the complete {target_lang} code implementation without any additional texts, comments, explanations, or examples.
+        # Provide only the {target_lang} code without any headers, comments, explanations, or examples.
     """).strip()
 
     return prompt
