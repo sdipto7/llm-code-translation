@@ -42,16 +42,15 @@ def get_algorithm_from_source_code_prompt(source_code_as_str, source_lang, targe
         {source_lang} code:
         {source_code_as_str}
 
-        Extract a detailed algorithm from this {source_lang} code which will be later translated into {target_lang} code. 
-        The algorithm should include:
-        - function signatures with parameter and return types
-        - variable declarations and data types
+        Extract a detailed algorithm from this code for translation to {target_lang}:
+        - function signatures with parameter and return types (consider {target_lang} equivalents)
+        - variable declarations and data types (note {target_lang} compatible types)
         - complete logic flow in execution order
         - all control structures (loops, conditionals) with exact conditions
-        - input/output operations and data processing logic
-        - required libraries, modules, or dependencies
+        - input/output operations and data processing logic (specify format for {target_lang})
+        - required libraries, modules, or dependencies (mention {target_lang} equivalents)
         
-        # Provide only the algorithm without any headers, comments, explanations, or examples.
+        #Structure the algorithm to facilitate accurate {target_lang} code generation. Provide only the algorithm without any headers, comments, explanations, or examples.
     """).strip()
 
     return prompt
