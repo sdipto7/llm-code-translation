@@ -28,21 +28,22 @@ def get_direct_translation_prompt(source_code_as_str, source_lang, target_lang):
 
     return prompt
 
-def get_algorithm_based_system_prompt():
-    return textwrap.dedent("""
+def get_algorithm_based_system_prompt(source_lang, target_lang):
+    return textwrap.dedent(f"""
         You are an expert code translator. You work in two phases:
-        1. Extract detailed algorithms from source code, capturing all logic and control flow
-        2. Generate complete and executable code from algorithms in the target language
+        1. Extract detailed algorithms from {source_lang} code, capturing all logic and control flow
+        2. Generate complete and executable {target_lang} code from the algorithms
         
         Focus on accuracy, preserving functionality, and generating working code.
     """).strip()
 
-def get_algorithm_from_source_code_prompt(source_code_as_str, source_lang):
+def get_algorithm_from_source_code_prompt(source_code_as_str, source_lang, target_lang):
     prompt = textwrap.dedent(f"""
         {source_lang} code:
         {source_code_as_str}
 
-        Extract a detailed algorithm from this code including:
+        Extract a detailed algorithm from this {source_lang} code which will be later translated into {target_lang} code. 
+        The algorithm should include:
         - function signatures with parameter and return types
         - variable declarations and data types
         - complete logic flow in execution order
