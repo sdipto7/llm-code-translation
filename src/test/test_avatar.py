@@ -4,8 +4,8 @@ import argparse
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from src.validator.arg_validator import validate_arguments
-from src.helper.result_organizer_helper import organize_translated_codes_by_result
-from src.test.test_utils import (
+from src.helper.io_helper import organize_translated_codes_by_result
+from src.helper.test_helper import (
     setup_test_environment,
     compile_python_code,
     compile_java_code,

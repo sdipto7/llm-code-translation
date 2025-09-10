@@ -4,10 +4,10 @@ from pathlib import Path
 from subprocess import Popen, PIPE
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-from src.model.test_result import TestResult
+from src.test.test_result import TestResult
 from src.helper.model_path_helper import resolve_model_name_for_path
-from src.util.constants import get_model_map, get_extension_map
-from src.util.io_utils import read_file
+from src.helper.constants import get_model_map, get_extension_map
+from src.helper.io_helper import read_file
 from src.helper.numeric_helper import normalize_integer_output, normalize_decimal_output
 from src.helper.report_helper import generate_test_report, generate_error_type_csv_report
 

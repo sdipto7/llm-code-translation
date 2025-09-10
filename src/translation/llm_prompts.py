@@ -1,6 +1,6 @@
 import textwrap
 
-def get_direct_translation_system_prompt():
+def get_system_prompt_for_direct_translation():
     return textwrap.dedent("""
         You are an expert code translator specializing in direct source-to-source translation between programming languages.
         Your task is to convert code while preserving exact functionality, logic, and structure.
@@ -8,7 +8,7 @@ def get_direct_translation_system_prompt():
         Focus on accuracy, preserving functionality, and generating working code.
     """).strip()
 
-def get_direct_translation_prompt(source_code_as_str, source_lang, target_lang):
+def get_prompt_for_direct_translation(source_code_as_str, source_lang, target_lang):
     prompt = textwrap.dedent(f"""
         {source_lang} code:
         {source_code_as_str}
@@ -26,16 +26,16 @@ def get_direct_translation_prompt(source_code_as_str, source_lang, target_lang):
 
     return prompt
 
-def get_algorithm_based_system_prompt():
+def get_system_prompt_for_algorithm_based_translation():
     return textwrap.dedent("""
         You are an expert code translator. You work in two phases:
         1. Extract detailed algorithms from source code, capturing all logic and control flow
         2. Generate complete and executable code from algorithms in the target language
         
-        Focus on accuracy, preserving functionality, and generating working code.
+        Focus on accuracy, preserving functionality, and creating working code that passes all test cases.
     """).strip()
 
-def get_algorithm_from_source_code_prompt(source_code_as_str, source_lang):
+def get_prompt_for_source_code_to_algorithm_generation(source_code_as_str, source_lang):
     prompt = textwrap.dedent(f"""
         {source_lang} code:
         {source_code_as_str}
@@ -53,7 +53,7 @@ def get_algorithm_from_source_code_prompt(source_code_as_str, source_lang):
 
     return prompt
 
-def get_translated_code_from_algorithm_prompt(algorithm, target_lang):
+def get_prompt_for_algorithm_to_code_translation(algorithm, target_lang):
     prompt = textwrap.dedent(f"""
         algorithm:
         {algorithm}
