@@ -1,6 +1,6 @@
 ## Models
 ```
-[gpt-4o, claude-sonnet-4, gemini-flash-2.5, llama-4-maverick, qwen-3-coder, qwen-2.5-coder, qwen-2.5, deepseek-r1, deepseek-v3.1]
+[gpt-4o, gemini-flash-2.5, llama-4-maverick, qwen-2.5-coder, qwen-2.5, deepseek-r1, deepseek-v3.1]
 ```
 
 ## Datasets

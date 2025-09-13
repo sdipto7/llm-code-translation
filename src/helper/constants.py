@@ -4,10 +4,8 @@ SUPPORTED_LANGUAGE_EXTENSION_MAP = {"java": "java", "python": "py"}
 
 SUPPORTED_LLM_API_MAP = {
     "gpt-4o": "openai/gpt-4o",
-    "claude-sonnet-4": "anthropic/claude-sonnet-4",
     "gemini-flash-2.5": "google/gemini-2.5-flash",
     "llama-4-maverick": "meta-llama/llama-4-maverick:free",
-    "qwen-3-coder": "qwen/qwen3-coder:free",
     "qwen-2.5-coder": "qwen/qwen-2.5-coder-32b-instruct:free",
     "qwen-2.5": "qwen/qwen-2.5-72b-instruct:free",
     "deepseek-r1": "deepseek/deepseek-r1:free",
