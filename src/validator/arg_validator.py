@@ -1,5 +1,8 @@
 import os
 import logging
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+from src.helper.constants import SUPPORTED_LLM_LIST, SUPPORTED_LANGUAGE_LIST
 
 os.makedirs(f'logs', exist_ok=True)
 logging.basicConfig(filename=f"logs/translation.log", level=logging.INFO, format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
@@ -9,9 +12,9 @@ def validate_model(model):
 
     if model is None:
         raise ValueError("Model is not provided")
-    
-    if model not in ["gpt-4o", "gemini-flash-2.5", "llama-4-maverick", "qwen-2.5-coder", "qwen-2.5", "deepseek-v3", "deepseek-r1"]:
-        raise ValueError(f"model {model} is not supported. should be one of [gpt-4o, gemini-flash-2.5, llama-4-maverick, qwen-2.5-coder, qwen-2.5, deepseek-v3, deepseek-r1]")
+
+    if model not in SUPPORTED_LLM_LIST:
+        raise ValueError(f"model {model} is not supported. should be one of {SUPPORTED_LLM_LIST}")
 
     logging.info("model validated successfully")
 
@@ -32,8 +35,8 @@ def validate_source_language(source_lang):
     if source_lang is None:
         raise ValueError("Source language is not provided")
 
-    if source_lang not in ["python", "java"]:
-        raise ValueError(f"source language {source_lang} is not supported. should be one of [python, java]")
+    if source_lang not in SUPPORTED_LANGUAGE_LIST:
+        raise ValueError(f"source language {source_lang} is not supported. should be one of {SUPPORTED_LANGUAGE_LIST}")
 
     logging.info("source language validated successfully")
 
@@ -43,8 +46,8 @@ def validate_target_language(target_lang):
     if target_lang is None:
         raise ValueError("Target language is not provided")
 
-    if target_lang not in ["python", "java"]:
-        raise ValueError(f"target language {target_lang} is not supported. should be one of [python, java]")
+    if target_lang not in SUPPORTED_LANGUAGE_LIST:
+        raise ValueError(f"target language {target_lang} is not supported. should be one of {SUPPORTED_LANGUAGE_LIST}")
 
     logging.info("target language validated successfully")
 
@@ -54,8 +57,8 @@ def validate_language_pair(source_lang, target_lang):
     if source_lang is None or target_lang is None:
         raise ValueError("Source language or target language is not provided")
 
-    if source_lang in ["python", "java"] and target_lang in ["python", "java"] and source_lang == target_lang:
-        raise ValueError(f"source language {source_lang} and target language {target_lang} should not be same")
+    if source_lang in SUPPORTED_LANGUAGE_LIST and target_lang in SUPPORTED_LANGUAGE_LIST and source_lang == target_lang:
+        raise ValueError(f"source language and target language can not be same")
 
     logging.info("language pair validated successfully")
 

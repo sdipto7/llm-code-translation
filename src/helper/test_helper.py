@@ -6,7 +6,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from src.test.test_result import TestResult
 from src.helper.model_path_helper import resolve_model_name_for_path
-from src.helper.constants import get_model_map, get_extension_map
+from src.helper.constants import SUPPORTED_LLM_API_MAP, SUPPORTED_LANGUAGE_EXTENSION_MAP
 from src.helper.io_helper import read_file
 from src.helper.numeric_helper import normalize_integer_output, normalize_decimal_output
 from src.helper.report_helper import generate_test_report, generate_error_type_csv_report
@@ -14,12 +14,12 @@ from src.helper.report_helper import generate_test_report, generate_error_type_c
 def setup_test_environment(args, dataset, is_algorithm_based_translation):
     print(f"testing translations for {'algorithm-based approach' if is_algorithm_based_translation else 'direct approach'} with {args.model} from {args.source_lang} to {args.target_lang} using {dataset} dataset")
     
-    model = get_model_map().get(args.model)
+    model = SUPPORTED_LLM_API_MAP.get(args.model)
     model_name_for_path = resolve_model_name_for_path(model)
 
     translation_type = "algo_based_translation" if is_algorithm_based_translation else "direct_translation"
     translation_dir = f"output/{model_name_for_path}/{dataset}/{translation_type}/{args.source_lang}/{args.target_lang}"
-    files = [f for f in os.listdir(translation_dir) if f.split(".")[-1] in list(get_extension_map().values())]
+    files = [f for f in os.listdir(translation_dir) if f.split(".")[-1] in list(SUPPORTED_LANGUAGE_EXTENSION_MAP.values())]
 
     test_cases_dir = f"dataset/{dataset}/{args.source_lang.capitalize()}/TestCases"
     reports_dir = f"reports/{model_name_for_path}/{dataset}"

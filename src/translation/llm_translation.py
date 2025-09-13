@@ -13,7 +13,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from src.validator.arg_validator import validate_arguments
 from src.helper.model_path_helper import resolve_model_name_for_path
 from src.helper.cache_helper import check_and_load_cache
-from src.helper.constants import get_extension_map, get_model_map
+from src.helper.constants import OPENROUTER_BASE_URL, SUPPORTED_LANGUAGE_EXTENSION_MAP, SUPPORTED_LLM_API_MAP
 from src.translation.llm_prompts import (
     get_system_prompt_for_direct_translation,
     get_system_prompt_for_algorithm_based_translation,
@@ -34,9 +34,9 @@ logging.basicConfig(filename=f"logs/translation.log", level=logging.INFO, format
 class Translator:
     def __init__(self, model, dataset) -> None:
         self.dataset = dataset
-        self.base_url = os.getenv("BASE_URL")
+        self.base_url = OPENROUTER_BASE_URL
         self.api_key = os.getenv("API_KEY")
-        self.model = get_model_map().get(model)
+        self.model = SUPPORTED_LLM_API_MAP.get(model)
         self.is_open_source_model = ":free" in self.model
         self.open_source_model_max_requests_per_minute = 20
         self.request_timestamps = deque()
@@ -159,7 +159,7 @@ class Translator:
             source_code_as_str = source_file.read_text(encoding="utf-8")
 
             translated_code_dir = get_translated_code_dir(base_dir_path, target_lang)
-            filename_of_translated_code = translated_code_dir.joinpath(f"{source_code_id}.{get_extension_map().get(target_lang)}")
+            filename_of_translated_code = translated_code_dir.joinpath(f"{source_code_id}.{SUPPORTED_LANGUAGE_EXTENSION_MAP.get(target_lang)}")
             has_translated_code, cached_translated_code = check_and_load_cache(filename_of_translated_code)
 
             row_data = {"dataset": self.dataset, "model": self.model, "source_lang": source_lang, "target_lang": target_lang, "source_code_id": source_code_id, "source_code": source_code_as_str}
