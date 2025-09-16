@@ -9,7 +9,7 @@ SUPPORTED_LLM_API_MAP = {
     "qwen-2.5-coder": "qwen/qwen-2.5-coder-32b-instruct:free",
     "qwen-2.5": "qwen/qwen-2.5-72b-instruct:free",
     "deepseek-r1": "deepseek/deepseek-r1:free",
-    "deepseek-v3.1": "deepseek/deepseek-chat-v3.1:free"
+    "deepseek-v3": "deepseek/deepseek-chat-v3-0324:free"
 }
 
 SUPPORTED_LANGUAGE_LIST = list(SUPPORTED_LANGUAGE_EXTENSION_MAP.keys())
