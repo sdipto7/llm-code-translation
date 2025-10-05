@@ -18,7 +18,7 @@ from src.helper.test_helper import (
     cleanup_results_and_get_result_map
 )
 
-def main(args, is_algorithm_based_translation, dataset="avatar"):
+def main(args, is_algorithm_based_translation, dataset="avatar", stop_at_first_fail_case = True):
     test_env = setup_test_environment(args, dataset, is_algorithm_based_translation)
 
     translation_type = test_env["translation_type"]
@@ -56,10 +56,10 @@ def main(args, is_algorithm_based_translation, dataset="avatar"):
 
                     msg = run_and_validate_test_cases(process, dataset, file, test_input, expected_output, result, test_case_number)
 
-                    if msg == "infinite_loop":
-                        break
-                    elif msg == "passed":
+                    if msg == "passed":
                         tests_passed += 1
+                    elif msg == "infinite_loop" or (stop_at_first_fail_case and msg == "failed"):
+                        break
 
             except subprocess.CalledProcessError as e:
                 result.add_to_compile_failed_with_details(file, e.stderr.decode('utf-8'))
