@@ -34,8 +34,6 @@ if [[ $DATASET == "avatar" ]]; then
     python3 src/test/test_avatar.py --model $MODEL --source_lang $SRC_LANG --target_lang $TRG_LANG --translation_type $TYPE;
 elif [[ $DATASET == "codenet" ]]; then
     python3 src/test/test_codenet.py --model $MODEL --source_lang $SRC_LANG --target_lang $TRG_LANG --translation_type $TYPE;
-elif [[ $DATASET == "evalplus" ]]; then
-    python3 src/test/test_evalplus.py --model $MODEL --source_lang $SRC_LANG --target_lang $TRG_LANG --translation_type $TYPE;
 else
     echo "Dataset not supported";
 fi

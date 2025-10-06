@@ -122,16 +122,11 @@ def get_successful_files(result_map):
     return set(result_map["test_passed"])
 
 
-def get_failed_files(result_map, fail_categories=None):
-    if fail_categories is None:
-        fail_categories = ["compile_failed", "runtime_failed", "test_failed", "infinite_loop"]
-    elif not isinstance(fail_categories, list):
-        fail_categories = [fail_categories]
-
+def get_failed_files(result_map):
+    fail_categories = ["compile_failed", "runtime_failed", "test_failed", "infinite_loop"]
     failed_files = set()
     for category in fail_categories:
-        if category in result_map:
-            failed_files.update(result_map[category])
+        failed_files.update(result_map[category])
 
     return failed_files
 
@@ -149,13 +144,3 @@ def organize_translated_codes_by_result(result_map, translation_dir):
     copy_files_to_directories(failed_files, translation_dir, fail_dir)
 
     logging.info(f"Organized test results into {success_dir} and {fail_dir}")
-
-
-def move_compile_failed_translated_codes_for_evalplus(result_map, translation_dir):
-    logging.info(f"Organizing translated codes by result in {translation_dir}")
-
-    fail_dir = create_failed_translation_directory(translation_dir)
-    failed_files = get_failed_files(result_map, "compile_failed")
-    copy_files_to_directories(failed_files, translation_dir, fail_dir, keep_source_files=False)
-
-    logging.info(f"Moved compile failed files to {fail_dir}")
