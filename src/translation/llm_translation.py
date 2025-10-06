@@ -24,7 +24,7 @@ from src.translation.llm_prompts import (
 from src.helper.translation_helper import (
     get_algorithm_dir,
     get_translated_code_dir,
-    refine_translated_code
+    update_class_name_if_required
 )
 from src.helper.io_helper import write_to_file, write_translation_data_to_xlsx
 
@@ -193,7 +193,9 @@ class Translator:
                 
                 translated_code = self.get_direct_translated_code(source_code_as_str, source_lang, target_lang)
 
-            translated_code = refine_translated_code(self.dataset, translated_code, source_code_id, target_lang)
+            if target_lang == "java":
+                translated_code = update_class_name_if_required(translated_code, source_code_id)
+
             write_to_file(filename_of_translated_code, translated_code)
 
             row_data["translated_code"] = translated_code

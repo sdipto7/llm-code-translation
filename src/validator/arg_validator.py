@@ -24,8 +24,8 @@ def validate_dataset(dataset):
     if dataset is None:
         raise ValueError("Dataset is not provided")
 
-    if dataset not in ["codenet", "avatar", "evalplus"]:
-        raise ValueError(f"dataset {dataset} is not supported. should be one of [codenet, avatar, evalplus]")
+    if dataset not in ["codenet", "avatar"]:
+        raise ValueError(f"dataset {dataset} is not supported. should be one of [codenet, avatar]")
 
     logging.info("dataset validated successfully")
 
