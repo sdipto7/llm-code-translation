@@ -15,6 +15,7 @@ from src.helper.test_helper import (
     get_test_input_and_output,
     cleanup_java_class_files,
     prepare_test_reports,
+    prepare_error_reports,
     cleanup_results_and_get_result_map
 )
 
@@ -78,6 +79,8 @@ def main(args, is_algorithm_based_translation, dataset="avatar", stop_at_first_f
     organize_translated_codes_by_result(result_map, translation_dir)
 
     prepare_test_reports(args, reports_dir, translation_type, result_map)
+
+    prepare_error_reports(args, reports_dir, translation_type, result_map)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
