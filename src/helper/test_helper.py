@@ -9,7 +9,7 @@ from src.helper.model_path_helper import resolve_model_name_for_path
 from src.helper.constants import SUPPORTED_LLM_API_MAP, SUPPORTED_LANGUAGE_EXTENSION_MAP
 from src.helper.io_helper import read_file
 from src.helper.numeric_helper import normalize_integer_output, normalize_decimal_output
-from src.helper.report_helper import generate_test_report, generate_error_type_csv_report
+from src.helper.report_helper import generate_test_report, generate_error_csv_report
 
 def setup_test_environment(args, dataset, is_algorithm_based_translation):
     print(f"testing translations for {'algorithm-based approach' if is_algorithm_based_translation else 'direct approach'} with {args.model} from {args.source_lang} to {args.target_lang} using {dataset} dataset")
@@ -125,5 +125,15 @@ def prepare_test_reports(args, reports_dir, translation_type, result_map):
     report_file_path = Path(reports_dir).joinpath(f"{args.source_lang}_to_{args.target_lang}_for_{translation_type}.txt")
     generate_test_report(report_file_path, result_map)
 
-    csv_report_file_path = Path(reports_dir).joinpath(f"error_type_report_from_{args.source_lang}_to_{args.target_lang}_for_{translation_type}.csv")
-    generate_error_type_csv_report(csv_report_file_path, result_map, args.source_lang, args.target_lang)
+def prepare_error_reports(args, reports_dir, translation_type, result_map):
+    compile_error_report_file_path = Path(reports_dir).joinpath(f"{args.source_lang}_to_{args.target_lang}_compile_error_report_for_{translation_type}.csv")
+    generate_error_csv_report(compile_error_report_file_path, result_map.get("compile_failed"), result_map.get("compile_failed_details"), "Compilation Error", args.source_lang, args.target_lang)
+
+    runtime_error_report_file_path = Path(reports_dir).joinpath(f"{args.source_lang}_to_{args.target_lang}_runtime_error_report_for_{translation_type}.csv")
+    generate_error_csv_report(runtime_error_report_file_path, result_map.get("runtime_failed"), result_map.get("runtime_failed_details"), "Runtime Error", args.source_lang, args.target_lang)
+
+    test_fail_report_file_path = Path(reports_dir).joinpath(f"{args.source_lang}_to_{args.target_lang}_test_fail_report_for_{translation_type}.csv")
+    generate_error_csv_report(test_fail_report_file_path, result_map.get("test_failed"), result_map.get("test_failed_details"), "Test Failed", args.source_lang, args.target_lang)
+
+    infinite_loop_report_file_path = Path(reports_dir).joinpath(f"{args.source_lang}_to_{args.target_lang}_infinite_loop_report_for_{translation_type}.csv")
+    generate_error_csv_report(infinite_loop_report_file_path, result_map.get("infinite_loop"), None, "Infinite Loop", args.source_lang, args.target_lang, "The program did not terminate within the allowed time limit")

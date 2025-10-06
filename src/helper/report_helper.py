@@ -27,53 +27,23 @@ def generate_test_report(report_file_path, result_map):
         report.writelines(f"Infinite Loop: {len(result_map.get("infinite_loop"))}\n")
         report.writelines(f"Infinite Loop Rate: {get_rate("infinite_loop", result_map, total_instance_count):.2f}%")
 
-def generate_error_type_csv_report(csv_report_file_path, result_map, source_lang, target_lang):
+def generate_error_csv_report(report_file_path, filenames, error_details, error_type, source_lang, target_lang, default_msg=None):
     data = []
 
-    compile_failed_details = result_map.get("compile_failed_details")
-    runtime_failed_details = result_map.get("runtime_failed_details")
-    test_failed_details = result_map.get("test_failed_details")
+    for filename in filenames:
+        if error_details is None:
+            details = default_msg
+        else:
+            details = "\n".join(error_details.get(filename, []))
 
-    for filename in result_map.get("compile_failed"):
-        error_details = "\n".join(compile_failed_details.get(filename, []))
         data.append({
             "source_lang": source_lang,
             "target_lang": target_lang,
             "filename": filename,
-            "error_type": "Compilation Error",
-            "error_details": error_details
+            "error_type": error_type,
+            "error_details": details
         })
 
-    for filename in result_map.get("runtime_failed"):
-        error_details = "\n".join(runtime_failed_details.get(filename, []))
-        data.append({
-            "source_lang": source_lang,
-            "target_lang": target_lang,
-            "filename": filename,
-            "error_type": "Runtime Error",
-            "error_details": error_details
-        })
-
-    for filename in result_map.get("test_failed"):
-        error_details = "\n".join(test_failed_details.get(filename, []))
-        data.append({
-            "source_lang": source_lang,
-            "target_lang": target_lang,
-            "filename": filename,
-            "error_type": "Test Failed",
-            "error_details": error_details
-        })
-
-    for filename in result_map.get("infinite_loop"):
-        error_details = "The program did not terminate within the allowed time limit"
-        data.append({
-            "source_lang": source_lang,
-            "target_lang": target_lang,
-            "filename": filename,
-            "error_type": "Infinite Loop",
-            "error_details": error_details
-        })
-
-    columns = ["source_lang", "target_lang", "filename", "error_type", "error_details"]
-    df = pd.DataFrame(data, columns=columns)
-    df.to_csv(csv_report_file_path, index=False)
+        columns = ["source_lang", "target_lang", "filename", "error_type", "error_details"]
+        df = pd.DataFrame(data, columns=columns)
+        df.to_csv(report_file_path, index=False)
