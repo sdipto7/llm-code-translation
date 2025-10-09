@@ -1,7 +1,4 @@
-import os
-import sys
 from pathlib import Path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 import re
 
 def get_algorithm_dir(base_dir_path):
