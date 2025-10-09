@@ -5,9 +5,8 @@ from subprocess import Popen, PIPE
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from src.test.test_result import TestResult
-from src.helper.model_path_helper import resolve_model_name_for_path
 from src.helper.constants import SUPPORTED_LLM_API_MAP, SUPPORTED_LANGUAGE_EXTENSION_MAP
-from src.helper.io_helper import read_file
+from src.helper.io_helper import read_file, resolve_model_name_for_path
 from src.helper.numeric_helper import normalize_integer_output, normalize_decimal_output
 from src.helper.report_helper import generate_test_report, generate_error_csv_report
 

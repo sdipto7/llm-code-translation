@@ -11,7 +11,6 @@ import time
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from src.validator.arg_validator import validate_arguments
-from src.helper.model_path_helper import resolve_model_name_for_path
 from src.helper.cache_helper import check_and_load_cache
 from src.helper.constants import OPENROUTER_BASE_URL, SUPPORTED_LANGUAGE_EXTENSION_MAP, SUPPORTED_LLM_API_MAP
 from src.translation.llm_prompts import (
@@ -26,7 +25,7 @@ from src.helper.translation_helper import (
     get_translated_code_dir,
     update_class_name_if_required
 )
-from src.helper.io_helper import write_to_file, write_translation_data_to_xlsx
+from src.helper.io_helper import write_to_file, write_translation_data_to_xlsx, resolve_model_name_for_path
 
 os.makedirs(f'logs', exist_ok=True)
 logging.basicConfig(filename=f"logs/translation.log", level=logging.INFO, format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')

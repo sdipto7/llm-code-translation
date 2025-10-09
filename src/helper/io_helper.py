@@ -9,6 +9,9 @@ from openpyxl.styles import Alignment
 os.makedirs(f'logs', exist_ok=True)
 logging.basicConfig(filename=f"logs/translation.log", level=logging.INFO, format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 
+def resolve_model_name_for_path(model_name):
+    return model_name.rsplit("/")[-1].split(":")[0].replace("-", "_")
+
 def read_file(file_name):
     logging.info(f"Reading file {file_name}")
 
