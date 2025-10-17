@@ -36,19 +36,26 @@ def main(args, is_algorithm_based_translation, dataset="codenet"):
 
                 if args.target_lang == "python":
                     compile_python_code(translation_dir, file)
-                    process = initialize_python_process(translation_dir, file)
                 else:
                     compile_java_code(translation_dir, file)
-                    process = initialize_java_process(translation_dir, file)
+
+            except subprocess.CalledProcessError as e:
+                result.add_to_compile_failed_with_details(file, e.stderr.decode('utf-8'))
+                continue
+
+            except Exception as e:
+                result.add_to_compile_failed_with_details(file, str(e))
+                continue
+
+            try:
+                process = initialize_python_process(translation_dir, file) if args.target_lang == "python" else initialize_java_process(translation_dir, file)
 
                 test_input, expected_output = get_test_input_and_output(dataset, test_cases_dir, file)
 
                 run_and_validate_test_cases(process, dataset, file, test_input, expected_output, result)
 
-            except subprocess.CalledProcessError as e:
-                result.add_to_compile_failed_with_details(file, e.stderr.decode('utf-8'))
             except Exception as e:
-                result.add_to_compile_failed_with_details(file, e)
+                result.add_to_runtime_failed_with_details(file, str(e))
         
         if args.target_lang == "java":
             cleanup_java_class_files(translation_dir)

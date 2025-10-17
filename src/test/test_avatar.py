@@ -39,19 +39,24 @@ def main(args, is_algorithm_based_translation, dataset="avatar", stop_at_first_f
                 else:
                     compile_java_code(translation_dir, file)
 
+            except subprocess.CalledProcessError as e:
+                result.add_to_compile_failed_with_details(file, e.stderr.decode('utf-8'))
+                continue
+
+            except Exception as e:
+                result.add_to_compile_failed_with_details(file, str(e))
+                continue
+
+            try:
                 tests_passed = 0
                 for test_case_number in range(1000):
-
                     has_next_test_case = os.path.exists(f"{test_cases_dir}/{file.split('.')[0]}_{test_case_number}.in")
                     if not has_next_test_case:
                         if tests_passed == test_case_number:
                             result.add_to_test_passed(file)
                         break
 
-                    if args.target_lang == "python":
-                        process = initialize_python_process(translation_dir, file)
-                    else:
-                        process = initialize_java_process(translation_dir, file)
+                    process = initialize_python_process(translation_dir, file) if args.target_lang == "python" else initialize_java_process(translation_dir, file)
 
                     test_input, expected_output = get_test_input_and_output(dataset, test_cases_dir, file, test_case_number)
 
@@ -62,10 +67,8 @@ def main(args, is_algorithm_based_translation, dataset="avatar", stop_at_first_f
                     elif msg == "infinite_loop" or (stop_at_first_fail_case and msg == "failed"):
                         break
 
-            except subprocess.CalledProcessError as e:
-                result.add_to_compile_failed_with_details(file, e.stderr.decode('utf-8'))
             except Exception as e:
-                result.add_to_compile_failed_with_details(file, e)
+                result.add_to_runtime_failed_with_details(file, str(e))
 
         if args.target_lang == "java":
             cleanup_java_class_files(translation_dir)

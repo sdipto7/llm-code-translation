@@ -52,7 +52,7 @@ def compile_python_code(translation_dir, file):
     subprocess.run(f"python3 -m py_compile {translation_dir}/{file}", check=True, capture_output=True, shell=True, timeout=30)
 
 def compile_java_code(translation_dir, file):
-    subprocess.run(f"javac {translation_dir}/{file}", check=True, capture_output=True, shell=True, timeout=30)
+    subprocess.run(f"javac -Xmaxerrs 1 {translation_dir}/{file}", check=True, capture_output=True, shell=True, timeout=30)
 
 def initialize_python_process(translation_dir, file):
     return Popen(["python3", f"{translation_dir}/{file}"], stdin=PIPE, stdout=PIPE, stderr=PIPE)
