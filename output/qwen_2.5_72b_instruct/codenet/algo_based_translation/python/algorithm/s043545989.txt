@@ -1,0 +1,26 @@
+Function signature: check_condition() -> None
+
+Variable declarations and data types:
+- N: int
+- a: List[int]
+- B: Counter[int]
+- k: List[int]
+- v: List[int]
+
+Logic flow in execution order:
+1. Read integer N from input
+2. Read N integers from input, convert them to a list of integers a
+3. Create a Counter object B from list a
+4. Convert keys of B to a list k
+5. Convert values of B to a list v
+6. If length of B is 3 and bitwise XOR of k[0], k[1], and k[2] equals 0 and v[0] equals v[1] equals v[2]:
+   - Print "Yes"
+7. Else if length of B is 2 and 0 is in k and (v[0] equals 2 times v[1] or v[1] equals 2 times v[0]):
+   - Print "Yes"
+8. Else if length of B is 1 and 0 is in k:
+   - Print "Yes"
+9. Else:
+   - Print "No"
+
+Required libraries, modules, or dependencies:
+- collections module for Counter

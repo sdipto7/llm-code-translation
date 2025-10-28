@@ -1,0 +1,7 @@
+1. Main function with no parameters and no return type.
+2. Declare a Scanner object `in` for input operations.
+3. Declare a String variable `c` and assign it the next input token from the scanner.
+4. Declare a Character variable `letter` and assign it the first character of the string `c`.
+5. Increment the value of `letter` by 1 (this moves to the next character in the Unicode sequence).
+6. Output the value of `letter`.
+7. Required library: `java.util.Scanner`.

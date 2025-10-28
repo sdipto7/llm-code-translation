@@ -1,0 +1,41 @@
+```
+Function: solve_problem()
+- Parameters: None
+- Return Type: None
+
+Variables:
+- d: int
+- g: int
+- pc: List[List[int]]
+- ans: float, initialized to float("inf")
+- bit: int
+- count: int
+- sum: int
+- nokori: Set[int]
+- i: int
+- use: int
+- n: int
+
+Execution Flow:
+1. Read integers d and g from input.
+2. Read a list of lists pc, each containing two integers, from input for d times.
+3. Initialize ans to positive infinity.
+4. Iterate over bit from 0 to (1 << d) - 1:
+   a. Set count and sum to 0.
+   b. Initialize nokori as a set containing integers from 1 to d inclusive.
+   c. Iterate over i from 0 to d - 1:
+      i. If the i-th bit of bit is set (bit & (1 << i)):
+         - Increase sum by pc[i][0] * (i + 1) * 100 + pc[i][1].
+         - Increase count by pc[i][0].
+         - Remove i + 1 from nokori.
+   d. If sum is less than g:
+      i. Select use as the maximum element in nokori.
+      ii. Calculate n as the minimum of pc[use-1][0] and ceil((g - sum) / (use * 100)).
+      iii. Increase count by n.
+      iv. Increase sum by n * use * 100.
+   e. If sum is greater than or equal to g:
+      i. Update ans to the minimum of ans and count.
+5. Print the value of ans.
+
+Required Libraries: None
+```

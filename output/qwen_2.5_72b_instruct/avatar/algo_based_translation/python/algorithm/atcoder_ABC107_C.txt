@@ -1,0 +1,48 @@
+Algorithm:
+
+Function signatures with parameter and return types:
+- `check(k: int) -> int`
+
+Variable declarations and data types:
+- `N: int`
+- `K: int`
+- `lst: List[int]`
+- `lst_p: List[int]`
+- `lst_m: List[int]`
+- `p: int`
+- `m: int`
+- `x: int`
+- `y: int`
+- `lastx: int`
+- `lasty: int`
+- `ans: int`
+- `j: int`
+
+Complete logic flow in execution order:
+- Import `sys` module
+- Read two integers `N` and `K` from input, split by space
+- Read a list of integers `lst` of size `N` from input, split by space
+- Initialize empty list `lst_p` for positive numbers
+- Initialize empty list `lst_m` for negative numbers
+- Loop over indices from 0 to `N-1`:
+  - If `lst[i]` is 0, decrement `K` by 1
+  - If `lst[i]` is greater than 0, append `lst[i]` to `lst_p`
+  - If `lst[i]` is less than 0, append `lst[i]` to `lst_m`
+- Initialize `p` to 0
+- Initialize `m` to 0
+- Initialize `x` to 0
+- Initialize `y` to length of `lst_m` minus 1
+- Initialize `lastx` to length of `lst_p`
+- Initialize `lasty` to length of `lst_m`
+- Define function `check(k: int) -> int`:
+  - Initialize `ans` to 10^9
+  - Loop over integers `j` from 0 to `k` inclusive:
+    - If `j` is greater than `lastx` or `k - j` is greater than `lasty`, pass
+    - Else:
+      - If `j` is 0, set `p` to 0
+      - Else, set `p` to `lst_p[j - 1]`
+      - If `k - j` is 0, set `m` to 0
+      - Else, set `m` to `lst_m[lasty - (k - j)]`
+      - Set `ans` to minimum of `ans`, `2 * p + abs(m)`, and `p + 2 * abs(m)`
+  - Return `ans`
+- Print result of `check(K)`

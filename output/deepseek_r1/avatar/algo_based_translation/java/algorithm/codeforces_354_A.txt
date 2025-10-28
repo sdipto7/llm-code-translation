@@ -1,0 +1,52 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+  - Parameters: String array `args`
+  - Return: void
+
+**Variables:**
+- `Scanner in`: Input handler
+- `int N`, `int L`, `int R`, `int QL`, `int QR`: Input values
+- `int[] W`: Size N, stores weights
+- `int[] sum`: Size N+1, prefix sums of W
+- `long min`: Initialized to `Long.MAX_VALUE`
+- Loop variables: `n`, `firstR`, `lCount`, `rCount`
+- Intermediate values: `cand`, `llCount`, `rrCount`
+
+**Libraries/Dependencies:**
+- `java.util.Scanner`
+
+**Logic Flow:**
+1. Read input values:
+   - `N`, `L`, `R`, `QL`, `QR` via Scanner
+   - Read `N` integers into array `W`
+
+2. Compute prefix sums:
+   - `sum[0] = 0`
+   - For `n` from 0 to N-1:
+     - `sum[n+1] = sum[n] + W[n]`
+
+3. Iterate `firstR` from 0 to N (inclusive):
+   - Calculate `lCount = firstR`
+   - Calculate `rCount = N - lCount`
+   - Compute base cost:
+     - `cand = sum[lCount] * L + (sum[N] - sum[lCount]) * R`
+   - Calculate imbalance penalties:
+     - `llCount = max(0, lCount - rCount - 1)`
+     - `rrCount = max(0, rCount - lCount - 1)`
+   - Adjust candidate cost:
+     - `cand += llCount * QL`
+     - `cand += rrCount * QR`
+   - Update `min` with the minimum value between current `cand` and `min`
+
+4. Output final `min` value
+
+**Control Structures:**
+- For-loop: `for (int n = 0; n < N; n++)`
+- For-loop: `for (int firstR = 0; firstR <= N; firstR++)`
+- Conditional penalty calculation:
+  - `Math.max(0, lCount - rCount - 1)`
+  - `Math.max(0, rCount - lCount - 1)`
+
+**Input/Output:**
+- Read from `System.in` using Scanner
+- Print result via `System.out.println(min)`

@@ -1,0 +1,20 @@
+Function signature: `public static void main(String[] args)`
+Variable declarations and data types: 
+- `Scanner scan` of type `Scanner`
+- `int n` of type `int`
+- `long[] arr` of type `long[]`
+- `long answer` of type `long`
+
+Logic flow in execution order:
+1. Create a `Scanner` object named `scan` to read input from `System.in`.
+2. Read an integer `n` using `scan.nextInt()`.
+3. Initialize an array `arr` of length `n` to store `long` values.
+4. For `int i` from `0` to `n-1`, do:
+   - Read a `long` value using `scan.nextInt()` and assign it to `arr[i]`.
+5. Initialize `answer` to the absolute value of `arr[0]`.
+6. For `int i` from `1` to `n-1`, do:
+   - Add the absolute difference between `arr[i]` and `arr[i-1]` to `answer`.
+7. Print the value of `answer` to `System.out`.
+
+Required libraries, modules, or dependencies:
+- `java.util.*`

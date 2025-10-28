@@ -1,0 +1,73 @@
+```plaintext
+1. Import necessary libraries:
+   - import math
+   - from functools import reduce
+   - from collections import deque, Counter
+   - import sys
+   - Set recursion limit to 10**7 using sys.setrecursionlimit(10 ** 7)
+
+2. Define input function:
+   - Function `input() -> str` reads and returns a stripped line from standard input.
+
+3. Define function to get a list of integers from input:
+   - Function `get_nums_l() -> List[int]` reads a line, splits it by spaces, converts each to an integer, and returns the list.
+
+4. Define function to get a list of integers from multiple lines:
+   - Function `get_nums_n(n: int) -> List[int]` reads `n` lines, converts each to an integer, and returns the list.
+
+5. Define function to get all integers from standard input:
+   - Function `get_all_int() -> Tuple[int]` reads from standard input, splits by whitespace, converts to integers, and returns as a tuple.
+
+6. Define generator function to iterate over a range with conditions:
+   - Function `rangeI(it: Iterable, l: int, r: int) -> Generator` yields elements from `it` between indices `l` and `r`.
+
+7. Define debug logging function:
+   - Function `log(*args: Any) -> None` prints to standard error with "DEBUG:" prefix.
+
+8. Define constants:
+   - INF = 999999999999999999999999
+   - MOD = 10 ** 9 + 7
+
+9. Read integer input:
+   - Variable `n: int` = integer from input()
+
+10. Check if `n` is 1:
+    - If `n == 1`, print `0` and exit program.
+
+11. Define prime factorization function:
+    - Function `prime_factorize(n: int) -> List[int]`
+    - Initialize list `a: List[int]` = []
+    - While `n` is divisible by 2:
+      - Append `2` to `a`
+      - Divide `n` by 2
+    - Initialize `f: int` = 3
+    - While `f * f <= n`:
+      - If `n` is divisible by `f`:
+        - Append `f` to `a`
+        - Divide `n` by `f`
+      - Else:
+        - Increment `f` by 2
+    - If `n` is not 1, append `n` to `a`
+    - Return list `a`
+
+12. Factorize `n` using prime factorization:
+    - Variable `fac_: List[int]` = result of `prime_factorize(n)`
+
+13. Count occurrences of each prime factor:
+    - Variable `fac: Counter` = Counter(fac_)
+
+14. Initialize answer:
+    - Variable `ans: int` = 0
+
+15. Calculate number of distinct prime factor groupings:
+    - For each prime `p` and its exponent `e` in `fac.items()`:
+      - Initialize `x: int` = `e`
+      - For `i` from 1 to a large number:
+        - If `x >= i`:
+          - Subtract `i` from `x`
+          - Increment `ans` by 1
+        - Else, break the loop
+
+16. Output the result:
+    - Print `ans`
+```

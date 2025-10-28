@@ -1,0 +1,25 @@
+Algorithm:
+- Import sys module
+- Initialize input to sys.stdin.readline
+- Define constant N = 368
+- Declare array m of integers with size N, initialized to zeros
+- Declare array f of integers with size N, initialized to zeros
+- Read integer n from input
+- For i from 0 to n-1:
+    - Read line from input and remove newline character
+    - Split line into x, a, b
+    - Convert a to integer
+    - Convert b to integer and add 1
+    - If x equals 'M':
+        - Increment m[a] by 2
+        - Decrement m[b] by 2
+    - Else:
+        - Increment f[a] by 2
+        - Decrement f[b] by 2
+- Initialize variables a, b, c to 0
+- For i from 0 to N-1:
+    - Add m[i] to a
+    - Add f[i] to b
+    - If minimum of a and b is greater than c:
+        - Set c to minimum of a and b
+- Print c

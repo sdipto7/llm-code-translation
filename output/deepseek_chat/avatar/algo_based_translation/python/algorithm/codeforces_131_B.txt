@@ -1,0 +1,35 @@
+**Algorithm:**
+
+1. Import the `sys` module and `Counter` from `collections`
+2. Read integer `n` from standard input
+3. Read next line from standard input, split into tokens, convert to integers, and create frequency counter `w`
+4. Initialize integer variable `c` to 0
+5. For each key `i` in counter `w`:
+   - If `i` equals 0:
+     - Add `w[i] * (w[i] - 1)` to `c`
+   - Else:
+     - If `-i` exists as a key in `w`:
+       - Add `w[i] * w[-i]` to `c`
+6. Print integer division of `c` by 2
+
+**Function Signatures:**
+- No explicit functions defined
+
+**Variable Declarations:**
+- `n`: integer
+- `w`: Counter (dictionary-like object mapping integers to frequencies)
+- `c`: integer
+- `i`: integer (loop variable)
+
+**Control Structures:**
+- For loop: `for i in w:`
+- Conditional: `if i == 0:`
+- Conditional: `if -i in w:`
+
+**Input/Output:**
+- Input: integer `n`, space-separated integers
+- Output: integer result printed to stdout
+
+**Dependencies:**
+- `sys` module
+- `Counter` from `collections` module

@@ -1,0 +1,22 @@
+```
+Function Signature:
+- main() -> None
+
+Variable Declarations:
+- x: int
+- y: int
+- a: int
+- b: int
+- games: List[Tuple[int, int]]
+
+Algorithm:
+1. Read a single line of input, split it by spaces, and convert each part to an integer. Assign these integers to variables x, y, a, and b respectively.
+2. Initialize an empty list `games` to store pairs of integers.
+3. Loop over each integer `i` from `a` to `x` (inclusive):
+   a. If `i` is less than or equal to `b`, skip this iteration.
+   b. Otherwise, loop over each integer `j` from `b` to `y` (inclusive):
+      i. If `i` is greater than `j`, append the tuple `(i, j)` to the list `games`.
+4. Print the length of the list `games`.
+5. For each tuple `i` in the list `games`:
+   a. Print the two elements of the tuple separated by a space.
+```

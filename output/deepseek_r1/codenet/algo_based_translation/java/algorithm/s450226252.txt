@@ -1,0 +1,38 @@
+- Import:
+  - `java.util.Scanner`
+
+- Function signature:
+  - `public static void main(String[] args)`
+
+- Variables:
+  - `Scanner stdIn = new Scanner(System.in)`
+  - `short r`
+
+- Input operation:
+  - `r = stdIn.nextShort()`
+
+- Logic flow:
+  1. Check if `r` < 1200:
+     - Output "ABC" via System.out.println
+     - Terminate program with return statement
+  2. If first condition false, check if `r` < 2800:
+     - Output "ARC" via System.out.println
+     - Terminate program with return statement
+  3. If both conditions false:
+     - Output "AGC" via System.out.println
+
+- Control structures:
+  - Sequential if statements with early returns
+  - Conditions checked in order:
+    1. `r < 1200`
+    2. `r < 2800`
+
+- Output operations:
+  - Exactly one output per execution path:
+    - "ABC" when r < 1200
+    - "ARC" when 1200 ≤ r < 2800
+    - "AGC" when r ≥ 2800
+
+- Data processing:
+  - Direct comparison of input value against fixed thresholds
+  - No data manipulation beyond input capture and conditional checks

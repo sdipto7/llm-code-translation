@@ -1,0 +1,55 @@
+Function Signatures:
+- `input(): str`
+- `I(): int`
+- `II(): map`
+- `III(): list`
+- `Line(N: int, num: int): map or list`
+- `my_sign(x: int) -> int`
+
+Variable Declarations and Data Types:
+- `mod: int`
+- `N: int`
+- `a: list`
+- `max_val: int`
+- `max_sign: int`
+- `max_index: int`
+- `i: int`
+- `a0: int`
+- `read_all: list`
+- `x: int`
+
+Logic Flow:
+1. Set recursion limit to \(10^7\).
+2. Define `mod` as \(10^9 + 7\).
+3. Read integer `N`.
+4. Read list `a` of integers.
+5. Initialize `max_val` to 0, `max_sign` to 0, `max_index` to -1.
+6. Iterate over `a` with index `i` and value `a0`:
+   - If `abs(a0)` > `max_val`, update `max_val` to `abs(a0)`, `max_sign` to `my_sign(a0)`, `max_index` to `i`.
+7. If `max_sign` is 0, print 0.
+8. If `max_sign` is 1, print `2 * N - 1`, then for `i` from 0 to `N-1`, print `max_index + 1` and `i + 1`, then for `i` from 0 to `N-2`, print `i + 1` and `i + 2`.
+9. If `max_sign` is -1, print `2 * N - 1`, then for `i` from 0 to `N-1`, print `max_index + 1` and `i + 1`, then for `i` from `N-1` to 1, print `i + 1` and `i`.
+
+Control Structures:
+- Loop: `for i, a0 in enumerate(a)`
+- Conditional: `if abs(a0) > max_val`
+- Conditional: `if max_sign == 0`
+- Conditional: `elif max_sign == 1`
+- Conditional: `else`
+- Loop: `for i in range(N)`
+- Loop: `for i in range(N-1)`
+- Loop: `for i in range(1, N)[::-1]`
+
+Input/Output Operations:
+- Read integer `N` from input.
+- Read list `a` of integers from input.
+- Print integer values based on conditions.
+
+Data Processing Logic:
+- Determine the maximum absolute value in list `a` and its sign.
+- Generate a sequence of operations based on the sign of the maximum value.
+
+Libraries/Modules/Dependencies:
+- `sys`
+- `math`
+- `collections`

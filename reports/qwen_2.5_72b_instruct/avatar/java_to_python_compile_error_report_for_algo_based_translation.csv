@@ -1,0 +1,31 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,codeforces_469_A.py,Compilation Error,"Error:   File ""output/qwen_2.5_72b_instruct/avatar/algo_based_translation/java/python/codeforces_469_A.py"", line 50
+    **Note:** The provided code contains an error in `arr.length` which should be `levels` in Python. Here is the corrected version:
+    ^^
+SyntaxError: invalid syntax
+"
+java,python,atcoder_AGC012_A.py,Compilation Error,"Error:   File ""output/qwen_2.5_72b_instruct/avatar/algo_based_translation/java/python/atcoder_AGC012_A.py"", line 9
+    from collections import *
+                            ^
+SyntaxError: import * only allowed at module level
+"
+java,python,codeforces_190_A.py,Compilation Error,"Error:   File ""output/qwen_2.5_72b_instruct/avatar/algo_based_translation/java/python/codeforces_190_A.py"", line 3830
+    * from sys import *
+      ^^^^
+SyntaxError: invalid syntax
+"
+java,python,codeforces_421_A.py,Compilation Error,"Error:   File ""output/qwen_2.5_72b_instruct/avatar/algo_based_translation/java/python/codeforces_421_A.py"", line 33
+    Note: Python does not have an `ArrayList` class, so a regular list is used instead. The input handling is adjusted to read all input at once and split it into parts, as Python's input handling is different from Java's Scanner.
+                 ^^^^
+SyntaxError: invalid syntax
+"
+java,python,atcoder_ABC174_E.py,Compilation Error,"Error:   File ""output/qwen_2.5_72b_instruct/avatar/algo_based_translation/java/python/atcoder_ABC174_E.py"", line 66
+    Note: The provided solution attempts to mimic the Java structure in Python, but there are some discrepancies due to the differences between Java and Python. For instance, Java's `BufferedReader` and `InputStreamReader` do not have direct equivalents in Python, and the `PrintWriter` class is implemented manually. Additionally, Python does not have a `StringTokenizer` class, so the `next` method uses Python's built-in string methods. The `main` function is used to mimic the entry point of a Java program.
+              ^^^^^^^^
+SyntaxError: invalid syntax
+"
+java,python,codeforces_462_B.py,Compilation Error,"Error:   File ""output/qwen_2.5_72b_instruct/avatar/algo_based_translation/java/python/codeforces_462_B.py"", line 3266
+    import
+          ^
+SyntaxError: invalid syntax
+"

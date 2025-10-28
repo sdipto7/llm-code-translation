@@ -1,0 +1,26 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- n: int
+- q: list[str[]]
+- count: int
+- i: int
+- j: str[]
+- k: str[]
+- a: str[]
+
+**Algorithm:**
+1. Read integer input from stdin, assign to n
+2. Initialize empty list q
+3. Initialize count to 0
+4. For i from 0 to n-1:
+   - Read string input from stdin
+   - Split input string by whitespace into list a
+   - Append a to q
+5. For each element j in q:
+   - For each element k in q:
+     - If k equals j: continue to next iteration
+     - Else if first element of j equals last element of k: increment count by 1
+     - Else: continue to next iteration
+6. Print count

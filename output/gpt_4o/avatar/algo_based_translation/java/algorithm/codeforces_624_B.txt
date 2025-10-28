@@ -1,0 +1,36 @@
+1. Import necessary libraries:
+   - `import java.util.Arrays;`
+   - `import java.util.Scanner;`
+
+2. Function signature:
+   - `public static void main(String[] args)`: No parameters, returns `void`.
+
+3. Variable declarations:
+   - `Scanner in`: For reading input.
+   - `int n`: Number of elements, read from input.
+   - `Long[] ans`: Array to store input values, size `n`.
+   - `Long count`: To accumulate the result, initialized later.
+
+4. Input operations:
+   - Read integer `n` using `in.nextInt()`.
+   - Initialize `ans` array with size `n`.
+   - Loop through indices `i` from `0` to `n-1`:
+     - Read each element into `ans[i]` using `in.nextLong()`.
+
+5. Process data:
+   - Sort the `ans` array using `Arrays.sort(ans)`.
+
+6. Initialize `count`:
+   - Set `count` to the last element of the sorted array, `ans[n-1]`.
+
+7. Control flow:
+   - Loop through indices `i` from `n-2` to `0`:
+     - Conditional: If `ans[i] < ans[i+1]`:
+       - Add `ans[i]` to `count`.
+     - Else:
+       - While `ans[i] >= ans[i+1]`, decrement `ans[i]` by `1`.
+       - Conditional: If `ans[i] > 0`:
+         - Add `ans[i]` to `count`.
+
+8. Output operation:
+   - Print the value of `count` using `System.out.println(count)`.

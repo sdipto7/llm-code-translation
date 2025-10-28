@@ -1,0 +1,14 @@
+1. Read input values A, B, H, M.
+2. Calculate mkaku = M * 6.
+3. Calculate hkaku = H * 30.
+4. Update hkaku = hkaku + (M / 2).
+5. Calculate kaku = mkaku - hkaku.
+6. Calculate dkaku = absolute value of (kaku in radians).
+7. Calculate AA2 = A^2.
+8. Calculate BB2 = B^2.
+9. Calculate CC = AA2 + BB2.
+10. Calculate DD = 2 * A * B * cos(dkaku).
+11. Calculate ans2 = CC - DD.
+12. Convert ans2 to dans2.
+13. Calculate ans = square root of dans2.
+14. Output ans.

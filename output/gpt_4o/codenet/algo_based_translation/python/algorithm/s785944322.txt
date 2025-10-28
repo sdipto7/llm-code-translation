@@ -1,0 +1,15 @@
+import sys
+
+# Read input from standard input
+a, b = map(int, sys.stdin.readline().split())
+
+# Conditional logic to determine output
+if a >= 13:
+    # Output the value of b if a is 13 or more
+    print(b)
+elif a >= 6:
+    # Output half of b, cast to an integer, if a is between 6 and 12 inclusive
+    print(int(b / 2))
+else:
+    # Output 0 if a is less than 6
+    print(0)

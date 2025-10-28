@@ -1,0 +1,58 @@
+**Algorithm Specification**
+
+**Function/Method Signatures**
+- Not applicable (script-based execution)
+
+**Variable Declarations**
+- `n: integer` (grid dimension)
+- `m: integer` (number of blocked lines)
+- `b: integer[2n]` (binary array for valid row/column tracking)
+- `r: integer` (row index from input)
+- `c: integer` (column index from input)
+- `i: integer` (loop iterator)
+
+**Step-by-Step Logic**
+
+1. **Input Acquisition**
+   - Read `n` and `m` from standard input via `input().split()` parsed as integers
+
+2. **Array Initialization**
+   - Initialize `b` with `2n` elements all set to 1
+   - Set `b[0]`, `b[n-1]`, `b[n]`, and `b[2n-1]` to 0
+
+3. **Blocked Line Processing**
+   - Loop `m` times:
+     1. Read `r` and `c` from standard input via `input().split()` parsed as integers
+     2. Set `b[r-1] = 0`
+     3. Set `b[n + c - 1] = 0`
+
+4. **Central Symmetry Handling**
+   - If `n` is odd:
+     1. Calculate `mid = n // 2`
+     2. If `b[mid] == 1` AND `b[n + mid] == 1`:
+        - Set `b[mid] = 0`
+
+5. **Result Calculation**
+   - Compute `sum(b)`
+   - Print the sum via standard output
+
+**Control Flow Structures**
+- Loop: `for i in range(m)` processes exactly `m` blocked lines
+- Conditional: `if n % 2` checks for odd grid dimension
+- Nested conditional: `if b[mid] and b[n + mid]` handles central symmetry conflict
+
+**Input/Output Operations**
+- Inputs: Sequential reads of `n`, `m`, and `m` pairs of `(r,c)` via `input()`
+- Output: Single integer via `print(sum(b))`
+
+**Error Handling**
+- Implicit type conversion via `map(int, ...)` assumes valid integer inputs
+- No explicit error handling for out-of-bound indices or invalid input formats
+
+**Edge Case Handling**
+- Automatic invalidation of perimeter rows/columns (index 0, n-1, n, 2n-1)
+- Central symmetry correction when `n` is odd and both midpoints are valid
+
+**External Dependencies**
+- Standard library functions: `input()`, `print()`, `map()`, `split()`
+- No external libraries or modules required

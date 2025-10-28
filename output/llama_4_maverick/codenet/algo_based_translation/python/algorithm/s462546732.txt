@@ -1,0 +1,8 @@
+1. Define a function `process_input` with no parameters and return type `None`.
+2. Declare variables `a` and `b` of type `str`.
+3. Read input from the user using `input()` and split it into `a` and `b` using space as the delimiter.
+4. Convert `a` and `b` to `int`.
+5. Declare a conditional statement checking if `a` is less than or equal to `b`.
+6. If the condition is `True`, print the value of `a`.
+7. If the condition is `False`, print the result of subtracting 1 from `a`.
+8. The required library is the built-in Python library, specifically the `input()` and `print()` functions.

@@ -1,0 +1,12 @@
+1. Read input string from the input stream.
+2. Create two copies of the input string as string builders a and b.
+3. Initialize counters a1 and a2 to 0.
+4. Iterate through the string a from the second character to the end.
+5. For each character in a, check if it is the same as the previous character.
+6. If the characters are the same, flip the current character in a.
+7. Increment counter a1 for each flip in a.
+8. Iterate through the string b from the second last character to the first.
+9. For each character in b, check if it is the same as the next character.
+10. If the characters are the same, flip the previous character in b.
+11. Increment counter a2 for each flip in b.
+12. Output the minimum of counters a1 and a2.

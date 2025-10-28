@@ -1,0 +1,42 @@
+- **Function Signature**  
+  `public static void main(String[] args) → void`  
+
+- **Variables**  
+  `Scanner sc` (Scanner object for input)  
+  `int w` (initial array size)  
+  `int n` (number of swap operations)  
+  `int[] values` (array to store integers 1 to `w`)  
+  `int i` (loop index)  
+  `String str` (input string for swap pair)  
+  `String[] ab` (split parts of `str`)  
+  `int a`, `int b` (zero-adjusted indices parsed from `ab`)  
+  `int x` (temporary swap variable)  
+
+- **Libraries/Dependencies**  
+  `import java.util.Scanner`  
+
+- **Algorithm**  
+  1. Read `w` and `n` from input using `Scanner`.  
+  2. Declare array `values` with size `w`.  
+  3. Initialize `values`:  
+     - Loop `i` from `0` to `w-1` (inclusive):  
+       `values[i] = i + 1`  
+  4. Process `n` swap operations:  
+     - Loop `i` from `0` to `n-1` (inclusive):  
+       - Read `str` from input.  
+       - Split `str` by `","` into `ab`.  
+       - Parse `ab[0]` to `int a` and subtract 1.  
+       - Parse `ab[1]` to `int b` and subtract 1.  
+       - Swap `values[a]` and `values[b]` using temporary variable `x`.  
+  5. Output final state of `values`:  
+     - Loop `i` from `0` to `w-1` (inclusive):  
+       - Print `values[i]`.  
+
+- **Control Structures**  
+  - `for (int i = 0; i < values.length; i++)`  
+  - `for (int i = 0; i < n; i++)`  
+  - `for (int i = 0; i < w; i++)`  
+
+- **Input/Output**  
+  - Input via `Scanner`: `w`, `n`, and `n` comma-separated pairs.  
+  - Output: One element of `values` per line after all swaps.

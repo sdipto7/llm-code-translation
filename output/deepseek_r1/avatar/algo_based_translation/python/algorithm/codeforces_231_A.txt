@@ -1,0 +1,41 @@
+**Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`
+
+**Variable Declarations:**
+- `n: int`
+- `c: int` (initialized to `0`)
+- `l1: list[int]`
+
+**Input/Output Operations:**
+1. Read `n` from standard input as integer.
+2. For `n` iterations, read a line from standard input, split into space-separated strings, map to integers, and store in `l1`.
+3. Print final value of `c`.
+
+**Control Flow Structures:**
+1. **Loop:**
+   - Type: `for` loop
+   - Range: `0` to `n-1` (inclusive)
+   - Body:
+      - Read and process input line into `l1`.
+      - **Conditional:**
+         - If `sum(l1) > 1`: increment `c` by `1`.
+
+**Logic Flow:**
+1. Initialize `c = 0`.
+2. Read integer `n` from input.
+3. For each `i` in `[0, n-1]`:
+   - Read a line of input values.
+   - Convert values to integers and store in `l1`.
+   - Calculate sum of `l1`.
+   - If sum exceeds `1`, increment `c`.
+4. After loop completion, print `c`.
+
+**Edge Case Handling:**
+- Implicitly handles variable-length input lines (sums all integers in each line regardless of count).
+- No explicit error handling for non-integer inputs (assumes valid input per original code).
+
+**Dependencies:**
+- Relies on Python's `input()` and `split()` for input processing.
+- Uses built-in `sum()` for list summation.

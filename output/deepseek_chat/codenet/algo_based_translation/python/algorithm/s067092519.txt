@@ -1,0 +1,20 @@
+N: int = integer input from standard input
+m: list[list[list[int]]] = 3D list with dimensions 10x3x10, all elements initialized to 0
+line: str = empty string
+
+For i in range(N):
+    Read input line and split into list n
+    b: int = convert n[0] to integer
+    f: int = convert n[1] to integer
+    r: int = convert n[2] to integer
+    v: int = convert n[3] to integer
+    m[b-1][f-1][r-1] += v
+
+For i in range(4):
+    For j in range(3):
+        For k in range(10):
+            Append formatted string " {value}" to line using m[i][j][k]
+        Print line
+        Reset line to empty string
+    If i < 3:
+        Print 20 '#' characters

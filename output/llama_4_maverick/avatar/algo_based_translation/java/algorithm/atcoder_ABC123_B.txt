@@ -1,0 +1,10 @@
+1. Read 5 integers into an array `a`.
+2. For each element in `a`, calculate its remainder when divided by 10 and store it in the corresponding index in array `r`.
+3. Create a TreeMap `map` to store the difference between 10 and the remainder `r[i]` as the key and the corresponding element from `a` as the value, but only if `r[i]` is not 0.
+4. Initialize a variable `ans` to 0.
+5. If `map` is empty, sum all elements in `a` and store the result in `ans`.
+6. If `map` is not empty, find the last key in `map` and its corresponding value, and store the value in `last`.
+7. Find the index `idx` of `last` in array `a`.
+8. For each element in `a` except the one at index `idx`, if the element is a multiple of 10, add it to `ans`; otherwise, add the element plus the difference between 10 and its remainder to `ans`.
+9. Add `last` to `ans`.
+10. Output `ans`.

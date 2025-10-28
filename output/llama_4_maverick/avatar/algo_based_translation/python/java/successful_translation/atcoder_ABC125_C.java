@@ -1,0 +1,60 @@
+
+import java.util.Scanner;
+
+public class atcoder_ABC125_C {
+    public static int gcd(int a, int b) {
+        if (b == 0) {
+            return a;
+        } else {
+            return gcd(b, a % b);
+        }
+    }
+
+    public static int[] ruiseki_lr(int[] array, int e) {
+        int n = array.length;
+        int[] left = new int[n + 1];
+        int[] right = new int[n + 1];
+        for (int i = 0; i <= n; i++) {
+            left[i] = e;
+            right[i] = e;
+        }
+        for (int i = 0; i < n; i++) {
+            left[i + 1] = gcd(left[i], array[i]);
+        }
+        for (int i = n - 1; i >= 0; i--) {
+            right[i] = gcd(right[i + 1], array[i]);
+        }
+        int[] result = new int[2];
+        result[0] = left[n];
+        result[1] = right[0];
+        return new int[]{left[0], right[0]};
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+        int[] result = new int[n + 1];
+        int e = 0;
+        int[] leftRight = new int[n + 1];
+        int[] left = new int[n + 1];
+        int[] right = new int[n + 1];
+        left[0] = 0;
+        right[n] = 0;
+        for (int i = 0; i < n; i++) {
+            left[i + 1] = gcd(left[i], a[i]);
+        }
+        for (int i = n - 1; i >= 0; i--) {
+            right[i] = gcd(right[i + 1], a[i]);
+        }
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            ans = Math.max(gcd(left[i], right[i + 1]), ans);
+        }
+        System.out.println(ans);
+    }
+}
+

@@ -1,0 +1,9 @@
+```plaintext
+Algorithm:
+1. Declare a function `check_strings` with parameters `s: str` and `t: str`, returning `str`.
+2. Inside the function, perform the following steps:
+   a. Compare the substring of `t` from the start to the second last character with `s`.
+   b. If the condition `t[:-1] == s` evaluates to `True`, return the string `'Yes'`.
+   c. Otherwise, return the string `'No'`.
+3. The algorithm assumes that input strings `s` and `t` are provided by the caller of the function.
+```

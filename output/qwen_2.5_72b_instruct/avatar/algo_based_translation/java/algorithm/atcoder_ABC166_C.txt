@@ -1,0 +1,45 @@
+Function Signature: 
+- `main(String[] args)`
+
+Variable Declarations and Data Types:
+- `N` as `int`
+- `M` as `long`
+- `H` as `long[]`
+- `ans` as `boolean[]`
+- `temp1` as `int`
+- `temp2` as `int`
+- `ans2` as `int`
+- `sc` as `Scanner`
+
+Logic Flow in Execution Order:
+1. Create a `Scanner` object `sc` for reading input.
+2. Read integer `N` and long `M`.
+3. Initialize array `H` of size `N` to store heights.
+4. Initialize boolean array `ans` of size `N` to store answers, setting all elements to `true`.
+5. For loop from `i = 0` to `N - 1`:
+   - Read height values for each `H[i]`.
+6. For loop from `i = 0` to `M - 1`:
+   - Read integers `temp1` and `temp2`.
+   - If `H[temp1 - 1] < H[temp2 - 1]`, set `ans[temp1 - 1]` to `false`.
+   - Else if `H[temp1 - 1] > H[temp2 - 1]`, set `ans[temp2 - 1]` to `false`.
+   - Else, set both `ans[temp1 - 1]` and `ans[temp2 - 1]` to `false`.
+7. Initialize `ans2` to `0`.
+8. For loop from `i = 0` to `N - 1`:
+   - If `ans[i]` is `true`, increment `ans2`.
+9. Print the value of `ans2`.
+
+Control Structures:
+- For loops for iterating through arrays and conditions.
+- Conditional statements (`if`, `else if`, `else`) for comparing heights and updating the answer array.
+
+Input/Output Operations:
+- Read `N`, `M`, and height values using `Scanner`.
+- Output the final count of valid heights using `System.out.println`.
+
+Data Processing Logic:
+- Compare heights of pairs specified by `temp1` and `temp2`.
+- Update the boolean array `ans` based on comparisons.
+- Count the number of `true` values in `ans` to determine the final result.
+
+Required Libraries, Modules, or Dependencies:
+- `java.util.Scanner`

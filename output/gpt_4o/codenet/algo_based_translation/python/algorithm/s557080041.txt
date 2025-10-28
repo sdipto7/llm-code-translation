@@ -1,0 +1,31 @@
+```plaintext
+Algorithm CheckDivisibilityByNine
+    Input: None
+    Output: Print 'Yes' or 'No'
+
+    Step 1: Read input from the user and store it in variable N
+        Input: N (user input, initially string)
+
+    Step 2: Check if N is equal to the integer 0
+        If N is equal to 0 then
+            Print 'Yes'
+        Else
+            Proceed to Step 3
+
+    Step 3: Convert N to a string (if not already a string)
+
+    Step 4: Convert the string N to a list of its characters
+        Declare: L as List of characters from N
+
+    Step 5: Convert each character in list L to an integer
+        Update L: List of integers
+
+    Step 6: Calculate the sum of integers in list L
+        Declare: X as Integer, X = sum(L)
+
+    Step 7: Check if X is divisible by 9
+        If X modulo 9 is equal to 0 then
+            Print 'Yes'
+        Else
+            Print 'No'
+```

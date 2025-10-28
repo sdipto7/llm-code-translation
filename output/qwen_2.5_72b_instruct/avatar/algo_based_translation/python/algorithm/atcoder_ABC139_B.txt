@@ -1,0 +1,30 @@
+Function signature with parameters and return types:
+- `main() -> None`
+
+Variable declarations and data types:
+- `a: int`
+- `b: int`
+- `hole: int`
+- `i: int`
+- `check: bool`
+
+Complete logic flow in execution order:
+1. Read two integers from standard input, assign to `a` and `b`.
+2. Initialize `hole` to 1.
+3. Initialize `i` to 0.
+4. Initialize `check` to True.
+5. Enter while loop with condition `check`.
+6. Inside loop, check if `hole >= b`:
+   - If true, set `check` to False.
+   - Else, calculate `hole` as `a * (i + 1) - i` and increment `i` by 1.
+7. After loop ends, print value of `i`.
+
+Control structures:
+- While loop with condition `check`.
+
+Input/output operations and data processing logic:
+- Input: Two integers `a` and `b` from standard input.
+- Output: Integer `i` to standard output.
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required.

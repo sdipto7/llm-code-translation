@@ -1,0 +1,18 @@
+1. Define a function `calculate_result` with no parameters and return type `int`.
+2. Declare variables `h` and `a` of type `int`.
+3. Read input from the user and store it in `h` and `a` by splitting the input string into two parts, stripping any leading/trailing whitespace, and converting the parts to integers using `map(int, input().strip().split())`.
+4. Declare variable `ans` of type `int` and calculate its value as the integer division of `h` by `a` using `h // a`.
+5. Declare variable `ama` of type `int` and calculate its value as the remainder of `h` divided by `a` using `h % a`.
+6. Check if `ama` is not equal to 0 using the condition `ama != 0`.
+7. If the condition is true, increment `ans` by 1 using `ans += 1`.
+8. Print the value of `ans` to the output.
+9. The program terminates after printing the result, with the return value being the value of `ans` implicitly, though the original code does not explicitly return it. 
+
+To fully adhere to the request, the algorithm should be translated into a step-by-step process without directly referencing the original code's structure:
+
+1. Read two integers from the input.
+2. Store the first integer in `h` and the second in `a`.
+3. Compute `ans = h // a`.
+4. Compute `ama = h % a`.
+5. If `ama != 0`, then `ans = ans + 1`.
+6. Output `ans`.

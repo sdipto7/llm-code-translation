@@ -1,0 +1,50 @@
+FUNCTIONAL SPECIFICATION:
+
+1. **Function/Method Signatures**
+   - Main procedure (no explicit function, executed sequentially)
+   - Input parameters: None
+   - Return type: Void (output printed to console)
+
+2. **Variable Declarations**
+   - `n: Integer` (user input)
+   - `s: Dictionary<String, Integer>` (default value 0)
+   - `l: List<String>`
+   - `f: String` (initial value "Yes")
+   - `i: Integer` (initial value -1)
+   - `v: String` (loop iteration variable)
+
+3. **Algorithm Logic**
+   1. Read integer `n` from standard input
+   2. Initialize dictionary `s` with default integer value 0
+   3. Populate list `l` with `n` string inputs
+   4. Initialize validation flag `f` to "Yes"
+   5. Initialize loop index `i` to -1
+   6. Iterate through each element `v` in list `l`:
+      1. Increment count: `s[v] += 1`
+      2. If `s[v] >= 2`:
+          - Set `f = "No"`
+      3. If `i != -1` AND `l[i][-1] != v[0]`:
+          - Set `f = "No"`
+      4. Increment `i += 1`
+   7. Print final value of `f`
+
+4. **Control Flow Structures**
+   - Sequential execution with single `for` loop
+   - Nested conditional checks:
+     - `if s[v] >= 2`
+     - `if i != -1 and l[i][-1] != v[0]`
+   - Loop exit criteria: Process all elements in list `l`
+
+5. **Input/Output Operations**
+   - Input: Reads integer `n` followed by `n` strings
+   - Output: Prints "Yes" or "No" based on validation checks
+
+6. **Error Handling & Edge Cases**
+   - Implicit handling of empty list (`n=0` returns "Yes")
+   - Detects duplicate strings via dictionary counts
+   - Verifies character chain consistency between consecutive elements
+   - No explicit error checking for invalid input formats
+
+7. **Dependencies**
+   - Requires `collections.defaultdict`
+   - Standard library dependencies: `input()` function, list comprehension

@@ -1,0 +1,6 @@
+read string s from standard input
+read string t from standard input
+if substring of t from index 0 to length(t)-1 equals s:
+    print 'Yes'
+else:
+    print 'No'

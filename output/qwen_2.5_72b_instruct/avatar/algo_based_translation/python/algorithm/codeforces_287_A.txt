@@ -1,0 +1,34 @@
+Function signature: `main()`
+Parameter and return types: None
+
+Variable declarations and data types:
+- `t`: List of Lists of Strings
+- `i`, `j`: Integers
+- `l`: List of Strings
+- `black`, `white`, `correct`: Integers
+
+Complete logic flow in execution order:
+1. Initialize `t` as an empty list.
+2. For `i` from 0 to 3:
+   - Read input as a string.
+   - Map each character of the input string to a string and convert to a list.
+   - Append the list to `t`.
+3. Initialize `black`, `white`, `correct` to 0.
+4. For `i` from 0 to 2:
+   - For `j` from 0 to 2:
+     - If `t[i][j]` is '#', increment `black`. Otherwise, increment `white`.
+     - If `t[i][j+1]` is '#', increment `black`. Otherwise, increment `white`.
+     - If `t[i+1][j]` is '#', increment `black`. Otherwise, increment `white`.
+     - If `t[i+1][j+1]` is '#', increment `black`. Otherwise, increment `white`.
+     - If `black` is 0 or 3 or `white` is 0 or 3 or 4 or `black` is 4:
+       - Set `correct` to 1.
+       - Break out of the inner loop.
+     - Reset `black` and `white` to 0.
+5. If `correct` is 1, print 'YES'. Otherwise, print 'NO'.
+
+Input/output operations and data processing logic:
+- Input: Four lines of strings, each string contains characters that can be either '#' or any other character.
+- Output: Prints 'YES' if any 2x2 subgrid in `t` meets the specified condition; otherwise, prints 'NO'.
+- Data processing: Counts occurrences of '#' and non-'#' characters in each 2x2 subgrid of `t`.
+
+Required libraries, modules, or dependencies: None

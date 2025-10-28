@@ -1,0 +1,32 @@
+- Function signature: `main()`
+- Variable declarations and data types:
+  - `menu`: List of Lists (int, int)
+  - `m`: str
+  - `e`: int
+  - `ans`: int
+- Logic flow in execution order:
+  - Initialize `menu` as an empty list
+  - For loop runs 5 times:
+    - Read input and assign to `m`
+    - Extract the last character of `m`, convert to int, and assign to `e`
+    - If `e` is equal to 0, set `e` to 10
+    - Append a list containing the integer conversion of `m` and `e` to `menu`
+  - Sort `menu` based on the second element of each sublist
+  - Initialize `ans` to 0
+  - For loop iterates over `menu` starting from the second element:
+    - Add the result of `math.ceil(m[0] / 10) * 10` to `ans`
+  - Print the result of `ans + menu[0][0]`
+- Control structures:
+  - For loop runs 5 times
+  - If condition checks if `e` is equal to 0
+  - For loop iterates over `menu` starting from the second element
+- Input/output operations:
+  - Reads input 5 times
+  - Prints the final result
+- Data processing logic:
+  - Extracts and processes the last digit of the input
+  - Sorts the menu based on the processed last digit
+  - Calculates the sum of processed menu values except the first one
+  - Adds the first menu value to the final sum
+- Required libraries, modules, or dependencies:
+  - `math` module for `math.ceil` function

@@ -1,0 +1,8 @@
+1. Import the `java.util.Scanner` module.
+2. Define a class `Main` with a `main` method that takes an array of `String` arguments and returns `void`.
+3. Within the `main` method:
+   - Declare a variable `sc` of type `Scanner` and initialize it with a new `Scanner` object that reads from `System.in`.
+   - Declare a variable `r` of type `int` and assign it the next integer value read from `sc`.
+   - Calculate the result of `3 * r * r` and store it in an unnamed variable.
+   - Print the calculated result to `System.out` followed by a newline.
+4. The program terminates after executing the `main` method.

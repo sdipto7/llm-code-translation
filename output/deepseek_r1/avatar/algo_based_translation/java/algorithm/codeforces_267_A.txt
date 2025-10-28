@@ -1,0 +1,54 @@
+```algorithm
+Function Signatures:
+- main(String[] args): void
+- sub(int a, int b): int
+
+Variables:
+Main Function:
+- Scanner scan: initialized with System.in
+- int n: initialized via scan.nextInt()
+- int i: loop counter from 0 to n-1
+- int a: per-testcase input from scan.nextInt()
+- int b: per-testcase input from scan.nextInt()
+
+Sub Function:
+- int min: initialized as Math.min(a, b)
+- int max: initialized as Math.max(a, b)
+- int result: initialized to 0
+- int curr_min: temporary minimum during swap
+- int curr_max: temporary maximum during swap
+
+Logic Flow:
+
+Main Execution:
+1. Initialize Scanner with System.in
+2. Read integer n from input
+3. For i from 0 to n-1:
+   a. Read integers a and b from input
+   b. Call sub(a, b)
+   c. Print returned result
+
+Sub Function Execution:
+1. Initialize min = minimum of inputs
+2. Initialize max = maximum of inputs
+3. While min > 0:
+   a. Add (max // min) to result (integer division)
+   b. Set max = max % min
+   c. Set curr_min = Math.min(min, max)
+   d. Set curr_max = Math.max(min, max)
+   e. Update min to curr_min
+   f. Update max to curr_max
+4. Return result
+
+Control Structures:
+- For loop: for (int i = 0; i < n; i++)
+- While loop: while (min > 0)
+- Conditional value assignments via Math.min/Math.max
+
+Input/Output:
+- Input via Scanner.nextInt()
+- Output via System.out.println()
+
+Dependencies:
+- java.util.Scanner
+```

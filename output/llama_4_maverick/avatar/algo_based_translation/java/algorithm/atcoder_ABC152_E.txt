@@ -1,0 +1,16 @@
+1. Read the number of elements N from the input.
+2. Read N integers into an array A.
+3. Initialize a variable lcm to 1.
+4. For each element ai in array A, update lcm to be the least common multiple of lcm and ai.
+5. Calculate the remainder of lcm when divided by 1000000007 and store it in modLcm.
+6. Initialize a variable ans to 0.
+7. For each element ai in array A, calculate modDiv(modLcm, ai, 1000000007) and add it to ans, taking the result modulo 1000000007.
+8. Output the final value of ans.
+9. To calculate modDiv(a, b, mod), compute (a % mod) * modInv(b, mod) % mod.
+10. To calculate modInv(x, mod), compute modPow(x, mod - 2, mod).
+11. To calculate modPow(b, e, mod), use the following steps:
+    1. Initialize ans to 1 and x to b % mod.
+    2. While e is not 0, perform the following steps:
+        1. If e is odd, update ans to be (ans * x) % mod.
+        2. Update x to be (x * x) % mod.
+        3. Right shift e by 1 bit.

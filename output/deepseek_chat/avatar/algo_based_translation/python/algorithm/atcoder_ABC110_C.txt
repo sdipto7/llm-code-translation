@@ -1,0 +1,16 @@
+import collections
+function run(s: string, t: string) -> string:
+    ss = sorted(list of values from collections.Counter(s))
+    tt = sorted(list of values from collections.Counter(t))
+    if ss equals tt:
+        return 'Yes'
+    else:
+        return 'No'
+
+function main() -> void:
+    s = read input string
+    t = read input string
+    print result of run(s, t)
+
+if __name__ equals '__main__':
+    call main()

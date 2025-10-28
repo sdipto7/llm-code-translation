@@ -1,0 +1,51 @@
+**Algorithm:**
+
+1. **Import Statements:**
+   - Import sys, re
+   - Import deque, defaultdict, Counter from collections
+   - Import ceil, sqrt, hypot, factorial, pi, sin, cos, radians from math
+   - Import accumulate, permutations, combinations, product from itertools
+   - Import itemgetter, mul from operator
+   - Import deepcopy from copy
+   - Import ascii_lowercase, ascii_uppercase, digits from string
+   - Import bisect, bisect_left from bisect
+   - Import gcd from fractions
+   - Import heappush, heappop from heapq
+   - Import reduce from functools
+
+2. **Function Definitions:**
+   - Define input() -> str: returns sys.stdin.readline().strip()
+   - Define INT() -> int: returns int(input())
+   - Define MAP() -> list[int]: returns list(map(int, input().split()))
+   - Define LIST() -> list[int]: returns list(map(int, input().split()))
+   - Define ZIP(n: int) -> list[tuple]: returns list(zip(*(MAP() for _ in range(n))))
+
+3. **Initialization:**
+   - Set sys.setrecursionlimit(10**9)
+   - Define INF = float('inf')
+   - Define mod = 10**9 + 7
+   - Read N, M = MAP()
+   - Initialize balls: list[list[int]] of length N, each element is [1, 0]
+   - Set balls[0] = [0, 1]
+
+4. **Processing M Operations:**
+   - For each operation from 1 to M:
+        Read x, y = MAP()
+        Get w_x, r_x = balls[x-1]
+        Get w_y, r_y = balls[y-1]
+        If w_x >= 1 and r_x >= 1:
+            balls[x-1][0] = w_x - 1
+            balls[y-1][1] = r_y + 1
+        Else if w_x == 0:
+            balls[x-1][1] = r_x - 1
+            balls[y-1][1] = r_y + 1
+        Else:
+            balls[x-1][0] = w_x - 1
+            balls[y-1][0] = w_y + 1
+
+5. **Result Calculation:**
+   - Initialize ans = 0
+   - For i from 0 to N-1:
+        If balls[i][1] > 0:
+            ans = ans + 1
+   - Print ans

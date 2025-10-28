@@ -1,0 +1,54 @@
+FUNCTION calculateMaxProduct(l: int, r: int) -> int:
+    VARIABLES:
+        curr: int
+        s: int
+        first: int
+        second: int
+        ans: int
+        i: int
+        curr_i: int
+        rev: str
+        k: str
+
+    STEPS:
+        1. curr = r
+        2. s = 0
+        3. WHILE curr != 0:
+            a. s = s + 1
+            b. curr = curr // 10
+        4. first = 10^s
+        5. second = first // 2
+        6. ans = -1
+        7. FOR EACH i IN [l, r, first, second]:
+            a. IF i >= l AND i <= r:
+                i. curr_i = i
+                ii. rev = ""
+                iii. FOR EACH k IN str(curr_i):
+                    - rev = rev + str(9 - int(k))
+                iv. ans = MAX(ans, int(rev) * curr_i)
+        8. RETURN ans
+
+INPUT/OUTPUT:
+    - Read l and r from standard input via split string conversion
+    - Execute calculateMaxProduct with l and r
+    - Print returned ans value
+
+CONTROL FLOW:
+    - While loop (step 3) exits when curr becomes 0
+    - For-each loop (step 7) iterates exactly 4 times
+    - Nested for-each loop (step 7.iii) iterates per digit count of curr_i
+    - Conditional (step 7.a) checks range inclusion
+
+EDGE CASES:
+    - Handles r=0 via while loop exit at step 3
+    - Processes original l and r values in candidate list
+    - Accounts for first/second values potentially being outside [l,r] range
+
+DATA TYPES:
+    - All numerical variables stored as integers
+    - String conversion used temporarily for digit manipulation
+
+EXTERNAL DEPENDENCIES:
+    - Standard input handling via input().split()
+    - String conversion functions (str(), int())
+    - Arithmetic operations (^ for exponentiation in algorithm context, though Python uses **)

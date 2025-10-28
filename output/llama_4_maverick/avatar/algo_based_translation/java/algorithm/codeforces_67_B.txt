@@ -1,0 +1,16 @@
+1. Initialize input and output streams.
+2. Read two integers n and k from the input.
+3. Read n integers into an array bb.
+4. Initialize an empty array aa of size n.
+5. Initialize a counter m to 0.
+6. Iterate from n-1 down to 0.
+7. For each iteration in step 6, decrement the value at the corresponding index in bb until it reaches 0.
+8. To decrement the value in bb, iterate through the array aa from the start until we find a suitable position.
+9. In each iteration of step 8, check if the value at the current index in aa is greater than or equal to the current index in bb plus k.
+10. If the condition in step 9 is met, decrement the value in bb.
+11. Once the value in bb is decremented to 0, shift the elements in aa to the right to make space for the current index.
+12. Insert the current index into the appropriate position in aa.
+13. Increment the counter m.
+14. After the iteration in step 6 is complete, iterate through the array aa.
+15. For each element in aa, add 1 to it and output the result.
+16. Output a newline character after all elements are processed.

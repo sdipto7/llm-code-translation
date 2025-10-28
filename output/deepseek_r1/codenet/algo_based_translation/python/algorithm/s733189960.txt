@@ -1,0 +1,33 @@
+**Function Signatures:**
+- `main() -> None`: No parameters, returns nothing.
+
+**Variables: Data Types and Initialization:**
+- `n: int` (initialized via `int(input())`)
+- `sdic: dict[str, int]` (empty dictionary initialized as `{}`)
+- `s: list[str]` (temporary list to store sorted characters of input string)
+- `ans: int` (initialized to `0`)
+
+**Logic Flow:**
+1. Read integer `n` from standard input.
+2. Initialize empty dictionary `sdic`.
+3. Loop `n` times:
+   - Read string from input, strip whitespace, sort characters alphabetically into list `s`.
+   - Convert sorted list `s` to a single string.
+   - Update `sdic`: increment count for the sorted string if it exists, else set count to 1.
+4. Calculate answer:
+   - Iterate over key-value pairs in `sdic`.
+   - For each pair, add `v * (v - 1) // 2` to `ans`.
+5. Print `ans` to standard output.
+
+**Control Structures:**
+- `for _ in range(n):` loop executing exactly `n` times
+- `if s in sdic: ... else: ...` conditional inside the input processing loop
+- `for k, v in sdic.items():` loop iterating through all dictionary entries
+
+**Input/Output Operations:**
+- Input: `n = int(input())`
+- Input: `s = [_s for _s in sorted(input().strip())]` for each iteration
+- Output: `print(ans)`
+
+**Dependencies:**
+- None (uses only Python standard libraries)

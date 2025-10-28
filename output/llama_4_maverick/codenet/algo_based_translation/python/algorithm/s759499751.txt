@@ -1,0 +1,24 @@
+1. Read two integers `n` and `k` from input, where `n` is the length of a string and `k` is the number of queries.
+2. Read a string of length `n` into an array `a`.
+3. Initialize an array `c` of size `n` with all elements set to 0.
+4. Iterate from `i = 1` to `n-1`:
+   - If `a[i]` is 'C' and `a[i-1]` is 'A', then `c[i] = c[i-1] + 1`.
+   - Else, `c[i] = c[i-1]`.
+5. Iterate `k` times:
+   - Read two integers `l` and `r` representing a query range.
+   - Print the result of `c[r-1] - c[l-1]`.
+
+Function signature: 
+`def count_pairs(n: int, k: int, a: str) -> None`
+
+1. `n, k = map(int, input().split())`
+2. `a = list(input())`
+3. `c = [0] * n`
+4. `for i in range(1, n):`
+   - `if a[i] == 'C' and a[i-1] == 'A':`
+     - `c[i] = c[i-1] + 1`
+   - `else:`
+     - `c[i] = c[i-1]`
+5. `for _ in range(k):`
+   - `l, r = map(int, input().split())`
+   - `print(c[r-1] - c[l-1])`

@@ -1,0 +1,6 @@
+read integer N from input
+read next line from input, split into list of strings, convert each to integer, store in list A
+import functools module
+import fractions module
+compute gcd of all elements in A using functools.reduce with fractions.gcd as function
+print computed gcd value

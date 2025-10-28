@@ -1,0 +1,38 @@
+Function signatures with parameter and return types:
+- main() -> None
+
+Variable declarations and data types:
+- n: int
+- m: int
+- x: list of tuples (int, int)
+- y: list of int
+- day: int
+- salary: int
+- d: int
+- s: int
+- r: int
+
+Complete logic flow in execution order:
+1. Import heapq module
+2. Read integers n and m from input
+3. Initialize empty list x
+4. Initialize empty list y
+5. For i from 0 to n-1:
+   - Read integers day and salary from input
+   - Push (-day, -salary) into heap x
+6. While x is not empty:
+   - Pop (-d, -s) from heap x
+   - Calculate r as m - length of y
+   - If r >= -d:
+       - Push -s into heap y
+   - Else:
+       - Push -s into heap y
+       - Pop smallest element from heap y
+7. Print sum of elements in y
+
+Input/output operations and data processing logic:
+- Input: Two integers n and m followed by n lines of two integers each (day and salary)
+- Output: A single integer representing the sum of elements in y
+
+Required libraries, modules, or dependencies:
+- heapq

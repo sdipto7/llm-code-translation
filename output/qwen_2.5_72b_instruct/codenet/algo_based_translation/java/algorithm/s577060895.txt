@@ -1,0 +1,17 @@
+Function signature: `main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner sc` (Scanner)
+- `long n` (long)
+- `double sqrt` (double)
+- `double nearNum` (double)
+- `long ans` (long)
+
+Execution order and logic flow:
+1. Instantiate `Scanner` object `sc` for standard input.
+2. Read a line from input, parse it as a `long`, and assign it to `n`.
+3. Calculate the square root of `n` and assign it to `sqrt`.
+4. Find the largest integer less than or equal to `sqrt` and assign it to `nearNum`.
+5. Raise `nearNum` to the power of 2, cast the result to `long`, and assign it to `ans`.
+6. Print the value of `ans`.
+7. Close the `Scanner` object `sc`.

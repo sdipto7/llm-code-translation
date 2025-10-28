@@ -1,0 +1,37 @@
+```
+Function: main()
+- No parameters
+- No return type
+
+Variables:
+- sc: Scanner (System.in)
+- n: integer
+- c: integer, initialized to 0
+- flg: integer, initialized to 0
+- x: integer
+- y: integer
+
+Logic Flow:
+1. Read integer input and assign to n using sc.nextInt()
+2. While loop with the condition n > 0:
+   - Decrement n by 1
+   - Read integer input and assign to x using sc.nextInt()
+   - Read integer input and assign to y using sc.nextInt()
+   - If x equals y:
+     - Increment c by 1
+     - If c is greater than or equal to 3:
+       - Set flg to 1
+   - Else:
+     - Set c to 0
+3. If flg equals 0:
+   - Print "No"
+4. Else:
+   - Print "Yes"
+
+Input/Output:
+- Input is read using Scanner from standard input
+- Output is printed to standard output
+
+Dependencies:
+- java.util.Scanner
+```

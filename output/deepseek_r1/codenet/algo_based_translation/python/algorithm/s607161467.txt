@@ -1,0 +1,28 @@
+- Function signature:  
+  determine_contest(R: int) -> str  
+
+- Variables:  
+  R: int (input value)  
+
+- Logic flow:  
+  1. Read integer input and assign to R  
+  2. Check if R < 1200:  
+     - Print "ABC"  
+  3. Else, check if R < 2800:  
+     - Print "ARC"  
+  4. Else:  
+     - Print "AGC"  
+
+- Control structures:  
+  if R < 1200 → "ABC"  
+  elif R < 2800 → "ARC"  
+  else → "AGC"  
+
+- Input operations:  
+  Read integer from standard input via input() and convert to int  
+
+- Output operations:  
+  Print "ABC", "ARC", or "AGC" based on R value  
+
+- Dependencies:  
+  None (standard input/output functions used)

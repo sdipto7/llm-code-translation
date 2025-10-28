@@ -1,0 +1,26 @@
+Function Signature:
+- No function is defined in the given code.
+
+Variables:
+- `candy`: List of integers
+
+Execution Order:
+1. Read a line of input from the user.
+2. Split the input string by spaces to create a list of strings.
+3. Convert each string in the list to an integer.
+4. Sort the list of integers.
+5. Assign the sorted list to the variable `candy`.
+
+Control Structures:
+- Conditional:
+  - If the sum of the first two elements in the list `candy` is equal to the third element:
+    - Print "Yes".
+  - Else:
+    - Print "No".
+
+Input/Output:
+- Input: A single line of space-separated integers from standard input.
+- Output: A string "Yes" or "No" to standard output. 
+
+Dependencies:
+- No external libraries or modules are required.

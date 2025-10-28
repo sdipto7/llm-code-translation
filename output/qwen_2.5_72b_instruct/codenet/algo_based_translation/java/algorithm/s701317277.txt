@@ -1,0 +1,26 @@
+Function signatures:
+- `main(String[] args): void`
+
+Variable declarations:
+- `sc: Scanner`
+- `N: int`
+- `A: int[]`
+- `min: int`
+- `count: int`
+- `sum: long`
+
+Logic flow:
+1. Initialize `sc` as a new `Scanner` object for reading input.
+2. Read an integer `N` from input.
+3. Declare an integer array `A` of size `N`.
+4. Initialize `min` to `Integer.MAX_VALUE`.
+5. Initialize `count` to `0`.
+6. Initialize `sum` to `0`.
+7. Loop from `i = 0` to `i < N`:
+   - Read an integer from input and assign it to `A[i]`.
+   - If `A[i]` is less than `0`, increment `count` by `1`.
+   - Update `min` to the smaller value between `min` and the absolute value of `A[i]`.
+   - Add the absolute value of `A[i]` to `sum`.
+8. Close the `Scanner` object `sc`.
+9. If `count` modulo `2` equals `0`, print `sum`.
+10. Otherwise, print `sum - min * 2`.

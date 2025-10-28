@@ -1,0 +1,40 @@
+Function signature: main(String[] args)
+
+Variable declarations and data types:
+- Scanner sc
+- int n
+- HashMap<Integer, Integer> map
+- int a
+- int ans
+- int key
+
+Logic flow in execution order:
+1. Create a Scanner object to read input
+2. Read an integer n from input
+3. Initialize an empty HashMap<Integer, Integer> named map
+4. For loop from 0 to n-1:
+   - Read an integer a from input
+   - If map contains key a:
+     - Increment the value associated with key a by 1
+   - Else:
+     - Put key a in map with value 1
+5. Initialize ans to 0
+6. For each key in map's key set:
+   - If the value associated with key is odd:
+     - Increment ans by 1
+7. Print the value of ans
+
+Control structures:
+- For loop with condition i < n
+- If-else statement checking if map contains key a
+- For-each loop iterating over map.keySet()
+- If statement checking if map.get(key) % 2 == 1
+
+Input/output operations and data processing logic:
+- Read integer n from input
+- Read n integers from input, updating map with counts of each integer
+- Count the number of keys in map with an odd count
+- Print the count of keys with odd values
+
+Required libraries, modules, or dependencies:
+- java.util.*

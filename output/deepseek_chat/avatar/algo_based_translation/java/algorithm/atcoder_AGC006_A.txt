@@ -1,0 +1,50 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `static void getFail(char[] b, int m)`
+- `public InputReader(InputStream stream)`
+- `public String next()`
+- `public int nextInt()`
+
+**Variable Declarations and Data Types:**
+- `static int N = 200 + 10`
+- `static int[] f = new int[N]`
+- `static char[] b = new char[N]`
+- `int n` (from input)
+- `String s1, str` (from input)
+- `int cnt = 0`
+- `int j = 0` (in getFail)
+- `int len` (computed value)
+
+**Logic Flow:**
+1. Initialize InputReader and PrintWriter for I/O
+2. Read integer `n`
+3. Read strings `s1` and `str`
+4. Initialize `cnt` to 0
+5. For `i` from 0 to n-1: copy `str.charAt(i)` to `b[++cnt]`
+6. For `i` from 0 to n-1: copy `s1.charAt(i)` to `b[++cnt]`
+7. Call `getFail(b, cnt)`
+8. In `getFail`:
+   - Set `f[0] = f[1] = 0`
+   - For `i` from 2 to m:
+        - While `j > 0` and `b[j+1] != b[i]`: set `j = f[j]`
+        - If `b[j+1] == b[i]`: increment `j`
+        - Set `f[i] = j`
+9. Compute `len = min(f[cnt], min(n, n))` (which simplifies to `min(f[cnt], n)`)
+10. Output `2*n - len`
+11. Flush output
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < n; i++)` (twice)
+- For loop: `for (int i = 2; i <= m; i++)`
+- While loop: `while (j > 0 && b[j+1] != b[i])`
+- Conditional: `if (b[j+1] == b[i])`
+- While loop: `while (tokenizer == null || !tokenizer.hasMoreTokens())` (in next())
+
+**Input/Output Operations:**
+- Input: `n = in.nextInt()`, `s1 = in.next()`, `str = in.next()`
+- Output: `out.println(2*n - len)`, `out.flush()`
+- InputReader uses BufferedReader and StringTokenizer for parsing
+
+**Required Libraries:**
+- `java.io.*`
+- `java.util.*`

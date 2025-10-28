@@ -1,0 +1,48 @@
+**Algorithm:**
+
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `public void run()`
+- `MyInput` class with methods: `hasNextByte() : boolean`, `readByte() : int`, `isPrintableChar(int c) : boolean`, `skipUnprintable()`, `hasNext() : boolean`, `next() : String`, `nextLong() : long`, `nextInt() : int`, `nextDouble() : double`
+
+**Variables:**
+- `String Sd`, `String T`
+- `int count`, `char c`, `boolean ok`, `int first`, `int end`
+- `MyInput in` instance
+
+**Logic Flow:**
+1. Read input strings `Sd` and `T` using `MyInput`.
+2. Initialize `count = 0`, `ok = false`, `first = -1`, `end = -1`.
+3. For each `j` in `[0, Sd.length() - 1]`:
+    - Reset `count` to 0.
+    - For each `i` where `i + j < Sd.length()`:
+        - Set `c = Sd.charAt(i + j)`.
+        - If `c` equals `'?'` or `T.charAt(count)`:
+            - Increment `count`.
+            - If `count == T.length()`:
+                - Set `first = (i + j) - T.length() + 1`.
+                - Set `end = i + j`.
+                - Set `ok = true`.
+                - Break inner loop.
+        - Else: Reset `count` to 0.
+4. If `ok` is true:
+    - For each index `i` in `[0, Sd.length() - 1]`:
+        - If `i` is between `first` and `end` (inclusive): Output `T.charAt(i - first)`.
+        - Else: Output `'a'` if `Sd.charAt(i) == '?'`, else output original character.
+    - Print the constructed string.
+5. Else:
+    - Print `"UNRESTORABLE"`.
+
+**Control Structures:**
+- Outer loop: Iterate `j` over all possible start positions in `Sd`.
+- Inner loop: Check consecutive characters starting at `j` for matching `T`.
+- Conditionals to validate character matches (`c == '?'` or `c == T.charAt(count)`).
+- Break inner loop immediately upon full match of `T`.
+
+**Input/Output:**
+- Custom `MyInput` handles byte reading, string parsing, and error handling.
+- `System.out` used for outputting results.
+
+**Dependencies:**
+- Requires `java.io.InputStream`, `java.io.IOException`, `java.util.NoSuchElementException`, `java.util.ArrayList`, `java.util.Arrays`, `java.util.LinkedList`, `java.util.Collections` (though some are unused in core logic).
+- Static import `java.lang.System.out`.

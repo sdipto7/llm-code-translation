@@ -1,0 +1,10 @@
+1. Read input from the input stream.
+2. Create a scanner object to parse the input.
+3. Create a print writer object to write to the output stream.
+4. Initialize an instance of the AStationAndBus class.
+5. Call the solve method on the AStationAndBus instance, passing 1, the scanner object, and the print writer object.
+6. In the solve method, read a string from the input using the scanner object.
+7. Check if the string contains both 'A' and 'B'.
+8. If the string contains both 'A' and 'B', write "Yes" to the output using the print writer object.
+9. If the string does not contain both 'A' and 'B', write "No" to the output using the print writer object.
+10. Close the print writer object to finalize the output.

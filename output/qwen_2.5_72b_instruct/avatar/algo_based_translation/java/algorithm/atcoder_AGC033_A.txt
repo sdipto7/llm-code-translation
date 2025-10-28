@@ -1,0 +1,40 @@
+Function signature: `public static void main(String[] args)`
+Variable declarations:
+- `Scanner sc` of type `Scanner`
+- `int H` representing height
+- `int W` representing width
+- `char[][] A` representing the grid
+- `Queue<int[]> queue` for BFS
+- `String row` for reading each row of the grid
+- `int[][] flag` to mark visited cells
+- `int ans` to store the maximum distance
+- `int[] dx` and `int[] dy` for direction vectors
+- `int[] temp`, `y`, `x`, `depth` for BFS processing
+- `int i` for loop iteration
+
+Logic flow:
+1. Initialize `sc` to read input
+2. Read `H` and `W`
+3. Initialize `A` as `H x W` character array
+4. Initialize `queue` as empty ArrayDeque
+5. For each row in grid:
+   - Read `row` string
+   - For each character in `row`:
+     - Assign character to `A[i][j]`
+     - If character is `#`, add `[i, j, 0]` to `queue`
+6. Initialize `flag` as `H x W` integer array filled with 0
+7. Initialize `ans` to 0
+8. Define direction vectors `dx` and `dy`
+9. While `queue` is not empty:
+   - Remove element from `queue` into `temp`
+   - Assign `y`, `x`, `depth` from `temp`
+   - For each direction in `dx` and `dy`:
+     - Check bounds `0 <= y + dy[i] <= H - 1` and `0 <= x + dx[i] <= W - 1`
+     - If cell `(y + dy[i], x + dx[i])` is not visited (`flag[y + dy[i]][x + dx[i]] == 0`) and is walkable (`A[y + dy[i]][x + dx[i]] == '.'`):
+       - Mark cell as visited: `flag[y + dy[i]][x + dx[i]] = 1`
+       - Add `[y + dy[i], x + dx[i], depth + 1]` to `queue`
+       - Update `ans` to `depth + 1`
+10. Print `ans`
+
+Libraries/modules/dependencies:
+- `java.util.*`

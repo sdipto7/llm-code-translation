@@ -1,0 +1,58 @@
+**Algorithm:**
+
+**Variables:**
+- `sc`: Scanner (static, initialized with `System.in`)
+- `nums`: String[] (from first input line split by spaces)
+- `N`: int (parsed from `nums[0]`)
+- `M`: int (parsed from `nums[1]`)
+- `room`: char[N][M] (static 2D array)
+- `D`: int (parsed from `nums[2]`)
+- `num`: int (static, initialized to 0)
+
+**Functions:**
+1. `main(args: String[])`: void
+   - Calls `inputRoom()`
+   - If `M >= D`, calls `setWE()`
+   - If `N >= D`, calls `setNS()`
+   - Prints `num`
+   - Closes `sc`
+
+2. `setWE()`: void
+   - Iterate `i` from 0 to `N-1` (rows)
+     - Iterate `j` from 0 to `M - D` (columns)
+       - Initialize `canPut` to true
+       - Iterate `k` from 0 to `D-1`
+         - If `room[i][j + k] == '#'`, set `canPut` to false and break
+       - If `canPut` is true, increment `num`
+
+3. `setNS()`: void
+   - Iterate `i` from 0 to `M-1` (columns)
+     - Iterate `j` from 0 to `N - D` (rows)
+       - Initialize `canPut` to true
+       - Iterate `k` from 0 to `D-1`
+         - If `room[j + k][i] == '#'`, set `canPut` to false and break
+       - If `canPut` is true, increment `num`
+
+4. `inputRoom()`: void
+   - Read `N` lines from input
+   - Store each line as a char array in `room`
+
+**Input Processing:**
+- First line: Read `N`, `M`, `D` via `sc.nextLine()`
+- Next `N` lines: Populate `room` row-wise
+
+**Control Structures:**
+- `if (M >= D)` checks horizontal placement feasibility
+- `if (N >= D)` checks vertical placement feasibility
+- Nested loops for row/column traversal and consecutive cell checks
+- Break statements on encountering `#` during placement checks
+
+**Dependencies:**
+- `java.util.Scanner` for input handling
+
+**Execution Flow:**
+1. Parse initial input values (`N`, `M`, `D`)
+2. Read room layout into `room[][]`
+3. Check and count valid horizontal placements if `M >= D`
+4. Check and count valid vertical placements if `N >= D`
+5. Output total valid placements (`num`)

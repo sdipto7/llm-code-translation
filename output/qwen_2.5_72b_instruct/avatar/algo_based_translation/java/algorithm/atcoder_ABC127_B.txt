@@ -1,0 +1,84 @@
+function main(String[] args): void
+    variable r: int
+    variable d: int
+    variable x: long
+    variable i: int
+    variable scanner: SimpleScanner
+    variable writer: PrintWriter
+
+    scanner = new SimpleScanner(System.in)
+    writer = new PrintWriter(System.out)
+
+    r = scanner.nextInt()
+    d = scanner.nextInt()
+    x = scanner.nextLong()
+
+    for i from 0 to 9 do
+        x = r * x - d
+        writer.println(x)
+    end for
+
+    writer.close()
+
+class SimpleScanner
+    constant BUFFER_SIZE: int = 10240
+    variable in: Readable
+    variable buffer: CharBuffer
+    variable eof: boolean
+
+    constructor(InputStream in): void
+        this.in = new BufferedReader(new InputStreamReader(in))
+        buffer = CharBuffer.allocate(BUFFER_SIZE)
+        buffer.limit(0)
+        eof = false
+
+    function read(): char
+        if not buffer.hasRemaining() then
+            buffer.clear()
+            variable n: int
+            n = in.read(buffer)
+            if n <= 0 then
+                eof = true
+                return '\u0000'
+            end if
+            buffer.flip()
+        end if
+        return buffer.get()
+
+    function checkEof(): void
+        if eof then
+            throw NoSuchElementException()
+        end if
+
+    function nextChar(): char
+        checkEof()
+        variable b: char
+        b = read()
+        checkEof()
+        return b
+
+    function next(): String
+        variable b: char
+        do
+            b = read()
+            checkEof()
+        while Character.isWhitespace(b)
+
+        variable sb: StringBuilder
+        sb = new StringBuilder()
+
+        do
+            sb.append(b)
+            b = read()
+        while not eof and not Character.isWhitespace(b)
+
+        return sb.toString()
+
+    function nextInt(): int
+        return Integer.valueOf(next())
+
+    function nextLong(): long
+        return Long.valueOf(next())
+
+    function nextDouble(): double
+        return Double.parseDouble(next())

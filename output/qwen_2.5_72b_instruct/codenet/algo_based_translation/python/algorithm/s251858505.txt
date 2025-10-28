@@ -1,0 +1,29 @@
+Function signature: `main()` with no parameters and no return type
+
+Variable declarations:
+- `input1`: string, result of `input()`
+- `input2`: string, result of `input()`
+- `mapped_values`: map object, result of `map(lambda x, y: x == y, input1, input2)`
+- `sum_result`: integer, result of `sum(mapped_values)`
+
+Logic flow:
+1. `input1` is assigned the result of `input()`
+2. `input2` is assigned the result of `input()`
+3. `mapped_values` is assigned the result of `map` applying the lambda function `(lambda x, y: x == y)` to each pair of characters from `input1` and `input2`
+4. `sum_result` is assigned the result of `sum(mapped_values)`
+5. `sum_result` is printed
+
+Control structures:
+- No explicit loops or conditionals, but the `map` function implicitly iterates over the characters in `input1` and `input2`
+- The lambda function contains a comparison condition `x == y`
+
+Input/output operations:
+- `input()` is called twice to read strings `input1` and `input2`
+- `print(sum_result)` outputs the final count of matching characters
+
+Data processing logic:
+- The lambda function checks if characters `x` and `y` are equal, returning `True` (1) if they are and `False` (0) otherwise
+- `sum(mapped_values)` counts the number of `True` values, which corresponds to the number of matching characters between `input1` and `input2`
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules are required

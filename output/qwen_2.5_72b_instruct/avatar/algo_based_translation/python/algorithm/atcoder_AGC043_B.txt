@@ -1,0 +1,30 @@
+Function Signature: `twos_in_factorial(n: int) -> int`
+Variable Declarations: `n: int`, `binary_representation: str`, `count_of_ones: int`
+Logic Flow:
+1. Convert `n` to its binary representation.
+2. Count the number of '1's in the binary representation.
+3. Return `n` minus the count of '1's.
+
+Function Signature: `parity_of_nCr(n: int, i: int) -> bool`
+Variable Declarations: `f: function`, `twos_in_n: int`, `twos_in_n_minus_i: int`, `twos_in_i: int`
+Logic Flow:
+1. Assign function `twos_in_factorial` to `f`.
+2. Calculate the number of 2s in the factorials of `n`, `n-i`, and `i` using `f`.
+3. Return `True` if the number of 2s in `n` is greater than the sum of the number of 2s in `n-i` and `i`, otherwise `False`.
+
+Main Program:
+Variable Declarations: `n: int`, `nums: List[int]`, `no_one: bool`, `is_odd: bool`
+Input/Output Operations:
+1. Read an integer `n` from the input.
+2. Read a line of space-separated integers, convert each to an integer, subtract 1 from each, and store in `nums`.
+Logic Flow:
+1. Check if `1` is not in `nums`.
+   - If true, divide each element in `nums` by 2 using integer division and update `nums`.
+   - Set `no_one` to `True`.
+2. Initialize `is_odd` to `False`.
+3. Iterate over `nums` with index `i`:
+   - If `parity_of_nCr(n - 1, i)` is `False` and the current number is odd (checked using bitwise AND with 1):
+     - Toggle `is_odd` using XOR with 1.
+4. After the loop, check if `is_odd` is `False`:
+   - If true, print `0`.
+   - Otherwise, print `1` left-shifted by `no_one`.

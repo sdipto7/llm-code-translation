@@ -1,0 +1,37 @@
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Input reading
+        int N = sc.nextInt(); // int: number of characters in the string
+        int Q = sc.nextInt(); // int: number of queries
+        String s = sc.next(); // String: input string
+
+        // Variable declaration
+        int[] pre = new int[N + 1];  // int[]: prefix sum array of size N+1
+
+        // Building the prefix sum array
+        for(int i = 1; i < N; i++) {
+            if(s.charAt(i - 1) == 'A' && s.charAt(i) == 'C') {
+                pre[i] = 1; // Initialize prefix sum array where 'AC' is found
+            }
+        }
+
+        // Calculate prefix sums
+        for(int i = 1; i < N; i++) {
+            pre[i] += pre[i - 1]; // Accumulate prefix sums
+        }
+
+        // Processing queries
+        while(Q-- > 0) {
+            int l = sc.nextInt(); // int: left index of query (1-based)
+            int r = sc.nextInt(); // int: right index of query (1-based)
+            r--; // Adjust right index to 0-based
+
+            // Output result of each query
+            System.out.println(pre[r] - pre[l - 1]); // Calculate and print number of 'AC' in range [l, r]
+        }
+    }
+}

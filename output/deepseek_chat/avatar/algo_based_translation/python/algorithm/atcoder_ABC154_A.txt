@@ -1,0 +1,43 @@
+**Function Signatures:**
+- `solve(S: str, T: str, A: int, B: int, U: str) -> None`
+- `main() -> None`
+- `iterate_tokens() -> Generator[str, None, None]`
+
+**Variables:**
+- `S: str` (input string)
+- `T: str` (input string)
+- `A: int` (input integer)
+- `B: int` (input integer)
+- `U: str` (input string)
+- `tokens: Generator[str, None, None]` (token generator)
+- `line: str` (temporary line storage)
+- `word: str` (temporary word storage)
+
+**Libraries/Modules:**
+- `sys` (standard library)
+
+**Algorithm Flow:**
+
+1. Execute `main()` when script is run directly
+2. In `main()`:
+   - Define `iterate_tokens()` generator function
+   - For each line in `sys.stdin`:
+     - Split line into words
+     - Yield each word sequentially
+   - Create tokens generator instance
+   - Extract tokens in order: S, T, A, B, U
+   - Convert A and B to integers
+   - Call `solve(S, T, A, B, U)`
+
+3. In `solve()`:
+   - Compare S and U: if equal, decrement A by 1
+   - Compare T and U: if equal, decrement B by 1
+   - Print A and B as space-separated values
+   - Return None
+
+**Control Structures:**
+- `if S == U: A -= 1`
+- `if T == U: B -= 1`
+- `for line in sys.stdin:`
+- `for word in line.split():`
+- `if __name__ == '__main__': main()`

@@ -1,0 +1,52 @@
+Function Signatures:
+- `leapyear(n): str` where `n` is an integer and the return type is a string
+
+Variable Declarations and Data Types:
+- `n`: integer
+- `d`: string
+- `ans`: string
+
+Logic Flow:
+1. Call `leapyear(n)` to determine if `n` is a leap year
+   - If `n % 400 == 0` or `(n % 4 == 0 and n % 100 != 0)`, return `"y"`
+   - Otherwise, return `"n"`
+2. Read an integer from input and assign it to `n`
+3. Initialize `d` to `"f"`
+4. Determine if `n` is a leap year and assign `"ly"` to `ans` if true, otherwise `"nly"`
+5. Enter an infinite loop
+   - Check if `n` is a leap year
+     - If true, update `d` based on its current value and increment `n` by 1
+       - `"m"` -> `"w"`
+       - `"t"` -> `"th"`
+       - `"w"` -> `"f"`
+       - `"th"` -> `"sa"`
+       - `"f"` -> `"s"`
+       - `"sa"` -> `"m"`
+       - `"s"` -> `"t"`
+     - If false, update `d` based on its current value and increment `n` by 1
+       - `"m"` -> `"t"`
+       - `"t"` -> `"w"`
+       - `"w"` -> `"th"`
+       - `"th"` -> `"f"`
+       - `"f"` -> `"sa"`
+       - `"sa"` -> `"s"`
+       - `"s"` -> `"m"`
+   - Check if `d` is `"f"` and `ans` is `"ly"` and `n` is a leap year, then break the loop
+   - Check if `d` is `"f"` and `ans` is `"nly"` and `n` is not a leap year, then break the loop
+6. Print the value of `n`
+
+Control Structures:
+- Conditional statements (`if`, `elif`, `else`) for leap year determination
+- Infinite loop (`while True`) with nested conditionals for day of week cycling and loop breaking conditions
+
+Input/Output Operations:
+- Read an integer from standard input
+- Print an integer to standard output
+
+Data Processing Logic:
+- Leap year calculation using modulo operations
+- Cycling through days of the week using conditional logic
+- Incrementing year and checking conditions to exit the loop
+
+Required Libraries, Modules, or Dependencies:
+- No external libraries or modules required

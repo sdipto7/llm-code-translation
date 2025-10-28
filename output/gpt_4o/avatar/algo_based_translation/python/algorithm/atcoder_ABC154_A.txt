@@ -1,0 +1,29 @@
+```
+import sys
+
+function solve(S: str, T: str, A: int, B: int, U: str) -> None:
+    if S == U:
+        A = A - 1
+    if T == U:
+        B = B - 1
+    print(A, B)
+    return
+
+function main() -> None:
+    function iterate_tokens() -> Iterator[str]:
+        for line in sys.stdin:
+            for word in line.split():
+                yield word
+
+    tokens = iterate_tokens()
+    S: str = next(tokens)
+    T: str = next(tokens)
+    A: int = int(next(tokens))
+    B: int = int(next(tokens))
+    U: str = next(tokens)
+    solve(S, T, A, B, U)
+    return
+
+if __name__ == '__main__':
+    main()
+```

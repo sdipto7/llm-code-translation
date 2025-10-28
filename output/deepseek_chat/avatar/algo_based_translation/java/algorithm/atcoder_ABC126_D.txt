@@ -1,0 +1,44 @@
+**Algorithm:**
+
+1. **Initialize:**
+   - Import java.util.* and java.util.Map.*
+   - Declare static integer array 'colors'
+   - Main method with String[] args parameter, throws Exception
+
+2. **Main execution:**
+   - Create Scanner object reading from System.in
+   - Read integer n from input
+   - Calculate m = n - 1
+   - Initialize colors array of size n with all elements set to -1
+   - Create array 'points' of Point objects of size n
+   - For i from 0 to n-1: points[i] = new Point(i)
+
+3. **Process edges:**
+   - While m > 0:
+     - Read me = sc.nextInt() - 1
+     - Read you = sc.nextInt() - 1
+     - Read length = sc.nextInt()
+     - Call points[me].becomeFriend(points[you], length)
+     - Call points[you].becomeFriend(points[me], length)
+     - Decrement m
+
+4. **DFS traversal:**
+   - Call dfs(points[0], 0)
+
+5. **Output results:**
+   - For each color c in colors array: print c
+
+6. **DFS method:**
+   - Parameters: Point p, integer length
+   - Check if colors[p.name] != -1 → if true, return
+   - If length % 2 == 0: colors[p.name] = 0
+   - Else: colors[p.name] = 1
+   - For each entry in p.friends.entrySet():
+     - Get friend Point from entry
+     - Get length2 integer from entry
+     - Recursively call dfs(friend, length + length2)
+
+7. **Point class:**
+   - Fields: integer name, Map<Point, Integer> friends
+   - Constructor Point(int name): initialize name, create empty HashMap
+   - Method becomeFriend(Point p, int length): put (p, length) in friends map

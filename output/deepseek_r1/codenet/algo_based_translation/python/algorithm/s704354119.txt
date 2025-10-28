@@ -1,0 +1,26 @@
+- Function Signatures: No explicit functions; executed as a script.
+- Variable Declarations:
+  - `n: int` (input integer)
+  - `l: list[str]` (input list of strings)
+  - `max: int` (initialized to -1e9)
+  - `min: int` (initialized to 1e9)
+  - `sum: int` (initialized to 0)
+  - `current_num: int` (temporary loop variable)
+- Logic Flow:
+  1. Read `n` from standard input.
+  2. Read `l` by splitting the next input line into a list of strings.
+  3. Initialize `max`, `min`, and `sum` with default values.
+  4. Iterate `i` from `0` to `n - 1`:
+      a. Convert `l[i]` to integer `current_num`.
+      b. Add `current_num` to `sum`.
+      c. If `current_num > max`, update `max` to `current_num`.
+      d. If `current_num < min`, update `min` to `current_num`.
+  5. Print `min`, `max`, and `sum` separated by spaces.
+- Control Structures:
+  - For loop: `for i in range(n)`
+  - Conditional 1: `if current_num > max`
+  - Conditional 2: `if current_num < min`
+- Input/Output Operations:
+  - Input: Read `n` via `input()`, read `l` via `input().split()`
+  - Output: Print `min`, `max`, `sum` via `print(min, max, sum)`
+- Dependencies: None (standard Python functions only).

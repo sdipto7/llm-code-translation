@@ -1,0 +1,16 @@
+Algorithm:
+1. Import Scanner from java.util
+2. Define main function with parameter String[] args and return type void
+3. Create Scanner object sc initialized with System.in
+4. Declare String variable s and assign sc.next()
+5. Declare int variable total initialized to 0
+6. Start outer for loop: i from 0 to s.length()-1, increment i by 1
+7. Start inner for loop: j from i+1 to s.length()-1, increment j by 1
+8. Check if character at position i equals character at position j in string s
+9. If true, increment total by 1
+10. End inner for loop
+11. End outer for loop
+12. Check if total equals 2
+13. If true, print "Yes"
+14. Else, print "No"
+15. End main function

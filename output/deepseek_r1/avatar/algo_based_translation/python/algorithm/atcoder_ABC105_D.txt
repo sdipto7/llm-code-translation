@@ -1,0 +1,54 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- Not applicable (script-based code, no user-defined functions)
+
+**Variable Declarations:**
+- `N`: Integer (input array size)
+- `M`: Integer (divisor)
+- `A`: 1D numpy array of int64 elements
+- `cum_remainders`: 1D numpy array of integers
+- `remainder_counts`: Dictionary-like structure (Counter) with integer keys (remainders) and integer values (counts)
+- `combinations`: Integer (result accumulator)
+
+**Step-by-Step Logic Flow:**
+1. Read two integers `N` and `M` from standard input via space-separated parsing
+2. Read array `A` from standard input by:
+   a. Reading next line
+   b. Splitting into substrings
+   c. Converting substrings to integers
+   d. Storing as numpy array with dtype=np.int64
+3. Create modified array via:
+   a. Concatenate 0 with array `A` using `np.hstack`
+   b. Compute modulo `M` for each element
+   c. Compute cumulative sum of elements
+   d. Apply modulo `M` to cumulative sum elements to create `cum_remainders`
+4. Count frequency of each distinct value in `cum_remainders` using `Counter`
+5. Initialize `combinations` to 0
+6. Iterate through all count values in `remainder_counts`:
+   a. For each count value `k`, compute k * (k - 1) // 2
+   b. Add result to `combinations`
+7. Output final value of `combinations` via print statement
+
+**Input/Output Operations:**
+- Input: Two lines via stdin
+  - First line: Space-separated `N` and `M`
+  - Second line: Space-separated integer values for array `A`
+- Output: Single integer via stdout
+
+**Control Flow Structures:**
+- Single loop: Iterates through values in `remainder_counts` dictionary
+  - Loop exit: After processing all key-value pairs
+- No explicit conditional branches
+
+**Error Handling:**
+- Implicit assumption of valid numeric input formatting
+- No explicit error checking for input types or array bounds
+
+**External Dependencies:**
+- `sys.stdin` for input reading
+- `collections.Counter` for frequency counting
+- `numpy` functions:
+  - `hstack` for array concatenation
+  - `cumsum` for cumulative sum calculation
+  - Array modulo operations

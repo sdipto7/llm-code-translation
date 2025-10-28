@@ -1,0 +1,20 @@
+Read integer n from input
+Initialize list F with n tuples of 10 integers each from input
+Initialize list P with n tuples of 11 integers each from input
+Initialize ans to negative infinity equivalent (-10**18)
+
+For each integer i from 1 to 1023 (2^10 - 1):
+    Initialize tmp to 0
+    Initialize lst as list of n zeros
+    
+    For each j from 0 to 9:
+        If the j-th bit of i is set:
+            For each k from 0 to n-1:
+                Add F[k][j] to lst[k]
+    
+    For each k from 0 to n-1:
+        Add P[k][lst[k]] to tmp
+    
+    Set ans to maximum of ans and tmp
+
+Print ans

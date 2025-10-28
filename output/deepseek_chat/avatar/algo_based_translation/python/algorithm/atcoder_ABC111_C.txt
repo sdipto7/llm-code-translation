@@ -1,0 +1,67 @@
+**Algorithm:**
+
+1. **Input:**
+   - Read integer `n` from standard input.
+   - Read list `x` of `n` integers from standard input.
+
+2. **Initialization:**
+   - Create empty lists `a` and `b`.
+   - For index `i` from 0 to `n-1`:
+     - If `i` is even (i % 2 == 0): append `x[i]` to `a`
+     - Else: append `x[i]` to `b`
+
+3. **Frequency Counting:**
+   - Initialize arrays `cnta` and `cntb` of size 100003 with zeros.
+   - For each element in `a`: increment `cnta[element]` by 1.
+   - For each element in `b`: increment `cntb[element]` by 1.
+
+4. **Find Most Frequent Values:**
+   - Initialize variables for `a`:
+     - `vala` = 0, `maxCnta` = 0 (most frequent value and its count)
+     - `vala1` = 0, `maxCnta1` = 0 (second most frequent value and its count)
+   - For each element in `a`:
+     - If `cnta[element]` > `maxCnta`: update `vala` and `maxCnta`
+   - For each element in `a`:
+     - If `cnta[element]` > `maxCnta1` AND element ≠ `vala`: update `vala1` and `maxCnta1`
+
+   - Initialize variables for `b`:
+     - `valb` = 0, `maxCntb` = 0 (most frequent value and its count)
+     - `valb1` = 0, `maxCntb1` = 0 (second most frequent value and its count)
+   - For each element in `b`:
+     - If `cntb[element]` > `maxCntb`: update `valb` and `maxCntb`
+   - For each element in `b`:
+     - If `cntb[element]` > `maxCntb1` AND element ≠ `valb`: update `valb1` and `maxCntb1`
+
+5. **Calculate Minimum Changes:**
+   - If `vala` ≠ `valb`:
+     - Count elements in `a` not equal to `vala`
+     - Count elements in `b` not equal to `valb`
+     - Sum these counts and print result
+   - Else:
+     - Calculate four possibilities:
+       - `resa`: elements in `a` not equal to `vala`
+       - `resb`: elements in `b` not equal to `valb`
+       - `resa1`: elements in `a` not equal to `vala1`
+       - `resb1`: elements in `b` not equal to `valb1`
+     - Print minimum of (`resa + resb1`) and (`resa1 + resb`)
+
+**Data Types:**
+- `n`: integer
+- `x`, `a`, `b`: list of integers
+- `cnta`, `cntb`: list of integers (frequency counters)
+- `vala`, `vala1`, `valb`, `valb1`: integers
+- `maxCnta`, `maxCnta1`, `maxCntb`, `maxCntb1`: integers
+- `res`, `resa`, `resb`, `resa1`, `resb1`: integers
+
+**Control Structures:**
+- For loops: iterate through indices 0 to n-1, iterate through lists a and b
+- If-else conditions: check index parity, compare frequency counts, compare values
+- Conditional execution based on whether most frequent values match
+
+**Input/Output:**
+- Input: integer n, space-separated integers
+- Output: single integer result
+
+**Dependencies:**
+- Standard input/output operations
+- No external libraries required

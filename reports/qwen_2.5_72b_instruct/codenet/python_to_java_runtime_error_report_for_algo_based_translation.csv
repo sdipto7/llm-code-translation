@@ -1,0 +1,31 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,s259116349.java,Runtime Error,"Error: Exception in thread ""main"" java.lang.OutOfMemoryError: Java heap space
+	at s259116349.main(s259116349.java:13)
+"
+python,java,s087080706.java,Runtime Error,"Error: Exception in thread ""main"" java.util.NoSuchElementException
+	at java.base/java.util.Scanner.throwFor(Scanner.java:962)
+	at java.base/java.util.Scanner.next(Scanner.java:1619)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2284)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2238)
+	at s087080706.main(s087080706.java:13)
+"
+python,java,s269975433.java,Runtime Error,"Error: Exception in thread ""main"" java.lang.NumberFormatException: For input string: """"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:565)
+	at java.base/java.lang.Integer.parseInt(Integer.java:685)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:727)
+	at s269975433.main(s269975433.java:17)
+"
+python,java,s952264435.java,Runtime Error,"Error: Exception in thread ""main"" java.util.NoSuchElementException
+	at java.base/java.util.Scanner.throwFor(Scanner.java:962)
+	at java.base/java.util.Scanner.next(Scanner.java:1619)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2284)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2238)
+	at s952264435.main(s952264435.java:11)
+"

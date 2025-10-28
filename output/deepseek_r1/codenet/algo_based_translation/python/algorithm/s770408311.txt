@@ -1,0 +1,30 @@
+- Function signature:  
+  - Name: `main`  
+  - Parameters: None  
+  - Return type: void  
+
+- Variable declarations:  
+  - `n`: integer (initialized via input)  
+  - `res`: list of strings (initialized empty)  
+  - `a`: string (temporary per iteration)  
+  - Loop counter `i`: integer (range 0 to n-1)  
+
+- Logic flow:  
+  1. Read integer `n` from standard input.  
+  2. Initialize empty list `res`.  
+  3. Loop `n` times:  
+      a. Read string `a` from input.  
+      b. Append `a` to `res`.  
+  4. Convert `res` to a set to remove duplicates.  
+  5. Compute length of the set.  
+  6. Print the length.  
+
+- Control structures:  
+  - For loop: `for i in range(n)`  
+
+- Input/Output operations:  
+  - Read `n` as integer from stdin.  
+  - Read `n` strings sequentially from stdin.  
+  - Print integer result to stdout.  
+
+- Dependencies: None (uses Python built-ins).

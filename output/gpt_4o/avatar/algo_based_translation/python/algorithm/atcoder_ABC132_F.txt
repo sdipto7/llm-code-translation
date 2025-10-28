@@ -1,0 +1,37 @@
+```plaintext
+Function signature:
+    function calculate_sum_of_ways(n: int, k: int) -> int
+
+Variable declarations:
+    mod: int = 1000000007
+    coef: list of int
+    nn: int
+    dp: list of list of int
+    tmp: int
+
+Execution flow:
+1. Parse input values for n and k using integer conversion.
+2. Initialize an empty list `coef` to store coefficients.
+3. Loop `i` from 1 to the integer square root of n (inclusive):
+    a. Calculate the difference between integer division of n by i and n by (i + 1).
+    b. Append this difference to `coef`.
+4. Append (n - sum(coef)) ones to `coef`.
+5. Reverse the `coef` list.
+6. Set `nn` to the length of `coef`.
+7. Initialize a 2D list `dp` of size (k + 1) x `nn` filled with zeros.
+8. Set the first element of the first row in `dp` (dp[0][0]) to 1.
+9. Loop `i` from 1 to k:
+    a. Initialize `tmp` to 0.
+    b. Loop `j` from `nn - 1` down to 0:
+        i. Increment `tmp` by the value at dp[i - 1][(nn - 1) - j].
+        ii. Apply modulo operation to `tmp` with `mod`.
+        iii. Set dp[i][j] to the product of coef[j] and `tmp`, then apply modulo operation with `mod`.
+10. Calculate the sum of elements in the `k`th row of `dp`, apply modulo operation with `mod`, and return this sum.
+
+I/O operations:
+    - Input is read using a single line, split into two integers n and k.
+    - Output is the result returned by the function, printed to standard output.
+
+Required libraries or dependencies:
+    - None
+```

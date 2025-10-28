@@ -1,0 +1,41 @@
+Function signature: process_input(n: int) -> None
+
+Variable declarations and data types:
+- n: int
+- arr: dict (str -> int)
+- s: str
+- max_count: int
+- dic: list (str)
+- out_sort: list (str)
+- i: str
+
+Logic flow in execution order:
+1. Read integer n from input
+2. Initialize empty dictionary arr
+3. For i in range(n):
+   - Read string s from input
+   - If s is not in arr:
+     - Set arr[s] to 1
+   - Else:
+     - Increment arr[s] by 1
+4. Find maximum value in arr values and assign it to max_count
+5. Create list dic containing keys from arr items where value equals max_count
+6. Sort dic and assign result to out_sort
+7. For each i in out_sort:
+   - Print i
+
+Control structures:
+- For loop: Iterates over range(n)
+- If-else statement: Checks if s is in arr
+
+Input/output operations and data processing logic:
+- Reads integer n from input
+- Reads n strings from input
+- Updates dictionary arr with counts of each string
+- Finds the maximum count of occurrences among strings
+- Collects all strings with the maximum count
+- Sorts the collected strings alphabetically
+- Outputs each sorted string
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules required

@@ -1,0 +1,32 @@
+1. Import `java.util.Arrays` and `java.util.Scanner`.
+
+2. Declare static variables:
+   - `long[] dp` array for memoization
+   - `int mod = 1000000007`
+
+3. Main method structure:
+   - Read integer `s` from standard input using `Scanner`
+   - Initialize `dp` array with size `s+1`, filled with `-1`
+   - Set `dp[0] = 1`
+   - Compute result by calling `dfs(s)`
+   - Print result
+
+4. Recursive function `dfs`:
+   - Signature: `static long dfs(int s)`
+   - Check if precomputed: if `dp[s] != -1`, return `dp[s]`
+   - Initialize `long ret = 0`
+   - Loop: `for (int i = s-3; i >= 0; i--)`
+     - Accumulate result: `ret += dfs(i)`
+     - Apply modulus: `ret %= mod`
+   - Store result: `dp[s] = ret`
+   - Return computed value: `return dp[s]`
+
+5. Control flow:
+   - Base case: `dp[0] = 1`
+   - Recursive step sums all valid partitions for `s` by considering all values from `s-3` down to `0`
+   - Modulo operation ensures results stay within 1e9+7
+
+6. Data processing:
+   - Memoization array stores intermediate results
+   - Input read once at program start
+   - Output final result after recursive computation completes

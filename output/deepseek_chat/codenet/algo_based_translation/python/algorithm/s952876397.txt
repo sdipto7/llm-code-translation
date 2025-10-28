@@ -1,0 +1,48 @@
+**Function Signature:**
+- No explicit function defined; main script execution
+- Input: integer `n` from stdin, string `s` from stdin
+- Output: prints modified string `s` to stdout
+
+**Variables and Data Types:**
+- `n`: integer (length of string)
+- `s`: string (input string)
+- `left`: integer (count of consecutive closing parentheses at start)
+- `i`: character (loop iterator)
+- `left1`: integer (count of unmatched opening parentheses needed)
+- `right1`: integer (count of unmatched closing parentheses needed)
+
+**Algorithm Logic:**
+1. Read integer `n` from standard input
+2. Read string `s` from standard input
+3. Initialize `left = 0`
+4. For each character `i` in string `s` (from left to right):
+   - If `i` equals ")", increment `left` by 1
+   - Else, break out of loop
+5. Initialize `left1 = 0`
+6. Initialize `right1 = 0`
+7. For index `i` from `left` to `n-1`:
+   - If character at position `i` equals "(", increment `right1` by 1
+   - Else if `right1 > 0`, decrement `right1` by 1
+   - Else, increment `left1` by 1
+8. Add `left` to `left1`
+9. For `right1` times, append ")" to end of string `s`
+10. For `left1` times, prepend "(" to beginning of string `s`
+11. Print modified string `s`
+
+**Control Structures:**
+- For loop: `for i in s:` (iterates through each character)
+- Break statement: exits loop when non-")" character encountered
+- For loop: `for i in range(left, n):` (iterates from index `left` to `n-1`)
+- Conditional: `if s[i] == "("`
+- Conditional: `elif right1 > 0`
+- Conditional: `else` (when neither condition above is met)
+- For loop: `for i in range(right1):` (appends closing parentheses)
+- For loop: `for i in range(left1):` (prepends opening parentheses)
+
+**Input/Output Operations:**
+- Input: `int(input())` reads integer
+- Input: `input()` reads string
+- Output: `print(s)` prints final string
+
+**Dependencies:**
+- None (uses built-in functions only)

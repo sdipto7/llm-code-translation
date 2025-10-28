@@ -1,0 +1,40 @@
+- Function signature: `public static void main(String[] args)`
+- Variable declarations and data types:
+  `int n`
+  `int m`
+  `HashMap<Integer, Integer> map`
+  `int countAc`
+  `int countWaAll`
+  `int question`
+  `String waOrAc`
+  `int countWa`
+- Complete logic flow in execution order:
+  1. Create a `Scanner` object for reading input.
+  2. Read two integers `n` and `m`.
+  3. Initialize a `HashMap<Integer, Integer>` named `map`.
+  4. Initialize `countAc` to 0.
+  5. Initialize `countWaAll` to 0.
+  6. Loop `m` times:
+     1. Read an integer `question`.
+     2. Read a string `waOrAc`.
+     3. If `map` does not contain `question`:
+        1. If `waOrAc` equals "WA", put `question` with value 1 in `map`.
+        2. Otherwise, put `question` with value -1 in `map` and increment `countAc` by 1.
+     4. Otherwise:
+        1. Get the value of `question` from `map` and store it in `countWa`.
+        2. If `countWa` is less than 0, do nothing.
+        3. Otherwise:
+           1. If `waOrAc` equals "WA", replace the value of `question` in `map` with `countWa + 1`.
+           2. Otherwise, replace the value of `question` in `map` with `-countWa`, increment `countAc` by 1, and add `countWa` to `countWaAll`.
+  7. Print `countAc` followed by a space and then `countWaAll`.
+- Control structures:
+  - Try-catch block to handle exceptions.
+  - For loop to iterate `m` times.
+  - If-else statements to handle conditions related to `waOrAc` and `map` contents.
+- Input/output operations and data processing logic:
+  - Input: Reads integers `n` and `m`, and pairs of `question` and `waOrAc` strings.
+  - Output: Prints two integers separated by a space.
+  - Data processing: Uses a `HashMap` to track the number of wrong answers before an accepted answer and counts total accepted answers and wrong answers before any acceptance.
+- Required libraries, modules, or dependencies:
+  - `java.util.*`
+  - `java.math.*`

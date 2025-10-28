@@ -1,0 +1,27 @@
+Algorithm:
+1. Import Scanner from java.util
+2. Define main method with String[] args parameter
+3. Declare Scanner sc initialized with System.in
+4. Read integer n from input
+5. Read integer m from input
+6. Declare integer array a with size m+1
+7. Declare integer array cnt with size n+1
+8. Initialize cnt[0] = 1
+9. Declare constant integer MOD = 1000000007
+10. For i from 1 to m (inclusive):
+    - Read integer into a[i]
+11. Declare integer num = 1
+12. If m > 0:
+    - If a[1] == 1:
+        - Set cnt[1] = 0
+        - If num < m: increment num by 1
+    - Else: set cnt[1] = 1
+13. Else: set cnt[1] = 1
+14. For i from 2 to n (inclusive):
+    - Set cnt[i] = (cnt[i-2] + cnt[i-1]) % MOD
+    - If m > 0:
+        - If i == a[num]:
+            - Set cnt[i] = 0
+            - If num < m: increment num by 1
+15. Print cnt[n]
+16. Close Scanner sc

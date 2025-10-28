@@ -1,0 +1,51 @@
+**Function Signatures:**
+- `public static int power(Long a)`
+- `public static long mult(Long a)`
+- `public static void main(String[] args)`
+
+**Variables:**
+- `int res = 0` (in power)
+- `Long a` input parameter (in power)
+- `int pow = power(a)` (in mult)
+- `long max = 0` (in mult)
+- `Scanner in = new Scanner(System.in)` (main)
+- `long l = in.nextLong()` (main)
+- `long r = in.nextLong()` (main)
+- `long res = 0` (main)
+- `long[] maxxes = new long[10]` (main)
+- `long temp = 0` (main)
+
+**Logic Flow:**
+1. Read `l` and `r` from standard input
+2. Initialize `maxxes` array:
+   - For `i` from 0 to 9:
+     - `temp = temp * 10 + 9`
+     - `maxxes[i] = (temp/2) * (temp - temp/2)`
+3. Calculate initial `res` as maximum of `mult(l)` and `mult(r)`
+4. Reset `temp` to 0
+5. For `i` from 0 to 9:
+   - `temp = temp * 10 + 9`
+   - If `temp/2` is between `l` and `r` (inclusive):
+     - Update `res` with `maxxes[i]` if larger
+6. Print final `res`
+
+**Control Structures:**
+- While loop (`while (a > 0)`) in power function
+- For loops:
+  - `for (int j = 0; j < pow; ++j)` in mult
+  - `for (int i = 0; i < 10; ++i)` (two instances in main)
+- Conditional:
+  - `if (l <= temp / 2 && temp / 2 <= r)` in main
+
+**Data Processing:**
+- `power()` calculates digit count via successive division by 10
+- `mult()` generates maximum 999...9 number with same digit count as input, calculates product
+- Precomputes optimal splits for 1-10 digit numbers in `maxxes` array
+
+**Libraries/Dependencies:**
+- `java.util.Scanner`
+- `java.util.Arrays` (imported but not explicitly used)
+
+**Input/Output:**
+- Input: Two space-separated longs via `Scanner`
+- Output: Single integer result via `System.out.println`

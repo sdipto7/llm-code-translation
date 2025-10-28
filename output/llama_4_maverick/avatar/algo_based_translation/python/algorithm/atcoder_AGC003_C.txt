@@ -1,0 +1,12 @@
+1. READ N from input
+2. INITIALIZE array A of size N
+3. FOR i FROM 0 TO N-1
+   4. READ value from input
+   5. STORE (value * N + i) in A[i]
+6. SORT array A in ascending order
+7. INITIALIZE cnt to 0
+8. FOR i FROM 0 TO N-1
+   9. CALCULATE d = (A[i] MOD N) MOD 2
+   10. IF d MOD 2 is not equal to i MOD 2
+      11. INCREMENT cnt by 1
+12. PRINT cnt DIV 2

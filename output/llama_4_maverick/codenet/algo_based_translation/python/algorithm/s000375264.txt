@@ -1,0 +1,20 @@
+1. Define a function `calculate_answer` with two integer parameters `X` and `t`, returning an integer.
+2. Read two integer inputs from the user and store them in `X` and `t` using a `map` function in combination with the `split` method.
+3. Check if `X` is greater than `t`. 
+4. If the condition is true, calculate `answer` as the difference between `X` and `t`.
+5. If the condition is false, check if `X` is less than or equal to `t`, then set `answer` to 0.
+6. Print the calculated `answer` to the console.
+7. The program terminates after printing the result.
+
+More formally:
+- Function signature: `def calculate_answer(X: int, t: int) -> int`
+- Variable declarations: `X: int`, `t: int`, `answer: int`
+- Execution order:
+  1. Read `X` and `t` from input.
+  2. Evaluate the condition `X > t`.
+  3. If true, `answer = X - t`.
+  4. If false, `answer = 0` because `X <= t`.
+  5. Print `answer`.
+- Control structure: If-elif statement with conditions `X > t` and `X <= t`.
+- Input/Output: Read two integers from input, print one integer to output.
+- Data processing: Compare `X` and `t`, perform subtraction if `X > t`.

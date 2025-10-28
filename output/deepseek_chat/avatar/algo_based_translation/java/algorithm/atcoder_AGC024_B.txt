@@ -1,0 +1,37 @@
+**Function Signature:**
+- main(String[] args): void
+
+**Variables:**
+- Scanner scan: Scanner object for input
+- int N: input integer
+- int[] P: array of integers of size N
+- Map<Integer, Integer> map: HashMap mapping integer to integer
+- List<Integer> nglist: ArrayList of integers
+- int ans: integer result
+
+**Libraries/Imports:**
+- java.util.ArrayList
+- java.util.HashMap
+- java.util.List
+- java.util.Map
+- java.util.Scanner
+
+**Algorithm:**
+1. Initialize Scanner with System.in
+2. Read integer N from input
+3. Create integer array P of size N
+4. For i from 0 to N-1:
+   - Read integer from input, subtract 1, store in P[i]
+5. Create empty HashMap map
+6. For i from 0 to N-1:
+   - Put key-value pair (P[i], i) in map
+7. Create empty ArrayList nglist
+8. For i from 0 to N-2:
+   - If map.get(i) > map.get(i+1):
+     - Add i to nglist
+9. If nglist is empty:
+   - Print 0 and return
+10. Set ans = minimum of (N - nglist.get(0) - 1) and (nglist.get(nglist.size()-1) + 1)
+11. For i from 0 to nglist.size()-2:
+    - Set ans = minimum of (nglist.get(i) + 1 + N - nglist.get(i+1) - 1) and current ans
+12. Print ans

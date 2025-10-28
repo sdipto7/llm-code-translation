@@ -1,0 +1,25 @@
+- Function signature: `def is_divisible_by_4(input_data: str) -> str`
+- Variable declarations:
+  - `input_data: str` - The input string containing numbers separated by spaces.
+  - `input_list: List[str]` - A list of strings obtained by splitting `input_data`.
+  - `num: str` - A concatenated string of the elements in `input_list`.
+
+- Logic flow:
+  1. Define the function `is_divisible_by_4` which takes `input_data` as a parameter.
+  2. Split `input_data` using spaces to create `input_list`.
+  3. Concatenate elements of `input_list` to form the string `num`.
+  4. Convert `num` to an integer and check if it is divisible by 4.
+     - Use the modulo operator `%` to check if `int(num) % 4 == 0`.
+     - If the condition is true, return the string `'YES'`.
+     - Otherwise, return the string `'NO'`.
+
+- No loops are present in the code.
+- Conditional structure:
+  - Single if-else condition to determine divisibility by 4.
+
+- Input/Output operations:
+  - Input: The function takes a single string `input_data` simulating the input from the user.
+  - Output: The function returns either `'YES'` or `'NO'` based on the divisibility check.
+
+- Required libraries, modules, or dependencies:
+  - No external libraries or dependencies are required.

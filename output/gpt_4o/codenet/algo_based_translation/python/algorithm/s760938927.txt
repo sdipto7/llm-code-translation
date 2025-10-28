@@ -1,0 +1,27 @@
+```plaintext
+Algorithm:
+
+1. Declare and initialize variables:
+   - h, w, ka: integers obtained from user input, representing the height and width of the matrix and the target count of '#' respectively.
+   - mat: a list of lists containing strings, representing the matrix, with input obtained line-by-line for each row.
+   - ans: integer initialized to 0, used to count the number of valid configurations.
+
+2. Iterate over all possible combinations of row and column selections:
+   - For i from 0 to (2**(h+w) - 1):
+     a. Convert i to a binary string with length (h+w), padded with leading zeros if necessary (variable 'b').
+     b. Split 'b' into two parts: 
+        - rs: first h characters representing row selections.
+        - cs: remaining characters representing column selections.
+
+3. Calculate the number of '#' that remain in the matrix after applying the current selections:
+   - Initialize ct to 0, which counts the number of '#' that are not removed.
+   - For each row index l from 0 to h-1:
+     a. For each column index k from 0 to w-1:
+        i. If mat[l][k] is '#' and rs[l] is '0' and cs[k] is '0', increment ct by 1.
+
+4. Check if the current configuration matches the target count:
+   - If ct is equal to ka, increment ans by 1.
+
+5. Output the final count:
+   - Print the value of ans.
+```

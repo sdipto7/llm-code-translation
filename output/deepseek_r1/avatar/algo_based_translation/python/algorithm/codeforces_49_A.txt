@@ -1,0 +1,41 @@
+**Structured Algorithm Specification:**
+
+**Function/Method Signature:**  
+- Procedure `main()`  
+  - **Input:** None (Reads from standard input)  
+  - **Output:** Writes "YES" or "NO" to standard output (or no output if all characters are skipped)  
+
+**Variable Declarations:**  
+- `a: str` (Input string)  
+- `vo: list[str]` (List of vowel characters: `['a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y']`)  
+- `i: int` (Loop index for string traversal)  
+
+**Step-by-Step Logic Flow:**  
+1. Read input string `a` from standard input.  
+2. Initialize `vo` with predefined vowel characters.  
+3. Iterate `i` from `len(a) - 1` down to `0` (inclusive):  
+   1. **Condition:** If `a[i]` is `' '` or `'?'`, skip to the next iteration (continue).  
+   2. **Else:**  
+      1. Check if `a[i]` exists in `vo`.  
+      2. **Condition:** If true, print "YES" to standard output.  
+      3. **Else:** Print "NO" to standard output.  
+      4. Terminate the loop (break).  
+
+**Control Flow Structures:**  
+- **Loop:**  
+  - `for i in range(len(a) - 1, -1, -1)` (reverse iteration)  
+  - **Exit Criteria:** Loop termination when `i` reaches `-1` or `break` is executed.  
+- **Conditionals:**  
+  - `if (a[i] == ' ' or a[i] == '?')` (skip characters)  
+  - `if (a[i] in vo)` (check vowel membership)  
+
+**Input/Output Operations:**  
+- Input: Read string `a` via `input()`.  
+- Output: Print "YES" or "NO" based on vowel check (executed once per valid input).  
+
+**Edge Case Handling:**  
+- Empty string input: No output (loop does not execute).  
+- All characters are `' '` or `'?'`: No output (loop completes without breaking).  
+
+**External Dependencies:**  
+- None (No imports or library functions beyond standard input/output).

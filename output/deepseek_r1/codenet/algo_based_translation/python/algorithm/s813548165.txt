@@ -1,0 +1,34 @@
+- Input Operations:
+  1. Read integer N from standard input
+  2. Read two space-separated strings S and T from standard input
+
+- Variable Declarations:
+  - N: int
+  - S: str
+  - T: str
+  - char_lists: List[str] (initialized as empty list)
+  - i: int (loop index)
+  - char: str (current character from S)
+
+- Logic Flow:
+  1. Initialize empty list char_lists
+  2. Iterate through each character and its index in S:
+     Loop: for i, char in enumerate(S)
+     a. Append current character from S to char_lists
+     b. Append character at index i from T to char_lists
+  3. Concatenate all elements in char_lists into single string
+  4. Print resulting string
+
+- Output Operation:
+  1. Print concatenated string using joined char_lists
+
+- Control Structures:
+  - Single for loop with enumerate(S) as iteration source
+  - Loop body contains two consecutive append operations
+
+- Data Processing:
+  - Character-by-character interleaving of S and T
+  - Sequential list construction with O(n) space complexity
+
+- Dependencies:
+  - Standard input/output functions (no external libraries required)

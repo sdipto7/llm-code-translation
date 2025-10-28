@@ -1,0 +1,9 @@
+1. Read the number of input elements.
+2. Create a list to store the input elements.
+3. Read the input elements and add them to the list.
+4. Sort the list in ascending order.
+5. Initialize a counter variable to 1.
+6. Iterate through the sorted list.
+7. For each element in the list, check if it is greater than or equal to the counter.
+8. If the condition is true, increment the counter.
+9. Output the final value of the counter.

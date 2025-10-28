@@ -1,0 +1,97 @@
+```
+Algorithm Main(in: FastScanner, out: PrintWriter, test: int)
+    N: int = in.nextInt()
+    A: int[] = new int[N]
+    
+    for i from 0 to N - 1
+        A[i] = in.nextInt()
+    
+    Arrays.sort(A)
+    
+    res: long = 0
+    
+    q: PriorityQueue<int[]> = new PriorityQueue<>(
+        Comparator.comparingInt((int[] e) -> Math.min(e[0], e[1])).reversed()
+    )
+    q.add(new int[]{A[N - 1], A[N - 1]})
+    
+    for i from N - 2 down to 0
+        a: int = A[i]
+        place: int[] = q.remove()
+        res += Math.min(place[0], place[1])
+        q.add(new int[]{place[0], a})
+        q.add(new int[]{a, place[1]})
+    
+    out.println(res)
+
+Algorithm main(args: String[])
+    out: PrintWriter = new PrintWriter(System.out)
+    in: FastScanner = new FastScanner(System.in)
+    
+    for t from 1 to 1
+        sol: Main = new Main(in, out, t)
+    
+    out.close()
+
+Class FastScanner
+    stream: InputStream
+    buf: byte[] = new byte[1024]
+    curChar: int
+    numChars: int
+    
+    Constructor FastScanner(stream: InputStream)
+        this.stream = stream
+    
+    Function read() -> int
+        if numChars == -1
+            throw InputMismatchException()
+        
+        if curChar >= numChars
+            curChar = 0
+            try
+                numChars = stream.read(buf)
+            catch IOException e
+                throw InputMismatchException()
+            
+            if numChars <= 0
+                return -1
+        
+        return buf[curChar++]
+    
+    Function isSpaceChar(c: int) -> boolean
+        return c == ' ' or c == '\n' or c == '\r' or c == '\t' or c == -1
+    
+    Function isEndline(c: int) -> boolean
+        return c == '\n' or c == '\r' or c == -1
+    
+    Function nextInt() -> int
+        return Integer.parseInt(next())
+    
+    Function nextLong() -> long
+        return Long.parseLong(next())
+    
+    Function nextDouble() -> double
+        return Double.parseDouble(next())
+    
+    Function next() -> String
+        c: int = read()
+        while isSpaceChar(c)
+            c = read()
+        res: StringBuilder = new StringBuilder()
+        do
+            res.appendCodePoint(c)
+            c = read()
+        while not isSpaceChar(c)
+        return res.toString()
+    
+    Function nextLine() -> String
+        c: int = read()
+        while isEndline(c)
+            c = read()
+        res: StringBuilder = new StringBuilder()
+        do
+            res.appendCodePoint(c)
+            c = read()
+        while not isEndline(c)
+        return res.toString()
+```

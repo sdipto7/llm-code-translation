@@ -1,0 +1,39 @@
+1. Import required libraries: 
+   - java.io.BufferedReader
+   - java.io.IOException
+   - java.io.InputStreamReader
+   - java.math.BigDecimal
+   - java.util.StringTokenizer
+
+2. Define a function main with signature: 
+   - public static void main(String[] args) throws IOException
+
+3. Declare variables:
+   - BufferedReader in
+   - StringTokenizer st
+   - BigDecimal a
+   - BigDecimal b
+   - BigDecimal mul
+
+4. Execution order:
+   1. Initialize in with new BufferedReader(new InputStreamReader(System.in))
+   2. Read a line from in and store it in st using new StringTokenizer(in.readLine())
+   3. Extract the first token from st and store it in a using new BigDecimal(st.nextToken())
+   4. Extract the second token from st and store it in b using new BigDecimal(st.nextToken())
+   5. Calculate the product of a and b, store it in mul using a.multiply(b)
+   6. Tokenize the string representation of mul using "." as the delimiter and store it in st
+   7. Extract the first token from st and print it to the console using System.out.println(st.nextElement())
+
+5. Control structures:
+   - None
+
+6. Input/Output operations:
+   - Read input from System.in using BufferedReader
+   - Print output to System.out using System.out.println
+
+7. Data processing logic:
+   - Tokenize input string
+   - Convert tokens to BigDecimal
+   - Multiply two BigDecimal numbers
+   - Tokenize the result using "." as the delimiter
+   - Extract and print the first token (integer part)

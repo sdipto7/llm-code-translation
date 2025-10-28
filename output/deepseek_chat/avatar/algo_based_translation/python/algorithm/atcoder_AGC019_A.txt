@@ -1,0 +1,41 @@
+**Algorithm:**
+
+1. **Import Libraries:**
+   - sys, re
+   - deque, defaultdict, Counter from collections
+   - sqrt, hypot, factorial, pi, sin, cos, radians from math
+   - gcd from math (if Python version >= 3.5) or from fractions (otherwise)
+   - heappop, heappush, heapify, heappushpop from heapq
+   - bisect_left, bisect_right from bisect
+   - permutations, combinations, product from itertools
+   - itemgetter, mul from operator
+   - deepcopy from copy
+   - reduce, partial from functools
+   - Fraction from fractions
+   - ascii_lowercase, ascii_uppercase, digits from string
+
+2. **Define Helper Functions:**
+   - input(): returns sys.stdin.readline().strip()
+   - ceil(a, b=1): returns integer ceiling of a divided by b
+   - round(x): returns integer rounding of x (using (x*2+1)//2 method)
+   - fermat(x, y, MOD): returns x * (y^(MOD-2) mod MOD
+   - lcm(x, y): returns least common multiple of x and y
+   - lcm_list(nums): returns LCM of list using reduce with lcm
+   - INT(): returns integer input
+   - MAP(): returns list of integers from input split by spaces
+   - LIST(): returns list of integers from input split by spaces
+
+3. **Set System Parameters:**
+   - Set recursion limit to 10^9
+   - Define INF as float('inf')
+   - Define MOD as 10^9+7
+
+4. **Main Execution:**
+   - Read four integers q, h, s, d from input
+   - Read integer n from input
+   - Calculate best1L = min(q*4, h*2, s)
+   - Calculate best2L = min(d, best1L*2)
+   - If n is even:
+        Print best2L * (n//2)
+   - Else:
+        Print best2L * (n//2) + best1L

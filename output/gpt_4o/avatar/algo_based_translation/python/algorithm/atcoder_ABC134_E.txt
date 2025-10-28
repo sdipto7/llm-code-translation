@@ -1,0 +1,28 @@
+```plaintext
+Function binary_search(key: int) -> int:
+    Declare variables:
+        bad: int = -1
+        good: int = length of list 'ans'
+    While good - bad > 1:
+        mid = (bad + good) // 2
+        If ans[mid][-1] < key:
+            good = mid
+        Else:
+            bad = mid
+    Return good
+
+Declare variables:
+    N: int
+    ans: list of lists of int = []
+
+Read integer input and assign to N
+For _ in range(N):
+    Read integer input and assign to A
+    idx = binary_search(A)
+    If idx is equal to length of list 'ans':
+        Append a new list containing A to 'ans'
+    Else:
+        Append A to ans[idx]
+
+Output the length of list 'ans'
+```

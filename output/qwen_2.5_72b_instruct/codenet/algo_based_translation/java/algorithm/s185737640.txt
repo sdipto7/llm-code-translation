@@ -1,0 +1,33 @@
+- Function signatures with parameter and return types:
+  - `public static void main(String[] args)`
+  - `static boolean isEvenString(String s)`
+
+- Variable declarations and data types:
+  - `Scanner sc`
+  - `String S`
+  - `String a`
+  - `String b`
+
+- Complete logic flow in execution order:
+  1. Create a `Scanner` object to read input.
+  2. Read a line of input and store it in `S`.
+  3. Close the `Scanner`.
+  4. Check if the length of `S` is odd:
+     - If true, remove the last character from `S`.
+     - If false, remove the last two characters from `S`.
+  5. Enter a loop that continues as long as `S` is not empty:
+     - Check if `S` is an even string using `isEvenString`:
+       - If true, break out of the loop.
+       - If false, remove the last two characters from `S`.
+  6. Print the length of `S`.
+
+- Control structures:
+  - Conditional (`if-else`) checks the length of `S` for odd/even and the result of `isEvenString`.
+  - Loop (`for`) continues while `S` is not empty.
+
+- Input/output operations and data processing logic:
+  - Input: Read a line of text from the console.
+  - Output: Print the length of the processed string `S`.
+
+- Required libraries, modules, or dependencies:
+  - `java.util.Scanner`

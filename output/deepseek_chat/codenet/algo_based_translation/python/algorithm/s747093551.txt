@@ -1,0 +1,34 @@
+**Function Signature:**
+- No explicit function defined; main execution block
+- Parameters: None
+- Return: None (prints result)
+
+**Variables and Data Types:**
+- N, M, X, Y: integers
+- x: list of integers
+- y: list of integers
+
+**Execution Flow:**
+1. Read first input line, split into 4 integers: N, M, X, Y
+2. Read second input line, split into list of integers: x
+3. Read third input line, split into list of integers: y
+4. Calculate maximum value between:
+   - Maximum value in list x
+   - X
+5. Calculate minimum value between:
+   - Minimum value in list y
+   - Y
+6. Compare results from steps 4 and 5:
+   - If maximum < minimum: print "No War"
+   - Else: print "War"
+
+**Control Structures:**
+- Conditional expression: max(max(x),X) < min(min(y),Y) ? "No War" : "War"
+
+**Input/Output Operations:**
+- Input: 3 lines from standard input
+- Output: Print "No War" or "War" to standard output
+
+**Dependencies:**
+- Standard input/output functions
+- Built-in functions: map, input, split, max, min, print

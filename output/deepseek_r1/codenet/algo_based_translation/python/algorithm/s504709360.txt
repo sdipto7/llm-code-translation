@@ -1,0 +1,50 @@
+**Algorithm**
+
+**Function Signature**
+- Not explicitly defined; procedural code with input from stdin and output via print.
+
+**Variables**
+- `s: str` (input string)
+- `i: int` (loop index for missing character search and reverse iteration)
+- `c: str` (character candidate for insertion)
+- `s1: str` (substring before pivot index)
+- `j: int` (loop index for finding replacement character)
+
+**Input/Output Operations**
+- Read `s` from standard input.
+- Print result or `-1` via standard output.
+
+**Control Flow**
+
+1. **Initial Check**  
+   - If `len(s) < 26`:  
+     1.1. For `i` in `0` to `25` (inclusive):  
+         a. Compute `c = chr(ord("a") + i)`  
+         b. If `c` not in `s`:  
+             i. Print `s + c`  
+             ii. Terminate execution.  
+
+2. **Full-Length String Handling**  
+   - Else (if `len(s) == 26`):  
+     2.1. Iterate `i` from `25` down to `1` (via `reversed(range(1, 26))`):  
+         a. If `s[i-1] < s[i]`:  
+             i. Set `s1 = s[0:i-1]`  
+             ii. For `j` in `0` to `25` (inclusive):  
+                 - Compute `c = chr(ord("a") + j`  
+                 - If `c > s[i-1]` and `c` not in `s1`:  
+                     A. Print `s1 + c`  
+                     B. Terminate execution.  
+             iii. Exit loop after first valid replacement.  
+     2.2. If no valid `i` found in step 2.1:  
+         - Print `-1`.  
+
+**Termination**  
+- Early termination via `exit()` after printing a result.  
+
+**Dependencies**  
+- None (uses built-in functions only).  
+
+**Data Flow**  
+- `s` is processed to find missing characters or the next lexicographical permutation.  
+- `s1` holds the prefix before the pivot point in the full-length case.  
+- `c` iterates through candidate characters for insertion.

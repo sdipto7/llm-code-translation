@@ -1,0 +1,24 @@
+```plaintext
+Algorithm:
+1. Import java.util.Scanner
+2. Define class codeforces_267_A
+3. Define main method with String[] args parameter
+4. Create Scanner object reading from System.in
+5. Read integer n from input
+6. For i from 0 to n-1:
+   a. Read integer a from input
+   b. Read integer b from input
+   c. Call sub(a, b) and print result
+7. Define sub method with parameters: int a, int b, returns int
+8. Initialize min = Math.min(a, b)
+9. Initialize max = Math.max(a, b)
+10. Initialize result = 0
+11. While min > 0:
+    a. result += max / min
+    b. max = max % min
+    c. curr_min = Math.min(min, max)
+    d. curr_max = Math.max(min, max)
+    e. min = curr_min
+    f. max = curr_max
+12. Return result
+```

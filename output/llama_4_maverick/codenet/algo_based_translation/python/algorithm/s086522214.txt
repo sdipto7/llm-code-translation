@@ -1,0 +1,39 @@
+1. Import required libraries: 
+   - collections
+   - scipy.misc
+   - sys
+   - numpy as np
+   - math
+   - operator.itemgetter
+   - itertools
+   - copy
+
+2. Define function prime_decomposition with parameter n of type integer and return type list of integers:
+   - Initialize i to 2 and table to an empty list
+   - While i squared is less than or equal to n:
+     - While n is divisible by i:
+       - Divide n by i
+       - Append i to table
+     - Increment i by 1
+   - If n is greater than 1:
+     - Append n to table
+   - Return table
+
+3. Define function digit with parameter i of type integer and return type list of integers:
+   - If i is greater than 0:
+     - Return the result of concatenating the list returned by digit(i//10) and the list [i%10]
+   - Else:
+     - Return an empty list
+
+4. Define function getNearestValueIndex with parameters list and num, and return type integer:
+   - Calculate the absolute difference between each element in list and num
+   - Return the index of the minimum difference
+
+5. Read input string S
+6. Split S into a list T using '/' as the delimiter
+7. Concatenate T[1] and T[2] to form a string representing a date
+8. Convert the date string to an integer
+9. If the date is less than or equal to 430:
+   - Print 'Heisei'
+10. Else:
+   - Print 'TBD'

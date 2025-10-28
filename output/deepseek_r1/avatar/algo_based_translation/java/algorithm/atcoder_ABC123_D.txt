@@ -1,0 +1,64 @@
+Algorithm:
+- Function: main(String[] args)
+  - Parameters: String array args
+  - Return type: void
+
+Variables:
+- Scanner sc
+- int[] x = new int[3]
+- int max = 0
+- int k
+- List<Long>[] a = new List[3]
+- List<Long> ans
+- int n
+
+Logic Flow:
+1. Initialize Scanner to read input
+2. Read 3 integers into array x:
+   - For i from 0 to 2:
+     - x[i] = nextInt()
+     - Update max to maximum of current max and x[i]
+3. Read integer k
+4. Initialize three ArrayLists for a[0], a[1], a[2]
+5. Populate each list with values:
+   - For each list index i (0-2):
+     - Iterate x[i] times:
+       - Add nextLong() to a[i]
+     - Sort a[i] in ascending order
+6. Close Scanner
+7. Generate combinations:
+   - For i from 0 to x[0]-1:
+     - For j from 0 to x[1]-1:
+       - For m from 0 to x[2]-1:
+         - Calculate product = (i+1) * (j+1) * (m+1)
+         - If product <= k:
+           - Calculate sum:
+             - a[0].get(x[0]-i-1)
+             + a[1].get(x[1]-j-1)
+             + a[2].get(x[2]-m-1)
+           - Add sum to ans list
+8. Sort ans in ascending order
+9. Set n = ans.size()
+10. Output results:
+    - For i from 0 to k-1:
+      - Print ans.get(n - i - 1)
+
+Control Structures:
+- For-loops:
+  - 3 layers of nested loops for combination generation
+  - Iteration counts determined by x array values
+- Conditional:
+  - (i+1)*(j+1)*(m+1) <= k check
+- Sorting operations on all input lists and result list
+
+Input/Output:
+- Reads 3 dimensions (x array)
+- Reads K value
+- Reads 3 sorted lists of long integers
+- Outputs K largest sums in descending order
+
+Dependencies:
+- java.util.Scanner
+- java.util.List
+- java.util.ArrayList
+- java.util.Collections (for sorting)

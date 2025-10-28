@@ -1,0 +1,31 @@
+```
+Function main() : void
+    Import BufferedWriter from java.io
+    Import IOException from java.io
+    Import OutputStreamWriter from java.io
+    Import Scanner from java.util
+
+    Declare sc as Scanner and initialize with System.in
+    Declare bw as BufferedWriter and initialize with OutputStreamWriter using System.out
+
+    Declare H as int and read input using sc.nextInt()
+    Declare W as int and read input using sc.nextInt()
+    Declare A as int and read input using sc.nextInt()
+    Declare B as int and read input using sc.nextInt()
+
+    If (W < 2 * A || H < 2 * B) then
+        Print -1 to System.out
+        Return
+
+    For i from 0 to H-1, incrementing by 1
+        For j from 0 to W-1, incrementing by 1
+            If ((i < B && j < A) || (i >= B && j >= A)) then
+                Write "0" to bw
+            Else
+                Write "1" to bw
+        End For
+        Write newline to bw
+
+    Flush bw
+End Function
+```

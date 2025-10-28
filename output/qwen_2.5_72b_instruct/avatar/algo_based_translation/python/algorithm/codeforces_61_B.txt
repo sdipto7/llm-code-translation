@@ -1,0 +1,71 @@
+Function signatures with parameter and return types:
+- `valid(i: int, j: int, n: int, m: int) -> bool`
+- `sumn(i: int, n: int) -> float`
+- `sqfun(a: float, b: float, c: float) -> float`
+- `value() -> Tuple[int]`
+- `values() -> Tuple[int]`
+- `inlst() -> List[int]`
+- `inlsts() -> List[int]`
+- `inp() -> int`
+- `inps() -> int`
+- `instr() -> str`
+- `stlst() -> List[str]`
+- `f(s: str) -> str`
+- `solve() -> None`
+
+Variable declarations and data types:
+- `i: int`
+- `j: int`
+- `n: int`
+- `m: int`
+- `r: str`
+- `a: float`
+- `b: float`
+- `c: float`
+- `l: List[str]`
+- `t: Iterator[Tuple[str]]`
+- `s: str`
+
+Complete logic flow in execution order:
+1. Import required libraries: `collections`, `heapq`, `sys`, `math`, `itertools`, `bisect`, `io`, `os`.
+2. Define `valid` function to check if indices `i`, `j` are within bounds `n`, `m`.
+3. Define `sumn` function to calculate the sum of numbers from `i` to `n`.
+4. Define `sqfun` function to calculate the positive root of a quadratic equation.
+5. Define `value` function to read a line of input and return a tuple of integers.
+6. Define `values` function to read a line from standard input and return a tuple of integers.
+7. Define `inlst` function to read a line of input and return a list of integers.
+8. Define `inlsts` function to read a line from standard input and return a list of integers.
+9. Define `inp` function to read a single integer from input.
+10. Define `inps` function to read a single integer from standard input.
+11. Define `instr` function to read a single string from input.
+12. Define `stlst` function to read a line of input and return a list of strings.
+13. Define `f` function to process string `s` by removing specific characters and converting to lowercase.
+14. Define `solve` function to:
+    1. Initialize an empty list `l`.
+    2. For three iterations, append processed input strings to `l`.
+    3. Generate all permutations of `l` and store them in `l` after joining each permutation tuple into a string.
+    4. Read an integer `i` representing the number of test cases.
+    5. For `i` iterations, check if the processed input string is in `l`. If true, print "ACC"; otherwise, print "WA".
+15. Check if the script is run directly and call `solve` function.
+
+Control structures:
+- `valid`: Conditional statement to check index bounds.
+- `f`: Conditional statement to skip specific characters.
+- `solve`: For loop to read three input strings and generate permutations.
+- `solve`: For loop to process each test case and check against generated permutations.
+- `solve`: Conditional statement to print "ACC" or "WA".
+
+Input/output operations and data processing logic:
+- Input reading functions (`value`, `values`, `inlst`, `inlsts`, `inp`, `inps`, `instr`, `stlst`) read data from standard input.
+- Function `f` processes strings by removing specific characters and converting to lowercase.
+- Function `solve` generates permutations of processed strings and checks processed input strings against these permutations to determine output ("ACC" or "WA").
+
+Required libraries, modules, or dependencies:
+- `collections`
+- `heapq`
+- `sys`
+- `math`
+- `itertools`
+- `bisect`
+- `io`
+- `os`

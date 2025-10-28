@@ -1,0 +1,45 @@
+**Algorithm Specification**
+
+**Function/Method Signatures**
+- Not applicable (script-based approach)
+
+**Variable Declarations and Data Types**
+- `n`: Integer (input value)
+- `s`: List of strings (input words)
+- `w`: Dictionary with string keys and integer values (word counts)
+- `reversed_s`: List of strings (reversed version of `s`)
+- `c`: Integer (tracking index, initialized to -1)
+- `a`: String (result, initialized to empty string placeholder)
+
+**Step-by-Step Logic**
+1. Read integer `n` from standard input.
+2. Read the next input line, remove trailing newline, split into list `s`.
+3. Count occurrences of each element in `s` using `Counter`, storing results in `w`.
+4. Reverse `s` to create `reversed_s`.
+5. Initialize `c = -1` and `a` as empty string.
+6. Compute `max_count` as the maximum value in `w.values()`.
+7. Iterate over each key `i` in `w`:
+   - If `w[i] == max_count`:
+      - Find `idx` = first occurrence index of `i` in `reversed_s`
+      - If `idx > c`:
+          - Set `a = i`
+          - Set `c = idx`
+8. Print `a` as the final result.
+
+**Control Flow Structures**
+- Loop over all keys in `w` (order depends on `Counter` implementation).
+- Nested conditionals check for maximum frequency and largest reversed index.
+
+**Input/Output Operations**
+- Read from `stdin` using `sys.stdin.readline`.
+- Split input string into tokens, process counts, reverse list.
+- Output final result via `print(a)`.
+
+**Error Handling and Edge Cases**
+- No explicit error handling: assumes valid integer `n` and properly formatted input line.
+- Handles multiple elements with maximum frequency by selecting the one with the latest first occurrence in `reversed_s` (may not correspond to true last occurrence in original list in all cases).
+
+**External Dependencies**
+- Imports:
+  - `sys` (for input reading)
+  - `collections.Counter` (for frequency counting)

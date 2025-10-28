@@ -1,0 +1,41 @@
+Function signature: `boolean isSolution(int columnsCount, String x)`
+Variable declarations: `boolean[] allXs`
+Logic flow:
+1. Initialize `allXs` as an array of booleans of size `columnsCount` filled with `true`
+2. For `i` from `0` to `11` (inclusive):
+   - If `x.charAt(i)` is not `'X'`, set `allXs[i % columnsCount]` to `false`
+3. For `i` from `0` to `columnsCount - 1` (inclusive):
+   - If `allXs[i]` is `true`, return `true`
+4. Return `false`
+
+Function signature: `void main(String[] args)`
+Variable declarations: `BufferedReader br`, `PrintWriter pw`, `int t`, `int possibleSolutions`, `StringBuilder solutions`, `String s`
+Logic flow:
+1. Create `BufferedReader` for input and `PrintWriter` for output
+2. Read integer `t` from input
+3. For `i` from `0` to `t - 1` (inclusive):
+   - Initialize `possibleSolutions` to `0`
+   - Create `StringBuilder` `solutions`
+   - Read string `s` from input
+   - If `isSolution(12, s)` is `true`:
+     - Append `" 1x12"` to `solutions`
+     - Increment `possibleSolutions`
+   - If `isSolution(6, s)` is `true`:
+     - Append `" 2x6"` to `solutions`
+     - Increment `possibleSolutions`
+   - If `isSolution(4, s)` is `true`:
+     - Append `" 3x4"` to `solutions`
+     - Increment `possibleSolutions`
+   - If `isSolution(3, s)` is `true`:
+     - Append `" 4x3"` to `solutions`
+     - Increment `possibleSolutions`
+   - If `isSolution(2, s)` is `true`:
+     - Append `" 6x2"` to `solutions`
+     - Increment `possibleSolutions`
+   - If `isSolution(1, s)` is `true`:
+     - Append `" 12x1"` to `solutions`
+     - Increment `possibleSolutions`
+   - Print `possibleSolutions` and `solutions`
+4. Flush and close `PrintWriter`
+
+Libraries: `java.io.BufferedReader`, `java.io.IOException`, `java.io.InputStreamReader`, `java.io.PrintWriter`, `java.util.Arrays`

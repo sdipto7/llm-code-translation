@@ -1,0 +1,16 @@
+import math
+Read integer N from input
+Read string S from input
+Define function calculate(n: int, s: str) -> None:
+    Convert s to list arr
+    Count occurrences of "R" in arr -> rNum
+    Count occurrences of "G" in arr -> gNum
+    Count occurrences of "B" in arr -> bNum
+    Initialize sum = 0
+    For step from 1 to ceil(n/2) inclusive:
+        For i from 0 to n - 2*step - 1 inclusive:
+            Create string s by concatenating arr[i], arr[i+step], arr[i+2*step]
+            If s equals "RGB" OR "RBG" OR "BGR" OR "BRG" OR "GBR" OR "GRB":
+                Increment sum by 1
+    Print rNum * gNum * bNum - sum
+Call calculate(N, S)

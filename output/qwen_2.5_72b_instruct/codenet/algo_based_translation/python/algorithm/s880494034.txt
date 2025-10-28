@@ -1,0 +1,16 @@
+- Function signature: `main()`
+- Variable declarations: 
+  - `N: str`
+  - `XS: List[int]`
+  - `m: int`
+  - `i: int`
+  - `c: int`
+- Libraries: `math`
+- Execution order and logic flow:
+  - Read input string `N`
+  - Read input string, split by spaces, convert each to integer, store in list `XS`
+  - Initialize `m` to 9999999999
+  - For `i` from 1 to 100 (inclusive):
+    - Calculate `c` as the sum of squared differences between each element `x` in `XS` and `i`
+    - If `m` is greater than `c`, update `m` to `c`
+  - Print the value of `m`

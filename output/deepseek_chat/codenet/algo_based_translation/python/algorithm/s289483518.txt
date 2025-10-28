@@ -1,0 +1,15 @@
+n: int, m: int = input().split() -> map(int) -> assign
+a: list[int] = input().split() -> map(int) -> list -> assign
+Sort list a in ascending order
+ope: list[list[int]] = for range(m): input().split() -> map(int) -> list -> collect
+Sort list ope by element at index 1 in descending order
+j: int = 0
+For i from 0 to n-1:
+    If a[i] < ope[j][1]:
+        Set a[i] = ope[j][1]
+        Decrement ope[j][0] by 1
+        If ope[j][0] == 0:
+            Increment j by 1
+            If j == len(ope): break loop
+    Else: break loop
+Print sum of list a

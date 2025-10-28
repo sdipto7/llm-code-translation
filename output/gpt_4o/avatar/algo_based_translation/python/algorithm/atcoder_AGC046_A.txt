@@ -1,0 +1,15 @@
+Algorithm:
+
+1. **Import Required Library**
+   - Import the `gcd` function from the `math` module.
+
+2. **Input Operation**
+   - Declare an integer variable `x`.
+   - Read an integer input from the user and assign it to `x`.
+
+3. **Processing and Output**
+   - Compute the greatest common divisor (GCD) of `360` and `x` using the `gcd` function.
+   - Perform integer division of `360` by the computed GCD value.
+   - Print the result of the division.
+
+The algorithm assumes that `x` is a non-zero positive integer as the input to ensure valid computation of GCD and division.

@@ -1,0 +1,14 @@
+1. Read the input value n from the user.
+2. Initialize a variable f to 0.
+3. Create an array a of size n.
+4. Iterate from i = 0 to n-1 and read the input values into the array a.
+5. Iterate from k = 0 to n-1.
+6. For each k, store the value of a[k] in a variable t.
+7. Iterate from i = 0 to n-1.
+8. For each i, iterate from j = 0 to n-2.
+9. Check if i is not equal to j and if t is equal to the sum of a[i] and a[j].
+10. If the condition is met, set f to 1 and break the inner loop.
+11. If f is 1, break the middle loop.
+12. If f is 1, break the outer loop.
+13. If f is 1, print the values k+1, j+1, and i+1.
+14. If f is not 1, print -1.

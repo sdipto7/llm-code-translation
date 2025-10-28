@@ -1,0 +1,35 @@
+Function signature: `main()`
+
+Variable declarations and data types:
+- `n`: integer
+- `l`: list of integers
+- `ans`: integer
+- `i`: integer
+- `j`: integer
+- `a`: integer
+- `b`: integer
+- `right`: integer
+- `left`: integer
+- `tmp`: integer
+
+Libraries:
+- `bisect` module
+
+Logic flow in execution order:
+1. Import `bisect_right` and `bisect_left` from `bisect` module
+2. Read input from standard input and split into integers
+3. Assign first integer to `n`
+4. Assign remaining integers to list `l`
+5. Sort list `l`
+6. Initialize `ans` to 0
+7. For each integer `i` from 0 to `n-1`:
+   8. For each integer `j` from `i+1` to `n-1`:
+      9. Assign `l[i]` to `a`
+     10. Assign `l[j]` to `b`
+     11. Calculate `right` using `bisect_left(l, a + b)`
+     12. Calculate `left` using `bisect_right(l, max(a - b, b - a))`
+     13. Calculate `tmp` as `max(0, right - left)`
+     14. If `left` is less than or equal to `i` and `i` is less than `right`, decrement `tmp` by 1
+     15. If `left` is less than or equal to `j` and `j` is less than `right`, decrement `tmp` by 1
+     16. Increment `ans` by `tmp`
+17. Print `ans // 3`

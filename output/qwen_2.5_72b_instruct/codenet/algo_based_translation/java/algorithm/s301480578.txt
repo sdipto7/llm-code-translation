@@ -1,0 +1,37 @@
+Function signatures:
+- `public static void main(String[] args)`: Takes an array of strings as input, no return value.
+
+Variable declarations and data types:
+- `Scanner sc`: For reading input.
+- `int n`: Number of elements.
+- `int[] h`: Array to store the input integers.
+- `int max`: To keep track of the maximum count of consecutive non-increasing elements.
+- `int count`: To count consecutive non-increasing elements.
+- `int l`: Loop variable.
+
+Logic flow in execution order:
+1. Create a `Scanner` object to read input.
+2. Read an integer `n` from the input.
+3. Initialize an array `h` of size `n`.
+4. Loop from `0` to `n-1` to fill the array `h` with integers read from the input.
+5. Initialize `max` to `0`.
+6. Loop from `0` to `n-2` using variable `l`:
+   - Initialize `count` to `0`.
+   - While `l` is less than `n-1` and `h[l]` is greater than or equal to `h[l+1]`:
+     - Increment `l`.
+     - Increment `count`.
+   - Update `max` to the maximum of `max` and `count`.
+7. Print the value of `max`.
+
+Control structures:
+- For loop for reading the array elements.
+- For loop with a while loop nested inside for counting consecutive non-increasing elements.
+- While loop condition is `l < n - 1 && h[l] >= h[l + 1]`.
+
+Input/output operations and data processing logic:
+- Read an integer `n` and `n` integers to fill the array `h`.
+- Process the array to find the maximum count of consecutive non-increasing elements.
+- Output the maximum count.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

@@ -1,0 +1,25 @@
+Function signature: main(String[] args) throws IOException
+
+Required libraries:
+- java.io.BufferedReader
+- java.io.InputStreamReader
+- java.io.IOException
+
+Variables:
+- BufferedReader in
+- String[] str
+- int h
+- int a
+- int num
+
+Logic flow:
+1. Create BufferedReader object reading from System.in
+2. Read input line and split by space into String array
+3. Parse first array element to integer h
+4. Parse second array element to integer a
+5. Initialize num to 0
+6. Start loop with i = 1, condition: h > 0, increment: i++
+7. Subtract a from h
+8. Increment num by 1
+9. Repeat loop while h > 0
+10. Print num

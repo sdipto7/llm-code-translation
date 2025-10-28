@@ -1,0 +1,38 @@
+Function signature:
+- main() -> None
+
+Variable declarations and data types:
+- n: int
+- l1: List[int]
+- a: int
+- b: int
+- ac: int
+- bc: int
+
+Execution flow and logic:
+- Input an integer n from the user
+- Input a list of integers l1 from the user, split by spaces
+- Sort the list l1 in ascending order
+- Assign the last element of l1 to a
+- Assign the first element of l1 to b
+- If a is equal to b:
+  - Print the result of a - b
+  - Print the result of (n * (n - 1)) // 2
+- Else:
+  - Count occurrences of a in l1 and assign to ac
+  - Count occurrences of b in l1 and assign to bc
+  - Print the result of a - b
+  - Print the result of ac * bc
+
+Input/output operations and data processing logic:
+- Read an integer n from standard input
+- Read a space-separated string, split it, convert each element to an integer, and store in list l1
+- Sort the list l1
+- Compare the maximum and minimum values in l1 (stored in a and b)
+- If all elements are the same, calculate the number of possible pairs in the list using the formula for combinations of n elements taken 2 at a time
+- If there are different elements, calculate the number of pairs consisting of the maximum and minimum values
+- Output the difference between the maximum and minimum values
+- Output the number of valid pairs
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules are required

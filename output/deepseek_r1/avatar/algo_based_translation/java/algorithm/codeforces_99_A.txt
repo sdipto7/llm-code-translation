@@ -1,0 +1,38 @@
+```algorithm
+Function Main:
+    Parameters: String[] args
+    Return Type: void
+    Libraries: java.util.Scanner, java.util.ArrayList, java.util.Arrays, java.math.BigInteger
+
+    Variables:
+        char[] str
+        int dotIndex = 0
+        String _str = ""
+        Scanner input = new Scanner(System.in)
+
+    Execution Steps:
+        1. Read input line and convert to char array:
+            str = input.nextLine().toCharArray()
+        
+        2. Find first occurrence of '.' in str:
+            for i from 0 to str.length-1:
+                if str[i] == '.':
+                    dotIndex = i
+                    break loop
+        
+        3. Check pre-decimal digit:
+            if str[dotIndex - 1] == '9':
+                Print "GOTO Vasilisa."
+            
+            else:
+                4. Check first post-decimal digit:
+                    if Integer.parseInt(str[dotIndex + 1] + "") > 4:
+                        _str = concatenate str[0] to str[dotIndex - 1]
+                        Convert _str to BigInteger, add 1, print result
+                    
+                    else:
+                        5. Print all characters before dot:
+                            for i from 0 to dotIndex - 1:
+                                print str[i]
+                            Print newline
+```

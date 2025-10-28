@@ -1,0 +1,37 @@
+Function Signatures:
+- `main(String[] args): void`
+
+Variable Declarations and Data Types:
+- `mod: long`
+- `sc: Scanner`
+- `n: int`
+- `q: int`
+- `c: char[]`
+- `range: int[][]`
+- `frag: int[]`
+- `rui: int[]`
+- `i: int`
+- `left: int`
+- `right: int`
+
+Logic Flow:
+1. Initialize `mod` to 1000000007
+2. Create `sc` as a new `Scanner` object for input
+3. Read `n` as next integer from `sc`
+4. Read `q` as next integer from `sc`
+5. Read a string from `sc` and convert it to a character array `c`
+6. Initialize `range` as a 2D array with dimensions `q` by 2
+7. For `i` from 0 to `q-1` do:
+   - Read two integers from `sc` and store them in `range[i][0]` and `range[i][1]`
+8. Initialize `frag` as an integer array of size `n+1`
+9. Initialize `rui` as an integer array of size `n+1`
+10. For `i` from 2 to `n` do:
+    - If `c[i-2]` is 'A' and `c[i-1]` is 'C' then increment `frag[i]` by 1
+    - Set `rui[i]` to `rui[i-1] + frag[i]`
+11. For `i` from 0 to `q-1` do:
+    - Set `left` to `range[i][0]`
+    - Set `right` to `range[i][1]`
+    - Print `rui[right] - rui[left]`
+
+Required Libraries, Modules, or Dependencies:
+- `java.util.*`

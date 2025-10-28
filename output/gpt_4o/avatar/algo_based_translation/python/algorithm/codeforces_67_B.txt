@@ -1,0 +1,37 @@
+Algorithm:
+1. Function Signature:
+   - `def process_numbers(n: int, k: int, M: List[int]) -> None`
+
+2. Variable Declarations:
+   - `n`: int
+   - `k`: int
+   - `M`: List[int]
+   - `m`: int, initialized to 0
+   - `j`: int, used in the outer loop
+   - `p`: int, used in the inner loops
+   - `l`: int, used in the innermost loop
+
+3. Logic Flow:
+   - Read two integers `n` and `k` from input.
+   - Read a list of integers `M` from input.
+   - Initialize variable `m` to 0.
+   - Outer loop: Iterate over variable `j` from 0 to `n-1`.
+     - Inner loop: Iterate over variable `p` from 0 to `n-1`.
+       - Conditional: If `M[p]` is equal to 0, execute the following:
+         - Print `p+1` followed by a space, without a newline.
+         - Break out of the inner loop.
+     - Innermost loop: Iterate over variable `l` from 0 to `p+1-k`.
+       - Decrement `M[l]` by 1.
+     - Decrement `M[p]` by 1.
+
+4. Control Structures:
+   - Two nested `for` loops for iterating over indices `j` and `p`.
+   - Conditional statement inside the inner loop to check if `M[p]` is 0.
+   - A `for` loop inside the conditional block for iterating over `l`.
+
+5. Input/Output Operations:
+   - Input: Read two integers and a list of integers from input.
+   - Output: Print a number followed by a space when a condition is met.
+
+6. Required Libraries:
+   - No external libraries or modules are required.

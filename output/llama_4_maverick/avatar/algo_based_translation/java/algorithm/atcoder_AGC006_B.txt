@@ -1,0 +1,10 @@
+1. Read input values for n and x.
+2. Call the function print with x and n.
+3. In the function print, calculate max as 2n - 1.
+4. Check if x equals 1 or x equals max.
+5. If the condition in step 4 is true, output "No" and exit the function.
+6. If the condition in step 4 is false, output "Yes".
+7. Generate a sequence of numbers from x + n - 1 to x + n + max - 2.
+8. For each number in the sequence, calculate its remainder when divided by max, add 1 to it, and convert it to a string.
+9. Concatenate the strings generated in step 8 with a newline separator.
+10. Output the concatenated string.

@@ -1,0 +1,28 @@
+```plaintext
+Algorithm:
+
+1. Function Signature:
+   - Function Name: calculate_combinations
+   - Parameters: two integers N and M
+   - Return Type: integer
+
+2. Variable Declarations:
+   - a: integer
+   - b: integer
+
+3. Logic Flow:
+   a. Read two integers N and M from input.
+   b. Calculate the combination of N items taken 2 at a time:
+      - a = N * (N - 1) // 2
+   c. Calculate the combination of M items taken 2 at a time:
+      - b = M * (M - 1) // 2
+   d. Return the sum of a and b.
+
+4. Input/Output Operations:
+   - Input: Read a line of input, split it into two integers N and M.
+   - Output: Print the result of the sum of combinations a and b.
+
+5. No loops or conditionals present.
+
+6. No external libraries, modules, or dependencies required.
+```

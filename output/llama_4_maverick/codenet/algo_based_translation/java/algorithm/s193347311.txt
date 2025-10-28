@@ -1,0 +1,15 @@
+1. Import the `java.util.Scanner` library.
+2. Define a function `main` with return type `void` and parameter `args` of type `String[]`.
+3. Declare a variable `scan` of type `Scanner` and initialize it with `new Scanner(System.in)`.
+4. Declare a variable `intLoop` of type `int` and read its value from `scan` using `nextInt()`.
+5. Declare variables `strTaro` and `strHana` of type `String` and initialize them with empty strings.
+6. Declare variables `intTaro` and `intHana` of type `int` and initialize them with 0.
+7. Start a `for` loop with initialization `i = 0`, condition `i < intLoop`, and increment `i++`.
+8. Inside the loop, read values for `strTaro` and `strHana` from `scan` using `next()`.
+9. Compare `strTaro` and `strHana` using `compareTo()` and store the result in `intJudge` of type `int`.
+10. Use an `if-else if-else` statement with conditions:
+   - `intJudge < 0`: increment `intHana` by 3.
+   - `intJudge == 0`: increment both `intTaro` and `intHana` by 1.
+   - `0 < intJudge`: increment `intTaro` by 3.
+11. After the loop, print the values of `intTaro` and `intHana` to the console separated by a space using `System.out.println()`.
+12. Close the `scan` object using `close()`.

@@ -1,0 +1,8 @@
+1. Read n and s from input
+2. Initialize c to 0
+3. Repeat n times:
+   1. Read f and t from input
+   2. Calculate x = t - (s - f)
+   3. If x > c then
+      1. Update c to x
+4. Print s + c

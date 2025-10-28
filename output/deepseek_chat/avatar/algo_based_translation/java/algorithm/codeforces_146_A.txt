@@ -1,0 +1,35 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner in`: Scanner object for input
+- `int x = 0`: sum of first half digits
+- `int y = 0`: sum of second half digits
+- `int t = 0`: flag for invalid characters
+- `int n`: integer input (length of string)
+- `String str`: string input
+- `char[] l`: character array from string
+
+**Logic Flow:**
+1. Read integer `n` from input
+2. Read string `str` from input
+3. Convert `str` to character array `l`
+4. Iterate `i` from 0 to `n-1`:
+   - If `l[i]` is not '4' and not '7':
+     - Set `t = 1`
+5. If `t == 1`:
+   - Print "NO"
+6. Else:
+   - Iterate `i` from 0 to `n/2 - 1`:
+     - Add numeric value of `l[i]` to `x`
+   - Iterate `i` from `n-1` down to `n/2`:
+     - Add numeric value of `l[i]` to `y`
+   - If `x == y`:
+     - Print "YES"
+   - Else:
+     - Print "NO"
+
+**Libraries/Dependencies:**
+- `java.util.Scanner`
+- `java.lang.Math` (imported but unused)
+- `java.lang.Character` (implicitly used)

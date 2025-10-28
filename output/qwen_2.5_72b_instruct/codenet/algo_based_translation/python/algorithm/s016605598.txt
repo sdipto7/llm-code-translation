@@ -1,0 +1,54 @@
+Function Signature:
+- main() -> None
+
+Variable Declarations and Data Types:
+- const: int = 0
+- left: list[int] = []
+- right: list[int] = []
+- q: int
+- cnt: int = 0
+- left_sum: int = 0
+- right_sum: int = 0
+- t: list[int]
+- a: int
+- b: int
+- c: int
+- tmp: int
+
+Libraries/Modules:
+- heapq
+
+Execution Order and Logic Flow:
+1. Import the heapq module.
+2. Initialize const to 0, left and right as empty lists, cnt, left_sum, and right_sum to 0.
+3. Read q as an integer from input.
+4. For _ in range(q):
+    a. Read t as a list of integers from input.
+    b. If t[0] == 1:
+        i. Set a, b to t[1], t[2].
+        ii. Increment const by b.
+        iii. If cnt % 2 == 0:
+            1. If right is empty:
+                a. Push -a to left.
+                b. Increment left_sum by a.
+                c. Increment cnt by 1.
+                d. Continue to next iteration.
+            2. Pop c from right, decrement right_sum by c.
+            3. If a <= c:
+                a. Push -a to left, push c to right.
+                b. Increment left_sum by a, increment right_sum by c.
+            4. Else:
+                a. Push -c to left, push a to right.
+                b. Increment left_sum by c, increment right_sum by a.
+        iv. Else:
+            1. Pop c from left, increment left_sum by c.
+            2. If a <= -c:
+                a. Push -a to left, push -c to right.
+                b. Increment left_sum by a, decrement right_sum by c.
+            3. Else:
+                a. Push c to left, push a to right.
+                b. Decrement left_sum by c, increment right_sum by a.
+        v. Increment cnt by 1.
+    c. Else:
+        i. Set tmp to -left[0].
+        ii. Print tmp, const - left_sum + right_sum + tmp * (cnt % 2).

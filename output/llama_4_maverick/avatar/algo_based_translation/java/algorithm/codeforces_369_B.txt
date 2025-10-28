@@ -1,0 +1,7 @@
+1. Read input values: n, k, l, r, sAll, sk.
+2. Initialize an array 'ans' of size n with all elements set to l.
+3. Subtract (n - k) * l from sAll.
+4. Subtract k * l from sk.
+5. Distribute the remaining sk among the last k elements of 'ans' by incrementing them one by one until sk becomes 0.
+6. Distribute the remaining sAll among the first (n - k) elements of 'ans' by incrementing them one by one until sAll becomes 0.
+7. Output the elements of 'ans'.

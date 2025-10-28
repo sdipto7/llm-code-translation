@@ -1,0 +1,215 @@
+**UnionFind Class:**
+- Parent: int[]
+- Constructor: UnionFind(n: int)
+  - Initialize Parent array of size n
+  - Fill Parent with -1
+- root(A: int): int
+  - If Parent[A] < 0: return A
+  - Else: set Parent[A] = root(Parent[A]) and return Parent[A]
+- size(A: int): int
+  - Return -Parent[root(A)]
+- connect(A: int, B: int): boolean
+  - Set A = root(A), B = root(B)
+  - If A == B: return false
+  - If size(A) < size(B): swap A and B
+  - Set Parent[A] += Parent[B]
+  - Set Parent[B] = A
+  - Return true
+
+**Main Class:**
+- Static variables:
+  - scan: FastScanner
+  - scanner: Scanner
+  - rand: Random
+  - mod: long = 1000000007
+  - eps: double = 1.0E-14
+  - big: int = Integer.MAX_VALUE
+  - PI: double = 3.14159265358979323846262338327950288
+
+- modlcm(a: long, b: long): long
+  - Return a * b * modint(gcd(a, b), mod)
+
+- gcd(a: long, b: long): long
+  - If b > 0: return gcd(b, a % b)
+  - Else: return a
+
+- lcm(a: long, b: long): long
+  - Return a * b / gcd(a, b)
+
+- max(a: int, b: int): int
+  - Return a if a > b else b
+
+- min(a: int, b: int): int
+  - Return a if a < b else b
+
+- lmax(a: long, b: long): long
+  - Return Math.max(a, b)
+
+- lmin(a: long, b: long): long
+  - Return Math.min(a, b)
+
+- factorial(i: int): long
+  - If i == 1: return 1
+  - Else: return i * factorial(i - 1)
+
+- main(args: String[]): void
+  - Read string str from scan.next()
+  - If str.charAt(2) == str.charAt(3) AND str.charAt(4) == str.charAt(5): print "Yes"
+  - Else: print "No"
+
+- lower_bound(a: int[], key: int): int
+  - Initialize right = a.length, left = 0
+  - While right - left > 1:
+    - mid = (right + left) / 2
+    - If a[mid] < key: left = mid
+    - Else: right = mid
+  - Return left
+
+- upper_bound(a: int[], key: int): int
+  - Initialize right = a.length, left = 0
+  - While right - left > 1:
+    - mid = (right + left) / 2
+    - If a[mid] <= key: left = mid
+    - Else: right = mid
+  - Return left
+
+- isPrime(n: long): boolean
+  - If n == 2: return true
+  - If n < 2 OR n % 2 == 0: return false
+  - d = sqrt(n)
+  - For i from 3 to d, step 2:
+    - If n % i == 0: return false
+  - Return true
+
+- upper_division(a: int, b: int): int
+  - If a % b == 0: return a / b
+  - Else: return a / b + 1
+
+- lupper_division(a: long, b: long): long
+  - If a % b == 0: return a / b
+  - Else: return a / b + 1
+
+- setArray(a: int): int[]
+  - Create array b of size a
+  - For i from 0 to a-1: b[i] = scan.nextInt()
+  - Return b
+
+- lsetArray(a: int): long[]
+  - Create array b of size a
+  - For i from 0 to a-1: b[i] = scan.nextLong()
+  - Return b
+
+- reverse(str: String): String
+  - Create char arrays ch and chch from str
+  - a = str.length()
+  - For i from 0 to upper_division(a, 2)-1:
+    - ch[i] = chch[ch.length - i - 1]
+    - ch[ch.length - 1 - i] = chch[i]
+  - Return String.valueOf(ch)
+
+- printArray(que: int[]): void
+  - For i from 0 to que.length-2: print que[i] + " "
+  - Print que[que.length-1]
+
+- doublesort(a: int[][]): int[][]
+  - Sort a using comparator: compare x[0] and y[0]
+  - Return sorted a
+
+- ldoublesort(a: long[][]): long[][]
+  - Sort a using comparator: compare x[0] and y[0]
+  - Return sorted a
+
+- modpow(x: long, n: long, mo: long): long
+  - sum = 1
+  - While n > 0:
+    - If n & 1 == 1: sum = sum * x % mo
+    - x = x * x % mo
+    - n >>= 1
+  - Return sum
+
+- revch(ch: char[]): char[]
+  - Create ret array of size ch.length
+  - For i from ch.length-1 down to 0, j from 0:
+    - ret[j] = ch[i]
+  - Return ret
+
+- revint(ch: int[]): int[]
+  - Create ret array of size ch.length
+  - For i from ch.length-1 down to 0, j from 0:
+    - ret[j] = ch[i]
+  - Return ret
+
+- warshall_floyd(v: int[][], n: int): void
+  - For k from 0 to n-1:
+    - For i from 0 to n-1:
+      - For j from 0 to n-1:
+        - v[i][j] = min(v[i][j], v[i][k] + v[k][j])
+
+- modint(a: long, m: long): long
+  - b = m, u = 1, v = 0
+  - While b != 0:
+    - t = a / b
+    - a = a - t * b
+    - Swap a and b
+    - u = u - t * v
+    - Swap u and v
+  - u %= m
+  - If u < 0: u += m
+  - Return u
+
+**FastScanner Class:**
+- Private variables:
+  - in: InputStream = System.in
+  - buffer: byte[1024]
+  - ptr: int = 0
+  - buflen: int = 0
+
+- hasNextByte(): boolean
+  - If ptr < buflen: return true
+  - Else: set ptr = 0, read into buffer from in
+  - If buflen <= 0: return false
+  - Else: return true
+
+- readByte(): int
+  - If hasNextByte(): return buffer[ptr++]
+  - Else: return -1
+
+- isPrintableChar(c: int): boolean
+  - Return 33 <= c <= 126
+
+- hasNext(): boolean
+  - While hasNextByte() AND NOT isPrintableChar(buffer[ptr]): ptr++
+  - Return hasNextByte()
+
+- next(): String
+  - If NOT hasNext(): throw NoSuchElementException
+  - Create StringBuilder sb
+  - b = readByte()
+  - While isPrintableChar(b):
+    - Append b to sb
+    - b = readByte()
+  - Return sb.toString()
+
+- nextLong(): long
+  - If NOT hasNext(): throw NoSuchElementException
+  - n = 0, minus = false
+  - b = readByte()
+  - If b == '-': minus = true, b = readByte()
+  - If b < '0' OR '9' < b: throw NumberFormatException
+  - While true:
+    - If '0' <= b <= '9': n = n * 10 + (b - '0')
+    - Else if b == -1 OR NOT isPrintableChar(b): return minus ? -n : n
+    - Else: throw NumberFormatException
+    - b = readByte()
+
+- nextInt(): int
+  - nl = nextLong()
+  - If nl < Integer.MIN_VALUE OR nl > Integer.MAX_VALUE: throw NumberFormatException
+  - Return (int)nl
+
+- nextDouble(): double
+  - Return Double.parseDouble(next())
+
+- nextchar(): char
+  - Try: return (char)System.in.read()
+  - Catch Exception: throw RuntimeException

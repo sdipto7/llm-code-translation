@@ -1,0 +1,12 @@
+1. Import java.util.Scanner
+2. Declare main method: public static void main(String[] args)
+3. Create Scanner object with System.in
+4. Declare integer array numlist with size 5
+5. Declare integer variable k
+6. For loop: i from 0 to 4 (inclusive)
+   - Read integer input and store in numlist[i]
+7. Read integer input and store in k
+8. If condition: (numlist[4] - numlist[0]) > k
+   - Print ":("
+9. Else condition:
+   - Print "Yay!"

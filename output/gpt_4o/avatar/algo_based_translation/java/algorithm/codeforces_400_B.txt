@@ -1,0 +1,33 @@
+1. Import necessary libraries:
+   - `java.util.HashSet`
+   - `java.util.Scanner`
+
+2. Define function `main` with parameter `args` of type `String[]`:
+   - Declare a `Scanner` object `sc` for reading input.
+   - Read two integers `n` and `m` from input using `sc.nextInt()`.
+
+3. Declare an array `arrs` of type `String[]` with size `n`.
+
+4. Loop over `i` from `0` to `n-1`:
+   - Read a string from input and assign it to `arrs[i]` using `sc.next()`.
+
+5. Declare an integer array `length` with size `n`.
+
+6. Initialize integer variables `index` and `returnDex` to `0`.
+
+7. For each `String` `tmp` in `arrs`:
+   - Find the index of character `"G"` in `tmp` and assign to `dexG`.
+   - Find the index of character `"S"` in `tmp` and assign to `dexS`.
+   - If `dexG` is greater than `dexS`, set `returnDex` to `-1`.
+   - Assign `dexS - dexG` to `length[index]`.
+   - Increment `index` by `1`.
+
+8. Declare a `HashSet` `set` to store `Integer` values.
+
+9. For each integer `len` in `length`:
+   - Add `len` to `set`.
+
+10. If `returnDex` is equal to `-1`:
+    - Print `returnDex`.
+11. Else:
+    - Print the size of `set` using `set.size()`.

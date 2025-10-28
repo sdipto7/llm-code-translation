@@ -1,0 +1,10 @@
+1. Import the `Scanner` class from the `java.util` package.
+2. Define a class `Main`.
+3. Define the `main` method with the signature: `public static void main(String[] args)`.
+4. Declare a variable `sc` of type `Scanner` and initialize it with `new Scanner(System.in)`.
+5. Declare an integer variable `intA`.
+6. Read an integer from standard input using `sc.nextInt()` and assign it to `intA`.
+7. Compute the cube of `intA` using `Math.pow(intA, 3)`, which returns a `double`.
+8. Declare a double variable `dbAncer` and assign it the result from step 7.
+9. Cast `dbAncer` to an integer and declare an integer variable `intAncer` to hold this value.
+10. Output `intAncer` to standard output using `System.out.println(intAncer)`.

@@ -1,0 +1,70 @@
+Main
+- function signatures: 
+  - `main(String[] args) throws java.lang.Exception`
+- variable declarations: 
+  - `Scanner scanner`
+- logic flow:
+  - instantiate `Solution` class
+
+Solution
+- function signatures: 
+  - `Solution()`
+  - `run_case()`
+  - `strToIntArray(String str)`
+- variable declarations: 
+  - `Scanner scanner`
+  - `String line`
+  - `int N`
+  - `int K`
+  - `int len`
+  - `String[] vals`
+  - `int sz`
+  - `int[] res`
+- logic flow:
+  - initialize `scanner` with standard input
+  - while `scanner` has next line, call `run_case()`
+- run_case:
+  - read line from `scanner`
+  - split line by spaces, parse first value as `N`, second as `K`
+  - initialize `len` to 0
+  - while `N` is greater than 0, divide `N` by `K`, increment `len`
+  - print `len`
+- strToIntArray:
+  - split `str` by spaces
+  - initialize `sz` as length of `vals`
+  - initialize `res` as int array of size `sz`
+  - for each index `i` from 0 to `sz-1`, parse `vals[i]` as int and store in `res[i]`
+  - return `res`
+
+LCS
+- function signatures: 
+  - `lcs(String A, String B)`
+  - `getLCS(String X, String Y)`
+- variable declarations: 
+  - `int[][] dp`
+  - `int sz_a`
+  - `int sz_b`
+  - `int index`
+  - `int temp`
+  - `char[] lcs`
+  - `int i`
+  - `int j`
+  - `int m`
+  - `int n`
+- logic flow:
+  - lcs:
+    - initialize `sz_a` and `sz_b` as lengths of `A` and `B` respectively
+    - initialize `dp` as 2D array of size `(sz_a+1) x (sz_b+1)`
+    - for each `i` from 0 to `sz_a`, set `dp[i][0]` to 0
+    - for each `j` from 0 to `sz_b`, set `dp[0][j]` to 0
+    - for each `i` from 1 to `sz_a`, for each `j` from 1 to `sz_b`, if `A[i-1]` equals `B[j-1]`, set `dp[i][j]` to `dp[i-1][j-1] + 1`, else set `dp[i][j]` to max of `dp[i-1][j]` and `dp[i][j-1]`
+    - return `dp[sz_a][sz_b]`
+  - getLCS:
+    - initialize `m` and `n` as lengths of `X` and `Y` respectively
+    - initialize `index` as `dp[m][n]`
+    - set `temp` to `index`
+    - initialize `lcs` as char array of size `index+1`
+    - set `lcs[index]` to null character
+    - initialize `i` to `m`, `j` to `n`
+    - while `i` is greater than 0 and `j` is greater than 0, if `X[i-1]` equals `Y[j-1]`, set `lcs[index-1]` to `X[i-1]`, decrement `i`, `j`, and `index`, else if `dp[i-1][j]` is greater than `dp[i][j-1]`, decrement `i`, else decrement `j`
+    - return substring of `lcs` from 0 to `temp+2`

@@ -1,0 +1,6 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,s666154520.java,Compilation Error,"Error: output/deepseek_r1/codenet/algo_based_translation/python/java/s666154520.java:17: error: integer number too large
+        return 9999800001;
+               ^
+1 error
+"

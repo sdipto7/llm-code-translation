@@ -1,0 +1,19 @@
+1. Define a function `check_input` with no parameters and return type string.
+2. Declare a variable `user_input` of type string.
+3. Read input from the user and store it in `user_input`.
+4. Check if the character '9' is present in `user_input`.
+5. Use a conditional statement to return "Yes" if '9' is found, otherwise return "No".
+6. Print the result of the conditional statement.
+7. The required library is the built-in Python library for input/output operations. 
+
+Function signature: `def check_input() -> str`
+
+1. `user_input: str = input()`
+2. `return "Yes" if '9' in user_input else "No"`
+ 
+ Execution order:
+- Read user input into `user_input`.
+- Evaluate the condition `'9' in user_input`.
+- If the condition is true, return "Yes".
+- If the condition is false, return "No".
+- Print the returned value.

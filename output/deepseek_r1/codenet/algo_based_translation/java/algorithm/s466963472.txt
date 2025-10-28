@@ -1,0 +1,60 @@
+**Algorithm:**
+
+**Functions:**
+- `static boolean read()`
+  - **Parameters:** None
+  - **Return:** `boolean`
+  - **Logic:**
+    1. Check if input has next integer using `Scanner.hasNextInt()`.
+    2. If true:
+        - Read integer `d` using `Scanner.nextInt()`.
+        - Return `true`.
+    3. Else, return `false`.
+
+- `static int solve()`
+  - **Parameters:** None
+  - **Return:** `int`
+  - **Variables:**
+    - `ans: int` (initialized to 0)
+    - `i: int` (loop counter)
+    - `x: int`
+    - `y: int`
+  - **Logic:**
+    1. Initialize `ans` to 0.
+    2. Loop `i` from 1 upwards:
+        - Compute `x = i * d`.
+        - If `x >= 600`, exit loop.
+        - Compute `y = x * x`.
+        - Add `y * d` to `ans`.
+    3. Return `ans`.
+
+- `public static void main(String[] args)`
+  - **Logic:**
+    1. Loop indefinitely:
+        - Call `read()`.
+        - If `read()` returns `false`, exit loop.
+        - Call `solve()` and print result to stdout.
+
+**Data Flow:**
+1. Input is read via `Scanner` from standard input.
+2. For each valid `d`:
+    - Compute the sum of `d * (i*d)^2` for all `i` where `i*d < 600`.
+    - Return the total sum.
+
+**Control Structures:**
+- `while (read())` in `main()` for continuous input processing.
+- `for` loop in `solve()` with condition `i*d < 600`.
+
+**Dependencies:**
+- `java.util.Scanner` for input handling.
+
+**Variables:**
+- Class-level:
+  - `static Scanner sc`: Initialized with `System.in`.
+  - `static int d`: Stores input value.
+- Local in `solve()`:
+  - `ans, i, x, y` as integers for computation.
+
+**Input/Output:**
+- Input: Sequence of integers from stdin.
+- Output: For each input `d`, print the computed integral result.

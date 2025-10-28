@@ -1,0 +1,27 @@
+- **Function Signature**:
+  - `public static void main(String[] args)`
+
+- **Variables**:
+  - `a: int`
+  - `b: int`
+  - `Scanner in = new Scanner(System.in)`
+
+- **Logic Flow**:
+  1. Initialize `Scanner` to read input.
+  2. Read integer `a` from input.
+  3. Read integer `b` from input.
+  4. Check if `a` modulo 2 equals 0 or `b` modulo 2 equals 0.
+  5. If true: print "No".
+  6. If false: print "Yes".
+
+- **Control Structures**:
+  - Conditional: `if (a % 2 == 0 || b % 2 == 0)` with else clause.
+
+- **Input/Output**:
+  - Input: Two integers via `Scanner.nextInt()`.
+  - Output: "No" if either integer is even; "Yes" otherwise.
+
+- **Dependencies**:
+  - `java.util.Scanner`
+  - `java.lang.*`
+  - `java.io.*`

@@ -1,0 +1,31 @@
+Function signature:
+- Function name: atc_079a
+- Parameter: input_value (type: str)
+- Return type: str
+
+Variable declarations and data types:
+- n (type: int)
+
+Logic flow in execution order:
+1. Assign the integer value 3 to the variable n.
+2. Start a for loop with i ranging from 0 to len(input_value) - n (inclusive).
+3. Inside the outer loop, start a for loop with j ranging from 1 to n - 1 (inclusive).
+4. Inside the inner loop, check if the character at index i in input_value is not equal to the character at index i + j in input_value.
+5. If the characters are not equal, break out of the inner loop.
+6. If j reaches n - 1 and the loop completes without breaking, return the string "Yes".
+7. If the outer loop completes without returning "Yes", return the string "No".
+
+Control structures:
+- For loop with range from 0 to len(input_value) - n (inclusive) for variable i.
+- For loop with range from 1 to n - 1 (inclusive) for variable j.
+- If statement to compare characters at index i and i + j in input_value.
+- Break statement to exit the inner loop if characters are not equal.
+- If statement to check if j has reached n - 1 and the loop completed without breaking, then return "Yes".
+
+Input/output operations and data processing logic:
+- Read a string from standard input and assign it to the variable input_value.
+- Call the function atc_079a with input_value as the argument.
+- Print the result returned by the function atc_079a.
+
+Required libraries, modules, or dependencies:
+- No external libraries, modules, or dependencies are required.

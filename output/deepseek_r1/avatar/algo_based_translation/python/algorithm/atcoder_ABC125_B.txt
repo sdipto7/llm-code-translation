@@ -1,0 +1,51 @@
+**Algorithm Specification:**
+
+**Function Signatures:**
+- `main() -> void`
+
+**Variables:**
+- `N: int` (Input value)
+- `V: List[int]` (Input list)
+- `C: List[int]` (Input list)
+- `list: List[int]` (Initialized as `[0]`)
+- `ans: int` (Initialized as `0`, unused)
+- `X: int` (Temporary value storage)
+- `Y: int` (Temporary value storage)
+- `i: int` (Loop iterator)
+
+**Steps:**
+
+1. **Input Operations:**
+   - Read integer `N` from standard input.
+   - Read next line, split into string tokens, convert to integer list `V`.
+   - Read next line, split into string tokens, convert to integer list `C`.
+
+2. **Initialization:**
+   - Initialize `list` with single element `[0]`.
+   - Initialize `ans`, `X`, `Y` to `0`.
+
+3. **Loop Execution (Iterate through elements):**
+   - For each `i` in range `0` to `N-1` (inclusive):
+     1. **Condition Check:**
+        - If `V[i] - C[i] > 0`:
+           1. Assign `X = V[i]`
+           2. Assign `Y = C[i]`
+           3. Append `X - Y` to `list`.
+
+4. **Result Calculation:**
+   - Compute sum of all elements in `list`.
+
+5. **Output Operation:**
+   - Print computed sum to standard output.
+
+**Control Flow Structures:**
+- For loop: `for i in 0 to N-1` with O(N) iterations.
+- Conditional: `if (V[i] - C[i] > 0)` controls element addition to list.
+
+**Edge Case Handling:**
+- Implicit handling of empty/non-positive contributions via initial `list = [0]`.
+- No explicit error checking for input validity or list length mismatches.
+
+**External Dependencies:**
+- Standard input/output functions.
+- List manipulation and sum calculation (built-in language features).

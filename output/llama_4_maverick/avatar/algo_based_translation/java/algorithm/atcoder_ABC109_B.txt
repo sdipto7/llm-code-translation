@@ -1,0 +1,15 @@
+1. Read the number of inputs N.
+2. Initialize an empty map to store the input strings.
+3. For i from 0 to N-1, read a string and store it in the map with index i.
+4. Initialize a flag 'ans' to true.
+5. Initialize an empty map 'past' to store the previously encountered strings.
+6. Initialize a variable 'next' to an empty string.
+7. For i from 0 to N-1, perform the following steps:
+   8. Check if the string at index i is already present in 'past'. 
+   9. If it is present, set 'ans' to false and exit the loop.
+   10. Store the string at index i in 'past'.
+   11. If i is not 0, check if the first character of the string at index i matches 'next'.
+   12. If it does not match, set 'ans' to false and exit the loop.
+   13. Update 'next' with the last character of the string at index i.
+14. If 'ans' is true, output "Yes".
+15. If 'ans' is false, output "No".

@@ -1,0 +1,46 @@
+**Function Signature:**
+main(String[] args)
+
+**Variables:**
+- Constant NUM: int = 100002
+- Scanner sc: Scanner
+- N: int
+- map: HashMap<Integer, Integer>
+- nums: PriorityQueue<Integer>
+- tmp: int
+- bin: int = 0
+- diff: int = 0
+- num: int
+- idx: int
+- ans: int
+
+**Logic Flow:**
+1. Create Scanner object for reading input
+2. Read integer N from input
+3. Initialize empty HashMap<Integer, Integer> named map
+4. Initialize empty PriorityQueue<Integer> named nums
+5. For i from 0 to N-1:
+   - Read integer tmp from input
+   - Add tmp to nums PriorityQueue
+   - Put key-value pair (tmp, i) in map
+6. While nums PriorityQueue is not empty:
+   - Poll smallest element from nums into num
+   - Get value from map using key num, store in idx
+   - If bin modulo 2 is not equal to idx modulo 2:
+     - Increment diff by 1
+   - Increment bin by 1
+   - Set bin to bin modulo 2
+7. Calculate ans as diff divided by 2 (integer division)
+8. Print ans
+
+**Control Structures:**
+- For loop: i = 0; i < N; i++
+- While loop: !nums.isEmpty()
+- Conditional: if (bin % 2 != idx % 2)
+
+**Input/Output Operations:**
+- Input: Reads integer N and N integers
+- Output: Prints integer ans
+
+**Required Libraries:**
+- java.util.* (specifically Scanner, HashMap, PriorityQueue)

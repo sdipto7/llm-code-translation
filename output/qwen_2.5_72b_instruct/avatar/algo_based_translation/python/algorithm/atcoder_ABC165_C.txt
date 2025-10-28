@@ -1,0 +1,39 @@
+Function signatures:
+- `solve(N: int, M: int, Q: int, a: List[int], b: List[int], c: List[int], d: List[int]) -> None`
+- `rec(A: List[int]) -> None`
+- `main() -> None`
+- `iterate_tokens() -> Generator[str, None, None]`
+
+Variable declarations and data types:
+- `res: int`
+- `N: int`
+- `M: int`
+- `Q: int`
+- `a: List[int]`
+- `b: List[int]`
+- `c: List[int]`
+- `d: List[int]`
+- `A: List[int]`
+- `ans: int`
+- `last_max: int`
+- `i: int`
+- `tokens: Generator[str, None, None]`
+- `line: str`
+- `word: str`
+
+Logic flow:
+1. `main()` function is called if the script is executed as the main program.
+2. `iterate_tokens()` is defined as a generator function to yield words from standard input.
+3. `tokens` is initialized by calling `iterate_tokens()`.
+4. `N`, `M`, and `Q` are read from `tokens` and converted to integers.
+5. Arrays `a`, `b`, `c`, and `d` of size `Q` are initialized.
+6. Each element of `a`, `b`, `c`, and `d` is read from `tokens` and converted to integers.
+7. `solve(N, M, Q, a, b, c, d)` is called with the read values.
+8. `solve` initializes `res` to 0.
+9. `rec` function is defined to perform recursive backtracking.
+10. `rec` checks if the length of `A` equals `N`. If true, it calculates `ans` by iterating over `Q`:
+    - For each `i` from 0 to `Q-1`, it checks if `A[b[i] - 1] - A[a[i] - 1]` equals `c[i]`. If true, it adds `d[i]` to `ans`.
+    - It updates `res` to the maximum of `res` and `ans`.
+11. If the length of `A` is not equal to `N`, it calculates `last_max` as 1 if `A` is empty, otherwise as the last element of `A`.
+12. It iterates `i` from `last_max` to `M` and recursively calls `rec` with `A + [i]`.
+13. After `rec` completes, `solve` prints `res`.

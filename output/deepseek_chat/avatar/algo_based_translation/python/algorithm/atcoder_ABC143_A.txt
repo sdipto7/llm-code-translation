@@ -1,0 +1,5 @@
+Read two integers A and B from input separated by whitespace
+Calculate result = A - (2 * B)
+If result is less than 0:
+    Set result to 0
+Print result

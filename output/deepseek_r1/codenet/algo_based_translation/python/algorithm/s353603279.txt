@@ -1,0 +1,18 @@
+- **Function Signature**: N/A (script format)
+- **Variables**:
+  - `X`: integer (input value)
+  - `h`: integer (quotient of `X` divided by 500)
+  - `a`: integer (quotient of remainder of `X` divided by 500, then divided by 5)
+  - `y`: integer (total value calculated from `h` and `a`)
+- **Logic Flow**:
+  1. Read integer input `X` from standard input.
+  2. Compute `h` as integer division of `X` by 500: `h = X // 500`.
+  3. Compute remainder of `X` divided by 500: `X % 500`.
+  4. Compute `a` as integer division of the remainder by 5: `a = (X % 500) // 5`.
+  5. Calculate `y` as `h * 1000 + a * 5`.
+  6. Print `y` to standard output.
+- **Control Structures**: None (no loops/conditionals).
+- **Input/Output**:
+  - Input: Single integer `X` via `input()`.
+  - Output: Integer `y` via `print(y)`.
+- **Dependencies**: None (uses standard input/output functions).

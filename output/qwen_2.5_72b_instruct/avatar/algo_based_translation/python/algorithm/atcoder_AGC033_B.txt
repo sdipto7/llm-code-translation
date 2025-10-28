@@ -1,0 +1,64 @@
+Function: main()  
+Parameters: None  
+Return Type: None
+
+Variables:
+- H: int
+- W: int
+- N: int
+- s_r: int
+- s_c: int
+- S: str
+- T: str
+- Judge: bool
+- S_L: int
+- S_R: int
+- S_U: int
+- S_D: int
+- T_L: int
+- T_R: int
+- T_U: int
+- T_D: int
+- x: int
+
+Logic Flow:
+1. Read three integers H, W, N from input
+2. Read two integers s_r, s_c from input
+3. Read string S from input
+4. Read string T from input
+5. Initialize Judge to False
+6. Initialize S_L, S_R, S_U, S_D to 0
+7. Initialize T_L, T_R, T_U, T_D to 0
+8. Loop from 0 to N-1 with index x:
+    a. If S[x] is 'L':
+        i. Increment S_L by 1
+        ii. If S_L - T_R - s_c equals 0:
+            1. Set Judge to True
+    b. Else if S[x] is 'R':
+        i. Increment S_R by 1
+        ii. If s_c + (S_R - T_L) equals W + 1:
+            1. Set Judge to True
+    c. Else if S[x] is 'U':
+        i. Increment S_U by 1
+        ii. If S_U - T_D - s_r equals 0:
+            1. Set Judge to True
+    d. Else if S[x] is 'D':
+        i. Increment S_D by 1
+        ii. If s_r + (S_D - T_U) equals H + 1:
+            1. Set Judge to True
+    e. If T[x] is 'L':
+        i. If S_R - T_L + s_c is not equal to 1:
+            1. Increment T_L by 1
+    f. If T[x] is 'R':
+        i. If s_c + (T_R - S_L) is not equal to W:
+            1. Increment T_R by 1
+    g. If T[x] is 'U':
+        i. If S_D - T_U + s_r is not equal to 1:
+            1. Increment T_U by 1
+    h. If T[x] is 'D':
+        i. If s_r + (T_D - S_U) is not equal to H:
+            1. Increment T_D by 1
+9. If Judge is True:
+    a. Print 'NO'
+10. Else:
+    a. Print 'YES'

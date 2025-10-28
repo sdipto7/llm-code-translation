@@ -1,0 +1,50 @@
+Function signatures:
+- main(String[] args): void
+- solve(int[] arr): int
+
+Variable declarations:
+- N: int
+- arr: int[]
+- tsk: Task
+- n: int
+- sorted: int[]
+- total: long
+- l: int
+- r: int
+- mid: int
+- target: int
+- cur: int
+- cnt: long
+- bit: long[]
+- x: int
+- i: int
+
+Logic flow:
+1. Read integer N from input.
+2. Initialize array arr of size N.
+3. For i from 0 to N-1:
+   - Read integer from input and assign to arr[i].
+4. Create instance tsk of Task.
+5. Call solve method of tsk with arr as argument and print the result.
+
+In solve method:
+1. Assign length of arr to n.
+2. Create copy of arr named sorted.
+3. Sort sorted array.
+4. Calculate total as n * (n + 1) / 2.
+5. Initialize l to 0, r to n - 1.
+6. While l < r:
+   - Calculate mid as l + (r - l) / 2.
+   - Assign sorted[mid] to target.
+   - Initialize cur to 0, cnt to 0.
+   - Create array bit of size 2 * n + 2.
+   - For x from n + 1 to bit.length increment by x & -x:
+     - Increment bit[x] by 1.
+   - For i from 0 to n-1:
+     - If arr[i] <= target, increment cur by 1, else decrement cur by 1.
+     - For x from cur + n + 1 to bit.length increment by x & -x:
+       - Increment bit[x] by 1.
+     - For x from cur + n to 1 decrement by x & -x:
+       - Add bit[x] to cnt.
+   - If cnt >= total / 2 + 1, set r to mid, else set l to mid + 1.
+7. Return sorted[l].

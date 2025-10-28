@@ -1,0 +1,22 @@
+1. Import the required module:
+   - Import `Scanner` from the `java.util` package.
+
+2. Define the main function:
+   - Function Signature: `public static void main(String[] args)`
+
+3. Declare and initialize variables:
+   - Create a `Scanner` object `sc` for reading input.
+   - Declare an integer `t` and assign it the value read from input using `sc.nextInt()`.
+   - Declare an integer `count` and initialize it to 0.
+
+4. Loop while there are test cases left (`t > 0`):
+   - Decrement `t` by 1 (`t--`).
+   - Declare integers `a`, `b`, `c` and assign them values read from input using `sc.nextInt()`.
+
+5. Conditional logic to determine if a problem will be solved:
+   - Check if at least two of the integers `a`, `b`, `c` are 1 using the condition:
+     - `(a == 1 && b == 1) || (a == 1 && c == 1) || (b == 1 && c == 1) || (a == 1 && b == 1 && c == 1)`.
+   - If the condition is true, increment `count` by 1.
+
+6. Output the result:
+   - Print the value of `count` using `System.out.println(count)`.

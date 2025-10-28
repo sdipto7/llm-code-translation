@@ -1,0 +1,44 @@
+```
+Algorithm atcoder_ABC142_A:
+
+1. Import necessary libraries:
+   - java.io.BufferedReader
+   - java.io.IOException
+   - java.io.InputStreamReader
+   - java.math.BigDecimal
+   - java.math.RoundingMode
+
+2. Define the main function with signature:
+   - public static void main(String[] args) throws Exception
+
+3. Initialize a try-catch block to handle exceptions:
+   - IOException
+   - NumberFormatException
+   - Exception
+
+4. Inside the try block:
+   a. Declare a BufferedReader object 'br' and initialize it with:
+      - new BufferedReader(new InputStreamReader(System.in))
+   
+   b. Declare a double variable 'input' and assign it the parsed value from:
+      - Double.parseDouble(br.readLine())
+   
+   c. Declare a double variable 'countOdd' and calculate it as:
+      - Math.round(input / 2)
+   
+   d. Declare a BigDecimal variable 'result' and initialize it with:
+      - new BigDecimal(countOdd / input)
+   
+   e. Set the scale of 'result' to 10 using RoundingMode.HALF_UP with:
+      - result.setScale(10, RoundingMode.HALF_UP)
+   
+   f. Output 'result' to the console using:
+      - System.out.println(result)
+
+5. In each catch block:
+   a. Print the stack trace of the exception using:
+      - e.printStackTrace()
+   
+   b. Terminate the program using:
+      - System.exit(0)
+```

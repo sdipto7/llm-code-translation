@@ -1,0 +1,30 @@
+N, X: integers from input split by space
+Import permutations from itertools
+
+Function calc(x: list of integers) returns integer:
+    Define sub(y: list of integers, debug: integer = 0) returns list of integers:
+        If debug != 0:
+            Print "D" followed by y
+        While length of y > 1:
+            Set y = [ sorted(y[i:i+3])[1] for i in range(0, length(y)-2) ]
+            If debug != 0:
+                Print "D" followed by y
+        Return y
+
+    Set y = sub(x)
+    If y[0] == 2:
+        Call sub(x, 1)
+        Print "=" followed by x
+    Return y[0]
+
+If X == 1 OR X == N*2-1:
+    Print "No"
+Else:
+    Print "Yes"
+    If X == N*2-2:
+        Set xs = list(range(N-1, X+2)) + list(range(1, N-1))
+    Else:
+        Set ys = list(range(1, X-1)) + list(range(X+3, N*2))
+        Set xs = ys[0:N-3] + [X+2, X-1, X, X+1] + ys[N-3:length(ys)]
+    For each x in xs:
+        Print x

@@ -1,0 +1,50 @@
+- Function Signatures:
+  - `public static void main(String[] args)`
+  - `private static int checKNo(int[] brr)`
+
+- Variable Declarations and Data Types:
+  - `Scanner scanner` (for input)
+  - `int n` (number of elements in the array)
+  - `int[] arr` (array to store input integers)
+  - `int max` (to store the maximum count of 1s)
+  - `int x` (index for copying elements)
+  - `int[] brr` (copy of the array with flipped bits in a subarray)
+  - `int count` (to store the count of 1s in the current subarray)
+  - `int val` (to count the number of 1s in the array)
+
+- Logic Flow in Execution Order:
+1. Create a Scanner object for input.
+2. Check if there is a next input available.
+3. Read the integer `n` which represents the number of elements.
+4. Initialize an array `arr` of size `n`.
+5. Loop from `i = 0` to `n-1` to read integers into `arr`.
+6. Initialize `max` to the smallest possible integer value.
+7. Loop from `i = 0` to `n-1` for the start of the subarray.
+8. Loop from `j = i` to `n-1` for the end of the subarray.
+9. Initialize `x` to 0.
+10. Create a copy of `arr` into `brr`.
+11. Loop through `k` from `i` to `j` to flip the bits in `brr`.
+12. Call `checKNo(brr)` to count the number of 1s in `brr` and store in `count`.
+13. If `count` is greater than `max`, update `max` to `count`.
+14. If `n` is 1, check if `arr[0]` is 1:
+    - If true, print 0.
+    - Otherwise, print 1.
+15. Otherwise, print `max`.
+
+- Control Structures:
+  - Conditional: `if (scanner.hasNext())`
+  - Conditional: `if (brr[k] == 0)`
+  - Conditional: `if (arr[0] == 1)`
+  - Conditional: `if (count > max)`
+  - Loop: `for (int i = 0; i < n; i++)`
+  - Loop: `for (int j = i; j < n; j++)`
+  - Loop: `for (int k : arr)`
+  - Loop: `for (int k = i; k <= j; k++)`
+  - Loop: `for (int i : brr)`
+
+- Input/Output Operations and Data Processing Logic:
+  - Read input using `scanner.nextInt()`.
+  - Print output using `System.out.println()`.
+
+- Required Libraries, Modules, or Dependencies:
+  - `import java.util.Scanner;`

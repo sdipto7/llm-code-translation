@@ -1,0 +1,29 @@
+import math
+
+def calculate_value(n: int, m: int) -> int:
+    MOD = 10**9 + 7  # Constant for modulo operation
+    f = math.factorial  # Reference to the factorial function from the math module
+
+    # Sort the input values to ensure n <= m
+    n, m = sorted([n, m])
+
+    # Calculate the expression `max(2 - m + n, 0) * f(n) * f(m) % MOD`
+    max_value = max(2 - m + n, 0)
+    factorial_n = f(n)
+    factorial_m = f(m)
+    result = (max_value * factorial_n * factorial_m) % MOD
+
+    return result
+
+def main():
+    # Read space-separated integers from input and split into a list
+    input_values = input().split()
+    
+    # Map input strings to integers and unpack into n and m
+    n, m = map(int, input_values)
+    
+    # Calculate the result using the calculate_value function
+    result = calculate_value(n, m)
+    
+    # Print the result
+    print(result)

@@ -1,0 +1,26 @@
+- Function: main()
+  - Parameters: None
+  - Return: None
+- Variables:
+  - n: integer
+  - x: integer
+  - m: list of integers
+  - sum_m: integer
+  - remaining: integer
+  - additional: integer
+  - total: integer
+- Logic Flow:
+  1. Read first input line as two space-separated integers → n, x
+  2. Read next n input lines as integers → store in list m
+  3. Sort list m in ascending order
+  4. Calculate sum_m = sum of all elements in m
+  5. Calculate remaining = x - sum_m
+  6. Calculate additional = remaining // m[0] (integer division)
+  7. Calculate total = n + additional
+  8. Print total as output
+- Control Structures:
+  - Implicit loop for list comprehension during input reading (n iterations)
+- Input/Output:
+  - Input: Read from standard input (first line: n,x; next n lines: elements of m)
+  - Output: Write integer total to standard output
+- Dependencies: None (uses built-in Python functions)

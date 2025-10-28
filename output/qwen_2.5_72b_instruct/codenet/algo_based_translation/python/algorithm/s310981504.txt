@@ -1,0 +1,30 @@
+Function signature: main() -> None
+
+Variable declarations:
+a: int
+b: int
+
+Execution order:
+1. Read input from standard input
+2. Split the input string by spaces
+3. Map each split string to an integer
+4. Assign the first integer to variable 'a'
+5. Assign the second integer to variable 'b'
+
+Control structures:
+Conditional:
+- If 'a' is less than or equal to 'b':
+    - Print 'a'
+- Else:
+    - Print 'a - 1'
+
+Input/output operations:
+- Input: Reads a single line of input containing two space-separated integers
+- Output: Prints either 'a' or 'a - 1' based on the conditional check
+
+Data processing logic:
+- Compares the values of 'a' and 'b'
+- Determines whether to print 'a' directly or to subtract 1 from 'a' before printing
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules required

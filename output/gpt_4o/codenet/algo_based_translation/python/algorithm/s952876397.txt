@@ -1,0 +1,31 @@
+```
+Function: balance_parentheses(n: int, s: str) -> str
+
+Variables:
+    left: int
+    left1: int
+    right1: int
+
+Algorithm:
+1. Initialize `left` to 0.
+2. Iterate over each character `i` in the string `s`:
+   a. If `i` is equal to ")":
+      - Increment `left` by 1.
+   b. Otherwise, break the loop.
+3. Initialize `left1` and `right1` to 0.
+4. Iterate over the range from `left` to `n`:
+   a. If `s[i]` is equal to "(":
+      - Increment `right1` by 1.
+   b. Else if `right1` is greater than 0:
+      - Decrement `right1` by 1.
+   c. Otherwise:
+      - Increment `left1` by 1.
+5. Increment `left1` by the value of `left`.
+6. Append `right1` number of ")" to the end of `s`.
+7. Prepend `left1` number of "(" to the beginning of `s`.
+8. Return the modified string `s`.
+
+Input/Output:
+- Input: Two integers `n` and a string `s` from standard input.
+- Output: A modified string `s` that is a balanced parentheses sequence.
+```

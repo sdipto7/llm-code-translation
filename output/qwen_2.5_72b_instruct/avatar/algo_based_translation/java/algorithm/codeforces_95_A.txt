@@ -1,0 +1,64 @@
+Function signatures with parameter and return types:
+- `codeforces_95_A()`
+- `int compare(char[] aa, int i, char[] bb, int j, int m)`
+- `void main()`
+
+Variable declarations and data types:
+- `Scanner sc = new Scanner(System.in)`
+- `int n = sc.nextInt()`
+- `char[][] ss = new char[n][]`
+- `char[] cc = sc.next().toCharArray()`
+- `int m = cc.length`
+- `char c = sc.next().charAt(0)`
+- `char c_ = Character.toUpperCase(c)`
+- `char a = c == 'a' ? 'b' : 'a'`
+- `char a_ = Character.toUpperCase(a)`
+- `boolean[] lucky = new boolean[m]`
+
+Complete logic flow in execution order:
+
+- Constructor `codeforces_95_A()` initializes `PrintWriter` with `System.out` and `true` for auto-flush.
+- `main(String[] $)` creates an instance of `codeforces_95_A` and calls its `main()` method, then flushes the output.
+- `main()` method:
+  - Reads integer `n` from input.
+  - Initializes a 2D array `ss` of size `n` to store character arrays.
+  - Reads `n` strings from input, converts each to a character array, and stores them in `ss`.
+  - Reads a string and converts it to a character array `cc`.
+  - Sets `m` to the length of `cc`.
+  - Reads a single character `c` from input.
+  - Converts `c` to uppercase and stores it in `c_`.
+  - Determines the opposite case character `a` ('b' if `c` is 'a', otherwise 'a') and converts it to uppercase `a_`.
+  - Initializes a boolean array `lucky` of size `m` to keep track of positions in `cc`.
+  - Iterates over each position `j` in `cc`.
+    - For each position `j`, iterates over each string `i` in `ss`.
+      - Checks if the remaining length of `cc` from position `j` is at least the length of `ss[i]`.
+      - Compares the substring of `cc` starting at `j` with `ss[i]` using the `compare` method.
+      - If they match, marks the corresponding positions in `lucky` as `true`.
+  - Iterates over each position `j` in `cc`.
+    - If `lucky[j]` is `true`:
+      - Checks if the lowercase version of `cc[j]` equals `c`.
+        - If true, replaces `cc[j]` with `a_` if `cc[j]` is uppercase, otherwise with `a`.
+        - Otherwise, replaces `cc[j]` with `c_` if `cc[j]` is uppercase, otherwise with `c`.
+  - Prints the modified `cc` array.
+
+Control structures:
+- Loops:
+  - `for (int i = 0; i < n; i++)`: Iterates over each string in `ss`.
+  - `for (int j = 0; j < m; j++)`: Iterates over each position in `cc`.
+  - `for (int i = 0; i < n; i++)`: Nested loop iterating over each string in `ss` to check substrings.
+  - `for (int h = 0; h < l; h++)`: Marks positions in `lucky` array.
+  - `for (int j = 0; j < m; j++)`: Second iteration over each position in `cc` to modify characters.
+- Conditionals:
+  - `if (m - j >= l && compare(cc, j, ss[i], 0, l) == 0)`: Checks if substring matches.
+  - `if (lucky[j])`: Checks if position is marked as lucky.
+  - `if (Character.toLowerCase(cc[j]) == c)`: Checks if character matches `c`.
+  - `if (Character.isUpperCase(cc[j]))`: Checks if character is uppercase.
+
+Input/output operations and data processing logic:
+- Reads an integer `n`, `n` strings, a string `cc`, and a single character `c` from input.
+- Processes `cc` to replace certain characters based on matching substrings in `ss` and the character `c`.
+- Prints the modified `cc` array.
+
+Required libraries, modules, or dependencies:
+- `java.io.*`
+- `java.util.*`

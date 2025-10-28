@@ -1,0 +1,42 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner sc` of type `Scanner`
+- `int a` of type `int`
+- `int b` of type `int`
+- `boolean[] ju` of type `boolean[]`
+- `int[] pe` of type `int[]`
+- `int wa` of type `int`
+- `int ac` of type `int`
+- `int n` of type `int`
+- `String res` of type `String`
+- `int i` of type `int`
+
+Logic flow in execution order:
+1. Create a `Scanner` object to read input.
+2. Read two integers `a` and `b` from input.
+3. Initialize a boolean array `ju` of size 100001 with all values set to `false`.
+4. Initialize an integer array `pe` of size 100001 with all values set to 0.
+5. Initialize `wa` to 0.
+6. Initialize `ac` to 0.
+7. For `i` from 0 to `b-1`:
+   1. Read an integer `n` from input.
+   2. Read a string `res` from input.
+   3. If `res` is equal to "WA" and `ju[n-1]` is `false`:
+      1. Increment `pe[n-1]` by 1.
+   4. If `res` is equal to "AC":
+      1. Set `ju[n-1]` to `true`.
+8. For `i` from 0 to `a-1`:
+   1. If `ju[i]` is `true`:
+      1. Increment `ac` by 1.
+      2. Add `pe[i]` to `wa`.
+9. Print `ac` followed by a space and then `wa`.
+
+Input/output operations and data processing logic:
+- Reads two integers from the standard input.
+- Reads `b` pairs of an integer and a string from the standard input.
+- Processes the results to count the number of accepted solutions (`ac`) and the number of wrong answers (`wa`) that occurred before an accepted solution for each problem.
+- Outputs the total number of accepted solutions and the total number of wrong answers that occurred before any accepted solution.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

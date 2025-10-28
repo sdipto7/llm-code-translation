@@ -1,0 +1,11 @@
+1. Read input values VP, VD, T, F, C.
+2. Check if VD <= VP.
+3. If true, output 0 and terminate.
+4. Initialize answer to 0 and start to T.
+5. Loop until termination condition is met.
+6. Calculate x = start * VP / (VD - VP).
+7. Check if (start + x) * VP >= C.
+8. If true, break the loop.
+9. Update start to start + 2 * x + F.
+10. Increment answer by 1.
+11. Output the value of answer.

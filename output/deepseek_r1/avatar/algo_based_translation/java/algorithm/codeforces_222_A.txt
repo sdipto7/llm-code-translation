@@ -1,0 +1,39 @@
+**Algorithm:**
+
+**Function Signatures:**
+- `public static void main(String[] args)`
+  - Parameters: `String[] args` (command-line arguments)
+  - Return type: `void`
+
+**Variables:**
+- `Scanner in`: Input reader (java.util.Scanner)
+- `int n`: First input value (array size)
+- `int k`: Second input value (modification parameter)
+- `int l = 0`: Previous element value (initialized to 0)
+- `int c = 1`: Consecutive count of last element (initialized to 1)
+- `int a`: Current element value during iteration
+
+**Logic Flow:**
+1. Read `n` and `k` from standard input.
+2. Initialize `l = 0`, `c = 1`.
+3. Loop `n` times:
+   - Read integer `a`.
+   - If `a == l`: increment `c` by 1.
+   - Else: reset `c` to 1.
+   - Update `l` to `a`.
+4. After loop:
+   - Compute condition `c + k > n`.
+   - If true: Output `n - c`.
+   - Else: Output `-1`.
+
+**Control Structures:**
+- `for (int i = 0; i < n; i++)` (loop all elements)
+- `if (a == l)` (consecutive check)
+- `if (c + k > n)` (final condition check)
+
+**Input/Output:**
+- Input: Two integers `n k` followed by `n` integers via `Scanner`.
+- Output: Single integer result (`n - c` or `-1`) printed to console.
+
+**Dependencies:**
+- `java.util.Scanner` for input handling.

@@ -1,0 +1,29 @@
+- Function Signature: `main(String[] args)` with return type `void` and parameter type `String[]`
+- Variable Declarations:
+  - `Scanner sc` of type `Scanner`
+  - `StringBuilder sb` of type `StringBuilder` initialized with empty string
+  - `int a, b, digit` of type `integer`
+- Logic Flow:
+  1. Initialize `Scanner sc` with `System.in`
+  2. Initialize `StringBuilder sb` with empty string
+  3. Enter a `while` loop with condition `sc.hasNextInt()`
+  4. Inside the loop:
+    - Read `a` from input using `sc.nextInt()`
+    - Read `b` from input using `sc.nextInt()`
+    - Calculate `digit` as `(int) Math.log10(a+b) + 1`
+    - Append `digit` to `sb`
+    - Append a newline character (`'\n'`) to `sb`
+  5. After the loop, print the contents of `sb` using `System.out.print(sb)`
+- Control Structures:
+  - `while` loop with condition `sc.hasNextInt()`
+- Input/Output Operations:
+  - Read integers from input using `sc.nextInt()`
+  - Print the contents of `sb` using `System.out.print(sb)`
+- Required Libraries/Modules:
+  - `java.io.IOException`
+  - `java.io.BufferedReader` (not used)
+  - `java.io.InputStreamReader` (not used)
+  - `java.util.Scanner`
+  - `java.util.Arrays` (not used)
+  - `java.util.Collections` (not used)
+  - `java.lang.Math` (used implicitly for `Math.log10`)

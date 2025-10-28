@@ -1,0 +1,35 @@
+- Function signatures with parameter and return types:
+  - `main(String[] args)`: void
+
+- Variable declarations and data types:
+  - `sc`: Scanner
+  - `N`: int
+  - `A[]`: long array
+
+- Complete logic flow in execution order:
+  - Create a new Scanner object to read input.
+  - Read an integer `N` from the input.
+  - Initialize a long array `A` of size `N`.
+  - For `i` from 0 to `N-1` (inclusive):
+    - Read a long integer from the input and store it in `A[i]`.
+  - Sort the array `A`.
+  - For `j` from 1 to `N-1` (inclusive):
+    - If `A[j]` is equal to `A[j-1]`:
+      - Print "NO".
+      - Exit the program.
+  - Print "YES".
+
+- Control structures:
+  - For loop: `for(int i=0;i<N;i++)`
+  - For loop: `for(int j=1;j<N;j++)`
+  - If statement: `if(A[j]==A[j-1])`
+
+- Input/output operations and data processing logic:
+  - Read an integer `N` from the standard input.
+  - Read `N` long integers from the standard input and store them in the array `A`.
+  - Sort the array `A`.
+  - Compare each element in the sorted array with its predecessor to check for duplicates.
+  - Print "NO" if a duplicate is found, otherwise print "YES".
+
+- Required libraries, modules, or dependencies:
+  - `java.util.*`

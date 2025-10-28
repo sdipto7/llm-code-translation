@@ -1,0 +1,62 @@
+**Function Signatures:**
+- solve(N: int, M: int, Q: int, a: List[int], b: List[int], c: List[int], d: List[int]) -> None
+- main() -> None
+- iterate_tokens() -> Generator[str, None, None]
+
+**Variables:**
+- res: int (global within solve)
+- A: List[int] (parameter and local in rec)
+- ans: int (local in rec)
+- last_max: int (local in rec)
+- tokens: Generator[str, None, None] (local in main)
+- N, M, Q: int (local in main)
+- a, b, c, d: List[int] (local in main)
+- i: int (loop counter in multiple scopes)
+
+**Libraries:**
+- sys
+
+**Algorithm Flow:**
+
+1. Import sys module
+2. Define solve function with parameters (N, M, Q, a, b, c, d)
+3. Initialize res = 0
+4. Define nested recursive function rec(A)
+5. In rec(A):
+   - If len(A) == N:
+     - Initialize ans = 0
+     - For i from 0 to Q-1:
+       - If A[b[i]-1] - A[a[i]-1] == c[i]:
+         - Add d[i] to ans
+     - Set res = max(res, ans)
+     - Return from rec
+   - Else:
+     - Set last_max = 1 if len(A) == 0 else A[-1]
+     - For i from last_max to M:
+       - Call rec(A + [i])
+6. Call rec([])
+7. Print res
+8. Return from solve
+
+9. Define main function
+10. Define nested function iterate_tokens():
+    - For each line in sys.stdin:
+      - For each word in line.split():
+        - Yield word
+11. Initialize tokens = iterate_tokens()
+12. Read N = int(next(tokens))
+13. Read M = int(next(tokens))
+14. Read Q = int(next(tokens))
+15. Initialize a = list of Q zeros
+16. Initialize b = list of Q zeros
+17. Initialize c = list of Q zeros
+18. Initialize d = list of Q zeros
+19. For i from 0 to Q-1:
+    - Read a[i] = int(next(tokens))
+    - Read b[i] = int(next(tokens))
+    - Read c[i] = int(next(tokens))
+    - Read d[i] = int(next(tokens))
+20. Call solve(N, M, Q, a, b, c, d)
+
+21. If __name__ == '__main__':
+    - Call main()

@@ -1,0 +1,13 @@
+1. Define a function `min_operations` with return type `int` that takes no parameters.
+2. Declare variables: `S` and `T` of type `str`, `N` and `M` of type `int`, `ans` of type `int`, `S_2` of type `str`, `cnt` of type `int`, and loop counters `i` and `j` of type `int`.
+3. Read input strings `S` and `T` from the user.
+4. Calculate the lengths `N` and `M` of `S` and `T` respectively.
+5. Initialize `ans` with the value of `M`.
+6. Iterate over the range from `0` to `N-M` (inclusive) using loop counter `i`.
+7. For each `i`, extract a substring `S_2` of length `M` from `S` starting at index `i`.
+8. Initialize a counter `cnt` to `0`.
+9. Iterate over the range from `0` to `M-1` (inclusive) using loop counter `j`.
+10. For each `j`, compare the characters at index `j` in `T` and `S_2`. If they are not equal, increment `cnt` by `1`.
+11. Update `ans` with the minimum of its current value and `cnt`.
+12. After the loop completes, output the value of `ans`.
+13. The required libraries are those that support basic input/output operations and string handling, typically available in the standard library.

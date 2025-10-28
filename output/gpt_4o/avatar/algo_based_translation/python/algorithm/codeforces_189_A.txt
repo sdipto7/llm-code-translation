@@ -1,0 +1,39 @@
+```
+Function Signature:
+    cutRibbon() -> None
+
+Variable Declarations:
+    arr: List[int]
+    length: int
+    ans: int
+    k: int
+    i: int
+    j: int
+    check: int
+
+Algorithm:
+    1. Read a line of input and split it into a list of integers, storing it in `arr`.
+    2. Assign the first element of `arr` to the variable `length`.
+    3. Sort the next three elements of `arr` in ascending order.
+    4. If `length` is divisible by the smallest element of the sorted array:
+        a. Print the quotient of `length` divided by the smallest element.
+        b. Return from the function.
+    5. Initialize `ans` to 0.
+    6. If the smallest and the second smallest elements are equal:
+        a. Initialize `k` to 0.
+        b. For each `i` from 0 to the quotient of `length` divided by the largest element (inclusive):
+            i. Calculate `check` as `length` minus `i` times the largest element.
+            ii. If `check` is non-negative and divisible by the smallest element:
+                - Calculate `k` as the quotient of `check` divided by the smallest element.
+                - Update `ans` to the maximum of `ans` and `k + i`.
+    7. Otherwise:
+        a. Initialize `k` to 0.
+        b. For each `i` from 0 to the quotient of `length` divided by the largest element (inclusive):
+            i. For each `j` from 0 to the quotient of `length` divided by the second smallest element (inclusive):
+                - Calculate `check` as `length` minus `i` times the largest element minus `j` times the second smallest element.
+                - If `check` is non-negative and divisible by the smallest element:
+                    * Calculate `k` as the quotient of `check` divided by the smallest element.
+                    * Update `ans` to the maximum of `ans` and `k + i + j`.
+    8. Print `ans`.
+    9. Return from the function.
+```

@@ -1,0 +1,22 @@
+```plaintext
+Dependencies:
+- Import the 'sys' module for reading input
+
+Function Signatures:
+- rs() -> str: Reads a line from standard input and returns it without trailing newline
+- ri() -> int: Converts the result of rs() into an integer
+- rs_() -> List[str]: Splits the result of rs() by whitespace and returns a list of strings
+- ri_() -> List[int]: Converts each element of the result of rs_() into integers and returns a list
+
+Algorithm:
+1. Read an integer N from input using the ri() function
+2. Initialize an integer variable `ans` to 0
+3. Loop over the range from 1 to N inclusive:
+   a. For each integer i in the range:
+      i. Calculate (N // i) as the integer division of N by i
+      ii. Calculate (N // i + 1) as the integer division of N by i plus 1
+      iii. Multiply i by the result from step 3.a.i
+      iv. Multiply the result from step 3.a.iii by the result from step 3.a.ii
+      v. Divide the result from step 3.a.iv by 2 using integer division and add this to `ans`
+4. Print the final value of `ans`
+```

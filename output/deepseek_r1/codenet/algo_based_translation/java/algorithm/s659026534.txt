@@ -1,0 +1,50 @@
+1. Required Library:
+   - java.util.Scanner
+
+2. Function Signature:
+   - public static void main(String[] args)
+
+3. Variables:
+   - Scanner scan (Scanner object)
+   - int n (user input)
+   - int count = 0 (accumulator)
+   - int i (loop counter)
+
+4. Input Operations:
+   - Read integer from standard input using Scanner.nextInt()
+   - Store input in variable n
+
+5. Processing Logic:
+   - Initialize count to 0
+   - For loop:
+     - Initialize i = 1
+     - Continue while i <= n
+     - Increment i by 1 after each iteration
+     - In each iteration:
+       - Add current i value to count (count += i)
+   - After loop completion:
+     - Output final count value using System.out.println()
+
+6. Control Structures:
+   - Single for loop:
+     for (int i = 1; i <= n; i++) {
+         count += i;
+     }
+
+7. Output Operation:
+   - Print integer result to standard output:
+     System.out.println(count);
+
+8. Data Flow:
+   - Input → Summation of integers 1 to n → Output final sum
+
+9. Data Types:
+   - All variables: int
+   - Scanner object: Scanner
+
+10. Execution Order:
+    - Declare Scanner
+    - Read n
+    - Initialize count
+    - Execute summation loop
+    - Print result

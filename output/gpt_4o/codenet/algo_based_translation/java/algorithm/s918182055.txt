@@ -1,0 +1,168 @@
+```
+Main function with no parameters:
+    Declare variable `out` of type `MyWriter` and initialize with `System.out`
+    Declare variable `sc` of type `MyScanner` and initialize with `System.in`
+    Declare integer `N` and assign `sc.nextInt()`
+    Declare integer `M` and assign `sc.nextInt()`
+    Declare array `list` of type `LinkedList<Integer>[]` with size 100001
+    For `i` from 0 to `N-1`:
+        Declare integer `a` and assign `sc.nextInt()`
+        Declare integer `b` and assign `sc.nextInt()`
+        If `list[a]` is null:
+            Initialize `list[a]` as a new `LinkedList<Integer>`
+        Add `b` to `list[a]`
+    Declare integer `res` and initialize to 0
+    Declare `pqueue` as `PriorityQueue<Integer>` with reverse order comparator
+    For `i` from 1 to `M`:
+        If `list[i]` is not null:
+            Add all elements of `list[i]` to `pqueue`
+        If `pqueue` is not empty:
+            Increment `res` by `pqueue.poll()`
+    Call `out.println(res)`
+    Call `out.flush()`
+
+Class `MyScanner` with constructor `MyScanner(InputStream in)`:
+    Declare constant integer `BUFFER_SIZE` as 8192
+    Declare `in` as InputStream
+    Declare `buffer` as byte array of size `BUFFER_SIZE`
+    Declare `point` as integer
+    Declare `readLength` as integer
+    Define method `readByte` with return type int:
+        If `point` is less than `readLength`:
+            Declare integer `result` and assign `buffer[point]`
+            Increment `point`
+            Return `result`
+        Try to read into `buffer` and assign to `readLength`
+        If `readLength` is -1:
+            Return -1
+        Set `point` to 1
+        Return `buffer[0]`
+    Define static method `isPrintableCharExceptSpace(int c)` with return type boolean:
+        Return `33 <= c <= 126`
+    Define method `next` with return type String:
+        Declare integer `c` and assign `readByte()`
+        While `c` is not -1 and not a printable character except space:
+            Assign `c` to `readByte()`
+        If `c` is -1:
+            Throw `NoSuchElementException`
+        Declare `b` as StringBuilder
+        Do:
+            Append code point `c` to `b`
+            Assign `c` to `readByte()`
+        While `c` is not -1 and is a printable character except space
+        Return `b.toString()`
+    Define method `nextLong` with return type long:
+        Declare integer `c` and assign `readByte()`
+        While `c` is not -1 and not a printable character except space:
+            Assign `c` to `readByte()`
+        If `c` is -1:
+            Throw `NoSuchElementException`
+        Declare boolean `minus` and initialize to false
+        If `c` is '-':
+            Set `minus` to true
+            Assign `c` to `readByte()`
+        Declare `result` as long and initialize to 0L
+        Do:
+            If `c` is not a digit:
+                Throw `InputMismatchException`
+            Update `result` as `result * 10L + (c - '0')`
+            Assign `c` to `readByte()`
+        While `c` is not -1 and is a printable character except space
+        Return `-result` if `minus` else `result`
+    Define method `nextInt` with return type int:
+        Declare long `n` and assign `nextLong()`
+        If `n` is outside integer range:
+            Throw `InputMismatchException`
+        Return `(int)n`
+    Define method `nextDouble` with return type double:
+        Return `Double.parseDouble(next())`
+    Define method `nextIntArray(int n)` with return type int[]:
+        Declare `result` as int array of size `n`
+        For `i` from 0 to `n-1`:
+            Assign `result[i]` to `nextInt()`
+        Return `result`
+    Define static method `allSameLength(int[] a, int[] b, int[]... c)` with return type boolean:
+        If `a.length` is not equal to `b.length`:
+            Return false
+        For each `element` in `c`:
+            If `a.length` is not equal to `element.length`:
+                Return false
+        Return true
+    Define static method `allSameLength(char[] a, char[] b, char[]... c)` with return type boolean:
+        If `a.length` is not equal to `b.length`:
+            Return false
+        For each `element` in `c`:
+            If `a.length` is not equal to `element.length`:
+                Return false
+        Return true
+    Define method `nextVerticalIntArrays(int[] a, int[] b, int[]... c)` with no return:
+        If `allSameLength(a, b, c)` is false:
+            Throw `IllegalArgumentException`
+        For `i` from 0 to `a.length-1`:
+            Assign `a[i]` to `nextInt()`
+            Assign `b[i]` to `nextInt()`
+            For each `d` in `c`:
+                Assign `d[i]` to `nextInt()`
+    Define method `nextLongArray(int n)` with return type long[]:
+        Declare `result` as long array of size `n`
+        For `i` from 0 to `n-1`:
+            Assign `result[i]` to `nextLong()`
+        Return `result`
+    Define method `nextChar` with return type char:
+        Declare integer `c` and assign `readByte()`
+        While `c` is not -1 and not a printable character except space:
+            Assign `c` to `readByte()`
+        If `c` is -1:
+            Throw `NoSuchElementException`
+        Return `(char)c`
+    Define method `nextCharArray(int n)` with return type char[]:
+        Declare `result` as char array of size `n`
+        For `i` from 0 to `n-1`:
+            Assign `result[i]` to `nextChar()`
+        Return `result`
+    Define method `next2dCharArray(int n, int m)` with return type char[][]:
+        Declare `result` as char 2D array of size `n` by `m`
+        For `i` from 0 to `n-1`:
+            For `j` from 0 to `m-1`:
+                Assign `result[i][j]` to `nextChar()`
+        Return `result`
+    Define method `nextVerticalCharArrays(char[] a, char[] b, char[]... c)` with no return:
+        If `allSameLength(a, b, c)` is false:
+            Throw `IllegalArgumentException`
+        For `i` from 0 to `a.length-1`:
+            Assign `a[i]` to `nextChar()`
+            Assign `b[i]` to `nextChar()`
+            For each `d` in `c`:
+                Assign `d[i]` to `nextChar()`
+
+Class `MyWriter` extends `PrintWriter` with constructor `MyWriter(OutputStream out)`:
+    Define method `joinAndPrintln(int[] x)` with no return:
+        Call `joinAndPrintln(x, " ")`
+    Define method `joinAndPrintln(int[] x, String delimiter)` with no return:
+        Declare `b` as StringBuilder
+        If `x.length` is greater than 0:
+            Append `x[0]` to `b`
+            For `i` from 1 to `x.length-1`:
+                Append `delimiter` and `x[i]` to `b`
+        Call `println(b.toString())`
+    Define method `joinAndPrintln(long[] x)` with no return:
+        Call `joinAndPrintln(x, " ")`
+    Define method `joinAndPrintln(long[] x, String delimiter)` with no return:
+        Declare `b` as StringBuilder
+        If `x.length` is greater than 0:
+            Append `x[0]` to `b`
+            For `i` from 1 to `x.length-1`:
+                Append `delimiter` and `x[i]` to `b`
+        Call `println(b.toString())`
+    Define method `joinAndPrintln(Iterable<?> iterable)` with no return:
+        Call `joinAndPrintln(iterable, " ")`
+    Define method `joinAndPrintln(Iterable<?> iterable, String delimiter)` with no return:
+        Declare `b` as StringBuilder
+        Get iterator `i` from `iterable`
+        If `i` has next:
+            Append `i.next()` to `b`
+            While `i` has next:
+                Append `delimiter` and `i.next()` to `b`
+        Call `println(b.toString())`
+```
+

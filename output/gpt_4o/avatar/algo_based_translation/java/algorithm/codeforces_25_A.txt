@@ -1,0 +1,43 @@
+1. **Function Signature**:  
+   - Function Name: `main`  
+   - Parameters: `String[] args`  
+   - Return Type: `void`
+
+2. **Variable Declarations and Data Types**:  
+   - `Scanner ob` is of type `Scanner`
+   - `int n` is an integer
+   - `int[] array` is an integer array of size `n + 1`
+   - `int odd` is an integer, initialized to 0
+   - `int even` is an integer, initialized to 0
+   - `int odd_ind` is an integer, initialized to 0
+   - `int even_ind` is an integer, initialized to 0
+
+3. **Logic Flow**:
+   1. Initialize a `Scanner` object `ob` to read input.
+   2. Read an integer `n` from input using `ob.nextInt()`.
+   3. Initialize an integer array `array` of size `n + 1`.
+   4. Loop for `i` from 1 to `n` (inclusive):
+      - Read an integer from input and store it in `array[i]`.
+   5. Loop for `i` from 1 to `n` (inclusive):
+      - If `array[i] % 2 == 0` (check if even):
+        - Increment `even` by 1.
+        - Set `even_ind` to `i`.
+      - Else (number is odd):
+        - Increment `odd` by 1.
+        - Set `odd_ind` to `i`.
+   6. If `odd > even`:
+      - Output `even_ind`.
+   7. Else:
+      - Output `odd_ind`.
+
+4. **Control Structures**:
+   - **For Loop**: `for (int i = 1; i <= n; i++)` to iterate through 1 to `n`.
+   - **If-Else Conditional**: `if (array[i] % 2 == 0)` to determine if a number is even or odd.
+   - **Final If-Else Conditional**: `if (odd > even)` to decide which index to output.
+
+5. **Input/Output Operations**:
+   - Input: Read integers from standard input using `Scanner`.
+   - Output: Print to standard output using `System.out.println`.
+
+6. **Dependencies**:
+   - Java `Scanner` class from `java.util` package for input handling.

@@ -1,0 +1,38 @@
+```
+Algorithm:
+1. Import the 'queue' module.
+2. Read integers 'n' and 'b' from input, separated by space.
+3. Define class 'Task' with:
+   - Constructor __init__(self, time: int, duration: int, index: int) -> None:
+     - Initialize attributes: 'time', 'duration', 'index'.
+4. Declare variables:
+   - remaining: queue.Queue() - a queue for tasks.
+   - running: bool - initialized to False.
+   - finish_time: int - initialized to 0.
+   - result: dict - to store task completion times.
+5. Define function run_task(remaining: queue.Queue, finish_time: int) -> tuple:
+   - Get task from 'remaining' queue.
+   - Calculate finish_time as max(finish_time, task.time) + task.duration.
+   - Update result[task.index] with finish_time.
+   - Return updated finish_time and result.
+6. Initialize 'result' as an empty dictionary.
+7. For each 'i' in range(n):
+   - Read 'time' and 'duration' from input, separated by space.
+   - Create a Task object with 'time', 'duration', index=i.
+   - Update result[i] with 0.
+   - If task.time > finish_time and remaining queue is empty:
+     - Set running to True.
+     - Update finish_time as task.time + task.duration.
+     - Update result[i] with finish_time.
+   - Else:
+     - If task.time >= finish_time and remaining queue is not empty:
+       - Call run_task() with remaining and finish_time.
+     - If size of remaining queue < b:
+       - Add task to the remaining queue.
+     - Else:
+       - Update result[i] with -1.
+8. While remaining queue is not empty:
+   - Call run_task() with remaining and finish_time.
+9. For each key in result:
+   - Print the value of result[key].
+```

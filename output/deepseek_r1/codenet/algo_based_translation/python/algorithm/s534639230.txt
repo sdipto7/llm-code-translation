@@ -1,0 +1,43 @@
+**Function Signature:**
+- `solve() -> None`
+
+**Parameters:**
+- None
+
+**Return Type:**
+- None (prints result directly)
+
+**Variables:**
+- `N: int` (read from input)
+- `D: List[int]` (read from input)
+- `mod: int` (constant value 998244353)
+- `cnt: Counter[int, int]` (frequency count of elements in D)
+- `res: int` (initialized to 1)
+
+**Libraries/Dependencies:**
+- `collections.Counter`
+
+**Logic Flow:**
+1. Read integer `N` from input.
+2. Read list `D` of integers from input.
+3. If first element of `D` is not 0:
+   - Print `0` and terminate.
+4. Count frequency of elements in `D` using `Counter`, store in `cnt`.
+5. If count of `0` in `cnt` exceeds 1:
+   - Print `0` and terminate.
+6. Initialize `res` to 1.
+7. Iterate `i` from 1 to `max(D)` (inclusive):
+   - If `cnt[i-1]` equals 1:
+     - Skip to next iteration.
+   - Update `res` with `(res * (cnt[i-1] ** cnt[i] % mod)) % mod`.
+8. Print `res`.
+
+**Control Structures:**
+- `if D[0] != 0` (initial check)
+- `if cnt[0] > 1` (validity check for root count)
+- `for i in range(1, max(D) + 1)` (loop over possible distances)
+- `if cnt[i-1] == 1` (skip condition during multiplication)
+
+**Input/Output Operations:**
+- Read `N` and `D` via `input()`.
+- Print results using `print()` based on checks and final calculation.

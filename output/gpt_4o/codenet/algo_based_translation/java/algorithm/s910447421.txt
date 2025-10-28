@@ -1,0 +1,71 @@
+```
+Import libraries:
+- java.io.* for input and output operations
+- java.math.* for mathematical operations
+- java.util.* for utility classes like Arrays and StringTokenizer
+
+Define global variables:
+- ans as an integer initialized to 100
+- balls as a 2D integer array
+- N as an integer
+- taken as a boolean array
+
+Main function:
+- Create FastScanner object for input
+- Create OutPut object for output
+- Read integer N using FastScanner
+- Set ans to N
+- Initialize balls as a 2D integer array of size N x 2
+- Loop from 0 to N-1:
+  - Read two integers for each ball's coordinates and store in balls[i][0] and balls[i][1]
+- Sort balls by the first coordinate using Arrays.sort with a comparator
+- Call solve() function
+- Loop from 0 to N-1:
+  - Swap each ball's coordinates (x, y) to (y, x)
+- Sort balls by the first coordinate using Arrays.sort with a comparator
+- Call solve() function
+- Print ans using OutPut object
+
+solve function:
+- Loop from 1 to N-1:
+  - Initialize taken as a boolean array of size N
+  - Calculate differences: p as balls[add][0] - balls[0][0], q as balls[add][1] - balls[0][1]
+  - Update ans to the minimum of ans and check(p, q)
+
+check function:
+- Parameters: int p, int q
+- Initialize ret as 0
+- While true:
+  - Initialize added as false
+  - Initialize start, x, y as integers, x and y set to -1
+  - Loop from 0 to N-1:
+    - If taken[i] is false:
+      - Set added to true
+      - Increment ret
+      - Set start to i
+      - Set taken[i] to true
+      - Set x to balls[i][0] + p
+      - Set y to balls[i][1] + q
+      - Break loop
+  - If added is false, break while loop
+  - Loop from start+1 to N-1:
+    - If balls[i][0] equals x and balls[i][1] equals y:
+      - Set taken[i] to true
+      - Increment x by p
+      - Increment y by q
+- Return ret
+
+Utility functions for min, max, abs, ceil, GCD, FastExp, ModInv, pop with appropriate parameters and return types
+
+FastScanner class:
+- BufferedReader br initialized with InputStreamReader(System.in)
+- StringTokenizer st initialized as empty
+- next function: Returns the next token as a String
+- nextInt function: Returns the next token as an integer
+- nextLong function: Returns the next token as a long
+- nextDouble function: Returns the next token as a double
+
+OutPut class:
+- PrintWriter w initialized with System.out
+- pln and p functions to output various data types using PrintWriter
+```

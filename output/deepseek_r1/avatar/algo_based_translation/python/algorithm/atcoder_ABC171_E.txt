@@ -1,0 +1,45 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- Not applicable (script-based code without explicit function definitions)
+
+**Variable Declarations & Data Types:**
+- `N: int`
+- `a: list[int]`
+- `total: int`
+
+**Step-by-Step Logic Flow:**
+1. Read integer `N` from standard input (unused in logic but required for input parsing)
+2. Read space-separated integers from standard input as list `a`
+3. Initialize `total` with cumulative XOR of all elements in `a` using initial value 0
+4. Create new list by applying XOR between each element `ai` in `a` and `total`
+5. Convert results to strings and join with space separators
+6. Print formatted string
+
+**Control Flow Structures:**
+- Linear execution without explicit loops/conditionals
+- Implicit iteration via `reduce` for XOR accumulation
+- Implicit iteration via `map` for element-wise XOR operation
+
+**Input/Output Operations:**
+- Input:
+  - First line: integer `N`
+  - Second line: space-separated integers for list `a`
+- Output:
+  - Single line with space-separated results of `ai XOR total`
+
+**Error Handling & Edge Cases:**
+- No explicit error handling
+- Assumes valid integer inputs
+- Handles empty input list (returns empty output via reduce with initial 0)
+- Processes zero-length list and single-element list correctly
+
+**External Dependencies:**
+- Python Standard Library:
+  - `functools.reduce`
+  - `operator.xor`
+- Implicit dependencies:
+  - Input parsing via `input()`
+  - List processing via `map()`
+  - String conversion via `str()`
+  - String joining via `join()`

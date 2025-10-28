@@ -1,0 +1,57 @@
+- Function signatures with parameter and return types:
+  - `main(String args[]) throws Exception`
+  - `FastScanner(BufferedReader in)`
+  - `nextToken() throws Exception` returns `String`
+  - `next() throws Exception` returns `String`
+  - `nextInt() throws Exception` returns `int`
+  - `nextLong() throws Exception` returns `long`
+  - `nextDouble() throws Exception` returns `double`
+
+- Variable declarations and data types:
+  - `BufferedReader br`
+  - `FastScanner sc`
+  - `PrintWriter out`
+  - `Random rnd`
+  - `int n`
+  - `long[] pre`
+  - `long min`
+  - `int i`
+  - `long val1`
+  - `long val2`
+  - `StringTokenizer st`
+
+- Complete logic flow in execution order:
+  1. Initialize `br` with `new BufferedReader(new InputStreamReader(System.in))`
+  2. Initialize `sc` with `new FastScanner(br)`
+  3. Initialize `out` with `new PrintWriter(System.out)`
+  4. Initialize `rnd` with `new Random()`
+  5. Read `n` as an integer from `sc`
+  6. Initialize `pre` as an array of longs with size `n+1`
+  7. For `i` from 1 to `n`:
+     - Set `pre[i]` to `pre[i-1] + sc.nextLong()`
+  8. Initialize `min` to `Long.MAX_VALUE`
+  9. For `i` from 1 to `n-1`:
+     - Set `val1` to `pre[i]`
+     - Set `val2` to `pre[n] - pre[i]`
+     - If `Math.abs(val1 - val2)` is less than `min`, set `min` to `Math.abs(val1 - val2)`
+  10. Print `min` using `out`
+  11. Close `out`
+
+- Control structures:
+  - For loop from 1 to `n` (inclusive) for calculating prefix sums
+  - For loop from 1 to `n-1` (inclusive) for finding the minimum difference
+  - Conditional inside inner loop to update `min` if a smaller difference is found
+
+- Input/output operations and data processing logic:
+  - Read integer `n` from standard input
+  - Read `n` long integers from standard input
+  - Calculate prefix sums of the input long integers
+  - Calculate the minimum absolute difference between two parts of the array split at each index
+  - Print the minimum difference to standard output
+
+- Required libraries, modules, or dependencies:
+  - `java.io.BufferedReader`
+  - `java.io.InputStreamReader`
+  - `java.io.PrintWriter`
+  - `java.util.StringTokenizer`
+  - `java.util.Random`

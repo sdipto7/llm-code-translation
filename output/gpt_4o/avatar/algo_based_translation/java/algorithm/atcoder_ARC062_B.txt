@@ -1,0 +1,56 @@
+1. Import necessary libraries:
+   - `java.io.OutputStream`
+   - `java.io.IOException`
+   - `java.io.InputStream`
+   - `java.io.PrintWriter`
+   - `java.util.StringTokenizer`
+   - `java.io.BufferedReader`
+   - `java.io.InputStreamReader`
+   - `java.io.InputStream`
+
+2. Function signature: `public static void main(String[] args)`
+   - Input: `String[] args`
+   - Output: void
+   - Execution Order:
+     1. `InputStream inputStream` is initialized to `System.in`.
+     2. `OutputStream outputStream` is initialized to `System.out`.
+     3. `InputReader in` is created with `inputStream`.
+     4. `PrintWriter out` is created with `outputStream`.
+     5. An instance of `TaskD` is created.
+     6. `solve` method of `TaskD` is called with arguments `1`, `in`, `out`.
+     7. `out.close()` is called to close the PrintWriter.
+
+3. Class `TaskD`
+   - Method signature: `public void solve(int testNumber, InputReader in, PrintWriter out)`
+     - Input: `int testNumber`, `InputReader in`, `PrintWriter out`
+     - Output: void
+     - Execution Order:
+       1. `String S` is initialized by calling `in.next()`.
+       2. `int score` is initialized to `0`.
+       3. Loop: `for (int i = 0; i < S.length(); i++)`
+          - Declare `char my`:
+            - If `i % 2 == 0`, `my = 'g'`.
+            - Else, `my = 'p'`.
+          - Declare `char his` as `S.charAt(i)`.
+          - If `my != his`:
+            - If `my == 'p'`, increment `score` by `1`.
+            - Else, decrement `score` by `1`.
+       4. Output `score` using `out.println(score)`.
+
+4. Class `InputReader`
+   - Constructor: `public InputReader(InputStream stream)`
+     - Input: `InputStream stream`
+     - Output: initializes `BufferedReader` and `StringTokenizer`
+     - Execution Order:
+       1. `reader` is initialized as a new `BufferedReader` with `new InputStreamReader(stream)` and buffer size `32768`.
+       2. `tokenizer` is initialized to `null`.
+
+   - Method signature: `public String next()`
+     - Input: None
+     - Output: `String`
+     - Execution Order:
+       1. Loop: `while (tokenizer == null || !tokenizer.hasMoreTokens())`
+          - Try block:
+            - `tokenizer` is initialized with `new StringTokenizer(reader.readLine())`.
+          - Catch block: Catches `IOException` and throws `RuntimeException`.
+       2. Return `tokenizer.nextToken()`.

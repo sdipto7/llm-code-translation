@@ -1,0 +1,41 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `int n` (input size)
+- `char[] ch` (result array)
+- `int s1 = 0`, `int s2 = 0` (cumulative sums)
+- `int i` (loop counter), `int j = 0` (result index), `int flag = 0` (error indicator), `int dif` (unused)
+- `Scanner sc` (input handler)
+
+**Libraries/Dependencies:**
+- `java.util.Scanner`
+
+**Logic Flow:**
+1. Read `n` from standard input.
+2. Initialize `ch` with size `n`.
+3. Loop `i` from `0` to `n-1`:
+   - Read `x` and `y` (current pair).
+   - Calculate `temp1 = s1 + x`, `temp2 = s2 + y`.
+   - If `|temp1 - s2| ≤ 500`:
+     - Update `s1 += x`.
+     - Append 'A' to `ch[j]`, increment `j`.
+     - Skip remaining checks for this iteration.
+   - Else if `|temp2 - s1| ≤ 500`:
+     - Update `s2 += y`.
+     - Append 'G' to `ch[j]`, increment `j`.
+     - Skip remaining checks for this iteration.
+   - Else:
+     - Set `flag = 1`, exit loop early.
+4. After loop termination:
+   - If `flag == 1`: Print `-1`.
+   - Else: Convert `ch` to String and print.
+
+**Control Structures:**
+- `for (i=0; i<n; i++)` loop with early exit via `break`
+- Nested `if-else` blocks with `Math.abs()` conditions
+- `continue` statements for iteration skipping
+
+**I/O Operations:**
+- Input: Read `n`, then `n` pairs of integers via `Scanner`.
+- Output: Print `-1` on failure or the constructed string from `ch`.

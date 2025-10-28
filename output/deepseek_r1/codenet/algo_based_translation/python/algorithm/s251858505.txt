@@ -1,0 +1,32 @@
+Function Signatures:
+- Function main() with no parameters returning void
+
+Variables:
+- s1: string (from first input)
+- s2: string (from second input)
+- count: integer (initialized to 0)
+- min_length: integer (minimum of lengths of s1 and s2)
+
+Logic Flow:
+1. Read s1 from standard input
+2. Read s2 from standard input
+3. Initialize count = 0
+4. Set min_length = minimum value between len(s1) and len(s2)
+5. For i from 0 to min_length - 1 (inclusive):
+   a. If s1[i] == s2[i]:
+       i. Increment count by 1
+6. Print count as decimal integer
+
+Control Structures:
+- Single loop iterating from 0 to min_length-1
+- Conditional check for character equality within loop
+
+Input/Output:
+- Reads two strings via sequential input operations
+- Processes character comparisons up to shorter string length
+- Outputs final count via print statement
+
+Dependencies:
+- Requires access to standard input/output functions
+- Implicit string manipulation and length operations
+- Comparison operator for character equality checks

@@ -1,0 +1,63 @@
+ALGORITHM SPECIFICATION
+
+FUNCTIONAL COMPONENTS:
+1. Main execution block
+
+VARIABLES:
+- r: integer
+- D: integer
+- x: integer
+- i: integer (loop counter)
+- temp_value: float (intermediate calculation)
+- result: integer (final printed value)
+
+INPUT/OUTPUT:
+- Input: Single line containing three space-separated integers via standard input
+- Output: 10 lines of integers printed to standard output
+
+CONTROL FLOW:
+1. Sequential execution
+2. Fixed iteration count loop (10 iterations)
+
+ALGORITHMIC STEPS:
+
+1. Read input
+   1.1 Read input line as string
+   1.2 Split into three string tokens
+   1.3 Convert tokens to integers r, D, x
+
+2. Iterate through years 2-11 inclusive
+   Loop Structure:
+   for i in 2 <= value <= 11 (10 iterations)
+   2.1 Calculate exponent: (i - 1)
+   2.2 Compute term1 = r^(exponent)
+   2.3 Compute denominator = (1 - r)
+   2.4 Compute term2 = D / denominator
+   2.5 Compute term3 = x + term2
+   2.6 Multiply term1 * term3
+   2.7 Subtract term2 from result
+   2.8 Convert final value to integer via truncation
+   2.9 Print converted integer
+
+EDGE CASES:
+- No explicit handling for division by zero when r = 1
+- Relies on input validation through integer conversion
+
+DATA PROCESSING:
+- Explicit float-to-integer conversion via truncation
+- Intermediate floating-point arithmetic
+- Final results cast to integers before output
+
+DEPENDENCIES:
+- Standard input/output functions
+- Integer parsing functionality
+- Exponential operator (^ equivalent)
+- Floating-point division
+
+ERROR HANDLING:
+- Implicit: Program will crash on invalid inputs or division by zero
+- No explicit validation of input ranges or values
+
+TERMINATION CONDITIONS:
+- Loop terminates after 10 iterations (i reaches 11)
+- Program ends after output generation completes

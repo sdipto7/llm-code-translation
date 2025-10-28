@@ -1,0 +1,18 @@
+- Function signature: main() -> None
+- Variable declarations:
+  - n: int
+  - x: List[int]
+- Execution order:
+  1. Read an integer input and assign it to the variable `n`.
+  2. Read a line of input, split the line into strings, convert each string to an integer, and store the list of integers in the variable `x`.
+  3. Reverse the order of elements in the list `x`.
+  4. Print the elements of the list `x` separated by spaces.
+- Control structures:
+  - No loops or conditionals
+- Input operations:
+  - Read an integer from standard input.
+  - Read a line of space-separated integers from standard input.
+- Output operations:
+  - Print the reversed list of integers to standard output.
+- Required libraries, modules, or dependencies:
+  - No external libraries or modules required.

@@ -1,0 +1,22 @@
+def main():
+    n, x = map(int, input().split())
+    a = list(map(int, input().split()))
+    b = [[None for _ in range(n)] for _ in range(n)]
+    
+    for i in range(n):
+        m = a[i]
+        for j in range(n):
+            k = i - j
+            if k < 0:
+                k += n
+            m = min(m, a[k])
+            b[j][i] = m
+    
+    m = 10**15
+    for i in range(len(b)):
+        current_sum = sum(b[i])
+        total_cost = current_sum + x * i
+        if total_cost < m:
+            m = total_cost
+    
+    print(m)

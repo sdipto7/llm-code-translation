@@ -1,0 +1,14 @@
+1. Read integer n from input
+2. Read n integers from input and store them in array arr
+3. If arr[0] is greater than 15 then
+    4. Output 15
+else
+    5. Iterate from i = 1 to length of arr
+    6. If difference between arr[i] and arr[i-1] is greater than 15 then
+        7. Output arr[i-1] + 15
+        8. Exit loop
+    9. If loop completes without exiting then
+        10. If arr[-1] is equal to 90 or arr[-1] + 15 is greater than or equal to 90 then
+            11. Output 90
+        else
+            12. Output arr[-1] + 15

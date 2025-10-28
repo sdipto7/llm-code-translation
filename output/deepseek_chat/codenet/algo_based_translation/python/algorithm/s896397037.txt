@@ -1,0 +1,15 @@
+1. Read input string from standard input
+2. Convert input string to list of characters
+3. Sort the list of characters in ascending order
+4. Check if:
+   - First element equals second element
+   - First element does not equal third element
+   - Third element equals fourth element
+5. If all conditions are true, print "Yes"
+6. Otherwise, print "No"
+
+Function signature: main() -> None
+Variables: s (list of characters)
+Input operation: input()
+Output operations: print()
+No external libraries required

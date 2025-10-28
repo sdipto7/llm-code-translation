@@ -1,0 +1,11 @@
+1. READ t from input and CONVERT to integer
+2. DEFINE function solve WITH parameter n
+   1. CALCULATE s = (n * (n + 1)) / 2
+   2. INITIALIZE t = 1
+   3. WHILE t <= n
+      1. SUBTRACT (2 * t) from s
+      2. UPDATE t = t * 2
+   4. RETURN s
+3. REPEAT t times
+   1. READ n from input and CONVERT to integer
+   2. CALL solve WITH n and PRINT result

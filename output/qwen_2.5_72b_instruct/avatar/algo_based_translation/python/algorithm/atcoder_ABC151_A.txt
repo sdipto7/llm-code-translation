@@ -1,0 +1,40 @@
+- Function: `log(text)`
+  - Parameters: `text` (string)
+  - Return: None
+  - Logic: If `debug` is True, print `text`
+
+- Function: `parse_input(lines_as_string=None)`
+  - Parameters: `lines_as_string` (optional, string)
+  - Return: Tuple containing `c` (string)
+  - Logic: 
+    - If `lines_as_string` is None:
+      - Set `debug` to False
+      - Append input() to `lines`
+    - Else:
+      - Set `debug` to True
+      - Split `lines_as_string` by "\n", exclude first and last elements, assign to `lines`
+    - Split first element of `lines` by " ", take first element, assign to `c`
+    - Return tuple `(c,)`
+
+- Function: `solve(c)`
+  - Parameters: `c` (string)
+  - Return: Next character in alphabet (string)
+  - Logic: 
+    - Define `a` as "abcdefghijklmnopqrstuvwxyz"
+    - Find index of `c` in `a`, assign to `i`
+    - Return character at index `i + 1` in `a`
+
+- Function: `main()`
+  - Parameters: None
+  - Return: None
+  - Logic: 
+    - Call `parse_input()`, unpack result into `c`
+    - Call `solve(c)`, assign result to `result`
+    - If `result` is list:
+      - For each `r` in `result`:
+        - Print `r` without newline
+    - Else:
+      - Print `result` without newline
+
+- Required libraries/modules: `sys`, `math` (not used in logic)
+- Global variable: `debug` (boolean)

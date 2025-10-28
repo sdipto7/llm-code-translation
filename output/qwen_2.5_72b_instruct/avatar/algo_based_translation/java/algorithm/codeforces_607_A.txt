@@ -1,0 +1,33 @@
+Function signature:  
+- `main(String[] args)`
+
+Variable declarations and data types:
+- `int max = 0`
+- `int n = sc.nextInt()`
+- `int[] beacon = new int[1000001]`
+- `int[] dp = new int[1000001]`
+- `Scanner sc = new Scanner(System.in)`
+- `int a = sc.nextInt()`
+- `int i = loop variable`
+
+Libraries:
+- `java.io.*`
+- `java.util.*`
+
+Execution logic:
+1. Initialize `max` to 0
+2. Read integer `n` from input
+3. Initialize arrays `beacon` and `dp` with size 1000001
+4. For each integer `i` from 0 to `n-1`:
+   - Read integer `a` from input
+   - Read integer `beacon[a]` from input
+5. If `beacon[0]` is not 0, set `dp[0]` to 1
+6. For each integer `i` from 1 to 1000000:
+   - If `beacon[i]` is not 0 and `beacon[i]` is less than `i`:
+     - Set `dp[i]` to `dp[i - beacon[i] - 1] + 1`
+   - Else if `beacon[i]` is not 0:
+     - Set `dp[i]` to 1
+   - Else:
+     - Set `dp[i]` to `dp[i - 1]`
+   - Update `max` to the maximum of `max` and `dp[i]`
+7. Print `n - max`

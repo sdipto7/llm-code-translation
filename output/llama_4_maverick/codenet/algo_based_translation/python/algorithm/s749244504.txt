@@ -1,0 +1,43 @@
+1. Import required libraries: `itertools`, `numpy`, `networkx`.
+2. Read input from standard input line by line using `iter(open(0).readlines())`.
+3. Extract height `h` and width `w` from the first line of input and convert them to integers.
+4. Create a 10x10 matrix `C` of integers and initialize it with zeros.
+5. Populate matrix `C` with values from the next 10 lines of input, where each line contains 10 space-separated integers.
+6. Create a matrix `A` of size `h` x `w` of integers and initialize it with zeros.
+7. Populate matrix `A` with values from the next `h` lines of input, where each line contains `w` space-separated integers.
+8. Create a directed graph `G` using `C` as the adjacency matrix.
+9. Create a dictionary `d` to store the shortest path lengths from each node `i` to node 1 in graph `G`, excluding node 1.
+10. For each node `i` from 0 to 9, if `i` is not equal to 1, calculate the shortest path length from `i` to 1 in graph `G` using `nx.shortest_path_length` with `weight='weight'` and store it in `d[i]`.
+11. Initialize a variable `s` to 0.
+12. Iterate over all elements `a` in matrix `A` using `chain.from_iterable(A)`.
+13. For each `a`, if `a` is not equal to -1 and not equal to 1, add the shortest path length from `a` to 1 stored in `d[a]` to `s`.
+14. Output the final value of `s`. 
+
+Function signature: 
+```python
+def main() -> None:
+```
+ Variable declarations:
+- `X`: iterator over input lines
+- `h`, `w`: integers representing height and width
+- `C`: 10x10 matrix of integers
+- `A`: matrix of size `h` x `w` of integers
+- `G`: directed graph
+- `d`: dictionary mapping nodes to shortest path lengths
+- `s`: integer accumulator
+- `i`, `j`, `a`, `c`: integer variables 
+
+Input/Output operations:
+- Reading input from standard input using `iter(open(0).readlines())`
+- Outputting the final value of `s` using `print(s)`
+
+Data processing logic:
+- Creating matrices `C` and `A` from input data
+- Creating a directed graph `G` from matrix `C`
+- Calculating shortest path lengths in graph `G` using `nx.shortest_path_length`
+- Accumulating the sum of shortest path lengths in `s` 
+
+Required libraries:
+- `itertools`
+- `numpy` as `np`
+- `networkx` as `nx`

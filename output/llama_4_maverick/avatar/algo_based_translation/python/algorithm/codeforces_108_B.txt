@@ -1,0 +1,8 @@
+1. Read input from user and discard it
+2. Read a list of numbers from user and store it in a list 'a'
+3. Convert all elements in 'a' to integers
+4. Sort 'a' in ascending order
+5. Iterate through 'a' starting from the second element (index 1)
+6. For each element, check if it is not equal to the previous element and less than twice the previous element
+7. If the condition in step 6 is met, return 'YES'
+8. If the loop completes without finding a match, return 'NO'

@@ -1,0 +1,36 @@
+**Function Signature:**
+- No explicit function defined; code executes at module level
+- Input: Reads integer `n` from stdin, then `n` integers from stdin
+- Output: Prints integer result to stdout
+
+**Variables and Data Types:**
+- `n`: integer (number of elements to read)
+- `l`: list of integers (stores input values)
+- `ans`: integer (accumulates total operations count)
+- `last`: integer (tracks previous value for difference calculation)
+- `i`: integer (loop iterator)
+
+**Execution Flow:**
+1. Read integer `n` from standard input
+2. Initialize empty list `l`
+3. For `i` in range 0 to `n-1`:
+   - Read integer from standard input
+   - Append integer to list `l`
+4. Initialize `ans` to `n - 1`
+5. Initialize `last` to 0
+6. For each element `i` in list `l`:
+   - Add `abs(last - i) + 1` to `ans`
+   - Set `last` to current element `i`
+7. Print `ans`
+
+**Control Structures:**
+- For loop: `for i in range(n)` (executes `n` times)
+- For loop: `for i in l` (iterates through all elements in list)
+
+**Input/Output Operations:**
+- Input: `input()` called `n+1` times total
+- Output: `print(ans)` once at end
+
+**Dependencies:**
+- Built-in functions: `input()`, `print()`, `range()`, `abs()`
+- No external libraries required

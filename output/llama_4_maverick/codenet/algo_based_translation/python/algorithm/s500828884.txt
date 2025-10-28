@@ -1,0 +1,20 @@
+1. Define a function `calculate_min_cost` with parameters `n`, `a`, and `b` of type `int` and return type `int`.
+2. Declare variables `n`, `a`, and `b` of type `int` to store input values.
+3. Read input from the user using `input().split()` and store the values in `n`, `a`, and `b` by mapping them to `int` using `map(int, ...)`.
+4. Calculate the minimum cost between `n * a` and `b` using the `min` function.
+5. Print the result of the `min` function to the output.
+6. The program depends on the built-in `input`, `map`, `min`, and `print` functions, which are part of the Python standard library. 
+   The exact algorithm can be represented as:
+   - Function: `def calculate_min_cost(n: int, a: int, b: int) -> int`
+   - Read `n`, `a`, `b` from input
+   - `result = min(n * a, b)`
+   - Return `result`
+   Alternatively, a more step-by-step representation:
+   1. `def main() -> None`
+   2. `n, a, b = read_input()`
+   3. `result = calculate_min_cost(n, a, b)`
+   4. `print_result(result)`
+   Where:
+   - `def read_input() -> Tuple[int, int, int]`: reads input, splits it, maps to `int`, and returns `n`, `a`, `b`.
+   - `def calculate_min_cost(n: int, a: int, b: int) -> int`: returns `min(n * a, b)`.
+   - `def print_result(result: int) -> None`: prints `result`.

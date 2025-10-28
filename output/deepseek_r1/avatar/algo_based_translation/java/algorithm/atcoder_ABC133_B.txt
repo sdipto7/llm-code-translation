@@ -1,0 +1,43 @@
+**Algorithm:**
+
+1. **Function Signature:**
+   - `main` method with parameters: `String[] args`, returns `void`.
+
+2. **Variables:**
+   - `N` (int): Number of vectors.
+   - `D` (int): Dimensions per vector.
+   - `vectors` (int[N][D]): 2D array storing vector coordinates.
+   - `answer` (int): Count of valid pairs.
+   - `i`, `j`, `d` (int): Loop counters.
+   - `dist` (int): Squared distance accumulator.
+   - `x` (int): Coordinate difference in a dimension.
+   - `sq` (double): Square root of `dist`.
+   - `sc` (Scanner): Input reader.
+
+3. **Input Operations:**
+   - Read `N` and `D` via `Scanner`.
+   - Populate `vectors` by reading `N * D` integers in nested loops.
+
+4. **Logic Flow:**
+   - Initialize `answer` to 0.
+   - Iterate all vector pairs (i, j) where `0 ≤ i < j < N`:
+     - Reset `dist` to 0.
+     - For each dimension `d` in `0..D-1`:
+       - Compute difference `x` between `vectors[i][d]` and `vectors[j][d]`.
+       - Accumulate `dist += x * x`.
+     - Compute `sq` as `sqrt(dist)`.
+     - Check if `sq` is integer by verifying `Math.abs(sq - Math.floor(sq)) < 0.001`.
+     - Increment `answer` if condition holds.
+
+5. **Output:**
+   - Print `answer`.
+
+6. **Control Structures:**
+   - Nested `for` loops for reading input.
+   - Double nested `for` loops for pairwise vector iteration.
+   - `for` loop over dimensions.
+   - Conditional check using `Math.abs` and `Math.floor`.
+
+7. **Dependencies:**
+   - `java.lang.Math` for mathematical operations.
+   - `java.util.Scanner` for input handling.

@@ -1,0 +1,51 @@
+- Import required libraries: java.io, java.util
+- Define a class Pair with:
+  - integer fields l and r
+  - a constructor Pair(int a, int b) that initializes l and r
+  - a toString method that returns a string representation of the pair
+
+- Define a class Main with:
+  - a static 3D array memo
+  - a static 2D array a
+  - a static integer n
+
+- Define a static method dp(int fliped, int idx, int msk) that:
+  - checks if msk is equal to (1 << n) - 1 and returns 0 if true
+  - checks if memo[fliped][idx][msk] is not equal to -1 and returns its value if true
+  - calculates the number of bits set in msk (x)
+  - initializes ff to 0 and ans to 1e9
+  - iterates over the range from 0 to n-1:
+    - checks if the ith bit is not set in msk
+    - calculates nf as x % 2
+    - checks if idx is equal to n or a[fliped][idx] is less than or equal to a[(nf + (ff % 2)) % 2][i]
+    - updates ans with the minimum of ans and ff + dp((nf + (ff % 2)) % 2, i, msk | (1 << i))
+    - increments ff
+  - stores the result in memo[fliped][idx][msk] and returns it
+
+- Define a main method that:
+  - creates a Scanner object sc to read from System.in
+  - creates a PrintWriter object pw to write to System.out
+  - reads an integer n from the input
+  - initializes a 2D array a with dimensions 2 x n
+  - reads 2n integers from the input and stores them in a
+  - initializes a 3D array memo with dimensions 2 x (n+1) x (1 << n)
+  - fills memo with -1
+  - calls dp(0, n, 0) and stores the result in ans
+  - writes ans to the output if it is less than 1e8, otherwise writes -1
+  - flushes the PrintWriter
+
+- Define a static class Scanner with:
+  - a BufferedReader br
+  - a StringTokenizer st
+
+  - constructors that initialize br from a FileReader or an InputStream
+
+  - a method next() that:
+    - checks if st is null or has no more tokens
+    - reads a line from br and tokenizes it if necessary
+    - returns the next token
+
+  - methods nextInt(), nextLong(), nextLine(), and nextDouble() that:
+    - call next() and parse the result to the corresponding type
+
+  - a method ready() that checks if br is ready to be read

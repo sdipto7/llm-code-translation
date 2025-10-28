@@ -1,0 +1,72 @@
+```
+- Function signatures:
+  - solve(): void
+  - rec(int i, int j, int k): double
+  - main(String[] args): void
+
+- Variable declarations and data types:
+  - int n
+  - int[] a
+  - double[][][] dp
+  - int[] cnt
+  - double ans
+  - static final long mod
+  - static final int[] dx, dy, dx8, dy8
+  - static final int inf
+  - static final long linf
+  - static final double dinf, eps, pi
+  - StringBuilder sb
+  - InputStream is
+  - PrintWriter out
+  - String INPUT
+  - byte[] inbuf
+  - int lenbuf, ptrbuf
+  - int num
+  - boolean minus
+
+- Logic flow:
+  1. solve()
+     - Read an integer n using ni().
+     - Read an array a of size n using na(n).
+     - Initialize a 3D array dp with dimensions (n+1)x(n+1)x(n+1) and fill with -1.
+     - Set dp[0][0][0] to 0.
+     - Initialize an integer array cnt of size 3.
+     - Count occurrences of 1, 2, and 3 in array a and store in cnt[0], cnt[1], and cnt[2] respectively.
+     - Call rec(cnt[0], cnt[1], cnt[2]) and store the result in ans.
+     - Output ans using out.println(ans).
+
+  2. rec(int i, int j, int k)
+     - If dp[i][j][k] is not -1, return dp[i][j][k].
+     - Initialize double ret to 0.
+     - Calculate double p as (i+j+k)/n.
+     - Calculate double pi as i/n, pj as j/n, pk as k/n.
+     - Add 1/p to ret.
+     - If i > 0, add pi/p * rec(i-1, j, k) to ret.
+     - If j > 0, add pj/p * rec(i+1, j-1, k) to ret.
+     - If k > 0, add pk/p * rec(i, j+1, k-1) to ret.
+     - Set dp[i][j][k] to ret and return ret.
+
+  3. main(String[] args)
+     - Set is to System.in if INPUT is empty, otherwise to a ByteArrayInputStream created from INPUT.
+     - Set out to a new PrintWriter(System.out).
+     - Call solve().
+     - Flush out using out.flush().
+
+- Control structures:
+  - For loops to iterate over arrays and fill dp.
+  - If conditions to check dp values and calculate probabilities in rec.
+  - While loops in lowerBound, upperBound and input reading methods.
+  - Try-catch for handling IOExceptions.
+
+- Input/output operations:
+  - Input: Read integers and arrays using ni(), na(), and auxiliary methods.
+  - Output: Print results using out.println().
+
+- Libraries, modules, or dependencies:
+  - java.io.*
+  - java.util.*
+  - System.in, System.out
+  - Arrays class for array operations
+  - StringBuilder, PrintWriter for string manipulation and output
+  - InputMismatchException for input errors
+```

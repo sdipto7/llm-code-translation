@@ -1,0 +1,10 @@
+1. Read two integers N and M from standard input.
+2. Read M integers from standard input into a list A.
+3. Sort list A in descending order.
+4. Calculate the sum S of all elements in list A.
+5. Iterate over the first M elements of sorted list A.
+6. For each element a, check if the condition (a/S) - (1/(4*M)) < 0 is true.
+7. If the condition is true for any element, output 'No' and terminate.
+8. If the iteration completes without finding any element that satisfies the condition, output 'Yes'. 
+9. The program uses the sys module for input operations. 
+The input is expected to be in the format: two integers on the first line, followed by a list of integers on the second line.

@@ -1,0 +1,25 @@
+def main():
+    n: int, k: int = map(int, input().split())
+    elems: list[int] = list(map(int, input().split()))
+    
+    all_same = lambda arr: all(x == arr[0] for x in arr)
+    
+    if all_same(elems):
+        print(0)
+        return
+        
+    if k == 1:
+        print(-1)
+        return
+        
+    if not all_same(elems[k-1:]):
+        print(-1)
+        return
+        
+    target: int = elems[-1]
+    to_delete: list[int] = elems[0:k-1]
+    
+    while to_delete and to_delete[-1] == target:
+        to_delete.pop()
+        
+    print(len(to_delete))

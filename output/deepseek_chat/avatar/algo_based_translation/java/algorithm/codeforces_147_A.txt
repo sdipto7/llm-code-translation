@@ -1,0 +1,40 @@
+**Functions:**
+- isLatinLetter(c: char): boolean
+  - Return true if c is between 'a' and 'z' inclusive
+- isPunctuation(c: char): boolean
+  - Return true if c is '.', ',', '!', or '?'
+- main(args: String[]): void
+
+**Variables:**
+- br: BufferedReader
+- pw: PrintWriter
+- s: String
+- sb: StringBuilder
+- n: int
+- c: char
+- i: int
+
+**Algorithm:**
+1. Initialize BufferedReader with System.in
+2. Initialize PrintWriter with System.out
+3. Read input string s
+4. Initialize StringBuilder sb
+5. Set n = length of s
+6. Append first character of s to sb
+7. For i from 1 to n-1:
+   - Set c = character at position i in s
+   - If isLatinLetter(c) is true:
+     - If character at position i-1 in s is NOT a Latin letter:
+       - Append space ' ' to sb
+     - Append c to sb
+   - Else if isPunctuation(c) is true:
+     - Append c to sb
+8. Print sb contents
+9. Flush PrintWriter
+10. Close PrintWriter
+
+**Required imports:**
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader
+- java.io.PrintWriter

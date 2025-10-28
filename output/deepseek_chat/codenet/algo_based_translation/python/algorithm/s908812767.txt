@@ -1,0 +1,52 @@
+Algorithm:
+- Import sys module and set recursion limit to 100000
+- Define function dfs(i) where i is integer:
+  - For each element [v, w] in V.get(i, []) where v is integer, w is integer:
+    - If w % 2 == 0:
+      - If color[v] == -1:
+        - Set color[v] = color[i]
+      - Else if color[v] == color[i]:
+        - Continue to next iteration
+      - Else if color[v] != color[i]:
+        - Return False
+    - Else (w % 2 != 0):
+      - If color[v] == -1:
+        - Set color[v] = 0 if color[i] == 1 else 1
+      - Else if color[v] == color[i]:
+        - Return False
+      - Else if color[v] != color[i]:
+        - Continue to next iteration
+    - Call dfs(v)
+  - Return True
+
+- Main execution:
+  - Read integer n from input
+  - Initialize dictionary V with integer keys and list values containing [vertex, weight] pairs
+  - Initialize dictionary color with integer keys and integer values (0, 1, or -1)
+  - For i from 1 to n-1:
+    - Read three integers u, v, w from input
+    - If V does not contain key u:
+      - Set V[u] = [[v, w]]
+    - Else:
+      - Append [v, w] to V[u]
+    - If V does not contain key v:
+      - Set V[v] = [[u, w]]
+    - Else:
+      - Append [u, w] to V[v]
+  - For i from 1 to n:
+    - Set color[i] = -1
+  - While True:
+    - Set i = 0
+    - For j from 1 to n:
+      - If color[j] == -1:
+        - Set i = j
+        - Set color[i] = 0
+        - Break inner loop
+    - If i == 0:
+      - For j from 1 to n:
+        - Print color[j]
+      - Break outer loop
+    - Else:
+      - If dfs(i) returns False:
+        - Print 'No'
+        - Break outer loop

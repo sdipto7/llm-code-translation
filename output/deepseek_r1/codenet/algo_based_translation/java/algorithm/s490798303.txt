@@ -1,0 +1,41 @@
+- Function Signatures:
+  - `public static void main(String[] args)`
+
+- Variable Declarations:
+  - `int n` (input)
+  - `int k` (input)
+  - `Map<Integer, List<Integer>> map = new HashMap<>()`
+  - `Scanner scanner = new Scanner(System.in)`
+  - `int d` (per group iteration)
+  - `int person` (per person iteration)
+  - `int count = 0`
+
+- Logic Flow:
+  1. Read `n` and `k` via `Scanner.nextInt()`
+  2. Initialize empty `HashMap` for `map`
+  3. Loop: `for (int i = 0; i < k; i++)`
+      a. Read `d` via `Scanner.nextInt()`
+      b. Loop: `for (int j = 0; j < d; j++)`
+          i. Read `person` via `Scanner.nextInt()`
+          ii. If `!map.containsKey(person)`: create new `ArrayList` entry in `map`
+          iii. Append `d` to `map.get(person)`
+  4. Loop: `for (int i = 1; i <= n; i++)`
+      a. If `!map.containsKey(i)`: increment `count`
+  5. Print `count` via `System.out.println`
+
+- Control Structures:
+  - `for` loop (k iterations) with nested `for` loop (d iterations)
+  - `if (!map.containsKey(person))` conditional
+  - `for` loop (n iterations) with `if (!map.containsKey(i))` conditional
+
+- Input/Output Operations:
+  - Input via `Scanner.nextInt()` for integers
+  - Output via `System.out.println(count)`
+  - All inputs processed sequentially in order: n, k, followed by k groups of (d followed by d person IDs)
+
+- Required Libraries:
+  - `java.util.Scanner`
+  - `java.util.HashMap`
+  - `java.util.ArrayList`
+  - `java.util.List`
+  - `java.util.Map`

@@ -1,0 +1,28 @@
+1. Required Libraries:
+- java.util.Scanner
+
+2. Function Signature:
+- public static void main(String[] args)
+
+3. Variables:
+- Scanner sc (Scanner object for input)
+- int r (integer input value)
+
+4. Execution Flow:
+4.1 Initialize Scanner with System.in
+4.2 Read integer input using nextInt() and store in variable r
+4.3 Calculate expression: 3 * r * r
+4.4 Print result using System.out.println()
+
+5. Input/Output Operations:
+- Input: Single integer from standard input
+- Output: Single integer result printed to standard output
+
+6. Data Processing:
+- Mathematical computation: multiply input squared by 3
+
+7. Control Structures:
+- None (strict sequential execution)
+
+8. Dependencies:
+- Requires Scanner class from java.util package

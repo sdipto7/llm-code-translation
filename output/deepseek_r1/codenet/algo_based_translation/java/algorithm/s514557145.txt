@@ -1,0 +1,78 @@
+Here is the detailed algorithm extracted from the Java code:
+
+---
+
+**Data Types and Variables:**
+- MOD2: Constant Long = 998244353
+- N: Integer (input size)
+- Q: Integer (number of queries)
+- tenmod: Long array of size N+1 (precomputed powers of 10 modulo MOD2)
+- inv9: Long (modular inverse of 9 under MOD2)
+- LazySegTree<S,F> with:
+  - S: Segment data type containing:
+    - sum: Long (current segment sum)
+    - l: Integer (leftmost index in segment)
+    - r: Integer (rightmost index in segment)
+  - F: Function type containing:
+    - D: Long (digit to apply)
+    - N: Integer (original array size)
+
+**Precomputations:**
+1. Compute tenmod array:
+   - tenmod[0] = 1
+   - For j=1 to N: tenmod[j] = (tenmod[j-1] * 10) % MOD2
+2. Compute inv9 = modInv(9) using Fermat's Little Theorem
+
+**Segment Tree Initialization:**
+- Initialize array of S objects:
+  - For each index i (0 ≤ i < N):
+    - sum = tenmod[N-i-1] (represents 10^(N-i-1) mod MOD2)
+    - l = i
+    - r = i
+- Build segment tree using S::op for combination and F for updates
+
+**Query Processing:**
+For each query:
+1. Read L, R (convert to 0-based indices: l = L-1, r = R-1)
+2. Read digit D (Long)
+3. Apply range update [l, r] with function F(D, N)
+4. Compute and print total sum using allProd().sum
+
+**Segment Operations:**
+- S::op(s1, s2):
+  - sum = (s1.sum + s2.sum) % MOD2
+  - l = min(s1.l, s2.l)
+  - r = max(s1.r, s2.r)
+  - Return new S(sum, l, r)
+- S::map(f, s):
+  - Compute segment length contribution:
+    - numerator = (tenmod[f.N - s.l] - tenmod[f.N - s.r - 1]) % MOD2
+    - If negative, add MOD2
+  - new_sum = (f.D * numerator % MOD2) * inv9 % MOD2
+  - Return new S(new_sum, s.l, s.r)
+
+**Function Composition:**
+- F::composite(f, g) returns f (new function overrides previous)
+
+**Lazy Propagation Logic:**
+- Apply updates to ranges by propagating function F through the segment tree
+- Push updates to child nodes during traversal
+- Combine ranges using S::op after updates
+
+**Input/Output:**
+- Use custom InputReader for efficient parsing
+- Print results after each query using PrintWriter
+
+**Mathematical Operations:**
+- modPow(x, y): Computes x^y % MOD2 using exponentiation by squaring
+- modInv(x): Computes modular inverse via modPow(x, MOD2-2)
+
+**Control Flow:**
+1. Sequential execution of precomputations
+2. Loop over all queries to process updates
+3. Binary tree traversal in segment tree for range updates and queries
+4. Modular arithmetic checks for all operations
+
+--- 
+
+This algorithm efficiently handles range updates and sum queries using lazy propagation in O(logN) per operation, leveraging modular arithmetic and precomputed values for geometric series calculations.

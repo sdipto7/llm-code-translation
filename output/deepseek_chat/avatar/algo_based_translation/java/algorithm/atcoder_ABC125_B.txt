@@ -1,0 +1,53 @@
+**Function Signatures:**
+- main(String[] args): void
+- str2List(String str): Map<Integer, Integer>
+
+**Variable Declarations:**
+- Scanner sc: Scanner object for input
+- Integer n: input size
+- String vStr: first input line
+- Map<Integer, Integer> vList: parsed values from vStr
+- String cStr: second input line  
+- Map<Integer, Integer> cList: parsed values from cStr
+- Integer max: result accumulator initialized to 0
+- Integer i: loop counter
+- Integer profit: temporary calculation result
+- String[] vArrStr: split input string
+- Map<Integer, Integer> ret: return map for str2List
+- Integer key: map key counter
+- String val: temporary string value
+
+**Logic Flow:**
+1. Create Scanner object for System.in
+2. Read integer n from first input line
+3. Read vStr from next input line
+4. Call str2List(vStr) to populate vList
+5. Read cStr from next input line
+6. Call str2List(cStr) to populate cList
+7. Initialize max to 0
+8. For i from 0 to n-1:
+   - Calculate profit = vList.get(i) - cList.get(i)
+   - If profit > 0, add profit to max
+9. Print max value
+
+**str2List Function:**
+1. Split input string by spaces into vArrStr
+2. Create empty HashMap ret
+3. Initialize key to 0
+4. For each val in vArrStr:
+   - Put Integer.valueOf(val) into ret with current key
+   - Increment key
+5. Return ret map
+
+**Control Structures:**
+- For loop: for (Integer i = 0; i < n; i++)
+- Conditional: if (profit > 0)
+
+**Input/Output:**
+- Input: System.in via Scanner
+- Output: System.out.println(max)
+
+**Dependencies:**
+- java.util.Scanner
+- java.util.Map
+- java.util.HashMap

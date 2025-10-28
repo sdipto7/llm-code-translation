@@ -1,0 +1,8 @@
+1. Define a function `check_sum` with parameters `a`, `b`, `c` of type `int` and return type `str`.
+2. Declare variables `a`, `b`, `c` of type `int` to store input values.
+3. Read input from the user using `input().split()` and store the values in `a`, `b`, `c` after converting them to `int` using `map(int, ...)`.
+4. Evaluate the condition `a + b >= c`.
+5. If the condition is `True`, return the string "Yes".
+6. If the condition is `False`, return the string "No".
+7. Print the result returned by the evaluation of the condition.
+8. The required libraries are the built-in Python libraries, specifically no external modules are required.

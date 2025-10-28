@@ -1,0 +1,10 @@
+1. Read integers n and m from input
+2. Initialize empty lists a and b
+3. For i from 0 to m-1:
+   - Read two integers a1 and b1 from input
+   - Append a1 to list a
+   - Append b1 to list b
+4. For i from 1 to n inclusive:
+   - Count occurrences of i in list a
+   - Count occurrences of i in list b
+   - Print the sum of these two counts

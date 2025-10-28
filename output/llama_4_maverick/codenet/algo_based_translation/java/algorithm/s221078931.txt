@@ -1,0 +1,42 @@
+1. Import required libraries:
+   - java.io.BufferedReader
+   - java.io.IOException
+   - java.io.InputStreamReader
+   - java.util.Arrays
+
+2. Define a class `IntegralRect` with:
+   - Properties: `height` and `width` of type `int`
+   - Constructor `IntegralRect(int h, int w)` that initializes `height` and `width`
+   - Method `diagonal()` that returns an `int` value representing the diagonal of the rectangle
+   - Method `compareTo(IntegralRect o)` that compares two `IntegralRect` objects and returns an `int`
+
+3. In the `main` method:
+   - Declare a `BufferedReader` object `br` to read input from `System.in`
+   - Create an array `rects` of `IntegralRect` objects with a size of 40000
+   - Initialize `rects` with `IntegralRect` objects in a nested loop:
+     - Outer loop iterates from 0 to 199
+     - Inner loop iterates from 0 to 199
+     - `rects` is populated with `IntegralRect` objects having `height` and `width` ranging from 1 to 200
+
+4. Sort the `rects` array using `Arrays.sort(rects)`
+
+5. Enter a loop that continues until a termination condition is met:
+   - Read a line from `System.in` using `br.readLine()`
+   - Split the input line into an array `tmpArray` using space as the delimiter
+   - Parse the first two elements of `tmpArray` into `int` values `h` and `w`
+   - Check if `h` and `w` are both 0; if so, break the loop
+
+6. Create a new `IntegralRect` object `tmpRect` with `height` `h` and `width` `w`
+   - Calculate the diagonal of `tmpRect` using the `diagonal()` method and store it in `diag`
+
+7. Iterate through the sorted `rects` array:
+   - Compare each `IntegralRect` object in `rects` with `tmpRect` using the `compareTo` method
+   - When an `IntegralRect` object is found to be greater than `tmpRect`, print its `height` and `width`, then break the loop
+
+8. The `IntegralRect` class implements `Comparable<IntegralRect>` with the `compareTo` method:
+   - Compare two `IntegralRect` objects based on their diagonals and heights
+   - If the diagonals are equal, compare based on `height`; otherwise, compare based on the diagonal values
+
+9. The `diagonal()` method in `IntegralRect`:
+   - If `height` is greater than or equal to `width`, return `Integer.MAX_VALUE`
+   - Otherwise, return the sum of the squares of `height` and `width`

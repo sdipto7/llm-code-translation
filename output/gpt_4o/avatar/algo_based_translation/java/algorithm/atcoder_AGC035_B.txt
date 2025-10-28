@@ -1,0 +1,59 @@
+```
+Algorithm:
+
+1. Import necessary libraries:
+   - `java.util.*`
+
+2. Define the public class `atcoder_AGC035_B`.
+
+3. Define the `main` method with the signature:
+   - `public static void main(String[] args)`
+
+4. Initialize a `Scanner` object to read input:
+   - `Scanner sc = new Scanner(System.in)`
+
+5. Read two integers from input:
+   - `int numNode = sc.nextInt()`
+   - `int numEdge = sc.nextInt()`
+
+6. Declare and initialize an array of `ArrayList<Integer>`:
+   - `ArrayList<Integer>[] connect = new ArrayList[numNode]`
+
+7. Loop from 0 to `numNode - 1` to initialize each `ArrayList`:
+   - For each `i`, initialize `connect[i] = new ArrayList<>()`
+
+8. Loop `numEdge` times to read and store edges:
+   - For each edge, read two integers `a` and `b`
+   - Decrement both `a` and `b` by 1 to use zero-based indexing
+   - Add `b` to `connect[a]` and `a` to `connect[b]`
+
+9. Check if the number of edges is odd:
+   - If `numEdge % 2 != 0`, print `-1` and return
+
+10. Declare and initialize arrays and objects:
+    - `int[] visited = new int[numNode]`
+    - `boolean[] odd = new boolean[numNode]`
+    - `StringBuilder print = new StringBuilder()`
+
+11. Call the `dfs` function with parameters `0` and `-1`.
+
+12. Print the content of `print`.
+
+13. Define the `dfs` function with the signature:
+    - `static void dfs(int crt, int parent)`
+
+14. Set `visited[crt]` to `1`.
+
+15. Retrieve the list of connections for the current node:
+    - `ArrayList<Integer> crtConnect = connect[crt]`
+
+16. Loop over each `child` in `crtConnect`:
+    - If `child` equals `parent` or `visited[child]` equals `1`, continue to the next iteration
+    - Else if `visited[child]` equals `2`, append the edge from `crt` to `child` to `print` and toggle `odd[crt]`
+    - Else:
+      - Recursively call `dfs` with `child` and `crt`
+      - If `odd[child]` is true, append the edge from `child` to `crt` to `print` and toggle `odd[child]`
+      - Else, append the edge from `crt` to `child` to `print` and toggle `odd[crt]`
+
+17. Set `visited[crt]` to `2`.
+```

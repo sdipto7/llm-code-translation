@@ -1,0 +1,51 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signature**  
+- Function: `process_number() → void`  
+- Parameters: None  
+- Return Type: void  
+
+**Variables**  
+- `input_str`: string (user input)  
+- `l`: list of strings (split components of input)  
+- `s`: list of characters (integer part of number)  
+- `p`: list of characters (fractional part of number)  
+- `i`: integer (first digit of fractional part)  
+
+**Input/Output Operations**  
+1. Read `input_str` from standard input.  
+2. Split `input_str` into `l` using '.' as delimiter.  
+3. Assign `s = list(l[0])` (integer part).  
+4. Assign `p = list(l[1])` (fractional part).  
+5. Assign `i = int(p[0])` (first fractional digit).  
+
+**Logic Flow**  
+1. **Check Condition 1**:  
+   - If last character of `s` is '9':  
+     - Print "GOTO Vasilisa."  
+     - Terminate execution.  
+2. **Check Condition 2** (Else-If):  
+   - If last character of `s` is not '9' and `i < 5`:  
+     - Join `s` into a string.  
+     - Print joined `s`.  
+3. **Default Action** (Else):  
+   - Join `s` into a string.  
+   - Convert joined `s` to integer, increment by 1, convert back to string.  
+   - Print incremented value.  
+
+**Control Flow Structures**  
+- Sequential execution after input.  
+- Branching:  
+  ```plaintext  
+  if (s[-1] == '9') → exit  
+  elif (s[-1] != '9' AND i < 5) → print s  
+  else → increment and print s  
+  ```  
+
+**Edge Case Handling**  
+- Implicitly handles cases where `s` is empty (if input starts with '.').  
+- Assumes valid numeric input format (no explicit validation).  
+
+**External Dependencies**  
+- Relies on `input()` for input and `print()` for output.  
+- Uses `split()`, `list()`, `int()`, `str()`, `join()`, and list indexing.

@@ -1,0 +1,18 @@
+1. Read input values N and K.
+2. Read N integers into array S.
+3. If K equals 1, then:
+   1. Initialize ans to a large value.
+   2. Iterate through array S, updating ans with the minimum absolute value encountered.
+   3. Output ans.
+4. Else if N - K is not equal to 0, then:
+   1. Initialize ans to a large value.
+   2. Iterate from i = 0 to N - K.
+   3. For each i, determine min as S[i] and max as S[i + K - 1].
+   4. If min is less than 0 and max is greater than 0, then calculate temp as the minimum of (2 * absolute(min) + max) and (absolute(min) + 2 * max).
+   5. Else, calculate temp as the maximum of absolute(min) and absolute(max).
+   6. Update ans with the minimum of ans and temp.
+   7. Output ans.
+5. Else:
+   1. Determine min as S[0] and max as S[N - 1].
+   2. If min is less than 0 and max is greater than 0, then output the minimum of (2 * absolute(min) + max) and (absolute(min) + 2 * max).
+   3. Else, output the maximum of absolute(min) and absolute(max).

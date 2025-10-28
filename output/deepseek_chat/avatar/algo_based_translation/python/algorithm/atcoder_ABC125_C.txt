@@ -1,0 +1,48 @@
+**Function Signatures:**
+- gcd(a: int, b: int) -> int
+- ruiseki_lr(array: list) -> tuple[list, list]
+
+**Variable Declarations:**
+- op: lambda function (int, int) -> int
+- e: int = 0
+- n: int (length of input array)
+- left: list[int] of length n+1
+- right: list[int] of length n+1
+- input_n: int from stdin
+- input_a: list[int] from stdin
+- ans: int = 0
+
+**Logic Flow:**
+1. Read integer n from stdin
+2. Read list of n integers a from stdin
+3. Call ruiseki_lr(a)
+   - Initialize op as gcd function
+   - Set e = 0
+   - Set n = len(array)
+   - Initialize left with n+1 zeros
+   - Initialize right with n+1 zeros
+   - For i from 0 to n-1:
+        left[i+1] = op(left[i], array[i])
+   - For i from n-1 down to 0:
+        right[i] = op(right[i+1], array[i])
+   - Return (left, right)
+
+4. Initialize ans = 0
+5. For i from 0 to n-1:
+        current = gcd(left[i], right[i+1])
+        ans = max(ans, current)
+6. Print ans
+
+**Control Structures:**
+- if b == 0: return a (in gcd function)
+- for i in range(n): (forward iteration)
+- for i in reversed(range(n)): (backward iteration)
+- for i in range(n): (main loop)
+
+**Input/Output Operations:**
+- n = int(input())
+- a = list(map(int, input().split()))
+- print(ans)
+
+**Dependencies:**
+- None (uses built-in functions only)

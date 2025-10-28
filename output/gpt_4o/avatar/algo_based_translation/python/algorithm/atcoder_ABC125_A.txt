@@ -1,0 +1,29 @@
+Function signature:
+- main() -> None
+
+Variable declarations:
+- a: int
+- b: int
+- t: int
+- cookie: int
+- time: float
+
+Logic flow:
+1. Parse input values into integers: a, b, t by splitting the input string on spaces.
+2. Initialize cookie to 0.
+3. Initialize time with the value of a.
+4. Start a while loop with the condition: time <= t + 0.5.
+   - Inside the loop:
+     - Increment cookie by the value of b.
+     - Increment time by the value of a.
+5. After exiting the loop, output the value of cookie.
+
+Control structures:
+- while loop: time <= t + 0.5
+
+Input/output operations:
+- Input: Read a line of input and split it into three integers.
+- Output: Print the integer value of cookie.
+
+Required libraries/modules:
+- None

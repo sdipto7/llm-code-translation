@@ -1,0 +1,37 @@
+1. Read four integer inputs from the user and store them in variables N, M, X, and Y.
+2. Read N integer inputs from the user and store them in a list x.
+3. Read M integer inputs from the user and store them in a list y.
+4. Evaluate the condition: max(max(x), X) < min(min(y), Y).
+5. If the condition is true, output 'No War'.
+6. If the condition is false, output 'War'.
+
+Function Signature:
+- Input function: takes no parameters, returns N, M, X, Y, x, y
+- Main function: takes N, M, X, Y, x, y as parameters, returns a string ('No War' or 'War')
+
+Variable Declarations and Data Types:
+- N, M, X, Y: integers
+- x, y: lists of integers
+
+Logic Flow:
+1. Input N, M, X, Y
+2. Input x and y
+3. Evaluate condition using N, M, X, Y, x, y
+4. Output result based on condition
+
+Control Structures:
+- Conditional statement: if max(max(x), X) < min(min(y), Y)
+
+Input/Output Operations:
+- Read integer inputs for N, M, X, Y
+- Read integer inputs for x and y
+- Output 'No War' or 'War'
+
+Data Processing Logic:
+- Find maximum of x and X
+- Find minimum of y and Y
+- Compare the maximum and minimum values
+
+Required Libraries/Modules:
+- Built-in input() and map() functions for reading input
+- Built-in max() and min() functions for finding maximum and minimum values

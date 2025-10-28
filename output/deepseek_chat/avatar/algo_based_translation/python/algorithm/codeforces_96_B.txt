@@ -1,0 +1,18 @@
+1. Declare global list l as empty list
+2. Set global integer limit = 10000000000
+3. Define function gen with parameters: integer number, integer four, integer seven
+   - If number > limit: return
+   - If number > 0 AND four == seven: append number to list l
+   - Call gen(number * 10 + 4, four + 1, seven)
+   - Call gen(number * 10 + 7, four, seven + 1)
+4. Define function main with no parameters
+   - Call gen(0, 0, 0)
+   - Sort list l in ascending order
+   - Read integer n from standard input
+   - Initialize integer ans = 0
+   - For each value val in list l:
+        If val >= n:
+            Set ans = val
+            Break loop
+   - Print ans
+5. Call main function

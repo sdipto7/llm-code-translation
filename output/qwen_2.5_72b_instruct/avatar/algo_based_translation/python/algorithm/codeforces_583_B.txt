@@ -1,0 +1,33 @@
+Function signature: `main_function()` with no parameters and no return type
+
+Variable declarations:
+- `n` as integer
+- `a` as list of integers
+- `current_level` as integer initialized to 0
+- `counter` as integer initialized to 0
+- `counter_turns` as integer initialized to -1
+
+Logic flow:
+1. Read integer `n` from input
+2. Read space-separated string of integers, convert each to integer, and store in list `a`
+3. Initialize `current_level` to 0
+4. Initialize `counter` to 0
+5. Initialize `counter_turns` to -1
+6. Enter while loop with condition `counter < len(a)`
+   - Increment `counter_turns` by 1
+   - Enter for loop with index `i` ranging from 0 to `len(a) - 1`
+     - If `a[i]` is not equal to -1 and `a[i]` is less than or equal to `counter`
+       - Increment `counter` by 1
+       - Set `a[i]` to -1
+   - Reverse list `a`
+7. Print value of `counter_turns`
+
+Input/output operations:
+- Read an integer `n` from standard input
+- Read a space-separated string of integers from standard input
+- Print the integer value of `counter_turns` to standard output
+
+Data processing logic:
+- The algorithm processes a list of integers, marking elements as processed by setting them to -1, and counts the number of "turns" required to process all elements in the list based on a condition that the element's value must be less than or equal to a counter.
+
+No required libraries, modules, or dependencies

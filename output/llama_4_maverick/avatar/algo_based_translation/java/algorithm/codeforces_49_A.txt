@@ -1,0 +1,10 @@
+1. Read a line of input from the user and store it as a string.
+2. Determine the length of the input string.
+3. Initialize a variable to store a character.
+4. Iterate through the input string from the end to the beginning.
+5. Check each character to see if it is not a space and not a question mark.
+6. When such a character is found, store it and stop iterating.
+7. Convert the stored character to lowercase.
+8. Check if the lowercase character is one of the vowels 'a', 'e', 'i', 'o', 'u', or 'y'.
+9. If it is a vowel, output 'YES'.
+10. If it is not a vowel, output 'NO'.

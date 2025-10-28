@@ -1,0 +1,10 @@
+1. Read two integers n and k from input
+2. Split the input into n and k
+3. Convert n and k to integers
+4. Read a list of n integers from input
+5. Split the input into a list of integers
+6. Convert each value in the list to an integer
+7. Sort the list of integers in ascending order
+8. Select the first k elements from the sorted list
+9. Calculate the sum of the selected k elements
+10. Print the sum of the selected k elements

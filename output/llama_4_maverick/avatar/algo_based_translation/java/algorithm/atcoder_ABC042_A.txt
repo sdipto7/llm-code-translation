@@ -1,0 +1,10 @@
+1. Read input line from the user.
+2. Split the input line into a list of strings using space as the delimiter.
+3. Parse the first element of the list into an integer x.
+4. Parse the second element of the list into an integer a.
+5. Parse the third element of the list into an integer y.
+6. Initialize a variable h to "NO".
+7. Check if x, a, or y is equal to 5 or 7.
+8. If the condition in step 7 is true, check if the sum of x, y, and a is equal to 17.
+9. If the condition in step 8 is true, update h to "YES".
+10. Print the value of h.

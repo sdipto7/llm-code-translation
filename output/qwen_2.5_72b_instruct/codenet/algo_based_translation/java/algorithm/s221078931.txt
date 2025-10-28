@@ -1,0 +1,34 @@
+Function Signatures:
+- `main(String[] args)`: void
+- `IntegralRect(int h, int w)`: constructor
+- `diagonal()`: int
+- `compareTo(IntegralRect o)`: int
+
+Variable Declarations and Data Types:
+- `br`: BufferedReader
+- `rects[]`: IntegralRect array size 40000
+- `i`, `j`: int
+- `tmpArray[]`: String array
+- `h`, `w`: int
+- `tmpRect`: IntegralRect
+- `diag`: int
+
+Logic Flow:
+1. Create BufferedReader object for reading input.
+2. Declare and initialize an array of IntegralRect objects `rects` with size 40000.
+3. Nested loop to fill `rects` array with IntegralRect objects having height and width values ranging from 1 to 200.
+4. Sort the `rects` array.
+5. Enter an infinite loop:
+   - Read a line of input and split it into a string array `tmpArray`.
+   - Convert first and second elements of `tmpArray` to integers `h` and `w`.
+   - If `h` and `w` are both 0, break the loop.
+   - Create a new IntegralRect object `tmpRect` with height `h` and width `w`.
+   - Calculate the diagonal of `tmpRect` and store it in `diag`.
+   - Loop through `rects` array:
+     - Compare current IntegralRect object in `rects` with `tmpRect` using `compareTo` method.
+     - If current IntegralRect object has a larger diagonal or same diagonal but larger height than `tmpRect`, print height and width of current IntegralRect object and break the loop.
+
+IntegralRect Class:
+1. Constructor `IntegralRect(int h, int w)` initializes height and width.
+2. Method `diagonal()` returns the square of the diagonal if height is less than width, otherwise returns Integer.MAX_VALUE.
+3. Method `compareTo(IntegralRect o)` compares diagonals of current object and `o`. If diagonals are equal, it compares heights. Returns the result of comparison.

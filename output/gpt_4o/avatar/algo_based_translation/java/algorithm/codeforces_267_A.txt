@@ -1,0 +1,25 @@
+1. Import the `Scanner` class from the `java.util` package.
+2. Define the `main` function.
+   - Parameters: `String[] args`
+   - Return type: `void`
+3. Inside `main`:
+   - Declare a `Scanner` object `scan` and initialize it to read from standard input.
+   - Read an integer `n` using `scan.nextInt()`.
+   - Iterate over a loop from `i = 0` to `i < n`:
+     - On each iteration, read two integers `a` and `b` using `scan.nextInt()`.
+     - Print the result of calling the `sub` function with parameters `a` and `b`.
+4. Define the `sub` function.
+   - Parameters: `int a`, `int b`
+   - Return type: `int`
+5. Inside `sub`:
+   - Declare `int min` and initialize it to `Math.min(a, b)`.
+   - Declare `int max` and initialize it to `Math.max(a, b)`.
+   - Declare `int result` and initialize it to `0`.
+   - Begin a `while` loop with condition `min > 0`:
+     - Add `max / min` to `result`.
+     - Update `max` to `max % min`.
+     - Declare `int curr_min` and initialize it to `Math.min(min, max)`.
+     - Declare `int curr_max` and initialize it to `Math.max(min, max)`.
+     - Update `min` to `curr_min`.
+     - Update `max` to `curr_max`.
+   - Return `result` from the `sub` function.

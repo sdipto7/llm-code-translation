@@ -1,0 +1,52 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signature**  
+- `main()`: void  
+  - Parameters: None  
+  - Return Type: void  
+
+**Variable Declarations**  
+- `n`: integer (input)  
+- `k`: integer (input)  
+- `x`: integer (initialized to 0)  
+- `i`: integer (loop variable for rows)  
+- `j`: integer (loop variable for columns)  
+
+**Step-by-Step Logic Flow**  
+1. Read `n` and `k` from standard input as space-separated integers.  
+2. Calculate `max_allowed` as `max(n² // 2, n² - (n² // 2))`.  
+3. If `k <= max_allowed`:  
+   1. Print "YES".  
+   2. Initialize `x` to 0.  
+   3. For each `i` from 0 to `n - 1` (inclusive):  
+      1. For each `j` from 0 to `n - 1` (inclusive):  
+         1. If `(i % 2) == (j % 2)` **and** `x < k`:  
+            1. Print 'L'.  
+            2. Increment `x` by 1.  
+         2. Else:  
+            1. Print 'S'.  
+      2. Print a newline after the inner loop completes.  
+4. Else:  
+   1. Print "NO".  
+
+**Control Flow Structures**  
+- **Conditional**:  
+  - Check `k <= max_allowed` to decide between printing "YES" with the grid or "NO".  
+- **Loops**:  
+  - Outer loop iterates `n` times over rows (`i` from 0 to `n-1`).  
+  - Inner loop iterates `n` times over columns (`j` from 0 to `n-1`).  
+  - Termination: Both loops exit when `i` or `j` reaches `n`.  
+
+**Input/Output Operations**  
+- **Input**: Read two integers `n` and `k` from standard input.  
+- **Output**:  
+  - "YES" or "NO" based on the condition.  
+  - Grid of 'L' and 'S' characters (if "YES"), printed row-wise with newline separators.  
+
+**Error Handling and Edge Cases**  
+- Implicit input validation via `map(int, ...)` (assumes valid integer inputs).  
+- Handles `k=0` by printing all 'S' when allowed.  
+- Correctly handles maximum checkerboard capacity via `max_allowed` calculation.  
+
+**External Dependencies**  
+- None (No external libraries or imports required).

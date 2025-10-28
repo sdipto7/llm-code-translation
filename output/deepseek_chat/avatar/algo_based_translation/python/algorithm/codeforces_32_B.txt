@@ -1,0 +1,38 @@
+**Function Signature:**
+- No explicit function defined (main script)
+- Input: string `s` from standard input
+- Output: prints result string to standard output
+
+**Variables:**
+- `s`: string (input string)
+- `result`: string (initially empty, accumulates output characters)
+- `i`: integer (index counter, initialized to 0)
+
+**Logic Flow:**
+1. Read input string `s` from standard input
+2. Initialize empty string `result`
+3. Initialize index counter `i` to 0
+4. While loop condition: `i < len(s)`
+   - If character at position `i` equals '.':
+     - Append '0' to `result`
+   - Else:
+     - Increment `i` by 1
+     - If character at new position `i` equals '.':
+       - Append '1' to `result`
+     - Else:
+       - Append '2' to `result`
+   - Increment `i` by 1
+5. Print final `result` string
+
+**Control Structures:**
+- While loop: `while i < len(s)`
+- Nested conditionals:
+  - `if s[i] == '.'`
+  - `else` with nested `if s[i] == '.'` and `else`
+
+**Input/Output:**
+- Input: single line from standard input
+- Output: print resulting string
+
+**Dependencies:**
+- None (uses built-in functions only)

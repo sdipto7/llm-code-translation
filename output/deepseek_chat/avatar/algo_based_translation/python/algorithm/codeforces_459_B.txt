@@ -1,0 +1,16 @@
+1. Read integer `n` from input
+2. Read next line, split into list of strings, convert each to integer, store in list `l1`
+3. Sort list `l1` in ascending order
+4. Assign last element of `l1` to variable `a` (maximum value)
+5. Assign first element of `l1` to variable `b` (minimum value)
+6. Check if `a` equals `b`
+   - If true:
+     - Calculate difference: `a - b`
+     - Calculate count: `n * (n - 1) // 2`
+     - Print both values
+   - Else:
+     - Count occurrences of `a` in `l1`, store in `ac`
+     - Count occurrences of `b` in `l1`, store in `bc`
+     - Calculate difference: `a - b`
+     - Calculate product: `ac * bc`
+     - Print both values

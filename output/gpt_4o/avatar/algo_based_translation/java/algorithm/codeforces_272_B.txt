@@ -1,0 +1,50 @@
+1. Import necessary libraries:
+   - `BufferedReader`, `IOException`, `InputStreamReader`, `PrintWriter`, `StringTokenizer`.
+
+2. Define the main function:
+   - Function signature: `public static void main(String[] args)`
+   - Initialize a `FastReader` object named `sc`.
+   - Initialize a `PrintWriter` object named `out` for output.
+
+3. Read input:
+   - Declare an integer `n` and assign it the next integer read using `sc.nextInt()`.
+
+4. Initialize an array:
+   - Declare an integer array `a` of size 33.
+
+5. Populate the array:
+   - Loop variable `i` from 0 to `n-1`:
+     - Call `rec` method with the next integer from `sc.nextInt()`.
+     - Increment the element at the returned index in array `a`.
+
+6. Calculate the answer:
+   - Declare a double variable `answer` and initialize it to 0.
+   - Loop variable `i` from 0 to the length of array `a`:
+     - Calculate `summ` as `(1 + a[i] - 1) / 2.0 * (a[i] - 1)`.
+     - Add `summ` to `answer`.
+
+7. Output the result:
+   - Print the long value of `answer` using `out.println((long) answer)`.
+   - Close the `out` object.
+
+8. Define the `rec` method:
+   - Function signature: `static int rec(long x)`
+   - Declare an integer `answer` and initialize to 0.
+   - Loop variable `k` from 31 to 0:
+     - If `(x & (1 << k)) != 0`, increment `answer`.
+   - Return `answer`.
+
+9. Define the `FastReader` class:
+   - Instance variables: `BufferedReader br` and `StringTokenizer st`.
+   - Constructor: Initializes `br` with `InputStreamReader(System.in)`.
+   - Method `next`:
+     - While `st` is null or `st` has no more elements:
+       - Read a line from `br` and initialize `st` with it using `StringTokenizer`.
+     - Return the next token from `st`.
+   - Method `nextInt`: Return `Integer.parseInt(next())`.
+   - Method `nextLong`: Return `Long.parseLong(next())`.
+   - Method `nextDouble`: Return `Double.parseDouble(next())`.
+   - Method `nextLine`:
+     - Declare a string `str`.
+     - Read a line from `br` and assign it to `str`.
+     - Return `str`.

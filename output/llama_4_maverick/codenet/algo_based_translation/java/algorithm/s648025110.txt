@@ -1,0 +1,36 @@
+1. Import the required library: java.util.Scanner
+2. Define a function main with parameter args of type String[] and return type void
+3. Declare a variable sc of type Scanner and initialize it with a new Scanner object reading from System.in
+4. Declare a variable n of type int and read an integer from sc into n
+5. Declare an array h of type int[] with size n and read n integers from sc into h
+6. Declare variables ans and out of type int and initialize them to 0
+7. Iterate over the array h using a for loop with loop variable i ranging from 0 to h.length - 1
+8. Inside the loop, check if out is less than h[i]
+9. If the condition is true, increment ans by h[i] - out and update out to h[i]
+10. If the condition is false, update out to h[i]
+11. After the loop, print the value of ans to System.out
+12. The function main returns void, indicating the end of the program. 
+
+In a more formal representation:
+- Function: main(String[] args) : void
+- Variables: 
+  - sc : Scanner
+  - n : int
+  - h : int[]
+  - ans : int
+  - out : int
+  - i : int
+- Logic Flow:
+  1. sc = new Scanner(System.in)
+  2. n = sc.nextInt()
+  3. h = new int[n]
+  4. for i = 0 to n-1: h[i] = sc.nextInt()
+  5. ans = 0
+  6. out = 0
+  7. for i = 0 to h.length - 1:
+     - if out < h[i]:
+       - ans = ans + (h[i] - out)
+       - out = h[i]
+     - else:
+       - out = h[i]
+  8. System.out.println(ans)

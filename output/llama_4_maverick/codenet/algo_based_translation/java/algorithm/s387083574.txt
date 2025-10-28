@@ -1,0 +1,13 @@
+1. Import required libraries: java.util.Scanner, java.util.Map, java.util.HashMap, java.util.Map.Entry, java.util.stream.Collectors.
+2. Define a function main with parameter args of type String[] and return type void.
+3. Declare a variable sc of type Scanner and initialize it with a new Scanner object reading from System.in.
+4. Declare a variable N of type int and read its value from sc using the nextInt method.
+5. Declare a variable map of type Map<Integer, Integer> and initialize it with a new HashMap object.
+6. Iterate from 1 to N (inclusive) using a for loop with loop counter i.
+7. Inside the loop, put a key-value pair into map where the key is i and the value is read from sc using the nextInt method.
+8. Sort the entries of map by their values in ascending order using the stream API and the comparingByValue method.
+9. Extract the keys from the sorted entries using the map method with Map.Entry::getKey.
+10. Convert the keys to strings using the map method with String::valueOf.
+11. Collect the resulting strings into a list using the collect method with Collectors.toList.
+12. Join the strings in the list into a single string separated by spaces using the String.join method.
+13. Print the resulting string to the console using System.out.println.

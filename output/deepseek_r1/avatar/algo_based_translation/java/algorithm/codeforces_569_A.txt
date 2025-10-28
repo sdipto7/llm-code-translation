@@ -1,0 +1,34 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+  - Parameters: `String[] args`
+  - Return type: `void`
+
+**Variables:**
+- `Scanner in = new Scanner(System.in)` (Type: `Scanner`)
+- `int T` (Input value)
+- `int S` (Input value)
+- `int q` (Input value)
+- `long previous = S`
+- `int answer = 0`
+
+**Libraries/Dependencies:**
+- `java.util.Scanner`
+
+**Logic Flow:**
+1. Read three integers `T`, `S`, and `q` from standard input using `Scanner`.
+2. Initialize `previous` with the value of `S` (as `long`).
+3. Initialize `answer` with `0`.
+4. While loop:
+   - Condition: `previous < T`
+   - Actions:
+     - Increment `answer` by `1`.
+     - Multiply `previous` by `q` and update its value.
+5. Terminate loop when `previous >= T`.
+6. Print `answer` to standard output.
+
+**Control Structures:**
+- `while (previous < T)` loop with arithmetic update inside the body.
+
+**Input/Output Operations:**
+- Input: Three integers read via `Scanner.nextInt()`.
+- Output: Final value of `answer` printed via `System.out.println`.

@@ -1,0 +1,13 @@
+1. Read the number of elements N from the input.
+2. Read N integers into an array P, adjusting each value by subtracting 1.
+3. Create a map to store the indices of elements in P.
+4. Populate the map with the elements of P as keys and their indices as values.
+5. Initialize an empty list nglist to store indices that represent "ng" (not good) conditions.
+6. Iterate through the range from 0 to N-2 and check if the index of i is greater than the index of i+1 in the map.
+7. If the condition in step 6 is true, add i to nglist.
+8. If nglist is empty, output 0 and terminate.
+9. Calculate the initial answer as the minimum between N - nglist's first element - 1 and nglist's last element + 1.
+10. Iterate through nglist from the first element to the second last element.
+11. For each element at index i, calculate the minimum between the current answer and nglist[i] + 1 + N - nglist[i+1] - 1.
+12. Update the answer with the result of step 11.
+13. Output the final answer.

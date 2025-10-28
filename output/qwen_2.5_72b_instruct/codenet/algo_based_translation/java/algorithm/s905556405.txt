@@ -1,0 +1,29 @@
+Function Signature: main(String[] args) - Return Type: void
+
+Variable Declarations:
+- Scanner sc - Data Type: Scanner
+- int[] numlist - Data Type: int array with size 5
+- int k - Data Type: int
+
+Logic Flow:
+1. Create a Scanner object to read input from the standard input stream.
+2. Declare an integer array numlist of size 5.
+3. Declare an integer variable k.
+4. Loop from 0 to 4 (inclusive):
+   - Read an integer from the scanner and store it in numlist[i].
+5. Read an integer from the scanner and store it in k.
+6. If the difference between the 5th element and the 1st element of numlist is greater than k:
+   - Print ":(".
+7. Otherwise:
+   - Print "Yay!".
+
+Control Structures:
+- For loop: Iterates from 0 to 4, inclusive.
+- If-else statement: Checks if (numlist[4] - numlist[0]) > k.
+
+Input/Output:
+- Input: 6 integers from the user (first 5 are stored in numlist, the 6th is stored in k).
+- Output: Either ":(" or "Yay!" based on the condition.
+
+Libraries/Modules:
+- java.util.Scanner

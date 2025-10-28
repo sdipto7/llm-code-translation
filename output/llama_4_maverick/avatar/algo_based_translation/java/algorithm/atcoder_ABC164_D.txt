@@ -1,0 +1,16 @@
+1. Read input string S from the user.
+2. Calculate the length of S and store it in N.
+3. Initialize an array mod_arr of size N to store the modulus values.
+4. Initialize an array mod_cnt of size 2019 to count the occurrences of each modulus value.
+5. Initialize a variable radix to 1.
+6. Iterate from i = 0 to N-1:
+   1. Calculate tmp = (S[N-1-i] - '0') * radix % 2019.
+   2. If i != 0, update tmp = (tmp + mod_arr[i-1]) % 2019.
+   3. Store tmp in mod_arr[i].
+   4. Increment mod_cnt[tmp] by 1.
+   5. Update radix = radix * 10 % 2019.
+7. Initialize a variable ans to 0.
+8. Increment mod_cnt[0] by 1.
+9. Iterate from i = 0 to 2018:
+   1. Update ans = ans + mod_cnt[i] * (mod_cnt[i] - 1) / 2.
+10. Output the value of ans.

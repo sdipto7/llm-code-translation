@@ -1,0 +1,30 @@
+Function Signature: `main()`
+
+Variable Declarations:
+- `N` of type `int`
+- `S` of type `str`
+- `T` of type `str`
+- `char_lists` of type `list` of `str`
+
+Logic Flow:
+1. Read an integer `N` from input.
+2. Read a string `S` and a string `T` from input, split by space.
+3. Initialize an empty list `char_lists`.
+4. For each index `i` and character `char` in the string `S`:
+   - Append `char` to `char_lists`.
+   - Append character at index `i` of `T` to `char_lists`.
+5. Join all elements in `char_lists` into a single string and print it.
+
+Control Structures:
+- For loop with condition `for i, char in enumerate(S)`
+
+Input/Output Operations:
+- Read `N` using `input()` and convert to `int`.
+- Read `S` and `T` using `input()` and split by space.
+- Print the joined string of `char_lists`.
+
+Data Processing Logic:
+- Iterate over each character in `S` and corresponding character in `T` to interleave them in `char_lists`.
+
+Libraries/Modules/Dependencies:
+- No external libraries or modules required.

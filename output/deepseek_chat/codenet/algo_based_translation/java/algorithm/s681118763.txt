@@ -1,0 +1,9 @@
+Algorithm:
+- Import java.util.Scanner
+- Define class Main
+- Define main method with parameter String[] args
+- Declare Scanner object 'in' initialized with System.in
+- Read next token from input as String 'c'
+- Extract first character from 'c' as Character 'letter'
+- Increment 'letter' by 1 (next character in Unicode sequence)
+- Print 'letter' to standard output

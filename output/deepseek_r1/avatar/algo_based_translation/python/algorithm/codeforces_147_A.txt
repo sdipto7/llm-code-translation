@@ -1,0 +1,58 @@
+**Algorithm Specification**
+
+**Function Signature**  
+Function: `process_string`  
+Parameters:  
+- `input_str` (type: `string`)  
+Return Type: `string`  
+
+**Variables**  
+- `res` (type: `List[string]`, initialized as empty list)  
+- `punctuation` (type: `List[string]`, value: `[',', '.', '!', '?']`)  
+
+**Logic Flow**  
+1. Read `input_str` from standard input.  
+2. Initialize `res` as an empty list.  
+3. Define `punctuation` as `[',', '.', '!', '?']`.  
+4. Iterate over each index `i` in `input_str` (range: `0` to `length of input_str - 1`):  
+   1. If `i == 0`:  
+      1. If `input_str[i]` is a space (`' '`), skip to next iteration.  
+      2. If `input_str[i]` is in `punctuation`, skip to next iteration.  
+      3. Else, append `input_str[i]` to `res`.  
+   2. Else (`i >= 1`):  
+      1. If `input_str[i]` is a space (`' '`):  
+         1. If the last element in `res` is not a space and `res` is not empty:  
+            1. Append `' '` to `res`.  
+         2. Else:  
+            1. Skip to next iteration.  
+      2. Else if `input_str[i]` is in `punctuation`:  
+         1. If `res` is not empty and the last element in `res` is a space:  
+            1. Remove the last element from `res`.  
+         2. Append `input_str[i]` to `res`.  
+         3. Append `' '` to `res`.  
+      3. Else:  
+         1. Append `input_str[i]` to `res`.  
+5. After loop termination, join all elements in `res` into a single string.  
+6. Return the joined string.  
+
+**Control Flow Structures**  
+- For loop: `for i in 0 to len(input_str) - 1`  
+- Nested conditionals:  
+  - Check `i == 0` vs. `i >= 1`  
+  - Check character type (space, punctuation, or other)  
+  - Check state of `res` (empty, last element value)  
+
+**Input/Output Operations**  
+- Input: Read `input_str` via `input()`.  
+- Output: Print result of `''.join(res)`.  
+
+**Edge Case Handling**  
+- Skip leading spaces or punctuation.  
+- Prevent consecutive spaces in `res`.  
+- Ensure punctuation is followed by exactly one space.  
+- Handle empty `res` when accessing `res[-1]` by checking list non-emptiness.  
+
+**Dependencies**  
+- Standard libraries: None.  
+- External libraries: None.  
+- Functions: `input()`, `print()`, `list.pop()`, `list.append()`, `str.join()`.

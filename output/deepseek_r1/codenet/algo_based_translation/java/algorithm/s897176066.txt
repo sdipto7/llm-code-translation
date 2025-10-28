@@ -1,0 +1,39 @@
+- Function signature:
+  public static void main(String[] args) → void
+
+- Variables:
+  Scanner sc (Scanner type)
+  int N (input size)
+  long[] A (array storage)
+  loop counter int i (0-based)
+  loop counter int j (1-based)
+
+- Execution flow:
+  1. Import java.util.*
+  2. Initialize Scanner with System.in
+  3. Read integer N from input
+  4. Declare array A of longs with size N
+  5. For i from 0 to N-1:
+      a. Read long value into A[i]
+  6. Sort array A using Arrays.sort()
+  7. For j from 1 to N-1:
+      a. If A[j] == A[j-1]:
+          i. Print "NO"
+          ii. Terminate program
+  8. Print "YES"
+
+- Control structures:
+  - For loop: 0 ≤ i < N (element input)
+  - For loop: 1 ≤ j < N (duplicate check)
+  - Conditional: if(A[j] == A[j-1]) with immediate termination
+
+- Input/Output:
+  - Input: First value = array size, followed by N long values
+  - Output: "NO" if duplicates found, "YES" otherwise
+
+- Dependencies:
+  java.util.Scanner
+  java.util.Arrays
+
+- Data processing:
+  Array sorting followed by linear adjacent element comparison

@@ -1,0 +1,29 @@
+1. Runtime Error Taxonomy - 
+
+    RE1: Dependency & Entry-Point Issues - total: 259 [direct approach: 231 (89.19%) and algorithm-based approach: 28 (10.81%)]
+
+    RE2: Parsing & Type Conversion Issues - total: 736 [direct approach: 391 (53.13%) and algorithm-based approach: 345 (46.87%)]
+
+    RE3: Index/Key Access Issues - total: 104 [direct approach: 60 (57.70%) and algorithm-based approach: 44 (42.30%)]
+
+    RE4: Missing State & Invalid Reference - total: 170 [direct approach: 80 (47.06%) and algorithm-based approach: 90 (52.94%)]
+
+    RE5: Arithmetic Errors - total: 10 [direct approach: 7 (70.00%) and algorithm-based approach: 3 (30.00%)]
+
+    RE6: Resource Exhaustion - total: 60 [direct approach: 34 (56.67%) and algorithm-based approach: 26 (43.33%)]
+
+2. Compile-time Error Taxonomy - 
+
+    CE1: Import/Namespace Resolution - total: 36 [direct approach: 21 (58.33%) and algorithm-based approach: 15 (41.67%)]
+
+    CE2: Lexical & Token Errors - total: 15 [direct approach: 15 (100.00%) and algorithm-based approach: 0 (0.00%)]
+
+    CE3: Incomplete Constructs - total: 22 [direct approach: 19 (86.37%) and algorithm-based approach: 3 (13.63%)]
+
+    CE4: Structural & Declaration Issues - total: 144 [direct approach: 116 (80.56%) and algorithm-based approach: 28 (19.44%)]
+
+    CE5: Type/Overload Resolution Errors - total: 26 [direct approach: 9 (34.62%) and algorithm-based approach: 17 (65.38%)]
+
+    CE6: Literal Constraints - total: 7 [direct approach: 5 (71.43%) and algorithm-based approach: 2 (28.57%)]
+
+    CE7: Others - total: 14 [direct approach: 7 (50.00%) and algorithm-based approach: 7 (50.00%)]

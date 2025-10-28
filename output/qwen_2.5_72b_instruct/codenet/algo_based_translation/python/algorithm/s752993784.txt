@@ -1,0 +1,46 @@
+Function Signature: main()
+Parameter Types: None
+Return Type: None
+
+Variable Declarations and Data Types:
+s: List[int]
+mods: List[int]
+countRemainder: List[int]
+cnt: int
+m: int
+mod: int
+i: int
+
+Logic Flow:
+1. Convert input string to list of integers and assign to s
+2. Initialize mods as list of zeros with length equal to s
+3. Initialize countRemainder as list of zeros with length 2019
+4. Initialize cnt to 0
+5. Initialize m to 1
+6. Initialize mod to 0
+
+Loop 1 (for i in range(len(s))):
+    a. Update mod by adding (integer value of character at position len(s) - i - 1 in s) multiplied by m
+    b. Update mod to mod modulo 2019
+    c. Update m by multiplying m by 10
+    d. Update m to m modulo 2019
+    e. Increment countRemainder[mod] by 1
+
+7. Increment countRemainder[0] by 1
+
+Loop 2 (for i in range(2019)):
+    a. Update cnt by adding integer division of countRemainder[i] multiplied by (countRemainder[i] - 1) by 2
+
+8. Print cnt
+
+Input/Output Operations:
+- Read input string from standard input
+- Print final value of cnt to standard output
+
+Data Processing Logic:
+- Calculate remainders of partial sums of input digits when divided by 2019
+- Count occurrences of each remainder
+- Use combination formula to calculate number of pairs of positions with the same remainder
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries or modules required

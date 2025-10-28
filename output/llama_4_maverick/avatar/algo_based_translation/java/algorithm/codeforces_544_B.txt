@@ -1,0 +1,11 @@
+1. Read input values n and count.
+2. Calculate a as (n + 1) / 2 and b as n / 2.
+3. Calculate max as a * a + b * b.
+4. Check if count is greater than max. If true, proceed to step 5; otherwise, proceed to step 6.
+5. Output "NO" and terminate the process.
+6. Output "YES".
+7. Iterate over i from 0 to n-1.
+8. For each i, iterate over j from 0 to n-1.
+9. For each i and j, check if (i + j) % 2 equals 0 and count is greater than 0. If true, append 'L' to the output string and decrement count; otherwise, append 'S' to the output string.
+10. Output the constructed string for each i.
+11. Terminate the process.

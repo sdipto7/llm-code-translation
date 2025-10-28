@@ -1,0 +1,11 @@
+Algorithm:
+- Import: java.util.Scanner
+- Function: main(String[] args)
+  - Declare Scanner sc = new Scanner(System.in)
+  - Declare int n = sc.nextInt()
+  - If (n / 10) % 111 == 0:
+    - Print "Yes"
+  - Else if (n % 1000) % 111 == 0:
+    - Print "Yes"
+  - Else:
+    - Print "No"

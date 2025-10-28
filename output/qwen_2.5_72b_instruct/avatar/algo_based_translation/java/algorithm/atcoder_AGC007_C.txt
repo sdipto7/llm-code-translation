@@ -1,0 +1,30 @@
+Function Signature:
+- main(String[] args) : void
+
+Variable Declarations and Data Types:
+- Scanner scan : Scanner
+- double N : double
+- double d : double
+- double x : double
+- BigDecimal ans : BigDecimal
+- BigDecimal adnum : BigDecimal
+- DecimalFormat format : DecimalFormat
+
+Logic Flow:
+1. Initialize Scanner object scan for input
+2. Read double values N, d, x from input using scan.nextDouble()
+3. Initialize BigDecimal variable ans to "0.0"
+4. While loop with condition N > 0.5:
+   a. Initialize BigDecimal variable adnum to value of d + x * (N - 0.5)
+   b. Add adnum to ans
+   c. Update d to (N + 1.0) * d / N + (5.0 * x) / (2.0 * N)
+   d. Update x to (1.0 + (2.0 / N)) * x
+   e. Decrement N by 1.0
+5. Initialize DecimalFormat object format with pattern "#.#"
+6. Set minimum fraction digits of format to 20
+7. Print formatted value of ans using format.format(ans)
+
+Required Libraries, Modules, or Dependencies:
+- java.math.BigDecimal
+- java.text.DecimalFormat
+- java.util.Scanner

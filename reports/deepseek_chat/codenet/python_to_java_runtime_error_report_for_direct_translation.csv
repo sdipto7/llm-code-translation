@@ -1,0 +1,37 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,s704354119.java,Runtime Error,"Error: Exception in thread ""main"" java.lang.NumberFormatException: For input string: """"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:565)
+	at java.base/java.lang.Integer.parseInt(Integer.java:685)
+	at s704354119.main(s704354119.java:13)
+"
+python,java,s087080706.java,Runtime Error,"Error: Exception in thread ""main"" java.util.NoSuchElementException
+	at java.base/java.util.Scanner.throwFor(Scanner.java:962)
+	at java.base/java.util.Scanner.next(Scanner.java:1619)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2284)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2238)
+	at s087080706.main(s087080706.java:17)
+"
+python,java,s764169243.java,Runtime Error,"Error: Error: Could not find or load main class s764169243
+Caused by: java.lang.ClassNotFoundException: s764169243
+"
+python,java,s695100304.java,Runtime Error,"Error: Exception in thread ""main"" java.lang.UnsupportedOperationException
+	at java.base/java.util.ImmutableCollections.uoe(ImmutableCollections.java:142)
+	at java.base/java.util.ImmutableCollections$AbstractImmutableList.set(ImmutableCollections.java:264)
+	at java.base/java.util.Collections.swap(Collections.java:525)
+	at java.base/java.util.Collections.reverse(Collections.java:387)
+	at s695100304.main(s695100304.java:12)
+"
+python,java,s016605598.java,Runtime Error,"Error: Exception in thread ""main"" java.lang.NumberFormatException: For input string: """"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:565)
+	at java.base/java.lang.Integer.parseInt(Integer.java:685)
+	at java.base/java.util.stream.ReferencePipeline$4$1.accept(ReferencePipeline.java:232)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:636)
+	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:291)
+	at java.base/java.util.stream.IntPipeline.toArray(IntPipeline.java:565)
+	at s016605598.main(s016605598.java:15)
+"

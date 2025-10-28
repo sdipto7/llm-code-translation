@@ -1,0 +1,71 @@
+Here is the detailed algorithm extracted from the Java code:
+
+**Function Signatures:**
+- `solve(): void`
+  - Reads input values `n` and array `a`
+  - Computes and prints the result using `rec()`
+- `rec(int i, int j, int k): double`
+  - Recursive memoization function with 3 parameters representing counts of different sushi types
+
+**Variables:**
+- `n: int` - Number of sushi plates
+- `a[]: int[]` - Array of sushi values (1-3)
+- `dp[][][]: double[][][]` - 3D memoization array (dimensions: [n+1][n+1][n+1])
+- `cnt[]: int[3]` - Counts of each sushi type (indices 0=type1, 1=type2, 2=type3)
+
+**Logic Flow:**
+1. **Input Handling:**
+   - Read integer `n`
+   - Read array `a` of length `n`
+
+2. **Initialization:**
+   - Initialize `dp` array with all values set to -1
+   - Set base case: `dp[0][0][0] = 0`
+   - Count occurrences of each sushi type into `cnt[]`
+
+3. **Recursive Calculation:**
+   ```python
+   def rec(i, j, k):
+       if memo exists in dp[i][j][k]:
+           return stored value
+       
+       total = i + j + k
+       p = total / n  # Probability of choosing any remaining sushi
+       
+       result = 1 / p  # Base expected value for this step
+       
+       if i > 0:
+           prob_i = i / n
+           result += (prob_i / p) * rec(i-1, j, k)
+       if j > 0:
+           prob_j = j / n
+           result += (prob_j / p) * rec(i+1, j-1, k)
+       if k > 0:
+           prob_k = k / n
+           result += (prob_k / p) * rec(i, j+1, k-1)
+       
+       memoize and return result
+   ```
+
+4. **State Transitions:**
+   - Type1 selection: Reduces i by 1
+   - Type2 selection: Increases i by 1, reduces j by 1
+   - Type3 selection: Increases j by 1, reduces k by 1
+
+5. **Termination:**
+   - Return computed result from initial state `rec(cnt[0], cnt[1], cnt[2])`
+
+**Control Structures:**
+- Conditional checks for memoization lookups
+- Three conditional blocks in `rec()` for handling possible sushi type transitions
+- Recursive calls for state transitions
+
+**Data Types:**
+- All counts stored as integers
+- Probabilities and DP values stored as doubles
+- 3D array dimensions based on maximum possible counts (n+1)
+
+**Dependencies:**
+- Requires input handling utilities for reading values
+- Uses floating-point arithmetic for probability calculations
+- Memoization pattern for dynamic programming optimization

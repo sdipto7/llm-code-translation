@@ -1,0 +1,71 @@
+**Algorithm:**
+
+**Function Signatures:**
+- `public static void main(String[] args) throws Exception`
+- `static void dfs(int u, int[] d, List<Integer>[] edges)`
+
+**Variables:**
+- `Scanner sc` (input scanner)
+- `int N` (number of nodes)
+- `int u` (starting node for first traversal, 0-indexed)
+- `int v` (starting node for second traversal, 0-indexed)
+- `List<Integer>[] edges` (array of lists representing adjacency list)
+- `int[] d` (distance array for node `u`)
+- `int[] e` (distance array for node `v`)
+- `int a`, `int b` (temporary edge inputs)
+- `int q` (maximum valid distance tracker)
+- `int i` (loop counters)
+
+**Logic Flow:**
+
+1. **Input Processing:**
+   - Read `N`, `u`, `v` from standard input (subtract 1 from each node index)
+   - Initialize `edges` as an array of empty `ArrayList<Integer>` with size `N`
+   - Read `N-1` edges and populate `edges` bidirectionally:
+     - For each edge, read `a` and `b`, add `b` to `edges[a]` and `a` to `edges[b]`
+
+2. **Distance Calculation for `u`:**
+   - Initialize `d` array with all values set to `Integer.MAX_VALUE`
+   - Set `d[u] = 0`
+   - Call `dfs(u, d, edges)`
+
+3. **Distance Calculation for `v`:**
+   - Initialize `e` array with all values set to `Integer.MAX_VALUE`
+   - Set `e[v] = 0`
+   - Call `dfs(v, e, edges)`
+
+4. **Result Calculation:**
+   - Initialize `q = -1`
+   - Iterate over all nodes `i` from 0 to `N-1`:
+     - If `d[i] < e[i]`, check if `e[i] > q`. If true, set `q = e[i]`
+   - If `q <= 0`, output `0`
+   - Else, output `q - 1`
+
+**DFS Function Logic:**
+1. For each neighbor `nu` in `edges[u]`:
+   - If `d[nu] == Integer.MAX_VALUE` (unvisited):
+     - Set `d[nu] = d[u] + 1`
+     - Recursively call `dfs(nu, d, edges)`
+
+**Control Structures:**
+- Nested `for` loops for edge initialization
+- Sequential `for` loops for distance array initialization
+- Recursive DFS implementation with base case handled via distance check
+- `for` loop with nested `if` for finding maximum `e[i]`
+- Final conditional (`if`/`else`) for output
+
+**Input/Output:**
+- Input via `Scanner` with space-separated integers:
+  - First line: `N u+1 v+1`
+  - Next `N-1` lines: pairs of node indices (1-indexed)
+- Output: Single integer value via `System.out.println`
+
+**Dependencies:**
+- `java.util.ArrayList`
+- `java.util.List`
+- `java.util.Scanner`
+
+**Data Types:**
+- Primitive `int` for all numerical values
+- `List<Integer>[]` for adjacency list
+- Single-dimensional `int[]` arrays for distance storage

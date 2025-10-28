@@ -1,0 +1,62 @@
+**Structured Algorithm Specification:**
+
+**Function Name:** CountTriangles  
+**Return Type:** Integer
+
+**Parameters:**
+- `n`: Integer (number of elements)
+- `l`: List of Integers (side lengths)
+
+**Imported Dependencies:**
+- `bisect.bisect_left`
+- `bisect.bisect_right`
+
+**Variables:**
+- `n`: Integer (input length)
+- `l`: Sorted List[Integer] (processed input data)
+- `ans`: Integer (result accumulator, initialized to 0)
+- `i`, `j`: Integer (loop indices, 0 ≤ i < j < n)
+- `a`, `b`: Integer (elements at `l[i]` and `l[j]`)
+- `left`, `right`: Integer (bisection results for valid range)
+- `tmp`: Integer (temporary count of valid values)
+
+**Algorithm Steps:**
+
+1. **Input Handling:**
+   - Read `n` and list `l` from input.
+   - Sort `l` in non-decreasing order.
+
+2. **Initialize Result:**
+   - Set `ans = 0`.
+
+3. **Outer Loop (Index `i`):**
+   - Iterate `i` from `0` to `n-1` (inclusive).
+   - **Inner Loop (Index `j`):**
+     - Iterate `j` from `i+1` to `n-1` (inclusive).
+     - **Step 3.1:** Assign `a = l[i]`, `b = l[j]`.
+     - **Step 3.2:** Compute lower bound as `max_val = max(a - b, b - a)`.
+     - **Step 3.3:** Compute:
+       - `left = bisect_right(l, max_val)` (first index > `max_val`).
+       - `right = bisect_left(l, a + b)` (first index ≥ `a + b`).
+     - **Step 3.4:** Calculate `tmp = max(0, right - left)`.
+     - **Step 3.5:** Adjust `tmp`:
+       - If `left ≤ i < right`, decrement `tmp` by 1.
+       - If `left ≤ j < right`, decrement `tmp` by 1.
+     - **Step 3.6:** Add `max(0, tmp)` to `ans`.
+
+4. **Final Result:**
+   - Compute `ans = ans // 3` (integer division to eliminate triplet overcounting).
+   - Return `ans`.
+
+**Edge Cases:**
+- Handled via `max(0, ...)` to avoid negative counts.
+- Implicitly handles invalid triangles via range checks.
+
+**Control Flow:**
+- Nested loops with strict index ordering (`i < j`).
+- Binary search for efficient range calculation.
+- Conditional adjustments for excluding `a` and `b` from valid `c` candidates.
+
+**Dependencies:**
+- Requires sorted input list for correct bisection behavior.
+- Relies on `bisect` module for O(log n) range queries.

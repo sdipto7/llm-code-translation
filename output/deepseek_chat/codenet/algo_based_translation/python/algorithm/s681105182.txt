@@ -1,0 +1,48 @@
+**Function Signatures:**
+- main(): void
+- LI(): List[int]
+- LI_(): List[int]
+- LF(): List[float]
+- LS(): List[str]
+- II(): int
+- SI(): str
+
+**Variables:**
+- sys: module
+- INF: int = 10**18
+- MOD: int = 10**9 + 7
+- N: int
+- a_li: List[int]
+- n: int
+- dif: int = INF
+- prev_dif: int = INF
+- a: int
+- r: int
+
+**Execution Flow:**
+1. Set recursion limit to 10**7
+2. Call main()
+3. Read integer N from stdin
+4. Read list of integers a_li from stdin
+5. Sort a_li in ascending order
+6. Set n to last element of a_li
+7. Initialize dif = INF
+8. Initialize prev_dif = INF
+9. For each element a in a_li excluding last element:
+   - Calculate absolute difference between n/2 and a
+   - Update dif to minimum of current dif and calculated difference
+   - If dif changed from prev_dif:
+     - Set r = a
+     - Set prev_dif = dif
+10. Print n and r
+
+**Control Structures:**
+- For loop: for a in a_li[:-1]
+- Conditional: if dif != prev_dif
+
+**Input/Output:**
+- Input: Integer N, List of integers a_li
+- Output: Print two integers n and r
+
+**Dependencies:**
+- sys module

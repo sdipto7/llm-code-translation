@@ -1,0 +1,16 @@
+Algorithm:
+- Import java.util.Scanner
+- Define class Main
+- Define main method with parameter String[] args
+- Declare Scanner sc initialized with System.in
+- Declare int n assigned from sc.nextInt()
+- Declare int array h of size n
+- For i from 0 to n-1: assign h[i] from sc.nextInt()
+- Declare int max initialized to 0
+- For l from 0 to n-2:
+  - Declare int count initialized to 0
+  - While l < n-1 AND h[l] >= h[l+1]:
+    - Increment l by 1
+    - Increment count by 1
+  - Set max to maximum of max and count
+- Print max

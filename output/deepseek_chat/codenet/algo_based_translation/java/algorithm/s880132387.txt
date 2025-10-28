@@ -1,0 +1,52 @@
+Algorithm:
+
+Initialize:
+    Scanner sc = new Scanner(System.in)
+    Random rand = new Random()
+
+Main loop (TCase):
+    While true:
+        Read W = integer input
+        Read H = integer input
+        If W == 0 AND H == 0: break loop and terminate
+        Create 2D char array map[H][W]
+        For h from 0 to H-1:
+            Read string input and convert to char array, store in map[h]
+        
+        Create 2D BigInteger array dp[H][W]
+        For h from 0 to H-1:
+            For w from 0 to W-1:
+                Initialize hprev = BigInteger.ZERO
+                If h >= 1: hprev = dp[h-1][w]
+                Initialize wprev = BigInteger.ZERO
+                If w >= 1: wprev = dp[h][w-1]
+                
+                If map[h][w] is a digit:
+                    If hprev > wprev: max = hprev
+                    Else: max = wprev
+                    dp[h][w] = max * 10 + BigInteger value of digit character
+                Else:
+                    dp[h][w] = BigInteger.ZERO
+        
+        Initialize max = BigInteger.ZERO
+        For h from 0 to H-1:
+            For w from 0 to W-1:
+                If dp[h][w] > max: max = dp[h][w]
+        
+        Print max value
+
+Supporting methods:
+    nextIntArray(n):
+        Create int array res[n]
+        For i from 0 to n-1:
+            res[i] = sc.nextInt()
+        Return res
+    
+    pr(o): Print object without newline
+    ln(o): Print object with newline
+    ln(): Print empty newline
+
+Dependencies:
+    java.math.BigInteger
+    java.util.*
+    java.lang.System

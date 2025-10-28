@@ -1,0 +1,24 @@
+```
+Algorithm:
+1. Function Signature: main() -> None
+
+2. Variable Declarations:
+   - N: int
+   - A: List[int]
+   - cnt: int
+   - i: int
+   - d: int
+
+3. Execution Flow:
+   a. Read an integer from input and assign it to N.
+   b. Initialize an empty list A.
+   c. For each integer i from 0 to N-1 (inclusive):
+      i.   Read an integer from input, multiply it by N, add i, and append the result to A.
+   d. Sort the list A in non-descending order.
+   e. Initialize cnt to 0.
+   f. For each integer i from 0 to N-1 (inclusive):
+      i.   Calculate d as the remainder of the division of A[i] by N, followed by obtaining its remainder when divided by 2.
+      ii.  If d modulo 2 is not equal to i modulo 2, increment cnt by 1.
+   g. Calculate the integer division of cnt by 2.
+   h. Print the result of the division.
+```

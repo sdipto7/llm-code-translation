@@ -1,0 +1,13 @@
+1. Import required libraries: java.util.*
+2. Define a class: Main
+3. Define a static method: main with parameter (String[] args) and return type void
+4. Declare a variable: sc of type Scanner and initialize it with new Scanner(System.in)
+5. Declare a variable: N of type int and read its value from sc using nextInt()
+6. Declare an array: A of type long[] with size N
+7. Iterate from i = 0 to N-1 using a for loop
+   - Read a long value from sc using nextLong() and store it in A[i]
+8. Sort the array A using Arrays.sort(A)
+9. Iterate from j = 1 to N-1 using a for loop
+   - Check if A[j] is equal to A[j-1]
+   - If true, print "NO" to the console and exit the program using System.exit(0)
+10. If the loop completes without finding any duplicates, print "YES" to the console

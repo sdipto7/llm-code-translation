@@ -1,0 +1,12 @@
+1. Read input from user and split it into three values
+2. Convert the three values into integers
+3. Store the three integers as a collection (ABC)
+4. Count the occurrences of the value 5 in ABC
+5. If count of 5 is equal to 2 then
+    6. Calculate the sum of all elements in ABC
+    7. If sum is equal to 17 then
+        8. Output 'YES'
+    9. Else
+        10. Output 'NO'
+11. Else
+    12. Output 'NO'

@@ -1,0 +1,29 @@
+**Input Processing:**
+- Read integer `N` from standard input
+- Read an array `A` of `N` integers from standard input
+- Set constant `MOD = 10**9 + 7`
+- Set constant `M = 1000000`
+- Set constant `Nsq = 1000`
+
+**Factorial Precomputation:**
+- Create 2D array `fact` of size `Nsq × Nsq` initialized with values `0` to `M-1`
+- Set `fact[0, 0] = 1`
+- For `n` from `1` to `Nsq-1`:
+  - Multiply each element in column `n` by corresponding element in column `n-1`
+  - Apply modulo `MOD` to each element in column `n`
+- For `n` from `1` to `Nsq-1`:
+  - Multiply each element in row `n` by `fact[n-1, -1]` (last element of previous row)
+  - Apply modulo `MOD` to each element in row `n`
+- Flatten `fact` to 1D array
+
+**Inverse Sum Precomputation:**
+- Create array `j` with values `0` to `N-1`
+- Create array `inv` where each element `i` is `pow(i+1, MOD-2, MOD)` for `i` from `0` to `N-1`
+- Compute cumulative sum of `inv` and apply modulo `MOD`
+- Create array `temp` where each element `j` is `inv[j] + inv[N-1-j] - 1`
+
+**Result Calculation:**
+- Multiply each element of `A` by corresponding element of `temp` and apply modulo `MOD`
+- Sum all elements of the resulting array and apply modulo `MOD`
+- Multiply result by `fact[N]` and apply modulo `MOD`
+- Print final result

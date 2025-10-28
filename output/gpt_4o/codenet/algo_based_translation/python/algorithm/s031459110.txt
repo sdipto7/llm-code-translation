@@ -1,0 +1,33 @@
+```plaintext
+Algorithm: Calculate Minimum Swaps to Order Characters
+
+1. Function Signature:
+   - Function Name: calculate_minimum_swaps
+   - Parameters: None
+   - Return Type: int
+
+2. Variable Declarations:
+   - N: int (stores the number of characters)
+   - c: str (stores the input string of characters)
+   - num_w: int (stores the count of 'W' characters in the string)
+   - num_r: int (stores the count of 'R' characters in the string)
+   - comp: str (stores the target ordered string with 'R' first, followed by 'W')
+   - ans: int (stores the number of swaps needed)
+
+3. Execution Logic:
+   a. Read an integer input and assign it to N.
+   b. Read a string input and assign it to c.
+   c. Calculate the number of 'W' characters in c and assign to num_w.
+   d. Calculate num_r as the difference between N and num_w.
+   e. Construct the target ordered string comp by concatenating 'R' repeated num_r times and 'W' repeated num_w times.
+   f. Initialize ans to 0.
+   g. Loop for each index i from 0 to num_r - 1:
+      i. If c[i] is not equal to comp[i], increment ans by 1.
+   h. Calculate the minimum of num_w, num_r, and ans, and assign it back to ans.
+
+4. Output:
+   a. Print the value of ans.
+
+5. Libraries/Modules:
+   - No external libraries or modules are required.
+```

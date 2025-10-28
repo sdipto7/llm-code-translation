@@ -1,0 +1,25 @@
+Function: main
+Parameters: none
+Return type: void
+
+Variables:
+- a: integer
+- v: integer
+- b: integer
+- w: integer
+- t: integer
+
+Algorithm:
+1. Read first line of input and split into two integers, assign to a and v
+2. Read second line of input and split into two integers, assign to b and w
+3. Read third line of input as integer, assign to t
+4. If a equals b:
+   - Print 'YES'
+5. Else if v is less than or equal to w:
+   - Print 'NO'
+6. Else:
+   - Calculate absolute difference between a and b divided by (v minus w)
+   - If t is less than this calculated value:
+     - Print 'NO'
+   - Else:
+     - Print 'YES'

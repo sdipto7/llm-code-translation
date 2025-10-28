@@ -1,0 +1,17 @@
+1. Import java.util.*
+2. Define class calArea with method:
+   - Signature: int Area(int w, int h)
+   - Logic: Multiply w and h, store result in area, return area
+3. Define public class Main with main method:
+   - Signature: public static void main(String[] args)
+4. Inside main:
+   - Create Scanner object sc reading from System.in
+   - Create ArrayList<Integer> named arr
+   - For loop: i from 0 to 3 (inclusive)
+     - Read next token from sc, parse to Integer, add to arr
+   - Create calArea object ab
+   - Calculate area1 = ab.Area(arr[0], arr[1])
+   - Calculate area2 = ab.Area(arr[2], arr[3])
+   - If area1 > area2: print area1
+   - Else if area1 < area2: print area2
+   - Else if area1 == area2: print area1

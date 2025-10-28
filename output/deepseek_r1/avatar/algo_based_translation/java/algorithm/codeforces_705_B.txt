@@ -1,0 +1,62 @@
+Algorithm:
+1. Function Definitions:
+   - main(String[] args)
+     - Parameters: String array args
+     - Return type: void
+   - solve()
+     - Return type: void
+
+2. Variables:
+   - FastReader scan (initialized once)
+   - int t (input test case count)
+   - int[] arr (stores input numbers)
+   - int prevWinner (initialized to 0)
+
+3. Input Processing:
+   - Read integer t via scan.nextInt()
+   - Initialize arr of size t
+   - Fill arr with t integers via scan.nextInt()
+
+4. Logic Flow:
+   For each number in arr:
+     a. If current number == 1 AND prevWinner == 0:
+         Set prevWinner = 2
+     b. Check prevWinner state:
+        i. If prevWinner is 2 OR 0:
+           - Calculate (current number - 1) % 2
+           - If result == 0:
+               Print 2
+               Set prevWinner = 2
+           - Else:
+               Print 1
+               Set prevWinner = 1
+        ii. Else (prevWinner is 1):
+           - Calculate (current number - 1) % 2
+           - If result == 0:
+               Print 1
+               Set prevWinner = 1
+           - Else:
+               Print 2
+               Set prevWinner = 2
+
+5. Control Structures:
+   - Single while loop in main (executes once)
+   - For-loop iterating through arr elements
+   - Nested if-else conditions checking:
+     - Current number value
+     - prevWinner state
+     - Parity of (current number - 1)
+
+6. Dependencies:
+   - Java IO classes: BufferedReader, InputStreamReader, IOException
+   - Java Util classes: StringTokenizer
+   - System input stream (System.in)
+
+7. Output Operations:
+   - Print either 1 or 2 to standard output for each input number
+   - Output decisions based on parity and previous state
+
+8. Data Flow:
+   - Sequential processing of numbers
+   - State preservation through prevWinner variable between iterations
+   - Conditional branching based on mathematical parity check (even/odd)

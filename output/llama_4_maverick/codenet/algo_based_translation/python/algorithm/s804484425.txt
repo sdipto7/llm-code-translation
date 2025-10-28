@@ -1,0 +1,22 @@
+1. Read two integers `n` and `k` from input.
+2. Read `n` lines of input, where each line contains two integers, and store them in a list of lists `info`.
+3. Sort `info` in descending order based on the second element of each sublist.
+4. Select the first `k` elements from the sorted `info` and store them in `selected`.
+5. Initialize an empty dictionary `memo` and lists `selected_only`, `selected_chohuku`, and `unselected_only`.
+6. Iterate over `selected`:
+   - For each pair `(t, d)`, check if `t` is not in `memo`.
+     - If `t` is not in `memo`, add `t` to `memo` and append `d` to `selected_only`.
+     - If `t` is in `memo`, append `d` to `selected_chohuku`.
+7. Calculate `cnt_type` as the number of keys in `memo`.
+8. Iterate over the remaining elements in `info` (from index `k` to the end):
+   - For each pair `(t, d)`, check if `t` is not in `memo`.
+     - If `t` is not in `memo`, add `t` to `memo` and append `d` to `unselected_only`.
+9. Calculate `sum_select` as the sum of `selected_chohuku` and `selected_only`.
+10. Initialize `ans` as `cnt_type` squared plus `sum_select`.
+11. Reverse the order of `unselected_only`.
+12. Iterate over the minimum length between `selected_chohuku` and `unselected_only`:
+    - In each iteration, increment `cnt_type` by 1, add the last element of `unselected_only` to `sum_select`, and subtract the last element of `selected_chohuku` from `sum_select`.
+    - Remove the last elements from both `unselected_only` and `selected_chohuku`.
+    - Calculate a temporary result `tmp` as `cnt_type` squared plus `sum_select`.
+    - Update `ans` to be the maximum of `ans` and `tmp`.
+13. Output `ans`.

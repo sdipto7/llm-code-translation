@@ -1,0 +1,34 @@
+```
+Function: calculate_profit(N: int, V: List[int], C: List[int]) -> int
+
+Variables:
+- list: List[int] initialized with [0]
+- ans: int initialized to 0
+- X: int initialized to 0
+- Y: int initialized to 0
+
+Logic Flow:
+1. Initialize list as [0].
+2. Initialize ans, X, Y to 0.
+3. For each index i from 0 to N-1:
+   a. If V[i] - C[i] > 0:
+      i. Set X to V[i].
+      ii. Set Y to C[i].
+      iii. Append X - Y to list.
+4. Return the sum of all elements in list.
+
+Control Structures:
+- For loop iterating over range from 0 to N-1.
+- If condition checking if V[i] - C[i] > 0.
+
+Input/Output Operations:
+- The function does not perform input/output operations directly.
+
+Data Processing Logic:
+- Converts strings to integers for lists V and C.
+- Calculates differences between corresponding elements of V and C.
+- Appends positive differences to list for summation.
+
+Dependencies:
+- The function relies on the List type from the typing module.
+```

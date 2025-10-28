@@ -1,0 +1,56 @@
+Algorithm:
+
+1. Input:
+   - Read integers N, A, B, C from first input line
+   - Read N subsequent integers into list l
+
+2. Data Structures:
+   - N: integer (number of bamboos)
+   - A, B, C: integers (target lengths)
+   - l: list of integers (bamboo lengths)
+   - dfs function parameters:
+     - cur: integer (current index in l)
+     - a, b, c: integers (current accumulated lengths for each group)
+   - Return type of dfs: integer
+
+3. Function dfs:
+   3.1 Base Case:
+   - If cur == N:
+     - If min(a, b, c) > 0:
+       - Return (|A - a| + |B - b| + |C - c| - 30)
+     - Else:
+       - Return 10^9
+
+   3.2 Recursive Case:
+   - Calculate four options:
+     1. no_add = dfs(cur + 1, a, b, c)
+     2. add_a = dfs(cur + 1, a + l[cur], b, c) + 10
+     3. add_b = dfs(cur + 1, a, b + l[cur], c) + 10
+     4. add_c = dfs(cur + 1, a, b, c + l[cur]) + 10
+   - Return minimum value among no_add, add_a, add_b, add_c
+
+4. Execution Flow:
+   - Initialize with dfs(0, 0, 0, 0)
+   - Print final result
+
+5. Control Structures:
+   - Conditional in base case: cur == N check
+   - Conditional check: min(a, b, c) > 0
+   - Recursive branching with four options
+
+6. Operations:
+   - Absolute value calculations for target differences
+   - Arithmetic operations for accumulating lengths and costs
+   - Minimum value selection between path options
+
+7. Edge Handling:
+   - Returns large value (10^9) for invalid groupings
+   - Automatic handling of list bounds via index increment
+
+8. Input/Output:
+   - Single print statement outputs final computed value
+   - All processing through standard input/output
+
+9. Dependencies:
+   - No external libraries required
+   - Uses built-in functions: input(), map(), min(), abs()

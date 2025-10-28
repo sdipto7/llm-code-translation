@@ -1,0 +1,31 @@
+```plaintext
+1. Import the `factorial` function from the `math` module and alias it as `f`.
+2. Read an integer input and store it in variable `N`.
+3. Initialize a list `primes` containing the first 15 prime numbers.
+4. Initialize an empty list `divs` to store prime factor counts for numbers 1 to 100.
+5. For each integer `i` from 1 to 100:
+   a. Initialize a list `tmp` of zeros with the same length as `primes`.
+   b. For each index `j` in the range of the length of `primes`:
+      i. Assign the prime number at index `j` from `primes` to variable `p`.
+      ii. Set `tmp[j]` to 0.
+      iii. While `i` divided by `p` equals `i` divided by `p` as a float:
+          - Divide `i` by `p` using integer division and assign it back to `i`.
+          - Increment `tmp[j]` by 1.
+   c. Append `tmp` to the list `divs`.
+6. Initialize a list `divsum` of zeros with the same length as `primes`.
+7. For each integer `i` from 1 to `N`:
+   a. For each index `j` in the range of the length of `primes`:
+      i. Add the value of `divs[i-1][j]` to `divsum[j]`.
+8. Define a function `num(n: int) -> int`:
+   a. Filter elements in `divsum` that are greater than or equal to `n-1`.
+   b. Return the count of such elements.
+9. Initialize variable `ans` to 0.
+10. Calculate the number of combinations where the product of primes has at least 74 factors and add the result to `ans` using `num(75)`.
+11. Calculate the combinations where:
+    a. One component has at least 14 factors and another has at least 4 factors (different component), and add the result to `ans`.
+12. Calculate the combinations where:
+    a. One component has at least 24 factors and another has at least 2 factors (different component), and add the result to `ans`.
+13. Calculate the combinations where:
+    a. Two components each have at least 4 factors and another component has at least 2 factors (all different), and add half of the result to `ans`.
+14. Print the integer value of `ans`.
+```

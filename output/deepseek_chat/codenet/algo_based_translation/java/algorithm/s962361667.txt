@@ -1,0 +1,20 @@
+1. Import Scanner from java.util
+2. Define public class Main
+3. Define public static void main method taking String[] args parameter
+4. Declare Scanner sc initialized with System.in
+5. Read integer w from input using sc.nextInt()
+6. Read integer n from input using sc.nextInt()
+7. Declare int array values of size w
+8. For i from 0 to w-1:
+   - Set values[i] = i + 1
+9. For i from 0 to n-1:
+   - Declare int x initialized to 0
+   - Read string str from input using sc.next()
+   - Split str by "," into string array ab
+   - Parse ab[0] to int and subtract 1, store in a
+   - Parse ab[1] to int and subtract 1, store in b
+   - Set x = values[a]
+   - Set values[a] = values[b]
+   - Set values[b] = x
+10. For i from 0 to w-1:
+    - Print values[i] followed by newline

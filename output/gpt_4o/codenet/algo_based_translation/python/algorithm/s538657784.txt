@@ -1,0 +1,12 @@
+Algorithm:
+
+1. Import the `math` module for mathematical operations.
+2. Define a function `calculate_result(N: int) -> int` to compute the desired result:
+   - Declare a variable `sqN` of type `int` and assign it the value of the integer square root of `N` using `math.sqrt(N)`.
+   - Initialize a `for` loop that iterates over `i` ranging from `0` to `sqN-1`.
+     - Inside the loop, check if `N` is divisible by `(sqN - i)` using the condition `N % (sqN - i) == 0`.
+       - If the condition is true, compute the result using the expression `int(N / (sqN - i) + sqN - i) - 2`.
+       - Return this computed result and exit the loop.
+3. Define the input/output operations:
+   - Read an integer `N` from user input.
+   - Call the function `calculate_result(N)` and print the result.

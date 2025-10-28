@@ -161,9 +161,7 @@ cython_debug/
 #.idea/
 
 # ignoring big directories
-dataset/
-reports/
+# dataset/
+# reports/
 logs/
-output/
-src/plots.ipynb
-figures/
+# output/

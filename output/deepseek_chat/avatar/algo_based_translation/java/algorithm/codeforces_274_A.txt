@@ -1,0 +1,27 @@
+Function signature: main(String[] args)
+Dependencies: java.util.*
+Variables:
+- Scanner sc
+- int n
+- long k
+- long[] arr of size n
+- HashSet<Long> set
+- int count = 0
+
+Execution flow:
+1. Initialize Scanner with System.in
+2. Read integer n from input
+3. Read long k from input
+4. Initialize long array arr of size n
+5. Initialize empty HashSet<Long> set
+6. For i from 0 to n-1:
+   - Read long value into arr[i]
+7. Sort arr in ascending order
+8. For i from 0 to n-1:
+   - If arr[i] % k != 0:
+     - Increment count
+     - Add arr[i] to set
+   - Else if set does not contain arr[i]/k:
+     - Increment count
+     - Add arr[i] to set
+9. Print count

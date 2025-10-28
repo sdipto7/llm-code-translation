@@ -1,0 +1,26 @@
+```
+Function Signature:
+  - main() -> None
+
+Variables:
+  - n: int
+  - sdic: dict[str, int]
+  - _: int (loop variable)
+  - s: list[str], then str
+  - ans: int
+  - k: str (dictionary key)
+  - v: int (dictionary value)
+
+Algorithm:
+1. Read an integer input and assign it to `n`.
+2. Initialize an empty dictionary `sdic`.
+3. Iterate over a range of `n`:
+   a. Read a string input, strip any leading/trailing whitespace, sort the characters, and create a list `s`.
+   b. Join the list `s` into a string.
+   c. If the string exists as a key in `sdic`, increment its value by 1.
+   d. Otherwise, add the string as a new key in `sdic` with a value of 1.
+4. Initialize `ans` to 0.
+5. Iterate over each key-value pair in `sdic`:
+   a. For each pair, update `ans` by adding the result of the expression `v * (v - 1) // 2`.
+6. Print the value of `ans`.
+```

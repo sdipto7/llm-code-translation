@@ -1,0 +1,16 @@
+1. Read input from the input stream.
+2. Create an input reader object to read input.
+3. Create a print writer object to write output.
+4. Create a solution object.
+5. Call the solve method of the solution object, passing the input reader and print writer objects.
+6. In the solve method:
+   1. Read an integer n.
+   2. Read an integer k.
+   3. Create an array of size n.
+   4. Read n integers into the array.
+   5. Sort the array in ascending order.
+   6. Initialize a variable ans to 0.
+   7. Iterate k times:
+      1. Add the current smallest element from the sorted array to ans.
+   8. Print ans to the output.
+7. Close the print writer object to finalize output.

@@ -1,0 +1,35 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signature:**  
+`calculate_burned_candles(candeleIntere: int, b: int) -> int`
+
+**Variables:**  
+- `s: int` (accumulates total burned candles)  
+- `restoSciolte: int` (tracks remaining stubs after candle creation)  
+
+**Input/Output Operations:**  
+- Read two space-separated integers from standard input (candeleIntere, b)  
+- Print final value of `s`  
+
+**Control Flow:**  
+1. Initialize `s = 0`  
+2. Initialize `restoSciolte = 0`  
+3. Loop while `candeleIntere > 0` OR `restoSciolte >= b`:  
+   3.1. `candeleIntere += restoSciolte // b` (convert stubs to new candles)  
+   3.2. `restoSciolte = restoSciolte % b` (update remaining stubs)  
+   3.3. `s += candeleIntere` (accumulate burned candles)  
+   3.4. `restoSciolte += candeleIntere % b` (add stubs from burned candles)  
+   3.5. `candeleIntere = candeleIntere // b` (convert burned candles to new candle batches)  
+4. Terminate loop when `candeleIntere <= 0` AND `restoSciolte < b`  
+
+**Edge Case Handling:**  
+- Implicitly handles zero initial candles by loop condition  
+- Requires `b > 0` (division operations assume non-zero divisor)  
+
+**External Dependencies:**  
+- `import re` (declared but unused in actual logic)  
+- Standard input handling via `input().split()`  
+- Integer conversion via `map(int, ...)`  
+
+**Return:**  
+Final computed `s` value printed to standard output

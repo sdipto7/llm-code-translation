@@ -1,0 +1,17 @@
+```python
+Read integers n and m from standard input.
+
+If n is 0:
+    If m is not 0:
+        Print "Impossible"
+    Else:
+        Print "0 0"
+    Exit
+Else:
+    If m <= n:
+        If m == 0:
+            Set m = 1
+        Print f"{n} {m + n - 1}"
+    Else:
+        Print f"{m} {m + n - 1}"
+```

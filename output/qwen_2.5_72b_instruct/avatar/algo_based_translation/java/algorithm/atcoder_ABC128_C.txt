@@ -1,0 +1,33 @@
+- Function signatures:
+  - `public static void main(String[] args)`
+  - `public void run()`
+
+- Variable declarations and data types:
+  - `atcoder_ABC128_C main`
+  - `Scanner sc`
+  - `int N`
+  - `int M`
+  - `ArrayList<Integer> a`
+  - `int k`
+  - `int s`
+  - `int p`
+  - `int ans`
+  - `int t`
+
+- Logic flow in execution order:
+  - Create an instance of `atcoder_ABC128_C` and call `run()`
+  - Initialize `Scanner sc` for reading input
+  - Read `N` and `M` as integers
+  - Initialize `ArrayList<Integer> a` with `N` elements all set to 0
+  - Loop `M` times to read switch configurations:
+    - Read `k` as the number of switches for the current configuration
+    - Loop `k` times to read switch indices `s` and update `a` at index `s-1` by setting the `i`th bit
+  - Read `M` integers and combine them into a single integer `p` where each bit represents a light's required state
+  - Initialize `ans` to 0 to count valid switch combinations
+  - Loop from `0` to `2^N - 1` to represent all possible switch states:
+    - Initialize `t` to 0 to compute the state of lights for the current switch configuration
+    - Loop `N` times to check each switch:
+      - If the `i`th bit of the current switch state is set, update `t` by XORing it with the value at index `i` in `a`
+    - If `t` equals `p`, increment `ans`
+  - Print `ans` as the result
+  - Close `sc` to free resources

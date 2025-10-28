@@ -1,0 +1,14 @@
+1. READ n
+2. READ s as a list of characters
+3. READ t as a list of characters
+4. IF s equals t THEN
+5.     PRINT n
+6. ELSE
+7.     INITIALIZE cnt to 0
+8.     FOR i FROM 0 TO n-1
+9.         FOR j FROM 0 TO n-i-1
+10.            IF s[i+j] is not equal to t[j] THEN
+11.                BREAK the inner loop
+12.            IF j equals n-i-1 THEN
+13.                SET cnt to n-i
+14.    PRINT 2*n - cnt

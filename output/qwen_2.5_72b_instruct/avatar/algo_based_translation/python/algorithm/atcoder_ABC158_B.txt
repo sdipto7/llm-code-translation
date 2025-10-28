@@ -1,0 +1,41 @@
+- Function signatures with parameter and return types:
+  - `I() -> int`
+  - `MI() -> map<int>`
+  - `LI() -> list<int>`
+  - `main() -> None`
+
+- Variable declarations and data types:
+  - `mod: int`
+  - `N: int`
+  - `A: int`
+  - `B: int`
+  - `ans: int`
+  - `rep: int`
+  - `res: int`
+
+- Complete logic flow in execution order:
+  1. Import `sys` module
+  2. Define `input` as `sys.stdin.readline`
+  3. Define `I()` to read an integer from input
+  4. Define `MI()` to read multiple integers from input and return as a map of integers
+  5. Define `LI()` to read multiple integers from input, convert to a list of integers, and return
+  6. Define `main()`:
+     1. Set `mod` to `10 ** 9 + 7`
+     2. Read `N`, `A`, `B` as integers from input
+     3. Initialize `ans` to `0`
+     4. Calculate `rep` as integer division of `N` by `(A + B)`
+     5. Add `rep * A` to `ans`
+     6. Calculate `res` as `N - rep * (A + B)`
+     7. Add minimum of `res` and `A` to `ans`
+     8. Print `ans`
+
+- Control structures:
+  - No explicit loops or conditionals in the provided code
+
+- Input/output operations and data processing logic:
+  - Input: Read integers `N`, `A`, `B` from standard input
+  - Output: Print the integer value of `ans` to standard output
+  - Data processing: Calculate the maximum number of times `A` can be added to `ans` given the constraints
+
+- Required libraries, modules, or dependencies:
+  - `sys` module for `sys.stdin.readline`

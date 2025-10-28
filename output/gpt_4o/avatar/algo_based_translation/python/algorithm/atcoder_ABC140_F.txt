@@ -1,0 +1,40 @@
+```
+1. Import the sys module for reading input.
+2. Define a function I() -> int:
+   a. Read a line from standard input using sys.stdin.readline().
+   b. Convert the line to an integer and return it.
+
+3. Define a function LI() -> List[int]:
+   a. Read a line from standard input using sys.stdin.readline().
+   b. Split the line into individual string components.
+   c. Convert each component to an integer.
+   d. Return the list of integers.
+
+4. Define the main function() -> str:
+   a. Call I() to read an integer N from input.
+   b. Call LI() to read a list of integers from input and sort it in descending order, storing it in S.
+   c. Create a list of boolean values 'flag' initialized to True, with the same length as S.
+   d. Initialize an empty list 'cur'.
+   e. Append the first element of S to 'cur'.
+   f. Set the first element of 'flag' to False.
+
+5. For each index i in range(0, N):
+   a. Initialize variable j to 0.
+   b. Set variable jM to the length of 'cur'.
+   
+6. Iterate over each index k in range from 0 to the length of S:
+   a. If flag[k] is True and S[k] is less than cur[j]:
+      i. Append S[k] to 'cur'.
+      ii. Increment j by 1.
+      iii. Set flag[k] to False.
+      iv. If j equals jM, break the inner loop.
+
+7. If the loop completes without breaking, return "No".
+
+8. Sort 'cur' in descending order.
+
+9. If all iterations complete successfully, return "Yes".
+
+10. If this module is executed as the main program:
+    a. Print the result of calling main().
+```

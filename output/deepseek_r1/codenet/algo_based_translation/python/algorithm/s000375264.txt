@@ -1,0 +1,20 @@
+- **Function Signatures**: N/A (script-based execution)
+- **Variable Declarations**:
+  - `X: int`
+  - `t: int`
+  - `answer: int`
+- **Input Operations**:
+  - Read a line from standard input.
+  - Split into substrings and convert to integers for `X` and `t`.
+- **Control Structures**:
+  - `if X > t`: Assign `answer = X - t`.
+  - `elif X <= t`: Assign `answer = 0`.
+- **Logic Flow**:
+  1. Read and parse `X` and `t` from input.
+  2. Compare `X` and `t`:
+     - If `X > t`, compute `answer` as `X - t`.
+     - If `X <= t`, set `answer` to `0`.
+  3. Print `answer`.
+- **Output Operations**:
+  - Print the value of `answer` as an integer.
+- **Dependencies**: None (standard input/output only).

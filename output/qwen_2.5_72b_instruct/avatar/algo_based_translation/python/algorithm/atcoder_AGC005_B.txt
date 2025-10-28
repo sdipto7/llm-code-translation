@@ -1,0 +1,42 @@
+Function signatures:
+- `root(x): int`
+- `same(x: int, y: int) -> bool`
+- `unite(*z: int)`
+
+Variable declarations and data types:
+- `root`: lambda function taking an integer `x` and returning an integer
+- `same`: lambda function taking two integers `x`, `y` and returning a boolean
+- `unite`: function taking a variable number of integers
+- `n`: integer
+- `a`: list of integers
+- `par`: list of integers
+- `rank`: list of integers
+- `size`: list of integers
+- `b`: list of integers
+- `c`: integer
+
+Logic flow in execution order:
+1. Define `root` as a lambda function that finds the root of the set containing `x`.
+2. Define `same` as a lambda function that checks if `x` and `y` are in the same set.
+3. Define `unite` as a function that merges the sets containing `x` and `y`:
+   - Find roots of `x` and `y`.
+   - If roots are different, merge smaller set into larger set:
+     - Update parent pointers and sizes accordingly.
+     - Increment rank of the new parent if both sets had the same rank.
+4. Read input values: first value is `n`, followed by `n` integers stored in `a`.
+5. Initialize `par` as a list with values from `0` to `n-1`.
+6. Initialize `rank` as a list of `1`s of length `n`.
+7. Initialize `size` as a list of `1`s of length `n`.
+8. Initialize `b` as a list of `0`s of length `n`.
+9. Populate `b` such that `b[t-1] = i` for each element `t` in `a` at index `i`.
+10. Initialize `c` to `0`.
+11. Iterate over `b` in reverse order:
+    - Initialize `l` and `r` to `1`.
+    - If current element index `k` is greater than `0` and the previous element in `a` is greater than the current element:
+      - Increment `l` by the size of the set containing `k-1`.
+      - Unite sets containing `k-1` and `k`.
+    - If current element index `k` is less than `n-1` and the next element in `a` is greater than the current element:
+      - Increment `r` by the size of the set containing `k+1`.
+      - Unite sets containing `k+1` and `k`.
+    - Add `l * r * a[k]` to `c`.
+12. Print the value of `c`.

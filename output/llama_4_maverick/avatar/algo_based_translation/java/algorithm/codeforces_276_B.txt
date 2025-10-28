@@ -1,0 +1,14 @@
+1. Read input string from the standard input.
+2. Create an empty map to store the frequency of characters in the string.
+3. Iterate over each character in the input string.
+4. For each character, check if it exists in the map.
+5. If the character exists, increment its count by 1.
+6. If the character does not exist, add it to the map with a count of 1.
+7. Initialize a counter for odd counts to 0.
+8. Iterate over the entries in the map.
+9. For each entry, check if the count is odd.
+10. If the count is odd, increment the odd count counter.
+11. Check if the odd count is less than or equal to 1 or if it is odd.
+12. If the condition is true, output "First".
+13. Otherwise, output "Second".
+14. Flush the output buffer to ensure the result is printed.

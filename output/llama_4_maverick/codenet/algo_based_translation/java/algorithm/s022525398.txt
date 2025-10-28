@@ -1,0 +1,10 @@
+1. Import the `java.util.Scanner` library.
+2. Define a class named `Main`.
+3. Define a `main` function with the signature `public static void main(String[] args)`.
+4. Declare a variable `in` of type `Scanner` and initialize it with a new `Scanner` object reading from `System.in`.
+5. Declare two variables `a` and `b` of type `String`.
+6. Use the `next()` method of the `Scanner` object `in` to read a `String` input into variable `a`.
+7. Use the `next()` method of the `Scanner` object `in` to read a `String` input into variable `b`.
+8. Concatenate the strings `b` and `a` in that order and store the result in an implicit variable.
+9. Use `System.out.println()` to output the concatenated string to the console, followed by a newline.
+10. The program terminates.

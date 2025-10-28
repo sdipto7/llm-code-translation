@@ -1,0 +1,29 @@
+- **Libraries/Dependencies**: `java.util.Scanner`
+- **Function Signature**:  
+  `public static void main(String[] args)`  
+  - **Return Type**: `void`
+  - **Parameters**: `String[] args`
+- **Variables**:
+  - `Scanner sc = new Scanner(System.in)` (Scanner type)
+  - `String s = sc.nextLine()` (String type)
+  - `int i = 0` (loop index, int type)
+  - `char c` (temporary character, char type)
+- **Logic Flow**:
+  1. Read input string `s` from standard input using `Scanner`.
+  2. Iterate over each character in `s` using a `for` loop:
+     - Loop condition: `i < s.length()`
+     - For each iteration:
+       - Extract character `c = s.charAt(i)`
+       - Check if `c` is uppercase via `Character.isUpperCase(c)`:
+         - If true:  
+           - Convert `c` to lowercase by `c += 32`  
+           - Print `c`
+       - Else, check if `c` is lowercase via `Character.isLowerCase(c)`:
+         - If true:  
+           - Convert `c` to uppercase by `c -= 32`  
+           - Print `c`
+       - Else (non-alphabetic character):  
+           - Print `c` unchanged
+       - Increment `i` by 1
+  3. After loop, print a newline.
+  4. Close `Scanner` via `sc.close()`.

@@ -1,0 +1,34 @@
+Function signatures:
+- `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner sc` of type `Scanner`
+- `int a`
+- `int b`
+- `int c`
+- `int d`
+
+Complete logic flow in execution order:
+1. Create a `Scanner` object named `sc` to read input from standard input.
+2. Read an integer value from `sc` and assign it to `a`.
+3. Read an integer value from `sc` and assign it to `b`.
+4. Read an integer value from `sc` and assign it to `c`.
+5. Read an integer value from `sc` and assign it to `d`.
+6. If `a * b` is greater than or equal to `c * d`:
+   - Print `a * b`.
+7. Else if `a * b` is less than or equal to `c * d`:
+   - Print `c * d`.
+
+Control structures:
+- Conditional (`if`):
+  - Condition: `a * b >= c * d`
+- Conditional (`else if`):
+  - Condition: `a * b <= c * d`
+
+Input/output operations and data processing logic:
+- Input: Four integers `a`, `b`, `c`, and `d` are read from standard input using `Scanner`.
+- Processing: Calculate the products `a * b` and `c * d`. Compare these products to determine which is greater or equal.
+- Output: Print either `a * b` or `c * d` based on the comparison.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

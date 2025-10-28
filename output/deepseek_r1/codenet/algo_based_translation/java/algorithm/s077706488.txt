@@ -1,0 +1,44 @@
+- Function signature:  
+main(String[] args): void  
+
+- Libraries:  
+java.util.Scanner  
+
+- Variables:  
+Scanner stdIn: Scanner object  
+int N: from input  
+int X: from input  
+int[] m: size N  
+int min: stores minimum value  
+
+- Execution flow:  
+1. Read integer N via stdIn  
+2. Read integer X via stdIn  
+3. Initialize array m with N elements  
+4. Read first element m[0] via stdIn  
+5. Subtract m[0] from X  
+6. Initialize min with m[0]  
+7. For i from 1 to N-1:  
+   a. Read m[i] via stdIn  
+   b. Subtract m[i] from X  
+   c. If m[i] < min:  
+      i. Set min = m[i]  
+8. Calculate N + (X divided by min) using integer division  
+9. Print result  
+
+- Control structures:  
+1. for-loop:  
+   - Initialization: i = 1  
+   - Condition: i < N  
+   - Increment: i++  
+2. if-statement:  
+   - Condition: m[i] < current min  
+
+- I/O operations:  
+1. System input for N, X, and array elements  
+2. System output for final calculation result  
+
+- Data processing:  
+1. Cumulative subtraction of array elements from X  
+2. Tracking minimum array value  
+3. Final division of remaining X by minimum value

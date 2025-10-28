@@ -1,0 +1,33 @@
+1. PROCEDURE main
+2.   INITIALIZE tokens to iterate_tokens()
+3.   SET N to int(next(tokens))
+4.   SET M to int(next(tokens))
+5.   SET Q to int(next(tokens))
+6.   INITIALIZE a, b, c, d to arrays of size Q
+7.   FOR i FROM 0 TO Q-1
+8.     SET a[i] to int(next(tokens))
+9.     SET b[i] to int(next(tokens))
+10.    SET c[i] to int(next(tokens))
+11.    SET d[i] to int(next(tokens))
+12.  CALL solve(N, M, Q, a, b, c, d)
+
+PROCEDURE solve(N, M, Q, a, b, c, d)
+1.  INITIALIZE res to 0
+2.  DEFINE PROCEDURE rec(A)
+3.    IF length(A) == N
+4.      INITIALIZE ans to 0
+5.      FOR i FROM 0 TO Q-1
+6.        IF A[b[i]-1] - A[a[i]-1] == c[i]
+7.          INCREMENT ans by d[i]
+8.      SET res to max(res, ans)
+9.      RETURN
+10.   CALCULATE last_max as 1 if length(A) == 0, otherwise A[-1]
+11.   FOR i FROM last_max TO M
+12.     CALL rec(A + [i])
+13. CALL rec([])
+14. PRINT res
+
+PROCEDURE iterate_tokens()
+1.  FOR each line in sys.stdin
+2.    FOR each word in line.split()
+3.      YIELD word

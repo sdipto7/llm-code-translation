@@ -1,0 +1,55 @@
+1. Define a function `main()` with no parameters and return type `void`.
+   - Create an instance of `Main` and call its `run()` method.
+
+2. Define a function `run()` with no parameters and return type `void`.
+   - Try to create a new instance of `Solver` and call its `solve()` method.
+   - If an exception or error occurs, print the stack trace and exit with a status code of 1.
+   - If no exception occurs, exit with a status code of 0.
+
+3. Define a class `Solver` with the following properties and methods:
+   - Properties: `hp` of type `Helper`, `MAXN` of type `int`, `MOD` of type `long`, `timer` of type `Timer`, and `task` of type `TimerTask`.
+   - Constructor `Solver()`:
+     - Initialize `hp` with `MOD` and `MAXN`.
+     - Initialize input/output streams for `hp`.
+     - Create a new `Timer` and a `TimerTask` that flushes `hp` and exits when run.
+     - Schedule the `TimerTask` to run after a certain delay (currently commented out).
+
+4. Define a function `solve()` with no parameters and return type `void`, throwing `Exception`.
+   - Determine the number of test cases (`tc`).
+   - For each test case, call `solve(int tc)` with the current test case number.
+   - Cancel the timer and flush `hp`.
+
+5. Define a function `solve(int tc)` with a parameter `tc` of type `int` and return type `void`, throwing `Exception`.
+   - Read an integer `N` and a long `K`.
+   - Read an array `A` of `N` integers.
+   - Create two `ArrayList`s, `straight` and `cycle`, to store indices.
+   - Create a boolean array `vis` of size `N` to track visited indices.
+   - Traverse the array `A` starting from index 0 until a visited index is found, marking visited indices in `vis`.
+   - Separate the traversed indices into `straight` and `cycle` based on whether they are part of a cycle.
+   - If `K` is less than the size of `straight`, print the element at index `K` in `straight` plus 1.
+   - Otherwise, subtract the size of `straight` from `K` and print the element at index `K % cycle.size()` in `cycle` plus 1.
+
+6. Define a class `Helper` with the following properties and methods:
+   - Properties: `MOD` of type `long`, `MAXN` of type `int`, and `rnd` of type `Random`.
+   - Constructor `Helper(long mod, int maxn)`:
+     - Initialize `MOD`, `MAXN`, and `rnd`.
+
+7. Define various utility functions in `Helper` for tasks such as:
+   - Generating factorials and calculating `nCr`.
+   - Reading arrays of different data types.
+   - Joining elements into a string.
+   - Calculating GCD, maximum, minimum, and sum of arrays.
+   - Shuffling and reversing arrays.
+   - Calculating power with modulo.
+
+8. Define input/output functions in `Helper` for reading and writing data, including:
+   - Initializing input/output streams.
+   - Reading integers, longs, and strings.
+   - Printing objects, with or without a newline.
+   - Flushing the output buffer.
+
+The required libraries and modules include:
+- `java.math.*`
+- `java.io.*`
+- `java.util.*`
+- `java.awt.*` (not actually used in the provided code)

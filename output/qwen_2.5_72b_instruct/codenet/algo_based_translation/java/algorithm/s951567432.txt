@@ -1,0 +1,16 @@
+Function Signature:  
+main(String[] args)
+
+Variable Declarations:  
+int count  
+int total  
+int ix
+
+Complete Logic Flow in Execution Order:  
+1. Import java.util.*;
+2. Create a Scanner object to read input from System.in.
+3. Read an integer from the standard input and assign it to count.
+4. Initialize total to 0.
+5. For ix from 1 to count (inclusive):
+   a. Add ix to total.
+6. Print the value of total to the standard output.

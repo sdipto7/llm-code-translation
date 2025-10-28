@@ -1,0 +1,24 @@
+- **Function Signatures**: None (procedural code)
+- **Variables**:
+  - `N`: Integer (input: size of score array)
+  - `K`: Integer (input: comparison offset)
+  - `score`: List of integers (input: array of scores)
+  - `mae`: Integer (initial value: 0)
+  - `usiro`: Integer (initial value: K)
+- **Logic Flow**:
+  1. Read integers `N` and `K` from standard input.
+  2. Read list of integers `score` from standard input (length `N`).
+  3. Initialize `mae = 0` and `usiro = K`.
+  4. Iterate `i` from `0` to `N - K - 1` (inclusive):
+      - Compare `score[mae]` and `score[usiro]`:
+        - If `score[mae] < score[usiro]`: Print "Yes".
+        - Else: Print "No".
+      - Increment `mae` by 1.
+      - Increment `usiro` by 1.
+- **Control Structures**:
+  - `for` loop over `range(N - K)` (Python syntax).
+  - `if-else` conditional with exact condition `score[mae] < score[usiro]`.
+- **Input/Output**:
+  - Input via `input()` and `split()` for `N`, `K`, and `score`.
+  - Output `Yes` or `No` for each iteration.
+- **Dependencies**: None (standard Python libraries only).

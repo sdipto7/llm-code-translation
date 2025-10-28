@@ -1,0 +1,51 @@
+**Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`
+  - *Parameters:* None
+  - *Return:* None
+
+**Variables:**
+- `n: int` (input value; later unused)
+- `arr: List[int]` (list of integer inputs)
+- `i: int` (loop index)
+
+**Logic Flow:**
+1. Read integer `n` from standard input.
+2. Read space-separated integers from next input line, store in `arr`.
+3. If `arr[0] > 15`:
+   - Print `15` and terminate execution.
+4. Else:
+   - Iterate `i` from `1` to `len(arr)-1` (inclusive):
+     1. If `arr[i] - arr[i-1] > 15`:
+        - Print `arr[i-1] + 15` and terminate execution.
+   - If loop completes without termination:
+     1. If `arr[-1] == 90` OR `arr[-1] + 15 >= 90`:
+        - Print `90`
+     2. Else:
+        - Print `arr[-1] + 15`
+
+**Control Flow Structures:**
+- **Conditional (Step 3):** Initial boundary check
+- **For Loop (Step 4a):** Range-based iteration with index `i`
+  - **Break Condition:** Early termination on gap detection
+- **Post-Loop Conditional (Steps 4b1-4b2):** Final boundary evaluation
+
+**Input/Output Operations:**
+- Read `n` via `input()` (unused)
+- Read space-separated integers via `input().split()`
+- Print results via `print()`
+
+**Edge Case Handling:**
+- Immediate termination if first element exceeds 15
+- Gap detection between consecutive elements
+- Final check for maximum allowed value (90)
+
+**Assumptions:**
+- Input always contains valid integers
+- `arr` is non-empty and sorted in ascending order
+- All elements in `arr` are ≤90
+
+**Dependencies:**
+- Standard input/output functions
+- No external libraries required

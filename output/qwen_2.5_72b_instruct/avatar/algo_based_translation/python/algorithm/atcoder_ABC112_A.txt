@@ -1,0 +1,20 @@
+- Function Signature: main() -> None
+- Variable Declarations: age (int), a (int), b (int)
+- Logic Flow:
+  1. Read age from input and convert to integer
+  2. If age equals 1:
+     1. Print 'Hello World'
+  3. Else:
+     1. Read two integers from input and convert to integers
+     2. Assign first integer to a
+     3. Assign second integer to b
+     4. Calculate sum of a and b
+     5. Print the sum
+- Control Structures:
+  - If condition: age == 1
+- Input/Output Operations:
+  - Read age from input
+  - Print 'Hello World' if age is 1
+  - Read two integers from input if age is not 1
+  - Print sum of two integers if age is not 1
+- Required Libraries/Modules/Dependencies: None

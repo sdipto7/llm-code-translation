@@ -1,0 +1,5 @@
+1. Read input from the user.
+2. Convert the input into an integer and store it in a variable 'n'.
+3. Calculate the result using the formula: (n / 3) * 2 + (n % 3 == 0 ? 0 : 1).
+4. Output the calculated result.
+5. End the process.

@@ -1,0 +1,35 @@
+**Algorithm Extraction:**
+
+**Function: maxMatching**
+- Parameters: integer v, integer p
+- Return type: integer
+- Initialize integer a = 0
+- Initialize integer o = 0
+- For each integer w in g[v]:
+  - If w equals p: continue to next iteration
+  - Call maxMatching(w, v) and store result in integer r
+  - Add r divided by 2 to a
+  - Add r modulo 2 to o
+- Return (2 * a) + minimum of (1, o) + 1
+
+**Function: main**
+- Read integer n from input
+- Initialize g as array of ArrayLists with size n
+- For i from 0 to n-2:
+  - Read integer a from input and subtract 1
+  - Read integer b from input and subtract 1
+  - Add b to g[a]
+  - Add a to g[b]
+- Call maxMatching(0, -1), divide result by 2, store in integer m
+- If 2*m equals n: print "Second"
+- Else: print "First"
+
+**Required Dependencies:**
+- java.io.BufferedReader
+- java.io.InputStreamReader
+- java.io.IOException
+- java.io.PrintWriter
+- java.io.BufferedOutputStream
+- java.util.ArrayList
+- java.util.Arrays
+- java.util.StringTokenizer

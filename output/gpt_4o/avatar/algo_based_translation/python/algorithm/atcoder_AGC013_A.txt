@@ -1,0 +1,58 @@
+```python
+# Function signatures
+def input() -> str
+def INT() -> int
+def MAP() -> map
+def LIST() -> list
+def ZIP(n: int) -> zip
+
+# Variable declarations and data types
+int N
+list A
+int i
+int ans
+
+# Execution order and logic flow
+- Import necessary modules:
+  - sys
+  - re
+  - collections (deque, defaultdict, Counter)
+  - math (ceil, sqrt, hypot, factorial, pi, sin, cos, radians)
+  - itertools (groupby, accumulate, permutations, combinations, product)
+  - operator (itemgetter, mul)
+  - copy (deepcopy)
+  - string (ascii_lowercase, ascii_uppercase, digits)
+  - bisect (bisect, bisect_left)
+  - fractions (gcd)
+  - heapq (heappush, heappop)
+  - functools (reduce)
+
+- Define utility functions:
+  - `input`: Reads a line from standard input and strips whitespace
+  - `INT`: Converts input to an integer
+  - `MAP`: Maps input line to integers
+  - `LIST`: Converts input line to a list of integers
+  - `ZIP`: Zips multiple input lines
+
+- Set recursion limit to `10**9`
+- Define constants:
+  - `INF` as positive infinity
+  - `mod` as `10**9 + 7`
+
+- Main logic:
+  - Read integer `N` from input
+  - Read list of integers `A` from input
+  - Remove consecutive duplicates from `A` using `groupby`, update `A`
+  - Update `N` to the length of the new `A`
+  - Initialize `i` to 1
+  - Initialize `ans` to 0
+
+- Loop through `A` from index 1 to `N - 2`:
+  - While `i < N - 1`:
+    - Check if `A[i-1] < A[i] > A[i+1]` or `A[i-1] > A[i] < A[i+1]`:
+      - If true, increment `ans` by 1
+      - Increment `i` by 1
+    - Increment `i` by 1
+
+- Output the result `ans + 1`
+```

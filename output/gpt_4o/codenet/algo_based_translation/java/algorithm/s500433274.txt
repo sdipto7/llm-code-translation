@@ -1,0 +1,24 @@
+1. Import required libraries:
+   - Import `java.math.*` for `BigInteger` functionality.
+   - Import `java.util.Scanner` for input functionality.
+
+2. Define the `main` function with no parameters and no return type.
+
+3. Declare variables:
+   - `BigInteger a` for storing the first number.
+   - `BigInteger b` for storing the second number.
+   - `BigInteger c` for storing the maximum of `a` and `b`.
+
+4. Initialize a `Scanner` object `cin` for reading input from the standard input stream.
+
+5. Start a loop using `cin.hasNext()` as the condition to continually read input until no more input is available:
+   - Read the next input value as a `BigInteger` and assign it to `a`.
+   - Read the next input value as a `BigInteger` and assign it to `b`.
+   - Calculate the maximum of `a` and `b` using the `max` method of `BigInteger` and assign it to `c`.
+
+6. Implement conditional logic to determine and print the relationship between `a` and `b`:
+   - If `a` is equal to `c` and `b` is not equal to `c`, print "GREATER".
+   - Else if `b` is equal to `c` and `a` is not equal to `c`, print "LESS".
+   - Else print "EQUAL".
+
+7. Close the `Scanner` object `cin` after the loop ends to release resources.

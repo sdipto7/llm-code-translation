@@ -1,0 +1,16 @@
+```
+Algorithm MainProgram
+    Declare sc as Scanner object for reading input
+    Declare n as Integer
+
+    Read an integer from input into n
+
+    If (n / 10) modulo 111 is equal to 0 Then
+        Output "Yes"
+    Else If (n modulo 1000) modulo 111 is equal to 0 Then
+        Output "Yes"
+    Else
+        Output "No"
+    End If
+End Algorithm
+```

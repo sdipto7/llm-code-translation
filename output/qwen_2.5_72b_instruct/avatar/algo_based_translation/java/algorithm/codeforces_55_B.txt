@@ -1,0 +1,40 @@
+Function signatures:
+- `public static void main(String[] args)`
+- `public static void util(ArrayList<Long> arr, String[] ops, int idx)`
+
+Variable declarations and data types:
+- `Scanner sc = new Scanner(System.in)`
+- `long min = Long.MAX_VALUE`
+- `ArrayList<Long> arr = new ArrayList<>()`
+- `String[] ops = new String[3]`
+- `ArrayList<Long> a = new ArrayList<>()`
+- `long res`
+
+Complete logic flow in execution order:
+1. Initialize `min` to `Long.MAX_VALUE`.
+2. Create an `ArrayList<Long>` named `arr`.
+3. Read four long integers from input and add them to `arr`.
+4. Create a `String[]` named `ops` of size 3.
+5. Read three strings from input and store them in `ops`.
+6. Call `util(arr, ops, 0)`.
+7. Print the value of `min`.
+
+Function `util`:
+1. If `idx` is equal to 3, update `min` to be the minimum of `min` and the first element of `arr`, then return.
+2. For each `i` from 0 to the size of `arr` - 1:
+   - For each `j` from `i + 1` to the size of `arr` - 1:
+     - Create a new `ArrayList<Long>` named `a`.
+     - For each `k` from 0 to the size of `arr` - 1:
+       - If `k` is not equal to `j` and `k` is not equal to `i`, add `arr.get(k)` to `a`.
+     - If `idx` is less than 3 and `ops[idx]` is equal to "+", set `res` to `arr.get(i) + arr.get(j)`.
+     - Otherwise, set `res` to `arr.get(i) * arr.get(j)`.
+     - Add `res` to `a`.
+     - Call `util(a, ops, idx + 1)`.
+
+Input/output operations and data processing logic:
+- Input: Four long integers followed by three strings.
+- Output: The minimum possible value obtained by applying the operations in `ops` to the integers in `arr` in all possible orders and combinations.
+- Data processing logic involves recursively generating all possible results of applying the operations in `ops` to the integers in `arr` in all possible orders and tracking the minimum result.
+
+Required libraries, modules, or dependencies:
+- `java.util.*`

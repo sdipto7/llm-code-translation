@@ -1,0 +1,21 @@
+Function signature:
+- A function that reads input from the user and prints a single character based on the condition.
+
+Variable declarations:
+- `x`: string (input from the user)
+
+Logic flow:
+1. Read input from the user and assign it to a string variable `x`.
+2. Check if the string `x` is in lowercase using the method `islower()`:
+   - If `x.islower()` returns `True`, print the character `"a"`.
+   - Otherwise, print the character `"A"`.
+
+Control structures:
+- Conditional statement to check if the input string `x` is lowercase.
+
+Input/Output operations:
+- Input: Read a string from the standard input.
+- Output: Print either "a" if the input is lowercase or "A" otherwise.
+
+Required libraries, modules, or dependencies:
+- None.

@@ -1,0 +1,28 @@
+```
+Algorithm:
+1. Import the `collections` module for counting elements.
+2. Define the main function `main()` with no parameters and no return value.
+3. Declare an integer variable `n` and assign it the value of an integer input from the user.
+4. Declare a list `v` and assign it the list of integers input from the user, split by spaces.
+5. Declare two empty lists `ve` and `vo`.
+6. Iterate over a range from 0 to `n//2`:
+   a. Append the element at index `2*i` from `v` to `ve`.
+   b. Append the element at index `2*i+1` from `v` to `vo`.
+7. Declare a `Counter` object `ce` and initialize it with the list `ve`.
+8. Declare a `Counter` object `co` and initialize it with the list `vo`.
+9. Declare an integer variable `ans` and initialize it with the value of `n`.
+10. If the most common element in `ce` is not equal to the most common element in `co`:
+    a. Update `ans` to be `n` minus the sum of the most common counts from `ce` and `co`.
+11. Else, if the length of `ce` is 1 and the length of `co` is 1:
+    a. Update `ans` to be `n` minus the most common count from `ce`.
+12. Else, if the length of `ce` is 1:
+    a. Update `ans` to be `n` minus the most common count from `ce` minus the second most common count from `co`.
+13. Else, if the length of `co` is 1:
+    a. Update `ans` to be `n` minus the second most common count from `ce` minus the most common count from `co`.
+14. Else:
+    a. Update `ans` to be the minimum of:
+       i. `n` minus the most common count from `ce` minus the second most common count from `co`
+       ii. `n` minus the second most common count from `ce` minus the most common count from `co`
+15. Print the value of `ans`.
+16. If the script is run as the main module, call the `main()` function.
+```

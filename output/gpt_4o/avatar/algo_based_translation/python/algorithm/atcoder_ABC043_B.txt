@@ -1,0 +1,17 @@
+```
+Function: process_string(s: str) -> str
+
+Variables:
+- my_str: str = ''
+
+Logic Flow:
+1. Receive a string `s` as input.
+2. Initialize `my_str` as an empty string.
+3. Iterate over each character `c` in the string `s`.
+   a. If `c` is '0' or '1', append `c` to `my_str`.
+   b. Else if `c` is 'B' and `my_str` is not empty:
+      i. Remove the last character from `my_str`.
+4. Return the final value of `my_str`.
+
+No external libraries, modules, or dependencies are required.
+```

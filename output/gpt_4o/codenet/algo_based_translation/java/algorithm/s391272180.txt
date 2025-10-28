@@ -1,0 +1,41 @@
+```
+Algorithm Main
+    Input: Two strings read from standard input
+    Output: "Yes" if one string is a rotation of the other, otherwise "No"
+    
+    Function Rotate(str: StringBuilder) -> StringBuilder
+        Declare len as integer
+        Assign len = length of str
+        Declare t as char
+        Assign t = character at index 0 of str
+        For i from 0 to len - 2 (inclusive)
+            Set character at index i of str to character at index i + 1 of str
+        End For
+        Set character at index len - 1 of str to t
+        Return str
+    End Function
+
+    Declare sc as Scanner
+    Initialize sc with a new Scanner to read from standard input
+    Declare s, t as StringBuilder
+    Assign s = new StringBuilder initialized with the next input from sc
+    Assign t = new StringBuilder initialized with the next input from sc
+    Declare flag as boolean
+    Set flag = false
+
+    For i from 0 to length of s - 1 (inclusive)
+        Assign s = Rotate(s)
+        If string representation of t equals string representation of s
+            Set flag = true
+            Break the loop
+        End If
+    End For
+
+    If flag is true
+        Output "Yes"
+    Else
+        Output "No"
+    End If
+End Algorithm
+```
+

@@ -1,0 +1,49 @@
+```plaintext
+Algorithm codeforces_351_A:
+
+1. Import necessary libraries:
+   - java.io.*
+   - java.util.*
+
+2. Define the main function:
+   - Signature: main(String[] args) throws IOException
+
+3. Declare and initialize variables:
+   - BufferedReader `br` for reading input from standard input.
+   - StringBuilder `sb` for building output strings.
+   - Integer `n` to store the number of pairs (parse from input).
+   - StringTokenizer `st` to tokenize the next input line.
+   - Double array `arr` with size `2 * n` to store numbers.
+   - Integer `non_int` to count non-integer numbers, initialized to 0.
+   - Double `sum_before` to store the sum of all numbers before processing, initialized to 0.
+   - Double `sum` to store the sum of the floored values of numbers, initialized to 0.
+
+4. Read integer `n` from input.
+
+5. Tokenize the next line of input containing `2 * n` numbers.
+
+6. Loop over `i` from 0 to `2 * n - 1`:
+   a. Parse a double `num` from the tokenizer.
+   b. Add `num` to `sum_before`.
+   c. Check if `num` is not an integer:
+      - If true, increment `non_int`.
+   d. Add the floored value of `num` to `sum`.
+   e. Store `num` in `arr[i]`.
+
+7. Calculate `max_sum` as the minimum of `n` and `non_int` plus `sum`.
+
+8. Calculate `min_sum` as the maximum of 0 and `non_int - n` plus `sum`.
+
+9. Declare `ans` to store the result.
+
+10. Conditional logic to determine `ans`:
+    a. If `min_sum` is greater than `sum_before`:
+       - Set `ans` to `min_sum - sum_before`.
+    b. Else if `max_sum` is less than `sum_before`:
+       - Set `ans` to `sum_before - max_sum`.
+    c. Else:
+       - Calculate `x` as the fractional part of `sum_before`.
+       - Set `ans` to the minimum of `1 - x` and `x`.
+
+11. Output `ans` formatted to three decimal places.
+```

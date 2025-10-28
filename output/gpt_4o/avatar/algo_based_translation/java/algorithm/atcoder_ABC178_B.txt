@@ -1,0 +1,49 @@
+Algorithm:
+
+1. **Function Signatures:**
+   - `modPower(int x, int y, int mod) -> int`
+   - `pair<T1, T2>(T1 first, T2 second)`
+
+2. **Variable Declarations:**
+   - `FastReader in`: a utility for fast input reading.
+   - `long[] a`: an array of four long integers.
+
+3. **Library Imports:** 
+   - Import `java.util.*`.
+   - Import `java.lang.*`.
+   - Import `java.io.*`.
+
+4. **FastReader Class:**
+   - `BufferedReader br`: Reads input from the standard input stream.
+   - `StringTokenizer st`: Tokenizes the input strings.
+   - `FastReader()`: Initializes `BufferedReader` with `InputStreamReader(System.in)`.
+   - `String next()`: Returns the next token as a string.
+     - If `st` is null or has no more elements, read a new line and tokenize it.
+     - Return the next token.
+   - `int nextInt()`: Parses and returns the next token as an integer.
+   - `long nextLong()`: Parses and returns the next token as a long.
+   - `double nextDouble()`: Parses and returns the next token as a double.
+   - `String nextLine()`: Reads and returns the entire line as a string.
+
+5. **Main Function:**
+   - Initialize `FastReader` object `in`.
+   - Declare `long[] a` with size 4.
+   - For `i` from 0 to 3 (inclusive):
+     - Read the next long value using `in.nextLong()` and assign it to `a[i]`.
+   - Calculate the maximum of the products: `a[0] * a[2]`, `a[1] * a[3]`, `a[0] * a[3]`, `a[1] * a[2]`.
+   - Print the maximum value.
+
+6. **modPower Function:**
+   - Initialize `int res = 1`.
+   - Compute `x = x % mod`.
+   - If `x == 0`, return 0.
+   - While `y > 0`:
+     - If `y` is odd (`y % 2 == 1`), compute `res = (res * x) % mod`.
+     - Right-shift `y` by 1 (equivalent to `y = y >> 1`).
+     - Compute `x = (x * x) % mod`.
+   - Return `res`.
+
+7. **Pair Class:**
+   - Generic class `pair` with types `T1` and `T2`.
+   - Attributes: `T1 first` and `T2 second`.
+   - Constructor initializes `first` and `second`.

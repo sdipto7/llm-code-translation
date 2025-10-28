@@ -1,0 +1,26 @@
+Function signature: `def compare_strings(s: str, t: str) -> None`
+
+Variable declarations:
+- `s: str`
+- `t: str`
+
+Logic flow in execution order:
+1. Read input string `s` from user
+2. Read input string `t` from user
+3. Check if substring of `t` excluding the last character is equal to `s`
+4. If condition true, print 'Yes'
+5. Else, print 'No'
+
+Control structures:
+- Conditional: `if t[:-1] == s:`
+
+Input/output operations:
+- Input: `s = input()`, `t = input()`
+- Output: `print('Yes')` or `print('No')`
+
+Data processing logic:
+- Extract substring of `t` from start to second-to-last character using slicing `t[:-1]`
+- Compare extracted substring with `s` for equality
+
+Required libraries, modules, or dependencies:
+- No additional imports required

@@ -1,0 +1,45 @@
+static sets:
+- ODD: Set<String> initialized with "R", "U", "D"
+- EVE: Set<String> initialized with "L", "U", "D"
+
+functions:
+main(String[] args) -> void
+isMatch(Set<String> set, char c) -> boolean
+
+variables:
+Scanner sc: reads from System.in
+String N: input string from sc.nextLine()
+char[] tap: N converted to character array
+boolean isGood: initialized true, becomes false on mismatch
+
+logic flow:
+1. Initialize ODD and EVE sets via static block
+2. Read input string N through scanner
+3. Convert N to character array tap
+4. Iterate over each index i from 0 to tap.length-1:
+   a. Calculate position: (i + 1)
+   b. If position is even:
+      - Verify tap[i] exists in EVE set via isMatch
+      - If false: set isGood=false, break loop
+   c. Else (position is odd):
+      - Verify tap[i] exists in ODD set via isMatch
+      - If false: set isGood=false, break loop
+5. Print "Yes" if isGood=true, else print "No"
+
+control structures:
+- For loop from i=0 to N.length()-1
+- If-else branching based on (i+1) % 2 == 0
+- Early loop termination via break when mismatch found
+
+input/output:
+- Input: single line from standard input
+- Output: "Yes" or "No" printed to console
+
+data processing:
+- Character-to-String conversion for set membership check
+- Array traversal with index parity check
+
+dependencies:
+- java.util.HashSet
+- java.util.Scanner
+- java.util.Set

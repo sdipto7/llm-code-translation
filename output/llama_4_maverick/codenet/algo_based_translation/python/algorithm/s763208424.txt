@@ -1,0 +1,11 @@
+1. Import required modules: `math` for `floor` function and `heapq` for heap operations.
+2. Define function `dis(x, y)` with parameters `x` and `y` of type integer and return type integer: `dis(x, y) = x // 2^y`.
+3. Declare variables: `n` and `m` of type integer to store input values, `a` of type min-heap to store negated input integers.
+4. Read input: `n` and `m` from standard input, followed by `n` integers.
+5. Iterate over input integers, negating each and pushing onto min-heap `a`.
+6. Iterate `m` times:
+   - Pop the smallest element (largest original value due to negation) from `a`.
+   - Apply `dis` function to the popped element with `y = 1`, negating the result.
+   - Push the result back onto `a`.
+7. Calculate the sum of all elements in `a`, negating the result.
+8. Output the final negated sum to standard output.

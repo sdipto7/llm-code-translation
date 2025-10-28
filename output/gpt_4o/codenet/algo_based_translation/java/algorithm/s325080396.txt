@@ -1,0 +1,32 @@
+```
+Algorithm:
+1. Import the `Scanner` class from the `java.util` package.
+
+2. Define a class named `Main`.
+
+3. Declare a constant integer `MAX` and set its value to `200000`.
+
+4. Define the `main` method with the signature:
+   - `public static void main(String[] args)`
+
+5. Inside the `main` method, perform the following steps:
+
+   a. Declare an integer array `R` of size `MAX`.
+
+   b. Create a `Scanner` object `in` to read input from the standard input.
+
+   c. Read an integer `n` from the input using `in.nextInt()`.
+
+   d. Iterate over a range from `0` to `n-1` (inclusive) using a `for` loop with loop variable `i`:
+      - Read an integer from the input and assign it to `R[i]` using `in.nextInt()`.
+
+   e. Declare an integer `maxv` and initialize it to the difference `R[1] - R[0]`.
+
+   f. Declare an integer `minv` and initialize it to `R[0]`.
+
+   g. Iterate over a range from `1` to `n-1` (inclusive) using a `for` loop with loop variable `i`:
+      - Update `maxv` to the maximum value between `maxv` and `R[i] - minv` using `Math.max(maxv, R[i] - minv)`.
+      - Update `minv` to the minimum value between `minv` and `R[i]` using `Math.min(minv, R[i])`.
+
+   h. Print the value of `maxv` using `System.out.println(maxv)`.
+```

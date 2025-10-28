@@ -1,0 +1,122 @@
+Main {
+    String[][] colorMtr
+    int h
+    int w
+    int k
+
+    solve() {
+        FastScanner fs = new FastScanner()
+        h = fs.nextInt()
+        w = fs.nextInt()
+        k = fs.nextInt()
+        colorMtr = new String[h][]
+        for i from 0 to h-1 {
+            colorMtr[i] = fs.next().split("")
+        }
+        int hPattern = pow(2, h)
+        int wPattern = pow(2, w)
+        int ans = 0
+        for i from 0 to hPattern-1 {
+            for j from 0 to wPattern-1 {
+                if judge(i, j) {
+                    ans++
+                }
+            }
+        }
+        System.out.println(ans)
+    }
+
+    boolean judge(int hPattern, int wPattern) {
+        int[] hBitArr = new int[h]
+        int[] wBitArr = new int[w]
+        for i from 0 to h-1 {
+            if ((hPattern >> i) & 1 == 1 {
+                hBitArr[i] = 1
+            }
+        }
+        for i from 0 to w-1 {
+            if ((wPattern >> i) & 1 == 1 {
+                wBitArr[i] = 1
+            }
+        }
+        int black = 0
+        for i from 0 to h-1 {
+            for j from 0 to w-1 {
+                if hBitArr[i] == 1 || wBitArr[j] == 1 {
+                    continue
+                }
+                if colorMtr[i][j].equals("#") {
+                    black++
+                }
+            }
+        }
+        if black == k {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    int pow(int base, int n) {
+        int retVal = 1
+        while n > 0 {
+            if (n & 1 == 1 {
+                retVal *= base
+            }
+            n >>= 1
+            base *= base
+        }
+        return retVal
+    }
+
+    FastScanner {
+        BufferedReader reader
+        StringTokenizer st
+
+        FastScanner() {
+            st = null
+            reader = new BufferedReader(new InputStreamReader(System.in))
+        }
+
+        String next() {
+            if st == null || !st.hasMoreElements() {
+                st = new StringTokenizer(reader.readLine())
+            }
+            return st.nextToken()
+        }
+
+        String nextLine() {
+            st = null
+            String readLine = reader.readLine()
+            return readLine
+        }
+
+        int nextInt() {
+            return Integer.parseInt(next())
+        }
+
+        long nextLong() {
+            return Long.parseLong(next())
+        }
+
+        int[] nextIntArr(int n) {
+            int[] retArr = new int[n]
+            for i from 0 to n-1 {
+                retArr[i] = nextInt()
+            }
+            return retArr
+        }
+
+        long[] nextLongArr(int n) {
+            long[] retArr = new long[n]
+            for i from 0 to n-1 {
+                retArr[i] = nextLong()
+            }
+            return retArr
+        }
+
+        void close() {
+            reader.close()
+        }
+    }
+}

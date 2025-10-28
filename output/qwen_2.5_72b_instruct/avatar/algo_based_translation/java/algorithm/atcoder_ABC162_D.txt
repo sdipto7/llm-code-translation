@@ -1,0 +1,32 @@
+Function signature: `main(String[] args)`
+
+Variable declarations:
+- `Scanner sc` of type `Scanner`
+- `n` of type `int`
+- `s` of type `String`
+- `rc`, `gc`, `bc` of type `long`
+- `result` of type `long`
+- `i`, `k` of type `int`
+- `is`, `ks`, `js` of type `char`
+
+Logic flow:
+- Initialize `sc` as new `Scanner(System.in)`
+- Read `n` as integer from `sc`
+- Read `s` as string from `sc`
+- Initialize `rc`, `gc`, `bc` to 0
+- For `i` from 0 to `s.length() - 1`:
+  - If `s.charAt(i)` equals 'R', increment `rc`
+  - Else if `s.charAt(i)` equals 'G', increment `gc`
+  - Else, increment `bc`
+- Set `result` to `rc * gc * bc`
+- For `i` from 1 to `n`:
+  - For `k` from `i + 1` to `n`:
+    - If `(i + k) % 2` equals 0:
+      - Set `is` to `s.charAt(i - 1)`
+      - Set `ks` to `s.charAt(k - 1)`
+      - Set `js` to `s.charAt(((i + k) / 2) - 1)`
+      - If `is` not equals `ks` and `ks` not equals `js` and `js` not equals `is`, decrement `result`
+- Print `result`
+
+Libraries:
+- `java.util.*`

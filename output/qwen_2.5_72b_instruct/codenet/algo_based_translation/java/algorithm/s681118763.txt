@@ -1,0 +1,22 @@
+Function Signature:
+- main(String[] args): void
+
+Variable Declarations and Data Types:
+- in: Scanner
+- c: String
+- letter: Character
+
+Logic Flow in Execution Order:
+1. Initialize Scanner object 'in' to read input from standard input.
+2. Read a single string input and assign it to variable 'c'.
+3. Extract the first character from string 'c' and assign it to variable 'letter'.
+4. Increment the character value of 'letter' by 1.
+5. Print the value of 'letter'.
+
+Input/Output Operations and Data Processing Logic:
+- Read input from the user.
+- Process the input by converting it to a character and incrementing it.
+- Output the incremented character.
+
+Required Libraries, Modules, or Dependencies:
+- java.util.Scanner

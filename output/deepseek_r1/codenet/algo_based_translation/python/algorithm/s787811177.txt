@@ -1,0 +1,28 @@
+1. **Function Signatures**:
+   - No explicit functions; code executes in main scope.
+
+2. **Variables**:
+   - `n: int` (input value)
+   - `ls: list[list[int]]` (stores input pairs)
+   - `taka: int` (sum of selected first elements)
+   - `aoki: int` (sum of selected second elements)
+
+3. **Logic Flow**:
+   - Read integer `n` from standard input.
+   - Read `n` lines, split each into two integers, create list `ls`.
+   - Sort `ls` in **descending** order using the sum of each sublist as the key.
+   - Compute `taka`: sum `ls[i][0]` for indices `0, 2, 4,...` (step=2, start=0).
+   - Compute `aoki`: sum `ls[i][1]` for indices `1, 3, 5,...` (step=2, start=1).
+   - Calculate and print `taka - aoki`.
+
+4. **Control Structures**:
+   - List comprehension for input processing.
+   - `sorted()` with lambda key `lambda x: sum(x)` and `reverse=True`.
+   - Range-based loops with step=2 in sum calculations.
+
+5. **Input/Output**:
+   - Input: First line contains `n`, followed by `n` lines with two integers each.
+   - Output: Single integer `taka - aoki`.
+
+6. **Dependencies**:
+   - No external libraries required; uses standard Python functions.

@@ -1,0 +1,28 @@
+1. Define a class `Main` with a method `main(String args[])` that creates an instance of `Main` and calls its `run()` method.
+2. Declare a class-level variable `MyInput in` to handle input operations.
+3. Define a method `run()` within the `Main` class that:
+   - Retrieves two strings `Sd` and `T` using `in.next()`.
+   - Initializes variables: `count` to 0, `ok` to false, `first` to -1, and `end` to -1.
+   - Iterates over `Sd` using a nested loop structure:
+     - Outer loop iterates over the starting index `j` of a substring in `Sd`.
+     - Inner loop checks for a match between the substring of `Sd` starting at index `i+j` and the string `T`.
+     - If a character in `Sd` is '?' or matches the corresponding character in `T`, increment `count`.
+     - If `count` equals the length of `T`, update `first`, `end`, and set `ok` to true, then break the inner loop.
+     - If a mismatch is found, reset `count` to 0.
+4. If `ok` is true:
+   - Iterate over `Sd` and construct a new string:
+     - If the current index is within the range `[first, end]`, append the corresponding character from `T`.
+     - If the character in `Sd` is '?', append 'a'.
+     - Otherwise, append the original character from `Sd`.
+   - Output the constructed string.
+5. If `ok` is false, output "UNRESTORABLE".
+6. Define a class `MyInput` to handle input operations:
+   - Use a byte array `buffer` to store input data and maintain pointers `ptr` and `buflen`.
+   - Implement `hasNextByte()` to check if there are more bytes to read in the buffer or if a new read is required.
+   - Implement `readByte()` to read the next byte from the buffer.
+   - Implement `isPrintableChar(int c)` to check if a character is printable.
+   - Implement `skipUnprintable()` to skip non-printable characters in the input.
+   - Implement `hasNext()` to check if there is a next printable token.
+   - Implement `next()` to read the next string token.
+   - Implement `nextLong()`, `nextInt()`, and `nextDouble()` to read numeric values.
+7. The required dependencies include `java.lang.System`, `java.lang.Math`, `java.io.InputStream`, `java.io.IOException`, `java.util.NoSuchElementException`, `java.util.ArrayList`, `java.util.Arrays`, `java.util.LinkedList`, and `java.util.Collections`.

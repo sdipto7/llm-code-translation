@@ -1,0 +1,13 @@
+Algorithm:
+- Import java.io.BufferedReader
+- Import java.io.IOException
+- Import java.io.InputStreamReader
+- Import java.util.*
+- Import java.math.*
+- Define public class atcoder_ABC051_A
+- Define public static void main(String[] args) throws IOException
+  - Declare BufferedReader br = new BufferedReader(new InputStreamReader(System.in))
+  - Declare StringBuilder sb = new StringBuilder()
+  - Declare String a = br.readLine()
+  - Call sb.append(a.replace(",", " "))
+  - Call System.out.println(sb)

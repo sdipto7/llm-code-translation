@@ -1,0 +1,27 @@
+Function signature: main() -> None
+
+Variable declarations:
+- a: int
+- b: int
+
+Execution order:
+1. Read input string and split it into two parts
+2. Convert each part of the split string to integers and assign them to variables a and b respectively
+3. Check if a is less than or equal to 8 and b is less than or equal to 8
+   - If true, print "Yay!"
+   - Otherwise, print ":("
+
+Control structures:
+- Conditional: if a <= 8 and b <= 8
+
+Input/output operations:
+- Input: Read a line from standard input, expected to contain two integers separated by whitespace
+- Output: Print "Yay!" if both conditions are met, otherwise print ":("
+
+Data processing logic:
+- Splitting the input string into components
+- Converting string components to integers
+- Evaluating boolean expression
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required

@@ -1,0 +1,38 @@
+function main() {
+    variable sc of type Scanner
+    variable n of type int
+    variable m of type int
+    variable arrs of type String array of size n
+    variable length of type int array of size n
+    variable index of type int initialized to 0
+    variable returnDex of type int initialized to 0
+
+    sc <- new Scanner(System.in)
+    n <- sc.nextInt()
+    m <- sc.nextInt()
+
+    for i from 0 to n - 1 {
+        arrs[i] <- sc.next()
+    }
+
+    for each tmp in arrs {
+        variable dexG of type int <- tmp.indexOf("G")
+        variable dexS of type int <- tmp.indexOf("S")
+        if dexG > dexS {
+            returnDex <- -1
+        }
+        length[index] <- dexS - dexG
+        index <- index + 1
+    }
+
+    variable set of type HashSet of Integer
+    for each len in length {
+        set.add(len)
+    }
+
+    if returnDex == -1 {
+        print returnDex
+    } else {
+        print set.size()
+    }
+}

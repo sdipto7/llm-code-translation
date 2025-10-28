@@ -1,0 +1,27 @@
+1. Function Signature:
+   - Function Name: contains_nine
+   - Parameters: None
+   - Return Type: str
+
+2. Variable Declaration:
+   - Variable Name: a
+   - Data Type: str
+
+3. Execution Order and Logic Flow:
+   1. Receive input from the user and assign it to variable `a`.
+   2. Check if the character '9' is present in the string `a`.
+   3. If '9' is present, print the string "Yes".
+   4. If '9' is not present, print the string "No".
+
+4. Control Structures:
+   - Conditional:
+     - Condition: `'9' in a`
+       - If True: Execute print statement with "Yes".
+       - If False: Execute print statement with "No".
+
+5. Input/Output Operations:
+   - Input: Read a string from standard input.
+   - Output: Print "Yes" or "No" to standard output.
+
+6. Required Libraries, Modules, or Dependencies:
+   - None

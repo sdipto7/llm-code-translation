@@ -1,0 +1,21 @@
+```
+Function main() with no parameters and no return type
+    Declare integer n, x
+    Read integers n and x from input
+    Declare list of integers a
+    Read list of integers a from input
+    Declare 2D list b with dimensions n x n initialized with None values
+    For integer i in range from 0 to n-1 inclusive
+        Declare integer m and assign a[i] to it
+        For integer j in range from 0 to n-1 inclusive
+            Declare integer k and calculate k = i - j
+            If k is less than 0
+                Add n to k
+            Reassign m with the minimum of m and a[k]
+            Assign m to b[j][i]
+    Declare integer m and assign 10^15 to it
+    For each index i and list j in enumeration of list b
+        Reassign m with the minimum of m and the sum of list j plus x times i
+    Print m to output
+Call main()
+```

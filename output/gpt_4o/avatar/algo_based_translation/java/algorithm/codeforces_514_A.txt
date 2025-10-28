@@ -1,0 +1,38 @@
+```
+Algorithm:
+
+1. Import necessary libraries:
+   a. `java.util.ArrayList`
+   b. `java.util.List`
+   c. `java.util.Scanner`
+
+2. Define the main function:
+   a. Function signature: `public static void main(String args[])`
+
+3. Initialize input and data structures:
+   a. Create a `Scanner` object `sc` to read input from the standard input.
+   b. Declare a `List<Long>` named `list` to store transformed digits.
+
+4. Read input:
+   a. Read a long integer `x` using `sc.nextLong()`.
+
+5. Process each digit of `x`:
+   a. While `x > 0`, repeat steps 5b to 5f:
+      b. Calculate `r` as `x % 10` (extract the last digit of `x`).
+      c. Determine whether to use `r` or `9 - r` based on the condition:
+         i. If `9 - r < r`, check:
+            - If `x / 10 == 0` (indicating it is the first digit) and `9 - r == 0`, add `r` to `list`.
+            - Otherwise, add `9 - r` to `list`.
+         ii. Else, add `r` to `list`.
+      d. Update `x` to `x / 10` to remove the last processed digit.
+
+6. Construct the new number:
+   a. Initialize `pow` as `0`.
+   b. Initialize `newNumber` as `0`.
+   c. For each element in `list` from index `0` to `list.size() - 1`, repeat steps 6d to 6e:
+      d. Update `newNumber` to `newNumber + list.get(i) * (long)Math.pow(10, pow)`.
+      e. Increment `pow` by `1`.
+
+7. Output the result:
+   a. Print `newNumber` to the standard output.
+```

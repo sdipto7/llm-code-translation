@@ -1,0 +1,3 @@
+read input string from standard input
+replace all occurrences of comma (",") with space (" ") in the input string
+print the resulting string to standard output

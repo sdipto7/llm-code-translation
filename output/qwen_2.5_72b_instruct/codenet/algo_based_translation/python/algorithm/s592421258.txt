@@ -1,0 +1,15 @@
+Function signature: main() -> None
+
+Variable declarations:
+- I: function (input)
+- s: string
+- result: list of strings ['No', 'Yes']
+
+Logic flow in execution order:
+1. Call I() to get input from the user and store it in a temporary variable (let's call it temp_input).
+2. Assign the value of temp_input repeated twice to s.
+3. Call I() again to get another input from the user.
+4. Check if the second input is in s.
+5. If the second input is in s, select 'Yes' from the result list.
+6. If the second input is not in s, select 'No' from the result list.
+7. Print the selected string from the result list.

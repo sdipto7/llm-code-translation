@@ -1,0 +1,51 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,s380356166.py,Compilation Error,"Error:   File ""output/deepseek_r1/codenet/direct_translation/java/python/s380356166.py"", line 1
+    Here is the Python code translated from the provided Java code:
+                ^^^^^^
+SyntaxError: invalid syntax
+"
+java,python,s443066739.py,Compilation Error,"Error:   File ""output/deepseek_r1/codenet/direct_translation/java/python/s443066739.py"", line 1
+    Here is the Python code translated from the given Java code:
+                ^^^^^^
+SyntaxError: invalid syntax
+"
+java,python,s863488345.py,Compilation Error,"Error:   File ""output/deepseek_r1/codenet/direct_translation/java/python/s863488345.py"", line 1
+    The provided Python code is a direct translation of the original Java code. Here's a breakdown of the key aspects:
+                                                                                    ^
+SyntaxError: unterminated string literal (detected at line 1)
+"
+java,python,s685734377.py,Compilation Error,"Error:   File ""output/deepseek_r1/codenet/direct_translation/java/python/s685734377.py"", line 1
+    Here's the Python code translation:
+        ^
+SyntaxError: unterminated string literal (detected at line 1)
+"
+java,python,s893190600.py,Compilation Error,"Error:   File ""output/deepseek_r1/codenet/direct_translation/java/python/s893190600.py"", line 1
+    Here's the translated Python code:
+        ^
+SyntaxError: unterminated string literal (detected at line 1)
+"
+java,python,s466963472.py,Compilation Error,"Error:   File ""output/deepseek_r1/codenet/direct_translation/java/python/s466963472.py"", line 1
+    To solve this problem, we need to compute the integral of a function using a numerical approximation method. The problem involves summing up the areas of rectangles under the curve defined by the function \( f(x) = x^2 \) over a specific interval. The width of each rectangle is determined by the input value \( d \), and the height is determined by the function evaluated at each interval.
+       ^^^^^
+SyntaxError: invalid syntax
+"
+java,python,s494783955.py,Compilation Error,"Error:   File ""output/deepseek_r1/codenet/direct_translation/java/python/s494783955.py"", line 1
+    Here is the Python code equivalent to the provided Java code:
+                ^^^^^^
+SyntaxError: invalid syntax
+"
+java,python,s022285498.py,Compilation Error,"Error:   File ""output/deepseek_r1/codenet/direct_translation/java/python/s022285498.py"", line 1
+    To solve this problem, we need to determine the number of ways each integer up to a given number \( n \) can be expressed as a specific quadratic form. The quadratic form in question is \( x^2 + y^2 + z^2 + xy + xz + yz \), where \( x, y, \) and \( z \) are integers ranging from 1 to 100. 
+                                                                                                      ^
+SyntaxError: unexpected character after line continuation character
+"
+java,python,s264878779.py,Compilation Error,"Error:   File ""output/deepseek_r1/codenet/direct_translation/java/python/s264878779.py"", line 1
+    Here is the Python code translated from the provided Java code:
+                ^^^^^^
+SyntaxError: invalid syntax
+"
+java,python,s391272180.py,Compilation Error,"Error:   File ""output/deepseek_r1/codenet/direct_translation/java/python/s391272180.py"", line 1
+    Here is the Python code equivalent to the provided Java code:
+                ^^^^^^
+SyntaxError: invalid syntax
+"

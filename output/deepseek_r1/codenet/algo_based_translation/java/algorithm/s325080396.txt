@@ -1,0 +1,33 @@
+- **Function**:  
+  `public static void main(String[] args)`  
+  - **Parameters**: `String[] args` (command-line arguments)  
+  - **Return**: `void`  
+
+- **Variables**:  
+  - `int MAX = 200000` (constant)  
+  - `int[] R = new int[MAX]` (array to store input values)  
+  - `Scanner in = new Scanner(System.in)` (input handler)  
+  - `int n` (number of elements, read from input)  
+  - `int maxv` (maximum profit, initialized to `R[1] - R[0]`)  
+  - `int minv` (minimum value, initialized to `R[0]`)  
+
+- **Input Handling**:  
+  1. Read `n` via `in.nextInt()`.  
+  2. Populate `R` with `n` integers via loop:  
+     `for (int i = 0; i < n; i++) R[i] = in.nextInt()`.  
+
+- **Logic Flow**:  
+  1. Initialize `maxv = R[1] - R[0]`.  
+  2. Initialize `minv = R[0]`.  
+  3. Iterate from `i = 1` to `i < n`:  
+     - Update `maxv` to the maximum of `maxv` and `R[i] - minv`.  
+     - Update `minv` to the minimum of `minv` and `R[i]`.  
+  4. Output `maxv` via `System.out.println(maxv)`.  
+
+- **Control Structures**:  
+  - `for (int i = 0; i < n; i++)` (input loop)  
+  - `for (int i = 1; i < n; i++)` (calculation loop)  
+  - Arithmetic operations using `Math.max()` and `Math.min()`.  
+
+- **Dependencies**:  
+  - `import java.util.Scanner` (for input handling).

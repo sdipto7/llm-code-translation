@@ -1,0 +1,16 @@
+1. Read input (not used)
+2. Read a list of space-separated integers and corresponding characters
+3. Create a tuple of pairs (integer, character) from the input
+4. Calculate initial score for 'B' pieces
+5. Initialize variables: pScore, sScore, pMaxScore, sMaxScore with the initial 'B' score
+6. Iterate through the tuple of pairs from left to right
+   1. If the character is 'A', add the integer to pScore
+   2. If pScore is greater than pMaxScore, update pMaxScore
+   3. If the character is 'B', subtract the integer from pScore
+7. Iterate through the tuple of pairs from right to left
+   1. If the character is 'A', add the integer to sScore
+   2. If sScore is greater than sMaxScore, update sMaxScore
+   3. If the character is 'B', subtract the integer from sScore
+8. Compare pMaxScore and sMaxScore
+9. Return the maximum of pMaxScore and sMaxScore
+10. Print the result of the main function if the script is run directly.

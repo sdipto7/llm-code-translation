@@ -1,0 +1,33 @@
+```
+Function Signature:
+- Function: process_list
+- Parameters: None
+- Returns: None
+
+Variable Declarations:
+- inp: int
+- lista: List[int]
+
+Algorithm:
+1. Read an integer input from the user and store it in the variable `inp`.
+2. Initialize `lista` as an empty list.
+3. Read a line of input, split it by spaces, convert each element to an integer, and store the resulting list in `lista`.
+4. Loop over the range from 0 to the length of `lista` (exclusive), with the loop variable `i`.
+   a. If `i` is 0:
+      - Print the difference between the second element and the first element of `lista`.
+      - Print the difference between the last element and the first element of `lista`.
+      - Continue to the next iteration of the loop.
+   b. Else if `i` is the index of the last element in `lista`:
+      - Print the difference between the last element and the second to last element of `lista`.
+      - Print the difference between the last element and the first element of `lista`.
+      - Continue to the next iteration of the loop.
+   c. Else:
+      - If the difference between the current element and the previous element is greater than the difference between the next element and the current element:
+          - Print the difference between the next element and the current element.
+      - Else:
+          - Print the difference between the current element and the previous element.
+      - If the difference between the last element and the current element is greater than the difference between the current element and the first element:
+          - Print the difference between the last element and the current element.
+      - Else:
+          - Print the difference between the current element and the first element.
+```

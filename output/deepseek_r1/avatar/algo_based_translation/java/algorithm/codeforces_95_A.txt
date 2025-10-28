@@ -1,0 +1,74 @@
+Algorithm:
+- Function: main (static void)
+  - Parameters: String[] $
+  - Steps:
+    1. Create instance of codeforces_95_A
+    2. Call instance main()
+    3. Flush output
+
+- Class: codeforces_95_A extends PrintWriter
+  - Constructor: codeforces_95_A()
+    - Calls super constructor with System.out and autoFlush=true
+    - Initializes Scanner sc with System.in
+
+- Method: compare (int)
+  - Parameters:
+    - char[] aa
+    - int i
+    - char[] bb
+    - int j
+    - int m
+  - Logic:
+    1. While m > 0:
+        a. Decrement m
+        b. Convert aa[i] and bb[j] to uppercase (a and b)
+        c. If a != b: return a - b
+        d. Increment i and j
+    2. Return 0 after loop
+
+- Method: main (void)
+  - Variables:
+    - int n = sc.nextInt()
+    - char[][] ss = new char[n][]
+    - char[] cc = sc.next().toCharArray()
+    - int m = cc.length
+    - char c = sc.next().charAt(0)
+    - char c_ = Character.toUpperCase(c)
+    - char a = (c == 'a') ? 'b' : 'a'
+    - char a_ = Character.toUpperCase(a)
+    - boolean[] lucky = new boolean[m]
+  - Logic:
+    1. Populate ss:
+       - For i from 0 to n-1:
+           ss[i] = sc.next().toCharArray()
+    2. Mark lucky positions:
+       - For j from 0 to m-1:
+           For i from 0 to n-1:
+               int l = ss[i].length
+               If (m-j >= l) AND (compare(cc, j, ss[i], 0, l) == 0):
+                   For h from 0 to l-1:
+                       lucky[j+h] = true
+    3. Process replacements:
+       - For j from 0 to m-1:
+           If lucky[j]:
+               If Character.toLowerCase(cc[j]) == c:
+                   cc[j] = (Character.isUpperCase(cc[j])) ? a_ : a
+               Else:
+                   cc[j] = (Character.isUpperCase(cc[j])) ? c_ : c
+    4. Print cc array via println
+
+- Dependencies:
+  - java.io.*
+  - java.util.*
+  - PrintWriter class
+  - Scanner class
+
+- Control Structures:
+  1. While loop in compare()
+  2. Nested for-loops for populating lucky array
+  3. Conditional checks for character comparisons
+  4. Ternary operations for case-sensitive character replacement
+
+- I/O Operations:
+  - Scanner reads input via nextInt(), next()
+  - PrintWriter outputs final char array via println()

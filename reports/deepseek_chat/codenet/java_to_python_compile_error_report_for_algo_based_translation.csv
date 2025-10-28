@@ -1,0 +1,6 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,s504715611.py,Compilation Error,"Error:   File ""output/deepseek_chat/codenet/algo_based_translation/java/python/s504715611.py"", line 109
+    return chr(ord(sys.stdin.read(1))
+              ^
+SyntaxError: '(' was never closed
+"

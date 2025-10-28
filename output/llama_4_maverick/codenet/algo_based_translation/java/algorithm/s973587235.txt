@@ -1,0 +1,13 @@
+1. Import the `java.util` library for using the `Scanner` class.
+2. Define a `public class Main` with a `public static void main(String[] args)` method.
+3. Declare a `Scanner` object `sc` and initialize it with `System.in`.
+4. Declare an integer variable `n` and read an integer input from `sc` into `n`.
+5. Declare an integer variable `minN` and read an integer input from `sc` into `minN`, then decrement `minN` by 1.
+6. Start a `for` loop that iterates `n-1` times, with a loop counter `i` starting from 0 and incrementing by 1 in each iteration.
+7. Inside the loop, declare an integer variable `h` and read an integer input from `sc` into `h`.
+8. Perform the following conditional checks in order:
+   - If `minN` equals `h`, then assign `h` to `minN`.
+   - Else if `minN` equals `h-1`, then assign `h-1` to `minN`.
+   - Else if `minN` is less than `h-1`, then assign `h-1` to `minN`.
+   - Else if `minN` is greater than `h`, then output "No" to the console and exit the program using `return`.
+9. After the loop completes, output "Yes" to the console.

@@ -1,0 +1,8 @@
+1. Define a function `process_string` with no parameters and return type `None`.
+2. Declare a variable `s` of type `str` to store the input string.
+3. Read a string input from the user and store it in `s`.
+4. Check the condition `len(s) == 2`.
+5. If the condition is `True`, print the value of `s`.
+6. If the condition is `False`, reverse the string `s` using slicing (`s[::-1]`) and print the result.
+7. The program terminates after the print operation. 
+The required library for this algorithm is the Python Standard Library, specifically the built-in functions `input()`, `len()`, and `print()`.

@@ -1,0 +1,20 @@
+1. Define function twos_in_factorial(n)
+   1.1. Return n - count of '1' bits in binary representation of n
+
+2. Define function parity_of_nCr(n, i)
+   2.1. f = twos_in_factorial
+   2.2. Return (f(n) - f(n-i) - f(i)) > 0
+
+3. If script is main
+   3.1. Read n from input
+   3.2. Read list of numbers from input, subtract 1 from each number
+   3.3. Check if 1 is not in the list of numbers
+   3.4. If 1 is not in the list, divide each number by 2
+
+4. Initialize is_odd to False
+5. Iterate over the list of numbers with their indices
+   5.1. For each number, check if parity_of_nCr(n-1, index) is False and number is odd
+   5.2. If condition is met, toggle is_odd
+
+6. If is_odd is False, print 0
+7. If is_odd is True, print 1 shifted left by 1 bit if 1 was not in the original list, otherwise print 1

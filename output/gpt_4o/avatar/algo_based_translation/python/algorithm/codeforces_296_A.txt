@@ -1,0 +1,28 @@
+```
+Function Signature:
+- Function: is_possible(n: int, m: List[str]) -> str
+
+Variable Declarations:
+- n: int
+- m: List[str]
+- possible: bool
+- i: str
+
+Algorithm Flow:
+1. Initialize variable `possible` as True.
+2. Convert list `m` to a set to get unique elements.
+3. Iterate over each element `i` in the set of `m`.
+   a. Count occurrences of `i` in the original list `m`.
+   b. Check if the count of `i` is greater than or equal to (n / 2 + 1).
+      i. If true, set `possible` to False.
+      ii. Break out of the loop.
+4. After the loop, check the value of `possible`.
+   a. If `possible` is True, return 'YES'.
+   b. Otherwise, return 'NO'.
+
+Input/Output Operations:
+- Input is read and processed to obtain `n` and `m`.
+- Output is a string ('YES' or 'NO') based on the logic.
+```
+
+

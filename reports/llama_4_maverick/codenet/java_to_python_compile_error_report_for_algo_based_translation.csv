@@ -1,0 +1,16 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,s151517960.py,Compilation Error,"Error:   File ""output/llama_4_maverick/codenet/algo_based_translation/java/python/s151517960.py"", line 21
+    However, a more pythonic and idiomatic way to write this code would be:
+               ^^^^
+SyntaxError: invalid syntax
+"
+java,python,s514557145.py,Compilation Error,"Error:   File ""output/llama_4_maverick/codenet/algo_based_translation/java/python/s514557145.py"", line 133
+    r in range(l, r + 1):
+                        ^
+SyntaxError: invalid syntax
+"
+java,python,s826491904.py,Compilation Error,"Error:   File ""output/llama_4_maverick/codenet/algo_based_translation/java/python/s826491904.py"", line 23
+    However, a more pythonic way to solve this problem is:
+               ^^^^
+SyntaxError: invalid syntax
+"

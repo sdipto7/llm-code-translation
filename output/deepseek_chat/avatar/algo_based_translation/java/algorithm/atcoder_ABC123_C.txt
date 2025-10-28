@@ -1,0 +1,9 @@
+long N = input next long
+long min = 0
+for i from 0 to 4:
+    if i == 0:
+        min = input next long
+    else:
+        min = minimum of min and input next long
+result = ceiling(N / min) + 4
+output result as long

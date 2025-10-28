@@ -1,0 +1,20 @@
+1. Import Scanner and IntStream from java.util
+2. Define public class atcoder_ABC119_B
+3. Define main method:
+   - Create Scanner object reading from System.in
+   - Read integer N from input
+   - Declare double array x of size N
+   - Declare String array u of size N
+   - For i from 0 to N-1:
+        Read double value into x[i]
+        Read String value into u[i]
+   - Call solve(x, u) and print result
+   - Close scanner
+
+4. Define static method solve:
+   - Parameters: double[] x, String[] u
+   - Return type: double
+   - Create IntStream from 0 to x.length-1
+   - Map each index i to: x[i] * (1 if u[i] equals "JPY", else 380000)
+   - Sum all mapped values
+   - Return the sum

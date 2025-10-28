@@ -1,0 +1,29 @@
+1. Import java.util.Collections, java.util.PriorityQueue, java.util.Queue, java.util.Scanner
+2. Define class Job implementing Comparable<Job>:
+   - Fields: int a, int b
+   - Constructor: Job(int a, int b) initializing fields
+   - Method: int compareTo(Job otherJob)
+     - If otherJob.a == this.a: return this.b - otherJob.b
+     - Else: return this.a - otherJob.a
+
+3. Define public class atcoder_ABC137_D:
+   - Method: public static void main(String[] args)
+     - Declare Scanner sc = new Scanner(System.in)
+     - Read first line, split by space into String[] line
+     - Parse line[0] to int N, line[1] to int M
+     - Declare Queue<Job> q = new PriorityQueue<>()
+     - For i from 0 to N-1:
+       - Read next line, split by space into line
+       - Parse line[0] to int, line[1] to int
+       - Add new Job(parsed values) to q
+     - Declare int cnt = 0
+     - Declare Queue<Integer> jobQ = new PriorityQueue<>(Collections.reverseOrder())
+     - For i from 1 to M:
+       - While q is not empty:
+         - Peek at next Job in q
+         - If job.a <= i:
+           - Poll from q and add job.b to jobQ
+         - Else: break
+       - If jobQ is not empty:
+         - Poll from jobQ and add to cnt
+     - Print cnt

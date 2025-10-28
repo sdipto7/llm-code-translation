@@ -1,0 +1,22 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,codeforces_265_B.py,Compilation Error,"Error: Sorry: IndentationError: unexpected indent (codeforces_265_B.py, line 1)"
+java,python,codeforces_296_A.py,Compilation Error,"Error:   File ""output/deepseek_chat/avatar/direct_translation/java/python/codeforces_296_A.py"", line 7
+    in = InputReader(input_stream)
+    ^^
+SyntaxError: invalid syntax
+"
+java,python,codeforces_333_B.py,Compilation Error,"Error:   File ""output/deepseek_chat/avatar/direct_translation/java/python/codeforces_333_B.py"", line 29
+    in = FastReader()
+    ^^
+SyntaxError: invalid syntax
+"
+java,python,atcoder_ABC125_A.py,Compilation Error,"Error:   File ""output/deepseek_chat/avatar/direct_translation/java/python/atcoder_ABC125_A.py"", line 73
+    Now that I understand the Java code, I'll translate it into Python. Since Python syntax is different from Java, I need to map each Java construct to its Python equivalent.
+                                          ^
+SyntaxError: unterminated string literal (detected at line 73)
+"
+java,python,codeforces_134_A.py,Compilation Error,"Error:   File ""output/deepseek_chat/avatar/direct_translation/java/python/codeforces_134_A.py"", line 33
+    Translating the Java code directly to Python involves replacing Java constructs with their Python equivalents. Here's how each part can be translated:
+                                                                                                                       ^
+SyntaxError: unterminated string literal (detected at line 33)
+"

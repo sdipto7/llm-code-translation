@@ -1,0 +1,53 @@
+**Algorithm:**
+
+**Function Signature:**
+- `public static void main(String[] args)`
+  - Parameters: `String[] args` (command-line arguments)
+  - Return type: `void`
+
+**Variables:**
+- `Scanner in` (Scanner object for input)
+- `long number` (input value)
+- `long ans = -1` (unused)
+- `long value = 0` (stores the generated super lucky number)
+- `int mask = 2` (counter to generate binary patterns)
+- `String s` (binary string derived from `mask`)
+- `int zeros` (counts '0's in `s`)
+
+**Libraries/Dependencies:**
+- `java.util.Scanner`
+
+**Logic Flow:**
+
+1. **Input:**
+   - Initialize `Scanner in` to read from standard input.
+   - Read `number` as `long` via `in.nextLong()`.
+
+2. **Loop Until Valid Super Lucky Number Found:**
+   - While `value < number`:
+     - Generate binary string from `mask`:
+       - Convert `mask` to binary via `Integer.toBinaryString(mask++)`.
+       - Remove leading '1' via `substring(1)` (stored in `s`).
+     - Count zeros in `s`:
+       - Initialize `zeros = 0`.
+       - Iterate over each character in `s`:
+         - Increment `zeros` for every '0'.
+     - Check balance of 4s and 7s:
+       - If `zeros != s.length() - zeros`, skip iteration (continue loop).
+     - Generate candidate number:
+       - Replace '0's in `s` with '4's.
+       - Replace '1's in `s` with '7's.
+       - Parse modified `s` as `long` to get `value`.
+     - Loop continues until `value >= number`.
+
+3. **Output:**
+   - Print `value` via `System.out.println(value)`.
+
+**Control Structures:**
+- `while (value < number)`
+- `for` loop over characters of `s`
+- `if (zeros != s.length() - zeros)` to skip unbalanced patterns
+
+**Data Processing:**
+- Binary string manipulation to derive candidate super lucky numbers.
+- Conversion between binary patterns and decimal numbers with digit replacements (0→4, 1→7).

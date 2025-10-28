@@ -1,0 +1,47 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- n: int
+- S: list of int
+- q: int
+- T: list of int
+- ans: int
+- i: int (element from T)
+- left: int
+- right: int
+- mid: int
+
+**Input Operations:**
+- Read integer n from stdin
+- Read next line, split into integers, convert to list S
+- Read integer q from stdin
+- Read next line, split into integers, convert to list T
+
+**Algorithm Logic:**
+1. Initialize ans = 0
+2. For each element i in list T:
+   - If i equals last element of S OR i equals first element of S:
+        - Increment ans by 1
+   - Else:
+        - Set left = 0
+        - Set right = n - 1
+        - While right - left > 1:
+            - Calculate mid = (left + right) // 2
+            - If S[mid] equals i:
+                - Increment ans by 1
+                - Break out of while loop
+            - Else if S[mid] < i:
+                - Set left = mid
+            - Else:
+                - Set right = mid
+3. Print ans
+
+**Control Structures:**
+- For loop: iterate through all elements of T
+- If-else condition: check if element equals first or last element of S
+- While loop: execute while right - left > 1
+- Nested if-elif-else condition: compare S[mid] with i
+
+**Output Operation:**
+- Print final value of ans

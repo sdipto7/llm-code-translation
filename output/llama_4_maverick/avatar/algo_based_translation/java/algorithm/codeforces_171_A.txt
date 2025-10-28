@@ -1,0 +1,11 @@
+1. Initialize a Fast Reader to read input from the standard input.
+2. Read two integers, n and m, using the Fast Reader.
+3. Reverse the integer m.
+4. To reverse m, check if m is less than 10. If true, return m multiplied by 10.
+5. If m is 10 or greater, initialize a variable r to 0 and a temporary variable t to m.
+6. While t is greater than 0, perform the following steps:
+   6.1. Calculate the remainder of t divided by 10 and add it to r after shifting the current digits of r one place to the left by multiplying by 10.
+   6.2. Update t by performing integer division by 10.
+7. Once t becomes 0, return the reversed number r.
+8. Add the reversed m to n.
+9. Output the sum of n and the reversed m.

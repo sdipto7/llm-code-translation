@@ -1,0 +1,75 @@
+**Algorithm Specification:**
+
+**1. Function/Method Signatures:**
+- `prime_factorize(n: int) -> list[int]`
+  - Parameters: `n` (integer to factorize)
+  - Returns: List of prime factors (integers) including duplicates
+- `main() -> void`
+  - Handles input, computation, and output
+
+**2. Variable Declarations:**
+- Global Constants:
+  - `INF = 999999999999999999999999` (unused)
+  - `MOD = 10**9 + 7` (unused)
+- Input Variables:
+  - `n: int` (input integer)
+- Processing Variables:
+  - `fac_: list[int]` (prime factors with duplicates)
+  - `fac: Counter` (dictionary-like structure mapping primes to exponents)
+  - `ans: int` (result accumulator)
+  - `p: int` (current prime in iteration)
+  - `e: int` (current exponent in iteration)
+  - `x: int` (temporary exponent counter)
+  - `i: int` (subtraction step counter)
+
+**3. Logic Flow:**
+1. Read integer `n` from standard input.
+2. If `n == 1`:
+   - Print `0` and terminate.
+3. Else:
+   - Compute `fac_` via `prime_factorize(n)`:
+     1. Initialize empty list `a`.
+     2. Divide `n` by 2 repeatedly while even, appending 2 to `a`.
+     3. For `f` from 3 to `sqrt(n)`, stepping by 2:
+        - While `f` divides `n`, append `f` to `a` and divide `n`.
+     4. If remaining `n > 1`, append `n` to `a`.
+   - Convert `fac_` to `fac` (Counter of primes to exponents).
+   - Initialize `ans = 0`.
+   - For each `(p, e)` in `fac.items()`:
+     1. Set `x = e`.
+     2. Initialize `i = 1`.
+     3. While `x >= i`:
+        - Subtract `i` from `x`.
+        - Increment `ans` by 1.
+        - Increment `i` by 1.
+     4. Proceed to next prime.
+4. Print `ans`.
+
+**4. Control Flow Structures:**
+- **Conditionals:**
+  - `if n == 1` (early termination)
+  - `while n % 2 == 0` (factor 2 extraction)
+  - `if n % f == 0` (odd factor check)
+  - `if n != 1` (remaining prime check)
+  - `while x >= i` (exponent subtraction loop)
+- **Loops:**
+  - `for f in 3 to sqrt(n)` (odd factor search)
+  - `for (p, e) in fac.items()` (prime iteration)
+  - `while x >= i` (triangular number subtraction)
+
+**5. Input/Output Operations:**
+- Input via `sys.stdin.readline().strip()` for `n`.
+- Final output via `print(ans)`.
+
+**6. Error Handling & Edge Cases:**
+- Explicit check for `n = 1` case.
+- Correctly handles prime factors with exponents of 1.
+- No input validation (assumes valid integer input).
+
+**7. Dependencies:**
+- Imports:
+  - `sys` for input and recursion limit (unused)
+  - `collections.Counter` for factor counting
+- Library Functions:
+  - `sys.stdin.readline()`, `sys.setrecursionlimit`
+  - `Counter` from `collections`

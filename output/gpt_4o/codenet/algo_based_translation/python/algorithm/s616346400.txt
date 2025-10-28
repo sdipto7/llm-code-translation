@@ -1,0 +1,21 @@
+```plaintext
+Function signature:
+    def atc_079a(input_value: str) -> str
+
+Variable declarations:
+    n: int = 3
+
+Algorithm:
+1. Initialize a variable `n` with the integer value 3.
+2. Begin a for loop with an index `i` starting from 0 to `len(input_value) + 1 - n`:
+   a. Begin a nested for loop with an index `j` starting from 1 to `n - 1`:
+      i. Check if the character at position `i` in `input_value` is not equal to the character at position `i + j` in `input_value`:
+         - If true, break out of the inner loop.
+      ii. Check if `j` is equal to `n - 1`:
+         - If true, return the string "Yes".
+3. After exiting the loop, if no matches were found, return the string "No".
+
+Input/output operations:
+- Read a string input from the user.
+- Call the function `atc_079a` with the user's input and print the result.
+```

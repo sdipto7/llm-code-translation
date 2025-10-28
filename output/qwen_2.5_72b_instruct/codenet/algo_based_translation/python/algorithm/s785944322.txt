@@ -1,0 +1,31 @@
+Function Signature: main() -> None
+
+Variable Declarations:
+a: int
+b: int
+
+Logic Flow:
+1. Import sys module
+2. Read a line from standard input and split it into two integers, assign them to variables a and b
+3. If a is greater than or equal to 13:
+   - Print the value of b
+4. Else if a is greater than or equal to 6:
+   - Print the integer division of b by 2
+5. Else:
+   - Print 0
+
+Control Structures:
+- If condition: a >= 13
+- Else if condition: a >= 6
+- Else condition: (implied, no explicit condition)
+
+Input/Output Operations:
+- Read input from standard input
+- Print to standard output
+
+Data Processing Logic:
+- Split input string into two integers
+- Compare the first integer (a) with 13 and 6 to determine which value to print or calculate
+
+Required Libraries:
+- sys

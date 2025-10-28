@@ -1,0 +1,16 @@
+1. Read the number of test cases.
+2. For each test case, read the values of n, a, and b.
+3. Check if n is less than a. If true, output "No" and proceed to the next test case.
+4. Check if a equals b. If true, check if n is divisible by a. If true, output "Yes"; otherwise, output "No". Proceed to the next test case.
+5. Calculate x as b divided by the difference between b and a.
+6. Check if n is greater than x times a. If true, output "Yes" and proceed to the next test case.
+7. Initialize low to 1 and high to x + 1. Initialize ans to 1.
+8. Perform a binary search:
+   - Calculate mid as the average of low and high.
+   - If mid times a is less than n, update low to mid + 1.
+   - Otherwise, update ans to mid and update high to mid - 1.
+   - Repeat until low is greater than high.
+9. Check if n is greater than (ans - 1) times b and less than ans times a. If true, output "No"; otherwise, output "Yes".
+10. Proceed to the next test case.
+11. Repeat steps 2-10 until all test cases are processed.
+12. End the program.

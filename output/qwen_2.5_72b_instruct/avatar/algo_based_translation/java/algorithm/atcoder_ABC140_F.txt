@@ -1,0 +1,40 @@
+Function signature:
+- `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `int N`
+- `int size`
+- `int[] S`
+- `boolean[] spawned`
+- `Scanner sc`
+- `List<Integer> active`
+- `List<Integer> activated`
+- `int next`
+- `int slime`
+
+Logic flow in execution order:
+
+1. Create a Scanner object `sc` to read input from System.in.
+2. Read an integer `N` from input.
+3. Calculate `size` as 2 raised to the power of `N`.
+4. Initialize an array `S` of integers with length `size`.
+5. Initialize a boolean array `spawned` with length `size`, setting all values to false.
+6. Set the last element of `spawned` to true.
+7. For each index `i` from 0 to `size - 1`, read an integer from input and store it in `S[i]`.
+8. Sort the array `S` in ascending order.
+9. Create a list `active` and add the last element of `S` to it.
+10. Set the last element of `spawned` to true.
+11. For each index `i` from 0 to `N - 1`:
+    1. Sort the list `active` in descending order.
+    2. Create a list `activated`.
+    3. Set `next` to `size - 1`.
+    4. For each integer `slime` in `active`:
+        1. While `next` is greater than or equal to 0 and (`S[next]` is greater than or equal to `slime` or `spawned[next]` is true):
+            1. Decrement `next` by 1.
+        2. If `next` is less than 0:
+            1. Print "No".
+            2. Return from main.
+        3. Set `spawned[next]` to true.
+        4. Add `S[next]` to `activated`.
+    5. Add all elements of `activated` to `active`.
+12. Print "Yes".

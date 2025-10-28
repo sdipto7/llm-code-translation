@@ -1,0 +1,31 @@
+Function: main()
+Parameters: None
+Return Type: None
+
+Variable Declarations:
+- n: Integer
+- r: List of Integers
+- ans: Integer
+
+Execution Order and Logic Flow:
+1. Input an integer value and assign it to n
+2. Input a line of space-separated integers, split the line into individual strings, convert each string to an integer, and store the integers in a list r
+3. Initialize ans with the absolute value of the first element of r
+4. For i from 1 to n-1 (inclusive):
+    a. Calculate the absolute difference between the i-th element of r and the (i-1)-th element of r
+    b. Add the result to ans
+5. Output the value of ans
+
+Control Structures:
+- For loop with range from 1 to n-1
+
+Input/Output Operations:
+- Read integer n from standard input
+- Read a line of space-separated integers from standard input
+- Output the final value of ans to standard output
+
+Data Processing Logic:
+- Calculate the sum of absolute differences between consecutive elements in the list r, starting with the absolute value of the first element
+
+Required Libraries, Modules, or Dependencies:
+- None

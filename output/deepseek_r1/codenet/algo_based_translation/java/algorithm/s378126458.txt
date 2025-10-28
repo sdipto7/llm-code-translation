@@ -1,0 +1,41 @@
+**Algorithm:**
+
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `N`: `int` (input string length)
+- `Q`: `int` (number of queries)
+- `s`: `String` (input string)
+- `pre`: `int[]` (size N+1, initialized to zero)
+- `l`: `int` (query start)
+- `r`: `int` (query end)
+
+**Input Operations:**
+1. Read `N` and `Q` from `System.in`.
+2. Read `s` from `System.in`.
+
+**Logic Flow:**
+1. Initialize `pre` array with N+1 elements (all zeros).
+2. Populate `pre` array:
+   - For `i` from 1 to N-1:
+     - Set `pre[i] = 1` if `s.charAt(i-1) == 'A'` and `s.charAt(i) == 'C'`.
+3. Compute prefix sums:
+   - For `i` from 1 to N-1:
+     - Update `pre[i] += pre[i-1]`.
+4. Process each query:
+   - Read `l` and `r`.
+   - Decrement `r` by 1.
+   - Output `pre[r] - pre[l-1]`.
+
+**Control Structures:**
+- For-loop: `for (int i = 1; i < N; i++)` (twice)
+- While-loop: `while (Q-- > 0)`
+- Conditional: `if (s.charAt(i-1) == 'A' && s.charAt(i) == 'C')`
+
+**Data Processing:**
+- Prefix sum array construction.
+- Range sum queries via subtraction of prefix sums.
+
+**Dependencies:**
+- `java.util.Scanner` for input handling.

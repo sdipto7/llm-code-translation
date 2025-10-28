@@ -1,0 +1,19 @@
+1. Initialize an empty list t
+2. For i from 0 to 3
+   1. Read a line of input and convert it into a list of characters l
+   2. Append l to t
+3. Initialize black, white, and correct to 0
+4. For i from 0 to 2
+   1. For j from 0 to 2
+      1. Check the value of t[i][j] and increment black or white accordingly
+      2. Check the value of t[i][j+1] and increment black or white accordingly
+      3. Check the value of t[i+1][j] and increment black or white accordingly
+      4. Check the value of t[i+1][j+1] and increment black or white accordingly
+      5. If (black == 0 or black == 3 or white == 0 or white == 3 or white == 4 or black == 4)
+         1. Set correct to 1
+         2. Break out of inner loop
+      6. Reset black and white to 0
+5. If correct == 1
+   1. Output 'YES'
+Else
+   1. Output 'NO'

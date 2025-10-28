@@ -1,0 +1,9 @@
+from collections import deque
+n: int = int(input())
+a: list[str] = list(map(str, input().split()))
+b: list[str] = []
+b = a[1::2][::-1] + a[::2]
+if len(a) % 2 == 0:
+    print(' '.join(b))
+else:
+    print(' '.join(b[::-1]))

@@ -1,0 +1,42 @@
+Function: main()
+Parameters: None
+Return Type: None
+
+Variables:
+- N: integer
+- K: integer
+- L: list of integers
+- path: list of integers
+- ind: integer
+- count: integer
+- x: integer
+- t: integer
+- flag: boolean
+- Hash: defaultdict with integer keys and integer values
+
+Logic Flow:
+1. Read integers N and K from input
+2. Read list L of integers from input
+3. Insert -1 at the beginning of list L
+4. Initialize path list with [1]
+5. Initialize ind to 0, count to 0, x to 1, t to -1, flag to False, and Hash as defaultdict with default value 0
+6. For i from 0 to N (inclusive):
+    a. Set ne to L[x]
+    b. If Hash[ne] is not 0:
+        i. Set flag to True
+        ii. Set t to Hash[ne]
+        iii. Break from loop
+    c. Append ne to path
+    d. Increment ind by 1
+    e. Set Hash[ne] to ind
+    f. Set x to ne
+7. If flag is True:
+    a. Set loop to slice of path from index t to end
+    b. If K is less than length of path:
+        i. Print path[K]
+    c. Else:
+        i. Subtract length of path from K
+        ii. Set K to K modulo length of loop
+        iii. Print loop[K]
+8. Else:
+    a. Print path[K-1]

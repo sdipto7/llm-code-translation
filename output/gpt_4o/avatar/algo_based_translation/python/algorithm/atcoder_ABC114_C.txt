@@ -1,0 +1,23 @@
+```
+Input:
+    - Read an integer N from standard input
+
+Function:
+    - aaa(n: str) -> int
+
+Variables:
+    - N: int, a global variable to store input value
+    - n: str, parameter representing a number as a string
+    - ans: int, to accumulate the number of valid '753' numbers
+
+Algorithm:
+1. Define function aaa(n: str) -> int:
+    a. Convert n to an integer and check if it is greater than N:
+        i. If true, return 0
+    b. Initialize ans to 1 if the set of characters in n is exactly {'7', '5', '3'}, else 0
+    c. For each character i in the string '753':
+        i. Add the result of aaa(n + i) to ans
+    d. Return ans
+
+2. Call aaa with '0' as argument and print the result
+```

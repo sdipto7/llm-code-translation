@@ -1,0 +1,7 @@
+Read integer n from standard input
+Initialize empty list res
+For i from 0 to n-1:
+    Read string a from standard input
+    Append a to res
+Convert res to a set to remove duplicates
+Print the length of the set

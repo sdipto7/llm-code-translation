@@ -1,0 +1,73 @@
+**Function Signatures:**
+- `canTake(int xNeeded, int xAvailable, int yNeeded, int yAvailable) : boolean`
+- `main(String[] args) : void`
+
+**Variable Declarations:**
+- `BufferedReader br`
+- `StringTokenizer st`
+- `int x`
+- `int y`
+- `int turn = 0`
+
+**Data Types:**
+- `BufferedReader` for input reading
+- `StringTokenizer` for parsing input
+- `int` for all numeric values
+
+**Required Libraries:**
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.util.StringTokenizer`
+
+**Algorithm Flow:**
+
+1. Define function `canTake`:
+   - If `xNeeded > xAvailable`: return false
+   - If `yNeeded > yAvailable`: return false
+   - Otherwise: return true
+
+2. Main execution:
+   - Initialize BufferedReader with InputStreamReader(System.in)
+   - Read input line and create StringTokenizer
+   - Parse first token as integer `x`
+   - Parse second token as integer `y`
+   - Initialize `turn` to 0
+
+3. Enter infinite loop:
+   - If `turn` is even (turn % 2 == 0):
+     - If canTake(2, x, 2, y) is true:
+       - Subtract 2 from x
+       - Subtract 2 from y
+     - Else if canTake(1, x, 12, y) is true:
+       - Subtract 1 from x
+       - Subtract 12 from y
+     - Else if canTake(0, x, 22, y) is true:
+       - Subtract 22 from y
+     - Else:
+       - Print "Hanako"
+       - Exit program
+
+   - If `turn` is odd:
+     - If canTake(0, x, 22, y) is true:
+       - Subtract 22 from y
+     - Else if canTake(1, x, 12, y) is true:
+       - Subtract 1 from x
+       - Subtract 12 from y
+     - Else if canTake(2, x, 2, y) is true:
+       - Subtract 2 from x
+       - Subtract 2 from y
+     - Else:
+       - Print "Ciel"
+       - Exit program
+
+   - Increment `turn` by 1
+   - Repeat loop
+
+**Input Processing:**
+- Read single line from standard input
+- Parse two space-separated integers
+
+**Output Operations:**
+- Print "Hanako" or "Ciel" when no valid moves remain
+- Program terminates after output

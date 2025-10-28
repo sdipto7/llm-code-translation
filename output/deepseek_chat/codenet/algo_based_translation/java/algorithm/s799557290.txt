@@ -1,0 +1,48 @@
+**Function Signature:**
+- main(String[] args): void
+
+**Variables:**
+- Scanner sc: Scanner object for input
+- int a: first input integer
+- int b: second input integer
+- boolean[] ju: array of booleans, size 100001
+- int[] pe: array of integers, size 100001
+- int wa: initialized to 0
+- int ac: initialized to 0
+- int n: temporary integer for problem number
+- String res: temporary string for result status
+
+**Logic Flow:**
+1. Initialize Scanner with System.in
+2. Read integer a from input
+3. Read integer b from input
+4. Initialize boolean array ju with size 100001
+5. Initialize integer array pe with size 100001
+6. Initialize wa to 0
+7. Initialize ac to 0
+8. For loop: i from 0 to b-1
+   - Read integer n from input
+   - Read string res from input
+   - If res equals "WA" AND ju[n-1] is false
+     - Increment pe[n-1] by 1
+   - If res equals "AC"
+     - Set ju[n-1] to true
+9. For loop: i from 0 to a-1
+   - If ju[i] is true
+     - Increment ac by 1
+     - Add pe[i] to wa
+10. Print ac and wa separated by space
+
+**Control Structures:**
+- For loop: for(int i=0; i<b; i++)
+- Conditional: if(res.equals("WA") && ju[n-1] != true)
+- Conditional: if(res.equals("AC"))
+- For loop: for(int i=0; i<a; i++)
+- Conditional: if(ju[i])
+
+**Input/Output:**
+- Input: Two integers a and b, followed by b pairs of (integer, string)
+- Output: Two integers separated by space
+
+**Dependencies:**
+- java.util.Scanner

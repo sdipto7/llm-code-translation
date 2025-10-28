@@ -1,0 +1,19 @@
+1. Import the factorial function from the math module.
+2. Read an integer input N from the user and store it in a variable N of type integer.
+3. Initialize a list 'primes' with pre-defined prime numbers.
+4. Initialize an empty list 'divs' to store the prime factorization of numbers from 1 to 100.
+5. Iterate over the range from 1 to 100 (inclusive) and for each number i:
+   - Initialize a temporary list 'tmp' of size equal to the number of primes, with all elements set to 0.
+   - Iterate over the 'primes' list and for each prime number p:
+     - While i is divisible by p (i.e., i//p == i/p), increment the corresponding count in 'tmp' and divide i by p.
+   - Append 'tmp' to 'divs'.
+6. Initialize a list 'divsum' of size equal to the number of primes, with all elements set to 0.
+7. Iterate over the range from 1 to N (inclusive) and for each number i:
+   - For each prime index j, add the corresponding count from 'divs[i-1]' to 'divsum[j]'.
+8. Define a function num(n) that takes an integer n as input and returns the count of elements in 'divsum' that are greater than or equal to n-1.
+9. Initialize a variable 'ans' to 0.
+10. Increment 'ans' by num(75).
+11. Increment 'ans' by the product of num(15) and (num(5)-1).
+12. Increment 'ans' by the product of num(25) and (num(3)-1).
+13. Increment 'ans' by the product of num(5), (num(5)-1), and (num(3)-2), divided by 2 (integer division).
+14. Output the final value of 'ans' as an integer.

@@ -1,0 +1,20 @@
+read string s from standard input
+read string t from standard input
+
+define function check with parameters a (string), b (string) returning integer:
+    initialize integer variable s = 0
+    for each character pair (i, j) from simultaneously iterating a and b:
+        if i != j:
+            increment s by 1
+    return s
+
+initialize integer variable ans = 1000000
+
+for integer i from 0 to length(s) - 1:
+    extract substring a = s starting at index i to end
+    if length(a) >= length(t):
+        extract substring candidate = first length(t) characters of a
+        call check(t, candidate) and assign result to current_check
+        set ans = minimum of ans and current_check
+
+print ans

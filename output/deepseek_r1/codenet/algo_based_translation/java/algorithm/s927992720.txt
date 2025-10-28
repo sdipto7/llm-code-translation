@@ -1,0 +1,40 @@
+- Function signature:  
+  main(String[] args) : void
+
+- Required libraries:  
+  java.util.Scanner
+
+- Variables:  
+  Scanner sc (Scanner object)  
+  int a (first operand)  
+  String op (operator)  
+  int b (second operand)
+
+- Logic flow:  
+  1. Initialize Scanner with System.in  
+  2. Start infinite loop:  
+      a. Read integer a from input  
+      b. Read string op from input  
+      c. Read integer b from input  
+      d. If op equals "?", break loop  
+      e. If op equals "+", print (a + b)  
+      f. If op equals "-", print (a - b)  
+      g. If op equals "*", print (a * b)  
+      h. If op equals "/", print (a / b)  
+  3. Loop resumes until broken by "?" operator  
+  4. Program terminates after loop exit
+
+- Control structures:  
+  - while(true) infinite loop  
+  - Sequential if statements for:  
+    op.equals("?") → breaks loop  
+    op.equals("+")  
+    op.equals("-")  
+    op.equals("*")  
+    op.equals("/")
+
+- Data processing:  
+  - Input: three space-separated values per iteration (int, String, int)  
+  - Output: single integer result per valid operation  
+  - Integer division for "/" operator  
+  - Immediate output generation without storage

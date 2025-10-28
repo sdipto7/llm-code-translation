@@ -1,0 +1,42 @@
+```algorithm
+Function:
+    Main method
+    Parameters: String[] args
+    Returns: void
+    Exceptions: IOException
+
+Imports:
+    java.io.BufferedReader
+    java.io.InputStreamReader
+    java.io.IOException
+    java.util.StringTokenizer
+
+Variables:
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in))
+    String[] str = input line split by spaces
+    StringTokenizer st = new StringTokenizer for next input line
+    int a = parsed integer from first token of st
+    int b = parsed integer from second token of st
+    String u = third input line
+
+Execution Flow:
+    1. Read first input line and split into String[] str using space delimiter
+    2. Read second input line and create StringTokenizer st
+    3. Parse first token from st to integer a
+    4. Parse second token from st to integer b
+    5. Read third input line into String u
+    6. Check if u equals str[0]:
+        - True: Output (a-1) and b as space-separated integers
+        - False: Output a and (b-1) as space-separated integers
+
+Control Structures:
+    Ternary conditional operator: u.equals(str[0]) ? 
+
+Input/Output:
+    Input operations:
+        - Read three lines from Standard Input
+        - Split first line into string array
+        - Tokenize second line for integer parsing
+    Output operation:
+        - Print modified a/b values based on string comparison
+```

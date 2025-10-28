@@ -1,0 +1,31 @@
+```
+Function Signature:
+    def calculate_combinations(l: str) -> int
+
+Variables:
+    mod: int = 10 ** 9 + 7
+    n: int = len(l)
+    dp: List[List[int]] = [[0] * 2 for _ in range(n + 1)]
+
+Initialization:
+    dp[0][0] = 1
+
+Logic Flow:
+    For each index i and character c in the string l:
+        If c is '0':
+            dp[i + 1][0] += dp[i][0]
+            dp[i + 1][1] += dp[i][1] * 3
+        Else:
+            dp[i + 1][0] += dp[i][0] * 2
+            dp[i + 1][1] += dp[i][0]
+            dp[i + 1][1] += dp[i][1] * 3
+        
+        dp[i + 1][0] %= mod
+        dp[i + 1][1] %= mod
+
+Output:
+    Return (dp[n][0] + dp[n][1]) % mod
+
+Input:
+    Read input string l from standard input
+```

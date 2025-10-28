@@ -1,0 +1,49 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner scan`: Scanner object for input
+- `int N`: integer from input
+- `int[] a`: integer array of size N
+- `int[] leftl`: integer array of size N
+- `int[] rightl`: integer array of size N
+- `ArrayDeque<Integer> que`: integer deque
+- `int index`: integer
+- `int ind`: integer
+- `long ans`: long integer
+
+**Libraries:**
+- `java.util.ArrayDeque`
+- `java.util.Scanner`
+- `java.util.stream.IntStream`
+
+**Algorithm:**
+1. Read integer N from input
+2. Initialize integer array a of size N
+3. For i from 0 to N-1: read integer into a[i]
+4. Initialize integer arrays leftl and rightl of size N
+5. Initialize ArrayDeque que
+6. Set index = 0
+7. While index < N:
+   - While que is not empty AND a[que.peek()] > a[index]:
+     - Set ind = que.poll()
+     - Set rightl[ind] = index - ind - 1
+   - Push index to que
+   - Increment index by 1
+8. While que is not empty:
+   - Set ind = que.poll()
+   - Set rightl[ind] = N - ind - 1
+9. Set index = N - 1
+10. While index >= 0:
+    - While que is not empty AND a[que.peek()] > a[index]:
+      - Set ind = que.poll()
+      - Set leftl[ind] = ind - index - 1
+    - Push index to que
+    - Decrement index by 1
+11. While que is not empty:
+    - Set ind = que.poll()
+    - Set leftl[ind] = ind - index - 1
+12. Set ans = 0
+13. For i from 0 to N-1:
+    - Add a[i] * (leftl[i] + 1) * (rightl[i] + 1) to ans
+14. Print ans

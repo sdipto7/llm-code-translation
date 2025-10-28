@@ -1,0 +1,22 @@
+Function signature: main(String[] args)
+Required library: java.util.Scanner
+
+Variables:
+- Scanner sc = new Scanner(System.in)
+- int a = Integer.parseInt(sc.next())
+- int b = Integer.parseInt(sc.next())
+- int sum = 0
+- int i = 0 (loop counter)
+
+Logic flow:
+1. Read first integer input and store in variable a
+2. Read second integer input and store in variable b
+3. Initialize sum to 0
+4. For loop: i from 0 to 1 (inclusive)
+   - If a >= b:
+     - Add a to sum
+     - Decrement a by 1
+   - Else:
+     - Add b to sum
+     - Decrement b by 1
+5. Print sum

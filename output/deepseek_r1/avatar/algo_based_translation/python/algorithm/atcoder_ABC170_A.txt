@@ -1,0 +1,42 @@
+**Structured Algorithm Specification:**
+
+**1. Function/Method Signatures**  
+- **Main Execution Block**  
+  - **Input**: None (Reads from standard input)  
+  - **Output**: Integer value printed to standard output (no return value)  
+
+**2. Variable Declarations and Data Types**  
+- `a`: List of integers (initialized from parsed input)  
+- `e`: Integer (loop iteration index)  
+- `i`: Integer (element value during iteration)  
+
+**3. Step-by-Step Logic Flow**  
+1. Read a line of input from standard input.  
+2. Split the input string into substrings using whitespace as the delimiter.  
+3. Convert each substring to an integer and store the results in list `a`.  
+4. Iterate over each element `i` in `a` using `enumerate`, tracking the index `e`:  
+   4.1. For each iteration, check if `i` equals `0`.  
+   4.2. If true:  
+      - Compute `e + 1` (1-based index).  
+      - Print the result to standard output.  
+      - Terminate the loop immediately.  
+
+**4. Control Flow Structures**  
+- **For Loop**:  
+  - **Range**: Iterates over all elements of `a` via `enumerate(a)`.  
+  - **Exit Criteria**: Loop exits after the first occurrence of `i == 0` due to `break`.  
+- **Conditional**:  
+  - **Condition**: `if i == 0` (checks for zero value).  
+
+**5. Input/Output Operations**  
+- **Input**: Single line from stdin, split into integers.  
+- **Output**: Integer (1-based index of first `0` in `a`) printed to stdout.  
+
+**6. Error Handling and Edge Cases**  
+- **Assumption**: Input contains at least one `0`.  
+- **Edge Cases**: Handles the first occurrence of `0` at any position (including index `0`).  
+- **No Explicit Error Handling**: Assumes valid integer input format.  
+
+**7. Dependencies**  
+- **Built-in Functions**: `input()`, `map()`, `list()`, `enumerate()`, `split()`, `int()`.  
+- **Libraries**: None (standard Python runtime).

@@ -1,0 +1,33 @@
+Function: main()
+Parameters: None
+Return Type: None
+
+Variable Declarations:
+- n: integer
+- sdic: dictionary (string -> integer)
+- s: list of characters
+- ans: integer
+
+Logic Flow:
+- Read integer n from input
+- Initialize empty dictionary sdic
+- For i from 0 to n-1:
+    - Read string from input, strip leading/trailing whitespace
+    - Convert string to list of characters
+    - Sort list of characters
+    - Join list of characters into string s
+    - If s is in sdic:
+        - Increment value of sdic[s] by 1
+    - Else:
+        - Set sdic[s] to 1
+- Initialize ans to 0
+- For each key-value pair (k, v) in sdic:
+    - Increment ans by v*(v-1)//2
+- Print ans
+
+Input/Output:
+- Input: integer n followed by n lines of strings
+- Output: single integer representing the number of anagram pairs
+
+Libraries/Modules/Dependencies:
+- No external libraries or modules required

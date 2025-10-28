@@ -1,0 +1,8 @@
+1. Import Scanner from java.util
+2. Define main method with String[] args parameter
+3. Create Scanner object with System.in
+4. Declare integer variable n and assign next integer input
+5. Check condition: if (n modulo 10 equals 9) OR (n divided by 10 equals 9)
+6. If condition true: print "Yes"
+7. Else: print "No"
+8. Close Scanner

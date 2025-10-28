@@ -1,0 +1,33 @@
+```plaintext
+Required Libraries:
+- java.util.*
+
+Function Signatures:
+- public static void main(String[] args)
+
+Variables:
+- Scanner scanner: initialized with System.in
+- int N: input integer
+- Map<Integer, Integer> idorder: HashMap storage
+- int i: loop counter
+- int A: temporary input integer
+
+Logic Flow:
+1. Initialize scanner with System.in
+2. Read integer N from input
+3. Create empty HashMap idorder with Integer key-value pairs
+4. For loop (i from 1 to N inclusive):
+   4.1 Read integer A
+   4.2 Insert entry (A → i) into idorder
+5. For loop (i from 1 to N inclusive):
+   5.1 Retrieve value from idorder using key i
+   5. Print retrieved value followed by space
+6. Close scanner implicitly via program termination
+
+Control Structures:
+- Two sequential for loops with range 1 ≤ i ≤ N
+
+Input/Output:
+- Input: First value is N, followed by N integers via standard input
+- Output: Space-separated integers representing original positions sorted by input order
+```

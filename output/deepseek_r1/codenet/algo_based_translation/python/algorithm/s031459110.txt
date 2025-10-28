@@ -1,0 +1,37 @@
+- Function Signature:  
+  def calculate_min_changes(N: int, c: str) -> int  
+
+- Variables:  
+  N: integer input  
+  c: string input  
+  num_w: integer = count of 'W' in c  
+  num_r: integer = N - num_w  
+  comp: string = "R" * num_r + "W" * num_w  
+  ans: integer = 0  
+  i: integer (loop index)  
+
+- Execution Flow:  
+  1. Read integer N from standard input  
+  2. Read string c from standard input  
+  3. Calculate num_w as number of 'W' characters in c  
+  4. Calculate num_r as N - num_w  
+  5. Construct comp by concatenating 'R' repeated num_r times and 'W' repeated num_w times  
+  6. Initialize ans to 0  
+  7. For each i in range [0, num_r-1]:  
+     a. If c[i] != comp[i]:  
+        i. Increment ans by 1  
+  8. Set ans = minimum value among num_w, num_r, and current ans  
+  9. Print ans  
+
+- Control Structures:  
+  - For-loop: range(num_r) iterations  
+  - Conditional: c[i] comparison with comp[i]  
+  - min() function call with three arguments  
+
+- Input/Output:  
+  - Reads two lines from stdin: integer N and string c  
+  - Prints final ans integer  
+
+- Dependencies:  
+  - No external libraries required  
+  - Uses built-in string operations and input/output functions

@@ -1,0 +1,35 @@
+Function: main()
+Parameters: None
+Return Type: None
+
+Variable Declarations:
+N: Integer
+A: List of Lists of Integers
+baselis: List of Integers
+groundlis: List of Integers
+ans: List of Integers
+count: Integer
+i: Integer
+
+Logic Flow:
+1. Read integer N from input
+2. Initialize empty list A
+3. Loop 2 times:
+   a. Read a line of input
+   b. Convert the line into a list of integers
+   c. Append the list to A
+4. Initialize empty list ans
+5. Loop from 0 to N-1 with variable i:
+   a. Assign A[0] to baselis
+   b. Assign A[1] to groundlis
+   c. Initialize count to 0
+   d. Calculate count as the sum of elements from baselis[0] to baselis[i] plus the sum of elements from groundlis[i] to groundlis[N]
+   e. Append count to ans
+6. Print the maximum value in ans
+
+Input/Output:
+- Input: Integer N followed by two lines of space-separated integers
+- Output: Single integer representing the maximum value in ans
+
+Libraries/Modules/Dependencies:
+- None

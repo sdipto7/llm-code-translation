@@ -1,0 +1,77 @@
+**Algorithm Specification**
+
+**Function/Method Signatures:**
+- Not applicable (procedural approach without explicit functions)
+
+**Variable Declarations:**
+- `D`: Integer (input)
+- `G`: Integer (input)
+- `PC`: List of tuples (each tuple contains two Integers)
+- `ans`: Integer initialized to \(10^9\)
+- `i`: Integer (loop variable for bitmask iteration)
+- `j`: Integer (loop variable for problem index)
+- `score`: Integer (temporary score accumulator)
+- `problem`: Integer (temporary problem count accumulator)
+- `left`: Integer (remaining score needed)
+- `tmp`: Integer (temporary calculation variable)
+
+**Step-by-Step Logic:**
+
+1. **Input Handling:**
+   1. Read `D` and `G` from standard input as integers.
+   2. Populate `PC` with `D` tuples by reading each subsequent line containing two integers.
+
+2. **Initialize Minimum Answer:**
+   1. Set `ans` to \(10^9\).
+
+3. **Bitmask Combination Loop:**
+   1. Iterate `i` from 0 to \(2^D - 1\) (inclusive):
+      1. Reset `score` to 0 and `problem` to 0.
+      2. **Check Selected Problems:**
+         1. For each `j` in 0 to D-1:
+            - If bit `j` in `i` is set (bitwise check `(i >> j) & 1`):
+               - Add \(100 \times (j+1) \times PC[j][0] + PC[j][1]\) to `score`.
+               - Add `PC[j][0]` to `problem`.
+      3. **Score Validation:**
+         - If `score` > G: Skip to next iteration of `i`.
+      4. **Calculate Remaining Score:**
+         - Set `left` = G - `score`.
+         - If `left` ≤ 0: Update `ans` with minimum of `ans` and `problem`.
+         - Else:
+            1. **Check Unselected Problems:**
+               - For each `j` in 0 to D-1:
+                  - Skip if bit `j` in `i` is set.
+                  - If remaining points from problem `j` (\(100 \times (j+1) \times PC[j][0] + PC[j][1]\)) ≤ `left`: Continue to next `j`.
+                  - Else:
+                     - Calculate `tmp` = \(\lceil \frac{left}{100 \times (j+1)} \rceil\) using integer division with ceiling.
+                     - Update `ans` with minimum of current `ans` and (`problem` + min(`tmp`, `PC[j][0]`)).
+                     - Break inner loop after first viable `j` (as higher `j` provides more points per problem).
+
+4. **Output Result:**
+   1. Print `ans`.
+
+**Control Flow Structures:**
+- Outer loop: Bitwise enumeration loop (`for i in 0..2^D-1`)
+- Nested loops:
+  - Problem selection loop (`for j in 0..D-1`)
+  - Partial problem check loop (`for j in 0..D-1`)
+- Conditional branches:
+  - Bitwise check (`(i >> j) & 1`)
+  - Score threshold check (`score > G`)
+  - Partial problem feasibility checks (`left > ...` vs else)
+  - Minimum value updates
+
+**Input/Output Operations:**
+- Read space-separated integers from stdin for `D` and `G`.
+- Read `D` lines of space-separated integers to populate `PC`.
+- Write final `ans` to stdout.
+
+**Error Handling & Edge Cases:**
+- Implicit handling of zero left score via direct `ans` update.
+- Correctly skips invalid combinations via score threshold check.
+- Ensures partial problem count does not exceed available problems via `min(tmp, PC[j][0])`.
+- Handles cases where no partial problems are needed via direct comparison with `left`.
+
+**External Dependencies:**
+- None beyond standard input/output operations.
+- No external libraries or modules required.

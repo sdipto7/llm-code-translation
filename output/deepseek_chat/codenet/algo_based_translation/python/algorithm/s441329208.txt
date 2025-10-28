@@ -1,0 +1,11 @@
+1. Import the `sys` module.
+2. Define aliases for input reading functions:
+   - `read` = `sys.stdin.read`
+   - `readline` = `sys.stdin.readline`
+   - `readlines` = `sys.stdin.readlines`
+3. Set recursion limit to 10^7.
+4. Read a line from stdin, remove trailing newline, sort the characters lexicographically, store in variable `s` (type: list of characters).
+5. Read another line from stdin, remove trailing newline, sort the characters lexicographically in reverse order, store in variable `t` (type: list of characters).
+6. Compare lists `s` and `t` lexicographically.
+7. If `s` is lexicographically less than `t`, print "Yes".
+8. Else, print "No".

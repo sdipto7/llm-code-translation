@@ -1,0 +1,49 @@
+**Algorithm:**
+
+**Function Signature:**  
+`public static void main(String[] args) throws IOException`
+
+**Variables:**  
+- `BufferedReader br` (input reader)  
+- `PrintWriter pw` (output writer)  
+- `StringTokenizer st` (tokenizer)  
+- `int a`, `int tA` (input parameters)  
+- `int b`, `int tB` (input parameters)  
+- `String timing` (time string input)  
+- `int hrs` (parsed hours from timing)  
+- `int mins` (parsed minutes from timing)  
+- `int simDeparture` (computed departure time in minutes)  
+- `int simArrival` (computed arrival time in minutes)  
+- `int counter` (initialized to 0)  
+- `int busDeparture`, `int busArrival` (loop variables)  
+
+**Input/Output Operations:**  
+1. Read first line: parse two integers `a` and `tA`.  
+2. Read second line: parse two integers `b` and `tB`.  
+3. Read third line: parse `timing` string as "HH:MM".  
+4. Convert `timing` to `hrs` and `mins`, compute `simDeparture = hrs * 60 + mins`.  
+5. Compute `simArrival = simDeparture + tA`.  
+6. Initialize `counter = 0`.  
+7. Iterate `i` from 300 to 1440 (exclusive) with step `b`:  
+   - Set `busDeparture = i`.  
+   - Compute `busArrival = i + tB`.  
+   - If `busDeparture >= simArrival` **OR** `simDeparture >= busArrival`: skip iteration.  
+   - Else: increment `counter` by 1.  
+8. Print `counter`.  
+
+**Control Structures:**  
+- `for (int i = 300; i < 1440; i += b)`  
+- `if (busDeparture >= simArrival || simDeparture >= busArrival) continue;`  
+
+**Dependencies:**  
+- `java.io.BufferedReader`  
+- `java.io.IOException`  
+- `java.io.InputStreamReader`  
+- `java.io.PrintWriter`  
+- `java.util.StringTokenizer`  
+
+**Execution Flow:**  
+1. Parse input parameters.  
+2. Compute simulation departure/arrival times.  
+3. Count overlapping bus schedules within 05:00–24:00.  
+4. Output total count.

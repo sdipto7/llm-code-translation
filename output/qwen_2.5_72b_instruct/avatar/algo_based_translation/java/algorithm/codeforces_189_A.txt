@@ -1,0 +1,25 @@
+Function signature:  
+main(String[] args) : void  
+
+Variable declarations and data types:  
+Scanner scanner : Scanner  
+int n : int  
+int maxn : int  
+int a : int  
+int b : int  
+int c : int  
+int[] arr : int[3]  
+int[] dp : int[maxn]  
+
+Logic flow in execution order:  
+- Initialize scanner for reading input  
+- Read integer value into n  
+- Set maxn to 4010  
+- Read three integer values into a, b, c  
+- Initialize arr with values a, b, c  
+- Initialize dp array with size maxn, setting each element to Integer.MIN_VALUE  
+- Set dp[0] to 0  
+- Loop over i from 0 to 2 (inclusive):  
+  - Loop over j from arr[i] to dp.length (exclusive):  
+    - Update dp[j] to the maximum of dp[j] and dp[j - arr[i]] + 1  
+- Print dp[n]

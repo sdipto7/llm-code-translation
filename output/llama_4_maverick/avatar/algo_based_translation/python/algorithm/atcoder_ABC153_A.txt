@@ -1,0 +1,8 @@
+1. Read input values for h and a
+2. Split input values into h and a
+3. Convert h and a to integers
+4. Calculate sho as integer division of h by a
+5. Calculate am as remainder of h divided by a
+6. If am is not equal to 0 then
+7. Increment sho by 1
+8. Print sho

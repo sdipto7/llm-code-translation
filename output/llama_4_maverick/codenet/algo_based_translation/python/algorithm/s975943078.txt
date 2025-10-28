@@ -1,0 +1,22 @@
+1. Import required libraries: sys, bisect.
+2. Define a function `solve()` with no parameters and return type integer.
+   - Within `solve()`, define a variable `input` and assign it the value of `sys.stdin.readline`.
+   - Read two integers `N` and `K` from the input and store them in variables of type integer.
+   - Read `N` integers from the input, apply the transformation `(int(a) % K) - 1` to each, and store the results in a list `A` of type integer.
+   - Initialize a list `sum_A` of size `N + 1` with all elements set to 0, where `sum_A` is of type integer.
+   - Initialize a variable `count` to 0 of type integer.
+   - Initialize an empty dictionary `modK` to store lists of integers.
+   - Assign the value `[0]` to `modK[0]`.
+3. Iterate over the range from 0 to `N-1` using a variable `i` of type integer.
+   - For each `i`, calculate `sum_A[i + 1]` as `(sum_A[i] + A[i]) % K` and store it in `sum_A`.
+   - Check if `sum_A[i+1]` is a key in the dictionary `modK`.
+     - If it is not, create a new key-value pair with `sum_A[i+1]` as the key and a list containing `i + 1` as the value.
+     - If it is, append `i + 1` to the list associated with the key `sum_A[i+1]`.
+4. Iterate over each key in the dictionary `modK`.
+   - For each key, determine the length `lenK` of its associated list.
+   - Iterate over the list associated with the current key using `enumerate` to get both the index `i` and the value `a`.
+     - For each `a`, calculate `bisect_left(modK[key], a + K, i, lenK) - i - 1` and add the result to `count`.
+5. Print the value of `count` to the output.
+6. Return 0 from the function `solve()`.
+7. Check if the script is being run as the main module (`if __name__ == "__main__":`).
+   - If true, call the `solve()` function.

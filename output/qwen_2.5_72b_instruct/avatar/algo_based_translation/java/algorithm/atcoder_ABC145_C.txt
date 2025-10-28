@@ -1,0 +1,50 @@
+Function Signature:  
+- `main(String[] args)`  
+- `dist(int x1, int y1, int x2, int y2) : double`
+
+Variable Declarations and Data Types:  
+- `Scanner scanner`  
+- `int N`  
+- `int[][] pos`  
+- `double sum`  
+- `int i` (loop variable)  
+- `int j` (nested loop variable)  
+- `int x1` (parameter for dist)  
+- `int y1` (parameter for dist)  
+- `int x2` (parameter for dist)  
+- `int y2` (parameter for dist)
+
+Execution Order and Logic Flow:
+
+1. Create a `Scanner` object for reading input.
+2. Read an integer `N` which represents the number of points.
+3. Initialize a 2D array `pos` to store coordinates of `N` points.
+4. Loop through `i` from 0 to `N-1` to read the coordinates for each point:
+   - Read two integers and store them in `pos[i][0]` and `pos[i][1]`.
+5. Initialize `sum` to 0 to accumulate the distances.
+6. Loop through `i` from 0 to `N-1`:
+   - Loop through `j` from 0 to `N-1`:
+     - If `i` equals `j`, skip to the next iteration.
+     - Calculate the distance between points `i` and `j` using the `dist` function and add it to `sum`.
+7. Print the average distance by dividing `sum` by `N`.
+
+Control Structures:
+
+- `for (int i = 0; i < N; i++)`
+- `for (int j = 0; j < N; j++)`
+- `if (i == j) continue;`
+
+Input/Output Operations:
+
+- Input: Integer `N`, followed by `N` pairs of integers representing coordinates.
+- Output: A single floating-point number representing the average distance between all pairs of points.
+
+Data Processing Logic:
+
+- The program reads `N` points' coordinates.
+- It calculates the Euclidean distance between every unique pair of points.
+- It sums these distances and computes their average.
+
+Required Libraries or Modules:
+
+- `java.util.Scanner`

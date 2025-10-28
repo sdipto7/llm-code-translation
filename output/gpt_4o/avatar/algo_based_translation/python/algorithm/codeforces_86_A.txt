@@ -1,0 +1,37 @@
+```
+Function: calculate_maximum_product(l: int, r: int) -> int
+
+Variables:
+- curr: int
+- s: int
+- first: int
+- second: int
+- ans: int
+- rev: str
+
+Logic:
+1. curr = r
+2. s = 0
+3. While curr is not zero:
+   a. Increment s by 1
+   b. Perform integer division of curr by 10
+4. first = 10 raised to the power of s
+5. second = first divided by 2
+6. ans = -1
+7. For each i in [l, r, first, second]:
+   a. If i is greater than or equal to l and i is less than or equal to r:
+      i. Set curr = i
+      ii. Initialize rev as an empty string
+      iii. For each character k in the string representation of curr:
+          - Append the string of (9 - integer value of k) to rev
+      iv. Convert rev to an integer and multiply it by curr
+      v. Update ans to be the maximum of ans and the product from step iv
+8. Return ans
+
+Input/Output:
+- Inputs are two integers read from standard input, separated by space
+- The function returns an integer which is printed to standard output
+
+Libraries/Dependencies:
+- None
+```

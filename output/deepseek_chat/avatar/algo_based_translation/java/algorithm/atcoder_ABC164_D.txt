@@ -1,0 +1,42 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `sc`: Scanner (for reading input)
+- `S`: String (input string)
+- `N`: int (length of S)
+- `mod_arr`: int array of size N
+- `mod_cnt`: int array of size 2019
+- `radix`: int (initialized to 1)
+- `tmp`: int (temporary calculation variable)
+- `ans`: long (initialized to 0L)
+
+**Logic Flow:**
+1. Initialize Scanner to read from standard input
+2. Read input string S
+3. Set N = length of S
+4. Initialize mod_arr as int array of size N
+5. Initialize mod_cnt as int array of size 2019 (all zeros)
+6. Initialize radix = 1
+7. For i from 0 to N-1:
+   - Calculate tmp = (digit at position N-1-i converted to int) * radix % 2019
+   - If i != 0: tmp = (tmp + mod_arr[i-1]) % 2019
+   - Store tmp in mod_arr[i]
+   - Increment mod_cnt[tmp] by 1
+   - Update radix = radix * 10 % 2019
+8. Increment mod_cnt[0] by 1
+9. For i from 0 to 2018:
+   - Add mod_cnt[i] * (mod_cnt[i] - 1) / 2 to ans
+10. Print ans
+
+**Control Structures:**
+- For loop: i from 0 to N-1
+- Conditional: if i != 0
+- For loop: i from 0 to 2018
+
+**Input/Output:**
+- Input: Single string from standard input
+- Output: Print long integer result
+
+**Dependencies:**
+- java.util.Scanner

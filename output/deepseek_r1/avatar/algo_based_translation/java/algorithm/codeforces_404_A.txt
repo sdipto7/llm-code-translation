@@ -1,0 +1,55 @@
+**Algorithm:**
+
+Function Signature:
+- `main(args: String[]) → void`
+
+Variables:
+- `sc: Scanner` (import from java.util.*)
+- `n: int`
+- `arr: char[n][n]`
+- `str: String[n]`
+- `a: char`
+- `b: char`
+- `res: boolean`
+
+Logic Flow:
+1. Read integer `n` from input.
+2. Read `n` strings into array `str`.
+3. For each `i` from 0 to n-1:
+   - For each `j` from 0 to n-1:
+     - Assign `arr[i][j]` to `str[i].charAt(j)`.
+4. Assign `a` ← `arr[0][0]`.
+5. Assign `b` ← `arr[0][1]`.
+6. If `a` equals `b`:
+   - Print "NO" and terminate.
+7. Else:
+   - Set `res` ← true.
+   - For each `i` from 0 to n-1:
+     - For each `j` from 0 to n-1:
+       - If `i` equals `j` OR `i + j` equals `n - 1`:
+         - If `arr[i][j]` ≠ `a`:
+           - Set `res` ← false.
+           - Break inner loop.
+       - Else:
+         - If `arr[i][j]` ≠ `b`:
+           - Set `res` ← false.
+           - Break inner loop.
+   - If `res` is true:
+     - Print "YES".
+   - Else:
+     - Print "NO".
+
+Control Structures:
+- Sequential execution.
+- Nested `for` loops (4 levels: reading input, populating array, checking conditions).
+- `if-else` conditions:
+  - Check `a == b`.
+  - Diagonal vs non-diagonal cell checks.
+  - Early termination of inner loops on mismatch (`break`).
+
+Input/Output:
+- Read `n` and `n` strings via `Scanner`.
+- Print "YES" if grid meets criteria; else "NO".
+
+Dependencies:
+- `java.util.Scanner` for input handling.

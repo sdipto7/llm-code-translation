@@ -1,0 +1,31 @@
+Function signature: `calculate_difference(a: int, b: int, c: int, k: int) -> None`
+
+Variable declarations:
+- `a: int`
+- `b: int`
+- `c: int`
+- `k: int`
+
+Logic flow:
+1. Read input values for `a`, `b`, `c`, and `k` as integers.
+2. Check if `k % 2 == 0`:
+   - If true, compute `a - b` and print the result.
+   - If false, compute `b - a` and print the result.
+
+Control structures:
+- Conditional statement: `if k % 2 == 0:`
+
+Input/output operations:
+- Input: Read four space-separated integers from standard input.
+- Output: Print the result of the subtraction operation to standard output.
+
+Data processing logic:
+- Map the input string to a list of integers.
+- Assign the first integer to `a`.
+- Assign the second integer to `b`.
+- Assign the third integer to `c`.
+- Assign the fourth integer to `k`.
+- Based on the value of `k`, calculate the difference between `a` and `b` or `b` and `a` and print the result.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules are required.

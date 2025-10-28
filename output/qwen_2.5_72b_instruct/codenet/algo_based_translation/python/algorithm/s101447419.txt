@@ -1,0 +1,36 @@
+Function: main()
+Parameters: None
+Return Type: None
+
+Variable Declarations:
+- n: integer
+- v: list of integers
+- ve: list of integers
+- vo: list of integers
+- ce: Counter object
+- co: Counter object
+- ans: integer
+
+Logic Flow:
+1. Read integer n from input
+2. Read list v of n integers from input
+3. Initialize empty lists ve and vo
+4. For i from 0 to n//2 - 1:
+    - Append v[2*i] to ve
+    - Append v[2*i+1] to vo
+5. Create Counter objects ce and co from ve and vo respectively
+6. Initialize ans to n
+7. If the most common element in ce is not equal to the most common element in co:
+    - Set ans to n minus the frequency of the most common element in ce minus the frequency of the most common element in co
+8. Else if the length of ce is 1 and the length of co is 1:
+    - Set ans to n minus the frequency of the most common element in ce
+9. Else if the length of ce is 1:
+    - Set ans to n minus the frequency of the most common element in ce minus the frequency of the second most common element in co
+10. Else if the length of co is 1:
+    - Set ans to n minus the frequency of the second most common element in ce minus the frequency of the most common element in co
+11. Else:
+    - Set ans to the minimum of (n minus the frequency of the most common element in ce minus the frequency of the second most common element in co) and (n minus the frequency of the second most common element in ce minus the frequency of the most common element in co)
+12. Print the value of ans
+
+Libraries:
+- collections module for Counter object

@@ -1,0 +1,38 @@
+```
+Algorithm Main():
+    Import java.util.Scanner
+    Function Main(args: String[]) -> void:
+        Declare sc as Scanner and initialize with System.in
+        Declare n as int and assign sc.nextInt()
+        Declare m as int and assign sc.nextInt()
+        Declare a as int array with size m + 1
+        Declare cnt as int array with size n + 1
+        Assign cnt[0] = 1
+        Declare MOD as final int with value 1000000007
+
+        For i from 1 to length of a - 1:
+            Assign a[i] = sc.nextInt()
+
+        Declare num as int and assign 1
+        If m > 0:
+            If a[1] == 1:
+                Assign cnt[1] = 0
+                If num < m:
+                    Increment num by 1
+            Else:
+                Assign cnt[1] = 1
+        Else:
+            Assign cnt[1] = 1
+
+        For i from 2 to length of cnt - 1:
+            Assign cnt[i] = cnt[i - 2] + cnt[i - 1]
+            Assign cnt[i] = cnt[i] modulo MOD
+            If m > 0:
+                If i == a[num]:
+                    Assign cnt[i] = 0
+                    If num < m:
+                        Increment num by 1
+
+        Print cnt[n]
+        sc.close()
+```

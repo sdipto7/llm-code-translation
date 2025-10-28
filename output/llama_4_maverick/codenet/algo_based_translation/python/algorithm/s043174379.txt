@@ -1,0 +1,7 @@
+1. Define a function `calculate_remaining_area` with parameters `H`, `W`, `h`, `w` of type integers and return type integer.
+2. Read two pairs of integers from input: 
+   - First pair into variables `H` and `W`.
+   - Second pair into variables `h` and `w`.
+3. Calculate the result using the formula: `ans = H * W - (h * W + w * H - h * w)`.
+4. Output the calculated result `ans`.
+5. The program does not use any external libraries or modules beyond built-in input/output operations.

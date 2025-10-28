@@ -1,0 +1,31 @@
+1. Import `java.util.Scanner`.
+
+2. Define the main function: `public static void main(String[] args)`
+
+3. Initialize a `Scanner` object to read input: `Scanner scanner = new Scanner(System.in)`.
+
+4. Read an integer `n` from input: `int n = scanner.nextInt()`.
+
+5. Declare and initialize `maxn` as 4010: `int maxn = 4010`.
+
+6. Read three integers `a`, `b`, `c` from input: 
+   - `int a = scanner.nextInt()`
+   - `int b = scanner.nextInt()`
+   - `int c = scanner.nextInt()`
+
+7. Declare an array `arr` containing `a`, `b`, and `c`: `int[] arr = { a, b, c }`.
+
+8. Declare an array `dp` of size `maxn` to store integer values: `int[] dp = new int[maxn]`.
+
+9. Initialize the first `n` elements of `dp` to `Integer.MIN_VALUE` using a loop:
+   - Loop from `i = 0` to `i < n`
+     - Set `dp[i] = Integer.MIN_VALUE`
+
+10. Set `dp[0] = 0` to initialize the base case.
+
+11. Loop over each element in `arr` to process each piece length:
+    - Loop variable `i` from `0` to `2` (inclusive)
+      - For each `arr[i]`, loop from `j = arr[i]` to `j < maxn`
+        - Update `dp[j]` as the maximum of `dp[j]` and `dp[j - arr[i]] + 1`
+
+12. Output the maximum number of pieces for length `n`: `System.out.println(dp[n])`.

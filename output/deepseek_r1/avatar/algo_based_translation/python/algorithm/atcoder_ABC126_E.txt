@@ -1,0 +1,72 @@
+**Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`
+- `input() -> str`
+
+**Variables:**
+- `N: int` (Number of nodes)
+- `M: int` (Number of edges)
+- `edge: list[list[int]]` (Adjacency list for graph representation, initialized with N empty lists)
+- `used: list[bool]` (Visitation status array, initialized with N `False` values)
+- `ans: int` (Count of connected components, initialized to 0)
+- `queue: deque[int]` (BFS queue structure)
+- `node: int` (Current node being processed in BFS)
+- `nextnode: int` (Adjacent node during edge traversal)
+- `X: int`, `Y: int`, `Z: int` (Temporary variables for edge input parsing)
+
+**Data Types:**
+- Integer for all counts and indices
+- Boolean array for node visitation tracking
+- List of integer lists for adjacency list
+- Deque for BFS queue operations
+
+**Logical Steps:**
+1. Set system recursion limit (non-functional in this implementation)
+2. Define input helper function to read and clean stdin
+3. In `main()`:
+   1. Read N and M from input
+   2. Initialize empty adjacency list with N elements
+   3. Process M edge inputs:
+      1. For each input line, parse three integers (X, Y, Z)
+      2. Convert X and Y to zero-based indices via lambda `x: int(x)-1`
+      3. Add bidirectional edges: append Y to edge[X] and X to edge[Y]
+   4. Initialize all nodes as unvisited
+   5. Iterate through all nodes (0 to N-1):
+      1. For unvisited nodes:
+         1. Increment component counter
+         2. Initialize BFS queue with starting node
+         3. Mark starting node as visited
+         4. Process queue until empty:
+            1. Dequeue front node
+            2. For all adjacent nodes:
+               1. If unvisited, enqueue and mark as visited
+   6. Print total component count
+
+**Control Flow Structures:**
+- For-loop: Process M edges (exact count iteration)
+- For-loop: Check all N nodes for component discovery
+- While-loop: BFS processing using deque (continues until queue is empty)
+- Nested for-loop: Iterate through adjacency list of current node
+
+**Input/Output Operations:**
+- Input: Read N, M via space-separated integers
+- Input: Read M lines of three integers per edge (third value ignored)
+- Output: Print final `ans` value representing component count
+
+**Edge Case Handling:**
+- Nodes with no edges handled naturally (detected as individual components)
+- Zero-based indexing corrects input values
+- Duplicate edges automatically handled by adjacency list structure
+- Nodes with multiple edges processed through BFS traversal
+
+**External Dependencies:**
+- `sys` module for input/output and recursion limit configuration
+- `collections.deque` for efficient queue operations
+- No external libraries beyond standard Python modules
+
+**Library Function Calls:**
+- `sys.stdin.readline().rstrip()` via `input()` helper
+- `deque.append()` and `deque.popleft()` for queue management
+- `map()` for input parsing conversions
+- No explicit error handling beyond Python default exceptions

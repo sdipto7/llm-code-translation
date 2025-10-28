@@ -1,0 +1,14 @@
+1. Import the `reduce` function from the `functools` module and the `math` module.
+2. Define a function `lcm(x: int, y: int) -> int` that calculates the least common multiple of two integers `x` and `y` using the formula `(x * y) // math.gcd(x, y)`.
+3. Define a function `lcm_list(numbers: list[int]) -> int` that calculates the least common multiple of all elements in the input list `numbers` by applying the `lcm` function cumulatively to the elements of the list, starting with an initial value of 1.
+4. Read two integers `N` and `M` from the input and store them in variables `N` and `M`.
+5. Read a list of `N` integers from the input and store them in a list `A`.
+6. Divide each element `a` in the list `A` by 2 and store the result back in `A`.
+7. Initialize a variable `count_div_2` to `None`.
+8. Iterate over each element `a` in the list `A`. For each `a`, count the number of times it can be divided by 2 without leaving a remainder, and store this count in a variable `cnt`.
+9. If `count_div_2` is `None`, set it to `cnt`. Otherwise, check if `cnt` is equal to `count_div_2`. If not, output 0 and terminate the program.
+10. Calculate the least common multiple of all elements in the list `A` using the `lcm_list` function and store the result in a variable `my_lcm`.
+11. Check if `my_lcm` is greater than `M`. If so, output 0 and terminate the program.
+12. Calculate the integer division of `M` by `my_lcm` and store the result in a variable `tmp`.
+13. Calculate the value of `(tmp + 1) // 2` and store it in a variable `ans`.
+14. Output the value of `ans`.

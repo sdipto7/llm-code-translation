@@ -1,0 +1,42 @@
+- Function Signature: `main()` (No parameters, No return type)
+
+- Variable Declarations and Data Types:
+  - `sa, sb: str` (Input strings)
+  - `a, b: int` (Converted from input strings)
+  - `P: int` (Constant, value `10 ** 9 + 7`)
+  - `INF: int` (Constant, value `10 ** 9 + 10`)
+  - `dbg: function` (Conditional logging function)
+  - `input: function` (Custom input function)
+  - `LMIIS: function` (Converts space-separated string to list of integers)
+  - `II: function` (Converts string to integer)
+
+- Logic Flow:
+  1. Set recursion limit to `10 ** 6`
+  2. Define `dbg` function based on environment variable 'TERM_PROGRAM'
+  3. Define `input` function to read and strip input line
+  4. Define `LMIIS` function to map space-separated string to list of integers
+  5. Define `II` function to convert string to integer
+  6. Assign constant `P` as `10 ** 9 + 7`
+  7. Assign constant `INF` as `10 ** 9 + 10`
+  8. Read two space-separated strings `sa` and `sb`
+  9. Convert `sa` to integer `a`
+  10. Convert `sb` to float, multiply by 100, add 0.1, convert to integer `b`
+  11. Calculate `a * b // 100` and print result
+
+- Control Structures:
+  - Conditional: `if 'TERM_PROGRAM' in environ` for defining `dbg` function
+
+- Input/Output Operations:
+  - Input: Read two space-separated strings `sa` and `sb`
+  - Output: Print result of `a * b // 100`
+
+- Data Processing Logic:
+  - Convert string inputs to integers for computation
+  - Perform arithmetic operations to compute final result
+
+- Required Libraries/Modules:
+  - `sys` (for `setrecursionlimit` and `stdin`)
+  - `os` (for `environ`)
+  - `collections` (for `defaultdict`, `deque`, `Counter`)
+  - `math` (for `ceil`, `floor`, `gcd`)
+  - `itertools` (for `accumulate`, `combinations`, `combinations_with_replacement`)

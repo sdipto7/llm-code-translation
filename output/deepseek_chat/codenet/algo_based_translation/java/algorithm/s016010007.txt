@@ -1,0 +1,53 @@
+**Input Processing:**
+- Read first line: split into 4 integers → p0(x0,y0), p1(x1,y1)
+- Read integer q (number of queries)
+- For each query: read line, split into 2 integers → p2(x2,y2)
+
+**Point2D Class:**
+- Properties: double x, double y
+- Methods:
+  - Point2D() - default constructor
+  - Point2D(double x, double y) - parameterized constructor
+  - boolean equals(double a, double b) - compare with EPS tolerance
+  - Point2D sum(Point2D b) - vector addition
+  - Point2D diff(Point2D b) - vector subtraction
+  - Point2D multiple(double k) - scalar multiplication
+  - double norm() - squared length
+  - double abs(Point2D a) - actual length
+  - String toString() - formatted string representation
+
+**Vector Class (extends Point2D):**
+- Methods:
+  - double dot(Point2D a, Point2D b) - dot product
+  - double cross(Point2D a, Point2D b) - cross product
+  - boolean isOrthogonal(Point2D a, Point2D b) - check orthogonality
+  - boolean isOrthogonal(Point2D a1, Point2D a2, Point2D b1, Point2D b2) - check line orthogonality
+  - boolean isParallel(Point2D a, Point2D b) - check parallelism
+  - boolean isParallel(Point2D a1, Point2D a2, Point2D b1, Point2D b2) - check line parallelism
+  - Point2D project(Point2D sp1, Point2D sp2, Point2D p) - projection onto line
+  - Point2D reflect(Point2D sp1, Point2D sp2, Point2D p) - reflection over line
+
+**Clockwise Judgment Algorithm:**
+1. Calculate vectors: a = p1 - p0, b = p2 - p0
+2. Compute cross product of a and b
+3. If cross > EPS → return "COUNTER_CLOCKWISE"
+4. If cross < -EPS → return "CLOCKWISE"
+5. If dot product < -EPS → return "ONLINE_BACK"
+6. If norm(a) < norm(b) → return "ONLINE_FRONT"
+7. Else return "ON_SEGMENT"
+
+**Main Execution Flow:**
+1. Read input points p0 and p1
+2. Read number of queries q
+3. For each query:
+   - Read point p2
+   - Call jadgeClockwise(p0, p1, p2)
+   - Append result to output buffer
+4. Print all results
+
+**Required Dependencies:**
+- java.awt.geom.Point2D.Double
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader
+- java.lang.Integer.parseInt

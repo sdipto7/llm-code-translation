@@ -1,0 +1,41 @@
+**Algorithm:**
+
+1. **Import Dependencies:**
+   - `statistics.median`
+   - `fractions.gcd`
+   - `itertools.combinations`
+   - `collections.deque`
+   - `collections.defaultdict`
+   - `bisect`
+   - `sys`
+
+2. **Set Recursion Limit:**
+   - `sys.setrecursionlimit(10000000)`
+
+3. **Define Constant:**
+   - `mod = 1000000007` (integer)
+
+4. **Function `readInts()`:**
+   - **Parameters:** None
+   - **Return Type:** List of integers
+   - **Logic:**
+     - Read a line from standard input
+     - Split the line into tokens
+     - Convert each token to integer
+     - Return list of integers
+
+5. **Function `main()`:**
+   - **Parameters:** None
+   - **Return Type:** None
+   - **Logic:**
+     - Read integer `n` from standard input
+     - Call `readInts()` to get list `A`
+     - Sort list `A` in ascending order
+     - Initialize integer `ans = 0`
+     - **Loop:** For `i` from `len(A) - 2` down to `len(A) - 2*n - 1` (inclusive), stepping by -2:
+       - Add `A[i]` to `ans`
+     - Print `ans`
+
+6. **Entry Point:**
+   - If script is executed directly:
+     - Call `main()`

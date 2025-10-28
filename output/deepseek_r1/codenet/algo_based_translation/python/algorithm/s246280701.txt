@@ -1,0 +1,32 @@
+**Algorithm:**
+
+1. **Input Operations:**
+   - Read integer `n` from standard input.
+   - Read a line of space-separated integers and store them in list `x` (length `n`).
+
+2. **Variable Declarations:**
+   - `ans`: Integer initialized to `10^10` (large constant).
+   - `tmp`: List of integers (temporary storage for squared differences).
+
+3. **Main Logic:**
+   - Loop `i` from `0` to `100` inclusive (integer iteration):
+     a. Compute list `tmp` by iterating through all `j` in `0` to `n-1`:
+        - `tmp[j] = |i - x[j]|^2`
+     b. Compute `sum_tmp` as the sum of all elements in `tmp`.
+     c. If `sum_tmp < ans`:
+        - Update `ans` to `sum_tmp`.
+
+4. **Output Operation:**
+   - Print `ans` after processing all iterations of `i`.
+
+**Control Structures:**
+- **For Loop:** `for i in 0 ... 100` (inclusive bounds).
+- **Implicit Indexed Loop:** For `j` in `0 ... n-1` (via list comprehension).
+- **Conditional:** `if sum(tmp) < ans` (strictly less than check).
+
+**Data Types:**
+- All variables (`n`, `ans`, `i`, list elements) are integers.
+- `x` and `tmp` are integer lists.
+
+**Dependencies:**
+- Requires standard input/output capabilities. No external libraries.

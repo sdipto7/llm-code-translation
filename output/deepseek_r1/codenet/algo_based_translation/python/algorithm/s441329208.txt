@@ -1,0 +1,33 @@
+**Function Signatures:**
+- N/A (Script-based code without explicit functions)
+
+**Variables:**
+- `read`: Reference to `sys.stdin.read` (function)
+- `readline`: Reference to `sys.stdin.readline` (function)
+- `readlines`: Reference to `sys.stdin.readlines` (function)
+- `s`: List[str] (sorted characters from first input line)
+- `t`: List[str] (reverse-sorted characters from second input line)
+
+**Libraries/Dependencies:**
+- `sys` module
+
+**Execution Flow:**
+1. Set recursion limit: `sys.setrecursionlimit(10 ** 7)`
+2. Read first input line: `readline().rstrip()`
+3. Sort characters from first line in ascending order → store in `s`
+4. Read second input line: `readline().rstrip()`
+5. Sort characters from second line in ascending order, then reverse the list → store in `t`
+6. Perform lexicographical comparison: `s < t`
+7. Print "Yes" if comparison is true, "No" otherwise
+
+**Control Structures:**
+- Single conditional: `if s < t` with implicit string comparison
+
+**Input/Output:**
+- Input: Two lines from stdin (via `sys.stdin.readline`)
+- Output: "Yes" or "No" printed to stdout based on comparison result
+
+**Data Processing:**
+- String sanitization: `.rstrip()` removes trailing newline
+- Character sorting: `sorted()` for alphabetical order
+- List reversal: `[::-1]` operator applied to sorted list for descending order

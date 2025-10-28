@@ -1,0 +1,47 @@
+**Structured Algorithm Specification**
+
+**1. Program Structure**  
+- **Imports**:  
+  - `os` module (external dependency, unused in logic)  
+  - `stdin`, `stdout` from `sys` module (input/output operations)  
+
+**2. Function Definitions**  
+- **Function**: `solve`  
+  - **Parameters**:  
+    - `tc` (integer, type: `int`; unused in logic)  
+  - **Return Type**: `void` (outputs result directly)  
+  - **Variables**:  
+    - `a` (integer, type: `int`; derived from input)  
+  - **Logic**:  
+    1. Read a line from `stdin`, remove leading/trailing whitespace.  
+    2. Convert the string to integer `a`.  
+    3. If `a` equals `0`, print `1` to `stdout`.  
+    4. Else, print `0` to `stdout`.  
+
+**3. Main Program Flow**  
+- **Variables**:  
+  - `tcs` (integer, type: `int`; initial value: `1`)  
+  - `tc` (integer, type: `int`; initial value: `1`)  
+- **Control Flow**:  
+  1. Initialize `tcs = 1`, `tc = 1`.  
+  2. Enter loop:  
+    - **Condition**: `tc <= tcs`  
+    - **Loop Body**:  
+      a. Call `solve(tc)`.  
+      b. Increment `tc` by `1`.  
+    - **Exit Condition**: `tc` becomes `2` (loop executes once).  
+
+**4. Input/Output Operations**  
+- **Input**:  
+  - Read a single integer from standard input via `stdin.readline()`.  
+- **Output**:  
+  - Print `1` if input is `0`, otherwise print `0`.  
+
+**5. Edge Cases & Error Handling**  
+- No explicit error handling for non-integer inputs (conversion failure will terminate the program).  
+
+**6. Dependencies**  
+- Direct dependencies:  
+  - `sys.stdin` for input.  
+  - `sys.stdout` for output.  
+  - `os` module (imported but unused).

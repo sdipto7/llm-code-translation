@@ -1,0 +1,31 @@
+```plaintext
+Algorithm:
+
+1. Function Signature:
+   - Function: assign_teams
+   - Parameters: none
+   - Return Type: none
+
+2. Variable Declarations:
+   - n: int
+   - a: int
+   - b: int
+   - lista: List[int]
+   - listb: List[int]
+
+3. Input Operations:
+   - Read a single line of input, split it by space, and convert each element to an integer. Assign the first, second, and third values to n, a, and b, respectively.
+   - Read a single line of input, split it by space, and convert each element to an integer. Assign the resulting list to lista.
+   - Read a single line of input, split it by space, and convert each element to an integer. Assign the resulting list to listb.
+
+4. Logic Flow:
+   - Loop over a range of integers from 0 to n-1, inclusive. Use variable k to track the current index in the loop.
+     - Conditional Check:
+       - If k + 1 is present in lista:
+         - Output the integer 1 followed by a space, without a newline.
+       - Else:
+         - Output the integer 2 followed by a space, without a newline.
+
+5. Output Operations:
+   - Print 1 or 2 based on the condition in the loop, separated by spaces.
+```

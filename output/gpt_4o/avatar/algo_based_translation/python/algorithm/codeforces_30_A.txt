@@ -1,0 +1,25 @@
+Function Signature:
+- `task4(A: int, B: int, n: int) -> int or str`
+
+Variable Declarations and Data Types:
+- `A`: int
+- `B`: int
+- `n`: int
+- `X`: int
+- `result`: int or str
+
+Algorithm:
+1. Start function `task4` with parameters `A`, `B`, and `n` which are integers.
+2. Begin a `for` loop with `X` ranging from `-1000` to `1000` inclusive.
+   - Calculate `A * (X ** n)`.
+   - Check if the result of the calculation is equal to `B`.
+     - If true, return `X`.
+3. If no value of `X` satisfies the condition in the loop, return "No solution".
+
+Input/Output Operations:
+1. Read input values from the user and split them into a list `[A, B, n]`.
+2. Convert `A`, `B`, and `n` to integers.
+3. Call `task4` function with `A`, `B`, and `n`.
+4. Print the result returned by `task4`.
+
+No additional libraries, modules, or dependencies are required.

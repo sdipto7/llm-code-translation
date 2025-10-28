@@ -1,0 +1,37 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `scan`: Scanner (input scanner)
+- `N`: int (number of points)
+- `x`: int[] (x-coordinates of points)
+- `y`: int[] (y-coordinates of points)
+- `i`: int (loop index)
+- `j`: int (loop index)
+- `thetas`: List<Double> (list of angles)
+- `k`: int (loop index)
+- `ans`: double (maximum gap)
+
+**Libraries/Dependencies:**
+- java.util.Scanner
+- java.util.Comparator
+- java.util.Arrays
+- java.util.List
+- java.util.ArrayList
+
+**Algorithm:**
+1. Read integer N from input
+2. Initialize arrays x and y of size N
+3. For i from 0 to N-1:
+   - Read x[i] and y[i] from input
+4. For i from 0 to N-1:
+   - Initialize empty list thetas of type Double
+   - For j from 0 to N-1:
+     - If i equals j: skip to next j
+     - Else: calculate angle using Math.atan2(y[j]-y[i], x[j]-x[i]) and add to thetas
+   - Sort thetas in natural order
+   - Append (first element of thetas + 2π) to thetas
+   - Initialize ans = 0
+   - For k from 0 to N-2:
+     - Set ans = max(ans, (thetas[k+1] - thetas[k] - π))
+   - Print (ans / (2π))

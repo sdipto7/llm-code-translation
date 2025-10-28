@@ -1,0 +1,80 @@
+**Structured Algorithm Specification**
+
+**Functions/Methods:**
+- `find(s: string, ch: char) → list<int>`  
+  *Parameters:*  
+  - `s`: Input string to search  
+  - `ch`: Character to locate in `s`  
+  *Returns:* List of indices where `ch` occurs in `s`  
+  *Steps:*  
+  1. Iterate over `s` with index tracking.  
+  2. Collect and return indices where character equals `ch`.
+
+---
+
+**Main Program:**
+
+**Variables:**
+- `n: int` (Input integer)  
+- `s: string` (Processed input string without spaces)  
+- `indices: list<int>` (Indices of '0' in `s`)  
+- `maximum: int` (Maximum computed value)  
+- `combs: itertools.combinations` (Iterator for 2-element index combinations)  
+- `count_ones: int` (Count of '1's in `s`)  
+- `a, b: int` (Temporary variables for index pairs in `combs`)
+
+---
+
+**Step-by-Step Logic:**
+
+1. **Input Handling:**  
+   a. Read `n` from standard input as integer.  
+   b. Read `s` from standard input and remove all space characters.  
+
+2. **Check for Absence of '0':**  
+   a. If `s` contains no '0':  
+      - Output `n - 1`.  
+      - Terminate program.  
+
+3. **Handle Presence of '0':**  
+   a. Compute `indices` via `find(s, '0')`.  
+   b. If `len(indices) == 1`:  
+      - Output `n`.  
+      - Terminate program.  
+
+4. **Compute Maximum Value for Multiple '0's:**  
+   a. Initialize `maximum = 0`.  
+   b. Generate all 2-element combinations of `indices` using `itertools.combinations`, stored in `combs`.  
+   c. For each combination `(a, b)` in `combs`:  
+      - Compute `index_a = indices.index(a)`.  
+      - Compute `index_b = indices.index(b)`.  
+      - Calculate `diff_indices = abs(index_a - index_b) - 1`.  
+      - Calculate `term = 2 + 2 * diff_indices`.  
+      - Compute `distance_actual = abs(a - b) - 1`.  
+      - Compute `current_value = term - distance_actual`.  
+      - Update `maximum = max(maximum, current_value)`.  
+
+5. **Final Output:**  
+   a. Calculate `count_ones = s.count('1')`.  
+   b. Output `count_ones + maximum`.  
+
+---
+
+**Control Flow Structures:**
+- **Conditional:**  
+  - Branch on presence/absence of '0' in `s`.  
+  - Branch on `len(indices) == 1`.  
+- **Loop:**  
+  - Iterate over `combs` to compute `maximum`.  
+
+**Input/Output Operations:**  
+- Read `n` and `s` from standard input.  
+- Output results to standard output.  
+
+**Edge Cases Handled:**  
+- No '0' in `s` → Output `n - 1`.  
+- Exactly one '0' → Output `n`.  
+- Multiple '0's → Compute optimal pair for maximum contribution.  
+
+**External Dependencies:**  
+- `itertools.combinations` for generating index pairs.

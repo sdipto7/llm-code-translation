@@ -1,0 +1,35 @@
+Function Signature:
+- `main(String[] args): void`
+
+Variable Declarations and Data Types:
+- `pandu: long`
+- `vundu: long`
+- `urdu: long`
+- `c: long`
+
+Logic Flow in Execution Order:
+1. Create a `Scanner` object for reading input.
+2. Read a `long` value from input and assign it to `pandu`.
+3. Read a `long` value from input and assign it to `vundu`.
+4. Read a `long` value from input and assign it to `urdu`.
+5. Initialize `c` to 0.
+6. For loop starts with `i` initialized to 1 and continues while `i` is less than or equal to `urdu`:
+   - Add `i * pandu` to `c`.
+   - Increment `i` by 1.
+7. If `c` is less than `vundu`:
+   - Print "0".
+8. Else:
+   - Print `c - vundu`.
+
+Control Structures:
+- For loop with condition `i <= urdu`.
+- If-Else statement with condition `c < vundu`.
+
+Input/Output Operations and Data Processing Logic:
+- Read three `long` values from standard input.
+- Use a loop to calculate the cumulative sum based on the formula `c += i * pandu`.
+- Compare the cumulative sum `c` with `vundu`.
+- Print either "0" or the difference `c - vundu` based on the comparison.
+
+Required Libraries, Modules, or Dependencies:
+- `java.util.Scanner`

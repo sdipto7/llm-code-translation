@@ -1,0 +1,42 @@
+Function signature:
+- main() -> None
+
+Variable declarations and data types:
+- soz: str
+- a: List[int]
+- n: int
+- arr: List[int]
+- i: int
+- m: str
+- l: str
+
+Logic flow in execution order:
+1. Input soz as a string
+2. Initialize list a with length len(soz) + 1 filled with zeros
+3. For i from 1 to len(soz) - 1:
+   - Set a[i] to a[i - 1]
+   - If soz[i - 1] equals soz[i]:
+     - Increment a[i] by 1
+4. Input n as an integer
+5. Initialize empty list arr
+6. For i from 0 to n - 1:
+   - Split input into strings m and l
+   - Append a[int(l) - 1] - a[int(m) - 1] to arr
+7. For each element i in arr:
+   - Print i
+
+Control structures:
+- For loop with range(1, len(soz)) for processing soz
+- If condition checking if consecutive characters in soz are equal
+- For loop with range(n) for processing queries
+- For loop iterating over elements in arr for printing results
+
+Input/output operations and data processing logic:
+- Read soz from standard input
+- Read n from standard input
+- For each query, read two space-separated values m and l
+- Compute the difference in counts between indices l and m in list a
+- Print each result from arr
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required

@@ -1,0 +1,10 @@
+1. Import Scanner from java.util
+2. Define main method with String[] args parameter
+3. Create Scanner object initialized with System.in
+4. Declare String variable s and assign next input token from Scanner
+5. Check if s equals "Sunny":
+   - If true: print "Cloudy"
+6. Else if s equals "Cloudy":
+   - If true: print "Rainy"
+7. Else:
+   - Print "Sunny"

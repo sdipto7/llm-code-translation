@@ -1,0 +1,12 @@
+- Function signatures: N/A (script execution)
+- Variable declarations: 
+  - N: str
+- Input operations: 
+  - Read string from standard input via input()
+  - Store result in N
+- Processing logic: 
+  - Concatenate "ABC" literal with value of N
+- Output operations: 
+  - Print concatenated string to standard output
+- Control structures: None
+- Dependencies: None

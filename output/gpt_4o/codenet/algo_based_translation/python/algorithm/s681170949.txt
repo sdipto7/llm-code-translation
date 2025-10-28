@@ -1,0 +1,20 @@
+1. Function signature:
+   - No function is defined; the code is executed in the main block.
+
+2. Variable declarations and data types:
+   - N: string
+
+3. Complete logic flow:
+   - Read input from the user and store it as a string in the variable `N`.
+   - Concatenate the string "ABC" with the string `N`.
+   - Print the concatenated result.
+
+4. Control structures:
+   - No loops or conditionals are present in the code.
+
+5. Input/output operations:
+   - Input: Use `input()` to read a string from the user.
+   - Output: Use `print()` to display the concatenated string "ABC" and the user input.
+
+6. Required libraries, modules, or dependencies:
+   - No external libraries or modules are required.

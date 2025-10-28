@@ -1,0 +1,66 @@
+**Function Signatures:**
+- valid(i: int, j: int, n: int, m: int) -> bool
+- sumn(i: int, n: int) -> float
+- sqfun(a: float, b: float, c: float) -> float
+- value() -> tuple[int]
+- values() -> tuple[int]
+- inlst() -> list[int]
+- inlsts() -> list[int]
+- inp() -> int
+- inps() -> int
+- instr() -> str
+- stlst() -> list[str]
+- f(s: str) -> str
+- solve() -> None
+
+**Variable Declarations:**
+- l: list[str]
+- t: itertools.permutations object
+- i: int (loop variable)
+- r: str
+- s: str (parameter)
+
+**Data Types:**
+- Input strings processed to lowercase alphanumeric
+- Lists of strings for storing permutations
+- Integer inputs for grid dimensions and counts
+- Floating point for mathematical operations
+
+**Execution Flow:**
+1. Import required libraries (collections, heapq, sys, math, itertools, bisect, io, os)
+2. Define helper functions for validation, mathematical operations, and input processing
+3. Define string processing function f(s) that removes '-', ';', '_' and converts to lowercase
+4. In solve():
+   - Initialize empty list l
+   - Read 3 input strings, process each with f(), and add to list l
+   - Generate all permutations of the 3 processed strings using itertools.permutations
+   - Convert each permutation tuple to string and store in list l
+   - Read integer n (number of test cases)
+   - For each test case:
+     - Read input string
+     - Process with f()
+     - Check if processed string exists in permutation list
+     - Print 'ACC' if found, 'WA' if not found
+
+**Control Structures:**
+- For loop: for i in range(3)
+- For loop: for i in t (permutations)
+- For loop: for i in range(inp()) (test cases)
+- Conditional: if valid(i, j, n, m)
+- Conditional: if processed test string in permutation list
+
+**Input/Output Operations:**
+- Read from standard input using input() and sys.stdin.readline()
+- Process 3 initial strings
+- Process n test case strings
+- Output 'ACC' or 'WA' for each test case
+
+**Dependencies:**
+- collections
+- heapq
+- sys
+- math
+- itertools
+- bisect
+- io.BytesIO, io.IOBase
+- os

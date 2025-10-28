@@ -1,0 +1,23 @@
+1. Import required libraries: java.io.BufferedReader, java.io.IOException, java.io.InputStreamReader
+2. Define a function `main` with signature `public static void main(String[] args) throws IOException`
+3. Declare a variable `br` of type `BufferedReader` and initialize it with `new BufferedReader(new InputStreamReader(System.in))`
+4. Declare a variable `n` of type `int` and assign it the value of `Integer.parseInt(br.readLine())`
+5. Declare an array `a` of type `int[]` with size `n`
+6. Declare a variable `elements` of type `String[]` and assign it the result of `br.readLine().split(" ")`
+7. Iterate from `i = 0` to `n-1` using a `for` loop
+   1. Assign `a[i]` the value of `Integer.parseInt(elements[i])`
+8. Declare a variable `swapCount` of type `int` and initialize it to `0`
+9. Iterate from `i = 0` to `a.length-1` using a `for` loop
+   1. Declare a variable `mini` of type `int` and initialize it to `i`
+   2. Iterate from `j = i` to `a.length-1` using a nested `for` loop
+      1. Check if `a[j] < a[mini]`
+      2. If true, assign `mini` the value of `j`
+   3. Check if `mini != i`
+   4. If true, 
+      1. Swap the values of `a[mini]` and `a[i]` using a temporary variable `v`
+      2. Increment `swapCount` by `1`
+10. Declare a variable `ans` of type `String` and initialize it with `String.valueOf(a[0])`
+11. Iterate from `i = 1` to `a.length-1` using a `for` loop
+    1. Append `" " + a[i]` to `ans`
+12. Output `ans` to the console using `System.out.println(ans)`
+13. Output `swapCount` to the console using `System.out.println(swapCount)`

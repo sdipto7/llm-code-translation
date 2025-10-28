@@ -1,0 +1,16 @@
+1. Read the input from the input stream.
+2. Create an InputReader object to read the input.
+3. Create a PrintWriter object to write the output.
+4. Initialize a Task object to solve the problem.
+5. Call the solve method of the Task object, passing the InputReader and PrintWriter objects.
+6. Read an integer n using the InputReader object.
+7. Create an array of size 1001 to store the frequency of numbers.
+8. Iterate n times and for each iteration, read an integer index and increment the corresponding frequency in the array.
+9. Initialize a variable countMax to -1 to store the maximum frequency.
+10. Iterate through the frequency array from index 1 to the end.
+11. Update countMax if a higher frequency is found.
+12. Check if n is even.
+13. If n is even, check if countMax is less than or equal to n/2.
+14. If n is odd, check if countMax is less than or equal to n/2 + 1.
+15. Print "YES" if the condition in step 13 or step 14 is met, otherwise print "NO".
+16. Close the PrintWriter object.

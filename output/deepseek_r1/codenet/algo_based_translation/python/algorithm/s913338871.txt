@@ -1,0 +1,20 @@
+- Function: main()
+- Inputs: None (reads from stdin)
+- Output: Writes integer to stdout
+- Variables:
+  - N: integer
+  - a: list of integers
+  - s: list of integers
+- Execution flow:
+  1. Read integer N from standard input
+  2. Read line from input, split into list of integers, store in a
+  3. Sort list a in ascending order (in-place)
+  4. Create new list s containing elements from a starting at index N, selecting every 2nd element (indices N, N+2, N+4...)
+  5. Calculate sum of all elements in list s
+  6. Print calculated sum to standard output
+- Control structures:
+  - Slice operation [N::2] with start=N, stop=implicit end, step=2
+- Data processing:
+  - List comprehension for creating s
+  - Built-in sum() function for aggregation
+- Dependencies: None (uses Python standard input/output and built-in functions)

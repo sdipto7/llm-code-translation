@@ -1,0 +1,38 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+
+**Variable Declarations:**
+- `Scanner sc = new Scanner(System.in);`
+- `int n;`
+- `ArrayList<Integer> a = new ArrayList<>();`
+- `ArrayList<Integer> b = new ArrayList<>();`
+- `int left = INF;`
+- `int right = 0;`
+- `int i;` (loop counter)
+
+**Logic Flow:**
+1. Read integer `n` from input.
+2. Initialize two ArrayLists `a` and `b`.
+3. Initialize `left` to `INF` and `right` to `0`.
+4. For `i` from `0` to `n-1`:
+   - Read next integer and add to `a`.
+   - Read next integer and add to `b`.
+   - Update `left` to minimum of current `left` and `a.get(i)`.
+   - Update `right` to maximum of current `right` and `b.get(i)`.
+5. For `i` from `0` to `n-1`:
+   - If `left == a.get(i)` and `right == b.get(i)`:
+     - Print `i+1` and exit.
+6. Print `-1`.
+
+**Control Structures:**
+- `for (int i = 0; i < n; i++)` (two loops)
+- `if (left == a.get(i) && right == b.get(i))`
+
+**Input/Output Operations:**
+- Input: `n`, followed by `n` pairs of integers stored in `a` and `b`.
+- Output: Index (starting at 1) of segment matching `[left, right]` or `-1`.
+
+**Required Libraries:**
+- `java.util.ArrayList`
+- `java.util.Scanner`
+- `java.lang.Math`

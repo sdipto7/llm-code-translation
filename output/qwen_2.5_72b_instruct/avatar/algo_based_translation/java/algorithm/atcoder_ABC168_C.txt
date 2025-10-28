@@ -1,0 +1,48 @@
+Function Signature:
+- `main(String[] args): void`
+
+Variable Declarations and Data Types:
+- `A: int`
+- `B: int`
+- `H: int`
+- `M: int`
+- `AA: BigDecimal`
+- `BB: BigDecimal`
+- `HH: BigDecimal`
+- `MM: BigDecimal`
+- `ans2: BigDecimal`
+- `kaku: BigDecimal`
+- `mkaku: BigDecimal`
+- `hkaku: BigDecimal`
+- `AA2: BigDecimal`
+- `BB2: BigDecimal`
+- `CC: BigDecimal`
+- `DD: BigDecimal`
+- `dkaku: double`
+- `dans2: double`
+- `ans: double`
+
+Execution Logic Flow:
+1. Create a `Scanner` object for input.
+2. Read `A`, `B`, `H`, and `M` as integers from the input.
+3. Convert `A`, `B`, `H`, and `M` to `BigDecimal` and store in `AA`, `BB`, `HH`, and `MM` respectively.
+4. Calculate `mkaku` as `MM * 6`.
+5. Calculate `hkaku` as `HH * 30 + M / 2`.
+6. Calculate `kaku` as `mkaku - hkaku`.
+7. Convert `kaku` to `double` and find its absolute value in radians, storing in `dkaku`.
+8. Calculate `AA2` as `AA * AA`.
+9. Calculate `BB2` as `BB * BB`.
+10. Calculate `CC` as `AA2 + BB2`.
+11. Calculate `DD` as `2 * AA * BB * cos(dkaku)`.
+12. Calculate `ans2` as `CC - DD`.
+13. Convert `ans2` to `double` and store in `dans2`.
+14. Calculate `ans` as the square root of `dans2`.
+15. Print `ans`.
+
+Input/Output:
+- Input: Four integers `A`, `B`, `H`, and `M`.
+- Output: A `double` value representing the calculated distance.
+
+Libraries:
+- `java.util.Scanner`
+- `java.math.BigDecimal`

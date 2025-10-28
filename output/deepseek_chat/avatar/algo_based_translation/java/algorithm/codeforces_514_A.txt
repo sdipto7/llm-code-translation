@@ -1,0 +1,44 @@
+{
+  "algorithm": {
+    "name": "main",
+    "parameters": ["String[] args"],
+    "returnType": "void",
+    "dependencies": ["java.util.ArrayList", "java.util.List", "java.util.Scanner"],
+    "variables": [
+      {"name": "sc", "type": "Scanner", "initialization": "new Scanner(System.in)"},
+      {"name": "list", "type": "List<Long>", "initialization": "new ArrayList<>()"},
+      {"name": "x", "type": "long", "initialization": "sc.nextLong()"},
+      {"name": "r", "type": "long"},
+      {"name": "pow", "type": "int", "initialization": "0"},
+      {"name": "newNumber", "type": "long", "initialization": "0"}
+    ],
+    "logic": [
+      "Read long integer input x from standard input",
+      "While x > 0:",
+      "  Calculate r = x % 10",
+      "  If (9 - r) < r:",
+      "    If x divided by 10 equals 0 AND (9 - r) equals 0:",
+      "      Add r to list",
+      "    Else:",
+      "      Add (9 - r) to list",
+      "  Else:",
+      "    Add r to list",
+      "  Set x = x / 10",
+      "Initialize pow = 0 and newNumber = 0",
+      "For each element in list from index 0 to size-1:",
+      "  Calculate newNumber = newNumber + (element * 10^pow)",
+      "  Increment pow by 1",
+      "Print newNumber to standard output"
+    ],
+    "controlStructures": [
+      {"type": "while", "condition": "x > 0"},
+      {"type": "if", "condition": "(9 - r) < r"},
+      {"type": "if", "condition": "(x / 10 == 0) && (9 - r == 0)"},
+      {"type": "for", "initialization": "int i = 0", "condition": "i < list.size()", "increment": "i++"}
+    ],
+    "inputOutput": [
+      {"operation": "input", "source": "System.in", "type": "long"},
+      {"operation": "output", "destination": "System.out", "type": "long"}
+    ]
+  }
+}

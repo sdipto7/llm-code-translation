@@ -1,0 +1,42 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner sc = new Scanner(System.in)`
+- `int max = 0`
+- `int n = sc.nextInt()`
+- `int[] beacon = new int[1000001]`
+- `int[] dp = new int[1000001]`
+
+**Logic Flow:**
+1. Read integer `n` from input
+2. Initialize `beacon` array (size 1,000,001) with zeros
+3. For `i` from 0 to `n-1`:
+   - Read integer `a`
+   - Read integer value and store in `beacon[a]`
+4. If `beacon[0] != 0`, set `dp[0] = 1`
+5. For `i` from 1 to 1,000,000:
+   - If `beacon[i] != 0` and `beacon[i] < i`:
+     - `dp[i] = dp[i - beacon[i] - 1] + 1`
+   - Else if `beacon[i] != 0`:
+     - `dp[i] = 1`
+   - Else:
+     - `dp[i] = dp[i-1]`
+   - Update `max = Math.max(max, dp[i])`
+6. Print `n - max`
+
+**Control Structures:**
+- `for (int i = 0; i < n; i++)`
+- `for (int i = 1; i < 1000001; i++)`
+- `if (beacon[0] != 0)`
+- `if (beacon[i] != 0 && beacon[i] < i)`
+- `else if (beacon[i] != 0)`
+- `else`
+
+**Input/Output:**
+- Input: `n` followed by `n` pairs of integers
+- Output: Single integer `n - max`
+
+**Dependencies:**
+- `java.io.*`
+- `java.util.*` (specifically `Scanner`)

@@ -1,0 +1,28 @@
+- Function signature: public static void main(String[] args)
+- Variable declarations: 
+  - Scanner sc (type: Scanner)
+  - String s (type: String)
+  - int total (type: int, initial value: 0)
+- Logic flow in execution order:
+  - Create a Scanner object to read input
+  - Read a string from standard input and store it in variable s
+  - Initialize total to 0
+  - Start outer for loop with i from 0 to s.length() - 1
+    - Start inner for loop with j from i + 1 to s.length() - 1
+      - Check if character at index i in s is equal to character at index j in s
+        - If true, increment total by 1
+    - End inner for loop
+  - End outer for loop
+  - Check if total is equal to 2
+    - If true, print "Yes"
+    - Otherwise, print "No"
+- Control structures:
+  - Outer for loop with condition i < s.length()
+  - Inner for loop with condition j < s.length()
+  - If statement with condition s.charAt(i) == s.charAt(j)
+  - Ternary operator with condition total == 2
+- Input/output operations:
+  - Read input using sc.next() and store in s
+  - Print "Yes" or "No" based on the value of total
+- Required libraries/modules/dependencies:
+  - import java.util.Scanner

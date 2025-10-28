@@ -1,0 +1,60 @@
+**Algorithm:**
+
+1. **Input:**
+   - Read integers `n` (number of items) and `k` (selection count)
+   - Read `n` pairs of integers `[t, d]` into list `info` (type `t`, deliciousness `d`)
+
+2. **Sorting:**
+   - Sort `info` in descending order of `d`
+
+3. **Initial Selection:**
+   - Create `selected` list: first `k` elements of sorted `info`
+   - Initialize variables:
+     - `selected_only`: list to store unique type entries
+     - `selected_chohuku`: list to store duplicate type entries
+     - `memo`: dictionary tracking encountered types
+   - Process `selected`:
+     - For each `(t, d)` in `selected`:
+       - If `t` not in `memo`: add `d` to `selected_only`, mark `t` in `memo`
+       - Else: add `d` to `selected_chohuku`
+
+4. **Process Remaining Items:**
+   - Initialize `unselected_only` list
+   - For each `(t, d)` in `info[k:]`:
+     - If `t` not in `memo`: add `d` to `unselected_only`, mark `t` in `memo`
+
+5. **Initial Calculation:**
+   - `cnt_type` = length of `memo` after selection
+   - `sum_select` = sum of `selected_only` + sum of `selected_chohuku`
+   - `ans` = cnt_type² + sum_select
+
+6. **Optimization Loop:**
+   - Reverse `unselected_only` to descending order
+   - For `i` in 0 to min(len(selected_chohuku), len(unselected_only)) - 1:
+     - Increment `cnt_type` by 1
+     - Add top element of `unselected_only` to `sum_select`
+     - Subtract last element of `selected_chohuku` from `sum_select`
+     - Remove last elements from both lists
+     - Update `ans` with max(current ans, cnt_type² + sum_select)
+
+7. **Output:**
+   - Print final `ans`
+
+**Data Structures:**
+- Lists: `info`, `selected`, `selected_only`, `selected_chohuku`, `unselected_only`
+- Dictionary: `memo` (type tracking)
+- Primitive variables: `n`, `k`, `cnt_type`, `sum_select`, `ans`
+
+**Control Flow:**
+- Sorting with custom comparator
+- Sequential processing with conditional checks
+- Loop with min-based iteration count
+- In-place list modifications
+
+**Dependencies:**
+- `operator.itemgetter` for sorting key
+
+**Operations:**
+- Arithmetic operations for score calculation
+- List slicing and manipulation
+- Dictionary lookups for type tracking

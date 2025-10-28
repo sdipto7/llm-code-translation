@@ -1,0 +1,36 @@
+- Import `ArrayList` from `java.util`.
+- Import `Scanner` from `java.util`.
+
+- Declare integer arrays `a`, `b`, `c`, `d`.
+- Declare integers `n`, `m`, `q`.
+- Declare `long` `ans`, initialized to `-100L`.
+
+- Define `main` function:
+  - Initialize `Scanner` to read from `System.in`.
+  - Read integers `n`, `m`, `q` from input.
+  - Initialize arrays `a`, `b`, `c`, `d` with size `q`.
+  - For `i` from `0` to `q - 1`:
+    - Read integer, subtract 1, and assign to `a[i]`.
+    - Read integer, subtract 1, and assign to `b[i]`.
+    - Read integer and assign to `c[i]`.
+    - Read integer and assign to `d[i]`.
+  - Call `dfs` with an empty `ArrayList<Integer>`.
+  - Print `ans`.
+
+- Define `dfs` function with parameter `list` of type `ArrayList<Integer>`:
+  - If `list.size()` equals `n`:
+    - Initialize `long` `score` to `0L`.
+    - For `i` from `0` to `q - 1`:
+      - If `list.get(b[i]) - list.get(a[i])` equals `c[i]`, add `d[i]` to `score`.
+    - Assign the maximum of `ans` and `score` to `ans`.
+    - Return from the function.
+  - If `list` is not empty:
+    - For `num` from `list.get(list.size() - 1)` to `m`:
+      - Add `num` to `list`.
+      - Recursively call `dfs` with `list`.
+      - Remove the last element from `list`.
+  - Else:
+    - For `num` from `1` to `m`:
+      - Add `num` to `list`.
+      - Recursively call `dfs` with `list`.
+      - Remove the last element from `list`.

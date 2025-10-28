@@ -1,0 +1,30 @@
+Function Signature:
+- Function Name: main
+- Parameters: None
+- Return Type: None
+
+Variable Declarations and Data Types:
+- cookies: List of Integers
+- leftOver: Integer
+- takahashi: Integer
+
+Logic Flow in Execution Order:
+1. Read input as a single line of space-separated values.
+2. Convert the input string into a list of integers, assigning it to cookies.
+3. Calculate the difference between the first and third elements of cookies, assigning it to leftOver.
+4. Assign the maximum of 0 and leftOver to takahashi.
+5. Check if takahashi is greater than 0:
+   a. If true, convert takahashi to a string and concatenate it with a space and the second element of cookies converted to a string.
+   b. If false, calculate the difference between the second element of cookies and the absolute value of leftOver, take the maximum of 0 and this value, convert it to a string, and concatenate it with a space and takahashi converted to a string.
+6. Print the resulting concatenated string.
+
+Control Structures:
+- Conditional (if-else) with condition: takahashi > 0
+
+Input/Output Operations and Data Processing Logic:
+- Input: A single line of space-separated integers.
+- Output: A single line of space-separated integers.
+- Data Processing: Arithmetic operations (subtraction, absolute value), comparison operations, and conversion between string and integer types.
+
+Required Libraries, Modules, or Dependencies:
+- None

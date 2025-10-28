@@ -1,0 +1,33 @@
+Algorithm:
+- Import java.util.Scanner and java.util.Arrays
+- Define class codeforces_86_A
+- Define function power(Long a) returning int:
+  - Initialize int res = 0
+  - While a > 0:
+    - Increment res by 1
+    - Set a = a / 10
+  - Return res
+- Define function mult(Long a) returning long:
+  - Call power(a) and store result in int pow
+  - Initialize long max = 0
+  - For j from 0 to pow-1:
+    - Set max = max * 10 + 9
+  - Return a * (max - a)
+- Define main function with String[] args parameter:
+  - Create Scanner object reading from System.in
+  - Read long l from input
+  - Read long r from input
+  - Initialize long res = 0
+  - Create long array maxxes of size 10
+  - Initialize long temp = 0
+  - For i from 0 to 9:
+    - Set temp = temp * 10 + 9
+    - Set maxxes[i] = (temp / 2) * (temp - temp / 2)
+  - Set res = maximum of mult(l) and current res
+  - Set res = maximum of mult(r) and current res
+  - Reset temp = 0
+  - For i from 0 to 9:
+    - Set temp = temp * 10 + 9
+    - If l <= temp/2 AND temp/2 <= r:
+      - Set res = maximum of maxxes[i] and current res
+  - Print res

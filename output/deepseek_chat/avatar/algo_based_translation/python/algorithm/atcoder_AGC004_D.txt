@@ -1,0 +1,34 @@
+import sys
+sys.setrecursionlimit(1000000)
+
+def dfs(links: list[set[int]], n: int, k: int, v: int, p: int) -> tuple[int, int]:
+    height_from_leaf: int = 0
+    cut_count: int = 0
+    for u in links[v]:
+        if u == 0:
+            continue
+        hgt: int
+        cut: int
+        hgt, cut = dfs(links, n, k, u, v)
+        height_from_leaf = max(height_from_leaf, hgt)
+        cut_count += cut
+    height_from_leaf += 1
+    if p != 0 and height_from_leaf == k:
+        height_from_leaf = 0
+        cut_count += 1
+    return height_from_leaf, cut_count
+
+n: int
+k: int
+aaa: list[int]
+n, k, *aaa = map(int, sys.stdin.buffer.read().split())
+links: list[set[int]] = [set() for _ in range(n)]
+for i, a in enumerate(aaa):
+    a -= 1
+    links[a].add(i + 1)
+_: int
+ans: int
+_, ans = dfs(links, n, k, 0, 0)
+if aaa[0] != 1:
+    ans += 1
+print(ans)

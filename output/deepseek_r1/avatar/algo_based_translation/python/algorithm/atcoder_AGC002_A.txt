@@ -1,0 +1,46 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `S() -> str`: Reads a line from standard input and strips trailing whitespace.
+- `I() -> int`: Reads an integer from standard input.
+- `LI() -> list[int]`: Reads a line of space-separated integers from standard input.
+- `LS() -> list[str]`: Reads a line of space-separated strings from standard input.
+- **Main Logic**: Executes after reading inputs `a` and `b` via `LI()`.
+
+**Variables:**
+- `a: int`: First input value (integer).
+- `b: int`: Second input value (integer).
+
+**Step-by-Step Logic:**
+1. **Read Input:**
+   - Read `a` and `b` using `LI()` to obtain two integers.
+
+2. **Check Positive Range:**
+   - If `a > 0`, print "Positive" (all values in the range are positive).
+
+3. **Check Zero Inclusion:**
+   - If `a ≤ 0` and `b ≥ 0`, print "Zero" (the range includes zero).
+
+4. **Handle Negative Range:**
+   - **Compute Sum:** Calculate `sum_ab = a + b`.
+   - **Check Parity:**
+     - If `sum_ab % 2 == 0`, print "Negative" (odd count of negative terms, product is negative).
+     - Else, print "Positive" (even count of negative terms, product is positive).
+
+**Control Flow:**
+- Sequential checks using `if`-`elif`-`else`:
+  1. Exit early for `a > 0`.
+  2. Exit early if the range spans zero.
+  3. Handle purely negative ranges via sum parity check.
+
+**Input/Output Operations:**
+- Input via `sys.stdin.readline` in helper functions.
+- Output via `print` statements based on logical conditions.
+
+**Edge Case Handling:**
+- Correctly identifies ranges where `a` or `b` is zero.
+- Handles cases where `a` and `b` are both negative with accurate parity checks.
+
+**Dependencies:**
+- **External Library:** `sys` for input operations.
+- **Unused Imports:** `bisect`, `collections`, `copy`, `heapq`, `itertools`, `math`, `numpy`, `string` (no impact on core logic).

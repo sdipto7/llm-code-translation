@@ -1,0 +1,32 @@
+**Input Operations:**
+- Read integer from stdin: `I() -> int`
+- Read multiple integers from stdin: `MI() -> tuple[int, ...]`
+- Read list of integers from stdin: `LI() -> list[int]`
+
+**Main Function:**
+- Parameters: none
+- Return type: void
+- Variables:
+  - `mod: int = 1000000007`
+  - `N: int`, `A: int`, `B: int` (from input)
+  - `ans: int = 0`
+  - `rep: int = N // (A + B)`
+  - `res: int = N - rep * (A + B)`
+
+**Execution Flow:**
+1. Call `main()`
+2. Read `N`, `A`, `B` using `MI()`
+3. Calculate `rep = N // (A + B)`
+4. Update `ans = rep * A`
+5. Calculate `res = N - rep * (A + B)`
+6. Update `ans = ans + min(res, A)`
+7. Print `ans`
+
+**Control Structures:**
+- None beyond basic arithmetic and min function
+
+**Output Operation:**
+- Print integer result to stdout
+
+**Dependencies:**
+- `sys` module for stdin operations

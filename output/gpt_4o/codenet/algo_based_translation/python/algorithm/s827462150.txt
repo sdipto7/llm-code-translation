@@ -1,0 +1,28 @@
+```
+Dependencies:
+- Import the `numpy` module as `np`.
+
+Input:
+- Read an integer `n` from input.
+
+Variable Declarations:
+- `n`: integer, the input value.
+- `A`: numpy array of floats, initialized with zeros of size `n`.
+- `x`, `y`, `z`: integers, all initialized to 1.
+- `i`: integer, used to store the calculation result.
+
+Logic Flow:
+1. Initialize `A` as a numpy array of zeros with length `n`.
+2. Set initial values: `x = 1`, `y = 1`, `z = 1`.
+3. Enter the first `while` loop with condition: `x**2 + y**2 + z**2 + x*y + y*z + z*x <= n`.
+    - Enter the second `while` loop with the same condition: `x**2 + y**2 + z**2 + x*y + y*z + z*x <= n`.
+        - Enter the third `while` loop with the same condition: `x**2 + y**2 + z**2 + x*y + y*z + z*x <= n`.
+            - Compute `i` as `x**2 + y**2 + z**2 + x*y + y*z + z*x`.
+            - Increment `A[i - 1]` by 1.
+            - Increment `z` by 1.
+        - Reset `z` to 1.
+        - Increment `y` by 1.
+    - Reset `y` and `z` to 1.
+    - Increment `x` by 1.
+4. Iterate over range `0` to `n-1` and print each element of `A` as an integer.
+```

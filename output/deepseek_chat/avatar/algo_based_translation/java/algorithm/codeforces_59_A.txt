@@ -1,0 +1,26 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner in`: Scanner object for input
+- `String word`: input string
+- `int uppercase`: count of uppercase letters
+- `int lowercase`: count of lowercase letters
+- `int i`: loop index
+- `char ch`: current character
+
+**Libraries:**
+- `java.util.Scanner`
+
+**Algorithm:**
+1. Create Scanner object for reading input
+2. Read next string input into variable `word`
+3. Initialize `uppercase` to 0
+4. Initialize `lowercase` to 0
+5. For each index `i` from 0 to `word.length() - 1`:
+   - Get character at position `i` from `word`
+   - If character is uppercase: increment `uppercase` by 1
+   - Else: increment `lowercase` by 1
+6. If `uppercase` > `lowercase`: output `word` converted to uppercase
+7. Else if `lowercase` > `uppercase`: output `word` converted to lowercase
+8. Else: output `word` converted to lowercase

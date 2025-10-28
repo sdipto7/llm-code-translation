@@ -1,0 +1,76 @@
+**Algorithm:**
+
+**Structures and Variables:**
+- `MOD` (int): 10^9+7
+- `to` (List of List of Integer): Adjacency list for tree
+- `dp` (array of int): Stores subtree size for each node
+- `edges` (2D array of int): Each row contains two nodes of an edge
+
+**Functions:**
+1. `main()`
+   - **Parameters:** Command-line arguments (unused)
+   - **Return:** void
+   - **Process:**
+     - Read integer N
+     - Initialize adjacency list `to` with N empty lists
+     - Read N-1 edges into `edges` array and build adjacency list
+     - Call `rec(0, -1)` to compute subtree sizes via DFS
+     - Initialize `mulsum` to 0
+     - For each edge in `edges`:
+       - Identify child node by comparing `dp` values of endpoints
+       - Calculate subtree sizes `a` (child subtree) and `b` (remaining nodes)
+       - Compute contribution `mul` as (2^a -1)*(2^b -1) mod MOD
+       - Accumulate `mulsum` with `mul` modulo MOD
+     - Compute total cases `cases = 2^N mod MOD`
+     - Calculate `PN = (mulsum + (cases - 1)) mod MOD`
+     - Compute `BN = N * 2^(N-1) mod MOD`
+     - Calculate `WN = (PN - BN + MOD) mod MOD`
+     - Compute answer as `WN * cases^ (MOD-2) mod MOD`
+     - Print answer
+
+2. `rec(v: int, parent: int) -> int`
+   - **Parameters:** Current node `v`, parent node `parent`
+   - **Return:** Subtree size of `v`
+   - **Process:**
+     - Initialize result to 1
+     - For each neighbor in adjacency list of `v`:
+       - Skip if neighbor is parent
+       - Add recursive call result for neighbor to result
+     - Store result in `dp[v]` and return
+
+3. `modpow(x: long, y: long) -> long`
+   - **Parameters:** Base `x`, exponent `y`
+   - **Return:** x^y mod MOD
+   - **Process:**
+     - If y == 0: return 1
+     - If y is odd: return (x * modpow(x, y-1)) mod MOD
+     - Else: Compute tmp = modpow(x, y/2), return (tmp * tmp) mod MOD
+
+**Control Flow:**
+1. Main execution:
+   - N input → tree construction → DFS → edge processing → mathematical calculations → output
+2. Edge processing loop:
+   - For each edge, determine child using `dp` comparison
+3. Recursive DFS:
+   - Post-order traversal accumulating subtree sizes
+4. Modular exponentiation:
+   - Recursive implementation with halving exponent
+
+**Data Processing:**
+- All integer operations use modulo 1e9+7
+- FastScanner handles input parsing for efficiency
+- Edge directions determined dynamically via subtree sizes
+
+**Dependencies:**
+- Java IO libraries (InputStream, BufferedReader, StringTokenizer)
+- Custom FastScanner for optimized input parsing
+
+**Input/Output:**
+- Input: Tree via N-1 edges from stdin
+- Output: Single integer (modular result) to stdout
+
+**Critical Logic:**
+- Child identification via subtree size comparison during edge processing
+- Correct handling of modular arithmetic for large exponents
+- Final division via Fermat's little theorem using modular inverse
+- Exclusion of all-white case in `PN` calculation using `(cases -1)`

@@ -1,0 +1,21 @@
+```
+Algorithm:
+1. Declare function `calculate_differences()` with no parameters and return type `None`.
+2. Declare variables:
+   - `n` of type `int`
+   - `a`, `b`, `c` of type `List[int]`
+   - `x`, `y`, `z` of type `int`
+3. Initialize `x`, `y`, `z` to 0.
+4. Read an integer from input and assign it to `n`.
+5. Read a line from input, split it into strings, convert each to an integer, and store them in list `a`.
+6. Read another line from input, split it into strings, convert each to an integer, and store them in list `b`.
+7. Read another line from input, split it into strings, convert each to an integer, and store them in list `c`.
+8. For each integer `i` in list `a`, perform:
+   - Add `i` to `x`.
+9. For each integer `i` in list `b`, perform:
+   - Add `i` to `y`.
+10. For each integer `i` in list `c`, perform:
+    - Add `i` to `z`.
+11. Calculate the absolute difference between `x` and `y`, then print the result.
+12. Calculate the absolute difference between `y` and `z`, then print the result.
+```

@@ -1,0 +1,50 @@
+```structured_algorithm
+Function: solve_case()
+Parameters: None
+Return Type: void
+
+Variables:
+- n: int
+- m: int
+- count: int[][]
+- ans: int (initialized to -1)
+- x: int
+- y: int
+- found: bool
+- k: int
+- i: int
+- j: int
+
+Algorithm:
+1. Read n and m from standard input via split() method.
+2. Initialize count as 2D array of size n x n with all elements set to 0.
+3. Set ans = -1.
+4. For k from 0 to m-1:
+    a. Read x and y from standard input via split() method.
+    b. Decrement x by 1.
+    c. Decrement y by 1.
+    d. Set found = false.
+    e. For i from (x - 2) to x (inclusive):
+        i. If i >= 0 AND i < n:
+            For j from (y - 2) to y (inclusive):
+                a. If j >= 0 AND j < n:
+                    i. Increment count[i][j] by 1.
+                    ii. If count[i][j] == 9:
+                        Set found = true.
+    f. If found == true:
+        i. Set ans = (k + 1).
+        ii. Break loop over k.
+5. Print ans to standard output.
+
+Edge Case Handling:
+- Automatically skips invalid indices through boundary checks (i >= 0, i < n, j >= 0, j < n)
+- Returns -1 if no 3x3 subgrid reaches cumulative count 9 after m operations
+
+Input Processing:
+- Reads integers from stdin using split() and map(int, ...)
+- Converts x,y from 1-based to 0-based indexing
+
+Control Flow:
+- Nested for-loops for 3x3 grid checks with early termination via break
+- Loop over m operations with early exit when solution found
+```

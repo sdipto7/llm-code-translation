@@ -1,0 +1,29 @@
+**Function Signature:**
+- main(): None
+
+**Variables:**
+- n: int
+- k: int
+- s: str
+- count: list[int] (length 26)
+- c: str
+- res: int
+- i: int
+
+**Algorithm:**
+1. Read two integers n and k from input
+2. Read string s from input
+3. Initialize list count with 26 zeros
+4. For each character c in s:
+   - Calculate index = ord(c) - ord('A')
+   - Increment count[index] by 1
+5. Sort count in descending order
+6. Initialize res to 0
+7. For i from 0 to 25:
+   - If count[i] >= k:
+        - Add k² to res
+        - Print res
+        - Exit program
+   - Subtract count[i] from k
+   - Add count[i]² to res
+8. Print res

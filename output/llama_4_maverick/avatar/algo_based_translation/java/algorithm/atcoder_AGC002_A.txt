@@ -1,0 +1,9 @@
+1. Read two integers from the input.
+2. Store the first integer in a variable 'a' and the second integer in a variable 'b'.
+3. Check if 'a' is greater than 0.
+4. If true, output "Positive".
+5. Otherwise, check if 'b' is greater than or equal to 0.
+6. If true, output "Zero".
+7. Otherwise, calculate the difference between 'b' and 'a', add 1, and check if the result is even.
+8. If the result is even, output "Positive".
+9. Otherwise, output "Negative".

@@ -1,0 +1,10 @@
+Algorithm:
+- Import java.util.Scanner
+- Define class Main
+- Define main method with parameter String[] args
+- Declare Scanner sc initialized with System.in
+- Declare int x, read integer input using sc.nextInt()
+- Declare int y, read integer input using sc.nextInt()
+- Declare int z, read integer input using sc.nextInt()
+- Print z, space, x, space, y using System.out.println()
+- Close Scanner sc using sc.close()

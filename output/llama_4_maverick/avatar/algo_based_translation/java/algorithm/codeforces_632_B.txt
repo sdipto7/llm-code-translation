@@ -1,0 +1,11 @@
+1. Read the number of elements 'n' from the input.
+2. Read 'n' integers into an array 'a'.
+3. Read a string 's' of length 'n' from the input.
+4. Initialize a variable 'sum' to 0.
+5. Iterate through the string 's' and for each character at index 'i', if the character is 'B', add the value of 'a[i]' to 'sum'.
+6. Initialize 'ans' with the value of 'sum'.
+7. Initialize 'sum1' with the value of 'sum'.
+8. Iterate through the string 's' from left to right. For each character at index 'i', if the character is 'A', add 'a[i]' to 'sum1', otherwise subtract 'a[i]' from 'sum1'. Update 'ans' with the maximum of 'ans' and 'sum1'.
+9. Reset 'sum1' to the initial 'sum'.
+10. Iterate through the string 's' from right to left. For each character at index 'i', if the character is 'A', add 'a[i]' to 'sum1', otherwise subtract 'a[i]' from 'sum1'. Update 'ans' with the maximum of 'ans' and 'sum1'.
+11. Output the value of 'ans'.

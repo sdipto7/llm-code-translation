@@ -1,0 +1,9 @@
+1. Read input from the user.
+2. Split the input into two time strings using space as the delimiter.
+3. Split each time string into hours and minutes using colon as the delimiter.
+4. Convert the hours and minutes of the first time string into integers.
+5. Create a LocalTime object representing the first time using the integer hours and minutes.
+6. Convert the hours and minutes of the second time string into integers.
+7. Create a LocalTime object representing the second time using the integer hours and minutes.
+8. Calculate the difference between the two LocalTime objects by subtracting the hours and minutes of the second time from the first time.
+9. Output the result of the subtraction.

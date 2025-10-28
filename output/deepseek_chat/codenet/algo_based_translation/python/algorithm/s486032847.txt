@@ -1,0 +1,17 @@
+import math
+
+function keta(s: string) -> integer:
+    if length(s) < 2:
+        return integer(s)
+    n = sum(map(integer, s))
+    return keta(string(n))
+
+function main():
+    N = input()
+    if keta(N) % 9 == 0:
+        print("Yes")
+    else:
+        print("No")
+
+if __name__ == "__main__":
+    main()

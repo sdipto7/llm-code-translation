@@ -1,0 +1,9 @@
+read integer n from input
+read integer m from input
+declare integer array po of size n
+for i from 0 to n-1:
+    read integer value into po[i]
+    subtract po[i] from m
+sort array po in ascending order
+calculate result = n + (m divided by po[0])
+print result

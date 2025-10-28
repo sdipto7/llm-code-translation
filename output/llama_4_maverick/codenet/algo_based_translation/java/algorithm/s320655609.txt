@@ -1,0 +1,26 @@
+1. Import required libraries: java.util, java.io, java.nio.charset.StandardCharsets.
+2. Define a class Main with the following properties and methods:
+   - Properties: 
+     - constraints (List<Long>)
+     - N (long)
+     - result (long)
+   - Constructor Main(): 
+     - InputStreamReader reader = new InputStreamReader(System.in, StandardCharsets.UTF_8)
+     - BufferedReader in = new BufferedReader(reader)
+     - N = Long.parseLong(in.readLine())
+     - For i = 0 to 4:
+       - constraints.add(Long.parseLong(in.readLine()))
+     - in.close()
+     - calc()
+   - Method calc(): 
+     - min = Long.MAX_VALUE
+     - For each c in constraints:
+       - min = Math.min(min, c)
+     - time = N / min
+     - If N % min != 0:
+       - time = time + 1
+     - time = time + 4
+     - result = time
+   - main():
+     - Main ins = new Main()
+     - Output ins.result.

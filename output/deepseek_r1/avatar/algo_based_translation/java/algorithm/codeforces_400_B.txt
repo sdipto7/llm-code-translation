@@ -1,0 +1,40 @@
+```algorithm
+Function main():
+    Parameters: String[] args
+    Returns: void
+
+    Import: java.util.Scanner, java.util.HashSet
+
+    Variables:
+        Scanner sc = new Scanner(System.in)
+        int n = sc.nextInt()
+        int m = sc.nextInt()
+        String[] arrs = new String[n]
+        int[] length = new int[n]
+        int index = 0
+        int returnDex = 0
+        HashSet<Integer> set = new HashSet<>()
+
+    Input:
+        Read n and m from input
+        For i from 0 to n-1:
+            arrs[i] = sc.next()
+
+    Processing:
+        For each String tmp in arrs:
+            int dexG = tmp.indexOf("G")
+            int dexS = tmp.indexOf("S")
+            If dexG > dexS:
+                returnDex = -1
+            length[index] = dexS - dexG
+            index += 1
+
+        For each int len in length:
+            set.add(len)
+
+    Output:
+        If returnDex == -1:
+            Print -1
+        Else:
+            Print set.size()
+```

@@ -1,0 +1,35 @@
+- **Imports**:  
+  `java.util.ArrayDeque`, `java.util.Queue`, `java.util.Random`, `java.util.Scanner`  
+
+- **Function Signatures**:  
+  - `public static void main(String[] args)`  
+  - `static void p(String ans)`  
+  - `static void p(int ans)`  
+  - `static void p()`  
+  - `static void p(long ans)`  
+  - `static void p(double ans)`  
+
+- **Variables**:  
+  - `Scanner sc = new Scanner(System.in)`  
+  - `long N` (input value)  
+  - `long min` (initialized to `0`, holds minimum of 5 inputs)  
+
+- **Logic Flow**:  
+  1. Read `N` via `sc.nextLong()`  
+  2. Loop `i` from `0` to `4` (inclusive):  
+     a. If `i == 0`: Read input via `sc.nextLong()` and assign to `min`  
+     b. Else: Read input via `sc.nextLong()` and set `min = Math.min(min, input)`  
+  3. Compute result: `ceil(N / min) + 4` (cast `N` to `double`, divide by `min`, compute ceiling, cast result to `long`, add `4`)  
+  4. Call `p(long ans)` with the computed result  
+
+- **Input/Output Operations**:  
+  - Input: Read `N` (long) followed by 5 long values  
+  - Output: Print the computed result as a long via `System.out.println`  
+
+- **Control Structures**:  
+  - For loop: `for (int i = 0; i < 5; i++)`  
+  - Conditional: `if (i == 0)` inside the loop  
+
+- **Data Processing**:  
+  - Determine the minimum of 5 input values  
+  - Compute ceiling of `N / min`, add 4 for final result

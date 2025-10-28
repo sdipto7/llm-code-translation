@@ -1,0 +1,23 @@
+```
+Function main() -> str:
+    Declare xxs as list of str obtained by splitting input string with " "
+    Declare x, t, a, b, da, db as integers initialized with respective elements from xxs converted to int
+    If x equals 0:
+        Print "YES"
+        Return "Result Found"
+    Declare a_time as integer, initialized to minimum of a divided by da and t minus 1
+    Declare b_time as integer, initialized to minimum of b divided by db and t minus 1
+    For i in range from 0 to a_time inclusive:
+        For j in range from 0 to b_time inclusive:
+            If a minus da multiplied by i equals x or b minus db multiplied by j equals x:
+                Print "YES"
+                Return "Result Found"
+            If (a minus da multiplied by i) plus (b minus db multiplied by j) equals x:
+                Print "YES"
+                Return "Result Found"
+    Return "Result Not Found"
+
+Declare ff as the result of main()
+If ff equals "Result Not Found":
+    Print "NO"
+```

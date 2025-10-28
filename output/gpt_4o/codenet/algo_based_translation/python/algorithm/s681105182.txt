@@ -1,0 +1,46 @@
+```plaintext
+- Import the `sys` module.
+- Set recursion limit to 10^7 using `sys.setrecursionlimit`.
+
+- Define function `LI()`:
+  - Return a list of integers parsed from a line of input using `sys.stdin.readline().split()`.
+
+- Define function `LI_()`:
+  - Return a list of integers each reduced by 1, parsed from a line of input.
+
+- Define function `LF()`:
+  - Return a list of floats parsed from a line of input.
+
+- Define function `LS()`:
+  - Return a list of strings from a line of input.
+
+- Define function `II()`:
+  - Return an integer parsed from a line of input.
+
+- Define function `SI()`:
+  - Return a stripped string from a line of input.
+
+- Define constant `INF` as 10^18.
+- Define constant `MOD` as 10^9 + 7.
+
+- Define function `main()`:
+  - Declare variable `N` as an integer initialized by calling `II()`.
+  - Declare list `a_li` initialized by calling `LI()`.
+
+  - Sort `a_li` in non-decreasing order.
+
+  - Declare integer `n` as the last element of `a_li`.
+
+  - Declare variable `dif` as `INF`.
+  - Declare variable `prev_dif` as `dif`.
+
+  - Loop through each element `a` in `a_li` except the last element:
+    - Update `dif` to be the minimum of `abs(n/2 - a)` and `dif`.
+    - If `dif` is different from `prev_dif`:
+      - Set `r` as `a`.
+      - Update `prev_dif` to the current value of `dif`.
+
+  - Print `n` and `r`.
+
+- Call `main()` to execute.
+```

@@ -1,0 +1,44 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signature**  
+```python
+def main() -> None:
+    pass
+```
+
+**Variables**  
+- `n: int`  
+- `arr: List[float]` (after processing)  
+- `o: int`  
+- `arr_sum: float`  
+- `res: float`  
+- `i: int` (loop control variable)  
+
+**Input Operations**  
+1. Read integer `n` from standard input.  
+2. Read next line containing 2n space-separated floats.  
+
+**Data Processing**  
+3. Convert input floats to list of fractional parts (x - int(x)) excluding zeros.  
+4. Sort resulting fractional parts in ascending order.  
+5. Calculate `o = 2n - len(arr)` (count of elements removed for being integers).  
+6. Compute `arr_sum` as sum of all elements in `arr`.  
+7. Initialize `res` to 2000000000.0.  
+
+**Control Flow**  
+8. For `i` in range 0 to n (inclusive):  
+    - **Condition**: If `(i + o) >= n`  
+        - **Action**:  
+            a. Calculate `current_diff = abs(i - arr_sum)`  
+            b. Update `res = min(res, current_diff)`  
+
+**Output Operation**  
+9. Print `res` formatted to 3 decimal places.  
+
+**Edge Case Handling**  
+- Automatically handles all-zero fractions by excluding them before processing  
+- Implicitly handles cases where all numbers are integers via `o` calculation  
+
+**External Dependencies**  
+- Requires standard input facilities  
+- Uses built-in functions: `input`, `split`, `map`, `float`, `int`, `sorted`, `sum`, `min`, `abs`

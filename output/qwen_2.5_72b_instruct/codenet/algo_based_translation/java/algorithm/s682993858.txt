@@ -1,0 +1,31 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner sc` (input stream)
+- `int sum` (integer)
+- `String s` (string)
+- `char a` (character)
+- `int i` (integer)
+
+Complete logic flow in execution order:
+1. Create an instance of `Scanner` to read input from standard input.
+2. Enter an infinite loop.
+3. Initialize `sum` to 0.
+4. Read a string `s` from the input.
+5. If `s` equals "0", break out of the loop.
+6. For each character `a` in the string `s` from index 0 to `s.length() - 1`:
+   - Convert character `a` to its integer value by subtracting '0' from it and add it to `sum`.
+7. Print the value of `sum` followed by a newline.
+8. Repeat from step 3 until the loop is broken.
+
+Control structures:
+- Infinite loop (`while(true)`)
+- Conditional statement (`if(s.equals("0"))`)
+- For loop (`for(int i=0; i<s.length(); i++)`)
+
+Input/output operations and data processing logic:
+- Input: Read strings from standard input using `Scanner`.
+- Output: Print the sum of the digits of the input string followed by a newline using `System.out.printf`.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

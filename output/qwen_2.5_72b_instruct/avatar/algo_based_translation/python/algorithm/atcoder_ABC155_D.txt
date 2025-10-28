@@ -1,0 +1,63 @@
+Function signature: `main() -> None`
+
+Variable declarations:
+- `N: int`
+- `K: int`
+- `A: List[int]`
+- `ll: int = -10 ** 18 - 1`
+- `rr: int = 10 ** 18 + 1`
+- `x: int`
+- `tot: int`
+- `i: int`
+- `l: int`
+- `r: int`
+- `c: int`
+
+Logic flow:
+1. Read `N` and `K` as integers from input.
+2. Read `A` as a list of integers from input.
+3. Sort the list `A`.
+4. Initialize `ll` to `-10 ** 18 - 1` and `rr` to `10 ** 18 + 1`.
+5. While `ll + 1 < rr`:
+   1. Set `x` to `(ll + rr) // 2`.
+   2. Initialize `tot` to `0`.
+   3. For each `i` in `0` to `N-1`:
+      1. If `A[i] < 0`:
+         1. Initialize `l` to `-1` and `r` to `N`.
+         2. While `l + 1 < r`:
+            1. Set `c` to `(l + r) // 2`.
+            2. If `A[i] * A[c] < x`:
+               1. Set `r` to `c`.
+            3. Else:
+               1. Set `l` to `c`.
+         4. Increment `tot` by `N - r`.
+      2. Else:
+         1. Initialize `l` to `-1` and `r` to `N`.
+         2. While `l + 1 < r`:
+            1. Set `c` to `(l + r) // 2`.
+            2. If `A[i] * A[c] < x`:
+               1. Set `l` to `c`.
+            3. Else:
+               1. Set `r` to `c`.
+         4. Increment `tot` by `r`.
+      3. If `A[i] * A[i] < x`:
+         1. Decrement `tot` by `1`.
+   4. Set `tot` to `tot // 2`.
+   5. If `tot < K`:
+      1. Set `ll` to `x`.
+   6. Else:
+      1. Set `rr` to `x`.
+6. Print `ll`.
+
+Input/output operations:
+- Read `N` and `K` from input.
+- Read `A` from input.
+- Print `ll` as output.
+
+Data processing logic:
+- Sorting the list `A`.
+- Binary search to count pairs whose product is less than `x`.
+- Adjusting the range `[ll, rr]` based on the count of valid pairs `tot` relative to `K`.
+
+Required libraries, modules, or dependencies:
+- No specific libraries or modules required. Uses built-in Python functions and data structures.

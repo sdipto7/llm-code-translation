@@ -1,0 +1,79 @@
+**Algorithm**
+
+**Variables:**
+- MOD: long (constant value 1000000007)
+- xx: int[]
+- min: int
+- max: int
+- res: long
+- f: long (function return value)
+- i: int (loop variable)
+- a: String[]
+- o: int[]
+- s: String (input line)
+
+**Functions:**
+1. solve(BufferedReader in)
+   - Parameters: BufferedReader in (input source)
+   - Return: void
+   - Operations:
+     - Read input line, split into two integers (xx)
+     - Set min = smaller of xx[0]/xx[1], max = larger
+     - If min == max:
+         - Compute f = factorial(min) via f()
+         - res = (2 * f * f) % MOD
+     - Else if max == min + 1:
+         - Compute f = factorial(min) via f()
+         - res = (f * ((f * max) % MOD)) % MOD
+     - Else:
+         - res = 0
+     - Output res
+
+2. f(int n)
+   - Parameters: int n (input number)
+   - Return: long (n! modulo MOD)
+   - Operations:
+     - Initialize res = 1
+     - For i from 2 to n (inclusive):
+         - res = (res * i) % MOD
+     - Return res
+
+3. toInt(String s)
+   - Parameters: String s (numeric string)
+   - Return: int (parsed value)
+   - Operation: Return Integer.parseInt(s)
+
+4. toInts(String s)
+   - Parameters: String s (space-separated values)
+   - Return: int[]
+   - Operations:
+     - Split s into String array a
+     - Create int array o of length a.length
+     - For each index i in a:
+         - o[i] = toInt(a[i])
+     - Return o
+
+5. main(String[] args)
+   - Parameters: String[] args (command-line args)
+   - Return: void
+   - Operations:
+     - Create BufferedReader for System.in
+     - Instantiate Main and call solve()
+
+**Control Flow:**
+1. Conditional in solve():
+   - First check min == max: calculate (2*f!²) mod MOD
+   - Else check max == min + 1: calculate (f! * (f! * max)) mod MOD
+   - Else set res = 0
+
+2. Loop in f():
+   - Multiply integers 2..n sequentially with modulo operation
+
+**Input/Output:**
+- Input: Read via BufferedReader from standard input (single line with two space-separated integers)
+- Output: Print res to standard output
+
+**Dependencies:**
+- java.io.BufferedReader
+- java.io.InputStreamReader
+- java.util.* (implicit for String operations)

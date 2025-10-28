@@ -1,0 +1,45 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main(): void`
+
+**Variable Declarations:**
+- `txt: string` (input string)
+- `cu: int` (initialized to 0)
+- `cl: int` (initialized to 0)
+- `out: string` (resultant string)
+
+**Logic Flow:**
+1. Read `txt` from standard input.
+2. Initialize `cu` to 0.
+3. Initialize `cl` to 0.
+4. Loop through each character `z` in `txt`:
+   1. If `z.islower()` evaluates to True:
+      1. Increment `cl` by 1.
+   2. Else:
+      1. Increment `cu` by 1.
+5. After loop completion:
+   1. If `cu > cl` evaluates to True:
+      1. Assign `out = txt.upper()`
+   2. Else:
+      1. Assign `out = txt.lower()`
+6. Print `out` to standard output.
+
+**Control Flow Structures:**
+- For loop: Iterates over all characters in `txt` (exit criteria: end of string).
+- Conditional (inside loop): `z.islower()` check.
+- Post-loop conditional: Comparison `cu > cl`.
+
+**Input/Output Operations:**
+- Input: Single line from stdin via `input()`.
+- Output: Print `out` via `print()`.
+
+**Edge Case Handling:**
+- Empty input string: Both counters remain 0, `cu > cl` is false, returns empty lowercase string.
+- Mixed case with equal counts: Prefers lowercase conversion.
+
+**External Dependencies:**
+- Standard library functions: `input()`, `print()`, `str.islower()`, `str.upper()`, `str.lower()`.
+
+**Error Handling:**
+- Implicit: No explicit error handling. Assumes valid string input.

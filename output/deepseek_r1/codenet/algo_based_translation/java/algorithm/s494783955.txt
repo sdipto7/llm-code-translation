@@ -1,0 +1,24 @@
+- Required libraries: java.util.Scanner
+
+- Function signature:
+  - public static void main(String[] args)
+
+- Variables:
+  - Scanner sc (java.util.Scanner)
+  - String C (user input)
+
+- Execution flow:
+  1. Initialize Scanner with System.in
+  2. Read entire next token from input as String C
+  3. Extract first character from C using charAt(0)
+  4. Convert character to ASCII value and increment by 1
+  5. Cast result back to character type
+  6. Print resulting character via System.out.println
+
+- Input/Output:
+  - Input: Single string from standard input
+  - Output: Single character following input's first character in ASCII sequence
+
+- Data processing:
+  - Direct character arithmetic through ASCII value manipulation
+  - No explicit error checking for empty input

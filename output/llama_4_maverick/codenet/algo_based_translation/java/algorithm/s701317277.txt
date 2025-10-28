@@ -1,0 +1,17 @@
+1. Import required libraries: java.util.*
+2. Define a class: Main
+3. Define a function: main with parameter args[] of type String and return type void
+4. Declare a variable: sc of type Scanner and initialize it with new Scanner(System.in)
+5. Declare a variable: N of type int and read its value from sc using nextInt()
+6. Declare an array: A of type int[] with size N
+7. Declare variables: min of type int and initialize it with Integer.MAX_VALUE, count of type int and initialize it with 0, sum of type long and initialize it with 0
+8. Loop from i = 0 to N-1 with increment 1
+   1. Read a value from sc using nextInt() and store it in A[i]
+   2. Check if A[i] is less than 0
+      1. If true, increment count by 1
+   3. Update min with the minimum of min and the absolute value of A[i]
+   4. Add the absolute value of A[i] to sum
+9. Close sc using close()
+10. Check if count is even by verifying count % 2 == 0
+    1. If true, output sum
+    2. If false, output sum - min * 2

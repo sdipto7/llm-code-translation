@@ -1,0 +1,26 @@
+Function signature: `check(a: str, b: str) -> int`
+
+Variable declarations:
+- `s: str` (input string)
+- `t: str` (input string)
+- `s: int` (counter for differing characters)
+- `ans: int` (minimum number of differing characters, initialized to a large value)
+- `i: int` (loop index)
+- `a: str` (substring of `s`)
+- `j: int` (loop index for zipped iteration)
+- `i: str` (character from `a`)
+- `j: str` (character from `b`)
+
+Logic flow:
+1. Read input strings `s` and `t`.
+2. Define function `check` which takes two strings `a` and `b` and returns an integer.
+3. Initialize `s` to 0 inside `check`.
+4. Iterate over characters `i` from `a` and `j` from `b` simultaneously using `zip`.
+5. Increment `s` by 1 if `i` is not equal to `j`.
+6. Return `s` from `check`.
+7. Initialize `ans` to 1,000,000.
+8. Iterate over each index `i` of string `s`.
+9. Create substring `a` starting from index `i` to the end of `s`.
+10. If the length of `a` is greater than or equal to the length of `t`:
+    11. Update `ans` to the minimum of `ans` and the result of `check` called with `t` and the first `len(t)` characters of `a`.
+12. Print `ans`.

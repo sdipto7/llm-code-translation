@@ -1,0 +1,47 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `n`: int (input integer)
+- `i`: int (initialized to 1, later reset to 0)
+- `k`: int (initialized to 0)
+- `p`: int (initialized to 1, unused)
+- `flag`: boolean (initialized to true)
+- `a`: int[1000] (array of integers)
+- `scan`: Scanner (for input)
+
+**Logic Flow:**
+1. Initialize Scanner to read from standard input
+2. Read integer `n` from input
+3. Set `i = 0`
+4. While `k <= n`:
+   - Update `i = i + k`
+   - If `i >= n`:
+     - While `i >= n`:
+       - Set `i = i - n`
+   - Increment `a[i]` by 1
+   - Increment `k` by 1
+5. For `i` from 0 to `n-1`:
+   - If `a[i] == 0`:
+     - Set `flag = false`
+     - Break loop
+6. If `flag` is true:
+   - Print "YES"
+   - Else print "NO"
+
+**Control Structures:**
+- `while (k <= n)`
+- `if (i >= n)`
+- `while (!(i < n))` (equivalent to `while (i >= n)`)
+- `for (i = 0; i < n; ++i)`
+- `if (a[i] == 0)`
+- `if (flag)`
+
+**Input/Output:**
+- Input: Single integer `n` from stdin
+- Output: "YES" or "NO" to stdout
+
+**Dependencies:**
+- `java.util.Scanner`
+- `java.lang.*` (implicit)
+- `java.io.*` (implicit)

@@ -1,0 +1,9 @@
+1. Read input string from the user.
+2. Convert the input string into a character array.
+3. Read a long integer value representing 'k'.
+4. Determine the length of the input string.
+5. Iterate from index 0 to 'k-1' over the character array.
+6. For each index 'i', check if the character at that index is '1'.
+7. If the character is '1' and 'i' equals 'k-1', output 1 and terminate.
+8. If the character is not '1', output the character and terminate.
+9. If the loop completes without termination, no output is specified in the algorithm.

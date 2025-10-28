@@ -1,0 +1,50 @@
+Here is the detailed algorithm extracted from the Java code:
+
+1. **Input Reading**:
+   - Read two integers H (height) and W (width) from input
+   - Create a 2D character array C of size [H+2][W+2] (with padding)
+
+2. **Grid Initialization**:
+   - For each row from 0 to H-1:
+     - Read a string and convert to char array
+     - Populate C from index [1][1] to [H][W]
+
+3. **Edge Case Check**:
+   - If H == 1 and W == 1:
+     - Output "No" and terminate
+
+4. **Grid Validation**:
+   - For every cell (i,j) from (1,1) to (H,W):
+     - If C[i][j] is '#':
+       - Check all four adjacent cells (i-1,j), (i+1,j), (i,j-1), (i,j+1)
+       - If **all** adjacent cells are not '#':
+         - Output "No" and terminate
+
+5. **Final Result**:
+   - If no isolated '#' found:
+     - Output "Yes"
+
+**Data Structures**:
+- 2D char array with padding for boundary handling
+
+**Control Flow**:
+- Early termination for single-cell grids
+- Nested loops for grid traversal (row-major order)
+- Conditional checks for cell validation
+- Short-circuit exit when invalid configuration detected
+
+**Key Conditions**:
+- C[i][j] == '#'
+- C[i-1][j] != '#'
+- C[i+1][j] != '#'
+- C[i][j-1] != '#'
+- C[i][j+1] != '#'
+
+**Input/Output**:
+- Reads from System.in via custom input wrapper
+- Writes to System.out via PrintWriter
+- Processes grid data as characters
+
+**Dependencies**:
+- Requires Java I/O classes (BufferedReader, InputStream, etc.)
+- Uses helper classes MyInput for optimized input parsing

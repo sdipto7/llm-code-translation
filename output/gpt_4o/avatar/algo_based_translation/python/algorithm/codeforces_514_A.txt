@@ -1,0 +1,39 @@
+Algorithm:
+
+- Function Signature:
+  - Function: `process_input() -> int`
+
+- Variable Declarations and Data Types:
+  - `ip`: `str` - stores the input string from the user
+  - `st`: `str` - initializes as an empty string, used to build the output string
+  - `n`: `int` - used within the loop to store the transformed digit
+
+- Logic Flow:
+  1. Read input from the user and store it in the variable `ip`.
+  2. Initialize an empty string `st`.
+  3. If the length of `ip` is not equal to 1:
+     - Check if the first character of `ip` is "9":
+       - If true, set `st` to "9".
+       - Update `ip` by removing the first character.
+     - Loop through each character `i` in the string `ip`:
+       - Convert `i` to an integer and check if it is greater than 4:
+         - If true, calculate `n` as `9 - int(i)`.
+         - Append `str(n)` to `st`.
+       - Else, append `i` to `st`.
+  4. Else, set `st` to `ip`.
+  5. Convert `st` to an integer and print it.
+
+- Control Structures:
+  - Conditional:
+    - If-else to check the length of `ip`.
+    - Nested if to check if the first character is "9".
+    - Nested if-else within the loop to check if the integer value of `i` is greater than 4.
+  - Loop:
+    - For loop to iterate over each character in `ip`.
+
+- Input/Output Operations and Data Processing Logic:
+  - Input: Read a string from the user.
+  - Output: Print the integer value of the transformed string stored in `st`.
+
+- Required Libraries, Modules, or Dependencies:
+  - None.

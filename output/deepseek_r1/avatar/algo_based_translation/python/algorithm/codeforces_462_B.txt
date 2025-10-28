@@ -1,0 +1,56 @@
+**Algorithm Specification**
+
+**Functions/Methods:**  
+Main execution flow (script-based, no explicit functions)
+
+**Variables:**  
+- `n`: Integer (input: length of string)  
+- `k`: Integer (input: maximum allowable character usage)  
+- `s`: String (input: uppercase characters)  
+- `count`: Array[Integer] (size 26, initialized to 0)  
+- `res`: Integer (initialized to 0, stores result)  
+
+**Input Operations:**  
+1. Read `n` and `k` from standard input as space-separated integers.  
+2. Read `s` from standard input.  
+
+**Processing Logic:**  
+1. **Populate Frequency Array:**  
+   - For each character `c` in `s`:  
+     - Compute index: `ord(c) - ord('A')`  
+     - Increment `count[index]` by 1  
+
+2. **Sort Frequency Array:**  
+   - Sort `count` in descending order  
+
+3. **Calculate Maximum Value:**  
+   - Initialize `res` to 0  
+   - For each `i` in 0 to 25 (loop over sorted `count`):  
+     a. If `count[i] >= k`:  
+        - Add `k^2` to `res`  
+        - Print `res`  
+        - Terminate program  
+     b. Else:  
+        - Subtract `count[i]` from `k`  
+        - Add `count[i]^2` to `res`  
+   - Print `res` after processing all elements  
+
+**Control Flow:**  
+- Loop: Fixed iteration over characters in `s` (exact count: `n`)  
+- Loop: Fixed iteration over 26 elements of sorted `count`  
+- Conditional: Check `count[i] >= k` to determine early termination  
+
+**Edge Cases Handled:**  
+- `k` exceeds total available characters (sum of `count`) → Sum all squares  
+- Exact match between remaining `k` and `count[i]` → Immediate termination  
+
+**Termination Conditions:**  
+- Program exits immediately after printing `res` when `count[i] >= k`  
+- Program exits after processing all 26 elements if no early termination  
+
+**External Dependencies:**  
+- Standard input/output functions  
+- No external libraries or dependencies beyond language primitives  
+
+**Error Handling:**  
+- No explicit error handling (assumes valid input types, `s` length `n`, uppercase letters)

@@ -1,0 +1,21 @@
+1. Define a function check(lis, k, mid)
+    1.1. For each element i in lis
+        1.1.1. If i modulo mid equals 0
+            1.1.1.1. Increment k by 1
+        1.1.2. Decrement k by the integer division of i by mid
+    1.2. Return whether k is greater than or equal to 0
+
+2. Read n and k from input
+3. Read a list of numbers lis from input
+4. Initialize a to 1 and b to the maximum value in lis
+5. Initialize ans to b
+
+6. While a is less than or equal to b
+    6.1. Calculate mid as the average of a and b rounded down
+    6.2. If check(lis, k, mid) returns True
+        6.2.1. Update ans to mid
+        6.2.2. Update b to mid - 1
+    6.3. Else
+        6.3.1. Update a to mid + 1
+
+7. Print ans

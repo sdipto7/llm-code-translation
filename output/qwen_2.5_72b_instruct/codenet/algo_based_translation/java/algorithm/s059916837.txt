@@ -1,0 +1,35 @@
+- Function signatures with parameter and return types:
+  - `public static void main(String[] args)`
+  - `public static int find(String a, String b)`
+
+- Variable declarations and data types:
+  - `Scanner scanner`
+  - `String S`
+  - `String T`
+  - `int min`
+  - `int i`
+  - `int calc`
+  - `int x`
+
+- Complete logic flow in execution order:
+  - Create a `Scanner` object to read input
+  - Read two strings `S` and `T` from standard input
+  - Initialize `min` to `Integer.MAX_VALUE`
+  - Loop from `0` to `S.length() - T.length()` inclusive:
+    - Call `find(S.substring(i, i + T.length()), T)` and update `min` with the minimum value between `min` and the result of the function call
+  - If `min` is not equal to `Integer.MAX_VALUE`:
+    - Print `min`
+  - Else:
+    - Print `T.length()`
+
+- Control structures:
+  - For loop: `for (int i = 0; i <= S.length() - T.length(); i++)`
+  - If-Else statement: `if (min != Integer.MAX_VALUE)`
+
+- Input/output operations and data processing logic:
+  - Read input strings `S` and `T` using `scanner.nextLine()`
+  - Calculate the minimum number of character changes required to convert any substring of `S` of length `T.length()` to `T` using the `find` function
+  - Print the result based on the value of `min`
+
+- Required libraries, modules, or dependencies:
+  - `java.util.Scanner`

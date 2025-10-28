@@ -1,0 +1,60 @@
+ALGORITHM SPECIFICATION:
+
+FUNCTIONS:
+- main(String[] args) -> void
+
+VARIABLES:
+- h1: int (hours of first time)
+- m1: int (minutes of first time)
+- h2: int (hours of second time)
+- m2: int (minutes of second time)
+- total1: int (total minutes of first time)
+- total2: int (total minutes of second time)
+- diff: int (time difference in minutes)
+- hours: int (result hours)
+- minutes: int (result minutes)
+
+INPUT/OUTPUT:
+- Read two lines from standard input in HH:MM format
+- Process to compute time difference
+- Print result in HH:MM format with leading zeros
+
+LOGIC FLOW:
+1. Read first input line and split using colon delimiter
+2. Parse first part as h1 (integer)
+3. Parse second part as m1 (integer)
+4. Calculate total1 = h1 * 60 + m1
+5. Read second input line and split using colon delimiter
+6. Parse first part as h2 (integer)
+7. Parse second part as m2 (integer)
+8. Calculate total2 = h2 * 60 + m2
+9. Calculate diff = total1 - total2
+10. Apply modulo 1440: diff = diff % 1440
+11. If diff < 0:
+    11.1 Add 1440 to diff
+12. Calculate hours = diff divided by 60 (integer division)
+13. Calculate minutes = diff modulo 60
+14. Format hours and minutes as two-digit zero-padded strings
+15. Print formatted result as "HH:MM"
+
+CONTROL STRUCTURES:
+- Conditional check (step 11) for negative modulo result
+
+DATA PROCESSING:
+- Time conversion to/from total minutes
+- Modulo arithmetic for 24-hour wrap-around
+- String formatting for output
+
+EDGE CASES:
+- Midnight (00:00) handling through modulo operation
+- Negative time differences handled via modulo adjustment
+- Single-digit components formatted with leading zeros
+
+EXTERNAL DEPENDENCIES:
+- java.util.Scanner for input handling
+- String.split() for input parsing
+- System.out.printf for formatted output
+
+ERROR HANDLING:
+- Implicit: Will throw NumberFormatException for non-integer inputs
+- Implicit: Will throw ArrayIndexOutOfBoundsException for invalid time formats

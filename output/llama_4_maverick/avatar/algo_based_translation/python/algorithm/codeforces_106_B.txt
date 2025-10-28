@@ -1,0 +1,20 @@
+1. Read integer n from input
+2. Initialize empty array input_array
+3. For i from 0 to n-1
+   1. Read four integers S, R, H, C from input
+   2. Append tuple (S, R, H, C) to input_array
+4. Initialize empty array outdated
+5. For i from 0 to n-1
+   1. For j from 0 to n-1
+      1. If input_array[i][0] < input_array[j][0] and input_array[i][1] < input_array[j][1] and input_array[i][2] < input_array[j][2]
+         1. Append input_array[i] to outdated
+6. Convert outdated to a set
+7. Initialize minimum_cost to 100000
+8. Initialize input_number to 0
+9. For i from 0 to n-1
+   1. current_item = input_array[i]
+   2. cost = current_item[3]
+   3. If current_item not in outdated and cost < minimum_cost
+      1. minimum_cost = cost
+      2. input_number = i + 1
+10. Print input_number

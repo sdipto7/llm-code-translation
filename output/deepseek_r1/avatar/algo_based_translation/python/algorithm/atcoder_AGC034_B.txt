@@ -1,0 +1,78 @@
+**Structured Algorithm Specification**
+
+**Functions:**
+1. `gcd(a: int, b: int) -> int`
+2. `solve() -> int`
+
+**Global Variables:**
+- None
+
+**Data Types:**
+- All variables use primitive types (string, int)
+
+**Function `gcd`:**
+1. **Parameters:**
+   - `a`: integer
+   - `b`: integer
+2. **Return:** integer
+3. **Steps:**
+   1. Assign `a` = max(original a, original b)
+   2. Assign `b` = min(original a, original b)
+   3. While `a % b` > 0:
+      1. Set temporary `a` = current `b`
+      2. Set `b` = current `a % b`
+      3. Update `a` to temporary `a`
+   4. Return `b`
+
+**Function `solve`:**
+1. **Parameters:** None
+2. **Return:** integer (0)
+3. **Variables:**
+   - `s`: string (input)
+   - `t`: string (processed)
+   - `i`: int (index for s, initialized to 0)
+   - `total`: int (result, initialized to 0)
+   - `numA`: int (A-counter, initialized to 0)
+4. **Input Handling:**
+   1. Read `s` from standard input
+5. **String Processing (t construction):**
+   1. While `i < len(s)`:
+      1. If `s[i]` == 'A':
+         1. Append 'A' to `t`
+         2. Increment `i` by 1
+      2. Else if `s[i]` == 'B':
+         1. If `i < len(s)-1` AND `s[i+1]` == 'C':
+            1. Append 'D' to `t`
+            2. Increment `i` by 2
+         2. Else:
+            1. Append 'X' to `t`
+            2. Increment `i` by 1
+      3. Else (for 'C' or other chars):
+         1. Append 'X' to `t`
+         2. Increment `i` by 1
+6. **Total Calculation:**
+   1. For each character `c` at index `i` in `t`:
+      1. If `c` == 'X':
+         1. Set `numA` = 0
+      2. Else if `c` == 'A':
+         1. Increment `numA` by 1
+      3. Else (`c` == 'D'):
+         1. Add `numA` to `total`
+7. **Output:**
+   1. Print `total`
+8. **Return:** 0
+
+**Control Flow:**
+- While-loop in string processing exits when `i >= len(s)`
+- For-loop in total calculation iterates through all characters of `t`
+- Conditionals handle character substitutions and counting logic
+
+**Edge Case Handling:**
+- Checks `i < len(s)-1` before accessing `s[i+1]` for BC detection
+- Resets `numA` on encountering 'X' in the processed string
+- Handles isolated 'B' or 'C' characters as 'X'
+
+**Dependencies:**
+- Standard input for string `s`
+- Standard output for printing result
+- No external library functions used in core logic

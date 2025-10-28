@@ -1,0 +1,38 @@
+**Function Signature:**
+- main(String[] args): void
+
+**Variables:**
+- Scanner sc: Scanner object for input
+- int n: input integer
+- int f: flag integer (initialized to 0)
+- int[] a: integer array of size n
+- int i, j, k: loop indices
+- int t: temporary storage for array element
+
+**Libraries/Dependencies:**
+- java.util.Scanner
+- java.lang.*
+
+**Algorithm:**
+1. Initialize Scanner object to read from standard input
+2. Read integer n from input
+3. Initialize flag f to 0
+4. Create integer array a of size n
+5. For i from 0 to n-1:
+   - Read integer and store in a[i]
+6. Initialize k, j, i to 0
+7. For k from 0 to n-1:
+   - Set t = a[k]
+   - For i from 0 to n-1:
+     - For j from 0 to n-2:
+       - If i ≠ j AND t equals (a[i] + a[j]):
+         - Set f = 1
+         - Break inner j loop
+     - If f equals 1:
+       - Break i loop
+   - If f equals 1:
+     - Break k loop
+8. If f equals 1:
+   - Print (k+1), (j+1), (i+1) separated by spaces
+9. Else:
+   - Print "-1"

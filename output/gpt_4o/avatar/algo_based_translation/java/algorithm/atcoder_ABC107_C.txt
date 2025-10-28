@@ -1,0 +1,48 @@
+```
+Dependencies:
+- Import Scanner from java.util package
+
+Function Signature:
+- main(String[] args): void
+
+Variable Declarations:
+- sc: Scanner
+- N: int
+- K: int
+- S: int[] (array of integers)
+- temp: int
+- ans: int
+
+Algorithm:
+1. Initialize `sc` as a new Scanner object for reading input from the standard input.
+2. Read an integer from input and assign it to `N`.
+3. Read another integer from input and assign it to `K`.
+4. Initialize `S` as an integer array of size `N`.
+5. For `i` from 0 to `N-1`, do:
+   - Read an integer from input and assign it to `S[i]`.
+6. Initialize `temp` to 0.
+7. Initialize `ans` to 1000000000.
+8. If `K` equals 1, then:
+   - For `i` from 0 to `N-1`, do:
+     - Assign `S[i]` to `temp`.
+     - Update `ans` to the minimum of `Math.abs(temp)` and `ans`.
+   - Output the value of `ans`.
+9. Otherwise, if `N - K` is not equal to 0, then:
+   - For `i` from 0 to `N-K`, do:
+     - Assign `S[i]` to `min`.
+     - Assign `S[i+K-1]` to `max`.
+     - If `min` is less than 0 and `max` is greater than 0, then:
+       - Update `temp` to the minimum of `2 * (-min) + max` and `(-min) + 2 * max`.
+     - Otherwise:
+       - Update `temp` to the maximum of `Math.abs(min)` and `Math.abs(max)`.
+     - Update `ans` to the minimum of `ans` and `temp`.
+   - Output the value of `ans`.
+10. Otherwise:
+    - Assign `S[0]` to `min`.
+    - Assign `S[N-1]` to `max`.
+    - If `min` is less than 0 and `max` is greater than 0, then:
+      - Output the minimum of `2 * (-min) + max` and `(-min) + 2 * max`.
+    - Otherwise:
+      - Output the maximum of `Math.abs(min)` and `Math.abs(max)`.
+11. Close the `sc` Scanner object.
+```

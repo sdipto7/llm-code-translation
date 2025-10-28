@@ -1,0 +1,31 @@
+- Libraries: java.util.Scanner
+- Static variables: scanner (Scanner)
+- Main function:
+  - Parameters: String[] args
+  - Return type: void
+- Variables:
+  - h: int (input height)
+  - w: int (input width)
+  - ans: String[] (array of processed rows)
+- Execution flow:
+  1. Read h = scanner.nextInt()
+  2. Read w = scanner.nextInt()
+  3. Initialize ans array with size h
+  4. For loop: i from 0 to h-1
+     a. Read input string via scanner.next()
+     b. Assign ans[i] = "#" + input + "#"
+  5. Create border string:
+     a. new char[w+2] initialized with null characters
+     b. replace all nulls with '#'
+     c. Print result
+  6. For each loop: iterate through ans array
+     a. Print each string
+  7. Repeat step 5 to print closing border
+- Control structures:
+  - for (int i = 0; i < h; i++)
+  - enhanced for (String s : ans)
+- Input operations:
+  - nextInt() for h/w
+  - next() for row strings
+- Output operations:
+  - println() for borders and processed rows

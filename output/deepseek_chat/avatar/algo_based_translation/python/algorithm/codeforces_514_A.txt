@@ -1,0 +1,16 @@
+Read input string from standard input
+Initialize an empty string variable st
+If the length of the input string is not equal to 1:
+    If the first character of the input string equals '9':
+        Append '9' to st
+        Remove the first character from the input string
+    For each character i in the remaining input string:
+        Convert i to integer and compare with 4
+        If integer value is greater than 4:
+            Calculate n = 9 - integer value of i
+            Convert n to string and append to st
+        Else:
+            Append i to st
+Else:
+    Set st equal to the input string
+Convert st to integer and print the result

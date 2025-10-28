@@ -1,0 +1,29 @@
+1. Import necessary library:
+   - Import `java.util.Scanner`.
+
+2. Define the `main` function:
+   - Signature: `public static void main(String[] args)`
+   - Declare a `Scanner` object `scan` to read input.
+
+3. Read the number of test cases:
+   - Variable: `int t`
+   - Use `scan.nextInt()` to read the integer input for `t`.
+
+4. Iterate over each test case using a `for` loop:
+   - Loop initialization: `int i = 0`
+   - Loop condition: `i < t`
+   - Loop increment: `i++`
+
+5. Within each iteration, perform the following:
+   - Read the integer `n` for the current test case:
+     - Variable: `int n`
+     - Use `scan.nextInt()` to read the integer input for `n`.
+
+6. Call the `maxLeft` function and print the result:
+   - Signature: `public static int maxLeft(int n)`
+   - Return type: `int`
+   - Condition: `n > 2`
+     - If true, return `n - 2`.
+     - If false, return `0`.
+
+7. Output the result using `System.out.println()`.

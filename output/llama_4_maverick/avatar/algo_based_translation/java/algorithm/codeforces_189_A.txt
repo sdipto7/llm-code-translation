@@ -1,0 +1,8 @@
+1. Read input integer n.
+2. Read input integers a, b, and c.
+3. Initialize array arr with values a, b, and c.
+4. Initialize array dp of size maxn (4010) with all elements set to Integer.MIN_VALUE.
+5. Set dp[0] to 0.
+6. For each element in arr, iterate from its value to maxn.
+7. For each j in the iteration, update dp[j] to be the maximum of its current value and dp[j - arr[i]] + 1.
+8. Output dp[n].

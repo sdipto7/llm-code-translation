@@ -1,0 +1,39 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner sc` of type `Scanner`
+- `int N` of type `int`
+- `long x` of type `long`
+- `List<Long> sweet` of type `List<Long>`
+- `int num` of type `int`
+
+Logic flow in execution order:
+1. Initialize `sc` as a new `Scanner` object reading from `System.in`.
+2. Read an integer `N` from `sc`.
+3. Read a long `x` from `sc`.
+4. Initialize `sweet` as an empty `ArrayList` of `Long`.
+5. Loop from `0` to `N-1` (inclusive):
+   - Read a long `a` from `sc`.
+   - Add `a` to `sweet`.
+6. Sort `sweet` in ascending order.
+7. Initialize `num` to `0`.
+8. Loop from `0` to `N-1` (inclusive):
+   - If `x - sweet.get(num) >= 0`:
+     - Subtract `sweet.get(num)` from `x`.
+     - Increment `num` by `1`.
+   - Else:
+     - Break out of the loop.
+9. If `num == N` and `x > 0`:
+   - Decrement `num` by `1`.
+10. Print `num`.
+
+Control structures:
+- For loops with conditions `i < N`
+- If-else statement with conditions `x - sweet.get(num) >= 0` and `num == N && x > 0`
+
+Input/output operations and data processing logic:
+- Input operations: Reading integers `N` and `x`, and longs `a` from `sc`.
+- Output operation: Printing the value of `num`.
+
+Required libraries, modules, or dependencies:
+- `java.util.*` for `Scanner`, `List`, and `Collections`.

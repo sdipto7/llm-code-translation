@@ -1,0 +1,36 @@
+```plaintext
+Function signature:
+- main(): void
+
+Variable declarations and data types:
+- sc: Scanner
+- Q, H, S, D, N, onePrice: long
+
+Execution order and logic flow:
+1. Initialize Scanner to read input from the standard input stream.
+2. Read five long integers Q, H, S, D, and N from input using the Scanner.
+
+Control structures:
+- Calculate onePrice:
+  - Compute the minimum of:
+    - Q multiplied by 4
+    - H multiplied by 2
+    - S
+  - Assign the result to onePrice.
+  
+- Conditional check:
+  - If onePrice is less than or equal to D divided by 2 (converted to double for accurate floating-point comparison):
+    - Output the product of N and onePrice.
+  - Else:
+    - Output the sum of:
+      - N divided by 2, multiplied by D
+      - N modulo 2, multiplied by onePrice
+
+Input/output operations:
+- Use Scanner for reading input.
+- Use System.out.println for outputting results.
+
+Required libraries:
+- java.util.Scanner
+- java.lang.System (implicitly used for standard input/output)
+```

@@ -1,0 +1,33 @@
+```
+Function Signature:
+  check(lis: List[int], k: int, mid: int) -> bool
+
+Variable Declarations:
+  n: int
+  k: int
+  lis: List[int]
+  a: int
+  b: int
+  ans: int
+  mid: int
+
+Algorithm:
+1. Define a function `check` with parameters `lis`, `k`, and `mid`.
+2. Inside `check`, iterate over each element `i` in `lis`.
+   - If `i % mid` equals 0, increment `k` by 1.
+   - Decrement `k` by `i // mid`.
+3. Return `True` if `k` is greater than or equal to 0, otherwise return `False`.
+
+4. Read integers `n` and `k` from input.
+5. Read a list of integers `lis` from input.
+6. Initialize `a` to 1 and `b` to the maximum value in `lis`.
+7. Set `ans` to `b`.
+8. Perform a binary search:
+   - While `a` is less than or equal to `b`:
+     - Calculate `mid` as the integer division of `(a + b)` by 2.
+     - If `check(lis, k, mid)` returns `True`:
+       - Set `ans` to `mid`.
+       - Set `b` to `mid - 1`.
+     - Otherwise, set `a` to `mid + 1`.
+9. Print the value of `ans`.
+```

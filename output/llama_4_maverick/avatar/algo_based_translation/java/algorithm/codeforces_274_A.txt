@@ -1,0 +1,9 @@
+1. Read the number of elements `n` and the divisor `k` from the input.
+2. Initialize an array of size `n` to store the elements.
+3. Read `n` elements from the input and store them in the array.
+4. Sort the array in ascending order.
+5. Initialize a count variable to 0 and an empty set to store unique elements.
+6. Iterate through the sorted array.
+7. For each element, check if it is not divisible by `k` or if it is divisible by `k` but its quotient is not in the set.
+8. If the condition in step 7 is met, increment the count and add the element to the set.
+9. After iterating through the entire array, output the count.

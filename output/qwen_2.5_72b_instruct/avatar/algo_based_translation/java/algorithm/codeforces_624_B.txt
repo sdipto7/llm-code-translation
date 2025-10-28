@@ -1,0 +1,35 @@
+Function Signature: 
+- `main(String[] args): void`
+
+Variable Declarations and Data Types:
+- `n: int`
+- `ans: Long[]`
+- `in: Scanner`
+- `count: Long`
+- `i: int`
+
+Logic Flow and Control Structures:
+1. `n = in.nextInt()`
+2. Initialize `ans` as an array of `Long` with size `n`
+3. For `i` from `0` to `n-1`:
+   - `ans[i] = in.nextLong()`
+4. `Arrays.sort(ans)`
+5. `count = ans[n-1]`
+6. For `i` from `n-2` to `0`:
+   - If `ans[i] < ans[i+1]`:
+     - `count += ans[i]`
+   - Else:
+     - While `ans[i] >= ans[i+1]`:
+       - `ans[i]--`
+     - If `ans[i] > 0`:
+       - `count += ans[i]`
+7. `System.out.println(count)`
+
+Input/Output Operations:
+- Read integer `n` from input
+- Read `n` long integers into array `ans`
+- Print the final value of `count`
+
+Libraries/Modules/Dependencies:
+- `java.util.Arrays`
+- `java.util.Scanner`

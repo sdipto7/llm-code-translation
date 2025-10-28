@@ -1,0 +1,18 @@
+1. Function signature: main() -> None
+2. Variables:
+   - a: int
+   - b: int
+   - t: int
+   - cookie: int (initialized to 0)
+   - time: float (initialized to a)
+3. Input operation:
+   - Read one line from standard input
+   - Split into three strings
+   - Convert each to int
+   - Assign to a, b, t respectively
+4. Loop structure:
+   - while time <= t + 0.5:
+     - cookie = cookie + b
+     - time = time + a
+5. Output operation:
+   - Print cookie value as integer

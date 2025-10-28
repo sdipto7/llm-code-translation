@@ -1,0 +1,28 @@
+Function Signature:
+- Function Name: check_equality
+- Parameters: None
+- Return Type: str
+
+Variable Declarations:
+- a: str
+- b: str
+- c: str
+
+Algorithm:
+1. Read a single line of input from the user.
+2. Strip leading and trailing whitespace from the input.
+3. Split the input string into a list of strings using whitespace as a delimiter, resulting in three separate strings.
+4. Assign the first string to variable `a`, the second string to variable `b`, and the third string to variable `c`.
+5. Check if `a`, `b`, and `c` are equal:
+   - If `a` is equal to `b` and `b` is equal to `c`, return the string "Yes".
+   - Otherwise, return the string "No".
+
+Input/Output Operations:
+- Input: Read from standard input
+- Output: Print to standard output
+
+Control Structures:
+- Conditional: if-else statement to compare the equality of `a`, `b`, and `c`
+
+Required Libraries:
+- None

@@ -1,0 +1,16 @@
+**Input Processing:**
+- Read integer N from standard input
+- Declare list A of size N: elements are computed as (input integer * N) + index, for each index from 0 to N-1
+- Sort list A in ascending order
+
+**Variable Declarations:**
+- cnt: integer counter initialized to 0
+
+**Main Logic:**
+- For each index i from 0 to N-1:
+  - Compute d = (A[i] mod N) mod 2
+  - If (d mod 2) ≠ (i mod 2):
+    - Increment cnt by 1
+
+**Output:**
+- Print cnt divided by 2 using integer division

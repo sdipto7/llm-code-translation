@@ -1,0 +1,24 @@
+```
+- Import the `itemgetter` function from the `operator` module.
+
+- Read an integer `N` from input.
+
+- Read a space-separated string of integers from input and convert it to a list of tuples `A` where:
+  - Each tuple consists of an index (starting from 1) and an integer value.
+  - The index is obtained using `enumerate` over the input string, starting from 0 and adding 1 to ensure the index starts from 1.
+  - The integer value is converted from string to int.
+
+- Sort the list `A` based on the second element (integer value) of each tuple using `itemgetter(1)`.
+  - Store the sorted list in `A_`.
+
+- Create a new list `A__` containing only the first element (index) of each tuple from the sorted list `A_`.
+
+- Iterate over each element `i` in the list `A__`, excluding the last element:
+  - Print the element followed by a space without a newline.
+
+- Print the last element of the list `A__` without a trailing space.
+
+- Function signature:
+  - `def process_input(N: int, input_string: str) -> None`
+  - No return value; the function performs printing as output.
+```

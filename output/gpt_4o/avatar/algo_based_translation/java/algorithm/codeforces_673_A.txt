@@ -1,0 +1,45 @@
+1. **Function Signature**
+   - `main()`: 
+     - Parameters: `args` (Array of Strings)
+     - Return Type: `void`
+
+2. **Variable Declarations**
+   - `sc`: Instance of `Scanner` for input
+   - `n`: Integer for number of timestamps
+   - `a`: ArrayList of Integers to store timestamps
+   - `value`: Integer to store each input value
+   - `result`: Integer to store the final result
+   - `pos`: Integer to store position in the list
+   - `flag`: Integer as a boolean flag (0 or 1)
+
+3. **Logic Flow**
+   - Initialize `sc` as a new `Scanner` object for reading input.
+   - Read an integer `n` from input using `sc.nextInt()`.
+   - Initialize `a` as a new `ArrayList` of Integers.
+   - Loop `i` from 0 to `n-1`:
+     - Read an integer `value` from input using `sc.nextInt()`.
+     - Add `value` to the list `a`.
+   - Initialize `pos` to 0 and `flag` to 0.
+   - Conditional:
+     - If the first element of `a` (`a.get(0)`) is greater than 15, set `result` to 15.
+     - Else:
+       - Loop `i` from 1 to `n-1`:
+         - Conditional:
+           - If the difference between `a.get(i)` and `a.get(i-1)` is greater than 15:
+             - Set `pos` to `i-1`.
+             - Set `flag` to 1.
+             - Break the loop.
+       - Conditional:
+         - If `flag` is 1, set `result` to `a.get(pos) + 15`.
+         - Else, set `result` to `a.get(n-1) + 15`.
+   - Conditional:
+     - If `result` is greater than 90, set `result` to 90.
+   - Output `result` using `System.out.println(result)`.
+
+4. **Input/Output Operations**
+   - Input: Read integers using `Scanner`.
+   - Output: Print the integer `result` using `System.out.println`.
+
+5. **Dependencies**
+   - `java.util.Scanner` for input operations.
+   - `java.util.ArrayList` for dynamic array storage.

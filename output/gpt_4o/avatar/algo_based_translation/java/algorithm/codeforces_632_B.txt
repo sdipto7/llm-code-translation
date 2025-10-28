@@ -1,0 +1,35 @@
+1. Import the `java.util.Scanner` library to handle input operations.
+
+2. Define the function `main` with no parameters and no return type.
+
+3. Inside the `main` function:
+   - Create a `Scanner` object `sc` to read input from the standard input.
+   - Read an integer `n` from input using `sc.nextInt()` representing the size of the array.
+   - Declare an integer array `a` of size `n`.
+   - Use a for-loop to iterate from `0` to `n-1`:
+     - Read the next integer from input using `sc.nextInt()` and assign it to `a[i]`.
+   - Read a string `s` from input using `sc.next()`.
+
+4. Declare a long integer `sum` and initialize it to `0`.
+
+5. Use a for-loop to iterate over each character in the string `s` using its index `i`:
+   - Get the character `ch` at position `i` in the string `s`.
+   - If `ch` is equal to `'B'`, add `a[i]` to `sum`.
+
+6. Declare a long integer `ans` and assign it the value of `sum`.
+
+7. Declare a long integer `sum1` and assign it the value of `sum`.
+
+8. Use a for-loop to iterate over each character in the string `s` using its index `i`:
+   - If the character at position `i` in the string `s` is `'A'`, add `a[i]` to `sum1`.
+   - Otherwise, subtract `a[i]` from `sum1`.
+   - Update `ans` to be the maximum of `ans` and `sum1`.
+
+9. Reassign `sum1` to the value of `sum`.
+
+10. Use a for-loop to iterate over each character in the string `s` in reverse order using its index `i`:
+    - If the character at position `i` in the string `s` is `'A'`, add `a[i]` to `sum1`.
+    - Otherwise, subtract `a[i]` from `sum1`.
+    - Update `ans` to be the maximum of `ans` and `sum1`.
+
+11. Print the value of `ans` to the standard output.

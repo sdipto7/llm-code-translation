@@ -1,0 +1,33 @@
+## Algorithm
+
+1. Define a function `main` with no parameters and no return value.
+   - Initialize a `Scanner` object `in` to read from standard input.
+   - Initialize `PrintStream` objects `out` and `err` to write to standard output and standard error, respectively.
+
+2. Read a string `Si` from standard input using `in.next()`.
+   - Reverse the string `Si` and convert it to a character array `S`.
+
+3. Initialize a long array `dp` of size 13 with all elements set to 0, except `dp[0]` which is set to 1.
+
+4. Iterate over the character array `S` from index 0 to `S.length - 1`.
+   - For each iteration `i`, calculate `d = 10^i mod 13`.
+   - Create a new long array `nd` of size 13 with all elements initialized to 0.
+
+5. For each character `c` at index `i` in `S`, check if `c` is a digit.
+   - If `c` is a digit, calculate `x = (c - '0') * d`.
+     - Iterate over the array `dp` from index 0 to 12.
+       - For each `j`, update `nd[(j + x) % 13]` with the value of `dp[j]`.
+   - If `c` is not a digit, iterate over the values 0 to 9 for `xi`.
+     - Calculate `x = xi * d`.
+     - Iterate over the array `dp` from index 0 to 12.
+       - For each `j`, calculate `ni = (j + x) % 13` and update `nd[ni]` with `(nd[ni] + dp[j]) mod 1000000007`.
+
+6. After processing each character `c`, update `dp` with the values from `nd`.
+
+7. After iterating over all characters in `S`, output the value of `dp[5]` to standard output.
+
+## Required Libraries and Modules
+
+- `java.io` for input/output operations
+- `java.util` for utility classes such as `Scanner` and arrays manipulation
+- `java.util.stream` (not used in the provided code snippet)

@@ -1,0 +1,12 @@
+Algorithm:
+- Read two integers N and K from standard input
+- Read a list of N integers as scores from standard input
+- Initialize variable mae as integer with value 0
+- Initialize variable usiro as integer with value K
+- For i from 0 to N-K-1 (inclusive):
+  - If score[mae] < score[usiro]:
+    - Print "Yes"
+  - Else:
+    - Print "No"
+  - Increment mae by 1
+  - Increment usiro by 1

@@ -1,0 +1,29 @@
+```
+Input:
+    - Two integers n, m: n is the number of initial elements, m is the number of operations
+    - List of integers: Represents the elements to be processed
+
+Declare:
+    - a: List of integers (used as a max-heap by storing negative values)
+    - dis: Function accepting two integers (x, y) and returning an integer
+
+Function dis(x: int, y: int) -> int:
+    - Compute and return x divided by 2 raised to the power of y, using integer division
+
+Process:
+    - For each integer i from the input list, perform the following:
+        - Push the negative of i into the heap `a` using heappush
+
+Loop (m times):
+    - Remove the largest element from the heap `a` using heappop, negate it back to positive
+    - Apply the function dis to this element with y = 1, negate the result
+    - Push the result back into the heap `a` using heappush
+
+Output:
+    - Compute the sum of the elements in the heap `a`, negate each element before summing
+    - Print the result
+
+Dependencies:
+    - `math.floor` (though not explicitly used in the provided code)
+    - `heapq` for heappush and heappop functions
+```

@@ -1,0 +1,42 @@
+# Algorithm:
+
+**Input Processing:**
+- Read a string `S` from standard input using `java.util.Scanner`
+
+**Variables:**
+- `S: String` (input string, mutated during processing)
+- `sc: Scanner` (input reader, closed after use)
+- `a: String`, `b: String` (temporary substring holders in `isEvenString`)
+
+**Function Signatures:**
+- `main(String[] args): void`
+- `isEvenString(String s): boolean`
+
+**Execution Flow:**
+1. Check initial string length:
+   - If `S.length() % 2 == 1`: Remove last character (`S = S.substring(0, S.length() - 1)`)
+   - Else: Remove last two characters (`S = S.substring(0, S.length() - 2)`)
+
+2. Loop until `S.length() > 0`:
+   - Check termination condition:
+     Call `isEvenString(S)`:
+     1. Split `s` into two equal parts:
+        - `a = s.substring(0, s.length()/2)`
+        - `b = s.substring(s.length()/2)`
+     2. Return `true` if `a.equals(b)`, else `false`
+   - If `isEvenString` returns `true`: exit loop
+   - Else: Remove last two characters (`S = S.substring(0, S.length() - 2)`)
+
+3. Output final `S.length()`
+
+**Control Structures:**
+- Initial length check: `if (odd) ... else ...`
+- While loop equivalent implemented via for-loop:
+   `for(; S.length() > 0; S = S.substring(0, S.length() - 2))`
+- Conditional exit via `if (isEvenString(S)) break`
+
+**Dependencies:**
+- `java.util.Scanner` for input handling
+
+**Data Flow:**
+- Input → Length adjustment → Iterative truncation → Equality check → Length output

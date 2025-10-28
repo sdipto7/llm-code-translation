@@ -1,0 +1,32 @@
+Function signatures:
+- No functions defined (procedural code)
+
+Variables:
+- N: int
+- M: int
+- X: int
+- Y: int
+- x: list[int]
+- y: list[int]
+- max_x_val: int (derived from max(x) and X)
+- min_y_val: int (derived from min(y) and Y)
+
+Logic Flow:
+1. Read first input line: split into 4 space-separated integers -> N, M, X, Y
+2. Read second input line: split into N space-separated integers -> list x
+3. Read third input line: split into M space-separated integers -> list y
+4. Calculate max_x_val = maximum value between max(x) and X
+5. Calculate min_y_val = minimum value between min(y) and Y
+6. Compare max_x_val and min_y_val:
+   - If max_x_val < min_y_val: print 'No War'
+   - Else: print 'War'
+
+Control Structures:
+- Single conditional check: if (max(x) or X) < (min(y) or Y)
+
+Input/Output:
+- Inputs read via standard input using input() and split()
+- Output printed via print() based on comparison result
+
+Dependencies:
+- None (uses Python built-in functions only)

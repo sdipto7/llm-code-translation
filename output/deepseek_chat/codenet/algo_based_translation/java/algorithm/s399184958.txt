@@ -1,0 +1,12 @@
+Algorithm:
+- Import java.util.Scanner
+- Declare class Main
+- Define main method with parameter String[] args
+- Create Scanner object sc with System.in
+- Declare integer variable A and assign sc.nextInt()
+- Declare integer variable B and assign sc.nextInt()
+- Declare integer variable C and assign sc.nextInt()
+- If condition: A equals B AND B equals C AND C equals A
+  - Print "Yes"
+- Else
+  - Print "No"

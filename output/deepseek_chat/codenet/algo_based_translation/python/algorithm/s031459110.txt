@@ -1,0 +1,15 @@
+N: integer from input
+c: string from input
+
+num_w: integer = count of 'W' in c
+num_r: integer = N - num_w
+
+comp: string = string with 'R' repeated num_r times concatenated with 'W' repeated num_w times
+ans: integer = 0
+
+for i from 0 to num_r - 1:
+    if c[i] != comp[i]:
+        ans = ans + 1
+
+ans = minimum of (num_w, num_r, ans)
+print ans

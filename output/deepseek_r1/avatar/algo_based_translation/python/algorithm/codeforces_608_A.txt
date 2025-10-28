@@ -1,0 +1,45 @@
+**Structured Algorithm Specification**
+
+**Function Signature**  
+- Function Name: `main`  
+- Parameters: None  
+- Return Type: void  
+
+**Variable Declarations**  
+- `n`: integer (input count)  
+- `s`: integer (target time)  
+- `c`: integer (maximum delay offset, initialized to 0)  
+- `f`: integer (floor number in iteration)  
+- `t`: integer (time to reach floor in iteration)  
+- `x`: integer (calculated delay value)  
+
+**Input/Output Operations**  
+1. Read first input line: two space-separated integers `n` and `s`.  
+2. Read `n` subsequent lines: each containing two space-separated integers `f` and `t`.  
+3. Output final result as `s + c`.  
+
+**Control Flow & Logic**  
+1. Initialize `c` to 0.  
+2. Loop:  
+   - **Type**: Counter-controlled loop (fixed iteration count)  
+   - **Iterations**: `n` times  
+   - **Steps per iteration**:  
+      a. Read `f` and `t`.  
+      b. Calculate `x = t + f - s`.  
+      c. Conditional:  
+         - **Condition**: `x > c`  
+         - **True Action**: Update `c` to `x`  
+         - **False Action**: No operation  
+3. After loop termination:  
+   - Compute final result as `s + c` and print.  
+
+**Edge Case Handling**  
+- Implicit handling via initialization of `c` to 0: if all `x` values are ≤ 0, output remains `s`.  
+- Assumes valid input formatting per problem constraints (no explicit error checks).  
+
+**Dependencies**  
+- Relies on `sys.stdin.readline` for input processing.  
+- Uses Python-native `map` for input parsing and type conversion.  
+
+**Termination**  
+- Process exits after printing result.

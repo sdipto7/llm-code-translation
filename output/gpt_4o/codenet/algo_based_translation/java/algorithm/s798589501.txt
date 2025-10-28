@@ -1,0 +1,35 @@
+```
+Function: main()
+    Parameters: None
+    Return Type: void
+
+    Declare Scanner s as new Scanner(System.in)
+    Declare int E
+    Declare int Y
+
+    Set E to s.nextInt()
+    Set Y to s.nextInt()
+
+    If (E == 0)
+        If (Y <= 1911)
+            Output "M"
+            Output Y - 1867
+        Else If (Y <= 1925)
+            Output "T"
+            Output Y - 1911
+        Else If (Y <= 1988)
+            Output "S"
+            Output Y - 1925
+        Else
+            Output "H"
+            Output Y - 1988
+    Else If (E == 1)
+        Output 1867 + Y
+    Else If (E == 2)
+        Output 1911 + Y
+    Else If (E == 3)
+        Output 1925 + Y
+    Else
+        Output 1988 + Y
+```
+

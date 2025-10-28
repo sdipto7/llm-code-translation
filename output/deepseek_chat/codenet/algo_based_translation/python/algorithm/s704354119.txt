@@ -1,0 +1,36 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- n: int
+- l: list[str]
+- max: int
+- min: int
+- sum: int
+- i: int
+
+**Logic Flow:**
+1. Read integer input from stdin, assign to n
+2. Read next line from stdin, split by whitespace into list l
+3. Initialize max to -1000000000
+4. Initialize min to 1000000000
+5. Initialize sum to 0
+6. For i from 0 to n-1:
+   - Convert l[i] to int and add to sum
+   - If max < int(l[i]):
+        Set max = int(l[i])
+   - If min > int(l[i]):
+        Set min = int(l[i])
+7. Print min, max, sum separated by spaces
+
+**Control Structures:**
+- For loop: for i in range(n)
+- Conditional: if max < int(l[i])
+- Conditional: if min > int(l[i])
+
+**Input/Output:**
+- Input: integer n, followed by space-separated numbers
+- Output: min max sum printed with space separation
+
+**Dependencies:**
+- Standard input/output operations

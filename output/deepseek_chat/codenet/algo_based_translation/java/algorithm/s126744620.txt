@@ -1,0 +1,26 @@
+**Input:**
+- Read integer `n` from standard input
+- Read integer `k` from standard input
+- Read array `a` of `n` integers from standard input
+
+**Variables:**
+- Declare integer array `a` of size `n`
+- Declare Integer array `x` of size 200010, initialized to zeros
+- Declare integer `ans` initialized to 0
+
+**Processing:**
+1. For each index `i` from 0 to n-1:
+   - Increment `x[a[i] - 1]` by 1
+
+2. Sort array `x` in ascending order using integer comparison
+
+3. For each index `i` from 0 to (200010 - k - 1):
+   - Add `x[i]` to `ans`
+
+**Output:**
+- Print integer `ans`
+
+**Dependencies:**
+- java.util.Arrays
+- java.util.Comparator
+- java.util.Scanner

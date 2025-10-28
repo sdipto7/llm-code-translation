@@ -1,0 +1,66 @@
+**Algorithm:**
+
+**Dependencies:**  
+- `java.io.BufferedReader`  
+- `java.io.InputStreamReader`  
+
+**Functions:**  
+1. `main(String[] args) throws Exception`  
+2. `static long modinv(long a, int m)`  
+
+**Variables:**  
+- **main:**  
+  - `n: int` (input size)  
+  - `a: int[]` (input array)  
+  - `mod: int = 1000000007`  
+  - `p: long` (factorial product)  
+  - `q: long[]` (cumulative modular inverse sums)  
+  - `ans: long` (result accumulator)  
+- **modinv:**  
+  - `b: long = m`  
+  - `u: long = 1`  
+  - `v: long = 0`  
+  - `tmp: long` (temporary swap variable)  
+  - `t: long` (division quotient)  
+
+**Execution Flow:**  
+1. **Input Handling:**  
+   - Read integer `n` from standard input.  
+   - Read and parse space-separated integers into array `a` of size `n`.  
+
+2. **Compute Factorial `p`:**  
+   - Initialize `p = 1`.  
+   - Multiply `p` by `i` (from 2 to `n` inclusive) modulo `mod`.  
+
+3. **Compute Array `q`:**  
+   - Initialize `q[0] = 1`.  
+   - For `i` from 1 to `n-1`:  
+     - `q[i] = (q[i-1] + modinv(i+1, mod)) % mod`  
+
+4. **Compute Answer `ans`:**  
+   - For each index `i` in `a`:  
+     - Calculate `val = (q[i] + q[n-i-1] - 1) % mod`.  
+     - Multiply `val` by `a[i]` and then by `p`, applying modulo `mod` after each operation.  
+     - Accumulate `val` into `ans` with modulo `mod`.  
+
+5. **Output Result:**  
+   - Print `ans` to standard output.  
+
+**modinv Logic (Extended Euclidean Algorithm):**  
+1. While `b > 0`:  
+   - Compute `t = a / b`.  
+   - Swap `a` and `b` using `tmp`, updating `a = b`, `b = a % b`.  
+   - Update `u` and `v` with `u -= t * v`, then swap using `tmp`.  
+2. Adjust `u` to be positive modulo `m`.  
+
+**Control Structures:**  
+- **Loops:**  
+  - For loops with ranges: `0 ≤ i < n`, `2 ≤ i ≤ n`, `1 ≤ i < n`.  
+  - While loop in `modinv` until `b == 0`.  
+- **Conditional:**  
+  - In `modinv`, check `if (u < 0)` to add `m` for positivity.  
+
+**Data Processing:**  
+- Modular arithmetic applied to all multiplicative operations.  
+- Cumulative sums in `q` use modular addition.  
+- Negative value correction in modular space during inverse calculation.

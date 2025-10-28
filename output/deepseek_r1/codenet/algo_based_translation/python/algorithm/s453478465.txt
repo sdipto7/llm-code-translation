@@ -1,0 +1,17 @@
+Algorithm:
+- Variables:
+  - a: integer
+  - b: integer
+- Input:
+  - Read one line from standard input as string
+  - Split input into two substrings using whitespace
+  - Convert substrings to integers and assign to a and b
+- Condition:
+  - if (a <= 8) and (b <= 8):
+    - Output "Yay!" to standard output
+  - else:
+    - Output ":(" to standard output
+- Control Flow:
+  - Sequential execution with single conditional branch
+- Dependencies:
+  - Standard input/output functions

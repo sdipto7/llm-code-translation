@@ -1,0 +1,7 @@
+1. Read the number of elements.
+2. Read the elements into an array.
+3. Sort the array in ascending order.
+4. Identify the smallest element in the sorted array.
+5. Check each element in the array to see if it is divisible by the smallest element.
+6. If any element is not divisible by the smallest element, output -1 and terminate.
+7. If all elements are divisible by the smallest element, output the smallest element.

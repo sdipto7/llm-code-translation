@@ -1,0 +1,35 @@
+```plaintext
+Function signature:
+- Function name: process_numbers
+- Parameters: None
+- Return types: Tuple[int, List[int]]
+
+Variable declarations and data types:
+- N: int
+- A: List[int]
+- B: List[int]
+- i: int
+- tmp_sum: int
+- j: int
+
+Logic flow:
+1. Read an integer input and assign it to N.
+2. Read a line of input, split it into a list of integers, and assign it to A.
+3. Initialize a list B of size N with all elements set to 0.
+
+Control structures:
+- For loop: `for i in range(N - 1, -1, -1)`
+  - Initialize tmp_sum to 0.
+  - Nested for loop: `for j in range((i + 1) * 2 - 1, N, i + 1)`
+    - Accumulate B[j] into tmp_sum.
+    - Compute tmp_sum modulo 2.
+  - Assign the value tmp_sum XOR A[i] to B[i].
+
+Output operations:
+- Compute the sum of elements in B and print it.
+- Print indices (1-based) of elements in B that are equal to 1.
+- Return the sum of elements in B and the list of 1-based indices of elements in B that are equal to 1.
+
+Required libraries, modules, or dependencies:
+- None
+```

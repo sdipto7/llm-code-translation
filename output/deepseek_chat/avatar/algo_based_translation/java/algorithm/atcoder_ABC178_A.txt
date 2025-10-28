@@ -1,0 +1,8 @@
+function main():
+    - Input: Read integer x from standard input
+    - Declare boolean variable bool
+    - Set bool = true if x equals 1, else false
+    - Declare integer variable result
+    - Set result = 1 if bool is false, else 0
+    - Output: Print result to standard output
+    - Flush output buffer

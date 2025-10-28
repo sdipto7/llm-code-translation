@@ -1,0 +1,47 @@
+```plaintext
+1. Import `deque` from the `collections` module.
+2. Declare variables:
+   - `H` (int): the height of the grid
+   - `W` (int): the width of the grid
+   - `G` (list of strings): to store the grid with borders
+
+3. Read `H` and `W` from input.
+4. Initialize `G` as an empty list.
+5. For `i` from 0 to `H+1`:
+   - If `i` is 0 or `H+1`, append a string of `'#'` of length `W+2` to `G`.
+   - Else, read a line of input, prepend and append `'#'`, and append this to `G`.
+
+6. Initialize `ans` (int) to 0 to store the maximum distance.
+7. For `sx` from 0 to `W+1`:
+   - For `sy` from 0 to `H+1`:
+     - If `G[sy][sx]` is `'.'`:
+       - Initialize `dist` (2D list of float) with dimensions `(H+2) x (W+2)`, filled with `-inf`.
+       - Initialize `visited` (2D list of int) with dimensions `(H+2) x (W+2)`, filled with `-1`.
+       - Initialize `q` as an empty deque.
+       - Append `(sx, sy)` to `q`.
+       - Set `dist[sy][sx]` to 0.
+       - Set `visited[sy][sx]` to 1.
+       - While `q` is not empty:
+         - Pop the leftmost element `(x, y)` from `q`.
+         - If `G[y][x+1]` is `'.'` and `visited[y][x+1]` is `-1`:
+           - Append `(x+1, y)` to `q`.
+           - Set `dist[y][x+1]` to `dist[y][x] + 1`.
+           - Set `visited[y][x+1]` to 1.
+         - If `G[y][x-1]` is `'.'` and `visited[y][x-1]` is `-1`:
+           - Append `(x-1, y)` to `q`.
+           - Set `dist[y][x-1]` to `dist[y][x] + 1`.
+           - Set `visited[y][x-1]` to 1.
+         - If `G[y+1][x]` is `'.'` and `visited[y+1][x]` is `-1`:
+           - Append `(x, y+1)` to `q`.
+           - Set `dist[y+1][x]` to `dist[y][x] + 1`.
+           - Set `visited[y+1][x]` to 1.
+         - If `G[y-1][x]` is `'.'` and `visited[y-1][x]` is `-1`:
+           - Append `(x, y-1)` to `q`.
+           - Set `dist[y-1][x]` to `dist[y][x] + 1`.
+           - Set `visited[y-1][x]` to 1.
+       - For `i` from 0 to `W+1`:
+         - For `j` from 0 to `H+1`:
+           - Set `ans` to the maximum of `ans` and `dist[j][i]`.
+
+8. Print `ans`.
+```

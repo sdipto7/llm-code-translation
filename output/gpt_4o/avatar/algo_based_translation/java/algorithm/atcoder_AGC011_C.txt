@@ -1,0 +1,47 @@
+```
+1. Import necessary libraries:
+   - `import java.util.*`
+
+2. Define a class `Main` implementing `Runnable`:
+   - Declare `ArrayList<Integer>[] graph`
+   - Declare `boolean[] visited`
+   - Declare `int[] color`
+   - Declare `long one`, `bipartite`, `count`
+   - Declare `boolean mujun`
+
+3. Define a method `dfs(int a, int c) -> int`:
+   - If `visited[a]` is `true`:
+     - If `color[a]` is not `-1` and `color[a]` is not equal to `c`, set `mujun` to `true`
+     - Return `0`
+   - Set `visited[a]` to `true`
+   - Set `color[a]` to `c`
+   - Initialize `total` to `1`
+   - For each `b` in `graph[a]`, add `dfs(b, 1 - c)` to `total`
+   - Return `total`
+
+4. Define `run()` method:
+   - Create `Scanner scan = new Scanner(System.in)`
+   - Read integers `n` and `m` from input
+   - Initialize `graph` as `new ArrayList[n]`
+   - For `i` from `0` to `n-1`, initialize `graph[i]` as `new ArrayList<Integer>()`
+   - For `i` from `0` to `m-1`:
+     - Read integers `u` and `v` from input, decrement each by `1`
+     - Add `v` to `graph[u]` and `u` to `graph[v]`
+   - Initialize `visited` as `new boolean[n]`
+   - Initialize `color` as `new int[n]` and fill with `-1`
+   - Initialize `one`, `bipartite`, `count` to `0`
+   - For `i` from `0` to `n-1`:
+     - If `visited[i]` is `true`, continue to next iteration
+     - Increment `count`
+     - Set `mujun` to `false`
+     - Call `dfs(i, 0)` and store result in `kind`
+     - If `kind` is `1`, increment `one`
+     - Else if `mujun` is `false`, increment `bipartite`
+   - Calculate `total` as `one * (2 * n - one)`
+   - Add `(count - one) * (count - one)` to `total`
+   - Add `bipartite * bipartite` to `total`
+   - Print `total`
+
+5. Define `main(String[] args)` method:
+   - Start a new thread with `new Main()`, stack size `128 * 1024 * 1024`
+```

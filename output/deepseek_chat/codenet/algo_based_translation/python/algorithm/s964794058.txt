@@ -1,0 +1,31 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- memTime: int
+- memLate: list of int
+- colorList: list of int
+- memColor: int
+- highLate: int
+- color: int (loop counter)
+- member: int
+- maxColor: int
+- minColor: int
+
+**Algorithm:**
+1. Read integer input and store in memTime
+2. Read next line input, split by spaces, convert each element to integer, store in memLate
+3. Initialize empty list colorList
+4. Initialize memColor to 0
+5. Initialize highLate to 0
+6. For color from 0 to memTime-1:
+   a. Set member = memLate[color]
+   b. If member // 400 >= 8:
+      - Increment highLate by 1
+   c. Else if (member // 400) is not in colorList:
+      - Append (member // 400) to colorList
+7. Set maxColor = length(colorList) + highLate
+8. Set minColor = length(colorList)
+9. If minColor == 0:
+   - Set minColor = 1
+10. Print minColor and maxColor as space-separated strings

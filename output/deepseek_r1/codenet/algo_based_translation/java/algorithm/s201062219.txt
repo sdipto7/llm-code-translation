@@ -1,0 +1,44 @@
+Main function:
+- Signature: public static void main(String[] args) throws IOException
+- Variables:
+  - Scanner scan (Scanner instance)
+  - String mark
+  - int c, b, x=0
+  - int[100000] a
+
+Algorithm flow:
+1. Initialize Scanner with System.in
+2. Enter first infinite loop:
+   a. Read integer c via scan.nextInt()
+   b. Read String mark via scan.next()
+   c. Read integer b via scan.nextInt()
+   d. If mark equals "?":
+      i. Set a[x] = 2000001
+      ii. Break loop
+   e. Else if mark equals "+": a[x] = c + b
+   f. Else if mark equals "-": a[x] = c - b
+   g. Else if mark equals "*": a[x] = c * b
+   h. Else if mark equals "/": a[x] = c / b
+   i. Increment x
+3. Reset x = 0
+4. Enter second infinite loop:
+   a. If a[x] == 2000001: break loop
+   b. Print a[x] via System.out.println
+   c. Increment x
+5. Close Scanner
+
+Control Structures:
+- Two do-while(true) loops with internal breaks
+- Chain of if-else if statements checking mark values
+
+Input/Output:
+- Input: Sequential reads of integer, string, integer from standard input
+- Output: Print stored results line by line
+
+Data Processing:
+- Stores results in array until termination marker "?"
+- Uses 2000001 as array termination value
+
+Dependencies:
+- java.util.Scanner
+- java.io.IOException (declared in throws clause)

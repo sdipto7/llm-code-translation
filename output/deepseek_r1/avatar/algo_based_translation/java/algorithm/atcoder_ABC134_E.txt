@@ -1,0 +1,42 @@
+**Algorithm:**
+
+**Function Signature:**  
+`public static void main(String[] args) throws Exception`  
+
+**Variables:**  
+- `Scanner sc = new Scanner(System.in)`  
+- `int n = sc.nextInt()`  
+- `TreeMap<Integer, Integer> map = new TreeMap<>()`  
+- `int num` (loop variable)  
+- `int key`, `int val` (temporary variables for map operations)  
+- `int ans = 0`  
+
+**Logic Flow:**  
+1. Read integer `n` from input.  
+2. Initialize a `TreeMap` to track counts of integers (key: integer, value: count).  
+3. Process `n` numbers in a loop:  
+   a. Read integer `num` from input.  
+   b. If no key smaller than `num` exists in the map:  
+      - Increment the count of `num` in the map.  
+   c. Else:  
+      - Retrieve the largest key smaller than `num` (`key`).  
+      - Decrement the count of `key` by 1.  
+      - If the count of `key` becomes 0, remove it from the map.  
+      - Increment the count of `num` in the map.  
+4. After processing all numbers, compute the sum of all values in the map (`ans`).  
+5. Print `ans`.  
+
+**Control Structures:**  
+- `while (n-- > 0)` loop for processing input numbers.  
+- `if (map.lowerKey(num) == null)` to check for the existence of a smaller key.  
+- Nested `if (val == 1)` to handle removal of keys with zero count.  
+- `for (Integer key : map.keySet())` loop to calculate the final sum.  
+
+**Input/Output Operations:**  
+- Read input via `Scanner` from `System.in`.  
+- Write result to `System.out.println(ans)`.  
+
+**Required Libraries/Modules:**  
+- `java.util.Scanner`  
+- `java.util.TreeMap`  
+- `java.util.*` (implicitly via wildcard import)

@@ -1,0 +1,47 @@
+- Function signatures with parameter and return types:
+  - `Pair(int a, int b)`: Constructor for `Pair` class with parameters `a` and `b` of type `int`
+  - `String toString()`: Method in `Pair` class that returns `String`
+  - `int dp(int fliped, int idx, int msk)`: Returns `int` with parameters `fliped`, `idx`, and `msk` of type `int`
+  - `void main(String[] args)`: Returns `void` with parameter `args` of type `String[]`
+
+- Variable declarations and data types:
+  - `int l`: Member variable in `Pair` class
+  - `int r`: Member variable in `Pair` class
+  - `int[][][] memo`: Static member variable in `Main` class
+  - `int[][] a`: Static member variable in `Main` class
+  - `int n`: Static member variable in `Main` class
+  - `Scanner sc`: Local variable in `main` method
+  - `PrintWriter pw`: Local variable in `main` method
+  - `int x`: Local variable in `dp` method
+  - `int ff`: Local variable in `dp` method
+  - `int ans`: Local variable in `dp` method
+  - `StringTokenizer st`: Member variable in `Scanner` class
+  - `BufferedReader br`: Member variable in `Scanner` class
+
+- Complete logic flow in execution order:
+  - Initialize `n` using input
+  - Initialize arrays `a[0]` and `a[1]` using input
+  - Initialize `memo` array with dimensions `[2][n+1][1<<n]` and fill with `-1`
+  - Call `dp(0, n, 0)` and store result in `ans`
+  - If `ans` is greater than or equal to `1e8`, print `-1`; otherwise, print `ans`
+
+- Control structures (loops, conditionals) with exact conditions:
+  - For loop in `main` method: Iterates `n` times to fill `a[0]` with input
+  - For loop in `main` method: Iterates `n` times to fill `a[1]` with input
+  - For each loop in `main` method: Iterates over `memo` to initialize with `-1`
+  - If statement in `dp` method: Checks if `msk` equals `(1<<n)-1`
+  - If statement in `dp` method: Checks if `memo[fliped][idx][msk]` is not equal to `-1`
+  - For loop in `dp` method: Iterates `n` times to process each index `i`
+  - If statement in `dp` method: Checks if `(msk&(1<<i))` equals `0`
+  - If statement in `dp` method: Checks if `idx` equals `n` or `a[fliped][idx]` is less than or equal to `a[(nf+(ff%2))%2][i]`
+
+- Input/output operations and data processing logic:
+  - Read integer `n` from input
+  - Read integers to fill `a[0]` and `a[1]` from input
+  - Call `dp` function to compute the result
+  - Print the result to output
+
+- Required libraries, modules, or dependencies:
+  - `javax.swing.text.Style`
+  - `java.io.*`
+  - `java.util.*`

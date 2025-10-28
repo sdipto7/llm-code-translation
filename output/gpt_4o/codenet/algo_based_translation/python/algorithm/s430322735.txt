@@ -1,0 +1,40 @@
+```
+Function Signature:
+    - Function: count_anagram_pairs
+    - Parameters: None
+    - Returns: int
+
+Variable Declarations:
+    - n: int
+    - lst: list of str
+    - pair: int, initialize to 0
+    - st: str
+    - pre: str, initialize to ''
+    - tmp_cnt: int, initialize to 0
+    - cnt: int, initialize to 0
+
+Required Libraries:
+    - None
+
+Logic Flow:
+    1. Read an integer input and assign it to `n`.
+    2. Initialize an empty list `lst`.
+    3. Initialize `pair` to 0 (not used further in the code).
+    4. Loop `i` from 0 to `n-1`:
+        a. Read a string input.
+        b. Sort the characters of the string, join them back to form a new string `st`.
+        c. Append `st` to `lst`.
+    5. Sort the list `lst`.
+    6. Append the string 'end' to `lst`.
+    7. Initialize `pre` to an empty string.
+    8. Initialize `tmp_cnt` to 0.
+    9. Initialize `cnt` to 0.
+    10. Loop over each string `i` in `lst`:
+        a. If `i` is equal to `pre`:
+            i. Increment `tmp_cnt` by 1.
+        b. Else:
+            i. Add the sum of the range from 0 to `tmp_cnt + 1` to `cnt`.
+            ii. Reset `tmp_cnt` to 0.
+        c. Set `pre` to `i`.
+    11. Return `cnt` as the result.
+```

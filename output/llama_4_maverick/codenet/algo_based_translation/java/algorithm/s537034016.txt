@@ -1,0 +1,23 @@
+1. Import required libraries: java.util.Arrays, java.util.Scanner
+2. Define a class Main with static variables: 
+   - dp: long array
+   - mod: int = 1000000007
+3. Define main function with return type void and throws Exception:
+   - Declare a Scanner object sc with input from System.in
+   - Read an integer s from sc
+   - Close sc
+   - Initialize dp array of size s + 1
+   - Fill dp array with -1
+   - Set dp[0] = 1
+   - Call dfs function with parameter s and print the result
+4. Define dfs function with return type long and parameter s of type int:
+   - Check if dp[s] != -1, return dp[s] if true
+   - Initialize ret = 0
+   - Iterate from s - 3 to 0 (inclusive) with variable i in reverse order:
+     - Add dfs(i) to ret
+     - Update ret = ret % mod
+   - Set dp[s] = ret and return ret
+5. Execution order:
+   - main function is called
+   - dfs function is called recursively with different parameters based on input s
+   - Input is read from System.in and output is printed to System.out

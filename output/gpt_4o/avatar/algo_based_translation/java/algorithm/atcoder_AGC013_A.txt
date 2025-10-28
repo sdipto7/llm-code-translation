@@ -1,0 +1,25 @@
+```
+- Import the Scanner class from the java.util package.
+- Define a public class named atcoder_AGC013_A.
+- Define the main method with a String array parameter named args.
+  - Initialize a Scanner object named stdIn to read from standard input.
+  - Declare an integer variable N and assign it the next integer input from stdIn.
+  - Declare an integer array A with size N.
+  - For each integer i from 0 to N-1, do the following:
+    - Assign the next integer input from stdIn to A[i].
+  - Declare an integer variable count and initialize it to 0.
+  - For each integer i from 0 to N-1, do the following:
+    - If i is equal to N-1, increment count by 1.
+    - Else if A[i] is equal to A[i+1], do nothing.
+    - Else if A[i] is less than A[i+1], do the following:
+      - While A[i] is less than or equal to A[i+1], do the following:
+        - Increment i by 1.
+        - If i is equal to N-1, break the loop.
+      - Increment count by 1.
+    - Else, do the following:
+      - While A[i] is greater than or equal to A[i+1], do the following:
+        - Increment i by 1.
+        - If i is equal to N-1, break the loop.
+      - Increment count by 1.
+  - Print the value of count.
+```

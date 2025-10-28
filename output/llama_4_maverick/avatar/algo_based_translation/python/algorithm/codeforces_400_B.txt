@@ -1,0 +1,10 @@
+1. Read two integer inputs, n and m, from the user.
+2. Initialize an empty set, c.
+3. Repeat the following steps n times:
+   1. Read a string input, s, from the user.
+   2. Find the index of "S" in s and the index of "G" in s.
+   3. Calculate the difference between the index of "S" and the index of "G".
+   4. Add the calculated difference to the set c.
+4. Check if any element in the set c is less than 0.
+5. If any element is less than 0, output -1.
+6. Otherwise, output the number of unique elements in the set c.

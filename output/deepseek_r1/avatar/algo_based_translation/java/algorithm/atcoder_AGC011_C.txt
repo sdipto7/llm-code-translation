@@ -1,0 +1,48 @@
+- **Variables**:
+  - `graph`: Array of `ArrayList<Integer>` for adjacency list
+  - `visited`: `boolean[]` tracking node visit status
+  - `color`: `int[]` storing 0/1 for bipartition colors (-1 unassigned)
+  - `one`: `long` counting single-node components
+  - `bipartite`: `long` counting bipartite components (size >1)
+  - `count`: `long` total components
+  - `mujun`: `boolean` flag for bipartition conflict
+
+- **Functions**:
+  - `int dfs(int a, int c)`:
+    1. If `visited[a]`:
+      - Check if existing color conflicts with `c` → set `mujun=true`
+      - Return 0
+    2. Mark `visited[a]=true` and set `color[a]=c`
+    3. Initialize `total=1`
+    4. For each neighbor `b` in `graph[a]`:
+      - Add `dfs(b, 1-c)` to `total`
+    5. Return `total`
+
+  - `void run()`:
+    1. Read `n` (nodes) and `m` (edges) via Scanner
+    2. Initialize `graph` with `n` empty ArrayLists
+    3. Read `m` edges and build undirected adjacency list
+    4. Initialize `visited[]` (all false) and `color[]` (all -1)
+    5. For each node `i` from 0 to n-1:
+      - Skip if visited
+      - Increment `count`
+      - Reset `mujun=false`
+      - Call `kind = dfs(i, 0)`
+      - If `kind==1`: increment `one`
+      - Else if `mujun==false`: increment `bipartite`
+    6. Compute `total = one*(2n - one) + (count - one - bipartite)^2 + bipartite^2`
+    7. Print `total`
+
+- **Control Flow**:
+  - DFS recursion with color flipping (0 ↔ 1)
+  - Loop through all nodes to find components
+  - Conditional classification of components (single-node, bipartite, or non-bipartite)
+  
+- **Input/Output**:
+  - Input: Graph edges via STDIN
+  - Output: Computed total via STDOUT
+
+- **Dependencies**:
+  - `java.util.Scanner`
+  - `java.util.ArrayList`
+  - `java.util.Arrays`

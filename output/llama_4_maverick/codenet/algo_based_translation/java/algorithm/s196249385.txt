@@ -1,0 +1,36 @@
+1. Import required libraries: 
+   - java.io
+   - java.util
+
+2. Define a class `Main` with private static members `sc` of type `Scanner` and `pr` of type `Printer`.
+
+3. Define a private static method `solve()` with no parameters and return type `void`.
+
+4. Within `solve()`:
+   - Read two integers `n` and `k` from input using `sc.nextInt()`.
+   - Declare an integer array `a` of size `n`.
+   - Read `n` integers from input and store them in `a` using a `for` loop.
+   - Declare a long array `cumsum` of size `n + 1`.
+   - Calculate the cumulative sum of `a` and store it in `cumsum` using a `for` loop.
+   - Declare a list `b` of type `Long` with initial capacity `n * (n + 1) / 2`.
+   - Declare a variable `max` of type `long` and initialize it to 0.
+   - Iterate over all subarrays of `a` using two nested `for` loops, calculate their sums using `cumsum`, and add them to `b`. Update `max` with the maximum sum found.
+   - Calculate the highest set bit in `max` using `Long.highestOneBit(max)` and store it in `mask`.
+   - Iterate until `mask` is greater than 0 using a `while` loop.
+   - Within the loop:
+     - Declare a temporary list `tmp` of type `Long`.
+     - Iterate over elements `e` in `b` using a `for` loop. If the bitwise AND of `e` and `mask` is not zero, add `e` to `tmp`.
+     - If the size of `tmp` is greater than or equal to `k`, assign `tmp` to `b`.
+     - Right shift `mask` by 1 bit using `mask >>= 1`.
+   - After the loop, check if the size of `b` is less than `k`. If so, print 0 using `pr.println(0)`.
+   - Otherwise, initialize a variable `ans` of type `long` to -1. Iterate over elements `e` in `b` using a `for` loop and update `ans` by performing a bitwise AND operation with `e`. Print `ans` using `pr.println(ans)`.
+
+5. Define a `main` method with no parameters and return type `void`.
+
+6. Within `main()`:
+   - Initialize `sc` with a new `Scanner` object reading from `System.in`.
+   - Initialize `pr` with a new `Printer` object writing to `System.out`.
+   - Call `solve()`.
+   - Close `pr` and `sc` using their respective `close()` methods.
+
+7. Define a static class `Printer` extending `PrintWriter` with a constructor taking an `OutputStream` as a parameter and passing it to the superclass constructor.

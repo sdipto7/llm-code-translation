@@ -1,0 +1,57 @@
+- Function signature: `public static void main(String[] args)`
+  - Parameters: `String[] args`
+  - Return type: `void`
+
+- Function signature: `private void solve(InputReader in, PrintWriter out)`
+  - Parameters: `InputReader in`, `PrintWriter out`
+  - Return type: `void`
+
+- Variable declarations and data types:
+  - `InputStream inputStream`
+  - `OutputStream outputStream`
+  - `InputReader in`
+  - `PrintWriter out`
+  - `Solution sol`
+  - `int n`
+  - `int k`
+  - `int[] a`
+  - `int ans`
+  - `BufferedReader reader` (in `InputReader`)
+  - `StringTokenizer tokenizer` (in `InputReader`)
+
+- Control structures and logic flow:
+  1. Initialize `inputStream` with `System.in`
+  2. Initialize `outputStream` with `System.out`
+  3. Create `InputReader in` object with `inputStream`
+  4. Create `PrintWriter out` object with `outputStream`
+  5. Create `Solution sol` object
+  6. Call `sol.solve(in, out)`
+  7. Close `out`
+
+- Inside `solve` method:
+  1. Read integer `n` using `in.ni()`
+  2. Read integer `k` using `in.ni()`
+  3. Create array `a` of size `n`
+  4. For loop (`i` from 0 to `n-1`)
+     - Set `a[i]` to value read by `in.ni()`
+  5. Sort array `a` in parallel using `Arrays.parallelSort(a)`
+  6. Initialize `ans` to 0
+  7. For loop (`i` from 0 to `k-1`)
+     - Add `a[i]` to `ans`
+  8. Print `ans` using `out.println(ans)`
+
+- Inside `InputReader` class:
+  - Constructor `private InputReader(InputStream stream)`
+    - Parameters: `InputStream stream`
+    - Initialize `reader` with `new BufferedReader(new InputStreamReader(stream), 32768)`
+    - Set `tokenizer` to `null`
+  
+  - Method `private String n()`
+    - While `tokenizer` is `null` or `tokenizer.hasMoreTokens()` is `false`
+      - Try block
+        - Set `tokenizer` with `new StringTokenizer(reader.readLine())`
+      - Catch `IOException` and throw `RuntimeException(e)`
+    - Return `tokenizer.nextToken()`
+  
+  - Method `private int ni()`
+    - Return parsed integer from `n()` using `Integer.parseInt(n())`

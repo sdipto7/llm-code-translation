@@ -1,0 +1,45 @@
+- **Function Signature**:
+  - `public static void main(String[] args)`
+
+- **Variables**:
+  - `Scanner sc` initialized with `System.in`
+  - `String[] str` of size 4
+  - `int i = -1`
+  - `int u = -1`
+  - `int yes = 0`
+
+- **Input Operations**:
+  - Read 4 strings via `sc.next()`, stored in `str[0]` to `str[3]` using a while loop with condition `i != 3`
+
+- **Logic Flow**:
+  1. Initialize `i = -1`
+  2. Loop while `i != 3`:
+     - Increment `i` by 1
+     - Assign `str[i] = sc.next()`
+  3. Initialize `u = -1`, `i = -1`, `yes = 0`
+  4. Loop while `u != 2`:
+     - Increment `u` by 1
+     - Reset `i = -1`
+     - Loop while `i != 2`:
+       - Increment `i` by 1
+       - Check if either of the following conditions is true:
+         - Case 1:
+           - `str[u].charAt(i) == str[u].charAt(i+1)`
+           - AND (`str[u+1].charAt(i) == str[u].charAt(i)` OR `str[u+1].charAt(i+1) == str[u].charAt(i)`)
+         - Case 2:
+           - `str[u+1].charAt(i) == str[u+1].charAt(i+1)`
+           - AND (`str[u].charAt(i) == str[u+1].charAt(i)` OR `str[u].charAt(i+1) == str[u+1].charAt(i)`)
+       - If either condition is true:
+         - Set `yes = 1`
+         - Print "YES"
+         - Break all nested loops
+     - If `yes == 1`, break outer loop
+  5. If `yes == 0` after all loops, print "NO"
+
+- **Control Structures**:
+  - Nested while loops for input reading and grid traversal
+  - Conditional checks for 2×2 grid patterns using logical OR/AND
+  - Early termination with `break` upon finding a valid pattern
+
+- **Libraries**:
+  - `java.util.Scanner` for input handling

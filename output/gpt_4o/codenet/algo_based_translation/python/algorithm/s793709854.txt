@@ -1,0 +1,35 @@
+```plaintext
+- Function signature: None (code is executed in a script-like manner)
+- Input: Two integers, N (number of items) and T (total time allowed)
+- Input: List L of N sublists, each containing two integers: time and value of the item
+
+- Variable Declarations:
+  - N, T: integers
+  - L: list of lists of integers
+  - dp: list of lists of integers, dimensions (N+1) x T, initialized to zero
+  - used: list of integers, initially empty
+  - B: integer, initialized to the value of dp[N][T-1]
+  - j: integer, initialized to T-1
+  - ans: integer
+  - c: integer, initialized to zero
+
+- Execution Flow:
+  1. Read two integers from input and assign to N and T
+  2. Read N lines of input, each containing two integers, and store in list L
+  3. Initialize a 2D list dp with dimensions (N+1) x T, filled with zeros
+  4. For each item i from 0 to N-1:
+     - For each time j from 0 to T-1:
+       - If j is less than L[i][0], set dp[i+1][j] to dp[i][j]
+       - Otherwise, set dp[i+1][j] to the maximum of dp[i][j] and dp[i][j-L[i][0]] + L[i][1]
+  5. Initialize B to dp[N][T-1] and j to T-1
+  6. For each item i from N-1 to 0:
+     - If B equals dp[i][j], continue to next iteration
+     - Subtract L[i][1] from B
+     - Append i to the list used
+     - Subtract L[i][0] from j
+  7. Initialize ans to dp[N][T-1]
+  8. For each item i from 0 to N-1:
+     - If i is in used, continue to next iteration
+     - Update c to the maximum of current c and L[i][1]
+  9. Print the sum of ans and c
+```

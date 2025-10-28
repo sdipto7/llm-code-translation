@@ -1,0 +1,39 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `public void solve(int testNumber, Scanner in, PrintWriter out)`
+
+**Variables:**
+- `String s = in.next().replaceAll("BC", "D")`
+- `long cnt = 0`
+- `long tmp = 0`
+
+**Logic Flow:**
+1. Replace all "BC" substrings in the input string with "D".
+2. Initialize `cnt` and `tmp` to 0.
+3. Iterate over each character in the modified string:
+   - If the character is 'A':  
+     Increment `tmp` by 1.
+   - Else if the character is 'D':  
+     Add the current value of `tmp` to `cnt`.
+   - Else (for 'B' or 'C'):  
+     Reset `tmp` to 0.
+4. After processing all characters, print `cnt`.
+
+**Control Structures:**
+- `for (int i = 0; i < s.length(); i++)` loop.
+- Nested `if-else if-else` block inside the loop:
+  - Condition 1: `s.charAt(i) == 'A'`
+  - Condition 2: `s.charAt(i) == 'D'`
+  - Default case: other characters.
+
+**Input/Output Operations:**
+- Read input string via `Scanner.next()`.
+- Modify input string with regex replacement.
+- Output result via `PrintWriter.println(cnt)`.
+
+**Dependencies:**
+- `java.io.OutputStream`
+- `java.io.IOException`
+- `java.io.InputStream`
+- `java.io.PrintWriter`
+- `java.util.Scanner`

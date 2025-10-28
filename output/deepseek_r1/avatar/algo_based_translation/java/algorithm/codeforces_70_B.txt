@@ -1,0 +1,50 @@
+**Function Signature:**
+- `public static void main(String[] args) throws NumberFormatException, IOException`
+
+**Variables:**
+- `BufferedReader br` (input reader)
+- `int n` (maximum allowed character count per message)
+- `String input` (original message)
+- `int max = -1` (longest sentence fragment)
+- `int[] msgLength` (stores lengths of sentence fragments)
+- `int count = 0` (temporary character counter)
+- `int idx = 0` (index for msgLength array)
+- `int ans = 0` (final answer count)
+
+**Dependencies:**
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+
+**Logic Flow:**
+1. Read integer `n` from standard input
+2. Read string `input` from standard input
+3. Initialize empty `msgLength` array with size `input.length() / 2`
+4. Iterate through each character in `input`:
+   - When encountering `.`, `?`, or `!`:
+     1. Increment `count` to include terminating punctuation
+     2. Store `count` in `msgLength[idx]`
+     3. Update `max` if current `count` exceeds previous maximum
+     4. Skip next character (space) via `i++`
+     5. Reset `count` to 0
+   - Else: increment `count`
+5. If `max > n`: print "Impossible"
+6. Else:
+   1. Initialize `ans` to 0
+   2. Iterate through `msgLength`:
+      a. Initialize current length `l` with current element
+      b. While next element can be added without exceeding `n`:
+         - Add next element's length + 1 (space) to `l`
+         - Move to next element via `i++`
+      c. Increment `ans` for each completed message
+   3. Print `ans`
+
+**Control Structures:**
+- For-loop: `for (int i = 0; i < input.length(); i++)`
+- If-else: check punctuation
+- While-loop: `while (i < idx - 1 && l + msgLength[i + 1] + 1 <= n)`
+- Conditional: `if (max > n)`
+
+**I/O Operations:**
+- Read from `System.in` via `BufferedReader`
+- Output results with `System.out.println()`

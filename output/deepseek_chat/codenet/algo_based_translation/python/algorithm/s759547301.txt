@@ -1,0 +1,7 @@
+read string S from standard input
+if S equals "Sunny":
+    print "Cloudy"
+if S equals "Cloudy":
+    print "Rainy"
+if S equals "Rainy":
+    print "Sunny"

@@ -1,0 +1,11 @@
+Read two integers A and B from standard input
+If A equals B:
+    Print "Draw"
+Else if A equals 1:
+    Print "Alice"
+Else if B equals 1:
+    Print "Bob"
+Else if A is greater than B:
+    Print "Alice"
+Else:
+    Print "Bob"

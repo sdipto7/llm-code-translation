@@ -1,0 +1,65 @@
+Algorithm:
+- Function: main()
+  - Parameters: None
+  - Return Type: void
+  - Variables:
+    - `n`: int
+    - `left`: TreeSet<Integer>
+    - `answer`: int array of size n
+    - `q`: int
+    - `l`: int
+    - `r`: int
+    - `win`: int
+    - `curr`: int
+    - `ans`: StringBuilder
+
+- Initialize `FastReader` object named `in`
+- Read integer `n` using `in.nextInt()`
+- Initialize `left` as a new TreeSet<Integer>
+- Initialize `answer` as an int array of size `n`
+- Loop from `i = 0` to `i < n`
+  - Add `i` to `left`
+- Read integer `q` using `in.nextInt()`
+- While `q` decrements to zero
+  - Read integer `l` using `in.nextInt()` and decrement it by 1
+  - Read integer `r` using `in.nextInt()` and decrement it by 1
+  - Read integer `win` using `in.nextInt()`
+  - While `left.ceiling(l)` is not null and `left.ceiling(l) <= r`
+    - Set `curr` as `left.ceiling(l)`
+    - Set `answer[curr]` to `win`
+    - Remove `curr` from `left`
+  - Set `answer[win - 1]` to 0
+  - Add `win - 1` to `left`
+- Initialize `ans` as a new StringBuilder
+- Loop from `i = 0` to `i < n`
+  - Append `answer[i]` as a string to `ans`
+- Print `ans`
+
+- Class: FastReader
+  - Variables:
+    - `st`: StringTokenizer
+    - `br`: BufferedReader
+  - Constructor: FastReader()
+    - Initialize `br` with a new BufferedReader using InputStreamReader(System.in)
+  - Function: next()
+    - Return Type: String
+    - While `st` is null or `st` has no more elements
+      - Try to initialize `st` with a new StringTokenizer using `br.readLine()`
+      - Catch `IOException` and print stack trace
+    - Return `st.nextToken()`
+  - Function: nextInt()
+    - Return Type: int
+    - Return `Integer.parseInt(next())`
+  - Function: nextLong()
+    - Return Type: long
+    - Return `Long.parseLong(next())`
+  - Function: nextDouble()
+    - Return Type: double
+    - Return `Double.parseDouble(next())`
+  - Function: nextLine()
+    - Return Type: String
+    - Initialize `s` as an empty string
+    - While `st` is null or `st` has more elements
+      - Try to set `s` as `br.readLine()`
+      - Catch `IOException` and print stack trace
+    - Return `s`

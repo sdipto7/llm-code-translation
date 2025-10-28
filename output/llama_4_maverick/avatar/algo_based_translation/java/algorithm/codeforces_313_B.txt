@@ -1,0 +1,12 @@
+1. Read input string from the input stream.
+2. Initialize an array `cum` of size equal to the length of the input string plus one with all elements set to 0.
+3. Iterate through the input string from the second character to the last character.
+4. For each character, check if it is equal to the previous character.
+5. If they are equal, increment the corresponding cumulative sum in `cum` by 1; otherwise, copy the previous cumulative sum.
+6. Read the number of queries `q` from the input stream.
+7. Iterate `q` times.
+8. In each iteration, read two integers `l` and `r` representing a query range from the input stream.
+9. Subtract 1 from `r`.
+10. Calculate the result for the query by subtracting the cumulative sum at `l - 1` from the cumulative sum at `r`.
+11. Output the result for the query to the output stream.
+12. Close the output stream.

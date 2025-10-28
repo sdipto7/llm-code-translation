@@ -1,0 +1,63 @@
+**Algorithm Extraction:**
+
+Input: Integer n, followed by n integers
+Output: Integer result printed to standard output
+
+Variables:
+- MOD: constant long = 1000000007
+- n: integer (number of elements)
+- l: list of integers
+- Other variables declared but unused: i, j, k, m, h, w, ans, a, b, c, d, x, y, z, s (list of strings), p (list of pairs)
+
+Functions:
+- main(): void
+  - Read integer n from input
+  - Read n integers and store in list l
+  - Sort list l in ascending order
+  - Calculate: l[n/2] - l[n/2-1]
+  - Print result
+
+- print(Object o): void
+  - Print object's string representation followed by newline
+
+- lcm(long m, long n): long
+  - Return m * n / gcd(m, n)
+
+- gcd(long m, long n): long
+  - If m < n: return gcd(n, m)
+  - If n == 0: return m
+  - Else: return gcd(n, m % n)
+
+- Pair class (unused in main algorithm)
+  - key: integer
+  - value: integer
+  - Constructor: Pair(int key, int value)
+  - getKey(): returns key
+  - getValue(): returns value
+
+- FastScanner class (input handling)
+  - InputStream: System.in
+  - Buffer: byte array of size 1024
+  - Methods: hasNextByte(), readByte(), isPrintableChar(), hasNext(), next(), nextLong(), nextInt(), nextDouble()
+
+Execution Flow:
+1. Initialize FastScanner for input
+2. Read integer n
+3. For i from 0 to n-1: read integer and add to list l
+4. Sort list l
+5. Calculate result = element at index n/2 minus element at index n/2-1
+6. Print result
+
+Control Structures:
+- For loop: i=0; i<n; i++
+- Recursive calls in gcd function
+- While loops in FastScanner methods
+
+Data Processing:
+- Input parsing through FastScanner
+- List sorting using Collections.sort
+- Index-based access to sorted list elements
+
+Dependencies:
+- java.util.* (for List, ArrayList, Collections)
+- java.io.* (for InputStream, IOException, PrintWriter)

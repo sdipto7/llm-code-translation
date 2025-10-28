@@ -1,0 +1,30 @@
+Main
+
+function signatures with parameter and return types:
+- main(String[] args): void
+
+variable declarations and data types:
+- Scanner scan: Scanner
+- int n: integer
+- int count: integer
+- int i: integer
+
+complete logic flow in execution order:
+1. Create a Scanner object to read input from standard input.
+2. Read an integer value from the scanner and assign it to variable n.
+3. Initialize an integer variable count to 0.
+4. Start a for loop with variable i initialized to 1 and continue while i is less than or equal to n.
+5. Inside the loop, add the value of i to count.
+6. Increment the value of i by 1.
+7. After the loop ends, print the value of count to standard output.
+
+control structures:
+- for loop with condition i <= n
+
+input/output operations and data processing logic:
+- Input: Read an integer from standard input.
+- Processing: Sum all integers from 1 to n.
+- Output: Print the resulting sum to standard output.
+
+required libraries, modules, or dependencies:
+- java.util.Scanner

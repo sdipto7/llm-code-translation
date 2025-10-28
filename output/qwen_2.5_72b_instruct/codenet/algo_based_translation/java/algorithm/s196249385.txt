@@ -1,0 +1,64 @@
+- Function signatures with parameter and return types:
+  - `solve()`: void
+  - `main(String[] args)`: void
+
+- Variable declarations and data types:
+  - `sc`: Scanner
+  - `pr`: Printer
+  - `n`: int
+  - `k`: int
+  - `a`: int[]
+  - `cumsum`: long[]
+  - `b`: List<Long>
+  - `max`: long
+  - `mask`: long
+  - `tmp`: List<Long>
+  - `e`: long
+  - `ans`: long
+
+- Complete logic flow in execution order:
+  1. Initialize `sc` as a new Scanner reading from standard input.
+  2. Initialize `pr` as a new Printer writing to standard output.
+  3. Call `solve()`:
+     1. Read `n` and `k` from `sc`.
+     2. Initialize `a` as an array of integers of size `n`.
+     3. For each index `i` from 0 to `n-1`, read `a[i]` from `sc`.
+     4. Initialize `cumsum` as an array of longs of size `n+1`.
+     5. For each index `i` from 0 to `n-1`, set `cumsum[i+1]` to `cumsum[i] + a[i]`.
+     6. Initialize `b` as a new ArrayList with capacity `n*(n+1)/2`.
+     7. Initialize `max` to 0.
+     8. For each index `i` from 0 to `n-1`:
+        1. For each index `j` from `i` to `n-1`:
+           1. Add `cumsum[j+1] - cumsum[i]` to `b`.
+           2. Update `max` to the maximum of `max` and `cumsum[j+1] - cumsum[i]`.
+     9. Initialize `mask` to the highest one bit of `max`.
+    10. While `mask` is greater than 0:
+        1. Initialize `tmp` as a new ArrayList.
+        2. For each element `e` in `b`:
+           1. If `(e & mask) != 0`, add `e` to `tmp`.
+        3. If the size of `tmp` is greater than or equal to `k`, set `b` to `tmp`.
+        4. Right shift `mask` by 1.
+    11. If the size of `b` is less than `k`, print 0 using `pr`.
+    12. Otherwise, initialize `ans` to -1L.
+    13. For each element `e` in `b`, update `ans` to `ans & e`.
+    14. Print `ans` using `pr`.
+  4. Close `pr`.
+  5. Close `sc`.
+
+- Control structures:
+  - For loops: Iterate over array indices and subarray ranges.
+  - While loop: Iterates while `mask` is greater than 0.
+  - If-else condition: Checks if the size of `tmp` is greater than or equal to `k`.
+
+- Input/output operations and data processing logic:
+  - Read integers `n` and `k` from standard input.
+  - Read `n` integers into array `a`.
+  - Compute cumulative sums in `cumsum`.
+  - Generate all subarray sums and store them in `b`.
+  - Use bit masking to filter subarray sums based on their binary representation.
+  - Find the intersection of the binary representations of the top `k` subarray sums.
+  - Print the result to standard output.
+
+- Required libraries, modules, or dependencies:
+  - java.io.*
+  - java.util.*

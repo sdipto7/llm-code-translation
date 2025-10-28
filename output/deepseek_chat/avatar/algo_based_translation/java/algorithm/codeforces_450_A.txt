@@ -1,0 +1,45 @@
+**Function Signature:**
+main(String[] args)
+
+**Parameters:**
+- args: String array
+
+**Return Type:**
+void
+
+**Required Libraries:**
+java.util.*
+
+**Variables:**
+- Scanner sc: Scanner object for input
+- int n: integer
+- int m: integer
+- Queue<Integer> q1: LinkedList of integers
+- Queue<Integer> q2: LinkedList of integers
+- int i: integer (loop counter)
+- int ans: integer
+- int x: integer
+- int val: integer
+- int val2: integer
+
+**Algorithm:**
+1. Create Scanner object sc reading from System.in
+2. Read integer n from input
+3. Read integer m from input
+4. Create empty queue q1 (LinkedList implementation)
+5. Create empty queue q2 (LinkedList implementation)
+6. For i from 1 to n (inclusive):
+   - Read integer from input and add to q1
+   - Add current i value to q2
+7. Initialize ans to 0
+8. While q1 is not empty:
+   - If first element in q1 ≤ m:
+     - Remove first element from q1
+     - Remove first element from q2 and assign to ans
+   - Else if first element in q1 > m:
+     - Remove first element from q1 and assign to x
+     - Calculate val = x - m
+     - Add val to end of q1
+     - Remove first element from q2 and assign to val2
+     - Add val2 to end of q2
+9. Print ans

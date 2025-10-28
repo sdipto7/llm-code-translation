@@ -1,0 +1,47 @@
+1. Function signatures:
+   - main(String[] args): void
+   - gs(): String
+   - gi(): int
+   - gl(): long
+   - gd(): double
+
+2. Variables:
+   - Scanner scanner (static)
+   - int N
+   - long i = 357
+   - int c = 0
+   - String s
+   - StringBuilder sb
+   - boolean f
+   - int j
+   - char a
+   - StringBuffer sb2
+
+3. Algorithm flow:
+   - Initialize scanner with System.in
+   - Read integer N using gi()
+   - Set i = 357, c = 0
+   - While i <= N:
+     - Convert i to string s
+     - If s contains '3', '5', and '7': increment c
+     - Create new StringBuilder sb
+     - Set f = false
+     - For j from 0 to s.length()-1:
+       - Get character a from s at position (s.length()-1-j)
+       - If f is true: append a to sb
+       - Else:
+         - If a == '3': append '5' to sb, set f = true
+         - Else if a == '5': append '7' to sb, set f = true
+         - Else: append '3' to sb
+     - If f is false: append '3' to sb
+     - Create StringBuffer sb2 from sb
+     - Reverse sb2 and parse to long, assign to i
+   - Print c
+
+4. Helper methods:
+   - gs(): return scanner.next()
+   - gi(): return Integer.parseInt(scanner.next())
+   - gl(): return Long.parseLong(scanner.next())
+   - gd(): return Double.parseDouble(scanner.next())
+
+5. Required: java.util.Scanner

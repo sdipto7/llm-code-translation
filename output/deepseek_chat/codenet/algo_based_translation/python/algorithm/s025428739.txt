@@ -1,0 +1,7 @@
+read two integers A and B from standard input
+create an empty list lst
+append (A + B) to lst
+append (A - B) to lst
+append (A * B) to lst
+find the maximum value in lst
+print the maximum value

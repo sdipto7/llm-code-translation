@@ -1,0 +1,6 @@
+1. Read input values for t, s, q
+2. Initialize ans to 0
+3. While s is less than t:
+   3.1 Multiply s by q
+   3.2 Increment ans by 1
+4. Output ans

@@ -1,0 +1,129 @@
+```
+Function: main()
+    Input: None
+    Output: None
+    Variables:
+        fs: FastScanner
+        n: int
+        a: int array of size n
+        sum: long
+        count: int
+    Execution:
+        fs = new FastScanner()
+        n = fs.nextInt()
+        a = new int[n]
+        for i from 0 to n-1:
+            a[i] = fs.nextInt()
+        Arrays.sort(a)
+        sum = 0
+        count = 0
+        for i from 0 to n-2:
+            sum += a[i]
+            if a[i+1] <= 2 * sum:
+                count += 1
+            else:
+                count = 0
+        print(count + 1)
+
+Class: FastScanner
+    Variables:
+        in: InputStream set to System.in
+        buffer: byte array of size 1024
+        ptr: int
+        buflen: int
+    Methods:
+        Function: hasNextByte()
+            Input: None
+            Output: boolean
+            Execution:
+                if ptr < buflen:
+                    return true
+                else:
+                    ptr = 0
+                    try:
+                        buflen = in.read(buffer)
+                    catch IOException e:
+                        e.printStackTrace()
+                    if buflen <= 0:
+                        return false
+                return true
+
+        Function: readByte()
+            Input: None
+            Output: int
+            Execution:
+                if hasNextByte():
+                    return buffer[ptr++]
+                else:
+                    return -1
+
+        Function: isPrintableChar(c: int)
+            Input: c: int
+            Output: boolean
+            Execution:
+                return 33 <= c <= 126
+
+        Function: hasNext()
+            Input: None
+            Output: boolean
+            Execution:
+                while hasNextByte() and not isPrintableChar(buffer[ptr]):
+                    ptr += 1
+                return hasNextByte()
+
+        Function: next()
+            Input: None
+            Output: String
+            Execution:
+                if not hasNext():
+                    throw NoSuchElementException
+                sb = new StringBuilder()
+                b = readByte()
+                while isPrintableChar(b):
+                    sb.appendCodePoint(b)
+                    b = readByte()
+                return sb.toString()
+
+        Function: nextLong()
+            Input: None
+            Output: long
+            Execution:
+                if not hasNext():
+                    throw NoSuchElementException
+                n = 0
+                minus = false
+                b = readByte()
+                if b == '-':
+                    minus = true
+                    b = readByte()
+                if b < '0' or '9' < b:
+                    throw NumberFormatException
+                while true:
+                    if '0' <= b <= '9':
+                        n *= 10
+                        n += b - '0'
+                    elif b == -1 or not isPrintableChar(b):
+                        return -n if minus else n
+                    else:
+                        throw NumberFormatException
+                    b = readByte()
+
+        Function: nextInt()
+            Input: None
+            Output: int
+            Execution:
+                nl = nextLong()
+                if nl < Integer.MIN_VALUE or nl > Integer.MAX_VALUE:
+                    throw NumberFormatException
+                return (int) nl
+
+        Function: nextDouble()
+            Input: None
+            Output: double
+            Execution:
+                return Double.parseDouble(next())
+
+Dependencies:
+    java.util.*
+    java.io.*
+```

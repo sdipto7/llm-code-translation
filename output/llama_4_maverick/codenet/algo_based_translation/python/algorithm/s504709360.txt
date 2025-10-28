@@ -1,0 +1,15 @@
+1. Define a function `find_next_string` with no parameters and return type string or integer.
+2. Read a string input from the user and store it in variable `s` of type string.
+3. Check if the length of `s` is less than 26.
+4. If true, iterate over a range from 0 to 25.
+5. For each iteration, calculate a character `c` using the ASCII value of 'a' plus the current iteration index `i`.
+6. Check if `c` is not present in `s`.
+7. If `c` is not in `s`, print the concatenation of `s` and `c`, then exit the program.
+8. If the length of `s` is not less than 26, iterate over a range from 25 to 1 in reverse order.
+9. For each iteration `i`, check if the character at index `i-1` in `s` is less than the character at index `i`.
+10. If the condition is true, create a substring `s1` from the start of `s` to index `i-1`.
+11. Iterate over a range from 0 to 25.
+12. For each iteration, calculate a character `c` using the ASCII value of 'a' plus the current iteration index `j`.
+13. Check if `c` is greater than the character at index `i-1` in `s` and `c` is not present in `s1`.
+14. If both conditions are true, print the concatenation of `s1` and `c`, then exit the program.
+15. If no condition is met after iterating over the range, print -1.

@@ -1,0 +1,20 @@
+1. Import required libraries: java.util.*
+2. Define a class Main with a main method (String[] args)
+3. Declare variables:
+   - sc: Scanner object
+   - a, b: integers
+   - ju: boolean array of size 100001
+   - pe: integer array of size 100001
+   - wa, ac: integers
+4. Read input:
+   - Read two integers a and b from the input using sc.nextInt()
+5. Initialize variables:
+   - wa = 0
+   - ac = 0
+6. Iterate from 0 to b-1:
+   - Read an integer n and a string res from the input
+   - If res equals "WA" and ju[n-1] is false, increment pe[n-1] by 1
+   - If res equals "AC", set ju[n-1] to true
+7. Iterate from 0 to a-1:
+   - If ju[i] is true, increment ac by 1 and add pe[i] to wa
+8. Output ac and wa to the console, separated by a space, in the format: ac + " " + wa

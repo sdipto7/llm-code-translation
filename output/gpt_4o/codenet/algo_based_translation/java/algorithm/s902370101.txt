@@ -1,0 +1,34 @@
+```
+Algorithm:
+1. Function Signature:
+   - Function: main
+   - Parameters: None
+   - Return Type: void
+
+2. Variable Declarations:
+   - `sc`: A Scanner object for reading input.
+   - `n`: An integer to store the number of elements.
+   - `array`: An integer array to store the elements.
+   - `max`: An integer initialized to 0 for tracking the maximum element.
+   - `min`: An integer initialized to 10000 for tracking the minimum element.
+
+3. Execution Flow:
+   a. Initialize a Scanner object `sc` to read input from the standard input.
+   b. Read an integer `n` using `sc.nextInt()` which represents the number of elements in the array.
+   c. Declare an integer array `array` of size `n`.
+   d. Initialize `max` to 0 and `min` to 10000.
+   e. Loop from `i = 0` to `i < n`:
+      i. Read an integer from input and assign it to `array[i]`.
+      ii. If `max < array[i]`, update `max` to `array[i]`.
+      iii. If `min > array[i]`, update `min` to `array[i]`.
+   f. Calculate the difference between `max` and `min`.
+   g. Print the result of `max - min`.
+   h. Close the Scanner object `sc`.
+
+4. Input/Output Operations:
+   - Input: Read integers from the standard input using Scanner.
+   - Output: Print the difference between the maximum and minimum values in the array.
+
+5. Required Libraries:
+   - Java.util.Scanner for input reading.
+```

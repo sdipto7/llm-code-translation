@@ -1,0 +1,27 @@
+```
+Algorithm Main(String[] args)
+
+    Import Libraries:
+        java.util.Scanner
+        java.lang.System
+        java.math
+
+    Variable Declarations:
+        youbi : Array of Strings = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"}
+        s : String
+        ans : Integer
+
+    Begin Execution:
+        Initialize sc as new Scanner(System.in)
+        Set s = sc.next() // Read input string
+
+        For i from 0 to length of youbi - 1 Do
+            If youbi[i] equals s Then
+                Set ans = 7 - i
+            End If
+        End For
+
+        Print ans to System.out
+
+End Algorithm
+```

@@ -1,0 +1,26 @@
+Function signature: `main() -> None`
+
+Variable declarations and data types:
+- `n: int`
+- `list: List[int]`
+
+Logic flow in execution order:
+1. Read an integer `n` from standard input.
+2. Read a line from standard input, split it into a list of strings, convert each string to an integer, compute the remainder of each integer when divided by 2, and store the results in `list`.
+3. If the sum of the elements in `list` is equal to 1:
+   - Find the index of the first occurrence of 1 in `list`, add 1 to it, and print the result.
+4. Otherwise:
+   - Find the index of the first occurrence of 0 in `list`, add 1 to it, and print the result.
+
+Control structures:
+- Conditional: `if sum(list) == 1:`
+- Conditional: `else:`
+
+Input/output operations and data processing logic:
+- Read an integer from standard input.
+- Read a line from standard input, split it into substrings, convert each substring to an integer, compute the modulus 2 of each integer, and store the results in a list.
+- Compute the sum of the list.
+- Depending on the sum, find the index of the first occurrence of either 1 or 0, adjust the index by adding 1, and print the result.
+
+Required libraries, modules, or dependencies:
+- `List` from `typing` module (implied by the use of list comprehension and type hinting, though not explicitly imported in the provided code)

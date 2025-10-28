@@ -1,0 +1,78 @@
+### Algorithm
+
+**Libraries and Modules:**
+- java.util.*
+- java.io.*
+
+**Global Constants:**
+- MOD = 1000000007 (long)
+
+**Main Function:**
+- **Function Signature:** `public static void main(String[] args)`
+- **Variable Declarations:**
+  - `Integer i, j, k, n = 0, m = 0, h = 0, w = 0, ans = 0`
+  - `long a = 0, b = 0, c = 0, d = 0, x = 0, y = 0, z = 0`
+  - `List<Integer> l = new ArrayList<>()`
+  - `List<String> s = new ArrayList<>()`
+  - `List<Pair> p = new ArrayList<>()`
+- **Logic Flow:**
+  1. Create `FastScanner sc` for input.
+  2. Create `PrintWriter out` for output.
+  3. Read integer `n` from input.
+  4. Loop `i` from 0 to `n-1`:
+     - Read integer from input and add to list `l`.
+  5. Sort list `l`.
+  6. Calculate `l.get(n/2) - l.get(n/2-1)`.
+  7. Print the result using `print` function.
+  8. Flush the output stream.
+
+**Print Function:**
+- **Function Signature:** `private static void print(Object o)`
+- **Logic Flow:**
+  1. Print the string representation of `o` followed by a newline.
+
+**LCM Function:**
+- **Function Signature:** `private static long lcm(long m, long n)`
+- **Logic Flow:**
+  1. Return `(m * n) / gcd(m, n)`.
+
+**GCD Function:**
+- **Function Signature:** `private static long gcd(long m, long n)`
+- **Logic Flow:**
+  1. If `m < n`, return `gcd(n, m)`.
+  2. If `n == 0`, return `m`.
+  3. Return `gcd(n, m % n)`.
+
+**Pair Class:**
+- **Fields:**
+  - `key` (int)
+  - `value` (int)
+- **Constructor:** `Pair(int key, int value)`
+  - Initialize `key` and `value`.
+- **Methods:**
+  - `public int getValue()`: Return `value`.
+  - `public int getKey()`: Return `key`.
+
+**FastScanner Class:**
+- **Fields:**
+  - `InputStream in = System.in`
+  - `byte[] buffer = new byte[1024]`
+  - `int ptr = 0`
+  - `int buflen = 0`
+- **Methods:**
+  - `private boolean hasNextByte()`
+    - Check if there are more bytes to read.
+  - `private int readByte()`
+    - Read a byte from input.
+  - `private static boolean isPrintableChar(int c)`
+    - Check if `c` is a printable character.
+  - `public boolean hasNext()`
+    - Skip non-printable characters and check if there are more tokens.
+  - `public String next()`
+    - Read the next token as a string.
+  - `public long nextLong()`
+    - Read the next token as a long integer.
+  - `public int nextInt()`
+    - Read the next token as an integer.
+  - `public double nextDouble()`
+    - Read the next token as a double.

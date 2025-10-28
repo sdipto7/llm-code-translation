@@ -1,0 +1,60 @@
+**Function Signatures:**
+- `main(String[] args)` (static void)
+- `main()` (non-static void)
+- Constructor `codeforces_67_B()` (no parameters)
+
+**Parameters:**
+- `String[] $` in static main
+- None in non-static main
+- None in constructor
+
+**Return Types:**
+- All functions return void
+
+**Variable Declarations:**
+- `int n = sc.nextInt()`
+- `int k = sc.nextInt()`
+- `int[] bb = new int[n]`
+- `int[] aa = new int[n]`
+- `int m = 0`
+- `int a` (loop counter)
+- `int j = 0`
+- `int j_` (loop counter)
+
+**Data Types:**
+- All variables are integers or integer arrays
+- Scanner object for input
+
+**Required Libraries:**
+- `java.io.*`
+- `java.util.*`
+
+**Logic Flow:**
+1. Read integer n from input
+2. Read integer k from input
+3. Initialize integer array bb of size n
+4. For i from 0 to n-1: read bb[i] from input
+5. Initialize integer array aa of size n
+6. Initialize m = 0
+7. For a from n-1 down to 0:
+   - Set j = 0
+   - While bb[a] > 0:
+     - If aa[j] >= a + k: decrement bb[a] by 1
+     - Increment j by 1
+   - For j_ from m down to j+1:
+     - Set aa[j_] = aa[j_-1]
+   - Set aa[j] = a
+   - Increment m by 1
+8. For i from 0 to n-1: print (aa[i] + 1) followed by space
+9. Print newline
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < n; i++)`
+- For loop: `for (int a = n - 1; a >= 0; a--)`
+- While loop: `while (bb[a] > 0)`
+- For loop: `for (int j_ = m++; j_ > j; j_--)`
+- Conditional: `if (aa[j] >= a + k)`
+
+**Input/Output Operations:**
+- Input: `sc.nextInt()` for reading integers
+- Output: `print()` and `println()` for writing to standard output

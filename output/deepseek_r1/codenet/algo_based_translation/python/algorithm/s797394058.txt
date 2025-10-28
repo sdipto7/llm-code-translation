@@ -1,0 +1,23 @@
+**Function Signatures:**
+- No explicit functions; executed as a script.
+
+**Variables and Data Types:**
+- `N`: Integer (from input).
+- `x`: Integer (initialized to 1, but unused in logic).
+- `N_list`: List of integers (elements from 1 to `N`).
+- `n`: List of tuples (output of `product`).
+- `m`: Integer (length of `n`).
+
+**Libraries/Dependencies:**
+- `itertools` (specifically `product`).
+
+**Logic Flow:**
+1. Import `itertools.product`.
+2. Read integer `N` from standard input.
+3. Generate `N_list` via list comprehension:
+   - Iterate `x` over `range(N)` (values 0 to `N-1`).
+   - For each `x`, store `x + 1` in `N_list`.
+4. Compute Cartesian product of `N_list` repeated 3 times using `itertools.product(N_list, repeat=3)`.
+5. Convert the product generator to a list `n`.
+6. Calculate `m` as `len(n)`.
+7. Print `m`.

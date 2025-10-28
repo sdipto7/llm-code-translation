@@ -1,0 +1,34 @@
+Algorithm:
+- Import java.util.Scanner
+- Define main function with String[] args parameter
+- Declare Scanner sc initialized with System.in
+- Declare integer N = sc.nextInt()
+- Declare integer M = sc.nextInt()
+- Declare array B of Box objects with size N
+- Initialize B[0] with new Box(1, true)
+- For i from 1 to N-1: Initialize B[i] with new Box(1, false)
+- For i from 0 to M-1:
+  - Declare integer x = sc.nextInt() - 1
+  - Declare integer y = sc.nextInt() - 1
+  - Call B[x].moveTo(B[y])
+- Declare integer counter = 0
+- For each Box b in array B:
+  - If b.red is true: increment counter by 1
+- Print counter
+- Define Box class with:
+  - Public integer num
+  - Public boolean red
+  - Constructor with parameters integer n and boolean r:
+    - Set num = n
+    - Set red = r
+  - Method moveTo with parameter Box other:
+    - If num == 0: return
+    - Else if num == 1:
+      - Set num = 0
+      - Set other.num = other.num + 1
+      - If red is true: set other.red = true
+      - Set red = false
+    - Else:
+      - Set num = num - 1
+      - Set other.num = other.num + 1
+      - If red is true: set other.red = true

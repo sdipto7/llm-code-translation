@@ -1,0 +1,22 @@
+```
+Function: calculate_sum_of_non_fizzbuzz_numbers(n: int) -> int
+
+Variables:
+- n: int (input parameter)
+- r: int (initialized to 0)
+- ii: int (loop counter)
+
+Logic Flow:
+1. Initialize integer variable `r` to 0.
+2. Loop from `ii = 0` to `ii < n` (increment `ii` by 1 each iteration):
+   - Check if `(ii + 1) % 3 != 0` and `(ii + 1) % 5 != 0`:
+     - If true, add `(ii + 1)` to `r`.
+3. Return the value of `r`.
+
+Input/Output:
+- Input: Read an integer `n` from standard input.
+- Output: Print the result of `calculate_sum_of_non_fizzbuzz_numbers(n)` to standard output.
+
+Dependencies:
+- No external libraries or modules are required.
+```

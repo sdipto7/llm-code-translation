@@ -1,0 +1,30 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- n: int
+- ans: int
+- sumL: int
+- s: string
+- L: int
+
+**Libraries:**
+- re (regular expressions)
+
+**Algorithm:**
+1. Read integer `n` from input
+2. Initialize `ans` to 1 and `sumL` to 0
+3. Read a string from input and split it using regex pattern "[.?!]" to get sentences
+4. For each sentence `s` in the split result:
+   - Remove leading/trailing whitespace from `s` and append '.' to it
+   - Calculate length of `s` as `L`
+   - If `L` > 1:
+     - If `L` > `n`:
+       - Print "Impossible"
+       - Exit program
+     - If `sumL + L + (1 if sumL > 0 else 0)` > `n`:
+       - Increment `ans` by 1
+       - Set `sumL` to `L`
+     - Else:
+       - Set `sumL` to `sumL + L + (1 if sumL > 0 else 0)`
+5. Print `ans`

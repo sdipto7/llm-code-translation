@@ -1,0 +1,36 @@
+**Function Signature**  
+Not applicable (script code without functions)
+
+**Variables**  
+- `n`: int  
+- `k`: int  
+- `tmp`: int  
+- `ans`: int  
+
+**Libraries/Dependencies**  
+- `numpy` (imported but unused)  
+
+**Logic Flow**  
+1. Read input values for `n` and `k` as integers.  
+2. If `n > k`:  
+   a. Compute `tmp = n % k`.  
+   b. If `tmp >= (k - tmp)`, set `ans = k - tmp`.  
+   c. Else, set `ans = tmp`.  
+3. Else if `n < k`:  
+   a. If `n >= (k - n)`, set `ans = k - n`.  
+   b. Else, set `ans = n`.  
+4. Else (`n == k`), set `ans = 0`.  
+5. Print `ans`.  
+
+**Input/Output Operations**  
+- Read from stdin: `n, k = map(int, input().split())`  
+- Write to stdout: `print(ans)`  
+
+**Control Structures**  
+- **If-elif-else** for comparing `n` and `k`.  
+- Nested **if-else** for determining `ans` based on intermediate values.  
+
+**Data Processing**  
+- Modulo operation `n % k`.  
+- Arithmetic operations for `k - tmp` and `k - n`.  
+- Comparisons between intermediate values to determine the final result.

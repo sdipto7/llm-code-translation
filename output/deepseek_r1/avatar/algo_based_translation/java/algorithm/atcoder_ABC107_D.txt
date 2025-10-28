@@ -1,0 +1,65 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+  - Parameters: `String[] args`
+  - Return: `void`
+- `public int solve(int[] arr)`
+  - Parameters: `int[] arr`
+  - Return: `int`
+
+**Variables:**
+- `main` method:
+  - `Scanner scan`: initialized with `BufferedInputStream(System.in)`
+  - `int N`: from input
+  - `int[] arr`: size N, populated from input
+  - `Task tsk`: instance of `Task` class
+- `solve` method:
+  - `int n = arr.length`
+  - `int[] sorted`: copy of `arr`, sorted
+  - `long total = (long)n * (n + 1) / 2`
+  - `int l = 0`, `r = n - 1`
+  - Binary search variables:
+    - `int mid`, `int target`, `int cur`, `long cnt`
+    - `long[] bit`: size `2*n + 2`
+
+**Logic Flow:**
+1. Read input array `arr` via `Scanner`.
+2. Create sorted copy `sorted` of `arr`.
+3. Compute total subarrays count: `total = n*(n+1)/2`.
+4. Binary search to find median value:
+   - Initialize `l = 0`, `r = n-1`.
+   - Loop while `l < r`:
+     - Calculate `mid = l + (r - l)/2`.
+     - Set `target = sorted[mid]`.
+     - Reset `cur = 0`, `cnt = 0`.
+     - Initialize BIT `bit` with all zeros.
+     - Preprocess BIT: Add 1 to all positions ≥ `n+1` using BIT update rules.
+     - Iterate through `arr` elements:
+       - Update `cur` (+1 if `arr[i] <= target`, else -1).
+       - Update BIT by adding 1 at index `cur + n + 1`.
+       - Query BIT for cumulative sum from `cur + n` down to 1, add to `cnt`.
+     - Compare `cnt` with `total/2 + 1`:
+       - If `cnt >= total/2 +1`: set `r = mid`.
+       - Else: set `l = mid +1`.
+5. Return `sorted[l]` as the median.
+
+**Control Structures:**
+- `while (l < r)` loop for binary search.
+- Nested `for` loops:
+  - `for (int x = n +1; x < bit.length; x += x & -x)` for BIT initialization.
+  - `for (int i =0; i <n; i++)` to process each array element.
+    - Inner BIT update loops with `x += x & -x`.
+    - Inner BIT query loop with `x -= x & -x`.
+- Conditional `if (cnt >= total/2 +1)` to adjust binary search bounds.
+
+**Input/Output:**
+- Input: Read integer `N` followed by `N` integers via `Scanner`.
+- Output: Print result of `tsk.solve(arr)`.
+
+**Dependencies:**
+- `java.io.BufferedInputStream`
+- `java.util.Arrays`
+- `java.util.Scanner`
+
+**Data Structures:**
+- Binary Indexed Tree (BIT) implemented via `long[] bit` for frequency tracking.
+- Sorted array for binary search candidates.

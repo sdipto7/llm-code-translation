@@ -1,0 +1,15 @@
+N: integer from input
+S: string from input
+T: string from input
+char_lists: list of characters
+
+Read integer N from standard input
+Read string S from standard input
+Read string T from standard input
+Initialize empty list char_lists
+
+For each index i from 0 to length(S)-1:
+    Append character at position i of S to char_lists
+    Append character at position i of T to char_lists
+
+Convert char_lists list to string and print result

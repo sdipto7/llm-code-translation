@@ -1,0 +1,20 @@
+- Function signature: `main()`
+- Variable declarations: 
+  - `input_list: List[str]`
+  - `num: str`
+  - `num_int: int`
+- Complete logic flow in execution order:
+  - Read input from standard input
+  - Split the input string into a list of strings using whitespace as the delimiter
+  - Convert the list of strings to a single string `num` by joining the list elements without any separator
+  - Convert the string `num` to an integer `num_int`
+  - Check if `num_int` is divisible by 4
+  - If true, print 'YES'
+  - Otherwise, print 'NO'
+- Control structures:
+  - Conditional: `if(num_int % 4 == 0)`
+- Input/output operations and data processing logic:
+  - Input: Read from standard input
+  - Output: Print to standard output either 'YES' or 'NO'
+- Required libraries, modules, or dependencies:
+  - `typing.List` for type annotation (optional, not strictly required for execution)

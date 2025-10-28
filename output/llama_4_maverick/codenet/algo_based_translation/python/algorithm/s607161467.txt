@@ -1,0 +1,8 @@
+1. Declare a function `determineContestCode` with no parameters and return type `None`.
+2. Within `determineContestCode`, declare a variable `R` of type `int`.
+3. Read an integer input from the user and store it in `R`.
+4. Evaluate the value of `R` using the following conditional checks in order:
+   - If `R` is less than 1200, print "ABC".
+   - If `R` is not less than 1200 but less than 2800, print "ARC".
+   - If `R` is neither less than 1200 nor less than 2800, print "AGC".
+5. The program terminates after executing the conditional checks and printing the corresponding contest code.

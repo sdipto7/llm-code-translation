@@ -1,0 +1,14 @@
+```
+Algorithm:
+1. Define a function `calculate_total_distance(n: int, a: List[int]) -> int`
+2. Declare `b` as a list of integers with size `n`, initialized with zeros.
+3. Iterate over `i` from `0` to `n - 1`:
+   a. Assign the value `i` to `b[a[i] - 1]`.
+4. Declare a variable `res` and initialize it with `0`.
+5. Iterate over `i` from `1` to `n - 1`:
+   a. Increment `res` by the absolute difference `abs(b[i] - b[i - 1])`.
+6. Return the value of `res`.
+7. Read an integer `n` from standard input.
+8. Read a list of integers `a` from standard input.
+9. Call the function `calculate_total_distance(n, a)` and print the result.
+```

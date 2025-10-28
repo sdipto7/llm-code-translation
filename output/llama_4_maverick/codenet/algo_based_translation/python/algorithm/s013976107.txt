@@ -1,0 +1,8 @@
+1. Define a function `validate_string` with no parameters and return type `None`.
+2. Declare variables `A` and `B` of type `int`.
+3. Read two integer values from standard input, separated by a space, and store them in `A` and `B` respectively.
+4. Declare a variable `S` of type `list[str]`.
+5. Read a string from standard input and store it as a list of characters in `S`.
+6. Check the condition: `S[A] == '-'` and the count of '-' in `S` equals 1.
+7. If the condition in step 6 is true, print "Yes" to standard output.
+8. If the condition in step 6 is false, print "No" to standard output.

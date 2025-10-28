@@ -1,0 +1,19 @@
+Function signature: `main() -> None`
+
+Variable declarations:
+- `n: int`
+- `t: int`
+- `s: List[int]`
+- `current_cell: int`
+
+Logic flow:
+1. Import `sys` module
+2. Read two integers `n` and `t` from standard input, separated by space
+3. Read a list of integers `s` of length `n` from standard input, separated by space
+4. Initialize `current_cell` to 0
+5. While `current_cell` is less than or equal to `t`:
+   1. Increment `current_cell` by the value at index `current_cell - 1` in list `s`
+   2. If `current_cell` is equal to `t`:
+      1. Print "YES"
+      2. Exit the program
+6. Print "NO"

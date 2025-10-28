@@ -1,0 +1,7 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,s010698290.py,Compilation Error,"Error: Sorry: IndentationError: unexpected indent (s010698290.py, line 1)"
+java,python,s041542819.py,Compilation Error,"Error:   File ""output/deepseek_chat/codenet/direct_translation/java/python/s041542819.py"", line 8
+    in = LightScanner(input_stream)
+    ^^
+SyntaxError: invalid syntax
+"

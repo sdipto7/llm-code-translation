@@ -1,0 +1,34 @@
+- Function signature: `main()`
+- Variable declarations and data types:
+  - `n: int`
+  - `m: int`
+  - `l: List[int]`
+  - `l2: List[int]`
+  - `i: int`
+  - `mx: int`
+  - `ind: int`
+- Logic flow in execution order:
+  - Read two integers `n` and `m` from input.
+  - Read a list `l` of `n` integers from input.
+  - Initialize an empty list `l2`.
+  - For each integer `i` in list `l`:
+    - If `i` is divisible by `m`, append `i // m` to `l2`.
+    - Otherwise, append `i // m + 1` to `l2`.
+  - Find the maximum value `mx` in list `l2`.
+  - For each index `i` from `0` to `n-1`:
+    - If `l2[i]` is equal to `mx`, set `ind` to `i`.
+  - Print `ind + 1`.
+- Control structures:
+  - For loop iterating over each element in list `l`.
+  - If-else conditional checking divisibility of `i` by `m`.
+  - For loop iterating over indices from `0` to `n-1`.
+  - If conditional checking if `l2[i]` is equal to `mx`.
+- Input/output operations and data processing logic:
+  - Read integers `n` and `m` from input.
+  - Read list `l` of `n` integers from input.
+  - Process each integer in `l` to compute the corresponding value in `l2`.
+  - Determine the maximum value in `l2`.
+  - Find the index of the first occurrence of the maximum value in `l2`.
+  - Print the 1-based index of the maximum value.
+- Required libraries, modules, or dependencies:
+  - `List` from `typing` module (for type annotations)

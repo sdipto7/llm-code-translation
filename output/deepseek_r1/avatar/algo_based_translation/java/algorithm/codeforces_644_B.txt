@@ -1,0 +1,39 @@
+**Function Signature:**
+- `main(String[] args)`: Void return type.
+
+**Variables:**
+- `Scanner sc`: Input reader.
+- `int n`: Number of tasks.
+- `int b`: Maximum queue capacity.
+- `long[] ans`: Stores results for each task.
+- `LinkedList<Long> q`: Queue to track task end times.
+- `int t`: Current task start time (per iteration).
+- `int d`: Current task duration (per iteration).
+
+**Libraries/Dependencies:**
+- `java.util.Scanner`
+- `java.util.LinkedList`
+
+**Logic Flow:**
+1. Read `n` and `b` from input.
+2. Initialize `ans` as a long array of size `n`.
+3. Initialize `q` as an empty LinkedList.
+4. For each `i` from `0` to `n-1`:
+   1. Read `t` and `d` from input.
+   2. **While** `q` is not empty AND the first element of `q` ≤ `t`:
+      1. Remove the first element of `q`.
+   3. **If** `q.size()` ≤ `b`:
+      1. Compute `ans[i]` as `(q.isEmpty() ? t : q.getLast()) + d`.
+      2. Add `ans[i]` to the end of `q`.
+   4. **Else**:
+      1. Set `ans[i]` to `-1`.
+5. Print all elements of `ans` separated by spaces. 
+
+**Control Structures:**
+- `for (int i = 0; i < n; i++)`
+- `while (!q.isEmpty() && q.getFirst() <= t)`
+- `if (q.size() <= b)` with corresponding `else`
+
+**Input/Output:**
+- Input: Read `n`, `b`, and pairs of `t`, `d` via `Scanner`.
+- Output: Print space-separated values of `ans` array.

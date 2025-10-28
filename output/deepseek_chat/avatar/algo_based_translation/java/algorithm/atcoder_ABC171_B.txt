@@ -1,0 +1,68 @@
+**Function Signatures:**
+- `main(String[] args)`
+- `solve(InputReader in, PrintWriter out)`
+- `InputReader(InputStream stream)`
+- `String n()`
+- `int ni()`
+
+**Variable Declarations:**
+- `InputStream inputStream = System.in`
+- `OutputStream outputStream = System.out`
+- `InputReader in = new InputReader(inputStream)`
+- `PrintWriter out = new PrintWriter(outputStream)`
+- `Solution sol = new Solution()`
+- `int n = in.ni()`
+- `int k = in.ni()`
+- `int[] a = new int[n]`
+- `int ans = 0`
+- `BufferedReader reader`
+- `StringTokenizer tokenizer`
+
+**Data Types:**
+- `InputStream`
+- `OutputStream`
+- `InputReader`
+- `PrintWriter`
+- `Solution`
+- `int`
+- `int[]`
+- `BufferedReader`
+- `StringTokenizer`
+- `String`
+
+**Logic Flow:**
+1. Initialize input/output streams
+2. Create InputReader and PrintWriter instances
+3. Create Solution instance
+4. Call solve method with InputReader and PrintWriter
+5. Read integers n and k from input
+6. Create integer array a of size n
+7. Read n integers into array a
+8. Sort array a in parallel
+9. Initialize ans to 0
+10. For i from 0 to k-1:
+    - Add a[i] to ans
+11. Print ans
+12. Close PrintWriter
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < n; ++i)`
+- For loop: `for (int i = 0; i < k; ++i)`
+- While loop: `while (tokenizer == null || !tokenizer.hasMoreTokens())`
+- Try-catch block for IOException
+
+**Input/Output Operations:**
+- Read from System.in using BufferedReader
+- Write to System.out using PrintWriter
+- Read integers using StringTokenizer
+- Print integer result
+
+**Required Libraries/Modules:**
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStream
+- java.io.InputStreamReader
+- java.io.OutputStream
+- java.io.PrintWriter
+- java.util.Arrays
+- java.util.StringTokenizer

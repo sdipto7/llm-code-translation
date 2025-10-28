@@ -1,0 +1,31 @@
+- **Function Signatures**:  
+  - `main()` (no parameters, no return)  
+
+- **Variables**:  
+  - `N: int` (input, not used)  
+  - `S: str` (input string)  
+  - `ans: int` (initialized to `1`)  
+  - `tmp: str` (initialized to first character of `S`)  
+  - `s: str` (loop variable for characters in `S`)  
+
+- **Logic Flow**:  
+  1. Read integer `N` from standard input.  
+  2. Read string `S` from standard input.  
+  3. Initialize `ans = 1`.  
+  4. Set `tmp` to the first character of `S` (`S[0]`).  
+  5. For each character `s` in `S`:  
+      a. If `s` is not equal to `tmp`:  
+          i. Increment `ans` by `1`.  
+          ii. Update `tmp` to `s`.  
+  6. Print `ans` to standard output.  
+
+- **Control Structures**:  
+  - `for` loop iterating over every character in `S`.  
+  - `if` statement checking `s != tmp` during iteration.  
+
+- **Input/Output Operations**:  
+  - Input: Reads `N` (unused) and `S` from `stdin`.  
+  - Output: Prints `ans` to `stdout`.  
+
+- **Dependencies**:  
+  - None (uses standard input/output functions).

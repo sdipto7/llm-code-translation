@@ -1,0 +1,59 @@
+Algorithm:
+
+Function Signatures:
+- main(String[] args): void
+
+Variables:
+- n: int
+- a: int[] (size n+1)
+- b: int[] (size n+1)
+- num: int[] (size n+1)
+- ss: String (initialized empty)
+- ans: int (initialized 0)
+- st: boolean[] (size n+1)
+
+Logic Flow:
+1. Read integer n from standard input
+2. Initialize arrays:
+   - a = new int[n+1]
+   - b = new int[n+1]
+   - num = new int[n+1]
+3. For i from 1 to n:
+   - Read a[i] from input
+4. For i from 1 to n:
+   - Read b[i] from input
+5. For i from 1 to n:
+   - Increment num[b[i]] by 1
+6. Initialize st array with all false
+7. For each i from 1 to n:
+   - If a[i] == 1:
+     a. Set st[i] = true
+     b. Create temporary string builders:
+        - sb = new StringBuilder()
+        - sss = new StringBuilder()
+     c. Append i to sss, reverse it, add to sb with leading space
+     d. Initialize x = b[i]
+     e. Initialize path length s = 1
+     f. While x != 0 AND st[x] == false AND num[x] == 1 AND a[x] != 1:
+        i. Create new string builder for x
+        ii. Append x to sss, reverse it, add to sb with leading space
+        iii. Set st[x] = true
+        iv. Update x = b[x]
+        v. Increment s by 1
+     g. If s > ans:
+        i. Update ans = s
+        ii. Reverse entire sb and store in ss
+8. Print ans followed by ss
+
+Control Structures:
+- Sequential input processing loops (for 1..n)
+- Conditional check a[i] == 1
+- While loop with compound conditions (x != 0, !st[x], num[x] == 1, a[x] != 1)
+- Conditional update for maximum path (if s > ans)
+
+Input/Output Operations:
+- Scanner.nextInt() for all input values
+- System.out.println() for outputting results
+
+Dependencies:
+- Requires java.util.Scanner for input handling

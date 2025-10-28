@@ -1,0 +1,42 @@
+Function Signature:
+- `main() -> None`
+
+Variable Declarations and Data Types:
+- `n: int`
+- `F: List[Tuple[int, int, int, int, int, int, int, int, int, int]]`
+- `P: List[Tuple[int, int, int, int, int, int, int, int, int, int]]`
+- `ans: int`
+- `i: int`
+- `tmp: int`
+- `lst: List[int]`
+- `j: int`
+- `k: int`
+
+Logic Flow:
+1. Read integer `n` from input.
+2. Initialize list `F` with `n` tuples of 10 integers each, read from input.
+3. Initialize list `P` with `n` tuples of 10 integers each, read from input.
+4. Set `ans` to -10^18.
+5. For `i` from 1 to 2^10 - 1:
+   1. Set `tmp` to 0.
+   2. Initialize list `lst` with `n` zeros.
+   3. For `j` from 0 to 9:
+      1. If the `j`-th bit of `i` is 1:
+         1. For `k` from 0 to `n` - 1:
+            1. Increment `lst[k]` by `F[k][j]`.
+   4. For `k` from 0 to `n` - 1:
+      1. Increment `tmp` by `P[k][lst[k]]`.
+   5. Set `ans` to the maximum of `ans` and `tmp`.
+6. Print `ans`.
+
+Input/Output Operations and Data Processing Logic:
+- Read `n` as an integer from input.
+- For each of the next `n` lines, read a tuple of 10 integers and store in list `F`.
+- For each of the next `n` lines, read a tuple of 10 integers and store in list `P`.
+- Iterate over all possible subsets of 10 time slots, represented by integers from 1 to 2^10 - 1.
+- For each subset, calculate the total points based on the facility usage and the corresponding points matrix.
+- Track the maximum points found.
+- Print the maximum points.
+
+Required Libraries, Modules, or Dependencies:
+- `None` (uses only built-in Python functionality)

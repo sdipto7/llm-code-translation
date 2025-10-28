@@ -1,0 +1,43 @@
+```
+Algorithm atcoder_AGC037_E
+  Input: An integer N, an integer K, and a string S
+  Output: A string printed to the console
+
+  1. Initialize:
+     - Scanner sc for reading inputs
+     - final int N = sc.nextInt()
+     - int K = sc.nextInt()
+     - StringBuilder S = new StringBuilder(sc.next())
+     - boolean firstTime = true
+     - int step = 1
+
+  2. While K > 0:
+     - Create StringBuilder T as a new StringBuilder with the content of S
+     - Reverse T
+     - Create StringBuilder revU as a concatenation of S and T
+     - Reverse revU
+     - Initialize String sDash with the content of S
+
+     - For each integer i starting from N down to 0, decrementing by step:
+       - Extract substring tmp from revU starting at i with length N
+       - If sDash is lexicographically greater than tmp, set sDash to tmp
+       - Else if not firstTime, break the loop
+
+     - If firstTime is true:
+       - Set firstTime to false
+       - If 2^K > N:
+         - Set char c to the first character of sDash
+         - Print c N times followed by a newline
+         - Exit the program
+
+     - Else:
+       - Double the value of step
+
+     - Decrement K by 1
+     - Set S to a new StringBuilder with the content of sDash
+     - Reverse S
+
+  3. Print the reversed content of S
+
+  4. Close the scanner sc
+```

@@ -1,0 +1,66 @@
+**Function Signatures:**
+- input(): str
+- INT(): int
+- MAP(): list[int]
+- LIST(): list[int]
+- ZIP(n: int): list[tuple[int]]
+
+**Variable Declarations:**
+- sys: module
+- re: module
+- deque: class
+- defaultdict: class
+- Counter: class
+- ceil: function
+- sqrt: function
+- hypot: function
+- factorial: function
+- pi: float
+- sin: function
+- cos: function
+- radians: function
+- accumulate: function
+- permutations: function
+- combinations: function
+- combinations_with_replacement: function
+- product: function
+- groupby: function
+- itemgetter: function
+- mul: function
+- deepcopy: function
+- copy: function
+- ascii_lowercase: str
+- ascii_uppercase: str
+- digits: str
+- bisect: function
+- bisect_left: function
+- insort: function
+- insort_left: function
+- gcd: function
+- heappush: function
+- heappop: function
+- reduce: function
+- INF: float = float('inf')
+- mod: int = 10**9 + 7
+- np: module
+- N: int
+- S: list[str]
+- march: list[str] = ["M", "A", "R", "C", "H"]
+- march_lis: list[int] = [0, 0, 0, 0, 0]
+- ans: int = 0
+- x: int
+- y: int
+- z: int
+
+**Logic Flow:**
+1. Set recursion limit to 10**9
+2. Read integer N from input
+3. Read N strings and store in list S
+4. Initialize march_lis as list of 5 zeros
+5. For each string s in S:
+   - If first character of s (uppercased) is in march list:
+     - Find index of that character in march list
+     - Increment corresponding position in march_lis
+6. For each combination of 3 elements (x, y, z) from march_lis:
+   - Multiply x * y * z and add to ans
+7. Print ans

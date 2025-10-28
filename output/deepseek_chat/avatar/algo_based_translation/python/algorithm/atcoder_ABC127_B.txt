@@ -1,0 +1,19 @@
+**Input Processing:**
+- Read one line from standard input
+- Split input by whitespace and parse first three tokens as integers
+- Assign values to variables: r (int), D (int), x (int)
+
+**Loop Execution:**
+- For i from 2 to 11 (inclusive):
+  - Calculate: (r^(i-1)) * (x + D/(1 - r)) - D/(1 - r)
+  - Convert result to integer
+  - Print integer result
+
+**Mathematical Operations:**
+- Constant calculation: D/(1 - r) (performed twice per iteration)
+- Exponentiation: r^(i-1)
+- Multiplication and subtraction operations
+- Integer conversion of final result
+
+**Output:**
+- Print 10 integer values (one per line) corresponding to i=2 through i=11

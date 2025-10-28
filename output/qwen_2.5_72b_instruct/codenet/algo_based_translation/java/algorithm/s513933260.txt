@@ -1,0 +1,22 @@
+Function signatures with parameter and return types:
+- main(String[] args): void
+
+Variable declarations and data types:
+- Scanner stdIn: Scanner
+- long n: long
+
+Complete logic flow in execution order:
+1. Create a Scanner object to read input from standard input and assign it to stdIn.
+2. Read a long integer from stdIn and assign it to n.
+3. Calculate the expression n * (n + 1) / 2 - n and print the result to standard output.
+
+All control structures (loops, conditionals) with exact conditions:
+- No loops or conditionals present in the code.
+
+Input/output operations and data processing logic:
+- Input: A single long integer from standard input.
+- Processing: Compute the value of n * (n + 1) / 2 - n.
+- Output: Print the computed value to standard output.
+
+Required libraries, modules, or dependencies:
+- java.util.Scanner

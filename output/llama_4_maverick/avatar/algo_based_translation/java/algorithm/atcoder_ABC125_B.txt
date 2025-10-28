@@ -1,0 +1,8 @@
+1. Read the input for the number of elements.
+2. Read the input string for values and convert it into a list of integers.
+3. Read the input string for costs and convert it into a list of integers.
+4. Initialize a variable to store the maximum profit.
+5. Iterate over the range of the number of elements.
+6. For each element, calculate the profit by subtracting the cost from the value.
+7. If the profit is greater than 0, add it to the maximum profit.
+8. Output the maximum profit.

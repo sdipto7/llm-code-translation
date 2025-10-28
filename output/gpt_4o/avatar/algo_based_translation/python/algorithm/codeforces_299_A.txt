@@ -1,0 +1,23 @@
+- Function signatures:
+  - `num_inp() -> int`
+  - `arr_inp() -> list[int]`
+  - `sp_inp() -> tuple[int, ...]`
+
+- Variable declarations:
+  - `a: list[int]`
+
+- Logic flow:
+  1. Read lines from standard input using `open(0)`.
+  2. Extract the second line from the input, split it into strings, and convert each string to an integer.
+  3. Store the sorted list of integers into variable `a`.
+  4. Evaluate the condition `any(x % a[0] for x in a)`.
+     - Iterate over each element `x` in list `a`.
+     - For each element, calculate the remainder of `x` divided by `a[0]`.
+     - If any remainder is non-zero, the condition evaluates to `True`.
+  5. Use the result of the condition to index into the list `[a[0], -1]`.
+     - If the condition is `True`, select `-1`.
+     - If the condition is `False`, select `a[0]`.
+  6. Print the selected value.
+
+- Libraries, modules, or dependencies:
+  - `open()` function for reading from standard input.

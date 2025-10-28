@@ -1,0 +1,45 @@
+**Function Signatures:**
+- `void doIt()`: No parameters, no return. Reads input, processes, outputs result.
+- `public static void main(String[] args)`: No return. Entry point, calls `doIt`.
+
+**Variables:**
+- `Scanner sc = new Scanner(System.in)`: Input reader.
+- `int N`: Number of elements (from input).
+- `long K`: Target step count (from input).
+- `int[] A`: Array of integers (size N, entries adjusted to 0-based).
+- `Set<Integer> used = new HashSet<>()`: Tracks visited indices.
+- `int[] idx`: Maps each index to its first occurrence step.
+- `int[] pos`: Records the index at each step of traversal.
+- `int next = 0`: Current index during traversal.
+- `int cur = 0`: Current step count during traversal.
+- `long a`: Cycle length.
+- `long b`: Steps before cycle starts.
+- `int ans`: Final computed step to retrieve the answer.
+
+**Logic Flow:**
+1. Read `N` and `K`.
+2. Read array `A` and convert entries to 0-based.
+3. Initialize `used`, `idx`, `pos`, `next`, `cur`.
+4. **Loop** while `used` does NOT contain `next`:
+   - Add `next` to `used`.
+   - Set `idx[next] = cur`.
+   - Set `pos[cur] = next`.
+   - Update `next = A[next]`.
+   - Increment `cur`.
+5. After loop:
+   - Compute `a = cur - idx[next]`.
+   - Compute `b = idx[next]`.
+   - **If** `K <= b`: Set `ans = (int)K`.
+   - **Else**: Compute `ans = (int)((K - b) % a + b)`.
+6. Output `pos[ans] + 1` (convert to 1-based index).
+
+**Control Structures:**
+- `while (!used.contains(next))`: Traversal until cycle detection.
+- `if (b > K)`: Check if target step is pre-cycle.
+
+**Input/Output:**
+- Input via `Scanner`: `N`, `K`, and array `A`.
+- Output via `System.out.println` after converting back to 1-based index.
+
+**Dependencies:**
+- `java.util.Scanner` and `java.util.HashSet` for input and cycle tracking.

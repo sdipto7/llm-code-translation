@@ -1,0 +1,18 @@
+**Input:**
+- Read integer `n` from input
+- Read two integers `l` and `r` from input
+- Initialize integer `id` to 0
+
+**Loop:**
+- For `i` from 1 to `n-1`:
+    - Read two integers `li` and `ri` from input
+    - If `li <= l` and `r <= ri`:
+        - Set `id = i`
+    - Else if `li < l` or `r < ri`:
+        - Set `id = n`
+    - Set `l = min(l, li)`
+    - Set `r = max(r, ri)`
+
+**Output:**
+- If `id == n`: print `-1`
+- Else: print `id + 1`

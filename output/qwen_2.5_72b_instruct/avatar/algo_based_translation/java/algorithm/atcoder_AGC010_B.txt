@@ -1,0 +1,45 @@
+Function signatures with parameter and return types:
+- main(String[] args): void
+- possible(int N, int[] A): boolean
+
+Variable declarations and data types:
+- Scanner scanner: Scanner
+- int N: int
+- int[] A: int array
+- long sum: long
+- long NS: long
+- long K: long
+- int i: int
+- int j: int
+- long d: long
+
+Logic flow in execution order:
+1. Create Scanner object to read from System.in
+2. Read integer N from input
+3. Initialize array A of size N
+4. For i from 0 to N-1, read integer from input and assign to A[i]
+5. Call possible(N, A) and store result
+6. If result is true, print "YES"
+7. Otherwise, print "NO"
+
+Function possible(int N, int[] A):
+1. Initialize sum to 0
+2. For i from 0 to N-1, add A[i] to sum
+3. Calculate NS as N * (N + 1) / 2
+4. If sum % NS is not equal to 0, return false
+5. Calculate K as sum / NS
+6. For i from 0 to N-1:
+   - If i is 0, set j to N - 1; otherwise, set j to i - 1
+   - Calculate d as K - (A[i] - A[j])
+   - If d is less than 0 or d % N is not equal to 0, return false
+7. Return true
+
+Input/output operations and data processing logic:
+- Read integer N from input
+- Read N integers and store in array A
+- Calculate sum of all elements in A
+- Check if sum can be evenly distributed according to the condition
+- Print "YES" if condition is met, otherwise print "NO"
+
+Required libraries, modules, or dependencies:
+- java.util.Scanner

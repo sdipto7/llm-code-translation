@@ -1,0 +1,43 @@
+**Function Signature:**
+- public static void main(String[] args) throws Exception
+
+**Variables:**
+- BufferedReader br (BufferedReader)
+- double input
+- double countOdd
+- BigDecimal result
+
+**Libraries/Dependencies:**
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader
+- java.math.BigDecimal
+- java.math.RoundingMode
+
+**Logic Flow:**
+1. Initialize BufferedReader with InputStreamReader(System.in)
+2. Read line from input via br.readLine()
+3. Parse read line to double (store in `input`)
+4. Compute countOdd = Math.round(input / 2)
+5. Compute result = new BigDecimal(countOdd / input)
+6. Set result's scale to 10 decimal places with RoundingMode.HALF_UP
+7. Print result via System.out.println()
+8. Catch IOException or NumberFormatException:
+   - Print stack trace
+   - Exit with code 0
+9. Catch general Exception:
+   - Print stack trace
+   - Exit with code 0
+
+**Control Structures:**
+- Try-catch block for input/output and numeric parsing errors
+- No explicit loops or conditionals outside exception handling
+
+**Data Processing:**
+- Explicit rounding during countOdd calculation
+- Precision control via BigDecimal scaling
+- Floating-point division (countOdd / input)
+
+**Input/Output:**
+- Input: Single numeric string from stdin
+- Output: Decimal value printed with up to 10-digit precision (unformatted BigDecimal toString)

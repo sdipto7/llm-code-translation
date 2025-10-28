@@ -1,0 +1,29 @@
+```
+Algorithm
+
+Dependencies:
+- Import Scanner from java.util
+- Import StringBuilder from java.lang
+
+Function Signature:
+- main(args: String[]) -> void
+
+Variables:
+- sc: Scanner (initialized with System.in)
+- sb: StringBuilder (initialized with an empty string)
+- a: int
+- b: int
+- digit: int
+
+Execution Flow:
+1. Initialize a Scanner object 'sc' to read from standard input.
+2. Initialize a StringBuilder object 'sb' with an empty string to build the output.
+3. Enter a loop that iterates while 'sc' has more integers to read:
+   a. Read an integer from 'sc' and assign it to 'a'.
+   b. Read another integer from 'sc' and assign it to 'b'.
+   c. Compute the sum of 'a' and 'b'.
+   d. Calculate 'digit' as the number of digits in the sum using the formula: (Math.log10(a+b) + 1).
+   e. Append 'digit' to the StringBuilder 'sb'.
+   f. Append a newline character to 'sb'.
+4. After exiting the loop, print the contents of 'sb' to standard output.
+```

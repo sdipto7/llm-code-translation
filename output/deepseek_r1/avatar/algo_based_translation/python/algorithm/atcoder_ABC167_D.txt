@@ -1,0 +1,67 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`: Entry point, no parameters, executes algorithm and prints result.
+
+**Variables:**
+- `N: Integer` - Input parameter representing list size adjustment.
+- `K: Integer` - Input parameter for target step index.
+- `L: List<Integer>` - Input list (1-based index after modification).
+- `path: List<Integer>` - Stores traversal path, initialized with `[1]`.
+- `Hash: Map<Integer, Integer>` - Tracks visited nodes (key: node value, value: index in path).
+- `ind: Integer` - Current index in path (initialized to 0).
+- `x: Integer` - Current node value (initialized to 1).
+- `t: Integer` - Start index of detected loop (initialized to -1).
+- `flag: Boolean` - Indicates loop detection (initialized to `False`).
+- `loop: List<Integer>` - Sub-list of `path` representing the cyclic portion.
+
+**Input/Output Operations:**
+1. Read `N` and `K` from standard input (space-separated).
+2. Read `L` from standard input (space-separated integers, converted to list).
+3. Insert `-1` at index 0 of `L`.
+4. Print result based on traversal logic.
+
+**Logic Flow:**
+1. **Initialization:**
+   - `path.append(1)`
+   - `Hash[1] = 0`
+
+2. **Cycle Detection:**
+   - For `i` in range `0` to `N` (inclusive):
+     - `ne = L[x]`
+     - If `ne` exists in `Hash`:
+       - Set `flag = True`
+       - Set `t = Hash[ne]`
+       - Break loop
+     - Else:
+       - Append `ne` to `path`
+       - Increment `ind` by 1
+       - Set `Hash[ne] = ind`
+       - Set `x = ne`
+
+3. **Result Determination:**
+   - If `flag` is `True`:
+     - Extract `loop` as `path[t:]`
+     - If `K < len(path)`:
+       - Output `path[K]`
+     - Else:
+       - Compute `K = (K - len(path)) % len(loop)`
+       - Output `loop[K]`
+   - Else:
+     - Output `path[K-1]`
+
+**Control Flow Structures:**
+- Loop: Fixed iteration `N+1` times (upper bound for cycle detection in N-element graph).
+- Conditional checks:
+  - `if Hash.contains(ne)` for cycle detection.
+  - `if flag` to branch on cycle existence.
+  - `if K < len(path)` to decide between direct access or loop computation.
+
+**Edge Case Handling:**
+- K exceeds pre-loop path length (modulo operation on loop length).
+- No cycle detected (direct access using original path).
+- Correct 1-based to 0-based index conversion in output when no loop exists.
+
+**External Dependencies:**
+- `defaultdict` from `collections` module (Python-specific, but treated as generic hash map in algorithm).
+- Input parsing via `input().split()`.

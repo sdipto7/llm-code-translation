@@ -1,0 +1,28 @@
+Algorithm:
+
+- Function signature:
+  - `main() -> void`: Main function that drives the program execution.
+  
+- Variable declarations:
+  - `sc: Scanner`: A Scanner object for reading input from the console.
+  - `n: long`: A long integer to store the input number.
+  - `sqrt: double`: A double to store the square root of `n`.
+  - `nearNum: double`: A double to store the floored square root of `n`.
+  - `ans: long`: A long integer to store the final result.
+
+- Execution logic:
+  1. Initialize a Scanner object `sc` to read from standard input.
+  2. Read a line from input using `sc.nextLine()` and parse it as a long integer, storing the result in `n`.
+  3. Calculate the square root of `n` using `Math.sqrt(n)` and store the result in `sqrt`.
+  4. Apply `Math.floor(sqrt)` to get the largest integer less than or equal to `sqrt`, storing the result in `nearNum`.
+  5. Calculate `nearNum` raised to the power of 2 using `Math.pow(nearNum, 2)` and cast it to a long integer, storing the result in `ans`.
+  6. Print the value of `ans` to standard output.
+  7. Close the Scanner object `sc`.
+
+- Input/Output operations:
+  - Input: Read a long integer from the console.
+  - Output: Print a long integer to the console.
+
+- Required libraries:
+  - `java.util.Scanner`: For reading input from the console.
+  - `java.lang.Math`: For mathematical operations like square root and power.

@@ -1,0 +1,62 @@
+```plaintext
+Import the following modules: collections, heapq, sys, math, itertools, bisect, BytesIO, IOBase, os
+
+Function valid(i: int, j: int, n: int, m: int) -> bool:
+    If i is within the range [0, n) and j is within the range [0, m), return True
+    Otherwise, return False
+
+Function sumn(i: int, n: int) -> float:
+    Return (n - i) * (i + n) / 2
+
+Function sqfun(a: float, b: float, c: float) -> float:
+    Return (-b + math.sqrt(b * b - 4 * a * c)) / (2 * a)
+
+Function value() -> Tuple[int]:
+    Return a tuple of integers from input split by whitespace
+
+Function values() -> Tuple[int]:
+    Return a tuple of integers from sys.stdin.readline() split by whitespace
+
+Function inlst() -> List[int]:
+    Return a list of integers from input split by whitespace
+
+Function inlsts() -> List[int]:
+    Return a list of integers from sys.stdin.readline() split by whitespace
+
+Function inp() -> int:
+    Return an integer from input
+
+Function inps() -> int:
+    Return an integer from sys.stdin.readline()
+
+Function instr() -> str:
+    Return a string from input
+
+Function stlst() -> List[str]:
+    Return a list of strings from input split by whitespace
+
+Function f(s: str) -> str:
+    Declare r as an empty string
+    For each character i in string s:
+        If i is not in the set {'-', ';', '_'}, append i.lower() to r
+    Return r
+
+Function solve():
+    Declare l as an empty list
+    For i from 0 to 2 (inclusive):
+        Append f(input()) to list l
+
+    Generate all permutations of list l of length len(l), assign to t
+    Reassign l as an empty list
+    For each permutation i in t:
+        Append the joined string of elements in i to list l
+
+    For each test case from range(0, inp()):
+        If f(instr()) is in list l:
+            Print 'ACC'
+        Else:
+            Print 'WA'
+
+If the script is executed as the main module:
+    Call solve()
+```

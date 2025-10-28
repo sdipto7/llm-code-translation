@@ -1,0 +1,28 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- n: int
+- k: int
+- tmp: int
+- ans: int
+
+**Required Libraries:**
+- numpy (as np)
+
+**Algorithm:**
+1. Read two integers from standard input and assign to n and k
+2. If n > k:
+   - Calculate tmp = n % k
+   - If tmp >= k - tmp:
+        Set ans = k - tmp
+   - Else:
+        Set ans = tmp
+3. Else if n < k:
+   - If n >= k - n:
+        Set ans = k - n
+   - Else:
+        Set ans = n
+4. Else (n == k):
+   - Set ans = 0
+5. Print ans

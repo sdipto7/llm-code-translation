@@ -1,0 +1,48 @@
+Algorithm:
+- Import required libraries: java.util.*, java.io.*, static java.lang.Math.*
+- Define class `codeforces_333_B`
+- Declare static variables:
+  - `FastReader in` as an instance of `FastReader`
+  - `PrintWriter out` as a new PrintWriter with `System.out`
+- Define `main` method with parameters `String[] args`:
+  - Declare integer variables `n` and `m`, read their values using `in.nextInt()`
+  - Declare `Set<Integer> bannedRows` and initialize it to a new `HashSet<>`
+  - Declare `Set<Integer> bannedCols` and initialize it to a new `HashSet<>`
+  - For loop with `int i = 0; i < m; i++`:
+    - Declare integer `r`, read its value using `in.nextInt()`
+    - If condition: `if (r > 1 && r < n)`, add `r` to `bannedRows`
+    - Declare integer `c`, read its value using `in.nextInt()`
+    - If condition: `if (c > 1 && c < n)`, add `c` to `bannedCols`
+  - Declare integer `answer`, calculate it as `(n - 2) * 2`
+  - Subtract the size of `bannedRows` from `answer`
+  - Subtract the size of `bannedCols` from `answer`
+  - If condition: `if (n % 2 != 0)`:
+    - Declare integer `mid`, calculate it as `(n + 1) / 2`
+    - If condition: `if (!bannedRows.contains(mid) && !bannedCols.contains(mid))`, decrement `answer` by 1
+  - Output `answer` using `out.println(answer)`
+  - Close `PrintWriter out` using `out.close()`
+- Define static class `FastReader`:
+  - Declare `BufferedReader br`
+  - Declare `StringTokenizer st`
+  - Constructor `FastReader()`:
+    - Initialize `br` with new `BufferedReader` and `InputStreamReader(System.in)`
+  - Define method `String next()`:
+    - While loop: `while (st == null || !st.hasMoreElements())`:
+      - Try block:
+        - Assign `st` with new `StringTokenizer` containing `br.readLine()`
+      - Catch block for `IOException e`:
+        - Print stack trace of exception `e`
+    - Return `st.nextToken()`
+  - Define method `int nextInt()`:
+    - Return `Integer.parseInt(next())`
+  - Define method `long nextLong()`:
+    - Return `Long.parseLong(next())`
+  - Define method `double nextDouble()`:
+    - Return `Double.parseDouble(next())`
+  - Define method `String nextLine()`:
+    - Declare `String str` initialized to an empty string
+    - Try block:
+      - Assign `str` with `br.readLine()`
+    - Catch block for `IOException e`:
+      - Print stack trace of exception `e`
+    - Return `str`

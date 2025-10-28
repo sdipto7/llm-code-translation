@@ -1,0 +1,14 @@
+1. Define a function `main` with no parameters and no return type.
+2. Declare a 3D array `info` of size 4x3x10 with data type `int` and initialize all elements to 0.
+3. Define a function to read an integer from the input and store it in a variable `n` of type `int`.
+4. Loop `n` times, performing the following steps:
+   - Read four integers from the input and store them in variables `built`, `floor`, `room`, and `num` of type `int`.
+   - Update the value at `info[built - 1][floor - 1][room - 1]` by adding `num` to it.
+5. Loop through the 3D array `info` using three nested loops with indices `i`, `j`, and `k`, where:
+   - `i` ranges from 0 to 3.
+   - `j` ranges from 0 to 2.
+   - `k` ranges from 0 to 9.
+6. Inside the innermost loop, print the value of `info[i][j][k]` followed by a space.
+7. After the innermost loop completes, print a newline character.
+8. After the middle loop completes, check if `i` is not equal to 3. If true, print a line of 20 '#' characters followed by a newline character.
+9. The required library is `java.util.Scanner` for reading input from the user.

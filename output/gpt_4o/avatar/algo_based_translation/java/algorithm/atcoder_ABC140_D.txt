@@ -1,0 +1,72 @@
+```
+Algorithm:
+
+1. Import the `java.util.Scanner` for input operations.
+
+2. Define the main function:
+   - Input: No parameters
+   - Output: None (prints result to console)
+
+3. Initialize a `Scanner` object to read input.
+
+4. Read and parse the following inputs:
+   - Integer `N` from input (number of characters in string)
+   - Integer `K` from input (maximum number of operations)
+   - String `S` from input (initial string of 'L' and 'R' characters)
+
+5. Convert the string `S` to two character arrays `c1` and `c3`.
+
+6. Initialize a boolean `flag` to `false` and an integer `count` to `0`.
+
+7. Process the character array `c1`:
+   - Iterate over each character from `0` to `N-1`:
+     - If `flag` is `true` and current character is 'R':
+       - Set `flag` to `false`
+       - Increment `count`
+     - If `count` equals `K`, break the loop.
+     - If current character is 'L':
+       - Set `flag` to `true`
+       - Change current character to 'R'
+
+8. Reset `flag` to `false` and `count` to `0`.
+
+9. Process the character array `c3`:
+   - Iterate over each character from `0` to `N-1`:
+     - If `flag` is `true` and current character is 'L':
+       - Set `flag` to `false`
+       - Increment `count`
+     - If `count` equals `K`, break the loop.
+     - If current character is 'R':
+       - Set `flag` to `true`
+       - Change current character to 'L'
+
+10. Convert `c1` and `c3` back to strings `S1` and `S3`.
+
+11. Initialize `count` to `1` and `sum1` to `0`.
+
+12. Calculate `sum1` based on `S1`:
+    - Set `bef` to the first character of `S1`.
+    - Iterate over each character from `1` to `N-1`:
+      - If current character equals `bef`:
+        - Increment `count`
+        - If current index is `N-1`, add `count-1` to `sum1`.
+      - Else:
+        - Set `bef` to current character
+        - Add `count-1` to `sum1`
+        - Reset `count` to `1`
+
+13. Initialize `count` to `1` and `sum3` to `0`.
+
+14. Calculate `sum3` based on `S3`:
+    - Set `bef` to the first character of `S3`.
+    - Iterate over each character from `1` to `N-1`:
+      - If current character equals `bef`:
+        - Increment `count`
+        - If current index is `N-1`, add `count-1` to `sum3`.
+      - Else:
+        - Set `bef` to current character
+        - Add `count-1` to `sum3`
+        - Reset `count` to `1`
+
+15. Output the maximum value between `sum1` and `sum3` to the console.
+```

@@ -1,0 +1,35 @@
+- Function/Method Signature:
+  - `main()`: Void function, no parameters.
+
+- Variable Declarations:
+  - `n`: Numeric type (integer or float), initialized from input.
+
+- Algorithm Steps:
+  1. Read integer input from standard input, assign to `n`.
+  2. Loop:
+     - **Condition**: While `n % 2 == 0`.
+     - **Operation**: Divide `n` by 2, store result in `n`.
+  3. After loop termination:
+     - **Condition**: If `n == 1`.
+       - **Operation**: Print "YES".
+     - **Else**:
+       - **Operation**: Print "NO".
+
+- Control Flow:
+  - Loop exits when `n % 2 != 0` (n becomes odd).
+  - Final condition branches based on `n == 1`.
+
+- Input/Output:
+  - Input: Single integer via standard input.
+  - Output: "YES" if reduced to 1, "NO" otherwise.
+
+- Edge Case Handling:
+  - Input `n = 1` directly exits loop and outputs "YES".
+  - Input `n = 0` causes infinite loop (no handling).
+  - Non-integer inputs cause runtime errors (no validation).
+
+- Error Handling:
+  - No explicit error handling for invalid inputs or edge cases.
+
+- External Dependencies:
+  - None. Uses standard input/output operations only.

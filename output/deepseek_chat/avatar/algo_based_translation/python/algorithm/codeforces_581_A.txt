@@ -1,0 +1,8 @@
+1. Read input string from standard input
+2. Split input string into tokens using whitespace as delimiter
+3. Convert first two tokens to integers, store in variables a and b
+4. Find minimum value between a and b
+5. Find maximum value between a and b
+6. Calculate difference between max and min values
+7. Integer divide the difference by 2
+8. Print the minimum value followed by the integer divided result, separated by space

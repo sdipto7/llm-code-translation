@@ -1,0 +1,54 @@
+**Algorithm Specification**
+
+**Function/Method Signatures**  
+None (Procedural script execution)
+
+**Variable Declarations**  
+- `n: int` (Input integer, unused)  
+- `a: list[int]` (First input list)  
+- `b: list[int]` (Second input list)  
+- `c: list[int]` (Third input list)  
+- `x: int` (Sum of elements in `a`, initialized to 0)  
+- `y: int` (Sum of elements in `b`, initialized to 0)  
+- `z: int` (Sum of elements in `c`, initialized to 0)  
+
+**Step-by-Step Logic**  
+1. Read integer `n` from standard input (unused).  
+2. Read three subsequent lines from input and parse as space-separated integers:  
+   - Assign first line to `a`  
+   - Assign second line to `b`  
+   - Assign third line to `c`  
+3. Iterate over all elements in `a`:  
+   - For each element, add its value to `x`  
+4. Iterate over all elements in `b`:  
+   - For each element, add its value to `y`  
+5. Iterate over all elements in `c`:  
+   - For each element, add its value to `z`  
+6. Compute absolute difference between `x` and `y` as `|x - y|`.  
+7. Compute absolute difference between `y` and `z` as `|y - z|`.  
+8. Print result of `|x - y|` followed by `|y - z|`, each on a new line.  
+
+**Control Flow Structures**  
+- Three independent `for` loops:  
+  1. Loop over `a` with exit after last element  
+  2. Loop over `b` with exit after last element  
+  3. Loop over `c` with exit after last element  
+- No conditional branches  
+
+**Input/Output Operations**  
+- Input:  
+  - First line: integer `n` (unused)  
+  - Next three lines: space-separated integers for `a`, `b`, `c`  
+- Output:  
+  - Two lines containing `|x - y|` and `|y - z|`  
+
+**Error Handling**  
+- No explicit error handling. Assumes:  
+  - Valid integer input for `n`  
+  - Exactly three subsequent lines with valid integers matching list lengths  
+  - No type or parsing errors  
+
+**External Dependencies**  
+- Relies on standard input/output functions  
+- Uses built-in `abs()` for absolute value calculation  
+- No external libraries or imports required

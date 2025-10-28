@@ -1,0 +1,37 @@
+Function signature: `find_longest_non_increasing_subsequence_length(N: int, heights: List[int]) -> int`
+
+Variable declarations and data types:
+- `N: int`
+- `heights: List[int]`
+- `count_best: int`
+- `count_tmp: int`
+- `i: int`
+
+Logic flow in execution order:
+1. Read an integer `N` from input.
+2. Read a list of integers `heights` of length `N` from input.
+3. Initialize `count_best` to 0.
+4. Initialize `count_tmp` to 0.
+5. For each index `i` from 0 to `N-2`:
+   - If `heights[i]` is greater than or equal to `heights[i+1]`:
+     - Increment `count_tmp` by 1.
+   - Else:
+     - If `count_tmp` is greater than `count_best`:
+       - Set `count_best` to `count_tmp`.
+     - Set `count_tmp` to 0.
+6. After the loop, if `count_tmp` is greater than `count_best`:
+   - Set `count_best` to `count_tmp`.
+7. Print `count_best`.
+
+Control structures:
+- For loop with condition `i` from 0 to `N-2`.
+- If-else statement with condition `heights[i] >= heights[i+1]`.
+- Nested if statement with condition `count_tmp > count_best`.
+
+Input/output operations and data processing logic:
+- Input: Reads an integer `N` and a list of `N` integers.
+- Output: Prints the length of the longest non-increasing subsequence in the list.
+- Data processing: Iterates through the list to count the length of non-increasing subsequences and keeps track of the maximum length found.
+
+Required libraries, modules, or dependencies:
+- `List` from `typing` module for type annotation.

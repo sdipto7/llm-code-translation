@@ -1,0 +1,23 @@
+Function Signature:
+- main(): void
+
+Variable Declarations:
+- sc: Scanner
+- count: int
+- givingNumbers: int[]
+
+Execution Order and Logic Flow:
+1. Initialize `sc` as a new Scanner object to read from standard input.
+2. Read a string from input using `sc.next()` and parse it as an integer to assign to `count`.
+3. Declare `givingNumbers` as an integer array of size `count`.
+4. Loop from `i = 0` to `i < count`:
+   a. Read a string from input using `sc.next()`.
+   b. Parse the string to an integer and assign it to `givingNumbers[i]`.
+5. Loop from `i = count - 1` to `i >= 0`:
+   a. Output the integer at `givingNumbers[i]` without a newline.
+   b. If `i > 0`, output a space character.
+6. Print a newline character.
+7. Close the Scanner `sc`.
+
+Dependencies:
+- java.util.Scanner

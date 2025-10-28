@@ -1,0 +1,31 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+
+**Variable Declarations:**
+- `Scanner s = new Scanner(System.in);` (Scanner object)
+- `int n` (integer input)
+- `int[] dp = new int[200001]` (integer array of size 200001)
+- `long ans = 0` (long integer accumulator)
+
+**Logic Flow:**
+1. Read integer `n` from standard input.
+2. Initialize integer array `dp` with size 200001.
+3. Loop `i` from `0` to `n-1` (inclusive):
+   - Read integer `x` from input.
+   - Set `dp[x] = i`.
+4. Initialize `ans` to 0.
+5. Loop `i` from `2` to `n` (inclusive):
+   - Compute absolute difference between `dp[i]` and `dp[i-1]`.
+   - Add result to `ans`.
+6. Print `ans` to standard output.
+
+**Control Structures:**
+- `for (int i = 0; i < n; i++)` (loop with condition `i < n`)
+- `for (int i = 2; i <= n; i++)` (loop with condition `i <= n`)
+
+**Input/Output Operations:**
+- Input: `n` and subsequent integers via `Scanner`.
+- Output: `ans` printed via `System.out.println`.
+
+**Dependencies:**
+- `java.util.Scanner` (imported for input handling)

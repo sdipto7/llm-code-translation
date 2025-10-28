@@ -1,0 +1,30 @@
+Function signature: `function process_numbers(input_string: str) -> None`
+
+Variable declarations and data types:
+- `input_string: str`
+- `a: int`
+- `b: int`
+
+Logic flow in execution order:
+1. Read input string from standard input.
+2. Split input string by space character to obtain two string values.
+3. Convert first string value to integer and assign to variable `a`.
+4. Convert second string value to integer and assign to variable `b`.
+5. If `a` is less than or equal to `b`, proceed to step 6; otherwise, proceed to step 7.
+6. Print value of `a`.
+7. Subtract 1 from `a` and print the result.
+
+Control structures:
+- Conditional (if-else):
+  - Condition: `a <= b`
+  - If true: Execute step 6
+  - If false: Execute step 7
+
+Input/output operations and data processing logic:
+- Input operation: `input()`
+- String split operation: `split(" ")`
+- Integer conversion: `int()`
+- Output operation: `print()`
+
+Required libraries, modules, or dependencies:
+- No additional libraries, modules, or dependencies required.

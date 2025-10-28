@@ -1,0 +1,13 @@
+1. Initialize an empty list called "menu".
+2. Repeat the following steps 5 times:
+   1. Read a string input "m" from the user.
+   2. Extract the last character of "m" and convert it to an integer "e".
+   3. If "e" equals 0, then set "e" to 10.
+   4. Convert the entire string "m" to an integer and store it along with "e" as a pair in the "menu" list.
+3. Sort the "menu" list based on the second element of each pair in ascending order.
+4. Initialize a variable "ans" to 0.
+5. Iterate through the "menu" list starting from the second element to the end:
+   1. For each element, calculate the ceiling of the first element divided by 10, then multiply by 10.
+   2. Add the result to "ans".
+6. Add the first element of the first pair in the "menu" list to "ans".
+7. Output the value of "ans".

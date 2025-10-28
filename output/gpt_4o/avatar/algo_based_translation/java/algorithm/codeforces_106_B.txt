@@ -1,0 +1,17 @@
+1. Import necessary libraries: `Arrays`, `java.util.*`, `java.io.PrintWriter`, and `java.util.Scanner`.
+2. Define the `main` function with signature `public static void main(String[] args)`.
+3. Declare `Scanner` object `input` to read from standard input.
+4. Declare `PrintWriter` object `out` to write to standard output.
+5. Read an integer `n` from input, representing the number of computers.
+6. Declare a 2D integer array `vec` with dimensions `[n][4]`.
+7. For `i` from `0` to `n-1`, perform the following:
+   - Read four integers from input and assign them to `vec[i][0]`, `vec[i][1]`, `vec[i][2]`, and `vec[i][3]`.
+8. Declare integer `ans` and initialize it to `500`.
+9. Declare integer `ansprice` and initialize it to `20000`.
+10. For `i` from `0` to `n-1`, perform the following:
+    - Declare integer `fl` and initialize it to `1`.
+    - For `j` from `0` to `n-1`, perform the following:
+      - If `vec[i][0] < vec[j][0]` and `vec[i][1] < vec[j][1]` and `vec[i][2] < vec[j][2]`, set `fl` to `0`.
+    - If `fl` is `1` and `vec[i][3] < ansprice`, update `ansprice` to `vec[i][3]` and update `ans` to `i + 1`.
+11. Print `ans` to standard output.
+12. Close the `PrintWriter` object `out`.

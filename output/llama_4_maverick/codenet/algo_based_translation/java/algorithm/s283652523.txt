@@ -1,0 +1,53 @@
+1. Import required libraries: 
+   - java.io
+   - java.util
+   - java.math.BigDecimal
+
+2. Define a class `Main` with the following components:
+   - Static variable `MOD` of type `int` with value `(int)1e9+7`
+   - Instance variables:
+     - `in` of type `FastScanner`
+     - `out` of type `PrintWriter`
+
+3. Define a method `solve()` with return type `void` and no parameters:
+   - Declare local variables:
+     - `N` of type `int`
+     - `A` of type `int[]`
+     - `ans` of type `long`
+     - `sum` of type `long`
+   - Read `N` from input using `in.nextInt()`
+   - Read an array `A` of size `N` from input using `in.nextIntArray(N)`
+   - Initialize `ans` to `0` and `sum` to `A[N-1]`
+   - Iterate from `N-2` to `0` (inclusive) using a for loop:
+     - Update `ans` to `(ans + (sum * A[i]) % MOD) % MOD`
+     - Update `sum` to `(sum + A[i]) % MOD`
+   - Print `ans` to output using `out.println(ans)`
+
+4. Define a method `main(String[] args)` with return type `void`:
+   - Create a new instance of `Main` and call its `m()` method
+
+5. Define a method `m()` with return type `void` and no parameters:
+   - Initialize `in` to a new `FastScanner` reading from `System.in`
+   - Initialize `out` to a new `PrintWriter` writing to `System.out`
+   - Call the `solve()` method
+   - Flush `out` using `out.flush()`
+   - Close `in` using `in.close()` and `out` using `out.close()`
+
+6. Define a static class `FastScanner` with the following components:
+   - Instance variable `input` of type `Reader`
+   - Constructor `FastScanner()` that initializes `input` to read from `System.in`
+   - Constructor `FastScanner(InputStream stream)` that initializes `input` to read from the given `stream`
+   - Method `close()` with return type `void` that closes the `input` reader
+   - Method `nextInt()` with return type `int` that reads an integer from input
+   - Method `nextLong()` with return type `long` that reads a long integer from input
+   - Method `nextDouble()` with return type `double` that reads a double from input
+   - Method `nextChar()` with return type `char` that reads a character from input
+   - Method `nextStr()` with return type `String` that reads a string from input
+   - Method `nextLine()` with return type `String` that reads a line from input
+   - Method `nextIntArray(int n)` with return type `int[]` that reads an array of `n` integers from input
+   - Method `nextIntArrayDec(int n)` with return type `int[]` that reads an array of `n` integers from input and decrements each value by 1
+   - Method `nextIntArray1Index(int n)` with return type `int[]` that reads an array of `n` integers from input and stores them in an array of size `n+1` starting from index 1
+   - Method `nextLongArray(int n)` with return type `long[]` that reads an array of `n` long integers from input
+   - Method `nextLongArrayDec(int n)` with return type `long[]` that reads an array of `n` long integers from input and decrements each value by 1
+   - Method `nextLongArray1Index(int n)` with return type `long[]` that reads an array of `n` long integers from input and stores them in an array of size `n+1` starting from index 1
+   - Method `nextDoubleArray(int n)` with return type `double[]` that reads an array of `n` doubles from input

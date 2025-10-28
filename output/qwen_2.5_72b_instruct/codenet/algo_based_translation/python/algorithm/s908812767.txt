@@ -1,0 +1,42 @@
+- Function signatures:
+  - `dfs(i: int) -> bool`
+
+- Variable declarations and data types:
+  - `V: dict[int, list[tuple[int, int]]]`  # key: vertex, value: list of tuples (opposite vertex, weight)
+  - `color: dict[int, int]`  # 0 or 1 or -1
+  - `n: int`
+  - `u: int`, `v: int`, `w: int`
+  - `i: int`
+  - `j: int`
+
+- Complete logic flow in execution order:
+  1. Set recursion limit to 100000 using `sys.setrecursionlimit`.
+  2. Initialize `V` as an empty dictionary.
+  3. Initialize `color` as an empty dictionary.
+  4. Read integer `n` from standard input.
+  5. For `i` from 1 to `n-1`:
+     - Read integers `u`, `v`, `w` from standard input.
+     - Add `[v, w]` to `V[u]` if `u` exists in `V`; otherwise, create `V[u]` with `[[v, w]]`.
+     - Add `[u, w]` to `V[v]` if `v` exists in `V`; otherwise, create `V[v]` with `[[u, w]]`.
+  6. For `i` from 1 to `n`, set `color[i]` to -1.
+  7. While true:
+     - Set `i` to 0.
+     - For `j` from 1 to `n`:
+        - If `color[j]` equals -1, set `i` to `j`, set `color[i]` to 0, and break.
+     - If `i` equals 0, for `j` from 1 to `n`, print `color[j]`, then break.
+     - Otherwise, if `dfs(i)` is false, print 'No', then break.
+
+- Control structures:
+  - For loops iterating over ranges.
+  - If-elif-else statements checking values.
+  - While loop with break conditions.
+
+- Input/output operations and data processing logic:
+  - Read integer `n` from standard input.
+  - For each of the next `n-1` lines, read three integers `u`, `v`, `w`.
+  - After processing all inputs, initialize colors for all vertices to -1.
+  - Use DFS to determine if the graph can be colored with two colors based on edge weights.
+  - Print the color of each vertex or 'No' if the graph cannot be colored as required.
+
+- Required libraries, modules, or dependencies:
+  - `sys` module for setting recursion limit.

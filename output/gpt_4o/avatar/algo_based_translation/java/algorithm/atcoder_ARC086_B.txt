@@ -1,0 +1,35 @@
+```
+Function Signature: main() -> None
+
+Dependencies:
+- Import Scanner from java.util
+- Import ArrayList from java.util
+- Import Arrays from java.util
+
+Variable Declarations:
+- n: int
+- a: int array of size n
+- r: ArrayList of Strings
+- m: int
+- i: int (used in loops)
+
+Algorithm:
+1. Initialize Scanner object s.
+2. Read an integer input n using s.
+3. Declare an integer array a of size n.
+4. Populate array a with n integers using Arrays.setAll and lambda to read inputs via s.
+5. Initialize ArrayList r to hold String elements.
+6. Initialize integer m to 0.
+7. Loop over index i from 1 to n-1:
+   - If absolute value of a[m] is less than absolute value of a[i], set m to i.
+8. Loop over index i from 0 to n-1:
+   - If sign of a[m] is different from sign of a[i], add to r the string "m+1 i+1".
+9. If a[m] is non-negative:
+   - Loop over index i from 1 to n-1:
+     - Add to r the string "i i+1".
+10. Else (if a[m] is negative):
+    - Loop over index i from n to 2 step -1:
+      - Add to r the string "i i-1".
+11. Print the size of ArrayList r.
+12. Iterate over each element in r and print it.
+```

@@ -1,0 +1,38 @@
+Algorithm:
+1. Import java.util.Scanner
+2. Define main method with String[] args parameter, throws Exception
+3. Declare Scanner object initialized with System.in
+4. Read integer m from input
+5. Read integer n from input
+6. Read integer x from input
+7. Read integer y from input
+8. Declare integer array a of size m
+9. For i from 0 to m-1:
+   - Read integer from input and store in a[i]
+10. Declare integer array b of size n
+11. For i from 0 to n-1:
+    - Read integer from input and store in b[i]
+12. Call MaxInt function with parameters x and a, store result in x_max
+13. Call MinInt function with parameters y and b, store result in y_min
+14. Call CheckWar function with parameters x_max and y_min
+
+MaxInt function:
+- Parameters: integer x, integer array a
+- Declare integer bignum initialized to x
+- For i from 0 to length of a - 1:
+    - Set bignum to maximum of current bignum and a[i]
+- Return bignum
+
+MinInt function:
+- Parameters: integer y, integer array b
+- Declare integer smallnum initialized to y
+- For i from 0 to length of b - 1:
+    - Set smallnum to minimum of current smallnum and b[i]
+- Return smallnum
+
+CheckWar function:
+- Parameters: integer a, integer b
+- If a >= b:
+    - Print "War"
+- Else:
+    - Print "No War"

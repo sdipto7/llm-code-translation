@@ -1,0 +1,21 @@
+- **Function Signature**: Script (no explicit function)
+- **Variables**:
+  - `n: int` (unused)
+  - `m: int` (unused)
+  - `x: int`
+  - `a: list[int]`
+  - `ans: int` (initialized to 0, unused)
+  - `i: int`
+- **Input Operations**:
+  1. Read first input line: split into `n`, `m`, `x` as integers.
+  2. Read second input line: split into list `a` as integers.
+- **Libraries**: `bisect` module (imported).
+- **Logic Flow**:
+  1. Import `bisect`.
+  2. Compute `i = bisect.bisect(a, x)` (insertion point for `x` in sorted list `a`).
+  3. Split `a` into two sublists: `a[:i]` and `a[i:]`.
+  4. Calculate lengths of both sublists.
+  5. Find the minimum of the two lengths.
+  6. Print the minimum value.
+- **Assumptions**:
+  - List `a` is pre-sorted (required for `bisect` to work correctly).

@@ -1,0 +1,27 @@
+**Function Signature**  
+- `public static void main(String[] args)`  
+  - Parameters: String array `args`  
+  - Return type: `void`  
+
+**Libraries/Dependencies**  
+- `java.util.Scanner`  
+
+**Variables**  
+- `Scanner sc = new Scanner(System.in)`  
+- `int a = sc.nextInt()`  
+- `int b = sc.nextInt()`  
+- `int c = sc.nextInt()`  
+- `String answer = "No"`  
+
+**Logic Flow**  
+1. Read three integers `a`, `b`, `c` from standard input using `Scanner`.  
+2. Initialize `answer` to "No".  
+3. Check conditional: if `(a + b >= c)`, set `answer` to "Yes".  
+4. Print `answer` to standard output.  
+
+**Control Structures**  
+- Single `if` statement with condition `(a + b >= c)`  
+
+**Input/Output Operations**  
+- Input: Three consecutive integers via `Scanner.nextInt()`  
+- Output: "Yes" or "No" via `System.out.println(answer)`

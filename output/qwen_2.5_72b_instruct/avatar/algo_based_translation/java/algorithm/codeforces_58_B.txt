@@ -1,0 +1,18 @@
+Function signature: `public static void main(String[] args) throws java.lang.Exception`
+Variable declarations: 
+- `Scanner sc` of type `Scanner`
+- `int n` 
+- `int m`
+- `int i`
+
+Libraries: `java.util.*`, `java.lang.*`, `java.io.*`
+
+Logic flow:
+- Create a `Scanner` object `sc` to read input
+- Assign `n` the value read from input using `sc.nextInt()`
+- Print `n` followed by a space
+- Assign `m` the value of `n`
+- Start a for loop with `i` initialized to `n-1`, decrementing `i` until `i > 0`
+  - If `m` modulo `i` equals `0`
+    - Print `i` followed by a space
+    - Assign `m` the value of `i`

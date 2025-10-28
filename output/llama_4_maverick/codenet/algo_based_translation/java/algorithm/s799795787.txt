@@ -1,0 +1,25 @@
+1. Import required libraries: java.util.*
+2. Define a class: Main
+3. Define a function: main with parameter args of type String[] and return type void
+4. Declare variables:
+   - sc of type Scanner
+   - n of type int
+   - array of type String[] with size n
+   - cnt of type int initialized to 0
+   - cnt2 of type int initialized to 0 (not used)
+   - a of type String
+   - i of type int (loop counter)
+5. Execution order:
+   1. Create a new Scanner object sc from System.in
+   2. Read an integer n from System.in using sc.nextInt()
+   3. Create a String array of size n
+   4. Iterate from i = 0 to n-1:
+      - Read a String from System.in using sc.next() and store it in array[i]
+   5. Sort the array in ascending order using Arrays.sort()
+   6. Initialize a to array[0] and cnt to 1
+   7. Iterate from i = 0 to n-1:
+      - Check if a is equal to array[i]
+      - If not equal, increment cnt
+      - Update a to array[i]
+   8. Print cnt to System.out using System.out.println()
+6. Required libraries: java.util.* (for Scanner and Arrays classes)

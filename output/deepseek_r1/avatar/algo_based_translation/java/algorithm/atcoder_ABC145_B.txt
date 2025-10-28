@@ -1,0 +1,49 @@
+# Extracted Algorithm
+
+**Function Signatures:**
+- `public static void cout(String str)`
+  - Parameter: `str` (String)
+  - Return: void
+
+- `public static void main(String[] args)`
+  - Parameter: `args` (String array)
+  - Return: void
+
+**Variables:**
+- `a`: String (initialized to "")
+- `b`: String (initialized to "")
+- `str`: String (user input)
+- `n`: int (user input)
+- `Scanner cin`: Scanner object for input
+
+**Libraries/Dependencies:**
+- `java.util.*`
+- `java.math.*`
+
+**Logic Flow:**
+
+1. **Initialize Scanner:**
+   - Create `cin` as `new Scanner(System.in)`
+
+2. **Read Inputs:**
+   - Read integer `n` via `cin.nextInt()`
+   - Consume newline with `cin.nextLine()`
+   - Read string `str` via `cin.nextLine()`
+
+3. **Build String `a`:**
+   - Loop: `for (int i = 0; i < (n / 2); i++)`
+     - Append `str.charAt(i)` to `a`
+
+4. **Check Condition:**
+   - If `str` equals `a + a`:
+     - Call `cout("Yes")`
+   - Else:
+     - Call `cout("No")`
+
+**Control Structures:**
+- `for` loop: Iterate from `i=0` to `i < (n / 2)`
+- `if-else` statement: Check `str.equals(a + a)`
+
+**Input/Output Operations:**
+- Input: Read integer `n` and string `str`
+- Output: Print "Yes" or "No" via `cout` method

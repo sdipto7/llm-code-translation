@@ -1,0 +1,11 @@
+1. Import the gcd function from the fractions module
+2. Define a function lcm(a, b) that returns the least common multiple of a and b
+3. Set MOD to 10^9 + 7
+4. Read the integer N from input
+5. Read N integers into a list A
+6. Initialize _lcm to 1
+7. For each element a in A:
+   7.1. Update _lcm to be the least common multiple of _lcm and a
+8. Calculate the sum of the modular multiplicative inverses of elements in A modulo MOD
+9. Compute ans as the product of _lcm and the sum calculated in step 8, modulo MOD
+10. Output ans modulo MOD as an integer

@@ -1,0 +1,36 @@
+Function Signatures:
+- main() -> None
+
+Variable Declarations:
+- n: int
+- ls: List[List[int]]
+- taka: int
+- aoki: int
+- i: int
+
+Logic Flow:
+1. Read an integer n from the input.
+2. Initialize an empty list ls.
+3. For i from 0 to n-1:
+   a. Read a line of input, split it into a list of integers, and append it to ls.
+4. Sort ls in descending order based on the sum of the sublists.
+5. Initialize taka to 0.
+6. For i from 0 to len(ls)-1, incrementing by 2:
+   a. Add the first element of ls[i] to taka.
+7. Initialize aoki to 0.
+8. For i from 1 to len(ls)-1, incrementing by 2:
+   a. Add the second element of ls[i] to aoki.
+9. Print the result of taka minus aoki.
+
+Input/Output Operations:
+- Read integer n from input.
+- Read n lines of input, each containing space-separated integers.
+- Print the integer result of taka minus aoki.
+
+Data Processing Logic:
+- The list ls is sorted based on the sum of its sublists in descending order.
+- The sum of every other element starting from the first element of the sorted list is calculated for taka.
+- The sum of every other element starting from the second element of the sorted list is calculated for aoki.
+
+Required Libraries/Modules/Dependencies:
+- None

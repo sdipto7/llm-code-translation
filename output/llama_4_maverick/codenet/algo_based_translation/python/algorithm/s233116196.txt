@@ -1,0 +1,115 @@
+## Step 1: Read Input Parameters
+Read two integers N and M from input, representing the number of nodes and edges in a graph.
+
+## Step 2: Initialize Graph Data Structure
+Create an adjacency list representation of the graph G, where G is a dictionary with keys ranging from 1 to N, and each value is an empty list.
+
+## Step 3: Populate Graph with Edges
+For M iterations, read two integers a and b representing an edge between nodes a and b. Append b to G[a] and a to G[b] to represent an undirected edge.
+
+## Step 4: Initialize Color Array
+Create a list col of size N+1, where col[i] represents the color (or component ID) of node i, initialized with -1 for all nodes.
+
+## Step 5: Initialize Component Counter
+Initialize a counter cnt to 0, which will be used to assign unique colors (component IDs) to connected components.
+
+## Step 6: Perform BFS Traversal for Connected Components
+For each node i from 1 to N, if col[i] is less than 0 (indicating it has not been visited), perform the following steps:
+- Assign cnt as the color of node i (col[i] = cnt).
+- Initialize a queue que with node i.
+- While que is not empty:
+  - Dequeue a node x from que.
+  - For each neighbor y of x in G[x]:
+    - If col[y] is less than 0 (y has not been visited), 
+      - Assign cnt as the color of y (col[y] = cnt).
+      - Enqueue y into que.
+- Increment cnt by 1 after processing all nodes in the current connected component.
+
+## Step 7: Find Maximum Component ID
+Find the maximum value in the col list, representing the maximum component ID (cmax).
+
+## Step 8: Output Maximum Component ID
+Print cmax, which represents the number of connected components in the graph.
+
+## Algorithm Representation
+
+### Function Signatures
+- `read_input() -> Tuple[int, int]`: Reads N and M from input.
+- `initialize_graph(N: int) -> Dict[int, List[int]]`: Initializes graph G.
+- `populate_graph(G: Dict[int, List[int]], M: int) -> None`: Populates G with edges.
+- `bfs_traversal(G: Dict[int, List[int]], N: int) -> int`: Performs BFS traversal and returns the number of connected components.
+
+### Variable Declarations
+- `N: int`, `M: int`: Number of nodes and edges.
+- `G: Dict[int, List[int]]`: Adjacency list representation of the graph.
+- `col: List[int]`: Color (component ID) of each node.
+- `cnt: int`: Counter for connected components.
+- `que: Deque[int]`: Queue for BFS traversal.
+
+### Logic Flow
+1. `N, M = read_input()`
+2. `G = initialize_graph(N)`
+3. `populate_graph(G, M)`
+4. `col = [-1] * (N + 1)`
+5. `cnt = 0`
+6. For `i` from 1 to `N`:
+   - If `col[i] < 0`:
+     - `col[i] = cnt`
+     - `que = Deque([i])`
+     - While `que` is not empty:
+       - `x = que.popleft()`
+       - For `y` in `G[x]`:
+         - If `col[y] < 0`:
+           - `col[y] = cnt`
+           - `que.append(y)`
+     - `cnt += 1`
+7. `cmax = max(col)`
+8. Print `cmax`
+
+### Required Libraries
+- `collections` for `Deque` data structure. 
+
+### Code Representation
+
+```python
+from collections import deque
+from typing import Dict, List, Tuple
+
+def read_input() -> Tuple[int, int]:
+    return map(int, input().split())
+
+def initialize_graph(N: int) -> Dict[int, List[int]]:
+    return {i: [] for i in range(1, N + 1)}
+
+def populate_graph(G: Dict[int, List[int]], M: int) -> None:
+    for _ in range(M):
+        a, b = map(int, input().split())
+        G[a].append(b)
+        G[b].append(a)
+
+def bfs_traversal(N: int, G: Dict[int, List[int]]) -> int:
+    col = [-1] * (N + 1)
+    cnt = 0
+    for i in range(1, N + 1):
+        if col[i] < 0:
+            col[i] = cnt
+            que = deque([i])
+            while que:
+                x = que.popleft()
+                for y in G[x]:
+                    if col[y] < 0:
+                        col[y] = cnt
+                        que.append(y)
+            cnt += 1
+    return max(col)
+
+def main() -> None:
+    N, M = read_input()
+    G = initialize_graph(N)
+    populate_graph(G, M)
+    cmax = bfs_traversal(N, G)
+    print(cmax)
+
+if __name__ == "__main__":
+    main()
+```

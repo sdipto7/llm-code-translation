@@ -1,0 +1,26 @@
+Function signature:
+main(String[] args): void
+
+Required libraries:
+java.util.Scanner
+java.util.Arrays
+
+Variables:
+- Scanner sc
+- int N
+- long[] A
+- int i (loop counter)
+- int j (loop counter)
+
+Algorithm:
+1. Create Scanner object reading from System.in
+2. Read integer N from input
+3. Create long array A of size N
+4. For i from 0 to N-1:
+   - Read long value from input and store in A[i]
+5. Sort array A in ascending order using Arrays.sort()
+6. For j from 1 to N-1:
+   - If A[j] equals A[j-1]:
+     - Print "NO"
+     - Terminate program with System.exit(0)
+7. Print "YES"

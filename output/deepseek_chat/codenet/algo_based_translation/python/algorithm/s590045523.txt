@@ -1,0 +1,42 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- N: int (input size)
+- L: list[int] (input list of integers)
+- ans: int (counter for valid triangles)
+- i: int (outer loop index)
+- j: int (middle loop index)
+- k: int (inner loop index)
+- a: int (element at index i)
+- b: int (element at index j)
+- c: int (element at index k)
+
+**Input Operations:**
+- Read integer N from standard input
+- Read next line, split into integers, convert to list L
+
+**Logic Flow:**
+1. Initialize ans to 0
+2. Outer loop: i from 0 to N-3 (inclusive)
+3. Middle loop: j from i+1 to N-2 (inclusive)
+4. Inner loop: k from j+1 to N-1 (inclusive)
+5. Assign a = L[i], b = L[j], c = L[k]
+6. Check if any two elements are equal (a==b OR b==c OR c==a)
+   - If true: skip to next iteration
+7. Check triangle inequality conditions:
+   - a+b > c AND b+c > a AND c+a > b
+   - If true: increment ans by 1
+8. After all loops complete: print ans
+
+**Control Structures:**
+- Triple nested for loops
+- Continue statement inside inner loop
+- Compound conditional checks
+
+**Output Operation:**
+- Print final value of ans
+
+**Dependencies:**
+- Standard input/output functions
+- No external libraries required

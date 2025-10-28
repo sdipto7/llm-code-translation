@@ -1,0 +1,8 @@
+1. Read integer N from input
+2. Read N space-separated integers from input
+3. Create a list A of tuples, where each tuple contains the index (starting from 1) and the corresponding integer value
+4. Sort the list A based on the integer values in ascending order
+5. Create a new list A_ containing only the indices from the sorted list A
+6. Iterate through the list A_ excluding the last element
+7. Print each index followed by a space
+8. Print the last index without a trailing space

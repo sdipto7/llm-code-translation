@@ -1,0 +1,24 @@
+Algorithm:
+1. Function: main (implicit, no parameters, no return)
+2. Variables:
+   - u: function reference to input
+   - n: integer
+   - k: integer
+   - M: list of integers
+   - m: integer (unused)
+   - j: integer (loop counter)
+   - p: integer (loop counter and index)
+   - l: integer (loop counter)
+3. Input operations:
+   - Read first line: split into two integers n and k
+   - Read second line: split into list of integers M
+4. Initialize m = 0
+5. Outer loop: for j from 0 to n-1 (inclusive)
+   - Inner loop: for p from 0 to n-1 (inclusive)
+     - Condition: if M[p] == 0
+       - Print: p+1 with space separator (no newline)
+       - Break inner loop
+   - Inner loop: for l from 0 to (p - k) inclusive
+     - Operation: M[l] = M[l] - 1
+   - Operation: M[p] = M[p] - 1
+6. No explicit return

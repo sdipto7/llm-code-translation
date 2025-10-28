@@ -1,0 +1,51 @@
+Function Signatures:
+- `R(): List[int]`
+
+Variable Declarations and Data Types:
+- `R: lambda function`
+- `n: int`
+- `m: int`
+- `s: int`
+- `f: int`
+- `d: int`
+- `c: str`
+- `res: str`
+- `i: int`
+- `j: int`
+- `t: int`
+- `l: int`
+- `r: int`
+- `k: int`
+
+Logic Flow in Execution Order:
+1. `R()` is called to read three integers `n`, `m`, `s`, `f` from input.
+2. If `s < f`:
+   - `d` is set to 1
+   - `c` is set to 'R'
+3. Else:
+   - `d` is set to -1
+   - `c` is set to 'L'
+4. `res` is initialized as an empty string
+5. `i` is initialized to 1
+6. `j` is initialized to `s`
+7. `R()` is called to read three integers `t`, `l`, `r` from input
+8. `k` is initialized to 1
+
+Control Structures:
+- While loop: `while j != f`
+  - If condition: `if i > t and k < m`
+    - `R()` is called to read new values for `t`, `l`, `r`
+    - `k` is incremented by 1
+  - If condition: `if i == t and (l <= j <= r or l <= j + d <= r)`
+    - `res` is concatenated with 'X'
+  - Else:
+    - `res` is concatenated with `c`
+    - `j` is incremented by `d`
+  - `i` is incremented by 1
+
+Input/Output Operations and Data Processing Logic:
+- Input: The program reads multiple lines of space-separated integers from standard input.
+- Output: The program prints a string `res` to standard output.
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries or modules are required.

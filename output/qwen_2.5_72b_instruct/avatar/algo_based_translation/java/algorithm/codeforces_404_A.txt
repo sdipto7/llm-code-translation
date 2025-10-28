@@ -1,0 +1,43 @@
+Function signature: main function with parameter types (String[] args) and return type void
+
+Variable declarations:
+- n of type int
+- arr of type char[][]
+- str of type String[]
+- a of type char
+- b of type char
+- res of type boolean
+
+Logic flow:
+1. Initialize Scanner object sc
+2. Read integer n from input
+3. Create 2D character array arr of size n x n
+4. Create 1D String array str of size n
+5. For i from 0 to n-1 (inclusive):
+   - Read string from input and store in str[i]
+6. For i from 0 to n-1 (inclusive):
+   - For j from 0 to n-1 (inclusive):
+       - Set arr[i][j] to character at index j of str[i]
+7. Set a to arr[0][0]
+8. Set b to arr[0][1]
+9. If a equals b:
+   - Print "NO"
+10. Else:
+    - Set res to true
+    - For i from 0 to n-1 (inclusive):
+        - For j from 0 to n-1 (inclusive):
+            - If i equals j or i + j equals n - 1:
+                - If arr[i][j] does not equal a:
+                    - Set res to false
+                    - Break out of inner loop
+            - Else:
+                - If arr[i][j] does not equal b:
+                    - Set res to false
+                    - Break out of inner loop
+    - If res:
+        - Print "YES"
+    - Else:
+        - Print "NO"
+
+Libraries:
+- java.util.*

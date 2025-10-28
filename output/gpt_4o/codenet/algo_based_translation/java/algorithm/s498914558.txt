@@ -1,0 +1,30 @@
+Algorithm:
+
+1. Import necessary library:
+   - `java.util.*` for `Scanner` and `Arrays` usage.
+
+2. Define the main function:
+   - `public static void main(String[] args)`
+
+3. Declare variables:
+   - `Scanner sc` to read input from the standard input.
+   - `int n` to store the first integer input.
+   - `int m` to store the second integer input.
+   - `int[] po` an array of integers to store subsequent integer inputs, with size `n`.
+
+4. Input operations:
+   - Read an integer from input and assign it to `n`.
+   - Read another integer from input and assign it to `m`.
+
+5. Data processing with a loop:
+   - Initialize a `for` loop with `int i = 0; i < n; i++`.
+   - Inside the loop:
+     - Read an integer from input and assign it to `po[i]`.
+     - Subtract `po[i]` from `m`.
+
+6. Sort the array `po`:
+   - Use `Arrays.sort(po)` to sort the array in non-decreasing order.
+
+7. Calculate and output the result:
+   - Calculate the result as `n + m / po[0]`.
+   - Print the result to the standard output using `System.out.println()`.

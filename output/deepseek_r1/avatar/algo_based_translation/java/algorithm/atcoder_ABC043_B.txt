@@ -1,0 +1,42 @@
+**Algorithm:**
+
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `public void solve(int testNumber, LightScanner in, PrintWriter out)`
+- `public LightScanner(InputStream in)`
+- `public String string()`
+
+**Variables:**
+- `String s` (input string)
+- `StringBuilder d` (result buffer)
+- `char c` (loop variable for processing input characters)
+- `BufferedReader reader` (in LightScanner)
+- `StringTokenizer tokenizer` (in LightScanner)
+
+**Logic Flow:**
+
+1. **Input Reading:**
+   - Initialize `LightScanner` to read from `System.in`.
+   - Read input string `s` via `in.string()`.
+
+2. **String Processing:**
+   - Initialize empty `StringBuilder d`.
+   - For each character `c` in `s`:
+     - **Case 0/1:** Append `c` to `d`.
+     - **Case B:** If `d` is non-empty, delete last character via `d.setLength(d.length() - 1)`.
+     - Ignore other characters.
+
+3. **Output Result:**
+   - Print contents of `d` via `out.println(d)`.
+
+**Control Structures:**
+- **For-loop:** Iterate over every character in `s.toCharArray()`.
+- **Switch-case:** Check character `c` against cases `'0'`, `'1'`, `'B'`.
+- **Conditional:** Check `d.length() > 0` before handling `'B'`.
+
+**Dependencies:**
+- `java.io.*` (InputStream, OutputStream, PrintWriter, BufferedReader, etc.)
+- `java.util.StringTokenizer`
+
+**Data Flow:**
+- Input string → character-by-character processing → append/delete operations → final buffer → printed output.

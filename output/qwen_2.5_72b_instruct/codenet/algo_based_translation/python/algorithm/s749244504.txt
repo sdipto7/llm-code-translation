@@ -1,0 +1,49 @@
+Function signatures with parameter and return types:
+- No explicit function signatures in the provided code
+
+Variable declarations and data types:
+- `X: iterator` (created from standard input)
+- `h: int` (height of the matrix)
+- `w: int` (width of the matrix)
+- `C: np.ndarray` (10x10 matrix of integers for costs)
+- `A: np.ndarray` (h x w matrix of integers representing the grid)
+- `G: nx.DiGraph` (directed graph created from matrix C)
+- `d: dict` (dictionary for storing shortest path lengths)
+- `s: int` (sum of shortest path lengths)
+
+Complete logic flow in execution order:
+1. Read dimensions `h` and `w` from input.
+2. Initialize a 10x10 matrix `C` with zeros.
+3. Fill matrix `C` with values from input.
+4. Initialize a h x w matrix `A` with zeros.
+5. Fill matrix `A` with values from input.
+6. Create a directed graph `G` from matrix `C` where each element represents the weight of an edge.
+7. Initialize an empty dictionary `d`.
+8. For each integer `i` from 0 to 9 (inclusive):
+   - If `i` is 1, skip the current iteration.
+   - Calculate the shortest path length from `i` to 1 in graph `G` using Dijkstra's algorithm and store it in dictionary `d` with key `i`.
+9. Initialize an integer `s` to 0.
+10. For each element `a` in a flattened version of matrix `A`:
+    - If `a` is -1 or 1, skip the current iteration.
+    - Add the shortest path length from `a` to 1 (retrieved from dictionary `d`) to `s`.
+11. Output the value of `s`.
+
+Control structures:
+- Loops:
+  - `for i in range(10)`
+  - `for j, c in enumerate(...)`
+  - `for i in range(h)`
+  - `for j, a in enumerate(...)`
+  - `for a in chain.from_iterable(A)`
+- Conditionals:
+  - `if i == 1: continue`
+  - `if a == -1 or a == 1: continue`
+
+Input/output operations and data processing logic:
+- Input: Read dimensions `h` and `w`, then read `C` and `A` matrices from standard input.
+- Output: Print the sum of shortest path lengths `s`.
+
+Required libraries, modules, or dependencies:
+- `itertools.chain`
+- `numpy` (as `np`)
+- `networkx` (as `nx`)

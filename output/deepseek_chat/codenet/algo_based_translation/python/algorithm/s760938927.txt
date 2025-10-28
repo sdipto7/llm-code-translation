@@ -1,0 +1,48 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- h: int, w: int, ka: int (input integers)
+- mat: List[List[str]] (2D list of characters)
+- ans: int (initialized to 0)
+- i: int (loop counter)
+- b: str (binary string representation)
+- rs: str (row selection bits)
+- cs: str (column selection bits)
+- ct: int (count of remaining '#' characters)
+- l: int (row index)
+- k: int (column index)
+
+**Algorithm:**
+1. Read three integers h, w, ka from standard input
+2. Read h lines of input, each containing w characters, storing in mat
+3. Initialize ans to 0
+4. For i from 0 to (2^(h+w) - 1:
+   - Convert i to binary string with exactly h+w bits (leading zeros)
+   - Split binary string into:
+     - rs: first h bits (row selection)
+     - cs: remaining w bits (column selection)
+   - Initialize ct to 0
+   - For l from 0 to h-1:
+     - For k from 0 to w-1:
+       - If mat[l][k] equals '#' AND rs[l] equals '0' AND cs[k] equals '0':
+         - Increment ct by 1
+   - If ct equals ka:
+     - Increment ans by 1
+5. Print ans
+
+**Control Structures:**
+- For loop: i in range(0, 2^(h+w))
+- For loop: l in range(0, h)
+- For loop: k in range(0, w)
+- Conditional: if mat[l][k] == '#' and rs[l] == '0' and cs[k] == '0'
+- Conditional: if ct == ka
+
+**Input/Output:**
+- Input: Three integers followed by h lines of w characters each
+- Output: Single integer result
+
+**Dependencies:**
+- Standard input/output operations
+- Integer to binary conversion
+- String manipulation (zfill, slicing)

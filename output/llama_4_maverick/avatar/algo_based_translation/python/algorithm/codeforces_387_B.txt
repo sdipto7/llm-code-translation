@@ -1,0 +1,9 @@
+1. READ n, m
+2. READ round_complexity array of size n
+3. READ george_complexity array of size m
+4. INITIALIZE i = 0, j = 0
+5. WHILE i < n AND j < m
+   6. IF round_complexity[i] <= george_complexity[j]
+      7. INCREMENT i by 1
+   8. INCREMENT j by 1
+9. PRINT n - i

@@ -1,0 +1,14 @@
+1. READ input string s
+2. INITIALIZE result as an empty string
+3. INITIALIZE i as 0
+4. WHILE i is less than the length of s
+   4.1 IF the character at index i in s is "."
+      4.1.1 APPEND '0' to result
+   4.2 ELSE
+      4.2.1 INCREMENT i by 1
+      4.2.2 IF the character at index i in s is "."
+         4.2.2.1 APPEND '1' to result
+      4.2.3 ELSE
+         4.2.3.1 APPEND '2' to result
+   4.3 INCREMENT i by 1
+5. PRINT result

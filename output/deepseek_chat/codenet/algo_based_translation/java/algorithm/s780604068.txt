@@ -1,0 +1,9 @@
+read integer N from input
+create integer array map of size N * 2
+for i from 0 to N * 2 - 1:
+    read integer into map[i]
+sort map array in ascending order
+initialize integer max to 0
+for i from 0 to N * 2 - 1 with step 2:
+    add minimum of map[i] and map[i+1] to max
+print max

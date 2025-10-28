@@ -1,0 +1,47 @@
+**Algorithm:**
+
+**Main Program:**
+- Function: `public static void main(String[] args)`
+- Variables:
+  - `Scanner scanner` (SimpleScanner instance initialized with `System.in`)
+  - `PrintWriter writer` (initialized with `System.out`)
+  - `int r` (input value)
+  - `int d` (input value)
+  - `long x` (input value)
+- Logic Flow:
+  1. Read `r`, `d`, and `x` using `scanner.nextInt()`, `scanner.nextInt()`, and `scanner.nextLong()`.
+  2. Loop 10 times with `i` from 0 to 9:
+     - Compute `x = r * x - d`
+     - Print `x` using `writer.println(x)`
+  3. Close `writer`.
+
+**SimpleScanner Class:**
+- Dependencies: `java.io.*`, `java.nio.CharBuffer`, `java.util.NoSuchElementException`
+- Fields:
+  - `private Readable in`
+  - `private CharBuffer buffer` (size 10240)
+  - `boolean eof`
+- Methods:
+  1. `SimpleScanner(InputStream in)`: Constructor initializes `buffer` and sets `eof=false`.
+  2. `private char read()`:
+     - If buffer is empty, refill via `in.read(buffer)`.
+     - Return next character or `\0` on EOF.
+  3. `void checkEof()`: Throws `NoSuchElementException` if `eof` is true.
+  4. `char nextChar()`: Reads next non-EOF character.
+  5. `String next()`:
+     - Skip leading whitespace.
+     - Collect characters until whitespace/EOF.
+  6. `int nextInt()`: Parse `next()` as integer.
+  7. `long nextLong()`: Parse `next()` as long.
+  8. `double nextDouble()`: Parse `next()` as double.
+
+**Control Structures:**
+- `for (int i=0; i<10; ++i)` in main loop.
+- `do-while` loops in `next()` to skip/collect characters.
+- `if (!buffer.hasRemaining())` in `read()` for buffer refill.
+- Throws `NoSuchElementException` on EOF in `checkEof()`.
+
+**I/O Operations:**
+- Input via `SimpleScanner` (buffered reading with `CharBuffer`).
+- Output via `PrintWriter` with `println()`.
+- Exception handling for invalid input/EOF.

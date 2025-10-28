@@ -1,0 +1,24 @@
+1. Import the `Scanner` class from the `java.util` package to handle user input.
+
+2. Define a static method `generateString`:
+   - No parameters.
+   - Return type: `char[]`.
+
+3. Inside `generateString` method:
+   - Declare a `StringBuilder` object `sb`.
+   - Use a `for` loop with an integer `i` initialized to 1, running while `i <= 1000`, and increment `i` by 1 in each iteration:
+     - Append the string representation of the integer `i` to `sb`.
+   - Convert the `StringBuilder` object `sb` to a string using `toString()` method and then to a character array using `toCharArray()`.
+   - Return the character array.
+
+4. Define the `main` method:
+   - Accepts a `String[] args` parameter and has a `void` return type.
+
+5. Inside the `main` method:
+   - Create a `Scanner` object `sc` to read input from the standard input stream.
+   - Read an integer `n` from the input using `sc.nextInt()`.
+   - Call the `generateString` method to get the character array.
+   - Access the character at index `n-1` of the character array.
+   - Print the accessed character to the standard output.
+
+6. Close the `Scanner` object to release the resource (not explicitly shown in the code but is a best practice).

@@ -1,0 +1,56 @@
+- Function signatures:
+  - `main(String[] args)`: void
+  - `FastScanner()`: constructor
+  - `next()`: String
+  - `nextLine()`: String
+  - `nextByte()`: byte
+  - `nextShort()`: short
+  - `nextInt()`: int
+  - `nextLong()`: long
+  - `nextDouble()`: double
+
+- Variable declarations and data types:
+  - `Scanner sc`: Scanner
+  - `PrintWriter o`: PrintWriter
+  - `int n`: int
+  - `int s`: int
+  - `int max`: int
+  - `int f`: int
+  - `int t`: int
+  - `BufferedReader br`: BufferedReader
+  - `StringTokenizer st`: StringTokenizer
+  - `String str`: String
+
+- Logic flow:
+  - Create an instance of `FastScanner`
+  - Create a `Scanner` instance for system input
+  - Create a `PrintWriter` instance for system output
+  - Read `n` (number of pairs) and `s` (threshold value) using `Scanner`
+  - Initialize `max` to 0
+  - Loop while `n` is greater than 0:
+    - Decrement `n`
+    - Read `f` (first integer) and `t` (second integer) using `Scanner`
+    - If `max` is less than `f + t`:
+      - Update `max` to `f + t`
+  - Print the maximum of `max` and `s` using `PrintWriter`
+  - Close the `PrintWriter`
+
+- Control structures:
+  - `while (n > 0)` loop
+  - `if (max < f + t)` conditional
+
+- Input/output operations and data processing logic:
+  - Read integers `n` and `s` from standard input
+  - Read pairs of integers `f` and `t` from standard input
+  - Calculate the sum of `f` and `t` for each pair
+  - Track the maximum sum encountered
+  - Compare the maximum sum to `s` and print the greater value
+  - Output the result to standard output
+
+- Required libraries:
+  - `java.util.Scanner`
+  - `java.io.BufferedReader`
+  - `java.io.IOException`
+  - `java.io.InputStreamReader`
+  - `java.io.PrintWriter`
+  - `java.util.StringTokenizer`

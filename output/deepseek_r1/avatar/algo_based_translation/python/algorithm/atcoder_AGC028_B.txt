@@ -1,0 +1,78 @@
+Algorithm Specifications:
+
+Function/Method Signatures:
+- main() -> void
+
+Parameters:
+- None (Input via standard input stream)
+
+Return Types:
+- void (Output via standard output)
+
+Variable Declarations:
+- MOD: integer constant (10^9 +7)
+- N: integer (user input)
+- M: integer constant (1000000)
+- A: 1D array of 64-bit integers (input array)
+- Nsq: integer constant (1000)
+- fact: 2D array of 64-bit integers (shape 1000x1000), later flattened to 1D
+- j: 1D array of integers (0 to N-1)
+- inv: 1D array of integers (cumulative modular inverses)
+- temp: 1D array of integers
+- ans: integer (final result)
+
+Step-by-Step Logic Flow:
+1. Read Input
+    1.1. Read integer N from standard input
+    1.2. Read N space-separated integers into array A
+
+2. Initialize Factorial Matrix
+    2.1. Create fact as 1000x1000 matrix with values 0-999999
+    2.2. Set fact[0][0] = 1
+    2.3. Column-wise Computation (n=1 to 999):
+        - Multiply all elements in current column n by previous column (n-1) element-wise, modulo MOD
+    2.4. Row-wise Computation (n=1 to 999):
+        - Multiply all elements in row n by last element of row (n-1), modulo MOD
+    2.5. Flatten fact to 1D array
+
+3. Compute Modular Inverses
+    3.1. For each index i in 0...N-1:
+        - Compute inv[i] = pow(i+1, MOD-2, MOD)
+    3.2. Compute cumulative sums of inv array modulo MOD
+
+4. Calculate Temp Array
+    4.1. Create j as array [0, 1, ..., N-1]
+    4.2. For each index in j:
+        - temp[j] = (inv[j] + inv[N-1-j] - 1) % MOD
+
+5. Compute Final Answer
+    5.1. Compute element-wise product of A and temp arrays
+    5.2. Sum all elements of product array modulo MOD
+    5.3. Multiply sum by fact[N] modulo MOD
+    5.4. Print result
+
+Control Flow Structures:
+- Sequential execution with two nested loops:
+    - Loop 2.3: for n in 1...999 (column operations)
+    - Loop 2.4: for n in 1...999 (row operations)
+- Vectorized array operations using numpy
+
+Input/Output Operations:
+- Read from stdin: integer N and array A
+- Write to stdout: final computed answer
+
+Error Handling:
+- Implicit modulo operations for integer overflow prevention
+- Assumes valid integer inputs and correct array sizes
+- No explicit error checking for invalid inputs
+
+External Dependencies:
+- numpy module for array operations
+- sys module for input reading
+- Modular exponentiation via pow() function
+
+Edge Case Handling:
+- Proper handling of zero-based and one-based indexing
+- Modular arithmetic prevents overflow for large numbers
+- Cumulative sums computed with continuous modulo operations
+- Symmetric index calculation (N-1-j) in temp array creation

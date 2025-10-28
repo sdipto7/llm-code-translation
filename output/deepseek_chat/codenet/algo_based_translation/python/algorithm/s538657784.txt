@@ -1,0 +1,9 @@
+import math
+N: int = int(input())
+sqN: int = int(math.sqrt(N))
+for i in range(sqN):
+    divisor: int = sqN - i
+    if N % divisor == 0:
+        result: int = int(N / divisor) + divisor - 2
+        print(result)
+        break

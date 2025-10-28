@@ -1,0 +1,13 @@
+- Function Signature: `main(String[] args)` with return type `void`
+- Import `java.util.*`
+- Declare `Scanner sc` of type `Scanner`
+- Initialize `sc` with `new Scanner(System.in)`
+- Declare `N` of type `int`
+- Initialize `N` with `sc.nextInt()`
+- Declare `count` of type `int` and initialize with `0`
+- Declare `next` of type `int` and initialize with `10`
+- Loop from `1` to `N` (inclusive) using `i` as loop counter
+  - Increment `count` by `1`
+  - Check if `i` equals `next - 1`
+    - If true, update `i` to `next * 10 - 1` and update `next` to `next * 100`
+- Output `count` using `System.out.println(count)`

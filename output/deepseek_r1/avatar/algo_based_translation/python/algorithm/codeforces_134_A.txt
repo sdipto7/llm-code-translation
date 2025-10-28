@@ -1,0 +1,51 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures**  
+- `main()`  
+  - Parameters: None  
+  - Return Type: Void  
+
+**Variables**  
+- `n`: Integer (input size)  
+- `w`: List of Integers (input list)  
+- `x`: Integer (sum of elements in `w`)  
+- `d`: List of Integers (result indices)  
+
+**Step-by-Step Logic Flow**  
+1. Read integer `n` from standard input.  
+2. Read next line, split into tokens, convert to integers, store in `w`.  
+3. Calculate `x` as the sum of all elements in `w`.  
+4. Initialize empty list `d`.  
+5. Iterate `i` from `0` to `n-1` (inclusive):  
+   1. Compute `current_element` as `w[i]`.  
+   2. Compute `n_minus_1` as `n - 1`.  
+   3. If `n_minus_1` ≠ 0:  
+      1. Compute `condition_value` as `(x - current_element) / n_minus_1`.  
+      2. If `condition_value` equals `current_element`:  
+          - Append `i + 1` to `d`.  
+6. Print the length of `d` to standard output.  
+7. Convert elements of `d` to strings, join with spaces, print result.  
+
+**Control Flow Structures**  
+- For-loop:  
+  - Range: `0 ≤ i < n`  
+  - Exit: When all `n` elements are processed  
+- Conditional:  
+  - Check `(x - current_element) / (n-1) == current_element` (prevents division by zero when `n > 1`)  
+
+**Input/Output Operations**  
+- Input:  
+  - Read `n` via `sys.stdin.readline()`  
+  - Read and parse `w` via `sys.stdin.readline()`  
+- Output:  
+  - Print `len(d)`  
+  - Print space-separated elements of `d`  
+
+**Error Handling**  
+- No explicit error handling for division by zero when `n = 1`.  
+
+**External Dependencies**  
+- Imports: `sys` module  
+- Library Functions:  
+  - `sys.stdin.readline` for input  
+  - `map`, `str.join`, `sum` for data processing

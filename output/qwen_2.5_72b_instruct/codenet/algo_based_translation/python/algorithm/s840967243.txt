@@ -1,0 +1,29 @@
+Function signatures with parameter and return types:
+- `f(x: int) -> int`: Computes the factorial of x.
+
+Variable declarations and data types:
+- `MOD: int`: Constant value equal to \(10^9 + 7\).
+- `f: function`: Reference to the `math.factorial` function.
+- `n: int`: First integer input.
+- `m: int`: Second integer input.
+
+Complete logic flow in execution order:
+1. Import the `math` module.
+2. Define `MOD` as \(10^9 + 7\).
+3. Assign `f` to `math.factorial`.
+4. Read two integers from input, split the input string, convert to integers, and sort them.
+5. Assign the smaller integer to `n` and the larger integer to `m`.
+6. Calculate `max(2 - m + n, 0)`.
+7. Compute the factorial of `n` using `f(n)`.
+8. Compute the factorial of `m` using `f(m)`.
+9. Multiply the result from step 6 with the factorials from steps 7 and 8.
+10. Take the result from step 9 modulo `MOD`.
+11. Print the result from step 10.
+
+Input/output operations and data processing logic:
+- Read two space-separated integers from standard input.
+- Process the integers to compute the final result based on the given formula.
+- Print the final result modulo \(10^9 + 7\).
+
+Required libraries, modules, or dependencies:
+- `math` module for the `factorial` function.

@@ -1,0 +1,27 @@
+Algorithm:
+
+1. Import sys module and deque from collections module
+2. Set recursion limit to 10^9
+3. Define constant INF = 10^18
+4. Define function input() that returns sys.stdin.readline().rstrip()
+5. Define main() function with no parameters and no return value
+6. Read N and M as integers from input
+7. Initialize edge as list of N empty lists
+8. For i from 0 to M-1:
+   - Read X, Y, Z from input (each converted to int and decremented by 1)
+   - Append Y to edge[X]
+   - Append X to edge[Y]
+9. Initialize used as list of N False values
+10. Initialize ans = 0
+11. For i from 0 to N-1:
+    - If used[i] is False:
+        - Increment ans by 1
+        - Initialize queue as deque containing i
+        - While queue is not empty:
+            - Pop left element from queue into node
+            - Set used[node] = True
+            - For each nextnode in edge[node]:
+                - If used[nextnode] is False:
+                    - Append nextnode to queue
+12. Print ans
+13. If __name__ == '__main__': call main()

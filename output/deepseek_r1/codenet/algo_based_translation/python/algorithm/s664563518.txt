@@ -1,0 +1,44 @@
+**Algorithm**
+
+1. **Function Definitions:**
+   - `main()`: No parameters, returns void.
+
+2. **Input Handling:**
+   - Read integer `N` from standard input.
+   - Initialize two lists `s` (strings) and `t` (integers) with size `N`.
+   - For each index `i` from 0 to `N-1`:
+     - Read a string and integer pair, store in `s[i]` and `t[i]`.
+   - Read string `X` from standard input.
+
+3. **Index Search:**
+   - Initialize `xi` to 0.
+   - Iterate through indices `i` from 0 to `N-1`:
+     - If `s[i]` equals `X`:
+       - Set `xi` to `i`.
+       - Break loop immediately.
+
+4. **Sum Calculation:**
+   - Initialize `ans` to 0.
+   - For each index `i` from 0 to `N-1`:
+     - If `i` > `xi`:
+       - Add `t[i]` to `ans`.
+
+5. **Output:**
+   - Print `ans`.
+
+**Variables:**
+- `N`: Integer (input size).
+- `s`: List[str] (task names).
+- `t`: List[int] (task times).
+- `X`: String (target task name).
+- `xi`: Integer (index of X in s).
+- `ans`: Integer (cumulative sum).
+
+**Control Structures:**
+- For-loop (0 to N-1) for input collection.
+- Linear search loop with early termination upon finding X.
+- Conditional check `xi < i` during summation.
+
+**Dependencies:**
+- Uses standard input/output functions.
+- No external libraries required for core logic.

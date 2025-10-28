@@ -1,0 +1,32 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- N: int
+- A: list of int
+- B: list of int
+- ans: int
+- i: int (loop counter)
+- d: int (temporary calculation variable)
+
+**Input Operations:**
+- Read integer N from standard input
+- Read next line, split into integers, store in list A
+- Read next line, split into integers, store in list B
+
+**Initialization:**
+- Set ans = 0
+
+**Main Logic:**
+- For i from 0 to N-1:
+  - Set d = minimum of A[i] and B[i]
+  - Add d to ans
+  - Subtract d from A[i]
+  - Subtract d from B[i]
+  - Set d = minimum of A[i+1] and B[i]
+  - Add d to ans
+  - Subtract d from A[i+1]
+  - Subtract d from B[i]
+
+**Output Operation:**
+- Print ans

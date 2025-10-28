@@ -1,0 +1,34 @@
+**Structured Algorithm Specification:**
+
+**1. Function/Method Signatures:**
+- `main()`: No parameters, no return value (procedure).
+
+**2. Variable Declarations:**
+- `a`: Integer
+- `b`: Integer
+- `min_val`: Integer
+- `difference`: Integer
+- `pairs`: Integer
+
+**3. Input/Output Operations:**
+- **Input:** Read one line from standard input, split into two string parts, convert to integers `a` and `b`.
+- **Output:** Print two integer values (`min_val` and `pairs`) separated by a space.
+
+**4. Logic Flow:**
+1. Read input line and split into string components using whitespace.
+2. Parse first component to integer `a`.
+3. Parse second component to integer `b`.
+4. Compute `min_val` as `min(a, b)`.
+5. Compute `difference` as `max(a, b) - min_val`.
+6. Compute `pairs` as `difference // 2` (integer division).
+7. Output `min_val` followed by `pairs`.
+
+**5. Control Flow Structures:**
+- None beyond sequential execution (no explicit loops/conditionals).
+
+**6. Error Handling:**
+- None explicitly defined. Assumes valid integer inputs with exactly two space-separated values.
+
+**7. External Dependencies:**
+- Standard input/output functions.
+- Built-in functions: `input()`, `split()`, `map()`, `int()`, `print()`, `min()`, `max()`.

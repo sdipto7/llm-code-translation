@@ -1,0 +1,8 @@
+1. Read four integers from input and store them in an array.
+2. Initialize a 2D array to store four 2D positions.
+3. Assign the first two integers to the first position, and the last two integers to the second position.
+4. Compute the third position by rotating the vector from the second position to the first position by 90 degrees clockwise and adding it to the second position.
+5. Compute the fourth position by rotating the vector from the third position to the second position by 90 degrees clockwise and adding it to the third position.
+6. Check if the first position is equal to the result of rotating the vector from the fourth position to the third position by 90 degrees clockwise and adding it to the fourth position.
+7. Output the third and fourth positions.
+8. If step 6 is true, output "OK".

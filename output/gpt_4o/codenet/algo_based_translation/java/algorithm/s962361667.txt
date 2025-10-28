@@ -1,0 +1,32 @@
+```
+Function Signature:
+- main() : void
+
+Variables:
+- sc : Scanner
+- w : int
+- n : int
+- values : int[]
+
+Execution Logic:
+1. Initialize a Scanner object 'sc'.
+2. Read an integer 'w' from input.
+3. Read an integer 'n' from input.
+4. Initialize an array 'values' of integers with size 'w'.
+5. Loop from i = 0 to i < w:
+   - Set values[i] to i + 1.
+6. Loop from i = 0 to i < n:
+   - Initialize an integer 'x' to 0.
+   - Read a string 'str' from input.
+   - Split 'str' by "," and store in array 'ab'.
+   - Parse 'ab[0]' to integer, subtract 1, and assign to 'a'.
+   - Parse 'ab[1]' to integer, subtract 1, and assign to 'b'.
+   - Assign values[a] to 'x'.
+   - Assign values[b] to values[a].
+   - Assign 'x' to values[b].
+7. Loop from i = 0 to i < w:
+   - Print values[i].
+
+Dependencies:
+- java.util.Scanner
+```

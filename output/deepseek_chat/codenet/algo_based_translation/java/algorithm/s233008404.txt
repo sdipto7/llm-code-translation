@@ -1,0 +1,77 @@
+**Algorithm Extraction:**
+
+**Input:**
+- Read integers h, w, k from standard input
+- Read h lines of strings, each containing w characters representing colors
+
+**Data Structures:**
+- String[][] colorMtr: h × w matrix storing color data
+- int h: height dimension
+- int w: width dimension  
+- int k: target black count
+
+**Functions:**
+
+**main(String[] args) throws IOException**
+- Create Main instance
+- Call solve()
+
+**solve() throws IOException**
+- Initialize FastScanner for input
+- Read h, w, k
+- Initialize colorMtr with dimensions h × w
+- For i from 0 to h-1:
+  - Read next line and split into individual characters to populate colorMtr[i]
+- Calculate hPattern = 2^h using pow(2, h)
+- Calculate wPattern = 2^w using pow(2, w)
+- Initialize ans = 0
+- For i from 0 to hPattern-1:
+  - For j from 0 to wPattern-1:
+    - If judge(i, j) returns true:
+      - Increment ans by 1
+- Print ans
+
+**judge(int hPattern, int wPattern) returns boolean**
+- Initialize int[] hBitArr of length h
+- Initialize int[] wBitArr of length w
+- For i from 0 to h-1:
+  - If (hPattern >> i) & 1 equals 1:
+    - Set hBitArr[i] = 1
+- For i from 0 to w-1:
+  - If (wPattern >> i) & 1 equals 1:
+    - Set wBitArr[i] = 1
+- Initialize black = 0
+- For i from 0 to h-1:
+  - For j from 0 to w-1:
+    - If hBitArr[i] == 1 OR wBitArr[j] == 1:
+      - Continue to next iteration
+    - Else if colorMtr[i][j] equals "#":
+      - Increment black by 1
+- If black equals k:
+  - Return true
+- Else:
+  - Return false
+
+**pow(int base, int n) returns int**
+- Initialize retVal = 1
+- While n > 0:
+  - If (n & 1) equals 1:
+    - retVal = retVal × base
+  - n = n >> 1
+  - base = base × base
+- Return retVal
+
+**FastScanner class methods:**
+- next() returns String: Read next token from input
+- nextLine() returns String: Read next line from input
+- nextInt() returns int: Parse next token as integer
+- nextLong() returns long: Parse next token as long
+- nextIntArr(int n) returns int[]: Read n integers into array
+- nextLongArr(int n) returns long[]: Read n longs into array
+- close(): Close input reader
+
+**Required Dependencies:**
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader
+- java.util.StringTokenizer

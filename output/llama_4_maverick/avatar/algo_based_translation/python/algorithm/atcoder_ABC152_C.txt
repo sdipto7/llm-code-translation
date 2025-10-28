@@ -1,0 +1,9 @@
+1. Read N from input and convert to integer
+2. Read a list of N integers from input and convert to array n
+3. Initialize a to 1
+4. Initialize pos to 0
+5. Iterate from i = 1 to N-1
+   5.1. If n[pos] > n[i]
+      5.1.1. Increment a by 1
+      5.1.2. Update pos to i
+6. Print the value of a

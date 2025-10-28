@@ -1,0 +1,28 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner in` initialized as new `Scanner(System.in)`
+- `char[] n` initialized as `in.next().toCharArray()`
+- `boolean s` initialized as `false`
+
+Logic flow in execution order:
+1. Create a `Scanner` object to read input.
+2. Read a string from the input, convert it to a character array `n`.
+3. Initialize a boolean variable `s` to `false`.
+4. Start a `for` loop that iterates over each character in the array `n` using index `i`.
+   - If the current character `n[i]` is a period `'.'`:
+     - Check if `s` is `true`:
+       - If true, print `1` and set `s` to `false`.
+       - If false, print `0`.
+   - If the current character `n[i]` is not a period `'.'`:
+     - Check if `s` is `true`:
+       - If true, print `2` and set `s` to `false`.
+       - If false, set `s` to `true`.
+5. Close the `Scanner` object.
+
+Input/output operations and data processing logic:
+- Input: Reads a single line of text from standard input.
+- Output: Prints a series of digits (`0`, `1`, or `2`) based on the conditions described above.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

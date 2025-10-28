@@ -1,0 +1,27 @@
+- **Function Signatures**:
+  - `main() -> void`
+
+- **Variables**:
+  - `n: int` (number of strings)
+  - `l: int` (unused length parameter)
+  - `S: List[str]` (list to store input strings)
+
+- **Logic Flow**:
+  1. Read integers `n` and `l` from standard input.
+  2. Initialize empty list `S`.
+  3. Loop `n` times:
+     - Read a string from input and append to `S`.
+  4. Sort `S` lexicographically.
+  5. Concatenate all elements of `S` into a single string.
+  6. Print the concatenated result.
+
+- **Control Structures**:
+  - Loop: `for a in range(n)` for reading strings.
+  - Sorting: `S.sort()`.
+
+- **Input/Output**:
+  - Input: Read `n`, `l`, then `n` strings.
+  - Output: Print concatenated sorted strings.
+
+- **Dependencies**:
+  - Standard input functions (no external libraries required for core logic).

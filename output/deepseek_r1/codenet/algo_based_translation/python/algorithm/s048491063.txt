@@ -1,0 +1,45 @@
+**Function Signatures:**
+- `main() -> void`
+
+**Variables:**
+- `N: int`, `M: int`, `Q: int` (input parameters)
+- `train: list[list[int]]` (N x N matrix initialized to 0)
+- `l: int`, `r: int` (train interval endpoints)
+- `accum: list[list[int]]` (starts with single row of N+1 zeros)
+- `i: int` (row index for accum construction)
+- `temp: list[int]` (temporary row for accum, starts with 0)
+- `v: int` (cumulative sum during accum construction)
+- `j: int` (column index during accum construction)
+- `p: int`, `q: int` (query interval endpoints)
+
+**Logic Flow:**
+1. Read `N`, `M`, `Q` from standard input.
+2. Initialize `train` as NxN zero matrix.
+3. For `M` iterations:
+   - Read `l`, `r` from input.
+   - Increment `train[l-1][r-1]` by 1.
+4. Initialize `accum` with `[0]*(N+1)` as first row.
+5. For each `i` from 0 to N-1:
+   - Initialize `temp` as `[0]`.
+   - Reset `v` to 0.
+   - For each `j` from 0 to N-1:
+     - Add `train[i][j]` to `v`.
+     - Append `accum[-1][j+1] + v` to `temp`.
+   - Append `temp` to `accum`.
+6. For `Q` iterations:
+   - Read `p`, `q` from input.
+   - Compute result as `accum[q][q] - accum[p-1][q] - accum[q][p-1] + accum[p-1][p-1]`.
+   - Print result.
+
+**Control Structures:**
+- `for _ in range(M):` loop for train data input
+- Nested `for i in range(N):` and `for j in range(N):` loops for accum construction
+- `for _ in range(Q):` loop for queries
+- Array index operations for 2D matrices
+
+**Input/Output:**
+- Input via `input().split()` and `map(int, ...)`
+- Output via `print(v)`
+
+**Dependencies:**
+- None (uses standard input/output only)

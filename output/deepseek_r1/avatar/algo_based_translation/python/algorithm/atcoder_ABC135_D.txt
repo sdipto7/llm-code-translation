@@ -1,0 +1,71 @@
+**Structured Algorithm Specification:**
+
+**1. Function Signatures:**
+- `main() -> void`
+  - **Input:** None (Reads from standard input)
+  - **Output:** Prints result to standard output
+
+**2. Variables:**
+- `S: string` (Input string)
+- `n: integer` (Length of `S`)
+- `mod: integer` (Constant value `10^9 + 7`)
+- `dp: 2D array[integer][integer]` (Size `n x 13`, initialized to 0)
+
+**3. Input/Output Operations:**
+- Read `S` from standard input.
+- Print `dp[n-1][5] % mod` as final result.
+
+**4. Data Types:**
+- All variables and array elements use integer types.
+- Modular arithmetic operations use integer modulus.
+
+**5. Control Flow:**
+
+**Step 1: Initial Checks**
+1. If `n == 1`:
+   1. If `S == "5"`: Print `1`
+   2. Else if `S == "?"`: Print `1`
+   3. Else: Print `0`
+   4. Terminate execution.
+
+**Step 2: DP Initialization**
+1. Initialize `dp` with dimensions `n x 13`, filled with `0`.
+
+**Step 3: Process First Character**
+1. For `i = 0`:
+   1. If `S[0] != '?'`:
+      1. `d = int(S[0])`
+      2. `dp[0][d % 13] = 1`
+   2. Else (`S[0] == '?'`):
+      1. For `j` in `0..9`:
+         1. `dp[0][j % 13] += 1`
+
+**Step 4: Process Remaining Characters**
+1. For each `i` from `1` to `n-1`:
+   1. If `S[i] != '?'`:
+      1. `d = int(S[i])`
+      2. For `k` in `0..12`:
+         1. `new_rem = (k * 10 + d) % 13`
+         2. `dp[i][new_rem] += dp[i-1][k]`
+         3. `dp[i][new_rem] %= mod`
+   2. Else (`S[i] == '?'`):
+      1. For `j` in `0..9`:
+         1. For `k` in `0..12`:
+            1. `new_rem = (k * 10 + j) % 13`
+            2. `dp[i][new_rem] += dp[i-1][k]`
+            3. `dp[i][new_rem] %= mod`
+   3. Apply final modulo to all `dp[i][*]`:
+      1. For each `k` in `0..12`:
+         1. `dp[i][k] %= mod`
+
+**Step 5: Output Result**
+1. Print `dp[n-1][5] % mod`
+
+**6. Edge Case Handling:**
+- Single-character input handled as special case.
+- Proper modulo operations prevent integer overflow.
+- `?` characters generate all valid digit possibilities.
+
+**7. Dependencies:**
+- Requires standard input/output facilities.
+- No external libraries needed for core logic (arithmetic operations only).

@@ -1,0 +1,36 @@
+**Function Signature:**
+- `public static void main(String[] args)`: Entry point method, no return.
+
+**Variables:**
+- `Scanner sc = new Scanner(System.in)`
+- `int n`: Input integer.
+- `long k`: Input long integer.
+- `long[] arr`: Array of long integers with size `n`.
+- `HashSet<Long> set`: Empty set for tracking elements.
+- `int count = 0`: Counter for valid elements.
+
+**Input Operations:**
+- Read `n` and `k` via `sc.nextInt()` and `sc.nextLong()`.
+- Populate `arr` with `n` long integers via loop and `sc.nextLong()`.
+
+**Data Processing:**
+- Sort `arr` using `Arrays.sort(arr)`.
+- Iterate `i` from `0` to `n-1`:
+  - **Condition 1:** If `arr[i] % k != 0`:
+    - Increment `count`.
+    - Add `arr[i]` to `set`.
+  - **Condition 2:** Else if `set` does NOT contain `arr[i] / k`:
+    - Increment `count`.
+    - Add `arr[i]` to `set`.
+
+**Output:**
+- Print `count` via `System.out.println(count)`.
+
+**Control Structures:**
+- `for` loop: `for (int i = 0; i < n; i++)`.
+- `if`-`else if` block with conditions `arr[i] % k != 0` and `!set.contains(arr[i] / k)`.
+
+**Dependencies:**
+- `java.util.Scanner`
+- `java.util.Arrays`
+- `java.util.HashSet`

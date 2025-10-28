@@ -1,0 +1,36 @@
+```plaintext
+Function: main
+- Parameters: String[] args
+- Return Type: void
+
+1. Declare Scanner object 'sc' to read input.
+2. Declare integer array 'x' of size 3.
+3. Declare integer 'max' and initialize to 0.
+4. For loop from i = 0 to 2 (inclusive):
+   a. Read an integer from input and store in x[i].
+   b. Update 'max' to be the maximum of 'max' and x[i].
+5. Read an integer 'k' from input.
+6. Declare an array 'a' of List<Long> with size 3.
+7. Initialize each element of 'a' to a new ArrayList<Long>:
+   a. For loop from i = 0 to 2 (inclusive):
+      i. Initialize a[i] to new ArrayList<Long>.
+8. For loop from i = 0 to 2 (inclusive):
+   a. For loop from j = 0 to x[i] - 1 (inclusive):
+      i. Read a long integer from input and add to a[i].
+   b. Sort a[i] in ascending order.
+9. Close the Scanner 'sc'.
+10. Declare List<Long> 'ans' and initialize to new ArrayList<Long>.
+11. For loop from i = 0 to x[0] - 1 (inclusive):
+    a. For loop from j = 0 to x[1] - 1 (inclusive):
+       i. For loop from m = 0 to x[2] - 1 (inclusive):
+          - If (i + 1) * (j + 1) * (m + 1) <= k:
+            * Calculate 'tmp' as the sum of:
+              - a[0].get(x[0] - i - 1)
+              - a[1].get(x[1] - j - 1)
+              - a[2].get(x[2] - m - 1)
+            * Add 'tmp' to 'ans'.
+12. Sort 'ans' in ascending order.
+13. Declare integer 'n' and assign the size of 'ans'.
+14. For loop from i = 0 to k - 1 (inclusive):
+    a. Print ans.get(n - i - 1).
+```

@@ -1,0 +1,18 @@
+Function: main
+Parameters: String[] args
+Return type: void
+
+Dependencies: java.util.Scanner
+
+Variables:
+  Scanner sc = new Scanner(System.in)
+  int A = sc.nextInt()
+  int B = sc.nextInt()
+
+Execution flow:
+1. Create Scanner object reading from System.in
+2. Read integer A from input
+3. Read integer B from input
+4. Check condition: A % 3 == 0 OR B % 3 == 0 OR (A + B) % 3 == 0
+5. If condition is true: output "Possible"
+6. Else: output "Impossible"

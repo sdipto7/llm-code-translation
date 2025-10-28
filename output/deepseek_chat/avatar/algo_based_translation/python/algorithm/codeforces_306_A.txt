@@ -1,0 +1,9 @@
+1. Read two integers `n` and `m` from standard input
+2. Calculate integer division quotient: `q = n // m`
+3. Calculate remainder: `r = n % m`
+4. Create list `a` of length `m` with all elements initialized to `q`
+5. For `i` from `0` to `r-1`:
+   - Increment `a[i]` by 1
+6. For `i` from `0` to `m-1`:
+   - Print `a[i]` followed by a space
+7. Output ends with trailing space

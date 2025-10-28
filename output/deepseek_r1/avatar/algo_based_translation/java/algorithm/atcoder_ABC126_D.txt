@@ -1,0 +1,71 @@
+```python
+# Function signatures and parameters:
+# - main() -> None
+#   - Parameters: None
+# - dfs(p: Point, length: int) -> None
+#   - Parameters: Point instance, integer length
+# - Point class:
+#   - __init__(name: int) -> None
+#   - becomeFriend(p: Point, length: int) -> None
+
+# Variables and data types:
+# Global:
+# - colors: List[int]
+# In main:
+# - sc: Scanner
+# - n: int
+# - m: int
+# - points: List[Point]
+# In dfs:
+# - alreadyKnown: bool
+# - friend: Point
+# - length2: int
+# Point class:
+# - name: int
+# - friends: Dict[Point, int]
+
+# Logic flow:
+1. Read integer n from input
+2. Initialize m = n - 1
+3. Initialize colors array with n elements set to -1
+4. Create points array with n Point instances (0-indexed)
+5. Process m edges:
+   while m > 0:
+   a. Read me, you, length from input (convert to 0-index)
+   b. points[me].becomeFriend(points[you], length)
+   c. points[you].becomeFriend(points[me], length)
+   d. Decrement m
+6. Start DFS from points[0] with initial length 0
+7. Print all elements in colors array
+
+# DFS logic:
+1. Check if colors[p.name] != -1 -> return if true
+2. Set colors[p.name] based on length parity:
+   if length % 2 == 0 -> 0
+   else -> 1
+3. For each friend in p.friends:
+   a. Get friend Point and edge length
+   b. Recursively call dfs(friend, length + edge_length)
+
+# Point class operations:
+- Each Point maintains Dict[Point, int] of connected nodes
+- becomeFriend adds entry to friends dictionary
+
+# Control structures:
+- While loop for edge processing (m iterations)
+- Recursive DFS calls
+- Conditional checks:
+   - colors array initialization check in dfs
+   - Length parity check for color assignment
+   - Loop through friends in dfs
+
+# Input/Output:
+- Input: Read via Scanner:
+   - First line: n
+   - Next m lines: three integers per line (u, v, w)
+- Output: Print each color (0/1) on separate lines
+
+# Dependencies:
+- sys module for input
+- List, Dict from typing (for type hints)
+```

@@ -1,0 +1,38 @@
+```
+Function Signature:
+- main(String[] args): void
+
+Variable Declarations:
+- Scanner sc (Input)
+- int A, B, H, M
+- BigDecimal AA, BB, HH, MM, ans2, kaku, mkaku, hkaku, AA2, BB2, CC, DD
+- double dkaku, dans2, ans
+
+Execution Order:
+1. Initialize Scanner for input.
+2. Read integers A, B, H, M from input.
+3. Convert A, B, H, M to BigDecimal as AA, BB, HH, MM.
+4. Calculate mkaku as MM multiplied by 6.
+5. Calculate hkaku as HH multiplied by 30.
+6. Add (M / 2) to hkaku.
+7. Calculate kaku as mkaku subtracted by hkaku.
+8. Compute the absolute value of kaku in radians and assign to dkaku.
+9. Calculate AA2 as AA squared.
+10. Calculate BB2 as BB squared.
+11. Compute CC as the sum of AA2 and BB2.
+12. Compute DD as 2 times the cosine of dkaku.
+13. Multiply DD by AA and BB.
+14. Compute ans2 as CC subtracted by DD.
+15. Convert ans2 to double and assign to dans2.
+16. Calculate ans as the square root of dans2.
+17. Output the value of ans.
+
+Input/Output Operations:
+- Input integers A, B, H, M using Scanner.
+- Output the result calculated as ans using System.out.println.
+
+Required Libraries:
+- java.util.Scanner
+- java.math.BigDecimal
+- java.lang.Math
+```

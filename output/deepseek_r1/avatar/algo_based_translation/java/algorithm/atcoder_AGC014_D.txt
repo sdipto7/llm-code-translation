@@ -1,0 +1,47 @@
+Here is the algorithm:
+
+Static Variables:
+- `ArrayList<Integer>[] g`: Adjacency list representing the graph
+
+Functions:
+1. `maxMatching(int v, int p) -> int`:
+   - Parameters: current node `v`, parent node `p`
+   - Returns: integer representing computed matching value
+   - Variables:
+     - `a: int` (accumulator for even components)
+     - `o: int` (odd component counter)
+   - Logic Flow:
+     - Iterate through all neighbors `w` of `v`:
+       - Skip neighbor if `w == p`
+       - Recursively compute `r = maxMatching(w, v)`
+       - Add `r / 2` to `a`
+       - Add `r % 2` to `o`
+     - Return `2 * a + Math.min(1, o) + 1`
+
+2. `main(String[] args)`:
+   - Variables:
+     - `n: int` (number of nodes)
+     - `a, b: int` (edge endpoints)
+     - `m: int` (matching result)
+   - Logic Flow:
+     - Read `n` from input
+     - Initialize adjacency list `g` with `n` empty ArrayLists
+     - Read `n-1` edges:
+       - Decrement both endpoints by 1
+       - Add bidirectional entries in `g`
+     - Compute `m = maxMatching(0, -1) / 2`
+     - Output "Second" if `2*m == n`, else "First"
+
+Input Handling:
+- Uses custom `MyScanner` class with BufferedReader for efficient input
+- Processes tokens via StringTokenizer
+
+Control Structures:
+- For loop iterating over edges (`n-1` times)
+- For-each loop in `maxMatching` for neighbors
+- Conditional check `w == p` to skip parent node
+- Ternary condition for final output comparison `2*m == n`
+
+Dependencies:
+- Requires `java.io.*` (BufferedReader, PrintWriter, IOException)
+- Requires `java.util.*` (ArrayList, Arrays, StringTokenizer)

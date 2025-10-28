@@ -1,0 +1,43 @@
+```
+Function signature:
+    def transform_string(pya: int, arre: List[str], oString: str, letter1: str) -> str
+
+Variable declarations:
+    arre: List[str] - list to store input words
+    oString: str - original string to be transformed
+    lowString: str - lowercase version of oString
+    letter1: str - letter for transformation to lowercase
+    letter2: str - alternate letter for transformation if letter1 is 'a'
+    valid: List[int] - list of zeros of length of oString
+    setcito: Set[int] - set to store indices of characters to transform
+
+Execution logic:
+1. Initialize arre as an empty list.
+2. While pya is greater than 0, do the following:
+    a. Decrement pya by 1.
+    b. Append a lowercase input string to arre.
+3. Read oString from input.
+4. Convert oString to lowercase and store it in lowString.
+5. Read the first character of an input string, convert it to lowercase, and assign it to letter1.
+6. Assign 'a' to letter2 if letter1 is not 'a', else assign 'b'.
+7. Initialize valid as a list of zeros with the same length as oString.
+8. Initialize setcito as an empty set.
+9. For each string x in arre, do the following:
+    a. If x is a substring of lowString, initialize wat to 0.
+    b. While True, do the following:
+        i. Find the index of x in lowString starting from wat.
+        ii. If index is less than 0, break the loop.
+        iii. For each index i from index to index + len(x), add i to setcito.
+        iv. Update wat to index + 1.
+10. Convert oString into a list of characters.
+11. For each index i in setcito, do the following:
+    a. If lowString[i] is not equal to letter1, assign letter1 to letter.
+    b. Otherwise, assign letter2 to letter.
+    c. If oString[i] is lowercase, replace it with letter.
+    d. Otherwise, replace it with the uppercase version of letter.
+12. Print each character in oString list without newline separation.
+13. Print a newline character for final output.
+
+Required libraries, modules, or dependencies:
+    import typing for List, Set
+```

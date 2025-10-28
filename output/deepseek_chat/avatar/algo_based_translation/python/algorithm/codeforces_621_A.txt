@@ -1,0 +1,30 @@
+**Function Signature:**
+- No explicit function defined; main script execution
+- Input: Reads from standard input
+- Output: Prints to standard output
+
+**Variable Declarations:**
+- n: integer
+- lst: list of integers
+- od: integer (odd count)
+- sum: integer
+- ok: boolean (initially false)
+
+**Execution Flow:**
+1. Read integer n from input
+2. Read next line, split into list of integers, store in lst
+3. Sort lst in ascending order
+4. Reverse lst to get descending order
+5. Initialize od = 0
+6. For each element i in lst:
+   - If i is odd (i & 1 != 0): increment od by 1
+7. Initialize sum = 0
+8. Initialize ok = false
+9. For i from 0 to n-1:
+   - If lst[i] is even (lst[i] % 2 == 0): add lst[i] to sum
+   - Else (odd number):
+     - If ok is true OR od > 1:
+       - Add lst[i] to sum
+       - Decrement od by 1
+       - Toggle ok (ok = not ok)
+10. Print sum

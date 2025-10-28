@@ -1,0 +1,9 @@
+1. Read the number of inputs, n.
+2. Read n integers and store them in a list.
+3. Remove duplicates from the list.
+4. Sort the list in ascending order.
+5. Initialize a flag, found, to false.
+6. Iterate through the sorted list.
+7. For each element, check if it and the next two elements are consecutive.
+8. If three consecutive elements are found, set found to true.
+9. Output "YES" if found is true, otherwise output "NO".

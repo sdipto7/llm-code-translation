@@ -1,0 +1,37 @@
+Function signature: `main() -> None`
+
+Variable declarations and data types:
+- `n: int`
+- `S: List[int]`
+- `q: int`
+- `T: List[int]`
+- `ans: int`
+- `i: int`
+- `left: int`
+- `right: int`
+- `mid: int`
+
+Complete logic flow in execution order:
+1. Read integer `n` from input.
+2. Read list `S` of integers from input, split by spaces.
+3. Read integer `q` from input.
+4. Read list `T` of integers from input, split by spaces.
+5. Initialize `ans` to 0.
+6. For each integer `i` in `T`:
+   1. If `i` equals last element of `S` or first element of `S`, increment `ans` by 1.
+   2. Otherwise:
+      1. Set `left` to 0.
+      2. Set `right` to `n-1`.
+      3. While `right-left` is greater than 1:
+         1. Calculate `mid` as integer division of `(left+right)` by 2.
+         2. If `S[mid]` equals `i`, increment `ans` by 1 and break the loop.
+         3. Else if `S[mid]` is less than `i`, set `left` to `mid`.
+         4. Else, set `right` to `mid`.
+7. Print `ans`.
+
+Input/output operations and data processing logic:
+- Input: Four lines of integers, where the first line is `n`, the second line contains `n` space-separated integers for `S`, the third line is `q`, and the fourth line contains `q` space-separated integers for `T`.
+- Output: A single integer representing the count of elements in `T` that are either the first or last element of `S` or exist in `S` between the first and last elements using binary search.
+
+Required libraries, modules, or dependencies:
+- `List` from `typing` module (implied by `List[int]` type hint)

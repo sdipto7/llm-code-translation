@@ -1,0 +1,18 @@
+```
+- Function Signature: main() -> void
+
+- Declare a Scanner object `sc` for reading input.
+
+- Variable Declarations:
+  - `sec` (int): Read an integer from input using `sc.nextInt()`.
+  - `per_num` (int): Read an integer from input using `sc.nextInt()`.
+  - `max_sec` (double): Read an integer from input using `sc.nextInt()`, convert to double, add 0.5.
+  - `ans_num` (int): Initialize to 0.
+
+- Loop Control Structure:
+  - for `i` from `sec` to less than `max_sec`, increment by `sec`:
+    - Add `per_num` to `ans_num`.
+
+- Output:
+  - Print `ans_num` to the standard output.
+```

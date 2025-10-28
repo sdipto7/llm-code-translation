@@ -1,0 +1,32 @@
+```
+Algorithm:
+1. Import the 'java.util.*' library.
+2. Define the main function: `public static void main(String[] args)`.
+3. Declare a Scanner object `sc` to read input.
+4. Read two integers, `H` and `W`, using `sc.nextInt()`.
+5. Declare a 2D character array `A` with dimensions `H` x `W`.
+6. Declare a Queue `queue` of integer arrays using `ArrayDeque<int[]>`.
+7. Use a for-loop to iterate over `i` from 0 to `H-1`:
+   - Read a string `row` using `sc.next()`.
+   - Use a nested for-loop to iterate over `j` from 0 to `W-1`:
+     - Assign `A[i][j]` to `row.charAt(j)`.
+     - If `A[i][j]` equals '#':
+       - Declare an integer array `start` with values `[i, j, 0]`.
+       - Add `start` to the `queue`.
+8. Declare a 2D integer array `flag` with dimensions `H` x `W`.
+9. Declare an integer `ans` and initialize it to 0.
+10. Declare integer arrays `dx` and `dy` to represent direction vectors: 
+    - `dx = [1, -1, 0, 0]`
+    - `dy = [0, 0, 1, -1]`
+11. Begin a while-loop with the condition `!queue.isEmpty()`:
+    - Remove and store the first element of the `queue` in array `temp`.
+    - Assign `y = temp[0]`, `x = temp[1]`, and `depth = temp[2]`.
+    - Use a for-loop to iterate over `i` from 0 to 3:
+      - Check if `0 <= y + dy[i] <= H - 1` and `0 <= x + dx[i] <= W - 1`:
+        - If `flag[y + dy[i]][x + dx[i]] == 0` and `A[y + dy[i]][x + dx[i]] == '.'`:
+          - Set `flag[y + dy[i]][x + dx[i]] = 1`.
+          - Declare an integer array `queue_add` with values `[y + dy[i], x + dx[i], depth + 1]`.
+          - Add `queue_add` to the `queue`.
+          - Update `ans = depth + 1`.
+12. After exiting the loop, print the value of `ans` using `System.out.println(ans)`.
+```

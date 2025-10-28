@@ -1,0 +1,36 @@
+1. Function Signature:
+   - Function: `calculate_time_difference`
+   - Parameters: None (reads input directly)
+   - Return Type: None (prints output directly)
+
+2. Variable Declarations:
+   - `h1`, `m1`: integers
+   - `h2`, `m2`: integers
+
+3. Logic Flow:
+   - Read a string input representing the first time in "HH:MM" format.
+   - Split the input string by the colon ':' character.
+   - Convert the split parts to integers and assign them to `h1` and `m1`.
+   - Convert `h1` to minutes by calculating `h1 * 60` and add it to `m1`.
+   - Update `m1` to represent the total minutes since midnight for the first time.
+   - Read a string input representing the second time in "HH:MM" format.
+   - Split the input string by the colon ':' character.
+   - Convert the split parts to integers and assign them to `h2` and `m2`.
+   - Convert `h2` to minutes by calculating `h2 * 60` and add it to `m2`.
+   - Update `m2` to represent the total minutes since midnight for the second time.
+   - Calculate the difference in minutes between the two times by subtracting `m2` from `m1`.
+   - Adjust the difference to fit within a 24-hour period by taking `m2` modulo 1440 (total minutes in a day).
+   - Calculate the hour and minute representation of the adjusted difference:
+     - Hours: `m2 // 60`
+     - Minutes: `m2 % 60`
+   - Print the result in "HH:MM" format using zero-padded two digits for both hours and minutes.
+
+4. Control Structures:
+   - None (no loops or conditionals).
+
+5. Input/Output:
+   - Input: Two strings representing times in "HH:MM" format via standard input.
+   - Output: A single string representing the time difference in "HH:MM" format printed to standard output.
+
+6. Required Libraries:
+   - None (uses built-in functions only).

@@ -1,0 +1,19 @@
+1. Import the `deque` data structure from the `collections` module.
+2. Read two integer inputs, `H` and `W`, from the standard input, representing the height and width of a grid.
+3. Initialize a 2D grid `G` with dimensions `(H+2) x (W+2)` by reading `H` lines of input and padding them with `#` characters to represent boundaries.
+4. Initialize a variable `ans` to 0 to store the maximum distance found.
+5. Iterate over all cells `(sx, sy)` in the grid `G`.
+6. For each cell `(sx, sy)` that is not a boundary (`G[sy][sx] == '.'`), perform the following steps:
+   a. Initialize a 2D array `dist` with dimensions `(H+2) x (W+2)` to store the distance from `(sx, sy)` to all other cells, initializing all values to negative infinity.
+   b. Initialize a 2D array `visited` with dimensions `(H+2) x (W+2)` to keep track of visited cells, initializing all values to -1.
+   c. Create a queue `q` and enqueue the starting cell `(sx, sy)`.
+   d. Set `dist[sy][sx]` to 0 and `visited[sy][sx]` to 1.
+   e. Perform a breadth-first search (BFS) traversal:
+      i. While the queue `q` is not empty:
+         1. Dequeue a cell `(x, y)` from `q`.
+         2. For each unvisited neighboring cell `(x', y')` of `(x, y)` that is not a boundary (`G[y'][x'] == '.'`):
+            a. Enqueue `(x', y')` into `q`.
+            b. Update `dist[y'][x']` to `dist[y][x] + 1`.
+            c. Mark `(x', y')` as visited by setting `visited[y'][x']` to 1.
+   f. After completing the BFS traversal, iterate over all cells in `dist` and update `ans` to be the maximum distance found.
+7. Output the maximum distance `ans` found.

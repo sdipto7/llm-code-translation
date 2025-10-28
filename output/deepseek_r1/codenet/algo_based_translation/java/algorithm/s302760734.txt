@@ -1,0 +1,46 @@
+Here is the algorithm extracted from the provided Java code:
+
+**Function Signatures**
+- `public static void main(String[] args)`
+
+**Variables**
+- `Scanner scanner` (Reads input)
+- `char[] s` (Input string converted to char array)
+- `char[] t` (Input substring converted to char array)
+- `boolean check = false` (Flag for valid replacement)
+- `int i` (Outer loop index)
+- `int j` (Inner loop index)
+- `boolean check2` (Flag for substring match validity)
+
+**Libraries/Dependencies**
+- `java.util.Scanner`
+
+**Logic Flow**
+1. Read `s` and `t` from input as char arrays.
+2. Iterate `i` from `s.length - t.length` down to `0` (inclusive):
+   - Set `check2` to `true`.
+   - Iterate `j` from `0` to `t.length - 1` (inclusive):
+     - If `s[i + j]` is not `?` and `s[i + j] != t[j]`, set `check2` to `false`.
+   - If `check2` is `true`:
+     - Set `check` to `true`.
+     - Replace substring `s[i..i+t.length-1]` with `t[0..t.length-1]`.
+     - Break the outer loop immediately.
+3. If `check` is `true`:
+   - Replace all remaining `?` in `s` with `'a'`.
+   - Print the modified `s`.
+4. Else:
+   - Print `"UNRESTORABLE"`.
+
+**Control Structures**
+- Nested loops:
+  - Outer `for` loop: `(i = s.length - t.length; i >= 0; i--)`
+  - Inner `for` loop: `(j = 0; j < t.length; j++)`
+- Conditionals:
+  - `if (s[i+j] != '?' && s[i+j] != t[j])`
+  - `if (check2)`
+  - `if (check)`
+  - `else` clause for final output
+
+**I/O Operations**
+- Input: Read two strings via `Scanner.next()`
+- Output: Print modified `s` (with `?`→`a`) or `"UNRESTORABLE"`

@@ -1,0 +1,13 @@
+1. Import java.util.Scanner
+2. Define main function: public static void main(String[] args)
+3. Create Scanner object sc with System.in
+4. Declare int a, assign Integer.parseInt(sc.next())
+5. Declare int b, assign Integer.parseInt(sc.next())
+6. Declare int c, assign Integer.parseInt(sc.next())
+7. Declare int count, initialize to 0
+8. For loop: initialize int i = a, condition i <= b, increment i++
+9. Inside loop: if condition c % i == 0
+10. If true: increment count by 1
+11. End if
+12. End for loop
+13. Print count using System.out.println(count)

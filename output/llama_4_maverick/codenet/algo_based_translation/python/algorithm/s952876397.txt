@@ -1,0 +1,17 @@
+1. Define a function `balance_parentheses` with no parameters and return type string.
+2. Read an integer `n` from input.
+3. Read a string `s` from input.
+4. Initialize a variable `left` to 0 of type integer.
+5. Iterate over each character `i` in string `s`.
+   - If `i` equals ')', increment `left` by 1.
+   - Else, break the loop.
+6. Initialize variables `left1` and `right1` to 0 of type integer.
+7. Iterate over the substring of `s` starting from index `left` to `n`.
+   - If the character at the current index equals '(', increment `right1` by 1.
+   - Else if `right1` is greater than 0, decrement `right1` by 1.
+   - Else, increment `left1` by 1.
+8. Add the value of `left` to `left1`.
+9. Append ')' to `s`, `right1` times.
+10. Prepend '(' to `s`, `left1` times.
+11. Return the modified string `s`.
+12. Print the result of `balance_parentheses`.

@@ -1,0 +1,33 @@
+- Function signatures:  
+  public static void main(String args[])  
+
+- Variables:  
+  Scanner sc = new Scanner(System.in)  
+  int n  
+  int[] h  
+  int ans = 0  
+  int out = 0  
+
+- Input processing:  
+  1. Read integer n from standard input  
+  2. Initialize integer array h with size n  
+  3. For i from 0 to n-1:  
+     - Read integer h[i] from standard input  
+
+- Algorithm logic:  
+  1. For each element h[i] in array h:  
+     a. If out < h[i]:  
+        - ans += (h[i] - out)  
+        - out = h[i]  
+     b. Else:  
+        - out = h[i]  
+
+- Control structures:  
+  1. for-loop: i from 0 to h.length-1 (inclusive)  
+  2. if-else conditional on out < h[i]  
+
+- Output operation:  
+  Print ans as integer to standard output  
+
+- Required dependencies:  
+  java.util.Scanner

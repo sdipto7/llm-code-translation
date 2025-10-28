@@ -1,0 +1,17 @@
+1. Import the required library: java.util.Scanner
+2. Define a function: main with parameters (String[] args) and return type void
+3. Declare a variable: scanner of type Scanner and initialize it with new Scanner(System.in)
+4. Declare variables: a and b of type int, and initialize them by reading two integers from the input using scanner.nextInt()
+5. Declare a variable: flag of type boolean and initialize it with false
+6. Start a for loop with:
+   - initialization: i = 1 of type int
+   - condition: i <= 100000
+   - increment: i++
+7. Inside the loop, check the condition: Math.floor(1.0 * i * 0.08) == a && b == Math.floor(0.1 * i)
+8. If the condition is true:
+   - Print the value of i to the output using System.out.println(i)
+   - Set flag to true
+   - Break out of the loop
+9. After the loop, check the condition: !flag
+10. If the condition is true:
+    - Print -1 to the output using System.out.println(-1)

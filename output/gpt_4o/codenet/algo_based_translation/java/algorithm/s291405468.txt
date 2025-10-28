@@ -1,0 +1,25 @@
+1. **Function Signature**
+   - `main()`: 
+     - Parameters: `args` (String array)
+     - Return Type: void
+
+2. **Variable Declarations**
+   - `sc`: Scanner object for reading input
+
+3. **Logic Flow**
+   - Create a Scanner object `sc` to read input from the standard input.
+   - Read an integer from input using `sc.nextInt()` and calculate the remainder when divided by 500.
+   - Read another integer from input using `sc.nextInt()`.
+   - Compare if the remainder calculated is less than or equal to the second integer.
+   - If the condition is true, output "Yes".
+   - If the condition is false, output "No".
+
+4. **Control Structures**
+   - Conditional: `if (remainder <= second integer)`
+
+5. **Input/Output Operations**
+   - Input: Read two integers from standard input using the Scanner.
+   - Output: Print "Yes" if the condition is satisfied, otherwise print "No".
+
+6. **Dependencies**
+   - `java.util.Scanner` for input reading.

@@ -1,0 +1,38 @@
+Here is the algorithm extracted from the code:
+
+- **Function Signature**:  
+  `main(String[] args) : void`
+
+- **Variables**:  
+  - `startTime`, `endTime` : `long`  
+  - `sc` : `Scanner` (input handler)  
+  - `n` : `int`  
+  - `div` : `long` (value: \(10^9 + 7\))  
+  - `A[]` : `long[]` (size `n`)  
+  - `ans` : `long` (initialized to 0)  
+  - `a` : `long` (per-bit temporary calculation)  
+  - `count1` : `long` (bit counter)  
+
+- **Input/Output**:  
+  1. Read `n` from standard input.  
+  2. Read `n` values into array `A`.  
+  3. Write final `ans` to standard output.  
+
+- **Logic Flow**:  
+  1. Initialize modulus `div = 1_000_000_007`.  
+  2. Iterate over **each bit position** `i` (0 ≤ i < 60):  
+     a. Count numbers in `A` with `i`-th bit set → `count1`.  
+     b. Compute contribution for this bit:  
+        `a = count1 * (n - count1)`  
+     c. Shift `a` left by `i` bits (equivalent to \(a \times 2^i\)) with modular reduction at each shift.  
+     d. Add shifted value to `ans`, applying `div` modulus.  
+  3. Output cumulative result `ans`.  
+
+- **Control Structures**:  
+  - Outer loop: `for i in 0 to 59`  
+    - Nested loop: `for j in 0 to n-1` (bit counting)  
+    - Shift loop: `for j in 0 to i-1` (bit shifting)  
+  - Conditional: Check bit state via `(A[j] >> i) & 1 == 1`  
+
+- **Dependencies**:  
+  - `java.util.Scanner` for input handling.

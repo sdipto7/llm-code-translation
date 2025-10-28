@@ -1,0 +1,69 @@
+1. Import required libraries: 
+   - java.io
+   - java.math
+   - java.util
+
+2. Declare a class `Main` with the following static variables:
+   - `ans` of type `int` initialized to 100
+   - `balls` of type `int[][]`
+   - `N` of type `int`
+   - `taken` of type `boolean[]`
+
+3. Define the `main` function with no parameters and return type `void`:
+   - Create an instance `I` of `FastScanner` for input
+   - Create an instance `O` of `OutPut` for output
+   - Read `N` using `I.nextInt()`
+   - Initialize `ans` to `N`
+   - Initialize `balls` as a 2D array of size `N x 2`
+   - Read `N` pairs of integers using `I.nextInt()` and store them in `balls`
+   - Sort `balls` based on the first coordinate
+   - Call `solve()`
+   - Swap the coordinates of each pair in `balls`
+   - Sort `balls` based on the new first coordinate (originally second)
+   - Call `solve()`
+   - Output `ans` using `O.pln(ans)`
+
+4. Define the `solve` function with no parameters and return type `void`:
+   - Iterate over `add` from 1 to `N-1`:
+     - Initialize `taken` as a boolean array of size `N`
+     - Calculate `p` and `q` as the differences between the coordinates of `balls[add]` and `balls[0]`
+     - Update `ans` with the minimum of `ans` and the result of `check(p, q)`
+
+5. Define the `check` function with parameters `p` and `q` of type `int` and return type `int`:
+   - Initialize `ret` to 0
+   - Enter a loop that continues until no more elements can be added:
+     - Initialize `added` to `false`
+     - Initialize `start` to 0
+     - Initialize `x` and `y` to -1
+     - Iterate over `i` from 0 to `N-1`:
+       - If `taken[i]` is `false`:
+         - Set `added` to `true`
+         - Increment `ret`
+         - Set `start` to `i`
+         - Set `taken[i]` to `true`
+         - Calculate `x` and `y` as the next coordinates based on `p` and `q`
+         - Break the loop
+     - If `added` is `false`, break the outer loop
+     - Iterate over `i` from `start+1` to `N-1`:
+       - If the coordinates of `balls[i]` match `x` and `y`:
+         - Set `taken[i]` to `true`
+         - Update `x` and `y` based on `p` and `q`
+   - Return `ret`
+
+6. Define various mathematical helper functions:
+   - `max` and `min` for `double`, `long`, and `int`
+   - `abs` for `long`
+   - `ceil` for `long`
+   - `GCD` for `long`
+   - `FastExp` for `long`
+   - `ModInv` for `long`
+   - `pop` for `long`
+
+7. Define a class `FastScanner` for input operations:
+   - Use a `BufferedReader` to read input
+   - Tokenize the input using a `StringTokenizer`
+   - Provide methods to read `int`, `long`, and `double` values
+
+8. Define a class `OutPut` for output operations:
+   - Use a `PrintWriter` to write output
+   - Provide methods to print various data types (`double`, `boolean`, `int`, `long`, `String`, `char`, `StringBuilder`, `BigInteger`) with or without a newline.

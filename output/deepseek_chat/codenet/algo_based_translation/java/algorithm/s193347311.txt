@@ -1,0 +1,17 @@
+1. Import Scanner from java.util
+2. Define main function with parameter String[] args and return type void
+3. Declare Scanner scan initialized with System.in
+4. Read integer intLoop from input using scan.nextInt()
+5. Declare String strTaro initialized to empty string
+6. Declare String strHana initialized to empty string
+7. Declare int intTaro initialized to 0
+8. Declare int intHana initialized to 0
+9. For loop: initialize int i = 0, condition i < intLoop, increment i++
+10. Inside loop: read strTaro from input using scan.next()
+11. Inside loop: read strHana from input using scan.next()
+12. Inside loop: declare int intJudge = result of strTaro.compareTo(strHana)
+13. If intJudge < 0 then add 3 to intHana
+14. Else if intJudge == 0 then add 1 to intTaro and add 1 to intHana
+15. Else if intJudge > 0 then add 3 to intTaro
+16. After loop: print intTaro + " " + intHana
+17. Close scan using scan.close()

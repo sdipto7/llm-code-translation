@@ -1,0 +1,41 @@
+Algorithm:
+
+Function Signatures:
+- Not applicable (script code)
+
+Variables:
+- N: integer
+- x: integer
+- a: list of integers
+- cnt: integer (initialized to 0)
+- i: integer (loop variable)
+- tmp: integer
+- excess: integer (implicit in code logic)
+
+Execution Steps:
+1. Read N and x via input parsing
+2. Read list a of N integers via input parsing
+3. Initialize cnt = 0
+4. Loop for i from 1 to N-1 inclusive:
+    a. tmp = a[i-1] + a[i]
+    b. If tmp > x:
+        i. excess = tmp - x
+        ii. If excess > a[i]:
+            - a[i-1] = tmp - a[i] - x
+            - a[i] = 0
+        iii. Else:
+            - a[i] -= excess
+        iv. cnt += excess
+5. Print cnt
+
+Control Structures:
+- for loop: iterate i from 1 to N-1
+- if condition: check tmp > x
+- nested if condition: check excess > a[i]
+
+Input/Output:
+- Input: two lines from stdin (N, x values; list a values)
+- Output: single integer cnt printed to stdout
+
+Dependencies:
+- None (uses standard input/output functions)

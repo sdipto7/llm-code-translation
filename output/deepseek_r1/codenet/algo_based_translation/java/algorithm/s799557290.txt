@@ -1,0 +1,46 @@
+# Algorithm
+
+Function Signatures:
+- main(String[] args) : void
+
+Variables:
+- a : int (input)
+- b : int (input)
+- ju : boolean[100001] (initialized to false)
+- pe : int[100001] (initialized to 0)
+- wa : int (initialized to 0)
+- ac : int (initialized to 0)
+- n : int (temporary)
+- res : String (temporary)
+
+Logic Flow:
+1. Read integer a from standard input
+2. Read integer b from standard input
+3. Initialize ju[] array with 100001 elements (default false)
+4. Initialize pe[] array with 100001 elements (default 0)
+5. For i from 0 to b-1:
+    a. Read integer n from input
+    b. Read String res from input
+    c. If res equals "WA" AND ju[n-1] is false:
+        i. Increment pe[n-1] by 1
+    d. If res equals "AC":
+        i. Set ju[n-1] to true
+6. For i from 0 to a-1:
+    a. If ju[i] is true:
+        i. Increment ac by 1
+        ii. Add pe[i] to wa
+7. Print ac and wa separated by space
+
+Control Structures:
+- For loop with i < b condition (5)
+- Two nested if conditions (5c, 5d)
+- For loop with i < a condition (6)
+- If condition (6a)
+
+Input/Output:
+- Read two integers via Scanner
+- Read b pairs of (int, String)
+- Print two integers at end
+
+Dependencies:
+- Requires java.util.Scanner for input handling

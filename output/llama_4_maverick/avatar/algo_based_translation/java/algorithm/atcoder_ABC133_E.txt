@@ -1,0 +1,11 @@
+1. Read the number of nodes N and the value K from the input.
+2. Initialize an array of N nodes, where each node has an index, a list of children, a parent, and a pattern value.
+3. For each node i from 0 to N-1, create a new node with index i.
+4. Read N-1 edges from the input and for each edge (a, b), add b to the children of node a and add a to the children of node b.
+5. Set the parent of node 0 to -1 and recursively set the parent and pattern value for all nodes in the tree rooted at node 0.
+6. For node 0, call the recursive function with K, -1, and 0 as arguments.
+7. In the recursive function, set the pattern value of the current node to K - use, where use is the number of nodes used so far in the subtree rooted at the current node's parent.
+8. For each child of the current node that is not its parent, recursively call the function with K, the current node's index, and the count of nodes used so far in the subtree rooted at the current node.
+9. Initialize a variable patterns to 1.
+10. For each node i from 0 to N-1, multiply patterns by the pattern value of node i and take the result modulo 1,000,000,007.
+11. Output the final value of patterns.

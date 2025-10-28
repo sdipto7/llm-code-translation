@@ -1,0 +1,27 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner sc`: Scanner object for input
+- `int n`: integer from input
+- `int[] array`: integer array of size 3*n
+- `int head`: integer index tracker
+- `long res`: long integer accumulator
+
+**Libraries/Dependencies:**
+- `java.util.*`
+- `static java.lang.Math.*`
+
+**Algorithm:**
+1. Create Scanner object reading from System.in
+2. Read integer n from input
+3. Create integer array of size 3*n
+4. For each index i from 0 to array.length-1:
+   - Read integer from input and store in array[i]
+5. Sort array in ascending order
+6. Initialize head = array.length - 2
+7. Initialize res = 0
+8. For i from 0 to n-1:
+   - Add array[head] to res
+   - Subtract 2 from head
+9. Print res

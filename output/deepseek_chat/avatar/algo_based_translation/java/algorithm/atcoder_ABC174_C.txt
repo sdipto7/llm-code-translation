@@ -1,0 +1,38 @@
+**Function Signatures:**
+- `public static void main(String[] args) throws IOException`
+- `private static int solve() throws IOException`
+- `private static int readInt() throws IOException`
+
+**Variable Declarations:**
+- `BufferedReader br` initialized with `System.in`
+- `PrintWriter pw` initialized with `System.out`
+- `StringTokenizer st` (initially null)
+- `int K` (from input)
+- `int ans` initialized to 1
+- `int remainder` initialized to `10 % K`
+
+**Logic Flow:**
+1. Initialize static I/O objects
+2. Call `solve()` from main method
+3. Read integer K using `readInt()`
+4. If K is divisible by 2 or 5: return -1
+5. If K is divisible by 7: divide K by 7
+6. Multiply K by 9
+7. Initialize remainder to `10 % K`
+8. While remainder is not equal to 1:
+   - Increment ans by 1
+   - Update remainder to `(remainder * 10) % K`
+9. Return ans
+
+**Control Structures:**
+- `if (K % 2 == 0 || K % 5 == 0)`
+- `if (K % 7 == 0)`
+- `while (remainder != 1)`
+
+**Input/Output Operations:**
+- Input: Read integer from standard input
+- Output: Print result to standard output
+
+**Required Dependencies:**
+- `java.io.*`
+- `java.util.*`

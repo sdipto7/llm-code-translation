@@ -1,0 +1,68 @@
+**Algorithm Specification**
+
+**1. Functions/Methods:**
+- **Function:** `gcd`
+  - **Parameters:** `a` (integer), `b` (integer)
+  - **Return Type:** integer
+  - **Steps:**
+    1. If `b` equals 0, return `a`.
+    2. Return `gcd(b, a % b)`.
+
+- **Function:** `ruiseki_lr`
+  - **Parameters:** `array` (list of integers)
+  - **Return Type:** tuple of two integer lists (`left`, `right`)
+  - **Variables:**
+    - `op`: Lambda function accepting two integers, returns their GCD.
+    - `e`: integer (initialized to 0)
+    - `n`: integer (length of `array`)
+    - `left`: list of integers (size `n + 1`, initialized with `e`)
+    - `right`: list of integers (size `n + 1`, initialized with `e`)
+  - **Steps:**
+    1. For each `i` from 0 to `n - 1` (inclusive):
+        - Set `left[i + 1]` = `op(left[i], array[i])`.
+    2. For each `i` from `n - 1` down to 0 (inclusive):
+        - Set `right[i]` = `op(right[i + 1], array[i])`.
+    3. Return (`left`, `right`).
+
+**2. Main Program:**
+- **Variables:**
+  - `n`: integer (read from input)
+  - `a`: list of integers (read from input)
+  - `left`: list of integers (from `ruiseki_lr`)
+  - `right`: list of integers (from `ruiseki_lr`)
+  - `ans`: integer (initialized to 0)
+- **Steps:**
+  1. Read `n` from standard input.
+  2. Read `a` as `n` space-separated integers from standard input.
+  3. Compute `left`, `right` = `ruiseki_lr(a)`.
+  4. For each `i` from 0 to `n - 1` (inclusive):
+      - Compute `current_gcd` = `gcd(left[i], right[i + 1])`.
+      - If `current_gcd` > `ans`, set `ans` = `current_gcd`.
+  5. Print `ans`.
+
+**3. Control Flow Structures:**
+- **Conditional in `gcd`:**
+  - **Condition:** `b == 0`
+  - **True:** Return `a`.
+  - **False:** Proceed to recursive call.
+
+- **Loops in `ruiseki_lr`:**
+  - **Forward Loop:** Iterate `i` from 0 to `n - 1` (inclusive).
+  - **Reverse Loop:** Iterate `i` from `n - 1` down to 0 (inclusive).
+
+- **Loop in Main Program:**
+  - Iterate `i` from 0 to `n - 1` (inclusive) to compute maximum GCD.
+
+**4. Input/Output Operations:**
+- **Input:**
+  - Read `n` via `int(input())`.
+  - Read `a` via `list(map(int, input().split()))`.
+- **Output:** Print `ans`.
+
+**5. Edge Case Handling:**
+- Implicitly handles `array` of length 1 via loop ranges.
+- Relies on input constraints (assumes valid `n` and `a` matching length `n`).
+
+**6. Dependencies:**
+- Standard input/output operations.
+- No external libraries or modules.

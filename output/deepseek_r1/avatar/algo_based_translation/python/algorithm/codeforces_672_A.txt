@@ -1,0 +1,57 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main(): void`  
+  *No parameters. Executes program logic and prints result.*
+
+**Variables:**
+- `li: int[]` (Initial value: empty list)  
+- `i: int` (Loop variable: 1 ≤ i ≤ 370)  
+- `temp: int[]` (Temporary digit storage)  
+- `p: int` (Temporary variable for digit counting)  
+- `q: int` (Temporary variable for digit extraction)  
+- `count: int` (Stores digit count of current `i`)  
+- `x: int` (Holds extracted digit during processing)  
+- `n: int` (Input value read from user)  
+
+**Step-by-Step Logic Flow:**
+
+1. Initialize `li` as an empty list of integers.  
+2. Iterate `i` from 1 to 370 (inclusive):  
+   a. Reset `temp` to an empty list.  
+   b. Set `p = i` and `count = 0`.  
+   c. **While** `p ≠ 0`:  
+      i. Update `p = p // 10` (integer division).  
+      ii. Increment `count` by 1.  
+   d. **If** `count == 1`:  
+      i. Append `i` to `li`.  
+   e. **Else if** `count == 2 || count == 3`:  
+      i. Set `q = i` and reset `temp` to empty list.  
+      ii. **While** `q ≠ 0`:  
+          - Compute `x = q % 10`.  
+          - Update `q = q // 10` (integer division).  
+          - Append `x` to `temp`.  
+      iii. Reverse the order of elements in `temp`.  
+      iv. Concatenate reversed `temp` to `li`.  
+3. Remove the last element from `li` using `li.pop()`.  
+4. Remove the new last element from `li` using `li.pop()`.  
+5. Read integer `n` from standard input.  
+6. Print the element at index `n-1` of `li`.  
+
+**Control Flow Structures:**
+- **For loop** over `i` (fixed range: 1–370).  
+- **While loops** for digit counting and extraction (exit when `p`/`q` reach 0).  
+- **Conditional branches** to handle digit counts (1 vs. 2/3).  
+
+**Input/Output Operations:**
+- Input: Read integer `n` from stdin.  
+- Output: Print `li[n-1]` to stdout.  
+
+**Edge Case Handling:**
+- Automatically processes numbers of all lengths (1–3 digits).  
+- No explicit validation for `n` exceeding list bounds.  
+
+**Dependencies:**
+- Relies on list/array manipulation (reverse, pop, append).  
+- Uses integer division and modulus operations.  
+- Requires standard input/output functions.

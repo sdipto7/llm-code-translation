@@ -1,0 +1,14 @@
+Read integer n from input
+Read next line of input, split into list of integers a of length n
+
+Declare integer m1 = (sum over i from 0 to n-1 of a[i] * (-1)^i) divided by 2
+
+Convert m1 to string and store as result
+
+Declare list m of length n with None values
+Set m[0] = m1
+
+For i from 1 to n-1:
+    Set m[i] = a[i-1] - m[i-1]
+
+Convert each element in m to string after multiplying by 2, join with spaces, and print

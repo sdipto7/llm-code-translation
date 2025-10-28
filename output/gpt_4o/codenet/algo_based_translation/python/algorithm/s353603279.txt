@@ -1,0 +1,29 @@
+```
+Function Signature:
+    def calculate_total_reward(x: int) -> int
+
+Variable Declarations:
+    x: int
+    h: int
+    a: int
+    y: int
+
+Logic Flow:
+    1. Receive an integer input x from the user.
+    2. Calculate the number of complete 500 units in x and store in h.
+        - h = x // 500
+    3. Calculate the remaining amount after extracting 500 units and determine the number of complete 5 units in that remainder, storing the result in a.
+        - a = (x % 500) // 5
+    4. Compute the total reward y based on:
+        - The number of 500 units (h) each contributing 1000 to the reward.
+        - The number of 5 units (a) each contributing 5 to the reward.
+        - y = h * 1000 + a * 5
+    5. Return the calculated reward y.
+
+Input/Output Operations:
+    - Input: An integer value x is taken from the user.
+    - Output: The calculated reward y is printed to the console.
+
+Required Libraries, Modules, or Dependencies:
+    - No external libraries or modules are required.
+```

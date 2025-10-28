@@ -1,0 +1,17 @@
+- Function: main, return type: None
+- Variable: input1, data type: string
+- Variable: input2, data type: string
+- Variable: x, data type: character
+- Variable: y, data type: character
+- Variable: sum_result, data type: integer
+
+1. Read input1 from standard input.
+2. Read input2 from standard input.
+3. Initialize a mapping operation with a lambda function taking two parameters x and y of type character, returning a boolean value indicating whether x equals y.
+4. Apply the lambda function to corresponding characters from input1 and input2 using the map function, stopping at the end of the shorter input.
+5. Convert the mapped boolean values to integers (True -> 1, False -> 0) implicitly during summation.
+6. Sum the resulting integer values using the sum function and store the result in sum_result.
+7. Print sum_result to standard output.
+
+Required libraries: built-in python functions (input, print, map, sum, lambda) 
+No explicit dependencies or module imports are required.

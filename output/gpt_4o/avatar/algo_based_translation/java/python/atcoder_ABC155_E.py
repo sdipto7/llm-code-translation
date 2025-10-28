@@ -1,0 +1,32 @@
+
+def main():
+    import sys
+    input = sys.stdin.read
+    number = input().strip()
+    
+    digits = [0] * (len(number) + 1)
+    
+    for i in range(len(number)):
+        digits[i] = ord(number[len(number) - 1 - i]) - ord('0')
+    
+    bills = 0
+    
+    for i in range(len(number) + 1):
+        if digits[i] == 10:
+            digits[i + 1] += 1
+            digits[i] = 0
+        if digits[i] < 5:
+            bills += digits[i]
+        elif digits[i] == 5:
+            if digits[i + 1] >= 5:
+                digits[i + 1] += 1
+            bills += 5
+        else:
+            digits[i + 1] += 1
+            bills += 10 - digits[i]
+    
+    print(bills)
+
+if __name__ == "__main__":
+    main()
+

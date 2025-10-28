@@ -1,0 +1,41 @@
+**Function Signature:**
+- main(): None
+
+**Input Operations:**
+- Read first line: H, W, N = integers from input split by space
+- Read second line: s_r, s_c = integers from input split by space
+- Read third line: S = string input
+- Read fourth line: T = string input
+
+**Variable Declarations:**
+- Judge: boolean = False
+- S_L, S_R, S_U, S_D: integers = 0
+- T_L, T_R, T_U, T_D: integers = 0
+
+**Main Logic:**
+- For x from 0 to N-1:
+  - If S[x] == 'L':
+    - Increment S_L by 1
+    - If (S_L - T_R - s_c) == 0: set Judge = True
+  - Else if S[x] == 'R':
+    - Increment S_R by 1
+    - If (s_c + (S_R - T_L)) == (W + 1): set Judge = True
+  - Else if S[x] == 'U':
+    - Increment S_U by 1
+    - If (S_U - T_D - s_r) == 0: set Judge = True
+  - Else if S[x] == 'D':
+    - Increment S_D by 1
+    - If (s_r + (S_D - T_U)) == (H + 1): set Judge = True
+  
+  - If T[x] == 'L':
+    - If (S_R - T_L + s_c) != 1: increment T_L by 1
+  - If T[x] == 'R':
+    - If (s_c + (T_R - S_L)) != W: increment T_R by 1
+  - If T[x] == 'U':
+    - If (S_D - T_U + s_r) != 1: increment T_U by 1
+  - If T[x] == 'D':
+    - If (s_r + (T_D - S_U)) != H: increment T_D by 1
+
+**Output Operation:**
+- If Judge is True: print 'NO'
+- Else: print 'YES'

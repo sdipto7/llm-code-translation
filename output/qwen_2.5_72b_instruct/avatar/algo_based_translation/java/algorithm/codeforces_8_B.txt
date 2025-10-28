@@ -1,0 +1,40 @@
+Function Signature: `main(String[] args): void`
+
+Variable Declarations:
+- `i: int`
+- `j: int`
+- `x: int` initialized to 0
+- `y: int` initialized to 0
+- `k: int` initialized to 0
+- `dx: int`
+- `dy: int`
+- `flag: boolean` initialized to true
+- `s: String`
+- `ch: char[]` size 100
+- `co: int[][]` size 2x101
+
+Input Operations:
+- `s = scan.next()`
+- `ch = s.toCharArray()`
+
+Logic Flow:
+1. Initialize coordinates `x` and `y` to 0.
+2. Store initial coordinates in `co[0][k]` and `co[1][k]`, then increment `k`.
+3. Iterate over each character in string `s` (length of `s`):
+   - Switch based on character:
+     - Case 'L': Decrement `x`.
+     - Case 'R': Increment `x`.
+     - Case 'U': Increment `y`.
+     - Case 'D': Decrement `y`.
+   - Store updated coordinates in `co[0][k]` and `co[1][k]`, then increment `k`.
+4. Iterate over index `i` from 0 to `k - 4`:
+   - Iterate over index `j` from `i + 3` to `k - 1`:
+     - Calculate absolute differences `dx` and `dy` between coordinates at `i` and `j`.
+     - If `dx <= 1` and `dy == 0` or `dy <= 1` and `dx == 0`, set `flag` to false and break inner loop.
+   - If `flag` is false, break outer loop.
+5. Output Operations:
+   - If `flag` is true, print "OK".
+   - Otherwise, print "BUG".
+
+Libraries/Modules/Dependencies:
+- `java.util.Scanner`

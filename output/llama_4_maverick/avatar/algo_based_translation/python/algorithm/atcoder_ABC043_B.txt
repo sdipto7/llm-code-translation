@@ -1,0 +1,8 @@
+1. READ input string s
+2. INITIALIZE empty string my_str
+3. FOR EACH character c IN s
+4. IF c IS '0' OR c IS '1'
+5. APPEND c TO my_str
+6. ELSE IF c IS 'B' AND my_str IS NOT EMPTY
+7. REMOVE LAST CHARACTER FROM my_str
+8. PRINT my_str

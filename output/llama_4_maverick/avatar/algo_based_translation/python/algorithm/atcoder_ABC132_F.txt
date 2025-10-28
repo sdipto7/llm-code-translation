@@ -1,0 +1,19 @@
+1. mod ← 10^9 + 7
+2. n, k ← input values
+3. coef ← empty list
+4. FOR i FROM 1 TO √n
+5.     APPEND ((n // i) - (n // (i + 1))) TO coef
+6. APPEND 1 to coef UNTIL sum(coef) equals n
+7. REVERSE coef
+8. nn ← length of coef
+9. dp ← 2D array of size (k+1) x nn initialized with 0
+10. dp[0][0] ← 1
+11. FOR i FROM 1 TO k
+12.     tmp ← 0
+13.     FOR j FROM nn-1 TO 0
+14.         tmp ← tmp + dp[i-1][nn-1-j]
+15.         tmp ← tmp MOD mod
+16.         dp[i][j] ← coef[j] * tmp
+17.         dp[i][j] ← dp[i][j] MOD mod
+18. result ← sum of dp[k] MOD mod
+19. OUTPUT result

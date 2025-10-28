@@ -1,0 +1,18 @@
+Algorithm:
+1. Import the `Scanner` class from the `java.util` package to read input.
+2. Define the main function `main` with parameters `(String[] args)` and return type `void`.
+3. Declare a `Scanner` object `sc` to read input from the standard input stream.
+4. Read an integer `n` using `sc.nextInt()` representing the size of the array.
+5. Declare an integer array `arr` of size `n`.
+6. Declare an integer variable `sum` and initialize it to 0.
+7. Use a `for` loop to iterate over the range from 0 to `n-1`:
+   - Read an integer input and store it in `arr[i]`.
+   - Add `arr[i]` to `sum`.
+8. Declare an integer variable `c` and initialize it to 0.
+9. Declare a `StringBuilder` object `sb` to construct the output string.
+10. Use a `for` loop to iterate over the range from 0 to `n-1`:
+    - If the condition `(sum - arr[i]) % (n - 1) == 0` and `(sum - arr[i]) / (n - 1) == arr[i]` is true:
+      - Increment `c` by 1.
+      - Append the string representation of `(i + 1)` followed by a space to `sb`.
+11. Use `System.out.println` to print the integer `c`.
+12. Use `System.out.println` to print the string representation of `sb` using `sb.toString()`.

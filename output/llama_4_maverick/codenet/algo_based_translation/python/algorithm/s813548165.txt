@@ -1,0 +1,35 @@
+1. Define a function `interleave_strings` with return type `str` and no parameters.
+2. Declare a variable `N` of type `int`.
+3. Read an integer input from the user and store it in `N`.
+4. Declare variables `S` and `T` of type `str`.
+5. Read a string input from the user, split it into two substrings separated by a space, and store them in `S` and `T`, respectively.
+6. Declare a variable `char_lists` of type `list[str]`.
+7. Initialize `char_lists` as an empty list.
+8. Iterate over the characters in `S` using `enumerate`, storing the index in `i` and the character in `char`.
+9. For each character in `S`, append the character to `char_lists`.
+10. For each character in `S`, append the corresponding character from `T` (at index `i`) to `char_lists`.
+11. Declare a variable `result` of type `str`.
+12. Join the elements of `char_lists` into a single string using the `join` method with an empty separator and store the result in `result`.
+13. Output the value of `result` to the user.
+14. Return `result` from the function `interleave_strings`. 
+
+Alternatively, in a more structured format:
+- Function: `interleave_strings() -> str`
+- Variables: 
+  - `N: int`
+  - `S: str`
+  - `T: str`
+  - `char_lists: list[str]`
+  - `i: int`
+  - `char: str`
+  - `result: str`
+- Logic Flow:
+1. Read `N` from input.
+2. Read `S` and `T` from input.
+3. Initialize `char_lists`.
+4. For `i, char` in `enumerate(S)`:
+   - Append `char` to `char_lists`.
+   - Append `T[i]` to `char_lists`.
+5. `result = "".join(char_lists)`.
+6. Output `result`.
+7. Return `result`.

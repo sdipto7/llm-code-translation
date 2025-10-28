@@ -1,0 +1,40 @@
+```
+Algorithm
+
+1. Function Signature:
+   - None (This script is executed without encapsulating in a function)
+
+2. Variable Declarations:
+   - X: int
+   - N: int
+   - p: List[int]
+   - candidates: Dict[int, List[int]]
+   - i: int
+   - smallest: int
+   - minNum: int
+
+3. Execution Flow:
+   a. Read input:
+      - Read a line of input, split by space, and map to integers. Assign the first value to X and the second to N.
+      - Read another line of input, split by space, and map to integers. Assign the list to p.
+
+   b. Sort the list p.
+
+   c. Initialize an empty dictionary `candidates`.
+
+   d. Loop from -1 to 101 (inclusive):
+      - For each integer i:
+        i. Check if i is in list p:
+           - If true, continue to the next iteration.
+        ii. Calculate the absolute difference abs(X - i).
+        iii. If this difference is not already a key in `candidates`:
+           - Add a new entry: `candidates[abs(X-i)] = [i]`
+        iv. Else, append i to the list at `candidates[abs(X-i)]`.
+
+   e. Find the smallest key in `candidates` and assign it to `smallest`.
+
+   f. Find the smallest integer in `candidates[smallest]` and assign it to `minNum`.
+
+   g. Output:
+      - Print the value of `minNum`.
+```

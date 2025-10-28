@@ -1,0 +1,53 @@
+- Function signatures with parameter and return types:
+  - `main(String[] args): void`
+
+- Variable declarations and data types:
+  - `sc: Scanner`
+  - `line: String[]`
+  - `N: int`
+  - `M: int`
+  - `q: Queue<Job>`
+  - `cnt: int`
+  - `jobQ: Queue<Integer>`
+
+- Complete logic flow in execution order:
+  - Initialize `sc` as new `Scanner` with `System.in`
+  - Read first line and split by " " into `line`
+  - Parse `line[0]` to `N`
+  - Parse `line[1]` to `M`
+  - Initialize `q` as new `PriorityQueue<Job>`
+  - For `i` from `0` to `N-1`:
+    - Read next line and split by " " into `line`
+    - Create new `Job` with `line[0]` and `line[1]` and add to `q`
+  - Initialize `cnt` to `0`
+  - Initialize `jobQ` as new `PriorityQueue<Integer>` with `Collections.reverseOrder()`
+  - For `i` from `1` to `M`:
+    - While `q` is not empty:
+      - Peek `job` from `q`
+      - If `job.a` is less than or equal to `i`:
+        - Remove `job` from `q` and add `job.b` to `jobQ`
+      - Else, break
+    - If `jobQ` is not empty:
+      - Increment `cnt` by `jobQ.poll()`
+  - Print `cnt`
+
+- Control structures:
+  - For loop from `0` to `N-1`
+  - While loop while `q` is not empty
+  - If condition `job.a <= i`
+  - Else condition
+  - For loop from `1` to `M`
+  - If condition `!jobQ.isEmpty()`
+
+- Input/output operations and data processing logic:
+  - Read `N` and `M` from standard input
+  - Read `N` jobs from standard input and add to `q`
+  - Process each day from `1` to `M`, adding available jobs to `jobQ`
+  - Select the job with the highest reward from `jobQ` each day and increment `cnt`
+  - Print the total reward `cnt` after `M` days
+
+- Required libraries, modules, or dependencies:
+  - `java.util.Collections`
+  - `java.util.PriorityQueue`
+  - `java.util.Queue`
+  - `java.util.Scanner`

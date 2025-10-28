@@ -1,0 +1,14 @@
+1. Import required libraries: java.util.*
+2. Define a public class: Main
+3. Define a public static method: main with parameters (String[] args) and return type void
+   1. Declare a variable: sc of type Scanner and initialize it with new Scanner(System.in)
+   2. Declare variables: n and m of type int
+   3. Read input from sc into n and m using nextInt()
+   4. Declare an array: po of size n with elements of type int
+   5. Loop from i = 0 to n-1 with increment i++
+      1. Read input from sc into po[i] using nextInt()
+      2. Subtract po[i] from m
+   6. Sort the array po in ascending order using Arrays.sort()
+   7. Calculate the result: n + m/po[0]
+   8. Output the result to the console using System.out.println()
+4. Required libraries: java.util.* (for Scanner and Arrays classes)

@@ -1,0 +1,42 @@
+**Algorithm:**
+
+1. Import deque from collections module
+2. Read H and W as integers from input
+3. Initialize G as empty list
+4. For i from 0 to H+1:
+   - If i equals 0 or i equals H+1:
+     - Append a string of '#' repeated W+2 times to G
+   - Else:
+     - Read input string, prepend '#', append '#', then add to G
+5. Initialize ans to 0
+6. For sx from 0 to W+1:
+   - For sy from 0 to H+1:
+     - If G[sy][sx] equals '.':
+       - Initialize dist as 2D list of size (H+2) × (W+2) with all elements set to -infinity
+       - Initialize visited as 2D list of size (H+2) × (W+2) with all elements set to -1
+       - Initialize q as deque
+       - Append (sx, sy) to q
+       - Set dist[sy][sx] to 0
+       - Set visited[sy][sx] to 1
+       - While q is not empty:
+         - Pop front element from q into (x, y)
+         - If G[y][x+1] equals '.' and visited[y][x+1] equals -1:
+           - Append (x+1, y) to q
+           - Set dist[y][x+1] to dist[y][x] + 1
+           - Set visited[y][x+1] to 1
+         - If G[y][x-1] equals '.' and visited[y][x-1] equals -1:
+           - Append (x-1, y) to q
+           - Set dist[y][x-1] to dist[y][x] + 1
+           - Set visited[y][x-1] to 1
+         - If G[y+1][x] equals '.' and visited[y+1][x] equals -1:
+           - Append (x, y+1) to q
+           - Set dist[y+1][x] to dist[y][x] + 1
+           - Set visited[y+1][x] to 1
+         - If G[y-1][x] equals '.' and visited[y-1][x] equals -1:
+           - Append (x, y-1) to q
+           - Set dist[y-1][x] to dist[y][x] + 1
+           - Set visited[y-1][x] to 1
+       - For i from 0 to W+1:
+         - For j from 0 to H+1:
+           - Set ans to maximum of ans and dist[j][i]
+7. Print ans

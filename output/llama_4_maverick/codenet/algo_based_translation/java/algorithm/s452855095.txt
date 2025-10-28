@@ -1,0 +1,29 @@
+### Algorithm
+
+1. Define a function `main` with no parameters and no return type.
+   - Declare a `Scanner` object named `sc` to read from standard input.
+   - Declare a `PrintWriter` object named `out` to write to standard output.
+
+2. Read an integer `n` from standard input using `sc.nextInt()`.
+   - Declare an integer array `arr` of size `n`.
+   - Iterate from `0` to `n-1` using a `for` loop.
+     - Read an integer into `arr[i]` using `sc.nextInt()`.
+
+3. Initialize an integer `cnt` to `0` and a boolean `flag` to `true`.
+   - Enter an infinite `while` loop (`while(true)`).
+     - Iterate from `0` to `n-1` using a `for` loop.
+       - Check if `arr[i]` is odd by verifying if `arr[i] % 2 != 0`.
+         - If `arr[i]` is odd, set `flag` to `false` and break the loop.
+       - If `arr[i]` is even, divide `arr[i]` by `2` (`arr[i] = arr[i] / 2`).
+
+     - Check if `flag` is `true`.
+       - If `flag` is `true`, increment `cnt` by `1`.
+       - If `flag` is `false`, break the `while` loop.
+
+4. Write the value of `cnt` to standard output using `out.println(cnt)`.
+   - Flush the output buffer using `out.flush()`.
+
+### Required Libraries and Modules
+
+- `java.io.PrintWriter`
+- `java.util.Scanner`

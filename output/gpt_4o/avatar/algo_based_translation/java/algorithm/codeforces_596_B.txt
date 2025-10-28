@@ -1,0 +1,19 @@
+1. Import the necessary module: `java.util.Scanner`.
+
+2. Define the main function: `public static void main(String[] args)`.
+
+3. Initialize a Scanner object to read input: `Scanner scan = new Scanner(System.in)`.
+
+4. Declare an integer variable `n` to store the size of the array and read an integer input from the user: `int n = scan.nextInt()`.
+
+5. Declare an array `arr` of type `long` with size `n`: `long[] arr = new long[n]`.
+
+6. Use a for loop to iterate over the range from `0` to `n-1`:
+   - For each iteration, read an integer from the input and store it in the array `arr` at the current index `i`: `arr[i] = scan.nextInt()`.
+
+7. Declare a long variable `answer` and initialize it with the absolute value of the first element of the array: `long answer = Math.abs(arr[0])`.
+
+8. Use a for loop to iterate over the range from `1` to `n-1`:
+   - For each iteration, add the absolute difference between the current element and the previous element in the array to `answer`: `answer += Math.abs(arr[i] - arr[i - 1])`.
+
+9. Print the final value of `answer`: `System.out.println(answer)`.

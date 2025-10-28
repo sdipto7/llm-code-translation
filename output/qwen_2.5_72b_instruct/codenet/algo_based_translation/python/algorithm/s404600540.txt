@@ -1,0 +1,27 @@
+Function signature: main() -> None
+
+Variable declarations:
+- q: int
+- h: int
+- s: int
+- d: int
+- n: int
+- min_1: int
+- min_2: int
+
+Logic flow:
+1. Read four integers q, h, s, d from input, separated by spaces.
+2. Read integer n from input.
+3. Calculate min_1 as the minimum value among q*4, h*2, q*2+h, and s.
+4. Calculate min_2 as the minimum value between min_1*2 and d.
+5. Print the result of the expression (n % 2)*min_1 + (n // 2)*min_2.
+
+Input/output operations:
+- Input: Two lines of integers. The first line contains four integers q, h, s, d. The second line contains one integer n.
+- Output: A single integer representing the calculated result.
+
+Control structures:
+- No loops or conditionals present in the code.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules required.

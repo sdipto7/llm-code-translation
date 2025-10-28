@@ -1,0 +1,45 @@
+1. **Function Signature**
+   - `main(args: String[]): void`
+
+2. **Variable Declarations**
+   - `BufferedReader br`: For reading input
+   - `String line`: To hold input lines
+   - `String[] words`: For splitting input lines (not used in final code)
+   - `int N`: Total number of items
+   - `int M`: Number of entries
+   - `int[] shortage`: Array to store shortage values for each entry
+   - `int A`: Temporary storage for parsed integer values from input
+   - `int ans`: Accumulator for sum of shortages
+
+3. **Logic Flow**
+   - Initialize `BufferedReader` to read from standard input.
+   - Read a line from input and assign it to `line`.
+   - Parse `N` and `M` from the `line` using `substring` and `indexOf`:
+     - `N = parseInt(line.substring(0, line.indexOf(' ')))`
+     - `M = parseInt(line.substring(line.indexOf(' ') + 1))`
+   - Initialize `shortage` array with size `M`.
+   - Loop from `i = 0` to `M - 1` to process each entry:
+     - Read a line from input and assign it to `line`.
+     - Parse `A` from `line` using `substring` and `indexOf`.
+     - Calculate shortage: If `N > A`, set `shortage[i] = N - A`; otherwise, set `shortage[i] = 0`.
+   - Sort the `shortage` array using `Arrays.sort`.
+   - Initialize `ans` to 0.
+   - Loop from `i = 0` to `M - 2`:
+     - Accumulate `shortage[i]` to `ans`.
+   - Print the value of `ans`.
+
+4. **Control Structures**
+   - `for` loop (iterates `M` times): To calculate shortages.
+   - Conditional within loop: If `N > A`, compute shortage, else set to 0.
+   - `for` loop (iterates `M - 1` times): To sum all except the largest shortage value.
+
+5. **Input/Output Operations**
+   - Use `BufferedReader` to read input lines.
+   - Use `System.out.println` to output the result.
+
+6. **Libraries/Dependencies**
+   - `java.io.BufferedReader`
+   - `java.io.InputStreamReader`
+   - `java.io.IOException`
+   - `java.util.Arrays`
+   - `java.lang.Integer.parseInt`

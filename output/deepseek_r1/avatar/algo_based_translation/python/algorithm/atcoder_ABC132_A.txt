@@ -1,0 +1,40 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures**  
+- `main(): void`  
+
+**Variables**  
+- `S: string` (input string)  
+- `c: dictionary<char, int>` (character frequency map)  
+- `Sa: set<char>` (unique character set)  
+
+**Steps**  
+1. Read input string `S` from standard input  
+2. Initialize `c` as a frequency counter mapping characters to their occurrence count in `S`  
+3. Initialize `Sa` by converting `S` into a set of unique characters  
+4. If `len(Sa) != 2`:  
+    a. Print "No" to standard output  
+    b. Terminate execution  
+5. For each character `i` in `Sa`:  
+    a. If `c[i] != 2`:  
+        i. Print "No" to standard output  
+        ii. Terminate execution  
+6. Print "Yes" to standard output  
+
+**Control Flow Structures**  
+- Step 4: Conditional check to ensure exactly 2 unique characters  
+- Step 5: Iterative check over unique characters to validate frequency of 2  
+
+**Input/Output Operations**  
+- Input: Single string via `stdin`  
+- Output:  
+    - "No" if validation fails (steps 4a, 5a.i)  
+    - "Yes" if validation succeeds (step 6)  
+
+**Error Handling & Edge Cases**  
+- Immediate termination on failed validation (incorrect character count or uniqueness)  
+- Handles empty/null input implicitly via character frequency checks  
+
+**External Dependencies**  
+- Frequency counter implementation (equivalent to `collections.Counter` in Python)  
+- Set data structure for uniqueness checks

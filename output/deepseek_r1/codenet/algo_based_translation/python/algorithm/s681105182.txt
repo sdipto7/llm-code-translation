@@ -1,0 +1,34 @@
+Here is the Rust code translated from the original Python algorithm:
+
+```rust
+use std::io::{self, BufRead};
+
+fn main() {
+    let stdin = io::stdin();
+    let mut lines = stdin.lock().lines();
+    
+    let n_val: usize = lines.next().unwrap().unwrap().trim().parse().unwrap();
+    let a_line = lines.next().unwrap().unwrap();
+    let mut a_li: Vec<i64> = a_line
+        .trim()
+        .split_whitespace()
+        .map(|s| s.parse().unwrap())
+        .collect();
+    
+    a_li.sort();
+    
+    let n = *a_li.last().unwrap();
+    let mut min_diff = f64::INFINITY;
+    let mut r = 0;
+    
+    for &a in &a_li[..a_li.len() - 1] {
+        let diff = (n as f64 / 2.0 - a as f64).abs();
+        if diff < min_diff {
+            min_diff = diff;
+            r = a;
+        }
+    }
+    
+    println!("{} {}", n, r);
+}
+```

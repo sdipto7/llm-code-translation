@@ -1,0 +1,16 @@
+def G(a: int, b: int) -> int:
+    while a % b != 0:
+        a, b = b, a % b
+    return b
+
+def L(a: int, b: int) -> int:
+    return a * b // G(a, b)
+
+l: list[str] = input().split(' ')
+x: int = int(l[0])
+y: int = int(l[1])
+a: int = int(l[2])
+b: int = int(l[3])
+lcm: int = L(x, y)
+result: int = b // lcm - (a - 1) // lcm
+print(result)

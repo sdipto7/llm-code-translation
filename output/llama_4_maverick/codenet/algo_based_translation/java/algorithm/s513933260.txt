@@ -1,0 +1,25 @@
+1. Import the `java.util.Scanner` module.
+2. Define a class `Main` with a `main` method that takes an array of `String` arguments and returns `void`.
+3. Within the `main` method:
+   - Declare a `Scanner` object named `stdIn` and initialize it with `System.in`.
+   - Declare a `long` variable `n` and assign it the next `long` value from `stdIn`.
+   - Calculate the result of the expression `n * (n + 1) / 2 - n` and store it in an implicit variable.
+   - Print the result to `System.out` followed by a newline.
+4. The program terminates after executing the `main` method. 
+
+Function signature: `public static void main(String[] args)`
+
+- Parameter: `args` of type `String[]`
+- Return type: `void`
+
+Variable declarations and data types:
+- `stdIn` of type `Scanner`
+- `n` of type `long`
+
+Control structures: None
+
+Input/Output operations:
+- Read a `long` value from `System.in` using `stdIn.nextLong()`.
+- Write the result to `System.out` using `System.out.println()`.
+
+Required libraries or modules: `java.util.Scanner`

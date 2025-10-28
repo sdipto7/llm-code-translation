@@ -1,0 +1,17 @@
+1. Read height (h) and width (w) from input
+2. Initialize a 2D graph with size h x w
+3. For each row in the graph:
+   1. Read a string of characters from input
+   2. For each character in the string:
+      1. If character is '#', set corresponding graph cell to 0
+      2. Otherwise, set corresponding graph cell to infinity
+4. For each column from left to second last:
+   1. Update the value of the next column's cells to be the minimum of its current value and the value of the previous column's cell plus 1
+5. For each column from right to second:
+   1. Update the value of the previous column's cells to be the minimum of its current value and the value of the next column's cell plus 1
+6. For each row from top to second last:
+   1. Update the value of the next row's cells to be the minimum of its current value and the value of the previous row's cell plus 1
+7. For each row from bottom to second:
+   1. Update the value of the previous row's cells to be the minimum of its current value and the value of the next row's cell plus 1
+8. Find the maximum value in the graph
+9. Output the maximum value as an integer

@@ -1,0 +1,51 @@
+**Function Signature:**
+- main() -> None
+
+**Variables:**
+- n: int, k: int
+- info: List[List[int]]
+- selected: List[List[int]]
+- selected_only: List[int]
+- selected_chohuku: List[int]
+- unselected_only: List[int]
+- memo: Dict[int, int]
+- cnt_type: int
+- sum_select: int
+- ans: int
+- tmp: int
+- t: int, d: int
+- i: int
+
+**Required Libraries:**
+- from operator import itemgetter
+
+**Algorithm:**
+1. Read n and k from input
+2. Read n lines of input, each containing two integers, store in info list
+3. Sort info list in descending order by second element (d)
+4. Select first k elements from sorted info into selected list
+5. Initialize empty lists: selected_only, selected_chohuku, unselected_only
+6. Initialize empty dictionary: memo
+7. For each element (t, d) in selected:
+   - If t not in memo:
+     - Add t to memo with value 1
+     - Append d to selected_only
+   - Else:
+     - Append d to selected_chohuku
+8. Set cnt_type = length of memo
+9. For each element (t, d) in remaining elements of info (from index k to end):
+   - If t not in memo:
+     - Add t to memo with value 1
+     - Append d to unselected_only
+10. Calculate sum_select = sum(selected_chohuku) + sum(selected_only)
+11. Calculate ans = cnt_type² + sum_select
+12. Reverse unselected_only list
+13. For i in range(min(len(selected_chohuku), len(unselected_only))):
+    - Increment cnt_type by 1
+    - Add last element of unselected_only to sum_select
+    - Subtract last element of selected_chohuku from sum_select
+    - Remove last element from unselected_only
+    - Remove last element from selected_chohuku
+    - Calculate tmp = cnt_type² + sum_select
+    - Set ans = max(ans, tmp)
+14. Print ans

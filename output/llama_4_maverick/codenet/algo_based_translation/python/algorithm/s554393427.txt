@@ -1,0 +1,13 @@
+1. Read an integer N from input.
+2. Declare an empty list `mo` to store currency data.
+3. Iterate N times:
+   - Read a string input, split it into two parts: `x` and `u`.
+   - Convert `x` to a float.
+   - Append a list containing `x` and `u` to `mo`.
+4. Initialize a variable `okz` to 0.
+5. Iterate over each element `i` in `mo`:
+   - If the second element of `i` (`i[1]`) equals "JPY", 
+     - Add the first element of `i` (`i[0]`) to `okz`.
+   - Else, 
+     - Add the product of `i[0]` and 380000 to `okz`.
+6. Output the value of `okz`.

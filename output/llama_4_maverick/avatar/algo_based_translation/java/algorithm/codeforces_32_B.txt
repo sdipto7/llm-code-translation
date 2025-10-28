@@ -1,0 +1,11 @@
+1. Read input string from the user.
+2. Convert the input string into a character array.
+3. Initialize a boolean flag to false.
+4. Iterate over each character in the character array.
+5. If the character is '.', check the boolean flag.
+6. If the flag is true, print '1' and set the flag to false.
+7. If the flag is false, print '0'.
+8. If the character is not '.', check the boolean flag.
+9. If the flag is true, print '2' and set the flag to false.
+10. If the flag is false, set the flag to true.
+11. Close the input stream.

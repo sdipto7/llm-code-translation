@@ -1,0 +1,21 @@
+Algorithm:
+- Import the `java.util.Scanner` library.
+- Define a class `Main`.
+- Define the `main` method with `void` return type and `String[] args` parameter.
+- Initialize a `Scanner` object `sc` to read input from the standard input.
+- Begin a while loop that continues as long as there are more tokens in the input using `sc.hasNext()`.
+  - Read the next token as a `String` named `str`.
+  - Split the `str` using the delimiter `","` to create a `String[]` array `strArr`.
+  - Declare an `int[]` array `l` of size 10.
+  - Declare an integer `d` initialized to 0.
+  - Begin a for loop iterating over `i` from 0 to 9 (inclusive).
+    - Parse the `i`-th element of `strArr` as an integer and assign it to `l[i]`.
+    - Add `l[i]` to `d`.
+  - Declare an `int[]` array `v` with two elements, parsing the 10th and 11th elements of `strArr` as integers.
+  - Calculate the time `t` as a `double`, using the formula `t = (double) d / (v[0] + v[1])`.
+  - Reset `d` to 0.
+  - Begin a for loop iterating over `i` from 0 to 10 (inclusive).
+    - Check if `v[0] * t <= d`.
+      - If true, print the value of `i`.
+      - Break out of the loop.
+    - Otherwise, add `l[i]` to `d`.

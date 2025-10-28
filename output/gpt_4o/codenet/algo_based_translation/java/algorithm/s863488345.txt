@@ -1,0 +1,100 @@
+```plaintext
+1. Import the `java.util.Scanner` library.
+
+2. Define the `Main` class:
+   - Declare static integer variables: `mapNum`, `h`, `w`, `bomberActNum`, `x`, `y`, `xOfBomber`, `yOfBomber`, `s`, `k`, `a`, `b`.
+   - Declare static character 2D array `battleTown`.
+   - Declare static character array `bomberAct`.
+   - Declare static integer array `tank` with size 2.
+
+3. Define the `main` method:
+   - Create a `Scanner` object `sc`.
+   - Read an integer from input and assign it to `mapNum`.
+
+4. Loop from `i = 0` to `mapNum - 1`:
+   - If `1 <= i < mapNum`, print a new line.
+   - Read two integers from input and assign them to `h` and `w`.
+   - Initialize `battleTown` as a 2D character array with dimensions `[h][w]`.
+
+5. Loop from `j = 0` to `h - 1`:
+   - Read a string from input, convert it to a character array, and assign it to `c`.
+   - Loop from `k = 0` to `w - 1`:
+     - Assign `c[k]` to `battleTown[j][k]`.
+     - If `battleTown[j][k]` is either '^', 'v', '<', or '>':
+       - Assign `j` to `x` and `k` to `y`.
+
+6. Read an integer from input and assign it to `bomberActNum`.
+7. Read a string from input, convert it to a character array, and assign it to `bomberAct`.
+
+8. If `0 <= x <= h` and `0 <= y <= w`:
+   - Loop from `l = 0` to `bomberActNum - 1`:
+     - If `bomberAct[l]` is 'U':
+       - Set `battleTown[x][y]` to '^'.
+       - If `x - 1 >= 0` and `battleTown[x-1][y]` is '.':
+         - Set `battleTown[x-1][y]` to '^'.
+         - Set `battleTown[x][y]` to '.'.
+         - Decrement `x` by 1.
+     - If `bomberAct[l]` is 'D':
+       - Set `battleTown[x][y]` to 'v'.
+       - If `x + 1 < h` and `battleTown[x+1][y]` is '.':
+         - Set `battleTown[x+1][y]` to 'v'.
+         - Set `battleTown[x][y]` to '.'.
+         - Increment `x` by 1.
+     - If `bomberAct[l]` is 'L':
+       - Set `battleTown[x][y]` to '<'.
+       - If `y - 1 >= 0` and `battleTown[x][y-1]` is '.':
+         - Set `battleTown[x][y-1]` to '<'.
+         - Set `battleTown[x][y]` to '.'.
+         - Decrement `y` by 1.
+     - If `bomberAct[l]` is 'R':
+       - Set `battleTown[x][y]` to '>'.
+       - If `y + 1 < w` and `battleTown[x][y+1]` is '.':
+         - Set `battleTown[x][y+1]` to '>'.
+         - Set `battleTown[x][y]` to '.'.
+         - Increment `y` by 1.
+     - If `bomberAct[l]` is 'S':
+       - Assign `x` to `xOfBomber`.
+       - Assign `y` to `yOfBomber`.
+       - Call `moveBomber(xOfBomber, yOfBomber)`.
+
+9. Loop from `s = 0` to `h - 1`:
+   - Loop from `k = 0` to `w - 1`:
+     - Print `battleTown[s][k]` without a new line.
+   - Print a new line.
+
+10. Define `moveBomber` function with parameters `a` (int) and `b` (int):
+    - If `0 <= a <= h` and `0 <= b <= w`:
+      - If `battleTown[a][b]` is '^':
+        - Loop from `i = a - 1` to `0`:
+          - If `a <= 0`, return.
+          - If `battleTown[a-1][b]` is '*':
+            - Set `battleTown[a-1][b]` to '.'.
+            - Return.
+          - If `battleTown[a-1][b]` is '#', return.
+          - Decrement `a` by 1.
+          - If `a == 0`, return.
+      - If `battleTown[a][b]` is 'v':
+        - Loop from `i = a + 1` to `h - 1`:
+          - If `battleTown[a+1][b]` is '*':
+            - Set `battleTown[a+1][b]` to '.'.
+            - Return.
+          - If `battleTown[a+1][b]` is '#', return.
+          - Increment `a` by 1.
+          - If `a == h`, return.
+      - If `battleTown[a][b]` is '<':
+        - Loop from `i = b - 1` to `0`:
+          - If `battleTown[a][b-1]` is '*':
+            - Set `battleTown[a][b-1]` to '.'.
+            - Return.
+          - If `battleTown[a][b-1]` is '#', return.
+          - Decrement `b` by 1.
+          - If `b == 0`, return.
+      - If `battleTown[a][b]` is '>':
+        - Loop from `i = b + 1` to `w - 1`:
+          - If `battleTown[a][b+1]` is '*':
+            - Set `battleTown[a][b+1]` to '.'.
+            - Return.
+          - If `battleTown[a][b+1]` is '#', return.
+          - Increment `b` by 1.
+          - If `b == w`, return.
+```

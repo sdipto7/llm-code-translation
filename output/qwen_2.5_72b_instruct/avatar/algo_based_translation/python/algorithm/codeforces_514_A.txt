@@ -1,0 +1,20 @@
+- Function signature: `main() -> None`
+- Variable declarations:
+  - `ip: str`
+  - `st: str`
+  - `i: str`
+  - `n: int`
+- Input operation: `ip = input()`
+- Conditional structure: `if len(ip) != 1:`
+  - Conditional structure: `if ip[0] == "9":`
+    - `st = "9"`
+    - `ip = ip[1:]`
+  - Loop structure: `for i in ip:`
+    - Conditional structure: `if int(i) > 4:`
+      - `n = 9 - int(i)`
+      - `st += str(n)`
+    - Else:
+      - `st += i`
+- Else:
+  - `st = ip`
+- Output operation: `print(int(st))`

@@ -1,0 +1,7 @@
+1. Import the java.util.Scanner library.
+2. Define a public class named Main with a public static void main method that takes a String array as a parameter and throws Exception.
+3. Declare a Scanner object named sc and initialize it with System.in.
+4. Declare an integer variable x and assign it the value of the next integer input from sc using sc.nextInt().
+5. Close the Scanner object sc using sc.close().
+6. Declare an integer variable ans and calculate its value using the formula (2199 - x) / 200.
+7. Output the value of ans to the console using System.out.println(ans).

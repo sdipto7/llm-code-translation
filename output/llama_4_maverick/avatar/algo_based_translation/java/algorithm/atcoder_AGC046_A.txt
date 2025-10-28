@@ -1,0 +1,9 @@
+1. Read an integer input from the user and store it in a variable x.
+2. Initialize a counter variable count to 0.
+3. Store the value of x in a temporary variable tmp.
+4. Reset the value of x to 0.
+5. Enter a loop that continues until x equals 360.
+6. Inside the loop, add tmp to x.
+7. Check if x is greater than 360. If true, subtract 360 from x.
+8. Increment the counter count by 1.
+9. Once the loop ends, output the value of count.

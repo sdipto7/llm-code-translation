@@ -1,0 +1,46 @@
+**Function Signature:**
+- `main(String[] args) throws IOException`
+
+**Variables:**
+- `outputStream: OutputStream = System.out`
+- `out: PrintWriter = new PrintWriter(outputStream)`
+- `br: BufferedReader = new BufferedReader(new InputStreamReader(System.in))`
+- `t: int = Integer.parseInt(br.readLine())`
+- `s: String[]`
+- `pqmax: PriorityQueue<Integer> = new PriorityQueue<>()`
+- `pqmin: PriorityQueue<Integer> = new PriorityQueue<>(new Comparator<Integer>() { public int compare(Integer x, Integer y) { return y - x; } })`
+- `sumMin: long = 0`
+- `sumMax: long = 0`
+- `sumb: long = 0`
+- `min: int = 0`
+
+**Logic Flow:**
+1. Read integer `t` from input
+2. While `t > 0`:
+   - Read next line and split into string array `s`
+   - If first character of `s[0]` is '2':
+     - Calculate `ans = min * pqmin.size() - sumMin`
+     - Calculate `ans1 = sumMax - min * pqmax.size()`
+     - Print `min` and `ans + ans1 + sumb`
+   - Else:
+     - Parse `s[1]` to integer `in`
+     - Add `Long.parseLong(s[2])` to `sumb`
+     - If `in > min`:
+       - Add `in` to `pqmax`
+       - Add `in` to `sumMax`
+     - Else:
+       - Add `in` to `pqmin`
+       - Add `in` to `sumMin`
+     - If `pqmin.size() > pqmax.size()`:
+       - Move top element from `pqmin` to `pqmax`
+       - Update `sumMax` and `sumMin` accordingly
+     - If `pqmin.size() < pqmax.size()`:
+       - Move top element from `pqmax` to `pqmin`
+       - Update `sumMax` and `sumMin` accordingly
+     - Set `min = pqmin.peek()`
+   - Decrement `t`
+3. Close `out`
+
+**Required Libraries:**
+- `java.io.*`
+- `java.util.*`

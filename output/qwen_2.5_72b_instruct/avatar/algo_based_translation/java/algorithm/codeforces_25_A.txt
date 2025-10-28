@@ -1,0 +1,38 @@
+Function signature: main(String[] args) - No return type
+
+Variable declarations:
+- Scanner ob - for input operations
+- int n - number of elements in the array
+- int[] array - array to store integers with size n+1
+- int odd - counter for odd numbers
+- int even - counter for even numbers
+- int odd_ind - index of the last odd number found
+- int even_ind - index of the last even number found
+
+Logic flow and control structures:
+
+1. Create a Scanner object to read input
+2. Read integer n from input
+3. Initialize array of size n+1
+4. Loop from 1 to n (inclusive):
+   - Read integer from input and store it in array[i]
+5. Initialize odd, even, odd_ind, even_ind to 0
+6. Loop from 1 to n (inclusive):
+   - If array[i] is even:
+     - Increment even counter
+     - Set even_ind to current index i
+   - Else:
+     - Increment odd counter
+     - Set odd_ind to current index i
+7. If odd counter is greater than even counter:
+   - Print even_ind
+   - Else:
+     - Print odd_ind
+
+Input/output operations:
+- Read integer n from standard input
+- Read n integers from standard input and store in array
+- Print either even_ind or odd_ind based on comparison of odd and even counters
+
+Required libraries, modules, or dependencies:
+- java.util.Scanner

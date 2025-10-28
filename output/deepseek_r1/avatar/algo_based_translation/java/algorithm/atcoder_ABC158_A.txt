@@ -1,0 +1,37 @@
+- **Function Signatures**:
+  - `public static void main(String[] args)`
+  - `public void solve(int testNumber, Scanner in, PrintWriter out)`
+
+- **Variable Declarations**:
+  - `InputStream inputStream = System.in`
+  - `OutputStream outputStream = System.out`
+  - `Scanner in = new Scanner(inputStream)`
+  - `PrintWriter out = new PrintWriter(outputStream)`
+  - `String s = in.next()`
+
+- **Logic Flow**:
+  1. Initialize input stream from standard input.
+  2. Initialize output stream to standard output.
+  3. Create `Scanner` object to read input.
+  4. Create `PrintWriter` object to write output.
+  5. Instantiate `AStationAndBus` solver.
+  6. Invoke `solve` method with test number 1, input scanner, and output writer.
+  7. Read input string `s`.
+  8. Check if `s` contains both "A" and "B".
+  9. Print "Yes" if condition is true; otherwise, print "No".
+  10. Close output writer.
+
+- **Control Structures**:
+  - `if` condition: `s.contains("A") && s.contains("B")`
+  - `else` branch for the inverse case.
+
+- **Input/Output Operations**:
+  - Read input via `Scanner.next()`.
+  - Output result via `PrintWriter.println()`.
+
+- **Dependencies**:
+  - `java.io.OutputStream`
+  - `java.io.IOException`
+  - `java.io.InputStream`
+  - `java.io.PrintWriter`
+  - `java.util.Scanner`

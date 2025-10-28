@@ -1,0 +1,16 @@
+1. Import required libraries: java.math and java.util.Scanner
+2. Define a class Main with a public static void main method taking a String array as a parameter
+3. Declare BigInteger variables a, b, c
+4. Create a new Scanner object cin to read from System.in
+5. Enter a while loop that continues as long as cin.hasNext() returns true
+6. Inside the loop:
+   - Read the next BigInteger from cin into a
+   - Read the next BigInteger from cin into b
+   - Calculate c as the maximum of a and b using a.max(b)
+   - Check if a equals c and b does not equal c
+     - If true, print "GREATER" to System.out
+   - Else check if b equals c and a does not equal c
+     - If true, print "LESS" to System.out
+   - Else print "EQUAL" to System.out
+7. After the loop, close the Scanner object cin
+8. The main method returns, ending the program.

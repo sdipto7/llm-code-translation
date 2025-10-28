@@ -1,0 +1,12 @@
+1. Read input line from stdin
+2. Split input string by space into list of strings
+3. Convert each string in list to integer
+4. Assign first integer to variable h (type: int)
+5. Assign second integer to variable a (type: int)
+6. Calculate integer division: sho = h // a (type: int)
+7. Calculate remainder: am = h % a (type: int)
+8. If am != 0:
+   - Increment sho by 1
+9. Else:
+   - Do nothing (pass)
+10. Print sho value to stdout

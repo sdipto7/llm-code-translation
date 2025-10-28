@@ -1,0 +1,12 @@
+1. Read the number of input strings.
+2. Initialize a count array of size 5 with all elements set to 0.
+3. Iterate over the range of the input number.
+4. For each iteration, read a string.
+5. Check the first character of the string.
+6. If the first character is 'M', increment the count at index 0.
+7. If the first character is 'A', increment the count at index 1.
+8. If the first character is 'R', increment the count at index 2.
+9. If the first character is 'C', increment the count at index 3.
+10. If the first character is 'H', increment the count at index 4.
+11. Calculate the result by summing the products of all possible combinations of three counts from the count array.
+12. Output the calculated result.

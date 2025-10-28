@@ -1,0 +1,33 @@
+**Function Signature:**
+- No explicit function defined; main script execution.
+
+**Input Operations:**
+- Read integers `n` and `m` from standard input.
+- Initialize list `out` of size `n` with zeros (type: integer list).
+- Initialize list `comp` of size `n` with values `[2, 3, ..., n+1]` (type: integer list).
+- For `m` iterations:
+  - Read integers `l`, `r`, `x` from standard input.
+
+**Logic Flow:**
+1. Set `t = l`.
+2. While `t <= r`:
+   - Let `next_val = comp[t - 1]`.
+   - If `out[t - 1] == 0` and `t != x`:
+     - Set `out[t - 1] = x`.
+   - Set `comp[t - 1] = r + 1` if `t >= x`, else `x`.
+   - Set `t = next_val`.
+3. After processing all iterations, print the `out` list.
+
+**Control Structures:**
+- For-loop: `for _ in range(m)`
+- While-loop: `while t <= r`
+- Conditional: `if out[t - 1] == 0 and t != x`
+
+**Output Operation:**
+- Print the `out` list with space-separated values.
+
+**Data Types:**
+- All variables are integers or integer lists.
+
+**Dependencies:**
+- None (uses built-in functions only).

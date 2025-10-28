@@ -1,0 +1,48 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+  - Parameters: `String[] args` (command-line arguments)
+  - Return: `void`
+
+**Variables:**
+- `Scanner sc` (initialized with `System.in`)
+- `int N` (input value from scanner)
+- `int K` (input value from scanner)
+- `StringBuilder S` (initialized with input string)
+- `boolean firstTime = true`
+- `int step = 1`
+- `StringBuilder T` (temporary reversed version of `S`)
+- `StringBuilder revU` (reverse of `S + T`)
+- `String sDash` (current candidate string)
+- `String tmp` (substring of `revU` during comparisons)
+
+**Logic Flow:**
+1. Read `N`, `K`, and initial string `S` via `Scanner`.
+2. Enter loop while `K > 0`:
+   - Create `T` as reversed `S`.
+   - Create `revU` as reversed concatenation of `S` and `T`.
+   - Initialize `sDash` to `S.toString()`.
+   - Loop `i` from `N` downto `0` with step size `step`:
+     - Extract `tmp` as `revU.substring(i, i + N)`.
+     - If `sDash` lexicographically > `tmp`, update `sDash` to `tmp`.
+     - Else, break loop if `firstTime` is false.
+   - If `firstTime` is true:
+     - Check `if (Math.pow(2, K) > N)`:
+       - If true, output `N` repetitions of `sDash.charAt(0)` and terminate.
+     - Set `firstTime = false`.
+   - Else, double `step` (`step += step`).
+   - Decrement `K` by 1.
+   - Update `S` to reversed `sDash`.
+3. After loop, reverse `S` and print it.
+
+**Control Structures:**
+- `while (K > 0)`
+- Nested `for (int i = N; i >= 0; i -= step)`
+- `if (sDash.compareTo(tmp) > 0) ... else ...`
+- `if (firstTime)` block with nested `if (Math.pow(2, K) > N)`
+
+**Input/Output Operations:**
+- Read inputs: `N = sc.nextInt()`, `K = sc.nextInt()`, `S = new StringBuilder(sc.next())`.
+- Output via `System.out.print(c)` and `System.out.println()`.
+
+**Dependencies:**
+- `java.util.Scanner` (required for input handling).

@@ -1,0 +1,15 @@
+- Import necessary modules: `java.io.BufferedReader`, `java.io.IOException`, `java.io.InputStreamReader`.
+- Declare a public class `Main`.
+- Define two public static final integer constants: `BIG_NUM` set to 2000000000, `MOD` set to 1000000007.
+- Create a `main` method with no parameters and void return type.
+  - Initialize a `BufferedReader` object `br` using `InputStreamReader(System.in)`.
+  - Declare an integer variable `ans`.
+  - Start an infinite loop.
+    - Inside the loop, execute the following:
+      - Attempt to read a line of input from the user using `br.readLine()` and store it in a string variable `inputed`.
+      - Check if `inputed` is a single character string "0". If true, break out of the loop.
+      - Set `ans` to 0.
+      - Iterate over each character `i` in the string `inputed` from index 0 to `inputed.length() - 1`.
+        - Convert the character at position `i` to an integer by subtracting the ASCII value of '0' and add the result to `ans`.
+      - Print the value of `ans` followed by a newline character using `System.out.printf`.
+    - Handle `IOException` if thrown during input reading and print stack trace.

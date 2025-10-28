@@ -1,0 +1,25 @@
+**Function Signature:**
+- `main(String[] args) throws IOException`
+
+**Variables:**
+- `sc: Scanner` (input scanner)
+- `s: String[]` (split first input string)
+- `t: String[]` (split second input string)
+- `x: LocalTime` (constructed from s[0] and s[1])
+- `y: LocalTime` (constructed from t[0] and t[1])
+
+**Libraries/Dependencies:**
+- `java.io.IOException`
+- `java.time.LocalTime`
+- `java.util.Scanner`
+
+**Logic Flow:**
+1. Create Scanner object reading from System.in
+2. Read next token and split by ":" into array s
+3. Read next token and split by ":" into array t
+4. Parse s[0] to int for hours, s[1] to int for minutes
+5. Construct LocalTime x from parsed hours and minutes
+6. Parse t[0] to int for hours, t[1] to int for minutes
+7. Construct LocalTime y from parsed hours and minutes
+8. Subtract y's hours and minutes from x
+9. Print resulting LocalTime

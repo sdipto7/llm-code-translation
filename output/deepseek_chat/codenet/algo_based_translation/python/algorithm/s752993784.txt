@@ -1,0 +1,47 @@
+**Function Signature:**
+- No explicit function defined; code executes at module level
+- Input: string from stdin
+- Output: integer printed to stdout
+
+**Variables:**
+- s: list of characters (from input string)
+- mods: list of integers, length = len(s) (unused in calculation)
+- countRemainder: list of integers, length = 2019
+- cnt: integer
+- m: integer
+- mod: integer
+- i: integer (loop counter)
+
+**Data Types:**
+- All variables are integers except s which is list of characters
+
+**Logic Flow:**
+1. Read input string and convert to list of characters
+2. Initialize mods as zero list with length equal to input string length
+3. Initialize countRemainder as zero list with 2019 elements
+4. Initialize cnt to 0
+5. Initialize m to 1
+6. Initialize mod to 0
+7. For i from 0 to len(s)-1 (inclusive):
+   - Calculate index: len(s) - i - 1
+   - Update mod: mod + (digit at calculated index) × m
+   - Apply mod 2019: mod = mod % 2019
+   - Update m: m = m × 10
+   - Apply mod 2019 to m: m = m % 2019
+   - Increment countRemainder[mod] by 1
+8. Increment countRemainder[0] by 1
+9. For i from 0 to 2018 (inclusive):
+   - Calculate combinations: countRemainder[i] × (countRemainder[i] - 1) / 2
+   - Add integer result to cnt
+10. Print cnt
+
+**Control Structures:**
+- For loop: for i in range(len(s))
+- For loop: for i in range(2019)
+
+**Input/Output:**
+- Input: single string from stdin
+- Output: single integer to stdout
+
+**Dependencies:**
+- None (uses built-in functions only)

@@ -1,0 +1,29 @@
+Function signature:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `Scanner scanner: Scanner`
+- `int n: int`
+- `Set<Integer> set: Set<Integer>`
+- `i: int` (loop variable)
+
+Logic flow in execution order:
+1. Create a `Scanner` object to read input from standard input.
+2. Read an integer `n` from the input.
+3. Initialize an empty `HashSet` named `set` to store unique integers.
+4. Use `IntStream.range(0, n)` to iterate from 0 to `n-1`.
+   - For each iteration, read an integer from the input and add it to `set`.
+5. Print the size of `set`.
+
+Control structures:
+- Loop: `IntStream.range(0, n).forEach(...)`
+
+Input/output operations and data processing logic:
+- Input: Read an integer `n`, then read `n` integers.
+- Output: Print the number of unique integers.
+
+Required libraries, modules, or dependencies:
+- `java.util.HashSet`
+- `java.util.Scanner`
+- `java.util.Set`
+- `java.util.stream.IntStream`

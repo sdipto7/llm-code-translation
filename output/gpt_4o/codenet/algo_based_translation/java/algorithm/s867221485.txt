@@ -1,0 +1,35 @@
+- Function Signature:
+  - `main(args: String[]): void`
+
+- Variable Declarations:
+  - `N: int`
+  - `s: String`
+  - `flag: boolean` (unused)
+  - `ans: int`
+  - `hen: int` (unused)
+  - `sha: int`
+  - `dot: int`
+  - `temp: int` (unused)
+  - `first: boolean`
+
+- Logic Flow:
+  1. Read an integer `N` from standard input.
+  2. Read a string `s` from standard input.
+  3. Initialize `flag` to `false`, `ans`, `hen`, `sha`, `dot`, `temp` to `0`, and `first` to `true`.
+  4. Loop over each character `i` from `0` to `N-1` in string `s`:
+     - If the character at index `i` is `'#'`:
+       - Set `first` to `false`.
+       - If `sha` is less than or equal to `dot`, then:
+         - Add `sha` to `ans`.
+         - Set `sha` and `dot` to `0`.
+         - Set `first` to `true`.
+       - Increment `sha` by `1`.
+     - Else:
+       - Increment `dot` by `1`.
+  5. If `sha` is less than or equal to `dot`, then:
+     - Add `sha` to `ans`.
+     - Set `dot` to `0`.
+  6. Output the sum of `ans` and `dot` to standard output.
+
+- Required Libraries:
+  - `java.util.Scanner`

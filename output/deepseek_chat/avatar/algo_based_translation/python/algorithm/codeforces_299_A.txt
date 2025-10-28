@@ -1,0 +1,12 @@
+num_inp = function with no parameters, returns integer from input
+arr_inp = function with no parameters, returns list of integers from input
+sp_inp = function with no parameters, returns tuple of integers from input
+Read all input lines from stdin
+Extract second line from input
+Split second line into list of strings
+Convert each string to integer
+Sort resulting list of integers in ascending order
+Check if any element in sorted list is not divisible by first element
+If condition is true: result = -1
+If condition is false: result = first element of sorted list
+Print result

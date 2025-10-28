@@ -1,0 +1,70 @@
+**Algorithm Extraction**
+
+**Main Class: atcoder_ABC151_A**
+- **Function Signature**:  
+  `public static void main(String[] args) throws IOException`  
+  **Variables**:  
+  - `BufferedReader r = new BufferedReader(new InputStreamReader(System.in), 1)`  
+  - `String s`  
+  - `String[] sl` (declared but unused)  
+  **Input/Output**:  
+  - Read input line: `s = r.readLine()`  
+  - Process: Extract first character `s.charAt(0)`, increment ASCII value by 1  
+  - Output: Print resulting character via `System.out.printf("%c", ...)`  
+
+**Class: RemRing**
+- **Constructor**:  
+  `public RemRing(long module)`  
+  **Variable**:  
+  - `long module` (instance variable)  
+
+- **Methods**:
+  1. `public long sum(long a, long b)`  
+     **Return**: `(a + b + module) % module`  
+
+  2. `public long sub(long a, long b)`  
+     **Return**: `(a - b + module) % module`  
+
+  3. `public long prod(long a, long b)`  
+     **Return**: `(a * b) % module`  
+
+  4. `public long div(long a, long b)`  
+     **Return**: `(a * inv(b)) % module`  
+
+  5. `public long inv(long a)`  
+     **Variables**:  
+     - `long b = this.module`  
+     - `long u = 1`, `long v = 0`  
+     - Temporary variables `t`, `z`  
+     **Logic Flow**:  
+     - While `b > 0`:  
+       - `t = a / b`  
+       - `a -= t * b`  
+       - `u -= t * v`  
+       - Swap `a` and `b` using `z`  
+       - Swap `u` and `v` using `z`  
+     - After loop:  
+       - `u %= module`  
+       - If `u < 0`: `u += module`  
+       - Return `u`  
+
+**Dependencies**:  
+- `java.io.BufferedReader`  
+- `java.io.IOException`  
+- `java.io.InputStreamReader`  
+
+**Control Structures**:  
+- `main` method: No loops/conditionals.  
+- `inv` method:  
+  - `while (b > 0)` loop with arithmetic operations and variable swaps.  
+  - Post-loop conditional: `if (u < 0)` for modular adjustment.  
+
+**Data Flow**:  
+- Input character is incremented via ASCII arithmetic.  
+- `RemRing` methods perform modular arithmetic with overflow/underflow protection.  
+- `inv` uses the extended Euclidean algorithm to compute modular inverse.  
+
+**Execution Order**:  
+1. Read input string.  
+2. Process first character and output successor.  
+3. (For `RemRing` methods) Operations follow modular arithmetic rules with dependencies on `inv` for division.

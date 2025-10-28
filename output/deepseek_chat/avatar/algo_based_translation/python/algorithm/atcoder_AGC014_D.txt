@@ -1,0 +1,36 @@
+Algorithm:
+- Import sys and deque from collections
+- Read input using sys.stdin.buffer.readline
+- Read integer N from input
+- Initialize adjacency list adj as list of empty lists with size N+1
+- For N-1 times:
+  - Read two integers a and b from input
+  - Add b to adj[a]
+  - Add a to adj[b]
+- Initialize queue que as deque containing 1
+- Initialize seen list of zeros with size N+1, set seen[1] to 1
+- Initialize par list of zeros with size N+1
+- Initialize child_num list of zeros with size N+1
+- While que is not empty:
+  - Pop left element v from que
+  - For each u in adj[v]:
+    - If seen[u] equals 0:
+      - Set seen[u] to 1
+      - Set par[u] to v
+      - Increment child_num[v] by 1
+      - Append u to que
+- Initialize seq as empty deque
+- For i from 1 to N:
+  - If child_num[i] equals 0:
+    - Append i to seq
+- While seq is not empty:
+  - Pop element c from seq
+  - Set seen[c] to 0
+  - If seen[par[c]] equals 0:
+    - Print 'First'
+    - Exit program
+  - Set seen[par[c]] to 0
+  - Decrement child_num[par[par[c]]] by 1
+  - If child_num[par[par[c]]] equals 0:
+    - Append par[par[c]] to seq
+- Print 'Second'

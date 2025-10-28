@@ -1,0 +1,40 @@
+**Algorithm:**
+
+1. **Function Signature:**
+   - `public static void main(String[] args)`
+   - Parameters: `String[] args`
+   - Return type: `void`
+
+2. **Imported Libraries:**
+   - `java.util.Scanner`
+
+3. **Variable Declarations:**
+   - `Scanner sc = new Scanner(System.in)`
+   - `int N = sc.nextInt()`
+   - `int count1 = 0`
+   - `int count2 = 0`
+
+4. **Input Processing Loop:**
+   - `for (int i = 0; i < N; i++)`
+     - `int a = sc.nextInt()`
+     - **Condition 1:** If `a % 4 == 0` → increment `count1`
+     - **Condition 2:** Else if `(a % 2 == 0) && ((a / 2) % 2 == 1)` → increment `count2`
+
+5. **Final Decision Logic:**
+   - **Condition 1:** If `count1 >= (N / 2)` → print "Yes"
+   - **Condition 2:** Else if `((N / 2 - count1) * 2 + N % 2) == count2` → print "Yes"
+   - **Else:** Print "No"
+
+6. **Control Structures:**
+   - Loop: `for` with `i` from 0 to `N-1`
+   - Nested `if-else if-else` within loop
+   - Top-level `if-else if-else` after loop
+
+7. **Input/Output Operations:**
+   - Read `N` and `a` values via `Scanner`
+   - Output "Yes" or "No" based on conditions
+
+8. **Data Flow:**
+   - Count multiples of 4 (`count1`)
+   - Count even numbers divisible by 2 once to become odd (`count2`)
+   - Compare counts against derived thresholds for final decision

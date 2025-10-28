@@ -1,0 +1,61 @@
+**Algorithm:**
+
+**Function Signatures:**
+1. `List<String> permutation(List<String> list, String target, String ans)`
+   - Parameters:
+     - `list`: List<String> (accumulator for permutations)
+     - `target`: String (remaining characters to permute)
+     - `ans`: String (current permutation being built)
+   - Returns: List<String> (all permutations)
+
+**Main Function Execution Flow:**
+1. Read integer `n` from input.
+2. Initialize 2x1 String array `line` with empty strings.
+3. For each of 2 lines:
+   - Read `n` space-separated numbers, concatenate into `line[i][0]`.
+4. Generate `number` by concatenating integers 1 to `n` (e.g., "123...n").
+5. Initialize empty list `listA`.
+6. Call `permutation(listA, number, "")` to generate all permutations of `number`.
+7. Initialize `sum` to 0.
+8. For each entry in `line`:
+   - Iterate through `listA` to find index of `line[j][0]`.
+   - If found:
+     - If `sum` is 0, add index to `sum`.
+     - Else, subtract index from `sum`.
+9. Print absolute value of `sum`.
+
+**Permutation Function Logic:**
+1. If `target` length ≤ 1:
+   - Add `ans + target` to `list`.
+2. Else:
+   - For each index `i` in `target`:
+     - Recursively call `permutation` with:
+       - New target: `target` excluding character at `i`.
+       - New `ans`: `ans` + character at `i`.
+
+**Variables:**
+- `n`: Integer (input size)
+- `line`: String[2][1] (stores input permutations as strings)
+- `number`: String (base permutation "12...n")
+- `listA`: List<String> (all permutations of `number`)
+- `sum`: Integer (difference accumulator)
+
+**Control Structures:**
+- **Main:**
+  - For loops: 0 ≤ i < 2 (input lines), 0 ≤ j < n (input numbers)
+  - Nested loop: Iterate `listA` to find indices of input permutations
+  - Conditionals: Check string equality and update `sum`
+- **Permutation:**
+  - If-else based on `target` length
+  - For loop over `target` characters
+  - Recursive calls
+
+**Input/Output:**
+- Input via `Scanner`: `n`, followed by two lines of `n` integers each.
+- Output: Absolute difference of permutation indices.
+
+**Dependencies:**
+- `java.util.ArrayList`
+- `java.util.Arrays`
+- `java.util.List`
+- `java.util.Scanner`

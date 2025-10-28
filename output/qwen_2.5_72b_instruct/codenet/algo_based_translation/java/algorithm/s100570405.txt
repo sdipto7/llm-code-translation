@@ -1,0 +1,90 @@
+Function signatures with parameter and return types:
+- `main(String args[])` - void
+- `run()` - void
+- `MyInput()` - constructor
+- `hasNextByte()` - boolean
+- `readByte()` - int
+- `isPrintableChar(int c)` - boolean
+- `skipUnprintable()` - void
+- `hasNext()` - boolean
+- `next()` - String
+- `nextLong()` - long
+- `nextInt()` - int
+- `nextDouble()` - double
+
+Variable declarations and data types:
+- `Sd` - String
+- `T` - String
+- `count` - int
+- `c` - char
+- `ok` - boolean
+- `first` - int
+- `end` - int
+- `in` - MyInput
+- `b` - int
+- `sb` - StringBuilder
+- `n` - long
+- `minus` - boolean
+
+Logic flow in execution order:
+1. `main(String args[])` is called, creating a new instance of `Main` and calling `run()`.
+2. Inside `run()`, `Sd` and `T` are read from input.
+3. Initialize `count = 0`, `ok = false`, `first = -1`, `end = -1`.
+4. Loop over `Sd` with `j` from 0 to `Sd.length() - 1`:
+   - Reset `count = 0`.
+   - Loop over `Sd` with `i` from 0 to `Sd.length() - j - 1`:
+     - Set `c = Sd.charAt(i + j)`.
+     - If `c == '?' || c == T.charAt(count)`:
+       - Increment `count`.
+       - If `count == T.length()`:
+         - Set `first = i + j - T.length() + 1`, `end = i + j`.
+         - Set `ok = true`.
+         - Break inner loop.
+     - Else:
+       - Set `count = 0`.
+5. If `ok`:
+   - Loop over `Sd` with `i` from 0 to `Sd.length() - 1`:
+     - If `first <= i && i <= end`:
+       - Print `T.charAt(i - first)`.
+     - Else:
+       - If `Sd.charAt(i) == '?'`:
+         - Print `"a"`.
+       - Else:
+         - Print `Sd.charAt(i)`.
+   - Print newline.
+6. Else:
+   - Print `"UNRESTORABLE"`.
+
+Control structures:
+- Loops:
+  - `for(int j = 0; j < Sd.length(); j++)`
+  - `for(int i = 0; i+j < Sd.length(); i++)`
+  - `for(int i = 0; i < Sd.length(); i++)`
+- Conditionals:
+  - `if(c == '?' || c == T.charAt(count))`
+  - `if(count == T.length())`
+  - `if(ok)`
+  - `if(first <= i && i <= end)`
+  - `if(Sd.charAt(i) == '?')`
+
+Input/output operations and data processing logic:
+- Input:
+  - `String Sd = in.next()`
+  - `String T = in.next()`
+- Output:
+  - `out.print(T.charAt(i - first))`
+  - `out.print("a")`
+  - `out.print(Sd.charAt(i))`
+  - `out.println()`
+  - `out.println("UNRESTORABLE")`
+
+Required libraries, modules, or dependencies:
+- `java.lang.System`
+- `java.lang.Math`
+- `java.io.InputStream`
+- `java.io.IOException`
+- `java.util.NoSuchElementException`
+- `java.util.ArrayList`
+- `java.util.Arrays`
+- `java.util.LinkedList`
+- `java.util.Collections`

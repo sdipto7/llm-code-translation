@@ -1,0 +1,43 @@
+Algorithm:
+
+1. Import necessary libraries:
+   - `java.util.*`
+   - `java.io.*`
+
+2. Function signature:
+   - `main(String[] args)`: No parameters, returns `void`
+
+3. Variable declarations:
+   - `BufferedReader br`: Input stream reader for reading input
+   - `PrintWriter pw`: Output writer for printing output
+   - `StringTokenizer s`: Tokenizer for tokenizing input strings
+   - `int n`: Stores the number of elements to process
+   - `HashMap<Integer, Integer> hm`: A hashmap to store integer counts
+   - `int ans`: Stores the final answer
+
+4. Input operations:
+   - Read a line from input using `br.readLine()`
+   - Initialize `StringTokenizer s` with the read line
+
+5. Parse the number of elements:
+   - Assign `n` by parsing the first token from `s` as an integer
+
+6. Initialize hashmap:
+   - Read another line of integers using `br.readLine()`
+   - Reinitialize `StringTokenizer s` with the read line
+
+7. Populate hashmap:
+   - Loop over `n` elements:
+     - Parse each element as an integer `val`
+     - Update hashmap `hm` by incrementing the count of `val` using `hm.getOrDefault(val, 0) + 1`
+
+8. Calculate the result:
+   - Initialize `ans` to 0
+   - Iterate over each `val` in `hm.keySet()`:
+     - Retrieve count `num` from hashmap using `hm.get(val)`
+     - If `num > val`, increment `ans` by `num - val`
+     - Else if `num < val`, increment `ans` by `num`
+
+9. Output result:
+   - Print `ans` using `pw.println(ans)`
+   - Close the `PrintWriter pw` with `pw.close()`

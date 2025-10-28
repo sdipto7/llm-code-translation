@@ -1,0 +1,30 @@
+- **Function Signature**:  
+  `main() -> void`  
+
+- **Variables**:  
+  - `ABC: list<int>` (Stores input integers)  
+  - `A: int` (First integer from `ABC`)  
+  - `B: int` (Second integer from `ABC`)  
+  - `C: int` (Third integer from `ABC`)  
+  - `computed_values: list<int>` (Stores three computed values)  
+
+- **Input Operations**:  
+  1. Read a line from standard input.  
+  2. Split the line into substrings by whitespace.  
+  3. Convert each substring to an integer and store in `ABC`.  
+
+- **Logic Flow**:  
+  1. Assign `A = ABC[0]`, `B = ABC[1]`, `C = ABC[2]`.  
+  2. Compute three values:  
+     - `10 * A + B + C`  
+     - `10 * B + C + A`  
+     - `10 * C + A + B`  
+  3. Store results in `computed_values`.  
+  4. Find the maximum value in `computed_values`.  
+
+- **Output Operations**:  
+  1. Print the maximum value.  
+
+- **Control Structures**: None (no explicit loops/conditionals; uses built-in `max`).  
+
+- **Dependencies**: None (uses standard input/output functions).

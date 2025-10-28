@@ -1,0 +1,24 @@
+Algorithm:
+- Import java.io.* and java.util.*
+- Declare class atcoder_ABC155_E with main method taking String[] args parameter
+- Declare constant INF = (long)1e15
+- Create Scanner object sc reading from System.in
+- Read input string number using sc.next()
+- Create integer array digits with length number.length() + 1
+- For i from 0 to number.length()-1:
+  - digits[i] = character at position (number.length()-1-i) converted to integer by subtracting '0'
+- Initialize bills = 0
+- For i from 0 to number.length():
+  - If digits[i] == 10:
+    - Increment digits[i+1] by 1
+    - Set digits[i] = 0
+  - If digits[i] < 5:
+    - Add digits[i] to bills
+  - Else if digits[i] == 5:
+    - If digits[i+1] >= 5:
+      - Increment digits[i+1] by 1
+    - Add 5 to bills
+  - Else (digits[i] > 5):
+    - Increment digits[i+1] by 1
+    - Add (10 - digits[i]) to bills
+- Print bills

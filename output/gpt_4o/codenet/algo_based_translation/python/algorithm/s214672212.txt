@@ -1,0 +1,26 @@
+Algorithm:
+
+1. Import required modules:
+   - No external libraries or modules are required.
+
+2. Function signature:
+   - Define a function `calculate_expression` with no parameters and return type `int`.
+
+3. Declare variables:
+   - `nums`: List of integers.
+
+4. Input operations:
+   - Read a line of input from the user.
+   - Split the input string by spaces to create a list of strings.
+   - Convert each string in the list to an integer using `map(int, ...)`.
+   - Assign the resulting list of integers to the variable `nums`.
+
+5. Processing logic:
+   - Sort the list `nums` in descending order using the `sort(reverse=True)` method.
+
+6. Output operations:
+   - Calculate the expression `nums[0] * 10 + nums[1] + nums[2]`.
+   - Print the result of the expression.
+
+7. Return value:
+   - The function `calculate_expression` does not explicitly return a value as it prints the result directly.

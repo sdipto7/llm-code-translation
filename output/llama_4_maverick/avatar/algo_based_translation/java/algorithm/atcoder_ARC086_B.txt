@@ -1,0 +1,8 @@
+1. Read the number of elements, n.
+2. Read n integers into an array, a.
+3. Find the index, m, of the element with the maximum absolute value in the array.
+4. For each element in the array, if the element and the element at index m have different signs, add the operation (m+1, i+1) to the result list.
+5. If the element at index m is non-negative, add operations (i, i+1) for i from 1 to n-1 to the result list.
+6. If the element at index m is negative, add operations (i, i-1) for i from n to 2 to the result list.
+7. Output the size of the result list.
+8. Output each operation in the result list.

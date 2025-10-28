@@ -1,0 +1,43 @@
+Function Signature:
+public static void main(String[] args)
+
+Parameters:
+- Scanner input for VP (double), VD (double), T (double), F (double), C (double)
+
+Variables:
+- VP: double (princess speed)
+- VD: double (dragon speed)
+- T: double (dragon start delay)
+- F: double (dragon rest time)
+- C: double (cave distance)
+- answer: int (number of required returns)
+- start: double (cumulative time elapsed)
+
+Logic Flow:
+1. Read VP, VD, T, F, C from standard input as doubles
+2. If VD ≤ VP:
+    a. Print "0"
+    b. Terminate program
+3. Else:
+    a. Initialize answer = 0
+    b. Initialize start = T
+    c. Enter infinite loop:
+        i. Calculate x = (start * VP) / (VD - VP)
+        ii. If (start + x) * VP ≥ C:
+            - Break loop
+        iii. Else:
+            - Update start = start + (2 * x) + F
+            - Increment answer by 1
+4. Print answer
+
+Control Structures:
+- If-conditional checking VD <= VP
+- While-true loop with break condition (step 3.c.ii)
+- Arithmetic operations with floating-point precision
+
+Input/Output:
+- Uses Scanner for input reading
+- Prints integer results to standard output
+
+Dependencies:
+- java.util.Scanner

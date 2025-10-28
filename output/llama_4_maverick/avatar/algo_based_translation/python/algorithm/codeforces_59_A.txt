@@ -1,0 +1,13 @@
+1. READ input text
+2. INITIALIZE uppercase count = 0
+3. INITIALIZE lowercase count = 0
+4. FOR EACH character in input text
+5.     IF character is lowercase
+6.         INCREMENT lowercase count
+7.     ELSE
+8.         INCREMENT uppercase count
+9. IF uppercase count > lowercase count
+10.     CONVERT input text to uppercase
+11. ELSE
+12.     CONVERT input text to lowercase
+13. PRINT output text

@@ -1,0 +1,27 @@
+```plaintext
+Algorithm
+
+- Input:
+  - Read a single line of input, splitting it into two integers `n` and `m`.
+  - `n` and `m` are both integers.
+
+- Variables:
+  - `q`: integer, store the result of integer division of `n` by `m`.
+  - `r`: integer, store the remainder when `n` is divided by `m`.
+  - `a`: list of integers, initialized with `m` elements, each being `q`.
+
+- Logic Flow:
+  1. Calculate `q` as the integer division of `n` by `m` (`q = n // m`).
+  2. Calculate `r` as the remainder of `n` divided by `m` (`r = n % m`).
+  3. Initialize list `a` with `m` elements, each element set to `q`.
+  4. Loop over the range from `0` to `r - 1` (inclusive):
+     - For each index `i` in this range, increment `a[i]` by 1.
+  5. Loop over the range from `0` to `m - 1` (inclusive):
+     - For each index `i`, output `a[i]`, followed by a space, without a newline.
+
+- Output:
+  - Print the elements of list `a` on a single line, separated by spaces.
+
+- Dependencies:
+  - No external libraries or modules are required.
+```

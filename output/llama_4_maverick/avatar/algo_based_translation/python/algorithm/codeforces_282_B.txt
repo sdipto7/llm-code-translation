@@ -1,0 +1,12 @@
+1. READ firstline AS INTEGER
+2. INITIALIZE total TO 0
+3. INITIALIZE memory AS EMPTY LIST
+4. FOR x FROM 0 TO firstline - 1
+5.     READ A AND G AS INTEGERS
+6.     IF total + A <= 500 THEN
+7.         ADD A TO total
+8.         APPEND "A" TO memory
+9.     ELSE
+10.        SUBTRACT G FROM total
+11.        APPEND "G" TO memory
+12. PRINT CONCATENATED STRING OF memory

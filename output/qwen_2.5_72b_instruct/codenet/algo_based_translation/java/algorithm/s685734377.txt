@@ -1,0 +1,71 @@
+Function signatures:
+- `main(String[] args): void`
+- `solve(int testNumber, FastScanner in, PrintWriter out): void`
+- `FastScanner(InputStream in): void`
+- `nextInt(): int`
+- `next(): String`
+
+Variable declarations and data types:
+- `InputStream inputStream: InputStream`
+- `OutputStream outputStream: OutputStream`
+- `FastScanner in: FastScanner`
+- `PrintWriter out: PrintWriter`
+- `TaskB solver: TaskB`
+- `int n: int`
+- `char[][] a: char[][]`
+- `long P: long`
+- `long Q: long`
+- `long[] powP: long[]`
+- `long[] powQ: long[]`
+- `long[][] hashRow: long[][]`
+- `long[][] hashCol: long[][]`
+- `int ans: int`
+- `int A: int`
+- `int B: int`
+- `boolean ok: boolean`
+- `int i: int`
+- `int j: int`
+- `int k: int`
+- `BufferedReader br: BufferedReader`
+- `StringTokenizer st: StringTokenizer`
+- `String line: String`
+
+Logic flow:
+1. `main` initializes `inputStream`, `outputStream`, `in`, `out`, and `solver`. Calls `solver.solve(1, in, out)` and then `out.close()`.
+2. `solve` initializes `n`, `a`, `P`, `Q`, `powP`, `powQ`, `hashRow`, and `hashCol`.
+3. Computes `powP` and `powQ` arrays.
+4. Reads input into `a`.
+5. Computes `hashRow` and `hashCol`:
+   - For each `i`, for each `j`, for each `k`, update `hashRow[i][k]` and `hashCol[j][k]` using `a[i][j]`, `powP`, and modulo `n` arithmetic.
+6. Initializes `ans` to `0`.
+7. Checks for each pair `(A, B)` if the condition is met:
+   - For each `i`, check if `hashRow[(i + A) % n][B]` equals `hashCol[(i + B) % n][A]`.
+   - If all conditions are met, increment `ans`.
+8. Prints `ans` using `out.println`.
+
+Control structures:
+- Loops:
+  - `for (int i = 1; i <= n; i++)` to calculate powers of `P` and `Q`.
+  - `for (int i = 0; i < n; i++)` for each row in `a`.
+  - `for (int j = 0; j < n; j++)` for each column in `a`.
+  - `for (int k = 0; k < n; k++)` for each index in `hashRow` and `hashCol`.
+  - `for (int A = 0; A < n; A++)` to iterate over possible `A`.
+  - `for (int B = 0; B < n; B++)` to iterate over possible `B`.
+  - `for (int i = 0; i < n; i++)` to check row and column hashes.
+- Conditionals:
+  - `while (st == null || !st.hasMoreElements())` to read new line if tokenizer is empty.
+  - `ok &= hashRow[(i + A) % n][B] == hashCol[(i + B) % n][A]` to update `ok` based on hash comparison.
+
+Input/output operations:
+- Reads integer `n` using `in.nextInt()`.
+- Reads each row of `a` using `in.next().toCharArray()`.
+- Prints `ans` using `out.println(ans)`.
+
+Required libraries:
+- `java.io.OutputStream`
+- `java.io.IOException`
+- `java.io.InputStream`
+- `java.io.PrintWriter`
+- `java.util.StringTokenizer`
+- `java.io.BufferedReader`
+- `java.io.InputStreamReader`

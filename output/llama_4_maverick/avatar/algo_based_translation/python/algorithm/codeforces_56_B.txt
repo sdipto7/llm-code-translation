@@ -1,0 +1,15 @@
+1. READ N
+2. READ A as a list of N integers
+3. INITIALIZE mn to N + 1 and mx to -1
+4. FOR i FROM 0 TO N-1
+   4.1 IF (i + 1) is not equal to A[i]
+      4.1.1 UPDATE mn to minimum of mn and i
+      4.1.2 UPDATE mx to maximum of mx and i
+5. IF mx is equal to -1
+   5.1 PRINT '0 0'
+6. ELSE
+   6.1 REVERSE the sublist of A from index mn to mx (inclusive)
+   6.2 IF the modified list A is sorted in ascending order
+      6.2.1 PRINT (mn + 1) and (mx + 1)
+   6.3 ELSE
+      6.3.1 PRINT '0 0'

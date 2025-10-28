@@ -1,0 +1,26 @@
+Algorithm:
+
+1. Import the necessary library:
+   - Import `java.util.Scanner` for reading input from the console.
+
+2. Define the main function:
+   - Signature: `public static void main(String[] args)`
+   - Parameters: `args` is an array of `String` (not used in this code).
+   - Return type: `void`
+
+3. Variable declarations:
+   - `Scanner sc`: Create a new `Scanner` object for reading input.
+   - `int x`: Declare an integer variable `x`.
+   - `int y`: Declare an integer variable `y`.
+   - `int z`: Declare an integer variable `z`.
+
+4. Input operations:
+   - Read an integer from the user and store it in `x` using `sc.nextInt()`.
+   - Read an integer from the user and store it in `y` using `sc.nextInt()`.
+   - Read an integer from the user and store it in `z` using `sc.nextInt()`.
+
+5. Output operation:
+   - Print the values of `z`, `x`, and `y` in that specific order, separated by spaces.
+
+6. Close the scanner:
+   - Call `sc.close()` to release the resources associated with the `Scanner` object.

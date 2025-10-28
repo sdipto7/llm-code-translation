@@ -1,0 +1,27 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner scan` (Scanner type)
+- `int n` (initialized via `scan.nextInt()`)
+- `int k` (initialized via `scan.nextInt()`)
+- `int z = 0`
+
+**Logic Flow:**
+1. Read integer `n` from input.
+2. Read integer `k` from input.
+3. Increment `n` by 1.
+4. Check if `n % k != 0`:
+   - If true: Assign `z = k - (n % k)`
+   - Else: `z` remains `0`
+5. Compute `n + z` and print the result.
+
+**Control Structures:**
+- Conditional: `if (n % k != 0)`
+
+**Input/Output Operations:**
+- Input: `n` and `k` via `Scanner` from standard input.
+- Output: Result of `n + z` via `System.out.println`.
+
+**Dependencies:**
+- `import java.util.Scanner`

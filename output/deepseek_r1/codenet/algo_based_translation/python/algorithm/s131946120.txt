@@ -1,0 +1,26 @@
+Algorithm:
+
+1. InputOperation: Read integer value from standard input, assign to variable n (type: int)
+2. Processing: Create list of strings by executing list comprehension with loop iteration count n:
+   - Loop Structure: For loop with loop counter _ (unused) in range(n)
+   - Loop Operation: Each iteration performs InputOperation to read string from standard input
+3. Processing: Convert list to set to eliminate duplicate elements (type: set[str])
+4. Processing: Calculate length of resulting set (type: int)
+5. OutputOperation: Print calculated length to standard output
+
+Variables:
+- n: int
+- Implicit temporary list: list[str]
+- Implicit temporary set: set[str]
+- Implicit length result: int
+
+Control Structures:
+- Implicit for loop executing exactly n iterations
+- No conditional statements
+
+Data Flow:
+- Input → List → Set → Length calculation → Output
+
+Dependencies:
+- Built-in functions: input(), int(), set(), len(), print()
+- No external libraries required

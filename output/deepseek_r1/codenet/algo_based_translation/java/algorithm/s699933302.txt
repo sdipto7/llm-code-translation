@@ -1,0 +1,23 @@
+- Required Library: `java.util.Scanner`
+- Function Signature: `public static void main(String[] args)`
+- Variables:
+  - Scanner `sc` initialized with `System.in`
+  - int `a` initialized with `Integer.parseInt(sc.next())`
+  - int `b` initialized with `Integer.parseInt(sc.next())`
+  - int `c` initialized with `Integer.parseInt(sc.next())`
+  - int `count` initialized to 0
+- Input Operations:
+  - Read three consecutive string tokens from standard input
+  - Convert them to integers for values a, b, c
+- Logic Flow:
+  1. Initialize loop counter `i` with value `a`
+  2. Loop while `i` <= `b`:
+     a. If `c` mod `i` equals 0:
+        - Increment `count` by 1
+     b. Increment `i` by 1
+  3. After loop completion:
+     - Print `count` followed by newline
+- Control Structures:
+  - for-loop: `for (int i = a; i <= b; i++)`
+  - Conditional: `if (c % i == 0)`
+- Output Operation: `System.out.println(count)`

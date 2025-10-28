@@ -1,0 +1,56 @@
+1. Import required libraries:
+   - java.util
+   - java.io
+   - java.math
+
+2. Define a class `Main` with the following components:
+   - Static class `InputIterator` with:
+     - Fields: `inputLine` (ArrayList<String>), `index` (int), `max` (int), `read` (String)
+     - Constructor: `InputIterator()`
+     - Methods: `hasNext()`, `next()`
+
+   - Static fields:
+     - `CONVSTR` (HashMap<Integer, String>)
+     - `ii` (InputIterator)
+     - `out` (PrintWriter)
+
+   - Static methods:
+     - `flush()`
+     - `myout(Object)`
+     - `myerr(Object)`
+     - `next()`
+     - `hasNext()`
+     - `nextInt()`
+     - `nextLong()`
+     - `nextDouble()`
+     - `nextStrArray()`
+     - `nextCharArray()`
+     - `nextIntArray()`
+     - `nextLongArray()`
+     - `myconv(Object, int)`
+     - `myconv(String, int)`
+     - `main(String[])`
+     - `solve()`
+
+3. In `main(String[])`:
+   - Initialize `CONVSTR` with key-value pairs (8, " "), (9, "\n"), (0, "")
+   - Call `solve()`
+   - Call `flush()`
+
+4. In `solve()`:
+   - Declare `N` (int) and assign it the return value of `nextInt()`
+   - Declare `list` (ArrayList<Integer>) and assign it the return value of `nextIntArray()`
+   - Declare `max` (int) and initialize it to 0
+   - Declare `output` (int) and initialize it to 0
+   - Iterate from `i = 0` to `N-1` using a for loop:
+     - Check if `max <= list.get(i)`:
+       - If true, update `max` to `list.get(i)` and increment `output` by 1
+   - Call `myout(output)` with `output` as the argument
+
+5. Input/Output Operations:
+   - Read input using `InputIterator` class
+   - Parse input to integers, longs, or doubles using `nextInt()`, `nextLong()`, `nextDouble()`
+   - Output result using `myout(Object)`
+
+6. Data Processing Logic:
+   - Iterate through the input list and count the number of elements that are greater than or equal to the current maximum value.

@@ -1,0 +1,11 @@
+1. Read the number of elements, n.
+2. Initialize an array, a, of size n to store the input elements.
+3. Read n elements into the array a.
+4. Initialize a dynamic programming array, dp, of size n+1 with all elements set to -1.
+5. Set dp[n-1] to a[n-1].
+6. Iterate from n-1 to 0, updating dp[i] to be the maximum of dp[i+1] and a[i].
+7. Iterate from 0 to n-1.
+8. For each i, check if a[i] is greater than dp[i+1].
+9. If true, output 0.
+10. If false, output dp[i+1] - a[i] + 1.
+11. Output a newline after all elements have been processed.

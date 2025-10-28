@@ -1,0 +1,41 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner scan = new Scanner(System.in)`
+- `int N = scan.nextInt()`
+- `int[] P = new int[N]`
+- `Map<Integer, Integer> map = new HashMap<>()`
+- `List<Integer> nglist = new ArrayList<>()`
+- `int ans`
+
+**Logic Flow:**
+1. Read input `N` from `scan`.
+2. Initialize array `P` with `N` elements. For each `i` from `0` to `N-1`, read integer from `scan`, subtract 1, and store in `P[i]`.
+3. Populate `map` by iterating `i` from `0` to `N-1`: `map.put(P[i], i)`.
+4. Iterate `i` from `0` to `N-2`:
+   - If `map.get(i) > map.get(i + 1)`, add `i` to `nglist`.
+5. If `nglist` is empty:
+   - Print `0` and terminate.
+6. Else:
+   - Compute initial `ans` as minimum of `(N - nglist.get(0) - 1)` and `(nglist.get(nglist.size() - 1) + 1)`.
+   - Iterate `i` from `0` to `nglist.size() - 2`:
+     - Compute `current = nglist.get(i) + 1 + N - nglist.get(i + 1) - 1`.
+     - Update `ans` to the minimum of `ans` and `current`.
+7. Print `ans`.
+
+**Control Structures:**
+- `for` loops for iterating over arrays and lists.
+- `if` conditions to check map entries and list emptiness.
+- Sequential execution of input processing, map population, violation checks, and answer computation.
+
+**Input/Output Operations:**
+- Read `N` and `P` via `Scanner`.
+- Output results via `System.out.println`.
+
+**Dependencies:**
+- `java.util.ArrayList`
+- `java.util.HashMap`
+- `java.util.List`
+- `java.util.Map`
+- `java.util.Scanner`

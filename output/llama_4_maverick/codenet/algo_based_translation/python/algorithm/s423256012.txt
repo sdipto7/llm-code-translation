@@ -1,0 +1,12 @@
+1. Define a function `solve` with no parameters and return type `None`.
+2. Declare variables `A` and `B` of type `int`.
+3. Read input from the user using `input().split()` and store the result in a list of strings.
+4. Use `map(int, ...)` to convert the list of strings into integers and assign the values to `A` and `B`.
+5. Evaluate the expression `(A + B) % 2`.
+6. Check if the result of `(A + B) % 2` is equal to `1` using an `if` statement.
+7. If the condition is `True`, print the string `'IMPOSSIBLE'` to the output.
+8. If the condition is `False`, calculate the integer division `(A + B) // 2`.
+9. Print the result of `(A + B) // 2` to the output.
+10. The function `solve` implicitly returns `None` after execution.
+11. Call the function `solve()` to start execution. 
+12. Required library: built-in Python functions (`input()`, `print()`, `map()`, `int()`, `//`, `%`).

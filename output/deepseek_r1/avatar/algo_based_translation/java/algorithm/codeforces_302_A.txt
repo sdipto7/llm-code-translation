@@ -1,0 +1,45 @@
+- **Function Signature**:
+  - `public static void main(String[] args) throws IOException`
+
+- **Variables**:
+  - `Scanner sc = new Scanner(System.in)`
+  - `int n` (input: array size)
+  - `int k` (input: number of queries)
+  - `int[] arr` (size `n`, initialized with input values)
+  - `StringBuffer res` (stores output strings)
+  - `int o = 0` (count of `1`s in `arr`)
+  - `int e = 0` (count of non-`1`s in `arr`)
+
+- **Input Processing**:
+  1. Read `n` and `k` via `sc.nextInt()`.
+  2. Populate `arr` with `n` integers via `sc.nextInt()`.
+
+- **Logic Flow**:
+  1. Iterate through `arr`:
+     - For each element:
+       - If element is `1`, increment `o`.
+       - Else, increment `e`.
+  2. For each of `k` queries:
+     - Read `l` and `r` via `sc.nextInt()`.
+     - Calculate `size = r - l + 1`.
+     - If `size` is odd:
+       - Append `"0\n"` to `res`.
+     - Else:
+       - If `size / 2 <= o` AND `size / 2 <= e`:
+         - Append `"1\n"` to `res`.
+       - Else:
+         - Append `"0\n"` to `res`.
+
+- **Output**:
+  - Print `res` as a single string via `System.out.print(res)`.
+
+- **Control Structures**:
+  - `for (int i = 0; i < n; i++)` (array population and counting loop)
+  - `for (int i = 0; i < k; i++)` (query processing loop)
+  - `if (arr[i] == 1)` (element counting condition)
+  - `if ((r - l + 1) % 2 == 1)` (odd-length segment check)
+  - `if ((r - l + 1) / 2 <= o && (r - l + 1) / 2 <= e)` (valid subarray condition)
+
+- **Libraries/Dependencies**:
+  - `java.io.IOException`
+  - `java.util.Scanner`

@@ -1,0 +1,24 @@
+Function signatures with parameter and return types:
+- `main(): None`
+
+Variable declarations and data types:
+- `N: int`
+- `A: List[int]`
+- `ans: int`
+
+Complete logic flow in execution order:
+1. Read an integer `N` from input.
+2. Read a space-separated string of integers from input, convert it to a list of integers `A`.
+3. Sort the list `A` in non-decreasing order.
+4. Calculate the difference between the last element and the first element of the sorted list `A` and store it in `ans`.
+5. Print the value of `ans`.
+
+Control structures:
+- No loops or conditionals are present in the provided code.
+
+Input/output operations and data processing logic:
+- Input: Read an integer `N` and a list of integers `A` from standard input.
+- Output: Print the integer `ans`, which is the difference between the maximum and minimum values in the list `A`.
+
+Required libraries, modules, or dependencies:
+- `typing.List` for type annotation of list `A`. However, since this is not imported or used directly in the code, it is not strictly required for the code to run.

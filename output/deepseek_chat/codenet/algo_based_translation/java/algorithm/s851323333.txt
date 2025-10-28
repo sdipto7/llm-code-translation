@@ -1,0 +1,13 @@
+Algorithm:
+- Import java.util.LinkedList
+- Import java.util.Scanner
+- Declare public class Main
+- Declare public static void main(String[] args)
+  - Create Scanner object scan initialized with System.in
+  - Create LinkedList<Integer> object list
+  - While scan.hasNextInt() returns true:
+    - Read integer a from scan using nextInt()
+    - If a equals 0:
+      - Print list.pop() value
+    - Else:
+      - Push a to list using list.push(a)

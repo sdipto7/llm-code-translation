@@ -1,0 +1,10 @@
+1. Define a function `calculate_max_result` with no parameters and return type `None`.
+2. Declare variables `A` and `B` of type `int`.
+3. Read two `int` values from standard input, split by whitespace, and store them in `A` and `B`.
+4. Declare a list `lst` to store results of operations on `A` and `B`.
+5. Append the result of `A + B` to `lst`.
+6. Append the result of `A - B` to `lst`.
+7. Append the result of `A * B` to `lst`.
+8. Find the maximum value in `lst` using the `max` function.
+9. Print the maximum value to standard output.
+10. End the function execution.

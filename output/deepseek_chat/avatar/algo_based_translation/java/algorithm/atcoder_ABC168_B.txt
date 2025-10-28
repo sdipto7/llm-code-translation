@@ -1,0 +1,8 @@
+1. Import Scanner from java.util
+2. Declare public class atcoder_ABC168_B with main method taking String[] args
+3. Create Scanner object reading from System.in
+4. Read integer K from input
+5. Read string S from input
+6. Check if length of S is less than or equal to K
+   - If true: print S
+   - If false: print substring of S from index 0 to K-1 concatenated with "..."

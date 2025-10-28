@@ -1,0 +1,34 @@
+```
+Function Signature: atcoder_ABC166_C()
+  Dependencies:
+    - Import Scanner from java.util
+  
+  Variables:
+    - N: int
+    - M: long
+    - H: array of long with size N
+    - ans: array of boolean with size N
+    - temp1: int
+    - temp2: int
+    - ans2: int
+  
+  Execution Flow:
+    1. Initialize Scanner object `sc` to read input
+    2. Read an integer from input and assign to N
+    3. Read a long integer from input and assign to M
+    4. Create an array H of size N to store long integers
+    5. Create an array ans of size N initialized with true
+    6. Loop for i from 0 to N-1:
+       - Read a long integer from input and assign to H[i]
+       - Set ans[i] to true
+    7. Loop for i from 0 to M-1:
+       - Read an integer from input and assign to temp1
+       - Read an integer from input and assign to temp2
+       - If H[temp1 - 1] < H[temp2 - 1], set ans[temp1 - 1] to false
+       - Else if H[temp1 - 1] > H[temp2 - 1], set ans[temp2 - 1] to false
+       - Else set both ans[temp1 - 1] and ans[temp2 - 1] to false
+    8. Initialize ans2 to 0
+    9. Loop for i from 0 to N-1:
+       - If ans[i] is true, increment ans2 by 1
+    10. Print ans2
+```

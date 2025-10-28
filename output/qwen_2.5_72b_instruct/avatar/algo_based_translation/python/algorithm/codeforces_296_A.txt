@@ -1,0 +1,31 @@
+Function Signature: `main()`
+
+Variable Declarations:
+- `n: int`
+- `m: List[str]`
+- `possible: bool`
+- `i: str`
+
+Logic Flow:
+1. Read an integer `n` from standard input.
+2. Read a line from standard input, split it by whitespace, and store the resulting list of strings in `m`.
+3. Initialize `possible` to `True`.
+4. Convert `m` to a set to get unique elements.
+5. For each element `i` in the set of `m`:
+   - If the count of `i` in `m` is greater than or equal to `n / 2 + 1`:
+     - Set `possible` to `False`.
+     - Break out of the loop.
+6. Print 'YES' if `possible` is `True`, otherwise print 'NO'.
+
+Input/Output Operations:
+- Read integer `n` from standard input.
+- Read a line of space-separated values and split into a list of strings `m`.
+- Print 'YES' or 'NO' based on the value of `possible`.
+
+Data Processing Logic:
+- Convert the list `m` to a set to iterate over unique elements.
+- Count occurrences of each unique element in `m`.
+- Determine if any element appears more than half the number of times `n + 1`.
+
+Required Libraries, Modules, or Dependencies:
+- None

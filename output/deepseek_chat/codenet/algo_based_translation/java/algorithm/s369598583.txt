@@ -1,0 +1,13 @@
+Algorithm:
+- Import java.util.Scanner
+- Define main function: public static void main(String[] args)
+- Declare Scanner sc = new Scanner(System.in)
+- Declare int N = sc.nextInt()
+- Declare int count = 0
+- Declare int next = 10
+- For loop: for(int i = 1; i <= N; i++)
+  - Increment count by 1: count++
+  - If condition: if(i == next - 1)
+    - Set i = next * 10 - 1
+    - Set next = next * 100
+- Print count: System.out.println(count)

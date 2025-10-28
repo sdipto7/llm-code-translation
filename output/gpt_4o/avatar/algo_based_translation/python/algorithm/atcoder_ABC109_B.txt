@@ -1,0 +1,32 @@
+```
+Algorithm
+
+1. Import the `defaultdict` class from the `collections` module.
+
+2. Function Signature:
+   - Function: main()
+   - Parameters: None
+   - Return Type: None
+
+3. Variable Declarations:
+   - `n`: Integer. Represents the number of strings to be input.
+   - `s`: defaultdict of integers. Maps each string to its count of occurrences.
+   - `l`: List of strings. Stores the input strings.
+   - `f`: String. Holds the result 'Yes' or 'No'.
+   - `i`: Integer. Index variable for iteration.
+
+4. Execution Flow:
+   - Read an integer from input and store it in `n`.
+   - Initialize `s` as a defaultdict with default value 0.
+   - Initialize `l` as a list containing `n` strings taken from input.
+   - Set `f` to 'Yes'.
+   - Set `i` to -1.
+
+5. Loop through each string `v` in list `l`:
+   - Increment the count of `v` in the defaultdict `s`.
+   - If the count of `v` is greater than or equal to 2, set `f` to 'No'.
+   - If `i` is not -1 and the last character of `l[i]` is not equal to the first character of `v`, set `f` to 'No'.
+   - Increment `i` by 1.
+
+6. Output the value of `f`.
+```

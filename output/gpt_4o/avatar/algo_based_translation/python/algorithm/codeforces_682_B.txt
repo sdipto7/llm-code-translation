@@ -1,0 +1,27 @@
+```
+Algorithm:
+
+1. Import necessary modules and functions:
+   - `import os, sys, io, math`
+   - `from array import array`
+   - `from math import *`
+
+2. Define lambda functions for input operations:
+   - `I`: Function to read a line from standard input, split it by spaces, and convert each part to an integer. Returns a list of integers.
+   - `IS`: Function to read a line from standard input and return it as a string.
+   - `IN`: Function to read a line from standard input, convert it to an integer, and return it.
+   - `IF`: Function to read a line from standard input, convert it to a float, and return it.
+
+3. Variable declarations:
+   - `n` (integer): Set to the result of calling `IN()`, which reads an integer from input.
+   - `l` (list of integers): Set to the result of calling `I()`, which reads a list of integers from input.
+   - `f` (integer): Initialize to 1 (not used in logic).
+   - `c` (integer): Initialize to 0.
+
+4. Sort the list `l` in non-decreasing order.
+
+5. Iterate over each element `i` in the sorted list `l`:
+   - If `i` is greater than `c`, increment `c` by 1.
+
+6. Output the value of `c + 1` by printing it.
+```

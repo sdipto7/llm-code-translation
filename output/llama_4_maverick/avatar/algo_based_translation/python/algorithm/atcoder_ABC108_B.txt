@@ -1,0 +1,12 @@
+1. Read input and split into parts using space as delimiter
+2. Convert first part to integer and store in x1
+3. Convert second part to integer and store in y1
+4. Convert third part to integer and store in x2
+5. Convert fourth part to integer and store in y2
+6. Calculate DIF1 as x2 minus x1
+7. Calculate DIF2 as y2 minus y1
+8. Calculate x3 as x2 minus DIF2
+9. Calculate y3 as y2 plus DIF1
+10. Calculate x4 as x1 minus DIF2
+11. Calculate y4 as y1 plus DIF1
+12. Print x3, y3, x4, and y4 separated by spaces

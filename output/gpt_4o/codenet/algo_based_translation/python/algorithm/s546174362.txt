@@ -1,0 +1,22 @@
+```
+Algorithm:
+1. Define a function `process_numbers(N: int, M: int, A: List[int]) -> int`.
+2. Initialize variables:
+   - `A: List[int]` as a sorted list of integers.
+3. Begin a while loop that continues as long as `M > 0`.
+   - Divide the last element of list `A` by 2 using integer division and update it.
+   - Decrement `M` by 1.
+   - Initialize `i` to -2.
+   - Begin a nested while loop with conditions `M > 0`, `i >= -N`, and `A[i] >= A[-1]`.
+     - Divide `A[i]` by 2 using integer division and update it.
+     - Decrement `M` by 1.
+     - Decrement `i` by 1.
+   - Sort the list `A` after the nested loop.
+4. Return the sum of all elements in the list `A`.
+5. Input and output operations:
+   - Read integers `N` and `M` from the input.
+   - Read a list of integers `A` from the input.
+   - Output the result of `process_numbers(N, M, A)`.
+6. Required libraries, modules, or dependencies:
+   - `from typing import List`
+```

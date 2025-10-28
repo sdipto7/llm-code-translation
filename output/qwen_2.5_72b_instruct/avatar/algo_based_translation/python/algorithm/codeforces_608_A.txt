@@ -1,0 +1,20 @@
+Function: main()
+Parameters: None
+Return Type: None
+Variables:
+- n (int)
+- s (int)
+- c (int)
+- f (int)
+- t (int)
+- x (int)
+
+1. Import sys module
+2. Read input using sys.stdin.readline and split into two integers, assign to n and s
+3. Initialize c to 0
+4. For loop runs n times:
+    a. Read input using sys.stdin.readline and split into two integers, assign to f and t
+    b. Calculate x as t - (s - f)
+    c. If x is greater than c:
+        i. Set c to x
+5. Print the value of s + c

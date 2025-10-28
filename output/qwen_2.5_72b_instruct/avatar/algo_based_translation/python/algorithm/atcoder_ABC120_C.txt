@@ -1,0 +1,33 @@
+Function signatures:
+- main(): None
+
+Variable declarations and data types:
+- s: str
+- ans: int
+
+Logic flow:
+1. Import necessary modules and set recursion limit
+2. Define constant values INF and MOD
+3. Define main function
+4. Read input string s
+5. Check if all characters in s are the same:
+   a. If true, print 0 and exit
+6. Count occurrences of each character in s using Counter, store in a
+7. Calculate ans as the minimum value in a multiplied by 2
+8. Print ans
+
+Control structures:
+- If condition: len(set(s)) == 1
+
+Input/output operations:
+- Read input string s
+- Print ans
+
+Data processing logic:
+- Convert string to set to check for unique characters
+- Use Counter to count character occurrences
+- Find minimum occurrence count and multiply by 2
+
+Required libraries:
+- collections: deque, Counter
+- sys: stdin, setrecursionlimit

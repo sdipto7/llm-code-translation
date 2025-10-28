@@ -1,0 +1,70 @@
+**Algorithm Specification:**
+
+**Function/Method Signatures:**
+- `main() -> void`  
+  (Implicit entry point, reads from stdin, processes data, writes to stdout)
+
+**Variables: Declarations & Types:**
+- `N: int` (Number of items)
+- `T: int` (Time constraint)
+- `time_value: List[Tuple[int, int]]` (List of tuples with time and value, indexed 0 to N)
+- `dp: List[List[int]]` (2D array of size (N+1) x T for dynamic programming)
+- `val_acum: int` (Accumulated value during post-processing)
+- `t: int` (Remaining time during post-processing)
+- `max_val: int` (Maximum value result)
+
+**Step-by-Step Logic:**
+
+1. **Input Initialization:**
+   - Read `N` and `T` from stdin as integers.
+   - Initialize `time_value` with `N+1` elements:
+     - `time_value[0] = (-1, -1)`
+     - Read `N` lines, storing each line as a tuple `(time, value)` in `time_value[1..N]`.
+
+2. **Data Preprocessing:**
+   - Sort `time_value` in ascending order based on the second element (value) of each tuple.
+
+3. **Dynamic Programming Table Setup:**
+   - Initialize `dp` as a 2D list of size `(N+1) x T` with all values set to `-1`.
+   - For all `t` in `0 ≤ t < T`, set `dp[0][t] = 0`.
+   - For all `n` in `1 ≤ n ≤ N`, set `dp[n][0] = 0`.
+
+4. **DP Table Population:**
+   - For each item `n` from `1` to `N`:
+     - For each time `t` from `1` to `T-1`:
+       - If `time_value[n][TIME] > t`:  
+         `dp[n][t] = dp[n-1][t]`
+       - Else:  
+         `dp[n][t] = max(dp[n-1][t], time_value[n][VAL] + dp[n-1][t - time_value[n][TIME]])`
+
+5. **Post-Processing for Maximum Value:**
+   - Initialize `val_acum = time_value[N][VAL]`, `t = T-1`, `max_val = val_acum + dp[N-1][t]`.
+   - For `n` from `N-1` down to `1`:
+     - Update `val_acum += time_value[n][VAL]`.
+     - Update `t -= time_value[n+1][TIME]`.
+     - If `t < 0`: Terminate loop.
+     - Else: Update `max_val = max(max_val, val_acum + dp[n-1][t])`.
+
+6. **Output Result:**
+   - Print `max_val`.
+
+**Control Flow Structures:**
+- **Loops:**
+  - `for i in range(1, N+1)` to read input items.
+  - `for n in range(1, N+1)` and nested `for t in range(1, T)` for DP population.
+  - `for n in range(N-1, 0, -1)` for post-processing.
+- **Conditionals:**
+  - `if time_value[n][TIME] > t` in DP population.
+  - `if t < 0` to break post-processing loop.
+
+**Input/Output Operations:**
+- Read all input via `sys.stdin.readline`.
+- Print final `max_val` to stdout.
+
+**Edge Case Handling:**
+- Initialization of `dp[0][t]` and `dp[n][0]` to handle base cases with zero items or zero time.
+- Termination of post-processing loop when remaining time `t` becomes negative.
+
+**External Dependencies:**
+- `sys` module for input reading.
+- `operator.itemgetter` for sorting tuples by value.

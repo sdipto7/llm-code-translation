@@ -1,0 +1,12 @@
+Algorithm:
+- Import: java.util.Scanner
+- Function: main(String[] args)
+  - Declare Scanner sc = new Scanner(System.in)
+  - Declare String s = sc.next()
+  - If s equals "Sunny":
+    - Print "Cloudy"
+  - Else if s equals "Cloudy":
+    - Print "Rainy"
+  - Else:
+    - Print "Sunny"
+  - Execute sc.close()

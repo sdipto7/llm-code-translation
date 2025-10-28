@@ -1,0 +1,6 @@
+1. Read two integer inputs from the user and store them in variables a and b.
+2. Calculate the minimum value between a and b.
+3. Calculate the maximum value between a and b.
+4. Calculate the difference between the maximum and minimum values.
+5. Divide the difference by 2 using integer division.
+6. Output the minimum value and the result of the division.

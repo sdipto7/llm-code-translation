@@ -1,0 +1,13 @@
+- Function signature: `main() -> None`
+- Variables:
+  - `A: int`
+  - `B: int`
+- Input: Read line from stdin, split into two integers for `A` and `B`
+- Conditional:
+  - If `(A + B) % 2 == 1`:
+    - Print "IMPOSSIBLE"
+  - Else:
+    - Compute `(A + B) // 2` and print result
+- Output operations:
+  - Direct console print with no returned value
+- Dependencies: None

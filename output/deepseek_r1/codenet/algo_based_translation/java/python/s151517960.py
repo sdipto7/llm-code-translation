@@ -1,0 +1,25 @@
+
+import sys
+
+def main():
+    data = list(map(int, sys.stdin.read().split()))
+    n = data[0]
+    nums = data[1:n+1]
+
+    count_map = {}
+    for num in nums:
+        if num in count_map:
+            count_map[num] += 1
+        else:
+            count_map[num] = 1
+
+    ans = 0
+    for count in count_map.values():
+        if count % 2 == 1:
+            ans += 1
+
+    print(ans)
+
+if __name__ == "__main__":
+    main()
+

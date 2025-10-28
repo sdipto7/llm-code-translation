@@ -1,0 +1,32 @@
+Function signature:
+- `main() -> None`
+
+Variable declarations and data types:
+- `candeleIntere: int`
+- `b: int`
+- `s: int`
+- `restoSciolte: int`
+
+Logic flow in execution order:
+1. Import the `re` module
+2. Read a line of input, split it into two integers, and assign them to `candeleIntere` and `b`
+3. Initialize `s` to 0
+4. Initialize `restoSciolte` to 0
+5. Enter a while loop that continues as long as `candeleIntere` is greater than 0 or `restoSciolte` is greater than or equal to `b`
+6. Inside the loop:
+   - Add the integer division of `restoSciolte` by `b` to `candeleIntere`
+   - Update `restoSciolte` to the remainder of `restoSciolte` divided by `b`
+   - Add `candeleIntere` to `s`
+   - Add the remainder of `candeleIntere` divided by `b` to `restoSciolte`
+   - Update `candeleIntere` to the integer division of `candeleIntere` by `b`
+7. After the loop, print the value of `s`
+
+Control structures:
+- While loop with condition `candeleIntere > 0 or restoSciolte >= b`
+
+Input/output operations and data processing logic:
+- Input: A single line containing two space-separated integers
+- Output: A single integer representing the total count
+
+Required libraries, modules, or dependencies:
+- `re` module (though not used in the provided code)

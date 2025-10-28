@@ -1,0 +1,65 @@
+**Structured Algorithm Specification**
+
+**Input/Output Operations:**
+1. Read integers `N` (number of nodes) and `K` (number of colors) from standard input.
+2. Read `N-1` edges from standard input, each representing an undirected connection between two nodes.
+3. Construct an adjacency list `graph` using 0-based node indices.
+4. Compute the result using DFS traversal and print it modulo `10^9 + 7`.
+
+**Data Structures:**
+- `graph`: Dictionary<int, List<int>>. Keys represent node indices (0-based), values are lists of adjacent node indices.
+- `mod`: Constant integer with value `10^9 + 7`.
+
+**Variables:**
+- `N`: Integer. Total nodes in the tree.
+- `K`: Integer. Available color count.
+- `a`, `b`: Integers. Temporary variables for edge input processing.
+- `caseNum`: Integer (local to `dfs`). Tracks valid color permutations for the current subtree.
+- `colorNum`: Integer (local to `dfs`). Tracks available color choices for child nodes.
+
+**Function Signature:**
+- `dfs(fro: int, to: int, f: int) -> int`
+  - `fro`: Current node index.
+  - `to`: Parent node index (use `-1` for root).
+  - `f`: Available color choices for the current node.
+  - Returns the number of valid colorings for the subtree rooted at `fro`.
+
+**Control Flow & Logic:**
+
+**DFS Function:**
+1. **Initialization:**
+   - Set `caseNum = f`.
+   - Set `colorNum = K - 1` if `f == K` (root case), else `colorNum = K - 2`.
+
+2. **Child Processing:**
+   - Iterate over all adjacent nodes `u` in `graph[fro]`:
+     - **Skip Condition:** If `u == to` (parent node), proceed to next iteration.
+     - **Recursive Call:** Compute `pat = dfs(u, fro, colorNum)`.
+     - **Early Termination:** If `pat == 0`, set `caseNum = 0` and exit loop.
+     - **Update Total:** Multiply `caseNum` by `pat` modulo `mod`.
+     - **Color Reduction:** Decrement `colorNum` by 1.
+
+3. **Return Result:** Return `caseNum` after processing all children.
+
+**Main Execution:**
+1. **Input Handling:**
+   - Read `N` and `K`.
+   - Populate `graph` with `N-1` edges (adjusting input to 0-based indices).
+
+2. **Edge Case Handling:**
+   - If `N == 1`, output `K % mod` (single-node case).
+   - If `K == 1` and `N > 1`, output `0` (impossible coloring).
+
+3. **DFS Invocation:**
+   - Call `ans = dfs(0, -1, K)` to compute the result for the root node.
+
+4. **Output Result:**
+   - Print `ans % mod`.
+
+**Dependencies:**
+- `sys` module for adjusting recursion limit (non-algorithmic optimization).
+- `collections.defaultdict` for adjacency list construction.
+
+**Error Handling:**
+- Recursion depth is increased via `sys.setrecursionlimit` to handle large trees (implementation-specific adjustment).
+- Implicitly handles invalid color counts (e.g., `colorNum` becoming negative returns 0 through multiplicative zeroing).

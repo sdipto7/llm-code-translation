@@ -1,0 +1,27 @@
+Function signature: `public static void main(String args[])`
+Variable declarations and data types:
+- `Scanner sc` of type `Scanner`
+- `int q` of type `int`
+- `int n` of type `int`
+- `long s` of type `long`
+- `int x` of type `int`
+
+Logic flow in execution order:
+1. Create a new `Scanner` object for reading input from standard input.
+2. Read an integer `q` representing the number of queries.
+3. Enter a loop that runs `q` times (while `q-- > 0`):
+   - Read an integer `n`.
+   - Initialize `s` to 0.
+   - Calculate `x` as the smallest power of 2 greater than or equal to `n` using `x = (int)(Math.log(n) / Math.log(2)) + 1`.
+   - Compute `s` using the formula: `s = -1 * (long)Math.pow(2, x) + 2 + ((long)n * (long)(n + 1)) / 2 - (long)Math.pow(2, x)`.
+   - Print the value of `s`.
+
+Control structures:
+- A while loop with the condition `q-- > 0`.
+
+Input/output operations and data processing logic:
+- Input: Reads integers `q` and `n` from standard input.
+- Output: Prints the computed value of `s` for each query.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

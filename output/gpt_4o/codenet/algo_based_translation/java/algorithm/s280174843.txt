@@ -1,0 +1,22 @@
+- Function Signature:
+  - `main(String[] args)`: Takes an array of strings as arguments, returns void.
+
+- Variable Declarations:
+  - `int[] abc`: Array of integers with a length of 3.
+  - `String str`: Variable to store input string.
+  - `String[] inp`: Array of strings to store split input.
+
+- Required Libraries:
+  - `java.io.IOException`
+  - `java.io.InputStreamReader`
+  - `java.io.BufferedReader`
+
+- Execution Order:
+  1. Initialize a `BufferedReader` object `buf` for reading input from standard input.
+  2. Read a line of input from the user and store it in the variable `str`.
+  3. Split the input string `str` by spaces into an array of strings `inp`.
+  4. Iterate over the `inp` array using a `for` loop with index `i` ranging from 0 to `inp.length - 1`:
+     - Convert each string `inp[i]` to an integer and store it in the corresponding index `i` of the `abc` array.
+  5. Use an `if` statement to check if `abc[0] < abc[1]` and `abc[1] < abc[2]`:
+     - If the condition is true, print "Yes".
+     - Otherwise, print "No".

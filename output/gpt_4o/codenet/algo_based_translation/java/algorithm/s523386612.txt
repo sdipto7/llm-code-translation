@@ -1,0 +1,25 @@
+```
+Algorithm:
+
+1. Import necessary libraries:
+   - java.util.Scanner
+   - java.lang (implicitly included in Java programs, so explicit import is optional)
+
+2. Define the main class `Main`.
+
+3. Implement the `main` method with the signature: `public static void main(String[] args)`.
+
+4. Inside the `main` method:
+   a. Declare a `Scanner` object `sc` for reading input from the standard input stream.
+   b. Read an integer `t` using `sc.nextInt()` which represents the number of integers to be processed.
+   c. Declare an integer array `count` of size `t + 1` to keep track of the occurrences of each number.
+
+5. Iterate from `i = 2` to `i = t` (inclusive):
+   a. Read the next integer using `sc.nextInt()`.
+   b. Increment the count of this integer in the `count` array.
+
+6. Iterate from `i = 1` to `i = t` (inclusive):
+   a. Print the value at index `i` of the `count` array using `System.out.println(count[i])`.
+
+7. Close the `Scanner` object `sc` if necessary for resource management (not shown in the given code).
+```

@@ -1,0 +1,19 @@
+```
+Dependencies:
+- java.util.Scanner
+
+Algorithm:
+1. Define the main function that throws Exception.
+2. Create a Scanner object `sc` to read input from the standard input.
+3. Read a string `str` from input using `sc.next()`.
+4. Convert the string `str` to a character array `c`.
+5. Read a long integer `k` from input using `sc.nextLong()`.
+6. Determine the length of the string `str` and store it in an integer `n`.
+7. Iterate over the range from 0 to `k` (exclusive):
+   - For each index `i`:
+     - Check if `c[i]` is equal to the character '1':
+       - If true, check if `i` is equal to `k - 1`:
+         - If true, print the integer 1 to the standard output and terminate the program.
+     - If `c[i]` is not equal to '1':
+       - Print the character `c[i]` to the standard output and terminate the program.
+```

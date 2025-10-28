@@ -1,0 +1,6 @@
+1. Read input string `n` from standard input.
+2. Declare list `a` containing strings: ["10", "100", "1000", "10000", "100000"]
+3. Convert string `n` to list of characters, map each character to integer, convert to list, then sum all integers to get `new`
+4. Check if `n` is in list `a`
+   - If true: print integer 10
+   - If false: print integer `new`

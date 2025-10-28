@@ -1,0 +1,38 @@
+1. Function: main
+   - Parameters: String args[]
+   - Return type: void
+
+2. Variables:
+   - Scanner sc: for reading input
+   - int N: read from input, size of array
+   - int[] A: array of size N
+   - int min: initialized to Integer.MAX_VALUE
+   - int count: initialized to 0
+   - long sum: initialized to 0
+   - int i: loop counter
+
+3. Logic Flow:
+   - Create Scanner object with System.in
+   - Read integer N from input
+   - Initialize array A with size N
+   - For i from 0 to N-1:
+        Read integer into A[i]
+        If A[i] < 0: increment count by 1
+        Set min = minimum of current min and absolute value of A[i]
+        Add absolute value of A[i] to sum
+   - Close Scanner
+   - If count is even: print sum
+   - Else: print (sum - min * 2)
+
+4. Control Structures:
+   - For loop: i = 0; i < N; i++
+   - If condition: A[i] < 0
+   - If condition: count % 2 == 0
+
+5. Input/Output:
+   - Input: integer N, followed by N integers
+   - Output: single integer result
+
+6. Dependencies:
+   - java.util.Scanner
+   - java.lang.Math.abs and Math.min

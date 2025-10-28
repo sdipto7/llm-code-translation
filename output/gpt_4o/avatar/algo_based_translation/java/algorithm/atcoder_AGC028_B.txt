@@ -1,0 +1,36 @@
+Algorithm:
+1. Import necessary classes: `BufferedReader` and `InputStreamReader`.
+2. Define the main function `main(String[] args)` which throws an `Exception`.
+3. Initialize a `BufferedReader` to read input from the standard input.
+4. Read an integer `n` from input representing the length of the array.
+5. Read the next line and split it by spaces to get an array of strings `sa`.
+6. Declare an integer array `a` of length `n`.
+7. Use a for-loop from `i = 0` to `i < n`:
+   - Convert `sa[i]` to an integer and assign it to `a[i]`.
+8. Close the `BufferedReader`.
+9. Declare an integer `mod` and assign it the value `1000000007`.
+10. Declare a long variable `p` and initialize it to `1`.
+11. Use a for-loop from `i = 2` to `i <= n`:
+    - Update `p` as `(p * i) % mod`.
+12. Declare a long array `q` of length `n`.
+13. Assign `q[0]` the value `1`.
+14. Use a for-loop from `i = 1` to `i < n`:
+    - Update `q[i]` as `(q[i-1] + modinv(i+1, mod)) % mod`.
+15. Declare a long variable `ans` and initialize it to `0`.
+16. Use a for-loop from `i = 0` to `i < n`:
+    - Calculate `val` as `q[i] + q[n-i-1] - 1`.
+    - Multiply `val` by `a[i]` and take modulo `mod`.
+    - Multiply `val` by `p` and take modulo `mod`.
+    - Add `val` to `ans` and take modulo `mod`.
+17. Print `ans`.
+18. Define a static method `modinv(long a, int m)` which returns a long:
+    - Declare long variables `b`, `u`, `v`, and `tmp` and initialize them to `m`, `1`, `0`, and `0` respectively.
+    - Use a while-loop with the condition `b > 0`:
+      - Calculate `t` as `a / b`.
+      - Update `a` by subtracting `t * b`.
+      - Swap values of `a` and `b`.
+      - Update `u` by subtracting `t * v`.
+      - Swap values of `u` and `v`.
+    - Update `u` as `u % m`.
+    - If `u < 0`, add `m` to `u`.
+    - Return `u`.

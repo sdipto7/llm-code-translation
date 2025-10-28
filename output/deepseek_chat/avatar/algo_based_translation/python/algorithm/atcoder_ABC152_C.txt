@@ -1,0 +1,12 @@
+Algorithm:
+- Import numpy module as np
+- Read integer N from standard input
+- Read next line from standard input, split into list of strings, convert each to integer, store in list n
+- Convert list n to numpy array
+- Initialize integer variable a = 1
+- Initialize integer variable pos = 0
+- For integer i from 1 to N-1 (inclusive):
+    - If element at index pos in array n is greater than element at index i:
+        - Increment a by 1
+        - Set pos = i
+- Print value of a

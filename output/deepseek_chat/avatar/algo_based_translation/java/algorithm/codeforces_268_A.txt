@@ -1,0 +1,29 @@
+- Function: main
+- Parameters: String[] args
+- Return type: void
+- Variables:
+  - Scanner sc (input scanner)
+  - int n (number of teams)
+  - int result (counter initialized to 0)
+  - int[] h (size n, home colors)
+  - int[] g (size n, guest colors)
+- Logic flow:
+  1. Read integer n from input
+  2. Initialize result to 0
+  3. Create arrays h and g of size n
+  4. For i from 0 to n-1:
+     - Read h[i] from input
+     - Read g[i] from input
+  5. For i from 0 to n-1:
+     - For j from 0 to n-1:
+        - If h[i] equals g[j]:
+           - Increment result by 1
+  6. Print result
+- Control structures:
+  - Two nested for loops with range 0 to n-1
+  - Conditional if statement comparing h[i] and g[j]
+- Input/output:
+  - Input: integer n followed by n pairs of integers
+  - Output: single integer result
+- Dependencies:
+  - java.util.Scanner

@@ -1,0 +1,47 @@
+**Structured Algorithm Specification**
+
+**1. Function/Method Signatures**
+- `num_inp: () → int`  
+- `arr_inp: () → list[int]`  
+- `sp_inp: () → map`  
+- `str_inp: () → str`  
+
+**2. Variable Declarations**
+- `x: int`  
+- `y: int`  
+- `num_inp: lambda function`  
+- `arr_inp: lambda function`  
+- `sp_inp: lambda function`  
+- `str_inp: lambda function`  
+
+**3. Step-by-Step Logic Flow**  
+1. Read two integers `x` and `y` from standard input via space-separated values.  
+2. Compute `temp1 = (y - x) % 3`.  
+3. Evaluate condition `(temp1 > 0)` to produce `1` (true) or `0` (false).  
+4. Compute intermediate value `sum_val = x + y - 3 + condition_result`.  
+5. Calculate final result as `max(sum_val, 0)`.  
+6. Print the final result.  
+7. Define lambda `num_inp` to read and return an integer from input.  
+8. Define lambda `arr_inp` to read and return a list of integers from input.  
+9. Define lambda `sp_inp` to read and return a map of integers from input.  
+10. Define lambda `str_inp` to read and return a string from input.  
+
+**4. Control Flow Structures**  
+- Conditional: Implicit boolean evaluation `(y - x) % 3 > 0` determines `condition_result`.  
+- Conditional: `max()` function enforces lower bound of `0`.  
+
+**5. Input/Output Operations**  
+- Input:  
+  - Two integers via `input().split()` for `x` and `y`.  
+  - Subsequent inputs via lambda functions (`num_inp`, `arr_inp`, etc.).  
+- Output:  
+  - Print result of `max(x + y - 3 + condition_result, 0)`.  
+
+**6. Error Handling & Edge Cases**  
+- `max(..., 0)` ensures output is non-negative.  
+- Handles cases where `x + y ≤ 3` by returning `0` if applicable.  
+- No explicit error handling for invalid input types (assumes valid integer inputs).  
+
+**7. External Dependencies**  
+- Relies on Python standard library functions: `input()`, `map()`, `split()`, `int()`, `list()`.  
+- No external libraries or imports required.

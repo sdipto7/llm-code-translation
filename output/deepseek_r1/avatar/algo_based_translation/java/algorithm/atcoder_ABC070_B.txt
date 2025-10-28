@@ -1,0 +1,46 @@
+Here's the algorithm extracted from the Java code:
+
+**Function: main()**
+- Parameters: None
+- Return Type: void
+- Variables:
+  - a: int
+  - b: int
+  - c: int
+  - d: int
+- Logic Flow:
+  1. Read integers a, b, c, d from input
+  2. Check:
+     - If c > b → Print 0
+     - Else If a > d → Print 0
+     - Else If a < c → Print (min(b, d) - c)
+     - Else:
+       a. Create list containing [a, b, c, d]
+       b. Sort the list
+       c. Print (sorted_list[2] - sorted_list[1])
+  3. Exit
+
+**Input Handling:**
+- Uses custom input reader with buffered stream
+- Tokenizes input for parsing integers
+
+**Required Dependencies:**
+- Java IO classes (InputStream, OutputStream, BufferedReader, etc.)
+- Java utility classes (ArrayList, Collections, StringTokenizer)
+
+---
+
+Here's the Python implementation:
+
+```python
+a, b, c, d = map(int, input().split())
+if c > b:
+    print(0)
+elif a > d:
+    print(0)
+elif a < c:
+    print(min(b, d) - c)
+else:
+    l = sorted([a, b, c, d])
+    print(l[2] - l[1])
+```

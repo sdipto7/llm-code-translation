@@ -1,0 +1,9 @@
+1. Define a function `check_string_match` with no parameters and return type `None`.
+2. Declare variables `s` and `t` of type `str` to store input strings.
+3. Read input from the user and store it in `s` using an input operation.
+4. Read input from the user and store it in `t` using an input operation.
+5. Compare the substring of `t` (excluding the last character) with `s` using the condition `t[:-1] == s`.
+6. If the condition in step 5 is `True`, execute the `if` branch.
+7. Inside the `if` branch, perform an output operation to print the string `'Yes'`.
+8. If the condition in step 5 is `False`, execute the `else` branch.
+9. Inside the `else` branch, perform an output operation to print the string `'No'`.

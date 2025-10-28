@@ -1,0 +1,21 @@
+1. Import the required library: java.util.Scanner
+2. Define a class: Main
+3. Define a function: main with return type void and parameter type String[]
+   1. Declare a variable: scan of type Scanner and initialize it with a new Scanner object using System.in
+   2. Declare a variable: size of type int and read its value from scan using nextInt()
+   3. Declare a 2D array: graph of type int[][] with size x size
+   4. Declare variables: id, cols of type int
+   5. Declare an array: row of type int[] with initial size 0
+   6. Loop from i = 0 to size - 1
+      1. Read id from scan using nextInt()
+      2. Read cols from scan using nextInt()
+      3. Reinitialize row with size 'size'
+      4. Loop from j = 0 to cols - 1
+         1. Read a value from scan using nextInt(), subtract 1, and use it as an index to set the corresponding element in row to 1
+      5. Assign row to graph[id - 1]
+   7. Loop from i = 0 to graph.length - 1
+      1. Loop from j = 0 to graph[i].length - 1
+         1. Print graph[i][j]
+         2. If j is less than graph[i].length - 1, print a space
+      2. Print a newline
+4. The program terminates.

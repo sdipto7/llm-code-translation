@@ -1,0 +1,44 @@
+Function signatures:
+- LI() -> map[int]
+
+Variable declarations and data types:
+- N: int
+- M: int
+- Q: int
+- Q_groups: list[list[int]]
+- max_score: int
+- p: tuple[int]
+- temp_score: int
+- q: list[int]
+
+Complete logic flow in execution order:
+1. Import `combinations_with_replacement` from `itertools` and `sys`.
+2. Define `LI()` to read a line from stdin, strip whitespace, split by spaces, and convert each element to an integer.
+3. Read three integers `N`, `M`, and `Q` from standard input using `LI()`.
+4. Initialize an empty list `Q_groups`.
+5. Loop `Q` times:
+   - Append a list of integers read from standard input using `LI()` to `Q_groups`.
+6. Initialize `max_score` to 0.
+7. Iterate over all combinations with replacement of numbers from 1 to `M` taken `N` at a time:
+   - Initialize `temp_score` to 0.
+   - For each query `q` in `Q_groups`:
+      - If the difference between the `q[1]`-th and `q[0]`-th elements of `p` equals `q[2]`:
+         - Add `q[3]` to `temp_score`.
+   - Update `max_score` to the maximum of `max_score` and `temp_score`.
+8. Print `max_score`.
+
+Control structures:
+- `for` loop to iterate `Q` times for reading `Q_groups`.
+- `for` loop to iterate over all combinations with replacement of numbers from 1 to `M` taken `N` at a time.
+- `for` loop to iterate over each query in `Q_groups`.
+- `if` statement to check if the difference between specific elements of `p` equals `q[2]`.
+
+Input/output operations and data processing logic:
+- Read input values for `N`, `M`, and `Q` using `LI()`.
+- Read `Q` groups of queries and store them in `Q_groups`.
+- Calculate the score for each combination of assignments and update `max_score` if a higher score is found.
+- Output the highest score found.
+
+Required libraries, modules, or dependencies:
+- `combinations_with_replacement` from `itertools`
+- `sys` module for reading input from standard input

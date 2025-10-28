@@ -1,0 +1,7 @@
+1. Define a function `main` with no parameters and return type `None`.
+2. Declare variables `X` and `A` of type `int`.
+3. Read input from the user and split it into two integers, storing them in `X` and `A`.
+4. Check the condition `X < A`.
+5. If the condition is `True`, output `0`.
+6. If the condition is `False`, output `10`.
+7. The required library is the built-in `input` and `map` functions, and the `list` data structure, which are part of the Python Standard Library.

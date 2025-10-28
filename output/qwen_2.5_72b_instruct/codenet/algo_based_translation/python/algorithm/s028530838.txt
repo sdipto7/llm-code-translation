@@ -1,0 +1,23 @@
+Function signature: main() -> None
+
+Variable declarations:
+- x: str
+
+Logic flow:
+1. Read input from the user and assign it to variable x
+2. Check if x is in lowercase
+   - If true, print "a"
+   - If false, print "A"
+
+Control structures:
+- Conditional (if-else) with condition x.islower()
+
+Input/output operations:
+- Input: Read string from user
+- Output: Print "a" or "A" based on condition
+
+Data processing logic:
+- Check if the input string is composed entirely of lowercase letters
+
+Required libraries, modules, or dependencies:
+- None

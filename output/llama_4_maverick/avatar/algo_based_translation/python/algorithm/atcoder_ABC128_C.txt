@@ -1,0 +1,16 @@
+1. Read n and m from input
+2. Initialize li as an empty list
+3. For i from 1 to m:
+   1. Read a list of integers from input
+   2. Append all elements except the first one to li
+4. Read p from input
+5. Initialize q as a set of all elements in li
+6. Initialize r as a set of integers from 1 to n
+7. Initialize v as the difference between r and q
+8. Initialize ans to 0
+9. For i from 0 to the size of q:
+   1. For each combination s of i elements from q:
+      1. For each pair (u, w) of corresponding elements from li and p:
+         1. If the size of the intersection between s and u is odd and not equal to w, break the loop
+      2. If the loop completes without breaking, increment ans by 2 raised to the power of the size of v
+10. Print ans

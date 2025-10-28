@@ -1,0 +1,14 @@
+1. Read the input size n.
+2. Read n strings of length n.
+3. Convert the input strings into a 2D character array.
+4. Identify the characters at the positions (0,0) and (0,1) in the 2D array.
+5. Check if the characters identified in step 4 are the same. If they are the same, output "NO".
+6. If the characters are different, initialize a flag to true.
+7. Iterate over the 2D array. For each element at position (i, j), check the following conditions:
+   - If i equals j or i + j equals n - 1, verify that the element is equal to the character at (0,0).
+   - If the element is not equal to the character at (0,0), set the flag to false and stop the iteration.
+   - If i is not equal to j and i + j is not equal to n - 1, verify that the element is equal to the character at (0,1).
+   - If the element is not equal to the character at (0,1), set the flag to false and stop the iteration.
+8. After iterating over the entire array, check the flag.
+9. If the flag is true, output "YES".
+10. If the flag is false, output "NO".

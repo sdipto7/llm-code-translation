@@ -1,0 +1,19 @@
+1. Read integer `n` from input
+2. Read a string from input, convert to list of characters, map each to integer, store as list `number`
+3. Initialize integer `h1` to 0
+4. Initialize integer `h2` to 0
+5. Initialize integer `x` to 0
+6. For each integer `i` from 0 to n-1:
+   - If `number[i]` is not equal to 4 AND not equal to 7:
+     - Print "NO"
+     - Increment `x` by 1
+     - Break out of loop
+   - If `i` is less than n//2:
+     - Add `number[i]` to `h1`
+   - Else:
+     - Add `number[i]` to `h2`
+7. If `x` equals 0:
+   - If `h1` equals `h2`:
+     - Print "YES"
+   - Else:
+     - Print "NO"

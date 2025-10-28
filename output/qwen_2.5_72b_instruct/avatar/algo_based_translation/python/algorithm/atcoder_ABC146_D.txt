@@ -1,0 +1,41 @@
+Function Signatures:
+- `bfs(v: int, N: int, G: List[Deque[int]], E: Dict[Tuple[int, int], int]) -> int`
+- `main() -> None`
+
+Variable Declarations and Data Types:
+- `visited: List[int]` initialized as `[0] * N`
+- `queue: Deque[int]` initialized as `deque()`
+- `K: int` initialized as `-1`
+- `node2color: List[int]` initialized as `[-1 for _ in range(N)]`
+- `q: int` used in the while loop
+- `color: int` used in the inner loop
+- `nex: int` iterated over in the for loop
+- `N: int` read from input
+- `G: List[Deque[int]]` initialized as `[deque() for _ in range(N)]`
+- `E: Dict[Tuple[int, int], int]` initialized as `dict()`
+- `a: int` and `b: int` read from input in the for loop
+
+Logic Flow in Execution Order:
+- `main()` starts by reading `N` as an integer from input.
+- Initializes `G` as a list of deques and `E` as a dictionary.
+- Reads `N-1` lines of input, each containing two integers `a` and `b`. Decrements `a` and `b` by 1 to convert to 0-based indexing. Adds edges between `a` and `b` in `G` and initializes the corresponding entry in `E` with `0`.
+- Calls `bfs(0, N, G, E)` and stores the result in `K`.
+- Prints `K`.
+- Iterates over values in `E` and prints each value.
+
+Required Libraries, Modules, or Dependencies:
+- `collections.deque`
+- `sys.stdin.readline`
+
+Control Structures:
+- `while queue:` checks if the queue is not empty.
+- `for nex in G[q]:` iterates over neighbors of `q`.
+- `if visited[nex]:` skips the iteration if `nex` has already been visited.
+- `if color == node2color[q]:` increments `color` if it matches the color of `q`.
+
+Input/Output Operations and Data Processing Logic:
+- Reads `N` and `N-1` pairs of integers from input.
+- Constructs graph `G` and edge dictionary `E`.
+- Performs BFS starting from vertex `0` to assign colors to edges such that no two adjacent edges share the same color.
+- Prints the maximum number of colors used (`K`).
+- Prints the color assigned to each edge in the dictionary `E`.

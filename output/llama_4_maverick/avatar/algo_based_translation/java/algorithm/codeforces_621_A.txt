@@ -1,0 +1,14 @@
+1. Read the number of inputs.
+2. Initialize an empty list to store input numbers.
+3. Read input numbers and store them in the list.
+4. Initialize an empty list to store odd numbers.
+5. Initialize a variable to store the sum of numbers.
+6. Iterate through the input numbers.
+7. For each number, check if it is even.
+8. If the number is even, add it to the sum.
+9. If the number is odd, add it to the list of odd numbers.
+10. Sort the list of odd numbers in ascending order.
+11. Iterate through the sorted odd numbers and add them to the sum.
+12. Check if the count of odd numbers is odd.
+13. If the count is odd, subtract the smallest odd number from the sum.
+14. Output the final sum.

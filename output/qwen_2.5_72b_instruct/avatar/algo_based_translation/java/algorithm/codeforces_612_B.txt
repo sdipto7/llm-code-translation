@@ -1,0 +1,32 @@
+Algorithm:
+Function signature: `main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner s` of type `Scanner`
+- `int n` of type `int`
+- `int[] dp` of type `int[]` with size `200001`
+- `long ans` of type `long`
+
+Complete logic flow in execution order:
+1. Create a new `Scanner` object `s` reading from `System.in`.
+2. Read an integer `n` from the input using `s.nextInt()`.
+3. Initialize an array `dp` of size `200001` to store integer values.
+4. For loop starting with `i = 0` and ending with `i < n` (inclusive), incrementing `i` by `1` each iteration:
+   - Read an integer from the input using `s.nextInt()` and set `dp` at index equal to the read integer to `i`.
+5. Initialize `ans` to `0`.
+6. For loop starting with `i = 2` and ending with `i <= n` (inclusive), incrementing `i` by `1` each iteration:
+   - Add the absolute difference between `dp[i]` and `dp[i - 1]` to `ans` using `Math.abs(dp[i] - dp[i - 1])`.
+7. Print the value of `ans` using `System.out.println(ans)`.
+
+Control structures:
+- For loop with condition `i < n` for initializing the `dp` array.
+- For loop with condition `i <= n` for calculating the total distance stored in `ans`.
+
+Input/output operations and data processing logic:
+- Read an integer `n` from standard input.
+- Read `n` integers from standard input, using each integer as an index to store its position in the `dp` array.
+- Calculate the sum of absolute differences between consecutive positions in the `dp` array.
+- Output the result stored in `ans` to standard output.
+
+Required libraries, modules, or dependencies:
+- `Scanner` from `java.util` package

@@ -1,0 +1,27 @@
+Function Signature:
+- No explicit function (executed as script)
+
+Variables:
+- input_str: string (from input)
+- last_digit: integer
+
+Input Operations:
+- Read input_str from standard input via `input()`
+
+Data Processing:
+- Extract last character of input_str: `input_str[-1]`
+- Convert to integer: `last_digit = int(input_str[-1])`
+
+Control Structures:
+1. If `last_digit in {2,4,5,7,9}`:
+   - Print "hon"
+2. Else if `last_digit in {0,1,6,8}`:
+   - Print "pon"
+3. Else (implicitly `last_digit == 3`):
+   - Print "bon"
+
+Output Operations:
+- Print result based on conditions using `print()`
+
+Dependencies:
+- None (uses built-in functions only)

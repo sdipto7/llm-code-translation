@@ -1,0 +1,23 @@
+1. Define a function `read_input()` that takes no parameters and returns a string.
+2. Declare a variable `user_input` of type string to store the result of `read_input()`.
+3. Assign the result of `read_input()` to `user_input`.
+4. Define a function `swap_case(input_str: string)` that takes a string as a parameter and returns a string.
+5. Declare a variable `swapped_case` of type string to store the result of `swap_case(user_input)`.
+6. Call `swap_case(user_input)` and assign the result to `swapped_case`.
+7. Define a function `print_output(output_str: string)` that takes a string as a parameter and returns no value.
+8. Call `print_output(swapped_case)`.
+ 
+Logic Flow:
+- Execute `read_input()` and store the result in `user_input`.
+- Pass `user_input` to `swap_case()` and store the result in `swapped_case`.
+- Pass `swapped_case` to `print_output()`.
+
+The `swap_case(input_str: string)` function inverts the case of each character in `input_str` and returns the resulting string.
+
+The `read_input()` function reads a line of input from the standard input and returns it as a string.
+
+The `print_output(output_str: string)` function writes `output_str` to the standard output.
+
+Required Libraries/Modules:
+- Input/Output library for `read_input()` and `print_output()` functions. 
+- String library for `swap_case()` function.

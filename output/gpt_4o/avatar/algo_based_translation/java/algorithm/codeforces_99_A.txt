@@ -1,0 +1,27 @@
+Function Signature:
+- Function: `main`
+- Parameters: `args` (String array)
+- Return Type: `void`
+
+Dependencies:
+- import `Scanner` from `java.util`
+- import `BigInteger` from `java.math`
+
+Variable Declarations:
+- `str`: char array
+- `dotIndex`: integer
+
+Algorithm Flow:
+1. Initialize `str` by reading a line from standard input, converting it to a character array.
+2. Initialize `dotIndex` to 0.
+3. Iterate over each character in `str` using index `i`:
+   - If `str[i]` is a period `'.'`, set `dotIndex` to `i` and exit the loop.
+4. Check if the character before the period (`str[dotIndex - 1]`) is `'9'`:
+   - If true, print "GOTO Vasilisa." and terminate.
+5. Otherwise, check if the character immediately after the period (`str[dotIndex + 1]`) is greater than `'4'`:
+   - Convert `str[dotIndex + 1]` to an integer for comparison.
+   - If true, create an empty string `_str`.
+   - Append characters from `str[0]` to `str[dotIndex - 1]` to `_str`.
+   - Convert `_str` to a `BigInteger`, add `1` to it, convert the result back to string, and print.
+6. If neither condition is true, iterate from `0` to `dotIndex` and print each character of `str` without a newline.
+7. Print a newline character.

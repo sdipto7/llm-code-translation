@@ -1,0 +1,28 @@
+Function signature: main() -> None
+
+Variable declarations and data types:
+- ABC: List[int]
+- A: int
+- B: int
+- C: int
+
+Logic flow in execution order:
+1. Read a line of input from the user and split it by spaces.
+2. Convert each split string element to an integer and store them in the list ABC.
+3. Assign the first element of ABC to A.
+4. Assign the second element of ABC to B.
+5. Assign the third element of ABC to C.
+6. Create a list containing three integers: 10*A + B + C, 10*B + C + A, 10*C + A + B.
+7. Find the maximum value in the created list.
+8. Print the maximum value.
+
+Control structures:
+- No loops or conditionals are present in the code.
+
+Input/output operations and data processing logic:
+- Input: A single line of space-separated integers.
+- Output: The maximum value among the three formed numbers.
+- Data processing involves arithmetic operations to form the three different numbers and comparison to find the maximum.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules are required.

@@ -1,0 +1,14 @@
+1. Read 5 integers from standard input and store them in list 'a'
+2. Initialize an empty dictionary 'dic'
+3. For each index i from 0 to 4:
+   - Convert a[i] to string and get last character
+   - If last character is '0':
+        Add entry {i: 0} to dic
+   - Else:
+        Convert last character to integer, subtract 10, add entry {i: result} to dic
+4. Find all keys in dic where value equals minimum value in dic
+5. Take first key from result and store as min_num
+6. Calculate sum of all elements in list a and store as a_sum
+7. Remove entry with key min_num from dic
+8. Calculate absolute sum of remaining values in dic
+9. Add a_sum to result and print final value

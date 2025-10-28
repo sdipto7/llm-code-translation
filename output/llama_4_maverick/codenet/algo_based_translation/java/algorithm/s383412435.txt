@@ -1,0 +1,23 @@
+### Algorithm
+
+1. Define a function `main` with no parameters and no return type.
+   - Declare a `Scanner` object `sc` to read input from the standard input.
+   - Read an integer `N` using `sc`.
+   - Declare a long array `a` of size `N`.
+   - Declare an integer `tmp` to store temporary results.
+   - Declare an integer `ans` to store the final answer and initialize it to 0.
+
+2. Read `N` long integers using `sc` and store them in the array `a`.
+3. Sort the array `a` in ascending order.
+4. If `N` equals 1 and the single element in `a` is greater than 1, set `ans` to 1.
+5. Otherwise, iterate through the sorted array `a` using a for loop with index `j`.
+   - For each element, check if it is the first occurrence (i.e., `j` equals 0 or `a[j]` is not equal to `a[j-1]`).
+   - If it is the first occurrence, count the number of subsequent equal elements using a nested for loop starting from `j+1` and store the count in `tmp`.
+   - If `tmp` is greater than `a[j]`, increment `ans` by `tmp - a[j]`.
+   - If `tmp` is less than `a[j]`, increment `ans` by `tmp`.
+6. Print the final answer `ans` to the standard output.
+
+### Required Libraries and Modules
+
+- `java.util.Scanner`
+- `java.util.Arrays`

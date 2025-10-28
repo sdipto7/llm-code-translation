@@ -1,0 +1,18 @@
+1. READ n
+2. READ lst as a list of n integers
+3. SORT lst in descending order
+4. INITIALIZE od to 0
+5. FOR EACH i in lst
+   IF i is odd THEN
+      INCREMENT od
+6. INITIALIZE sum to 0
+7. INITIALIZE ok to 0 (FALSE)
+8. FOR i from 0 to n-1
+   IF lst[i] is even THEN
+      sum = sum + lst[i]
+   ELSE
+      IF ok is TRUE OR od > 1 THEN
+         sum = sum + lst[i]
+         DECREMENT od
+         ok = NOT ok
+9. PRINT sum

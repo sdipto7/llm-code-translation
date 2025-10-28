@@ -1,0 +1,62 @@
+Function signatures:
+- `main(String[] args)`: Return type is void
+- `dfs(int to, int color, int parents)`: Return type is void
+
+Variable declarations and data types:
+- `n`: int
+- `g`: List<ArrayList<Edge>>
+- `ans`: int[]
+- `sc`: Scanner
+- `a`: int
+- `b`: int
+- `max`: int
+- `temp`: int
+- `c`: int
+- `k`: int
+- `e`: Edge
+
+Logic flow in execution order:
+1. Create a new Scanner object
+2. Read integer value for `n`
+3. Initialize `g` as an ArrayList of ArrayList<Edge> with size `n`
+4. Loop from 0 to `n-1`:
+   - Add an empty ArrayList<Edge> to `g`
+5. Loop from 0 to `n-2`:
+   - Read integer values for `a` and `b`, decrement both by 1
+   - Create new Edge with id as loop index and to as `b`, add to `g.get(a)`
+   - Create new Edge with id as loop index and to as `a`, add to `g.get(b)`
+6. Initialize `ans` as int array with size `n-1`
+7. Call `dfs(0, -1, -1)`
+8. Initialize `max` to 0
+9. Loop through each element in `ans`:
+   - Update `max` to be the maximum of `max` and current element
+10. Print `max`
+11. Loop through each element in `ans`:
+    - Print current element
+
+Control structures:
+- Loops:
+  - For loop from 0 to `n-1` for initializing `g`
+  - For loop from 0 to `n-2` for reading edges and adding to graph
+  - For loop through `ans` for finding maximum value
+  - For loop through `ans` for printing values
+- Conditional:
+  - If `e.to` equals `parents`, continue to next iteration
+
+Input/output operations and data processing logic:
+- Input:
+  - Read integer `n`
+  - Read `n-1` pairs of integers representing edges
+- Output:
+  - Print maximum value found in `ans`
+  - Print each element in `ans`
+
+Required libraries, modules, or dependencies:
+- `java.util.ArrayList`
+- `java.util.List`
+- `java.util.Scanner`
+
+Data processing logic:
+- Build an adjacency list representation of the graph
+- Perform DFS starting from node 0, assigning colors to edges
+- Track and print the maximum color used and each edge's color

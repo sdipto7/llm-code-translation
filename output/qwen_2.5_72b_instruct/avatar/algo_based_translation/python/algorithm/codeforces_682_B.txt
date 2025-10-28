@@ -1,0 +1,35 @@
+Function signatures:
+- `I() -> List[int]`
+- `IS() -> str`
+- `IN() -> int`
+- `IF() -> float`
+
+Variable declarations:
+- `n: int`
+- `l: List[int]`
+- `f: int`
+- `c: int`
+- `i: int`
+
+Required libraries, modules, or dependencies:
+- `os`
+- `sys`
+- `io`
+- `math`
+- `array`
+
+Logic flow in execution order:
+1. Import necessary modules and functions.
+2. Define lambda functions for reading input:
+   - `I`: Read a line of integers from standard input and return as a list.
+   - `IS`: Read a line of string from standard input.
+   - `IN`: Read a single integer from standard input.
+   - `IF`: Read a single float from standard input.
+3. Read an integer `n` from standard input.
+4. Read a list of integers `l` from standard input using function `I`.
+5. Initialize `f` to 1 (though `f` is not used).
+6. Sort the list `l`.
+7. Initialize `c` to 0.
+8. Iterate over each integer `i` in the sorted list `l`:
+   - If `i` is greater than `c`, increment `c` by 1.
+9. Print `c + 1`.

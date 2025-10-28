@@ -1,0 +1,33 @@
+Algorithm:
+
+1. Import the `Scanner` class from the `java.util` package for input operations.
+
+2. Define the `main` function with no parameters and a void return type.
+
+3. Declare a `Scanner` object `sc` to read input from the standard input stream.
+
+4. Read an integer `n` using `sc.nextInt()` which represents the number of test cases.
+
+5. Define a string array `s` and initialize it with the string `".,!? :abc:def:ghi:jkl:mno:pqrs:tuv:wxyz"` split by the colon `":"` delimiter. This results in segments representing characters associated with each number on a typical mobile keypad.
+
+6. Declare a 2D character array `k` with dimensions `[9][]` to store character mappings for each key.
+
+7. Iterate over `i` from 0 to 8:
+   - Convert each string `s[i]` to a character array and assign it to `k[i]`.
+
+8. Execute the following for each test case (loop `while (n-- > 0)`):
+   - Read a string from input using `sc.next()`, convert it to a character array `c`.
+
+   - Initialize integer variables `l` to `-1` and `a` to `0`.
+
+   - Iterate over each character `c[i]` in the array `c`:
+     - If `c[i]` is not equal to `'0'`:
+       - Assign `a` the value of `c[i] - '1'`, mapping the character to its corresponding keypad index.
+       - Update `l` to `(l + 1) % k[a].length`, cycling through characters associated with the current key.
+     - Else if `l` is greater than or equal to `0`:
+       - Print the character `k[a][l]` to the standard output.
+       - Reset `l` to `-1`.
+
+   - Print a newline character to move to the next line after processing each test case.
+
+9. End the program.

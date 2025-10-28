@@ -1,0 +1,20 @@
+```
+Algorithm:
+
+1. Import the 're' module for regular expression operations.
+2. Define the function `calculate_paragraphs(n: int, text: str) -> int` that accepts an integer `n` and a string `text`.
+3. Declare variables: 
+   - `ans` as an integer initialized to 1.
+   - `sumL` as an integer initialized to 0.
+4. Split the input `text` into sentences using `re.split("[.?!]", text)`.
+5. Iterate over each sentence `s` in the list of sentences:
+   a. Trim leading and trailing whitespace from `s` and append a period '.' to it.
+   b. Calculate the length `L` of the modified sentence `s`.
+   c. If `L` is greater than 1, proceed with the following checks:
+      i. If `L` is greater than `n`, print "Impossible" and terminate the program.
+     ii. If the sum of `sumL`, `L`, and an additional 1 (if `sumL` is greater than 0) is greater than `n`:
+         - Increment `ans` by 1.
+         - Set `sumL` to `L`.
+    iii. Else, update `sumL` to the sum of `sumL`, `L`, and an additional 1 (if `sumL` is greater than 0).
+6. Return the value of `ans`.
+```

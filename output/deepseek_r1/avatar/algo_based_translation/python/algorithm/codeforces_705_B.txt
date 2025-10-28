@@ -1,0 +1,33 @@
+**Structured Algorithm Specification:**
+
+**Function/Method Signatures:**
+- Not applicable (script-based approach)
+
+**Variable Declarations:**
+- `n`: Integer (input count, read from stdin)
+- `w`: List of integers (input numbers, read from stdin)
+- `c`: Integer (state variable initialized to 2)
+
+**Input/Output Operations:**
+1. Read integer `n` from standard input via `sys.stdin.readline`
+2. Read space-separated integer list `w` from standard input via `sys.stdin.readline().split()`
+3. Print output values to standard output
+
+**Control Flow & Logic:**
+1. Initialize `c = 2`
+2. Iterate through each element `i` in list `w`:
+   1. **Conditional Branch 1**: If `i == 1`
+      1. Output current `c` value
+   2. **Conditional Branch 2**: Else if `i % 2 == 0`
+      1. Update `c = 3 - c`
+      2. Output updated `c` value
+   3. **Default Case**: Else
+      1. Output current `c` value
+
+**Edge Case Handling:**
+- No explicit validation of input length (`len(w)` vs `n`)
+- Handles all integer values in `w` including 1, even numbers, and other odd numbers
+
+**Dependencies:**
+- Requires Python `sys` module for input reading
+- Relies on Python's default integer parsing and list operations

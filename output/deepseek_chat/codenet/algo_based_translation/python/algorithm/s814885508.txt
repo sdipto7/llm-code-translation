@@ -1,0 +1,36 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- X: integer (input value)
+- K: integer (input value)
+- D: integer (input value)
+- r: integer (X divided by D using integer division)
+- a: integer (remainder after subtracting r*D from X)
+
+**Input Operations:**
+- Read three integers X, K, D from standard input
+
+**Logic Flow:**
+1. Calculate r = X // D (integer division)
+2. If abs(r) > K:
+   - Calculate result = abs(X) - K * D
+   - Print result
+   - Exit program
+3. Else:
+   - Calculate a = X - r * D
+   - If (K - r) % 2 == 0:
+     - Print a
+   - Else:
+     - Print abs(D - a)
+
+**Control Structures:**
+- If condition: abs(r) > K
+- If condition: (K - r) % 2 == 0
+
+**Output Operations:**
+- Print integer result to standard output
+
+**Dependencies:**
+- Standard input/output functions
+- Built-in abs() function

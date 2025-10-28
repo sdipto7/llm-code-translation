@@ -1,0 +1,26 @@
+**Function Signature:**
+- `main()` -> None
+
+**Variable Declarations:**
+- `s: str` (input string)
+- `alphabets: List[str]` (list of lowercase letters 'a' to 'z')
+
+**Logic Flow:**
+1. Read input string `s` from standard input
+2. Initialize `alphabets` list containing all lowercase English letters in alphabetical order
+3. Iterate `i` from 0 to length of `alphabets` minus 1:
+   - If `alphabets[i]` equals `s`:
+     - Print `alphabets[i+1]` (the next letter in alphabet)
+     - Exit loop (implicitly through execution flow)
+4. If no match found, no output is produced
+
+**Control Structures:**
+- For loop: `for i in range(len(alphabets))`
+- Conditional: `if alphabets[i] == s`
+
+**Input/Output Operations:**
+- Input: `input()` reads string from stdin
+- Output: `print()` writes to stdout if condition is met
+
+**Dependencies:**
+- None (uses built-in functions only)

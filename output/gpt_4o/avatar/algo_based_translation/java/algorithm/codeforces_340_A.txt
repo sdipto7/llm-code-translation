@@ -1,0 +1,47 @@
+1. **Function Signature:**
+   - `main(String[] sh)`: No return type.
+
+2. **Variable Declarations:**
+   - `Scanner s`: Used for input operations.
+   - `long x, y, a, b`: Input variables.
+   - `long j = 2, i, x1 = 0, y1 = 0, c = 0`: Variables for calculations.
+   - `boolean ans = true`: Control flag.
+
+3. **Input Operations:**
+   - Read integers using `Scanner` and assign them to `x`, `y`, `a`, `b`.
+
+4. **Logic Flow:**
+   - Assign `c` as the maximum of `x` and `y`.
+   - Check if `c > b`:
+     - If true, output "0" and set `ans` to false.
+
+5. **Control Structures:**
+   - **While Loop:** `while (c % Math.min(x, y) != 0 && ans)`
+     - If `x > y`:
+       - Set `c = x * j`
+       - Increment `j`
+     - Else:
+       - Set `c = y * j`
+       - Increment `j`
+     - If `c > b`:
+       - Output "0"
+       - Set `ans` to false
+       - Break the loop
+
+6. **Conditional Structures:**
+   - If `ans` is true:
+     - Initialize `count` to 0.
+     - Initialize `i = a`.
+     - **For Loop:** `for (i = a; i <= b; i++)`
+       - If `i % c == 0`:
+         - Break the loop
+     - If `i != b + 1`:
+       - Output `((b - i) / c) + 1`
+     - Else:
+       - Output "0"
+
+7. **Output Operations:**
+   - Print results based on conditions checked within loops and conditional branches.
+
+8. **Required Libraries:**
+   - `import java.util.Scanner`: For input operations.

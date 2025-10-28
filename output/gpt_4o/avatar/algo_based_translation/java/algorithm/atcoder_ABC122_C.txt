@@ -1,0 +1,28 @@
+import java.util.*;
+
+Function main() returns void
+    Declare mod as long with value 1000000007
+    Create Scanner object sc
+    Declare integer n, read from input
+    Declare integer q, read from input
+    Declare character array c, read from input as string and convert to character array
+    Declare 2D integer array range with dimensions q by 2
+    For i from 0 to q - 1
+        Set range[i][0] to next integer from input
+        Set range[i][1] to next integer from input
+    End For
+
+    Declare integer array frag with size n + 1
+    Declare integer array rui with size n + 1
+    For i from 2 to n
+        If c[i-2] is 'A' and c[i-1] is 'C'
+            Increment frag[i] by 1
+        End If
+        Set rui[i] to rui[i-1] + frag[i]
+    End For
+
+    For i from 0 to q - 1
+        Declare integer left, set to range[i][0]
+        Declare integer right, set to range[i][1]
+        Print rui[right] - rui[left]
+    End For

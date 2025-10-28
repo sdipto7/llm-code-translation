@@ -1,0 +1,39 @@
+**Algorithm:**
+
+- **Dependencies:**
+  - `java.util.Scanner`
+  - `javax.swing.JOptionPane` (not utilized in logic)
+
+- **Function Signature:**
+  - `public static void main(String[] args)`
+
+- **Variables:**
+  - `Scanner s` initialized with `System.in`
+  - `int a` (array size from input)
+  - `int[] ar` (array of size `a`)
+  - `int max` initialized to 0
+  - `int min` initialized to 0
+
+- **Input Operations:**
+  1. Read integer `a` from standard input.
+  2. Read `a` integers into array `ar` sequentially.
+
+- **Processing Logic:**
+  - For each index `i` in `ar`:
+    1. Compute `max`:
+      - `max = Math.max(ar[i] - ar[0], ar[ar.length - 1] - ar[i])`
+    2. Compute `min`:
+      - If `i == 0`: `min = ar[i + 1] - ar[i]`
+      - Else if `i == ar.length - 1`: `min = ar[i] - ar[i - 1]`
+      - Else: `min = Math.min(ar[i] - ar[i - 1], ar[i + 1] - ar[i])`
+    3. Output `min` and `max` for index `i` via `System.out.println`.
+
+- **Control Structures:**
+  - **Loop 1:** `for (int i = 0; i < ar.length; i++)` (populate array)
+  - **Loop 2:** `for (int i = 0; i < ar.length; i++)` (compute min/max per element)
+    - **Conditional 1:** `if (i == 0)`
+    - **Conditional 2:** `else if (i == ar.length - 1)`
+    - **Conditional 3:** `else` (general case)
+
+- **Output Operations:**
+  - Print `min` and `max` for each element as space-separated values.

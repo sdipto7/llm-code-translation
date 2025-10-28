@@ -1,0 +1,9 @@
+1. Read two integers n and m from the input.
+2. Create an array a of size m and initialize it with zeros implicitly by declaring its size.
+3. Check if n is divisible by m.
+4. If n is divisible by m, then assign n/m to each element of array a.
+5. If n is not divisible by m, then calculate the quotient sub = n/m.
+6. Assign sub to each element of array a.
+7. Calculate the remainder test = n - (sub * m).
+8. Distribute the remainder test across the array a by incrementing the first 'test' elements of a by 1, wrapping around to the start of the array if necessary.
+9. Print the elements of array a in reverse order.

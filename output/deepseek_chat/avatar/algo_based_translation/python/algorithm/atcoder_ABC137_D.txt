@@ -1,0 +1,16 @@
+1. Import heapq module
+2. Read integers n and m from input
+3. Initialize empty list x
+4. Initialize empty list y
+5. For i in range(n):
+   - Read day and salary from input
+   - Push tuple (-day, -salary) into heap x using heapq.heappush
+6. While x is not empty:
+   - Pop smallest element from heap x into variables d and s
+   - Calculate r = m - length of list y
+   - If r >= -d:
+      * Push -s into heap y using heapq.heappush
+   - Else:
+      * Push -s into heap y using heapq.heappush
+      * Pop smallest element from heap y using heapq.heappop
+7. Print sum of all elements in list y

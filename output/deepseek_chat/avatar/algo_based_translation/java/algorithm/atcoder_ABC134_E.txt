@@ -1,0 +1,47 @@
+**Function Signature:**
+- `main(String[] args) throws Exception` - returns void
+
+**Variables:**
+- `Scanner sc = new Scanner(System.in)`
+- `int n = sc.nextInt()`
+- `TreeMap<Integer, Integer> map = new TreeMap<>()`
+- `int num` (temporary variable)
+- `int key` (temporary variable)
+- `int val` (temporary variable)
+- `int ans = 0`
+
+**Logic Flow:**
+1. Read integer `n` from standard input
+2. Initialize empty TreeMap `map` with Integer keys and Integer values
+3. While `n > 0`:
+   - Decrement `n` by 1
+   - Read integer `num` from standard input
+   - If `map.lowerKey(num)` returns null:
+     - Get current value for key `num` (default 0 if not exists)
+     - Increment value by 1
+     - Put `(num, value)` in map
+   - Else:
+     - Get `key = map.lowerKey(num)`
+     - Get `val = map.get(key)`
+     - If `val == 1`:
+       - Remove `key` from map
+     - Else:
+       - Decrement `val` by 1
+       - Put `(key, val)` in map
+     - Get current value for key `num` (default 0 if not exists)
+     - Increment value by 1
+     - Put `(num, value)` in map
+4. For each key in `map.keySet()`:
+   - Get `val = map.get(key)`
+   - Add `val` to `ans`
+5. Print `ans` to standard output
+
+**Control Structures:**
+- While loop: `while (n-- > 0)`
+- If-else: `if (map.lowerKey(num) == null)`
+- Nested if: `if (val == 1)`
+- For-each loop: `for (Integer key : map.keySet())`
+
+**Required Libraries:**
+- `java.util.Scanner`
+- `java.util.TreeMap`

@@ -1,0 +1,49 @@
+Function signatures with parameter and return types:
+- `main(String[] args) throws Exception`
+- `dfs(Point p, int length)`
+- `Point(int name)`
+- `becomeFriend(Point p, int length)`
+
+Variable declarations and data types:
+- `Scanner sc`
+- `int n`
+- `int m`
+- `int[] colors`
+- `Point[] points`
+- `int me`
+- `int you`
+- `int length`
+- `boolean alreadyKnown`
+- `int length2`
+- `int c`
+- `int name`
+- `Map<Point, Integer> friends`
+
+Complete logic flow in execution order:
+- Initialize `Scanner` for input
+- Read integer `n`
+- Set `m` to `n - 1`
+- Initialize array `colors` of size `n` with all values set to `-1`
+- Initialize array `points` of size `n` with each element being a new `Point` object with index as name
+- Loop `m` times:
+  - Read integers `me`, `you`, and `length`
+  - Convert `me` and `you` to zero-based indices by subtracting `1`
+  - Set `points[me]` and `points[you]` as friends with `length` as edge weight
+- Call `dfs` with `points[0]` and `0` as arguments
+- Loop through `colors` array:
+  - Print each color value
+
+All control structures (loops, conditionals) with exact conditions:
+- `while (m-- > 0)`
+- `for (int i = 0; i < n; i++)`
+- `for (Entry<Point, Integer> entry : p.friends.entrySet())`
+- `if (alreadyKnown) return;`
+- `if (length % 2 == 0)`
+
+Input/output operations and data processing logic:
+- Read integers from standard input using `Scanner`
+- Write integers to standard output using `System.out.println`
+
+Required libraries, modules, or dependencies:
+- `java.util.*`
+- `java.util.Map.*`

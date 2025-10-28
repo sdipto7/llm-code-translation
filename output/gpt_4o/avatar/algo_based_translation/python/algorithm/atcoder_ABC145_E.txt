@@ -1,0 +1,46 @@
+```plaintext
+Function signature:
+- Function takes no arguments and returns an integer
+
+Variable declarations and data types:
+- `TIME`: constant integer, value is 0
+- `VAL`: constant integer, value is 1
+- `N`: integer, number of items
+- `T`: integer, maximum time available
+- `time_value`: list of tuples, each tuple contains two integers representing time and value
+- `dp`: list of lists of integers, used for dynamic programming
+- `val_acum`: integer, accumulative value
+- `t`: integer, remaining time
+- `max_val`: integer, maximum value found
+
+Logic flow:
+1. Read integers `N` and `T` from input
+2. Initialize `time_value` as a list with a placeholder tuple `(-1, -1)` followed by `None` for the rest of the list
+3. For each index `i` from 1 to `N`:
+   - Read a tuple of two integers from input and assign it to `time_value[i]`
+4. Sort `time_value` based on the second element (value) of the tuples
+5. Initialize `dp` as a list of `N+1` lists, each containing `T` elements initialized to `-1`
+6. Set all elements of `dp[0]` to `0`
+7. For each `n` from 1 to `N`:
+   - Set `dp[n][0]` to `0`
+   - For each `t` from 1 to `T-1`:
+     - If `time_value[n][TIME]` is greater than `t`, set `dp[n][t]` to `dp[n-1][t]`
+     - Otherwise, set `dp[n][t]` to the maximum of `dp[n-1][t]` and `time_value[n][VAL] + dp[n-1][t - time_value[n][TIME]]`
+8. Set `val_acum` to `time_value[N][VAL]`
+9. Set `t` to `T-1`
+10. Set `max_val` to `val_acum + dp[N-1][t]`
+11. For each `n` from `N-1` down to 1:
+    - Add `time_value[n][VAL]` to `val_acum`
+    - Subtract `time_value[n+1][TIME]` from `t`
+    - If `t` is less than 0, break the loop
+    - Otherwise, set `max_val` to the maximum of `max_val` and `val_acum + dp[n-1][t]`
+12. Print `max_val`
+
+Input/Output operations:
+- Input is read using `sys.stdin.readline()`
+- Output is printed using `print()`
+
+Required libraries, modules, or dependencies:
+- `sys` module
+- `operator` module with `itemgetter`
+```

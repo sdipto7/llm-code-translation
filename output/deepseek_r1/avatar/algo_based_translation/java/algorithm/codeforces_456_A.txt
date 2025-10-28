@@ -1,0 +1,50 @@
+**Algorithm:**
+
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Imports/Dependencies:**
+- `java.util.Scanner`
+
+**Variable Declarations:**
+- `Scanner in = new Scanner(System.in)`
+- `int n = in.nextInt()`
+- `int[] a = new int[n]`
+- `int[] b = new int[n]`
+- `int temp = 0`
+- `int q = 0`
+- `int w = 0`, `e = 0`
+- `boolean f = false`
+
+**Logic Flow:**
+1. Read integer `n` from input.
+2. Initialize arrays `a` and `b` of size `n`.
+3. For each `i` from `0` to `n-1`:
+   - Read `a[i]` and `b[i]` from input.
+   - If `temp < a[i]`:
+     - If `q > b[i]`, set `f = true`.
+     - Update `q = b[i]` and `temp = a[i]`.
+   - Else if `temp > a[i]`:
+     - If `q < b[i]`, set `f = true`.
+     - Update `q = b[i]` and `temp = a[i]`.
+   - If `a[i] > w`:
+     - Set `w = a[i]`.
+     - If `b[i] < e`, set `f = true`.
+     - Update `e = b[i]`.
+   - If `a[i] < w`:
+     - If `b[i] > e`, set `f = true`.
+4. After loop:
+   - If `f == true`, print "Happy Alex".
+   - Else, print "Poor Alex".
+
+**Control Structures:**
+- `for` loop with `i` iterating from `0` to `n-1`.
+- Four nested conditional blocks:
+  1. `if (temp < a[i])` with inner `if (q > b[i])`
+  2. `else if (temp > a[i])` with inner `if (q < b[i])`
+  3. `if (a[i] > w)` with inner `if (b[i] < e)`
+  4. `if (a[i] < w)` with inner `if (b[i] > e)`
+
+**Input/Output:**
+- Input: Read `n`, followed by `n` pairs of integers into `a` and `b`.
+- Output: Print "Happy Alex" if any quality-price inconsistency is found; otherwise, "Poor Alex".

@@ -1,0 +1,30 @@
+
+import java.util.Scanner;
+
+public class s246280701 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int[] x = new int[n];
+        for (int j = 0; j < n; j++) {
+            x[j] = scanner.nextInt();
+        }
+        long ans = (long) 1e10;
+        for (int i = 0; i <= 100; i++) {
+            long[] tmp = new long[n];
+            for (int j = 0; j < n; j++) {
+                tmp[j] = (long) Math.pow(Math.abs(i - x[j]), 2);
+            }
+            long sum = 0;
+            for (long val : tmp) {
+                sum += val;
+            }
+            if (sum < ans) {
+                ans = sum;
+            }
+        }
+        System.out.println(ans);
+        scanner.close();
+    }
+}
+

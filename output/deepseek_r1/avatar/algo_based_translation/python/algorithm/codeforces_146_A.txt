@@ -1,0 +1,56 @@
+```structured-algorithm
+Function: main
+Return type: void
+Input parameters: None (reads from standard input)
+
+Variables:
+- n: int
+- number: list[int]
+- h1: int = 0
+- h2: int = 0
+- x: int = 0
+- i: int
+
+Steps:
+1. Read integer n from standard input
+2. Read next line from input, convert to character list, then map to list of integers stored in number
+3. Initialize h1 = 0, h2 = 0, x = 0
+4. For i from 0 to (n - 1) inclusive:
+    a. If number[i] != 4 AND number[i] != 7:
+        i. Print "NO" to standard output
+        ii. Set x = 1
+        iii. Break loop
+    b. Else:
+        i. If i < (n // 2):
+            - Add number[i] to h1
+        ii. Else:
+            - Add number[i] to h2
+5. If x == 0:
+    a. If h1 == h2:
+        i. Print "YES" to standard output
+    b. Else:
+        i. Print "NO" to standard output
+
+Control Flow:
+- For loop with range 0 to n-1
+- Conditional checks for digit validity (4 or 7)
+- Conditional summation split based on n//2 index
+- Final sum comparison after full validation
+
+Error Handling:
+- Immediate termination on first invalid digit detection
+- Handles empty input? (Assumes correct input per programming competition standards)
+
+Edge Cases:
+- All digits valid but unequal sums
+- Odd-length numbers with unequal partition sums
+- Early invalid digit terminates before full iteration
+
+Input/Output:
+- Reads integer n followed by digit string
+- Outputs "YES" or "NO" based on conditions
+
+Dependencies:
+- Relies on standard input functions for data acquisition
+- No external libraries required beyond basic I/O operations
+```

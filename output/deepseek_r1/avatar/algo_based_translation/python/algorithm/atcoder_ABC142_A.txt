@@ -1,0 +1,39 @@
+**Structured Algorithm Specification**
+
+**1. Function Signatures**
+- `next_int() -> int`: Reads an integer from standard input.
+- `next_ints() -> list[int]`: Reads a line of integers from standard input.
+
+**2. Variable Declarations**
+- `n: int`: Stores the integer input value.
+- `t: int`: Counter initialized to 0.
+- `i: int`: Loop iteration variable.
+
+**3. Data Types**
+- All variables (`n`, `t`, `i`) are integers.
+- Final division result is a floating-point value.
+
+**4. Logic Flow**
+1. Read `n` via `next_int()`.
+2. Initialize `t` to 0.
+3. Iterate `i` from 0 to `n-1` (inclusive) via a `for` loop:
+   - Compute `(i + 1) & 1`.
+   - If the result is non-zero (indicating `i+1` is odd), increment `t` by 1.
+4. Compute `t / n` as a floating-point value.
+5. Print the computed value.
+
+**5. Control Flow Structures**
+- Loop: `for i in range(n)` (executes exactly `n` times).
+- Conditional: `if (i + 1) & 1` (checks for oddness via bitwise operation).
+
+**6. Input/Output Operations**
+- Input: `n` read via `next_int()`, which uses `input()` and `int()` conversion.
+- Output: Print result of `t / n` using `print()`.
+
+**7. Error Handling**
+- No explicit error handling for invalid inputs (assumes valid integer inputs).
+- Division by zero occurs if `n = 0` (unhandled in code).
+
+**8. External Dependencies**
+- `math` module imported but not utilized in code.
+- Relies on Python's `input()`, `int()`, `map()`, and list conversion.

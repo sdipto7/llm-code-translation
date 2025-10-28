@@ -1,0 +1,31 @@
+Function Signature: main(String[] args)  
+Return Type: void  
+
+Variable Declarations:  
+- Scanner sc  
+- int n  
+- int[] arr  
+- int sum  
+- int c  
+- StringBuilder sb  
+
+Logic Flow:
+
+1. Create a Scanner object sc to read input.
+2. Read an integer n from input.
+3. Declare an array arr of size n.
+4. Initialize sum to 0.
+5. Loop from i = 0 to n - 1:
+   - Read an integer from input and store it in arr[i].
+   - Add arr[i] to sum.
+6. Initialize c to 0.
+7. Create a StringBuilder object sb.
+8. Loop from i = 0 to n - 1:
+   - Check if (sum - arr[i]) % (n - 1) == 0 and (sum - arr[i]) / (n - 1) == arr[i]:
+     - If true, increment c by 1.
+     - Append (i + 1) followed by a space to sb.
+9. Print c.
+10. Print the string representation of sb.
+
+Required Libraries:
+- java.util.*

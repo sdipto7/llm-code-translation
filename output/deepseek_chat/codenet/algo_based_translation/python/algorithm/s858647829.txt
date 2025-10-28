@@ -1,0 +1,25 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- a: int
+- b: int
+
+**Algorithm:**
+1. Read input line from standard input
+2. Split input line into two strings
+3. Convert both strings to integers and assign to variables a and b
+4. Check if a modulo 3 equals 0
+5. Check if b modulo 3 equals 0
+6. Check if (a + b) modulo 3 equals 0
+7. If any of conditions 4, 5, or 6 is true:
+   - Print "Possible" to standard output
+8. Else:
+   - Print "Impossible" to standard output
+
+**Input/Output:**
+- Input: Single line containing two integers separated by space
+- Output: "Possible" or "Impossible" based on modulo conditions
+
+**Dependencies:**
+- Standard input/output operations

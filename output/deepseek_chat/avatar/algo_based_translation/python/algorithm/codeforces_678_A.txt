@@ -1,0 +1,5 @@
+read two integers from input, assign to variables vamshi and z
+calculate integer division of vamshi by z
+add 1 to the result
+multiply the sum by z
+print the final result

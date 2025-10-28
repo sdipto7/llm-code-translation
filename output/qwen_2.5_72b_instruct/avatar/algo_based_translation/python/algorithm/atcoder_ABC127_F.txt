@@ -1,0 +1,51 @@
+- Function signatures with parameter and return types:
+  - `main() -> None`
+
+- Variable declarations and data types:
+  - `q: int`
+  - `ans: List[int]`
+  - `p1: List[int]`
+  - `p2: List[int]`
+  - `sum_b: int`
+  - `sum_p1: int`
+  - `sum_p2: int`
+  - `ql: List[int]`
+  - `k: int`
+
+- Required libraries, modules, or dependencies:
+  - `heapq`
+
+- Complete logic flow in execution order:
+  1. Read integer `q` from input.
+  2. Initialize `ans` as a list of two zeros.
+  3. Initialize `p1` and `p2` as empty lists.
+  4. Convert `p1` and `p2` into heaps using `heapq.heapify`.
+  5. Initialize `sum_b`, `sum_p1`, and `sum_p2` to zero.
+  6. For each iteration from 0 to `q-1`:
+     1. Read a list `ql` of integers from input.
+     2. If the first element of `ql` is 2:
+        1. If the length of `p1` is equal to the length of `p2`:
+           1. Print the negative of the first element of `p2` and the result of `sum_p1 - len(p1) * -p2[0] + len(p2) * -p2[0] - sum_p2 + sum_b`.
+        2. Else:
+           1. Print the first element of `p1` and the result of `sum_p1 - len(p1) * p1[0] + len(p2) * p1[0] - sum_p2 + sum_b`.
+     3. Else:
+        1. Add the third element of `ql` to `sum_b`.
+        2. If `p1` is empty:
+           1. Push the second element of `ql` into `p1`.
+           2. Add the second element of `ql` to `sum_p1`.
+        3. Else if the first element of `p1` is less than or equal to the second element of `ql`:
+           1. Push the second element of `ql` into `p1`.
+           2. Add the second element of `ql` to `sum_p1`.
+        4. Else:
+           1. Push the negative of the second element of `ql` into `p2`.
+           2. Add the second element of `ql` to `sum_p2`.
+        5. If the length of `p1` is less than the length of `p2`:
+           1. Pop the smallest element `k` from `p2`.
+           2. Push the negative of `k` into `p1`.
+           3. Add `k` to `sum_p2`.
+           4. Subtract `k` from `sum_p1`.
+        6. If the length of `p1` minus 1 is greater than the length of `p2`:
+           1. Pop the smallest element `k` from `p1`.
+           2. Push the negative of `k` into `p2`.
+           3. Subtract `k` from `sum_p1`.
+           4. Add `k` to `sum_p2`.

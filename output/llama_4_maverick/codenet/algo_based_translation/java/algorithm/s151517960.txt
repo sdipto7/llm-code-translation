@@ -1,0 +1,15 @@
+1. Import required libraries: java.util.*
+2. Define a class: Main with a main method: public static void main(String[] args)
+3. Declare a Scanner object: sc of type Scanner to read input from System.in
+4. Read an integer: n from System.in using sc.nextInt()
+5. Declare a HashMap: map of type HashMap<Integer, Integer> to store integer frequencies
+6. Iterate from i = 0 to n-1 using a for loop with condition i < n
+   a. Read an integer: a from System.in using sc.nextInt()
+   b. Check if map contains key a using map.containsKey(a)
+      i. If true, increment the value associated with key a by 1 using map.put(a, map.get(a) + 1)
+      ii. If false, put key a with value 1 into map using map.put(a, 1)
+7. Declare an integer: ans and initialize it to 0
+8. Iterate over the keySet of map using a for-each loop with variable key of type int
+   a. Check if the value associated with key is odd using (map.get(key) % 2) == 1
+      i. If true, increment ans by 1
+9. Print the value of ans to System.out using System.out.println(ans)

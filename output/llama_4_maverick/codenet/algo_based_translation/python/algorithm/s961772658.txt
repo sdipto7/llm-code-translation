@@ -1,0 +1,8 @@
+1. Define a function `get_next_alphabet` with return type `void` and no parameters.
+2. Declare a variable `s` of type `string` to store the input string.
+3. Declare and initialize a list `alphabets` of type `list<string>` containing all lowercase English alphabets from "a" to "z".
+4. Read a string input from the user and store it in `s`.
+5. Iterate over the list `alphabets` using a `for` loop with a counter variable `i` ranging from 0 to `length(alphabets) - 1`.
+6. Inside the loop, check if the current alphabet `alphabets[i]` is equal to the input string `s` using an `if` statement.
+7. If the condition is true, print the next alphabet `alphabets[i + 1]` to the output.
+8. End the function.

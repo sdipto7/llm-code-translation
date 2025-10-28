@@ -1,0 +1,56 @@
+**Function Signatures:**
+- `bfs(v: int, N: int, G: list[deque], E: dict[tuple[int, int], int]) -> int`
+- `main() -> None`
+
+**Variables and Data Types:**
+- `visited: list[int]` (length N)
+- `queue: deque[int]`
+- `K: int` (initialized to -1)
+- `node2color: list[int]` (length N, initialized to -1)
+- `q: int`
+- `color: int`
+- `nex: int`
+- `N: int` (from input)
+- `G: list[deque[int]]` (length N)
+- `E: dict[tuple[int, int], int]`
+- `a: int`, `b: int` (from input)
+- `value: int`
+
+**Required Libraries:**
+- `collections.deque`
+- `sys`
+
+**Algorithm Flow:**
+
+1. Read integer N from stdin
+2. Initialize G as list of N empty deques
+3. Initialize E as empty dictionary
+4. For i from 0 to N-2:
+   - Read two integers a and b from stdin (subtract 1 from each)
+   - Append b to G[a]
+   - Append a to G[b]
+   - Add key (min(a,b), max(a,b)) to E with value 0
+
+5. Call bfs(0, N, G, E):
+   - Initialize visited as list of N zeros
+   - Initialize queue as empty deque
+   - Set K = -1
+   - Initialize node2color as list of N -1 values
+   - Append v to queue
+   - Set visited[v] = 1
+   - While queue is not empty:
+     - Pop left element from queue into q
+     - Set color = 0
+     - For each neighbor nex in G[q]:
+       - If visited[nex] is non-zero: continue to next neighbor
+       - Set visited[nex] = 1
+       - Increment color by 1
+       - If color equals node2color[q]: increment color by 1
+       - Set node2color[nex] = color
+       - Set E[(min(q, nex), max(q, nex))] = color
+       - Append nex to queue
+     - Set K = max(K, color)
+   - Return K
+
+6. Print K
+7. For each value in E.values(): print value

@@ -1,0 +1,44 @@
+```java
+import java.util.*;
+
+Function Signature:
+public static void main(String[] args)
+
+Variables:
+- Scanner sc (Scanner)
+- int N (sc.nextInt())
+- long x (sc.nextInt())
+- List<Long> sweet (ArrayList<Long>)
+- long a (temporary)
+- int num = 0
+
+Logic Flow:
+1. Read N and x from input using Scanner
+2. Read N integers and add to sweet list
+3. Sort sweet list in ascending order using Collections.sort
+4. For i from 0 to N-1 (inclusive):
+   a. If x - sweet.get(num) >= 0:
+      i. Subtract sweet.get(num) from x
+      ii. Increment num by 1
+   b. Else:
+      i. Break loop
+5. After loop:
+   a. If num == N and x > 0:
+      i. Decrement num by 1
+6. Print num
+
+Control Structures:
+- for loop (i=0; i < N; i++)
+- if-else inside loop (x - sweet.get(num) >= 0)
+- if condition after loop (num == N && x > 0)
+
+Input/Output:
+- Read N, x via Scanner
+- Read N values for sweet list via Scanner
+- Print final num value
+
+Dependencies:
+- java.util.Scanner
+- java.util.ArrayList
+- java.util.Collections (for sort)
+```

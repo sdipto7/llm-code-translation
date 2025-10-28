@@ -1,0 +1,23 @@
+Function: main
+Parameters: String[] args
+Return type: void
+
+Dependencies: java.util.Scanner
+
+Variables:
+- int[] R of size MAX (constant MAX = 200000)
+- Scanner in
+- int n
+- int maxv
+- int minv
+
+Logic:
+1. Initialize Scanner with System.in
+2. Read integer n from input
+3. For i from 0 to n-1: Read integer into R[i]
+4. Set maxv = R[1] - R[0]
+5. Set minv = R[0]
+6. For i from 1 to n-1:
+   - Set maxv = maximum(maxv, R[i] - minv)
+   - Set minv = minimum(minv, R[i])
+7. Print maxv

@@ -1,0 +1,62 @@
+```plaintext
+Algorithm:
+- Imports:
+  - java.util.Scanner
+  - java.io.BufferedReader
+  - java.io.IOException
+  - java.io.InputStreamReader
+  - java.io.PrintWriter
+  - java.nio.charset.MalformedInputException
+  - java.util.StringTokenizer
+  - java.util.Arrays
+  - java.util.HashSet
+
+- Class: codeforces_608_A
+  - Main method:
+    - Signature: public static void main(String[] args)
+    - Variables:
+      - FastScanner in
+      - Scanner sc
+      - PrintWriter o
+      - int n
+      - int s
+      - int max = 0
+      - int f
+      - int t
+    - Logic:
+      1. Initialize in (FastScanner), sc (Scanner), o (PrintWriter)
+      2. Read n = sc.nextInt()
+      3. Read s = sc.nextInt()
+      4. While loop (n-- > 0):
+          a. Read f = sc.nextInt()
+          b. Read t = sc.nextInt()
+          c. If (f + t > max):
+              i. max = f + t
+      5. Print via o: Math.max(max, s)
+      6. Close o
+
+  - Inner class: FastScanner
+    - Variables:
+      - BufferedReader br
+      - StringTokenizer st
+    - Methods:
+      - next(): String
+        - While (st has no more elements):
+            try: st = new StringTokenizer(br.readLine())
+            catch IOException
+        - Return st.nextToken()
+      - nextLine(): String
+        - Read via br.readLine()
+        - Catch IOException
+        - Return str
+      - nextByte(): byte
+        - Return Byte.parseByte(next())
+      - nextShort(): short
+        - Return Short.parseShort(next())
+      - nextInt(): int
+        - Return Integer.parseInt(next())
+      - nextLong(): long
+        - Return Long.parseLong(next())
+      - nextDouble(): double
+        - Return Double.parseDouble(next())
+```

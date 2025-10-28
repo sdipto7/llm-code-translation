@@ -1,0 +1,10 @@
+1. Define a program with no functions, executing from top to bottom.
+2. Declare variables A and B of type integer.
+3. Perform input operation to read two space-separated integers from the user.
+4. Use the map function to apply the int function to the input values, converting them to integers.
+5. Assign the converted integers to variables A and B using tuple unpacking.
+6. Perform a multiplication operation on A and B.
+7. Print the result of the multiplication operation to the output.
+8. Terminate the program. 
+
+Required libraries: built-in input() and print() functions, map() function.

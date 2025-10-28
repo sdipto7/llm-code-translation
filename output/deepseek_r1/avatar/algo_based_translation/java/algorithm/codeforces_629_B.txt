@@ -1,0 +1,42 @@
+Here is the algorithm extracted from the provided Java code:
+
+---
+**Function Signature**  
+`public static void main(String[] args)`  
+
+**Variables**  
+- `Scanner sc` (input handler)  
+- `int n` (number of people)  
+- `int[367] FfriendPerDay` (female friend counts per day)  
+- `int[367] MfriendPerDay` (male friend counts per day)  
+- `int answer = 0` (result storage)  
+
+**Input Processing**  
+1. Read integer `n` from standard input.  
+2. For `n` iterations:  
+   - Read character `c` (gender: 'M' or 'F')  
+   - Read integers `a` (start day) and `b` (end day)  
+
+**Logic Flow**  
+1. For each person:  
+   - Iterate over days `j` from `a` to `b` (inclusive):  
+     - If `c == 'M'`, increment `MfriendPerDay[j]`  
+     - Else, increment `FfriendPerDay[j]`  
+     - Compare counts for day `j`:  
+       - If `MfriendPerDay[j] < FfriendPerDay[j]`:  
+         - Update `answer` to `max(answer, MfriendPerDay[j])`  
+       - Else:  
+         - Update `answer` to `max(answer, FfriendPerDay[j])`  
+
+**Output**  
+Print `answer * 2`  
+
+**Control Structures**  
+- `for (int i = 0; i < n; i++)` (person loop)  
+- `for (int j = a; j <= b; j++)` (day iteration)  
+- `if (c == 'M')` (gender check)  
+- Nested `if`/`else` for updating `answer`  
+
+**Dependencies**  
+- `java.util.Scanner` for input handling  
+---

@@ -1,0 +1,43 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `int INF = 100000`
+- `Scanner sc = new Scanner(System.in)`
+- `int D`
+- `long G`
+- `int[] p = new int[D]`
+- `int[] c = new int[D]`
+- `int min = INF`
+- `int bit`, `int score`, `int solve_num`, `int i`, `int j` (loop variables)
+
+**Logic Flow:**
+1. Read integer `D` and long `G` from input.
+2. Read `D` pairs of integers into arrays `p` and `c`.
+3. Iterate all possible bitmask values from `0` to `(1 << D) - 1`:
+   1. Initialize `score = 0` and `solve_num = 0`.
+   2. For each bit position `i` in the bitmask:
+      - If bit `i` is set, add `100*(i+1)*p[i] + c[i]` to `score` and `p[i]` to `solve_num`.
+   3. If `score < G`:
+      - Iterate `i` from `D-1` down to `0`:
+         - If bit `i` is not set in the bitmask:
+            - Add up to `p[i]-1` problems of set `i` to `score` and `solve_num` until `score >= G`.
+            - Break if `score >= G`.
+   4. If `score >= G`, update `min` to the smaller of `min` and `solve_num`.
+4. Output `min`.
+
+**Control Structures:**
+- Loop `for (int bit = 0; bit < (1 << D); bit++)`
+- Nested loop `for (int i = 0; i < D; i++)` to check set bits
+- Conditional `if ((bit & (1 << i)) != 0)`
+- Conditional `if (score < G)` triggering a loop from `D-1` to `0` with label `loop:`
+- Nested loop `for (int j = 0; j < p[i] - 1; j++)` for partial problems
+- Labeled break `break loop` when `score >= G`
+- Conditional `if (score >= G)` to update `min`
+
+**Input/Output Operations:**
+- Read via `Scanner`: `D = sc.nextInt()`, `G = sc.nextLong()`, `p[i] = sc.nextInt()`, `c[i] = sc.nextInt()`
+- Output via `System.out.println(min)`
+
+**Dependencies:**
+- `java.util.Scanner` for input handling

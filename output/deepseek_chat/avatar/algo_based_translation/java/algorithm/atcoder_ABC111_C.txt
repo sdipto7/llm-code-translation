@@ -1,0 +1,40 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner sc`: Scanner object for input
+- `int n`: integer
+- `int[] v`: integer array of size 100010
+- `Integer[] vo`: Integer array of size 100010
+- `Integer[] ve`: Integer array of size 100010
+- `Integer[] vt`: Integer array of size 100010
+- `int ans`: integer
+
+**Libraries/Dependencies:**
+- java.util.Arrays
+- java.util.Collections
+- java.util.Scanner
+
+**Algorithm:**
+1. Initialize Scanner `sc` with System.in
+2. Read integer `n` from input
+3. Initialize integer array `v` with size 100010
+4. For `i` from 0 to `n-1`:
+   - Read integer value into `v[i]`
+5. Initialize Integer arrays `vo`, `ve`, and `vt` with size 100010
+6. Fill `vo`, `ve`, and `vt` with zeros
+7. For `i` from 0 to `n-1`:
+   - Increment `vt[v[i]]` by 1
+   - If `i` is even:
+     - Increment `ve[v[i]]` by 1
+   - Else:
+     - Increment `vo[v[i]]` by 1
+8. Sort `vo` in descending order
+9. Sort `ve` in descending order
+10. Sort `vt` in descending order
+11. If `vo[0] + ve[0]` equals `vt[0]`:
+    - Set `ans` to minimum of `n - vo[0] - ve[1]` and `n - vo[1] - ve[0]`
+12. Else:
+    - Set `ans` to `n - vo[0] - ve[0]`
+13. Print `ans`
+14. Close Scanner `sc`

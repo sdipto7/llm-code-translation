@@ -1,0 +1,27 @@
+```
+Algorithm atcoder_AGC002_A
+  Input: None (reads from standard input)
+  Output: Prints "Positive", "Zero", or "Negative" to standard output
+
+  Dependencies:
+    - Import Scanner from java.util
+
+  Begin
+    Declare scanner as a new instance of Scanner using standard input
+    Declare integer variable a
+    Declare integer variable b
+    
+    Read an integer from input and assign it to a
+    Read an integer from input and assign it to b
+    
+    If a > 0 then
+      Print "Positive"
+    Else if b >= 0 then
+      Print "Zero"
+    Else if (b - a + 1) % 2 == 0 then
+      Print "Positive"
+    Else
+      Print "Negative"
+    End If
+  End
+```

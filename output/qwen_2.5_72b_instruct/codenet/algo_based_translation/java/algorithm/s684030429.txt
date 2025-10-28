@@ -1,0 +1,52 @@
+- **Function Signatures:**
+  - `solve()`: void
+  - `Main()`: void
+  - `main(String[] args)`: static void
+  - `ni()`: int
+  - `nl()`: long
+  - `nf()`: float
+  - `nd()`: double
+  - `ns()`: String
+  - `nst(String s)`: StringTokenizer
+  - `ia(int a[])`: void
+  - `la(long a[])`: void
+  - `fa(float a[])`: void
+  - `da(double a[])`: void
+  - `sa(String a[], boolean empty)`: void
+  - `ida(int a[][], int n, int m)`: void
+  - `lda(long a[][], int n, int m)`: void
+  - `dda(double a[][], int n, int m)`: void
+  - `stoi(String s)`: int
+  - `stod(String s)`: double
+  - `lmin(long a[])`: long
+  - `imin(int a[])`: int
+  - `lmax(long a[])`: long
+  - `imax(int a[])`: int
+  - `ibs(int a[], int toFind)`: boolean
+  - `lbs(long a[], long toFind)`: boolean
+  - `stb(String s)`: int
+
+- **Variable Declarations and Data Types:**
+  - `Scanner sc`
+  - `int max = 0`
+  - `int cur = 0`
+  - `int a`
+  - `int b`
+
+- **Logic Flow in Execution Order:**
+  1. Initialize `Scanner sc` for input.
+  2. Read two integers `a` and `b` using `ni()`.
+  3. Compute `Math.max(0, a - 2 * b)` and print the result.
+
+- **Control Structures:**
+  - Loops: None in the `solve()` method.
+  - Conditionals: `Math.max(0, a - 2 * b)` implicitly uses a conditional to choose the maximum between 0 and the computed value.
+
+- **Input/Output Operations and Data Processing Logic:**
+  - Input: Reads two integers using `ni()`.
+  - Output: Prints the result of `Math.max(0, a - 2 * b)`.
+
+- **Libraries, Modules, or Dependencies:**
+  - `java.io.*`
+  - `java.util.*`
+  - `java.math.*`

@@ -1,0 +1,17 @@
+import math
+Read integer n and integer d from input
+Initialize points as an empty list
+For n times:
+    Read a list of d integers from input and append to points
+Define function dist with parameters x (list of numbers) and y (list of numbers) returning float:
+    Initialize tmp as 0.0
+    For i from 0 to d-1:
+        Add (x[i] - y[i]) squared to tmp
+    Return square root of tmp
+Initialize count as 0
+For i from 0 to n-1 with element elm = points[i]:
+    For j from i+1 to n-1:
+        Calculate distance = dist(elm, points[j])
+        If distance is an integer (has no fractional part):
+            Increment count by 1
+Print count

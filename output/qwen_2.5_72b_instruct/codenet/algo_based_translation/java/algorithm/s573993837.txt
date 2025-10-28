@@ -1,0 +1,106 @@
+Main
+
+Function signatures:
+- `main(String[] args)`
+- `solve(InputReader sc, PrintWriter pw)`
+- `swap(char[] chrr, int i, int j)`
+- `num(int n)`
+- `isPrime(int n)`
+- `gcd(long a, long b)`
+- `fast_pow(long base, long n, long M)`
+- `modInverse(long n, long M)`
+- `feedArr(long[] arr, InputReader sc)`
+- `feedArr(double[] arr, InputReader sc)`
+- `feedArr(int[] arr, InputReader sc)`
+- `feedArr(String[] arr, InputReader sc)`
+- `printArr(int[] arr)`
+- `printArr(long[] arr)`
+- `printArr(String[] arr)`
+- `printArr(double[] arr)`
+
+Variable declarations and data types:
+- `InputStream inputStream`
+- `OutputStream outputStream`
+- `InputReader in`
+- `PrintWriter out`
+- `static int L, R, top, bottom`
+- `long n, m`
+- `char temp`
+- `int a`
+- `Pair(int u, int v, int i)`
+- `boolean`
+- `long`
+- `String`
+- `double`
+- `BufferedReader reader`
+- `StringTokenizer tokenizer`
+
+Logic flow in execution order:
+- Create `InputStream` and `OutputStream` objects
+- Create `InputReader` object using `InputStream`
+- Create `PrintWriter` object using `OutputStream`
+- Call `solve` method
+- Close `PrintWriter`
+
+solve method:
+- Initialize `t` to 1
+- Start labeled loop `u` while `t > 0`
+- Decrease `t` by 1
+- Read `n` and `m` as `long` from `InputReader`
+- If `n` is 0, print 0 and continue loop `u`
+- If `n` equals `m`, print 0 and continue loop `u`
+- If `n` is greater than `m`, update `n` to `m + n % m`, then subtract `m` from `n`, print minimum of `m - n` and `n`, and continue loop `u`
+- Print minimum of `m - n` and `n`
+
+swap method:
+- Take `char[] chrr` and indices `i, j`
+- Swap characters at `i` and `j`
+
+num method:
+- Take integer `n`
+- Initialize `a` to 0
+- While `n > 0`, add least significant bit of `n` to `a`, right shift `n` by 1
+- Return `a`
+
+isPrime method:
+- Take integer `n`
+- If `n` is less than or equal to 1, return false
+- If `n` is less than or equal to 3, return true
+- If `n` is divisible by 2 or 3, return false
+- For `i` starting at 5, incrementing by 6, check divisibility of `n` by `i` and `i + 2`
+- Return true
+
+gcd method:
+- Take longs `a, b`
+- If `b` is 0, return `a`
+- Return `gcd(b, a % b)` if `a` is greater than `b`, else return `gcd(a, b % a)`
+
+fast_pow method:
+- Take longs `base, n, M`
+- If `n` is 0, return 1
+- If `n` is 1, return `base`
+- Recursively calculate `halfn` as `fast_pow(base, n / 2, M)`
+- If `n` is even, return `(halfn * halfn) % M`
+- Else, return `((halfn * halfn) % M * base) % M`
+
+modInverse method:
+- Take longs `n, M`
+- Return `fast_pow(n, M - 2, M)`
+
+feedArr methods:
+- Take array `arr` and `InputReader sc`
+- For each element in `arr`, read corresponding type from `sc` and assign to `arr`
+
+printArr methods:
+- Take array `arr`
+- Initialize `StringBuilder sbr`
+- Append each element of `arr` followed by space to `sbr`
+- Return string representation of `sbr`
+
+InputReader class:
+- Constructor takes `InputStream stream`
+- Initialize `reader` and `tokenizer`
+- `next` method reads next token from `reader` and `tokenizer`
+- `nextInt` method converts `next` to integer
+- `nextLong` method converts `next` to long
+- `nextDouble` method converts `next` to double

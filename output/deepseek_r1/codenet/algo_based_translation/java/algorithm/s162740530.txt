@@ -1,0 +1,44 @@
+Algorithm:
+- Function: public static void main(String[] args)
+- Parameters: String array args (command-line arguments)
+- Return type: void
+
+Variables:
+1. Scanner sc = new Scanner(System.in)
+2. int n (read from input)
+3. int m (read from input)
+4. int array a of size m + 1
+5. int array cnt of size n + 1
+6. int MOD = 1000000007 (constant)
+7. int num = 1
+
+Execution Steps:
+1. Initialize cnt[0] = 1
+2. Read m + 1 integers into array a starting from index 1
+3. If m > 0:
+   a. If a[1] == 1:
+      i. Set cnt[1] = 0
+      ii. If num < m: increment num
+   b. Else: set cnt[1] = 1
+4. Else: set cnt[1] = 1
+5. For i from 2 to n (inclusive):
+   a. Calculate cnt[i] = (cnt[i-2] + cnt[i-1]) % MOD
+   b. If m > 0:
+      i. If i == a[num]:
+         - Set cnt[i] = 0
+         - If num < m: increment num
+6. Print cnt[n]
+
+Control Structures:
+- For loop: for(int i = 1; i < a.length; i++) (reads input into a)
+- If-else structure to handle m > 0 check at initialization
+- For loop: for(int i = 2; i < cnt.length; i++) (main computation)
+- Nested if-else structures for step validation checks
+
+Input/Output:
+- Input order: n, m, followed by m integers for array a
+- All integers read via Scanner.nextInt()
+- Output: Single integer cnt[n] via System.out.println()
+
+Dependencies:
+- java.util.Scanner (required for input handling)

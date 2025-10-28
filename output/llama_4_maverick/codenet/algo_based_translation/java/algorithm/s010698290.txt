@@ -1,0 +1,54 @@
+1. Define a function `main` with no parameters and no return type.
+   - Declare variables: `s` of type `FastReader`, `w` of type `BufferedWriter`, `i`, `j`, `m`, `n`, `t`, `max`, `k`, `x`, `y`, `min`, `correct_ans`, `num`, `num_penal` of type `int`, `a`, `b`, `sum` of type `long`, `str` of type `String`.
+   - Initialize `s` with a new instance of `FastReader` and `w` with a new `BufferedWriter` wrapping an `OutputStreamWriter` for `System.out`.
+
+2. Read two integers `n` and `m` using `s.nextInt()`.
+
+3. Declare two arrays: `penal` of size `n+1` to store integers and `solved` of size `n+1` to store booleans.
+   - Initialize all elements of `solved` to `false` using `Arrays.fill`.
+
+4. Loop from `i = 0` to `m-1`:
+   - Read an integer `num` and a string `str` using `s.nextInt()` and `s.next()`.
+   - If the first character of `str` is 'A', set `solved[num]` to `true`.
+   - Else, if `solved[num]` is `false`, increment `penal[num]` by 1.
+
+5. Initialize `correct_ans` to 0 and `num_penal` to 0.
+   - Loop from `i = 1` to `n`:
+     - If `solved[i]` is `true`, increment `correct_ans` by 1 and add `penal[i]` to `num_penal`.
+
+6. Write `correct_ans` and `num_penal` to `w` followed by a newline using `w.write`.
+
+7. Close `w` using `w.close`.
+
+**FastReader Class Algorithm:**
+
+1. Define a class `FastReader`.
+2. Declare variables: `br` of type `BufferedReader` and `st` of type `StringTokenizer`.
+3. Define a constructor `FastReader()`:
+   - Initialize `br` with a new `BufferedReader` wrapping an `InputStreamReader` for `System.in`.
+
+4. Define a function `next()` with no parameters and return type `String`:
+   - Loop while `st` is `null` or `st.hasMoreElements()` is `false`:
+     - Try to read a line from `br` and tokenize it into `st`.
+   - Return the next token from `st`.
+
+5. Define functions for reading different data types:
+   - `nextInt()`: Return the integer parsed from `next()`.
+   - `nextLong()`: Return the long parsed from `next()`.
+   - `nextDouble()`: Return the double parsed from `next()`.
+   - `nextLine()`: Try to read a line directly from `br` and return it.
+
+**Required Libraries and Modules:**
+
+- `java.io.BufferedReader`
+- `java.io.BufferedWriter`
+- `java.io.FileOutputStream`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.io.OutputStream`
+- `java.io.OutputStreamWriter`
+- `java.io.PrintWriter`
+- `java.util.*` (including `Scanner`, `Arrays`, `ArrayList`, `Collections`, `StringTokenizer`)
+- `java.lang.Math`
+- `java.awt.Point`
+- `java.awt.geom.*`

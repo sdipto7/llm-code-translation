@@ -1,0 +1,45 @@
+**Algorithm Extraction**
+
+1. **Function Signatures**
+   - `public static void main(String[] args)`
+     - Parameters: `String[] args` (command-line arguments)
+     - Return type: `void`
+
+2. **Variable Declarations**
+   - `Scanner scan = new Scanner(System.in)` (Scanner object for input)
+   - `int X` (first input value)
+   - `int t` (second input value)
+
+3. **Input Operations**
+   - Read `X` via `scan.nextInt()`
+   - Read `t` via `scan.nextInt()`
+
+4. **Logic Flow**
+   - If `X >= t`:
+     - Compute `X - t`
+     - Print result
+   - Else if `X < t`:
+     - Print `0`
+
+5. **Control Structures**
+   - `if (X >= t)`
+   - `else if (X < t)`
+
+6. **Output Operations**
+   - `System.out.println(X - t)` (for `X >= t`)
+   - `System.out.print(0)` (for `X < t`)
+
+7. **Dependencies**
+   - `java.util.Scanner`
+
+---
+
+**Python Code**
+
+```python
+X, t = map(int, input().split())
+if X >= t:
+    print(X - t)
+else:
+    print(0)
+```

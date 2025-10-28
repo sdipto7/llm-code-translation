@@ -1,0 +1,74 @@
+### Algorithm
+
+1. Import required libraries:
+   - `java.util`
+   - `java.io`
+
+2. Declare a class `Main` with the following static variables:
+   - `counter`: an integer array
+   - `graph`: a list of lists of integers
+
+3. Define the `main` function with the following steps:
+   - Create an instance `fs` of `FastScanner`
+   - Read two integers `n` and `q` using `fs.nextInt()`
+   - Initialize `graph` as a list of `n` empty linked lists
+   - Initialize `counter` as an integer array of size `n`
+   - For `n-1` times:
+     - Read two integers `a` and `b` using `fs.nextInt()`, subtract 1 from each
+     - Add `b` to `graph.get(a)` and `a` to `graph.get(b)`
+   - For `q` times:
+     - Read two integers `x` and `y` using `fs.nextInt()`, subtract 1 from `x`
+     - Increment `counter[x]` by `y`
+   - Call `dfs(0, -1, 0)`
+   - Create a `StringJoiner` `sj` with a space separator
+   - For `n` times:
+     - Add the string representation of `counter[i]` to `sj`
+   - Print the string representation of `sj`
+
+4. Define the `dfs` function with parameters:
+   - `v`: an integer
+   - `par`: an integer
+   - `val`: a long integer
+   - Iterate over each neighbor `i` of `v` in `graph`:
+     - If `i` is not equal to `par`, call `dfs(i, v, val + counter[v])`
+   - Increment `counter[v]` by `val`
+
+5. Define a nested static class `FastScanner` with the following:
+   - Private instance variables:
+     - `in`: an `InputStream` initialized to `System.in`
+     - `buffer`: a byte array of size 1024
+     - `ptr`: an integer initialized to 0
+     - `buflen`: an integer initialized to 0
+   - Private method `hasNextByte()`:
+     - If `ptr` is less than `buflen`, return true
+     - Otherwise, set `ptr` to 0 and read into `buffer` from `in`
+     - If the read length is less than or equal to 0, return false
+     - Return true
+   - Private method `readByte()`:
+     - If `hasNextByte()` returns true, return the byte at `buffer[ptr]` and increment `ptr`
+     - Otherwise, return -1
+   - Private method `isPrintableChar(int c)`:
+     - Return true if `c` is between 33 and 126 (inclusive), false otherwise
+   - Public method `hasNext()`:
+     - While `hasNextByte()` returns true and the next byte is not printable, increment `ptr`
+     - Return `hasNextByte()`
+   - Public method `next()`:
+     - If `hasNext()` returns false, throw a `NoSuchElementException`
+     - Create a `StringBuilder` `sb`
+     - Read bytes using `readByte()` until a non-printable byte is encountered
+     - Append each printable byte to `sb`
+     - Return the string representation of `sb`
+   - Public method `nextLong()`:
+     - If `hasNext()` returns false, throw a `NoSuchElementException`
+     - Initialize a long integer `n` to 0 and a boolean `minus` to false
+     - Read the next byte using `readByte()`
+     - If the byte is '-', set `minus` to true and read the next byte
+     - If the byte is not a digit, throw a `NumberFormatException`
+     - While the byte is a digit, multiply `n` by 10 and add the digit value
+     - If the next byte is not a digit or is -1, return `n` with the correct sign
+   - Public method `nextInt()`:
+     - Call `nextLong()` and check if the result is within the integer range
+     - If not, throw a `NumberFormatException`
+     - Return the result as an integer
+   - Public method `nextDouble()`:
+     - Call `next()` and parse the result as a double using `Double.parseDouble()`

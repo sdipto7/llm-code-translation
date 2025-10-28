@@ -1,0 +1,81 @@
+```
+Libraries/Modules:
+- java.io.*
+- java.util.Arrays
+- java.util.StringTokenizer
+
+Function Signatures:
+- void Task.solve(int testNumber, InputReader in, PrintWriter out)
+- void Main.sort(double[] arr)
+- void Main.sort(int[] arr)
+- void Main.sort(long[] arr)
+- void Main.solve()
+- public static void Main.main(String[] args)
+- String InputReader.next()
+- int InputReader.nextInt()
+- long InputReader.nextLong()
+- double InputReader.nextDouble()
+
+Algorithm:
+1. Function `Task.solve(int testNumber, InputReader in, PrintWriter out)`:
+   - Declare `int n` and assign it the value from `in.nextInt()`.
+   - Declare `int[] countArr` with size `n + 1`.
+   - Loop `int x` from 1 to 100 (inclusive).
+     - Loop `int y` from 1 to 100 (inclusive).
+       - Loop `int z` from 1 to 100 (inclusive).
+         - Calculate `int value = x * x + y * y + z * z + x * y + x * z + y * z`.
+         - If `value > n`, break the innermost loop.
+         - Increment `countArr[value]`.
+   - Loop `int i` from 1 to `n` (inclusive):
+     - Use `out.println(countArr[i])`.
+
+2. Function `Main.sort(double[] arr)`:
+   - Convert `double[] arr` to `Double[] objArr` using `Arrays.stream().boxed().toArray()`.
+   - Use `Arrays.sort(objArr)`.
+   - Loop over `arr` and assign sorted values from `objArr` back to `arr`.
+
+3. Function `Main.sort(int[] arr)`:
+   - Convert `int[] arr` to `Integer[] objArr` using `Arrays.stream().boxed().toArray()`.
+   - Use `Arrays.sort(objArr)`.
+   - Loop over `arr` and assign sorted values from `objArr` back to `arr`.
+
+4. Function `Main.sort(long[] arr)`:
+   - Convert `long[] arr` to `Long[] objArr` using `Arrays.stream().boxed().toArray()`.
+   - Use `Arrays.sort(objArr)`.
+   - Loop over `arr` and assign sorted values from `objArr` back to `arr`.
+
+5. Function `Main.solve()`:
+   - Declare `InputStream inputStream` and assign `System.in`.
+   - Declare `OutputStream outputStream` and assign `System.out`.
+   - Create `InputReader in` with `inputStream`.
+   - Create `PrintWriter out` with `outputStream`.
+   - Create `Task task`.
+   - Call `task.solve(1, in, out)`.
+   - Call `out.close()`.
+
+6. Function `Main.main(String[] args)`:
+   - Start a new `Thread` with a lambda calling `Main.solve()`, with name "1" and stack size `1 << 26`.
+
+7. Class `InputReader`:
+   - BufferedReader `reader`.
+   - StringTokenizer `tokenizer`.
+
+8. Constructor `InputReader(InputStream stream)`:
+   - Initialize `reader` using `BufferedReader` with `InputStreamReader(stream)` and buffer size 32768.
+   - Initialize `tokenizer` as `null`.
+
+9. Function `InputReader.next()`:
+   - While `tokenizer` is `null` or `!tokenizer.hasMoreTokens()`:
+     - Try to read a line with `reader.readLine()`.
+     - Initialize `tokenizer` with new `StringTokenizer`.
+   - Return `tokenizer.nextToken()`.
+
+10. Function `InputReader.nextInt()`:
+    - Return `Integer.parseInt(next())`.
+
+11. Function `InputReader.nextLong()`:
+    - Return `Long.parseLong(next())`.
+
+12. Function `InputReader.nextDouble()`:
+    - Return `Double.parseDouble(next())`.
+```

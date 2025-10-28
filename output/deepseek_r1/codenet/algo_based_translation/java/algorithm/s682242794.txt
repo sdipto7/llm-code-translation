@@ -1,0 +1,38 @@
+- Functions:
+  - `public void solve()`
+    - Parameters: none
+    - Return type: void
+  - `public static void main(String[] args)`
+    - Parameters: String array args
+    - Return type: void
+
+- Variables:
+  - Instance variables (int): high, low, sa
+  - Local variables:
+    - Scanner sc in solve()
+    - int i in loop (scope: for loop)
+
+- Execution flow:
+  1. Create Main object in main()
+  2. Call solve() method
+  3. Initialize Scanner object with System.in
+  4. Start loop: i = 0 to i < 7 (7 iterations)
+     a. Read integer input for high
+     b. Read integer input for low
+     c. Calculate sa = high - low
+     d. Print sa to standard output
+  5. Close Scanner (implicit with program end)
+
+- Control structures:
+  - for loop: 
+    - Initialization: int i = 0
+    - Condition: i < 7
+    - Update: i++
+
+- Input/Output:
+  - Input operations: nextInt() called twice per iteration
+  - Output operation: System.out.println(sa) per iteration
+  - Data processing: subtraction of two integers
+
+- Dependencies:
+  - java.util.Scanner (imported)

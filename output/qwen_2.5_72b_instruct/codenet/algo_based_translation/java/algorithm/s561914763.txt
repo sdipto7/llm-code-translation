@@ -1,0 +1,63 @@
+Import:
+- java.util.HashSet
+- java.util.Scanner
+- java.util.Set
+
+Global Variables:
+- ODD: Set<String>
+- EVE: Set<String>
+
+Static Block:
+- ODD.add("R")
+- ODD.add("U")
+- ODD.add("D")
+- EVE.add("L")
+- EVE.add("U")
+- EVE.add("D")
+
+Function Signatures:
+- main(String[] args): void
+- isMatch(Set<String> set, char c): boolean
+
+Variable Declarations and Data Types:
+- sc: Scanner
+- N: String
+- tap: char[]
+- isGood: boolean
+
+Logic Flow in Execution Order:
+
+1. Initialize Scanner object sc
+2. Read a line of input from standard input and store it in N
+3. Convert string N to character array tap
+4. Set isGood to true
+5. Loop through each character in tap using index i from 0 to length of N - 1
+   - If (i + 1) % 2 == 0 (even index)
+     - If isMatch(EVE, tap[i]) is false
+       - Set isGood to false
+       - Break loop
+   - Else (odd index)
+     - If isMatch(ODD, tap[i]) is false
+       - Set isGood to false
+       - Break loop
+6. If isGood is true
+   - Print "Yes"
+   - Else print "No"
+
+Control Structures:
+- Static block to initialize sets ODD and EVE
+- For loop to iterate over each character in the input string
+- If-else conditional to check whether the index is even or odd
+- Nested if statements to check character match against sets ODD and EVE
+
+Input/Output Operations and Data Processing Logic:
+- Input: Single line string from standard input
+- Process:
+  - Convert input string to character array
+  - Check each character against respective set based on its position (odd/even index)
+- Output: Print "Yes" if all characters match their respective sets, otherwise print "No"
+
+Required Libraries, Modules, or Dependencies:
+- java.util.HashSet
+- java.util.Scanner
+- java.util.Set

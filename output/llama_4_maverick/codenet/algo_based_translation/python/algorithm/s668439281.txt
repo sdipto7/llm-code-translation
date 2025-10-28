@@ -1,0 +1,12 @@
+1. Read an integer `n` from input.
+2. Initialize an empty list `ls` to store `n` input strings.
+3. For `n` iterations, read a string from input and append it to `ls`.
+4. Create a `Counter` object `c` from the list `ls` to count the frequency of each string.
+5. Retrieve the count of the most common string(s) by accessing the first element of the `most_common()` list of `c`, stored in `count`.
+6. Initialize an empty list `ans` to store the most common string(s).
+7. Iterate over the `most_common()` list `p` of `c`.
+8. For each iteration, check if the count of the current string is equal to `count`.
+9. If the counts are equal, append the string to `ans`.
+10. If the counts are not equal, break the loop.
+11. Sort the list `ans` in ascending order.
+12. Iterate over the sorted `ans` list and print each string.

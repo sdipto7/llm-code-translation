@@ -1,0 +1,7 @@
+1. Import the `java.util.Scanner` library.
+2. Define a class `Main` with a `main` method that takes an array of `String` arguments and returns `void`.
+3. Declare a `Scanner` object `sc` and initialize it with `System.in`.
+4. Declare an `int` variable `num` and assign it the value returned by `sc.nextInt()`.
+5. Evaluate the condition `num < 1200`.
+6. If the condition is `true`, execute `System.out.println("ABC")`.
+7. If the condition is `false`, execute `System.out.println("ARC")`.

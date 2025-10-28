@@ -1,0 +1,24 @@
+- Functions:
+  - `public static void main(String[] args)`: Entry point, no return
+  - `private static void log(String str)`: Output helper, no return
+  - `private static void log(int str)`: Output helper, no return
+- Variables:
+  - `Scanner scanner`: Instantiated with `System.in`
+  - `int A`: Read from input via `scanner.nextInt()`
+  - `int B`: Read from input via `scanner.nextInt()`
+  - `int T`: Read from input via `scanner.nextInt()`
+  - `int result`: Computed as `(T / A) * B`
+- Execution Flow:
+  1. Initialize scanner for standard input
+  2. Read three space-separated integers in sequence: A, B, T
+  3. Compute integer division of T by A (truncated toward zero)
+  4. Multiply division result by B
+  5. Print computed value via `log(int)` method
+- Operations:
+  - Input: Three integers from stdin via Scanner
+  - Processing: Arithmetic operations with integer division
+  - Output: Single integer result printed via System.out.println
+- Dependencies:
+  - `java.util.Scanner` required for input handling
+- Control Structures:
+  - Linear execution flow with no loops or conditionals

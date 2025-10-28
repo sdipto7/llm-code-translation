@@ -1,0 +1,15 @@
+- Import the `math` module.
+- Read a line of input and split it into two integers, `N` and `K`.
+- Calculate `R` as `N - K`.
+- Define a constant `mod` with the value `10**9 + 7`.
+
+- Define a function `fact(n: int, r: int) -> int`:
+  - Compute the factorial of `n`, divided by the product of the factorial of `n - r` and the factorial of `r`.
+  - Return the computed value.
+
+- Iterate over a range from `1` to `K + 1` (inclusive of `1` and exclusive of `K + 1`):
+  - For each `i` in the range:
+    - If `N - K + 1 < i`, set `ans` to `0`.
+    - Otherwise, calculate `ans` using:
+      - `fact(R + 1, i)` multiplied by `fact(K - 1, i - 1)`.
+    - Print the value of `ans` modulo `mod`.

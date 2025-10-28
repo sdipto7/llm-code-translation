@@ -1,0 +1,25 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner sc = new Scanner(System.in)` (Scanner type)
+- `int X = sc.nextInt()`
+- `int t = sc.nextInt()`
+
+**Logic Flow:**
+1. Read integer `X` from standard input
+2. Read integer `t` from standard input
+3. Calculate `X - t`
+4. Check if result is ≥ 0:
+   - TRUE: Print `X - t`
+   - FALSE: Print 0
+
+**Control Structures:**
+- Single conditional: `if (X - t >= 0) { ... } else { ... }`
+
+**Input/Output Operations:**
+- Input: Two space-separated integers via `Scanner`
+- Output: Single integer result via `System.out.println`
+
+**Dependencies:**
+- `java.util.Scanner` (imported)

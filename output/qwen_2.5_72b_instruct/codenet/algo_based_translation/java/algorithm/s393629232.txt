@@ -1,0 +1,32 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner sc` for input
+- `int n` for number of inputs
+- `int maxv` initialized to `Integer.MIN_VALUE`
+- `int minv` for minimum value read from input
+
+Logic flow in execution order:
+1. Create a `Scanner` object to read input.
+2. Read an integer `n`, representing the number of integers to process.
+3. Initialize `maxv` to the smallest possible integer value.
+4. Read the first integer and assign it to `minv`.
+5. For `i` from 1 to `n-1` (inclusive):
+   - Read an integer `ri`.
+   - Update `maxv` to be the maximum of `maxv` and the difference between `ri` and `minv`.
+   - Update `minv` to be the minimum of `minv` and `ri`.
+6. Print the value of `maxv`.
+7. Close the `Scanner` object.
+
+Control structures:
+- Loop: `for (int i = 1; i < n; i++)`
+- Conditionals: 
+  - `Math.max(maxv, ri - minv)` updates `maxv` based on the condition
+  - `Math.min(minv, ri)` updates `minv` based on the condition
+
+Input/output operations and data processing logic:
+- Input: Read integers using `sc.nextInt()`
+- Output: Print the maximum difference calculated
+
+Required libraries, modules, or dependencies:
+- `import java.util.Scanner`

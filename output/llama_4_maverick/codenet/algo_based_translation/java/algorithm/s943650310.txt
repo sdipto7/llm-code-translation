@@ -1,0 +1,13 @@
+1. Import required libraries: java.util.Scanner
+2. Define a class: Main
+3. Define a function: main with parameter args of type String[] and return type void
+4. Declare a variable: sc of type Scanner and initialize it with a new Scanner object using System.in
+5. Declare variables: X and t of type int
+6. Read input from sc into X using nextInt()
+7. Read input from sc into t using nextInt()
+8. Evaluate the condition: X - t >= 0
+9. If the condition is true, execute: 
+   - Calculate X - t and store the result in an anonymous variable
+   - Output the result using System.out.println()
+10. If the condition is false, execute: 
+    - Output 0 using System.out.println()

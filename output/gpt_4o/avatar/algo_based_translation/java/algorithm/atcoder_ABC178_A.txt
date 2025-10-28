@@ -1,0 +1,29 @@
+```
+Function Signature:
+- main(String[] args) : void
+
+Libraries/Modules:
+- java.util.Scanner
+- java.io.PrintWriter
+- java.lang.Integer
+
+Variable Declarations:
+- scan : Scanner
+- x : int
+- bool : boolean
+- result : int
+- out : PrintWriter
+
+Algorithm:
+1. Create a Scanner object `scan` to read from standard input.
+2. Read the next input as a String and convert it to an integer, assigning it to `x`.
+3. Evaluate the condition `x == 1`.
+   - If true, assign `true` to `bool`.
+   - If false, assign `false` to `bool`.
+4. Evaluate the condition `!bool`.
+   - If true, assign `1` to `result`.
+   - If false, assign `0` to `result`.
+5. Create a PrintWriter object `out` to write to standard output.
+6. Print the value of `result` using `out`.
+7. Flush the output buffer using `out.flush()`.
+```

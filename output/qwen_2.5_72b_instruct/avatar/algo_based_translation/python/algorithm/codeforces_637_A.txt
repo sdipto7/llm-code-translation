@@ -1,0 +1,21 @@
+Function Signature: main() -> None
+
+Variable Declarations and Data Types:
+- n: int
+- s: List[str]
+- w: Counter (Dictionary-like)
+- c: int
+- a: str
+
+Logic Flow:
+1. Read an integer n from standard input.
+2. Read a line of space-separated strings from standard input, remove the last character, and split it into a list s.
+3. Create a Counter object w from the list s to count occurrences of each string.
+4. Reverse the list s.
+5. Initialize variables c to -1 and a to an empty string.
+6. Loop over each unique string i in the Counter object w:
+   a. If the count of i in w is equal to the maximum value in w.values():
+      i. If the index of i in the reversed list s is greater than c:
+         1. Set a to i.
+         2. Set c to the index of i in the reversed list s.
+7. Print the string a to standard output.

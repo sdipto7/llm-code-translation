@@ -1,0 +1,10 @@
+1. Read a line of input from the user and convert it into a character array.
+2. Iterate through the character array to find the index of the '.' character.
+3. Check if the character preceding the '.' is '9'.
+4. If the preceding character is '9', output "GOTO Vasilisa.".
+5. If not, parse the character immediately following the '.' into an integer.
+6. Check if the parsed integer is greater than 4.
+7. If it is greater than 4, create a new string consisting of characters before the '.' in the original array.
+8. Convert the new string into a BigInteger, add 1 to it, and output the result as a string.
+9. If the parsed integer is not greater than 4, output the characters before the '.' in the original array.
+10. End the process.

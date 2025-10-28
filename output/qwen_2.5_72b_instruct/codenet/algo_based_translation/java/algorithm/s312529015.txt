@@ -1,0 +1,14 @@
+- Function signature: `public static void main(String[] args)`
+- Variable declarations: `Scanner sc`, `int A`, `int B`
+- Logic flow:
+  1. Create a `Scanner` object `sc` to read input from the standard input stream.
+  2. Read an integer input and assign it to variable `A`.
+  3. Read an integer input and assign it to variable `B`.
+  4. Check if `A` modulo 3 equals 0 or `B` modulo 3 equals 0 or `(A + B)` modulo 3 equals 0.
+  5. If the condition in step 4 is true, print "Possible".
+  6. If the condition in step 4 is false, print "Impossible".
+- Control structures:
+  - Conditional: `if(A % 3 == 0 || B % 3 == 0 || (A + B) % 3 == 0)` with corresponding `else`.
+- Input operations: `sc.nextInt()` for reading two integers.
+- Output operations: `System.out.println("Possible")` or `System.out.println("Impossible")` based on the condition.
+- Required libraries: `java.util.Scanner`

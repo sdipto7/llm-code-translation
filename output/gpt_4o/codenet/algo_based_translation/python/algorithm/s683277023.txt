@@ -1,0 +1,25 @@
+Algorithm:
+1. Input Reading:
+   - Read a single line of input and split it into two integers `n` and `k`.
+
+2. Variable Declarations:
+   - `n: int` - the number of elements in the list.
+   - `k: int` - the number of smallest elements to sum.
+   - `li: List[int]` - a list of integers of length `n`.
+   - `tmp: List[int]` - a list that will store the first `k` smallest integers from `li`.
+
+3. Input Parsing:
+   - Read a single line of input and split it into `n` integers.
+   - Assign this list of integers to `li`.
+
+4. Sorting:
+   - Sort the list `li` in ascending order.
+
+5. Selection:
+   - Select the first `k` elements from the sorted list `li` and assign them to `tmp`.
+
+6. Sum Calculation:
+   - Calculate the sum of the integers in the list `tmp`.
+
+7. Output:
+   - Print the calculated sum.

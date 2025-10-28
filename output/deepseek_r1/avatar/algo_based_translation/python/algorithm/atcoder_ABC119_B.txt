@@ -1,0 +1,50 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`  
+  *Entry point function. No parameters, returns nothing.*
+
+**Variable Declarations:**
+- `N: int`  
+  *Stores the number of input lines.*  
+- `x: List[float]`  
+  *Stores converted numerical values from input strings.*  
+- `sum_x: float`  
+  *Stores the sum of all values in `x`.*  
+
+**Step-by-Step Logic Flow:**
+1. Read integer `N` from standard input.  
+2. Initialize `x` as an empty list of floats.  
+3. For `i` in range `0` to `N - 1` (inclusive):  
+   a. Read string `s` from standard input.  
+   b. Replace all occurrences of `'JPY'` in `s` with `'*1.0'`.  
+   c. Replace all occurrences of `'BTC'` in `s` with `'*380000.0'`.  
+   d. Evaluate the modified string `s` as a Python expression, convert the result to a float, and store in `value`.  
+   e. Append `value` to `x`.  
+4. Compute `sum_x` as the sum of all elements in `x`.  
+5. Print `sum_x` to standard output.  
+
+**Control Flow Structures:**
+- Loop:  
+  - Type: Count-controlled (for-loop)  
+  - Range: `0 ≤ i < N`  
+  - Exit Criteria: All `N` inputs processed.  
+
+**Input/Output Operations:**
+- Input:  
+  - Read `N` via `input()` and cast to `int`.  
+  - Read `N` strings sequentially via `input()`.  
+- Output:  
+  - Print `sum_x` as a floating-point number.  
+
+**Data Processing Logic:**
+- String manipulation to convert currency notation (`JPY/BTC`) to arithmetic expressions.  
+- Evaluation of dynamically generated arithmetic expressions.  
+
+**Error Handling & Edge Cases:**
+- Implicit type conversion assumes valid numeric inputs (no explicit error handling).  
+- If `N = 0`, `x` remains empty, and `sum_x = 0.0` (no iteration occurs).  
+
+**External Dependencies:**
+- `eval()` function from Python’s standard library for expression evaluation.  
+- No external libraries or imports beyond base language features.

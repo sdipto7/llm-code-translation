@@ -1,0 +1,6 @@
+Algorithm:
+1. Import module: bisect
+2. Declare integer variable N, assign value from input conversion
+3. Declare list variable arr, assign [111, 222, 333, 444, 555, 666, 777, 888, 999]
+4. Declare integer variable ans_idx, assign result of bisect.bisect_left(arr, N)
+5. Print arr[ans_idx]

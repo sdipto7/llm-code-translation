@@ -1,0 +1,74 @@
+Function Signatures:
+- `input() -> str`
+- `INT() -> int`
+- `MAP() -> map`
+- `LIST() -> list`
+- `ZIP(n: int) -> zip`
+
+Variable Declarations and Data Types:
+- `sys`: module
+- `re`: module
+- `deque`: class from collections
+- `defaultdict`: class from collections
+- `Counter`: class from collections
+- `ceil`: function from math
+- `sqrt`: function from math
+- `hypot`: function from math
+- `factorial`: function from math
+- `pi`: constant from math
+- `sin`: function from math
+- `cos`: function from math
+- `radians`: function from math
+- `accumulate`: function from itertools
+- `permutations`: function from itertools
+- `combinations`: function from itertools
+- `combinations_with_replacement`: function from itertools
+- `product`: function from itertools
+- `groupby`: function from itertools
+- `itemgetter`: function from operator
+- `mul`: function from operator
+- `deepcopy`: function from copy
+- `copy`: function from copy
+- `ascii_lowercase`: string from string
+- `ascii_uppercase`: string from string
+- `digits`: string from string
+- `bisect`: function from bisect
+- `bisect_left`: function from bisect
+- `insort`: function from bisect
+- `insort_left`: function from bisect
+- `gcd`: function from fractions
+- `heappush`: function from heapq
+- `heappop`: function from heapq
+- `reduce`: function from functools
+- `np`: module from numpy
+- `N`: int
+- `S`: list of str
+- `march`: list of str
+- `march_lis`: list of int
+- `s`: str
+- `x`: int
+- `y`: int
+- `z`: int
+- `ans`: int
+
+Logic Flow:
+1. Import necessary modules and functions.
+2. Define `input` function to read a line from standard input and strip it.
+3. Define `INT` function to convert the input string to an integer.
+4. Define `MAP` function to convert the input string to a map of integers.
+5. Define `LIST` function to convert the input string to a list of integers.
+6. Define `ZIP` function to create a zip object from `n` maps of integers.
+7. Set recursion limit to \(10^9\).
+8. Define constants `INF` as infinity and `mod` as \(10^9 + 7\).
+9. Import numpy module as `np`.
+10. Read integer `N` from input.
+11. Read `N` strings from input and store them in list `S`.
+12. Initialize list `march` with strings ["M", "A", "R", "C", "H"].
+13. Initialize list `march_lis` with five zeros.
+14. For each string `s` in list `S`:
+    - If the uppercase first character of `s` is in list `march`:
+        - Increment the corresponding index in `march_lis` by 1.
+15. Initialize variable `ans` to 0.
+16. For each combination `(x, y, z)` of three elements from `march_lis`:
+    - Add the product of `x`, `y`, and `z` to `ans`.
+17. Print the value of `ans`.

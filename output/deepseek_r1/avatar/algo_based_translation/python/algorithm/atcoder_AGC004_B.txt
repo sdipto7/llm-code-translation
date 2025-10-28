@@ -1,0 +1,60 @@
+**Structured Algorithm Specification:**
+
+**Function Signatures:**
+- `main() -> void`
+  - Parameters: None
+  - Return Type: Void
+
+**Variables:**
+- `n: integer` (Input size)
+- `x: integer` (Cost multiplier)
+- `a: list of integers` (Input array)
+- `b: 2D list of integers` (Matrix storing minimum values)
+- `m: integer` (Temporary minimum value / Result accumulator)
+- `i: integer` (Loop index for outer iteration)
+- `j: integer` (Loop index for inner iteration)
+- `k: integer` (Adjusted index for array `a`)
+
+**Algorithm Steps:**
+
+1. **Input Operations:**
+   1. Read `n` and `x` from standard input as integers.
+   2. Read `n` integers from standard input into list `a`.
+
+2. **Matrix Initialization:**
+   1. Create `b` as an `n x n` matrix initialized with placeholder values (type integer).
+
+3. **Matrix Population:**
+   1. For each `i` from `0` to `n-1` (inclusive):
+      1. Assign `m = a[i]`.
+      2. For each `j` from `0` to `n-1` (inclusive):
+         1. Compute `k = i - j`.
+         2. If `k < 0`, set `k = k + n`.
+         3. Update `m = min(m, a[k])`.
+         4. Assign `b[j][i] = m`.
+
+4. **Minimum Cost Calculation:**
+   1. Initialize `m` to a large integer value (e.g., 10^15).
+   2. For each row index `i` in `b` (from `0` to `n-1` inclusive):
+      1. Compute `row_sum` as the sum of all elements in `b[i]`.
+      2. Compute `total_cost = row_sum + x * i`.
+      3. Update `m = min(m, total_cost)`.
+
+5. **Output Operation:**
+   1. Print the value of `m`.
+
+**Control Flow Structures:**
+- Outer loop (Matrix Population):
+  - Range: `for i in 0 to n-1`
+  - Nested inner loop: `for j in 0 to n-1`
+    - Conditional: `if k < 0` (adjust index `k` using `k += n`)
+- Loop (Minimum Cost Calculation):
+  - Iterate over all rows `i` from `0` to `n-1`
+
+**Edge Case Handling:**
+- Implicit handling of circular array indexing via `k` adjustment when `k < 0`.
+- Initialization of `m` with a sufficiently large value (10^15) to ensure correct minimum comparison.
+
+**External Dependencies:**
+- Standard input for reading data.
+- No external libraries or functions beyond basic list operations and integer arithmetic.

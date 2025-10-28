@@ -1,0 +1,20 @@
+- Function Signature: `main(String[] args)` with no explicit return type as it's a Java main method, implicitly returning void.
+- Variable Declarations and Data Types:
+  - `w`, `a`, `b` of type `int`
+  - `answer` of type `int`
+  - `sc` of type `Scanner`
+- Logic Flow:
+  1. Import required libraries: `java.util.*`
+  2. Create a new `Scanner` object `sc` to read from `System.in`.
+  3. Read three integers from `System.in` into `w`, `a`, and `b` using `sc.nextInt()`.
+  4. Calculate `answer` as `Math.max(a, b) - Math.min(a, b) - w`.
+  5. Check if `answer` is less than 0.
+  6. If true, output `0` to `System.out`.
+  7. If false, output the value of `answer` to `System.out`.
+- Control Structures:
+  - Conditional: `if (answer < 0)`
+- Input/Output Operations:
+  - Input: Read three integers from `System.in` using `Scanner`.
+  - Output: Print either `0` or the calculated `answer` to `System.out`.
+- Required Libraries/Modules:
+  - `java.util.*` for `Scanner` class.

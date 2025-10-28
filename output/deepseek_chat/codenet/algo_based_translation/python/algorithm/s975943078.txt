@@ -1,0 +1,45 @@
+**Function Signature:**
+- solve() -> int
+
+**Parameters:**
+- None
+
+**Return Type:**
+- int (returns 0)
+
+**Variables:**
+- input: function (sys.stdin.readline)
+- N: int
+- K: int
+- A: list[int] (length N)
+- sum_A: list[int] (length N+1)
+- count: int
+- modK: dict[int, list[int]]
+- key: int
+- lenK: int
+- i: int
+- a: int
+
+**Libraries/Modules:**
+- sys
+- bisect (bisect_left)
+
+**Algorithm Flow:**
+
+1. Read input using sys.stdin.readline
+2. Read first line: N, K = integers from input
+3. Read second line: Convert each element to int, compute (element % K) - 1, store in list A
+4. Initialize sum_A as list of zeros with length N+1
+5. Initialize count = 0
+6. Initialize modK as dictionary with key 0 mapping to list [0]
+7. For i from 0 to N-1:
+   - sum_A[i+1] = (sum_A[i] + A[i]) % K
+   - If sum_A[i+1] not in modK: modK[sum_A[i+1]] = [i+1]
+   - Else: append i+1 to modK[sum_A[i+1]]
+8. For each key in modK:
+   - lenK = length of modK[key]
+   - For each index i and value a in modK[key]:
+     - Find insertion position of (a + K) in modK[key] starting from index i to lenK
+     - Add (insertion_position - i - 1) to count
+9. Print count
+10. Return 0

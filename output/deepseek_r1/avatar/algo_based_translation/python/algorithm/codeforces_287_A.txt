@@ -1,0 +1,56 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signature:**
+- `main() -> void`
+
+**Variables:**
+- `grid`: List[List[str]] (size 4x4)
+- `blackCount`: int (initial 0)
+- `whiteCount`: int (initial 0)
+- `correctFound`: bool (initial False)
+
+**Input/Output Operations:**
+1. Read 4 lines from standard input, each line converted to a list of characters and stored in `grid`.
+
+**Logic Flow:**
+1. **Grid Initialization:**
+   - For index `k` from 0 to 3:
+     - Read input line as string.
+     - Convert to character list.
+     - Store in `grid[k]`.
+
+2. **Subgrid Analysis:**
+   - Loop `i` from 0 to 2:
+     - Loop `j` from 0 to 2:
+       1. Reset `blackCount` and `whiteCount` to 0.
+       2. **Cell Evaluation:**
+          - If `grid[i][j] == '#'`: `blackCount += 1`  
+            Else: `whiteCount += 1`
+          - If `grid[i][j+1] == '#'`: `blackCount += 1`  
+            Else: `whiteCount += 1`
+          - If `grid[i+1][j] == '#'`: `blackCount += 1`  
+            Else: `whiteCount += 1`
+          - If `grid[i+1][j+1] == '#'`: `blackCount += 1`  
+            Else: `whiteCount += 1`
+       3. **Condition Check:**
+          - If `blackCount` in {0,3,4} OR `whiteCount` in {0,3,4}:
+            - Set `correctFound = True`
+            - Exit all loops immediately.
+   - If `correctFound` is set during any iteration, skip remaining subgrid checks.
+
+3. **Result Output:**
+   - If `correctFound` is True: Print "YES"
+   - Else: Print "NO"
+
+**Control Flow Structures:**
+- Nested loops with indices `i` (rows) and `j` (columns) iterating 0-2.
+- Early termination via `break` when `correctFound` becomes True.
+- Conditional checks on aggregated counts after processing each 2x2 subgrid.
+
+**Edge Case Handling:**
+- Implicitly handles all possible 2x2 subgrid configurations in a 4x4 matrix.
+- Correctly identifies subgrids with all matching or near-matching cell values.
+
+**External Dependencies:**
+- Standard input/output functions for data ingestion and result display.
+- No external libraries or modules required.

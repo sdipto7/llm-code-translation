@@ -1,0 +1,10 @@
+1. Start
+2. Read input from the standard input stream.
+3. Parse the input into a double value.
+4. Calculate the count of odd numbers by dividing the input by 2 and rounding to the nearest integer.
+5. Calculate the result by dividing the count of odd numbers by the input.
+6. Set the scale of the result to 10 decimal places with rounding mode HALF_UP.
+7. Print the result to the standard output stream.
+8. If an IOException or NumberFormatException occurs during input parsing, catch the exception, print the error stack trace, and exit the program with status code 0.
+9. If any other exception occurs, catch the exception, print the error stack trace, and exit the program with status code 0.
+10. End

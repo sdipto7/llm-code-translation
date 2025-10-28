@@ -1,0 +1,62 @@
+**Algorithm:**
+
+1. **Main Function:**
+   - Parameters: String[] args
+   - Return: void
+   - Initialize InputStream from System.in
+   - Initialize OutputStream from System.out
+   - Create FastScanner instance with inputStream
+   - Create PrintWriter instance with outputStream
+   - Create TaskB solver instance
+   - Call solver.solve(1, scanner, writer)
+   - Close PrintWriter
+
+2. **TaskB.solve Function:**
+   - Parameters: int testNumber, FastScanner in, PrintWriter out
+   - Return: void
+   - Read integer n from input
+   - Declare 2D char array a of size n×n
+   - Initialize long constants P=37, Q=47
+   - Declare arrays powP and powQ of size n+1
+   - Initialize powP[0] = 1, powQ[0] = 1
+   - For i from 1 to n:
+     - powP[i] = powP[i-1] * P
+     - powQ[i] = powQ[i-1] * Q
+   - For i from 0 to n-1:
+     - Read next string and convert to char array for a[i]
+   - Declare 2D long arrays hashRow and hashCol of size n×n
+   - For i from 0 to n-1:
+     - For j from 0 to n-1:
+       - For k from 0 to n-1:
+         - hashRow[i][k] += a[i][j] * powP[(j - k + n) % n]
+         - hashCol[j][k] += a[i][j] * powP[(i - k + n) % n]
+   - Initialize ans = 0
+   - For A from 0 to n-1:
+     - For B from 0 to n-1:
+       - Set ok = true
+       - For i from 0 to n-1:
+         - Check if hashRow[(i+A)%n][B] == hashCol[(i+B)%n][A]
+         - If any comparison fails, set ok = false
+       - If ok is true, increment ans by 1
+   - Print ans
+
+3. **FastScanner Class:**
+   - Fields: BufferedReader br, StringTokenizer st
+   - Constructor: FastScanner(InputStream in)
+     - Initialize br with BufferedReader(InputStreamReader(in))
+   - nextInt(): int
+     - Return Integer.parseInt(next())
+   - next(): String
+     - While st is null or has no more tokens:
+       - Read line from br
+       - Create new StringTokenizer with line
+     - Return next token from st
+
+**Required Libraries:**
+- java.io.OutputStream
+- java.io.IOException
+- java.io.InputStream
+- java.io.PrintWriter
+- java.util.StringTokenizer
+- java.io.BufferedReader
+- java.io.InputStreamReader

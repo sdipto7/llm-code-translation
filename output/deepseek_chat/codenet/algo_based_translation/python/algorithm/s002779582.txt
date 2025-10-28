@@ -1,0 +1,18 @@
+Function signature: main() -> None
+Variables:
+- N: int
+- Hs: list[int]
+- ans: int
+- maxH: int
+- H: int (loop variable)
+
+Logic flow:
+1. Read integer N from standard input
+2. Read next line, split into list of strings, convert each to integer, store in Hs
+3. Initialize ans to 0
+4. Initialize maxH to 0
+5. For each H in Hs:
+   a. If maxH <= H:
+      i. Increment ans by 1
+      ii. Set maxH to H
+6. Print ans

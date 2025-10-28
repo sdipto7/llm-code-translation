@@ -1,0 +1,10 @@
+- Import the following libraries: `java.util.LinkedList`, `java.util.Scanner`
+- Define the `main` function with the signature `public static void main(String[] args)`
+- Declare a `Scanner` object `scan` to read input from the standard input
+- Declare a `LinkedList` object `list` to store `Integer` elements
+- Loop while `scan.hasNextInt()` returns `true`:
+  - Read an integer `a` from the input using `scan.nextInt()`
+  - If `a` equals `0`, execute the following:
+    - Output and remove the first element from `list` using `list.pop()`
+  - Otherwise, execute the following:
+    - Add `a` to the front of `list` using `list.push(a)`

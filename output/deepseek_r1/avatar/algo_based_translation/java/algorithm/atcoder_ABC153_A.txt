@@ -1,0 +1,46 @@
+**Algorithm:**
+
+Function: main  
+Parameters: String[] args  
+Return type: void  
+Variables:  
+- BufferedReader in  
+- String[] str  
+- int h  
+- int a  
+- int num  
+
+Execution Flow:  
+1. Initialize BufferedReader with System.in  
+2. Read input line and split into string array by spaces  
+3. Parse first array element as integer (h)  
+4. Parse second array element as integer (a)  
+5. Initialize num to 0  
+6. Loop:  
+   - Start with i=1  
+   - Continue while h > 0  
+   - Iteration step: i++  
+   Loop Body:  
+   - Subtract a from h  
+   - Increment num by 1  
+7. Print num  
+
+Control Structures:  
+- for loop:  
+  Initialization: i = 1  
+  Termination: h <= 0  
+  Update: i++  
+
+Dependencies:  
+- java.io.BufferedReader  
+- java.io.InputStreamReader  
+- java.io.IOException  
+
+Input/Output:  
+- Reads one line of space-separated integers from standard input  
+- Outputs one integer to standard output  
+
+Data Processing:  
+- Converts string input to numerical values  
+- Uses arithmetic subtraction in loop  
+- Counts required iterations to reduce h <= 0

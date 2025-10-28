@@ -1,0 +1,12 @@
+1. Import the `re` module (though unused in this code)
+2. Read input line, split into two integers: `candeleIntere` and `b`
+3. Initialize `s` to 0 (integer)
+4. Initialize `restoSciolte` to 0 (integer)
+5. Enter while loop with condition: `candeleIntere > 0 OR restoSciolte >= b`
+6. Inside loop:
+   - Update `candeleIntere`: add integer division of `restoSciolte` by `b`
+   - Update `restoSciolte`: remainder of division by `b`
+   - Add current `candeleIntere` to `s`
+   - Update `restoSciolte`: add remainder of `candeleIntere` divided by `b`
+   - Update `candeleIntere`: integer division by `b`
+7. After loop exits, print `s`

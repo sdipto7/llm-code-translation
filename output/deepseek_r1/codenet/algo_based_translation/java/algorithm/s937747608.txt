@@ -1,0 +1,20 @@
+- **Dependencies**: `java.util.Scanner`
+- **Function Signature**: `public static void main(String[] args)`
+- **Variables**:
+  - `Scanner sc = new Scanner(System.in)`
+  - `int a = sc.nextInt()`
+  - `int b = sc.nextInt()`
+  - `int c = sc.nextInt()`
+  - `int d = sc.nextInt()`
+- **Logic Flow**:
+  1. Read integer input for `a`, `b`, `c`, `d` using `Scanner`.
+  2. Calculate `a * b` and `c * d`.
+  3. Compare `a * b` and `c * d`:
+     - If `a * b >= c * d`, print `a * b`.
+     - Else if `a * b <= c * d`, print `c * d`.
+- **Control Structures**:
+  - `if (a * b >= c * d)`
+  - `else if (a * b <= c * d)`
+- **Input/Output**:
+  - Input via `Scanner` from standard input.
+  - Output via `System.out.println` with result of comparison.

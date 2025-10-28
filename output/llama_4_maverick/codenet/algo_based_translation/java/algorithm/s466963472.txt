@@ -1,0 +1,50 @@
+### Algorithm
+
+#### Function Signatures and Variable Declarations
+
+- `read()`: `boolean`
+- `solve()`: `int`
+- `main(String[] args)`: `void`
+- Variables:
+  - `sc`: `Scanner`
+  - `d`: `int`
+  - `ans`: `int`
+  - `n`: `int` (not used in the active code path)
+  - `x`: `int`
+  - `y`: `int`
+  - `i`: `int`
+
+#### Logic Flow
+
+1. Initialize a `Scanner` object `sc` to read from the standard input.
+2. Enter the `main` method.
+3. Call `read()` in a loop until it returns `false`.
+4. Within `read()`:
+   - Check if the input has a next integer using `sc.hasNextInt()`.
+   - If true, read the integer into `d` using `sc.nextInt()`.
+   - Return `true` if an integer was successfully read; otherwise, return `false`.
+5. If `read()` returns `true`, call `solve()`.
+6. Within `solve()`:
+   - Initialize `ans` to 0.
+   - Iterate using a `for` loop with `i` starting from 1 and continuing as long as `i * d < 600`.
+   - Within the loop:
+     - Calculate `x = i * d`.
+     - Calculate `y = x * x`.
+     - Accumulate `y * d` into `ans`.
+   - Return `ans` after the loop completes.
+7. Print the result of `solve()` to the standard output using `System.out.println()`.
+8. Repeat steps 3-7 until `read()` returns `false`.
+
+#### Control Structures
+
+- `while` loop in `main`: Continues as long as `read()` returns `true`.
+- `for` loop in `solve()`: Iterates from `i = 1` to `i * d < 600`, incrementing `i` by 1 in each iteration.
+
+#### Input/Output Operations
+
+- Reading input: `sc.hasNextInt()` and `sc.nextInt()` within `read()`.
+- Writing output: `System.out.println(solve())` in `main`.
+
+#### Required Libraries/Modules
+
+- `java.util.Scanner` for input reading.

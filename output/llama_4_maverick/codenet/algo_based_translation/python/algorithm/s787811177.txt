@@ -1,0 +1,35 @@
+1. Read an integer `n` from input.
+2. Declare a list `ls` to store `n` lists of integers.
+3. For `n` iterations, read a list of integers from input, and append it to `ls`.
+4. Sort `ls` in descending order based on the sum of each inner list.
+5. Initialize `taka` to the sum of the first elements of the inner lists at even indices in `ls`.
+6. Initialize `aoki` to the sum of the second elements of the inner lists at odd indices in `ls`.
+7. Calculate the difference between `taka` and `aoki`.
+8. Output the result of the difference. 
+
+Function signature: `main() -> None`
+- `n: int`
+- `ls: list[list[int]]`
+- `taka: int`
+- `aoki: int`
+
+1. `n = read_integer()`
+2. `ls = []`
+3. For `i` from 0 to `n-1`, 
+   - `inner_list = read_list_of_integers()`
+   - `ls.append(inner_list)`
+4. `ls = sort(ls, key=sum_of_inner_list, order=descending)`
+5. `taka = sum_of_elements_at_even_indices(ls, index=0)`
+6. `aoki = sum_of_elements_at_odd_indices(ls, index=1)`
+7. `result = taka - aoki`
+8. `output(result)`
+
+Required libraries: built-in input/output functions. 
+
+Data processing logic:
+- `read_integer()`: reads an integer from input.
+- `read_list_of_integers()`: reads a list of integers from input.
+- `sum_of_inner_list(inner_list)`: calculates the sum of an inner list.
+- `sort(ls, key=sum_of_inner_list, order=descending)`: sorts `ls` based on the sum of inner lists in descending order.
+- `sum_of_elements_at_even_indices(ls, index)`: sums elements at even indices and specified inner index.
+- `sum_of_elements_at_odd_indices(ls, index)`: sums elements at odd indices and specified inner index.

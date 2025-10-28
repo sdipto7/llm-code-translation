@@ -1,0 +1,11 @@
+1. Import necessary modules and set up required constants and functions.
+2. Define a function `readInts` to read a list of integers from input.
+3. Define a `main` function.
+4. Read an integer `n` from input.
+5. Read a list of integers `A` using `readInts`.
+6. Sort `A` in ascending order.
+7. Initialize a variable `ans` to 0.
+8. Iterate from `len(A) - 2` down to `len(A) - 2*n - 1` with a step of -2.
+9. In each iteration, add the current element of `A` at index `i` to `ans`.
+10. Print the value of `ans`.
+11. Call the `main` function if the script is run as the main module.

@@ -1,0 +1,35 @@
+Here is the algorithm extracted from the Java code:
+
+Function: main()
+Parameters: None (Java's main method)
+Return type: void (implicit in Python)
+
+Variables:
+- n: integer (from input)
+- m: integer (from input)
+- dp: list of integers, size (n+2)
+- i: integer (loop counter)
+- a: integer (temporary storage for broken steps)
+
+Logic Flow:
+1. Read integers n and m from standard input
+2. Initialize dp array with (n+2) elements, all set to 0
+3. Set dp[n] = 1
+4. For m iterations:
+   a. Read integer a
+   b. Set dp[a] = -1
+5. Iterate i from (n-1) to 0 (inclusive), descending:
+   a. If dp[i] == -1:
+      i. Set dp[i] = 0
+   b. Else:
+      i. dp[i] = (dp[i+1] + dp[i+2]) % 1000000007
+6. Print dp[0]
+
+Input/Output:
+- Input taken via standard input
+- First input line: n and m (space-separated)
+- Next m lines: single integer each indicating broken steps
+- Output: dp[0] printed to standard output
+
+Dependencies:
+- Requires input handling (standard input reading)

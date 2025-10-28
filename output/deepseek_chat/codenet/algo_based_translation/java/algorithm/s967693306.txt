@@ -1,0 +1,43 @@
+**Algorithm Extraction:**
+
+**Input:** Two integers `n` (number of digits) and `m` (number of constraints), followed by `m` pairs of integers `(s, c)` where `s` is position (1-indexed) and `c` is required digit.
+
+**Data Structures:**
+- Map<Integer, Integer> `map` to store position-digit constraints
+
+**Logic Flow:**
+1. Read `n` and `m`
+2. For each of `m` constraints:
+   - Read `s` and `c`
+   - If `map` already contains `s` with different `c`: output "-1" and terminate
+   - Store `(s, c)` in `map`
+3. Iterate through numbers 0 to 999:
+   - Convert current number to string `s`
+   - If `s.length` < `n`: skip
+   - For each digit position `j` (0-indexed) in `s`:
+     - If `map` has constraint for position `j+1` and digit doesn't match: set flag false and break
+     - If `map` has no constraint for position `j+1` and digit is not 0: set flag false and break
+     - Exception: First digit position (j=0) can be 1 even without constraint
+   - If flag is true and `s.length` equals `n`: output `s` and terminate
+4. If no valid number found: output "-1"
+
+**Function Signatures:**
+- `void solve()`: Main solution logic
+- `long gcd(long a, long b)`: Returns greatest common divisor
+- `long lcm(long a, long b)`: Returns least common multiple
+- `long inv(long a)`: Returns modular inverse
+- `long pow(long a, long r)`: Returns modular exponentiation
+- `long modFact(long n)`: Returns factorial mod MOD
+- `long fact(long n)`: Returns factorial
+- `void initCOMB()`: Initializes combination arrays
+- `long modComb(int n, int r)`: Returns nCr mod MOD
+- `long comb(long n, long r)`: Returns nCr
+- `boolean isPrime(long a)`: Returns primality check
+- `String nextPermutation(String s)`: Returns next lexicographical permutation
+- `boolean nextPermutation(long[] a)`: Returns if next permutation exists
+- `int find(long dest, long[] a, int s, int e)`: Binary search helper
+- `void elimination(int[][] a, int[] b)`: Gaussian elimination
+
+**Helper Classes:**
+- `Pair` with `(long a, long b)` and natural ordering by `b`
+- `FastScanner` for input parsing with methods: `hasNext()`, `next()`, `nextLong()`, `nextInt()`, `nextDouble()`

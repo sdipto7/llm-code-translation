@@ -1,0 +1,24 @@
+Function signature: main() -> None
+Variables: 
+- A: int
+- B: int
+- input_string: str
+
+Logic flow:
+1. Read input string from standard input
+2. Split input string by whitespace
+3. Convert first two elements to integers and assign to A and B
+4. Calculate sum of A and B
+5. Check if sum modulo 2 equals 1
+6. If condition is true: print 'IMPOSSIBLE'
+7. If condition is false: calculate integer division of sum by 2 and print result
+
+Control structures:
+- if (A + B) % 2 == 1: then print 'IMPOSSIBLE'
+- else: print (A + B) // 2
+
+Input/output:
+- Input: single line containing two integers separated by whitespace
+- Output: either 'IMPOSSIBLE' or integer result
+
+Dependencies: None (uses built-in functions)

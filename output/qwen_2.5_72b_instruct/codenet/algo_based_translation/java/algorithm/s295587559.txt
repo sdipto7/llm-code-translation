@@ -1,0 +1,51 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `in: Scanner`
+- `num: int[]`
+- `count: int`
+- `pt: Pattern`
+- `line: int[]`
+- `next: String`
+- `matcher: Matcher`
+- `change: int`
+- `i, j: int`
+
+Complete logic flow in execution order:
+1. Initialize `Scanner` object `in` to read input.
+2. Declare and initialize array `num` of size `in.nextInt()`.
+3. Populate `num` array with values from 1 to length of `num`.
+4. Read `count` as `in.nextInt()`.
+5. Compile regex pattern `pt` for matching two numbers separated by a comma.
+6. Declare array `line` of size 2 to store parsed indices.
+7. For `i` from 0 to `count - 1`:
+   1. Read next input string `next` that matches pattern `pt`.
+   2. For `j` from 0 to 1:
+      1. Create `Matcher` object `matcher` from pattern `pt` for string `next`.
+      2. Ensure `matcher` matches `next`.
+      3. Parse and store the j-th group from `matcher` (converted to int and decremented by 1) in `line[j]`.
+   3. Store value at `num[line[0]]` in `change`.
+   4. Assign value at `num[line[1]]` to `num[line[0]]`.
+   5. Assign `change` to `num[line[1]]`.
+8. For `i` from 0 to length of `num` - 1:
+   1. Print value at `num[i]`.
+
+Control structures:
+- For loop: `for (int i = 0; i < num.length; i++)`
+- For loop: `for (int i = 0; i < count; i++)`
+- For loop: `for (int j = 0; j < line.length; j++)`
+
+Input/output operations and data processing logic:
+- Read integer input for size of `num` array.
+- Read integers to populate `num` array.
+- Read integer `count` for number of swaps.
+- Read strings matching pattern `pt` for indices to swap.
+- Parse strings to integers and decrement by 1 to adjust for 0-based indexing.
+- Perform swaps on `num` array based on parsed indices.
+- Print each element of `num` array.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`
+- `java.util.regex.Matcher`
+- `java.util.regex.Pattern`

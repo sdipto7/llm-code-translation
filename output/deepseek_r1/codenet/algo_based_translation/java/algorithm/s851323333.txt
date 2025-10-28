@@ -1,0 +1,32 @@
+- **Imported Libraries**:
+  - `java.util.LinkedList`
+  - `java.util.Scanner`
+
+- **Function Signature**:
+  - `public static void main(String[] args)`
+
+- **Variables**:
+  - `Scanner scan = new Scanner(System.in)`
+  - `LinkedList<Integer> list = new LinkedList<Integer>()`
+  - `int a`
+
+- **Logic Flow**:
+  1. Initialize `scan` to read from standard input
+  2. Initialize `list` as an empty linked list of integers
+  3. Enter loop while `scan.hasNextInt()` returns `true`:
+     1. Read integer `a` using `scan.nextInt()`
+     2. If `a == 0`:
+         - Remove and retrieve the first element of `list` using `pop()`
+         - Print the retrieved element using `System.out.println()`
+     3. Else:
+         - Add `a` to the front of `list` using `push(a)`
+  4. Terminate loop when no more integers are available in input
+
+- **Control Structures**:
+  - `while (scan.hasNextInt() == true)`
+  - `if (a == 0) { ... } else { ... }`
+
+- **Input/Output**:
+  - Input: Read integers from standard input until end of integer stream
+  - Output: Print integers removed from the list when input is `0`
+  - Data Processing: Maintain LIFO (stack) behavior using linked list operations

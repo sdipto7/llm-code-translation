@@ -1,0 +1,31 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `BufferedReader buf`
+- `int[] abc = new int[3]`
+- `String str`
+- `String[] inp`
+
+Complete logic flow in execution order:
+1. Create a `BufferedReader` object named `buf` to read input from standard input.
+2. Read a line of input and store it in the `str` variable.
+3. Split the `str` into an array of strings `inp` using space as a delimiter.
+4. Loop through each element in `inp` and convert it to an integer, storing the result in the corresponding index of the `abc` array.
+5. Check if `abc[0]` is less than `abc[1]` and `abc[1]` is less than `abc[2]`.
+   - If true, print "Yes".
+   - Otherwise, print "No".
+
+Control structures:
+- For loop: `for (int i = 0; i < inp.length; i++)`
+- If-else statement: `if (abc[0] < abc[1] && abc[1] < abc[2])`
+
+Input/output operations and data processing logic:
+- Input: Read a line of input from standard input.
+- Output: Print "Yes" or "No" based on the condition check.
+- Data processing: Convert the input string into an array of integers and perform a comparison.
+
+Required libraries, modules, or dependencies:
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.io.BufferedReader`

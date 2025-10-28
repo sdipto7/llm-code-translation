@@ -1,0 +1,57 @@
+Function signatures with parameter and return types:
+- `solve(int testNumber, InputReader in, PrintWriter out): void`
+- `sort(double[] arr): void`
+- `sort(int[] arr): void`
+- `sort(long[] arr): void`
+- `solve(): void`
+- `main(String[] args): void`
+- `InputReader(InputStream stream): void`
+- `next(): String`
+- `nextInt(): int`
+- `nextLong(): long`
+- `nextDouble(): double`
+
+Variable declarations and data types:
+- `int n`
+- `int[] countArr`
+- `int x`, `int y`, `int z`, `int value`, `int i`
+- `double[] arr`, `Double[] objArr`
+- `int[] arr`, `Integer[] objArr`
+- `long[] arr`, `Long[] objArr`
+- `InputStream inputStream`
+- `OutputStream outputStream`
+- `Task task`
+- `BufferedReader reader`
+- `StringTokenizer tokenizer`
+
+Complete logic flow in execution order:
+1. `main` calls `solve` in a new thread.
+2. `solve` initializes `inputStream`, `outputStream`, `in`, `out`, and `task`.
+3. `task.solve` reads `n` from `in`.
+4. `task.solve` initializes `countArr` with size `n + 1`.
+5. Nested loops iterate over `x`, `y`, and `z` from 1 to 100.
+6. Inside nested loops, `value` is calculated as `x * x + y * y + z * z + x * y + x * z + y * z`.
+7. If `value` is greater than `n`, inner loop breaks.
+8. Otherwise, `countArr[value]` is incremented.
+9. After loops, `task.solve` iterates from 1 to `n`.
+10. For each `i`, `out.println(countArr[i])` is called.
+11. `out.close()` is called after printing all values.
+12. `sort` methods convert arrays to their object counterparts, sort them, and then convert back.
+
+Control structures:
+- `for (int x = 1; x <= 100; x++)`
+- `for (int y = 1; y <= 100; y++)`
+- `for (int z = 1; z <= 100; z++)`
+- `if (value > n)`
+- `for (int i = 1; i <= n; i++)`
+- `while (tokenizer == null || !tokenizer.hasMoreTokens())`
+- `try-catch` block inside `next`
+
+Input/output operations and data processing logic:
+- `in.nextInt()` reads integer inputs.
+- `out.println(countArr[i])` prints integer outputs.
+
+Required libraries, modules, or dependencies:
+- `java.io.*`
+- `java.util.Arrays`
+- `java.util.StringTokenizer`

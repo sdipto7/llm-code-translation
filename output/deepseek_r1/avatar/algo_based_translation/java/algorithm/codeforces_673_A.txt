@@ -1,0 +1,44 @@
+**Function Signature**  
+`public static void main(String[] args)`  
+- Parameters: `String[] args`  
+- Return type: `void`  
+
+**Variables**  
+- `Scanner sc = new Scanner(System.in)`  
+- `int n`  
+- `ArrayList<Integer> a`  
+- `int value` (loop variable)  
+- `int result`, `int pos = 0`, `int flag = 0`  
+
+**Input/Output Operations**  
+1. Read integer `n` from input.  
+2. Read `n` integers and store them in `a`.  
+
+**Logic Flow**  
+1. If `a.get(0) > 15`:  
+   - Set `result = 15`.  
+2. Else:  
+   - Iterate `i` from `1` to `n-1` (inclusive):  
+     - If `a.get(i) - a.get(i-1) > 15`:  
+       - Set `pos = i-1` and `flag = 1`.  
+       - Break loop.  
+   - After loop:  
+     - If `flag == 1`:  
+       - Set `result = a.get(pos) + 15`.  
+     - Else:  
+       - Set `result = a.get(n-1) + 15`.  
+3. If `result > 90`:  
+   - Set `result = 90`.  
+4. Print `result`.  
+
+**Control Structures**  
+- `if (a.get(0) > 15)`  
+- `for (int i = 1; i < n; i++)`  
+- `if (a.get(i) - a.get(i-1) > 15)` (inside loop)  
+- `break` (inside nested if)  
+- `if (flag == 1)` (post-loop condition)  
+- `if (result > 90)`  
+
+**Dependencies**  
+- `java.util.Scanner`  
+- `java.util.ArrayList`

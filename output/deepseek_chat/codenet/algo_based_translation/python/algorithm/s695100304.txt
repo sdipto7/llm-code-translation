@@ -1,0 +1,24 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- n: int
+- x: list of int
+
+**Logic Flow:**
+1. Read integer input from stdin, assign to n
+2. Read next line of input, split into list of strings, convert each to int, assign to x
+3. Reverse the list x in-place using reverse() method
+4. Print all elements of x separated by spaces using unpacking operator
+
+**Control Structures:**
+- None (no loops or conditionals)
+
+**Input/Output Operations:**
+- Input: integer n, space-separated integers for list x
+- Output: space-separated integers from reversed list x
+
+**Dependencies:**
+- Built-in functions: input(), int(), map(), print()
+- List method: reverse()
+- Unpacking operator: *

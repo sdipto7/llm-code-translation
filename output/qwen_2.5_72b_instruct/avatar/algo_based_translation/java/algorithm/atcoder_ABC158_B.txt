@@ -1,0 +1,31 @@
+Function Signature: `public static void main(String[] args)`
+
+Variable Declarations:
+- `Scanner scan` of type `Scanner`
+- `long N` of type `long`
+- `long A` of type `long`
+- `long B` of type `long`
+- `long k` of type `long`
+
+Logic Flow:
+1. Initialize `scan` as new `Scanner(System.in)`
+2. Read input for `N` as `long` using `scan.nextLong()`
+3. Read input for `A` as `long` using `scan.nextLong()`
+4. Read input for `B` as `long` using `scan.nextLong()`
+5. Initialize `k` to 0
+
+Conditional Control Structures:
+1. Check if `1 <= N && N <= Math.pow(10, 18) && 0 <= A && 0 <= B && 0 < A + B && A + B <= Math.pow(10, 18)`
+   - If true:
+     - Check if `A + B <= N`
+       - If true:
+         - Set `k = N / (A + B)`
+         - Check if `N - k * (A + B) > A`
+           - If true:
+             - Print `A * k + (N - k * (A + B)) - (N - (k * (A + B) + A))`
+           - Else:
+             - Print `A * k + (N - k * (A + B))`
+     - Else if `A + B > N && A <= N`
+       - Print `A`
+     - Else
+       - Print `N`

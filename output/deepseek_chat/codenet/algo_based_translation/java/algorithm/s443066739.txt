@@ -1,0 +1,25 @@
+Algorithm:
+- Import java.io.*, java.util.*, java.math.*, java.util.concurrent.*
+- Define class Main with static BufferedReader br, FastScanner sc, PrintWriter out, Random rnd
+- Define main method with String[] args parameter, throws Exception
+  - Declare int n = sc.nextInt()
+  - Declare long[] pre of size n+1
+  - For i from 1 to n inclusive:
+    - pre[i] = pre[i-1] + sc.nextLong()
+  - Declare long min = Long.MAX_VALUE
+  - For i from 1 to n-1 inclusive:
+    - Declare long val1 = pre[i]
+    - Declare long val2 = pre[n] - pre[i]
+    - min = Math.min(min, Math.abs(val1 - val2))
+  - Print min
+  - Close PrintWriter
+- Define class FastScanner with BufferedReader in, StringTokenizer st
+- Constructor: FastScanner(BufferedReader in) assigns parameter to this.in
+- Method nextToken() throws Exception:
+  - While st is null or st has no more tokens:
+    - st = new StringTokenizer(in.readLine())
+  - Return st.nextToken()
+- Method next() throws Exception: return nextToken().toString()
+- Method nextInt() throws Exception: return Integer.parseInt(nextToken())
+- Method nextLong() throws Exception: return Long.parseLong(nextToken())
+- Method nextDouble() throws Exception: return Double.parseDouble(nextToken())

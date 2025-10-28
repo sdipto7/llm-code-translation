@@ -1,0 +1,11 @@
+1. Read a line of input from standard input
+2. Split the input string by whitespace into a list of strings
+3. Convert each string in the list to an integer
+4. Store the resulting list of integers in variable 'a'
+5. Iterate through list 'a' using enumerate to get both index 'e' and element 'i'
+6. For each element 'i':
+   - Check if i equals 0
+   - If true:
+        * Print (e + 1) to standard output
+        * Break out of the loop
+7. If no zero is found, the loop completes without output

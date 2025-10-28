@@ -1,0 +1,37 @@
+Function signature: `get_nums(num: int, t: int) -> list[int]`
+
+Variable declarations and data types:
+- `num: int`
+- `t: int`
+- `ans: list[int]`
+- `n: int`
+- `k: int`
+- `l: int`
+- `r: int`
+- `sa: int`
+- `sk: int`
+- `i: int`
+
+Logic flow in execution order:
+1. Read input values `n`, `k`, `l`, `r`, `sa`, `sk` as integers.
+2. Call `get_nums(k, sk)` and store the result.
+3. Call `get_nums(n - k, sa - sk)` and append the result to the previous result.
+4. Convert the final list to a string with space-separated values and print.
+
+`get_nums` function logic:
+1. Initialize an empty list to store results.
+2. Loop over the range from `0` to `num - 1` with variable `i`.
+3. For each `i`, check if `i` is in the range from `0` to `t % num - 1`.
+4. If true, calculate `t // num + 1` and append it to the list.
+5. If false, calculate `t // num` and append it to the list.
+6. Return the list.
+
+Input/output operations:
+- Input operation reads a line of input, splits it into components, and maps each component to an integer.
+- Output operation joins the list of integers into a string with spaces and prints it.
+
+Data processing logic:
+- The function `get_nums` calculates a list of integers based on division and modulo operations, distributing `t` items into `num` parts as evenly as possible, with some parts having one more item if necessary.
+- The main logic combines two such distributions, one for `k` parts and another for `n - k` parts, using different total items `sk` and `sa - sk`.
+
+No additional libraries, modules, or dependencies are required.

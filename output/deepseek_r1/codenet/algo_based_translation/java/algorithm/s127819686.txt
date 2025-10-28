@@ -1,0 +1,26 @@
+- Function signature:  
+  `public static void main(String[] args) -> void`
+
+- Variables:  
+  - `Scanner sc = new Scanner(System.in)`  
+  - `int a = sc.nextInt()`  
+  - `int b = sc.nextInt()`  
+  - `int hb = b / 2`
+
+- Logic flow:  
+  1. Initialize scanner for input  
+  2. Read integer a from standard input  
+  3. Read integer b from standard input  
+  4. Calculate hb as integer division of b by 2  
+  5. Compute sum of a and hb  
+  6. Print sum to standard output
+
+- Control structures:  
+  None
+
+- Input/Output operations:  
+  - Input: Two consecutive integer inputs via Scanner  
+  - Output: Print result of a + hb using System.out.println
+
+- Dependencies:  
+  `java.util.Scanner`

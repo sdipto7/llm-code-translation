@@ -1,0 +1,11 @@
+1. Read two integers, n and m, from the input.
+2. Read n strings into an array.
+3. Initialize an array of length n to store the differences between the indices of 'S' and 'G' in each string.
+4. Iterate through each string in the array.
+5. For each string, find the indices of 'G' and 'S'.
+6. If the index of 'G' is greater than the index of 'S', mark a flag as -1.
+7. Store the difference between the indices of 'S' and 'G' in the array.
+8. Create a set to store unique differences.
+9. Add each difference from the array to the set.
+10. If the flag is -1, output -1.
+11. Otherwise, output the size of the set.

@@ -1,0 +1,25 @@
+Function signatures:
+- `main(String[] args)`: void
+
+Variable declarations and data types:
+- `sc`: Scanner
+- `a`: int
+- `b`: int
+
+Logic flow in execution order:
+1. Create a `Scanner` object named `sc` to read input.
+2. Read an integer input and store it in variable `a`.
+3. Read another integer input and store it in variable `b`.
+4. Check if `b` is divisible by `a` (i.e., `b % a == 0`).
+   - If true, print the sum of `a` and `b` (`a + b`).
+   - If false, print the difference between `b` and `a` (`b - a`).
+
+Control structures:
+- Conditional (`if-else`): Checks if `b % a == 0`.
+
+Input/output operations and data processing logic:
+- Input: Two integer values from the user.
+- Output: Prints either the sum or the difference of the two integers based on divisibility.
+
+Required libraries, modules, or dependencies:
+- `java.util.*` for the `Scanner` class.

@@ -1,0 +1,35 @@
+Function Signature:
+- main(String[] args): void
+
+Variable Declarations and Data Types:
+- Scanner stdIn: for reading input
+- int n: first input integer, represents the size of the array minus one
+- int m: second input integer, represents the number of obstacles
+- int[] dp: array for dynamic programming storage, size n + 2
+- int i: loop variable
+
+Complete Logic Flow in Execution Order:
+1. Create a Scanner object to read from standard input.
+2. Read the first integer n from input.
+3. Read the second integer m from input.
+4. Initialize an array dp of size n + 2.
+5. Set dp[n + 1] to 0.
+6. Set dp[n] to 1.
+7. For i from 0 to m - 1:
+   a. Read an integer from input and set dp at that index to -1.
+8. For i from n - 1 to 0 (inclusive):
+   a. If dp[i] is -1, set dp[i] to 0.
+   b. Otherwise, set dp[i] to (dp[i + 1] + dp[i + 2]) modulo 1000000007.
+9. Print the value of dp[0].
+
+Control Structures:
+- For loop (i from 0 to m - 1) for setting obstacles in dp array.
+- For loop (i from n - 1 to 0) for filling dp array with possible paths.
+- If-else condition inside the second for loop to check if dp[i] is -1.
+
+Input/Output Operations and Data Processing Logic:
+- Input: Two integers n and m, followed by m integers representing the obstacles.
+- Output: A single integer, the number of ways to reach the end modulo 1000000007.
+
+Libraries, Modules, or Dependencies:
+- java.util.Scanner

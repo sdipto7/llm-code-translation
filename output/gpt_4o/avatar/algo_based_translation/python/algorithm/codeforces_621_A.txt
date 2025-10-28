@@ -1,0 +1,32 @@
+```
+Function Signature:
+    No specific functions are defined; the logic operates within the main execution flow.
+
+Variables:
+    n: int - Stores the number of elements in the list.
+    lst: List[int] - Stores the list of integers input by the user.
+    od: int - Counter for the number of odd numbers in the list.
+    sum: int - Accumulator for the resulting sum based on given conditions.
+    ok: int - Toggle to manage the addition of odd numbers.
+
+Execution Flow:
+1. Read an integer input from the user and assign it to 'n'.
+2. Read a space-separated string of integers from the user, map them to integers, convert to a list, and assign to 'lst'.
+3. Sort 'lst' in ascending order.
+4. Reverse 'lst' to arrange it in descending order.
+5. Initialize 'od' to 0.
+6. Iterate over each element 'i' in 'lst':
+    a. If 'i' is odd (i.e., i & 1 is true), increment 'od' by 1.
+7. Initialize 'sum' to 0.
+8. Initialize 'ok' to 0.
+9. Iterate over the range from 0 to 'n' (exclusive):
+    a. If 'lst[i]' is even (i.e., lst[i] % 2 == 0), add 'lst[i]' to 'sum'.
+    b. Otherwise, if 'ok' is true or 'od' is greater than 1:
+        i. Add 'lst[i]' to 'sum'.
+        ii. Decrement 'od' by 1.
+        iii. Toggle 'ok' (set to not ok).
+10. Output the value of 'sum'.
+
+Required Libraries/Modules/Dependencies:
+    None
+```

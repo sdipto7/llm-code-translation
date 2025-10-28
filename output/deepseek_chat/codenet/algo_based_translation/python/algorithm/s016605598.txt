@@ -1,0 +1,65 @@
+**Function Signature:**
+- main() -> None
+
+**Variables:**
+- const: int, initialized to 0
+- left: list (used as max-heap via negative values), initialized to empty list
+- right: list (min-heap), initialized to empty list
+- q: int, read from input
+- cnt: int, initialized to 0
+- left_sum: int, initialized to 0
+- right_sum: int, initialized to 0
+- t: list of int, read from input each iteration
+- a: int, extracted from t[1]
+- b: int, extracted from t[2]
+- c: int, temporary variable for heap operations
+- tmp: int, temporary variable for median calculation
+
+**Libraries:**
+- heapq
+
+**Algorithm Flow:**
+1. Read integer q from input
+2. Initialize cnt = 0, left_sum = 0, right_sum = 0
+3. For each of q iterations:
+   - Read list t of integers from input
+   - If t[0] == 1:
+        - Extract a = t[1], b = t[2]
+        - Add b to const
+        - If cnt is even:
+            - If right heap is empty:
+                - Push -a to left heap
+                - Add a to left_sum
+                - Increment cnt by 1
+                - Continue to next iteration
+            - Else:
+                - Pop smallest element c from right heap
+                - Subtract c from right_sum
+                - If a <= c:
+                    - Push -a to left heap
+                    - Push c to right heap
+                    - Add a to left_sum
+                    - Add c to right_sum
+                - Else:
+                    - Push -c to left heap
+                    - Push a to right heap
+                    - Add c to left_sum
+                    - Add a to right_sum
+        - Else (cnt is odd):
+            - Pop largest element c from left heap (c is negative)
+            - Add c to left_sum (effectively subtracting absolute value)
+            - If a <= -c:
+                - Push -a to left heap
+                - Push -c to right heap
+                - Add a to left_sum
+                - Subtract c from right_sum
+            - Else:
+                - Push c to left heap
+                - Push a to right heap
+                - Subtract c from left_sum
+                - Add a to right_sum
+        - Increment cnt by 1
+   - Else (t[0] != 1):
+        - Set tmp to the absolute value of the largest element in left heap (-left[0])
+        - Calculate result = const - left_sum + right_sum + tmp * (cnt % 2)
+        - Print tmp and result

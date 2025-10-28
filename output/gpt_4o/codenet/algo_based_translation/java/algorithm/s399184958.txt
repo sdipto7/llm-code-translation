@@ -1,0 +1,15 @@
+- Function signature: `main(args: String[]): void`
+- Variable declarations: 
+  - `sc: Scanner`
+  - `A: int`
+  - `B: int`
+  - `C: int`
+- Logic flow:
+  1. Initialize `sc` as a new `Scanner` object to read from standard input.
+  2. Read an integer from input and assign it to `A`.
+  3. Read an integer from input and assign it to `B`.
+  4. Read an integer from input and assign it to `C`.
+  5. Conditional: Check if `A`, `B`, and `C` are all equal.
+     - If true, print `"Yes"`.
+     - If false, print `"No"`.
+- Required libraries: `java.util.Scanner`

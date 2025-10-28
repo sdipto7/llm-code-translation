@@ -1,0 +1,51 @@
+Function Signatures:
+- `public static void main(String[] args)`
+
+Variable Declarations and Data Types:
+- `Scanner scanner = new Scanner(System.in)`
+- `char[] s = scanner.next().toCharArray()`
+- `char[] t = scanner.next().toCharArray()`
+- `boolean check = false`
+- `boolean check2 = true`
+- `int i, j`
+
+Logic Flow in Execution Order:
+1. Initialize `scanner` to read input from standard input.
+2. Read two strings from input and convert them to character arrays `s` and `t`.
+3. Initialize `check` to `false`.
+4. For `i` from `s.length - t.length` to `0` (inclusive), decrementing `i`:
+   1. Initialize `check2` to `true`.
+   2. For `j` from `0` to `t.length - 1` (inclusive), incrementing `j`:
+      1. If `s[i+j]` is not `'?'` and `s[i+j]` is not equal to `t[j]`, set `check2` to `false`.
+   3. If `check2` is `true`, set `check` to `true`.
+   4. For `j` from `0` to `t.length - 1` (inclusive), incrementing `j`:
+      1. Set `s[i+j]` to `t[j]`.
+   5. If `check` is `true`, break the outer loop.
+5. If `check` is `true`:
+   1. For `i` from `0` to `s.length - 1` (inclusive), incrementing `i`:
+      1. If `s[i]` is `'?'`, print `'a'`.
+      2. Otherwise, print `s[i]`.
+   2. Print a newline character.
+6. Otherwise, print `"UNRESTORABLE"` followed by a newline character.
+
+Control Structures:
+- For loop: `for(int i=s.length-t.length;i>=0;i--)`
+- For loop: `for(int j=0;j<t.length;j++)`
+- If condition: `if(s[i+j] != '?' && s[i+j] != t[j])`
+- If condition: `if(check2)`
+- For loop: `for(int j=0;j<t.length;j++)`
+- If condition: `if(check)`
+- If condition: `if(check)`
+- For loop: `for(int i=0;i<s.length;i++)`
+- If condition: `if(s[i] == '?')`
+
+Input/Output Operations and Data Processing Logic:
+- Read two strings from input.
+- Convert strings to character arrays.
+- Use nested loops and conditions to check if `t` can be matched with a segment of `s` where `'?'` can be any character.
+- If a match is found, replace '?' in the matched segment with corresponding characters from `t`.
+- Print the modified `s` with all '?' replaced by 'a' if a match is found.
+- Print "UNRESTORABLE" if no match is found.
+
+Required Libraries, Modules, or Dependencies:
+- `java.util.Scanner`

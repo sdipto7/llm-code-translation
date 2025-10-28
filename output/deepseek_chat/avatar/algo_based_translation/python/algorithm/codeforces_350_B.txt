@@ -1,0 +1,54 @@
+**Function Signature:**
+- No explicit function defined; main script execution
+- Inputs: Standard input (stdin)
+- Outputs: Standard output (stdout)
+
+**Variables:**
+- n: integer (first input value)
+- t: list of integers (size n+1, index 0 unused)
+- a: list of integers (size n+1, index 0 unused)
+- ans: list of integers (initially empty)
+- cnt: list of integers (size n+1, all initialized to 0)
+- i: integer (loop iterator)
+- crt: list of integers (temporary path storage)
+- x: integer (temporary pointer)
+
+**Logic Flow:**
+1. Read integer n from input
+2. Read next line, split into integers, create list t with leading 0
+3. Read next line, split into integers, create list a with leading 0
+4. Initialize empty list ans
+5. Initialize list cnt with n+1 zeros
+6. For each element i in list a:
+   - Increment cnt[i] by 1
+7. For i from 1 to n (inclusive):
+   - If t[i] equals 1:
+     - Initialize crt as [i]
+     - Set x = a[i]
+     - While cnt[x] equals 1:
+       - Append x to crt
+       - Set x = a[x]
+     - If length of crt > length of ans:
+       - Set ans = copy of crt
+8. Reverse list ans
+9. Print length of ans
+10. Print elements of ans as space-separated string
+
+**Control Structures:**
+- For loop: iterates over all elements in list a
+- For loop: iterates i from 1 to n
+- Conditional: if t[i] == 1
+- While loop: while cnt[x] == 1
+- Conditional: if len(crt) > len(ans)
+
+**Input/Output:**
+- Input: 3 lines from stdin
+  - First: integer n
+  - Second: n space-separated integers for t[1..n]
+  - Third: n space-separated integers for a[1..n]
+- Output: 2 lines to stdout
+  - First: integer (length of longest path)
+  - Second: space-separated integers (longest path in reverse order)
+
+**Dependencies:**
+- Standard Python libraries only (no external modules)

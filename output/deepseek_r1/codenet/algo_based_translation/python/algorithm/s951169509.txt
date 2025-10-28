@@ -1,0 +1,72 @@
+**Algorithm:**
+
+**Function:**  
+No explicit functions - main program flow
+
+**Input:**  
+- Read H (int), W (int) from standard input  
+- Read H lines of grid data (strings) from standard input  
+
+**Output:**  
+- Print ans (int): maximum shortest path length between two '.' cells  
+
+**Variables:**  
+- H: int (grid height)  
+- W: int (grid width)  
+- G: list[str] (grid with border walls)  
+- ans: int = 0 (result)  
+- sx: int (x-coordinate start)  
+- sy: int (y-coordinate start)  
+- dist: list[list[float]] (2D array for distances)  
+- visited: list[list[int]] (2D array for visited status)  
+- q: deque[tuple[int, int]] (BFS queue)  
+- x: int (current x-coordinate in BFS)  
+- y: int (current y-coordinate in BFS)  
+
+**Logic Flow:**  
+1. Construct grid:  
+   - Create border of '#' characters around input grid  
+   - Format: G[0] and G[H+1] = '#'*(W+2)  
+   - Middle rows: '#' + input_line + '#'  
+
+2. For each cell (sx, sy) in 0 ≤ sx < W+2, 0 ≤ sy < H+2:  
+   a. If G[sy][sx] == '.':  
+      i. Initialize dist with -infinity for all cells  
+      ii. Initialize visited with -1 for all cells  
+      iii. Initialize queue with (sx, sy)  
+      iv. Set dist[sy][sx] = 0  
+      v. Set visited[sy][sx] = 1  
+
+      vi. While queue not empty:  
+          1. Dequeue (x, y)  
+          2. Check right neighbor (x+1, y):  
+             - If G[y][x+1] == '.' and visited[y][x+1] == -1  
+             - Enqueue neighbor  
+             - Update dist[y][x+1] = dist[y][x] + 1  
+             - Set visited[y][x+1] = 1  
+          3. Repeat check/enqueue/update for left (x-1, y)  
+          4. Repeat check/enqueue/update for down (y+1, x)  
+          5. Repeat check/enqueue/update for up (y-1, x)  
+
+      vii. After BFS completion:  
+          1. Iterate through all grid cells (i, j)  
+          2. Update ans = max(ans, dist[j][i])  
+
+3. Print final ans value  
+
+**Control Structures:**  
+- Nested loops:  
+  - Outer: sx from 0 to W+1  
+  - Inner: sy from 0 to H+1  
+- While loop for BFS processing  
+- Four consecutive conditional blocks for neighbor checks  
+- Nested loops for post-BFS maximum calculation  
+
+**Dependencies:**  
+- collections.deque for BFS queue implementation  
+
+**Data Processing:**  
+- Grid padding with '#' characters creates 1-cell buffer zone  
+- BFS computes shortest paths from each valid start position  
+- Negative infinity initialization prevents considering unreachable cells  
+- Visited matrix prevents reprocessing of cells

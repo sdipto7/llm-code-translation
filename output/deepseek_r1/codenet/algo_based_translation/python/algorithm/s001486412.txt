@@ -1,0 +1,22 @@
+- Input operations:
+  - Read integer `n` from standard input
+  - Read line from input containing `n` space-separated integers, convert to list `a`
+- Variable declarations:
+  - `n`: integer type
+  - `a`: list of integers
+  - `below`: float type initialized to 0.0
+- Logic flow:
+  1. Initialize reciprocal sum variable: `below = 0.0`
+  2. Iterate through each element in list `a` using index-based loop:
+     - Loop control: `for i in range(n):`
+     - Operation: `below += 1.0 / a[i]`
+  3. Calculate final result as reciprocal of `below`
+  4. Output result using `print(1.0 / below)`
+- Control structures:
+  - Single for loop with range iteration from 0 to n-1 (inclusive)
+- Data processing:
+  - Convert input string to list of integers
+  - Floating-point division in reciprocal calculations
+  - Accumulate sum of reciprocals
+  - Final reciprocal operation for harmonic mean calculation
+- Dependencies: None (uses standard input/output functions only)

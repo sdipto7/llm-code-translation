@@ -1,0 +1,51 @@
+```
+Algorithm solve(in: InputReader, out: PrintWriter)
+    Declare n as integer
+    Set n to in.nextInt()
+    Declare array as integer array of size 1001
+    For i from 0 to n - 1
+        Declare index as integer
+        Set index to in.nextInt()
+        Increment array[index] by 1
+    Declare countMax as integer
+    Set countMax to -1
+    For i from 1 to length of array - 1
+        If countMax is less than array[i]
+            Set countMax to array[i]
+    If n modulo 2 equals 0
+        If countMax is less than or equal to n divided by 2
+            out.println("YES")
+        Else
+            out.println("NO")
+    Else
+        If countMax is less than or equal to n divided by 2 plus 1
+            out.println("YES")
+        Else
+            out.println("NO")
+
+Class InputReader
+    Declare reader as BufferedReader
+    Declare tokenizer as StringTokenizer
+    Constructor InputReader(stream: InputStream)
+        Initialize reader with a new BufferedReader using InputStreamReader with stream and buffer size 32768
+    Method next() returns String
+        While tokenizer is null or tokenizer does not have more elements
+            Try
+                Set tokenizer to new StringTokenizer with reader.readLine()
+            Catch IOException e
+                Throw new RuntimeException with e
+        Return tokenizer.nextToken()
+    Method nextInt() returns int
+        Return Integer.parseInt(next())
+    Method nextLong() returns long
+        Return Long.parseLong(next())
+    Method nextDouble() returns double
+        Return Double.parseDouble(next())
+    Method nextLine() returns String
+        Declare str as String
+        Try
+            Set str to reader.readLine()
+        Catch IOException e
+            e.printStackTrace()
+        Return str
+```

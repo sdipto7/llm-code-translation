@@ -1,0 +1,46 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures**  
+- *Main Procedure*  
+  - **Parameters**: None  
+  - **Return Type**: Void  
+
+**Variable Declarations**  
+- `n`: Integer (number of rows)  
+- `m`: Integer (number of columns, unused in logic)  
+- `s`: String (temporary storage for each input row)  
+- `c`: Set of Integers (stores differences between 'S' and 'G' positions per row)  
+- `a`: Integer (temporary variable for checking elements in `c`)  
+
+**Step-by-Step Logic Flow**  
+1. **Input Operations**  
+   1. Read a line of input, split into two integers `n` and `m`.  
+   2. Read `n` subsequent lines of input, storing each line as a string `s`.  
+
+2. **Data Processing**  
+   1. Initialize empty set `c`.  
+   2. For each string `s` in the input rows:  
+      1. Find index of first occurrence of `'S'` in `s` using `s.find("S")`.  
+      2. Find index of first occurrence of `'G'` in `s` using `s.find("G")`.  
+      3. Compute difference `(S_index - G_index)`.  
+      4. Add computed difference to set `c`.  
+
+3. **Control Flow and Validation**  
+   1. Check if any element `a` in set `c` satisfies `a < 0`.  
+      1. If true:  
+         - Output `-1`.  
+      2. Else:  
+         - Output the size of set `c` (number of unique differences).  
+
+**Error Handling and Edge Cases**  
+- Implicitly handles rows where `'S'` or `'G'` are missing via `s.find` returning `-1`, which creates negative differences.  
+- Explicit check for negative differences ensures output `-1` if any row has `'S'` after `'G'` or missing characters.  
+
+**External Dependencies**  
+- Uses standard input/output operations.  
+- Relies on `str.find` method for index detection.  
+- Utilizes Python set for uniqueness, but algorithm is adaptable to equivalent data structures in other languages.  
+
+**Input/Output Operations**  
+- Input: First line contains `n` and `m`. Next `n` lines contain strings representing rows.  
+- Output: `-1` if any invalid row detected, else the count of unique valid differences.

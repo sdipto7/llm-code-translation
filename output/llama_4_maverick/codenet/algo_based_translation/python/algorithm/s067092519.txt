@@ -1,0 +1,21 @@
+1. Declare a 3D array `m` with dimensions 10x3x10, initialized with zeros.
+2. Define a function `read_input()` that returns an integer `N`.
+   - Read an integer `N` from the input.
+
+3. Define a function `read_data(N)` that takes an integer `N` and returns nothing.
+   - For `N` iterations:
+     - Read a line from the input, split it into four parts, and convert them to integers `b`, `f`, `r`, and `v`.
+     - Update the value in the 3D array `m` at index `[b-1][f-1][r-1]` by adding `v` to it.
+
+4. Define a function `print_data(m)` that takes a 3D array `m` and returns nothing.
+   - For `i` ranging from 0 to 3:
+     - For `j` ranging from 0 to 2:
+       - For `k` ranging from 0 to 9:
+         - Append the value of `m[i][j][k]` to a string `line`, prefixed with a space.
+       - Print the string `line`.
+       - Reset `line` to an empty string.
+     - If `i` is less than 3, print a line consisting of 20 '#' characters.
+
+5. Call `N = read_input()`.
+6. Call `read_data(N)`.
+7. Call `print_data(m)`.

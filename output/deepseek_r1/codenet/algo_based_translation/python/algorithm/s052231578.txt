@@ -1,0 +1,25 @@
+**Algorithm:**
+
+**Imports:**
+- `bisect` module
+
+**Variables:**
+- `N: int` (input value)
+- `arr: list[int] = [111, 222, 333, 444, 555, 666, 777, 888, 999]`
+- `ans_idx: int`
+
+**Execution Flow:**
+1. Read integer input for `N`
+2. Initialize `arr` with predefined ascending values
+3. Compute `ans_idx = bisect.bisect_left(arr, N)` (finds first index where `arr[index] >= N`)
+4. Output `arr[ans_idx]`
+
+**Control Structures:**
+- Binary search via `bisect.bisect_left` to determine insertion point for `N` in sorted `arr`
+
+**Input/Output:**
+- Input: Single integer via STDIN
+- Output: Smallest element in `arr` >= `N` via STDOUT
+
+**Dependencies:**
+- Requires `bisect` module for binary search operation

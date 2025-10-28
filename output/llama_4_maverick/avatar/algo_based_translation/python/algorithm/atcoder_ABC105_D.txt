@@ -1,0 +1,13 @@
+1. Import necessary inputs N and M from standard input, parsing them as integers.
+2. Import array A from standard input, parsing its elements as integers.
+3. Calculate cumulative remainders by:
+   1. Prepending 0 to array A.
+   2. Computing the remainder of each element when divided by M.
+   3. Calculating the cumulative sum of these remainders.
+   4. Computing the remainder of the cumulative sum when divided by M.
+4. Count occurrences of each remainder in the cumulative remainders.
+5. Initialize a variable to store the total count of combinations.
+6. For each count of remainder occurrences:
+   1. Calculate the number of combinations using the formula count * (count - 1) / 2.
+   2. Add this to the total count of combinations.
+7. Output the total count of combinations.

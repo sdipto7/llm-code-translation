@@ -1,0 +1,30 @@
+1. Import the `java.util.Scanner` library for input operations.
+
+2. Define the `main` function with signature: `public static void main(String[] args)`, no return value.
+
+3. Declare a `Scanner` object `in` to read input from the standard input stream.
+
+4. Read a line of input and assign it to a `String` variable `word1`. 
+   - Process `word1` by removing all non-alphabetic characters and converting it to lowercase.
+
+5. Repeat step 4 for two more inputs, storing them in `String` variables `word2` and `word3`.
+
+6. Create six permutations of `word1`, `word2`, and `word3` as follows:
+   - `String perm1 = word1 + word2 + word3;`
+   - `String perm2 = word1 + word3 + word2;`
+   - `String perm3 = word2 + word1 + word3;`
+   - `String perm4 = word2 + word3 + word1;`
+   - `String perm5 = word3 + word2 + word1;`
+   - `String perm6 = word3 + word1 + word2;`
+
+7. Read an integer from input and store it in `int` variable `students` to determine the number of test cases.
+
+8. Consume the trailing newline from the input buffer using `in.nextLine()`.
+
+9. Initiate a `for` loop with counter `i` starting at 0 and running while `i < students`:
+   - Read a line of input and assign it to `String` variable `testCase`.
+   - Process `testCase` by removing all non-alphabetic characters and converting it to lowercase.
+   
+10. Inside the loop, use an `if-else` structure to compare `testCase` with each of the six permutations (`perm1` to `perm6`):
+    - If `testCase` matches any of the permutations, output "ACC".
+    - Otherwise, output "WA".

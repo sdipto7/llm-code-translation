@@ -1,0 +1,40 @@
+```plaintext
+Function Signatures:
+- LI() -> List[int]
+- LI_() -> List[int]
+- LS() -> List[str]
+- II() -> int
+- SI() -> str
+- main() -> str
+
+Variable Declarations and Data Types:
+- n: int
+- S: str
+- C: Counter (collections.Counter)
+
+Logic Flow:
+1. Define function `LI` that reads a line from standard input, splits it, converts each part to an integer, and returns a list of integers.
+2. Define function `LI_` that reads a line from standard input, splits it, converts each part to an integer, subtracts one from each, and returns a list of integers.
+3. Define function `LS` that reads a line from standard input, splits it, and returns a list of strings.
+4. Define function `II` that reads a line from standard input, converts it to an integer, and returns the integer.
+5. Define function `SI` that reads a line from standard input and returns the string.
+6. Define function `main` that executes the following steps:
+   a. Call `II()` to read an integer `n` from input.
+   b. Call `SI()` to read a string `S` from input.
+   c. Create a `Counter` object `C` from the string `S` to count occurrences of each character.
+   d. If the count of 'R' in `C` is greater than `n` minus the count of 'R', return 'Yes'.
+   e. Otherwise, return 'No'.
+7. Call `main()` and print its result.
+
+Control Structures:
+- Conditional: `if C['R'] > n - C['R']` checks if the count of 'R' is greater than half of `n`.
+
+Input/Output Operations:
+- Input: Reading integers and strings from standard input using `sys.stdin.readline()` and `input()`.
+- Output: Printing the result of the `main()` function.
+
+Required Libraries:
+- sys
+- collections.Counter
+- collections.defaultdict
+```

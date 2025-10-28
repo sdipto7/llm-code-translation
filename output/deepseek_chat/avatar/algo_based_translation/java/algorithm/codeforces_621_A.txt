@@ -1,0 +1,45 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner sc`: Scanner object for input
+- `int n`: integer input
+- `List<Long> list`: ArrayList of Long values
+- `List<Long> odd`: ArrayList of Long values
+- `long sum`: initialized to 0
+
+**Logic Flow:**
+1. Read integer `n` from input
+2. Initialize empty ArrayList `list`
+3. For `i` from 0 to `n-1`:
+   - Read next long value and add to `list`
+4. Initialize empty ArrayList `odd`
+5. Initialize `sum` to 0
+6. For each element `i` in `list`:
+   - If `i % 2 == 0`:
+     - Add `i` to `sum`
+   - Else:
+     - Add `i` to `odd` list
+7. Sort `odd` list in ascending order
+8. For each element `i` in `odd`:
+   - Add `i` to `sum`
+9. If size of `odd` is odd (`odd.size() % 2 != 0`):
+   - Subtract first element of `odd` from `sum`
+10. Print `sum`
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < n; i++)`
+- Enhanced for loop: `for (long i : list)`
+- Enhanced for loop: `for (long i : odd)`
+- Conditional: `if (i % 2 == 0)`
+- Conditional: `if (odd.size() % 2 != 0)`
+
+**Input/Output:**
+- Input: Integer `n` followed by `n` long values
+- Output: Single long value `sum`
+
+**Dependencies:**
+- `java.util.Scanner`
+- `java.util.List`
+- `java.util.ArrayList`
+- `java.util.Collections`

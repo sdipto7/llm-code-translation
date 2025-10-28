@@ -1,0 +1,50 @@
+Function signature: `main() -> None`
+
+Variable declarations and data types:
+- `n: int`
+- `cake: List[str]`
+- `happiness: int`
+- `chocCount: int`
+- `nfat: int`
+- `posCount: int`
+- `line: str`
+- `i: int`
+- `j: int`
+
+Logic flow and control structures:
+1. Read integer `n` from input.
+2. Initialize `cake` as an empty list.
+3. Initialize `happiness` to 0.
+4. Initialize `chocCount` to 0.
+5. Initialize `nfat` to 1.
+6. For `i` from 0 to `n-1`:
+   - Read string `line` from input.
+   - Append `line` to `cake`.
+   - For each character `j` in `line`:
+     - If `j` equals 'C':
+       - Increment `chocCount` by 1.
+   - If `chocCount` is greater than 1:
+     - For `i` from `chocCount` down to `chocCount - 2` (inclusive):
+       - Multiply `nfat` by `i`.
+     - Add `nfat / 2` to `happiness`.
+   - Reset `nfat` to 1.
+   - Reset `chocCount` to 0.
+7. Initialize `posCount` to 0.
+8. For `j` from 0 to `n-1`:
+   - For `i` from 0 to `n-1`:
+     - If character at position `j` in `cake[i]` equals 'C':
+       - Increment `chocCount` by 1.
+   - If `chocCount` is greater than 1:
+     - For `i` from `chocCount` down to `chocCount - 2` (inclusive):
+       - Multiply `nfat` by `i`.
+     - Add `nfat / 2` to `happiness`.
+   - Reset `nfat` to 1.
+   - Reset `chocCount` to 0.
+9. Print `happiness` as an integer.
+
+Input/output operations and data processing logic:
+- Input: Reads integer `n`, followed by `n` lines of strings.
+- Output: Prints the integer value of `happiness`.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules are required.

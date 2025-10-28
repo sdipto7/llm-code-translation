@@ -1,0 +1,61 @@
+**Algorithm Specification**
+
+**Function/Method Signatures:**
+```plaintext
+main() -> void
+```
+
+**Variable Declarations:**
+- `n: int`  
+- `l: int[1000010]` (indices 0-1000009)  
+- `dp: int[1000010]` (indices 0-1000009)  
+- `a: int`, `b: int` (temporary input variables)  
+- `mx: int` (initialized to 0)  
+
+**Step-by-Step Logic Flow:**
+
+1. Read integer `n` from standard input.  
+2. Initialize array `l` with 1,000,010 elements, all set to 0.  
+3. Initialize array `dp` with 1,000,010 elements, all set to 0.  
+4. For exactly `n` iterations:  
+   a. Read integers `a` and `b` from input.  
+   b. Assign `l[a] = b`.  
+5. If `l[0] > 0`:  
+   a. Set `dp[0] = 1`.  
+6. Initialize `mx = dp[0]`.  
+7. For each `i` from 1 to 1,000,009 (inclusive):  
+   a. If `l[i] == 0`:  
+      i. Set `dp[i] = dp[i-1]`.  
+   b. Else:  
+      i. If `l[i] >= i`:  
+         A. Set `dp[i] = 1`.  
+      ii. Else:  
+         A. Compute `prev_index = i - l[i] - 1`.  
+         B. Set `dp[i] = dp[prev_index] + 1`.  
+      iii. If `dp[i] > mx`:  
+          - Set `mx = dp[i]`.  
+   c. If `dp[i] > mx` (after step 7a or 7b):  
+      i. Set `mx = dp[i]`.  
+8. Compute and print `n - mx`.  
+
+**Control Flow Structures:**  
+- Loop: Fixed iteration `n` times for input (step 4)  
+- Conditional: Check `l[0] > 0` (step 5)  
+- Loop: Iterate 1,000,009 times with index `i` (step 7)  
+- Conditional branching for `l[i] == 0` vs. `l[i] > 0` (steps 7a, 7b)  
+- Nested conditional for `l[i] >= i` vs. `l[i] < i` (steps 7b.i, 7b.ii)  
+- Max-value tracking via `mx` (steps 7b.iii, 7c)  
+
+**Input/Output Operations:**  
+- Read `n` via `input()`  
+- Read `n` pairs of integers via `input().split()`  
+- Final output via `print(n - mx)`  
+
+**Edge Case Handling:**  
+- `l[i] == 0` propagates previous DP value (step 7a)  
+- `l[i] >= i` forces standalone interval (step 7b.i)  
+- Negative `prev_index` implicitly handled via array access (step 7b.ii.A)  
+
+**External Dependencies:**  
+- Standard input/output functions  
+- No external libraries or platform-specific APIs

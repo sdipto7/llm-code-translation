@@ -1,0 +1,47 @@
+Function signatures with parameter and return types:
+- `main(String[] args) throws IOException`
+
+Variable declarations and data types:
+- `OutputStream outputStream = System.out`
+- `PrintWriter out = new PrintWriter(outputStream)`
+- `BufferedReader br = new BufferedReader(new InputStreamReader(System.in))`
+- `int t = Integer.parseInt(br.readLine())`
+- `String[] s`
+- `PriorityQueue<Integer> pqmax = new PriorityQueue<>()`
+- `PriorityQueue<Integer> pqmin = new PriorityQueue<>(new Comparator<Integer>() { public int compare(Integer x, Integer y) { return y - x; } })`
+- `long sumMin = 0`
+- `long sumMax = 0`
+- `long sumb = 0`
+- `int min = 0`
+- `int in = Integer.parseInt(s[1])`
+- `long ans`
+- `long ans1`
+
+Complete logic flow in execution order:
+- Initialize `outputStream` and `out`
+- Read integer `t` from input
+- Initialize `br`, `pqmax`, `pqmin`, `sumMin`, `sumMax`, `sumb`, `min`
+- While `t > 0`:
+  - Read line and split into `s`
+  - If first character of `s[0]` is '2':
+    - Calculate `ans` as `min * pqmin.size() - sumMin`
+    - Calculate `ans1` as `sumMax - min * pqmax.size()`
+    - Print `min` and `(ans + ans1 + sumb)`
+  - Else:
+    - Parse `s[1]` to `in` and `s[2]` to add to `sumb`
+    - If `in > min`:
+      - Add `in` to `pqmax`
+      - Add `in` to `sumMax`
+    - Else:
+      - Add `in` to `pqmin`
+      - Add `in` to `sumMin`
+    - If `pqmin.size() > pqmax.size()`:
+      - Add `pqmin.peek()` to `sumMax`
+      - Subtract `pqmin.peek()` from `sumMin`
+      - Add `pqmin.poll()` to `pqmax`
+    - If `pqmin.size() < pqmax.size()`:
+      - Subtract `pqmax.peek()` from `sumMax`
+      - Add `pqmax.peek()` to `sumMin`
+      - Add `pqmax.poll()` to `pqmin`
+    - Set `min` to `pqmin.peek()`
+- Close `out`

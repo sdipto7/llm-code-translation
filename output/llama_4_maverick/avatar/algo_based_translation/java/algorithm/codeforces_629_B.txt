@@ -1,0 +1,13 @@
+1. Initialize an array `FfriendPerDay` of size 367 with all elements as 0.
+2. Initialize an array `MfriendPerDay` of size 367 with all elements as 0.
+3. Initialize a variable `answer` to 0.
+4. Read the value of `n`.
+5. Iterate `n` times:
+   1. Read a character `c`.
+   2. Read two integers `a` and `b`.
+   3. Iterate from `a` to `b` (inclusive):
+      1. If `c` is 'M', increment `MfriendPerDay[j]`.
+      2. If `c` is not 'M', increment `FfriendPerDay[j]`.
+      3. If `MfriendPerDay[j]` is less than `FfriendPerDay[j]` and `MfriendPerDay[j]` is greater than `answer`, update `answer` to `MfriendPerDay[j]`.
+      4. If `MfriendPerDay[j]` is not less than `FfriendPerDay[j]` and `FfriendPerDay[j]` is greater than `answer`, update `answer` to `FfriendPerDay[j]`.
+6. Output the value of `answer * 2`.

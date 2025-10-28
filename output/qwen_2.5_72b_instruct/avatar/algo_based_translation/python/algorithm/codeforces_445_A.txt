@@ -1,0 +1,41 @@
+Function signature: main() -> None
+
+Variable declarations and data types:
+n: int
+m: int
+l: List[List[str]]
+s: List[str]
+i: int
+j: int
+c: List[str]
+
+Logic flow in execution order:
+
+1. Read two integers n and m from standard input, separated by whitespace.
+2. Initialize an empty list l to store rows of characters.
+3. Loop i from 0 to n-1:
+   1. Read a string s from standard input.
+   2. Convert string s to a list of characters.
+   3. Loop j from 0 to m-1:
+      1. If character at index j in list s is '.':
+         1. If (i + j) is odd:
+            1. Set character at index j in list s to 'W'.
+         2. Else:
+            1. Set character at index j in list s to 'B'.
+   4. Append list s to list l.
+4. Loop c over each element in list l:
+   1. Join list c into a string.
+   2. Print the resulting string to standard output.
+
+Control structures:
+- For loop iterating over range(n) with loop variable i.
+- For loop iterating over range(m) with loop variable j.
+- If-else conditional checking if character at index j in list s is '.', and if (i + j) is odd.
+
+Input/output operations and data processing logic:
+- Input: Two integers n and m, followed by n lines of strings, each of length m.
+- Output: n lines of strings, each of length m, where '.' characters are replaced by 'W' or 'B' based on the sum of their row and column indices.
+- Data processing involves reading input, modifying the grid based on specified rules, and then outputting the modified grid.
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules are required. The code uses built-in Python functions and data structures.

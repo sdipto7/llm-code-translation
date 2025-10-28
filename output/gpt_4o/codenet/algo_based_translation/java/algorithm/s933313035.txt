@@ -1,0 +1,45 @@
+1. Import `Scanner` class from `java.util` package.
+2. Define `Main` class with a `public static void main(String[] args)` method.
+3. Declare a `Scanner` object `sc` for reading input from standard input.
+4. Read an integer `m` from input using `sc.nextInt()`.
+5. Initialize a `Node` object `tree` to `null`.
+6. Loop `i` from `0` to `m-1`:
+   - Read a `String` `command` from input using `sc.next()`.
+   - If `command` equals `"insert"`:
+     - Read a `long` integer `key` using `sc.nextLong()`.
+     - If `tree` is `null`:
+       - Create a new `Node` and assign to `tree`.
+       - Set `tree.value` to `key`.
+     - Else:
+       - Call `tree.insert(key)`.
+   - Else:
+     - If `tree` is not `null`:
+       - Call `tree.printInOrder()`.
+       - Print a newline.
+       - Call `tree.printPreOrder()`.
+       - Print a newline.
+7. Define a static class `Node` with:
+   - `long value`.
+   - `Node left`.
+   - `Node right`.
+   - Method `void insert(long newValue)`:
+     - If `newValue < this.value`:
+       - If `left` is `null`:
+         - Create a new `Node` and assign to `left`.
+         - Set `left.value` to `newValue`.
+       - Else:
+         - Call `left.insert(newValue)`.
+     - Else:
+       - If `right` is `null`:
+         - Create a new `Node` and assign to `right`.
+         - Set `right.value` to `newValue`.
+       - Else:
+         - Call `right.insert(newValue)`.
+   - Method `void printInOrder()`:
+     - If `left` is not `null`, call `left.printInOrder()`.
+     - Print `value` with a leading space.
+     - If `right` is not `null`, call `right.printInOrder()`.
+   - Method `void printPreOrder()`:
+     - Print `value` with a leading space.
+     - If `left` is not `null`, call `left.printPreOrder()`.
+     - If `right` is not `null`, call `right.printPreOrder()`.

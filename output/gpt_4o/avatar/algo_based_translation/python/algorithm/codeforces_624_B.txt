@@ -1,0 +1,25 @@
+```plaintext
+Dependencies:
+1. Import the 'sys' module.
+
+Function Signature:
+1. main() -> None
+
+Variable Declarations and Data Types:
+1. n: int
+2. a: List[int]
+3. pre: float
+4. ans: int
+5. j: int
+
+Logic Flow:
+1. Read an integer input 'n' from standard input.
+2. Read a list of integers 'a' from standard input and convert it to a list.
+3. Initialize 'pre' with positive infinity.
+4. Initialize 'ans' with 0.
+5. Sort the list 'a' in descending order.
+6. For each integer 'j' in the range from 0 to n-1 (inclusive), perform the following:
+   a. Calculate max(0, min(pre - 1, a[j])) and add the result to 'ans'.
+   b. Update 'pre' with max(0, min(pre - 1, a[j])).
+7. Output the value of 'ans'.
+```

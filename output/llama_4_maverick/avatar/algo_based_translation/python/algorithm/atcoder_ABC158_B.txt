@@ -1,0 +1,8 @@
+1. Set mod to 10^9 + 7
+2. Read N, A, B from input
+3. Initialize ans to 0
+4. Calculate rep = N / (A + B) using integer division
+5. Update ans = ans + rep * A
+6. Calculate res = N - rep * (A + B)
+7. Update ans = ans + minimum of res and A
+8. Output ans

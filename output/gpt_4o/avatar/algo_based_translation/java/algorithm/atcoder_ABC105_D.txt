@@ -1,0 +1,54 @@
+```plaintext
+- Import necessary modules:
+  - java.io.OutputStream
+  - java.io.IOException
+  - java.io.InputStream
+  - java.io.PrintWriter
+  - java.util.StringTokenizer
+  - java.util.HashMap
+  - java.io.BufferedReader
+  - java.io.InputStreamReader
+  - java.util.InputMismatchException
+
+- Define the main function with no parameters and no return type:
+  - Initialize InputStream `inputStream` to System.in
+  - Initialize OutputStream `outputStream` to System.out
+  - Create an instance of `InputReader` with `inputStream` as argument
+  - Create an instance of `PrintWriter` with `outputStream` as argument
+  - Create an instance of `TaskD`
+  - Call `solve` method on `TaskD` instance with parameters (1, `InputReader` instance, `PrintWriter` instance)
+  - Call `close` method on `PrintWriter` instance
+
+- Define class `TaskD` with method `solve`:
+  - Method signature: `solve(int testNumber, InputReader in, PrintWriter out)` with void return type
+  - Declare integer `n` and assign result of `nextInt` method on `InputReader` instance
+  - Declare integer `m` and assign result of `nextInt` method on `InputReader` instance
+  - Declare integer array `a` and assign result of `nextIntArray` method on `InputReader` instance with `n` as argument
+  - Declare HashMap `dp` with keys of type Integer and values of type Integer
+  - Declare long `ans` and initialize to 0
+  - Declare integer `base` and initialize to 0
+  - Start a for loop iterating `i` from 0 to `n-1`:
+    - Update `base` as `(base - a[i] % m + m) % m`
+    - Use `merge` method on `dp` with arguments `((base + a[i]) % m, 1, Integer::sum)`
+    - Add result of `getOrDefault` method on `dp` with arguments `(base, 0)` to `ans`
+  - Call `println` method on `PrintWriter` instance with `ans` as argument
+
+- Define class `InputReader`:
+  - Private member `BufferedReader br`
+  - Private member `StringTokenizer st`
+  - Constructor `InputReader(InputStream inputStream)`:
+    - Initialize `br` with `BufferedReader` wrapping `InputStreamReader` with `inputStream` as argument
+    - Initialize `st` with an empty `StringTokenizer`
+  - Method `nextString()` with return type String:
+    - While `st` does not have more tokens:
+      - Try to read a line using `readLine` on `br` and assign to `st` as a new `StringTokenizer`
+      - Catch `IOException` and throw `InputMismatchException`
+    - Return result of `nextToken` on `st`
+  - Method `nextInt()` with return type int:
+    - Return result of parsing `nextString()` as integer
+  - Method `nextIntArray(int n)` with return type int[]:
+    - Declare integer array `res` of size `n`
+    - Start a for loop iterating `i` from 0 to `n-1`:
+      - Assign result of `nextInt()` to `res[i]`
+    - Return `res`
+```

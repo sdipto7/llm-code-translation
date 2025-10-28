@@ -1,0 +1,53 @@
+Algorithm:
+- Function: main (no explicit function signature, but implied as main program)
+- Parameters: none
+- Return: none (output printed to console)
+
+Variables:
+- q: integer (number of queries)
+- ans: list of integers (initialized to [0, 0])
+- p1: min-heap (list) for integers
+- p2: min-heap (list) for integers (storing negatives to simulate max-heap)
+- sum_b: integer (sum of third elements in type 1 queries)
+- sum_p1: integer (sum of all elements in p1)
+- sum_p2: integer (sum of all elements in p2)
+- ql: list of integers (current query input)
+
+Libraries:
+- heapq module
+
+Logic:
+1. Read integer q from input
+2. Initialize ans = [0, 0]
+3. Initialize empty lists p1 and p2
+4. Convert p1 and p2 to heap structures using heapq.heapify
+5. Initialize sum_b, sum_p1, sum_p2 to 0
+6. For each of q queries:
+   a. Read and parse input line into list ql of integers
+   b. If ql[0] == 2 (query type 2):
+      - If len(p1) == len(p2):
+          median = -p2[0]
+          cost = sum_p1 - len(p1)*median + len(p2)*median - sum_p2 + sum_b
+          Print median and cost
+      - Else:
+          median = p1[0]
+          cost = sum_p1 - len(p1)*median + len(p2)*median - sum_p2 + sum_b
+          Print median and cost
+   c. Else (query type 1):
+      - Add ql[2] to sum_b
+      - If p1 is empty OR p1[0] <= ql[1]:
+          Push ql[1] to p1
+          Add ql[1] to sum_p1
+      - Else:
+          Push -ql[1] to p2
+          Add ql[1] to sum_p2
+      - If len(p1) < len(p2):
+          Pop smallest element k from p2 (which is -actual_value)
+          Push -k to p1
+          Subtract k from sum_p2 (since k is negative)
+          Add -k to sum_p1 (since we push -k)
+      - If len(p1) - 1 > len(p2):
+          Pop smallest element k from p1
+          Push -k to p2
+          Subtract k from sum_p1
+          Add k to sum_p2 (since k is positive)

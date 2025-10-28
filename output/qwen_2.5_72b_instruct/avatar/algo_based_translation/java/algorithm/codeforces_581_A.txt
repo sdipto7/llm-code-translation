@@ -1,0 +1,24 @@
+Function: main, Parameters: None, Return Type: void
+Variables: 
+- sc: Scanner
+- a: int
+- b: int
+- count: int
+- ans: int
+
+Logic Flow:
+1. Initialize sc as new Scanner(System.in)
+2. Read next integer input and assign to a
+3. Read next integer input and assign to b
+4. Initialize count to 0
+5. While true:
+   a. If a > 0 and b > 0:
+      i. Increment count by 1
+      ii. Decrement a by 1
+      iii. Decrement b by 1
+   b. Else, break the loop
+6. Calculate ans as (a / 2) + (b / 2)
+7. Print count followed by a space and ans
+
+Libraries:
+- java.util.Scanner

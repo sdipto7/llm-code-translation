@@ -1,0 +1,31 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `sc`: Scanner (for reading input)
+- `n`: int (number of elements)
+- `a`: int[] (array of integers with size n)
+- `r`: int (initialized to 0)
+
+**Logic Flow:**
+1. Initialize Scanner to read from standard input
+2. Read integer `n` from input
+3. Declare integer array `a` of size `n`
+4. Initialize integer `r` to 0
+5. Loop from `i = 0` to `n-1`:
+   - Read integer into `a[i]`
+   - Update `r` as `r XOR a[i]`
+6. Loop from `i = 0` to `n-1`:
+   - If `i != 0`, print a space
+   - Print `r XOR a[i]`
+
+**Control Structures:**
+- `for (int i = 0; i < n; i++)` (two loops)
+- `if (i != 0)` (inside second loop)
+
+**Input/Output:**
+- Input: First integer `n`, then `n` integers
+- Output: Space-separated values of `r XOR a[i]` for each element
+
+**Required Libraries:**
+- `java.util.Scanner`

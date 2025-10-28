@@ -1,0 +1,163 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,codeforces_469_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/codeforces_469_A.py"", line 5, in <module>
+    p = int(sys.stdin.readline())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '74 96 32 63 12 69 72 99 15 22 1 41 79 77 71 31 20 28 75 73 85 37 38 59 42 100 86 89 55 87 68 4 24 57 52 8 92 27 56 98 95 58 34 9 45 14 11 36 66 76 61 19 25 23 78 49 90 26 80 43 70 13 65 10 5 74 81 21
+"
+java,python,atcoder_ABC168_C.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC168_C.py"", line 5, in <module>
+    A = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 4 10 40'
+"
+java,python,codeforces_445_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/codeforces_445_A.py"", line 21, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/codeforces_445_A.py"", line 7, in main
+    m = int(first_line[1])
+        ^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ' '
+"
+java,python,atcoder_ABC146_D.py,Runtime Error,"Test Index: 11 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC146_D.py"", line 44, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC146_D.py"", line 37, in main
+    dfs(0, -1, -1)
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC146_D.py"", line 34, in dfs
+    dfs(e.to, k, to)
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC146_D.py"", line 34, in dfs
+    dfs(e.to, k, to)
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC146_D.py"", line 34, in dfs
+    dfs(e.to, k, to)
+  [Previous line repeated 995 more times]
+RecursionError: maximum recursion depth exceeded
+"
+java,python,atcoder_ABC125_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC125_A.py"", line 2, in <module>
+    sec = int(input())
+          ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 2 9'
+"
+java,python,atcoder_AGC017_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_AGC017_A.py"", line 16, in <module>
+    x = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 6 78 14 66 54 18 82 92 42 54 66 86 40 40 26'
+"
+java,python,atcoder_AGC033_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_AGC033_B.py"", line 2, in <module>
+    h, w, n, sr, sc = map(int, input().split())
+    ^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 5, got 3)
+"
+java,python,atcoder_AGC004_D.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_AGC004_D.py"", line 42, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_AGC004_D.py"", line 39, in main
+    print(calculator.calculate())
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_AGC004_D.py"", line 19, in calculate
+    self.dfs(0, 0)
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_AGC004_D.py"", line 26, in dfs
+    h = max(h, self.dfs(i, a))
+               ^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_AGC004_D.py"", line 26, in dfs
+    h = max(h, self.dfs(i, a))
+               ^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_AGC004_D.py"", line 26, in dfs
+    h = max(h, self.dfs(i, a))
+               ^^^^^^^^^^^^^^
+  [Previous line repeated 994 more times]
+RecursionError: maximum recursion depth exceeded
+"
+java,python,codeforces_678_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/codeforces_678_A.py"", line 12, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/codeforces_678_A.py"", line 3, in main
+    n = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '453145 333625'
+"
+java,python,codeforces_334_A.py,Runtime Error,"Test Index: 0 Error: 2
+"
+java,python,atcoder_ABC169_C.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC169_C.py"", line 14, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC169_C.py"", line 3, in main
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0 9.98'
+"
+java,python,atcoder_ABC145_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC145_B.py"", line 20, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC145_B.py"", line 13, in main
+    a += str[i]
+         ~~~^^^
+IndexError: string index out of range
+"
+java,python,atcoder_AGC019_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_AGC019_A.py"", line 2, in <module>
+    Q, H, S, D, N = map(int, input().split())
+    ^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 5, got 4)
+"
+java,python,codeforces_356_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/codeforces_356_A.py"", line 51, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/codeforces_356_A.py"", line 23, in main
+    n = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 2'
+"
+java,python,atcoder_ABC133_E.py,Runtime Error,"Test Index: 21 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC133_E.py"", line 45, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC133_E.py"", line 37, in main
+    nodes[0].set_parent(K, -1, 0, nodes)
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC133_E.py"", line 18, in set_parent
+    nodes[n].set_parent(K, self.index, count, nodes)
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC133_E.py"", line 18, in set_parent
+    nodes[n].set_parent(K, self.index, count, nodes)
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC133_E.py"", line 18, in set_parent
+    nodes[n].set_parent(K, self.index, count, nodes)
+  [Previous line repeated 995 more times]
+RecursionError: maximum recursion depth exceeded
+"
+java,python,atcoder_ABC137_D.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC137_D.py"", line 34, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_ABC137_D.py"", line 8, in main
+    N = int(input[ptr])
+        ^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '5 3\n1 2\n1 3\n1 4\n2 1\n2 3\n'
+"
+java,python,codeforces_342_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/codeforces_342_B.py"", line 45, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/codeforces_342_B.py"", line 14, in main
+    parts = list(map(int, sys.stdin.readline().split()))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1...'
+"
+java,python,atcoder_AGC024_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_AGC024_B.py"", line 24, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/atcoder_AGC024_B.py"", line 11, in main
+    if pos_map[i] > pos_map[i + 1]:
+       ~~~~~~~^^^
+KeyError: 0
+"
+java,python,codeforces_534_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/codeforces_534_B.py"", line 4, in <module>
+    v1, v2, t, d = map(int, sys.stdin.readline().split())
+    ^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 4, got 2)
+"
+java,python,codeforces_456_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/avatar/algo_based_translation/java/python/codeforces_456_A.py"", line 10, in <module>
+    x, y = map(int, input().split())
+    ^^^^
+ValueError: invalid literal for int() with base 10: '3679...'
+"

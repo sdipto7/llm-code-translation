@@ -1,0 +1,40 @@
+Algorithm:
+- Function: main() -> None
+- Variables: 
+  - D: int
+  - G: int
+  - PC: List[Tuple[int, int]]
+  - ans: int
+  - score: int
+  - problem: int
+  - i: int
+  - j: int
+  - left: int
+  - tmp: int
+
+- Input:
+  - Read D, G as integers from input
+  - Read D lines, each containing two integers, and store as tuples in list PC
+
+- Logic:
+  - Initialize ans to 10^9
+  - Loop i from 0 to 2^D - 1:
+    - Initialize score to 0
+    - Initialize problem to 0
+    - Loop j from 0 to D - 1:
+      - If (i >> j) & 1 is true:
+        - Add 100 * (j + 1) * PC[j][0] + PC[j][1] to score
+        - Add PC[j][0] to problem
+    - If score is greater than G:
+      - Continue to the next iteration of the outer loop
+    - Set left to G - score
+    - Loop j from 0 to D - 1:
+      - If (i >> j) & 1 is true:
+        - Continue to the next iteration of the inner loop
+      - If left is greater than 100 * (j + 1) * PC[j][0] + PC[j][1]:
+        - Pass (do nothing)
+      - Else:
+        - Set tmp to (left + (100 * (j + 1)) - 1) // (100 * (j + 1))
+        - Update ans to the minimum of ans and problem + minimum of tmp and PC[j][0]
+- Output:
+  - Print ans

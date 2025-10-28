@@ -1,0 +1,26 @@
+1. Import necessary library:
+   - Import `Scanner` from `java.util` for input operations.
+
+2. Main function:
+   - Signature: `void main(String[] args)`
+
+3. Variable declarations:
+   - Create a `Scanner` object `in` for reading input.
+   - Read an integer `n` from input.
+   - Declare three integer arrays `c`, `s`, and `f` of size `n - 1`.
+
+4. Input operations:
+   - Loop from `i = 0` to `i < n - 1`:
+     - Read integers into `c[i]`, `s[i]`, `f[i]` from input.
+
+5. Logic flow for calculating times:
+   - Loop from `i = 0` to `i < n - 1`:
+     - Initialize integer `time` to `s[i] + c[i]`.
+     - Loop from `j = i + 1` to `j < n - 1`:
+       - If `time % f[j] != 0`, adjust `time` by adding `f[j] - (time % f[j])`.
+       - If `time < s[j]`, update `time` to `s[j]`.
+       - Add `c[j]` to `time`.
+     - Output the value of `time`.
+
+6. Output operation:
+   - Print integer `0`.

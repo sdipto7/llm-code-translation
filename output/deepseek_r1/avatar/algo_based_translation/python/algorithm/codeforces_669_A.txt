@@ -1,0 +1,40 @@
+Algorithm Specification:
+
+1. Program Structure:
+   - Entry Point: Main procedure
+   - Parameters: None
+   - Return Type: void
+
+2. Data Types:
+   - Input: Integer (n)
+   - Intermediate Values: Integer (n * 2, n * 2 + 1)
+   - Output: Integer
+
+3. Variables:
+   - n: Integer (initialized via user input)
+   - result: Integer (computed value)
+
+4. Steps:
+   1. Read input from standard input as string
+   2. Convert input string to integer, store in variable n
+   3. Calculate temporary value: (n * 2)
+   4. Calculate intermediate value: (temporary value + 1)
+   5. Compute final result: intermediate_value // 3 using integer division
+   6. Output result to standard output
+
+5. Control Flow:
+   - Linear execution with no branching or loops
+
+6. Input/Output:
+   - Input Operation: Single integer read via stdin
+   - Output Operation: Single integer printed to stdout
+   - Data Processing: Arithmetic operations (multiplication, addition, integer division)
+
+7. Error Handling:
+   - No explicit error handling
+   - Implicit conversion error if non-integer input provided
+
+8. Dependencies:
+   - Standard input/output facilities
+   - Integer conversion function
+   - Integer arithmetic operations

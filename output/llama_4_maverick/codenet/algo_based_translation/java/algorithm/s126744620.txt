@@ -1,0 +1,35 @@
+1. Read two integers `n` and `k` from input.
+2. Read `n` integers into an array `a` of size `n`.
+3. Create an array `x` of size 200010 and initialize all elements to 0.
+4. For each element in `a`, increment the corresponding index in `x` (i.e., `x[a[i] - 1]++`).
+5. Sort the array `x` in ascending order using a comparator.
+6. Initialize a variable `ans` to 0.
+7. Iterate from `i = 0` to `200010 - k - 1` and add `x[i]` to `ans` in each iteration.
+8. Output the value of `ans`. 
+
+Function Signatures:
+- `main(String[] args)`
+
+Variable Declarations and Data Types:
+- `n`: integer
+- `k`: integer
+- `a`: integer array of size `n`
+- `x`: Integer array of size 200010
+- `ans`: integer
+- `i`: integer (loop counter)
+- `sc`: Scanner object
+
+Control Structures:
+- Loop: `for(int i = 0 ; i < n ; i++)` 
+- Loop: `for(int i = 0 ; i <= 200010 - k - 1 ; i++)`
+- Conditional: None
+
+Input/Output Operations:
+- Read `n` and `k` from input using `sc.nextInt()`.
+- Read `n` integers into array `a` using `sc.nextInt()`.
+- Output the value of `ans` using `System.out.println(ans)`.
+
+Required Libraries/Modules:
+- `java.util.Arrays`
+- `java.util.Comparator`
+- `java.util.Scanner`

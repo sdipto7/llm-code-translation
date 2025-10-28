@@ -1,0 +1,29 @@
+**Function Signatures:**
+- `main() -> str`
+
+**Variables:**
+- `n: int` (input string length)
+- `S: str` (input string)
+- `C: Counter[str]` (character frequency counter)
+
+**Libraries/Dependencies:**
+- `sys`
+- `collections.Counter`
+
+**Execution Flow:**
+1. Read integer `n` from standard input via `II()`
+2. Read string `S` from standard input via `SI()`
+3. Create character frequency counter `C` using `Counter(S)`
+4. Compare count of 'R' in `C` with `(n - C['R'])`
+5. Return "Yes" if `C['R'] > n - C['R']`, else return "No"
+
+**Control Structures:**
+1. Single conditional check: `if C['R'] > (n - C['R'])`
+
+**Input/Output Operations:**
+- Input via `sys.stdin.readline()` for `n` and `S`
+- Output via `print(main())` returning "Yes"/"No"
+
+**Data Processing:**
+- Count characters in `S` using `Counter`
+- Arithmetic comparison between `C['R']` and remaining characters `(n - C['R'])`

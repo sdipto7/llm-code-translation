@@ -1,0 +1,12 @@
+1. Read two values v1 and v2 from input, split by space
+2. Read two values t and d from input, split by space
+3. Convert v1, v2, t, and d to integers
+4. Initialize a variable a to 1
+5. Initialize a variable v to v1
+6. Initialize a variable distance to 0
+7. Loop from 0 to t-1
+   8. Check if v - v2 is greater than (t - current iteration - 1) * d
+   9. If true, then multiply a by -1 and update v to (t - current iteration - 1) * d + v2
+   10. Add v to distance
+   11. Update v by adding a * d to it
+12. Print the final value of distance

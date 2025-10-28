@@ -1,0 +1,40 @@
+- **Function Signatures**:
+  - `public static void main(String[] args) throws IOException`
+
+- **Variables**:
+  - `int n`: Input value for array size
+  - `int[][] arr`: 2D array of size [n][3] storing input values
+  - `int[][] dp`: 2D array of size [n][3] for dynamic programming states
+  - `int max`: Final result storage
+
+- **Logic Flow**:
+  1. Read integer `n` via `sc.nextInt()`
+  2. Initialize `arr` with dimensions [n][3]
+  3. Populate `arr` using nested loops via `sc.nextInt()`:
+     - Outer loop: `i` from 0 to n-1
+     - Inner loop: `j` from 0 to 2
+  4. Initialize `dp` with dimensions [n][3]
+  5. Set initial state: `dp[0][0] = arr[0][0]`, `dp[0][1] = arr[0][1]`, `dp[0][2] = arr[0][2]`
+  6. Fill `dp` using nested loops:
+     - Outer loop: `i` from 1 to n-1
+     - Inner loop: `j` from 0 to 2
+       - If `j == 0`: `dp[i][0] = max(arr[i][0] + dp[i-1][1], arr[i][0] + dp[i-1][2])`
+       - If `j == 1`: `dp[i][1] = max(arr[i][1] + dp[i-1][0], arr[i][1] + dp[i-1][2])`
+       - If `j == 2`: `dp[i][2] = max(arr[i][2] + dp[i-1][0], arr[i][2] + dp[i-1][1])`
+  7. Compute final `max` by comparing all elements in `dp[n-1]`
+  8. Print `max`
+
+- **Control Structures**:
+  - Sequential input processing
+  - Nested `for` loops for array initialization/iteration
+  - Conditional branches (`if`) based on column index `j`
+  - Single-pass dynamic programming state updates
+
+- **Input/Output**:
+  - Input via custom `sc` class using `BufferedReader` and `StringTokenizer`
+  - Output via `System.out.println(max)`
+
+- **Dependencies**:
+  - `java.util.*` (for `StringTokenizer`)
+  - `java.io.*` (for `BufferedReader`, `InputStreamReader`, `IOException`)
+  - Custom `sc` class for input parsing

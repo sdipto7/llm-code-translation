@@ -1,0 +1,47 @@
+**Algorithm:**
+
+1. **Function Signature:**
+   - `public static void main(String[] args)`
+
+2. **Input Handling:**
+   - Read integer `n` from standard input.
+   - Read `n` integers into array `v` of size 100010.
+
+3. **Variable Declarations:**
+   - `vo`: Integer array of size 100010 (frequency count for odd indices).
+   - `ve`: Integer array of size 100010 (frequency count for even indices).
+   - `vt`: Integer array of size 100010 (total frequency count).
+   - Initialize all elements of `vo`, `ve`, and `vt` to 0.
+
+4. **Frequency Counting:**
+   - For each `i` from `0` to `n-1`:
+     - Increment `vt[v[i]]` by 1.
+     - If `i` is even (0-based), increment `ve[v[i]]` by 1.
+     - Else, increment `vo[v[i]]` by 1.
+
+5. **Sorting:**
+   - Sort `vo`, `ve`, and `vt` in descending order.
+
+6. **Result Calculation:**
+   - Check if `vo[0] + ve[0] == vt[0]`:
+     - **If true**:
+       - Compute `ans` as the minimum of `n - vo[0] - ve[1]` and `n - vo[1] - ve[0]`.
+     - **Else**:
+       - Compute `ans` as `n - vo[0] - ve[0]`.
+
+7. **Output:**
+   - Print `ans` to standard output.
+
+**Control Structures:**
+- Loop: `for (int i = 0; i < n; i++)` for reading input and frequency counting.
+- Conditional: `if (i % 2 == 0)` to separate even/odd index processing.
+- Conditional: `if (vo[0] + ve[0] == vt[0])` for result logic.
+
+**Data Structures:**
+- Arrays `vo`, `ve`, `vt` for frequency tracking.
+- Reverse-order sorting using `Collections.reverseOrder()`.
+
+**Dependencies:**
+- `java.util.Arrays` for array operations.
+- `java.util.Collections` for reverse sorting.
+- `java.util.Scanner` for input handling.

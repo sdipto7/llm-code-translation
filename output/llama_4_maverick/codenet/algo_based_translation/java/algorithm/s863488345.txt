@@ -1,0 +1,37 @@
+1. Read the number of test cases `mapNum`.
+2. For each test case:
+   1. Read the height `h` and width `w` of the battle town map.
+   2. Initialize a 2D array `battleTown` of size `h` x `w` to store the map.
+   3. Read the map into `battleTown`.
+   4. Identify the initial position `(x, y)` and direction of the tank on the map.
+   5. Read the number of actions `bomberActNum` for the tank.
+   6. Read the actions `bomberAct` for the tank.
+   7. For each action in `bomberAct`:
+      1. If the action is 'U', 'D', 'L', or 'R', update the tank's direction and move it if the next position is valid (i.e., within the map and not a wall or obstacle).
+      2. If the action is 'S', call the `moveBomber` function with the current tank position `(x, y)`.
+   8. After all actions are processed, print the final state of the `battleTown` map.
+
+`moveBomber` function:
+1. Takes two parameters: `a` (x-coordinate) and `b` (y-coordinate) representing the tank's position.
+2. Checks the direction of the tank at position `(a, b)`.
+3. Based on the tank's direction, simulate the movement of the bomber (shell) in that direction.
+4. For each step in the direction:
+   1. If the next position is out of the map bounds, stop.
+   2. If the next position is a brick wall '*', change it to '.' (flat ground) and stop.
+   3. If the next position is a steel wall '#', stop.
+   5. Continue until the bomber hits something or goes out of bounds.
+
+Required libraries: `java.util.Scanner`
+
+Variables and data types:
+- `mapNum`: integer
+- `h`, `w`: integers
+- `battleTown`: 2D char array
+- `bomberActNum`: integer
+- `bomberAct`: char array
+- `x`, `y`: integers (tank's position)
+- `a`, `b`: integers (parameters for `moveBomber` function)
+
+Function signatures:
+- `public static void main(String[] args)`
+- `public static void moveBomber(int a, int b)`

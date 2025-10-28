@@ -1,0 +1,57 @@
+**Algorithm:**
+
+**Function:**
+- `solve() -> int`
+
+**Parameters:**
+- None. Reads input via `sys.stdin`.
+
+**Variables:**
+- `N: int` (input size)
+- `K: int` (modulo constraint)
+- `A: List[int]` (input array elements transformed as `(int(a) % K) - 1`)
+- `sum_A: List[int]` (prefix sum array size `N+1`, initialized to 0)
+- `count: int` (result counter initialized to 0)
+- `modK: Dict[int, List[int]]` (maps prefix sum remainders to indices)
+- Loop variables `i`, `key`, `a`, `lenK` with integer types
+
+**Logic Flow:**
+
+1. **Input Handling:**
+   - Read `N` and `K` from standard input.
+   - Read array elements and compute `A = [(int(a) % K) - 1 for all elements]`.
+
+2. **Prefix Sum Initialization:**
+   - Initialize `sum_A` to length `N+1` with zeros.
+
+3. **modK Dictionary Construction:**
+   - Initialize `modK` with key `0` mapped to list `[0]`.
+   - For each `i` in `0` to `N-1`:
+     - Compute `sum_A[i+1] = (sum_A[i] + A[i]) % K`
+     - Append `i+1` to `modK[sum_A[i+1]]` (create entry if missing)
+
+4. **Count Valid Subarrays:**
+   - For each `key` in `modK`:
+     - Get `lenK = len(modK[key])`
+     - For each index `i` and value `a` in `modK[key]`:
+       - Use `bisect_left` on `modK[key]` to find insertion point of `a + K` in sublist `modK[key][i : lenK]`
+       - Add `(insertion_index - i - 1)` to `count`
+
+5. **Output Result:**
+   - Print `count`
+   - Return `0`
+
+**Control Structures:**
+- `for i in range(N):` (array iteration)
+- `if sum_A[i+1] not in modK: ... else: ...` (dictionary entry check)
+- `for key in modK:` (dictionary key iteration)
+- `for i, a in enumerate(modK[key]):` (list element iteration with index)
+- `bisect_left` binary search within conditional bounds
+
+**Input/Output Operations:**
+- Read via `sys.stdin.readline()`
+- Print result to standard output
+
+**Dependencies:**
+- `sys` module for input
+- `bisect.bisect_left` for binary search

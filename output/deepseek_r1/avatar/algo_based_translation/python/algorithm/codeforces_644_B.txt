@@ -1,0 +1,85 @@
+**Structured Algorithm Specification**
+
+**1. Data Structures and Variables:**
+- **Task Class:**
+  - Attributes:
+    - `time: int` (arrival time)
+    - `duration: int` (processing duration)
+    - `index: int` (original task index)
+- **Global Variables:**
+  - `n: int` (number of tasks)
+  - `b: int` (buffer capacity)
+  - `remaining: Queue<Task>` (queue for pending tasks)
+  - `running: bool` (flag for active task processing; initialized to `False`)
+  - `finish_time: int` (timestamp for current task completion; initialized to `0`)
+  - `result: Dict<int, int>` (maps task indices to completion times/-1)
+
+**2. Function Specifications:**
+- **Task.\_\_init\_\_**
+  - Parameters:
+    - `time: int`
+    - `duration: int`
+    - `index: int`
+  - Return: `None`
+- **run_task**
+  - Parameters:
+    - `remaining: Queue<Task>` (by reference)
+    - `finish_time: int`
+  - Return: `Tuple<int, Dict<int, int>>` (updated `finish_time` and `result`)
+
+**3. Input/Output Operations:**
+- **Initial Input:**
+  - Read `n` and `b` from stdin via `input().split()`
+- **Task Input:**
+  - For each of `n` tasks:
+    - Read `time` and `duration` from stdin via `input().split()`
+- **Output:**
+  - Print `result` values in order of task indices via `print(result.get(key))`
+
+**4. Control Flow and Logic:**
+1. **Initialize:**
+   1. Read `n` and `b`
+   2. Create empty `remaining` queue and `result` dictionary
+2. **Process Each Task:**
+   - For `i` in `0` to `n-1`:
+      1. Read `time` and `duration`, create `Task` object with index `i`
+      2. Add entry `i:0` to `result`
+      3. **Immediate Execution Check:**
+         - If `task.time > finish_time` and `remaining` is empty:
+           - Set `finish_time = max(finish_time, task.time) + task.duration`
+           - Update `result[i] = finish_time`
+      4. **Buffer Handling:**
+         - Else:
+           1. **Process Queued Task if Conditions Met:**
+              - If `task.time >= finish_time` and `remaining` is not empty:
+                - Invoke `run_task` to process next queued task
+                - Update `finish_time` and `result`
+           2. **Add to Queue or Reject:**
+              - If `remaining.qsize() < b`:
+                - Enqueue `task` in `remaining`
+              - Else:
+                - Set `result[i] = -1`
+3. **Process Remaining Tasks:**
+   - While `remaining` is not empty:
+     1. Invoke `run_task` to process next queued task
+     2. Update `finish_time` and `result`
+4. **Output Results:**
+   - Iterate through `result` keys in order and print corresponding values
+
+**5. Function Logic (run_task):**
+1. Dequeue `task_to_run` from `remaining`
+2. Compute new `finish_time` as `max(finish_time, task_to_run.time) + task_to_run.duration`
+3. Update `result[task_to_run.index]` with new `finish_time`
+4. Return updated `finish_time` and `result`
+
+**6. Edge Cases and Error Handling:**
+- **Buffer Full:** Tasks arriving when `remaining.qsize() >= b` are rejected (`result[i] = -1`)
+- **Empty Queue Handling:** Directly process tasks when queue is empty and arrival time permits
+- **Timing Synchronization:** Uses `max(finish_time, task.time)` to handle tasks arriving before previous task completion
+
+**7. External Dependencies:**
+- **Imports:** `queue` module for FIFO queue operations
+- **Library Functions:**
+  - `queue.Queue()` for task buffer
+  - `input().split()` for data reading
+  - `print()` for output

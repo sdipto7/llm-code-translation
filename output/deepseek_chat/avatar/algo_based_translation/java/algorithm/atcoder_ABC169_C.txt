@@ -1,0 +1,14 @@
+Scanner sc = new Scanner(System.in)
+long a = sc.nextLong()
+String b = sc.next()
+char[] bChar = b.toCharArray()
+int length = bChar.length
+String bStr = ""
+int i = 0
+while i < length:
+    if bChar[i] != '.':
+        bStr += bChar[i]
+    i = i + 1
+int bInt = Integer.parseInt(bStr)
+long result = (a * bInt) / 100
+System.out.println(result)

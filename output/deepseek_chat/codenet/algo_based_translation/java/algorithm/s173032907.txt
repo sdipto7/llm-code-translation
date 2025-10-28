@@ -1,0 +1,28 @@
+Algorithm:
+- Import java.util.Scanner
+- Define class Main implementing Runnable
+- Declare static Scanner sc initialized to System.in
+- Define main method with String[] args parameter:
+  - Start new thread with Main instance and 128MB stack size
+- Define run method with no parameters:
+  - Read integer n from input
+  - Create integer array a of size n
+  - For i from 0 to n-1:
+    - Read integer into a[i]
+  - Initialize long cost1 = 0, cost2 = 0
+  - Initialize int current1 = 0, current2 = 0
+  - Create long arrays dp1 and dp2 of size n
+  - For i from 0 to n-1 and j from n-1 to 0 simultaneously:
+    - cost1 += absolute value of (a[i] - current1)
+    - Set current1 = a[i]
+    - Store cost1 in dp1[i]
+    - cost2 += absolute value of (a[j] - current2)
+    - Set current2 = a[j]
+    - Store cost2 in dp2[j]
+  - For i from 0 to n-1:
+    - If i == 0:
+      - Print dp2[1] + absolute value of a[1]
+    - Else if i == n-1:
+      - Print dp1[n-2] + absolute value of a[n-2]
+    - Else:
+      - Print dp1[i-1] + dp2[i+1] + absolute value of (a[i-1] - a[i+1])

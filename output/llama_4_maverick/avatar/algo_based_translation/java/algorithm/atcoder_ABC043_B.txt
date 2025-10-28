@@ -1,0 +1,13 @@
+1. Read input from the input stream.
+2. Create a `LightScanner` object to read input and a `PrintWriter` object to write output.
+3. Create an instance of `BUnhappyHackingABCEdit`.
+4. Call the `solve` method on the `BUnhappyHackingABCEdit` instance, passing 1, the `LightScanner` object, and the `PrintWriter` object.
+5. In the `solve` method:
+   1. Read a string from the input using the `LightScanner`.
+   2. Initialize an empty `StringBuilder`.
+   3. Iterate over each character in the input string.
+   4. For each character:
+      1. If the character is '0' or '1', append it to the `StringBuilder`.
+      2. If the character is 'B' and the `StringBuilder` is not empty, remove the last character from the `StringBuilder`.
+   5. Print the contents of the `StringBuilder` to the output using the `PrintWriter`.
+6. Close the `PrintWriter` to finalize the output.

@@ -1,0 +1,86 @@
+**Algorithm Specification:**
+
+**Structures:**
+- Heaps: `p1` (min-heap), `p2` (max-heap via negation)
+- Variables: `sum_p1` (int), `sum_p2` (int), `sum_b` (int)
+- Output: List of tuples containing median (int) and cost (int)
+
+**Input:**
+- Integer `q` (number of queries)
+- `q` subsequent lines with query data:
+  - Type 1: `1 x b` (insert `x`, add `b` to `sum_b`)
+  - Type 2: `2` (compute current median and cost)
+
+**Output:**
+- For each type 2 query: tuple of (median, cost)
+
+**Functions:**
+- `process_queries(q: int, queries: List[List[int]]) -> List[Tuple[int, int]]`
+  - **Parameters:**
+    - `q`: Number of queries
+    - `queries`: List of query lists (type 1 or 2)
+  - **Returns:**
+    - List of (median, cost) tuples for each type 2 query
+
+**Variables:**
+- `p1`: Min-heap storing upper half elements (int[])
+- `p2`: Max-heap (via negation) storing lower half elements (int[])
+- `sum_p1`: Sum of elements in `p1` (int)
+- `sum_p2`: Sum of elements in `p2` (int)
+- `sum_b`: Cumulative sum from type 1 queries (int)
+- `results`: Output list for type 2 responses (List[Tuple[int, int]])
+
+**Algorithm Steps:**
+
+1. **Initialization:**
+   - Initialize empty heaps `p1` and `p2`
+   - Set `sum_p1`, `sum_p2`, `sum_b` to 0
+   - Initialize empty `results` list
+
+2. **Process Each Query:**
+   For each query in `queries`:
+   - **If query is type 2:**
+     1. **Determine Median:**
+        - If `len(p1) == len(p2)`: median = `-p2[0]`
+        - Else: median = `p1[0]`
+     2. **Calculate Cost:**
+        ```
+        cost = (sum_p1 - median * len(p1)) + (median * len(p2) - sum_p2) + sum_b
+        ```
+     3. Append `(median, cost)` to `results`
+   - **If query is type 1:**
+     1. Extract `x = query[1]`, `b = query[2]`
+     2. Update `sum_b += b`
+     3. **Insert `x` into appropriate heap:**
+        - If `p1` is empty or `x >= p1[0]`:
+          - Insert `x` into `p1`, update `sum_p1 += x`
+        - Else:
+          - Insert `-x` into `p2`, update `sum_p2 += x`
+     4. **Balance Heaps:**
+        - **Case 1:** `len(p1) < len(p2)`
+          - Pop `k` from `p2`
+          - Insert `-k` into `p1`
+          - Update sums: `sum_p2 += k`, `sum_p1 -= k`
+        - **Case 2:** `len(p1) - len(p2) > 1`
+          - Pop `k` from `p1`
+          - Insert `-k` into `p2`
+          - Update sums: `sum_p1 -= k`, `sum_p2 += k`
+
+3. **Return Results:**
+   - After all queries processed, return `results`
+
+**Control Flow:**
+- Loop over all `q` queries sequentially
+- Conditional branching based on query type (1 or 2)
+- Heap insertion rules based on element comparison and current heap sizes
+- Heap balancing conditions enforced after each insertion
+
+**Edge Cases Handling:**
+- Initial empty heaps handled via explicit checks for emptiness
+- Heap size differences constrained to ≤1 via balancing steps
+- Correct median selection for even/odd total elements via heap size parity check
+
+**External Dependencies:**
+- Min-heap operations: insertion (`heappush`), extraction (`heappop`)
+- Max-heap emulation via negation in `p2`
+- Input parsing to extract query parameters

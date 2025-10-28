@@ -1,0 +1,38 @@
+Function Signature:
+- main() -> None
+
+Variable Declarations and Data Types:
+- n: int
+- lst: List[int]
+- od: int
+- sum: int
+- ok: bool
+- i: int
+
+Logic Flow in Execution Order:
+1. Read an integer n from input.
+2. Read a space-separated string of integers from input, convert each to int, and store in list lst.
+3. Sort lst in ascending order.
+4. Reverse lst to sort in descending order.
+5. Initialize od to 0.
+6. For each integer i in lst:
+   a. If i is odd (i & 1):
+      i. Increment od by 1.
+7. Initialize sum to 0.
+8. Initialize ok to 0.
+9. For each index i in range from 0 to n-1:
+   a. If lst[i] is even (lst[i] % 2 == 0):
+      i. Add lst[i] to sum.
+   b. Else:
+      i. If ok is True or od is greater than 1:
+         1. Add lst[i] to sum.
+         2. Decrement od by 1.
+         3. Set ok to not ok.
+10. Print sum.
+
+Input/Output Operations and Data Processing Logic:
+- Input: Two lines, first line contains an integer n, second line contains n space-separated integers.
+- Output: A single integer which is the calculated sum based on the described logic.
+
+Required Libraries, Modules, or Dependencies:
+- No external libraries or modules required. Uses built-in functions and data types.

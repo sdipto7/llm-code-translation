@@ -1,0 +1,38 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `public static int reverse(int n)`
+
+**Variables:**
+- `int n` (input)
+- `int m` (input)
+- `int t` (stores reversed value of `m`)
+- Inside `reverse`: `int t = n`, `int r = 0`
+
+**Logic Flow:**
+1. **Input Handling:**
+   - Read `n` using `FastReader.nextInt()`
+   - Read `m` using `FastReader.nextInt()`
+2. **Reverse Calculation:**
+   - Call `reverse(m)` and assign result to `t`
+   - **Reverse Function Logic:**
+     - If `n < 10`: return `n * 10`
+     - Else:
+       - Initialize `t = n`, `r = 0`
+       - Loop while `t > 0`:
+         - `r = (r * 10) + (t % 10)`
+         - `t = t / 10`
+       - Return `r`
+3. **Output:**
+   - Print `t + n` via `System.out.println`
+
+**Control Structures:**
+- **Conditional:** `if (n < 10)` in `reverse`
+- **Loop:** `while (t > 0)` in `reverse`
+
+**Input/Output Operations:**
+- Input via `FastReader` (uses `BufferedReader` and `StringTokenizer`)
+- Output via `System.out.println`
+
+**Dependencies:**
+- `java.io.*`
+- `java.util.*`

@@ -1,0 +1,32 @@
+**Function Signature**
+- `public static void main(String[] args)`
+
+**Variable Declarations**
+- `Scanner sc = new Scanner(System.in)`
+- `int n` (read from input)
+- `int result = 0`
+- `int[] h` (size `n`)
+- `int[] g` (size `n`)
+
+**Input Operations**
+- Read integer `n` via `sc.nextLine()`
+- For `i` from `0` to `n-1`:
+  - Read `h[i]` via `sc.nextInt()`
+  - Read `g[i]` via `sc.nextInt()`
+
+**Processing Logic**
+- For each `i` from `0` to `n-1`:
+  - For each `j` from `0` to `n-1`:
+    - If `h[i] == g[j]`:
+      - Increment `result` by 1
+
+**Output Operation**
+- Print `result` via `System.out.println(result)`
+
+**Control Structures**
+- `for (int i = 0; i < n; i++)` loop for reading input
+- Nested `for (int i = 0; i < n; i++)` and `for (int j = 0; j < n; j++)` loops for comparisons
+- Conditional `if (h[i] == g[j])`
+
+**Dependencies**
+- `java.util.Scanner` library

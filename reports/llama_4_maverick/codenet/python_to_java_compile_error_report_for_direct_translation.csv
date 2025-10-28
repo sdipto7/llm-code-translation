@@ -1,0 +1,19 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,s760938927.java,Compilation Error,"Error: output/llama_4_maverick/codenet/direct_translation/python/java/s760938927.java:22: error: illegal line end in character literal
+                    if (mat[l][k] == '
+                                     ^
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s067092519.java,Compilation Error,"Error: output/llama_4_maverick/codenet/direct_translation/python/java/s067092519.java:25: error: unclosed string literal
+                    System.out.print(""
+                                     ^
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s259116349.java,Compilation Error,"Error: output/llama_4_maverick/codenet/direct_translation/python/java/s259116349.java:29: error: ';' expected
+        int num(int n) {
+               ^
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"

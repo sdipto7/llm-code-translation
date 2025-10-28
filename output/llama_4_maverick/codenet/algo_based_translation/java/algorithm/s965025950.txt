@@ -1,0 +1,9 @@
+1. Import the required library: java.util.Scanner
+2. Define a class: Main
+3. Define a function: main with parameter args of type String[] and return type void
+4. Declare a variable: sc of type Scanner and initialize it with a new Scanner object using System.in
+5. Declare variables: x, y, z of type int
+6. Read input from the user using sc.nextInt() and store it in x, y, z in that order
+7. Print the values of z, x, y to the console in that order, separated by spaces
+8. Close the Scanner object sc using sc.close()
+9. End the execution of the main function.

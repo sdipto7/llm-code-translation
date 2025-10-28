@@ -1,0 +1,21 @@
+1. Initialize N and MOD.
+2. Define TOKENS as an array containing "A", "C", "G", "T".
+3. Create a memoization table memo of size N + 1.
+4. For each index in memo, initialize a HashMap to store intermediate results.
+5. Read input N from the user.
+6. Call the calc function to compute the result.
+7. In calc, call dfs with initial parameters (0, "TTT").
+8. In dfs, check if the result for the current state (current, last3) is already memoized.
+9. If memoized, return the stored result.
+10. If current equals N, return 1.
+11. Initialize result to 0.
+12. For each token c in TOKENS, check if the concatenation of last3 and c is valid using the isOK function.
+13. If valid, recursively call dfs with (current + 1, last3.substring(1) + c) and add the result to the current result modulo MOD.
+14. Store the computed result in memo[current] with key last3.
+15. Return the result.
+16. In isOK, check if the given string last4 contains "AGC".
+17. If it does, return false.
+18. For each possible swap of adjacent characters in last4, check if the resulting string contains "AGC".
+19. If any swap results in "AGC", return false.
+20. If no "AGC" is found, return true.
+21. Output the result of calc.

@@ -1,0 +1,22 @@
+1. Import required libraries: java.util.*
+2. Define a public class Main with a public static void main method taking a String array as a parameter.
+3. Declare variables:
+   - sc: Scanner object
+   - N: integer
+   - s: array of Strings
+   - a_num: integer
+   - b_num: integer
+   - flag: boolean
+   - ans: integer
+4. Read input from the user using the Scanner object and store the first input in N after parsing it to an integer.
+5. Create an array s of size N to store N number of Strings.
+6. Iterate over a loop N times:
+   - Read a String input from the user and store it in the array s.
+   - Check if the first character of the String is "B" and increment b_num if true.
+   - Check if the last character of the String is "A" and increment a_num if true.
+   - Check if the String starts with "B" or ends with "A". If true, check if it does not both start with "B" and end with "A". If this condition is true, set flag to false.
+   - Iterate over the characters in the String (excluding the last character):
+     - Check if the current and next character form "AB". If true, increment ans.
+7. After the loop, update ans by adding the minimum of a_num and b_num.
+8. Check if the minimum of a_num and b_num is not zero and flag is true. If true, decrement ans by 1.
+9. Print the final value of ans.

@@ -1,0 +1,29 @@
+FastReader class:
+- BufferedReader br
+- StringTokenizer st
+- Constructor: initialize br with BufferedReader wrapping InputStreamReader(System.in)
+- next(): while st is null or has no more tokens, read line and tokenize; return next token
+- nextInt(): return Integer.parseInt(next())
+- nextLong(): return Long.parse.parseLong(next())
+- nextDouble(): return Double.parseDouble(next())
+- nextLine(): read and return line from br
+
+main(String[] args):
+- Create FastReader instance sc
+- Read integer n using sc.nextInt()
+- Read integer m using sc.nextInt()
+- Call reverse(m) and store result in t
+- Print t + n
+
+reverse(int n):
+- If n < 10: return n * 10
+- Initialize t = n
+- Initialize r = 0
+- While t > 0:
+  - r = (r * 10) + t % 10
+  - t = t / 10
+- Return r
+
+Required imports:
+- java.io.*
+- java.util.*

@@ -1,0 +1,39 @@
+Function signature: `main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner sc`
+- `long a`
+- `String b`
+- `char[] bChar`
+- `int length`
+- `String bStr`
+- `int bInt`
+- `long result`
+
+Logic flow in execution order:
+1. Initialize `sc` as a new `Scanner` object for reading input.
+2. Read a `long` value from standard input and assign it to `a`.
+3. Read a `String` value from standard input and assign it to `b`.
+4. Convert `b` to a character array `bChar`.
+5. Assign the length of `bChar` to `length`.
+6. Initialize an empty `String` `bStr`.
+7. Loop through each character in `bChar` using index `i` from 0 to `length - 1`:
+   a. If the character at `bChar[i]` is not equal to '.', append the character to `bStr`.
+8. Parse `bStr` as an integer and assign it to `bInt`.
+9. Calculate `(a * bInt) / 100` and assign the result to `result`.
+10. Print `result` to standard output.
+
+Control structures:
+- For loop: Iterates from 0 to `length - 1`, checks if `bChar[i]` is not equal to '.'.
+
+Input/output operations and data processing logic:
+- Reads a `long` value and a `String` value from standard input.
+- Processes the `String` to remove all occurrences of '.'.
+- Converts the processed `String` to an integer.
+- Performs arithmetic operations to calculate the final result.
+- Outputs the calculated result to standard output.
+
+Required libraries, modules, or dependencies:
+- `java.util.ArrayList` (not used)
+- `java.util.LinkedList` (not used)
+- `java.util.Scanner`

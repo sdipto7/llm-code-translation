@@ -1,0 +1,53 @@
+Function signatures:
+- main(String[] args): void
+
+Variable declarations and data types:
+- BufferedReader br: BufferedReader
+- int n: int
+- String str[]: String[]
+- int s[]: int[100010]
+- int dec: int
+- int one: int
+- int two: int
+- int i: int (loop index)
+
+Logic flow in execution order:
+1. Create BufferedReader object br for reading input from System.in
+2. Read integer n from input
+3. Read a line of space-separated strings and split into array str
+4. Initialize array s of size 100010 with all elements set to 0
+5. For each element in str:
+   - Convert string to integer and use as index to increment corresponding element in s by 1
+6. Set dec to 0
+7. For each element in s:
+   - If element is not 0:
+     - If element is even, set element to 2
+     - Otherwise, set element to 1
+8. Set one to 0
+9. Set two to 0
+10. For each element in s:
+    - If element is 2, increment two by 1
+    - Else if element is 1, increment one by 1
+11. If two is odd, decrement one by 1
+12. Print the sum of two and one
+
+Control structures:
+- Loop for reading and processing input numbers
+- Conditional for checking if element in s is not 0
+- Nested conditional for setting element in s to 2 or 1 based on evenness
+- Loop for counting occurrences of 1 and 2 in s
+- Conditional for adjusting one if two is odd
+
+Input/output operations and data processing logic:
+- Read integer n from input
+- Read space-separated string of numbers, split into array str
+- Convert each string in str to integer and count occurrences using array s
+- Process array s to replace counts with 1 or 2 based on evenness
+- Count occurrences of 1 and 2 in processed array s
+- Adjust count of ones if necessary
+- Output final count of twos plus adjusted count of ones
+
+Required libraries, modules, or dependencies:
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader

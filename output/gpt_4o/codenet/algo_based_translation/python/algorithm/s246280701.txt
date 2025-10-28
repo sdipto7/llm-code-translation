@@ -1,0 +1,33 @@
+```
+- Function Signature:
+  - No functions are defined; code is procedural
+  - Input: None
+  - Output: None
+
+- Variable Declarations and Data Types:
+  - `n` (int): stores the number of elements in the list `x`
+  - `x` (List[int]): list of integers input by the user
+  - `ans` (int): initialized to a large integer, 10^10, to store the minimum sum of squared differences
+  - `i` (int): loop iterator for potential integer values from 0 to 100
+  - `tmp` (List[int]): a list to store squared differences for each `i`
+
+- Logic Flow:
+  1. Read an integer from standard input and store it in `n`.
+  2. Read a line of input, split it into space-separated strings, convert them to integers, and store them in the list `x`.
+  3. Initialize `ans` to 10^10 to ensure it is larger than any potential sum of squared differences.
+  4. Iterate `i` from 0 to 100 (inclusive):
+     - For each `i`, calculate the list `tmp` where each element is the squared difference between `i` and each element of `x`.
+     - Calculate the sum of elements in `tmp`.
+     - If this sum is less than `ans`, update `ans` with this sum.
+  5. Print the value of `ans`.
+
+- Control Structures:
+  - Loop: `for i in range(101)` iterates over integers from 0 to 100.
+  - Conditional: `if sum(tmp) < ans` checks if the current sum of squared differences is less than the previously found minimum.
+
+- Input/Output Operations:
+  - Input: Uses `input()` to read data from standard input. The first input is an integer `n`, and the second input is processed into a list `x`.
+  - Output: Uses `print()` to output the minimum sum of squared differences.
+
+- No additional libraries, modules, or dependencies are required.
+```

@@ -1,0 +1,39 @@
+- **Function Signature**
+  - `public static void main(String[] args)`
+
+- **Variables**
+  - `Scanner sc` (input scanner)
+  - `int n` (input string length)
+  - `String s` (input string)
+  - `long rc = 0` (count of 'R')
+  - `long gc = 0` (count of 'G')
+  - `long bc = 0` (count of 'B')
+  - `long result` (final result)
+
+- **Input Operations**
+  - Read `n` using `sc.nextInt()`
+  - Read `s` using `sc.next()`
+
+- **Logic Flow**
+  1. Iterate over each character in `s`:
+     - Increment `rc` if character is 'R'
+     - Increment `gc` if character is 'G'
+     - Increment `bc` if character is 'B'
+  2. Compute initial `result` as `rc * gc * bc`
+  3. Iterate `i` from `1` to `n` (inclusive):
+     - Iterate `k` from `i + 1` to `n` (inclusive):
+       - If `(i + k) % 2 == 0`:
+         - Compute `j = (i + k) / 2`
+         - Get characters at indices `i-1`, `k-1`, `j-1` as `is`, `ks`, `js`
+         - If `is`, `ks`, `js` are all distinct (`is != ks`, `ks != js`, `js != is`):
+           - Decrement `result` by `1`
+  4. Print `result`
+
+- **Control Structures**
+  - `for` loop: `i` from `0` to `s.length() - 1` (character counting)
+  - Nested `for` loops: `i` from `1` to `n`, `k` from `i+1` to `n`
+  - Conditional check `(i + k) % 2 == 0`
+  - Conditional checks `is != ks`, `ks != js`, `js != is`
+
+- **Libraries/Dependencies**
+  - `java.util.Scanner` for input handling

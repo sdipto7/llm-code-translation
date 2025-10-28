@@ -1,0 +1,53 @@
+```
+Algorithm "codeforces_302_A"
+
+1. Import necessary libraries:
+   - java.io.IOException
+   - java.util.Scanner
+
+2. Function Signature:
+   - main(String[] args) -> void
+
+3. Variable Declarations:
+   - Scanner sc: for reading input
+   - int n: to hold the size of the array
+   - int k: to hold the number of queries
+   - int[] arr: array to hold integers inputted
+   - StringBuffer res: to build the result output
+   - int o: counter for occurrences of 1 in the array
+   - int e: counter for occurrences of other values (assumed to be -1) in the array
+
+4. Execution Order:
+   - Initialize Scanner object for input
+   - Read integer n using sc.nextInt()
+   - Read integer k using sc.nextInt()
+   - Initialize arr as an array of size n
+
+5. Input and Array Population:
+   - For loop from i = 0 to n-1:
+     - Read integer using sc.nextInt() and assign to arr[i]
+
+6. Count Occurrences:
+   - For loop from i = 0 to n-1:
+     - If arr[i] equals 1, increment o
+     - Else increment e
+
+7. Process Queries:
+   - For loop from i = 0 to k-1:
+     - Read integer l using sc.nextInt()
+     - Read integer r using sc.nextInt()
+     - Calculate segment length as (r - l + 1)
+     - If segment length is odd:
+       - Append "0\n" to res
+     - Else (segment length is even):
+       - If half of segment length is less than or equal to both o and e:
+         - Append "1\n" to res
+       - Else:
+         - Append "0\n" to res
+
+8. Output Results:
+   - Print the content of res
+
+9. Close Scanner:
+   - sc.close()
+```

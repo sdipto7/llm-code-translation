@@ -1,0 +1,4 @@
+read integer R from standard input
+read integer G from standard input
+compute result = G multiplied by 2 minus R
+print result to standard output

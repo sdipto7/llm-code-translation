@@ -1,0 +1,44 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner sc`: initialized with `System.in`
+- `int n`: initialized via `sc.nextInt()`
+- `int f`: initialized to 0
+- `int[] a`: size `n`, populated via loop
+- `int k, j, i`: loop indices initialized to 0
+- `int t`: temporary variable holding `a[k]`
+
+**Input Operations:**
+- Read `n` from standard input
+- Read `n` integers into array `a`
+
+**Logic Flow:**
+1. Iterate `k` from 0 to `n-1`:
+   - Assign `t = a[k]`
+   - Iterate `i` from 0 to `n-1`:
+     - Iterate `j` from 0 to `n-2`:
+       - Check if `i != j` and `t == a[i] + a[j]`
+       - If true:
+         - Set `f = 1`
+         - Break innermost `j` loop
+     - If `f == 1`, break `i` loop
+   - If `f == 1`, break `k` loop
+
+**Output Operations:**
+- If `f == 1`: print `(k+1) (j+1) (i+1)`
+- Else: print "-1"
+
+**Control Structures:**
+- Triple nested `for` loops:
+  - Outer: `k` from 0 to `n-1`
+  - Middle: `i` from 0 to `n-1`
+  - Inner: `j` from 0 to `n-2`
+- Conditional checks:
+  - `if (i != j && t == a[i] + a[j])`
+  - Three consecutive break statements when `f == 1`
+- Final `if-else` for output selection
+
+**Dependencies:**
+- `java.util.*` (for `Scanner`)
+- `java.lang.*` (implicit)

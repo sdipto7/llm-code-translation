@@ -1,0 +1,9 @@
+1. Declare a function `check_case` with no parameters and return type `None`.
+2. Inside `check_case`, declare a variable `x` of type `str`.
+3. Read input from the user and store it in `x`.
+4. Evaluate the condition `x.islower()`.
+5. If the condition is `True`, print the string "a" to the console.
+6. If the condition is `False`, print the string "A" to the console.
+7. The function `check_case` has no return value (`None`).
+8. Call the function `check_case`.
+9. The required library is the built-in Python library, specifically the `input()` function and the `print()` function, as well as the string method `islower()`.

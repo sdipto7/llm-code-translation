@@ -1,0 +1,31 @@
+**Algorithm:**
+
+1. Import modules: math, functools.reduce, collections.deque, collections.Counter, sys
+2. Set recursion limit: 10^7
+3. Define function input() -> str: returns sys.stdin.readline().strip()
+4. Define function get_nums_l() -> List[int]: splits input by space and converts to integers
+5. Define function get_nums_n(n: int) -> List[int]: reads n integers from input
+6. Define function get_all_int() -> Iterator[int]: reads all integers from stdin
+7. Define generator rangeI(it: Iterable, l: int, r: int) -> Generator: yields elements from index l to r-1
+8. Define function log(*args): prints debug message to stderr
+9. Set constants: INF = 999999999999999999999999, MOD = 10^9 + 7
+10. Read integer n from input
+11. If n == 1: print(0) and exit program
+12. Define function prime_factorize(n: int) -> List[int]:
+    - Initialize empty list a
+    - While n divisible by 2: append 2 to a, divide n by 2
+    - Set f = 3
+    - While f*f <= n:
+        - If n divisible by f: append f to a, divide n by f
+        - Else: increment f by 2
+    - If n != 1: append n to a
+    - Return a
+13. Call prime_factorize(n) and store result in fac_
+14. Create Counter from fac_ and store in fac
+15. Initialize ans = 0
+16. For each (p, e) in fac.items():
+    - Set x = e
+    - For i from 1 to 99999998:
+        - If x >= i: subtract i from x, increment ans by 1
+        - Else: break inner loop
+17. Print ans

@@ -1,0 +1,51 @@
+- Function signatures with parameter and return types:
+  - `main(String[] args): void`
+
+- Variable declarations and data types:
+  - `Scanner sc`: object for reading input
+  - `int n`: first integer input
+  - `int m`: second integer input
+  - `int[] a`: array of size `m + 1` to store integers
+  - `int[] cnt`: array of size `n + 1` to store counts
+  - `int num`: counter for positions in array `a`
+  - `final int MOD`: constant value `1000000007` for modulo operation
+
+- Complete logic flow in execution order:
+  - Initialize `Scanner sc` for input
+  - Read `n` and `m` from input
+  - Initialize array `a` of size `m + 1`
+  - Initialize array `cnt` of size `n + 1` and set `cnt[0]` to 1
+  - Read `m` integers into array `a` starting from index 1
+  - Set `num` to 1
+  - If `m > 0`:
+    - If `a[1]` equals 1:
+      - Set `cnt[1]` to 0
+      - Increment `num` if `num < m`
+    - Else:
+      - Set `cnt[1]` to 1
+  - Else:
+    - Set `cnt[1]` to 1
+  - For `i` from 2 to `n`:
+    - Set `cnt[i]` to `(cnt[i - 2] + cnt[i - 1]) % MOD`
+    - If `m > 0`:
+      - If `i` equals `a[num]`:
+        - Set `cnt[i]` to 0
+        - Increment `num` if `num < m`
+  - Print `cnt[n]`
+  - Close `Scanner sc`
+
+- Control structures:
+  - If statement checking `m > 0`
+  - If-else statement checking `a[1] == 1`
+  - For loop iterating from 1 to `m` to read input values into array `a`
+  - For loop iterating from 2 to `n` to calculate `cnt` values
+  - Nested if statement inside the last for loop checking `i == a[num]`
+
+- Input/output operations and data processing logic:
+  - Read two integers `n` and `m` from standard input
+  - Read `m` integers into array `a`
+  - Calculate the number of ways to reach each position up to `n` using dynamic programming, considering obstacles at positions specified in `a`
+  - Print the number of ways to reach position `n` modulo `1000000007`
+
+- Required libraries, modules, or dependencies:
+  - `java.util.Scanner` for input handling

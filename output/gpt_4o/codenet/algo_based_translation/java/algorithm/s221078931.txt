@@ -1,0 +1,79 @@
+```
+Algorithm
+
+1. Import Libraries
+   - java.io.BufferedReader
+   - java.io.IOException
+   - java.io.InputStreamReader
+   - java.util.Arrays
+
+2. Define Class Main
+   - Define method main with parameters (String[] args) and return type void
+     - Throws IOException
+
+3. Variable Declarations
+   - BufferedReader br
+   - IntegralRect[] rects
+
+4. Initialize BufferedReader
+   - br = new BufferedReader(new InputStreamReader(System.in))
+
+5. Initialize Array rects
+   - rects = new IntegralRect[40000]
+
+6. Populate rects Array
+   - For i from 0 to 199
+     - For j from 0 to 199
+       - Create new IntegralRect(i + 1, j + 1) and assign to rects[i * 200 + j]
+
+7. Sort rects Array
+   - Call Arrays.sort(rects)
+
+8. Infinite Loop
+   - While true
+     - Read input line
+     - Split input line by space into tmpArray
+
+9. Parse Input
+   - int h = Integer.parseInt(tmpArray[0])
+   - int w = Integer.parseInt(tmpArray[1])
+
+10. Check Termination Condition
+    - If h equals 0 and w equals 0, break loop
+
+11. Create Temporary Rectangle
+    - IntegralRect tmpRect = new IntegralRect(h, w)
+
+12. Compute Diagonal
+    - int diag = tmpRect.diagonal()
+
+13. Find Suitable Rectangle
+    - For i from 0 to rects.length - 1
+      - If rects[i].compareTo(tmpRect) > 0
+        - Output rects[i].height and rects[i].width
+        - Break loop
+
+14. Define Class IntegralRect
+    - Implements Comparable<IntegralRect>
+
+15. Variable Declarations
+    - int height
+    - int width
+
+16. Constructor IntegralRect
+    - Parameters: int h, int w
+    - Initialize height = h
+    - Initialize width = w
+
+17. Method diagonal
+    - Return type int
+    - If height >= width, return Integer.MAX_VALUE
+    - Return height * height + width * width
+
+18. Method compareTo
+    - Parameters: IntegralRect o
+    - Return type int
+    - int d1 = this.diagonal()
+    - int d2 = o.diagonal()
+    - Return d1 == d2 ? this.height - o.height : d1 - d2
+```

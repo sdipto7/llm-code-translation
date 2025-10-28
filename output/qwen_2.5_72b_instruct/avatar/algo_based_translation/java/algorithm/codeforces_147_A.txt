@@ -1,0 +1,46 @@
+Function signatures:
+- `isLatinLetter(char c)`: Returns boolean
+- `isPunctuation(char c)`: Returns boolean
+- `main(String[] args)`: Throws IOException
+
+Variable declarations and data types:
+- `BufferedReader br`: BufferedReader
+- `PrintWriter pw`: PrintWriter
+- `String s`: String
+- `StringBuilder sb`: StringBuilder
+- `int n`: int
+- `char c`: char
+
+Logic flow in execution order:
+1. Create BufferedReader `br` to read input.
+2. Create PrintWriter `pw` to write output.
+3. Read input string `s`.
+4. Initialize StringBuilder `sb` and append first character of `s`.
+5. Determine length of `s` and store in `n`.
+6. Loop from index 1 to `n-1`:
+   - Assign character at index `i` of `s` to `c`.
+   - If `c` is a Latin letter:
+     - If previous character at index `i-1` is not a Latin letter:
+       - Append space to `sb`.
+     - Append `c` to `sb`.
+   - Else if `c` is punctuation:
+     - Append `c` to `sb`.
+7. Print `sb` using `pw`.
+8. Flush and close `pw`.
+
+Control structures:
+- Loop: `for (int i = 1; i < n; i++)`
+- Conditional: `if (isLatinLetter(c))`
+- Nested Conditional: `if (!isLatinLetter(s.charAt(i - 1)))`
+- Conditional: `else if (isPunctuation(c))`
+
+Input/output operations and data processing logic:
+- Read input string `s` from standard input.
+- Process each character of `s` to format and append to `sb` based on character type.
+- Write formatted string stored in `sb` to standard output.
+
+Required libraries, modules, or dependencies:
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.io.PrintWriter`

@@ -1,0 +1,14 @@
+1. READ input into l
+2. SPLIT l into two parts at '.' and store in l
+3. CONVERT l[0] to a list of characters and store in s
+4. CONVERT l[1] to a list of characters and store in p
+5. CONVERT p[0] to an integer and store in i
+6. IF the last character of s is '9' THEN
+7.     PRINT "GOTO Vasilisa."
+8. ELSE IF the last character of s is not '9' and i is less than 5 THEN
+9.     JOIN the characters in s into a string
+10.    PRINT the resulting string
+11. ELSE
+12.    JOIN the characters in s into a string
+13.    CONVERT the string to an integer, INCREMENT it by 1, and CONVERT back to a string
+14.    PRINT the resulting string

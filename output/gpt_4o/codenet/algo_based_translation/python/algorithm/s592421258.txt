@@ -1,0 +1,15 @@
+Function Signature:
+- `is_substring_double(s1: str, s2: str) -> str`
+
+Variables:
+- `s: str` - a string that is the result of concatenating `s1` with itself.
+- `result: str` - a string that will be either 'Yes' or 'No'.
+
+Algorithm:
+1. Read the first input string `s1` from the user.
+2. Create a new string `s` by concatenating `s1` with itself.
+3. Read the second input string `s2` from the user.
+4. Check if `s2` is a substring of `s`.
+   - If `s2` is found within `s`, set `result` to 'Yes'.
+   - Otherwise, set `result` to 'No'.
+5. Print the value of `result`.

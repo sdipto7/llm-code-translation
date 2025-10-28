@@ -1,0 +1,87 @@
+**Algorithm Extraction**
+
+**UnionFind Class:**
+- **Variables:**
+  - `Parent`: `int[]` (Stores parent indices and sizes)
+- **Constructor:**
+  - `UnionFind(int n)`: Initialize `Parent` array with size `n`, fill with `-1`
+- **Methods:**
+  - `int root(int A)`:
+    1. If `Parent[A] < 0`: return `A`
+    2. Recursively set `Parent[A] = root(Parent[A])` and return it (path compression)
+  - `int size(int A)`:
+    1. Return `-Parent[root(A)]`
+  - `boolean connect(int A, int B)`:
+    1. Set `A = root(A)`, `B = root(B)`
+    2. If `A == B`: return `false`
+    3. If `size(A) < size(B)`: swap `A` and `B`
+    4. Set `Parent[A] += Parent[B]`
+    5. Set `Parent[B] = A`
+    6. Return `true`
+
+**Main Class:**
+- **Static Variables:**
+  - `scan`: `FastScanner` (input handler)
+  - `scanner`: `Scanner`
+  - `rand`: `Random`
+  - `mod`: `long` (1000000007)
+  - `eps`: `double` (1.0E-14)
+  - `big`: `int` (Integer.MAX_VALUE)
+  - `PI`: `double` (3.14159265358979323846)
+- **Methods:**
+  - **Prime/Mod Functions:**
+    - `long modlcm(long a, long b)`: Return `a * b * modint(gcd(a, b), mod)`
+    - `long gcd(long a, long b)`: Recursive GCD with base case `b == 0`
+    - `long lcm(long a, long b)`: Compute LCM via `a*b/gcd(a, b)`
+    - `long modpow(long x, long n, long mo)`: Binary exponentiation with modulus
+    - `long modint(long a, long m)`: Extended Euclidean algorithm for modular inverse
+  - **Math Utilities:**
+    - `max`, `min`, `lmax`, `lmin`: Return greater/smaller of two values
+    - `factorial(int i)`: Recursive factorial calculation
+    - `isPrime(long n)`: Check divisibility up to sqrt(n) for primes
+    - `upper_division`, `lupper_division`: Ceiling division for int and long
+  - **Array Operations:**
+    - `lower_bound(int[] a, int key)`: Binary search leftmost index where element < key
+    - `upper_bound(int[] a, int key)`: Binary search leftmost index where element <= key
+    - `setArray`, `lsetArray`: Read arrays via scanner
+    - `reverse(String str)`: Reverse string via character array
+    - `printArray(int[] que)`: Print space-separated elements
+    - `doublesort`, `ldoublesort`: Sort 2D arrays by first element
+    - `revch`, `revint`: Reverse char and int arrays
+    - `warshall_floyd(int[][] v, int n)`: Update adjacency matrix for shortest paths
+  - **Main Method:**
+    1. Read input string `str` using `scan.next()`
+    2. Check `str.charAt(2) == str.charAt(3)` and `str.charAt(4) == str.charAt(5)`
+    3. Print "Yes" if both conditions true, else "No"
+
+**FastScanner Class:**
+- **Variables:**
+  - `in`: `InputStream` (System.in)
+  - `buffer`: `byte[1024]`
+  - `ptr`, `buflen`: int (buffer management)
+- **Methods:**
+  - `hasNextByte()`: Check buffer status, refill if empty
+  - `readByte()`: Return next byte from buffer
+  - `isPrintableChar(int c)`: Check ASCII range
+  - `hasNext()`: Skip non-printable characters
+  - `next()`: Build string from printable chars
+  - `nextLong()`, `nextInt()`, `nextDouble()`: Parse numeric inputs
+  - `nextchar()`: Read single character
+
+**Input/Output Operations:**
+- **Input Handling:** Via `FastScanner` methods (byte buffer reading)
+- **Output:** Direct `System.out` calls (e.g., main method prints "Yes"/"No")
+
+**Control Structures:**
+- **Conditionals:** All methods use standard `if-else` checks (e.g., main's character comparison)
+- **Loops:**
+  - Binary search in `lower_bound`/`upper_bound` (while loop)
+  - Prime checking (for loop)
+  - Warshall-Floyd (triple nested for loop)
+  - Factorial (recursive)
+  - Modular exponentiation (while loop)
+  - Input parsing (while loops in `FastScanner`)
+
+**Dependencies:**
+- Java libraries: `java.io`, `java.util`, `java.lang.Math`
+- No external modules beyond standard Java SE

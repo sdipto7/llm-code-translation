@@ -1,0 +1,50 @@
+Function signature: `FastReader()`
+Variable declarations: `BufferedReader br`, `StringTokenizer st`
+
+Function signature: `String next()`
+Variable declarations: None
+
+Function signature: `int nextInt()`
+Variable declarations: None
+
+Function signature: `long nextLong()`
+Variable declarations: None
+
+Function signature: `double nextDouble()`
+Variable declarations: None
+
+Function signature: `String nextLine()`
+Variable declarations: `String str`
+
+Function signature: `int modPower(int x, int y, int mod)`
+Variable declarations: `int res`, `int x`, `int y`
+Logic flow:
+- Set `res` to 1
+- Set `x` to `x % mod`
+- If `x` is 0, return 0
+- While `y` is greater than 0:
+  - If `y % 2` is 1, set `res` to `(res * x) % mod`
+  - Set `y` to `y >> 1`
+  - Set `x` to `(x * x) % mod`
+Return `res`
+
+Class: `pair<T1, T2>`
+Variable declarations: `T1 first`, `T2 second`
+Constructor: `pair(T1 first, T2 second)`
+
+Function signature: `public static void main(String[] args) throws java.lang.Exception`
+Variable declarations: `FastReader in`, `long[] a`
+Logic flow:
+- Create instance of `FastReader` and assign to `in`
+- Create array of size 4 and assign to `a`
+- For loop from 0 to 3:
+  - Set `a[i]` to `in.nextLong()`
+- Print maximum value between:
+  - `a[0] * a[2]`
+  - Maximum value between:
+    - `a[1] * a[3]`
+    - Maximum value between:
+      - `a[0] * a[3]`
+      - `a[1] * a[2]`
+
+Required libraries: `java.util.*`, `java.lang.*`, `java.io.*`

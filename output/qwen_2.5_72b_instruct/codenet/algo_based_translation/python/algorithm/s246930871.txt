@@ -1,0 +1,28 @@
+Function signature: `calculate_stones(N: int, A: int, B: int) -> int`
+
+Variable declarations:
+- `N: int`
+- `A: int`
+- `B: int`
+- `ans: int`
+
+Logic flow:
+1. Read input values `N`, `A`, `B` as integers from the standard input.
+2. Calculate the integer division of `N` by the sum of `A` and `B` and multiply the result by `A`.
+3. Calculate the remainder of `N` divided by the sum of `A` and `B`.
+4. Determine the minimum value between `A` and the remainder calculated in step 3.
+5. Add the result from step 2 to the result from step 4 and store the sum in `ans`.
+6. Print the value of `ans` to the standard output.
+
+Input/output operations:
+- Input: Read a single line from the standard input containing three space-separated integers `N`, `A`, `B`.
+- Output: Print a single integer `ans` to the standard output.
+
+Data processing logic:
+- Use integer division to determine how many complete cycles of `A` stones can be taken.
+- Calculate the remaining stones after the complete cycles.
+- Determine the number of additional stones that can be taken from the remaining stones, which is the minimum of `A` and the remaining stones.
+- Sum the stones from complete cycles and additional stones to get the final answer.
+
+Required libraries, modules, or dependencies:
+- None

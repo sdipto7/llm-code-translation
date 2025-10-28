@@ -1,0 +1,53 @@
+Function signatures:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `ArrayList<Integer> result`
+- `Scanner insert`
+- `int n`
+- `String line`
+- `String[] array2`
+- `int[] input`
+- `int sum`
+- `double avg`
+- `int num`
+
+Complete logic flow in execution order:
+1. Initialize an empty `ArrayList<Integer>` named `result`.
+2. Create a `Scanner` object named `insert` to read input from standard input.
+3. Set `n` to -1.
+4. Enter a `while` loop that continues indefinitely.
+5. Read a line of input from `insert` and parse it to an integer, assign to `n`.
+6. If `n` is 0, break out of the `while` loop.
+7. Read another line of input from `insert`, split it by spaces, and store the parts in `array2`.
+8. Initialize an array `input` of size `n`.
+9. Initialize `sum` to 0.
+10. For each index `i` from 0 to `n-1`:
+    - Parse the `i`th element of `array2` to an integer and assign to `input[i]`.
+    - Add `input[i]` to `sum`.
+11. Calculate `avg` as the division of `sum` by `n` (cast both to `double`).
+12. Initialize `num` to 0.
+13. For each index `i` from 0 to `n-1`:
+    - If `input[i]` is less than or equal to `avg`, increment `num` by 1.
+14. Add `num` to `result`.
+15. Exit the `while` loop.
+16. For each index `i` from 0 to the size of `result` minus 1:
+    - If the `i`th element of `result` is -1, print "NONE".
+    - Otherwise, print the `i`th element of `result`.
+
+Control structures:
+- `while(true)` with a `break` condition when `n` is 0.
+- `for(int i = 0; i < n; i++)` loop for reading and processing input elements.
+- `if(input[i] <= avg)` conditional to count elements less than or equal to the average.
+
+Input/output operations and data processing logic:
+- Read integer `n` from input.
+- Read `n` space-separated integers from input, store them in `input`, and calculate their sum.
+- Calculate the average of the integers.
+- Count how many integers are less than or equal to the average.
+- Store the count in `result`.
+- After input processing is done, print each element of `result`.
+
+Required libraries, modules, or dependencies:
+- `java.util.ArrayList`
+- `java.util.Scanner`

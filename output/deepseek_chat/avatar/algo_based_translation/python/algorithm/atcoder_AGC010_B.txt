@@ -1,0 +1,43 @@
+**Input Operations:**
+- Read integer `n` from first input line
+- Read list `a` of `n` integers from second input line
+
+**Variable Declarations:**
+- `n`: integer
+- `a`: list of integers
+- `k`: float
+
+**Logic Flow:**
+1. Calculate `total_sum = sum(a)`
+2. Calculate `denominator = n * (n + 1) / 2`
+3. If `total_sum % denominator != 0`:
+   - Print "NO"
+   - Exit
+4. Else:
+   - Set `k = total_sum / denominator`
+   - Append `a[0]` to end of list `a` (making length n+1)
+   - Initialize two sums:
+     - `sum1 = 0`
+     - `sum2 = 0`
+   - For each index `i` from 0 to n-1:
+     - Calculate `diff = k - a[i+1] + a[i]`
+     - Add `diff % n` to `sum1`
+     - If `diff / n >= 0`: add 1 to `sum2`
+   - If `sum1 != 0` OR `sum2 != n`:
+     - Print "NO"
+   - Else:
+     - Print "YES"
+
+**Control Structures:**
+- If-else condition checking divisibility
+- For loop iterating n times
+- If condition checking sum results
+
+**Output Operations:**
+- Print "NO" or "YES" based on conditions
+
+**Data Processing:**
+- Arithmetic operations with integers and floats
+- List operations and indexing
+- Modulo and division operations
+- Boolean comparisons

@@ -1,0 +1,52 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,s000375264.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/direct_translation/python/java/s000375264.java:14: error: variable answer might not have been initialized
+        System.out.println(answer);
+                           ^
+1 error
+"
+python,java,s724326345.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/direct_translation/python/java/s724326345.java:11: error: integer number too large
+        int ans = 10000000000;
+                  ^
+1 error
+"
+python,java,s621701371.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/direct_translation/python/java/s621701371.java:25: error: ';' expected
+                    f = 1 if (f != 1) else 2;
+                         ^
+1 error
+only showing the first 1 errors, of 3 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s170274782.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/direct_translation/python/java/s170274782.java:9: error: underscore not allowed here
+        for (int _ = 0; _ < 2; _++) {
+                        ^
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s764169243.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/direct_translation/python/java/s764169243.java:10: error: int cannot be dereferenced
+        this.size = 1 << (size - 1).bitLength();
+                                   ^
+1 error
+"
+python,java,s735480710.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/direct_translation/python/java/s735480710.java:11: error: cannot find symbol
+        List<String> b = new ArrayList<>(a.subList(1, n).stream().skip(1).collect(Collectors.toList()));
+                                                                                  ^
+  symbol:   variable Collectors
+  location: class s735480710
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error
+only showing the first 1 errors, of 3 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s817205687.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/direct_translation/python/java/s817205687.java:46: error: cannot find symbol
+        return Arrays.stream(numbers).reduce(1, Main::lcm);
+                                                ^
+  symbol:   variable Main
+  location: class s817205687
+1 error
+"
+python,java,s592421258.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/direct_translation/python/java/s592421258.java:5: error: bad operand types for binary operator '*'
+String s=I.next()*2;
+                 ^
+  first type:  String
+  second type: int
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"

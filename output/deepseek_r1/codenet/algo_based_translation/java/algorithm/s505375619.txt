@@ -1,0 +1,40 @@
+- **Function Signature**  
+  `public static void main(String[] args)`  
+
+- **Variables**  
+  - `Scanner s` (input handler)  
+  - `int n` (read from input)  
+  - `int[] v` (size `n`, stores values)  
+  - `int[] c` (size `n`, stores costs)  
+  - `int[] dp` (size `n`, dynamic programming array)  
+  - `int tmp` (temporary calculation variable)  
+  - `int i` (loop index)  
+
+- **Logic Flow**  
+  1. Read integer `n` from standard input.  
+  2. Initialize arrays `v`, `c`, and `dp` of size `n`.  
+  3. Set all elements of `dp` to `0` via loop (0 to `n-1`).  
+  4. Read `n` integers into `v` via loop (0 to `n-1`).  
+  5. Read `n` integers into `c` via loop (0 to `n-1`).  
+  6. Explicitly set `dp[0] = 0`.  
+  7. Iterate `i` from `1` to `n-1` (inclusive):  
+     a. Compute `tmp` as `dp[i-1] + (v[i-1] - c[i-1])`.  
+     b. Set `dp[i] = tmp` if `tmp > dp[i-1]`, else retain `dp[i-1]`.  
+  8. After loop (step 7), compute `tmp` as `dp[n-1] + (v[n-1] - c[n-1])`.  
+  9. Update `dp[n-1]` to `tmp` if `tmp > dp[n-1]`, else retain `dp[n-1]`.  
+  10. Print `dp[n-1]` as the final result.  
+
+- **Control Structures**  
+  - For-loop: `for (int i = 0; i < n; i++)` (initialization loops for `dp`, `v`, `c`)  
+  - For-loop: `for (int i = 1; i < n; i++)` (main dynamic programming logic)  
+  - Ternary conditional: `tmp > dp[i-1] ? tmp : dp[i-1]` (updates `dp[i]` and `dp[n-1]`)  
+
+- **Input/Output**  
+  - Input:  
+    - Read `n` via `Scanner`.  
+    - Read `n` integers for `v` and `c` sequentially.  
+  - Output:  
+    - Print the value of `dp[n-1]`.  
+
+- **Dependencies**  
+  - `java.util.Scanner` (required for input handling).

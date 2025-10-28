@@ -1,0 +1,49 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+  - Parameters: `String[] args`
+  - Return: void
+
+**Variables:**
+- `N` (int) - Unused
+- `MOD` (int) - Unused
+- `t` (int) - Number of test cases
+- `n`, `a`, `b` (long) - Input values for each test case
+- `x` (long) - Calculated as `b / (b - a)`
+- `low`, `high`, `mid`, `ans` (long) - Binary search variables
+
+**Logic Flow:**
+1. Read `t` from input.
+2. For each test case:
+   - Read `n`, `a`, `b`.
+   - If `n < a`:
+     - Print "No" → continue to next test case.
+   - If `a == b`:
+     - If `n % a == 0` → print "Yes".
+     - Else → print "No".
+     - Continue to next test case.
+   - Compute `x = b / (b - a)` (integer division).
+   - If `n > x * a` → print "Yes" → continue to next test case.
+   - Initialize binary search:
+     - `low = 1`, `high = x + 1`, `ans = 1`.
+     - While `low <= high`:
+       - `mid = (low + high) / 2`.
+       - If `mid * a < n` → set `low = mid + 1`.
+       - Else → set `ans = mid`, `high = mid - 1`.
+   - After binary search:
+     - If `n > (ans - 1) * b` AND `n < ans * a` → print "No".
+     - Else → print "Yes".
+
+**Control Structures:**
+- While loop: `while (t-- > 0)` for test cases.
+- If-else conditions for handling edge cases (`n < a`, `a == b`).
+- Binary search loop: `while (low <= high)`.
+- Nested conditionals within binary search and final decision.
+
+**Input/Output:**
+- Input via `Scanner` reading `nextInt()` for `t`, `n`, `a`, `b`.
+- Output via `PrintWriter` using `println("Yes"/"No")`.
+
+**Dependencies:**
+- `java.io.IOException` (unused), `java.io.InputStream`, `java.io.PrintWriter`.
+- `java.util.Scanner`.
+- Other unused imports (irrelevant to core logic).

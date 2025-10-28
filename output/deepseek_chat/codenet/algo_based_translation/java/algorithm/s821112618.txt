@@ -1,0 +1,34 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner sc`: Scanner object for input
+- `int n`: integer from input
+- `String[] s`: array of strings initialized from split string
+- `char[][] k`: 2D char array of size 9
+- `char[] c`: char array from input string
+- `int l`: integer initialized to -1
+- `int a`: integer
+
+**Libraries/Dependencies:**
+- `java.util.Scanner`
+
+**Algorithm:**
+1. Create Scanner object `sc` for reading input
+2. Read integer `n` from input
+3. Initialize string array `s` by splitting ".,!? :abc:def:ghi:jkl:mno:pqrs:tuv:wxyz" using ":" as delimiter
+4. Create 2D char array `k` with 9 rows
+5. For each index `i` from 0 to 8:
+   - Convert `s[i]` to char array and assign to `k[i]`
+6. While `n` > 0:
+   - Decrement `n` by 1
+   - Read next input string and convert to char array `c`
+   - Set `l` = -1
+   - For each index `i` from 0 to length of `c` - 1:
+     - If `c[i]` != '0':
+       - Set `a` = `c[i]` - '1'
+       - Set `l` = (`l` + 1) % length of `k[a]`
+     - Else if `l` >= 0:
+       - Print `k[a][l]`
+       - Set `l` = -1
+   - Print newline

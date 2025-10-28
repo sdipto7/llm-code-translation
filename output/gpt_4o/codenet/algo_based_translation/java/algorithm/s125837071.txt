@@ -1,0 +1,26 @@
+```
+import java.util.Scanner
+
+function main(): void
+    declare scanner as Scanner
+    declare n as int
+    declare ans as long with initial value 1
+    declare mod as int with value 1000000007
+    set n to scanner.nextInt()
+    for i from 2 to n inclusive
+        for j from 2 while (i % j != 0 and j < i) or j == i increment j
+            if j == i
+                declare s as int with initial value 0
+                for k from 1 to n inclusive
+                    set s to s + findS(k, i)
+                set ans to (ans * (s + 1)) % mod
+    print ans
+
+function findS(k: int, i: int): int
+    declare s as int with initial value 0
+    declare j as int with initial value k
+    while j % i == 0
+        set j to j / i
+        increment s
+    return s
+```

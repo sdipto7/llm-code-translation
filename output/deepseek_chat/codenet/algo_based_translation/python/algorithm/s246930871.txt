@@ -1,0 +1,9 @@
+N, A, B = integer values from input split by spaces
+ans = integer variable
+
+Calculate:
+    quotient = N // (A + B)
+    remainder = N % (A + B)
+    ans = A * quotient + min(A, remainder)
+
+Print ans

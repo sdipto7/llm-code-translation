@@ -1,0 +1,98 @@
+```plaintext
+1. Import the following modules:
+   - sys
+   - math
+   - defaultdict and deque from collections
+
+2. Define function `load(vtype=int) -> int`:
+   - Read input from the standard input, strip whitespace, and convert it to `vtype` (default is int).
+   - Return the converted value.
+
+3. Define function `load_list(seplator=" ", vtype=int) -> List[int]`:
+   - Read input from the standard input, strip whitespace, split by the `separator`, and convert each value to `vtype` (default is int).
+   - Return the list of converted values.
+
+4. Define function `exit() -> None`:
+   - Exit the program using `sys.exit(0)`.
+
+5. Define function `perm_sub(li: List[int], used: Set[int]) -> List[Deque[int]]`:
+   - If the length of `li` equals the length of `used`, return a list containing an empty deque.
+   - Initialize an empty list `k`.
+   - Iterate over each index `i` in `li`:
+     - If `i` is in `used`, continue to the next iteration.
+     - Add `i` to `used`.
+     - Recursively call `perm_sub(li, used)` and store the result in `sub_list`.
+     - For each `sub` in `sub_list`, append `li[i]` to the left of `sub`.
+     - Extend `k` with `sub_list`.
+     - Remove `i` from `used`.
+   - Return `k`.
+
+6. Define function `perm_li(li: List[int]) -> List[Deque[int]]`:
+   - Return the result of `perm_sub(li, set())`.
+
+7. Define function `perm_n(n: int) -> List[Deque[int]]`:
+   - Return the result of `perm_sub(list(range(n)), set())`.
+
+8. Define function `join_i(li: List[int], sep="") -> str`:
+   - Convert each element in `li` to a string and join them with `sep`.
+   - Return the resulting string.
+
+9. Define function `li2n(li: List[int]) -> int`:
+   - Initialize `n` to 0 and `base` to 1.
+   - Iterate over `li` in reverse order:
+     - Multiply the element by `base` and add it to `n`.
+     - Multiply `base` by 10.
+   - Return `n`.
+
+10. Define function `sli2ili(li: List[str]) -> List[int]`:
+    - Convert each element in `li` to an int.
+    - Return the list of integers.
+
+11. Define function `prime_list(n: int) -> List[int]`:
+    - Create a list `li` containing integers from 2 to `n`.
+    - Iterate over each index `i` in `li`:
+      - If `li[i]` is greater than or equal to the square root of `n`, break the loop.
+      - If `li[i]` is -1, continue to the next iteration.
+      - Iterate over each index `j` from `i+1` to the end of `li`:
+        - If `li[j]` is divisible by `li[i]`, set `li[j]` to -1.
+    - Return a list of elements in `li` that are not -1.
+
+12. Define function `gcd(a: int, b: int) -> int`:
+    - Assign `a` to max(a, b) and `b` to min(a, b).
+    - While True:
+      - Calculate `r` as `a % b`.
+      - If `r` is 0, return `b`.
+      - Assign `a` to `b` and `b` to `r`.
+
+13. Define function `lcm(a: int, b: int) -> int`:
+    - Return the result of `(a * b) / gcd(a, b)`.
+
+14. Define function `all_subset(li: List[int]) -> List[Set[int]]`:
+    - Initialize an empty list `s`.
+    - Calculate `n` as the length of `li`.
+    - Iterate over each `bit` from 0 to `(1 << (n+1))`:
+      - Initialize an empty set `ss`.
+      - Iterate over each index `i` from 0 to `n`:
+        - If `bit` AND `(1 << i)` is non-zero, add `li[i]` to `ss`.
+      - Append `ss` to `s`.
+    - Return `s`.
+
+15. Define function `factorial(n: int) -> int`:
+    - If `n` is 1, return 1.
+    - Return `n * factorial(n-1)`.
+
+16. Define function `mCn(m: int, n: int) -> int`:
+    - Define nested function `factorial_ntimes(m: int, n: int) -> int`:
+      - Initialize `r` to 1.
+      - While `n` is non-zero:
+        - Multiply `r` by `m`.
+        - Decrement `m` and `n`.
+      - Return `r`.
+    - Return the result of `factorial_ntimes(m, n) / factorial(n)`.
+
+17. Main program:
+    - Read an integer `n` using `load()`.
+    - Read a list of integers `A` using `load_list()`.
+    - If `n` equals the length of the set of `A`, print "YES".
+    - Otherwise, print "NO".
+```

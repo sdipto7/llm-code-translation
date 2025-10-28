@@ -1,0 +1,42 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main()` -> `void`
+
+**Variables:**
+- `y`: `int` (Unused)
+- `arr`: `list[int]`
+- `i`: `int` (Loop index 0 ≤ i < len(arr))
+- `j`: `int` (Loop index 0 ≤ j < len(arr))
+- `k`: `int` (Loop index 0 ≤ k < len(arr))
+
+**Input Operations:**
+1. Read integer `y` from standard input (unused)
+2. Read space-separated integers into `arr` from standard input
+
+**Output Operations:**
+1. Print triplet as `k+1 j+1 i+1` if found
+2. Print `-1` if no valid triplet exists
+
+**Control Flow:**
+1. For `i` in 0 to len(arr)-1:
+   1. For `j` in 0 to len(arr)-1:
+      1. If `i == j` → Continue to next `j` iteration
+      2. For `k` in 0 to len(arr)-1:
+         1. If `arr[k] != arr[j] ∧ arr[k] != arr[i] ∧ arr[k] == arr[i] + arr[j]`:
+            1. Print output triplet
+            2. Terminate program
+2. After full iteration → Print `-1`
+
+**Termination Conditions:**
+- Immediate exit upon finding first valid triplet
+- Full iteration completes when no triplet found
+
+**Edge Case Handling:**
+- Empty input list → Output `-1`
+- List with <3 elements → Output `-1`
+- Multiple valid triplets → First occurrence in iteration order is selected
+
+**Dependencies:**
+- Standard input/output functions
+- No external libraries required

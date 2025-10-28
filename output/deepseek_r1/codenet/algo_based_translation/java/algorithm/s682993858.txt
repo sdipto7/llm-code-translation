@@ -1,0 +1,32 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner sc = new Scanner(System.in)`
+- `int sum = 0` (reinitialized per iteration)
+- `String s`
+- `char a` (per character iteration)
+- `int i` (loop index)
+
+**Logic Flow:**
+1. Import `java.util.Scanner`
+2. Begin infinite loop:
+   - Initialize `sum` to 0
+   - Read input string `s` using `sc.next()`
+   - If `s` equals "0", terminate loop
+   - Iterate over each character in `s`:
+     - Extract character `a` at index `i`
+     - Convert `a` to integer via `a - '0'`
+     - Add converted value to `sum`
+   - Print `sum` using `System.out.printf("%d\n", sum)`
+
+**Control Structures:**
+- `while (true)` loop with `if (s.equals("0")) break` exit condition
+- `for (int i=0; i < s.length(); i++)` loop
+
+**Input/Output:**
+- Input: String via `Scanner.next()`
+- Output: Integer sum via formatted print
+
+**Dependencies:**
+- `java.util.Scanner` required for input handling

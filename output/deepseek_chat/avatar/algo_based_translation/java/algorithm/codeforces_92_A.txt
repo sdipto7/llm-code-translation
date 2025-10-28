@@ -1,0 +1,23 @@
+**Function Signature:**
+- main(String[] args): void
+
+**Variables:**
+- Scanner scn: Scanner object for input
+- int n: input integer
+- int k: input integer
+- int i = 1: counter variable
+- int req = 1: required amount for current iteration
+
+**Libraries:**
+- java.util.Scanner
+
+**Logic Flow:**
+1. Read integer n from standard input
+2. Read integer k from standard input
+3. Initialize i = 1 and req = 1
+4. While k - req >= 0:
+   - Subtract req from k
+   - Increment i by 1
+   - If i % n != 0: set req = i % n
+   - Else: set req = n
+5. Print remaining value of k

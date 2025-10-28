@@ -1,0 +1,39 @@
+1. Define a function `check_candy_condition` with no parameters and return type string.
+2. Read input from the user as a string.
+3. Split the input string into a list of substrings using space as the delimiter.
+4. Convert each substring in the list to an integer using a mapping operation.
+5. Sort the list of integers in ascending order.
+6. Store the sorted list in a variable `candy` of type list of integers.
+7. Check if the sum of the first two elements of `candy` is equal to the third element.
+8. If the condition is true, return the string "Yes".
+9. If the condition is false, return the string "No".
+10. Print the returned string. 
+
+Function signature: 
+`def check_candy_condition() -> str`
+
+ Variable declarations:
+- `candy`: list of integers
+
+Required libraries: 
+- built-in python functions (input, split, map, sorted) 
+
+ Execution order:
+1. Read input from the user.
+2. Process the input (split, convert to integers, sort).
+3. Check the condition.
+4. Return "Yes" or "No" based on the condition.
+5. Print the result. 
+
+Control structure: 
+- Conditional statement: `if candy[0]+candy[1]== candy[2]` 
+
+Input/Output operations: 
+- Read input from the user.
+- Print the result ("Yes" or "No"). 
+
+Data processing logic: 
+- Split the input string.
+- Convert substrings to integers.
+- Sort the list of integers.
+- Check the condition (`candy[0]+candy[1]== candy[2]`).

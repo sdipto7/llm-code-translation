@@ -1,0 +1,11 @@
+1. Read input string from the user.
+2. Initialize two counters, uppercase and lowercase, to 0.
+3. Iterate over each character in the input string.
+4. For each character, check if it is uppercase.
+5. If the character is uppercase, increment the uppercase counter.
+6. If the character is not uppercase, increment the lowercase counter.
+7. Compare the values of uppercase and lowercase counters.
+8. If uppercase is greater than lowercase, convert the input string to uppercase.
+9. If lowercase is greater than uppercase, convert the input string to lowercase.
+10. If uppercase equals lowercase, convert the input string to lowercase.
+11. Output the resulting string.

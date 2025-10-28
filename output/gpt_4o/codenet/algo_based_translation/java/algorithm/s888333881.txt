@@ -1,0 +1,676 @@
+```plaintext
+- Define class `Graph0n`
+  - Private `ArrayList<Node0n>` `dt`
+  - Constructor `Graph0n(int sz)`
+    - Loop `i` from `0` to `sz-1`
+      - Create `Node0n` instance `node1`
+      - Add `node1` to `dt`
+  - Method `add(int vn, int val)`
+    - Call `add(val)` on `dt.get(vn)`
+  - Method `add2(int vn, int val)`
+    - Call `add(val)` on `dt.get(vn)`
+    - Call `add(vn)` on `dt.get(val)`
+  - Method `get(int vn, int index)` returns `int`
+    - Return `dt.get(vn).get(index)`
+  - Method `get(int vn)` returns `ArrayList<Integer>`
+    - Return `dt.get(vn).getAll()`
+  - Method `sizeOf(int vn)` returns `int`
+    - Return `dt.get(vn).size()`
+  - Method `clear()`
+    - Loop `i` from `0` to `dt.size()-1`
+      - Call `clear()` on `dt.get(i)`
+
+- Define class `Node0n`
+  - Private `ArrayList<Integer>` `next_vs`
+  - Method `add(int val)`
+    - Call `add(val)` on `next_vs`
+  - Method `get(int ad)` returns `int`
+    - Return `next_vs.get(ad)`
+  - Method `getAll()` returns `ArrayList<Integer>`
+    - Return `next_vs`
+  - Method `size()` returns `int`
+    - Return `next_vs.size()`
+  - Method `clear()`
+    - Call `clear()` on `next_vs`
+
+- Define class `Edge`
+  - Public `int from = -1, v2 = -1`
+  - Public `long weight`
+  - Constructor `Edge(int vn, long w)`
+    - Set `v2` to `vn`
+    - Set `weight` to `w`
+  - Constructor `Edge(int cm, int vn, long w)`
+    - Set `from` to `cm`
+    - Set `v2` to `vn`
+    - Set `weight` to `w`
+
+- Define class `Edge2`
+  - Public `int v2`
+  - Public `long cost1, cost2`
+  - Constructor `Edge2(int vn, long w1, long w2)`
+    - Set `v2` to `vn`
+    - Set `cost1` to `w1`
+    - Set `cost2` to `w2`
+
+- Define class `Comparator_Edge` implements `Comparator<Edge>`
+  - Method `compare(Edge a, Edge b)` returns `int`
+    - If `a.weight > b.weight`, return `-1`
+    - Else if `a.weight < b.weight`, return `1`
+    - Else return `b.v2 - a.v2`
+
+- Define class `V2Comp` implements `Comparator<Edge>`
+  - Method `compare(Edge a, Edge b)` returns `int`
+    - If `a.v2 > b.v2`, return `-1`
+    - Else if `a.v2 < b.v2`, return `1`
+    - Else if `a.weight > b.weight`, return `-1`
+    - Else if `a.weight < b.weight`, return `1`
+    - Else return `0`
+
+- Define class `antiV2` implements `Comparator<Edge>`
+  - Method `compare(Edge a, Edge b)` returns `int`
+    - If `a.v2 > b.v2`, return `1`
+    - Else if `a.v2 < b.v2`, return `-1`
+    - Else if `a.weight > b.weight`, return `-1`
+    - Else if `a.weight < b.weight`, return `1`
+    - Else return `0`
+
+- Define class `Vector`
+  - Public `int x, y`
+  - Constructor `Vector(int sx, int sy)`
+    - Set `x` to `sx`
+    - Set `y` to `sy`
+
+- Function `main(String[] args)` throws `Exception`
+  - Create `FastScanner` instance `sc`
+  - Create `PrintWriter` instance `out`
+  - Read `int n` using `sc.nexI()`
+  - Read `String s` using `sc.next()`
+  - Declare `boolean[] flaged` of size `n`
+  - Call `fill(flaged, false)`
+  - Declare `long pop1st = 0L`
+  - Loop `i` from `0` to `n-1`
+    - If `s.charAt(i) == '1'`
+      - Set `flaged[i]` to `true`
+      - Increment `pop1st`
+  - Declare `long surp1 = 0`
+  - Loop `i` from `0` to `n-1`
+    - Multiply `surp1` by `2L`
+    - If `flaged[i]`, increment `surp1`
+    - `surp1 %= (pop1st + 1L)`
+  - Declare `long surp9 = 0L`
+  - If `pop1st > 1`
+    - Loop `i` from `0` to `n-1`
+      - Multiply `surp9` by `2L`
+      - If `flaged[i]`, increment `surp9`
+      - `surp9 %= (pop1st - 1L)`
+  - Loop `p` from `0` to `n-1`
+    - If `flaged[p]`
+      - If `pop1st == 1`
+        - Print `0` using `out.println()`
+        - Continue loop
+      - Declare `long dw = surp9`
+      - Call `pow10E97(2, n-p-1, pop1st-1)` and assign to `long dif`
+      - `dw -= dif`
+      - `dw += (pop1st - 1L)`
+      - `dw %= (pop1st - 1L)`
+      - Declare `int ans = 1`
+      - While `dw != 0`
+        - If `dw < 0`, print `1/0` using `out.println()`
+        - Call `countFlaged(dw)` and assign to `int count`
+        - `dw %= count`
+        - Increment `ans`
+      - Print `ans` using `out.println()`
+    - Else
+      - Declare `long dw = surp1`
+      - Call `pow10E97(2, n-p-1, pop1st+1)` and assign to `long dif`
+      - `dw += dif`
+      - `dw %= (pop1st + 1L)`
+      - Declare `int ans = 1`
+      - While `dw != 0`
+        - If `dw < 0`, print `1/0` using `out.println()`
+        - Call `countFlaged(dw)` and assign to `int count`
+        - `dw %= count`
+        - Increment `ans`
+      - Print `ans` using `out.println()`
+  - Call `out.flush()`
+
+- Define `int INF = (int)1e8`
+- Define `long INFL = (long)1e17`
+- Define `long e97 = (long)1e9 + 7`
+
+- Function `assertion(boolean b)`
+  - If `!b`, throw `AssertionError`
+
+- Function `abs(int a)` returns `int`
+  - Return `(a >= 0) ? a : -a`
+
+- Function `abs(long a)` returns `long`
+  - Return `(a >= 0) ? a : -a`
+
+- Function `abs(double a)` returns `double`
+  - Return `(a >= 0) ? a : -a`
+
+- Function `min(int a, int b)` returns `int`
+  - Return `(a > b) ? b : a`
+
+- Function `min(long a, long b)` returns `long`
+  - Return `(a > b) ? b : a`
+
+- Function `min(double a, double b)` returns `double`
+  - Return `(a > b) ? b : a`
+
+- Function `max(int a, int b)` returns `int`
+  - Return `(a > b) ? a : b`
+
+- Function `max(long a, long b)` returns `long`
+  - Return `(a > b) ? a : b`
+
+- Function `max(double a, double b)` returns `double`
+  - Return `(a > b) ? a : b`
+
+- Function `minN(int... ins)` returns `int`
+  - Declare `int min = ins[0]`
+  - Loop `i` from `1` to `ins.length-1`
+    - If `ins[i] < min`, set `min` to `ins[i]`
+  - Return `min`
+
+- Function `maxN(int... ins)` returns `int`
+  - Declare `int max = ins[0]`
+  - Loop `i` from `1` to `ins.length-1`
+    - If `ins[i] > max`, set `max` to `ins[i]`
+  - Return `max`
+
+- Function `minN(long... ins)` returns `long`
+  - Declare `long min = ins[0]`
+  - Loop `i` from `1` to `ins.length-1`
+    - If `ins[i] < min`, set `min` to `ins[i]`
+  - Return `min`
+
+- Function `maxN(long... ins)` returns `long`
+  - Declare `long max = ins[0]`
+  - Loop `i` from `1` to `ins.length-1`
+    - If `ins[i] > max`, set `max` to `ins[i]`
+  - Return `max`
+
+- Function `minExAd(int[] dt, int ad)` returns `int`
+  - Declare `int min=INF`
+  - Loop `i` from `0` to `dt.length-1`
+    - If `(i != ad) && (dt[i] < min)`, set `min` to `dt[i]`
+  - Return `min`
+
+- Function `minExAd(long[] dt, int ad)` returns `long`
+  - Declare `long min=INFL`
+  - Loop `i` from `0` to `dt.length-1`
+    - If `(i != ad) && (dt[i] < min)`, set `min` to `dt[i]`
+  - Return `min`
+
+- Function `minExVal(int[] dt, int ex_val)` returns `int`
+  - Declare `int min=INF`
+  - Loop `i` from `0` to `dt.length-1`
+    - If `(dt[i] != ex_val) && (dt[i] < min)`, set `min` to `dt[i]`
+  - Return `min`
+
+- Function `minExVal(long[] dt, long ex_val)` returns `long`
+  - Declare `long min=INFL`
+  - Loop `i` from `0` to `dt.length-1`
+    - If `(dt[i] != ex_val) && (dt[i] < min)`, set `min` to `dt[i]`
+  - Return `min`
+
+- Function `maxExAd(int[] dt, int ad)` returns `int`
+  - Declare `int max=-INF`
+  - Loop `i` from `0` to `dt.length-1`
+    - If `(i != ad) && (dt[i] > max)`, set `max` to `dt[i]`
+  - Return `max`
+
+- Function `maxExAd(long[] dt, int ad)` returns `long`
+  - Declare `long max=-INFL`
+  - Loop `i` from `0` to `dt.length-1`
+    - If `(i != ad) && (dt[i] > max)`, set `max` to `dt[i]`
+  - Return `max`
+
+- Function `maxExVal(int[] dt, int ex_val)` returns `int`
+  - Declare `int max=-INF`
+  - Loop `i` from `0` to `dt.length-1`
+    - If `(dt[i] != ex_val) && (dt[i] > max)`, set `max` to `dt[i]`
+  - Return `max`
+
+- Function `maxExVal(long[] dt, long ex_val)` returns `long`
+  - Declare `long max=-INFL`
+  - Loop `i` from `0` to `dt.length-1`
+    - If `(dt[i] != ex_val) && (dt[i] > max)`, set `max` to `dt[i]`
+  - Return `max`
+
+- Function `sumA(int[] dt)` returns `int`
+  - Declare `int sum = 0`
+  - Loop through `e` in `dt`
+    - Increment `sum` by `e`
+  - Return `sum`
+
+- Function `sumA(long[] dt)` returns `long`
+  - Declare `long sum = 0`
+  - Loop through `e` in `dt`
+    - Increment `sum` by `e`
+  - Return `sum`
+
+- Function `sumA(List<Integer> dt)` returns `int`
+  - Declare `int sum = 0`
+  - Loop through `e` in `dt`
+    - Increment `sum` by `e`
+  - Return `sum`
+
+- Function `same3(long a, long b, long c)` returns `boolean`
+  - If `a != b`, return `false`
+  - If `b != c`, return `false`
+  - If `c != a`, return `false`
+  - Return `true`
+
+- Function `dif3(long a, long b, long c)` returns `boolean`
+  - If `a == b`, return `false`
+  - If `b == c`, return `false`
+  - If `c == a`, return `false`
+  - Return `true`
+
+- Function `triangle_inequality(int a, int b, int c)` returns `boolean`
+  - If `(a + b) < c`, return `false`
+  - If `(b + c) < a`, return `false`
+  - If `(c + a) < b`, return `false`
+  - Return `true`
+
+- Function `hypod(double a, double b)` returns `double`
+  - Return `Math.sqrt(a * a + b * b)`
+
+- Function `factorial(int n)` returns `long`
+  - Declare `long ans = 1`
+  - Loop `i` from `n` to `1`
+    - Multiply `ans` by `i`
+  - Return `ans`
+
+- Function `facP(int n, long p)` returns `long`
+  - Declare `long ans = 1`
+  - Loop `i` from `n` to `1`
+    - Multiply `ans` by `i`
+    - `ans %= p`
+  - Return `ans`
+
+- Function `lcm(long m, long n)` returns `long`
+  - Divide `m` by `gcd(m, n)` and assign to `long ans`
+  - Multiply `ans` by `n`
+  - Return `ans`
+
+- Function `gcd(long m, long n)` returns `long`
+  - If `m < n`, return `gcd(n, m)`
+  - If `n == 0`, return `m`
+  - Return `gcd(n, m % n)`
+
+- Function `is_prime(long a)` returns `boolean`
+  - If `a == 1`, return `false`
+  - Loop `i` from `2L` to `Math.sqrt(a)`
+    - If `a % i == 0`, return `false`
+  - Return `true`
+
+- Function `modinv(long a, long p)` returns `long`
+  - Declare `long b = p, u = 1L, v = 0L`
+  - While `b > 0`
+    - Compute `long t = a / b`
+    - Compute `long pe = a % b`
+    - Set `a` to `b`
+    - Set `b` to `pe`
+    - Compute `pe = u - t * v`
+    - Set `u` to `v`
+    - Set `v` to `pe`
+  - `u %= p`
+  - If `u < 0`, `u += p`
+  - Return `u`
+
+- Function `pow(int n, int k)` returns `int`
+  - Declare `int ans = 1`
+  - Loop `i` from `0` to `k-1`
+    - Multiply `ans` by `n`
+  - Return `ans`
+
+- Function `pow(long n, int k)` returns `long`
+  - Declare `long ans = 1`
+  - Loop `i` from `0` to `k-1`
+    - Multiply `ans` by `n`
+  - Return `ans`
+
+- Function `pow2(int in)` returns `int`
+  - Return `in * in`
+
+- Function `pow2(long in)` returns `long`
+  - Return `in * in`
+
+- Function `pow2(double in)` returns `double`
+  - Return `in * in`
+
+- Function `getDigit2(long num)` returns `int`
+  - Declare `long cf = 1`
+  - Declare `int d = 0`
+  - While `num >= cf`
+    - Increment `d`
+    - `cf = (1L << d)`
+  - Return `d`
+
+- Function `getDigit10(long num)` returns `int`
+  - Declare `long cf = 1`
+  - Declare `int d = 0`
+  - While `num >= cf`
+    - Increment `d`
+    - `cf *= 10`
+  - Return `d`
+
+- Function `isINF(int in)` returns `boolean`
+  - Return `((long) in * 20) > INF`
+
+- Function `isINFL(long in)` returns `boolean`
+  - Return `(in * 10000) > INFL`
+
+- Function `pow10E97(long ob, long soeji, long p)` returns `long`
+  - If `ob == 0`, return `0`
+  - If `soeji == 0`, return `1`
+  - If `soeji == 2`, return `(ob * ob) % p`
+  - Declare `int d = getDigit2(soeji)`
+  - Declare `long[] ob_pow_2pow` of size `d`
+  - Set `ob_pow_2pow[0]` to `ob`
+  - Loop `i` from `1` to `d-1`
+    - `ob_pow_2pow[i] = (ob_pow_2pow[i-1] * ob_pow_2pow[i-1]) % p`
+  - Declare `long ans = 1`
+  - Loop `i` from `d-1` to `0`
+    - If `soeji >= (long) (1 << i)`
+      - Subtract `(long) (1 << i)` from `soeji`
+      - `ans = (ans * ob_pow_2pow[i]) % p`
+  - Return `ans % p`
+
+- Function `flag(long pos)` returns `long`
+  - Return `(1L << pos)`
+
+- Function `isFlaged(int bit, int pos)` returns `boolean`
+  - Return `(bit & (1 << pos)) > 0`
+
+- Function `isFlaged(long bit, int pos)` returns `boolean`
+  - Return `(bit & (1L << pos)) > 0`
+
+- Function `deflag(int bit, int pos)` returns `int`
+  - Return `bit & ~(1 << pos)`
+
+- Function `countFlaged(int bit)` returns `int`
+  - Declare `int ans = 0`
+  - Loop `i` from `0` to `getDigit2(bit)-1`
+    - If `(bit & (1 << i)) > 0`, increment `ans`
+  - Return `ans`
+
+- Function `countFlaged(long bit)` returns `int`
+  - Declare `int ans = 0`
+  - Loop `i` from `0` to `getDigit2(bit)-1`
+    - If `(bit & (1L << i)) > 0`, increment `ans`
+  - Return `ans`
+
+- Function `showflag(int bit)`
+  - Loop `i` from `0` to `getDigit2(bit)-1`
+    - If `isFlaged(bit, i)`, print `O`
+    - Else print `.`
+  - Print new line
+
+- Function `biSearch(int[] dt, int target)` returns `int`
+  - Declare `int left = 0, right = dt.length - 1`
+  - Declare `int mid = -1`
+  - While `left <= right`
+    - Set `mid` to `(right + left) / 2`
+    - If `dt[mid] == target`, return `mid`
+    - If `dt[mid] < target`, set `left` to `mid + 1`
+    - Else set `right` to `mid - 1`
+  - Return `-1`
+
+- Function `biSearchMax(long[] dt, long target)` returns `int`
+  - Declare `int left = -1, right = dt.length`
+  - Declare `int mid = -1`
+  - While `(right - left) > 1`
+    - Set `mid` to `left + (right - left) / 2`
+    - If `dt[mid] <= target`, set `left` to `mid`
+    - Else set `right` to `mid`
+  - Return `left`
+
+- Function `biSearchMaxAL(ArrayList<Integer> dt, long target)` returns `int`
+  - Declare `int left = -1, right = dt.size()`
+  - Declare `int mid = -1`
+  - While `(right - left) > 1`
+    - Set `mid` to `left + (right - left) / 2`
+    - If `dt.get(mid) <= target`, set `left` to `mid`
+    - Else set `right` to `mid`
+  - Return `left`
+
+- Function `fill_parent(int[] ob)`
+  - Loop `i` from `0` to `ob.length-1`
+    - Set `ob[i]` to `i`
+
+- Function `get_root_uf(int[] parent, int index)` returns `int`
+  - If `parent[index] == index`, return `index`
+  - Set `int root` to `get_root_uf(parent, parent[index])`
+  - Set `parent[index]` to `root`
+  - Return `root`
+
+- Function `is_same_uf(int[] parent, int x, int y)` returns `boolean`
+  - Return `get_root_uf(parent, x) == get_root_uf(parent, y)`
+
+- Function `unite_uf(int[] parent, int receiver, int attacker)`
+  - Set `parent[get_root_uf(parent, attacker)]` to `get_root_uf(parent, receiver)`
+
+- Define `int[] Xdir4 = {1, 0, 0, -1}`
+- Define `int[] Ydir4 = {0, 1, -1, 0}`
+- Define `int[] Xdir8 = {1, 1, 1, 0, 0, -1, -1, -1}`
+- Define `int[] Ydir8 = {1, 0, -1, 1, -1, 1, 0, -1}`
+
+- Function `is_in_area(int y, int x, int h, int w)` returns `boolean`
+  - If `y < 0`, return `false`
+  - If `x < 0`, return `false`
+  - If `y >= h`, return `false`
+  - If `x >= w`, return `false`
+  - Return `true`
+
+- Function `show2(boolean[][] dt, int lit_x, int lit_y)`
+  - Create `PrintWriter` instance `out`
+  - Loop `j` from `0` to `dt.length-1`
+    - Loop `i` from `0` to `dt[j].length-1`
+      - If `(i == lit_y) && (j == lit_x)`, print `X`
+      - Else if `dt[j][i]`, print `O`
+      - Else print `.`
+    - Print new line
+  - Call `out.flush()`
+
+- Function `show2(int[][] dt, String cmnt)`
+  - Create `PrintWriter` instance `out`
+  - Loop `i` from `0` to `dt.length-1`
+    - Loop `j` from `0` to `dt[i].length-1`
+      - Print `dt[i][j] + ","`
+    - Print `"<-" + cmnt + ":" + i`
+  - Call `out.flush()`
+
+- Function `show2(long[][] dt, String cmnt)`
+  - Create `PrintWriter` instance `out`
+  - Loop `i` from `0` to `dt.length-1`
+    - Loop `j` from `0` to `dt[i].length-1`
+      - Print `dt[i][j] + ","`
+    - Print `"<-" + cmnt + ":" + i`
+  - Call `out.flush()`
+
+- Function `disp_que(ArrayDeque<Long> dt)`
+  - Declare `long a = 0`
+  - While `dt.size() > 0`
+    - Set `a` to `dt.removeFirst()`
+    - Print `a`
+  - Print new line
+
+- Function `disp_list(List dt)`
+  - Loop `i` from `0` to `dt.size()-1`
+    - Print `dt.get(i) + ","`
+  - Print new line
+
+- Function `prtlnas(int[] as)`
+  - Create `PrintWriter` instance `out`
+  - Loop `i` from `0` to `as.length-1`
+    - Print `as[i]`
+  - Call `out.flush()`
+
+- Function `prtlnas(long[] as)`
+  - Create `PrintWriter` instance `out`
+  - Loop `i` from `0` to `as.length-1`
+    - Print `as[i]`
+  - Call `out.flush()`
+
+- Function `prtspas(int[] as)`
+  - Create `PrintWriter` instance `out`
+  - Print `as[0]`
+  - Loop `i` from `1` to `as.length-1`
+    - Print `" " + as[i]`
+  - Print new line
+  - Call `out.flush()`
+
+- Function `prtspas(long[] as)`
+  - Create `PrintWriter` instance `out`
+  - Print `as[0]`
+  - Loop `i` from `1` to `as.length-1`
+    - Print `" " + as[i]`
+  - Print new line
+  - Call `out.flush()`
+
+- Function `prtspas(List as)`
+  - Create `PrintWriter` instance `out`
+  - Print `as.get(0)`
+  - Loop `i` from `1` to `as.size()-1`
+    - Print `" " + as.get(i)`
+  - Print new line
+  - Call `out.flush()`
+
+- Function `fill(boolean[] ob, boolean res)`
+  - Loop `i` from `0` to `ob.length-1`
+    - Set `ob[i]` to `res`
+
+- Function `fill(int[] ob, int res)`
+  - Loop `i` from `0` to `ob.length-1`
+    - Set `ob[i]` to `res`
+
+- Function `fill(long[] ob, long res)`
+  - Loop `i` from `0` to `ob.length-1`
+    - Set `ob[i]` to `res`
+
+- Function `fill(char[] ob, char res)`
+  - Loop `i` from `0` to `ob.length-1`
+    - Set `ob[i]` to `res`
+
+- Function `fill(double[] ob, double res)`
+  - Loop `i` from `0` to `ob.length-1`
+    - Set `ob[i]` to `res`
+
+- Function `fill(boolean[][] ob, boolean res)`
+  - Loop `i` from `0` to `ob.length-1`
+    - Loop `j` from `0` to `ob[0].length-1`
+      - Set `ob[i][j]` to `res`
+
+- Function `fill(int[][] ob, int res)`
+  - Loop `i` from `0` to `ob.length-1`
+    - Loop `j` from `0` to `ob[0].length-1`
+      - Set `ob[i][j]` to `res`
+
+- Function `fill(long[][] ob, long res)`
+  - Loop `i` from `0` to `ob.length-1`
+    - Loop `j` from `0` to `ob[0].length-1`
+      - Set `ob[i][j]` to `res`
+
+- Function `fill(char[][] ob, char res)`
+  - Loop `i` from `0` to `ob.length-1`
+    - Loop `j` from `0` to `ob[0].length-1`
+      - Set `ob[i][j]` to `res`
+
+- Function `fill(double[][] ob, double res)`
+  - Loop `i` from `0` to `ob.length-1`
+    - Loop `j` from `0` to `ob[0].length-1`
+      - Set `ob[i][j]` to `res`
+
+- Function `fill(int[][][] ob, int res)`
+  - Loop `i` from `0` to `ob.length-1`
+    - Loop `j` from `0` to `ob[0].length-1`
+      - Loop `k` from `0` to `ob[0][0].length-1`
+        - Set `ob[i][j][k]` to `res`
+
+- Function `fill(long[][][] ob, long res)`
+  - Loop `i` from `0` to `ob.length-1`
+    - Loop `j` from `0` to `ob[0].length-1`
+      - Loop `k` from `0` to `ob[0][0].length-1`
+        - Set `ob[i][j][k]` to `res`
+        
+- Define class `FastScanner`
+  - Private `InputStream in` initialized to `System.in`
+  - Private `byte[] buffer` of size `1024`
+  - Private `int ptr = 0`
+  - Private `int buflen = 0`
+  - Method `hasNextByte()` returns `boolean`
+    - If `ptr < buflen`, return `true`
+    - Else
+      - Set `ptr` to `0`
+      - Try to read `buffer` into `buflen` 
+      - Catch `IOException`, print stack trace
+      - If `buflen <= 0`, return `false`
+    - Return `true`
+  - Method `readByte()` returns `int`
+    - If `hasNextByte()`, return `buffer[ptr++]`
+    - Else return `-1`
+  - Static method `isPrintableChar(int c)` returns `boolean`
+    - Return `33 <= c && c <= 126`
+  - Method `hasNext()` returns `boolean`
+    - While `hasNextByte()` and `!isPrintableChar(buffer[ptr])`, increment `ptr`
+    - Return `hasNextByte()`
+  - Method `next()` returns `String`
+    - If `!hasNext()`, throw `NoSuchElementException`
+    - Declare `StringBuilder sb`
+    - Declare `int b = readByte()`
+    - While `isPrintableChar(b)`
+      - Append `b` to `sb`
+      - Set `b` to `readByte()`
+    - Return `sb.toString()`
+  - Method `nexL()` returns `long`
+    - If `!hasNext()`, throw `NoSuchElementException`
+    - Declare `long n = 0`
+    - Declare `boolean minus = false`
+    - Declare `int b = readByte()`
+    - If `b == '-'`
+      - Set `minus` to `true`
+      - Set `b` to `readByte()`
+    - If `b < '0' || '9' < b`, throw `NumberFormatException`
+    - While `true`
+      - If `'0' <= b && b <= '9'`
+        - Multiply `n` by `10`
+        - Increment `n` by `b - '0'`
+      - Else if `b == -1 || !isPrintableChar(b) || b == ':'`, return `minus ? -n : n`
+      - Else throw `NumberFormatException`
+      - Set `b` to `readByte()`
+  - Method `nexI()` returns `int`
+    - Call `nexL()` and assign to `long nl`
+    - If `nl < Integer.MIN_VALUE || nl > Integer.MAX_VALUE`, throw `NumberFormatException`
+    - Return `(int) nl`
+  - Method `nexD()` returns `double`
+    - Return `Double.parseDouble(next())`
+  - Method `ni(long[] array2)`
+    - Loop `i` from `0` to `array2.length-1`
+      - Set `array2[i]` to `nexL()`
+  - Method `ni(int[] array2)`
+    - Loop `i` from `0` to `array2.length-1`
+      - Set `array2[i]` to `nexI()`
+  - Method `ni(int[] as, int[] bs)`
+    - Loop `i` from `0` to `as.length-1`
+      - Set `as[i]` to `nexI()`
+      - Set `bs[i]` to `nexI()`
+  - Method `ni(long[] as, long[] bs)`
+    - Loop `i` from `0` to `as.length-1`
+      - Set `as[i]` to `nexL()`
+      - Set `bs[i]` to `nexL()`
+  - Method `ni(int[] as, int[] bs, int[] cs)`
+    - Loop `i` from `0` to `as.length-1`
+      - Set `as[i]` to `nexI()`
+      - Set `bs[i]` to `nexI()`
+      - Set `cs[i]` to `nexI()`
+  - Method `nisan(int[][] as)`
+    - Loop `i` from `0` to `as.length-1`
+      - Loop `j` from `0` to `as[0].length-1`
+        - Set `as[i][j]` to `nexI()`
+```
+

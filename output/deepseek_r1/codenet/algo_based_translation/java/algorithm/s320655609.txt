@@ -1,0 +1,36 @@
+- **Function Signatures**
+  - `Main() throws IOException`: Constructor
+  - `void calc()`: No parameters, no return value
+  - `public static void main(String[] args) throws IOException`: Entry point
+
+- **Variables**
+  - `List<Long> constraints`: Stores 5 input constraints
+  - `long N`: Input value for calculation
+  - `long result`: Final computed result
+  - Temporary variables: `long min` (minimum constraint), `long time` (preliminary time calculation)
+
+- **Logic Flow**
+  1. Initialize `InputStreamReader` with UTF-8 encoding
+  2. Read `N` from first input line via `BufferedReader`
+  3. Read next 5 lines into `constraints` list using for-loop (0 ≤ i < 5)
+  4. Close input stream
+  5. Find minimum value in `constraints` using for-each loop
+  6. Calculate base time: `N / min`
+  7. If `N % min ≠ 0`, increment base time by 1
+  8. Add 4 to base time to get final result
+  9. Store result in `this.result`
+  10. Print `result` through `main` method
+
+- **Control Structures**
+  - For-loop: `for (int i = 0; i < 5; ++i)` for constraint input
+  - For-each loop: `for (Long c : this.constraints)` for finding minimum
+  - Conditional: `if (this.N % min != 0)` for time adjustment
+
+- **Input/Output**
+  - Input: Reads 6 lines from stdin with numeric values
+  - Output: Writes single integer value to stdout
+
+- **Dependencies**
+  - `java.util.List`, `java.util.ArrayList`
+  - `java.io.InputStreamReader`, `java.io.BufferedReader`, `java.io.IOException`
+  - `java.nio.charset.StandardCharsets`

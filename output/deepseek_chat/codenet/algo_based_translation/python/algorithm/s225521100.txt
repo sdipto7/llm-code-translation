@@ -1,0 +1,28 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- N: int
+- K: int
+- A: list[int] (size N)
+- i: int (loop counter)
+- d: int
+- AA: list[int]
+- j: int (loop counter)
+- n: int
+
+**Algorithm:**
+1. Read first line of input, split into two integers N and K
+2. Initialize empty list A
+3. For i from 0 to N-1:
+   - Append 0 to list A
+4. For i from 0 to K-1:
+   - Read integer d
+   - Read next line, split into list AA of d integers
+   - For j from 0 to d-1:
+     - Set A[AA[j]-1] = 1
+5. Initialize n = 0
+6. For i from 0 to N-1:
+   - If A[i] == 0:
+     - Increment n by 1
+7. Print n

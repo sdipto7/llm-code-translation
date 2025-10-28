@@ -1,0 +1,12 @@
+Algorithm:
+- Import sys module
+- Define input function as sys.stdin.readline
+- Declare n as integer, read from input
+- Declare w as list of integers, read from input, split by spaces
+- Declare x as the sum of all elements in w
+- Declare d as an empty list
+- For each index i from 0 to n-1:
+    - If (x - w[i]) / (n - 1) equals w[i]:
+        - Append i + 1 to d
+- Print length of d
+- Print elements of d as space-separated string

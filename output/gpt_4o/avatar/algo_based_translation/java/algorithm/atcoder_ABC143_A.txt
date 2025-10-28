@@ -1,0 +1,19 @@
+Function Signature:
+- `main(String[] args)`: void
+
+Variables:
+- `BufferedReader bf`: BufferedReader
+- `String[] x`: String array
+- `int a`: Integer
+- `int b`: Integer
+- `int c`: Integer
+
+Algorithm:
+1. Initialize a `BufferedReader` object `bf` to read input from the standard input stream.
+2. Read a line of input using `bf.readLine()`, trim any leading/trailing whitespace, and split the line by spaces into a `String` array `x`.
+3. Parse the first element of `x` as an integer and assign it to variable `a`.
+4. Parse the second element of `x` as an integer and assign it to variable `b`.
+5. Calculate `c` as `a - b * 2`.
+6. If `c` is less than 0, set `c` to 0.
+7. Print the value of `c` to the standard output.
+8. Handle any exceptions that may occur during the process with a try-catch block, but do not perform any action in the catch block.

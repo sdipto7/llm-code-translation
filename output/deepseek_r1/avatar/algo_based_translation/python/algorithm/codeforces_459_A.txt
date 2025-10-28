@@ -1,0 +1,59 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signature**
+- `process_square_coordinates(x1: int, y1: int, x2: int, y2: int) -> Union[Tuple[int, int, int, int], int]`
+
+**Variables**
+- `denominator: int` (x2 - x1)
+- `numerator: int` (y2 - y1)
+- `quotient: float` (numerator / denominator, computed if denominator ≠ 0)
+- `d: int` (Euclidean distance between (x1,y1) and (x2,y2) as integer)
+
+**Input/Output Operations**
+- Input: Single line containing four space-separated integers (x1 y1 x2 y2)
+- Output: Four integers representing (x3 y3 x4 y4) or -1 if no valid square
+
+**Control Flow & Logic**
+
+1. **Input Parsing**
+   - Read input string and split into list of strings
+   - Convert list elements to integers: x1, y1, x2, y2
+
+2. **Initial Calculations**
+   - Calculate denominator = x2 - x1
+   - Calculate numerator = y2 - y1
+   - If denominator ≠ 0: calculate quotient = numerator / denominator
+
+3. **Conditional Checks (In Order)**
+   - **Case 1: Horizontal Line (numerator == 0)**
+     1. Calculate d = floor(√((x2-x1)² + (y2-y1)²))
+     2. Set x3 = x2, y3 = y2 + d
+     3. Set x4 = x1, y4 = y1 + d
+     4. Return (x3, y3, x4, y4)
+
+   - **Case 2: Vertical Line (denominator == 0)**
+     1. Calculate d = floor(√((x2-x1)² + (y2-y1)²))
+     2. Set x3 = x2 + d, y3 = y2
+     3. Set x4 = x1 + d, y4 = y1
+     4. Return (x3, y3, x4, y4)
+
+   - **Case 3: Slope = 1 (quotient == 1.0)**
+     1. Set x3 = x1, y3 = y2
+     2. Set x4 = x2, y4 = y1
+     3. Return (x3, y3, x4, y4)
+
+   - **Case 4: Slope = -1 (quotient == -1.0)**
+     1. Set x3 = x2, y3 = y1
+     2. Set x4 = x1, y4 = y2
+     3. Return (x3, y3, x4, y4)
+
+   - **Default Case**
+     1. Return -1
+
+**Edge Case Handling**
+- Identical points handled through horizontal line case (d=0 produces degenerate square)
+- Integer casting of Euclidean distance ensures whole number coordinates
+
+**Dependencies**
+- Mathematics: Square root calculation (math.sqrt)
+- Type Conversion: String to integer parsing, float to integer distance casting

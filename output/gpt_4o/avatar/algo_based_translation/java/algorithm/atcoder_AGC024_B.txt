@@ -1,0 +1,28 @@
+1. Import the following libraries:
+   - `java.util.ArrayList`
+   - `java.util.HashMap`
+   - `java.util.List`
+   - `java.util.Map`
+   - `java.util.Scanner`
+
+2. Define the main function `public static void main(String[] args)`:
+   - Initialize a `Scanner` object `scan` for reading input.
+   - Read an integer `N` from input using `scan.nextInt()`.
+   - Declare an integer array `P` of size `N`.
+   - For each integer `i` from `0` to `N-1`, execute:
+     - Read an integer and assign `P[i] = scan.nextInt() - 1`.
+   - Declare a `Map<Integer, Integer>` named `map`.
+   - For each integer `i` from `0` to `N-1`, execute:
+     - Assign `map.put(P[i], i)`.
+   - Declare a `List<Integer>` named `nglist`.
+   - For each integer `i` from `0` to `N-2`, execute:
+     - If `map.get(i) > map.get(i + 1)`, execute:
+       - Add `i` to `nglist`.
+   - If `nglist` is empty, execute:
+     - Print `0`.
+     - Return from the function.
+   - Declare an integer `ans` and compute:
+     - Assign `ans = Math.min(N - nglist.get(0) - 1, nglist.get(nglist.size() - 1) + 1)`.
+   - For each integer `i` from `0` to `nglist.size() - 2`, execute:
+     - Compute `ans = Math.min(nglist.get(i) + 1 + N - nglist.get(i + 1) - 1, ans)`.
+   - Print `ans`.

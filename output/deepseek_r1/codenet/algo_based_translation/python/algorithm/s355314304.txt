@@ -1,0 +1,32 @@
+Function Signature:
+- Function: main()
+- Parameters: None
+- Return Type: None
+
+Variables:
+- n: Integer (input value)
+
+Algorithm:
+1. Read integer input from standard input, store in variable n
+2. Compute n mod 1000:
+   a. remainder = n % 1000
+3. Conditional check:
+   a. If remainder equals 0:
+      i. Print integer 0 to standard output
+   b. Else:
+      i. Compute 1000 - remainder
+      ii. Print result of computation (1000 - remainder) to standard output
+4. Program termination
+
+Input/Output Operations:
+- Single integer input via input()
+- Single integer output via print()
+
+Control Structures:
+- Single if-else conditional:
+  - Condition: (n % 1000) == 0
+  - True branch: output 0
+  - False branch: output 1000 - (n % 1000)
+
+Dependencies:
+- Standard I/O functions (built-in, no external modules required)

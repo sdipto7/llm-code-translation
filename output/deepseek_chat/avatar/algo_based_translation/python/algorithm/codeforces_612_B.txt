@@ -1,0 +1,30 @@
+**Function Signature:**
+- No explicit function defined; main script execution.
+
+**Variables:**
+- `n`: integer, read from input.
+- `a`: list of integers, read from input.
+- `b`: list of integers of length `n`, initialized to zeros.
+- `res`: integer, initialized to 0.
+
+**Logic Flow:**
+1. Read integer `n` from standard input.
+2. Read next line, split into tokens, convert each to integer, store in list `a`.
+3. Initialize list `b` with `n` zeros.
+4. For each index `i` from 0 to `n-1`:
+   - Set `b[a[i] - 1] = i`.
+5. Initialize `res` to 0.
+6. For each index `i` from 1 to `n-1`:
+   - Add absolute difference `|b[i] - b[i-1]|` to `res`.
+7. Print `res`.
+
+**Control Structures:**
+- `for i in range(n):` (loop from 0 to n-1)
+- `for i in range(1, n):` (loop from 1 to n-1)
+
+**Input/Output:**
+- Input: first integer `n`, then list of `n` integers.
+- Output: single integer `res`.
+
+**Dependencies:**
+- None (uses built-in functions: `input`, `int`, `map`, `list`, `split`, `abs`, `print`).

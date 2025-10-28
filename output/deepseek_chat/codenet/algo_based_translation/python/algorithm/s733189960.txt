@@ -1,0 +1,39 @@
+1. Function: main()
+   - Parameters: none
+   - Return type: void
+   - Variables:
+        n: int (from input)
+        sdic: dictionary (string keys, int values)
+        s: list of characters, then string
+        ans: int
+        k: string (dictionary key)
+        v: int (dictionary value)
+
+2. Algorithm:
+   Read integer n from standard input
+   Initialize empty dictionary sdic
+   For loop: repeat n times
+        Read string from input, strip whitespace
+        Convert string to sorted list of characters
+        Convert list back to string s
+        If s exists in sdic:
+            Increment sdic[s] by 1
+        Else:
+            Set sdic[s] to 1
+   Initialize ans to 0
+   For each key-value pair (k, v) in sdic:
+        Calculate v*(v-1)//2 and add to ans
+   Print ans
+
+3. Control structures:
+   - For loop: range(n)
+   - Conditional: if s in sdic
+   - For loop: iterating through sdic.items()
+
+4. Input/Output:
+   - Input: integer n, then n strings
+   - Output: integer ans
+
+5. Dependencies:
+   - Standard input/output functions
+   - String manipulation and sorting operations

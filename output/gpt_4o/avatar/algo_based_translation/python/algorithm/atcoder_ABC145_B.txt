@@ -1,0 +1,33 @@
+```
+Algorithm: Check if a string can be split into two identical halves
+
+Function Signature:
+    check_string_halves(n: int, s: str) -> str
+
+Variable Declarations:
+    - n: int, the length of the string
+    - s: str, the string to be checked
+    - half_length: int, the length of one half of the string
+
+Logic Flow:
+1. Input Operations:
+    - Read an integer input and assign it to variable `n`
+    - Read a string input and assign it to variable `s`
+
+2. Control Structures:
+    - If the integer `n` is odd (i.e., `n % 2 != 0`):
+        - Output the string "No"
+    - Else:
+        - Calculate `half_length` as `n / 2`
+        - Compare the first half of the string `s` (`s[:half_length]`) with the second half (`s[half_length:]`)
+        - If both halves are identical:
+            - Output the string "Yes"
+        - Else:
+            - Output the string "No"
+
+3. Return Value:
+    - The function returns a string "Yes" or "No" based on the above conditions
+
+Required Libraries or Dependencies:
+    - None
+```

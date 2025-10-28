@@ -1,0 +1,29 @@
+**Function Signature:**
+- `main() -> None`
+
+**Variables and Data Types:**
+- `n: str` (unused input)
+- `l: list[int]` (list of integers)
+- `b: int` (maximum value in list)
+- `s: int` (sum of list elements)
+
+**Logic Flow:**
+1. Read first input line and store as `n`
+2. Read second input line, split into list of strings, convert to integers, store as `l`
+3. Find maximum value in `l`, store as `b`
+4. Calculate sum of all elements in `l`, store as `s`
+5. Check if `b` is less than `s - b`
+6. If true: print "Yes"
+7. Else: print "No"
+
+**Control Structures:**
+- Single conditional: `if b < s - b:`
+
+**Input/Output Operations:**
+- Input: two lines from standard input
+- Output: print "Yes" or "No"
+
+**Dependencies:**
+- Built-in functions: `input()`, `max()`, `sum()`, `print()`
+- Built-in type conversion: `int()`
+- Built-in method: `str.split()`

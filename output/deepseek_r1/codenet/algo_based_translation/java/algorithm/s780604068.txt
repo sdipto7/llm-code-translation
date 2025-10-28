@@ -1,0 +1,26 @@
+- **Function Signature**  
+  `public static void main(String[] args)`  
+
+- **Variables**  
+  - `int N`: Input value for group count  
+  - `int[] map`: Array of size `2*N` to store input values  
+  - `int max = 0`: Accumulator for final result  
+
+- **Input Operations**  
+  1. Read integer `N` from standard input  
+  2. Read `2*N` integers into `map` array  
+
+- **Data Processing**  
+  1. Sort `map` array in ascending order using `Arrays.sort()`  
+  2. Iterate over sorted `map` in steps of 2:  
+     - For each index `i` (starting at 0, increment by 2), add `min(map[i], map[i+1])` to `max`  
+
+- **Control Structures**  
+  - Loop: `for (int i = 0; i < N * 2; i++)` to populate `map`  
+  - Loop: `for (int i = 0; i < N * 2; i += 2)` to calculate pairwise minima  
+
+- **Output**  
+  Print `max` after processing all pairs  
+
+- **Dependencies**  
+  `java.util.Arrays` (for sorting), `java.util.Scanner` (for input)

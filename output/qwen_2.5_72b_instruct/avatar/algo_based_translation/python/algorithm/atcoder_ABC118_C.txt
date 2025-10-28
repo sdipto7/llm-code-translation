@@ -1,0 +1,25 @@
+Function signatures with parameter and return types:
+- `gcd(int, int) -> int` from `fractions` module
+
+Variable declarations and data types:
+- `N: int`
+- `A: List[int]`
+
+Complete logic flow in execution order:
+1. Read an integer `N` from standard input.
+2. Read a line of space-separated integers, convert each to an integer, and store them in list `A`.
+3. Import `functools` module.
+4. Import `fractions` module.
+5. Compute the greatest common divisor (GCD) of all elements in list `A` using `functools.reduce` and `fractions.gcd`, and store the result in variable `gcd`.
+6. Print the value of `gcd`.
+
+Control structures:
+- No explicit loops or conditionals are present in the code.
+
+Input/output operations and data processing logic:
+- Input: Two lines from standard input; first line is an integer `N`, second line is a space-separated string of integers.
+- Output: A single integer representing the GCD of the numbers in list `A`.
+
+Required libraries, modules, or dependencies:
+- `functools`
+- `fractions`

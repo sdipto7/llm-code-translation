@@ -1,0 +1,27 @@
+Function Signature:
+- main(String[] args) : void
+
+Variable Declarations and Data Types:
+- n : int
+- i : int
+- j : int
+- p : int
+- c : char[]
+
+Logic Flow:
+1. Initialize n, i, j, and p with values 0, 0, 0, and 97 (ASCII for 'a') respectively.
+2. Read an integer value from standard input and assign it to n.
+3. Declare a character array c of size n.
+4. For i from 0 to 3 (inclusive):
+   - For j from i to n-1 with a step of 4:
+     - Assign the ASCII character value of p to c[j].
+     - Increment p by 1.
+5. For i from 0 to n-1 (inclusive):
+   - Print the character c[i] to standard output without a newline.
+
+Input/Output Operations:
+- Read an integer from standard input.
+- Print characters to standard output.
+
+Required Libraries:
+- java.util.* (for Scanner class)

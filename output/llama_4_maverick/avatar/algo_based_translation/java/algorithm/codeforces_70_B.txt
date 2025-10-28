@@ -1,0 +1,10 @@
+1. Read the input for the maximum allowed message length.
+2. Read a string containing messages separated by '.', '?' or '!'.
+3. Initialize variables to track the maximum message length and store the lengths of individual messages.
+4. Iterate through the input string to identify message separators and calculate the length of each message.
+5. Update the maximum message length if a longer message is found.
+6. Check if the maximum message length exceeds the allowed limit.
+7. If the maximum message length exceeds the limit, output "Impossible".
+8. Otherwise, iterate through the stored message lengths to merge messages within the allowed limit.
+9. Count the number of merged messages.
+10. Output the count of merged messages.

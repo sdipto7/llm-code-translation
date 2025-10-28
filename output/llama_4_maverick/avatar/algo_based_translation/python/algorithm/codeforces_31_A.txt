@@ -1,0 +1,10 @@
+1. READ y FROM INPUT
+2. READ array arr FROM INPUT
+3. FOR i FROM 0 TO LENGTH(arr) - 1
+4.   FOR j FROM 0 TO LENGTH(arr) - 1
+5.     IF i == j THEN CONTINUE
+6.     FOR k FROM 0 TO LENGTH(arr) - 1
+7.       IF arr[k] != arr[j] AND arr[k] != arr[i] AND arr[k] == arr[i] + arr[j] THEN
+8.         PRINT k + 1, j + 1, i + 1
+9.         EXIT PROGRAM
+10. PRINT -1

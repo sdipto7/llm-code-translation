@@ -1,0 +1,86 @@
+ALGORITHM SPECIFICATION:
+
+FUNCTIONS/METHODS:
+1. main() -> void
+   - Parameters: None
+
+VARIABLES:
+1. pya: int (input count)
+2. arre: list<str> (substring patterns)
+3. oString: str (original input string)
+4. lowString: str (lowercase version of oString)
+5. letter1: char (first character of third input line, lowercase)
+6. letter2: char (determined as 'a' if letter1 != 'a', else 'b')
+7. valid: list<int> (initialized then unused)
+8. setcito: set<int> (stores target character indices)
+9. wat: int (temporary index tracker)
+10. index: int (substring match position)
+11. x: str (current substring pattern in loop)
+12. i: int (current character index)
+13. letter: str (temporary character storage)
+
+DATA TYPES:
+- Primitive types: int, str, char, bool
+- Collections: list<str>, list<int>, set<int>
+
+STEP-BY-STEP LOGIC:
+1. Read integer pya from standard input
+2. Initialize empty list arre
+3. While pya > 0:
+   a. Decrement pya by 1
+   b. Read input string, convert to lowercase, append to arre
+4. Read oString from input
+5. Create lowString as lowercase version of oString
+6. Read third input line, extract first character as letter1 (lowercase)
+7. Set letter2 to 'a' if letter1 != 'a', else 'b'
+8. Initialize empty set setcito
+9. For each x in arre:
+   a. If x is substring of lowString:
+      i. Initialize wat = 0
+      ii. While True:
+           - Find next occurrence of x in lowString starting at wat
+           - If no match (index < 0), break loop
+           - Add all indices from index to index+len(x)-1 to setcito
+           - Set wat = index + 1
+10. Convert oString to list of characters
+11. For each index in setcito:
+    a. current_char = lowString[index]
+    b. If current_char == letter1:
+       - select_char = letter2
+    c. Else:
+       - select_char = letter1
+    d. If original character (oString[index]) was uppercase:
+       - Set oString[index] = select_char.upper()
+    e. Else:
+       - Set oString[index] = select_char
+12. Join modified oString list and print as single string
+
+CONTROL FLOW:
+- While loop (pya > 0) for input collection
+- For-each loop through arre elements
+- Nested infinite while loop with break condition (index < 0)
+- For-each loop through setcito indices
+- Conditional branches for character selection and case handling
+
+INPUT/OUTPUT:
+- Inputs via stdin:
+  1. Integer pya
+  2. pya lines of strings for arre
+  3. Original string oString
+  4. Letter selection input
+- Output via stdout: modified oString
+
+ERROR HANDLING:
+- No explicit error handling
+- Implicit handling:
+  - Empty input lines treated as empty strings
+  - Inputs with insufficient characters use first available character
+  - Case-insensitive matching via lowercase conversion
+
+EXTERNAL DEPENDENCIES:
+- Standard input/output functions
+- String manipulation methods:
+  - lower()
+  - find()
+  - islower()
+  - upper()

@@ -1,0 +1,63 @@
+**Algorithm Specification: Calculate Minimum Cost**
+
+**Function Signature:**
+```python
+def calculate_min_cost(n: int, m: int, x: int, c: list[list[int]]) -> int:
+    ...
+```
+
+**Variables:**
+- `n`: Integer (number of rows)
+- `m`: Integer (number of required columns)
+- `x`: Integer (minimum required sum per column)
+- `c`: 2D list of integers (size n x (m+1); first element of each row is cost)
+- `pre`: List of integers (values [0, 1, ..., n-1])
+- `l`: List of lists (stores all valid combinations of row indices)
+- `rem`: List of integers (tracks invalid combination indices during processing)
+- `ans`: Integer (minimum cost result)
+- `ca`: Integer (temporary accumulator for sums)
+- Loop variables: `i`, `j`, `k`, `ii` (indices and iterators)
+
+**Step-by-Step Logic:**
+
+1. **Initialize Row Indices:**
+   - Create `pre` as `[0, 1, ..., n-1]`.
+
+2. **Generate Combinations:**
+   - Generate all non-empty combinations of `pre` for sizes 1..n. Store in `l`.
+
+3. **Column Validation Loop:**
+   - For each column `i` (1 ≤ i ≤ m):
+     a. Reset `rem` to empty list.
+     b. **Check Combinations for Column `i`:**
+        - For each combination index `j` and row indices `k` in `l`:
+          i. Sum `c[row][i]` for all rows in `k`.
+          ii. If sum < `x`, add `j` to front of `rem`.
+     c. **Remove Invalid Combinations:**
+        - Iterate `rem` in reverse order and remove corresponding entries from `l`.
+     d. **Early Termination Check:**
+        - If `l` is empty: return -1.
+
+4. **Calculate Minimum Cost:**
+   - Initialize `ans` = 0.
+   - For each combination in `l`:
+     a. Sum `c[row][0]` for all rows in the combination.
+     b. Update `ans` with the minimum value between current `ans` and the sum.
+   - Return `ans`.
+
+**Control Flow:**
+- Iterate through columns 1..m with nested loops for combination validation.
+- Conditional checks for column sum requirements and early termination.
+- Reverse iteration over removal indices to prevent index corruption.
+
+**Input/Output:**
+- Input format: First line has `n m x`. Next `n` lines each contain `m+1` integers.
+- Output: Single integer (minimum cost) or -1 if no valid combinations.
+
+**Edge Case Handling:**
+- Returns -1 immediately if all combinations fail any column check.
+- Handles minimal cost calculation when multiple valid combinations exist.
+
+**Dependencies:**
+- Requires combinatorial subset generation (equivalent to Python's `itertools.combinations`).
+- No external libraries strictly required if combination generation is implemented manually.

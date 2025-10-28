@@ -1,0 +1,41 @@
+**Function Signature:**
+void main(String[] args) throws IOException
+
+**Variables:**
+- Scanner sc: initialized with System.in
+- BufferedWriter bw: initialized with OutputStreamWriter(System.out)
+- int H: read via sc.nextInt()
+- int W: read via sc.nextInt()
+- int A: read via sc.nextInt()
+- int B: read via sc.nextInt()
+
+**Libraries/Dependencies:**
+- java.io.BufferedWriter
+- java.io.IOException
+- java.io.OutputStreamWriter
+- java.util.Scanner
+
+**Algorithm Logic:**
+1. Read H, W, A, B from standard input.
+2. Check if (W < 2 * A) OR (H < 2 * B):
+   - If true: print "-1" and terminate.
+   - Else: proceed.
+3. For each row i from 0 to H-1:
+   - For each column j from 0 to W-1:
+     - Check if (i < B AND j < A) OR (i ≥ B AND j ≥ A):
+       - True: write '0' to output.
+       - False: write '1' to output.
+   - Write a newline after each row.
+4. Flush the output buffer.
+
+**Control Structures:**
+- If-conditional at step 2 with compound OR condition.
+- Nested loops:
+  - Outer loop: i from 0 to H-1 (inclusive)
+  - Inner loop: j from 0 to W-1 (inclusive)
+- Conditional inside inner loop with compound logical OR and AND conditions.
+
+**Input/Output Operations:**
+- Input via Scanner.nextInt() for H, W, A, B.
+- Output via BufferedWriter.write() and BufferedWriter.newLine().
+- Output buffer flushed at end.

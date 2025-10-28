@@ -1,0 +1,23 @@
+### Algorithm
+
+1. Import required library: `java.util.Scanner`
+2. Define a class `Main` with a method `main(String[] args)` 
+   - Declare a `Scanner` object `sc` and initialize it with `System.in`
+   - Declare an integer `n` and read its value from `sc` using `nextInt()`
+   - Declare a string array `s` and initialize it by splitting the string ".,!? :abc:def:ghi:jkl:mno:pqrs:tuv:wxyz" at ":"
+   - Declare a 2D character array `k` with dimensions 9x and initialize it
+   - Iterate over the range 0 to 8 (inclusive) 
+     - Assign the character array representation of `s[i]` to `k[i]`
+   - Enter a while loop that continues until `n` becomes 0, decrementing `n` by 1 in each iteration
+     - Read a string from `sc` using `next()` and convert it to a character array `c`
+     - Declare an integer `l` and initialize it to -1
+     - Declare an integer `a` and initialize it to 0
+     - Iterate over the characters in `c`
+       - If the current character is not '0'
+         - Calculate `a` as the integer value represented by the current character minus 1
+         - Update `l` to be `(l + 1)` modulo the length of `k[a]`
+       - Else if `l` is greater than or equal to 0
+         - Print the character at index `l` in `k[a]`
+         - Reset `l` to -1
+     - Print a newline character
+3. Execution terminates after the while loop completes.

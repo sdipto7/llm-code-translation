@@ -1,0 +1,37 @@
+Function Signature: `main() -> None`
+
+Variable Declarations:
+- `s: str`
+- `i: int`
+- `c: str`
+- `s1: str`
+- `j: int`
+
+Logic Flow:
+1. Input: Read a string `s` from the user.
+2. Check if the length of `s` is less than 26:
+   1. Loop over integers `i` from 0 to 25:
+      1. Generate character `c` as the `i`-th alphabet character.
+      2. Check if `c` is not in `s`:
+         1. Output: Print `s` concatenated with `c`.
+         2. Exit the program.
+3. Else:
+   1. Loop over integers `i` from 25 to 1 in reverse:
+      1. Check if the character at position `i-1` in `s` is less than the character at position `i` in `s`:
+         1. Set `s1` to the substring of `s` from the start to position `i-2`.
+         2. Loop over integers `j` from 0 to 25:
+            1. Generate character `c` as the `j`-th alphabet character.
+            2. Check if `c` is greater than the character at position `i-1` in `s` and `c` is not in `s1`:
+               1. Output: Print `s1` concatenated with `c`.
+               2. Exit the program.
+   2. Output: Print `-1`.
+
+Input/Output:
+- Input: Read a single string `s`.
+- Output: Print a single string or `-1`.
+
+Data Processing:
+- String manipulation and comparison.
+- Character generation using ASCII values.
+
+Libraries/Modules/Dependencies: None

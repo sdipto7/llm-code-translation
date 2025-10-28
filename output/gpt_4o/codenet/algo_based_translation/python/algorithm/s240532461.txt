@@ -1,0 +1,21 @@
+1. Input: Read two integers from input and assign them to variables `N` and `L`.
+
+2. Variable Declarations:
+   - `N`: Integer, represents the number of elements.
+   - `L`: Integer, represents the starting integer for the sequence.
+   - `aji`: List of integers, initialized as an empty list.
+
+3. Loop: For each integer `i` from 1 to `N` (inclusive):
+   - Calculate `L + i - 1` and append the result to the list `aji`.
+
+4. Conditional Statements:
+   - If the minimum value in `aji` is greater than or equal to 0:
+     - Remove the minimum value in `aji` from the list.
+   - Else if the maximum value in `aji` is less than or equal to 0:
+     - Remove the maximum value in `aji` from the list.
+   - Else:
+     - Remove the value in `aji` that has the minimum absolute value.
+
+5. Output: Calculate and print the sum of the elements in the modified `aji` list.
+
+6. No libraries, modules, or dependencies are required.

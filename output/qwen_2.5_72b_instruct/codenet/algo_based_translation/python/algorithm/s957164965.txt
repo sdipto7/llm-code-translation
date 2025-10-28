@@ -1,0 +1,40 @@
+Function Signature:
+- Function Name: find_closest_number
+- Parameters: None
+- Return Type: int
+
+Variable Declarations:
+- X: int
+- N: int
+- p: List[int]
+- candidates: Dict[int, List[int]]
+- i: int
+- smallest: int
+- minNum: int
+
+Logic Flow:
+1. Read two integers X and N from standard input, separated by a space.
+2. Read a list p of N integers from standard input.
+3. Sort the list p in ascending order.
+4. Initialize an empty dictionary candidates where keys are integers and values are lists of integers.
+5. Loop over the range from -1 to 101 (inclusive):
+   a. If the current value i is in the list p, skip to the next iteration.
+   b. If the absolute difference between X and i is not a key in candidates, add it as a key with a value of a list containing i.
+   c. Otherwise, append i to the list that is the value of the key abs(X-i) in candidates.
+6. Find the smallest key in candidates and assign it to smallest.
+7. Find the minimum value in the list that is the value of the key smallest in candidates and assign it to minNum.
+8. Print the value of minNum.
+
+Input/Output Operations:
+- Input: Two integers X and N followed by N integers representing the list p.
+- Output: A single integer representing the closest number to X not in p.
+
+Data Processing Logic:
+- The algorithm first sorts the list p.
+- It then iterates over a predefined range of numbers from -1 to 101.
+- For each number i in this range, if i is not in p, it calculates the absolute difference between X and i.
+- It groups these numbers by their absolute differences from X in the dictionary candidates.
+- Finally, it selects the smallest absolute difference and from the numbers associated with this difference, it selects and prints the smallest number.
+
+Required Libraries/Modules/Dependencies:
+- No specific libraries or modules are required beyond the standard Python library.

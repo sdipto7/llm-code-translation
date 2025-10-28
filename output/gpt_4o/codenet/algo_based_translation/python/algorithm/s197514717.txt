@@ -1,0 +1,27 @@
+```
+Function: calculate_maximum_value
+    Parameters: None
+    Return Type: int
+    
+    Step 1: Read input from the user and split the input string by spaces.
+    Step 2: Convert the split string values into integers and store them in a list `ABC`.
+        - Variable: ABC, Type: List[int]
+    
+    Step 3: Assign the first element of `ABC` to variable `A`.
+        - Variable: A, Type: int, Value: ABC[0]
+    Step 4: Assign the second element of `ABC` to variable `B`.
+        - Variable: B, Type: int, Value: ABC[1]
+    Step 5: Assign the third element of `ABC` to variable `C`.
+        - Variable: C, Type: int, Value: ABC[2]
+    
+    Step 6: Calculate three different values using the formula 10*x+y+z for permutations of A, B, C.
+        - Value 1: 10*A + B + C
+        - Value 2: 10*B + C + A
+        - Value 3: 10*C + A + B
+    
+    Step 7: Compute the maximum of the three calculated values.
+        - Use the `max` function to determine the largest value.
+    
+    Step 8: Output the maximum value.
+        - Use the `print` function to display the result.
+```

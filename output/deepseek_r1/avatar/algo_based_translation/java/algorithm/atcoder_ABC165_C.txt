@@ -1,0 +1,57 @@
+- **Variables**
+  - Global:
+    - `int[] a`, `int[] b`, `int[] c`, `int[] d` (size `q`)
+    - `int n`, `int m`, `int q`
+    - `long ans` initialized to `-100`
+  - Local in `main`:
+    - `Scanner sc` initialized with `System.in`
+  - Local in `dfs`:
+    - `ArrayList<Integer> list` (mutable parameter)
+    - `long score` during base case evaluation
+
+- **Input/Output Operations**
+  - Read `n`, `m`, `q` from standard input via `Scanner`
+  - Read `q` entries for `a`, `b`, `c`, `d` (adjusting `a[i]` and `b[i]` by `-1`)
+  - Print final value of `ans` to standard output
+
+- **Function Signatures**
+  - `public static void main(String[] args)`
+  - `public static void dfs(ArrayList<Integer> list)`
+
+- **Control Flow and Logic**
+  1. **Main Execution**
+     - Initialize `a`, `b`, `c`, `d` arrays with input values
+     - Invoke `dfs` with an empty `ArrayList<Integer>`
+     - Output the maximum score stored in `ans`
+
+  2. **DFS Function**
+     - **Base Case** (`list.size() == n`):
+       - Compute `score` by iterating over all `q` queries:
+         - For query `i`, check if `list.get(b[i]) - list.get(a[i]) == c[i]`
+         - Add `d[i]` to `score` if true
+       - Update `ans` with `Math.max(ans, score)`
+       - Return
+
+     - **Recursive Case**:
+       - If `list` is **not empty**:
+         - Iterate `num` from `list.get(list.size() - 1)` to `m` (inclusive)
+         - Add `num` to `list`
+         - Recurse with modified `list`
+         - Remove the last element of `list`
+       - If `list` is **empty**:
+         - Iterate `num` from `1` to `m` (inclusive)
+         - Add `num` to `list`
+         - Recurse with modified `list`
+         - Remove the last element of `list`
+
+- **Data Structures**
+  - `ArrayList<Integer>` for tracking the current sequence during DFS
+
+- **Control Structures**
+  - `for` loops for input processing and iteration in DFS
+  - `if` conditions for base case check and empty list handling
+  - Recursive calls for backtracking
+
+- **Libraries/Dependencies**
+  - `java.util.ArrayList`
+  - `java.util.Scanner`

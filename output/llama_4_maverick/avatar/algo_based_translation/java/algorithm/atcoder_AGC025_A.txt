@@ -1,0 +1,17 @@
+1. Define a function to calculate the sum of digits of a given integer.
+   1.1. Initialize a variable to store the sum.
+   1.2. While the number is greater than or equal to 10, add the remainder of the number divided by 10 to the sum and update the number by performing integer division by 10.
+   1.3. Add the final number to the sum.
+   1.4. Return the calculated sum.
+
+2. Read an integer N from the input.
+
+3. If N is even, calculate n as N divided by 2; otherwise, calculate n as (N + 1) divided by 2.
+
+4. Initialize the answer as the sum of the digits of 1 and N - 1.
+
+5. Iterate from A = 1 to n (inclusive).
+   5.1. For each A, calculate the sum of the digits of A and N - A.
+   5.2. If this sum is less than the current answer, update the answer.
+
+6. Output the final answer.

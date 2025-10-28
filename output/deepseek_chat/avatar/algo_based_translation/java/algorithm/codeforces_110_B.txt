@@ -1,0 +1,13 @@
+Scanner sc = new Scanner(System.in)
+int n = sc.nextInt()
+int i, j
+int p = 97
+char[] c = new char[n]
+
+for i from 0 to 3 inclusive:
+    for j starting at i, while j < n, increment j by 4:
+        c[j] = (char)p
+    p = p + 1
+
+for i from 0 to n-1 inclusive:
+    System.out.print(c[i])

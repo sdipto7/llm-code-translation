@@ -1,0 +1,31 @@
+1. READ number_of_strings
+2. INITIALIZE an empty list to store input strings
+3. WHILE number_of_strings > 0
+   1. DECREMENT number_of_strings
+   2. READ input_string and CONVERT to lowercase
+   3. APPEND input_string to the list
+4. READ original_string
+5. CONVERT original_string to lowercase and STORE in lowercase_string
+6. READ first_letter and CONVERT to lowercase
+7. DETERMINE second_letter as 'a' if first_letter is not 'a', otherwise 'b'
+8. INITIALIZE a list of validity flags for each character in original_string to 0
+9. INITIALIZE an empty set to store indices of characters to be replaced
+10. FOR EACH string in the list of input strings
+    1. IF string is a substring of lowercase_string
+        1. INITIALIZE search_start to 0
+        2. WHILE True
+            1. FIND the index of the next occurrence of string in lowercase_string starting from search_start
+            2. IF index is negative (not found)
+                1. BREAK the loop
+            3. FOR EACH index in the range of the found substring
+                1. ADD the index to the set of indices to be replaced
+            4. UPDATE search_start to index + 1
+11. CONVERT original_string to a list of characters
+12. FOR EACH index in the set of indices to be replaced
+    1. DETERMINE replacement_letter as first_letter if the character at index in lowercase_string is not first_letter, otherwise second_letter
+    2. IF the character at index in original_string is lowercase
+        1. REPLACE the character at index with replacement_letter
+    3. ELSE (character is uppercase)
+        1. REPLACE the character at index with the uppercase version of replacement_letter
+13. PRINT the characters in the modified list of characters without adding a newline after each character
+14. PRINT a newline character

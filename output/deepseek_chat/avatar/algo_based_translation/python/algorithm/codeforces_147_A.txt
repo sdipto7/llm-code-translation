@@ -1,0 +1,33 @@
+**Function Signature:**
+- `process_string(s: str) -> str`
+
+**Variables:**
+- `s`: input string (str)
+- `res`: result list (list[str])
+- `punctuation`: list of punctuation marks (list[str])
+
+**Algorithm:**
+1. Initialize empty list `res`
+2. Define `punctuation` as [',', '.', '!', '?']
+3. Iterate through each character in `s` using index `i` from 0 to len(s)-1
+4. If `i >= 1` (not first character):
+   - If current character is space:
+     - If last element in `res` is not space: append space to `res`
+     - Else: continue to next character
+   - Else if current character is in `punctuation`:
+     - If last element in `res` is space: remove last element from `res`
+     - Append punctuation character to `res`
+     - Append space to `res`
+   - Else: append character to `res`
+5. Else (first character):
+   - If character is space: continue to next character
+   - If character is in `punctuation`: continue to next character
+   - Else: append character to `res`
+6. Join all elements in `res` into a string and return it
+
+**Input/Output:**
+- Input: string from standard input
+- Output: processed string printed to standard output
+
+**Dependencies:**
+- None (uses built-in functions only)

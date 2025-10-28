@@ -1,0 +1,11 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,codeforces_397_B.java,Compilation Error,"Error: output/deepseek_r1/avatar/algo_based_translation/python/java/codeforces_397_B.java:12: error: invalid method declaration; return type required
+    public ProblemSolution() {
+           ^
+1 error
+"
+python,java,atcoder_AGC033_B.java,Compilation Error,"Error: output/deepseek_r1/avatar/algo_based_translation/python/java/atcoder_AGC033_B.java:17: error: variable sR is already defined in method main(String[])
+        int sL = 0, sR = 0, sU = 0, sD = 0;
+                    ^
+1 error
+"

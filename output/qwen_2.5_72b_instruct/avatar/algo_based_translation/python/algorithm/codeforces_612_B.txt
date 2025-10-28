@@ -1,0 +1,30 @@
+Function signature: `main()`
+Parameter and return types: None
+
+Variable declarations and data types:
+- `n`: integer
+- `a`: list of integers
+- `b`: list of integers initialized with zeros
+- `res`: integer initialized to 0
+
+Logic flow in execution order:
+1. Read integer `n` from input
+2. Read a line of input, split it by spaces, convert each element to an integer, and store in list `a`
+3. Initialize list `b` with `n` zeros
+4. For each index `i` from 0 to `n-1`:
+   - Set `b[a[i] - 1]` to `i`
+5. Initialize `res` to 0
+6. For each index `i` from 1 to `n-1`:
+   - Add the absolute difference between `b[i]` and `b[i-1]` to `res`
+7. Print `res`
+
+Control structures:
+- For loop iterating over range `n` for initializing `b`
+- For loop iterating over range from 1 to `n` for calculating `res`
+
+Input/output operations and data processing logic:
+- Input: Read `n` and then read `n` integers for list `a`
+- Output: Print the final value of `res` which represents the sum of absolute differences between consecutive elements in transformed list `b`
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules required

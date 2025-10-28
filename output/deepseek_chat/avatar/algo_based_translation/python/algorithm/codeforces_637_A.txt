@@ -1,0 +1,29 @@
+**Function Signature:**
+- No explicit function defined; main script execution
+
+**Variables and Data Types:**
+- `input`: function reference (from sys.stdin.readline)
+- `n`: integer (read from input)
+- `s`: list of strings (from processed input)
+- `w`: Counter object (dictionary-like with string keys and integer values)
+- `c`: integer (initialized to -1)
+- `a`: string (initialized to empty string equivalent)
+- `i`: string (loop variable)
+
+**Libraries/Dependencies:**
+- sys module
+- collections.Counter
+
+**Algorithm Steps:**
+
+1. Read integer `n` from standard input
+2. Read next line from standard input, remove last character (newline), split into list of strings `s`
+3. Create frequency counter `w` from list `s`
+4. Reverse list `s` and reassign to `s`
+5. Initialize `c` to -1 and `a` to empty value
+6. For each key `i` in counter `w`:
+   - If frequency count `w[i]` equals maximum value in `w.values()`:
+     - If index of first occurrence of `i` in reversed list `s` is greater than `c`:
+       - Set `a` to `i`
+       - Set `c` to index of first occurrence of `i` in reversed list `s`
+7. Print value of `a`

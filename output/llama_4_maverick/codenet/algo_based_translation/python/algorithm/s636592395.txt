@@ -1,0 +1,9 @@
+1. Read an integer N from the input.
+2. Read a list of N integers from the input and store it in a list A.
+3. Define a function main() with no parameters and no return value.
+4. Inside main(), sort the list A in ascending order.
+5. Calculate the difference between the last element of the sorted list A and the first element of the sorted list A.
+6. Store the result in a variable ans.
+7. Print the value of ans to the output.
+8. Check if the current script is being run as the main program.
+9. If it is, call the function main().

@@ -1,0 +1,60 @@
+**Function Signatures:**
+- `bubbleSort(cards: list[str]) -> None`
+- `selectionSort(cards: list[str]) -> None`
+
+**Variables:**
+- `n: int` (in both functions)
+- `i: int`, `j: int` (loop counters)
+- `mini: int` (in selectionSort)
+- `cards2: list[str]` (in main code)
+- Input variables: `n = int(input())`, `cards = input().split(" ")`
+
+**Logic Flow:**
+
+1. **Main Execution:**
+   - Read integer `n` from input
+   - Read `cards` list from input (split by spaces)
+   - Create copy: `cards2 = list(cards)`
+   - Call `bubbleSort(cards)`
+   - Print "Stable"
+   - Call `selectionSort(cards2)`
+   - Compare outputs:
+     - If `" ".join(map(str, cards2)) == " ".join(map(str, cards))`: Print "Stable"
+     - Else: Print "Not stable"
+
+2. **bubbleSort:**
+   - Initialize `n = len(cards)`
+   - Outer loop: `for i in range(0, n)`
+     - Inner loop: `for j in range(n-1, i, -1)`
+       - Compare: `if int(cards[j][1]) < int(cards[j-1][1])`
+         - Swap elements: `cards[j], cards[j-1] = cards[j-1], cards[j]`
+   - Print sorted list: `print(" ".join(map(str, cards)))`
+
+3. **selectionSort:**
+   - Initialize `n = len(cards)`
+   - Outer loop: `for i in range(0, n)`
+     - Initialize `mini = i`
+     - Inner loop: `for j in range(i, n)`
+       - Compare: `if int(cards[j][1]) < int(cards[mini][1])`
+         - Update: `mini = j`
+     - Conditional swap: `if mini != i: cards[i], cards[mini] = cards[mini], cards[i]`
+   - Print sorted list: `print(" ".join(map(str, cards)))`
+
+**Control Structures:**
+- Range-based `for` loops with explicit start/stop values
+- Nested loops in both sorting algorithms
+- Conditional swaps using `if` statements
+- Final stability check with `if-else`
+
+**Data Types:**
+- All card elements are strings (e.g., "H3", "S2")
+- Numeric comparisons use `int(card[1])` (second character converted to integer)
+
+**Input/Output:**
+- Input: Single integer `n` followed by space-separated card strings
+- Output: Two sorted lists and stability check result
+- Printed outputs use space-joined card strings
+
+**Dependencies:**
+- No external libraries required
+- Uses Python built-ins: `len()`, `range()`, `map()`, `str()`, `input()`, `print()`

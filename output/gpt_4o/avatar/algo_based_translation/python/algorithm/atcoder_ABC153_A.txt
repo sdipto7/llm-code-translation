@@ -1,0 +1,28 @@
+1. Function Signature:
+   - Function name: calculate_shots
+   - Parameters: none
+   - Return type: None
+
+2. Variable Declarations:
+   - h: int
+   - a: int
+   - sho: int
+   - am: int
+
+3. Input Operations:
+   - Read a single line of input.
+   - Split the input string by spaces.
+   - Convert each split string to an integer and assign to variables h and a.
+
+4. Logic Flow:
+   - Calculate the integer division of h by a, assign the result to sho.
+   - Calculate the modulus of h by a, assign the result to am.
+
+5. Conditional Structures:
+   - If am is not equal to 0, increment sho by 1.
+
+6. Output Operations:
+   - Print the value of sho.
+
+7. Required Libraries:
+   - No external libraries or modules required.

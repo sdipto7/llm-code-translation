@@ -1,0 +1,58 @@
+```python
+from typing import List, Tuple
+
+def value() -> Tuple[int, ...]:
+    return tuple(map(int, input().split()))
+
+def values() -> Tuple[int, ...]:
+    return tuple(map(int, sys.stdin.readline().split()))
+
+def inlst() -> List[int]:
+    return [int(i) for i in input().split()]
+
+def inlsts() -> List[int]:
+    return [int(i) for i in sys.stdin.readline().split()]
+
+def inp() -> int:
+    return int(input())
+
+def inps() -> int:
+    return int(sys.stdin.readline())
+
+def instr() -> str:
+    return input()
+
+def stlst() -> List[str]:
+    return [i for i in input().split()]
+
+def help(a: int, b: int, l: List[int]) -> bool:
+    tot: List[List[int]] = []
+    for i in range(b):
+        tot.append(l[i * a: i * a + a])
+    for i in zip(*tot):
+        if sum(i) == b:
+            return True
+    return False
+
+def solve() -> None:
+    tot: List[Tuple[int, int]] = []
+    x: str = instr()
+    s: List[int] = []
+    for i in x:
+        if i == 'O':
+            s.append(0)
+        else:
+            s.append(1)
+    for i in range(1, 13):
+        if 12 % i == 0:
+            if help(i, 12 // i, s):
+                tot.append((12 // i, i))
+    print(len(tot), end=' ')
+    for a, b in sorted(tot):
+        print(f'{a}x{b}', end=' ')
+    print()
+
+if __name__ == "__main__":
+    for i in range(inp()):
+        solve()
+```

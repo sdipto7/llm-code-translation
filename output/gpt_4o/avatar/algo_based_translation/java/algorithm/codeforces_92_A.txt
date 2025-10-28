@@ -1,0 +1,37 @@
+```
+Function: main
+    Parameters: args (String array)
+    Return Type: void
+
+    Import java.util.Scanner
+
+    Declare Scanner scn
+    Initialize scn to new Scanner(System.in)
+
+    Declare integer n
+    Set n to the next integer from scn
+
+    Declare integer k
+    Set k to the next integer from scn
+
+    Declare integer i
+    Set i to 1
+
+    Declare integer req
+    Set req to 1
+
+    While (k - req >= 0)
+        If (k - req >= 0)
+            Set k to k - req
+        Else
+            Break loop
+
+        Increment i by 1
+
+        If (i % n != 0)
+            Set req to i % n
+        Else
+            Set req to n
+
+    Output k using System.out.println
+```

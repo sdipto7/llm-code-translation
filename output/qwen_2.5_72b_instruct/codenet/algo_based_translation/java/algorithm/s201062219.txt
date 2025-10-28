@@ -1,0 +1,41 @@
+Function Signature: `public static void main(String[] args)`
+
+Variable Declarations:
+- `Scanner scan` of type `Scanner`
+- `String mark`
+- `int c` initialized to `0`
+- `int b` initialized to `0`
+- `int a[]` array of type `int` with size `100000`
+- `int x` initialized to `0`
+
+Logic Flow:
+1. Create a new `Scanner` object for reading input from standard input.
+2. Enter an infinite loop (`do-while(true)`) to process input repeatedly.
+3. Inside the loop, read an integer `c` from the scanner.
+4. Read a string `mark` from the scanner.
+5. Read an integer `b` from the scanner.
+6. Check the value of `mark`:
+   - If `mark` equals "?":
+     - Set `a[x]` to `2000001`.
+     - Break out of the loop.
+   - Else if `mark` equals "+":
+     - Set `a[x]` to the sum of `c` and `b`.
+   - Else if `mark` equals "-":
+     - Set `a[x]` to the difference between `c` and `b`.
+   - Else if `mark` equals "*":
+     - Set `a[x]` to the product of `c` and `b`.
+   - Else if `mark` equals "/":
+     - Set `a[x]` to the quotient of `c` divided by `b`.
+7. Increment `x` by `1`.
+8. End of loop. Reset `x` to `0`.
+9. Enter another infinite loop (`do-while(true)`) to print results.
+10. Inside the loop, check if `a[x]` equals `2000001`:
+    - If true, break out of the loop.
+    - Otherwise, print the value of `a[x]`.
+11. Increment `x` by `1`.
+12. End of loop.
+13. Close the `Scanner` object.
+
+Required Libraries: 
+- `java.io.IOException`
+- `java.util.Scanner`

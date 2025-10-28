@@ -1,0 +1,12 @@
+1. Declare a function `check_divisibility_by_9` with a parameter `N` of type integer and return type string.
+2. Inside the function, read an integer input from the user and store it in variable `N` of type integer.
+3. Check the condition if `N` modulo 9 equals 0.
+4. If the condition is true, return the string 'Yes'.
+5. If the condition is false, return the string 'No'.
+6. Call the function `check_divisibility_by_9` and print the returned result.
+
+Alternatively, a more accurate representation of the original code as an algorithm is:
+1. Read an integer input from the user and store it in variable `N` of type integer.
+2. Check the condition if `N` modulo 9 equals 0.
+3. If the condition is true, output 'Yes'.
+4. If the condition is false, output 'No'.

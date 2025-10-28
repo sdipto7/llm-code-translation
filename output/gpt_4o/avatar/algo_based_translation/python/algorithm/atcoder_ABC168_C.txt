@@ -1,0 +1,35 @@
+```
+Input:
+    a, b, h, m: integer values read from input, representing two lengths and time in hours and minutes.
+
+Libraries:
+    Import the `math` module.
+
+Algorithm:
+1. Parse input:
+    a, b, h, m = map(int, input().split())
+
+2. Calculate the angle `C` in degrees between the hour and minute hand:
+    - Calculate the angle moved by the minute hand:
+        angle_minute_hand = 360 / 60 * m
+    - Calculate the angle moved by the hour hand:
+        angle_hour_hand = 360 / 12 * h + 360 / 12 / 60 * m
+    - Find the absolute difference between the two angles:
+        C = abs(angle_minute_hand - angle_hour_hand)
+
+3. Normalize the angle `C` to be the smaller angle between the two hands:
+    If C > 180:
+        C = 360 - C
+
+4. Convert angle `C` to radians:
+    angle_C_radians = math.radians(C)
+
+5. Calculate the cosine of angle `C`:
+    cosC = math.cos(angle_C_radians)
+
+6. Apply the law of cosines to find the distance between the two ends of the clock hands:
+    distance = math.sqrt(a**2 + b**2 - 2 * a * b * cosC)
+
+7. Output the calculated distance:
+    print(distance)
+```

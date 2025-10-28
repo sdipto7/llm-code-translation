@@ -1,0 +1,23 @@
+Algorithm:
+- Import `deque` from the `collections` module
+- Declare `N` and `M` as integers by reading a line of input, splitting it into two parts, and converting each part to an integer
+- Declare `G` as a dictionary with keys from 1 to `N` (inclusive), each key associated with an empty list
+- For each of `M` iterations:
+    - Read a line of input, split it into two parts, convert each part to an integer, and assign them to `a` and `b` respectively
+    - Append `b` to the list associated with key `a` in `G`
+    - Append `a` to the list associated with key `b` in `G`
+- Declare `col` as a list of integers, initialized with `-1` repeated `N+1` times
+- Declare `cnt` as an integer, initialized to `0`
+- For each integer `i` from 1 to `N` (inclusive):
+    - If `col[i]` is less than `0`:
+        - Set `col[i]` to `cnt`
+        - Declare `que` as a `deque` containing the single element `i`
+        - While `que` is not empty:
+            - Set `x` to the result of removing the leftmost element from `que`
+            - For each integer `y` in the list associated with key `x` in `G`:
+                - If `col[y]` is less than `0`:
+                    - Set `col[y]` to `cnt`
+                    - Append `y` to `que`
+        - Increment `cnt` by `1`
+- Declare `cmax` as the maximum value in `col`
+- Output `cmax`

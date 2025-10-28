@@ -1,0 +1,38 @@
+# Function Signatures
+- `public static void main(String[] args)`
+- `private static double dist(int x1, int y1, int x2, int y2)`
+
+# Variables and Data Types
+- `Scanner scanner = new Scanner(System.in)`
+- `int N`
+- `int[][] pos`
+- `double sum = 0`
+- Loop counters: `int i`, `int j`
+
+# Logic Flow
+1. Read integer `N` from input
+2. Initialize 2D array `pos` with dimensions `N x 2`
+3. For `i` from 0 to `N-1`:
+   - Read two integers into `pos[i][0]` and `pos[i][1]`
+4. For `i` from 0 to `N-1`:
+   - For `j` from 0 to `N-1`:
+     - If `i == j`, skip iteration
+     - Calculate distance between `pos[i]` and `pos[j]` using `dist`
+     - Add result to `sum`
+5. Compute average by dividing `sum` by `N`
+6. Print average with `System.out.println`
+
+# Control Structures
+- `for (int i = 0; i < N; i++)` (nested)
+- `if (i == j) continue`
+
+# Input/Output Operations
+- Read via `scanner.nextInt()` for `N` and coordinate values
+- Output result via `System.out.println(sum / N)`
+
+# Data Processing
+- Distance calculation:  
+  `Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2))`
+
+# Dependencies
+- `java.util.Scanner`

@@ -1,0 +1,44 @@
+Function signatures with parameter and return types:
+- main(String[] args): void
+
+Variable declarations and data types:
+- sc: Scanner
+- n: int
+- nums: int[]
+- min: int
+- countNegatives: int
+- sum: long
+- i: int
+- num: int
+- abs: int
+
+Logic flow in execution order:
+1. Initialize sc as a new Scanner object for standard input.
+2. Read an integer n from sc.
+3. Initialize nums as an integer array of size n.
+4. Loop from i = 0 to n - 1:
+   - Read an integer from sc and assign it to nums[i].
+5. Initialize min as Integer.MAX_VALUE.
+6. Initialize countNegatives as 0.
+7. Initialize sum as 0.
+8. Loop through each num in nums:
+   - Calculate abs as the absolute value of num.
+   - Add abs to sum.
+   - Update min to be the smaller value between min and abs.
+   - If num is less than 0, increment countNegatives by 1.
+9. If countNegatives modulo 2 equals 0, print sum.
+10. Otherwise, print sum minus (min * 2).
+
+Control structures:
+- for loop with condition i < n and increment i++.
+- for-each loop iterating over nums.
+- if statement with condition num < 0.
+- ternary operator checking countNegatives % 2 == 0.
+
+Input/output operations and data processing logic:
+- Input: Reads n and n integers from standard input.
+- Output: Prints the sum of absolute values or the adjusted sum based on the count of negative numbers.
+- Data processing: Calculates the sum of absolute values, finds the minimum absolute value, counts negative numbers, and adjusts the sum if necessary.
+
+Required libraries, modules, or dependencies:
+- java.util.*

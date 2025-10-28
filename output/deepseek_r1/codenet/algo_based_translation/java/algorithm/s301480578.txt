@@ -1,0 +1,37 @@
+- Function signature:  
+  `public static void main(String[] args)`  
+
+- Variables:  
+  - `Scanner sc = new Scanner(System.in)`  
+  - `int n = sc.nextInt()`  
+  - `int[] h = new int[n]`  
+  - `int max = 0`  
+  - `int l` (loop counter in outer loop)  
+  - `int count` (temporary counter inside outer loop)  
+
+- Input operations:  
+  1. Read integer `n` from standard input  
+  2. Read `n` integers into array `h`  
+
+- Logic flow:  
+  1. Initialize `max` to 0  
+  2. Outer loop: `for (l = 0; l < n - 1; l++)`  
+      a. Initialize `count` to 0  
+      b. Inner loop: `while (l < n - 1 && h[l] >= h[l + 1])`  
+          i. Increment `l` by 1  
+          ii. Increment `count` by 1  
+      c. Set `max = Math.max(max, count)`  
+  3. Print `max`  
+
+- Control structures:  
+  - Outer `for` loop with range `0 ≤ l < n - 1`  
+  - Nested `while` loop with dual condition:  
+    `(current index < last index) AND (current height ≥ next height)`  
+  - Conditional maximum update after inner loop  
+
+- Data processing:  
+  - Count consecutive non-increasing elements starting from each position  
+  - Track longest consecutive non-increasing sequence  
+
+- Dependencies:  
+  `import java.util.Scanner`

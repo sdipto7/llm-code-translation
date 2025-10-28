@@ -1,0 +1,51 @@
+ALGORITHM SPECIFICATION
+
+Function:
+- Name: compute_total_distance
+- Parameters:
+  - n: int (input value)
+  - a: list[int] (input array)
+- Return Type: int
+
+Variables:
+- n: integer (size of input array)
+- a: array of integers (input permutation)
+- b: array of integers (size n) initialized with zeros
+- res: integer initialized to 0
+- i: integer (loop iterator)
+
+Steps:
+
+1. Read integer n from standard input
+2. Read space-separated integers from standard input into array a with length n
+3. Initialize array b with length n containing all zeros
+4. For i from 0 to n-1 (inclusive):
+   4.1 Set index (a[i] - 1) of array b to current i value
+5. Initialize res to 0
+6. For i from 1 to n-1 (inclusive):
+   6.1 Add absolute value of (b[i] - b[i-1]) to res
+7. Output res via standard output
+
+Control Flow:
+- Sequential execution
+- Two for-loops:
+  - First loop: fixed iteration count (n iterations), index 0 to n-1
+  - Second loop: fixed iteration count (n-1 iterations), index 1 to n-1
+- No conditional branching structures
+
+Input/Output:
+- Input operations:
+  - Read integer from stdin
+  - Read space-separated integer array from stdin
+- Output operation:
+  - Print final res value
+
+Error Handling:
+- No explicit error handling
+- Implicit assumptions:
+  - Input array a contains valid integers between 1 and n (inclusive)
+  - Input array a is a valid permutation of 1..n values
+
+Dependencies:
+- Standard input/output functions
+- Absolute value calculation (language-agnostic math operation)

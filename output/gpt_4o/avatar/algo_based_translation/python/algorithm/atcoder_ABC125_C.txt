@@ -1,0 +1,27 @@
+```
+Function gcd(a: int, b: int) -> int:
+    If b equals 0:
+        Return a
+    Else:
+        Return gcd(b, a % b)
+
+Function ruiseki_lr(array: List[int]) -> Tuple[List[int], List[int]]:
+    Declare op as a lambda function: op = lambda a, b: gcd(a, b)
+    Declare e as an integer with value 0
+    Declare n as an integer and assign the length of array
+    Declare left as a list of integers with size n + 1, initialized with e
+    Declare right as a list of integers with size n + 1, initialized with e
+    For each integer i from 0 to n - 1:
+        Set left[i + 1] to the result of op(left[i], array[i])
+    For each integer i from n - 1 to 0, in reverse order:
+        Set right[i] to the result of op(right[i + 1], array[i])
+    Return left and right
+
+Declare n as an integer and assign it the value from standard input
+Declare a as a list of integers and assign it the values from standard input
+Assign left, right the result of ruiseki_lr(a)
+Declare ans as an integer with value 0
+For each integer i from 0 to n - 1:
+    Set ans to the maximum of gcd(left[i], right[i + 1]) and ans
+Output the value of ans to standard output
+```

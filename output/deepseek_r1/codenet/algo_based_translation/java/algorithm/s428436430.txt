@@ -1,0 +1,39 @@
+# Function Signatures
+- calArea::Area(int w, int h) -> int
+
+# Variables
+- Scanner sc
+- List<Integer> arr
+- calArea ab
+- int area1
+- int area2
+
+# Logic Flow
+1. Initialize Scanner object for input
+2. Create empty ArrayList<Integer>
+3. Loop 4 times:
+   - Read string from input via Scanner
+   - Parse to integer
+   - Add to arr
+4. Create calArea instance
+5. Call Area(arr[0], arr[1]) -> store in area1
+6. Call Area(arr[2], arr[3]) -> store in area2
+7. Compare areas:
+   - If area1 > area2: print area1
+   - Else if area1 < area2: print area2
+   - Else (equal): print area1
+
+# Control Structures
+- for (int i=0; i<4; i++)
+- if (area1 > area2)
+- else if (area1 < area2)
+- else if (area1 == area2)
+
+# Input/Output
+- Read 4 space-separated integers via Scanner
+- Print single integer (larger area or equal value)
+
+# Dependencies
+- java.util.Scanner
+- java.util.List
+- java.util.ArrayList

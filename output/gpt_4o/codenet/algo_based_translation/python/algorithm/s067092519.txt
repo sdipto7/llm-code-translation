@@ -1,0 +1,18 @@
+```
+1. Declare a variable `N` of type integer and read an integer input from the user.
+2. Declare a 3-dimensional list `m` with dimensions [10][3][10], initialized to 0.
+3. Iterate `i` from 0 to `N-1`:
+   a. Read a line of input, split it by spaces, and store as a list of strings `n`.
+   b. Convert the first element of `n` to integer `b`.
+   c. Convert the second element of `n` to integer `f`.
+   d. Convert the third element of `n` to integer `r`.
+   e. Convert the fourth element of `n` to integer `v`.
+   f. Increment `m[b-1][f-1][r-1]` by `v`.
+4. Iterate `i` from 0 to 3:
+   a. Iterate `j` from 0 to 2:
+      i. Initialize an empty string `line`.
+      ii. Iterate `k` from 0 to 9:
+          A. Append the value of `m[i][j][k]` formatted as a string with a leading space to `line`.
+      iii. Output `line`.
+   b. If `i` is less than 3, output a string of twenty '#' characters.
+```

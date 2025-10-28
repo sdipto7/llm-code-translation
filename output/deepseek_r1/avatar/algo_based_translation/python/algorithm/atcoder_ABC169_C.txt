@@ -1,0 +1,64 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`
+
+**Variable Declarations:**
+- `sa: string`
+- `sb: string`
+- `a: int`
+- `b: int`
+- `dbg: function` (conditionally defined)
+
+**Data Types:**
+- Input strings converted to integers via explicit type casting
+- Floating-point arithmetic for currency conversion
+- Integer division for final result
+
+**Step-by-Step Logic Flow:**
+1. Initialize environment:
+   1.1 Increase recursion limit to 1,000,000 (unused but set)
+   1.2 Define debug print function `dbg` if `TERM_PROGRAM` exists in environment variables
+
+2. Input processing:
+   2.1 Read entire input line from `stdin`
+   2.2 Split input into two strings `sa` (integer part) and `sb` (decimal part)
+
+3. Numerical conversion:
+   3.1 Convert `sa` to integer `a` using direct type casting
+   3.2 Convert `sb` to float and scale to integer:
+      3.2.1 Multiply floating-point value by 100
+      3.2.2 Add 0.1 to mitigate floating-point precision errors
+      3.2.3 Convert result to integer `b` via truncation
+
+4. Calculation:
+   4.1 Multiply `a` and `b`
+   4.2 Perform integer division by 100
+
+5. Output:
+   5.1 Print final result
+
+**Control Flow Structures:**
+- Conditional definition of `dbg` function based on environment variable check
+- Linear execution path with no loops or branching beyond input parsing
+
+**Input/Output Operations:**
+- Single-line input from standard input
+- Space-separated string parsing for numeric components
+- Console output via integer division result
+
+**Error Handling:**
+- Implicit floating-point error mitigation via +0.1 adjustment
+- No explicit error checking for invalid input formats
+- Relies on input adhering to expected two-part numeric format
+
+**Edge Case Handling:**
+- Precision correction for decimal values through fixed offset addition
+- Integer division ensures truncation toward zero
+- Handles maximum values up to 1e9 * 1e7 (P=1e9+7 constraint)
+
+**External Dependencies:**
+- System input/output via `sys.stdin`
+- Environment variable check via `os.environ`
+- Core mathematical operations without external libraries
+- Debug helper uses standard print function when enabled

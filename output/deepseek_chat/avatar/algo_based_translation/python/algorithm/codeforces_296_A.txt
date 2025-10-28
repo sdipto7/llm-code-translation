@@ -1,0 +1,10 @@
+Read integer n from input
+Read next line from input, split into list m of strings
+Declare boolean variable possible = True
+Create set from m, iterate over each unique element i in set:
+    Count occurrences of i in m
+    If count >= (n / 2 + 1):
+        Set possible = False
+        Break loop
+If possible is True: print "YES"
+Else: print "NO"

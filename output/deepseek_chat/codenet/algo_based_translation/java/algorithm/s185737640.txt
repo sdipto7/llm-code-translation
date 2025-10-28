@@ -1,0 +1,24 @@
+Algorithm:
+- Import java.util.Scanner
+- Define class Main
+- Define main method with String[] args parameter
+  - Declare Scanner sc initialized with System.in
+  - Declare String S initialized with sc.nextLine()
+  - Close sc
+  - If S.length() % 2 == 1
+    - Set S = S.substring(0, S.length() - 1)
+  - Else
+    - Set S = S.substring(0, S.length() - 2)
+  - Loop while S.length() > 0
+    - If isEvenString(S) returns true
+      - Break loop
+    - Else
+      - Set S = S.substring(0, S.length() - 2)
+  - Print S.length()
+- Define static method isEvenString with String s parameter returning boolean
+  - Declare String a initialized with s.substring(0, s.length()/2)
+  - Declare String b initialized with s.substring(s.length()/2)
+  - If a.equals(b)
+    - Return true
+  - Else
+    - Return false

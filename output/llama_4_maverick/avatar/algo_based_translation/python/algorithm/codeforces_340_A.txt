@@ -1,0 +1,14 @@
+1. Define function G(a, b)
+   1.1 While a mod b is not equal to 0
+      1.1.1 Update a to be b and b to be a mod b
+   1.2 Return b
+
+2. Define function L(a, b)
+   2.1 Return (a * b) divided by G(a, b) using integer division
+
+3. Read input and split it into a list l using space as the delimiter
+4. Parse the list l into integers x, y, a, b
+
+5. Calculate lcm = L(x, y)
+
+6. Print (b divided by lcm using integer division) - ((a - 1) divided by lcm using integer division)

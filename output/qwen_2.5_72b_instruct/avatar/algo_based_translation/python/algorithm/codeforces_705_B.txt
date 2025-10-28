@@ -1,0 +1,30 @@
+Function Signature:
+- main() -> None
+
+Variable Declarations:
+- n: Integer
+- w: List of Integers
+- c: Integer
+
+Logic Flow:
+1. Import sys module
+2. Set input to sys.stdin.readline
+3. Read an integer value and assign it to n
+4. Read a line of input, split it into a list of strings, convert each string to an integer, and assign the resulting list to w
+5. Initialize c to 2
+6. For each integer i in w:
+   - If i is equal to 1:
+     - Print c
+   - Else if i is even:
+     - Set c to 3 minus c
+     - Print c
+   - Else:
+     - Print c
+
+Input/Output Operations:
+- Read an integer n from standard input
+- Read a list of integers w from standard input
+- Print the value of c based on the conditions specified for each integer in w
+
+Required Libraries/Modules:
+- sys module

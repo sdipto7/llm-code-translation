@@ -1,0 +1,44 @@
+1. Define a function `count_anagram_pairs` with return type `int`.
+2. Read an integer `n` from input.
+3. Declare an empty list `lst` to store strings.
+4. Initialize a variable `pair` to 0 (not used in the code).
+5. Iterate `n` times:
+   - Read a string from input, sort its characters, and append the sorted string to `lst`.
+6. Sort the list `lst` in ascending order.
+7. Append a sentinel string 'end' to `lst`.
+8. Initialize variables: `pre` to an empty string, `tmp_cnt` to 0, and `cnt` to 0.
+9. Iterate over each string `i` in `lst`:
+   - If `i` equals `pre`, increment `tmp_cnt` by 1.
+   - Else, update `cnt` by adding the sum of integers from 0 to `tmp_cnt` (inclusive), and reset `tmp_cnt` to 0.
+   - Update `pre` to `i`.
+10. Return `cnt` as the result.
+11. Read input and call the function implicitly, printing the result.
+
+Alternatively, in a more structured format:
+
+- Function: `count_anagram_pairs() -> int`
+- Variables: 
+  - `n: int`
+  - `lst: list[str]`
+  - `pair: int` (not used)
+  - `i: str`
+  - `st: str`
+  - `pre: str`
+  - `tmp_cnt: int`
+  - `cnt: int`
+- Execution Flow:
+  1. Read `n` from input.
+  2. `lst = []`
+  3. `pair = 0`
+  4. For `i` in range(`n`):
+     - Read string, sort it, and append to `lst`.
+  5. Sort `lst`.
+  6. `lst.append('end')`
+  7. `pre = ''`, `tmp_cnt = 0`, `cnt = 0`
+  8. For `i` in `lst`:
+     - If `i == pre`: `tmp_cnt += 1`
+     - Else: 
+       - `cnt += sum(range(tmp_cnt + 1))`
+       - `tmp_cnt = 0`
+     - `pre = i`
+  9. Print `cnt`.

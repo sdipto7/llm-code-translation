@@ -1,0 +1,28 @@
+Function Signature: `process_string(s: str) -> str`
+
+Variable Declarations:
+- `s: str` (input string)
+- `result: str` (output string)
+- `i: int` (index for iterating through the string)
+
+Logic Flow:
+1. Initialize `s` with input from user.
+2. Initialize `result` as an empty string.
+3. Initialize `i` to 0.
+4. While `i` is less than the length of `s`:
+    1. If the character at index `i` in `s` is a dot (`.`):
+        1. Append '0' to `result`.
+    2. Else:
+        1. Increment `i` by 1.
+        2. If the character at the new index `i` in `s` is a dot (`.`):
+            1. Append '1' to `result`.
+        3. Else:
+            1. Append '2' to `result`.
+    3. Increment `i` by 1.
+5. Print `result`.
+
+Input/Output Operations:
+- Input: Read a string `s` from the user.
+- Output: Print the string `result` which contains the processed characters based on the rules defined in the logic flow.
+
+No libraries, modules, or dependencies are required.

@@ -1,0 +1,7 @@
+1. Read four integers: a, b, c, d.
+2. Check if c is greater than b. If true, output 0 and terminate.
+3. Check if a is greater than d. If true, output 0 and terminate.
+4. Check if a is less than c. If true, output the minimum of b and d minus c, and terminate.
+5. Create a list containing a, b, c, d.
+6. Sort the list in ascending order.
+7. Output the difference between the third element and the second element of the sorted list.

@@ -1,0 +1,12 @@
+1. Import the required library: java.util.Scanner
+2. Define a class: Main
+3. Define a function: main with return type void and parameter args of type String[]
+4. Declare a variable: sc of type Scanner and initialize it with new Scanner(System.in)
+5. Enter an infinite loop: while(true)
+6. Inside the loop, declare a variable: sum of type int and initialize it to 0
+7. Declare a variable: s of type String and read input from sc using sc.next() and store it in s
+8. Check if s is equal to "0", if true, break the loop
+9. Enter a loop that iterates over the length of s: for(int i=0; i<s.length(); i++)
+10. Inside the loop, declare a variable: a of type char and assign it the character at index i in s using s.charAt(i)
+11. Update sum by adding the integer value of a (obtained by subtracting '0' from a) to sum: sum += a - '0'
+12. After the loop, print the value of sum to the console followed by a newline using System.out.printf("%d\n", sum)

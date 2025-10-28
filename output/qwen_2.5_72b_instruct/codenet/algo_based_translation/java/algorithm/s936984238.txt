@@ -1,0 +1,29 @@
+Function Signatures:
+- `main(String[] args): void`
+- `read(): boolean`
+- `slove(): void`
+
+Variable Declarations and Data Types:
+- `sc: Scanner`
+- `score: int[]`
+- `number: int`
+- `sum: int`
+
+Execution Order and Logic Flow:
+1. Initialize `Scanner` object `sc`.
+2. Enter while loop that continues as long as `read()` returns true.
+3. Inside while loop, call `slove()`.
+
+Control Structures:
+- While loop: Continues as long as `read()` returns true.
+- If statement in `read()`: Checks if `number` is 0, returns false if true.
+- For loop in `read()`: Iterates from 0 to `number-1`, assigns input values to `score[i]`.
+- For loop in `slove()`: Iterates from 1 to `number-2`, sums up `score[i]`.
+
+Input/Output Operations and Data Processing Logic:
+- Input: Reads integer value for `number`. If `number` is 0, terminates program. Otherwise, reads `number` integers into `score` array.
+- Processing: Sorts `score` array. Calculates sum of elements from index 1 to `number-2`. Computes average of these elements.
+- Output: Prints the computed average.
+
+Required Libraries, Modules, or Dependencies:
+- `java.util.*`

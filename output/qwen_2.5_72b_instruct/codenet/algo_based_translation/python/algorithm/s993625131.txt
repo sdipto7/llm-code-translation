@@ -1,0 +1,23 @@
+Function: find_max_consecutive_dna_length
+Parameters: S (List[str])
+Return Type: int
+
+Variable Declarations:
+S (List[str])
+count (int)
+record (int)
+
+Logic Flow:
+1. Initialize S as a list of characters from input string
+2. Initialize count to 0
+3. Initialize record to 0
+4. For each character in S from index 0 to length of S - 1:
+    a. If the character is "A" or "C" or "G" or "T":
+        i. Increment count by 1
+    b. Else:
+        i. If count is greater than record:
+            1. Set record to count
+        ii. Set count to 0
+5. If count is greater than record:
+    a. Set record to count
+6. Print record

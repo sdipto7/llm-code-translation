@@ -1,0 +1,22 @@
+```
+Function Signature:
+    def check_string_pattern() -> None
+
+Algorithm:
+    1. Input operation:
+        - Declare a variable `s` of type `list` and assign it the list of characters from the input string.
+    
+    2. Data processing:
+        - Sort the list `s` in ascending order.
+    
+    3. Conditional logic:
+        - If condition:
+            - Check if the first element `s[0]` is equal to the second element `s[1]`.
+            - Check if the first element `s[0]` is not equal to the third element `s[2]`.
+            - Check if the third element `s[2]` is equal to the fourth element `s[3]`.
+            - If all conditions are true, execute the following block:
+                - Output operation: Print "Yes".
+            - Else:
+                - Output operation: Print "No".
+```
+

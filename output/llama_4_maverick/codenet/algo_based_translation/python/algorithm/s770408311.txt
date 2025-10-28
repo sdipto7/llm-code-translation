@@ -1,0 +1,29 @@
+1. Define a function `count_unique_strings` with no parameters and return type `int`.
+2. Declare a variable `n` of type `int` to store the number of input strings.
+3. Read an integer from the standard input and store it in `n`.
+4. Declare an empty list `res` to store input strings.
+5. Iterate `n` times using a `for` loop with loop counter `i`.
+6. Inside the loop, read a string from the standard input and store it in variable `a`.
+7. Append the string `a` to the list `res`.
+8. After the loop, convert the list `res` to a set to remove duplicates.
+9. Calculate the size of the resulting set.
+10. Print the size of the set to the standard output.
+11. Return the size of the set as the result of the function `count_unique_strings`. 
+
+Alternatively, in a more formal representation:
+
+- Function: `count_unique_strings() -> int`
+- Variables: `n: int`, `res: list[str]`, `i: int`, `a: str`
+- Execution Flow:
+  1. `n = read_int()`
+  2. `res = []`
+  3. `for i in range(n)`
+     1. `a = read_string()`
+     2. `res.append(a)`
+  4. `print(size(set(res)))`
+  5. `return size(set(res))`
+- Control Structures: `for` loop with condition `i < n`
+- Input/Output: `read_int()`, `read_string()`, `print()`
+- Data Processing: `list.append()`, `set()`, `size()` 
+
+In terms of required libraries or modules, the code relies on built-in Python functionality.

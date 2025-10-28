@@ -1,0 +1,542 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,s498914558.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s498914558.py"", line 21, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s498914558.py"", line 8, in main
+    n = int(input().strip())
+        ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 1000'
+"
+java,python,s456888268.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s456888268.py"", line 142, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s456888268.py"", line 139, in main
+    solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s456888268.py"", line 5, in solve
+    tmp = ns()
+          ^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s456888268.py"", line 113, in ns
+    b = skip()
+        ^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s456888268.py"", line 107, in skip
+    b = read_byte()
+        ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s456888268.py"", line 90, in read_byte
+    if lenbuf == -1:
+       ^^^^^^
+NameError: name 'lenbuf' is not defined
+"
+java,python,s682242794.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s682242794.py"", line 13, in <module>
+    obj.solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s682242794.py"", line 6, in solve
+    high = int(sys.stdin.readline().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '30 19'
+"
+java,python,s523386612.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s523386612.py"", line 18, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s523386612.py"", line 11, in main
+    index = int(sys.stdin.readline().strip())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 1 2 2'
+"
+java,python,s193347311.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s193347311.py"", line 30, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s193347311.py"", line 17, in main
+    strHana = next(input).strip()
+              ^^^^^^^^^^^
+  File ""/usr/lib/python3.12/fileinput.py"", line 256, in __next__
+    raise StopIteration
+StopIteration
+"
+java,python,s428436430.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s428436430.py"", line 28, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s428436430.py"", line 14, in main
+    arr.append(int(sc.readline().strip()))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 5 2 7'
+"
+java,python,s316260310.py,Runtime Error,"Error: invalid literal for int() with base 10: ''
+"
+java,python,s566905615.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s566905615.py"", line 16, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s566905615.py"", line 7, in main
+    a = int(sys.stdin.readline().strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '50 100 120'
+"
+java,python,s453440639.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s453440639.py"", line 41, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s453440639.py"", line 12, in main
+    H = int(input[index])
+        ^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 5'
+"
+java,python,s973587235.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s973587235.py"", line 21, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s973587235.py"", line 6, in main
+    minN = int(sys.stdin.readline().strip()) - 1
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 2 1 1 3'
+"
+java,python,s835214694.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s835214694.py"", line 15, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s835214694.py"", line 6, in main
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 12'
+"
+java,python,s965025950.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s965025950.py"", line 10, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s965025950.py"", line 4, in main
+    x = int(sys.stdin.readline())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 2 3\n'
+"
+java,python,s960387817.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s960387817.py"", line 15, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s960387817.py"", line 6, in main
+    from collections import HashSet
+ImportError: cannot import name 'HashSet' from 'collections' (/usr/lib/python3.12/collections/__init__.py)
+"
+java,python,s818271374.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s818271374.py"", line 27, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s818271374.py"", line 14, in main
+    a = int(sc.readline().strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 10 100'
+"
+java,python,s847387793.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s847387793.py"", line 128, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s847387793.py"", line 125, in main
+    solver.run()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s847387793.py"", line 18, in run
+    self.n = self.sc.next_int()
+             ^^^^^^^^^^^^^^^^
+AttributeError: 'FastScanner' object has no attribute 'next_int'. Did you mean: 'nextInt'?
+"
+java,python,s918182055.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s918182055.py"", line 3, in <module>
+    from collections import deque, defaultdict, PriorityQueue
+ImportError: cannot import name 'PriorityQueue' from 'collections' (/usr/lib/python3.12/collections/__init__.py)
+"
+java,python,s902370101.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s902370101.py"", line 19, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s902370101.py"", line 11, in main
+    array[i] = int(sys.stdin.readline().strip())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 3 7 9'
+"
+java,python,s307170605.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s307170605.py"", line 12, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s307170605.py"", line 6, in main
+    num = int(input())
+          ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0 2 3 4 5'
+"
+java,python,s773621585.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s773621585.py"", line 14, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s773621585.py"", line 9, in main
+    key = input()
+          ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,s699933302.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s699933302.py"", line 14, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s699933302.py"", line 4, in main
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '5 14 80'
+"
+java,python,s511234019.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s511234019.py"", line 16, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s511234019.py"", line 7, in main
+    a = int(next(input).strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 1'
+"
+java,python,s720527488.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s720527488.py"", line 114, in <module>
+    Main.main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s720527488.py"", line 13, in main
+    m = ir.nextInt()
+        ^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s720527488.py"", line 80, in nextInt
+    c = self.skip()
+        ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s720527488.py"", line 66, in skip
+    b = self.readByte()
+        ^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s720527488.py"", line 55, in readByte
+    self.lenbuf = self.in_.readinto(self.buffer)
+                  ^^^^^^^^^^^^^^^^^
+AttributeError: '_io.TextIOWrapper' object has no attribute 'readinto'. Did you mean: 'readline'?
+"
+java,python,s518927375.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s518927375.py"", line 19, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s518927375.py"", line 5, in main
+    k = int(sys.stdin.readline().strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 2 6'
+"
+java,python,s596709252.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s596709252.py"", line 12, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s596709252.py"", line 5, in main
+    x = int(sys.stdin.readline().strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 2 3'
+"
+java,python,s832608243.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s832608243.py"", line 17, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s832608243.py"", line 5, in main
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 2'
+"
+java,python,s387083574.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s387083574.py"", line 24, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s387083574.py"", line 20, in main
+    result = ' '.join(map(str, sorted_keys))
+                      ^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'dict' object is not callable
+"
+java,python,s575985145.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s575985145.py"", line 56, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s575985145.py"", line 42, in main
+    id = int(scan.readline())
+         ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 2 2 4\n'
+"
+java,python,s824230885.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s824230885.py"", line 90, in <module>
+    solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s824230885.py"", line 80, in solve
+    lst = next_int_array()
+          ^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s824230885.py"", line 58, in next_int_array
+    input = next_str_array()
+            ^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s824230885.py"", line 52, in next_str_array
+    return myconv(next(), 8)
+           ^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s824230885.py"", line 72, in myconv
+    raise TypeError(""Don't join"")
+TypeError: Don't join
+"
+java,python,s004995062.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s004995062.py"", line 13, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s004995062.py"", line 5, in main
+    sb = input().strip()
+         ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,s916993080.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s916993080.py"", line 50, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s916993080.py"", line 26, in main
+    n = sc.nextInt()
+        ^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s916993080.py"", line 22, in nextInt
+    return int(self.next())
+               ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s916993080.py"", line 10, in next
+    while self.tokenizer is None or not self.tokenizer.hasMoreTokens():
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list_iterator' object has no attribute 'hasMoreTokens'
+"
+java,python,s127819686.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s127819686.py"", line 11, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s127819686.py"", line 4, in main
+    a = int(sys.stdin.readline())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '81 58\n'
+"
+java,python,s937747608.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s937747608.py"", line 23, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s937747608.py"", line 13, in main
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 5 2 7'
+"
+java,python,s890213274.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s890213274.py"", line 16, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s890213274.py"", line 6, in main
+    A1 = int(sys.stdin.readline())
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '5 7 9\n'
+"
+java,python,s380356166.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s380356166.py"", line 109, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s380356166.py"", line 106, in main
+    solver.solve(1, in_, out)
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s380356166.py"", line 7, in solve
+    K = in_.nextInt()
+        ^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s380356166.py"", line 43, in nextInt
+    len_ = self.reads(len_, self.isSpace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s380356166.py"", line 91, in reads
+    c = self.read()
+        ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s380356166.py"", line 34, in read
+    raise EOFError
+EOFError
+"
+java,python,s312529015.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s312529015.py"", line 11, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s312529015.py"", line 3, in main
+    A = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 5'
+"
+java,python,s943650310.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s943650310.py"", line 12, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s943650310.py"", line 3, in main
+    X = int(sys.stdin.readline())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '100 17\n'
+"
+java,python,s022525398.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s022525398.py"", line 9, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s022525398.py"", line 5, in main
+    b = input().strip()
+        ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,s609591310.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s609591310.py"", line 50, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s609591310.py"", line 10, in main
+    list[i] = int(sc.readline().strip())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 1 3 2'
+"
+java,python,s100570405.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s100570405.py"", line 71, in <module>
+    main.run()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s100570405.py"", line 9, in run
+    Sd = self.in_.next()
+         ^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s100570405.py"", line 57, in next
+    raise StopIteration
+StopIteration
+"
+java,python,s968213233.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s968213233.py"", line 81, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s968213233.py"", line 78, in main
+    main_instance = Main(in_scanner, out_writer, t)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s968213233.py"", line 56, in __init__
+    N = in_scanner.next_int()
+        ^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s968213233.py"", line 26, in next_int
+    return int(self.next())
+               ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s968213233.py"", line 40, in next
+    res.append(chr(c))
+               ^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+"
+java,python,s987117545.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s987117545.py"", line 22, in <module>
+    main_instance.run()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s987117545.py"", line 10, in run
+    n = int(self.sc.readline())
+        ^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 2\n'
+"
+java,python,s584135649.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s584135649.py"", line 19, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s584135649.py"", line 12, in main
+    n = int(stdin.readline().strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0 2 3 4 5'
+"
+java,python,s936984238.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s936984238.py"", line 26, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s936984238.py"", line 23, in main
+    solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s936984238.py"", line 18, in solve
+    average = total_sum // (number - 2)
+              ~~~~~~~~~~^^~~~~~~~~~~~~~
+ZeroDivisionError: integer division or modulo by zero
+"
+java,python,s552480860.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s552480860.py"", line 17, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s552480860.py"", line 7, in main
+    h1 = int(sys.stdin.readline())
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '10 0 15 0 30\n'
+"
+java,python,s657273562.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s657273562.py"", line 127, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s657273562.py"", line 103, in main
+    arr = list(map(int, sc.readline().strip().split()))
+               ^^^
+UnboundLocalError: cannot access local variable 'map' where it is not associated with a value
+"
+java,python,s545439898.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s545439898.py"", line 18, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s545439898.py"", line 12, in main
+    givingNumbers[i] = int(sc.readline().strip())
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 2 3 4 5'
+"
+java,python,s927992720.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s927992720.py"", line 28, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s927992720.py"", line 6, in main
+    a = int(input())
+            ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,s684030429.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s684030429.py"", line 127, in <module>
+    main_instance.solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s684030429.py"", line 10, in solve
+    a = self.ni()
+        ^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s684030429.py"", line 15, in ni
+    return int(self.sc.readline().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '12 4'
+"
+java,python,s888667117.py,Runtime Error,"Error: d: 1, i: 0, S[i]: 5
+[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+d: 1, i: 1, S[i]: ?
+[1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1]
+d: 1, i: 2, S[i]: ?
+[9, 10, 9, 8, 7, 7, 7, 7, 7, 7, 7, 7, 8]
+d: 1, i: 3, S[i]: 2
+[7, 8, 9, 10, 9, 8, 7, 7, 7, 7, 7, 7, 7]
+d: 1, i: 4, S[i]: ?
+[73, 72, 73, 76, 78, 79, 79, 79, 79, 79, 79, 78, 76]
+d: 1, i: 5, S[i]: ?
+[779, 773, 767, 764, 763, 763, 763, 763, 764, 767, 773, 779, 782]
+"
+java,python,s175590171.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s175590171.py"", line 50, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s175590171.py"", line 34, in main
+    n = fs.nextInt()
+        ^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s175590171.py"", line 24, in nextInt
+    return int(self.next())
+               ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s175590171.py"", line 17, in next
+    if not self._has_next():
+           ^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s175590171.py"", line 14, in _has_next
+    return self.next_token < len(self.buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+"
+java,python,s831281137.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s831281137.py"", line 87, in <module>
+    Main.main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s831281137.py"", line 65, in main
+    N = Main.nint()
+        ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s831281137.py"", line 11, in nint
+    return int(sys.stdin.readline())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 5\n'
+"
+java,python,s745776078.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s745776078.py"", line 32, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s745776078.py"", line 11, in main
+    n = int(in_.readline().strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 4'
+"
+java,python,s399184958.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s399184958.py"", line 12, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s399184958.py"", line 3, in main
+    A = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 2 2'
+"
+java,python,s012761786.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s012761786.py"", line 76, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s012761786.py"", line 53, in main
+    a = nextLong()
+        ^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s012761786.py"", line 13, in nextLong
+    return int(next())
+               ^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s012761786.py"", line 5, in next
+    return sys.stdin.read().split()[next.index]
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+IndexError: list index out of range
+"
+java,python,s685537842.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s685537842.py"", line 74, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s685537842.py"", line 60, in main
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 5 7'
+"
+java,python,s201062219.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s201062219.py"", line 36, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s201062219.py"", line 9, in main
+    c = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 + 2'
+"
+java,python,s910008321.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s910008321.py"", line 13, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s910008321.py"", line 5, in main
+    h = int(sys.stdin.readline())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '10 4\n'
+"
+java,python,s036404962.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s036404962.py"", line 14, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s036404962.py"", line 5, in main
+    X = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '100 17'
+"

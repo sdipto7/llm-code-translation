@@ -1,0 +1,35 @@
+Function: main()
+Parameters: None
+Return Type: None
+
+Variable Declarations:
+n: Integer
+c: Integer
+i: Integer
+l1: List of Integers
+
+Logic Flow:
+1. Read integer n from standard input
+2. Initialize c to 0
+3. For each i from 0 to n-1:
+    a. Read a line of input, split by spaces, convert each element to an integer, and store in l1
+    b. If the sum of elements in l1 is greater than 1:
+        i. Increment c by 1
+4. Print the value of c
+
+Control Structures:
+- For loop: Iterates from 0 to n-1 (inclusive)
+- If statement: Checks if the sum of elements in l1 is greater than 1
+
+Input/Output Operations:
+- Read integer n from standard input
+- Read lines of input for each iteration of the loop, process them, and store in l1
+- Print the final value of c to standard output
+
+Data Processing Logic:
+- Convert input strings to integers and store in a list
+- Calculate the sum of the list
+- Compare the sum to 1 and update a counter based on the comparison
+
+Libraries/Modules/Dependencies:
+- No specific libraries or modules are required

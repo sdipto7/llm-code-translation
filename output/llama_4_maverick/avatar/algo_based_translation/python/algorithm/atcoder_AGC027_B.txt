@@ -1,0 +1,8 @@
+1. Read input values N, X, and array A from input stream.
+2. Compute prefix sum array S of array A using accumulation.
+3. Initialize variable ans to positive infinity.
+4. For each index k from 1 to length of S:
+   4.1. Compute value E as k * X + 2 * sum of elements in S at indices N - 2k - 1 down to 0 with step -k.
+   4.2. Update ans to minimum of ans and E.
+5. Compute final result as ans + N * X + 5 * last element of S.
+6. Output final result.

@@ -1,0 +1,10 @@
+1. Read the number of elements N from the input.
+2. Initialize an array of size N to store the elements.
+3. Read N elements from the input and store them in the array.
+4. Initialize a variable sum to 0.
+5. Create a priority queue.
+6. Iterate through the array.
+7. For each element in the array, add it to the priority queue.
+8. Check if the current element is less than or equal to the smallest element in the priority queue.
+9. If true, increment the sum by 1.
+10. Return the value of sum.

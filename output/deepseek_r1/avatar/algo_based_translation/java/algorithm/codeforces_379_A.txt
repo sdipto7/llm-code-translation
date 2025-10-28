@@ -1,0 +1,26 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Input Operations:**
+- Read two integers `a` (int) and `b` (int) from standard input via `Scanner`.
+
+**Variable Declarations:**
+- `a`: int (initial value from input)
+- `b`: int (initial value from input)
+- `res`: int (initialized to `a`)
+
+**Logic Flow:**
+1. Initialize `res` with the value of `a`.
+2. While loop:
+   - **Condition:** `a >= b`
+   - **Loop Body:**
+     1. Add integer division result `a / b` to `res`.
+     2. Update `a` to the sum of its integer division by `b` (`a / b`) and remainder (`a % b`).
+3. Terminate loop when `a < b`.
+4. Print `res` to standard output.
+
+**Control Structures:**
+- `while (a >= b)`
+
+**Dependencies:**
+- `java.util.Scanner` for input handling.

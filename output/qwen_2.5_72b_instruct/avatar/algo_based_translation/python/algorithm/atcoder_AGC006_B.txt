@@ -1,0 +1,36 @@
+- Function signatures with parameter and return types
+  - `calc(x: List[int]) -> int`
+  - `sub(y: List[int], debug: int = 0) -> List[int]`
+
+- Variable declarations and data types
+  - `N: int`
+  - `X: int`
+  - `x: List[int]`
+  - `y: List[int]`
+  - `ys: List[int]`
+  - `xs: List[int]`
+  - `i: int`
+
+- Complete logic flow in execution order
+  1. Read input values for `N` and `X` as integers.
+  2. Check if `X` equals 1 or `X` equals `N * 2 - 1`.
+     - If true, print "No".
+     - If false, print "Yes".
+  3. If `X` equals `N * 2 - 2`, assign `xs` to a list created by concatenating `range(N - 1, X + 2)` and `range(1, N - 1)`.
+     - Otherwise, assign `ys` to a list created by concatenating `range(1, X - 1)` and `range(X + 3, N * 2)`.
+     - Assign `xs` to a list created by concatenating the first `N - 3` elements of `ys`, `[X + 2, X - 1, X, X + 1]`, and the remaining elements of `ys` starting from index `N - 3`.
+  4. For each element `x` in `xs`, print `x`.
+
+- Control structures (loops, conditionals) with exact conditions
+  - While loop in `sub` function: Continue looping while the length of `y` is greater than 1.
+  - Conditional in `calc` function: Check if `X` equals 1 or `X` equals `N * 2 - 1`.
+  - Conditional in `calc` function: Check if `X` equals `N * 2 - 2`.
+  - For loop: Iterate over each element `x` in `xs`.
+
+- Input/output operations and data processing logic
+  - Input: Read a line of input, split it by spaces, convert each element to an integer, and assign them to `N` and `X`.
+  - Output: Print "No" if `X` equals 1 or `X` equals `N * 2 - 1`. Otherwise, print "Yes" and then print each element of `xs` on separate lines.
+  - Data processing: In the `sub` function, repeatedly reduce the list `y` by replacing each group of three consecutive elements with their median value until only one element remains. Optionally, print debugging information if `debug` is set to 1.
+
+- Required libraries, modules, or dependencies
+  - `itertools` module (imported but not used in the provided code)

@@ -1,0 +1,54 @@
+**Algorithm: Main.solve()**
+
+**Input:**
+- Standard input stream containing:
+  - First line: Two integers H and W
+  - Next 10 lines: 10 integers each forming a 10×10 cost matrix
+  - Next H×W lines: Integers representing grid values
+
+**Data Structures:**
+- int H: grid height
+- int W: grid width  
+- int[10][10] c: cost matrix
+- int[10] min: minimum cost array
+- int ans: total cost accumulator
+
+**Execution Flow:**
+
+1. Read H and W from input
+2. Initialize 10×10 cost matrix c:
+   - For i from 0 to 9:
+     - For j from 0 to 9:
+       - Read c[i][j] from input
+
+3. Initialize min array with direct costs to target (column 1):
+   - For i from 0 to 9:
+     - min[i] = c[i][1]
+
+4. Compute minimum costs using dynamic programming (10 iterations):
+   - For tc from 0 to 9:
+     - For i from 0 to 9:
+       - For j from 0 to 9:
+         - min[i] = minimum(min[i], c[i][j] + min[j])
+
+5. Process grid and accumulate total cost:
+   - Initialize ans = 0
+   - For h from 1 to H:
+     - For w from 1 to W:
+       - Read integer A from input
+       - If A ≥ 0:
+         - ans += min[A]
+
+6. Output result:
+   - Print ans
+
+**Scanner Utility Methods:**
+- hasNextByte(): Checks if buffer has bytes or reads from stream
+- hasNext(): Skips non-printable characters and checks for next token
+- readByte(): Returns next byte from buffer
+- next(): Reads next printable string token
+- nextLong(): Reads next long integer (handles negative signs)
+- nextInt(): Reads next integer (casts from long)
+- nextDouble(): Reads next double value
+
+**Note:** The algorithm uses a custom Scanner class for input parsing with buffer management and character validation.

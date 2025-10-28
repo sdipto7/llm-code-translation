@@ -1,0 +1,16 @@
+Algorithm:
+1. Import Scanner from java.util
+2. Define class Main with public static void main(String[] args)
+3. Declare Scanner scanner = new Scanner(System.in)
+4. Read integer a from input
+5. Read integer b from input
+6. Declare boolean flag = false
+7. For integer i from 1 to 100000 inclusive:
+   a. Calculate floor(1.0 * i * 0.08)
+   b. Calculate floor(0.1 * i)
+   c. If first calculation equals a AND second calculation equals b:
+      i. Print i
+      ii. Set flag = true
+      iii. Break loop
+8. If flag is false:
+   a. Print -1

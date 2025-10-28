@@ -1,0 +1,14 @@
+```
+- Define a function `process_string(s: str) -> str`
+  - Input: A string `s`
+  - Output: A string which is either the original string or its reverse
+
+- Declare a variable `s` of type `str`
+  - Assign the value from an input operation to `s`
+
+- Check if the length of `s` is equal to 2
+  - If true, return `s` as is
+  - Otherwise, return the reverse of `s`
+
+- Use `print` to output the result of `process_string(s)`
+```

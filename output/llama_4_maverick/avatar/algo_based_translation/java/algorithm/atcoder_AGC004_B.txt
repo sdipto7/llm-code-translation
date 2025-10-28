@@ -1,0 +1,13 @@
+1. Read the number of elements N from the input.
+2. Read a value x from the input.
+3. Read N long integers and store them in a list called srimeList.
+4. Create a list called costList to store N arrays, each of size N.
+5. For each index i from 0 to N-1, perform the following steps:
+   1. Initialize the first element of the ith array in costList with the ith element of srimeList.
+   2. For each castNum from 1 to N-1, calculate the value of costList[i][castNum] as the minimum of costList[i][castNum-1] and the (i-castNum+N) modulo N element of srimeList.
+6. Create a list called result to store N values.
+7. For each index i from 0 to N-1, perform the following steps:
+   1. Calculate the sum of the ith elements of all arrays in costList.
+   2. Calculate the value i*x + sum and store it in the result list.
+8. Find the minimum value in the result list.
+9. Output the minimum value found in step 8.

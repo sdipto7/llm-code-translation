@@ -1,0 +1,31 @@
+Algorithm:
+- Function Signature: `main() -> None`
+- Variable Declarations:
+  - `mod: int = 10 ** 9 + 7`
+  - `n: int`
+  - `c: List[int]`
+  - `b: int`
+  - `a: int`
+  - `ans: int = 0`
+  - `i: int` (loop variable)
+- Execution Order:
+  - Read integer `n` from input
+  - Read list `c` of `n` integers from input, split by spaces
+  - Sort list `c` in descending order
+  - Calculate `b` as `2` raised to the power of `2 * n - 2`, modulo `mod`
+  - Calculate `a` as `2 * b`, modulo `mod`
+  - Initialize `ans` to `0`
+  - For each index `i` from `0` to `n - 1`:
+    - Update `ans` by adding `c[i] * (a + i * b)`
+    - Update `ans` by taking modulo `mod` of `ans`
+  - Print the final value of `ans`
+- Input/Output Operations:
+  - Read `n` as an integer from standard input
+  - Read a line of space-separated integers and convert to a list `c`
+  - Print the final result `ans` to standard output
+- Data Processing Logic:
+  - Sorting the list `c` in descending order
+  - Computing powers and modular arithmetic to derive coefficients
+  - Accumulating weighted sums based on the sorted list and computed coefficients
+- Required Libraries/Modules/Dependencies:
+  - `List` from `typing` module (if type annotations are to be strictly followed, though not necessary for execution)

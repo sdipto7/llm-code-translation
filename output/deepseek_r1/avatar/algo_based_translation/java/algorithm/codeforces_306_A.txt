@@ -1,0 +1,32 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `n: int` (input value)
+- `m: int` (input value)
+- `a: int[]` (size `m`)
+- `sub: int` (when `n % m != 0`)
+- `test: int` (when `n % m != 0`)
+- `count: int` (when `n % m != 0`)
+
+**Libraries/Dependencies:**
+- `java.util.Scanner` for input
+
+**Algorithm:**
+
+1. Read `n` and `m` from standard input.
+2. Declare `a` as an integer array of size `m`.
+3. If `n % m == 0`:
+   1. Iterate over all indices of `a`:
+      - Assign `a[i] = n / m`.
+4. Else:
+   1. Compute `sub = n / m` (integer division).
+   2. Fill all elements of `a` with `sub`.
+   3. Compute `test = n - (sub * m)`.
+   4. Initialize `count = 0`.
+   5. For `i` from `0` to `test - 1`:
+      1. Increment `a[count]` by 1.
+      2. Increment `count` by 1.
+      3. If `count >= a.length`, reset `count` to 0.
+5. Iterate over `a` in reverse order (from last index to 0):
+   - Print each element followed by a space.

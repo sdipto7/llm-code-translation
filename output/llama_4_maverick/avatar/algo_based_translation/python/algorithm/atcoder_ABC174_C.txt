@@ -1,0 +1,20 @@
+1. Import necessary modules and set up input/output functions
+   SET mod = 1000000007
+   SET k = READ_INTEGER()
+
+2. Initialize variables
+   SET t = 0
+
+3. Loop through range from 1 to k (inclusive)
+   FOR i FROM 1 TO k
+       UPDATE t = (t MOD k) * 10 + 7
+       IF t MOD k == 0 THEN
+           PRINT i
+           EXIT LOOP
+       END IF
+   END FOR
+
+4. If loop completes without finding a match
+   IF no match found THEN
+       PRINT -1
+   END IF

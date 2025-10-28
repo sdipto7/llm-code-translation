@@ -1,0 +1,25 @@
+- **Function**: main()
+  - **Parameters**: None
+  - **Return type**: void
+- **Variables**:
+  - `n: int` (input count)
+  - `res: float` (accumulated result, initialized to 0.0)
+  - `x: str` (input value string)
+  - `u: str` (input unit string)
+- **Logic Flow**:
+  1. Read integer `n` from standard input.
+  2. Initialize `res` to 0.0.
+  3. Loop `n` times:
+     - Read a line from input, split into `x` and `u`.
+     - If `u` equals "BTC":
+       - Convert `x` to float, multiply by 380000, add to `res`.
+     - Else:
+       - Convert `x` to integer, add to `res`.
+  4. Print `res` as a floating-point number or integer (depending on accumulated value).
+- **Control Structures**:
+  - `for` loop: `range(n)`
+  - `if-else`: condition `u == "BTC"`
+- **Input/Output**:
+  - Input: Read `n` via `input()`, then read `n` lines containing `x` and `u`.
+  - Output: Print total `res` with no formatting.
+- **Dependencies**: None (uses built-in input/output functions).

@@ -1,0 +1,20 @@
+- Function signature: `main(String[] args)`
+- Import the `java.util` library for `Scanner` class
+- Declare variables: 
+  - `n` of type `int`
+  - `c` of type `int` initialized to 0
+  - `flg` of type `int` initialized to 0
+  - `x` and `y` of type `int`
+- Create a `Scanner` object `sc` to read from `System.in`
+- Read an integer `n` from `System.in` using `sc.nextInt()`
+- While loop condition: `n > 0` with post-decrement operation (`n--`)
+  - Inside the loop:
+    - Read two integers `x` and `y` from `System.in` using `sc.nextInt()`
+    - If condition: `x == y`
+      - If true, increment `c` by 1
+      - If `c >= 3`, set `flg` to 1
+    - Else, reset `c` to 0
+- After the loop:
+  - If condition: `flg == 0`
+    - If true, print "No" to `System.out`
+  - Else, print "Yes" to `System.out`

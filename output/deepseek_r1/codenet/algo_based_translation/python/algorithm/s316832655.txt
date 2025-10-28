@@ -1,0 +1,26 @@
+- **Function Signature**:  
+  Not applicable (script code, no explicit function)
+
+- **Variables**:  
+  - `a`: int  
+  - `b`: int  
+  - `c`: int  
+
+- **Logic Flow**:  
+  1. Read one line of input from standard input.  
+  2. Split the input into three string parts using whitespace as the delimiter.  
+  3. Convert each part to an integer and assign to `a`, `b`, and `c` (third value `c` is unused).  
+  4. Multiply `a` by `b`.  
+  5. Divide the product by `2` using floating-point division.  
+  6. Convert the result to an integer (truncates decimal part).  
+  7. Print the integer result to standard output.  
+
+- **Control Structures**:  
+  None (no explicit loops or conditionals)  
+
+- **Input/Output**:  
+  - Input: Single line with three space-separated integers.  
+  - Output: Single integer result of `(a * b) // 2` (implied via truncation).  
+
+- **Dependencies**:  
+  None (uses built-in Python functions).

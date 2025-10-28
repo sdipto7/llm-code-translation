@@ -1,0 +1,28 @@
+Function Signature:
+- Function: `calculate_min_moves`
+- Parameters: `n: int`, `d: int`, `x: List[int]`
+- Returns: `int`
+
+Variable Declarations:
+- `x: List[int]` - a list of integers
+- `m: int` - initialized to 0, stores the total number of moves
+- `q: int` - initialized to 0, stores the temporary number of moves required for each pair
+
+Logic Flow:
+1. Initialize `m` to 0.
+2. Iterate over `a` from 0 to `n - 2` (inclusive):
+   - If `x[a] >= x[a + 1]`:
+     - Calculate `q` as `((x[a] - x[a + 1]) // d) + 1`.
+     - Increment `m` by `q`.
+     - Update `x[a + 1]` as `x[a + 1] + q * d`.
+3. Return `m`.
+
+Control Structures:
+- For loop iterating over `a` from 0 to `n - 2`:
+  - Conditional `if` to check if `x[a] >= x[a + 1]`.
+
+Input/Output Operations:
+- The input list `x` is processed to ensure each element after the first is greater than the previous by at least `d`.
+
+Dependencies:
+- No external libraries are required.

@@ -1,0 +1,48 @@
+Function: main
+Parameters: String[] args
+Return Type: void
+
+Variable Declarations:
+- long startTime
+- Scanner sc
+- int n
+- long div
+- long[] A
+- long ans
+- long a
+- long count1
+- int i, j
+
+Libraries:
+- java.util.*
+
+Execution Order and Logic Flow:
+
+1. startTime = System.currentTimeMillis()
+2. sc = new Scanner(System.in)
+3. n = sc.nextInt()
+4. div = (long) Math.pow(10, 9) + 7
+5. A = new long[n]
+6. ans = 0
+
+Loop 1: for (int i = 0; i < n; i++)
+    A[i] = sc.nextLong()
+
+Loop 2: for (int i = 0; i < 60; i++)
+    1. a = 0
+    2. count1 = 0
+    
+    Loop 3: for (int j = 0; j < n; j++)
+        if ((A[j] >> i & 1) == 1)
+            count1++
+    
+    3. a = a + count1 * (n - count1)
+    
+    Loop 4: for (int j = 0; j < i; j++)
+        a = (a << 1) % div
+    
+    5. ans += a
+    6. ans %= div
+
+7. System.out.println(ans)
+8. endTime = System.currentTimeMillis()

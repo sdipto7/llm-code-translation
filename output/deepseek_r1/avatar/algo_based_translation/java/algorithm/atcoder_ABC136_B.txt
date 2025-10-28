@@ -1,0 +1,32 @@
+```algorithm
+Function Main:
+    Parameters: String array args
+    Return: void
+
+    Variables:
+        Scanner stdIn = new Scanner(System.in)
+        int N = stdIn.nextInt()
+        int count = 0
+        int temp = N
+        int ans = 0
+
+    Execution Steps:
+        1. Read integer N from standard input
+        2. Calculate number of digits in N:
+            While temp > 0:
+                temp = temp / 10
+                count += 1
+        3. For i from 1 to count (inclusive):
+            If i == count:
+                If i is odd:
+                    ans += (N - 10^(i-1) + 1)
+            Else:
+                If i == 1:
+                    ans += 9
+                Else if i is odd:
+                    ans += (10^i - 10^(i-1))
+        4. Print ans to standard output
+
+    Dependencies:
+        java.util.Scanner
+```

@@ -1,0 +1,43 @@
+Function Signature:
+- `dfs(links: List[Set[int]], n: int, k: int, v: int, p: int) -> Tuple[int, int]`
+
+Variable Declarations and Data Types:
+- `height_from_leaf: int`
+- `cut_count: int`
+- `hgt: int`
+- `cut: int`
+- `u: int`
+- `n: int`
+- `k: int`
+- `aaa: List[int]`
+- `links: List[Set[int]]`
+- `ans: int`
+- `_ : int` (used to ignore return value)
+
+Logic Flow and Control Structures:
+1. Initialize `height_from_leaf` to 0.
+2. Initialize `cut_count` to 0.
+3. Iterate over each `u` in `links[v]`:
+   - If `u` equals 0, continue to the next iteration.
+   - Recursively call `dfs(links, n, k, u, v)` and assign the result to `hgt` and `cut`.
+   - Update `height_from_leaf` to the maximum of `height_from_leaf` and `hgt`.
+   - Increment `cut_count` by `cut`.
+4. Increment `height_from_leaf` by 1.
+5. If `p` is not 0 and `height_from_leaf` equals `k`:
+   - Reset `height_from_leaf` to 0.
+   - Increment `cut_count` by 1.
+6. Return `height_from_leaf` and `cut_count`.
+
+Input/Output Operations and Data Processing Logic:
+1. Read input from standard input as bytes, split by whitespace, and convert to integers.
+2. Assign the first integer to `n`, the second to `k`, and the rest to `aaa`.
+3. Initialize `links` as a list of sets of integers, with length `n`.
+4. For each index `i` and value `a` in `aaa`:
+   - Decrement `a` by 1.
+   - Add `i` to the set at index `a` in `links`.
+5. Call `dfs(links, n, k, 0, 0)` and assign the second returned value to `ans`.
+6. If the first element of `aaa` is not 1, increment `ans` by 1.
+7. Print `ans`.
+
+Required Libraries, Modules, or Dependencies:
+- `sys` module for reading input from standard input buffer.

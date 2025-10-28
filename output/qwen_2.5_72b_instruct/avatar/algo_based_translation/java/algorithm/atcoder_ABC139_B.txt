@@ -1,0 +1,35 @@
+Function Signature:
+- `main(String[] args)`
+
+Variable Declarations and Data Types:
+- `Scanner sc`
+- `int A`
+- `int B`
+- `int amari`
+- `int result`
+- `PrintWriter out`
+
+Logic Flow in Execution Order:
+1. Create a `Scanner` object to read input from standard input.
+2. Read an integer input for variable `A`.
+3. Read an integer input for variable `B`.
+4. Initialize `amari` to 0.
+5. Initialize `result` to 0.
+6. Calculate `(B - 1) / (A - 1)` and assign it to `result`.
+7. Calculate `(B - 1) % (A - 1)` and assign it to `amari`.
+8. If `amari` is not equal to 0, increment `result` by 1.
+9. Create a `PrintWriter` object to write output to standard output.
+10. Print the value of `result`.
+11. Close the `Scanner` object.
+12. Flush the `PrintWriter` object.
+
+Control Structures:
+- Conditional: If `amari != 0`, then `result += 1`.
+
+Input/Output Operations and Data Processing Logic:
+- Input: Read two integers `A` and `B` from standard input.
+- Output: Write the calculated `result` to standard output.
+
+Required Libraries, Modules, or Dependencies:
+- `java.io.PrintWriter`
+- `java.util.Scanner`

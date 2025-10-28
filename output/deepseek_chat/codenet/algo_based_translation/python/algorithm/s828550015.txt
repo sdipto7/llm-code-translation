@@ -1,0 +1,51 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- x: int
+- y: int
+- a: int
+- b: int
+- c: int
+- p: list[int]
+- q: list[int]
+- r: list[int]
+- pq: list[int]
+- i: int
+
+**Input Operations:**
+- Read one line from stdin and split into 5 integers: x, y, a, b, c
+- Read one line from stdin and split into a integers
+- Read one line from stdin and split into b integers
+- Read one line from stdin and split into c integers
+
+**Logic Flow:**
+1. Read x, y, a, b, c from input
+2. Read a list of a integers
+3. Sort the list in descending order and take first x elements → store in p
+4. Read a list of b integers
+5. Sort the list in descending order and take first y elements → store in q
+6. Read a list of c integers
+7. Sort the list in descending order → store in r
+8. Concatenate lists p and q → sort the combined list in ascending order → store in pq
+9. Calculate loop_count = min(x+y, a+b, c)
+10. For i from 0 to loop_count-1:
+    - If pq[i] < r[i]:
+        - Set pq[i] = r[i]
+11. Calculate sum of all elements in pq
+12. Print the sum
+
+**Control Structures:**
+- For loop: for i in range(min(x+y, a+b, c))
+- Conditional: if pq[i] < r[i]
+
+**Data Processing:**
+- Sorting operations (both descending and ascending)
+- List slicing
+- List concatenation
+- Element replacement in list
+- Summation of list elements
+
+**Dependencies:**
+- Built-in functions: input(), split(), map(), sorted(), min(), range(), sum(), print()
+- No external libraries required

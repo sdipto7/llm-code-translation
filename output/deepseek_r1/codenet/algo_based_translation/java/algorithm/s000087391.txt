@@ -1,0 +1,55 @@
+- Functions:
+  - `public static void main(String[] args)`
+    - Parameters: String array args
+    - Returns: void
+
+- Variables:
+  - `ArrayList<Integer> result = new ArrayList<>()`
+  - `Scanner insert = new Scanner(System.in)`
+  - `int n = -1`
+  - `String line`
+  - `String[] array2`
+  - `int[] input`
+  - `int sum`
+  - `double avg`
+  - `int num`
+
+- Logic Flow:
+  1. Initialize result ArrayList
+  2. Initialize Scanner for input
+  3. Start infinite loop:
+     1. Read line from input
+     2. Parse line to integer n
+     3. If n == 0, break loop
+     4. For loop: i from 0 to n-1 (empty body)
+     5. Read next line from input
+     6. Split line into array2 using space delimiter
+     7. Initialize input array with size n
+     8. Initialize sum = 0
+     9. For loop: i from 0 to n-1
+        1. Parse array2[i] to integer
+        2. Add to input[i]
+        3. sum += input[i]
+     10. Compute avg = (double)sum / (double)n
+     11. Initialize num = 0
+     12. For loop: i from 0 to n-1
+         1. If input[i] <= avg: increment num
+     13. Add num to result
+  4. For loop: i from 0 to result.size()-1
+     1. If result.get(i) == -1: print "NONE"
+     2. Else: print result.get(i)
+
+- Control Structures:
+  - `while(true)` loop terminated by n==0 check
+  - Three nested for-loops for array processing
+  - Two conditional checks for n==0 and input[i] <= avg
+  - Final output loop with conditional check for -1
+
+- Input/Output:
+  - Reads from System.in using Scanner
+  - Processes multiple test cases until n=0
+  - Outputs "NONE" for -1 entries, numeric results otherwise
+
+- Dependencies:
+  - `java.util.ArrayList`
+  - `java.util.Scanner`

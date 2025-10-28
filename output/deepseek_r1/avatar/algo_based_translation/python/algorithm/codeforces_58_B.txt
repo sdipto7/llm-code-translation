@@ -1,0 +1,41 @@
+Structured Algorithm Specification:
+
+Function/Method Signatures:
+- Function: main()
+  - Parameters: None
+  - Return type: void
+
+Variable Declarations:
+- n: int (initialized via input)
+- i: int (loop iterator)
+
+Step-by-Step Logic Flow:
+1. Read integer from standard input using input() and convert to int. Store in n.
+2. Initialize for loop:
+   - Iterator: i
+   - Start value: Original value of n
+   - End value: 1 (inclusive)
+   - Step: -1
+3. For each iteration:
+   a. Check if current n modulo i equals 0
+   b. If condition true:
+      i. Assign n = i
+      ii. Print integer i to stdout with trailing space (no newline)
+4. Loop terminates after completing all iterations from initial n to 1
+
+Control Flow Structures:
+- For loop with fixed range (original n to 1, step -1)
+- Conditional check (n % i == 0) controlling variable reassignment and output
+
+Input/Output Operations:
+- Single integer input via stdin
+- Space-separated integers printed to stdout via print() with end=' '
+
+Error Handling Mechanisms:
+- No input validation or try/catch blocks
+- Implicitly handles n=0 and negative inputs via empty loop execution
+- Assumes valid integer input format
+
+External Dependencies:
+- Standard Python I/O functions (input, print)
+- No external libraries or modules required

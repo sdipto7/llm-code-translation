@@ -1,0 +1,36 @@
+Function signature: main(String[] args) - no return type
+
+Variable declarations:
+- N: int
+- A: int[]
+- min: int
+- max: int
+- mins: long
+- maxs: long
+- in: Scanner
+- pw: PrintWriter
+
+Logic flow:
+1. Initialize in as new Scanner(System.in)
+2. Initialize pw as new PrintWriter(System.out)
+3. Read N as int from in
+4. Initialize A as int array of size N
+5. For loop from n=0 to N-1:
+   a. Read A[n] as int from in
+6. Sort A array
+7. Set min to A[0]
+8. Set max to A[N-1]
+9. Initialize mins to 0
+10. Initialize maxs to 0
+11. For each value in A:
+    a. If value equals min, increment mins by 1
+    b. If value equals max, increment maxs by 1
+12. If min equals max:
+    a. Print (max - min) + " " + (mins * (mins - 1) / 2) using pw
+13. Else:
+    a. Print (max - min) + " " + (mins * maxs) using pw
+14. Close pw
+
+Libraries:
+- java.io.*
+- java.util.*

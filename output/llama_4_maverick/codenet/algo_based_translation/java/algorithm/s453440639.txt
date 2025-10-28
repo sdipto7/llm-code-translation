@@ -1,0 +1,65 @@
+1. Read two integers H and W from input.
+2. Read H lines of text, each of length W, into a 2D array S of size H x W.
+3. For each element S[i][j] in the 2D array:
+   1. If S[i][j] is '.':
+      1. Initialize count to 0.
+      2. For each neighboring cell S[i+a][j+b] where a and b range from -1 to 1:
+         1. If i+a is out of bounds (less than 0 or greater than or equal to H), skip.
+         2. If j+b is out of bounds (less than 0 or greater than or equal to W), skip.
+         3. If S[i+a][j+b] is '#', increment count.
+      3. Replace S[i][j] with the character representation of count.
+4. Output each element S[i][j] in the 2D array.
+5. Output a newline after each row.
+
+**Algorithm Details**
+
+- Function Signature: `main(String[] args)`
+- Input: Two integers H and W, followed by H lines of text of length W.
+- Output: A 2D grid where '.' is replaced with the count of neighboring '#'.
+
+1. `readInput(H, W)` 
+   - Input: None
+   - Output: H, W
+   - Operation: Read two integers from input using `Scanner`.
+2. `readGrid(H, W, S)` 
+   - Input: H, W
+   - Output: 2D array S
+   - Operation: Read H lines of text into S.
+3. `processGrid(H, W, S)` 
+   - Input: H, W, S
+   - Output: Modified S
+   - Operation: For each '.' in S, count neighboring '#' and replace '.' with the count.
+4. `printGrid(H, W, S)` 
+   - Input: H, W, S
+   - Output: None
+   - Operation: Output the modified grid.
+
+**Step-by-Step Logic**
+
+1. `main()`
+   1. Call `readInput(H, W)`.
+   2. Call `readGrid(H, W, S)`.
+   3. Call `processGrid(H, W, S)`.
+   4. Call `printGrid(H, W, S)`.
+
+**Required Libraries**
+
+- `java.util.Scanner` 
+
+**Data Types and Declarations**
+
+- `H`, `W`: integers
+- `S`: 2D character array of size H x W
+- `count`: integer
+- `a`, `b`, `i`, `j`: integers 
+
+**Exact Control Structures**
+
+- Loop: `for (int i = 0; i < H; i++)`
+- Loop: `for (int j = 0; j < W; j++)`
+- Conditional: `if (S[i][j] == '.')`
+- Loop: `for (int a = -1; a <= 1; a++)`
+- Loop: `for (int b = -1; b <= 1; b++)`
+- Conditional: `if (i + a < 0 || H <= i + a)`
+- Conditional: `if (j + b < 0 || W <= j + b)`
+- Conditional: `if (S[i + a][j + b] == '#')`

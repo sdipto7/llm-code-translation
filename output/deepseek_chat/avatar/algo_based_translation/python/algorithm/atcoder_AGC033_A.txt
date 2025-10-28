@@ -1,0 +1,35 @@
+**Function Signature:**
+- main(): None
+
+**Variables:**
+- h: int
+- w: int
+- graph: numpy.ndarray (2D array of floats)
+
+**Libraries/Dependencies:**
+- numpy
+
+**Algorithm:**
+1. Read two integers h and w from input
+2. Initialize a 2D list comprehension:
+   - For each row in range(h):
+     - Read a string from input
+     - Convert string to list of characters
+     - For each character i:
+       - If i equals '#', set value to 0
+       - Else, set value to float('inf')
+3. Convert the list to a numpy array
+4. Process columns from left to right:
+   - For x from 0 to w-2:
+     - Update graph[:, x+1] = minimum(graph[:, x] + 1, graph[:, x+1])
+5. Process columns from right to left:
+   - For x from w-1 down to 1:
+     - Update graph[:, x-1] = minimum(graph[:, x] + 1, graph[:, x-1])
+6. Process rows from top to bottom:
+   - For y from 0 to h-2:
+     - Update graph[y+1, :] = minimum(graph[y, :] + 1, graph[y+1, :])
+7. Process rows from bottom to top:
+   - For y from h-1 down to 1:
+     - Update graph[y-1, :] = minimum(graph[y, :] + 1, graph[y-1, :])
+8. Find maximum value in graph array
+9. Convert maximum value to integer and print

@@ -1,0 +1,30 @@
+```
+Function Signature:
+- main(): void
+
+Variables:
+- scan: Scanner
+- intLoop: int
+- strTaro: String
+- strHana: String
+- intTaro: int
+- intHana: int
+- intJudge: int
+
+Libraries:
+- java.util.Scanner
+
+Algorithm:
+1. Initialize a Scanner object `scan` to read input from the standard input.
+2. Read an integer `intLoop` using `scan.nextInt()` which determines the number of iterations.
+3. Initialize `intTaro` and `intHana` to 0, which represent Taro's and Hana's scores respectively.
+4. Start a for-loop to iterate from 0 to `intLoop - 1`:
+   a. For each iteration, read a string `strTaro` using `scan.next()`.
+   b. Read another string `strHana` using `scan.next()`.
+   c. Calculate the integer `intJudge` as the result of `strTaro.compareTo(strHana)`.
+   d. If `intJudge` is less than 0, increment `intHana` by 3.
+   e. Else if `intJudge` equals 0, increment both `intTaro` and `intHana` by 1.
+   f. Else if `intJudge` is greater than 0, increment `intTaro` by 3.
+5. After the loop, output the values of `intTaro` and `intHana` separated by a space using `System.out.println(intTaro + " " + intHana)`.
+6. Close the `scan` object using `scan.close()`.
+```

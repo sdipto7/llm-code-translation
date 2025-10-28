@@ -1,0 +1,21 @@
+Algorithm:
+1. Read integer N from input
+2. Read list A of N integers from input
+3. Initialize variables:
+   - mn = N + 1 (integer)
+   - mx = -1 (integer)
+4. For i from 0 to N-1:
+   - If (i + 1) != A[i]:
+     - mn = min(mn, i)
+     - mx = max(mx, i)
+5. If mx == -1:
+   - Print "0 0"
+6. Else:
+   - Create new list A by concatenating:
+     - A[0:mn]
+     - A[mn:mx+1] reversed
+     - A[mx+1:]
+   - If sorted(A) equals A:
+     - Print (mn + 1) and (mx + 1)
+   - Else:
+     - Print "0 0"

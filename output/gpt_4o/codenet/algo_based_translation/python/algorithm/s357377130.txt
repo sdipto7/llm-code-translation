@@ -1,0 +1,36 @@
+```
+Function signature:
+    function process_numbers(A: int, B: int, K: int) -> None
+
+Variable declarations:
+    A, B, K: integers
+    i: integer initialized to 0
+
+Logic flow:
+    Read three space-separated integers from input and assign them to A, B, K
+    If condition A + K - 1 >= B - K + 1:
+        While A <= B:
+            Output the value of A
+            Increment A by 1
+    Else:
+        Initialize i to 0
+        While i <= K - 1:
+            Output the value of A + i
+            Increment i by 1
+        While B - K + 1 <= B:
+            Output the value of B - K + 1
+            Decrement K by 1
+
+Control structures:
+    Conditional: if A + K - 1 >= B - K + 1
+    Loop: while A <= B
+    Loop: while i <= K - 1
+    Loop: while B - K + 1 <= B
+
+Input/Output operations:
+    Input: Read space-separated integers and assign to A, B, K
+    Output: Print integers based on conditions
+
+Required libraries:
+    None
+```

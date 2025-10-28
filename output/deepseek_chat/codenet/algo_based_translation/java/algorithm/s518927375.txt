@@ -1,0 +1,16 @@
+```python
+def main():
+    import sys
+    input = sys.stdin.read().split()
+    k = int(input[0])
+    a = int(input[1])
+    b = int(input[2])
+    
+    if b <= a + 2:
+        print(1 + k)
+        return
+    
+    x = k - (a - 1)
+    ans = a + (x // 2) * (b - a) + (x % 2)
+    print(ans)
+```

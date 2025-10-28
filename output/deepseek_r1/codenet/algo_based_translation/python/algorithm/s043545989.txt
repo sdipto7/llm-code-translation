@@ -1,0 +1,46 @@
+**Function Signature**
+```python
+def main() -> None:
+```
+
+**Variables**
+- `N: int`
+- `a: List[int]`
+- `B: collections.Counter[int]`
+- `k: List[int]`
+- `v: List[int]`
+
+**Logic Flow**
+1. Read integer `N` from standard input
+2. Read list of integers `a` from standard input
+3. Create Counter `B` from elements of `a`
+4. Extract keys `k` and values `v` from `B`
+5. Check conditions in sequence:
+   - If `len(B) == 3`:
+     - Verify `k[0] ^ k[1] ^ k[2] == 0`
+     - Verify `v[0] == v[1] == v[2]`
+     - If both conditions true: print "Yes"
+   - Else if `len(B) == 2`:
+     - Verify presence of `0` in `k`
+     - Check `v[0] == 2 * v[1]` or `v[1] == 2 * v[0]`
+     - If both conditions true: print "Yes"
+   - Else if `len(B) == 1`:
+     - Verify `0` in `k`
+     - If condition true: print "Yes"
+   - Else:
+     - Print "No"
+
+**Control Structures**
+- Sequential conditional checks:
+  - `if len(B) == 3` with compound boolean check
+  - `elif len(B) == 2` with compound boolean check
+  - `elif len(B) == 1` with membership check
+  - `else` fallthrough
+
+**Input/Output Operations**
+- Read `N` via `input()`
+- Read array `a` via `input().split()` conversion
+- Print "Yes" or "No" based on conditions
+
+**Dependencies**
+- `collections.Counter` from Python standard library

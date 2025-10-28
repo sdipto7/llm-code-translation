@@ -1,0 +1,44 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `sc`: Scanner (for reading input)
+- `S`: String (first input string)
+- `T`: String (second input string)
+- `A`: String[] (array of lowercase letters "a" to "z")
+- `res`: boolean (result flag, initialized to true)
+- `s`: String (current character from A in loop)
+- `sIdx`: int (index of s in S)
+- `t`: String (character at sIdx in T)
+- `idx`: int (current index position during while loop)
+
+**Libraries/Dependencies:**
+- `java.util.Scanner`
+
+**Algorithm Steps:**
+1. Create Scanner object to read from standard input
+2. Read first line into S
+3. Read second line into T
+4. Close Scanner
+5. Initialize array A with all lowercase letters
+6. Initialize boolean res to true
+7. For each string s in A:
+   - Find first index of s in S, store in sIdx
+   - If sIdx < 0, skip to next iteration
+   - Get character at sIdx in T, convert to string t
+   - Initialize idx to 0
+   - While idx < length of S:
+     - If S contains s starting from idx:
+       - If index of s in S from idx != index of t in T from idx:
+         - Set res to false
+         - Break while loop
+       - Else:
+         - Set idx to index of s in S from idx + 1
+     - Else if T contains t starting from idx:
+       - Set res to false
+       - Break while loop
+     - Else:
+       - Break while loop
+   - If res is false, break for loop
+8. If res is true, print "Yes"
+9. Else, print "No"

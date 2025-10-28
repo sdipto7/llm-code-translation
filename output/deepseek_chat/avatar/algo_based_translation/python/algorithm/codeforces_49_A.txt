@@ -1,0 +1,12 @@
+1. Read a string input from standard input and assign to variable `a`
+2. Declare list `vo` containing vowel characters: ['a','e','i','o','u','y','A','E','I','O','U','Y']
+3. Initialize loop counter `i` starting from last index of string `a` (len(a)-1), decrementing by 1 each iteration until reaching -1
+4. For each iteration:
+   - Check if character at position `i` in string `a` is either space (' ') or question mark ('?')
+   - If condition is true: skip current iteration and continue to next character
+   - Else:
+     - Check if character at position `i` exists in list `vo`
+     - If vowel found: print "YES" to standard output
+     - Else: print "NO" to standard output
+     - Exit loop immediately after printing result
+5. If loop completes without finding non-space/non-question-mark character, no output is produced

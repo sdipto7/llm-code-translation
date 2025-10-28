@@ -1,0 +1,6 @@
+1. Read input from standard input into a variable 'stdin'.
+2. Assign the value of 'stdin' to variable 's'.
+3. Check if 's' contains both 'A' and 'B'.
+4. If 's' contains both 'A' and 'B', then set 'result' to "Yes".
+5. If 's' does not contain both 'A' and 'B', then set 'result' to "No".
+6. Output the value of 'result'.

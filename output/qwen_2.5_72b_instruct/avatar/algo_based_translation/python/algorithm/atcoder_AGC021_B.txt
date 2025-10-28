@@ -1,0 +1,47 @@
+- **Function Signatures:**
+  - `main() -> None`
+
+- **Variable Declarations and Data Types:**
+  - `N: int`
+  - `XY: List[int]`
+  - `coordinates: List[Tuple[int, int]]`
+  - `i: int`
+  - `x: int`
+  - `y: int`
+  - `D: List[float]`
+  - `j: int`
+  - `X: int`
+  - `Y: int`
+  - `ans: float`
+  - `a: float`
+  - `b: float`
+
+- **Complete Logic Flow in Execution Order:**
+  1. Read an integer `N` and a list of integers `XY` from standard input.
+  2. Convert `XY` into a list of tuples `coordinates` where each tuple contains a pair of integers (x, y).
+  3. For each tuple `(x, y)` in `coordinates`:
+     1. Initialize an empty list `D`.
+     2. For each tuple `(X, Y)` in `coordinates` where the index `j` is not equal to the current index `i`:
+        1. Calculate the angle `atan2(X - x, Y - y)` and append it to `D`.
+     3. Append `D[0] + 2 * pi` to `D`.
+     4. Initialize `ans` to 0.
+     5. For each pair of consecutive elements `(a, b)` in `D`:
+        1. If `b - a` is greater than or equal to `pi`, update `ans` to `(b - a) - pi`.
+     6. Print `ans / (2 * pi)`.
+
+- **Control Structures:**
+  - For loop iterating over `coordinates` with index `i`.
+  - For loop iterating over `coordinates` with index `j` and condition `j != i`.
+  - For loop iterating over pairs of consecutive elements in `D`.
+  - If statement with condition `b - a >= pi`.
+
+- **Input/Output Operations and Data Processing Logic:**
+  - Read input from standard input.
+  - Process input to extract `N` and `XY`.
+  - Convert `XY` into a list of coordinate tuples.
+  - For each coordinate, calculate angles relative to other coordinates.
+  - Determine the maximum angle difference that does not exceed `pi`.
+  - Output the result as a fraction of the full circle (`2 * pi`).
+
+- **Required Libraries, Modules, or Dependencies:**
+  - `math` module for `atan2` and `pi` functions.

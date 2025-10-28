@@ -1,0 +1,10 @@
+1. Import the `Scanner` class from the `java.util` package.
+2. Define the `main` function with `void` return type, taking an array of `String` as a parameter.
+3. Instantiate a `Scanner` object named `sc` to read from standard input.
+4. Read an integer from input using `sc.nextInt()` and store it in the integer variable `n`.
+5. Declare an array `ryuka` of `long` data type with size `n + 1`.
+6. Assign the value `2` to the first element (`ryuka[0]`) of the `ryuka` array.
+7. Assign the value `1` to the second element (`ryuka[1]`) of the `ryuka` array.
+8. Use a `for` loop with integer variable `i` starting from `2` and incrementing by `1` until `i` is less than `n + 1`:
+   - Inside the loop, set `ryuka[i]` to the sum of `ryuka[i - 1]` and `ryuka[i - 2]`.
+9. Print the `n`-th element of the `ryuka` array to standard output using `System.out.println(ryuka[n])`.

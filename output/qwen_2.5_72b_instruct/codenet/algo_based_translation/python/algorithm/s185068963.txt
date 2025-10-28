@@ -1,0 +1,28 @@
+Function Signature: main() -> None
+
+Variable Declarations and Data Types:
+a: int
+b: int
+c: int
+
+Logic Flow:
+1. Read input as a single line of three space-separated integers.
+2. Map the input strings to integers using map function.
+3. Unpack the mapped integers into variables a, b, c.
+4. Check if the sum of a and b is greater than or equal to c.
+5. If true, print "Yes".
+6. If false, print "No".
+
+Control Structures:
+Conditional: if a + b >= c then print "Yes" else print "No"
+
+Input/Output Operations:
+Input: Read from standard input (stdin)
+Output: Print to standard output (stdout)
+
+Data Processing Logic:
+Sum calculation of variables a and b.
+Comparison of the sum with variable c.
+
+Libraries/Modules/Dependencies:
+No external libraries or modules are required.

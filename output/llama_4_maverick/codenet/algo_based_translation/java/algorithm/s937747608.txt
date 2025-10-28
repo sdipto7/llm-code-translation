@@ -1,0 +1,12 @@
+1. Import required library: java.util.Scanner
+2. Define class: Main
+3. Define function: main with parameter args of type String[] and return type void
+4. Declare variable sc of type Scanner and initialize with new Scanner(System.in)
+5. Declare variables a, b, c, d of type int
+6. Read input from sc into a, b, c, d using nextInt()
+7. Evaluate condition: if (a * b >= c * d)
+8. If condition is true, output a * b to console using System.out.println()
+9. If condition is false, evaluate else if condition: (a * b <= c * d)
+10. If else if condition is true, output c * d to console using System.out.println()
+11. End function main
+12. End class Main

@@ -1,0 +1,13 @@
+Algorithm:
+1. Import necessary libraries or modules (none required for this algorithm).
+2. Define a function named `determine_label` with the signature `determine_label(n: int) -> str`.
+3. Inside the function, declare a variable `n` of data type `int` to store the input integer.
+4. Check the condition: If `n` is greater than or equal to 1000, then:
+   - Return the string `'ABD'`.
+5. Otherwise (else condition):
+   - Return the string `'ABC'`.
+6. Prepare to execute the function `determine_label`.
+7. Read an integer input from the user and convert it to an integer data type.
+8. Call the function `determine_label` with the input integer as the argument.
+9. Capture the returned string from the function call.
+10. Output the captured string to the console.

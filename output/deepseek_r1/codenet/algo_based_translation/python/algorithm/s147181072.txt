@@ -1,0 +1,31 @@
+Algorithm:
+
+1. Function Signatures:
+   - input() -> str
+   - str.swapcase() -> str
+   - print(str) -> None
+
+2. Variables:
+   - Implicit input_str: str (result of input())
+   - Implicit processed_str: str (result of input_str.swapcase())
+
+3. Execution Flow:
+   1. Read input string from standard input via input()
+   2. Create new string by swapping case: 
+      - Convert all uppercase characters to lowercase
+      - Convert all lowercase characters to uppercase
+      - Leave non-alphabetic characters unchanged
+   3. Print resulting string to standard output via print()
+
+4. Data Processing:
+   - String transformation through swapcase() method
+
+5. Control Structures:
+   - Linear execution flow with no loops or conditionals
+
+6. I/O Operations:
+   - Input: Read line from stdin
+   - Output: Write transformed string to stdout
+
+7. Dependencies:
+   - Python Standard Library (built-in functions/methods)

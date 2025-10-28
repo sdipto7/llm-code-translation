@@ -1,0 +1,45 @@
+```
+Algorithm atcoder_ABC134_E:
+
+1. Import required libraries:
+   - Import `java.util.*` for using `Scanner` and `TreeMap`.
+
+2. Define `main` function:
+   - Parameters: `String[] args`
+   - Return type: `void`
+   - Throws: `Exception`
+
+3. Initialize input handling:
+   - Create a `Scanner` object `sc` to read from standard input.
+
+4. Read number of elements:
+   - Declare `int n` and initialize with `sc.nextInt()`.
+
+5. Declare a data structure for processing:
+   - Use `TreeMap<Integer, Integer> map` to keep track of integer frequencies with automatic key ordering.
+
+6. Process each number:
+   - Loop while `n` decrements from its original value to 0:
+     - Read an integer `num` using `sc.nextInt()`.
+     - If `map.lowerKey(num)` returns `null`:
+       - Get the current count of `num` in `map` using `map.getOrDefault(num, 0)`.
+       - Increment the count by 1 and update the map with `map.put(num, ++val)`.
+     - Otherwise:
+       - Retrieve the smallest key `key` in `map` that is less than `num` using `map.lowerKey(num)`.
+       - Get the count `val` of that `key` from the map.
+       - If the count `val` is 1:
+         - Remove the `key` from the map using `map.remove(key)`.
+       - Otherwise:
+         - Decrease the count of `key` by 1 and update the map with `map.put(key, --val)`.
+       - Get the current count of `num` in `map` using `map.getOrDefault(num, 0)`.
+       - Increment the count by 1 and update the map with `map.put(num, ++val)`.
+
+7. Calculate the result:
+   - Declare `int ans` and initialize it to 0.
+   - For each `key` in the key set of `map`:
+     - Retrieve the count `val` of `key` from the map.
+     - Add `val` to `ans`.
+
+8. Output the result:
+   - Print `ans` to standard output.
+```

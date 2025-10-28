@@ -1,0 +1,18 @@
+1. Start the `main` function with no parameters and no return type.
+2. Import necessary libraries: `java.util.Scanner`, `java.util.List`, `java.util.ArrayList`, and `java.util.Collections`.
+3. Initialize a `Scanner` object `sc` for input reading.
+4. Declare an integer variable `n` and assign it the next integer input from `sc`.
+5. Declare a `List` of `Long` named `list` and initialize it as an empty `ArrayList`.
+6. Loop `n` times with an index variable `i` from 0 to `n-1`.
+   - In each iteration, read the next long input from `sc` and add it to `list`.
+7. Declare a `List` of `Long` named `odd` and initialize it as an empty `ArrayList`.
+8. Declare a long variable `sum` and initialize it to 0.
+9. Iterate over each long `i` in `list`:
+   - If `i` is even (`i % 2 == 0`), add `i` to `sum`.
+   - Otherwise, add `i` to `odd`.
+10. Sort the `odd` list in ascending order using `Collections.sort`.
+11. Iterate over each long `i` in `odd`:
+    - Add `i` to `sum`.
+12. Check if the size of `odd` is odd (`odd.size() % 2 != 0`):
+    - If true, subtract the first element of `odd` (`odd.get(0)`) from `sum`.
+13. Output the value of `sum` to the standard output using `System.out.println`.

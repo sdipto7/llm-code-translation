@@ -1,0 +1,34 @@
+Algorithm:
+
+1. Import the `Scanner` class from the `java.util` package.
+
+2. Define the main class `atcoder_ABC145_C`.
+
+3. In the `main` function:
+   - Create a `Scanner` object named `scanner` to read input from the standard input stream.
+   - Declare an integer `N` and read its value using `scanner.nextInt()` to determine the number of points.
+   - Declare a 2D integer array `pos` with dimensions `[N][2]` to store the coordinates of the points.
+
+4. Initialize the 2D array `pos`:
+   - For `i` ranging from 0 to `N-1`:
+     - Read two integers using `scanner.nextInt()` for the x and y coordinates.
+     - Store `pos[i][0]` as the x-coordinate and `pos[i][1]` as the y-coordinate.
+
+5. Declare a double variable `sum` and initialize it to 0.
+
+6. Calculate the total distance:
+   - For `i` ranging from 0 to `N-1`:
+     - For `j` ranging from 0 to `N-1`:
+       - If `i` equals `j`, continue to the next iteration of the inner loop.
+       - Call the `dist` function with parameters `pos[i][0]`, `pos[i][1]`, `pos[j][0]`, `pos[j][1]`.
+       - Add the result of `dist` to `sum`.
+
+7. Output the result:
+   - Print the value of `sum / N` to the standard output.
+
+8. Define the `dist` function:
+   - The `dist` function takes four integer parameters `x1`, `y1`, `x2`, `y2`.
+   - Calculate the Euclidean distance using the formula `Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2))`.
+   - Return the calculated distance as a double.
+
+9. End of the algorithm.

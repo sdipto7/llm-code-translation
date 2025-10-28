@@ -1,0 +1,9 @@
+- Function signature: `replace_commas_with_spaces(input_string: str) -> str`
+- Declare variable `user_input` of type `str`
+- Declare variable `result` of type `str`
+- Execute in the following order:
+  - Read a line of text from standard input and assign it to `user_input`
+  - Replace all occurrences of the comma character `,` in `user_input` with a space ` ` and assign the resulting string to `result`
+  - Output the value of `result` to standard output
+- No loops or conditionals
+- No external libraries, modules, or dependencies required

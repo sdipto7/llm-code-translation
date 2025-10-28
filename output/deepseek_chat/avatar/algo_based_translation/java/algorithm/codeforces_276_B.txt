@@ -1,0 +1,39 @@
+**Function Signature:**
+- `main(String[] args) throws NumberFormatException, IOException`
+
+**Variables:**
+- `inputStreamReader: InputStreamReader`
+- `bufferedReader: BufferedReader`
+- `writer: PrintWriter`
+- `str: String`
+- `map: Map<Character, Integer>`
+- `oddCount: int`
+
+**Libraries/Dependencies:**
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.io.PrintWriter`
+- `java.util.*`
+
+**Algorithm:**
+1. Initialize `inputStreamReader` with `System.in`
+2. Initialize `bufferedReader` with `inputStreamReader`
+3. Initialize `writer` with `System.out`
+4. Read input string `str` from `bufferedReader`
+5. Initialize empty `HashMap<Character, Integer>` named `map`
+6. Initialize `oddCount` to 0
+7. For each character in `str` (index `i` from 0 to `str.length()-1`):
+   - Get character `ch` at position `i`
+   - If `map` contains key `ch`:
+        - Update `map` with key `ch` and value `map.get(ch) + 1`
+   - Else:
+        - Put key `ch` with value 1 in `map`
+8. For each entry in `map.entrySet()`:
+   - If `entry.getValue() % 2 != 0`:
+        - Increment `oddCount` by 1
+9. If `oddCount <= 1` OR `oddCount % 2 != 0`:
+   - Print "First" using `writer`
+10. Else:
+   - Print "Second" using `writer`
+11. Flush `writer` output

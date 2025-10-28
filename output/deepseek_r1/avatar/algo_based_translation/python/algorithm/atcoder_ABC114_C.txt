@@ -1,0 +1,61 @@
+Algorithm Specification:
+
+Function Signatures:
+- main() -> void
+    - Parameters: None
+    - Return: void
+- aaa(n: string) -> int
+    - Parameters:
+        - n: string (string representation of a number)
+    - Return: int (count of valid numbers)
+
+Variables:
+1. Global:
+    - N: int (user-defined upper limit)
+2. Within aaa:
+    - current_num: int (integer conversion of input string n)
+    - ans: int (accumulator for valid counts)
+    - digit: char (loop variable for '7','5','3')
+    - new_n: string (temporary string for recursive calls)
+
+Step-by-Step Logic:
+
+main():
+1. Read integer N from standard input
+2. Call aaa('0') and store result
+3. Print stored result
+
+aaa(n):
+1. current_num = convert string n to integer
+2. If current_num > N:
+    a. Return 0
+3. Convert current_num back to string, remove leading zeros
+4. Create set from characters in converted string
+5. If set equals {'7','5','3'}:
+    a. ans = 1
+6. Else:
+    a. ans = 0
+7. For each digit in {'7','5','3'} (processed in order):
+    a. new_n = concatenate n and digit
+    b. ans += aaa(new_n)
+8. Return ans
+
+Control Flow:
+- Recursive depth-first generation of numbers through string concatenation
+- Base case: current_num exceeds N (return 0)
+- Conditional check for valid digit composition (set equality)
+- Iterative loop through digits '7','5','3' for number extension
+
+Input/Output:
+- Single integer input via stdin
+- Final count printed via stdout
+
+Edge Case Handling:
+- Implicit handling of leading zeros through integer conversion
+- Empty initial input ('0') treated as root for number generation
+- Explicit check for digit set equality ensures all three required digits are present
+
+Dependencies:
+- Standard input/output functions
+- String manipulation and set operations
+- No external libraries required

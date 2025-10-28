@@ -1,0 +1,44 @@
+**Algorithm:**
+
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner stdIn = new Scanner(System.in)`
+- `int x = Integer.parseInt(stdIn.next())`
+- `int i` (loop control variable)
+- `double sqrtNum` (storing square root of x)
+
+**Logic Flow:**
+1. **Input Handling:**
+   - Read integer input `x` from standard input.
+
+2. **Initial Adjustment:**
+   - If `x` is not equal to 2 AND `x` is even (`x % 2 == 0`):
+     - Increment `x` by 1.
+
+3. **Prime Search Loop:**
+   - Enter infinite `while` loop:
+     1. Compute `sqrtNum = Math.sqrt(x)`
+     2. **Divisor Check Loop:**
+        - Initialize `i` to 3
+        - For `i <= sqrtNum` with step `i += 2`:
+          - If `x` is divisible by `i` (`x % i == 0`), exit loop
+     3. **Prime Verification:**
+        - If `i > sqrtNum` (no divisors found):
+          - Exit infinite loop
+     4. **Next Candidate:**
+        - Increment `x` by 2
+
+4. **Output:**
+   - Print final value of `x` to standard output.
+
+**Control Structures:**
+- `if (x != 2 && x % 2 == 0)`
+- `while (true)` with internal break condition
+- `for (i = 3; i <= sqrtNum; i += 2)`
+- Conditional break when `i > sqrtNum`
+
+**Dependencies:**
+- `java.util.Scanner` (input handling)
+- `java.lang.Math` (square root calculation)

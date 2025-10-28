@@ -1,0 +1,43 @@
+**Structured Algorithm Specification**
+
+**1. Function/Method Signatures**
+- `main() -> void`: Entry point function with no parameters and no return value.
+
+**2. Variable Declarations**
+- `a: int`: Length of first side.
+- `b: int`: Length of second side.
+- `h: int`: Hour component of time.
+- `m: int`: Minute component of time.
+- `C: float`: Angle between clock hands in degrees.
+- `cosC: float`: Cosine of angle `C`.
+
+**3. External Dependencies**
+- `math` library for `sqrt`, `cos`, and `radians` functions.
+
+**4. Step-by-Step Logic Flow**
+1. Read a single input line and split into four space-separated values.
+2. Parse input values into integers `a`, `b`, `h`, and `m` respectively.
+3. Compute minute hand angle: `(360.0 / 60.0) * m`.
+4. Compute hour hand angle: `(360.0 / 12.0) * h + (360.0 / 12.0 / 60.0) * m`.
+5. Calculate absolute angular difference: `C = |minute_angle - hour_angle|`.
+6. If `C > 180.0`, adjust angle: `C = 360.0 - C`.
+7. Convert `C` to radians using `math.radians(C)`.
+8. Compute `cosC = math.cos(radians_converted)`.
+9. Calculate third side length via Law of Cosines: `sqrt(a² + b² - 2*a*b*cosC)`.
+10. Print result with at least 9 decimal places precision.
+
+**5. Control Flow Structures**
+- Conditional:
+  - `if C > 180.0`: Adjust angle to ensure smallest circular segment.
+
+**6. Input/Output Operations**
+- Input: Single line with four space-separated integers via standard input.
+- Output: Print floating-point result via standard output.
+
+**7. Edge Case Handling**
+- Automatic angle normalization via `C > 180` check ensures smallest angle between clock hands.
+- No explicit error handling: Assumes valid integer input format and non-negative time values.
+
+**8. Data Processing**
+- Floating-point arithmetic used for all geometric calculations.
+- Angular conversions between degrees and radians handled via library functions.

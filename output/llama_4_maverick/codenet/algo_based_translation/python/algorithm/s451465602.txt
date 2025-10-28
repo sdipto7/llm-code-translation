@@ -1,0 +1,10 @@
+1. Define a function `time_conversion` with no parameters and return type `void`.
+2. Declare integer variables `n`, `h`, `m`, `s`.
+3. Read an integer input from the user and store it in `n`.
+4. Calculate `h` by performing integer division of `n` by 3600.
+5. Update `n` to be the remainder of `n` divided by 3600.
+6. Calculate `m` by performing integer division of `n` by 60.
+7. Update `n` to be the remainder of `n` divided by 60.
+8. Assign the value of `n` to `s`.
+9. Print the string representation of `h`, followed by a colon (:), then the string representation of `m`, another colon (:), and finally the string representation of `s`.
+10. The required library for this algorithm is the input/output library, which in Python is included by default.

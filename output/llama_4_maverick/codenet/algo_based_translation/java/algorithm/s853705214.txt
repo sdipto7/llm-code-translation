@@ -1,0 +1,26 @@
+1. Define a function `readInput()` with return type `int[]` that takes no parameters.
+   - Declare a variable `n` of type `int` and read an integer from the input.
+   - Declare an array `nums` of type `int[]` with size `n`.
+   - Iterate from `0` to `n-1` using a `for` loop.
+     - Inside the loop, read an integer from the input and store it in `nums` at the current index.
+   - Return `nums`.
+
+2. Define a function `processNumbers(int[] nums)` with return type `long` that takes an array `nums` of type `int[]` as a parameter.
+   - Declare a variable `min` of type `int` and initialize it with `Integer.MAX_VALUE`.
+   - Declare a variable `countNegatives` of type `int` and initialize it with `0`.
+   - Declare a variable `sum` of type `long` and initialize it with `0`.
+   - Iterate over each number `num` in `nums` using a `for-each` loop.
+     - Calculate the absolute value `abs` of `num`.
+     - Add `abs` to `sum`.
+     - Update `min` with the minimum of `min` and `abs`.
+     - If `num` is less than `0`, increment `countNegatives`.
+   - If `countNegatives` modulo `2` equals `0`, return `sum`.
+   - Otherwise, return `sum - (min * 2)`.
+
+3. Define a function `main()` with no return type that takes an array `args` of type `String[]` as a parameter.
+   - Call `readInput()` and store the result in `nums`.
+   - Call `processNumbers(nums)` and store the result in a variable.
+   - Print the result to the output.
+
+4. Import the required library `java.util.*` for input/output operations.
+   - Specifically, use `Scanner` from `java.util` to read from the input.

@@ -1,0 +1,10 @@
+1. Import the sys module.
+2. Define input as sys.stdin.readline.
+3. Read an integer n from input.
+4. Initialize ans to 10^18.
+5. Iterate from 1 to the square root of n (rounded down to the nearest integer) plus 1 (i.e., int(n^(1/2)) + 2) using a for loop with variable i.
+6. Inside the loop, check if n is divisible by i (i.e., n % i == 0).
+7. If n is not divisible by i, continue to the next iteration.
+8. If n is divisible by i, calculate j as n divided by i (i.e., n // i).
+9. Update ans to be the minimum of its current value and the sum of i and j minus 2 (i.e., min(ans, i + j - 2)).
+10. After the loop completes, output the final value of ans.

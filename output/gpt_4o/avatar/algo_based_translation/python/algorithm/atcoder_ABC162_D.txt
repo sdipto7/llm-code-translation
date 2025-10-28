@@ -1,0 +1,18 @@
+```
+1. Import the `math` module.
+2. Read an integer `N` from input.
+3. Read a string `S` from input.
+4. Define a function `calculate(n: int, s: str) -> None`.
+   a. Convert string `s` into a list of characters `arr`.
+   b. Declare integer `rNum` to count occurrences of "R" in `arr`.
+   c. Declare integer `gNum` to count occurrences of "G" in `arr`.
+   d. Declare integer `bNum` to count occurrences of "B" in `arr`.
+   e. Initialize integer `sum` to 0.
+   f. For each integer `step` from 1 to `math.ceil(n / 2) + 1` (exclusive):
+      i. For each integer `i` from 0 to `n - 2 * step` (exclusive):
+         1. Create string `s` by joining characters at indices `i`, `i + step`, and `i + 2 * step` from `arr`.
+         2. If `s` is any permutation of "RGB":
+            a. Increment `sum` by 1.
+   g. Calculate and print `rNum * gNum * bNum - sum`.
+5. Call `calculate(N, S)`.
+```

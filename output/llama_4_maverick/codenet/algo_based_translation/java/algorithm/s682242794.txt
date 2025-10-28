@@ -1,0 +1,13 @@
+1. Import the `java.util.Scanner` library.
+2. Define a class `Main` with instance variables `high`, `low`, and `sa` of type `int`.
+3. Define a method `solve()` with return type `void` and no parameters.
+   1. Declare a local variable `sc` of type `Scanner` and initialize it with a new `Scanner` object reading from `System.in`.
+   2. Start a `for` loop with initialization `int i = 0`, condition `i < 7`, and increment `i++`.
+      1. Inside the loop, read an `int` value from `sc` and store it in `high`.
+      2. Read an `int` value from `sc` and store it in `low`.
+      3. Calculate `sa = high - low`.
+      4. Print the value of `sa` to `System.out`.
+4. Define a `main` method with return type `void`, parameter type `String[] args`.
+   1. Create a new instance of `Main` and store it in `obj`.
+   2. Call the `solve()` method on `obj`.
+5. Execution starts at the `main` method.

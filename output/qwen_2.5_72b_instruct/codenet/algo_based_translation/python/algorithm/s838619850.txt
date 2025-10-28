@@ -1,0 +1,25 @@
+Function signature: `main()`  
+Variable declarations and data types:  
+- `S`: string  
+- `T`: string  
+- `N`: integer  
+- `M`: integer  
+- `ans`: integer  
+- `i`: integer  
+- `S_2`: string  
+- `cnt`: integer  
+- `j`: integer  
+
+Execution order and logic flow:  
+1. Read input string `S`  
+2. Read input string `T`  
+3. Assign length of `S` to `N`  
+4. Assign length of `T` to `M`  
+5. Initialize `ans` with value of `M`  
+6. For loop from `i` = 0 to `i` = `N` - `M` (inclusive):  
+   1. Assign substring of `S` from index `i` to `i + M` to `S_2`  
+   2. Initialize `cnt` with 0  
+   3. For loop from `j` = 0 to `j` = `M` - 1 (inclusive):  
+      1. If character at index `j` in `T` is not equal to character at index `j` in `S_2`, increment `cnt` by 1  
+   4. Assign minimum of `ans` and `cnt` to `ans`  
+7. Print `ans`

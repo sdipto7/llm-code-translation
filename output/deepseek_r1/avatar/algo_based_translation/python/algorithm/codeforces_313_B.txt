@@ -1,0 +1,59 @@
+**Structured Algorithm Specification**
+
+**1. Input/Output Operations**
+- Read input string `soz` from standard input.
+- Read integer `n` from standard input representing query count.
+- Read `n` pairs of integers `(m, l)` from standard input.
+- Print computed results for each query to standard output.
+
+**2. Data Structures & Variables**
+- `soz`: String type. Stores original input string.
+- `a`: Array of integers. Size = length(soz) + 1. Tracks cumulative count of consecutive duplicate pairs.
+- `n`: Integer. Number of queries.
+- `arr`: List of integers. Stores results of all queries.
+- `m`, `l`: Integers. Query parameters (1-based indices).
+
+**3. Function/Method Signatures**
+- Not explicitly defined (procedural code). Equivalent operations:
+  - **ProcessString**(soz: string) -> a: int[]
+  - **ProcessQueries**(n: int, a: int[]) -> arr: int[]
+
+**4. Algorithmic Steps**
+
+**4.1 Prefix Array Construction**
+1. Initialize array `a` with `len(soz) + 1` elements set to 0.
+2. Iterate `i` from 1 to `len(soz) - 1` (inclusive):
+   1. Set `a[i] = a[i-1]`
+   2. If `soz[i-1] == soz[i]`:
+      1. Increment `a[i]` by 1
+
+**4.2 Query Processing**
+1. Read integer `n` from input
+2. Initialize empty list `arr`
+3. For `n` iterations:
+   1. Read line, split into `m` and `l`
+   2. Convert `m` and `l` to integers
+   3. Calculate `result = a[l-1] - a[m-1]`
+   4. Append `result` to `arr`
+
+**4.3 Result Output**
+1. For each value in `arr`:
+   1. Print value
+
+**5. Control Flow Structures**
+- **For loop 1:** Fixed iteration from 1 to len(soz)-1 (inclusive) for array construction
+  - Exit when `i > len(soz)-1`
+- **For loop 2:** Fixed `n` iterations for query collection
+  - Exit after `n` queries processed
+- **Conditional:** Check `soz[i-1] == soz[i]` during array construction
+- **For loop 3:** Iterate through `arr` to print results
+
+**6. Edge Case Handling**
+- Implicit handling for `m=1` via zero-based index adjustment
+- No explicit error checking for out-of-bound indices
+- Empty string input results in zero-length prefix array (no processing)
+
+**7. Dependencies**
+- Standard input/output operations
+- No external libraries or functions required
+- Primitive operations: string indexing, list/array manipulation, integer arithmetic

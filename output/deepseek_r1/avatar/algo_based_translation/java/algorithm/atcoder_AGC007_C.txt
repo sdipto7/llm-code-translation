@@ -1,0 +1,44 @@
+Algorithm:
+
+Function: main
+Parameters: String[] args (command-line arguments)
+Return type: void
+
+Libraries:
+- java.math.BigDecimal
+- java.text.DecimalFormat
+- java.util.Scanner
+
+Variables:
+- Scanner scan = new Scanner(System.in)
+- double N = scan.nextDouble()
+- double d = scan.nextDouble()
+- double x = scan.nextDouble()
+- BigDecimal ans = new BigDecimal("0.0")
+- DecimalFormat format = new DecimalFormat("#.#")
+
+Execution Flow:
+1. Read three double inputs: N, d, x
+2. Initialize ans with BigDecimal 0.0
+3. While loop: while (N > 0.5)
+   a. Calculate adnum = d + x*(N - 0.5)
+   b. Convert adnum to BigDecimal and add to ans
+   c. Update d: d = ((N + 1.0)*d)/N + (5.0*x)/(2.0*N)
+   d. Update x: x = (1.0 + (2.0/N)) * x
+   e. Decrement N by 1 (N--)
+4. After loop:
+   a. Configure DecimalFormat: setMinimumFractionDigits(20)
+   b. Print formatted ans with 20 decimal precision
+
+Control Structures:
+- Single while loop with condition (N > 0.5)
+- No conditional branches except loop termination
+
+Data Processing:
+- Floating-point arithmetic with precision control using BigDecimal
+- Iterative calculation with variables d and x updated in each cycle
+- Accumulation of results in BigDecimal ans
+
+Input/Output:
+- Input via Scanner from System.in
+- Output via DecimalFormat to System.out with 20 fractional digits

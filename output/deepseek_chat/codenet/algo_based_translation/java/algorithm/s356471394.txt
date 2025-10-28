@@ -1,0 +1,46 @@
+### Algorithm Extraction:
+
+**Input:**
+- First line: three space-separated integers (N, M, D)
+- Next N lines: strings of length M representing room layout
+
+**Variables:**
+- Scanner sc (input scanner)
+- String[] nums (split input line)
+- int N (room rows)
+- int M (room columns)
+- char[][] room (N×M character grid)
+- int D (required consecutive length)
+- int num = 0 (counter for valid placements)
+- boolean canPut (temporary flag)
+
+**Function: main()**
+1. Call inputRoom()
+2. If M >= D: call setWE()
+3. If N >= D: call setNS()
+4. Print num
+5. Close scanner
+
+**Function: inputRoom()**
+1. For i from 0 to N-1:
+   - Read next line as str_room
+   - Convert str_room to char array and store in room[i]
+
+**Function: setWE()** (West-East horizontal placements)
+1. For i from 0 to N-1:
+   - For j from 0 to M-D:
+     - Set canPut = true
+     - For k from 0 to D-1:
+       - If room[i][j+k] == '#': set canPut = false and break inner loop
+     - If canPut == true: increment num
+
+**Function: setNS()** (North-South vertical placements)
+1. For i from 0 to M-1:
+   - For j from 0 to N-D:
+     - Set canPut = true
+     - For k from 0 to D-1:
+       - If room[j+k][i] == '#': set canPut = false and break inner loop
+     - If canPut == true: increment num
+
+**Dependencies:**
+- java.util.Scanner for input handling

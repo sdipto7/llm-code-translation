@@ -1,0 +1,8 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,s504715611.py,Test Failed,"Actual: Yes
+ Generated: "
+java,python,s580342216.py,Test Failed,"Actual: 4
+ Generated: "
+java,python,s739337307.py,Test Failed,"Actual: 2 2
+ Generated: cannot access local variable 'map' where it is not associated with a value
+"

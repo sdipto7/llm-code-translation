@@ -1,0 +1,15 @@
+- Input integer n from standard input
+- Initialize a as empty list
+- For i in range(2):
+  - Read line from input, split into integers, convert to list, append to a
+- Reverse the second list in a
+- Import numpy module
+- Compute res_0 as numpy cumulative sum of first list in a (res_0[i] = sum(a[0][0..i]))
+- Compute res_1 as numpy cumulative sum of reversed second list (res_1[i] = sum(a[1][0..i]))
+- Initialize ans = 0 (integer)
+- For i from 0 to n-1 inclusive:
+  - check = res_0[i] + res_1[n-1-i]
+  - If check > ans:
+    - Set ans = check
+- Output ans to standard output
+- Required dependency: numpy

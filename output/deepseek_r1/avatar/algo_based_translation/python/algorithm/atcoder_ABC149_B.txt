@@ -1,0 +1,42 @@
+**Structured Algorithm Specification**
+
+**Functions/Methods:**
+- `main() -> void`  
+  - **Input:** None (reads from stdin)  
+  - **Output:** Writes result to stdout  
+
+**Variables:**
+- `cookies: list[int]` (input values)  
+- `leftOver: int` (computed value)  
+- `takahashi: int` (result component)  
+- `second_val: int` (result component)  
+
+**Input/Output Operations:**
+1. Read line from stdin, split into substrings, convert each to `int`, store in `cookies`.  
+2. Write formatted string `<takahashi> <second_val>` to stdout.  
+
+**Control Flow & Logic:**  
+1. **Compute `leftOver`:**  
+   `leftOver = cookies[0] - cookies[2]`  
+
+2. **Compute `takahashi`:**  
+   `takahashi = max(0, leftOver)`  
+
+3. **Determine `second_val`:**  
+   - **Condition:** `takahashi > 0`  
+     - **If true:** `second_val = cookies[1]`  
+     - **Else:**  
+       - Compute `temp = cookies[1] - abs(leftOver)`  
+       - `second_val = max(0, temp)`  
+
+4. **Output Result:**  
+   Format `takahashi` and `second_val` as space-separated strings and print.  
+
+**Edge Cases & Constraints:**  
+- Handles negative `leftOver` by clamping `takahashi` to 0.  
+- Ensures `second_val` is non-negative via `max(0, ...)` operations.  
+- No explicit error handling for invalid input formats.  
+
+**Dependencies:**  
+- Relies on standard input/output functions.  
+- Uses `abs()` and `max()` from Python built-ins (translated to equivalent in target language).

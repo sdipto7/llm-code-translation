@@ -1,0 +1,11 @@
+N = integer input
+A = list of integers from input
+s = A[0] XOR A[1]
+for i from 2 to N-1:
+    s = s XOR A[i]
+B = list of zeros with length N
+for i from 0 to N-1:
+    B[i] = s XOR A[i]
+L = list of string representations of elements in B
+L = join elements of L with space
+print L

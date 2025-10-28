@@ -1,0 +1,21 @@
+1. Import the `Scanner` class from the `java.util` package for reading input from the user.
+
+2. Define the `main` function with the signature `public static void main(String[] args)` which does not take any parameters and returns no value.
+
+3. Create a `Scanner` object named `sc` to read input from the standard input stream.
+
+4. Declare four integer variables, `a`, `b`, `c`, and `d`.
+
+5. Read an integer from input and assign it to the variable `a` using `sc.nextInt()`.
+
+6. Read an integer from input and assign it to the variable `b` using `sc.nextInt()`.
+
+7. Read an integer from input and assign it to the variable `c` using `sc.nextInt()`.
+
+8. Read an integer from input and assign it to the variable `d` using `sc.nextInt()`.
+
+9. Calculate the product of `a` and `b` and compare it with the product of `c` and `d`.
+
+10. If the product of `a` and `b` is greater than or equal to the product of `c` and `d`, print the product of `a` and `b`.
+
+11. Otherwise, if the product of `a` and `b` is less than or equal to the product of `c` and `d`, print the product of `c` and `d`.

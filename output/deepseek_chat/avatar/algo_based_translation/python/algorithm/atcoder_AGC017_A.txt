@@ -1,0 +1,45 @@
+**Function Signatures:**
+- combi(N: int, K: int) -> float
+
+**Variable Declarations and Data Types:**
+- N: int
+- P: int
+- a: float
+- i: int
+- j: int
+- ans: int
+- lis: List[int]
+- ls: List[int]
+- a: int (in loop)
+- one: int
+- zero: int
+- pattern_a: float
+- pattern_b: float
+- time: int
+
+**Logic Flow:**
+1. Read two integers N and P from input
+2. Define function combi(N, K):
+   - Initialize a = 1
+   - For i from 0 to K-1:
+     - Multiply a by (N - i)
+   - For j from 0 to K-1:
+     - Divide a by (j + 1)
+   - Return a
+3. Initialize ans = 0
+4. Read list of integers lis from input
+5. Initialize empty list ls
+6. For each element a in lis:
+   - Append (a % 2) to ls
+7. Count occurrences of 1 in ls → one
+8. Count occurrences of 0 in ls → zero
+9. Initialize pattern_a = 0
+10. Initialize pattern_b = 0
+11. For j from 0 to zero:
+    - Add combi(zero, j) to pattern_b
+12. Initialize time = 0
+13. While time ≤ one:
+    - If time % 2 == P:
+        - Add combi(one, time) to pattern_a
+    - Increment time by 1
+14. Print integer conversion of (pattern_a * pattern_b)

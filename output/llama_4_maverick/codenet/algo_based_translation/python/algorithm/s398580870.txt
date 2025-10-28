@@ -1,0 +1,12 @@
+1. Define a function `calculate_result` with parameters `n` and `k` of type integers and return type integer.
+2. Read two integer inputs from the user and store them in `n` and `k`.
+3. Check if `k` is odd by verifying if the remainder of `k` divided by 2 is 1.
+4. If `k` is odd, calculate the result as the cube of the integer division of `n` by `k`.
+5. If `k` is even, calculate two values: 
+   - the cube of the integer division of `n` by `k`, 
+   - the cube of the integer division of the sum of `n` and half of `k` by `k`.
+6. If `k` is even, sum the two calculated values to obtain the final result.
+7. Output the calculated result.
+8. The required input is two integers `n` and `k`, and the output is an integer result. 
+9. The input operation involves reading two space-separated integers.
+10. The necessary operation is integer division and modulo operation, which are built-in in most programming languages.

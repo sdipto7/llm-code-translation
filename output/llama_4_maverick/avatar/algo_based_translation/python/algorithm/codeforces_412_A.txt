@@ -1,0 +1,11 @@
+1. Read two integers n and k from input
+2. Read a string v from input
+3. Initialize array d with two string values "LEFT" and "RIGHT"
+4. Determine boolean value f based on condition k - 1 < n - k
+5. Calculate integer value m as minimum of k - 1 and n - k
+6. Initialize empty array a
+7. Iterate from 0 to m - 1 and append d[not f] to array a in each iteration
+8. Iterate over characters in string v in reverse order if f is true, otherwise in normal order
+9. For each character i in the iteration, append "PRINT " + i to array a
+10. Append d[f] to array a after appending "PRINT " + i
+11. Print elements of array a (excluding the last element) separated by newline characters

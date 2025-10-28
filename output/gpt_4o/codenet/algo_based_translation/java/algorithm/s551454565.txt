@@ -1,0 +1,20 @@
+- Import necessary module: 
+  - `java.util.Scanner` for reading input from the console.
+  
+- Define `main` function:
+  - Parameters: `args` (array of `String`)
+  - Return type: `void`
+
+- Inside `main` function:
+  - Declare variable `sc` of type `Scanner` initialized with `System.in`.
+  - Declare variable `s` of type `String` and assign it the next input token from `sc`.
+
+- Conditional logic:
+  - If condition: `s.equals("Sunny")`
+    - Output: Print "Cloudy"
+  - Else if condition: `s.equals("Cloudy")`
+    - Output: Print "Rainy"
+  - Else:
+    - Output: Print "Sunny"
+
+- Close the `Scanner` object `sc`.

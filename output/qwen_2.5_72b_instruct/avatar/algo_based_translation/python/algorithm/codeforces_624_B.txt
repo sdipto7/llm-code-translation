@@ -1,0 +1,24 @@
+Function signature: `main()`
+Variable declarations:
+- `n: int`
+- `a: List[int]`
+- `pre: float` initialized to `float('inf')`
+- `ans: int` initialized to `0`
+
+Logic flow:
+1. Import `sys` module
+2. Read an integer `n` from standard input
+3. Read a list of integers `a` of size `n` from standard input
+4. Sort list `a` in descending order
+5. For each integer `a[j]` in list `a` from index `0` to `n-1`:
+   - Update `ans` by adding the maximum value between `0` and the minimum value between `pre - 1` and `a[j]`
+   - Update `pre` to the maximum value between `0` and the minimum value between `pre - 1` and `a[j]`
+6. Print the final value of `ans` to standard output
+
+Input/output operations:
+- Read an integer `n` from standard input
+- Read a list of integers `a` from standard input
+- Print the final value of `ans` to standard output
+
+Libraries/modules/dependencies:
+- `sys` module for reading from standard input

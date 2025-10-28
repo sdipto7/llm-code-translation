@@ -1,0 +1,13 @@
+Function atc_079a(input_value: str) -> str:
+    Declare n: int = 3
+    For i from 0 to len(input_value) - n inclusive:
+        For j from 1 to n - 1 inclusive:
+            If input_value[i] != input_value[i + j]:
+                Break inner loop
+            Else if j == n - 1:
+                Return "Yes"
+    Return "No"
+
+Main:
+    Read input_value from standard input
+    Call atc_079a(input_value) and print result

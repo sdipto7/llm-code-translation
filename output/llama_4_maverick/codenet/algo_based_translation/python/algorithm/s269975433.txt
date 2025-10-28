@@ -1,0 +1,15 @@
+1. Import required libraries: `itertools`, `sys`.
+2. Define function `LI()` that returns a map object of type `int` by reading a line from `sys.stdin`, stripping it, splitting it into parts, and mapping `int` to these parts.
+3. Read input values `N`, `M`, `Q` using `LI()` and store them as integers.
+4. Initialize an empty list `Q_groups`.
+5. Iterate `Q` times:
+   - Read input values using `LI()` and store them in a list.
+   - Append this list to `Q_groups`.
+6. Initialize `max_score` to 0.
+7. Iterate over all combinations with replacement of numbers from 1 to `M` (inclusive) of length `N` using `combinations_with_replacement(range(1, M + 1), r=N)`:
+   - Initialize `temp_score` to 0.
+   - Iterate over each group `q` in `Q_groups`:
+     - Check if the difference between the elements at index `q[1] - 1` and `q[0] - 1` in the current combination is equal to `q[2]`.
+     - If true, add `q[3]` to `temp_score`.
+   - Update `max_score` to be the maximum of `max_score` and `temp_score`.
+8. Print `max_score`.

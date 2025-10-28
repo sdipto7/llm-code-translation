@@ -1,0 +1,56 @@
+**Algorithm Extraction:**
+
+**Main Function:**
+- Function: main(String[] args)
+- Variables:
+  - Scanner fs = new Scanner(System.in)
+  - int n = fs.nextInt()
+  - long k = fs.nextLong()
+  - long[] a = new long[n]
+  - For i from 0 to n-1: a[i] = fs.nextLong()
+  - Arrays.sort(a)
+  - long INF = (long)(1e18) + 1
+  - long l = -INF
+  - long r = INF
+- Logic:
+  - While l + 1 < r:
+    - long c = (l + r) / 2
+    - If check(c) is true: l = c
+    - Else: r = c
+  - Print l
+
+**Helper Function:**
+- Function: check(long x)
+- Return type: boolean
+- Variables:
+  - long tot = 0
+  - For i from 0 to n-1:
+    - long now = a[i]
+    - int l = 0
+    - int r = n
+- Logic:
+  - For each element a[i]:
+    - If now >= 0:
+      - While l < r:
+        - int c = (l + r) / 2
+        - If now * a[c] < x: l = c + 1
+        - Else: r = c
+      - tot += l
+    - Else:
+      - While l < r:
+        - int c = (l + r) / 2
+        - If now * a[c] >= x: l = c + 1
+        - Else: r = c
+      - tot += (n - l)
+    - If a[i] * a[i] < x: tot--
+  - If tot/2 < k: return true
+  - Else: return false
+
+**Dependencies:**
+- java.util.*
+- java.math.*
+- Arrays.sort()
+- Scanner class for input
+- Binary search implementation
+- Large integer handling (long type)
+- Arithmetic operations with overflow consideration

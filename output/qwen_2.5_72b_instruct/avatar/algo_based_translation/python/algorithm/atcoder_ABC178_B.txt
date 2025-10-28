@@ -1,0 +1,15 @@
+Algorithm:
+- Import modules: math, itertools, fractions, heapq, collections, bisect, sys, queue, copy
+- Set recursion limit: 10^7
+- Define constants: inf = 10^20, mod = 10^9 + 7
+- Define direction vectors: dd = [(-1, 0), (0, 1), (1, 0), (0, -1)], ddn = [(-1, 0), (-1, 1), (0, 1), (1, 1), (1, 0), (1, -1), (0, -1), (-1, -1)]
+- Define function LI: Read a line from stdin, split it into strings, convert each to int, return as list of ints
+- Define function I: Read a line from stdin, convert it to int, return as int
+- Define function F: Read a line from stdin, convert it to float, return as float
+- Define function LS: Read a line from stdin, split it into strings, return as list of strings
+- Define function S: Read a line from stdin, return as string
+- Define function main:
+    - Read four integers from input: a, b, c, d
+    - Calculate four products: a*c, b*d, a*d, b*c
+    - Return the maximum of the four products
+- Call function main, print the result

@@ -1,0 +1,28 @@
+1. Initialize n, m from input
+2. Set vis, ci, cb, cc to array of zeros of size n+1, 0, 0, 0 respectively
+3. Initialize g as an empty adjacency list for n+1 nodes
+4. Define function dfs(x)
+   1. Initialize stk as a stack, flag as True
+   2. Push (x, 1) onto stk
+   3. While stk is not empty
+      1. Pop (u, col) from stk
+      2. If vis[u] is not zero
+         1. flag = flag and (vis[u] == col)
+         2. Continue to next iteration
+      3. vis[u] = col
+      4. For each neighbor i of u
+         1. Push (i, 3-col) onto stk
+   4. Return flag
+5. For m iterations
+   1. Input u, v
+   2. Add v to g[u] and u to g[v]
+6. For each node i from 1 to n
+   1. If vis[i] is zero
+      1. If g[i] is empty
+         1. ci = ci + 1
+      2. Else
+         1. If dfs(i) returns True
+            1. cb = cb + 1
+         2. Else
+            1. cc = cc + 1
+7. Output ci*ci + 2*ci*(n-ci) + cc*cc + 2*cb*cc + 2*cb*cb

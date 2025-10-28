@@ -1,0 +1,20 @@
+1. Initialize N and M from input
+2. Create a list "balls" of size N with each element as [1, 0] except the first element which is [0, 1]
+3. For M iterations:
+   3.1. Read x and y from input
+   3.2. Retrieve the values of w_x, r_x from balls[x-1] and w_y, r_y from balls[y-1]
+   3.3. If w_x >= 1 and r_x >= 1:
+      3.3.1. Decrement w_x by 1
+      3.3.2. Increment r_y by 1
+   3.4. Else if w_x == 0:
+      3.4.1. Decrement r_x by 1
+      3.4.2. Increment r_y by 1
+   3.5. Else:
+      3.5.1. Decrement w_x by 1
+      3.5.2. Increment w_y by 1
+   3.6. Update balls[x-1] and balls[y-1] with the new values
+4. Initialize ans to 0
+5. For each element in balls:
+   5.1. If the second value (r) is non-zero:
+      5.1.1. Increment ans by 1
+6. Output ans

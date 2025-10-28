@@ -1,0 +1,10 @@
+1. Read the number of inputs, n.
+2. Create a 2D array, vec, of size n x 4.
+3. For i from 0 to n-1, read four integers and store them in vec[i][0], vec[i][1], vec[i][2], and vec[i][3] respectively.
+4. Initialize ans to 500 and ansprice to 20000.
+5. For i from 0 to n-1, perform the following steps:
+   6. Initialize a flag, fl, to 1.
+   7. For j from 0 to n-1, check if vec[i][0] < vec[j][0] and vec[i][1] < vec[j][1] and vec[i][2] < vec[j][2]. If true, set fl to 0.
+   8. If fl is 1 and vec[i][3] < ansprice, update ansprice to vec[i][3] and ans to i + 1.
+9. Output ans. 
+10. Terminate the process.

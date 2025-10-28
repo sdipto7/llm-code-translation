@@ -1,0 +1,23 @@
+1. Import library: `java.util.Scanner`
+
+2. Function `sum(int a) -> int`:
+   - Declare an integer `ans` and initialize to 0.
+   - While `a` is greater than or equal to 10:
+     - Add `a % 10` to `ans`.
+     - Update `a` by dividing it by 10 (integer division).
+   - Add remaining `a` to `ans`.
+   - Return `ans`.
+
+3. Main execution:
+   - Create a `Scanner` object `stdIn` to read from standard input.
+   - Read an integer `N` using `stdIn.nextInt()`.
+   - Declare an integer `n`.
+   - If `N` is even (`N % 2 == 0`):
+     - Set `n` to `N / 2`.
+   - Otherwise, if `N` is odd:
+     - Set `n` to `(N + 1) / 2`.
+   - Declare an integer `ans` and set it to the sum of `sum(1)` and `sum(N - 1)`.
+   - For integer `A` from 1 to `n` (inclusive):
+     - If `sum(A) + sum(N - A)` is less than `ans`:
+       - Update `ans` to `sum(A) + sum(N - A)`.
+   - Print the value of `ans`.

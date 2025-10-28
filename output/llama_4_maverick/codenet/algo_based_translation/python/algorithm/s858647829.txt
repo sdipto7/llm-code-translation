@@ -1,0 +1,7 @@
+1. Define a function `check_divisibility` with no parameters and return type `None`.
+2. Declare variables `a` and `b` of type `int`.
+3. Read input from the user using `input().split()` and store the values in `a` and `b` by mapping them to `int`.
+4. Check the condition: `a % 3 == 0 or b % 3 == 0 or (a + b) % 3 == 0`.
+5. If the condition is `True`, output the string 'Possible'.
+6. If the condition is `False`, output the string 'Impossible'. 
+7. The required library is the built-in Python library, specifically the `input` and `print` functions.

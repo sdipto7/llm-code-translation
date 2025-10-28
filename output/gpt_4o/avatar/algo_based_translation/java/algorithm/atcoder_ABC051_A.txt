@@ -1,0 +1,26 @@
+1. Import Dependencies:
+   - Import `java.io.BufferedReader`
+   - Import `java.io.IOException`
+   - Import `java.io.InputStreamReader`
+   - Import `java.util.*`
+   - Import `java.math.*`
+
+2. Function Signature:
+   - `public static void main(String[] args) throws IOException`
+
+3. Variable Declarations:
+   - `BufferedReader br`: Declare a `BufferedReader` object to read input.
+   - `StringBuilder sb`: Declare a `StringBuilder` object for constructing the output string.
+   - `String a`: Declare a `String` variable to store the input.
+
+4. Logic Flow:
+   - Initialize `br` with `new BufferedReader(new InputStreamReader(System.in))` to read from standard input.
+   - Initialize `sb` with `new StringBuilder()` to start building the output string.
+   - Read a line of input using `br.readLine()` and store it in variable `a`.
+
+5. Data Processing:
+   - Use `a.replace(",", " ")` to replace every comma in the input string with a space.
+   - Append the result of the replacement to `sb`.
+
+6. Output:
+   - Print the contents of `sb` using `System.out.println(sb)`.

@@ -1,0 +1,25 @@
+- **Function Signature**: Not applicable (script-style code without functions)
+- **Variables**:
+  - `n`: Integer (number of elements)
+  - `m`: Integer (selection threshold)
+  - `a`: List of integers (input array)
+  - `s`: Float (minimum required value)
+- **Input Operations**:
+  1. Read first line: Split into `n` and `m` via `map(int, input().split())`
+  2. Read second line: Split into list `a` via `list(map(int, input().split()))`
+- **Data Processing**:
+  1. Sort `a` in descending order with `a.sort(reverse=True)`
+  2. Calculate `s` as `sum(a) / (4 * m)`
+- **Control Structures**:
+  - If-else condition:
+    - **Condition**: `a[m-1] >= s`
+    - **True Branch**: Print `'Yes'`
+    - **False Branch**: Print `'No'`
+- **Execution Order**:
+  1. Read `n` and `m`
+  2. Read and parse `a`
+  3. Sort `a` in descending order
+  4. Compute `s` from sum of `a` divided by `4*m`
+  5. Check if the m-th largest element (index `m-1`) is ≥ `s`
+  6. Print result based on condition
+- **Dependencies**: None (uses built-in functions only)

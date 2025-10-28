@@ -1,0 +1,32 @@
+Function Signature:
+- `public static void main(String[] args)`
+
+Variable Declarations and Data Types:
+- `Scanner stdIn` of type `Scanner`
+- `int N`
+- `int count` initialized to 0
+- `int temp` initialized to `N`
+- `int ans` initialized to 0
+
+Logic Flow:
+1. Initialize `stdIn` with `new Scanner(System.in)`
+2. Read integer `N` from `stdIn`
+3. Initialize `count` to 0
+4. Initialize `temp` to `N`
+5. Initialize `ans` to 0
+6. While `temp` is greater than 0:
+    - Divide `temp` by 10
+    - Increment `count` by 1
+7. For each `i` from 1 to `count` inclusive:
+    - If `i` equals `count`:
+        - If `i` modulo 2 equals 1:
+            - Add `(N - Math.pow(10, i - 1) + 1)` to `ans`
+    - Else:
+        - If `i` equals 1:
+            - Add 9 to `ans`
+        - Else if `i` modulo 2 equals 1:
+            - Add `(Math.pow(10, i) - Math.pow(10, i - 1))` to `ans`
+8. Print `ans`
+
+Libraries:
+- `java.util.Scanner`

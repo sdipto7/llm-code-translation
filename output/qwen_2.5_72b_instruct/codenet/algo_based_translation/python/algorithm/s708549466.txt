@@ -1,0 +1,24 @@
+Function signature: `main() -> None`
+
+Variable declarations:
+- N: int
+- x: int
+- a: List[int]
+- cnt: int
+- i: int
+- tmp: int
+
+Logic flow in execution order:
+1. Read two integers N and x from input.
+2. Read a list of N integers into list a.
+3. Initialize counter cnt to 0.
+4. Loop over indices from 1 to N-1 (inclusive):
+   - Calculate the sum of the current element and the previous element, store in tmp.
+   - If tmp is greater than x:
+     - If tmp - x is greater than the current element:
+       - Set the previous element to tmp - current element - x.
+       - Set the current element to 0.
+     - Else:
+       - Subtract tmp - x from the current element.
+     - Add tmp - x to cnt.
+5. Print the value of cnt.

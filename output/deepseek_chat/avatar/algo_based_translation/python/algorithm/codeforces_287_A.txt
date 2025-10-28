@@ -1,0 +1,30 @@
+### Algorithm Extraction:
+
+**Input:**
+- Read 4 lines of input, each containing a string of characters
+
+**Data Structures:**
+- `t`: list of lists (4x4 grid) containing characters
+- `black`: integer counter for '#' characters
+- `white`: integer counter for non-'#' characters
+- `correct`: integer flag (0 or 1)
+
+**Execution Flow:**
+
+1. Initialize empty list `t`
+2. For `i` from 0 to 3:
+   - Read input line and convert to list of characters
+   - Append to `t`
+3. Initialize `black = 0`, `white = 0`, `correct = 0`
+4. For `i` from 0 to 2:
+   - For `j` from 0 to 2:
+     - Check `t[i][j]`: increment `black` if '#', else increment `white`
+     - Check `t[i][j+1]`: increment `black` if '#', else increment `white`
+     - Check `t[i+1][j]`: increment `black` if '#', else increment `white`
+     - Check `t[i+1][j+1]`: increment `black` if '#', else increment `white`
+     - If `black == 0` OR `black == 3` OR `white == 0` OR `white == 3` OR `white == 4` OR `black == 4`:
+       - Set `correct = 1`
+       - Break inner loop
+     - Reset `black = 0`, `white = 0`
+5. If `correct == 1`: print "YES"
+6. Else: print "NO"

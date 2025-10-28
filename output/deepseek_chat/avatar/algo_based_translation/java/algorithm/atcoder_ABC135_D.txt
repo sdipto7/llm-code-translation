@@ -1,0 +1,52 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `void run()`
+- `void tr(Object... objects)`
+
+**Variable Declarations:**
+- `MOD: long = 1000000007`
+- `sc: Scanner`
+- `cs: char[]`
+- `dp: long[][]` with dimensions `[cs.length][13]`
+- `base: int = 1`
+- `pre: int`
+- `next: int`
+
+**Logic Flow:**
+1. Initialize `MOD` constant
+2. Call `run()` method from `main`
+3. Create `Scanner` to read from `System.in`
+4. Read input string and convert to char array `cs`
+5. Initialize 2D DP array `dp` with dimensions `[cs.length][13]`
+6. Initialize `base` to 1
+7. Iterate `i` from 0 to `cs.length - 1`:
+   - If character at position `cs.length - 1 - i` is '?':
+     - Iterate `pre` from 0 to 12:
+       - Iterate `next` from 0 to 9:
+         - Calculate new remainder: `(base * next + pre) % 13`
+         - Add previous state value: `dp[i-1][pre]` if `i > 0`, else `1` if `pre == 0`, else `0`
+         - Apply modulo `MOD`
+   - Else:
+     - Convert character to integer `next`
+     - Iterate `pre` from 0 to 12:
+       - Calculate new remainder: `(base * next + pre) % 13`
+       - Add previous state value: `dp[i-1][pre]` if `i > 0`, else `1` if `pre == 0`, else `0`
+       - Apply modulo `MOD`
+   - Update `base = (base * 10) % 13`
+8. Print `dp[cs.length - 1][5]`
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < cs.length; ++i)`
+- If-else: `if (cs[cs.length - 1 - i] == '?')`
+- Nested for loops: `for (int pre = 0; pre < 13; ++pre)` and `for (int next = 0; next < 10; ++next)`
+- Ternary condition: `(i > 0 ? dp[i-1][pre] : (pre == 0 ? 1 : 0))`
+
+**Input/Output:**
+- Input: Read string from standard input
+- Output: Print final DP value at `dp[cs.length - 1][5]`
+
+**Required Libraries:**
+- `java.io.PrintWriter`
+- `java.util.ArrayList`
+- `java.util.Arrays`
+- `java.util.Scanner`

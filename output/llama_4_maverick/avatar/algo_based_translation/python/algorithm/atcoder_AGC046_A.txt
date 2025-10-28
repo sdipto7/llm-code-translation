@@ -1,0 +1,5 @@
+1. INPUT x
+2. x = INTEGER(x)
+3. CALCULATE g = GCD(360, x)
+4. CALCULATE result = 360 / g (integer division)
+5. OUTPUT result

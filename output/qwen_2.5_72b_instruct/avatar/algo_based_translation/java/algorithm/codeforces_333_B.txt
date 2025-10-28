@@ -1,0 +1,46 @@
+Function Signature: `public static void main(String[] args)`
+Parameters: `String[] args` (no return type)
+Variable Declarations:
+- `int n` 
+- `int m`
+- `Set<Integer> bannedRows`
+- `Set<Integer> bannedCols`
+- `int answer`
+- `int mid` (only used inside if condition `n % 2 != 0`)
+- `FastReader in`
+- `PrintWriter out`
+
+Execution Order and Logic Flow:
+1. `n = in.nextInt()`
+2. `m = in.nextInt()`
+3. `bannedRows = new HashSet<>()`
+4. `bannedCols = new HashSet<>()`
+5. For loop `for (int i = 0; i < m; i++)`
+   - `r = in.nextInt()`
+   - If `r > 1 && r < n` then `bannedRows.add(r)`
+   - `c = in.nextInt()`
+   - If `c > 1 && c < n` then `bannedCols.add(c)`
+6. `answer = (n - 2) * 2`
+7. `answer -= bannedRows.size()`
+8. `answer -= bannedCols.size()`
+9. If `n % 2 != 0`
+   - `mid = (n + 1) / 2`
+   - If `!bannedRows.contains(mid) && !bannedCols.contains(mid)` then `answer--`
+10. `out.println(answer)`
+11. `out.close()`
+
+FastReader Class:
+- Constructor `FastReader()`
+- `String next()`
+- `int nextInt()`
+- `long nextLong()`
+- `double nextDouble()`
+- `String nextLine()`
+- Variable Declarations:
+  - `BufferedReader br`
+  - `StringTokenizer st`
+
+Required Libraries:
+- `java.util.*`
+- `java.io.*`
+- `static java.lang.Math.*`

@@ -1,0 +1,39 @@
+- Function Signature:  
+  public static void main(String[] args)
+
+- Variables:  
+  Scanner sc (java.util.Scanner)  
+  int intA  
+  double dbAncer  
+  int intAncer
+
+- Libraries/Dependencies:  
+  java.util.Scanner
+
+- Input Operations:  
+  1. Initialize Scanner with System.in  
+  2. Read integer from standard input: sc.nextInt() -> intA
+
+- Processing Logic:  
+  1. Calculate cube: dbAncer = Math.pow(intA, 3)  
+  2. Cast result to int: intAncer = (int)dbAncer
+
+- Output Operation:  
+  Print intAncer via System.out.println(intAncer)
+
+- Execution Order:  
+  Scanner initialization → Input reading → Cube calculation → Type casting → Result output
+
+- Data Flow:  
+  System.in → Scanner → int → double → int → stdout
+
+- Type Conversions:  
+  Implicit: Math.pow returns double  
+  Explicit: double to int cast
+
+- Control Structures:  
+  Linear execution flow (no loops/conditionals)
+
+- Exception Points:  
+  Scanner.nextInt() may throw InputMismatchException  
+  Math.pow handles integer exponents implicitly

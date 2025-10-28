@@ -1,0 +1,21 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,codeforces_598_A.java,Compilation Error,"Error: output/llama_4_maverick/avatar/direct_translation/python/java/codeforces_598_A.java:8: error: underscore not allowed here
+        for (int _ = 0; _ < t; _++) {
+                        ^
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC133_B.java,Compilation Error,"Error: output/llama_4_maverick/avatar/direct_translation/python/java/atcoder_ABC133_B.java:18: error: cannot find symbol
+                if (dist(points[i], points[j]).isInteger()) {
+                                              ^
+  symbol:   method isInteger()
+  location: class Double
+1 error
+"
+python,java,codeforces_70_B.java,Compilation Error,"Error: output/llama_4_maverick/avatar/direct_translation/python/java/codeforces_70_B.java:19: error: bad operand types for binary operator '+'
+                if (sumL + L + (sumL > 0) > n) {
+                             ^
+  first type:  int
+  second type: boolean
+1 error
+"

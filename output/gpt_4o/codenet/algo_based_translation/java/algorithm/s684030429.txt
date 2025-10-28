@@ -1,0 +1,33 @@
+```plaintext
+import java.io.*;
+import java.util.*;
+import java.math.*;
+
+class Main {
+    Scanner sc;
+    int max = 0, cur = 0;
+
+    Main() {
+        try {
+            sc = new Scanner(System.in);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    void solve() {
+        int a = ni();
+        int b = ni();
+        System.out.println(Math.max(0, a - 2 * b));
+    }
+
+    public static void main(String[] args) {
+        new Main().solve();
+    }
+
+    int ni() {
+        int a = sc.nextInt();
+        return a;
+    }
+}
+```

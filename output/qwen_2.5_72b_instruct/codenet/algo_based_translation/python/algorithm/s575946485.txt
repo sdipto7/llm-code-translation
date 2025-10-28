@@ -1,0 +1,22 @@
+Function signature: main() -> None
+
+Variable declarations and data types:
+a: List[int]
+dic: Dict[int, int]
+i: int
+min_num: int
+a_sum: int
+
+Logic flow in execution order:
+1. Initialize list `a` by reading 5 integers from input.
+2. Initialize empty dictionary `dic`.
+3. Loop over indices from 0 to 4:
+   3.1. If the last digit of `a[i]` is '0':
+       3.1.1. Update `dic` with key `i` and value `0`.
+   3.2. Else:
+       3.2.1. Update `dic` with key `i` and value `int(str(a[i])[-1]) - 10`.
+4. Create list `min_num` containing keys from `dic` where the value is the minimum value in `dic`.
+5. Assign the first element of `min_num` to `min_num`.
+6. Calculate the sum of all elements in `a` and assign it to `a_sum`.
+7. Remove the key `min_num` from `dic`.
+8. Print the absolute value of the sum of values in `dic` plus `a_sum`.

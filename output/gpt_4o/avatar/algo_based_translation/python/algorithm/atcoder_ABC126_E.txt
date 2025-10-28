@@ -1,0 +1,46 @@
+```
+Algorithm:
+1. Import necessary modules:
+   - sys
+   - collections.deque
+   - Set recursion limit using sys.setrecursionlimit with value 10^9
+   - Define a constant INF with value 10^18
+
+2. Define a function input() -> str:
+   - Return a line of input from standard input with trailing whitespace removed
+
+3. Define the main function:
+   - Declare variables N, M as integers by parsing a space-separated input string
+
+4. Initialize an adjacency list for edges:
+   - Declare a list of lists, edge, of size N, where each element is an empty list
+
+5. Populate the adjacency list with edges:
+   - Iterate M times to read edges:
+     - Parse integers X, Y, Z from input, adjust X and Y by subtracting 1
+     - Append Y to edge at index X
+     - Append X to edge at index Y
+
+6. Declare a list used of size N with boolean values initialized to False
+
+7. Initialize ans to 0
+
+8. Perform BFS to determine connected components:
+   - Iterate over each node index i from 0 to N-1:
+     - If used[i] is False:
+       - Increment ans by 1
+       - Initialize a queue as a deque
+       - Append i to the queue
+       - While the queue is not empty:
+         - Dequeue an element node from the queue
+         - Set used[node] to True
+         - Iterate over each nextnode in edge[node]:
+           - If used[nextnode] is False:
+             - Append nextnode to the queue
+
+9. Output the result:
+   - Print the value of ans
+
+10. Check if the script is being run as the main module:
+    - If True, invoke the main function
+```

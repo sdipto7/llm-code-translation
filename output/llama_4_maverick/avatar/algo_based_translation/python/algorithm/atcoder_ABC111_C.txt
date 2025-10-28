@@ -1,0 +1,44 @@
+1. Read integer n from input
+2. Read n integers from input and store them in list x
+3. Initialize two empty lists a and b
+4. For i from 0 to n-1:
+    4.1 If i is even, append x[i] to a
+    4.2 Else, append x[i] to b
+5. Initialize count arrays cnta and cntb of size 100003 with all elements as 0
+6. Initialize variables vala, vala1, maxCnta, maxCnta1, valb, valb1, maxCntb, maxCntb1 to 0
+7. For each element i in a:
+    7.1 Increment cnta[i] by 1
+8. For each element i in a:
+    8.1 If cnta[i] > maxCnta:
+        8.1.1 vala = i
+        8.1.2 maxCnta = cnta[i]
+9. For each element i in a:
+    9.1 If cnta[i] > maxCnta1 and i != vala:
+        9.1.1 vala1 = i
+        9.1.2 maxCnta1 = cnta[i]
+10. For each element i in b:
+    10.1 Increment cntb[i] by 1
+11. For each element i in b:
+    11.1 If cntb[i] > maxCntb:
+        11.1.1 valb = i
+        11.1.2 maxCntb = cntb[i]
+12. For each element i in b:
+    12.1 If cntb[i] > maxCntb1 and i != valb:
+        12.1.1 valb1 = i
+        12.1.2 maxCntb1 = cntb[i]
+13. If vala != valb:
+    13.1 Initialize res to 0
+    13.2 For each element i in a:
+        13.2.1 If i != vala, increment res by 1
+    13.3 For each element i in b:
+        13.3.1 If i != valb, increment res by 1
+    13.4 Output res
+14. Else:
+    14.1 Initialize resa, resb, resa1, resb1 to 0
+    14.2 For each element i in a:
+        14.2.1 If i != vala, increment resa by 1
+        14.2.2 If i != vala1, increment resa1 by 1
+    14.3 For each element i in b:
+        14.3.1 If i != valb, increment resb by 1
+        14.3.2 If i != valb1, increment resb1 by 1
+    14.4 Output minimum of (resa + resb1) and (resa1 + resb)

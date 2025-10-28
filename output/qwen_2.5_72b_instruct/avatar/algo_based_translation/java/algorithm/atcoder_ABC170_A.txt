@@ -1,0 +1,34 @@
+Function Signature:
+- `public static void main(String[] args) throws IOException`
+
+Variable Declarations and Data Types:
+- `BufferedReader br`
+- `PrintWriter pw`
+- `String[] input_array`
+- `int result`
+
+Logic Flow in Execution Order:
+1. Create `BufferedReader` object `br` to read input from standard input.
+2. Create `PrintWriter` object `pw` to write output to standard output.
+3. Read a line of input using `br.readLine()`, split it by spaces, and store the resulting array in `input_array`.
+4. Initialize `result` to 0.
+5. Iterate over each string `str` in `input_array` using an enhanced for loop.
+   - Increment `result` by 1.
+   - If `str` equals "0", break out of the loop.
+6. Print the value of `result` using `pw.println(result)`.
+7. Close `BufferedReader` object `br`.
+8. Close `PrintWriter` object `pw`.
+
+Control Structures:
+- Enhanced for loop: `for (String str : input_array)`
+- Conditional statement: `if ("0".equals(str)) break`
+
+Input/Output Operations and Data Processing Logic:
+- Input: Read a single line of input containing space-separated integers.
+- Output: Print the count of numbers read before encountering the first "0".
+
+Required Libraries, Modules, or Dependencies:
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.io.PrintWriter`

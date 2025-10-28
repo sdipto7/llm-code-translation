@@ -1,0 +1,10 @@
+1. Define a function `calculate_total` with no parameters and return type `float`.
+2. Declare a variable `n` of type `int` and read its value from standard input.
+3. Initialize a variable `res` of type `float` to 0.
+4. Loop `n` times.
+   4.1. Read a line from standard input and split it into two parts: `x` and `u`.
+   4.2. If `u` equals "BTC", then multiply the float value of `x` by 380000 and add the result to `res`.
+   4.3. Otherwise, convert `x` to an integer and add it to `res`.
+5. Print the final value of `res` to standard output.
+6. The program's entry point is the `calculate_total` function or directly execute the steps if it's a script.
+Required libraries: No explicit libraries are imported; the code relies on built-in Python functionality.

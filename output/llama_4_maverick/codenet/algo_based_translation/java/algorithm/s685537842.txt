@@ -1,0 +1,14 @@
+- Function signature: `main` with no parameters and return type `void`
+- Import `java.util.Scanner`
+- Declare `Scanner sc` and initialize with `System.in`
+- Declare `int a`, `int b`, `int t` and read from `sc` using `nextInt()`
+- Declare `double time` and initialize to `0`
+- Declare `int count` and initialize to `0`
+- While loop condition: `time < t + 0.5`
+  - Inside loop:
+    - Increment `count` by `b`
+    - Increment `time` by `a`
+    - If condition: `time > t + 0.5`
+      - Decrement `count` by `b`
+      - Break out of loop
+- Output `count` to console using `System.out.println()`

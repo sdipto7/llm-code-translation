@@ -1,0 +1,25 @@
+Function signature: `calculate_result(n: int, k: int) -> int`
+
+Variable declarations:
+- `n: int`
+- `k: int`
+
+Logic flow:
+1. Read two integers from input, assign them to `n` and `k`
+2. If `k % n` equals 0, calculate `n + k`
+3. Otherwise, calculate `k - n`
+4. Return the result of step 2 or 3
+
+Control structures:
+- Conditional: If `k % n == 0` then `n + k` else `k - n`
+
+Input/output operations:
+- Input: Read two space-separated integers from the standard input
+- Output: Print the result of the conditional expression to the standard output
+
+Data processing logic:
+- Calculate the modulus of `k` by `n`
+- Depending on the result, either sum `n` and `k` or subtract `n` from `k`
+
+Required libraries, modules, or dependencies:
+- None

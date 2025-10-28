@@ -1,0 +1,41 @@
+```java
+Function Signatures:
+- public static void main(String[] args)
+
+Variables:
+- Scanner scanner (Instantiated with System.in)
+- int a (Initialized via scanner input)
+- int b (Initialized via scanner input)
+- boolean flag (Initialized to false)
+- int i (Loop counter from 1 to 100000 inclusive)
+
+Logic Flow:
+1. Read two integers 'a' and 'b' from standard input
+2. Initialize flag to false
+3. Iterate i from 1 to 100000 (inclusive):
+   a. Calculate floor value of (i * 0.08)
+   b. Calculate floor value of (i * 0.1)
+   c. If first value equals 'a' AND second value equals 'b':
+      i. Print current i value
+      ii. Set flag to true
+      iii. Terminate loop
+4. If flag remains false after loop completion:
+   a. Print -1
+
+Control Structures:
+- for loop: for (int i = 1; i <= 100000; i++)
+- if condition: (Math.floor(1. * i * 0.08) == a) && (b == Math.floor(0.1 * i))
+- break statement upon successful condition
+- final if (!flag) check
+
+Input/Output:
+- Input: Two space-separated integers via Scanner.nextInt()
+- Output: Single integer (first valid i or -1)
+
+Dependencies:
+- java.util.Scanner required for input handling
+
+Data Processing:
+- Floating-point calculations with explicit truncation via Math.floor()
+- Direct numerical comparison between floored percentages and input values
+```

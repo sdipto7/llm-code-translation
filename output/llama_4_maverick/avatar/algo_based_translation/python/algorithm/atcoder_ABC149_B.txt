@@ -1,0 +1,11 @@
+1. READ input values into an array cookies
+2. SPLIT input values into individual elements of cookies
+3. CONVERT each element of cookies to INTEGER
+4. CALCULATE leftOver = cookies[0] - cookies[2]
+5. CALCULATE takahashi = MAX(0, leftOver)
+6. IF takahashi > 0 THEN
+   CALCULATE output2 = cookies[1]
+   ELSE
+   CALCULATE output2 = MAX(0, cookies[1] - ABS(leftOver))
+7. PRINT takahashi
+8. PRINT output2 alongside takahashi, separated by a space

@@ -1,0 +1,15 @@
+1. Define a function `remainder_check` with parameters `N` and `K` of type integer and return type integer.
+2. Read two integer values from input and store them in variables `N` and `K`.
+3. Check if `N` is divisible by `K` using the modulo operator (`N % K == 0`).
+4. If the condition is true, return `0`.
+5. If the condition is false, return `1`.
+6. The input operation involves reading two space-separated integers.
+7. The output operation involves printing the result of the divisibility check. 
+
+Alternatively in a more structured algorithmic representation:
+- Function: `remainder_check(N: int, K: int) -> int`
+- Read `N` and `K` from input
+- If `N % K == 0` then 
+  - Return `0`
+- Else 
+  - Return `1`

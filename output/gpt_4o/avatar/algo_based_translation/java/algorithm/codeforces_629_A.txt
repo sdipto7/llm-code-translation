@@ -1,0 +1,20 @@
+1. Import the `java.util.*` library.
+2. Define the main function `public static void main(String[] args)`.
+3. Declare a `Scanner` object `sc` to read input from the standard input.
+4. Read an integer `num` from input using `sc.nextInt()` which represents the number of rows and columns of an NxN grid.
+5. Declare an integer `counter` initialized to 0.
+6. Declare an integer `fine` initialized to 0.
+7. Declare an `ArrayList<String>` named `arr` to store the strings representing the grid rows.
+8. Loop `i` from 0 to `num - 1`:
+   - Read a string `s` using `sc.next()` and add it to `arr`.
+9. Loop `i` from 0 to `num - 1`:
+   - Set `counter` to 0.
+   - Loop `k` from 0 to `num - 1`:
+     - If the character at position `i` in the `k`-th string of `arr` is 'C', increment `counter` by 1.
+   - Increment `fine` by `(counter * (counter - 1)) / 2`.
+10. Loop `i` from 0 to `num - 1`:
+    - Set `counter` to 0.
+    - Loop `k` from 0 to `num - 1`:
+      - If the character at position `k` in the `i`-th string of `arr` is 'C', increment `counter` by 1.
+    - Increment `fine` by `(counter * (counter - 1)) / 2`.
+11. Print the value of `fine`.

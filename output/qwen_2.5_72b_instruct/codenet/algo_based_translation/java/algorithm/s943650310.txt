@@ -1,0 +1,10 @@
+Main() -> void
+sc -> Scanner
+X -> int
+t -> int
+sc.nextInt() -> X
+sc.nextInt() -> t
+if(X - t >= 0)
+    System.out.println(X - t)
+else
+    System.out.println(0)

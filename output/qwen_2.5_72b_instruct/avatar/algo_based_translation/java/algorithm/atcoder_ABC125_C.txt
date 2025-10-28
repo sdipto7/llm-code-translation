@@ -1,0 +1,47 @@
+- Function signatures:
+  - `public static int[] A`
+  - `public static void main(String[] args)`
+  - `public static int gcd(int a, int b)`
+
+- Variable declarations and data types:
+  - `Scanner sc`
+  - `int N`
+  - `int[] A`
+  - `int[] M`
+  - `int[] L`
+  - `int[] R`
+  - `int answer`
+  - `int tmp`
+  - `int r`
+
+- Logic flow in execution order:
+  - Create a `Scanner` object for input.
+  - Read an integer `N` from input.
+  - Initialize array `A` of size `N` with integers from input.
+  - Close the `Scanner` object.
+  - Initialize arrays `M`, `L`, `R` of size `N`.
+  - Set `L[0]` to `A[0]`.
+  - For `i` from 1 to `N-1`, set `L[i]` to `gcd(L[i-1], A[i])`.
+  - Set `R[N-1]` to `A[N-1]`.
+  - For `i` from `N-2` to 0, set `R[i]` to `gcd(R[i+1], A[i])`.
+  - Set `answer` to the maximum of `L[N-2]` and `R[1]`.
+  - For `i` from 1 to `N-2`, update `answer` to the maximum of `answer` and `gcd(L[i-1], R[i+1])`.
+  - Print the value of `answer`.
+
+- Control structures:
+  - For loop: `for (int i = 1; i < N; i++)`
+  - For loop: `for (int i = N - 2; i >= 0; i--)`
+  - For loop: `for (int i = 1; i < N - 1; i++)`
+  - If statement: `if (b > a)`
+  - If statement: `if (b == 0)`
+  - Do-while loop: `do { r = a % b; a = b; b = r; } while (r != 0)`
+
+- Input/output operations and data processing logic:
+  - Read integer `N` and array `A` from standard input.
+  - Compute `L` array using prefix GCD.
+  - Compute `R` array using suffix GCD.
+  - Compute the maximum GCD of non-overlapping subarrays.
+  - Print the result.
+
+- Required libraries, modules, or dependencies:
+  - `java.util.Scanner`

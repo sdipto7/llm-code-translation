@@ -1,0 +1,28 @@
+```plaintext
+Function Signature:
+- Function: calculate_tower_and_maximum_height
+- Parameters: n: int, l: List[int]
+- Returns: Tuple[int, int]
+
+Algorithm:
+1. Variable Declarations:
+   - high: int, initialized to 1
+   - tower: int, initialized to n
+   - maximum: int, initialized to 1
+
+2. Sort the list 'l' in ascending order.
+
+3. Loop through the sorted list 'l' starting from index 1 to n-1:
+   a. If the current element l[i] is equal to the previous element l[i-1]:
+      - Decrement tower by 1
+      - Increment high by 1
+   b. Else:
+      - If high is greater than maximum:
+        - Set maximum to high
+      - Reset high to 1
+
+4. After the loop, check if high is greater than maximum:
+   a. If true, set maximum to high
+
+5. Return a tuple containing maximum and tower
+```

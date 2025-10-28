@@ -1,0 +1,23 @@
+**Algorithm Extraction:**
+
+1. **Imports:** math, string, itertools, fractions, heapq, collections, re, array, bisect, sys, random, time, copy, functools
+2. **Configuration:** Set recursion limit to 10^7, define inf=10^20, eps=1.0/10^10, mod=10^9+7
+3. **Direction arrays:** dd=[(-1,0),(0,1),(1,0),(0,-1)], ddn=[(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1),(0,-1),(-1,-1)]
+4. **Helper functions:**
+   - LI(): returns list of integers from stdin
+   - LI_(): returns list of integers from stdin with each decreased by 1
+   - LF(): returns list of floats from stdin
+   - LS(): returns split string from stdin
+   - I(): returns integer from stdin
+   - F(): returns float from stdin
+   - S(): returns input string
+   - pf(s): prints string with flush=True
+5. **main() function:**
+   - Input: string s, integer k
+   - Initialize l=0
+   - For each character c in s:
+        if c != '1': break loop
+        else: increment l by 1
+   - If l >= k: return 1
+   - Else: return s[l]
+6. **Execution:** print(main())

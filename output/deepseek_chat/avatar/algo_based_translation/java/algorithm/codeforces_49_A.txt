@@ -1,0 +1,26 @@
+**Function Signature:**
+- main(String[] args): void
+
+**Variables:**
+- Scanner sc: Scanner object for input
+- String s: input string from user
+- int length: length of string s
+- char ch: character variable for storing last non-space/non-question mark character
+
+**Libraries/Dependencies:**
+- java.util.Scanner
+
+**Algorithm:**
+1. Create Scanner object to read from standard input
+2. Read entire input line into string variable s
+3. Calculate length of string s and store in length variable
+4. Initialize character variable ch to 0
+5. Iterate backwards through string s from last character to first character:
+   - For each index i from length-1 down to 0:
+     - If character at position i is not space and not question mark:
+       - Set ch to character at position i
+       - Break out of loop
+6. Convert ch to lowercase
+7. Check if ch is one of 'a', 'e', 'i', 'o', 'u', or 'y':
+   - If true: print "YES"
+   - If false: print "NO"

@@ -1,0 +1,23 @@
+```
+Function Signature:
+    def compute_min_cost(n: int, m: int, x: int, a: List[int]) -> int
+
+Variable Declarations:
+    n: int
+    m: int
+    x: int
+    a: List[int]
+    ans: int
+    i: int
+
+Library Dependencies:
+    from bisect import bisect
+
+Execution Logic:
+1. Initialize variables n, m, x by reading a line of input and splitting the values, converting each to an integer.
+2. Initialize list a by reading a line of input, splitting the values, and converting each to an integer.
+3. Set ans to 0.
+4. Use the bisect function from the bisect module to find the insertion point i for x in the sorted list a.
+5. Calculate the minimum of the lengths of the two sublists a[:i] and a[i:].
+6. Return the calculated minimum value as the result.
+```

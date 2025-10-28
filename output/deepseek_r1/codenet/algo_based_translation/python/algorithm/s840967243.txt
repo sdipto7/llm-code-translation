@@ -1,0 +1,28 @@
+1. **Imported Libraries/Modules**:  
+   - `math` module for factorial calculation.
+
+2. **Function Signatures**:  
+   - `math.factorial(x: int) -> int`.
+
+3. **Variables**:  
+   - `MOD: int` (constant) assigned as \(10^9 + 7\).  
+   - `f: Callable[[int], int]` assigned to `math.factorial`.  
+   - `n: int`, `m: int` (input integers sorted such that \(n \leq m\)).
+
+4. **Input Operations**:  
+   - Read line from standard input.  
+   - Split into two integers.  
+   - Sort integers and assign to `n` (smaller or equal) and `m`.
+
+5. **Computation Logic**:  
+   - Calculate coefficient: \( \text{max}(2 - m + n, 0) \).  
+   - Compute \( \text{factorial}(n) \).  
+   - Compute \( \text{factorial}(m) \).  
+   - Multiply coefficient, \( \text{factorial}(n) \), and \( \text{factorial}(m) \).  
+   - Apply modulo \(10^9 + 7\) to the product.
+
+6. **Output Operation**:  
+   - Print the result of the modulo operation.  
+
+7. **Control Structures**:  
+   - Implicit conditional via `max(2 - m + n, 0)` to determine coefficient (0 if \(m - n \geq 2\), else \(2 - (m - n)\)).

@@ -1,0 +1,10 @@
+1. Read two integers n and m from the input.
+2. Check if n is equal to 0.
+3. If n is 0, check if m is not equal to 0.
+4. If m is not 0, output "Impossible".
+5. If m is 0, output "0 0".
+6. If n is not 0, check if m is less than or equal to n.
+7. If m is less than or equal to n, check if m is 0.
+8. If m is 0, set m to 1.
+9. Output the value of n and the sum of m and n minus 1.
+10. If m is greater than n, output the value of m and the sum of m and n minus 1.

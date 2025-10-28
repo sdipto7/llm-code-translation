@@ -1,0 +1,15 @@
+1. Read input values N and X
+2. If X equals 1 or X equals 2N - 1
+   2.1. Print "No"
+Else
+   2.2. Print "Yes"
+   2.3. If X equals 2N - 2
+      2.3.1. Generate list xs with elements from N-1 to X+2 and from 1 to N-2 in that order
+   2.4. Else
+      2.4.1. Generate list ys with elements from 1 to X-2 and from X+3 to 2N-1 in that order
+      2.4.2. Generate list xs by concatenating three parts: 
+         - first part: elements from ys from index 0 to N-4
+         - second part: elements X+2, X-1, X, X+1 in that order
+         - third part: remaining elements from ys from index N-3 to end
+   2.5. For each element x in xs
+      2.5.1. Print x

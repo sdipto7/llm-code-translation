@@ -1,0 +1,41 @@
+- Function signature:  
+  `public static void main(String[] args)` (returns void)  
+
+- Variables:  
+  `Scanner scan` (Scanner type)  
+  `int intLoop` (integer)  
+  `String strTaro` (string)  
+  `String strHana` (string)  
+  `int intTaro = 0` (integer)  
+  `int intHana = 0` (integer)  
+
+- Execution flow:  
+  1. Read integer `intLoop` from standard input  
+  2. Initialize `scan` as `new Scanner(System.in)`  
+  3. Loop from `i = 0` to `intLoop - 1`:  
+     a. Read `strTaro` from input  
+     b. Read `strHana` from input  
+     c. Compute `intJudge = strTaro.compareTo(strHana)`  
+     d. If `intJudge < 0`:  
+        - Add 3 to `intHana`  
+     e. Else if `intJudge == 0`:  
+        - Add 1 to `intTaro`  
+        - Add 1 to `intHana`  
+     f. Else if `intJudge > 0`:  
+        - Add 3 to `intTaro`  
+  4. Print `intTaro` and `intHana` separated by space  
+  5. Close `scan`  
+
+- Control structures:  
+  - `for` loop: `i < intLoop`  
+  - `if`-`else if` chain with conditions:  
+    `intJudge < 0`  
+    `intJudge == 0`  
+    `intJudge > 0`  
+
+- Input/Output operations:  
+  - Scanner methods: `nextInt()`, `next()`  
+  - System output: `System.out.println`  
+
+- Dependencies:  
+  - `java.util.Scanner`

@@ -1,0 +1,41 @@
+from collections import defaultdict
+import sys
+
+sys.setrecursionlimit(10000000)
+
+graph = defaultdict(list)
+
+input_line = input().split()
+N = int(input_line[0])
+K = int(input_line[1])
+
+for i in range(N - 1):
+    input_line = input().split()
+    a = int(input_line[0])
+    b = int(input_line[1])
+    graph[a - 1].append(b - 1)
+    graph[b - 1].append(a - 1)
+
+mod = 1000000007
+
+def dfs(fro: int, to: int, f: int) -> int:
+    caseNum = f
+    colorNum = K - 1 if f == K else K - 2
+    
+    for u in graph[fro]:
+        if u == to:
+            continue
+        
+        pat = dfs(u, fro, colorNum)
+        
+        if pat == 0:
+            caseNum = 0
+            break
+        
+        caseNum = caseNum * pat % mod
+        colorNum -= 1
+    
+    return caseNum
+
+ans = dfs(0, -1, K)
+print(ans)

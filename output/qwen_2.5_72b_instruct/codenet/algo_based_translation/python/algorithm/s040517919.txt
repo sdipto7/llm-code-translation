@@ -1,0 +1,33 @@
+Function signatures:
+- main() -> None
+
+Variable declarations and data types:
+- A: int
+- B: int
+
+Logic flow in execution order:
+1. Read input values and split them into two parts.
+2. Convert the split string values to integers and assign them to variables A and B.
+3. Check if A is equal to B.
+4. If true, print "Draw".
+5. If false, check if A is equal to 1.
+6. If true, print "Alice".
+7. If false, check if B is equal to 1.
+8. If true, print "Bob".
+9. If false, check if A is greater than B.
+10. If true, print "Alice".
+11. If false, print "Bob".
+
+Control structures:
+- if A == B
+- elif A == 1
+- elif B == 1
+- elif A > B
+- else
+
+Input/output operations and data processing logic:
+- Input: Read a line from standard input, split it into two parts, convert each part to an integer, and assign them to A and B.
+- Output: Print a string to standard output based on the conditions evaluated.
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules are required.

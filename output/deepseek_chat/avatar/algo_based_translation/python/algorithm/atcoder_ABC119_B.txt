@@ -1,0 +1,10 @@
+Read integer N from standard input
+Declare list x of type float with size N
+For i from 0 to N-1:
+    Read string from standard input
+    Replace all occurrences of 'JPY' with '* 1.0' in the string
+    Replace all occurrences of 'BTC' with '* 380000.0' in the string
+    Evaluate the resulting string as a mathematical expression and convert to float
+    Store result in x[i]
+Calculate sum of all elements in x
+Print the sum to standard output

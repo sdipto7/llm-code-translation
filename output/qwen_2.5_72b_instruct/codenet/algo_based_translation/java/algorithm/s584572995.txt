@@ -1,0 +1,78 @@
+- Function: `main(String[] args)`
+  - Variables: 
+    - `N: int`
+    - `to: List<ArrayList<Integer>>`
+    - `dp: int[]`
+    - `fs: FastScanner`
+    - `edges: int[][]`
+    - `mulsum: long`
+    - `cases: long`
+    - `PN: long`
+    - `BN: long`
+    - `WN: long`
+    - `ans: long`
+    - `candidate1: int`
+    - `candidate2: int`
+    - `child: int`
+    - `a: long`
+    - `b: long`
+    - `mul: long`
+  - Logic:
+    - Initialize `fs` with `System.in`
+    - Read `N` from `fs`
+    - Initialize `to` with `N` empty `ArrayList<Integer>`
+    - Read `edges` from `fs` and populate `to`
+    - Initialize `dp` with size `N`
+    - Call `rec(0, -1)` and store result in `dp`
+    - Initialize `mulsum` to `0`
+    - For each edge in `edges`:
+      - Determine `candidate1` and `candidate2` from edge
+      - Set `child` to the smaller of `dp[candidate1]` and `dp[candidate2]`
+      - Calculate `a` as `dp[child]`
+      - Calculate `b` as `N - a`
+      - Calculate `mul` using `modpow` for `(2^a - 1) * (2^b - 1) % mod`
+      - Add `mul` to `mulsum` and take modulo `mod`
+    - Calculate `cases` as `2^N % mod`
+    - Calculate `PN` as `(mulsum + (cases - 1 + mod) % mod) % mod`
+    - Calculate `BN` as `N * 2^(N-1) % mod`
+    - Calculate `WN` as `(PN - BN + mod) % mod`
+    - Calculate `ans` as `WN * 2^(mod-2) % mod`
+    - Print `ans`
+
+- Function: `rec(int v, int parent)`
+  - Variables: 
+    - `res: int`
+  - Logic:
+    - Initialize `res` to `1`
+    - For each `next` in `to.get(v)`:
+      - If `next` is not `parent`:
+        - Add `rec(next, v)` to `res`
+    - Set `dp[v]` to `res`
+    - Return `res`
+
+- Function: `modpow(long x, long y)`
+  - Variables: 
+    - `tmp: long`
+  - Logic:
+    - If `y` is `0`, return `1`
+    - If `y` is odd, return `x * modpow(x, y-1) % mod`
+    - Otherwise, calculate `tmp` as `modpow(x, y/2)`
+    - Return `tmp * tmp % mod`
+
+- Class: `FastScanner`
+  - Variables: 
+    - `reader: BufferedReader`
+    - `tokenizer: StringTokenizer`
+  - Constructor: `FastScanner(InputStream in)`
+    - Initialize `reader` with `BufferedReader` of `InputStreamReader` of `in`
+    - Initialize `tokenizer` to `null`
+  - Functions:
+    - `next()`: Read next token from `tokenizer` or `reader`, return as `String`
+    - `nextLine()`: Read next line from `reader` or `tokenizer`, return as `String`
+    - `nextLong()`: Read next token and parse as `long`
+    - `nextInt()`: Read next token and parse as `int`
+    - `nextDouble()`: Read next token and parse as `double`
+    - `nextIntArray(int n)`: Read `n` integers and return as `int[]`
+    - `nextLongArray(int n)`: Read `n` longs and return as `long[]`
+
+- Libraries: `java.util.*`, `java.io.*`

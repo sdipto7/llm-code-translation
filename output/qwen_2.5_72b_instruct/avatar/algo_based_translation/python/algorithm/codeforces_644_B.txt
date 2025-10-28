@@ -1,0 +1,35 @@
+Algorithm:
+- Import queue library
+- Read n (number of tasks) and b (maximum tasks in queue) as integers from input
+- Define class Task with constructor:
+  - Parameters: time (int), duration (int), index (int)
+  - Initialize self.time, self.duration, self.index
+- Initialize remaining as Queue object
+- Initialize running as False
+- Initialize finish_time as 0
+- Define function run_task:
+  - Parameters: remaining (Queue), finish_time (int)
+  - Get task_to_run from remaining queue
+  - Update finish_time to max(finish_time, task_to_run.time) + task_to_run.duration
+  - Update result at task_to_run.index with finish_time
+  - Return finish_time, result
+- Initialize result as empty dictionary
+- Loop from 0 to n-1:
+  - Read time and duration as integers from input
+  - Create task object with Task constructor, passing time, duration, and loop index as index
+  - Update result at loop index with 0
+  - If task.time > finish_time and remaining is empty:
+    - Set running to True
+    - Update finish_time to task.time + task.duration
+    - Update result at loop index with finish_time
+  - Else:
+    - If task.time >= finish_time and remaining is not empty:
+      - Call run_task with remaining and finish_time, update finish_time and result
+    - If remaining queue size < b:
+      - Put task in remaining queue
+    - Else:
+      - Update result at loop index with -1
+- While remaining is not empty:
+  - Call run_task with remaining and finish_time, update finish_time and result
+- Loop through keys in result:
+  - Print result at key

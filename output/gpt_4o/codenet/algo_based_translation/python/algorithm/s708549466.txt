@@ -1,0 +1,26 @@
+```plaintext
+function calculate_operations(N: int, x: int, a: List[int]) -> int:
+    declare cnt: int = 0
+    for i from 1 to N - 1 do
+        declare tmp: int = a[i - 1] + a[i]
+        if tmp > x then
+            if tmp - x > a[i] then
+                a[i - 1] = tmp - a[i] - x
+                a[i] = 0
+            else
+                a[i] = a[i] - (tmp - x)
+            cnt = cnt + (tmp - x)
+    return cnt
+
+function main() -> None:
+    import sys
+    declare N, x: int
+    declare a: List[int]
+    input_data = sys.stdin.read().strip().split()
+    N = int(input_data[0])
+    x = int(input_data[1])
+    a = list(map(int, input_data[2:]))
+    declare result: int = calculate_operations(N, x, a)
+    print(result)
+```
+

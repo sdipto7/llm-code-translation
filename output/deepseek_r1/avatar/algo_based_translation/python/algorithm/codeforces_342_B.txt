@@ -1,0 +1,61 @@
+**Structured Algorithm Specification**
+
+**Function: main()**
+- **Return Type:** void
+- **Parameters:** None
+
+**Variables:**
+- `n`, `m`, `s`, `f`: integers (input values)
+- `d`: integer (direction: 1 or -1)
+- `c`: character ('R' or 'L')
+- `res`: string (output result)
+- `i`: integer (current time unit, initialized to 1)
+- `j`: integer (current position, initialized to `s`)
+- `t`, `l`, `r`: integers (current step parameters)
+- `k`: integer (tracker for processed steps, initialized to 1)
+
+**Input Operations:**
+1. Read initial input line as four integers: `n`, `m`, `s`, `f`
+2. Read first step parameters as three integers: `t`, `l`, `r`
+
+**Control Flow & Logic:**
+
+1. **Direction Determination:**
+    - If `s` < `f`:
+        - Set `d` = 1
+        - Set `c` = 'R'
+    - Else:
+        - Set `d` = -1
+        - Set `c` = 'L'
+
+2. **Main Movement Loop** (while `j` ≠ `f`):
+    1. **Check for New Step:**
+        - If `i` > `t` AND `k` < `m`:
+            - Read next input line as `t`, `l`, `r`
+            - Increment `k` by 1
+    
+    2. **Position Check:**
+        - If current time matches step (`i` == `t`) AND:
+            - (`j` is within [l, r]) OR
+            - (`j + d` is within [l, r]):
+                - Append 'X' to `res`
+        - Else:
+            - Append `c` to `res`
+            - Update position: `j` += `d`
+    
+    3. **Time Progression:**
+        - Increment `i` by 1
+
+3. **Termination:**
+    - Exit loop when `j` == `f`
+    - Print `res`
+
+**Edge Case Handling:**
+- Processes exactly `m` steps (no extra input reads after `k` reaches `m`)
+- Handles edge where movement direction requires reverse traversal (`s` > `f`)
+- Blocks movement when current OR next position is in a blocked range
+
+**External Dependencies:**
+- Standard input for reading data
+- Integer parsing and string concatenation operations
+- No external libraries required

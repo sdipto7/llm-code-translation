@@ -1,0 +1,14 @@
+1. Initialize a Scanner object to read from the standard input.
+2. Declare and initialize variables: n, i, k, p, flag, and an integer array a of size 1000.
+3. Read an integer n from the standard input.
+4. Set i to 0.
+5. Enter a while loop that continues as long as k is less than or equal to n.
+6. Inside the loop, increment i by k.
+7. Check if i is greater than or equal to n. If true, enter a nested while loop.
+8. Inside the nested loop, decrement i by n until i is less than n.
+9. Increment the value in the array a at index i.
+10. Increment k by 1.
+11. Exit the while loop when k exceeds n.
+12. Iterate through the array a from index 0 to n-1.
+13. Inside the loop, check if the value at the current index i is 0. If true, set flag to false and break the loop.
+14. Check the value of flag. If true, output "YES". Otherwise, output "NO".

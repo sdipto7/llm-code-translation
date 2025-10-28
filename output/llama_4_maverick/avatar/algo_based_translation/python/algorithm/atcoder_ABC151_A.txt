@@ -1,0 +1,26 @@
+1. Set debug to False
+2. Define a function log(text) 
+    1. If debug is True 
+        1. Print text
+3. Define a function parse_input(lines_as_string) 
+    1. Set global debug to False if lines_as_string is None 
+    2. If lines_as_string is None 
+        1. Read input and append to lines 
+    3. Else 
+        1. Set global debug to True 
+        2. Split lines_as_string by newline and store in lines (excluding first and last elements) 
+    4. Extract the first character from the first line and store in c 
+    5. Return c 
+4. Define a function solve(c) 
+    1. Define a string a as "abcdefghijklmnopqrstuvwxyz" 
+    2. Find the index of c in a and store in i 
+    3. Return the character at index i + 1 in a 
+5. Define a function main() 
+    1. Call parse_input() and unpack the result into arguments for solve() 
+    2. Store the result of solve() in result 
+    3. If result is a list 
+        1. Print each element of result 
+    4. Else 
+        1. Print result 
+6. If the script is being run directly 
+    1. Call main()

@@ -1,0 +1,79 @@
+**Structured Algorithm Specification:**
+
+**Function Signature:**
+```python
+def calculate_matches(s: str, t: str) -> tuple[int, int]
+```
+
+**Variables:**
+- `freqs: dict[str, int]` (character frequency map for string `s`)
+- `freqt: dict[str, int]` (character frequency map for string `t`)
+- `yay: int` (count of exact case-sensitive matches)
+- `whoops: int` (count of case-insensitive matches after exhausting exact matches)
+
+**Logic Flow:**
+
+1. **Input Acquisition:**
+   - Read input strings `s` and `t` from standard input.
+
+2. **Frequency Map Initialization:**
+   - Initialize `freqs` by iterating through each character in `s`:
+     - Increment count for existing entries
+     - Create new entry with count=1 for new characters
+   - Initialize `freqt` by iterating through each character in `t` using same logic as `freqs`.
+
+3. **Exact Match Calculation (yay):**
+   - For each character `c` in `freqs.keys()`:
+     - While `freqs[c] > 0` AND `c` exists in `freqt` AND `freqt[c] > 0`:
+       - Increment `yay` by 1
+       - Decrement `freqs[c]` by 1
+       - Decrement `freqt[c]` by 1
+
+4. **Case-Insensitive Match Calculation (whoops):**
+   - For each character `c` in `freqs.keys()`:
+     - While `freqs[c] > 0`:
+       - If `c` is lowercase:
+         - Check if `c.upper()` exists in `freqt` AND `freqt[c.upper()] > 0`
+         - If true:
+           - Increment `whoops` by 1
+           - Decrement `freqs[c]` by 1
+           - Decrement `freqt[c.upper()]` by 1
+         - Else: exit loop
+       - Else if `c` is uppercase:
+         - Check if `c.lower()` exists in `freqt` AND `freqt[c.lower()] > 0`
+         - If true:
+           - Increment `whoops` by 1
+           - Decrement `freqs[c]` by 1
+           - Decrement `freqt[c.lower()]` by 1
+         - Else: exit loop
+       - Else: exit loop
+
+5. **Result Output:**
+   - Return tuple `(yay, whoops)` as final result
+
+**Control Flow Structures:**
+- Nested loops:
+  - 2 `for` loops for frequency map initialization
+  - 2 sequential `for` loops for match calculations
+  - `while` loops within character iterations for multi-occurrence processing
+- Conditional branches:
+  - `if`/`else` in frequency map initialization
+  - Compound condition checks in `yay` calculation loop
+  - Case-checking conditionals with character case validation in `whoops` calculation
+
+**Edge Case Handling:**
+- Explicit existence checks (`c in freqt`) before accessing dictionary entries
+- Case transformation validation (`.islower()`/`.isupper()`) before case conversions
+- Loop exit on first failed match attempt in case-insensitive processing
+
+**Data Flow:**
+- Input strings → frequency maps → incremental match counters → aggregated result tuple
+- Frequency maps are mutated during processing to track remaining character counts
+
+**Dependencies:**
+- Standard library functions:
+  - `str.islower()`
+  - `str.isupper()`
+  - `str.lower()`
+  - `str.upper()`
+- No external libraries required

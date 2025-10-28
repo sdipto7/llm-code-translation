@@ -1,0 +1,28 @@
+Function Signature: `calculate_y(X: int) -> int`
+
+Variable Declarations:
+- `X: int`
+- `h: int`
+- `a: int`
+- `y: int`
+
+Logic Flow:
+- Input: Read an integer `X` from the user
+- Calculation: 
+  - Compute `h` as integer division of `X` by 500
+  - Compute `a` as integer division of the remainder of `X` divided by 500 by 5
+  - Compute `y` as `h` multiplied by 1000 plus `a` multiplied by 5
+- Output: Print the value of `y`
+
+Control Structures:
+- No loops or conditionals present
+
+Input/Output Operations:
+- Input: `X = int(input())`
+- Output: `print(y)`
+
+Data Processing Logic:
+- Arithmetic operations: division, multiplication, addition, modulus
+
+Required Libraries, Modules, or Dependencies:
+- No external libraries or modules required

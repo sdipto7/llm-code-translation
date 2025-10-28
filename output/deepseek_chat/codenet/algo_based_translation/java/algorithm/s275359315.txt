@@ -1,0 +1,7 @@
+Algorithm:
+- Import java.util.Scanner
+- Define main method with String[] args parameter, return type void
+- Declare Scanner object named scan initialized with System.in
+- Declare integer variable r initialized with scan.nextInt()
+- Declare integer variable res initialized with (int)Math.pow(r, 2)
+- Call System.out.println with res as argument

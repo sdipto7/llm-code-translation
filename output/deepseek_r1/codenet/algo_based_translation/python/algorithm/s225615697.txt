@@ -1,0 +1,31 @@
+- **Function Signature**  
+  Not explicitly present. Code operates at script level.
+
+- **Variables and Data Types**  
+  - `n: int`  
+  - `a: list[int]` (length = `n`)  
+  - `m1: int`  
+  - `m: list[int]` (length = `n`)  
+  - `result: str`  
+
+- **Input Operations**  
+  1. Read integer `n` from standard input.  
+  2. Read `n` space-separated integers into list `a` from standard input.  
+
+- **Logic Flow**  
+  1. Compute `m1` as the integer result of:  
+     `sum(a[i] * (-1)**i for i in range(n)) // 2`.  
+  2. Initialize list `m` of length `n`, set `m[0] = m1`.  
+  3. For `i` from `1` to `n-1` (inclusive):  
+     - Compute `m[i] = a[i-1] - m[i-1]`.  
+  4. Generate `result` by joining elements of `[str(x*2) for x in m]` with spaces.  
+
+- **Output Operation**  
+  Print `result` to standard output.  
+
+- **Control Structures**  
+  - One loop: `for i in range(1, n)`  
+  - No explicit conditionals.  
+
+- **Dependencies**  
+  None. Uses built-in functions only.

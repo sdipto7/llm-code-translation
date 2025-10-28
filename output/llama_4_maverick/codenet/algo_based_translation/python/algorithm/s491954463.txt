@@ -1,0 +1,12 @@
+1. Define a function `main()` with no parameters and no return type.
+2. Declare variables `n` and `m` of type integer.
+3. Read input and parse it into `n` and `m` using a split operation on whitespace, converting the resulting strings to integers.
+4. Declare two empty lists `a` and `b` to store integers.
+5. Iterate `m` times using a for loop with loop counter `i`.
+6. Inside the loop, read input and parse it into two integers `a1` and `b1` using a split operation on whitespace, converting the resulting strings to integers.
+7. Append `a1` and `b1` to lists `a` and `b` respectively.
+8. Iterate from 1 to `n` (inclusive) using a for loop with loop counter `i`.
+9. Inside the loop, calculate the sum of the counts of `i` in lists `a` and `b`.
+10. Print the calculated sum for each `i`.
+11. The required library is the built-in Python library, specifically the `input()` function and list operations.
+12. The input operations are reading `n` and `m`, and then `m` pairs of integers, followed by printing `n` counts.

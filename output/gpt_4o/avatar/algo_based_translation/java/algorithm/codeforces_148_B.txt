@@ -1,0 +1,43 @@
+```
+Algorithm:
+
+1. Import necessary module:
+   - Import `java.util.Scanner`.
+
+2. Define the main function:
+   - Function signature: `public static void main(String[] args)`
+
+3. Initialize the input mechanism:
+   - Create a `Scanner` object `in` to read input from the system.
+
+4. Declare and initialize variables to read input values:
+   - `double VP = in.nextInt()`; // Princess's speed
+   - `double VD = in.nextInt()`; // Dragon's speed
+   - `double T = in.nextInt()`;  // Initial lead time
+   - `double F = in.nextInt()`;  // Time for dragon to return after catching princess
+   - `double C = in.nextInt()`;  // Distance to the castle
+
+5. Check if the dragon can catch the princess:
+   - If `VD <= VP` then:
+     - Output "0".
+     - Terminate the program.
+
+6. Initialize additional variables:
+   - `int answer = 0;` // Count of times the dragon catches up
+   - `double start = T;` // Start time after initial lead
+
+7. Enter an infinite loop to calculate encounters:
+   - Loop forever:
+     - Calculate `x`: the time it takes for the dragon to catch up to the princess:
+       - `double x = start * VP / (VD - VP);`
+     - Check if the princess reaches the castle before the dragon catches up:
+       - If `(start + x) * VP >= C` then:
+         - Break out of the loop.
+     - Update the start time for next chase after the dragon returns and rests:
+       - `start += 2 * x + F;`
+     - Increment the encounter count:
+       - `answer++`
+
+8. Output the result:
+   - Print `answer` which is the number of times the dragon catches the princess.
+```

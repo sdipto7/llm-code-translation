@@ -1,0 +1,31 @@
+
+import sys
+from typing import List
+
+def debug(*obj):
+    print(*obj, file=sys.stderr)
+
+def main():
+    import sys
+    from typing import List
+    from collections import deque
+    import bisect
+
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+
+    n = int(data[0])
+    list = [int(x) for x in data[1:]]
+
+    list.sort()
+    c = 1
+    for i in range(n):
+        if list[i] >= c:
+            c += 1
+
+    print(c)
+
+if __name__ == "__main__":
+    main()
+

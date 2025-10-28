@@ -1,0 +1,15 @@
+1. Define function run with parameters s and t
+2. Count frequency of characters in s and store in ss
+3. Sort the frequencies in ss in ascending order
+4. Count frequency of characters in t and store in tt
+5. Sort the frequencies in tt in ascending order
+6. Compare ss and tt for equality
+7. If ss equals tt, return 'Yes'
+8. Else, return 'No'
+9. Define function main
+10. Read input string s from user
+11. Read input string t from user
+12. Call function run with s and t, and store result
+13. Print the result
+14. Check if script is being run as main module
+15. If true, call function main

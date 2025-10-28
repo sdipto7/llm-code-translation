@@ -1,0 +1,12 @@
+1. Define a function `main` with no parameters and return type `None`.
+2. Declare a list `a` of integers with 5 elements, initialized using a list comprehension that reads 5 integer inputs from the user.
+3. Declare an empty dictionary `dic` to store integer values.
+4. Iterate over the range from 0 to 4 (inclusive) using a `for` loop with loop variable `i`.
+5. Inside the loop, check if the last digit of the `i-th` element of `a` is "0" using the condition `str(a[i])[-1] == "0"`.
+6. If the condition is true, update `dic` with key `i` and value `0` using `dic.update({i: 0})`.
+7. If the condition is false, update `dic` with key `i` and value `int(str(a[i])[-1]) - 10` using `dic.update({i: int(str(a[i])[-1]) - 10})`.
+8. After the loop, find the key `min_num` in `dic` with the minimum value using a list comprehension `[i for i in dic if dic[i] == min(dic.values())][0]`.
+9. Calculate the sum `a_sum` of all elements in `a` using `sum(a)`.
+10. Remove the key-value pair with key `min_num` from `dic` using `dic.pop(min_num)`.
+11. Calculate the absolute sum of the remaining values in `dic` using `abs(sum(dic.values()))`.
+12. Print the result of adding `abs(sum(dic.values()))` and `a_sum` using `print(abs(sum(dic.values())) + a_sum)`.

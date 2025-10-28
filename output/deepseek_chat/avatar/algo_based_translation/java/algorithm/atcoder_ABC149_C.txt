@@ -1,0 +1,14 @@
+Algorithm:
+- Import Scanner and Math libraries
+- Declare public class atcoder_ABC149_C with main method taking String[] args parameter
+- Create Scanner object stdIn reading from System.in
+- Read next token from stdIn, parse to integer, assign to variable x (int)
+- If x is not equal to 2 AND x modulo 2 equals 0, increment x by 1
+- Begin infinite loop:
+  - Declare variable i (int)
+  - Calculate square root of x, assign to sqrtNum (double)
+  - Initialize for loop with i = 3, condition i <= sqrtNum, increment i by 2:
+    - If x modulo i equals 0, break out of for loop
+  - After for loop, if i > sqrtNum, break out of infinite loop
+  - Otherwise, increment x by 2
+- Print value of x to standard output

@@ -1,0 +1,41 @@
+```
+Algorithm:
+1. Import the necessary libraries for input, output, and data manipulation:
+   - java.io.*
+   - java.util.*
+
+2. Define the main function with no parameters and no return type:
+   - main(String[] args)
+
+3. Create a Scanner object to read input from the standard input stream.
+4. Create a PrintWriter object to write output to the standard output stream.
+
+5. Read an integer N from input, representing the number of elements in the array.
+6. Declare an integer array A of size N.
+
+7. Loop over the range from 0 to N-1 (inclusive):
+   - For each index n, read an integer from input and assign it to A[n].
+
+8. Sort the array A in non-decreasing order using Arrays.sort().
+
+9. Declare an integer min and assign it the value of A[0].
+10. Declare an integer max and assign it the value of A[N-1].
+
+11. Declare a long variable mins and initialize it to 0.
+12. Declare a long variable maxs and initialize it to 0.
+
+13. Loop over each value in the array A:
+   - If the value is equal to min, increment mins by 1.
+   - If the value is equal to max, increment maxs by 1.
+
+14. If min is equal to max:
+   - Calculate the number of pairs using the formula mins * (mins - 1) / 2 and store it in a long variable.
+   - Output the result as a string "0 <calculated_value>" using PrintWriter.
+
+15. Else (min is not equal to max):
+   - Calculate the difference max - min.
+   - Calculate the number of pairs as mins * maxs.
+   - Output the result as a string "<max - min> <calculated_pairs>" using PrintWriter.
+
+16. Close the PrintWriter to flush the output and release resources.
+```

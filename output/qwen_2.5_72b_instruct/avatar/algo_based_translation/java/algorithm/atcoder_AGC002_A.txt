@@ -1,0 +1,15 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner scanner = new Scanner(System.in)`
+- `int a = scanner.nextInt()`
+- `int b = scanner.nextInt()`
+
+Logic flow in execution order:
+1. Initialize `Scanner` object to read input from standard input.
+2. Read an integer value and assign it to variable `a`.
+3. Read another integer value and assign it to variable `b`.
+4. If `a` is greater than 0, print "Positive".
+5. Else if `b` is greater than or equal to 0, print "Zero".
+6. Else if the result of `(b - a + 1) % 2` is equal to 0, print "Positive".
+7. Else, print "Negative".

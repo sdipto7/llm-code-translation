@@ -1,0 +1,32 @@
+Function signature: main() -> None
+
+Variable declarations and data types:
+n: int
+a: List[int]
+k: float
+i: int
+j: int
+
+Logic flow in execution order:
+1. Read an integer value from input and assign it to n.
+2. Read a space-separated string of integers from input, convert them to a list of integers, and assign it to a.
+3. Check if the sum of elements in a modulo (n * (n + 1) / 2) is not zero.
+   - If true, print "NO".
+   - If false, proceed to the next step.
+4. Calculate the sum of elements in a divided by (n * (n + 1) / 2) and assign it to k.
+5. Append the first element of a to the end of a.
+6. Create a list of values where each value is (k - i + j) % n for corresponding pairs (i, j) from zipped (a[1:], a).
+7. Check if the sum of the created list is not zero.
+   - If true, print "NO".
+   - If false, proceed to the next step.
+8. Create another list of boolean values where each value is (k - i + j) / n >= 0 for corresponding pairs (i, j) from zipped (a[1:], a).
+9. Check if the sum of the boolean list is not equal to n.
+   - If true, print "NO".
+   - If false, print "YES".
+
+Input/output operations and data processing logic:
+- Input: Two lines of text - first line contains an integer n, second line contains n integers separated by spaces.
+- Output: A single line containing either "YES" or "NO".
+
+Required libraries, modules, or dependencies:
+- No specific libraries or modules are required beyond Python's built-in functions and types.

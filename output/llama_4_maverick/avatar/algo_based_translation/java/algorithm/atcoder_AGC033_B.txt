@@ -1,0 +1,16 @@
+1. Read input values: height (h), width (w), number of operations (n), initial row (sr), initial column (sc), string s, and string t.
+2. Initialize a flag 'end' to False.
+3. Initialize variables to track safe rows: usafe to 1 and dsafe to h.
+4. Iterate from n-1 to 0 over the characters in string s in reverse order.
+5. For each character in s, if it's 'U', increment usafe. If it's 'D', decrement dsafe.
+6. Check if usafe > dsafe. If true, set 'end' to True and break the loop.
+7. If the current index is greater than 0, check the character at the previous index in string t.
+8. If the character in t is 'U', increment dsafe by 1 and cap it at h. If it's 'D', decrement usafe by 1 and ensure it doesn't go below 1.
+9. Initialize variables to track safe columns: lsafe to 1 and rsafe to w.
+10. Iterate from n-1 to 0 over the characters in string s in reverse order.
+11. For each character in s, if it's 'L', increment lsafe. If it's 'R', decrement rsafe.
+12. Check if lsafe > rsafe. If true, set 'end' to True and break the loop.
+13. If the current index is greater than 0, check the character at the previous index in string t.
+14. If the character in t is 'L', increment rsafe by 1 and cap it at w. If it's 'R', decrement lsafe by 1 and ensure it doesn't go below 1.
+15. Check if sr is within the range [usafe, dsafe] and sc is within the range [lsafe, rsafe] and 'end' is False.
+16. If the conditions in step 15 are met, output "YES". Otherwise, output "NO".

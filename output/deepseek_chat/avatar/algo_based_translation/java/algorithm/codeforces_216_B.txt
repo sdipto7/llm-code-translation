@@ -1,0 +1,68 @@
+**Function Signatures:**
+- `public int dfs(int child, int par)`
+- `public static void main(String[] args)`
+
+**Variables:**
+- `count: int`
+- `seen: boolean[]`
+- `path: int = 0`
+- `cycle: int = 1`
+- `graph: LinkedList<LinkedList<Integer>>`
+- `sc: Scanner`
+- `m: int`
+- `n: int`
+- `ft: codeforces_216_B`
+- `x: int`
+- `y: int`
+- `toremove: int = 0`
+
+**Logic Flow:**
+1. Initialize Scanner object for input
+2. Read integers m and n from input
+3. Create instance ft of codeforces_216_B
+4. Initialize ft.graph as LinkedList of LinkedLists with size m+1
+5. Initialize ft.seen as boolean array of size m+1
+6. For i from 0 to n-1:
+   - Read integers x and y
+   - Add y to graph[x]
+   - Add x to graph[y]
+7. Set toremove = 0
+8. For i from 1 to m:
+   - If ft.seen[i] is false:
+     - Set ft.count = 0
+     - Call ft.dfs(i, 0)
+     - If return value equals ft.cycle:
+        - If ft.count % 2 == 1: increment toremove
+9. If (m - toremove) % 2 == 1: increment toremove
+10. Print toremove
+
+**dfs Function Logic:**
+1. If seen[child] is true: return cycle
+2. Set seen[child] = true
+3. For each Integer i in graph.get(child):
+   - If i != par:
+     - Increment this.count
+     - Call dfs(i, child)
+     - If return value equals cycle: return cycle
+4. Return path
+
+**Control Structures:**
+- For loop: for (int i = 0; i <= m; i++)
+- For loop: for (int i = 0; i < n; i++)
+- For loop: for (int i = 1; i <= m; i++)
+- If condition: if (!ft.seen[i])
+- If condition: if (ft.dfs(i, 0) == ft.cycle)
+- If condition: if (ft.count % 2 == 1)
+- If condition: if ((m - toremove) % 2 == 1)
+- For-each loop: for (Integer i : graph.get(child))
+- If condition: if (i != par)
+- If condition: if (dfs(i, child) == cycle)
+
+**Input/Output:**
+- Input: m, n, followed by n pairs of integers (x,y)
+- Output: Integer toremove
+
+**Dependencies:**
+- java.util.Iterator
+- java.util.LinkedList
+- java.util.Scanner

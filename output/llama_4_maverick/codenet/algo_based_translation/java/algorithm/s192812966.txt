@@ -1,0 +1,22 @@
+1. Define function `main` with return type `void` and parameter `args` of type `String[]`.
+2. Declare variables: 
+   - `scanner` of type `Scanner`
+   - `w`, `h`, `n` of type `int`
+   - arrays `x`, `y`, `a` of type `int[]` with size `n`
+   - `xmax`, `xmin`, `ymax`, `ymin` of type `int`
+3. Initialize `scanner` with `new Scanner(System.in)`.
+4. Read input into `w`, `h`, `n` using `scanner.nextInt()`.
+5. Initialize `xmax` with `w`, `xmin` with `0`, `ymax` with `h`, `ymin` with `0`.
+6. Loop from `i = 0` to `n-1` with increment `i++`.
+   - Read input into `x[i]`, `y[i]`, `a[i]` using `scanner.nextInt()`.
+   - Switch on `a[i]`.
+     - Case `1`: Update `xmin` with `Math.max(xmin, x[i])`.
+     - Case `2`: Update `xmax` with `Math.min(xmax, x[i])`.
+     - Case `3`: Update `ymin` with `Math.max(ymin, y[i])`.
+     - Case `4`: Update `ymax` with `Math.min(ymax, y[i])`.
+7. Update `w` with `Math.max(xmax - xmin, 0)`.
+8. Update `h` with `Math.max(ymax - ymin, 0)`.
+9. Output `w * h` using `System.out.println()`.
+10. End function `main`. 
+
+Required library: `java.util.Scanner`

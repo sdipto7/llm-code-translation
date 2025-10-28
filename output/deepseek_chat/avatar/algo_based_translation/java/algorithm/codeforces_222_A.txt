@@ -1,0 +1,32 @@
+**Function Signature:**
+- main(String[] args): void
+
+**Variables:**
+- Scanner in: System input scanner
+- int n: first input integer
+- int k: second input integer
+- int l: 0 (initial value), stores previous integer
+- int c: 1 (initial value), counter for consecutive same values
+- int a: temporary storage for each input integer
+
+**Libraries/Dependencies:**
+- java.util.Scanner
+
+**Algorithm:**
+1. Initialize Scanner for reading from standard input
+2. Read integer n
+3. Read integer k
+4. Initialize l = 0
+5. Initialize c = 1
+6. For i from 0 to n-1:
+   - Read integer a
+   - If a equals l:
+        Increment c by 1
+   - Else:
+        Set c = 1
+   - Set l = a
+7. After loop:
+   - If c + k > n:
+        Print (n - c)
+   - Else:
+        Print -1

@@ -1,0 +1,27 @@
+Function signature: main() -> None
+
+Variable declarations:
+s: str
+alphabets: List[str]
+
+Logic flow in execution order:
+1. Read input string s from standard input
+2. Initialize list alphabets containing all lowercase English letters from 'a' to 'z'
+3. Loop over the indices of the alphabets list with index variable i
+   - If the element at index i in alphabets is equal to s
+     - Print the element at index i+1 in alphabets
+
+Control structures:
+- For loop: for i in range(len(alphabets))
+- If statement: if alphabets[i] == s
+
+Input/output operations:
+- Input: s = input()
+- Output: print(alphabets[i+1])
+
+Data processing logic:
+- Compare each element of the alphabets list with the input string s
+- When a match is found, output the next element in the list
+
+Required libraries, modules, or dependencies:
+- None

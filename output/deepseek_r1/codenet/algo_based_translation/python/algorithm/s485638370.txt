@@ -1,0 +1,16 @@
+Algorithm:
+
+- Function: main (no parameters, return type: void)
+- Variables:
+  - a: string (user input)
+- Logic Flow:
+  1. Read input from standard input as string, assign to variable a
+  2. Check conditional expression: '9' in a
+  3. If condition is true:
+     - Output "Yes" to standard output
+  4. Else:
+     - Output "No" to standard output
+- Input/Output:
+  - Input operation: input()
+  - Output operation: print()
+- Dependencies: None

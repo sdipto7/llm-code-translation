@@ -1,0 +1,36 @@
+```plaintext
+Import the bisect_right and bisect_left functions from the bisect module.
+
+Declare a function with signature:
+    def count_triangle_combinations(n: int, l: List[int]) -> int
+
+Inside the function:
+    - Sort the list `l`.
+    - Initialize an integer variable `ans` to 0.
+
+    Start a for loop over variable `i` ranging from 0 to n-1 (inclusive):
+        Start another for loop over variable `j` ranging from i+1 to n-1 (inclusive):
+            - Assign the value at index `i` of `l` to integer variable `a`.
+            - Assign the value at index `j` of `l` to integer variable `b`.
+            
+            - Use bisect_left to find the insertion point for `a + b` in `l` and assign it to integer variable `right`.
+            - Use bisect_right to find the insertion point for `max(a - b, b - a)` in `l` and assign it to integer variable `left`.
+            
+            - Calculate `tmp` as the maximum of 0 and `right - left`.
+            
+            - If `left <= i < right`, decrement `tmp` by 1.
+            - If `left <= j < right`, decrement `tmp` by 1.
+            
+            - Increment `ans` by `tmp`.
+
+    Return `ans // 3`.
+
+Declare a function with signature:
+    def main() -> None
+
+Inside the function:
+    - Read input data from standard input, split it into integers, and unpack it into `n` and list `l`.
+    - Call count_triangle_combinations(n, l) and print the result.
+
+The main function is called to execute the script.
+```

@@ -1,0 +1,11 @@
+1. Read an integer input representing the number of members (memTime).
+2. Read a list of integers representing the late times of members (memLate).
+3. Initialize an empty list (colorList) to store unique colors.
+4. Initialize two counters: memColor = 0 and highLate = 0.
+5. Iterate over the range of memTime.
+6. For each member, calculate the color by performing integer division of the late time by 400.
+7. If the calculated color is greater than or equal to 8, increment highLate.
+8. If the calculated color is not already in colorList, append it to colorList.
+9. After iterating over all members, calculate maxColor as the sum of the length of colorList and highLate.
+10. Calculate minColor as the length of colorList. If minColor is 0, set it to 1.
+11. Output the values of minColor and maxColor.

@@ -1,0 +1,22 @@
+Algorithm:
+- Function: main
+  Parameters: String args[]
+  Return type: void
+- Variables:
+  Scanner sc = new Scanner(System.in)
+  String S = sc.next()
+  long MOD = 1000000007
+  long dp[][] = new long[S.length() + 1][13]
+- Initialize dp[0][0] = 1
+- For i from 0 to S.length() - 1:
+  - If character at position i equals "?":
+    - For j from 0 to 9:
+      - For k from 0 to 12:
+        - dp[i + 1][(k * 10 + j) % 13] += dp[i][k]
+        - dp[i + 1][(k * 10 + j) % 13] %= MOD
+  - Else:
+    - For k from 0 to 12:
+      - int x = Integer.parseInt(S.substring(i, i + 1))
+      - dp[i + 1][(k * 10 + x) % 13] += dp[i][k]
+      - dp[i + 1][(k * 10 + x) % 13] %= MOD
+- Output dp[S.length()][5]

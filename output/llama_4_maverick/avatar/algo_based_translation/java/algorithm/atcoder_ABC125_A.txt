@@ -1,0 +1,7 @@
+1. Read an integer representing seconds.
+2. Read an integer representing the number of items per period.
+3. Read a double representing the maximum seconds and add 0.5 to it.
+4. Initialize a variable to store the total number of items to 0.
+5. Start a loop from the seconds read in step 1, incrementing by the seconds read in step 1, until the loop variable is no longer less than the result from step 3.
+6. Inside the loop, increment the total number of items by the number of items per period read in step 2.
+7. Output the total number of items calculated.

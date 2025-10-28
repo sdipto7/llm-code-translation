@@ -1,0 +1,72 @@
+**Algorithm:**
+
+**Program Structure:**
+- Class: `atcoder_ABC122_D`
+- Dependencies: `java.util.*`, `java.io.*`
+
+**Variables:**
+- Instance:
+  - `int N`: Input value for sequence length
+  - `long MOD = 1000000007L`: Modulo constant
+  - `String[] TOKENS = {"A", "C", "G", "T"}`: Valid DNA characters
+  - `Map<String, Long>[] memo`: Memoization array for DP states
+
+**Functions:**
+1. **Constructor:**
+   - Parameters: None
+   - Logic:
+     - Read `N` from `System.in` via `Scanner`
+     - Initialize `memo` as array of `HashMap<String, Long>` with size `N+1`
+
+2. **calc:**
+   - Return: `long`
+   - Logic:
+     - Return result of `dfs(0, "TTT")`
+
+3. **isOK:**
+   - Parameters: `String last4`
+   - Return: `boolean`
+   - Logic:
+     - If `last4` contains "AGC" → return `false`
+     - For `i` in 0..2:
+       - Create swapped version of `last4` by exchanging positions `i` and `i+1`
+       - If swapped string contains "AGC" → return `false`
+     - Return `true`
+
+4. **dfs:**
+   - Parameters: `int current`, `String last3`
+   - Return: `long`
+   - Logic:
+     - If `memo[current]` contains `last3` → return stored value
+     - If `current == N` → return 1 (base case)
+     - Initialize `result = 0`
+     - For each `c` in `TOKENS`:
+       - Form candidate string `last3 + c`
+       - If `isOK(candidate)`:
+         - Update `result` with `(result + dfs(current+1, new_last3)) % MOD`
+         - `new_last3` = `last3.substring(1) + c`
+     - Store `result` in `memo[current]` for `last3`
+     - Return `result`
+
+5. **main:**
+   - Parameters: `String[] args`
+   - Logic:
+     - Create instance of `atcoder_ABC122_D`
+     - Print result of `calc()`
+
+**Control Flow:**
+1. Constructor initializes memoization structure
+2. `calc()` triggers recursive DFS starting with 0-length sequence and initial state "TTT"
+3. `dfs`:
+   - Uses memoization to avoid recomputation
+   - Base case returns 1 when sequence reaches length `N`
+   - Iterates through all possible nucleotide additions
+   - Validates candidate sequences using `isOK`
+   - Recursively computes valid subsequences
+4. `isOK` performs validity checks for all permutations of the last 4 characters
+
+**Data Flow:**
+- Input: Integer `N` via standard input
+- Output: Final count modulo `1000000007` printed to standard output
+- Memoization keys: Tuple of (`current_length`, `last3_chars`)
+- State transitions: Append new nucleotide → check validity → keep last 3 characters for next state

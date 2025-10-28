@@ -1,0 +1,9 @@
+read input line from standard input
+split input line into tokens using space as delimiter
+extract first token as string and convert to BigDecimal for variable a
+extract second token as string and convert to BigDecimal for variable b
+multiply BigDecimal a by BigDecimal b, store result in BigDecimal mul
+convert BigDecimal mul to string representation
+split resulting string using period (.) as delimiter
+extract first token from the split operation
+print the extracted token to standard output

@@ -1,0 +1,34 @@
+Algorithm:
+1. Function Signature:
+   - Function name: process_number
+   - Parameters: none
+   - Return type: none
+
+2. Variable Declarations:
+   - `l`: string
+   - `s`: list of characters (strings)
+   - `p`: list of characters (strings)
+   - `i`: integer
+
+3. Execution Order:
+   - Read input from the user and assign it to variable `l`.
+   - Split the string `l` at the '.' character, resulting in a list, and reassign it to `l`.
+   - Create a list of characters from the first element of `l` (before the '.') and assign it to `s`.
+   - Create a list of characters from the second element of `l` (after the '.') and assign it to `p`.
+   - Convert the first character of `p` to an integer and assign it to `i`.
+
+4. Control Structures:
+   - Conditional: If the last character of `s` is '9', print "GOTO Vasilisa.".
+   - Else If the last character of `s` is not '9' and `i` is less than 5:
+     - Join the list `s` into a string and print the result.
+   - Else:
+     - Join the list `s` into a string.
+     - Convert the string to an integer, add 1, and convert back to a string.
+     - Print the resulting string.
+
+5. Input/Output Operations:
+   - Input: Read a single line of input from the user.
+   - Output: Print a string based on the conditions evaluated.
+
+6. Required Libraries, Modules, or Dependencies:
+   - None

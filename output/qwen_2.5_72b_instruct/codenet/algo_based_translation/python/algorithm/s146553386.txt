@@ -1,0 +1,25 @@
+Function signature: main() -> None
+
+Variable declarations:
+n: int
+a: List[List[int]]
+i: int
+res_0: List[int]
+res_1: List[int]
+ans: int
+check: int
+
+Logic flow:
+1. Read integer input and assign to n
+2. Initialize empty list a
+3. For loop with i ranging from 0 to 1:
+   a. Read space-separated integers, convert to list of integers, and append to a
+4. Reverse list at index 1 of a
+5. Import numpy module
+6. Calculate cumulative sum of list at index 0 of a and assign to res_0
+7. Calculate cumulative sum of reversed list at index 1 of a and assign to res_1
+8. Initialize ans to 0
+9. For loop with i ranging from 0 to n-1:
+   a. Assign sum of res_0[i] and res_1[n-1-i] to check
+   b. Update ans to maximum of ans and check
+10. Print ans

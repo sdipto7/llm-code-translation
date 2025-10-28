@@ -1,0 +1,29 @@
+- Function signature:  
+  `main() -> void`  
+- Variables:  
+  `n: int` (input sequence count)  
+  `res: int` (maximum subarray sum)  
+  `s: int` (current subarray sum)  
+  `a: int` (current element value)  
+- Logic flow:  
+  1. Start infinite loop  
+  2. Read integer `n` from standard input  
+  3. If `n == 0` -> break loop  
+  4. Initialize `res = -1111111111`  
+  5. Initialize `s = 0`  
+  6. For `i` from `0` to `n-1`:  
+     a. Read integer `a` from standard input  
+     b. `s = max(s + a, a)`  
+     c. `res = max(res, s)`  
+  7. Print `res`  
+- Control structures:  
+  - `while True` outer loop  
+  - `if n == 0` conditional break  
+  - `for` loop with `n` iterations  
+  - Two `max()` operations per element  
+- Input/Output:  
+  - Reads integers via standard input  
+  - Prints final `res` value per test case  
+- Dependencies:  
+  - Requires standard input/output capabilities  
+  - No external libraries needed

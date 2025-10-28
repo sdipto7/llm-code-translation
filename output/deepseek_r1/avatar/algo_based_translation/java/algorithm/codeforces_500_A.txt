@@ -1,0 +1,47 @@
+Functions:
+- dfs(int currpos, int[] arr, int target) returns boolean
+- main(String[] args) returns void
+
+Variables:
+- Scanner sc (Scanner)
+- int n (from input)
+- int goal (from input)
+- int[] arr (size n-1)
+- boolean isFound (result of dfs)
+- boolean teleport (recursive result in dfs)
+
+Logic Flow:
+1. main:
+   1.1. Initialize Scanner with System.in
+   1.2. Read integer n from input
+   1.3. Read integer goal from input
+   1.4. Create int array arr with length n-1
+   1.5. For i from 0 to n-2 inclusive:
+        1.5.1. Read integer into arr[i]
+   1.6. Call dfs(1, arr, goal) and store result in isFound
+   1.7. If isFound is true: print "YES"
+   1.8. Else: print "NO"
+   1.9. Close Scanner
+
+2. dfs:
+   2.1. If currpos == target: return true
+   2.2. If currpos == (arr.length + 1): return false
+   2.3. Calculate next position: currpos + arr[currpos - 1]
+   2.4. Recursively call dfs(next position, arr, target) → teleport
+   2.5. If teleport is true: return true
+   2.6. Else: return false
+
+Control Structures:
+- In main:
+   - for loop with i from 0 to n-2
+   - if-else based on isFound
+- In dfs:
+   - Base case checks (two if statements)
+   - Conditional return based on teleport boolean
+
+Input/Output:
+- Input through Scanner: n, goal, and n-1 array elements
+- Output: "YES" or "NO" printed to console
+
+Dependencies:
+- java.util.Scanner

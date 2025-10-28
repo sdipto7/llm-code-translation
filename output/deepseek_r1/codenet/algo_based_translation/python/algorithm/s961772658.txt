@@ -1,0 +1,27 @@
+Function signature:  
+main()  
+Parameters: None  
+Return type: void  
+
+Variables:  
+- s: str (input from stdin)  
+- alphabets: list[str] = ["a", "b", ..., "z"]  
+- i: int (loop index)  
+
+Logic flow:  
+1. Read input string `s` from stdin.  
+2. Initialize `alphabets` with lowercase letters a-z in order.  
+3. Iterate `i` from 0 to len(alphabets) - 1 (inclusive) via a `for` loop:  
+   - Conditional: if `alphabets[i] == s`  
+     - Action: print `alphabets[i + 1]` to stdout  
+     - Loop continues after printing (no early exit)  
+
+Control structures:  
+- `for i in range(len(alphabets))`  
+- `if alphabets[i] == s`  
+
+Input/output:  
+- Input: Read `s` using `input()`  
+- Output: Print next alphabet character if condition met  
+
+Dependencies: None

@@ -1,0 +1,35 @@
+```
+Algorithm atcoder_ABC149_B
+  Input:
+    BufferedReader in
+
+  Variables:
+    long A, B, K
+    long x, y
+
+  Constructor atcoder_ABC149_B(in: BufferedReader)
+    String[] tokens = in.readLine().split(" ")
+    A = Long.parseLong(tokens[0])
+    B = Long.parseLong(tokens[1])
+    K = Long.parseLong(tokens[2])
+
+  Method calc()
+    x = A
+    y = B
+    x = A - K
+    if x < 0
+      y = B + x
+      x = 0
+      if y < 0
+        y = 0
+
+  Method showResult()
+    Output x + " " + y
+
+  Main Method
+    InputStreamReader reader = new InputStreamReader(System.in, StandardCharsets.UTF_8)
+    BufferedReader in = new BufferedReader(reader)
+    atcoder_ABC149_B ins = new atcoder_ABC149_B(in)
+    ins.calc()
+    ins.showResult()
+```

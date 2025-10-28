@@ -1,0 +1,45 @@
+```plaintext
+Input: Read integer values K and N from input.
+
+Variable Declarations:
+- mod (int): Set to 998244353
+- __N (int): Set to 8000
+- g1 (list of int): Initialize with [1, 1]
+- g2 (list of int): Initialize with [1, 1]
+- inverse (list of int): Initialize with [0, 1]
+
+Algorithm:
+1. Precompute factorials and modular inverses up to __N:
+   - For each i from 2 to __N:
+     - Append (g1[-1] * i) % mod to g1
+     - Append (-inverse[mod % i] * (mod // i)) % mod to inverse
+     - Append (g2[-1] * inverse[-1]) % mod to g2
+
+2. Define function cmb(n: int, r: int, mod: int) -> int:
+   - If r < 0 or r > n, return 0
+   - Set r to min(r, n - r)
+   - Return g1[n] * g2[r] * g2[n - r] % mod
+
+3. Define function kumiawase(p: int, q: int) -> int:
+   - Return cmb(p + q - 1, q - 1, mod)
+
+4. Define function solve(n: int) -> int:
+   - Assert n <= K + 1
+   - Initialize ans to 0
+   - Set kumi to (n - 1) // 2
+   - For each p from 0 to kumi:
+     - If p > N, break loop
+     - Update ans with 2^p * cmb(kumi, p, mod) * kumiawase(N - p, p + (K - kumi * 2 - int(n % 2 == 0)))
+     - If n is even and N - p - 1 >= 0:
+       - Update ans with 2^p * cmb(kumi, p, mod) * kumiawase(N - p - 1, p + (K - kumi * 2 - int(n % 2 == 0)))
+   - Return ans
+
+5. Initialize empty list ans
+6. For each i from 2 to 2 * K + 1:
+   - If i <= K + 1:
+     - Compute tmp as solve(i) % 998244353
+     - Append tmp to ans
+     - Print tmp
+   - Else:
+     - Print ans[-i + K]
+```

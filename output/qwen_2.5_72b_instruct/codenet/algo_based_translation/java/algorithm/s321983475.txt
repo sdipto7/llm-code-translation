@@ -1,0 +1,28 @@
+Function signatures with parameter and return types:
+- main(String[] args): void
+
+Variable declarations and data types:
+- sc: Scanner
+- w: int
+- a: int
+- b: int
+- answer: int
+
+Complete logic flow in execution order:
+1. Create a Scanner object named sc to read input.
+2. Read an integer from standard input and assign it to w.
+3. Read an integer from standard input and assign it to a.
+4. Read an integer from standard input and assign it to b.
+5. Calculate the absolute difference between a and b by subtracting the minimum of a and b from the maximum of a and b, then subtract w from this result. Assign the result to answer.
+6. If answer is less than 0, print 0.
+7. Otherwise, print the value of answer.
+
+Control structures (loops, conditionals) with exact conditions:
+- If condition: answer < 0
+
+Input/output operations and data processing logic:
+- Input: Three integers from standard input.
+- Output: A single integer printed to standard output, either 0 or the calculated value of answer.
+
+Required libraries, modules, or dependencies:
+- java.util.*

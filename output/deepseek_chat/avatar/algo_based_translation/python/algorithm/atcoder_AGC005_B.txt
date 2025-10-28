@@ -1,0 +1,38 @@
+root: function(x: int) -> int
+    returns x if par[x] == x, else recursively calls root(par[x])
+
+same: function(x: int, y: int) -> bool
+    returns True if root(x) equals root(y), else False
+
+unite: function(*z: int) -> None
+    x, y = root(z[0]), root(z[1])
+    if x != y:
+        if rank[x] < rank[y]:
+            par[x] = y
+            size[y] += size[x]
+        else:
+            par[y] = x
+            size[x] += size[y]
+            if rank[x] == rank[y]:
+                rank[x] += 1
+
+main:
+    n, *a = list of integers from input
+    par = list of integers from 0 to n-1
+    rank = list of n integers all set to 1
+    size = list of n integers all set to 1
+    b = list of n zeros
+    for i in range(n):
+        b[a[i]-1] = i
+    c = 0
+    for k in reversed(b):
+        l = 1
+        r = 1
+        if k > 0 and a[k-1] > a[k]:
+            l += size[root(k-1)]
+            unite(k-1, k)
+        if k+1 < n and a[k+1] > a[k]:
+            r += size[root(k+1)]
+            unite(k+1, k)
+        c += l * r * a[k]
+    print(c)

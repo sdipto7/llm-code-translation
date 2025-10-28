@@ -1,0 +1,29 @@
+1. Import the `java.util` library for using the `Scanner` class.
+2. Define a class `Main` with a static `Scanner` object `sc` initialized with `System.in`.
+3. Define the `main` method with a `String[]` parameter `args` and return type `void`.
+   1. Read three `long` values `n`, `a`, and `b` from the input using the `nextLong` method.
+   2. Calculate the absolute difference `sa` between `a` and `b`.
+   3. Initialize a `long` variable `ans` to 0.
+   4. Check if `sa` is even.
+      1. If `sa` is even, set `ans` to `sa / 2`.
+      2. If `sa` is odd, 
+         1. Calculate `AAA` as the minimum of `(n - a)` and `(a - 1)`.
+         2. Calculate `BBB` as the minimum of `(n - b)` and `(b - 1)`.
+         3. Set `ans` to the minimum of `AAA` and `BBB`.
+         4. Decrement `sa` by 1 and increment `ans` by 1.
+         5. Set `ans` to `ans + sa / 2`.
+   5. Print the value of `ans` to the output.
+4. Define a set of static methods for reading input:
+   1. `next`: returns a `String` from the input.
+   2. `nextInt`: returns an `int` parsed from the input `String`.
+   3. `nextLong`: returns a `long` parsed from the input `String`.
+   4. `nextDouble`: returns a `double` parsed from the input `String`.
+5. Define a set of static methods for string and character processing:
+   1. `splitString`: splits a `String` into an array of `String`s using an empty string as the delimiter.
+   2. `splitChar`: converts a `String` to a character array.
+   3. `charToInt`: converts a character to an `int` by subtracting 48.
+6. Define a set of static methods for finding maximum and minimum values in arrays:
+   1. `maxInt`: finds the maximum `int` value in an array.
+   2. `minInt`: finds the minimum `int` value in an array.
+   3. `maxLong`: finds the maximum `long` value in an array.
+   4. `minLong`: finds the minimum `long` value in an array.

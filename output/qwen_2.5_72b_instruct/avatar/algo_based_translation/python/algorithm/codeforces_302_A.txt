@@ -1,0 +1,37 @@
+Function signature: main() -> None
+
+Variable declarations:
+- n: int
+- m: int
+- sa: int
+- ss: List[str]
+
+Logic flow in execution order:
+1. Read space-separated integers n and m from input and convert them to int.
+2. Read a string from input, count the number of '-' characters, and assign it to sa.
+3. Update sa to be the minimum of (n - sa) and sa.
+4. Initialize an empty list ss to store output strings.
+5. For _ in range(m):
+   - Read space-separated integers a and b from input and convert them to int.
+   - Subtract a from b and update b with the result.
+   - Calculate the expression (b % 2 and b <= sa << 1).
+   - If the expression is True, append "1\n" to ss, otherwise append "0\n" to ss.
+6. Join all elements in ss into a single string and print it.
+
+Control structures:
+- For loop: for _ in range(m)
+- Conditional expression: (b % 2 and b <= sa << 1) and "1\n" or "0\n"
+
+Input/output operations:
+- Read input using input() and process it to extract integers n, m, and subsequent a, b pairs.
+- Write output to stdout by joining elements of ss and printing the result.
+
+Data processing logic:
+- Count '-' characters in the second input line to determine sa.
+- Adjust sa to be the minimum of (n - sa) and sa.
+- For each pair of a, b, calculate b - a and check if the resulting b is odd and less than or equal to 2 * sa.
+- Based on the check, append either "1\n" or "0\n" to the list ss.
+- Finally, concatenate all strings in ss to form the output.
+
+Required libraries, modules, or dependencies:
+- None

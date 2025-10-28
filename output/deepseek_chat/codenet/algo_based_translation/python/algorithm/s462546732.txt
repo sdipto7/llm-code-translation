@@ -1,0 +1,7 @@
+Read two space-separated strings from standard input
+Convert first string to integer variable a
+Convert second string to integer variable b
+If a is less than or equal to b:
+    Print integer a
+Else:
+    Print integer (a - 1)

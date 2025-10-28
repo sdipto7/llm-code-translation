@@ -1,0 +1,45 @@
+{
+  "function": {
+    "name": "main",
+    "parameters": ["String[] args"],
+    "returnType": "void"
+  },
+  "variables": [
+    {"name": "sc", "type": "Scanner", "scope": "local"},
+    {"name": "n", "type": "int", "scope": "local"},
+    {"name": "a", "type": "int[]", "scope": "local"},
+    {"name": "i", "type": "int", "scope": "loop"},
+    {"name": "count", "type": "int", "scope": "local"},
+    {"name": "now", "type": "int", "scope": "local"},
+    {"name": "bef", "type": "int", "scope": "local"}
+  ],
+  "input": [
+    {"operation": "readInt", "variable": "n"},
+    {"operation": "readIntArray", "variable": "a", "size": "n"}
+  ],
+  "logic": [
+    {"operation": "initialize", "variable": "count", "value": 1},
+    {"operation": "initialize", "variable": "now", "value": 0},
+    {"operation": "initialize", "variable": "bef", "value": 0},
+    {"operation": "loop", "type": "for", "start": "i=1", "end": "i<n", "increment": "i++", "steps": [
+      {"operation": "conditional", "type": "if", "condition": "a[i-1] < a[i]", "then": [
+        {"operation": "assign", "variable": "now", "value": 1}
+      ]},
+      {"operation": "conditional", "type": "else if", "condition": "a[i-1] > a[i]", "then": [
+        {"operation": "assign", "variable": "now", "value": -1}
+      ]},
+      {"operation": "conditional", "type": "else", "then": [
+        {"operation": "continue"}
+      ]},
+      {"operation": "conditional", "type": "if", "condition": "bef == 0", "then": [
+        {"operation": "assign", "variable": "bef", "value": "now"}
+      ]},
+      {"operation": "conditional", "type": "if", "condition": "bef != now", "then": [
+        {"operation": "increment", "variable": "count", "value": 1},
+        {"operation": "assign", "variable": "bef", "value": 0}
+      ]}
+    ]},
+    {"operation": "output", "value": "count"}
+  ],
+  "dependencies": ["java.util.Scanner"]
+}

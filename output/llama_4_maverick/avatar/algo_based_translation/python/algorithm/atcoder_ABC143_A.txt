@@ -1,0 +1,5 @@
+1. Read two integer inputs from the user and store them in variables A and B.
+2. Calculate the value of ans by subtracting twice the value of B from A.
+3. Check if the value of ans is less than 0.
+4. If the condition is true, set the value of ans to 0.
+5. Output the final value of ans.

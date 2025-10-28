@@ -1,0 +1,57 @@
+### Algorithm Extraction:
+
+**Input:**
+- Read integers N and M from standard input
+- Read N pairs of integers (a, b) from standard input
+
+**Data Structures:**
+- Array `list` of LinkedList<Integer> with size 100001
+- PriorityQueue<Integer> `pqueue` with reverse order comparator
+- Integer variable `res` initialized to 0
+
+**Execution Flow:**
+1. Initialize empty array of linked lists `list` with 100001 elements
+2. For i from 0 to N-1:
+   - Read integer a
+   - Read integer b
+   - If list[a] is null:
+     - Initialize list[a] as new LinkedList<Integer>
+   - Add b to list[a]
+3. For i from 1 to M:
+   - If list[i] is not null:
+     - Add all elements from list[i] to pqueue
+   - If pqueue is not empty:
+     - Remove and return the largest element from pqueue
+     - Add this value to res
+4. Output res to standard output
+
+**Function Signatures:**
+- main(String[] args): void
+- MyScanner(InputStream in): constructor
+- readByte(): int
+- isPrintableCharExceptSpace(int c): boolean
+- next(): String
+- nextLong(): long
+- nextInt(): int
+- nextDouble(): double
+- nextIntArray(int n): int[]
+- allSameLength(int[] a, int[] b, int[]... c): boolean
+- allSameLength(char[] a, char[] b, char[]... c): boolean
+- nextVerticalIntArrays(int[] a, int[] b, int[]... c): void
+- nextLongArray(int n): long[]
+- nextChar(): char
+- nextCharArray(int n): char[]
+- next2dCharArray(int n, int m): char[][]
+- nextVerticalCharArrays(char[] a, char[] b, char[]... c): void
+- MyWriter(OutputStream out): constructor
+- joinAndPrintln(int[] x): void
+- joinAndPrintln(int[] x, String delimiter): void
+- joinAndPrintln(long[] x): void
+- joinAndPrintln(long[] x, String delimiter): void
+- joinAndPrintln(Iterable<?> iterable): void
+- joinAndPrintln(Iterable<?> iterable, String delimiter): void
+
+**Required Libraries/Dependencies:**
+- java.util.*
+- java.io.*
+- java.awt.Point

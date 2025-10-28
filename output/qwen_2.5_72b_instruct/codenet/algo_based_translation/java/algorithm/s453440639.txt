@@ -1,0 +1,57 @@
+- Function signatures with parameter and return types:
+  - `main(String[] args): void`
+
+- Variable declarations and data types:
+  - `Scanner sc`: object
+  - `int H`: integer
+  - `int W`: integer
+  - `char[][] S`: 2D character array
+  - `String text`: string
+  - `int i`: integer
+  - `int j`: integer
+  - `int count`: integer
+  - `int a`: integer
+  - `int b`: integer
+
+- Complete logic flow in execution order:
+  1. Create `Scanner` object `sc` for standard input.
+  2. Read integer `H` from input.
+  3. Read integer `W` from input.
+  4. Consume newline character using `sc.nextLine()`.
+  5. Initialize 2D character array `S` with dimensions `H x W`.
+  6. For each row `i` from 0 to `H-1`:
+     1. Read string `text` from input.
+     2. For each column `j` from 0 to `W-1`:
+        1. Assign `text.charAt(j)` to `S[i][j]`.
+  7. Close `Scanner` object `sc`.
+  8. For each row `i` from 0 to `H-1`:
+     1. For each column `j` from 0 to `W-1`:
+        1. If `S[i][j]` is equal to '.':
+           1. Initialize `count` to 0.
+           2. For each `a` from -1 to 1:
+              1. If `i + a` is less than 0 or `H` is less than or equal to `i + a`, continue to next iteration.
+              2. For each `b` from -1 to 1:
+                 1. If `j + b` is less than 0 or `W` is less than or equal to `j + b`, continue to next iteration.
+                 2. If `S[i + a][j + b]` is equal to '#', increment `count` by 1.
+           3. Assign `(char)(count + 48)` to `S[i][j]`.
+        2. Print character `S[i][j]` without newline.
+     2. Print newline character.
+
+- Control structures (loops, conditionals) with exact conditions:
+  - For loop: `for (int i = 0; i < H; i++)`
+  - For loop: `for (int j = 0; j < W; j++)`
+  - If statement: `if (S[i][j] == '.')`
+  - For loop: `for (int a = -1; a <= 1; a++)`
+  - If statement: `if (i + a < 0 || H <= i + a)`
+  - For loop: `for (int b = -1; b <= 1; b++)`
+  - If statement: `if (j + b < 0 || W <= j + b)`
+  - If statement: `if (S[i + a][j + b] == '#')`
+  - For loop: `for (int i = 0; i < H; i++)`
+  - For loop: `for (int j = 0; j < W; j++)`
+
+- Input/output operations and data processing logic:
+  - Input: Read integers `H` and `W`, then read `H` lines of strings representing the grid.
+  - Output: Print the modified grid where each '.' is replaced by the number of adjacent '#' characters.
+
+- Required libraries, modules, or dependencies:
+  - `java.util.Scanner`

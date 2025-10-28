@@ -1,0 +1,16 @@
+1. Import the `stdin` module from the `sys` library.
+2. Define a lambda function `il` that takes an optional `func` parameter (defaulting to `int`) and returns a list of values obtained by mapping `func` to the split and stripped input from `stdin.readline()`.
+3. Define a lambda function `ils` that takes required `n` and optional `s` parameters (defaulting to `"int(input())"`), and returns a list of `n` values obtained by evaluating `s` in a loop.
+4. Define a function `gcd` that takes two integer parameters `a` and `b` and returns their greatest common divisor.
+   - If `a` is less than `b`, recursively call `gcd` with `b` and `a`.
+   - If `b` is zero, return `a`.
+   - Otherwise, recursively call `gcd` with `b` and the remainder of `a` divided by `b`.
+5. Define a function `lcm` that takes two integer parameters `a` and `b` and returns their least common multiple by calculating `a * b` divided by their `gcd`.
+6. Read two integer values `n` and `m` from input using the `il` function.
+7. Read two string values `s` and `t` from input.
+8. Calculate `aa` as the `gcd` of `n` and `m`.
+9. Calculate `bb` as the `lcm` of `n` and `m`.
+10. Iterate over a range from 0 to `aa-1`.
+    - For each iteration `i`, compare the characters at index `n//aa*i` in `s` and `m//aa*i` in `t`.
+    - If the characters do not match, output `-1` and terminate the program.
+11. If the loop completes without finding any mismatches, output `bb`.

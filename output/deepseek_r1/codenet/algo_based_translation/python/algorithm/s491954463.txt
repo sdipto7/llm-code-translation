@@ -1,0 +1,34 @@
+Function Signatures:
+- No explicit functions (executed as script)
+
+Variables:
+- n: int
+- m: int
+- a: list[int]
+- b: list[int]
+- a1: int
+- b1: int
+- i: int (loop counter)
+
+Logic Flow:
+1. Read input line, split into n and m using map(int, input().split())
+2. Initialize a and b as empty lists
+3. Loop for m iterations:
+   a. Read a1 and b1 from input using map(int, input().split())
+   b. Append a1 to list a
+   c. Append b1 to list b
+4. Loop i from 1 to n (inclusive):
+   a. Calculate sum of a.count(i) and b.count(i)
+   b. Print the sum
+
+Control Structures:
+- for i in range(m): (loop exactly m times)
+- for i in range(1, n+1): (loop from 1 to n inclusive)
+
+Input/Output:
+- Read n and m from first input line
+- Read m lines, each containing two integers for a1 and b1
+- Print n lines, each containing the degree of vertex i (sum of occurrences in a and b)
+
+Libraries/Dependencies:
+- None (uses built-in functions and standard input/output)

@@ -1,0 +1,29 @@
+Function Signature:
+- Function: `multiply_integers_and_decimal`
+- Parameters: None
+- Return Type: int
+
+Algorithm:
+1. Input Operations:
+   - Read a single line of input and split it into two parts `A` and `B` using space as the delimiter.
+   - `A` will be a string representing an integer.
+   - `B` will be a string representing a decimal number.
+
+2. Data Processing:
+   - Convert `A` to an integer.
+   - Remove the period from `B` and convert it to an integer.
+
+3. Arithmetic Operations:
+   - Multiply the integer value of `A` by the integer value of `B`.
+   - Perform integer division of the result by 100.
+
+4. Output Operations:
+   - Print the resulting value from the arithmetic operations.
+
+Variable Declarations:
+- `A`: int
+- `B`: int (after removing the decimal point and converting)
+- `result`: int
+
+Dependencies:
+- None

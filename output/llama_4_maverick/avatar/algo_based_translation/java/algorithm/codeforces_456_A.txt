@@ -1,0 +1,15 @@
+1. Initialize an empty data structure to store intermediate results.
+2. Read the number of input pairs.
+3. Create two arrays to store the input pairs.
+4. Initialize variables to track the maximum and minimum values encountered so far.
+5. Iterate over the input pairs.
+6. For each pair, read the two integers and store them in the corresponding arrays.
+7. Compare the first element of the current pair with the maximum value encountered so far.
+8. If the current first element is greater, update the maximum value and check if the second element is less than the previously stored second element for the maximum first element. If so, set a flag to true.
+9. If the current first element is less than the maximum value, check if the second element is greater than the previously stored second element for the maximum first element. If so, set a flag to true.
+10. Compare the first element of the current pair with another tracked maximum value.
+11. If the current first element is greater than this tracked maximum, update this tracked maximum and check if the second element is less than the previously stored second element for this tracked maximum. If so, set the flag to true.
+12. If the current first element is less than this tracked maximum, check if the second element is greater than the previously stored second element for this tracked maximum. If so, set the flag to true.
+13. After processing all pairs, check the flag.
+14. If the flag is true, output "Happy Alex".
+15. If the flag is false, output "Poor Alex".

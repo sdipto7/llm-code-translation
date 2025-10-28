@@ -1,0 +1,25 @@
+**Algorithm Extraction:**
+
+- **Imported Components:** `java.util.Scanner`
+- **Input Operations:** 
+  - Read integer `X` from standard input via `Scanner.nextInt()`
+  - Read integer `Y` from standard input via `Scanner.nextInt()`
+- **Variables:**
+  - `Scanner sc = new Scanner(System.in)` (Scanner object)
+  - `int X = sc.nextInt()`
+  - `int Y = sc.nextInt()`
+- **Logic Flow:**
+  1. Compute `X % 500`
+  2. Compare result of `X % 500` with `Y`
+  3. If result ≤ Y: Output "Yes"
+  4. Else: Output "No"
+- **Control Structures:** 
+  - Single conditional: `if (X % 500 <= Y)`
+- **Output Operation:** Print "Yes" or "No" based on condition
+
+**Code Generation (Python):**
+
+```python
+x, y = map(int, input().split())
+print("Yes" if x % 500 <= y else "No")
+```

@@ -1,0 +1,23 @@
+**Function Signature:**
+- main(String[] args): void
+
+**Variables:**
+- Scanner scanner: Scanner object for input
+- int a: first integer input
+- int b: second integer input
+
+**Libraries:**
+- java.util.Scanner
+
+**Algorithm:**
+1. Create Scanner object reading from System.in
+2. Read integer a from input
+3. Read integer b from input
+4. If a > 0:
+   - Print "Positive"
+5. Else if b >= 0:
+   - Print "Zero"
+6. Else if (b - a + 1) % 2 == 0:
+   - Print "Positive"
+7. Else:
+   - Print "Negative"

@@ -1,0 +1,63 @@
+**Function Signatures and Parameters:**
+- `load(vtype: type = int) -> vtype`
+- `load_list(seplator: str = " ", vtype: type = int) -> list[vtype]`
+- `exit() -> None`
+- `perm_sub(li: list, used: set) -> list[deque]`
+- `perm_li(li: list) -> list[deque]`
+- `perm_n(n: int) -> list[deque]`
+- `join_i(li: list, sep: str = "") -> str`
+- `li2n(li: list[int]) -> int`
+- `sli2ili(li: list[str]) -> list[int]`
+- `prime_list(n: int) -> list[int]`
+- `gcd(a: int, b: int) -> int`
+- `lcm(a: int, b: int) -> int`
+- `all_subset(li: list) -> list[set]`
+- `factorial(n: int) -> int`
+- `mCn(m: int, n: int) -> int`
+
+**Variables and Data Types:**
+- Global: `n: int`, `A: list[int]`
+- `perm_sub`: `k: list[deque]`, `i: int`, `sub_list: list[deque]`, `sub: deque`
+- `prime_list`: `li: list[int]`, `i: int`, `j: int`
+- `gcd`: `a: int`, `b: int`, `r: int`
+- `lcm`: Derived from `gcd` result
+- `factorial_ntimes`: `r: int`, `m: int`, `n: int`
+- `all_subset`: `s: list[set]`, `bit: int`, `ss: set`, `i: int`
+
+**Logic Flow:**
+1. Import `sys`, `math`, `defaultdict`, `deque`
+2. Define all functions in the codebase
+3. Execute main script:
+   - Read integer `n` via `load()`
+   - Read list `A` via `load_list()`
+   - Compare `n` with `len(set(A))`
+   - Print "YES" if equal, else "NO"
+
+**Control Structures:**
+- **perm_sub**:
+  - Base case: if `len(li) == len(used)`, return `[deque()]`
+  - Loop through `i` in `range(len(li))`:
+    - Skip if `i` in `used`
+    - Recursively call `perm_sub` with `used.add(i)`
+    - Prepend `li[i]` to all sub-results
+    - Backtrack with `used.discard(i)`
+- **prime_list**:
+  - Sieve implementation with nested loops:
+    - Outer loop until `sqrt(n)`
+    - Inner loop marks multiples as `-1`
+- **gcd**:
+  - While loop until remainder `r` becomes 0
+- **all_subset**:
+  - Bitmask loop from 0 to `1 << (n+1)`
+  - Inner loop checks bits to build subsets
+- **main logic**:
+  - Conditional `if n == len(set(A))`
+
+**Input/Output Operations:**
+- `load()` uses `input().strip()` with type conversion
+- `load_list()` splits input via `input().strip().split()`
+- Final output via `print('YES'/'NO')`
+
+**Dependencies:**
+- Required modules: `sys`, `math`
+- Required classes: `defaultdict`, `deque` from `collections`

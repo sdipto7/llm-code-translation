@@ -1,0 +1,40 @@
+Algorithm:
+
+1. **Function Signature**
+   - Function: `find_minimum_cost_item()`
+   - Parameters: None
+   - Return Type: `int`
+
+2. **Variable Declarations**
+   - `n`: `int` (number of items)
+   - `input_array`: `List[Tuple[int, int, int, int]]` (stores tuples of S, R, H, C)
+   - `outdated`: `Set[Tuple[int, int, int, int]]` (stores outdated items)
+   - `minimum_cost`: `int` (initialized to 100,000, stores the minimum cost found)
+   - `input_number`: `int` (stores the 1-based index of the item with minimum cost)
+
+3. **Logic Flow**
+   - Read an integer from input and assign it to `n`.
+   - Initialize an empty list `input_array`.
+   - For `i` from 0 to `n-1`:
+     - Read a line of input and split it into four integers `S`, `R`, `H`, `C`.
+     - Append the tuple `(S, R, H, C)` to `input_array`.
+   - Initialize an empty set `outdated`.
+   - For each `i` from 0 to `n-1`:
+     - For each `j` from 0 to `n-1`:
+       - If `S[i] < S[j]`, `R[i] < R[j]`, and `H[i] < H[j]`:
+         - Add `input_array[i]` to `outdated`.
+   - Initialize `minimum_cost` to 100,000 and `input_number` to 0.
+   - For each `i` from 0 to `n-1`:
+     - Assign `input_array[i]` to `current_item`.
+     - Assign the fourth element of `current_item` to `cost`.
+     - If `current_item` is not in `outdated` and `cost < minimum_cost`:
+       - Update `minimum_cost` to `cost`.
+       - Update `input_number` to `i + 1`.
+   - Print `input_number`.
+
+4. **Input/Output Operations**
+   - Input: Read integers and tuples from standard input.
+   - Output: Print an integer representing the index of the item with the minimum cost that is not outdated.
+
+5. **Dependencies**
+   - Required Libraries: None

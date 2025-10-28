@@ -1,0 +1,20 @@
+Read integers H and W from input
+Read next line to consume newline
+Declare 2D char array S with dimensions H x W
+For i from 0 to H-1:
+    Read string text from input
+    For j from 0 to W-1:
+        Set S[i][j] to j-th character of text
+
+For i from 0 to H-1:
+    For j from 0 to W-1:
+        If S[i][j] equals '.':
+            Initialize count to 0
+            For a from -1 to 1:
+                If i+a < 0 OR i+a >= H: continue to next a
+                For b from -1 to 1:
+                    If j+b < 0 OR j+b >= W: continue to next b
+                    If S[i+a][j+b] equals '#': increment count by 1
+            Set S[i][j] to character representation of count (by adding 48)
+        Print S[i][j]
+    Print newline character

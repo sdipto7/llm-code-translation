@@ -1,0 +1,9 @@
+1. Read three integers: n, a, b.
+2. Initialize two empty lists: list1 and list2.
+3. Read 'a' integers and store them in list1.
+4. Read 'b' integers and store them in list2.
+5. Iterate from 1 to n.
+6. For each number i in the range, check if i is present in list1.
+7. If i is present in list1, output 1.
+8. If i is not present in list1, output 2.
+9. Output a space after each output.

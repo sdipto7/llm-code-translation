@@ -1,0 +1,32 @@
+Function Signature:
+- main(String[] args): void
+
+Variable Declarations:
+- sc: Scanner
+- s: String
+- n: int
+- ans: long
+- mask: int
+- sum: long
+- x: String
+- split: String[]
+- i: int
+
+Logic Flow:
+1. Initialize Scanner sc to read input.
+2. Read a string s from input.
+3. Set n to the length of s.
+4. Initialize ans to 0.
+5. For mask from 0 to 2^(n-1) - 1:
+   a. Initialize sum to 0.
+   b. Set x to the first character of s.
+   c. For i from 0 to n-2:
+      i. If (mask & (1 << i)) is greater than or equal to 1:
+         1. Append "+" and the (i+1)th character of s to x.
+      ii. Else:
+          1. Append the (i+1)th character of s to x.
+   d. Split x by "+" into split array.
+   e. For i from 0 to length of split - 1:
+      i. Convert split[i] to long and add to sum.
+   f. Add sum to ans.
+6. Print ans.

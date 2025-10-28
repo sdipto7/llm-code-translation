@@ -1,0 +1,21 @@
+```
+Function: process_numbers
+Parameters: None
+Return type: None
+
+1. Declare variable n of type int and assign it the integer value from user input.
+2. Declare a list variable arr containing integers, assigned by mapping each element from the user input string (split by spaces) to integers.
+3. If the first element of arr (arr[0]) is greater than 15:
+   - Print the integer 15.
+4. Otherwise, execute the following loop:
+   - For each integer i starting from 1 up to the length of arr (exclusive):
+     a. If the difference between arr[i] and arr[i-1] is greater than 15:
+        - Print the result of arr[i-1] plus 15.
+        - Break the loop.
+5. If the loop completes without breaking (no difference greater than 15 found):
+   - If the last element of arr (arr[-1]) is equal to 90 or arr[-1] plus 15 is greater than or equal to 90:
+     - Print the integer 90.
+   - Else:
+     - Print the result of arr[-1] plus 15.
+6. End function.
+```

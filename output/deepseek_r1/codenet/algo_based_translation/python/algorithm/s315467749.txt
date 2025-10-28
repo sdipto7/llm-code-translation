@@ -1,0 +1,49 @@
+- **Input Operations**:
+  - Read integer `n` from input.
+  - Read list `S` of `n` integers from input.
+  - Read integer `q` from input.
+  - Read list `T` of `q` integers from input.
+
+- **Variables**:
+  - `n`: Integer (length of list `S`).
+  - `S`: List of integers (sorted implicitly via binary search logic).
+  - `q`: Integer (length of list `T`).
+  - `T`: List of integers.
+  - `ans`: Integer (initialized to 0).
+  - `i`: Integer (current element from `T` during iteration).
+  - `left`: Integer (initialized to 0 during binary search).
+  - `right`: Integer (initialized to `n-1` during binary search).
+  - `mid`: Integer (middle index during binary search).
+
+- **Logic Flow**:
+  1. Initialize `ans` to 0.
+  2. Iterate over each element `i` in list `T`:
+     - If `i` equals `S[0]` or `S[-1]`, increment `ans` by 1.
+     - Else:
+       - Set `left` to 0 and `right` to `n-1`.
+       - While `right - left > 1`:
+         - Compute `mid` as `(left + right) // 2`.
+         - If `S[mid]` equals `i`:
+           - Increment `ans` by 1.
+           - Exit the loop.
+         - Else if `S[mid]` is less than `i`:
+           - Set `left` to `mid`.
+         - Else:
+           - Set `right` to `mid`.
+  3. Print `ans`.
+
+- **Control Structures**:
+  - For loop over `T`: `for i in T`.
+  - If-Else condition checking `i == S[-1] or i == S[0]`.
+  - While loop with condition `right - left > 1`.
+  - Nested If-Elif-Else inside the while loop for binary search comparisons.
+
+- **Output Operation**:
+  - Print the final value of `ans`.
+
+- **Data Types**:
+  - All variables explicitly declared as integers.
+  - Lists `S` and `T` hold integer elements.
+
+- **Dependencies**:
+  - None (uses standard input/output operations without external libraries).

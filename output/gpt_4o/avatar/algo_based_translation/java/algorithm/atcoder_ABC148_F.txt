@@ -1,0 +1,50 @@
+```plaintext
+Function: main()
+  Input:
+    - List of integers from standard input
+  Variables:
+    - N: integer
+    - u: integer
+    - v: integer
+    - edges: List of List of Integer
+    - d: array of integers
+    - e: array of integers
+    - q: integer
+  Logic:
+    - Read integer N from input
+    - Read and adjust for 0-based index: u from input
+    - Read and adjust for 0-based index: v from input
+    - Initialize edges as a list of empty lists of size N
+    - Loop from i = 0 to N-2
+      - Read and adjust for 0-based index: a from input
+      - Read and adjust for 0-based index: b from input
+      - Add b to edges[a]
+      - Add a to edges[b]
+    - Initialize all elements of array d with Integer.MAX_VALUE
+    - Set d[u] = 0
+    - Call dfs(u, d, edges)
+    - Initialize all elements of array e with Integer.MAX_VALUE
+    - Set e[v] = 0
+    - Call dfs(v, e, edges)
+    - Set q = -1
+    - Loop from i = 0 to N-1
+      - If d[i] < e[i]
+        - If e[i] > q
+          - Set q = e[i]
+    - If q <= 0
+      - Output 0
+    - Else
+      - Output q - 1
+
+Function: dfs(u: integer, d: array of integers, edges: List of List of Integer)
+  Logic:
+    - For each nu in edges[u]
+      - If d[nu] == Integer.MAX_VALUE
+        - Set d[nu] = d[u] + 1
+        - Call dfs(nu, d, edges)
+
+Dependencies:
+  - java.util.ArrayList
+  - java.util.List
+  - java.util.Scanner
+```

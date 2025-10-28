@@ -1,0 +1,8 @@
+1. Read the number of inputs N.
+2. Initialize two arrays, x and u, of size N to store the values and units respectively.
+3. For i ranging from 0 to N-1, read the value and unit into x[i] and u[i] respectively.
+4. Calculate the total sum by iterating over the range from 0 to N-1.
+5. For each i, if u[i] equals "JPY", multiply x[i] by 1, otherwise multiply x[i] by 380000.
+6. Sum up the results from step 5.
+7. Output the total sum calculated in step 6.
+8. End.

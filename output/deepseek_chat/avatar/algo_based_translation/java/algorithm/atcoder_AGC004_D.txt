@@ -1,0 +1,32 @@
+**Input Processing:**
+- Read integer n
+- Read integer k
+- Read n integers, subtract 1 from each, store in list 'as'
+
+**Initialization:**
+- Initialize answer = 0
+- Initialize lists as list of n empty lists
+- For i from 0 to n-1:
+  - j = as.get(i)
+  - If i > 0:
+    - Add i to lists.get(j)
+  - Else if j > 0:
+    - Increment answer by 1
+
+**DFS Function:**
+- Parameters: int a, int pre
+- Initialize h = 0
+- For each child i in lists.get(a):
+  - h = max(h, dfs(i, a))
+- If pre > 0 AND h == k-1:
+  - Set h = 0
+  - Increment answer by 1
+- Else:
+  - Increment h by 1
+- Return h
+
+**Main Calculation:**
+- If not calculated:
+  - Call dfs(0, 0)
+  - Set isCalculate = true
+- Return answer

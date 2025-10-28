@@ -1,0 +1,13 @@
+1. Read the number of elements N from the input.
+2. Read N integers into an array A.
+3. Check if it is possible to satisfy the condition using the array A and N.
+4. To check the possibility, calculate the sum of all elements in array A.
+5. Compute the value of NS using the formula N * (N + 1) / 2.
+6. Check if the sum is divisible by NS. If not, it is not possible.
+7. Calculate K by dividing the sum by NS.
+8. Iterate over each element in array A.
+9. For each element at index i, consider the previous element at index j (wrapping around to N-1 for i=0).
+10. Calculate the difference d = K - (A[i] - A[j]).
+11. Check if d is negative or not divisible by N. If so, it is not possible.
+12. If all checks pass, it is possible.
+13. Output "YES" if it is possible, otherwise output "NO".

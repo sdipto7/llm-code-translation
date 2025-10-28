@@ -1,0 +1,35 @@
+Function signature: main(String[] args)
+
+Variable declarations and data types:
+- Scanner sc
+- int num
+- int counter
+- int fine
+- ArrayList<String> arr
+
+Logic flow:
+1. Initialize Scanner sc to read input from System.in
+2. Read integer num from input
+3. Initialize counter to 0
+4. Initialize fine to 0
+5. Initialize empty ArrayList<String> arr
+6. For i from 0 to num - 1:
+   - Read string s from input
+   - Add s to arr
+7. For i from 0 to num - 1:
+   - For k from 0 to num - 1:
+      - If character at position i in string at position k in arr is 'C':
+         - Increment counter by 1
+   - Add (counter * (counter - 1)) / 2 to fine
+   - Reset counter to 0
+8. For i from 0 to num - 1:
+   - For k from 0 to num - 1:
+      - If character at position k in string at position i in arr is 'C':
+         - Increment counter by 1
+   - Add (counter * (counter - 1)) / 2 to fine
+   - Reset counter to 0
+9. Print fine
+
+Required libraries:
+- java.util.Scanner
+- java.util.ArrayList

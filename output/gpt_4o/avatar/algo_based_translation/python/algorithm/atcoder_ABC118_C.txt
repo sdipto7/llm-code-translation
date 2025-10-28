@@ -1,0 +1,6 @@
+- Import the `functools` module.
+- Import the `fractions` module.
+- Define a variable `N` of type integer and assign it the value from user input, converted to integer.
+- Define a variable `A` of type list of integers and assign it the list of integers converted from a space-separated string input.
+- Define a function `gcd` using `functools.reduce` with `fractions.gcd` as the reducing function and `A` as the iterable.
+- Print the value of `gcd`.

@@ -1,0 +1,16 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,s514557145.py,Compilation Error,"Error:   File ""output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s514557145.py"", line 218
+    self.in = stream
+         ^^
+SyntaxError: invalid syntax
+"
+java,python,s888333881.py,Compilation Error,"Error:   File ""output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s888333881.py"", line 4685
+    import
+          ^
+SyntaxError: invalid syntax
+"
+java,python,s893190600.py,Compilation Error,"Error:   File ""output/qwen_2.5_72b_instruct/codenet/algo_based_translation/java/python/s893190600.py"", line 191
+    def del(self, from_node, to_node):
+        ^^^
+SyntaxError: invalid syntax
+"

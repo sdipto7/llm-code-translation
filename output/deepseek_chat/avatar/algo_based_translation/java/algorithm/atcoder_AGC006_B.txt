@@ -1,0 +1,37 @@
+**Function Signatures:**
+- `main(String[] args): void`
+- `print(int x, int n): void`
+
+**Variable Declarations:**
+- `Scanner scanner: Scanner`
+- `int n: int`
+- `int x: int`
+- `int max: int`
+- `String sep: String`
+- `String ans: String`
+
+**Logic Flow:**
+1. Create Scanner object for reading input
+2. Read integer `n` from input
+3. Read integer `x` from input
+4. Call `print(x, n)`
+5. Calculate `max = n * 2 - 1`
+6. If `x == 1` OR `x == max`: print "No" and return
+7. Print "Yes"
+8. Get system line separator into `sep`
+9. Generate sequence from `x + n - 1` to `x + n + max - 2` (inclusive)
+10. For each value `e` in sequence: calculate `(e % max + 1)` and append with `sep`
+11. Collect results into string `ans`
+12. Print `ans`
+
+**Control Structures:**
+- If condition: `(x == 1 || x == max)`
+- Stream range generation: `IntStream.range(x + n - 1, x + n + max - 1)`
+
+**Input/Output Operations:**
+- Input: Read integers `n` and `x` from standard input
+- Output: Print "No" or "Yes" followed by generated number sequence
+
+**Required Libraries:**
+- `java.util.Scanner`
+- `java.util.stream.IntStream`

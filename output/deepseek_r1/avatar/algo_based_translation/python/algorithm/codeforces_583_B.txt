@@ -1,0 +1,72 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signature**  
+- `main_function(): void`
+
+**Parameters**  
+- None
+
+**Return Type**  
+- `void`
+
+---
+
+**Variable Declarations**  
+- `n: int` (unused)  
+- `a: list<int>`  
+- `current_level: int` (initialized to `0`, unused)  
+- `counter: int` (initialized to `0`)  
+- `counter_turns: int` (initialized to `-1`)  
+
+---
+
+**Step-by-Step Logic Flow**  
+
+1. **Input Operations**  
+   - Read integer `n` from standard input (unused).  
+   - Read space-separated integers from standard input and store in list `a`.  
+
+2. **Initialization**  
+   - Set `current_level = 0` (unused).  
+   - Set `counter = 0`.  
+   - Set `counter_turns = -1`.  
+
+3. **Main Loop**  
+   - **While** `counter < len(a)` do:  
+      1. Increment `counter_turns` by 1.  
+      2. **Iterate** over indices `i` from `0` to `len(a) - 1`:  
+          - **If** `a[i] != -1` **and** `a[i] <= counter`:  
+              - Increment `counter` by 1.  
+              - Set `a[i] = -1`.  
+      3. Reverse the order of elements in `a`.  
+
+4. **Output Operation**  
+   - Print `counter_turns` to standard output.  
+
+---
+
+**Control Flow Structures**  
+- **Loop**:  
+  - Outer `while` loop with condition `counter < len(a)`.  
+  - Inner `for` loop iterating over all indices of `a` (direction alternates due to reversals).  
+- **Conditionals**:  
+  - Check `a[i] != -1` and `a[i] <= counter` during inner iteration.  
+
+---
+
+**Input/Output Operations**  
+- **Input**: Reads `n` and `a` via `input()`.  
+- **Output**: Prints `counter_turns` via `print()`.  
+
+---
+
+**Edge Case Handling**  
+- No explicit handling for invalid input formats.  
+- Assumes `a` contains valid integers matching the input format.  
+- Processes empty lists implicitly (loop exits immediately).  
+
+---
+
+**External Dependencies**  
+- Uses `input()` and `print()` from Python standard libraries.  
+- No external libraries or dependencies.

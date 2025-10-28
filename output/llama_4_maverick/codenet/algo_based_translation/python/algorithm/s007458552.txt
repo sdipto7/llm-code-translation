@@ -1,0 +1,24 @@
+1. Import required libraries: 
+   - sys
+   - collections (specifically Counter and defaultdict)
+
+2. Define constants:
+   - INF as float('inf')
+   - MOD as 10^9 + 7
+
+3. Define input helper functions:
+   - LI(): returns a list of integers from a line of input
+   - LI_(): returns a list of integers from a line of input, subtracting 1 from each integer
+   - LS(): returns a list of strings from a line of input
+   - II(): returns an integer from a line of input
+   - SI(): returns a string from a line of input
+
+4. Define main function:
+   - main(): 
+     1. Read an integer n from input using II()
+     2. Read a string S from input using SI()
+     3. Count the occurrences of each character in S using Counter(S)
+     4. Compare the count of 'R' to n minus the count of 'R'
+     5. Return 'Yes' if count of 'R' is greater, 'No' otherwise
+
+5. Print the result of main() to output.

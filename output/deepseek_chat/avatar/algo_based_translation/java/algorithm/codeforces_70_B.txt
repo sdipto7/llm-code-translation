@@ -1,0 +1,49 @@
+**Function Signature:**
+main(String[] args) throws NumberFormatException, IOException
+
+**Required Libraries:**
+java.io.BufferedReader
+java.io.IOException
+java.io.InputStreamReader
+
+**Variables:**
+- BufferedReader br
+- int n
+- String input
+- int max = -1
+- int[] msgLength
+- int count = 0
+- int idx = 0
+- char c
+- int ans = 0
+- int l
+
+**Algorithm:**
+1. Initialize BufferedReader to read from standard input
+2. Read integer n from first input line
+3. Read string input from second input line
+4. Initialize max to -1
+5. Create msgLength array with size input.length() / 2
+6. Initialize count = 0, idx = 0
+7. For i from 0 to input.length() - 1:
+   - Get character c at position i
+   - If c is '.', '?', or '!':
+     - Increment count by 1
+     - Store count in msgLength at index idx
+     - Increment idx by 1
+     - If count > max, set max = count
+     - Increment i by 1
+     - Reset count to 0
+   - Else:
+     - Increment count by 1
+8. If max > n:
+   - Print "Impossible"
+9. Else:
+   - Initialize ans = 0
+   - For i from 0 to idx - 1:
+     - Set l = msgLength[i]
+     - While i < idx - 1 AND l + msgLength[i + 1] + 1 <= n:
+       - Set l = l + msgLength[i + 1] + 1
+       - Increment i by 1
+     - Increment ans by 1
+   - Print ans

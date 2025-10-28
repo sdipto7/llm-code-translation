@@ -1,0 +1,20 @@
+```plaintext
+Input:
+  - Read a line from standard input, split the line by spaces, and convert each part to an integer.
+  - Assign the first integer to `candeleIntere` and the second integer to `b`.
+
+Initialize:
+  - Declare an integer `s` and set it to 0.
+  - Declare an integer `restoSciolte` and set it to 0.
+
+Loop:
+  - While `candeleIntere` is greater than 0 or `restoSciolte` is greater than or equal to `b`:
+    - Add the integer division of `restoSciolte` by `b` to `candeleIntere`.
+    - Update `restoSciolte` to be the remainder of `restoSciolte` divided by `b`.
+    - Add `candeleIntere` to `s`.
+    - Update `restoSciolte` by adding the remainder of `candeleIntere` divided by `b`.
+    - Update `candeleIntere` to be the integer division of `candeleIntere` by `b`.
+
+Output:
+  - Print the value of `s`.
+```

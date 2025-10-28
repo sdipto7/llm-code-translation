@@ -1,0 +1,33 @@
+```
+Function Signature:
+- Function: process_numbers
+- Parameters: None
+- Return Type: None
+
+Variable Declarations:
+- n: int
+- w: List[int]
+- c: int
+
+Algorithm:
+1. Import `sys` module.
+2. Assign `sys.stdin.readline` to variable `input`.
+3. Read an integer `n` from input.
+4. Read a space-separated string of integers from input, convert them to a list of integers, and assign to variable `w`.
+5. Initialize integer `c` with value 2.
+6. Iterate over each integer `i` in list `w`:
+   a. If `i` is equal to 1:
+      i. Print the value of `c`.
+   b. Else if `i` is even (i.e., `i % 2 == 0`):
+      i. Assign `3 - c` to `c`.
+      ii. Print the updated value of `c`.
+   c. Else (i.e., `i` is odd):
+      i. Print the value of `c`.
+
+Input/Output Operations:
+- Input: Read from standard input using `sys.stdin.readline`.
+- Output: Print to standard output using `print`.
+
+Required Libraries:
+- sys
+```

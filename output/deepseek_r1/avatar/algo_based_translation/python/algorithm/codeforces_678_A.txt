@@ -1,0 +1,36 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures**  
+- `main()`: void  
+  - No parameters  
+  - No return value (executes I/O operations)  
+
+**Variable Declarations & Data Types**  
+- `vamshi`: int  
+- `z`: int  
+- Implicit intermediate results: int (during computation)  
+
+**Step-by-Step Logic Flow**  
+1. Read input line as a string from standard input.  
+2. Split the input string into two substrings using whitespace.  
+3. Convert both substrings to integers. Assign first to `vamshi`, second to `z`.  
+4. Compute integer division: `vamshi // z`.  
+5. Add 1 to the result of Step 4.  
+6. Multiply the result of Step 5 by `z`.  
+7. Print the result of Step 6 to standard output.  
+
+**Control Flow Structures**  
+- None (strictly sequential execution).  
+
+**Input/Output Operations**  
+- Input: Single line containing two space-separated integers.  
+- Output: Single integer representing the smallest multiple of `z` greater than `vamshi`.  
+
+**Error Handling & Edge Cases**  
+- No explicit error handling (assumes valid integer input and `z ≠ 0`).  
+- Edge case behavior:  
+  - If `vamshi` is divisible by `z`, result is `vamshi + z`.  
+  - If `z = 0`, runtime error occurs during division.  
+
+**External Dependencies**  
+- Standard input/output functions (no external libraries or imports).

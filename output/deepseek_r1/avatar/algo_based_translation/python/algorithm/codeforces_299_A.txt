@@ -1,0 +1,42 @@
+```structured_algorithm
+Algorithm Specification:
+
+1. Input Handling:
+   - Read all lines from standard input as strings.
+   - Extract second line (index 1) containing space-separated integers.
+   - Split line into string tokens and convert to list of integers.
+   - Assign to variable 'a' after sorting in ascending order.
+
+2. Variable Declarations:
+   - a: List<Integer> (sorted input numbers)
+   - min_val: Integer (a[0], smallest element)
+   - has_remainder: Boolean (flag indicating divisibility check)
+
+3. Control Flow:
+   3.1 Sort input list:
+       a = sorted(input_numbers)
+   
+   3.2 Set minimum value:
+       min_val ← a[0]
+   
+   3.3 Check divisibility:
+       For each element x in a:
+           If x mod min_val ≠ 0:
+               Set has_remainder ← True
+               Exit loop
+   
+4. Output Decision:
+   - If has_remainder is True:
+       Print -1
+   - Else:
+       Print min_val
+
+5. Edge Case Handling:
+   - Implicit handling of empty input through list indexing (assumes at least one element)
+   - No explicit error handling for division by zero (assumes non-zero elements in input)
+
+6. External Dependencies:
+   - Standard input reading operations
+   - List sorting functionality
+   - Integer conversion and modulo operations
+```

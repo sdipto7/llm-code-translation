@@ -1,0 +1,39 @@
+1. Import the required library: java.util
+2. Define a class Main with the following components:
+   - Static variables: 
+     - sc of type Scanner
+     - score of type int array
+     - number of type int
+   - Main method:
+     - While loop with condition: read()
+     - Inside the loop: slove()
+   - Method read() with return type boolean:
+     - Read an integer into number using sc.nextInt()
+     - If number equals 0, return false
+     - Initialize score array with size number
+     - For loop with condition: i < number
+       - Read an integer into score[i] using sc.nextInt()
+     - Return true
+   - Method slove() with return type void:
+     - Sort the score array using java.util.Arrays.sort()
+     - Initialize sum to 0
+     - For loop with condition: i = 1 to number-2 (i.e., 1 <= i < number-1)
+       - sum = sum + score[i]
+     - Print sum/(number-2) to the console using System.out.println()
+
+To translate this into a step-by-step algorithm:
+
+1. Initialize a Scanner object to read from the standard input.
+2. Enter a loop that continues as long as the read() function returns true.
+3. Within the loop, call the slove() function.
+4. In the read() function:
+   4.1. Read an integer from the input into the variable 'number'.
+   4.2. If 'number' equals 0, return false to exit the loop in the main method.
+   4.3. Create an integer array 'score' of size 'number'.
+   4.4. Iterate from 0 to 'number'-1, reading an integer into each index of the 'score' array.
+   4.5. Return true to continue the loop in the main method.
+5. In the slove() function:
+   5.1. Sort the 'score' array in ascending order.
+   5.2. Initialize a variable 'sum' to 0.
+   5.3. Iterate from index 1 to 'number'-2 (inclusive), adding each 'score' value to 'sum'.
+   5.4. Calculate the average by dividing 'sum' by ('number'-2) and print the result to the console.

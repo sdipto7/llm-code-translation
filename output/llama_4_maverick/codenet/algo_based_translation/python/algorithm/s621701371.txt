@@ -1,0 +1,14 @@
+1. Read input string `s` from the user.
+2. Read the number of operations `q` from the user and convert it to an integer.
+3. Read `q` operations from the user, where each operation is a list of strings, and store them in `qs`.
+4. Initialize a boolean flag `n` to `False`, and two empty strings `left` and `right`.
+5. Iterate over each operation in `qs`.
+   1. If the operation is '1', toggle the value of `n`.
+   2. If the operation is '2', extract the target `f` and character `c` from the operation.
+      1. Convert `f` to an integer.
+      2. If `n` is `True`, toggle the value of `f` between 1 and 2.
+      3. If `f` is 1, prepend `c` to `left`.
+      4. If `f` is 2, append `c` to `right`.
+6. Concatenate `left`, `s`, and `right` to form the modified string.
+7. If `n` is `True`, reverse the modified string.
+8. Output the resulting string.

@@ -1,0 +1,11 @@
+1. Read two integer inputs, N and D, from the user, where N and D are separated by a space.
+2. Declare an empty list, mat, to store the input matrix.
+3. Iterate N times:
+   - Read D integer inputs from the user, separated by spaces.
+   - Store these D integers as a list in mat.
+4. Initialize a counter variable, c, to 0.
+5. Iterate over each pair of distinct lists (mat[i], mat[j]) in mat:
+   - Calculate the Euclidean distance between mat[i] and mat[j] using their corresponding elements.
+   - Check if the calculated distance is an integer.
+   - If it is an integer, increment c by 1.
+6. Output the value of c.

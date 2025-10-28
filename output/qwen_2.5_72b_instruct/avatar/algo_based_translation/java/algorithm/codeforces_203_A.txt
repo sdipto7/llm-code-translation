@@ -1,0 +1,65 @@
+Function signatures:
+- `solve()`: void
+- `main(String[] args)`: void
+- `run()`: void
+- `nextInt()`: int
+- `next()`: String
+
+Variable declarations and data types:
+- `x`: int
+- `t`: int
+- `a`: int
+- `b`: int
+- `da`: int
+- `db`: int
+- `first`: int
+- `second`: int
+- `ok`: boolean
+- `i`: int
+- `j`: int
+- `br`: BufferedReader
+- `st`: StringTokenizer
+- `out`: PrintWriter
+
+Logic flow in execution order:
+- `main(String[] args)`: 
+  - Create instance of `codeforces_203_A`
+  - Call `run()`
+  
+- `run()`: 
+  - Initialize `br` with BufferedReader reading from System.in
+  - Initialize `out` with PrintWriter writing to System.out
+  - Call `solve()`
+  - Close `br` and `out`
+  
+- `solve()`: 
+  - Initialize `x`, `t`, `a`, `b`, `da`, `db` with values from `nextInt()`
+  - Initialize `ok` to false
+  - For `i` from 0 to `t-1`:
+    - Calculate `first` as `a - (da * i)`
+    - For `j` from 0 to `t-1`:
+      - Calculate `second` as `b - (db * j)`
+      - If `second + first == x` or `second == x` or `first == x` or `x == 0`:
+        - Set `ok` to true
+        - Break inner loop
+    - If `ok` is true:
+      - Break outer loop
+  - If `ok` is true:
+    - Print "YES" using `out`
+  - Else:
+    - Print "NO" using `out`
+  
+- `nextInt()`: 
+  - Return result of `Integer.parseInt(next())`
+  
+- `next()`: 
+  - While `st` is null or `st` has no more tokens:
+    - Read line from `br` and update `st` with StringTokenizer of the line
+  - Return next token from `st`
+
+Required libraries, modules, or dependencies:
+- `java.io.BufferedReader`
+- `java.io.InputStreamReader`
+- `java.io.PrintWriter`
+- `java.io.IOException`
+- `java.util.StringTokenizer`

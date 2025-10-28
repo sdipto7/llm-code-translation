@@ -1,0 +1,48 @@
+```plaintext
+Function Signature:
+public static void main(String[] args)
+
+Variables:
+- long INF (unused)
+- Scanner sc = new Scanner(System.in)
+- String number (input)
+- int[] digits (size: number.length() + 1)
+- int bills = 0
+
+Libraries/Dependencies:
+java.io.*
+java.util.*
+
+Execution Steps:
+1. Read input string via Scanner
+2. Initialize digits array with length (input length + 1)
+3. Populate digits array in reverse order from input string digits (digits[0] = last input digit)
+4. Iterate through digits array indices 0 to number.length() inclusive:
+   a. Check if current digit == 10:
+      i. Increment next digit
+      ii. Set current digit to 0
+   b. Handle current digit value:
+      if digits[i] < 5:
+          bills += digits[i]
+      elif digits[i] == 5:
+          if next digit >= 5:
+              increment next digit
+          bills += 5
+      else:
+          increment next digit
+          bills += (10 - digits[i])
+5. Print total bills
+
+Control Flow:
+- For loop: 0 ≤ i < input length (digits initialization)
+- For loop: 0 ≤ i ≤ input length (main processing)
+- Conditional branches:
+  - digits[i] == 10 check
+  - Digits processing: <5, ==5, >5 branches
+  - Nested check for digits[i+1] ≥5 when current digit ==5
+
+Input/Output:
+- Read decimal number string from stdin
+- Process digits to calculate minimal bills
+- Print integer result to stdout
+```

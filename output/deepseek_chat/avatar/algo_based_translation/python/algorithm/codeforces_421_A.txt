@@ -1,0 +1,8 @@
+Read integer n and two list sizes a, b from input
+Read list of integers lista of size a from input
+Read list of integers listb of size b from input
+For k from 0 to n-1:
+    If k+1 exists in lista:
+        Print "1 " without newline
+    Else:
+        Print "2 " without newline

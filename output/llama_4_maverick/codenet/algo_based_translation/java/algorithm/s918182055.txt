@@ -1,0 +1,35 @@
+1. Define a function `main` with no parameters and no return type.
+   - Declare variables: `out` of type `MyWriter`, `sc` of type `MyScanner`, `N` and `M` of type `int`.
+   - Initialize `out` with `new MyWriter(System.out)` and `sc` with `new MyScanner(System.in)`.
+   - Read `N` and `M` from input using `sc.nextInt()`.
+
+2. Declare a variable `list` as an array of `LinkedList<Integer>` with size 100001.
+   - Iterate from `i = 0` to `N-1`:
+     - Read two integers `a` and `b` from input using `sc.nextInt()`.
+     - If `list[a]` is `null`, initialize it with `new LinkedList<Integer>()`.
+     - Add `b` to `list[a]`.
+
+3. Declare variables: `res` of type `int`, `pqueue` of type `PriorityQueue<Integer>`.
+   - Initialize `pqueue` with `new PriorityQueue<Integer>(Collections.reverseOrder())`.
+   - Iterate from `i = 1` to `M`:
+     - If `list[i]` is not `null`, add all elements of `list[i]` to `pqueue`.
+     - If `pqueue` is not empty, remove the maximum element from `pqueue` and add it to `res`.
+
+4. Print `res` to output using `out.println(res)`.
+   - Flush the output buffer using `out.flush()`.
+
+5. Define a class `MyScanner` with a constructor taking an `InputStream` and methods:
+   - `readByte()`: reads a byte from the input stream.
+   - `isPrintableCharExceptSpace(int c)`: checks if a character is printable except space.
+   - `next()`: reads a string from input.
+   - `nextLong()`: reads a long integer from input.
+   - `nextInt()`: reads an integer from input by calling `nextLong()` and checking the range.
+   - `nextDouble()`: reads a double from input by parsing the result of `next()`.
+   - `nextIntArray(int n)`, `nextLongArray(int n)`, `nextCharArray(int n)`, `next2dCharArray(int n, int m)`: read arrays of integers, longs, characters, and 2D character arrays from input.
+   - `nextVerticalIntArrays(int[] a, int[] b, int[]... c)` and `nextVerticalCharArrays(char[] a, char[] b, char[]... c)`: read vertical arrays of integers and characters from input.
+
+6. Define a class `MyWriter` extending `PrintWriter` with a constructor taking an `OutputStream` and methods:
+   - `joinAndPrintln(int[] x)`, `joinAndPrintln(long[] x)`, `joinAndPrintln(Iterable<?> iterable)`: print arrays or iterables to output with a delimiter and a newline at the end.
+   - Overloaded versions of `joinAndPrintln` with a custom delimiter.
+
+Required libraries and modules: `java.util`, `java.io`.

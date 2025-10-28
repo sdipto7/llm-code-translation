@@ -1,0 +1,36 @@
+Function signature:
+- `main()`: No parameters, No return type
+
+Variable declarations and data types:
+- `strn`: String
+- `n`: Integer
+- `shichigolist`: List of Strings
+- `shichigo`: List of Lists of Strings
+- `target`: Integer
+
+Execution order and logic flow:
+
+1. `strn = input()`: Read a string input from the user and store it in `strn`.
+2. `n = int(strn)`: Convert `strn` to an integer and store it in `n`.
+3. `shichigolist = ["3","5","7"]`: Initialize a list `shichigolist` with strings "3", "5", and "7".
+4. `shichigo = [[] for _ in range(len(strn))]`: Initialize a list of lists `shichigo` with the same length as `strn`, where each element is an empty list.
+5. For each index `i` from 0 to `len(strn) - 1`:
+   - If `i` is 0:
+     - For each element `j` in `shichigolist`:
+       - Append `j` to `shichigo[i]`.
+   - Else:
+     - For each element `j` in `shichigo[i-1]`:
+       - For each element `k` in `shichigolist`:
+         - Append `j + k` to `shichigo[i]`.
+6. `target = len(strn) - 1`: Set `target` to the last index of `strn`.
+7. For each index `i` from 0 to `len(strn) - 1`:
+   - For each element `j` in a copy of `shichigo[i]`:
+     - If `i` is equal to `target`:
+       - If `int(j)` is greater than `n`:
+         - Remove `j` from `shichigo[target]`.
+       - Else if `j.count("3")` is 0 or `j.count("5")` is 0 or `j.count("7")` is 0:
+         - Remove `j` from `shichigo[target]`.
+     - Else:
+       - If `j.count("3")` is 0 or `j.count("5")` is 0 or `j.count("7")` is 0:
+         - Remove `j` from `shichigo[i]`.
+8. `print(sum([len(shichigo[i]) for i in range(len(strn))]))`: Calculate the sum of lengths of all sublists in `shichigo` and print the result.

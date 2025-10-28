@@ -1,0 +1,12 @@
+1. Read integer `n` from standard input
+2. Read `n` lines from standard input, each containing two integers separated by space
+3. Store each line as a list of two integers in a list `ls`
+4. Sort `ls` in descending order by the sum of each sublist
+5. Initialize `taka` to 0
+6. For every even index (0, 2, 4...) in `ls`:
+   - Add the first element of the sublist at that index to `taka`
+7. Initialize `aoki` to 0
+8. For every odd index (1, 3, 5...) in `ls`:
+   - Add the second element of the sublist at that index to `aoki`
+9. Calculate `taka - aoki`
+10. Print the result

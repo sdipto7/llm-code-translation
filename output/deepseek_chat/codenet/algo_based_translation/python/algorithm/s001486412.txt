@@ -1,0 +1,9 @@
+n: integer from input
+a: list of integers from input split by spaces
+below: float initialized to 0.0
+
+for i from 0 to n-1:
+    below = below + (1.0 / a[i])
+
+result = 1.0 / below
+print result

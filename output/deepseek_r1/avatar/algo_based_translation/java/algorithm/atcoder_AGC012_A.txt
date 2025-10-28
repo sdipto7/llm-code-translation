@@ -1,0 +1,33 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner sc = new Scanner(System.in)` (Scanner)
+- `int n = sc.nextInt()` (int)
+- `int[] array = new int[3 * n]` (int[])
+- `int head = array.length - 2` (int)
+- `long res = 0` (long)
+
+**Logic Flow:**
+1. Read integer `n` from standard input.
+2. Declare an integer array of size `3 * n`.
+3. Read `3 * n` integers from input and store them in the array.
+4. Sort the array in ascending order using `Arrays.sort`.
+5. Initialize `head` to the second-to-last index of the sorted array.
+6. Initialize `res` to 0.
+7. Iterate `n` times:
+   - Add the value of `array[head]` to `res`.
+   - Decrement `head` by 2 in each iteration.
+8. Print `res` as the final result.
+
+**Control Structures:**
+- `for (int i = 0; i < array.length; i++)` to populate the array.
+- `for (int i = 0; i < n; i++)` to accumulate values into `res`.
+
+**Input/Output:**
+- Input via `Scanner` reading `n` and `3 * n` integers.
+- Output via `System.out.println(res)`.
+
+**Dependencies:**
+- `java.util.*` (for `Scanner` and `Arrays`)
+- `static java.lang.Math.*` (imported but unused in the logic)

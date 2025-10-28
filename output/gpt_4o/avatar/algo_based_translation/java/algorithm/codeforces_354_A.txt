@@ -1,0 +1,44 @@
+Algorithm:
+
+1. Import the Scanner class from the `java.util` package for input operations.
+
+2. Define the main function `public static void main(String[] args)`.
+
+3. Declare and initialize a Scanner object `in` to read input from the standard input.
+
+4. Read the following integer inputs using the Scanner object and store them in respective variables:
+   - `int N = in.nextInt()`: Number of weights.
+   - `int L = in.nextInt()`: Cost per unit for lifting weights with the left hand.
+   - `int R = in.nextInt()`: Cost per unit for lifting weights with the right hand.
+   - `int QL = in.nextInt()`: Additional cost if left hand is used more than right hand.
+   - `int QR = in.nextInt()`: Additional cost if right hand is used more than left hand.
+
+5. Create an integer array `W` of size `N` to store the weights.
+
+6. Create an integer array `sum` of size `N + 1` to store cumulative sums of weights.
+
+7. Initialize a loop `for (int n = 0; n < N; n++)` to process each weight:
+   - Read weight using `W[n] = in.nextInt()`.
+   - Calculate cumulative sum using `sum[n + 1] = sum[n] + W[n]`.
+
+8. Declare a variable `long min` and initialize it with `Long.MAX_VALUE` to keep track of the minimum cost.
+
+9. Initialize a loop `for (int firstR = 0; firstR <= N; firstR++)` to iterate over possible splits between left and right hand lifting:
+   - Calculate the number of weights lifted by the left hand `int lCount = firstR`.
+   - Calculate the number of weights lifted by the right hand `int rCount = N - lCount`.
+
+10. Calculate the initial candidate cost `long cand` using:
+    - `cand = sum[lCount] * L + (sum[N] - sum[lCount]) * R`.
+
+11. Determine if there is an imbalance in the number of weights lifted by left and right hand:
+    - Calculate `int llCount = Math.max(0, lCount - rCount - 1)`, which represents the excess weights lifted by the left hand.
+    - Calculate `int rrCount = Math.max(0, rCount - lCount - 1)`, which represents the excess weights lifted by the right hand.
+
+12. Adjust the candidate cost `cand` by adding the additional costs for the imbalance:
+    - `cand += llCount * QL`
+    - `cand += rrCount * QR`
+
+13. Update the minimum cost `min` by taking the minimum between `cand` and the current `min` using:
+    - `min = Math.min(cand, min)`
+
+14. After completing the loop, print the minimum cost `System.out.println(min)`.

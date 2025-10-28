@@ -1,0 +1,156 @@
+## Step 1: Extracting the Algorithm
+The given Java code implements a solution to a problem involving a Lazy Segment Tree data structure. To extract the detailed algorithm, we need to analyze the code's structure and identify the key components.
+
+## Step 2: Identifying Key Components
+The code consists of several classes: `Main`, `S`, `F`, `LazySegTree`, and `InputReader`. The `Main` class contains the `main` method, which is the entry point of the program. The `S` and `F` classes represent the data and operation types used in the Lazy Segment Tree, respectively. The `LazySegTree` class implements the Lazy Segment Tree data structure, and the `InputReader` class is used for reading input from the user.
+
+## Step 3: Analyzing the `Main` Class
+The `main` method in the `Main` class performs the following operations:
+- Initializes a `PrintWriter` object for output and an `InputReader` object for input.
+- Reads two integers, `N` and `Q`, representing the size of the input data and the number of queries, respectively.
+- Initializes an array `tenmod` of size `N+1` to store the powers of 10 modulo `MOD2`.
+- Creates an array `dat` of type `S` with `N` elements, where each element is initialized with a value based on `tenmod`.
+- Creates a `LazySegTree` object with the `dat` array and performs `Q` queries on it.
+
+## Step 4: Understanding the Lazy Segment Tree Operations
+The `LazySegTree` class provides several methods for operating on the segment tree, including:
+- `set(int p, S x)`: Sets the value at index `p` to `x`.
+- `get(int p)`: Returns the value at index `p`.
+- `allProd()`: Returns the product of all elements in the tree.
+- `apply(int p, F f)`: Applies the operation `f` to the element at index `p`.
+- `apply(int l, int r, F f)`: Applies the operation `f` to the elements in the range `[l, r)`.
+
+## Step 5: Extracting the Algorithm
+Based on the analysis, the algorithm can be extracted as follows:
+
+### Data Structures and Variables
+- `N`: The size of the input data.
+- `Q`: The number of queries.
+- `tenmod`: An array of size `N+1` storing the powers of 10 modulo `MOD2`.
+- `dat`: An array of type `S` with `N` elements.
+- `lazySegTree`: A `LazySegTree` object initialized with `dat`.
+
+### Main Logic
+1. Read `N` and `Q` from input.
+2. Initialize `tenmod` with powers of 10 modulo `MOD2`.
+3. Create `dat` with `N` elements of type `S`, where each element is initialized based on `tenmod`.
+4. Create a `LazySegTree` object `lazySegTree` with `dat`.
+5. For each query (up to `Q` times):
+   - Read `l`, `r`, and `D` from input.
+   - Apply the operation `F(D, N)` to the range `[l, r+1)` using `lazySegTree.apply(l, r+1, new F(D, N))`.
+   - Print the result of `lazySegTree.allProd().sum`.
+
+### Lazy Segment Tree Operations
+- The `LazySegTree` class implements the necessary operations for the segment tree, including `set`, `get`, `allProd`, and `apply`.
+
+### Input/Output Operations
+- Input is read using the `InputReader` class.
+- Output is written using a `PrintWriter` object.
+
+### Required Libraries and Modules
+- `java.io.IOException`
+- `java.io.InputStream`
+- `java.io.PrintWriter`
+- `java.util.*`
+
+The final algorithm is represented by the provided Java code, focusing on the key components and logic flow.
+
+```java
+static final long MOD1 = 1000000007;
+static final long MOD2 = 998244353;
+static long[] tenmod;
+static final long inv9 = modInv(9);
+
+public static void main(String[] args) {
+    PrintWriter out = new PrintWriter(System.out);
+    InputReader sc = new InputReader(System.in);
+    int N = sc.nextInt();
+    int Q = sc.nextInt();
+    tenmod = new long[N + 1];
+    tenmod[0] = 1;
+    for (int j = 1; j <= N; j++) {
+        tenmod[j] = (tenmod[j - 1] * 10L) % MOD2;
+    }
+    S[] dat = new S[N];
+    Arrays.setAll(dat, i -> new S(tenmod[N - i - 1], i, i));
+    LazySegTree<S, F> lazySegTree = new LazySegTree<S, F>(dat, S::op, S.E, S::map, F::composite, F.I);
+    for (int j = 0; j < Q; j++) {
+        int l = sc.nextInt() - 1;
+        int r = sc.nextInt() - 1;
+        long D = sc.nextLong();
+        lazySegTree.apply(l, r + 1, new F(D, N));
+        out.println(lazySegTree.allProd().sum);
+    }
+    out.flush();
+}
+
+static class S {
+    static final S E = new S(0, Integer.MAX_VALUE / 2, Integer.MIN_VALUE / 2);
+    long sum;
+    int l;
+    int r;
+
+    public S(long sum, int l, int r) {
+        this.sum = sum;
+        this.l = l;
+        this.r = r;
+    }
+
+    public static S op(S s1, S s2) {
+        long sum = s1.sum + s2.sum;
+        if (sum >= MOD2) {
+            sum -= MOD2;
+        }
+        return new S(sum, Math.min(s1.l, s2.l), Math.max(s1.r, s2.r));
+    }
+
+    static S map(F f, S s) {
+        long c = (tenmod[(f.N - s.l)] - tenmod[(f.N - s.r - 1)]);
+        if (c < 0) {
+            c += MOD2;
+        }
+        return new S(((f.D * c) % MOD2 * inv9) % MOD2, s.l, s.r);
+    }
+}
+
+static class F {
+    static final F I = new F(0, 0);
+    long D;
+    int N;
+
+    public F(long D, int N) {
+        this.D = D;
+        this.N = N;
+    }
+
+    public static F composite(F f, F g) {
+        return new F(f.D, f.N);
+    }
+}
+
+static long modInv(long x) {
+    return modPow(x, MOD2 - 2);
+}
+
+static long modPow(long x, long y) {
+    long z = 1;
+    while (y > 0) {
+        if (y % 2 == 0) {
+            x = (x * x) % MOD2;
+            y /= 2;
+        } else {
+            z = (z * x) % MOD2;
+            y--;
+        }
+    }
+    return z;
+}
+
+static class LazySegTree<S, F> {
+    // Implementation as provided
+}
+
+static class InputReader {
+    // Implementation as provided
+}
+```

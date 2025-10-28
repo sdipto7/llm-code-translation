@@ -1,0 +1,12 @@
+1. Read input values n and q.
+2. Read a string of characters and store it in an array c.
+3. Read q pairs of integers representing ranges and store them in a 2D array range.
+4. Initialize two arrays, frag and rui, of size n+1 with all elements set to 0.
+5. Iterate from i = 2 to n:
+   5.1. Check if the characters at positions i-2 and i-1 in array c are 'A' and 'C' respectively.
+   5.2. If they are 'A' and 'C', increment frag[i] by 1.
+   5.3. Calculate rui[i] as the sum of rui[i-1] and frag[i].
+6. Iterate from i = 0 to q-1:
+   6.1. Extract the left and right boundaries of the range from the range array.
+   6.2. Calculate the result as rui[right] - rui[left].
+   6.3. Output the result.

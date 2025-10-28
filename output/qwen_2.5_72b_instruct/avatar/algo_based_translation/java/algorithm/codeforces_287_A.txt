@@ -1,0 +1,36 @@
+Function Signature:
+- `main(String[] args): void`
+
+Variable Declarations:
+- `sc: Scanner`
+- `str: String[]` (size 4)
+- `i: int`
+- `u: int`
+- `yes: int`
+
+Logic Flow:
+1. Initialize `sc` as a new `Scanner` object for reading input.
+2. Initialize `str` as a new `String` array of size 4.
+3. Initialize `i` to -1.
+4. While `i` is not equal to 3:
+   - Increment `i` by 1.
+   - Assign the next input string from `sc` to `str[i]`.
+5. Initialize `u` to -1.
+6. Initialize `i` to -1.
+7. Initialize `yes` to 0.
+8. While `u` is not equal to 2:
+   - Increment `u` by 1.
+   - Initialize `i` to -1.
+   - While `i` is not equal to 2:
+     - Increment `i` by 1.
+     - If the condition `((str[u].charAt(i) == str[u].charAt(i + 1) && (str[u + 1].charAt(i) == str[u].charAt(i) || str[u + 1].charAt(i + 1) == str[u].charAt(i))) || (str[u + 1].charAt(i) == str[u + 1].charAt(i + 1) && (str[u].charAt(i) == str[u + 1].charAt(i) || str[u].charAt(i + 1) == str[u + 1].charAt(i))))` is true:
+       - Set `yes` to 1.
+       - Print "YES".
+       - Break out of the inner while loop.
+9. If `yes` is equal to 1:
+   - Break out of the outer while loop.
+10. If `yes` is equal to 0:
+    - Print "NO".
+
+Libraries/Modules:
+- `java.util.Scanner`

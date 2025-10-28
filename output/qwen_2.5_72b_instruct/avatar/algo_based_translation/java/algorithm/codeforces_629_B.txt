@@ -1,0 +1,38 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner sc` of type `Scanner`
+- `int n` of type `int`
+- `int[] FfriendPerDay` of type `int[367]`
+- `int[] MfriendPerDay` of type `int[367]`
+- `int answer` of type `int`
+- `char c` of type `char`
+- `int a` of type `int`
+- `int b` of type `int`
+- `int i`, `j` of type `int`
+
+Logic flow in execution order:
+1. Initialize `sc` as a new `Scanner(System.in)`
+2. Read `n` as an integer from `sc`
+3. Initialize `FfriendPerDay` array with size 367 filled with zeros
+4. Initialize `MfriendPerDay` array with size 367 filled with zeros
+5. Initialize `answer` to 0
+6. For loop where `i` ranges from 0 to `n - 1`:
+   1. Read `c` as a character from `sc`
+   2. Read `a` as an integer from `sc`
+   3. Read `b` as an integer from `sc`
+   4. For loop where `j` ranges from `a` to `b`:
+      1. If `c` equals 'M':
+         1. Increment `MfriendPerDay[j]` by 1
+      2. Else:
+         1. Increment `FfriendPerDay[j]` by 1
+      3. If `MfriendPerDay[j]` is less than `FfriendPerDay[j]`:
+         1. If `MfriendPerDay[j]` is greater than `answer`:
+            1. Set `answer` to `MfriendPerDay[j]`
+      4. Else:
+         1. If `FfriendPerDay[j]` is greater than `answer`:
+            1. Set `answer` to `FfriendPerDay[j]`
+7. Print `answer * 2` to standard output
+
+Required libraries, modules, or dependencies:
+- `java.util.*`

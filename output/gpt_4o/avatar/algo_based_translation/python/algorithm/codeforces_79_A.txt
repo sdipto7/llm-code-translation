@@ -1,0 +1,60 @@
+```
+Algorithm: Determine the winning player in a turn-based resource deduction game.
+
+Function Signature:
+- Function: determine_winner
+- Parameters: None
+- Return Type: str
+
+Variables and Data Types:
+- x: int
+- y: int
+- a: int (initialized to 0)
+
+Logic Flow and Control Structures:
+1. Parse input:
+   - Read input as a string.
+   - Split the string by spaces.
+   - Convert each split string to an integer to obtain x and y.
+
+2. Initialize variable:
+   - Set a to 0.
+
+3. Execute loop with condition:
+   - While (x >= 0 and y >= 22) or (x >= 1 and y >= 12) or (x >= 2 and y >= 2):
+     a. Conditional check:
+        - If a is truthy (a = 1):
+          i. Inner conditional sequence:
+             - If y >= 22:
+               * Subtract 22 from y.
+             - Else if x >= 1 and y >= 12:
+               * Subtract 1 from x.
+               * Subtract 12 from y.
+             - Else:
+               * Subtract 2 from x.
+               * Subtract 2 from y.
+
+        - Else (a is falsy, a = 0):
+          i. Inner conditional sequence:
+             - If x >= 2 and y >= 2:
+               * Subtract 2 from x.
+               * Subtract 2 from y.
+             - Else if x >= 1 and y >= 12:
+               * Subtract 1 from x.
+               * Subtract 12 from y.
+             - Else:
+               * Subtract 22 from y.
+
+     b. Toggle a:
+        - Set a to 1 - a.
+
+4. Determine output:
+   - Return 'Ciel' if a is 0, else return 'Hanako'.
+
+Input/Output Operations:
+- Input: Read a line of space-separated integers.
+- Output: Print the name of the winning player ('Ciel' or 'Hanako').
+
+Required Libraries:
+- No external libraries or modules required.
+```

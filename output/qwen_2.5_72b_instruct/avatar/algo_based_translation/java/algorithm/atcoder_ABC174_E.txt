@@ -1,0 +1,84 @@
+Function signatures:
+- main(String[] args) : void
+- solve(InputReader in, PrintWriter out) : void
+- nei(int mid, int[] logsLength, int k) : boolean
+- InputReader(InputStream stream) : void
+- next() : String
+- nextInt() : int
+- readArray(int n) : int[]
+
+Variable declarations and data types:
+- InputStream inputStream : InputStream
+- OutputStream outputStream : OutputStream
+- InputReader in : InputReader
+- PrintWriter out : PrintWriter
+- Solution sol : Solution
+- int n : int
+- int k : int
+- int[] logsLength : int[]
+- int min : int
+- int max : int
+- int mid : int
+- int log : int
+- int tokenizer : StringTokenizer
+- String[] args : String[]
+- BufferedReader reader : BufferedReader
+
+Logic flow in execution order:
+- main(String[] args)
+  - inputStream = System.in
+  - outputStream = System.out
+  - in = new InputReader(inputStream)
+  - out = new PrintWriter(outputStream)
+  - sol = new Solution()
+  - sol.solve(in, out)
+  - out.close()
+
+- solve(InputReader in, PrintWriter out)
+  - n = in.nextInt()
+  - k = in.nextInt()
+  - logsLength = in.readArray(n)
+  - min = 1
+  - max = (int) 1e9 + 1000
+  - while (min < max)
+    - mid = (min + max) / 2
+    - if (nei(mid, logsLength, k))
+      - max = mid
+    - else
+      - min = mid + 1
+  - out.println(min)
+
+- nei(int mid, int[] logsLength, int k)
+  - for (log : logsLength)
+    - k -= (log + mid - 1) / mid - 1
+  - return k >= 0
+
+- InputReader(InputStream stream)
+  - reader = new BufferedReader(new InputStreamReader(stream), 32768)
+  - tokenizer = null
+
+- next()
+  - while (tokenizer == null || !tokenizer.hasMoreTokens())
+    - try
+      - tokenizer = new StringTokenizer(reader.readLine())
+    - catch (IOException e)
+      - throw new RuntimeException(e)
+  - return tokenizer.nextToken()
+
+- nextInt()
+  - return Integer.parseInt(next())
+
+- readArray(int n)
+  - a = new int[n]
+  - for (i = 0; i < n; ++i)
+    - a[i] = nextInt()
+  - return a
+
+Libraries, modules, or dependencies:
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStream
+- java.io.InputStreamReader
+- java.io.OutputStream
+- java.io.PrintWriter
+- java.util.StringTokenizer

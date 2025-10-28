@@ -1,0 +1,35 @@
+```
+Algorithm codeforces_8_B
+
+Dependencies:
+- Import Scanner from java.util
+
+Variables:
+- Scanner scan: to read input
+- int i, j, x = 0, y = 0, k = 0, dx, dy: loop counters and coordinate variables
+- boolean flag = true: to track if a bug is detected
+- String s: to store the input string
+- char[] ch: character array of size 100 to store the moves
+- int[][] co: 2D integer array with dimensions [2][101] to store coordinates
+
+Procedure:
+1. Initialize Scanner object to read input
+2. Read a string s from input
+3. Convert string s to a character array ch
+4. Initialize starting coordinates (x, y) and store in co[0][k] and co[1][k], increment k
+5. Iterate over each character in string s from index 0 to s.length()-1
+   a. Switch on current character ch[i]
+      i. Case 'L': Decrement x
+      ii. Case 'R': Increment x
+      iii. Case 'U': Increment y
+      iv. Case 'D': Decrement y
+   b. Store updated coordinates (x, y) in co[0][k] and co[1][k], increment k
+6. Iterate i from 0 to k-3
+   a. Iterate j from i+3 to k
+      i. Calculate dx as the absolute difference between co[0][i] and co[0][j]
+      ii. Calculate dy as the absolute difference between co[1][i] and co[1][j]
+      iii. If (dx <= 1 and dy == 0) or (dy <= 1 and dx == 0), set flag to false and break inner loop
+   b. If flag is false, break outer loop
+7. If flag is true, print "OK"
+8. Else, print "BUG"
+```

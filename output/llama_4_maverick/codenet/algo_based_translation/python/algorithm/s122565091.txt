@@ -1,0 +1,12 @@
+1. Define a function `can_catch` with parameters `a`, `v`, `b`, `w`, and `t` of type integers and return type string.
+2. Read three lines of input: 
+   - First line: two integers `a` and `v` separated by space.
+   - Second line: two integers `b` and `w` separated by space.
+   - Third line: one integer `t`.
+3. Declare variables `a`, `v`, `b`, `w`, and `t` as integers.
+4. Check if `a` equals `b`. If true, return 'YES'.
+5. Check if `v` is less than or equal to `w`. If true, return 'NO'.
+6. Calculate the absolute difference between `a` and `b` divided by the difference between `v` and `w`.
+7. Check if `t` is less than the result from step 6. If true, return 'NO'. Otherwise, return 'YES'.
+8. The required input operations are reading three lines with specified formats.
+9. The required library is the built-in input/output functionality.

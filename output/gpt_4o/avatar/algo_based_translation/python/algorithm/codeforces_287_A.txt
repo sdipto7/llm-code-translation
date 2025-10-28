@@ -1,0 +1,49 @@
+1. Function Signature:
+   - `def check_pattern(t: List[List[str]]) -> str:`
+
+2. Variable Declarations:
+   - `t`: List of lists of strings, initialized as an empty list.
+   - `black`: Integer, initialized to 0.
+   - `white`: Integer, initialized to 0.
+   - `correct`: Integer, initialized to 0.
+   - `i`: Integer, used as a loop counter.
+   - `j`: Integer, used as a loop counter.
+
+3. Logic Flow:
+   - Initialize `t` as an empty list to store input grid.
+   - Loop from `i = 0` to `i = 3` (inclusive):
+     - Read a line of input, split it into characters, store as list `l`.
+     - Append list `l` to list `t`.
+   - Initialize `black`, `white`, and `correct` to 0.
+   - Loop from `i = 0` to `i = 2` (inclusive):
+     - Loop from `j = 0` to `j = 2` (inclusive):
+       - Check character at `t[i][j]`:
+         - If it is '#', increment `black` by 1.
+         - Else, increment `white` by 1.
+       - Check character at `t[i][j + 1]`:
+         - If it is '#', increment `black` by 1.
+         - Else, increment `white` by 1.
+       - Check character at `t[i + 1][j]`:
+         - If it is '#', increment `black` by 1.
+         - Else, increment `white` by 1.
+       - Check character at `t[i + 1][j + 1]`:
+         - If it is '#', increment `black` by 1.
+         - Else, increment `white` by 1.
+       - Check if any of the following conditions are true:
+         - `black == 0`
+         - `black == 3`
+         - `white == 0`
+         - `white == 3`
+         - `white == 4`
+         - `black == 4`
+       - If any condition is true, set `correct` to 1 and break the inner loop.
+       - Reset `black` and `white` to 0.
+   - If `correct` is 1, return 'YES'.
+   - Else, return 'NO'.
+
+4. Input/Output Operations:
+   - Input: Four lines of strings from standard input.
+   - Output: Print 'YES' or 'NO' based on the evaluation of the grid pattern.
+
+5. Required Libraries:
+   - None.

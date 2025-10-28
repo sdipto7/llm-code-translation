@@ -1,0 +1,33 @@
+**Algorithm:**
+
+- **Libraries/Dependencies:**
+  - java.util.Scanner
+
+- **Function Signatures:**
+  - `public static void main(String[] args)`
+
+- **Variables:**
+  - Scanner `scan` initialized with `System.in`
+  - int `a` (input)
+  - int `b` (input)
+  - int `c` (input)
+
+- **Input Operations:**
+  1. Read integer from standard input into `a`
+  2. Read integer from standard input into `b`
+  3. Read integer from standard input into `c`
+  4. Close `scan` after reading
+
+- **Logic Flow:**
+  1. Check if `a < b` AND `b < c` AND `a < c`
+    - **If true:** Print "Yes" to standard output
+    - **Else:** Print "No" to standard output
+
+- **Control Structures:**
+  - Single conditional block:
+    ```plaintext
+    if (a < b && b < c && a < c)
+        → Execute true branch
+    else
+        → Execute false branch
+    ```

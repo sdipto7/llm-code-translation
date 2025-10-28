@@ -1,0 +1,60 @@
+**Function Signatures:**
+- `Main(FastScanner in, PrintWriter out, int test)` (constructor)
+- `main(String[] args)` (static method)
+- `FastScanner(InputStream stream)` (constructor)
+- `read()` returns `int`
+- `isSpaceChar(int c)` returns `boolean`
+- `isEndline(int c)` returns `boolean`
+- `nextInt()` returns `int`
+- `nextLong()` returns `long`
+- `nextDouble()` returns `double`
+- `next()` returns `String`
+- `nextLine()` returns `String`
+
+**Variable Declarations:**
+- `int N`
+- `int[] A`
+- `long res`
+- `PriorityQueue<int[]> q`
+- `int a`
+- `int[] place`
+- `InputStream stream`
+- `byte[] buf = new byte[1024]`
+- `int curChar`
+- `int numChars`
+- `int c`
+- `StringBuilder res`
+
+**Logic Flow:**
+1. Read integer N from input
+2. Create integer array A of size N
+3. Read N integers into array A
+4. Sort array A in ascending order
+5. Initialize result variable res to 0
+6. Create priority queue q with comparator that compares minimum of two elements in reverse order
+7. Add array containing last element of A twice to queue
+8. For i from N-2 down to 0:
+   - Remove element from queue and store in place
+   - Add minimum of place[0] and place[1] to res
+   - Add new array {place[0], A[i]} to queue
+   - Add new array {A[i], place[1]} to queue
+9. Print res
+
+**Control Structures:**
+- For loop: `for (int i = N - 2; i >= 0; i--)`
+- While loop: `while (isSpaceChar(c))` and `do...while(!isSpaceChar(c))`
+- While loop: `while (isEndline(c))` and `do...while(!isEndline(c))`
+- If condition: `if (numChars == -1)`
+- If condition: `if (curChar >= numChars)`
+- If condition: `if (numChars <= 0)`
+
+**Input/Output Operations:**
+- Read integers from FastScanner
+- Write result to PrintWriter
+- Read bytes from InputStream
+- Parse integers/longs/doubles from strings
+- Build strings from character codes
+
+**Required Dependencies:**
+- java.util.* (Arrays, PriorityQueue, Comparator, InputMismatchException)
+- java.io.* (InputStream, IOException, PrintWriter)

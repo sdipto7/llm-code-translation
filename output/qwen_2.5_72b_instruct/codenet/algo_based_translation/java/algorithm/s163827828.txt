@@ -1,0 +1,33 @@
+Function Signature:
+- `main(String args[])` with no return type
+
+Variable Declarations:
+- `Scanner sc` to read input
+- `int N` to store the number of strings
+- `String s[]` to store the array of strings
+- `int a_num` to count strings ending with "A"
+- `int b_num` to count strings starting with "B"
+- `boolean flag` to check if all strings starting with "B" or ending with "A" have both
+- `int ans` to store the final answer
+
+Logic Flow:
+1. Initialize `sc` to read input
+2. Read `N` as the number of strings
+3. Initialize `s` as an array of strings of size `N`
+4. Initialize `a_num`, `b_num` to 0
+5. Initialize `flag` to true
+6. Initialize `ans` to 0
+7. Loop from `i = 0` to `N - 1`:
+   - Read `s[i]`
+   - If `s[i]` starts with "B", increment `b_num`
+   - If `s[i]` ends with "A", increment `a_num`
+   - If `s[i]` starts with "B" or ends with "A":
+     - If `s[i]` does not start with "B" and end with "A", set `flag` to false
+   - Loop from `j = 0` to `s[i].length() - 2`:
+     - If `s[i]` contains "AB" at position `j`, increment `ans`
+8. Add the minimum of `a_num` and `b_num` to `ans`
+9. If the minimum of `a_num` and `b_num` is not 0 and `flag` is true, decrement `ans`
+10. Print `ans`
+
+Libraries:
+- `java.util.*` for using `Scanner`

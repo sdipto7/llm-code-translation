@@ -1,0 +1,6 @@
+read two integers a and b from input
+if a equals b:
+    result = a + b
+else:
+    result = (maximum of a and b) * 2 - 1
+print result

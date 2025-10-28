@@ -1,0 +1,25 @@
+Function Signatures:
+- main(String[] args): void
+
+Variable Declarations and Data Types:
+- sc: Scanner
+- a: int
+- b: int
+- hb: int
+
+Logic Flow in Execution Order:
+1. Create a Scanner object named sc
+2. Read an integer input from sc and assign it to a
+3. Read an integer input from sc and assign it to b
+4. Calculate b divided by 2 and assign the result to hb
+5. Print the sum of a and hb
+
+Control Structures:
+- No loops or conditionals present
+
+Input/Output Operations and Data Processing Logic:
+- Input: Two integers from the standard input
+- Output: The sum of the first integer and half of the second integer (integer division)
+
+Required Libraries, Modules, or Dependencies:
+- java.util.Scanner

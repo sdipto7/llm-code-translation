@@ -1,0 +1,43 @@
+```
+Function main():
+    Declare InputStream inputStream as System.in
+    Declare OutputStream outputStream as System.out
+    Declare InputReader in initialized with inputStream
+    Declare PrintWriter out initialized with outputStream
+    Declare TaskB solver as new TaskB
+    Call solver.solve(1, in, out)
+    Call out.close()
+
+Class TaskB:
+    Function solve(testNumber: int, in: InputReader, out: PrintWriter):
+        Declare String x initialized with in.next()
+        Declare Stack<Character> s as new Stack
+        Declare int c initialized to 0
+        For int i from 0 to x.length() - 1:
+            Call s.push(x.charAt(i))
+            While s.size() > 1:
+                Declare Character p initialized with s.pop()
+                Declare Character q initialized with s.pop()
+                If (p == '1' and q == '0') or (p == '0' and q == '1'):
+                    Increment c by 1
+                    Continue
+                Else:
+                    Call s.push(q)
+                    Call s.push(p)
+                    Break
+        Call out.println(c * 2)
+
+Class InputReader:
+    Declare BufferedReader reader
+    Declare StringTokenizer tokenizer
+    Constructor InputReader(stream: InputStream):
+        Initialize reader as new BufferedReader with new InputStreamReader(stream) and buffer size 32768
+        Initialize tokenizer as null
+    Function next() -> String:
+        While tokenizer is null or not tokenizer.hasMoreTokens():
+            Try:
+                Initialize tokenizer with new StringTokenizer(reader.readLine())
+            Catch IOException e:
+                Throw new RuntimeException(e)
+        Return tokenizer.nextToken()
+```

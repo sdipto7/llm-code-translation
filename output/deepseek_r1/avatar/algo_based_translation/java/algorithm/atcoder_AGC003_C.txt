@@ -1,0 +1,44 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `N: int` (input size)
+- `map: HashMap<Integer, Integer>` (stores value-to-original-index mapping)
+- `nums: PriorityQueue<Integer>` (sorted elements)
+- `tmp: int` (temporary input value)
+- `bin: int` (parity tracker, initialized to 0)
+- `diff: int` (count of parity mismatches, initialized to 0)
+- `num: int` (current value from priority queue)
+- `idx: int` (original index of current value)
+- `ans: int` (final result)
+
+**Libraries/Dependencies:**
+- `java.util.Scanner`
+- `java.util.HashMap`
+- `java.util.PriorityQueue`
+
+**Logic Flow:**
+1. Read integer `N` from standard input.
+2. Initialize empty `HashMap<Integer, Integer>` and `PriorityQueue<Integer>`.
+3. For `i` from 0 to `N-1`:
+   - Read integer `tmp`
+   - Add `tmp` to `nums`
+   - Insert entry `(tmp → i)` in `map`
+4. While `nums` is not empty:
+   - Remove smallest element `num` from `nums`
+   - Retrieve original index `idx` using `map.get(num)`
+   - If `bin % 2 != idx % 2`:
+     - Increment `diff` by 1
+   - Increment `bin` by 1
+   - Set `bin = bin % 2`
+5. Compute `ans = diff / 2`
+6. Print `ans`
+
+**Control Structures:**
+- `for` loop with `i` iterating from 0 to `N-1`
+- `while` loop running until `nums` becomes empty
+- `if` condition checking parity mismatch between `bin` and `idx`
+
+**Input/Output Operations:**
+- Input: Read `N` and `N` integers via `Scanner`
+- Output: Print calculated `ans` using `System.out.println`

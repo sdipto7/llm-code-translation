@@ -1,0 +1,40 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner scanner`
+- `int N`
+- `String s`
+- `boolean flag`
+- `int ans`
+- `int hen`
+- `int sha`
+- `int dot`
+- `int temp`
+- `boolean first`
+
+Logic flow in execution order:
+1. Create a `Scanner` object for input.
+2. Read an integer `N` from the input.
+3. Skip the next line.
+4. Read a string `s` from the input.
+5. Initialize `flag` to `false`.
+6. Initialize `ans` to `0`.
+7. Initialize `hen` to `0`.
+8. Initialize `sha` to `0`.
+9. Initialize `dot` to `0`.
+10. Initialize `temp` to `0`.
+11. Initialize `first` to `true`.
+12. For each character in the string `s` from index `0` to `N-1`:
+    - If the character is `#`:
+        - Set `first` to `false`.
+        - If `sha` is less than or equal to `dot`:
+            - Add `sha` to `ans`.
+            - Reset `sha` to `0`.
+            - Reset `dot` to `0`.
+            - Set `first` to `true`.
+        - Increment `sha` by `1`.
+    - Else:
+        - Increment `dot` by `1`.
+13. After the loop:
+    - If `sha` is less than or equal to `dot`, add `sha` to `ans`.
+14. Print `ans + dot`.

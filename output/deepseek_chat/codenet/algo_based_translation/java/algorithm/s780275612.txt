@@ -1,0 +1,9 @@
+1. Import java.util.Scanner
+2. Define class Main with public static void main(String args[])
+3. Declare Scanner sc = new Scanner(System.in)
+4. Read integer input intA = sc.nextInt()
+5. Calculate dbAncer = Math.pow(intA, 3) (double result)
+6. Cast to integer: int intAncer = (int)dbAncer
+7. Print intAncer using System.out.println()
+8. End main method
+9. End class

@@ -1,0 +1,39 @@
+- **Function**: Main program (no explicit function, sequential execution)
+- **Input**:
+  - Read integer `n` from standard input
+  - Read `n` lines with 10 space-separated integers → list `F` of tuples
+  - Read `n` lines with 11 space-separated integers → list `P` of tuples
+- **Variables**:
+  - `n: int` (number of shops)
+  - `F: list[tuple[int, ...]]` (shop opening time indicators)
+  - `P: list[tuple[int, ...]]` (profit values per overlap count)
+  - `ans: int` (initialized to `-10**18`)
+  - `i: int` (bitmask loop variable, 1 ≤ i < 2^10)
+  - `tmp: int` (temporary profit accumulator)
+  - `lst: list[int]` (overlap counts per shop)
+  - `j: int` (time slot index, 0 ≤ j < 10)
+  - `k: int` (shop index, 0 ≤ k < n)
+- **Logic Flow**:
+  1. Initialize `ans` to a large negative value
+  2. Iterate `i` from 1 to 1023 (exclusive):
+     1. Reset `tmp` to 0
+     2. Initialize `lst` as a list of `n` zeros
+     3. Iterate `j` from 0 to 9:
+        1. Check if bit `j` is set in `i` (using `(i >> j) & 1`)
+        2. If true, iterate `k` from 0 to `n-1` and add `F[k][j]` to `lst[k]`
+     4. Iterate `k` from 0 to `n-1`:
+        1. Add `P[k][lst[k]]` to `tmp`
+     5. Update `ans` with `max(ans, tmp)`
+  3. Print `ans`
+- **Control Structures**:
+  - For-loop over `i` (bitmask)
+  - Nested for-loop over `j` (time slots)
+  - Conditional check for set bits in `i`
+  - Nested for-loop over `k` (shops) for updating `lst`
+  - For-loop over `k` (shops) for profit calculation
+- **Data Processing**:
+  - Bitmask iteration to generate all possible open/closed schedules
+  - Accumulate overlap counts per shop for each schedule
+  - Lookup profit values based on accumulated counts
+  - Track maximum profit across all schedules
+- **Dependencies**: None (uses standard input/output only)

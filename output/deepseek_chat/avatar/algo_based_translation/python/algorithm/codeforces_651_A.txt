@@ -1,0 +1,19 @@
+Read two integers x and y from input
+Compute result = max( (x + y - 3 + (1 if (y - x) % 3 > 0 else 0)), 0 )
+Print result
+
+Define function num_inp with no parameters that:
+    Reads input and converts to integer
+    Returns integer
+
+Define function arr_inp with no parameters that:
+    Reads input, splits into list of strings, converts each to integer
+    Returns list of integers
+
+Define function sp_inp with no parameters that:
+    Reads input, splits into list of strings, converts each to integer
+    Returns tuple of integers
+
+Define function str_inp with no parameters that:
+    Reads input
+    Returns string

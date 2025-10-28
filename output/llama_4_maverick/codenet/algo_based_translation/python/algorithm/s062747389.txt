@@ -1,0 +1,20 @@
+1. Define a function `calculate_result` with return type `int` and no parameters.
+2. Declare variables `a` and `b` of type `int`.
+3. Read input from the user using `input().split()` and store the result in a list of strings.
+4. Use `map(int, ...)` to convert the list of strings into a list of integers and unpack it into `a` and `b`.
+5. Evaluate the condition `a == b`.
+6. If `a == b` is true, calculate `a + b`.
+7. If `a == b` is false, calculate `max(a, b) * 2 - 1`.
+8. Print the result of the calculation.
+9. The program terminates after printing the result.
+
+Alternatively, a more structured representation:
+- Function: `main` or entry point, no parameters, return type `None`
+  1. Declare `a` and `b` as `int`.
+  2. Read two integers from input into `a` and `b`.
+  3. If `a == b`, then result = `a + b`.
+  4. Else, result = `max(a, b) * 2 - 1`.
+  5. Print result.
+
+Required libraries: built-in Python libraries (`input`, `print`, `map`, `max`) 
+No explicit imports are required.

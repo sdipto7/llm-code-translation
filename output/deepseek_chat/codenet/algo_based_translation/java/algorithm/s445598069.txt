@@ -1,0 +1,37 @@
+**Function Signature:**
+- main(String[] args) throws IOException
+
+**Variables:**
+- BufferedReader br
+- int n
+- String[] str
+- int[] s (size 100010)
+- int dec
+- int one
+- int two
+
+**Libraries/Dependencies:**
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader
+
+**Algorithm:**
+
+1. Initialize BufferedReader with System.in
+2. Read integer n from input
+3. Read next line, split by spaces into string array str
+4. Create integer array s of size 100010 initialized to zeros
+5. For i from 0 to n-1:
+   - Convert str[i] to integer
+   - Increment s[converted_value] by 1
+6. Initialize dec to 0
+7. For i from 0 to length(s)-1:
+   - If s[i] != 0:
+     - If s[i] % 2 == 0: set s[i] = 2
+     - Else: set s[i] = 1
+8. Initialize one = 0, two = 0
+9. For i from 0 to length(s)-1:
+   - If s[i] == 2: increment two by 1
+   - Else if s[i] == 1: increment one by 1
+10. If two % 2 != 0: decrement one by 1
+11. Print (two + one)

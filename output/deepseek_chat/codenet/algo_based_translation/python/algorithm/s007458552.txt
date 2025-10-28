@@ -1,0 +1,32 @@
+**Function Signatures:**
+- main() -> str
+- II() -> int
+- SI() -> str
+- LI() -> List[int]
+- LI_() -> List[int]
+- LS() -> List[str]
+
+**Variables:**
+- n: int (number of characters)
+- S: str (input string)
+- C: Counter (character frequency counter)
+
+**Execution Flow:**
+1. Import sys, Counter, defaultdict
+2. Define constants INF = float('inf'), MOD = 1000000007
+3. Read integer n using II()
+4. Read string S using SI()
+5. Count character frequencies in S using Counter(S)
+6. Compare count of 'R' characters with (n - count of 'R')
+7. Return 'Yes' if C['R'] > n - C['R'], else return 'No'
+8. Print result of main()
+
+**Helper Functions:**
+- II(): reads integer from stdin
+- SI(): reads string from stdin
+- LI(): reads list of integers from stdin
+- LI_(): reads list of integers from stdin and decrements each by 1
+- LS(): reads list of strings from stdin
+
+**Control Structures:**
+- Single conditional: if C['R'] > n - C['R']

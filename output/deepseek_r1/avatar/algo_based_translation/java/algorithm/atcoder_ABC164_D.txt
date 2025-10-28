@@ -1,0 +1,39 @@
+- **Function Signature**:  
+  - `main(String[] args) : void`  
+
+- **Variables**:  
+  - `Scanner sc` (input reader)  
+  - `String S` (input string)  
+  - `int N` (length of `S`)  
+  - `int[] mod_arr` (size `N`, stores modulo-2019 remainders)  
+  - `int[] mod_cnt` (size 2019, counts occurrences of each remainder)  
+  - `int radix` (initialized to 1, tracks power of 10 modulo 2019)  
+  - `long ans` (initialized to 0, stores final result)  
+
+- **Execution Flow**:  
+  1. Read `S` using `sc.next()`.  
+  2. Compute `N = S.length()`.  
+  3. Initialize `mod_arr` and `mod_cnt` with zeros.  
+  4. Loop over `i` from `0` to `N-1` (inclusive):  
+     a. Extract digit `d = (S.charAt(N-1-i) - '0')`.  
+     b. Compute `tmp = (d * radix) % 2019`.  
+     c. If `i ≠ 0`, update `tmp = (tmp + mod_arr[i-1]) % 2019`.  
+     d. Store `mod_arr[i] = tmp`.  
+     e. Increment `mod_cnt[tmp]` by 1.  
+     f. Update `radix = (radix * 10) % 2019`.  
+  5. After the loop, increment `mod_cnt[0]` by 1.  
+  6. Loop over all indices `i` in `mod_cnt` (0 ≤ `i` ≤ 2018):  
+     a. Add `mod_cnt[i] * (mod_cnt[i] - 1) / 2` to `ans`.  
+  7. Print `ans`.  
+
+- **Control Structures**:  
+  - `for` loop: Iterates over each character of `S` (index `0` to `N-1`).  
+  - `if` condition: Checks if `i ≠ 0` to include prior remainder in `tmp`.  
+  - `for` loop: Aggregates results from `mod_cnt` into `ans`.  
+
+- **Input/Output**:  
+  - Input: Read string `S` via `Scanner`.  
+  - Output: Print `ans` representing the count of valid substrings.  
+
+- **Dependencies**:  
+  - `java.util.Scanner` for input handling.

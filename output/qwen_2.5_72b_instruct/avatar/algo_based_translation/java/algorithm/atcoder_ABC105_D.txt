@@ -1,0 +1,50 @@
+- Function signature: `main(String[] args)` with no return type
+  - Variable declarations: 
+    - `InputStream inputStream` initialized with `System.in`
+    - `OutputStream outputStream` initialized with `System.out`
+    - `InputReader in` initialized with `inputStream`
+    - `PrintWriter out` initialized with `outputStream`
+    - `TaskD solver` initialized with a new `TaskD` instance
+  - Logic flow:
+    - Call `solver.solve(1, in, out)`
+    - Call `out.close()`
+
+- Function signature: `solve(int testNumber, InputReader in, PrintWriter out)` in `TaskD` class with no return type
+  - Variable declarations:
+    - `int n` initialized with `in.nextInt()`
+    - `int m` initialized with `in.nextInt()`
+    - `int[] a` initialized with `in.nextIntArray(n)`
+    - `HashMap<Integer, Integer> dp` initialized with a new `HashMap`
+    - `long ans` initialized with `0`
+    - `int base` initialized with `0`
+  - Logic flow:
+    - For loop from `i = 0` to `i < n`
+      - Update `base` as `(base - a[i] % m + m) % m`
+      - Call `dp.merge((base + a[i]) % m, 1, Integer::sum)`
+      - Update `ans` as `ans + dp.getOrDefault(base, 0)`
+    - Call `out.println(ans)`
+
+- Function signature: `InputReader(InputStream inputStream)` with no return type in `InputReader` class
+  - Variable declarations:
+    - `BufferedReader br` initialized with `new BufferedReader(new InputStreamReader(inputStream))`
+    - `StringTokenizer st` initialized with `new StringTokenizer("")`
+
+- Function signature: `nextString()` in `InputReader` class with return type `String`
+  - Logic flow:
+    - While `!st.hasMoreTokens()`
+      - Try
+        - Update `st` with `new StringTokenizer(br.readLine(), " ")`
+      - Catch `IOException`
+        - Throw `new InputMismatchException()`
+    - Return `st.nextToken()`
+
+- Function signature: `nextInt()` in `InputReader` class with return type `int`
+  - Return `Integer.parseInt(nextString())`
+
+- Function signature: `nextIntArray(int n)` in `InputReader` class with return type `int[]`
+  - Variable declarations:
+    - `int[] res` initialized with `new int[n]`
+  - Logic flow:
+    - For loop from `i = 0` to `i < n`
+      - Update `res[i]` with `nextInt()`
+    - Return `res`

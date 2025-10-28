@@ -1,0 +1,27 @@
+```
+Algorithm Codeforces617B
+  Input: An integer n followed by n integers
+  
+  Function main() -> void
+    Declare input as Scanner initialized with System input
+    Declare n as Integer
+    Set n to the next integer from input
+    Declare arr as List of Integer
+    Initialize arr as an empty ArrayList
+    
+    For each integer i from 0 to n-1 (inclusive)
+      If the next integer from input equals 1
+        Add i to arr
+    
+    If arr is empty
+      Output 0
+    Else
+      Declare result as Long
+      Set result to 1
+      
+      For each integer i from 1 to the size of arr - 1 (inclusive)
+        Set result to result multiplied by (arr[i] - arr[i - 1])
+      
+      Output result
+```
+

@@ -1,0 +1,43 @@
+**Algorithm Specification:**
+
+**Function/Method Signatures:**
+- Function: `calculate_total_absolute_difference()`
+  - Parameters:
+    - `n: int` (number of elements)
+    - `r: list[int]` (list of integers)
+  - Return Type: `int`
+
+**Variable Declarations:**
+- `n: int` (stores the number of elements)
+- `r: list[int]` (stores the list of integers)
+- `ans: int` (accumulates the total absolute difference)
+- `i: int` (loop iteration variable)
+
+**Logic Flow:**
+1. Read `n` from standard input as integer.
+2. Read a line from standard input, split into tokens, convert each to integer, and store in list `r`.
+3. Initialize `ans` to the absolute value of the first element in `r` (`abs(r[0])`).
+4. Iterate through indices `i` from `1` to `n - 1` (inclusive):
+   1. Compute the difference between `r[i]` and `r[i - 1]`.
+   2. Add the absolute value of this difference to `ans`.
+5. Output `ans` to standard input.
+
+**Control Flow Structures:**
+- Loop: `for i in range(1, n)`
+  - Exit Criteria: Loop terminates when `i` reaches `n` (exclusive upper bound).
+
+**Input/Output Operations:**
+- Input: 
+  - First input line parsed as integer `n`.
+  - Second input line split into integers and stored in `r`.
+- Output: 
+  - Final value of `ans` printed to standard output.
+
+**Error Handling & Edge Cases:**
+- Assumes valid input format (exactly `n` integers provided after `n` is read).
+- Implicitly assumes `n ≥ 1` (to avoid `r[0]` index error).
+- No explicit error handling for invalid/missing inputs.
+
+**External Dependencies:**
+- Uses built-in functions: `input()`, `map()`, `int()`, `split()`, `abs()`, `print()`.
+- No external libraries or modules required.

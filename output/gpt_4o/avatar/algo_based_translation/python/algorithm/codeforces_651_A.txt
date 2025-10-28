@@ -1,0 +1,24 @@
+1. Function Signatures:
+   - `num_inp() -> int`
+   - `arr_inp() -> List[int]`
+   - `sp_inp() -> Tuple[int, ...]`
+   - `str_inp() -> str`
+
+2. Variable Declarations and Data Types:
+   - `x: int`
+   - `y: int`
+
+3. Logic Flow:
+   - Read two integers from input and assign them to `x` and `y`.
+   - Calculate the value of `x + y - 3`.
+   - Determine if `(y - x) % 3` is greater than 0. If true, add 1 to the previous calculation.
+   - Compute the maximum of the calculated value and 0.
+   - Print the result.
+
+4. Input/Output Operations and Data Processing Logic:
+   - Use `input()` to read a line of input.
+   - Use `map(int, input().split())` to convert the input into two integers `x` and `y`.
+   - Print the result using `print()`.
+
+5. Required Libraries, Modules, or Dependencies:
+   - No external libraries or modules are required.

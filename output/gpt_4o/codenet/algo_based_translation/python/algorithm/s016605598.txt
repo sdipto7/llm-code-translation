@@ -1,0 +1,56 @@
+```plaintext
+import heapq
+
+Function process_queries() -> None:
+    Declare const: int = 0
+    Declare left: List[int] = []
+    Declare right: List[int] = []
+    Read q: int from input
+    Declare cnt: int = 0
+    Declare left_sum: int = 0
+    Declare right_sum: int = 0
+
+    For each _ in range(0, q):
+        Read t: List[int] from input and split into integers
+        If t[0] is equal to 1:
+            Assign a, b from t[1], t[2]
+            Increment const by b
+            If cnt modulo 2 is equal to 0:
+                If right is empty:
+                    Push -a onto left using heapq
+                    Increment left_sum by a
+                    Increment cnt by 1
+                    Continue to next iteration of the loop
+
+                Assign c from heapq.heappop(right)
+                Decrement right_sum by c
+                If a is less than or equal to c:
+                    Push -a onto left using heapq
+                    Push c onto right using heapq
+                    Increment left_sum by a
+                    Increment right_sum by c
+                Else:
+                    Push -c onto left using heapq
+                    Push a onto right using heapq
+                    Increment left_sum by c
+                    Increment right_sum by a
+            Else:
+                Assign c from heapq.heappop(left)
+                Increment left_sum by c
+                If a is less than or equal to -c:
+                    Push -a onto left using heapq
+                    Push -c onto right using heapq
+                    Increment left_sum by a
+                    Decrement right_sum by c
+                Else:
+                    Push c onto left using heapq
+                    Push a onto right using heapq
+                    Decrement left_sum by c
+                    Increment right_sum by a
+            Increment cnt by 1
+        Else:
+            Assign tmp from -left[0]
+            Print tmp, const - left_sum + right_sum + tmp * (cnt modulo 2)
+
+```
+

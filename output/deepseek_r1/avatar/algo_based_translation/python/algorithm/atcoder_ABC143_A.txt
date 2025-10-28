@@ -1,0 +1,46 @@
+ALGORITHM SPECIFICATION:
+
+FUNCTIONAL COMPONENTS:
+1. Main execution flow (script-like)
+
+VARIABLES:
+- A: integer (input)
+- B: integer (input)
+- ans: integer (computed result)
+
+DATA TYPES:
+- All variables: integer
+
+FUNCTION/METHOD SIGNATURES:
+- None (procedural script)
+
+LOGIC FLOW:
+1. Read input line from standard input
+2. Split input into two string tokens using space separator
+3. Convert tokens to integers A and B
+4. Calculate initial result: ans = A - (2 * B)
+5. Apply non-negative clamp:
+   5.1. IF ans < 0:
+       5.1.1. SET ans = 0
+6. Output final ans to standard output
+
+CONTROL STRUCTURES:
+- Single conditional:
+   - Condition: ans < 0
+   - Execution block: ans assignment to 0
+   - Exit criteria: Always proceeds after assignment
+
+INPUT/OUTPUT:
+- Input: Single line from stdin containing two space-separated integers
+- Output: Single integer printed to stdout
+
+EDGE CASE HANDLING:
+- Explicit check for negative result (step 5.1) ensures output is never negative
+
+ERROR HANDLING:
+- Implicit: Input parsing assumes valid integer inputs
+
+EXTERNAL DEPENDENCIES:
+- Standard input/output facilities
+- String manipulation for input splitting
+- Type conversion functions (string to integer)

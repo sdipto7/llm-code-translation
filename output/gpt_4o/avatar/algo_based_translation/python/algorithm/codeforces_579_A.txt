@@ -1,0 +1,10 @@
+```
+Algorithm:
+- Import the math module for mathematical operations.
+- Declare an integer variable `n` and assign it the integer value from user input.
+- Declare an integer variable `x` and initialize it to 1.
+- While the logarithm base 2 of `n` is not an integer (i.e., `math.log2(n) % 1` is not zero):
+  - Increment the variable `x` by 1.
+  - Subtract `2` raised to the power of the integer part of the logarithm base 2 of `n` from `n`.
+- Print the value of `x`.
+```

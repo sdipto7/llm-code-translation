@@ -1,0 +1,9 @@
+1. Read the input integers n and m.
+2. Read an array a of n integers.
+3. Initialize a HashMap dp to store the count of prefix sums modulo m.
+4. Initialize a variable base to 0 and a variable ans to 0.
+5. Iterate over the array a from index 0 to n-1.
+6. For each element a[i], update base to (base - a[i] % m + m) % m.
+7. Merge the count of (base + a[i]) % m into dp, incrementing its count by 1 if it exists, or setting it to 1 if it does not exist.
+8. Add the count of base in dp to ans.
+9. After iterating over the entire array, output the value of ans.

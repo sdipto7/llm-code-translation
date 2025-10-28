@@ -1,0 +1,14 @@
+Read input line, split by space
+Parse first token as integer n
+Parse second token as integer, convert to double d
+Initialize integer cnt to 0
+
+For i from 0 to n-1:
+    Read input line, split by space
+    Parse first token as integer, convert to double x
+    Parse second token as integer, convert to double y
+    Calculate sqrt(x*x + y*y)
+    If result <= d:
+        Increment cnt by 1
+
+Print cnt

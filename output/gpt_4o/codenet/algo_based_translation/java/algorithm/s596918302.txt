@@ -1,0 +1,42 @@
+```
+- Import the `java.util.*` package
+- Define a public class `Main`
+- Define a public static method `main` with parameter `args` of type `String[]`
+  - Declare a `Scanner` object `sc` initialized to new `Scanner(System.in)`
+  - Read an integer `n` using `sc.nextInt()`
+  - Declare a 2D integer array `arr` with dimensions `n x 3`
+  - Iterate over `i` from 0 to `n-1`
+    - Iterate over `j` from 0 to 2
+      - Assign `arr[i][j]` with `sc.nextInt()`
+  - Declare an integer `ans`
+  - Assign `ans` the result of calling `dpx` method with parameters `arr` and `n`
+  - Print the value of `ans`
+
+- Define a static method `min` with parameters `arr` of type `int[]` and `n` of type `int`, returning `int`
+  - If `n` equals 1, return 0
+  - If `n` equals 2, return the absolute difference between `arr[n-1]` and `arr[n-2]`
+  - Declare an integer `op1` as the sum of the absolute difference between `arr[n-1]` and `arr[n-2]` plus the result of calling `min` with parameters `arr` and `n-1`
+  - Declare an integer `op2` as the sum of the absolute difference between `arr[n-1]` and `arr[n-3]` plus the result of calling `min` with parameters `arr` and `n-2`
+  - Declare an integer `res` as the minimum of `op1` and `op2`
+  - Return `res`
+
+- Define a static method `dpc` with parameters `arr` of type `int[][]`, `i` of type `int`, `n` of type `int`, and `row` of type `int`, returning `int`
+  - If `row` equals `n`, return 0
+  - Declare integers `j` and `k`
+  - If `i` equals 1, assign `j` to 0 and `k` to 2
+  - Else if `i` equals 0, assign `j` to 1 and `k` to 2
+  - Else, assign `j` to 0 and `k` to 1
+  - Return the sum of `arr[row][i]` and the maximum of `dpc` called with parameters `arr`, `j`, `n`, and `row+1` and `dpc` called with parameters `arr`, `k`, `n`, and `row+1`
+
+- Define a static method `dpx` with parameters `arr` of type `int[][]` and `n` of type `int`, returning `int`
+  - Declare a 2D integer array `dp` with dimensions `n x 3`
+  - Assign `dp[0][0]` to `arr[0][0]`, `dp[0][1]` to `arr[0][1]`, and `dp[0][2]` to `arr[0][2]`
+  - Iterate over `i` from 1 to `n-1`
+    - Iterate over `in` from 0 to 2
+      - Declare integers `j` and `k`
+      - If `in` equals 1, assign `j` to 0 and `k` to 2
+      - Else if `in` equals 0, assign `j` to 1 and `k` to 2
+      - Else, assign `j` to 0 and `k` to 1
+      - Assign `dp[i][in]` the sum of the maximum of `dp[i-1][k]` and `dp[i-1][j]` and `arr[i][in]`
+  - Return the maximum of `dp[n-1][0]`, `dp[n-1][1]`, and `dp[n-1][2]`
+```

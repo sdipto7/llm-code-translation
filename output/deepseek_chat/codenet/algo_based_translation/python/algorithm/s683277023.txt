@@ -1,0 +1,19 @@
+1. Read two integers `n` and `k` from standard input
+2. Read a list of `n` integers from standard input
+3. Sort the list in ascending order
+4. Create a sublist containing the first `k` elements from the sorted list
+5. Calculate the sum of all elements in the sublist
+6. Print the sum
+
+Function signature: main() -> None (no explicit function, but implied entry point)
+Variables:
+- n: int
+- k: int  
+- li: List[int]
+- tmp: List[int]
+
+No explicit control structures (no loops or conditionals)
+No external libraries required beyond basic input/output and list operations
+Input operations: input(), split(), map(), int()
+Output operation: print()
+Data processing: list(), sort(), slicing [start:end], sum()

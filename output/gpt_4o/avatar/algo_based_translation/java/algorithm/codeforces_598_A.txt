@@ -1,0 +1,24 @@
+1. Import the `java.util.Scanner` class for input operations.
+
+2. Define the main method with the signature: `public static void main(String[] args)`.
+
+3. Create a `Scanner` object named `sc` to read input from the standard input.
+
+4. Read an integer `q` from the input using `sc.nextInt()` which represents the number of test cases.
+
+5. Enter a loop that runs `q` times, using the condition `while (q-- > 0)`:
+
+   a. Inside the loop, read an integer `n` from the input using `sc.nextInt()`.
+
+   b. Declare a long integer variable `s` and initialize it to 0.
+
+   c. Calculate the integer `x` using the expression `(int)(Math.log(n) / Math.log(2))` which computes the floor of the base-2 logarithm of `n`.
+
+   d. Increment `x` by 1, i.e., `x++`.
+
+   e. Calculate the sum `s` using the formula:
+      - `s = -1 * (long)Math.pow(2, x) + 2 + ((long)n * (long)(n + 1)) / 2 - (long)Math.pow(2, x)`
+
+   f. Output the result `s` using `System.out.println(s)`.
+
+6. End the main method.

@@ -1,0 +1,73 @@
+**Function Signature:**
+main(String[] args)
+
+**Parameters:**
+- String[] args: Command line arguments
+
+**Return Type:**
+void
+
+**Variables:**
+- Scanner sc: Scanner object for input
+- int n: First input integer
+- int m: Second input integer
+- int x: Third input integer
+- int min: Initialized to Integer.MAX_VALUE
+- int[][] a: 2D array with dimensions n × (m+1)
+- int i: Loop counter
+- int j: Loop counter
+- int k: Loop counter
+- int[] status: Array of length n
+- int[] res: Array of length m+1
+- boolean flag: Boolean flag
+
+**Logic Flow:**
+1. Initialize Scanner with System.in
+2. Read integers n, m, x from input
+3. Initialize min to maximum integer value
+4. Create 2D array a with dimensions n × (m+1)
+5. For i from 0 to n-1:
+   - For j from 0 to m:
+     - Read integer into a[i][j]
+6. For i from 0 to (2^n)-1:
+   - Initialize status array of length n with zeros
+   - For j from 0 to n-1:
+     - If ((1 & (i >> j)) == 1:
+       - Set status[j] = 1
+   - Initialize res array of length m+1 with zeros
+   - For j from 0 to n-1:
+     - If status[j] == 1:
+       - For k from 0 to m:
+         - Add a[j][k] to res[k]
+   - Set flag = true
+   - For j from 1 to m:
+     - If res[j] < x:
+       - Set flag = false
+       - Break loop
+   - If flag is true:
+     - Set min = minimum of min and res[0]
+7. If min equals Integer.MAX_VALUE:
+   - Print -1
+8. Else:
+   - Print min
+
+**Control Structures:**
+- For loop: for (int i = 0; i < n; i++)
+- For loop: for (int j = 0; j <= m; j++)
+- For loop: for (int i = 0; i < Math.pow(2, n); i++)
+- For loop: for (int j = 0; j < n; j++)
+- Conditional: if ((1 & i >> j) == 1)
+- For loop: for (int j = 0; j < n; j++)
+- Conditional: if (status[j] == 1)
+- For loop: for (int k = 0; k <= m; k++)
+- For loop: for (int j = 1; j <= m; j++)
+- Conditional: if (res[j] < x)
+- Conditional: if (flag)
+- Conditional: if (min == Integer.MAX_VALUE)
+
+**Input/Output Operations:**
+- Scanner.nextInt() for reading integers
+- System.out.println() for output
+
+**Required Libraries:**
+- java.util.Scanner

@@ -1,0 +1,35 @@
+**Algorithm Extraction:**
+
+1. Import math module functions: atan2, pi
+2. Read all input from stdin:
+   - First token as integer N
+   - Remaining tokens as list of integers XY
+3. Reshape XY into list of tuples: [(x1,y1), (x2,y2), ..., (xn,yn)]
+4. For each point i with coordinates (x,y) in XY:
+   a. Create list D containing angles (in radians) between current point i and all other points j (j ≠ i)
+     - Angle calculated as atan2(X-x, Y-y) where (X,Y) are coordinates of point j
+   b. Sort D in ascending order
+   c. Append first angle from D plus 2π to D (to handle circular nature)
+   d. Initialize ans = 0
+   e. For each consecutive angle pair (a,b) in D:
+        If difference b - a ≥ π:
+            Set ans = (b - a) - π
+   f. Print ans / (2π)
+
+**Data Types:**
+- N: int
+- XY: List[int] initially, then List[Tuple[int, int]]
+- D: List[float] (angles in radians)
+- x, y, X, Y: int
+- i, j: int (indices)
+- a, b: float (angles)
+- ans: float
+
+**Control Structures:**
+- For loop iterating over points (index i)
+- For loop iterating over angle pairs in D
+- Conditional check: if (b - a) ≥ π
+
+**Dependencies:**
+- math.atan2
+- math.pi

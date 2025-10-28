@@ -1,0 +1,21 @@
+1. Import Scanner and regex classes
+2. Declare main method with String[] args parameter
+3. Create Scanner object reading from System.in
+4. Read integer input for array size, create int array 'num' with that size
+5. For loop: i from 0 to num.length-1
+   - Set num[i] = i + 1
+6. Read integer input 'count' for number of swap operations
+7. Create Pattern object with regex "(\\d+),(\\d+)"
+8. Create int array 'line' of size 2
+9. For loop: i from 0 to count-1
+   - Read next input string matching pattern
+   - For loop: j from 0 to line.length-1
+     - Create Matcher object with pattern and input string
+     - Call matches() method
+     - Set line[j] = Integer.parseInt(matcher.group(j+1)) - 1
+   - Create temporary variable 'change' = num[line[0]]
+   - Set num[line[0]] = num[line[1]]
+   - Set num[line[1]] = change
+10. For loop: i from 0 to num.length-1
+    - Print num[i] followed by newline
+11. End main method

@@ -1,0 +1,24 @@
+**Function Signature:**
+- main(String[] args): void
+
+**Variables:**
+- BufferedReader bf: BufferedReader
+- String[] x: String array
+- int a: integer
+- int b: integer
+- int c: integer
+
+**Libraries/Imports:**
+- java.io.BufferedReader
+- java.io.InputStreamReader
+- java.util.Scanner
+
+**Algorithm:**
+1. Create BufferedReader instance reading from System.in
+2. Read input line, trim whitespace, split by space into string array x
+3. Parse first array element to integer a
+4. Parse second array element to integer b
+5. Calculate c = a - (b * 2)
+6. If c < 0 then set c = 0
+7. Print value of c
+8. Catch any exceptions silently

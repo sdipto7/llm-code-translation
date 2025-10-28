@@ -1,0 +1,19 @@
+1. READ n
+2. READ number as a list of integers
+3. INITIALIZE h1 = 0
+4. INITIALIZE h2 = 0
+5. INITIALIZE x = 0
+6. FOR i FROM 0 TO n-1
+7.     IF number[i] NOT EQUAL TO 4 AND number[i] NOT EQUAL TO 7
+8.         PRINT "NO"
+9.         INCREMENT x BY 1
+10.        BREAK LOOP
+11.    IF i LESS THAN n/2
+12.        ADD number[i] TO h1
+13.    ELSE
+14.        ADD number[i] TO h2
+15. IF x EQUAL TO 0
+16.     IF h1 EQUAL TO h2
+17.         PRINT "YES"
+18.     ELSE
+19.         PRINT "NO"

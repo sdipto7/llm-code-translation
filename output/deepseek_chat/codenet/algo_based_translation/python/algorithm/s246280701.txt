@@ -1,0 +1,12 @@
+1. Read integer `n` from input.
+2. Read list `x` of `n` integers from input.
+3. Initialize variable `ans` to 10000000000 (10^10).
+4. For integer `i` from 0 to 100 inclusive:
+   a. Initialize list `tmp` as empty.
+   b. For integer `j` from 0 to `n-1`:
+      - Compute `abs(i - x[j])^2`
+      - Append result to `tmp`
+   c. Compute `sum_tmp` as sum of all elements in `tmp`
+   d. If `sum_tmp` < `ans`:
+      - Set `ans` = `sum_tmp`
+5. Print `ans`

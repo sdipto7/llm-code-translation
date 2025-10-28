@@ -1,0 +1,38 @@
+```
+- Import necessary libraries:
+  - Scanner from java.util
+  - Arrays from java.util
+
+- Define function `power` with parameter `(a: Long)` returning `int`:
+  - Initialize `res` as `0`
+  - While `a > 0`:
+    - Increment `res` by `1`
+    - Update `a` as `a / 10`
+  - Return `res`
+
+- Define function `mult` with parameter `(a: Long)` returning `long`:
+  - Initialize `pow` as `power(a)`
+  - Initialize `max` as `0`
+  - For `j` from `0` to `pow` (exclusive):
+    - Update `max` as `max * 10 + 9`
+  - Return `a * (max - a)`
+
+- Define `main` function with parameter `(args: String[])`:
+  - Create `Scanner` object `in` for standard input
+  - Read long input `l` using `in.nextLong()`
+  - Read long input `r` using `in.nextLong()`
+  - Initialize `res` as `0`
+  - Declare `maxxes` as a long array of size `10`
+  - Initialize `temp` as `0`
+  - For `i` from `0` to `10` (exclusive):
+    - Update `temp` as `temp * 10 + 9`
+    - Assign `maxxes[i]` as `temp / 2 * (temp - temp / 2)`
+  - Update `res` as `Math.max(mult(l), res)`
+  - Update `res` as `Math.max(mult(r), res)`
+  - Reinitialize `temp` as `0`
+  - For `i` from `0` to `10` (exclusive):
+    - Update `temp` as `temp * 10 + 9`
+    - If `l <= temp / 2` and `temp / 2 <= r`:
+      - Update `res` as `Math.max(maxxes[i], res)`
+  - Print `res` using `System.out.println(res)`
+```

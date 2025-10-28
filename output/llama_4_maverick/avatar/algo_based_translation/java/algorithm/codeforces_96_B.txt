@@ -1,0 +1,13 @@
+1. Initialize a Scanner object to read from the standard input.
+2. Read a long integer number from the input.
+3. Initialize a variable ans to -1 and a variable value to 0.
+4. Initialize a variable mask to 2.
+5. Enter a while loop that continues as long as value is less than number.
+6. Within the loop, convert the current value of mask to a binary string, remove the first character, and store it in s.
+7. Increment mask by 1.
+8. Count the number of zeros in s.
+9. Check if the count of zeros is equal to the count of ones in s; if not, skip to the next iteration.
+10. Replace all occurrences of '0' with '4' in s.
+11. Replace all occurrences of '1' with '7' in s.
+12. Parse the modified string s into a long integer and store it in value.
+13. Once the loop exits, output the value of value.

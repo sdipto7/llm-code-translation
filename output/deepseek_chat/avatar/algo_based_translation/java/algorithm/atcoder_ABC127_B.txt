@@ -1,0 +1,87 @@
+**Function Signatures:**
+- `main(String[] args)`
+- `SimpleScanner(InputStream in)`
+- `read() : char`
+- `checkEof() : void`
+- `nextChar() : char`
+- `next() : String`
+- `nextInt() : int`
+- `nextLong() : long`
+- `nextDouble() : double`
+
+**Variable Declarations:**
+- `scanner: SimpleScanner`
+- `writer: PrintWriter`
+- `r: int`
+- `d: int`
+- `x: long`
+- `i: int`
+- `in: Readable`
+- `buffer: CharBuffer`
+- `eof: boolean`
+- `n: int`
+- `b: char`
+- `sb: StringBuilder`
+
+**Logic Flow:**
+1. Create SimpleScanner from System.in
+2. Create PrintWriter from System.out
+3. Read integer r
+4. Read integer d
+5. Read long x
+6. For i from 0 to 9:
+   - x = r * x - d
+   - Print x
+7. Close writer
+8. SimpleScanner constructor:
+   - Initialize in as BufferedReader wrapping InputStreamReader
+   - Allocate CharBuffer of size 10240
+   - Set buffer limit to 0
+   - Set eof to false
+9. read():
+   - If buffer has no remaining characters:
+     - Clear buffer
+     - Try to read from input stream into buffer
+     - If read result <= 0, set eof true and return null char
+     - Flip buffer
+   - Return next character from buffer
+10. checkEof():
+    - If eof true, throw NoSuchElementException
+11. nextChar():
+    - Call checkEof()
+    - Call read() and store in b
+    - Call checkEof()
+    - Return b
+12. next():
+    - Do:
+      - Call read() to b
+      - Call checkEof()
+    - While b is whitespace
+    - Create StringBuilder sb
+    - Do:
+      - Append b to sb
+      - Call read() to b
+    - While not eof and b not whitespace
+    - Return sb.toString()
+13. nextInt():
+    - Return Integer.valueOf(next())
+14. nextLong():
+    - Return Long.valueOf(next())
+15. nextDouble():
+    - Return Double.parseDouble(next())
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < 10; ++i)`
+- If condition: `if (!buffer.hasRemaining())`
+- Do-while loops in next() method
+- Exception throwing in checkEof()
+
+**Input/Output Operations:**
+- Reading from System.in through custom scanner
+- Writing to System.out through PrintWriter
+- Buffer management for efficient reading
+
+**Required Libraries:**
+- java.io.*
+- java.nio.CharBuffer
+- java.util.NoSuchElementException

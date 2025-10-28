@@ -1,0 +1,45 @@
+**Function Signature:**
+- main(String[] args): void
+
+**Variables:**
+- Scanner sc: input scanner
+- int n: input integer
+- char[] ch: array of characters with length n
+- int s1 = 0: first sum
+- int s2 = 0: second sum
+- int i: loop index
+- int j = 0: output array index
+- int flag = 0: error flag
+- int dif = 0: unused variable
+- int x: first input value per iteration
+- int y: second input value per iteration
+- int temp1: temporary calculation for s1 + x
+- int temp2: temporary calculation for s2 + y
+
+**Logic Flow:**
+1. Read integer n from input
+2. Initialize character array ch with size n
+3. Initialize s1, s2, i, j, flag, dif to 0
+4. For i from 0 to n-1:
+   - Read integers x and y
+   - Calculate temp1 = s1 + x
+   - Calculate temp2 = s2 + y
+   - If absolute difference between temp1 and s2 <= 500:
+        - Add x to s1
+        - Store 'A' in ch[j] and increment j
+        - Continue to next iteration
+   - Else if absolute difference between temp2 and s1 <= 500:
+        - Add y to s2
+        - Store 'G' in ch[j] and increment j
+        - Continue to next iteration
+   - Else:
+        - Set flag = 1
+        - Break loop
+5. If flag == 1:
+        - Print -1
+6. Else:
+        - Convert ch array to string
+        - Print the string
+
+**Required Libraries:**
+- java.util.Scanner

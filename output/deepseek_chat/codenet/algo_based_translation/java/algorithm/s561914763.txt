@@ -1,0 +1,20 @@
+Initialize two sets: ODD containing {"R", "U", "D"} and EVE containing {"L", "U", "D"}
+Read input string N from standard input
+Convert N to character array tap
+Declare boolean variable isGood initialized to true
+For each index i from 0 to length(N)-1:
+    If (i+1) is even:
+        If character tap[i] is not in set EVE:
+            Set isGood to false
+            Break loop
+    Else:
+        If character tap[i] is not in set ODD:
+            Set isGood to false
+            Break loop
+If isGood is true:
+    Print "Yes"
+Else:
+    Print "No"
+
+Function isMatch(Set<String> set, char c):
+    Return true if set contains string representation of c, else false

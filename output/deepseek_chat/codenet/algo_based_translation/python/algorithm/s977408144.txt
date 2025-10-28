@@ -1,0 +1,14 @@
+**Algorithm:**
+
+1. **Import Modules:**
+   - Import `sys` for standard input operations.
+
+2. **Define main function:**
+   - Read two integers `n` and `l` from standard input.
+   - Initialize an empty list `S` of type `str[]`.
+   - For `a` from `0` to `n-1`:
+     - Read a string from standard input and append to `S`.
+   - Sort list `S` lexicographically.
+   - Concatenate all strings in `S` and print the result.
+
+3. **Execute main function.**

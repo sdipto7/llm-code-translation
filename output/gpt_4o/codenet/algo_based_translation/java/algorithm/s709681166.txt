@@ -1,0 +1,29 @@
+```
+Function Signature:
+- main(): void
+
+Variable Declarations:
+- sc: Scanner
+- s: String
+- i: int
+- c: char
+
+Logic Flow:
+1. Initialize a Scanner object `sc` to read input from the console.
+2. Read a line of input from the user and store it in a String variable `s`.
+3. Iterate over each character in the string `s` using a for-loop with `i` ranging from 0 to the length of `s` - 1.
+   - Inside the loop, declare a character variable `c` and assign it the character at index `i` of the string `s`.
+   - If the character `c` is an uppercase letter (check using `Character.isUpperCase(c)`):
+     - Convert `c` to its lowercase equivalent by adding 32 to its ASCII value.
+     - Print the converted character `c` without a newline.
+   - Else if the character `c` is a lowercase letter (check using `Character.isLowerCase(c)`):
+     - Convert `c` to its uppercase equivalent by subtracting 32 from its ASCII value.
+     - Print the converted character `c` without a newline.
+   - Else (if `c` is neither uppercase nor lowercase):
+     - Print the character `c` without any modification.
+4. After the loop completes, print a newline character.
+5. Close the Scanner object `sc`.
+
+Required Libraries:
+- java.util.Scanner
+```

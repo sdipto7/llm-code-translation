@@ -1,0 +1,35 @@
+1. Import the `Scanner` class from the `java.util` package.
+
+2. Declare a public class named `atcoder_ABC125_C`.
+
+3. Declare a public static integer array `A`.
+
+4. Define the `main` function with `String[] args` as a parameter:
+   - Create a `Scanner` object `sc` to read from the standard input.
+   - Read an integer `N` from input using `sc.nextInt()`.
+   - Initialize the integer array `A` with size `N`.
+   - For each index `i` from `0` to `N-1` (inclusive):
+     - Assign the `i`-th element of `A` as the next integer from input using `sc.nextInt()`.
+   - Close the `Scanner` object `sc`.
+   - Declare integer arrays `M`, `L`, and `R` with size `N`.
+   - Assign `L[0]` to `A[0]`.
+   - For each index `i` from `1` to `N-1` (inclusive):
+     - Assign `L[i]` as the GCD of `L[i-1]` and `A[i]` using the `gcd` function.
+   - Assign `R[N-1]` to `A[N-1]`.
+   - For each index `i` from `N-2` to `0` (inclusive, decrementing):
+     - Assign `R[i]` as the GCD of `R[i+1]` and `A[i]` using the `gcd` function.
+   - Initialize an integer `answer` with the maximum of `L[N-2]` and `R[1]`.
+   - For each index `i` from `1` to `N-2` (inclusive):
+     - Update `answer` with the maximum of `answer` and the GCD of `L[i-1]` and `R[i+1]` using the `gcd` function.
+   - Print the value of `answer` to the standard output.
+
+5. Define a public static function `gcd` with parameters `int a` and `int b` that returns an integer:
+   - Declare an integer variable `tmp`.
+   - If `b` is greater than `a`, swap `a` and `b` using `tmp`.
+   - If `b` is zero, return `a`.
+   - Declare an integer `r` initialized to `-1`.
+   - Repeat the following until `r` equals `0`:
+     - Assign `r` as `a % b`.
+     - Update `a` to `b`.
+     - Update `b` to `r`.
+   - Return `a`.

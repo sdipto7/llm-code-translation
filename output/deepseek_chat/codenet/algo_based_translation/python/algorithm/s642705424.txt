@@ -1,0 +1,29 @@
+**Function Signature:**
+main() -> None
+
+**Variables and Data Types:**
+- N: integer (input)
+- S: string (input)
+- x: integer (initialized to 1)
+- i: integer (loop counter)
+
+**Algorithm Steps:**
+1. Read integer input from stdin and store in variable N
+2. Read string input from stdin and store in variable S
+3. Initialize variable x to integer value 1
+4. For loop: iterate i from 0 to N-2 (inclusive)
+   - Conditional: if character at index i of S != character at index i+1 of S
+     - Increment x by 1
+5. Print value of x to stdout
+
+**Control Structures:**
+- For loop: for i in range(0, N-1)
+- Conditional: if S[i] != S[i+1]
+
+**Input/Output Operations:**
+- Input: integer N from stdin
+- Input: string S from stdin
+- Output: integer x to stdout
+
+**Dependencies:**
+- Standard input/output functions

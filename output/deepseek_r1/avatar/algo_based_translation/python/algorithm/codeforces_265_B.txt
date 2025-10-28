@@ -1,0 +1,39 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`: Entry point of the program. No parameters. Prints result to stdout.
+
+**Variable Declarations:**
+- `n: Integer`: Stores the count of input elements.
+- `l: List of Integer`: Stores the sequence of integer inputs.
+- `ans: Integer`: Accumulates the total steps calculated.
+- `last: Integer`: Tracks the previous value during iteration.
+- `i: Integer`: Loop variable for iterating through elements of `l`.
+
+**Logic Flow:**
+1. Read integer `n` from standard input.
+2. Initialize `l` as an empty list.
+3. Loop `n` times:
+    - Read integer from standard input and append to `l`.
+4. Set `ans = n - 1`.
+5. Set `last = 0`.
+6. For each element `i` in `l`:
+    - Add `abs(last - i) + 1` to `ans`.
+    - Update `last` to `i`.
+7. Print `ans`.
+
+**Control Flow Structures:**
+- For-loop (fixed count): Executes `n` times to populate `l`.
+- For-each loop: Iterates through all elements in `l` to compute `ans`.
+
+**Input/Output Operations:**
+- Input: Two-phase input reading (first `n`, then `n` integers).
+- Output: Single print statement for final `ans`.
+
+**Edge Case Handling:**
+- Implicitly assumes valid integer inputs.
+- Correctly handles empty input sequence (n=0 produces `ans = -1` through initialization, though contextual constraints may prevent this).
+
+**External Dependencies:**
+- Uses `abs()` for absolute value calculation.
+- Relies on standard input/output mechanisms.

@@ -1,0 +1,53 @@
+### Algorithm
+
+1. **Function Signature**: `main(String[] args)`
+   - Return Type: `void`
+   - Parameters: `String[] args`
+
+2. **Variable Declarations**:
+   - `N`: `int`
+   - `s`: `String`
+   - `flag`: `boolean`
+   - `ans`: `int`
+   - `hen`: `int`
+   - `sha`: `int`
+   - `dot`: `int`
+   - `temp`: `int`
+   - `first`: `boolean`
+   - `scanner`: `Scanner`
+
+3. **Execution Order**:
+   1. Create a new `Scanner` object to read from `System.in`.
+   2. Read an integer `N` from the input.
+   3. Consume the newline character left in the input buffer.
+   4. Read a line of string `s` from the input.
+   5. Initialize `flag` to `false`, `ans` to `0`, `hen` to `0`, `sha` to `0`, `dot` to `0`, `temp` to `0`, and `first` to `true`.
+   6. Iterate over each character in the string `s` using a `for` loop from `i = 0` to `N-1`.
+      - If the character at index `i` is `#`:
+        - Set `first` to `false`.
+        - If `sha` is less than or equal to `dot`:
+          - Increment `ans` by `sha`.
+          - Reset `sha` to `0` and `dot` to `0`.
+          - Set `first` to `true`.
+        - Increment `sha` by `1`.
+      - If the character at index `i` is not `#`:
+        - Increment `dot` by `1`.
+   7. After the loop:
+     - If `sha` is less than or equal to `dot`:
+       - Increment `ans` by `sha`.
+       - Reset `dot` to `0`.
+   8. Output the sum of `ans` and `dot` to the console.
+
+4. **Control Structures**:
+   - `for` loop: Iterate over the string `s` from index `0` to `N-1`.
+   - `if` conditions:
+     - Check if the character at the current index is `#`.
+     - Check if `sha` is less than or equal to `dot` inside the loop and after the loop.
+
+5. **Input/Output Operations**:
+   - Read an integer `N` from `System.in`.
+   - Read a line of string `s` from `System.in`.
+   - Output the result (`ans + dot`) to `System.out`.
+
+6. **Required Libraries/Modules**:
+   - `java.util.Scanner`

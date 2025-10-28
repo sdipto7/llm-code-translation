@@ -1,0 +1,58 @@
+- **Functions**:
+  - `main(String[] args)`: void
+    - Parameters: `args` (String array)
+    - Reads input, processes data, writes output
+  - `rec(long x)`: int
+    - Parameters: `x` (long)
+    - Returns count of set bits in x's binary representation
+  - `FastReader` class methods:
+    - `next()`: String
+    - `nextInt()`: int
+    - `nextLong()`: long
+    - `nextDouble()`: double
+    - `nextLine()`: String
+
+- **Variables**:
+  - In `main`:
+    - `n`: int (input quantity)
+    - `a[]`: int[33] (bit count frequency array)
+    - `answer`: double (total pair count)
+    - `summ`: double (temporary combination calculation)
+  - In `rec`:
+    - `answer`: int (bit count accumulator)
+    - `k`: int (bit position iterator)
+
+- **Logic Flow**:
+  1. Initialize `FastReader` and `PrintWriter`
+  2. Read integer `n`
+  3. Create array `a` with 33 elements initialized to 0
+  4. For each of `n` input numbers:
+     - Read number via `nextInt()`
+     - Calculate bit count via `rec()`
+     - Increment corresponding index in `a`
+  5. Initialize `answer` to 0.0
+  6. For each index `i` in `a`:
+     - Calculate pairwise combinations: `summ = a[i] * (a[i] - 1) / 2.0`
+     - Add `summ` to `answer`
+  7. Print `answer` cast to long
+  8. Close output stream
+
+- **Control Structures**:
+  - `for (int i = 0; i < n; i++)` - input processing loop
+  - `for (int i = 0; i < a.length; i++)` - combination calculation loop
+  - `for (int k = 31; k >= 0; k--)` - bit checking loop in `rec()`
+  - `while (st == null || !st.hasMoreElements())` - input tokenization loop in `FastReader`
+
+- **I/O Operations**:
+  - Read input via `FastReader` using buffered input stream
+  - Write output via `PrintWriter` with System.out
+  - Specifically reads integers for processing
+  - Final output formatted as long integer
+
+- **Dependencies**:
+  - Requires `java.io` package classes:
+    - BufferedReader
+    - InputStreamReader
+    - PrintWriter
+    - IOException
+    - StringTokenizer

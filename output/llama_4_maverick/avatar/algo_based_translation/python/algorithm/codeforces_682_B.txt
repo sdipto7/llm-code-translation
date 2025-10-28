@@ -1,0 +1,9 @@
+1. Import necessary modules and define input functions
+2. Read integer input n
+3. Read list of integers l
+4. Initialize flag f to 1
+5. Sort list l in ascending order
+6. Initialize counter c to 0
+7. Iterate through each element i in sorted list l
+8. If i is greater than c, increment c by 1
+9. Print c + 1

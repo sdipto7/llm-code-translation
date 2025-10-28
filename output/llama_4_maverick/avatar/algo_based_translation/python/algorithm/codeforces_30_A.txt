@@ -1,0 +1,8 @@
+1. PROCEDURE task4(A, B, n)
+2. FOR X FROM -1000 TO 1000
+3. IF A * (X ^ n) == B THEN
+4. RETURN X
+5. RETURN "No solution"
+6. INPUT [A, B, n]
+7. SPLIT [A, B, n] INTO integers
+8. PRINT task4(A, B, n)

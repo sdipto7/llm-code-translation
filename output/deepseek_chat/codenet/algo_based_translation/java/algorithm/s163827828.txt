@@ -1,0 +1,26 @@
+Algorithm:
+1. Import java.util.Scanner
+2. Define main function with parameter String[] args, return type void
+3. Declare Scanner sc initialized with System.in
+4. Read integer N from input using sc.next() and parse to int
+5. Declare String array s of size N
+6. Declare int a_num initialized to 0
+7. Declare int b_num initialized to 0
+8. Declare boolean flag initialized to true
+9. Declare int ans initialized to 0
+10. For i from 0 to N-1:
+    a. Read string s[i] from input using sc.next()
+    b. If first character of s[i] equals "B":
+        i. Increment b_num by 1
+    c. If last character of s[i] equals "A":
+        i. Increment a_num by 1
+    d. If first character equals "B" OR last character equals "A":
+        i. If NOT (first character equals "B" AND last character equals "A"):
+            1. Set flag to false
+    e. For j from 0 to length(s[i])-2:
+        i. If substring from j to j+2 equals "AB":
+            1. Increment ans by 1
+11. Add Math.min(a_num, b_num) to ans
+12. If Math.min(a_num, b_num) != 0 AND flag is true:
+    a. Subtract 1 from ans
+13. Print ans

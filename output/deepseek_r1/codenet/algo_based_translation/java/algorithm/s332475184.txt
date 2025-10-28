@@ -1,0 +1,67 @@
+- **Imports**:  
+  `java.util.*`, `java.io.*`
+
+- **Static Variables**:  
+  - `static int[] counter`  
+  - `static List<List<Integer>> graph`
+
+- **Main Function**:  
+  - **Parameters**: `String[] args`  
+  - **Steps**:  
+    1. Initialize `FastScanner` object.  
+    2. Read integers `n` (number of nodes) and `q` (number of queries).  
+    3. Initialize `graph` with `n` empty `LinkedList` entries.  
+    4. Initialize `counter` array of size `n`.  
+    5. Read `n-1` edges:  
+        - For each edge, read `a` and `b`, convert to 0-based indices.  
+        - Add bidirectional entries in `graph` (add `b` to `a`'s list and `a` to `b`'s list).  
+    6. Process `q` queries:  
+        - For each query, read node index `p` (0-based) and value `x`, add `x` to `counter[p]`.  
+    7. Execute `dfs(0, -1, 0)` to propagate counter values.  
+    8. Collect `counter` values into a space-separated string using `StringJoiner`.  
+    9. Print the result.  
+
+- **DFS Function**:  
+  - **Signature**: `static void dfs(int v, int par, long val)`  
+  - **Logic**:  
+    1. Iterate over all neighbors `i` of `v` in `graph`:  
+        - If `i != par`, recursively call `dfs(i, v, val + counter[v])`.  
+    2. After processing all children, add `val` to `counter[v]`.  
+
+- **FastScanner Class**:  
+  - **Variables**:  
+    - `InputStream in = System.in`  
+    - `byte[] buffer = new byte[1024]`  
+    - `int ptr = 0`, `int buflen = 0`  
+  - **Methods**:  
+    - `hasNextByte()`: Checks if more bytes are available in the buffer. Reloads buffer if empty.  
+    - `readByte()`: Returns next byte or -1.  
+    - `isPrintableChar(int c)`: Returns true if `c` is between 33-126.  
+    - `hasNext()`: Skips non-printable characters and checks for next byte.  
+    - `next()`: Reads next token as a string.  
+    - `nextLong()`: Reads a long integer, handling negative signs.  
+    - `nextInt()`: Reads an integer, validates range.  
+    - `nextDouble()`: Parses next token as double.  
+
+- **Data Flow**:  
+  1. Input: Graph structure via edges and queries with node-value pairs.  
+  2. Processing:  
+     - Build adjacency list for the tree.  
+     - Apply all queries to the initial counter values.  
+     - Traverse the tree with DFS to propagate cumulative values from root to leaves.  
+  3. Output: Final counter values for all nodes.  
+
+- **Control Structures**:  
+  - **Loops**:  
+    - `for` loops for graph initialization, edge processing, query processing, and result formatting.  
+    - `while(true)` in `nextLong()` for reading numeric input.  
+  - **Conditionals**:  
+    - `if (i != par)` in DFS to prevent revisiting parent.  
+    - Checks for negative numbers and numeric validity in `nextLong()`.  
+
+- **Input/Output**:  
+  - Input via `FastScanner` from `System.in`.  
+  - Output via `System.out.println` with space-separated counter values.  
+
+- **Dependencies**:  
+  - Java standard libraries: `java.util.List`, `java.util.LinkedList`, `java.util.StringJoiner`, `java.io.InputStream`, `java.io.IOException`.

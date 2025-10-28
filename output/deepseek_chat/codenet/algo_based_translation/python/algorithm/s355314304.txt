@@ -1,0 +1,7 @@
+n: integer = input integer from standard input
+if n modulo 1000 equals 0:
+    print integer 0 to standard output
+else:
+    remainder: integer = n modulo 1000
+    result: integer = 1000 minus remainder
+    print result to standard output

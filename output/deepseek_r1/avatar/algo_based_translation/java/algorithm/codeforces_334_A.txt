@@ -1,0 +1,41 @@
+**Function Signatures**:
+- `main(String[] args)`: void
+- `debug(Object... obj)`: void
+
+**Variables**:
+- `n`: int (input integer)
+- `square`: int (n * n)
+- `odd`: ArrayList\<Integer\> (stores odd numbers from 1 to n²)
+- `even`: ArrayList\<Integer\> (stores even numbers from 1 to n²)
+- `loop`: int (calculated as square / n)
+- `div`: int (calculated as loop / 2 via integer division)
+
+**Libraries/Dependencies**:
+- `java.io.*`
+- `java.util.*`
+
+**Logic Flow**:
+1. Read `n` from input using `Scanner`.
+2. Compute `square = n * n`.
+3. Populate `odd` and `even` lists by iterating from 1 to `square`, sorting by parity.
+4. Calculate `loop = square / n` (equals `n`).
+5. Calculate `div = loop / 2`.
+6. For each `i` from 1 to `loop` (inclusive):
+   1. For `j` from 0 to `div - 1`:
+      1. If `i` is odd:
+         - Remove first element from `odd` and last from `even`.
+         - Print both values separated by a space.
+      2. Else:
+         - Remove first element from `even` and last from `odd`.
+         - Print both values separated by a space.
+   2. Print a newline after processing `div` pairs.
+7. Close the `PrintWriter` to flush output.
+
+**Control Structures**:
+- Outer loop: `for (int i = 1; i <= loop; i++)`
+- Inner loop: `for (int j = 0; j < div; j++)`
+- Conditional: `if (i % 2 == 1)` to alternate between odd/even list operations.
+
+**Input/Output**:
+- Input: Read `n` via `Scanner`.
+- Output: Print formatted rows via `PrintWriter`, with each row containing `div` pairs of numbers.

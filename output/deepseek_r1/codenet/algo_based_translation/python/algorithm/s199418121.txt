@@ -1,0 +1,29 @@
+**Algorithm**
+
+**Function Signature**  
+No explicit functions. Executes as a script.
+
+**Variables**  
+- `A`: string (initially), converted to integer  
+- `B`: string (initially), processed to remove decimal point and converted to integer  
+
+**Input Operations**  
+1. Read a line from standard input.  
+2. Split input into two strings `A` and `B` using whitespace as the delimiter.  
+
+**Data Processing**  
+1. Convert `A` to an integer.  
+2. Remove all occurrences of '.' in `B` and convert the result to an integer.  
+
+**Computation**  
+1. Multiply integer `A` by integer `B`.  
+2. Perform integer division of the product by 100.  
+
+**Output Operation**  
+1. Print the result of the division.  
+
+**Control Structures**  
+No loops or conditionals. Execution follows strict sequential order.  
+
+**Dependencies**  
+None (uses only built-in Python functions).

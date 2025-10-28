@@ -1,0 +1,20 @@
+1. READ input into list s
+2. INITIALIZE num_g to 0
+3. INITIALIZE num_p to 0
+4. INITIALIZE score to 0
+5. FOR EACH x in s
+   6. IF x is 'g'
+      7. IF num_g - num_p > 0
+         8. INCREMENT score by 1
+         9. INCREMENT num_p by 1
+      10. ELSE
+         11. num_g remains the same as score (NO CHANGE)
+         12. INCREMENT num_g by 1
+   13. ELSE IF x is 'p'
+      14. IF num_g - num_p > 0
+         15. score remains the same (NO CHANGE)
+         16. INCREMENT num_p by 1
+      17. ELSE
+         18. DECREMENT score by 1
+         19. INCREMENT num_g by 1
+20. PRINT score

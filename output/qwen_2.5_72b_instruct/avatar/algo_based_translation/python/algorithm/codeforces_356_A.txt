@@ -1,0 +1,27 @@
+Function Signature:
+- `main() -> None`
+
+Variable Declarations:
+- `n: int`
+- `m: int`
+- `out: List[int]` (size `n`, initialized with 0s)
+- `comp: List[int]` (size `n`, initialized with values `i + 2` for `i` in `range(n)`)
+- `l: int`
+- `r: int`
+- `x: int`
+- `t: int`
+- `next_val: int`
+
+Algorithm:
+1. Read two integers `n` and `m` from input.
+2. Initialize list `out` with `n` zeros.
+3. Initialize list `comp` with values `[i + 2 for i in range(n)]`.
+4. For `m` times:
+   1. Read three integers `l`, `r`, and `x` from input.
+   2. Set `t` to `l`.
+   3. While `t <= r`:
+      1. Set `next_val` to `comp[t - 1]`.
+      2. If `out[t - 1]` is 0 and `t` is not equal to `x`, set `out[t - 1]` to `x`.
+      3. If `t` is greater than or equal to `x`, set `comp[t - 1]` to `r + 1`; otherwise, set `comp[t - 1]` to `x`.
+      4. Set `t` to `next_val`.
+5. Print all elements of `out` separated by spaces.

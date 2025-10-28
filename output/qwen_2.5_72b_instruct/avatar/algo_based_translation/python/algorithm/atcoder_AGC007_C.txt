@@ -1,0 +1,25 @@
+Function Signature: `main(N: int, d: int, x: int) -> float`
+
+Variable Declarations:
+- `N: int`
+- `d: int`
+- `x: int`
+- `ret: float` initialized to 0
+
+Logic Flow:
+1. Read input values for `N`, `d`, and `x` from standard input as integers.
+2. Initialize `ret` to 0.
+3. While `N` is not zero:
+   - Add `d + (N - 0.5) * x` to `ret`.
+   - Update `d` to `d + (d / N) + (5 * x) / (2 * N)`.
+   - Update `x` to `x + 2 * x / N`.
+   - Decrement `N` by 1.
+4. Return the value of `ret`.
+5. Print the result of `main(N, d, x)`.
+
+Input/Output:
+- Input: Three integers `N`, `d`, and `x` from standard input.
+- Output: The result of the `main` function printed to standard output.
+
+Libraries/Modules:
+- `sys` for reading input from standard input.

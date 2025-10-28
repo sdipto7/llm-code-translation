@@ -1,0 +1,11 @@
+Initialize Scanner object for reading standard input
+Begin infinite loop
+    Declare integer variable sum and initialize to 0
+    Read next token from input as string s
+    If s equals "0" then break out of loop
+    For integer i from 0 to length of s minus 1
+        Get character at position i from string s and assign to char variable a
+        Convert character a to integer by subtracting '0' and add to sum
+    Print sum followed by newline
+End loop
+Close Scanner

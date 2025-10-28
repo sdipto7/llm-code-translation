@@ -1,0 +1,40 @@
+Function signature: `find_maximum_height_and_unique_towers(n: int, l: List[int]) -> Tuple[int, int]`
+
+Variable declarations and data types:
+- `n: int`
+- `l: List[int]`
+- `high: int`
+- `tower: int`
+- `maximum: int`
+
+Logic flow in execution order:
+1. Read integer `n` from input.
+2. Read a list of integers `l` from input, split by spaces, and convert each to integer.
+3. Initialize `high` to 1.
+4. Initialize `tower` to `n`.
+5. Initialize `maximum` to 1.
+6. Sort list `l` in ascending order.
+7. For loop starting from index 1 to `n-1`:
+   - If `l[i]` equals `l[i-1]`:
+     - Decrement `tower` by 1.
+     - Increment `high` by 1.
+   - Else:
+     - If `high` greater than `maximum`:
+       - Set `maximum` to `high`.
+     - Reset `high` to 1.
+8. After loop, if `high` greater than `maximum`:
+   - Set `maximum` to `high`.
+9. Print `maximum` and `tower`.
+
+Control structures:
+- For loop with condition `i` from 1 to `n-1`.
+- If-else condition checking if `l[i]` equals `l[i-1]`.
+- Nested if condition checking if `high` greater than `maximum`.
+
+Input/output operations and data processing logic:
+- Input: Two lines - first line is an integer `n`, second line contains `n` space-separated integers.
+- Output: Two integers - first is the maximum height of consecutive identical numbers, second is the count of unique towers.
+
+Required libraries, modules, or dependencies:
+- `List` from `typing` module.
+- `Tuple` from `typing` module.

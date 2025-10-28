@@ -1,0 +1,9 @@
+1. Read input from the user and store it in a string.
+2. Split the input string into two parts using space as the delimiter.
+3. Convert the first part into an integer and store it in a variable 'h'.
+4. Convert the second part into an integer and store it in a variable 'a'.
+5. Initialize a counter variable 'num' to 0.
+6. Start a loop that continues until 'h' is less than or equal to 0.
+7. In each iteration of the loop, subtract 'a' from 'h'.
+8. Increment 'num' by 1 in each iteration.
+9. Once the loop ends, output the value of 'num'.

@@ -1,0 +1,39 @@
+- **Function/method signatures:**
+  - `function s(): string`
+
+- **Variable declarations and data types:**
+  - `a: list<int>`
+
+- **Step-by-step logic flow:**
+  1. Read and discard a line from standard input
+  2. Read next input line, split into space-separated tokens, convert each token to integer, store as list `a`
+  3. Sort `a` in non-decreasing order using in-place sort
+  4. Initialize loop counter `i` to 1
+  5. **While** `i < length of a`:
+     1. **If** `a[i] != a[i-1]` **and** `a[i] < 2 * a[i-1]`:
+        1. Return "YES"
+     2. Increment `i` by 1
+  6. Return "NO"
+
+- **Control flow structures:**
+  - Loop: `for i in range(1, len(a))` equivalent to steps 4-5 with 0-based indices
+  - Conditional: Check pairwise inequality and magnitude relationship
+  - Early exit: Return immediately when condition met in loop
+
+- **Input/output operations:**
+  - Input: Two consecutive input lines from stdin
+  - Output: Print result of `s()` via `print(s())`
+
+- **Error handling mechanisms:**
+  - Implicit type conversion assumes valid integer inputs
+  - No explicit handling for empty inputs or insufficient data
+
+- **Edge case handling:**
+  - Handles empty list via len(a) check in loop termination
+  - Automatic false return for single-element lists
+  - Duplicate elements bypass first condition check
+
+- **External dependencies:**
+  - Relies on Python's `input()` for IO
+  - Uses built-in `list.sort()` for sorting
+  - No external libraries required

@@ -1,0 +1,35 @@
+Function signature:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `Scanner sc`
+- `int N`
+- `HashMap<Integer, String> map`
+- `boolean ans`
+- `HashMap<Integer, String> past`
+- `String next`
+
+Execution flow and logic:
+
+1. Initialize `sc` as new `Scanner(System.in)`
+2. Read integer `N` from `sc`
+3. Initialize `map` as new `HashMap<Integer, String>`
+4. Loop from `i = 0` to `i < N`:
+   - Read string from `sc` and put into `map` with key `i`
+5. Initialize `ans` as `true`
+6. Initialize `past` as new `HashMap<Integer, String>`
+7. Initialize `next` as empty string
+8. Loop from `i = 0` to `i < N`:
+   - If `past` contains value `map.get(i)`:
+     - Set `ans` to `false`
+     - Break loop
+   - Put `map.get(i)` into `past` with key `i`
+   - If `i` is not equal to `0`:
+     - If `next` is not equal to first character of `map.get(i)`:
+       - Set `ans` to `false`
+       - Break loop
+   - Set `next` to last character of `map.get(i)`
+9. If `ans` is `true`:
+   - Print "Yes"
+10. Else:
+    - Print "No"

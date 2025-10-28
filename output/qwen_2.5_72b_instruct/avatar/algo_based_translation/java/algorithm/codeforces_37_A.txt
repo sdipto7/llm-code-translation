@@ -1,0 +1,53 @@
+Function signatures and parameter/return types:
+- `main(String[] args)`: void
+- `next()`: String
+- `nextInt()`: int
+- `nextLong()`: long
+- `nextDouble()`: double
+- `nextLine()`: String (throws IOException)
+
+Variable declarations and data types:
+- `input`: FastScanner
+- `n`: int
+- `map`: HashMap<Integer, Integer>
+- `i`: int
+- `val`: int
+- `max`: int
+- `entry`: Map.Entry<Integer, Integer>
+- `value`: Integer
+- `br`: BufferedReader
+- `st`: StringTokenizer
+- `e`: IOException
+
+Logic flow in execution order:
+1. Create `FastScanner` object named `input`
+2. Read integer `n` using `input.nextInt()`
+3. Initialize `HashMap<Integer, Integer>` named `map`
+4. Loop `i` from 0 to `n-1`:
+   - Read integer `val` using `input.nextInt()`
+   - Update `map` to increment count of `val` by 1, using `map.getOrDefault(val, 0) + 1`
+5. Initialize `max` to `Integer.MIN_VALUE`
+6. For each `entry` in `map.entrySet()`:
+   - Get `value` from `entry.getValue()`
+   - Update `max` to be the maximum of `max` and `value`
+7. Print `max` followed by `map.size()` as a string
+
+Control structures:
+- For loop: `for (int i = 0; i < n; i++)`
+- Enhanced for loop: `for (Map.Entry<Integer, Integer> entry : map.entrySet())`
+- While loop: `while (!st.hasMoreTokens())` inside `next()`
+- Try-catch block: `try { ... } catch (IOException e) { ... }` inside `next()`
+
+Input/output operations and data processing logic:
+- Read input using `FastScanner` methods `nextInt()`
+- Process input by populating `HashMap` with frequency counts of integers
+- Determine the maximum frequency (`max`) present in the `HashMap`
+- Output the maximum frequency followed by the number of unique integers (`map.size()`)
+
+Required libraries, modules, or dependencies:
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.util.HashMap`
+- `java.util.Map`
+- `java.util.StringTokenizer`

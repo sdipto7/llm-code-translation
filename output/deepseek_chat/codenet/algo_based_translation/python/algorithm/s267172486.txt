@@ -1,0 +1,25 @@
+Function: main
+Parameters: None
+Return: None
+
+Variables:
+- h: integer
+- a: integer
+- ans: integer
+- ama: integer
+
+Logic Flow:
+1. Read input line from stdin
+2. Split input by whitespace and convert first two tokens to integers
+3. Assign first integer to h, second integer to a
+4. Calculate integer division: ans = h // a
+5. Calculate modulus: ama = h % a
+6. Check if ama != 0
+   - If true: increment ans by 1
+7. Print ans
+
+Input/Output:
+- Input: Single line containing two space-separated integers
+- Output: Single integer value
+
+Dependencies: None (uses built-in functions)

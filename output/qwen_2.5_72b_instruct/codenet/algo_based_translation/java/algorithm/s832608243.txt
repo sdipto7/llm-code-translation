@@ -1,0 +1,29 @@
+- Function signatures: `public static void main(String[] args)`
+
+- Variable declarations and data types:
+  - `Scanner scanner`
+  - `int a`
+  - `int b`
+  - `boolean flag`
+  - `int i`
+
+- Logic flow in execution order:
+  1. Create a `Scanner` object to read input from standard input.
+  2. Read two integers `a` and `b` from the input.
+  3. Initialize a boolean variable `flag` to `false`.
+  4. Start a `for` loop with `i` ranging from 1 to 100000.
+     - Inside the loop, check if `Math.floor(1.0 * i * 0.08)` equals `a` and `Math.floor(0.1 * i)` equals `b`.
+     - If the condition is true, print the value of `i`, set `flag` to `true`, and break out of the loop.
+  5. After the loop, if `flag` is `false`, print `-1`.
+
+- Control structures:
+  - `for` loop: `for(int i=1; i<=100000; i++)`
+  - `if` statement: `if (Math.floor(1.0 * i * 0.08) == a && b == Math.floor(0.1 * i))`
+  - `if` statement: `if (!flag)`
+
+- Input/output operations and data processing logic:
+  - Input: Two integers `a` and `b` are read from the user.
+  - Output: Either the value of `i` that satisfies the conditions or `-1` if no such `i` is found.
+
+- Required libraries, modules, or dependencies:
+  - `java.util.Scanner`

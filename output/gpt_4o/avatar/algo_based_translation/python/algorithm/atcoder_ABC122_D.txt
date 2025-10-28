@@ -1,0 +1,28 @@
+```plaintext
+Function ok(last4: str) -> bool:
+    Declare variable i as integer
+    For i from 0 to 3 inclusive:
+        Declare variable t as list of characters, initialized to list of last4
+        If i is greater than or equal to 1:
+            Swap elements at indices i and i-1 in list t
+        If string obtained by joining list t contains substring 'AGC':
+            Return False
+    Return True
+
+Function dfs(cur: int, last3: str) -> int:
+    If last3 exists as a key in memo[cur]:
+        Return the value of memo[cur][last3]
+    If cur equals n:
+        Return 1
+    Declare variable ret as integer, initialized to 0
+    For each character c in string "ACGT":
+        If ok(last3 + c) returns True:
+            Set ret to (ret + dfs(cur + 1, last3[1:] + c)) modulo mod
+    Set memo[cur][last3] to ret
+    Return ret
+
+Declare integer n, initialized to input converted to integer
+Declare integer mod, initialized to 10**9 + 7
+Declare list of dictionaries memo, with n+1 empty dictionaries
+Print result of dfs(0, 'TTT')
+```

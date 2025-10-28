@@ -1,0 +1,59 @@
+**Algorithm Specification:**
+
+**Function/Method Signatures:**
+- `calculate(n: int, s: str) -> void`
+
+**Variable Declarations:**
+- `arr: list[str]` (size `n`)
+- `rNum: int`
+- `gNum: int`
+- `bNum: int`
+- `sum: int` (initialized to 0)
+- `step: int` (loop variable)
+- `i: int` (loop variable)
+- `s_triplet: str`
+
+**Imports:**
+- `math` (for `math.ceil`)
+
+**Input/Output Operations:**
+1. Read integer `N` from standard input.
+2. Read string `S` from standard input.
+3. Write computed result to standard output.
+
+**Logic Flow:**
+
+1. **Initialization:**
+   1. Convert input string `S` into list `arr`.
+   2. Calculate `rNum` as count of 'R' in `arr`.
+   3. Calculate `gNum` as count of 'G' in `arr`.
+   4. Calculate `bNum` as count of 'B' in `arr`.
+   5. Initialize `sum` to 0.
+
+2. **Triplet Analysis:**
+   1. For `step` in range 1 to `math.ceil(n / 2)` inclusive:
+      1. For `i` in range 0 to `n - 2 * step` exclusive:
+         1. Create triplet string `s_triplet` by concatenating `arr[i]`, `arr[i + step]`, `arr[i + 2 * step]`.
+         2. If `s_triplet` matches any permutation of "RGB" (6 possible combinations):
+            1. Increment `sum` by 1.
+
+3. **Result Calculation:**
+   1. Compute `total_valid` as `rNum * gNum * bNum - sum`.
+   2. Print `total_valid`.
+
+**Control Flow Structures:**
+- Outer loop: `for step in range(1, math.ceil(n/2) + 1)`
+- Inner loop: `for i in range(n - 2 * step)`
+- Conditional: `if s_triplet in {"RGB", "RBG", "BGR", "BRG", "GBR", "GRB"}`
+
+**Exit Criteria:**
+- Outer loop terminates after processing all `step` values up to `math.ceil(n/2)`
+- Inner loop terminates when `i` reaches `n - 2 * step - 1`
+
+**Edge Case Handling:**
+- Implicitly handles `n < 3` through loop structure (no iteration when `n - 2*step < 0`)
+- Automatically outputs 0 when any color count is zero (via product calculation)
+
+**Dependencies:**
+- Relies on `math.ceil` for accurate step range calculation
+- Assumes input string length matches `n` (no explicit validation)

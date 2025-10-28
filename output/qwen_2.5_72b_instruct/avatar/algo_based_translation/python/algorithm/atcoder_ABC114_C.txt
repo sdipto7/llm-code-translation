@@ -1,0 +1,24 @@
+- Function signature: `aaa(n: str) -> int`
+- Variable declarations and data types:
+  - `N: int`
+  - `n: str`
+  - `ans: int`
+  - `i: str`
+- Logic flow in execution order:
+  1. Read an integer `N` from input.
+  2. Define function `aaa` that takes a string `n`.
+  3. Inside `aaa`, check if the integer value of `n` is greater than `N`. If true, return 0.
+  4. Convert `n` to an integer, then to a string, and create a set of its characters. Check if this set is equal to the set `{'7', '5', '3'}`. If true, set `ans` to 1; otherwise, set `ans` to 0.
+  5. Loop over each character `i` in the string `'753'`:
+     - Recursively call `aaa` with `n + i` and add the result to `ans`.
+  6. Return `ans`.
+  7. Call `aaa` with the string `'0'` and print the result.
+- Control structures:
+  - Conditional: `if int(n) > N`
+  - Conditional: `if set(str(int(n))) == {'7', '5', '3'}`
+  - Loop: `for i in '753'`
+- Input/output operations and data processing logic:
+  - Read integer `N` from input.
+  - Print the result of `aaa('0')`.
+- Required libraries, modules, or dependencies:
+  - No specific libraries or modules required.

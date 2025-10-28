@@ -1,0 +1,35 @@
+Function Signatures:
+- main(String[] args): void
+
+Variable Declarations and Data Types:
+- Scanner sc: Scanner
+- int n: integer
+- int[] array: integer array
+- int max: integer
+- int min: integer
+
+Complete Logic Flow in Execution Order:
+1. Create a Scanner object to read input from standard input
+2. Read an integer value for n
+3. Initialize an integer array of size n
+4. Initialize max to 0
+5. Initialize min to 10000
+6. Start a for loop that iterates from 0 to n-1:
+   a. Read an integer value and store it in the current index of the array
+   b. If max is less than the current array element, update max to the current array element
+   c. If min is greater than the current array element, update min to the current array element
+7. Print the difference between max and min
+8. Close the Scanner object
+
+Control Structures:
+- For loop: iterates from 0 to n-1
+- Conditional statements:
+  - If max < array[i], then max = array[i]
+  - If min > array[i], then min = array[i]
+
+Input/Output Operations:
+- Input: Reads an integer for n and then reads n integers for the array elements
+- Output: Prints the difference between the maximum and minimum values in the array
+
+Required Libraries, Modules, or Dependencies:
+- java.util.Scanner

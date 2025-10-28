@@ -1,0 +1,96 @@
+Algorithm:
+
+Function Signatures:
+- `main(String[] args) throws IOException`
+- `sort(int[] a)`
+- `InputReader(InputStream in)`
+- `int readByte()`
+- `boolean isSpaceChar(int c)`
+- `int skip()`
+- `String next()`
+- `int nextInt()`
+- `long nextLong()`
+- `int[] toIntArray(int n)`
+
+Variable Declarations and Data Types:
+- `InputStream in`
+- `PrintWriter out`
+- `int INF`
+- `long LINF`
+- `InputReader ir`
+- `int m`
+- `int n`
+- `int[] manju`
+- `int[] boxlen`
+- `int[] boxcost`
+- `int[][] dp`
+- `int i`
+- `int j`
+- `int len`
+- `int cnt`
+- `int t`
+- `int temp`
+- `byte[] buffer`
+- `int curbuf`
+- `int lenbuf`
+- `int b`
+- `StringBuilder sb`
+- `boolean minus`
+- `long res`
+- `int c`
+
+Logic Flow:
+- Initialize `in` to `System.in` and `out` to `System.out`
+- Define constants `INF` and `LINF`
+- Create `InputReader` instance `ir` with `in`
+- Read `m` and `n` as integers
+- Initialize `manju` array with size `m` and read `m` integers into it
+- Initialize `boxlen` and `boxcost` arrays with size `n`
+- For each index `i` from 0 to `n-1`, read two integers into `boxlen[i]` and `boxcost[i]`
+- Call `sort` on `manju` array
+- Initialize `dp` 2D array with dimensions `(m+1) x (n+1)`
+- For each index `i` from `m-1` to 0:
+  - For each index `j` from `n-1` to 0:
+    - Set `len` to `i + boxlen[j]` if `i + boxlen[j]` is less than `m`, otherwise set `len` to `m`
+    - Initialize `cnt` to 0
+    - For each index `k` from `i` to `len-1`:
+      - Increment `cnt` by `manju[m-1-k]`
+    - Set `dp[i][j]` to the maximum of `dp[i][j]` and `dp[len][j+1] + cnt - boxcost[j]`
+    - Set `dp[i][j]` to the maximum of `dp[i][j]` and `dp[i][j+1]`
+- Print `dp[0][0]`
+- Flush `out`
+
+- In `sort` function:
+  - For each index `i` from `a.length-1` to 1:
+    - Generate random index `t` from 0 to `i-1`
+    - Swap `a[i]` and `a[t]`
+  - Sort `a` array
+
+- In `InputReader` class:
+  - Initialize `in` to the provided `InputStream`
+  - Define `buffer`, `curbuf`, and `lenbuf`
+  - In `readByte` function:
+    - If `lenbuf` is -1, throw `InputMismatchException`
+    - If `curbuf` is equal to or greater than `lenbuf`, reset `curbuf` and read into `buffer`
+    - If length of read bytes is less than or equal to 0, return -1
+    - Return byte at `curbuf` index and increment `curbuf`
+  - In `isSpaceChar` function:
+    - Return true if character `c` is not between 33 and 126, inclusive
+  - In `skip` function:
+    - Read bytes until a non-space character is found
+  - In `next` function:
+    - Skip initial space characters
+    - Append non-space characters to `StringBuilder` `sb`
+    - Return string representation of `sb`
+  - In `nextInt` function:
+    - Skip initial space characters
+    - Handle negative sign
+    - Read digits and convert to integer
+    - Return integer, negated if necessary
+  - In `nextLong` function:
+    - Skip initial space characters
+    - Handle negative sign
+    - Read digits and convert to long
+    - Return long, negated if necessary
+  - In `toIntArray` function:
+    - Create and return array of integers of size `n`, each element read using `nextInt`

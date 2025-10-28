@@ -1,0 +1,16 @@
+def main_function():
+    n: int = int(input())
+    a: list[int] = [int(i) for i in input().split(" ")]
+    current_level: int = 0
+    counter: int = 0
+    counter_turns: int = -1
+    
+    while counter < len(a):
+        counter_turns += 1
+        for i in range(len(a)):
+            if a[i] != -1 and a[i] <= counter:
+                counter += 1
+                a[i] = -1
+        a.reverse()
+    
+    print(counter_turns)

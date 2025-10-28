@@ -1,0 +1,12 @@
+```plaintext
+Algorithm main():
+    Declare variable s as string
+    s = input string from standard input
+    If the length of set of characters in s is equal to 1:
+        Print 0
+        Exit the program
+    Declare variable a as Counter with frequency of each character in s
+    Declare variable ans as integer
+    ans = minimum value from a.values() multiplied by 2
+    Print ans
+```

@@ -1,0 +1,13 @@
+1. Read input string and convert it into a list of characters.
+2. Initialize an array `mods` of size equal to the length of the input string with all elements as 0.
+3. Initialize an array `countRemainder` of size 2019 with all elements as 0.
+4. Initialize a variable `cnt` to 0.
+5. Initialize a variable `m` to 1 and `mod` to 0.
+6. Iterate over the input string from right to left.
+7. For each character, update `mod` by adding the integer value of the current character multiplied by `m`, then take the modulus of `mod` with 2019.
+8. Update `m` by multiplying it by 10, then take the modulus of `m` with 2019.
+9. Increment the count of `mod` in the `countRemainder` array.
+10. After the loop, increment the count of 0 in the `countRemainder` array by 1.
+11. Iterate over the `countRemainder` array.
+12. For each count, calculate the number of combinations using the formula `count * (count - 1) / 2` and add it to `cnt`.
+13. Output the value of `cnt`.

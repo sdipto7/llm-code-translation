@@ -1,0 +1,34 @@
+Function signatures:
+- `main(String[] args)`: void
+- `solve(int testNumber, Scanner in, PrintWriter out)`: void
+
+Variable declarations and data types:
+- `InputStream inputStream`: InputStream
+- `OutputStream outputStream`: OutputStream
+- `Scanner in`: Scanner
+- `PrintWriter out`: PrintWriter
+- `AStationAndBus solver`: AStationAndBus
+- `String s`: String
+
+Logic flow:
+1. Initialize `inputStream` to `System.in`
+2. Initialize `outputStream` to `System.out`
+3. Create `Scanner` object `in` with `inputStream`
+4. Create `PrintWriter` object `out` with `outputStream`
+5. Create `AStationAndBus` object `solver`
+6. Call `solver.solve(1, in, out)`
+7. Close `out`
+
+Inside `solve` method:
+1. Read next string `s` from `in`
+2. If `s` contains "A" and "B":
+   1. Print "Yes" to `out`
+3. Else:
+   1. Print "No" to `out`
+
+Libraries/modules/dependencies:
+- java.io.OutputStream
+- java.io.IOException
+- java.io.InputStream
+- java.io.PrintWriter
+- java.util.Scanner

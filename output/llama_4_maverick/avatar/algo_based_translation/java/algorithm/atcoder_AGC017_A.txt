@@ -1,0 +1,20 @@
+1. Define a function C(n, m) to calculate the binomial coefficient.
+   1.1. Initialize res to 1.
+   1.2. For i from (m - n + 1) to m, multiply res by i.
+   1.3. For i from 1 to n, divide res by i.
+   1.4. Return res.
+
+2. Read input values n and p.
+3. Initialize k0 and k1 to 0.
+4. For i from 0 to n-1, read x and update k0 and k1 based on whether x is even or odd.
+5. Initialize ans to 1.
+6. For i from 0 to k0-1, multiply ans by 2.
+7. If p is 0, then:
+   7.1. Initialize add to 0.
+   7.2. For i from 0 to k1 with a step of 2, add C(i, k1) to add.
+   7.3. Multiply ans by add.
+8. Else:
+   8.1. Initialize add to 0.
+   8.2. For i from 1 to k1 with a step of 2, add C(i, k1) to add.
+   8.3. Multiply ans by add.
+9. Output ans.

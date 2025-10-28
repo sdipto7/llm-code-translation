@@ -1,0 +1,14 @@
+1. Read the number of nodes n from the input.
+2. Initialize an empty graph g with n nodes.
+3. For each node in g, initialize an empty list to store its edges.
+4. Read n-1 edges from the input and add them to g.
+5. For each edge, store its id and the node it connects to.
+6. Initialize an array ans of size n-1 to store the color of each edge.
+7. Perform a depth-first search (dfs) on g starting from node 0.
+8. During dfs, keep track of the current node's parent and the color used for the edge to its parent.
+9. For each neighbor of the current node, if it's not the parent, assign a color to the edge connecting them.
+10. If the color to be assigned is the same as the color used for the edge to the parent, increment the color.
+11. Recursively perform dfs on the neighbor with the assigned color and the current node as its parent.
+12. After dfs is complete, find the maximum color used in ans.
+13. Output the maximum color used.
+14. Output the color of each edge in ans.

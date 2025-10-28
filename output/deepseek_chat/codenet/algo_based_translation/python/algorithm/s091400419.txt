@@ -1,0 +1,9 @@
+Read two integers from standard input separated by space
+Store first integer in variable a (type: int)
+Store second integer in variable b (type: int)
+Create list lst containing three elements:
+    Element 1: result of a + b (type: int)
+    Element 2: result of a - b (type: int)
+    Element 3: result of a * b (type: int)
+Find maximum value in list lst using max() function
+Print maximum value to standard output

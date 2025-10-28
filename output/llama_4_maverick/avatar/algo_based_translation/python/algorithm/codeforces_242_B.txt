@@ -1,0 +1,11 @@
+1. Initialize n = Read Integer Input
+2. Initialize id = 0
+3. Initialize l, r = Read Two Integers Input
+4. For i from 1 to n-1
+   4.1. Read li, ri
+   4.2. If li <= l and r <= ri then id = i
+   4.3. Else If li < l or r < ri then id = n
+   4.4. l = Minimum of l and li
+   4.5. r = Maximum of r and ri
+5. If id = n then Print -1
+   Else Print id + 1

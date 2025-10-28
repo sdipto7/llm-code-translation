@@ -1,0 +1,8 @@
+1. READ integer n FROM input
+2. READ array m FROM input SPLIT BY spaces
+3. SET possible TO True
+4. FOR EACH unique element i IN m
+5.     IF COUNT of i IN m IS GREATER THAN OR EQUAL TO (n / 2) + 1
+6.         SET possible TO False
+7.         BREAK loop
+8. PRINT 'YES' IF possible IS True ELSE PRINT 'NO'

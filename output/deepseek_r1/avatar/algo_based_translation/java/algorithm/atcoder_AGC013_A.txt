@@ -1,0 +1,42 @@
+**Function Signature:**
+- `main(String[] args) : void`
+
+**Variables:**
+- `N : int` (input)
+- `A : int[]` (size N, input)
+- `count : int` (initialized to 0)
+- `i : int` (loop index)
+
+**Input/Output:**
+- Read `N` via `Scanner`
+- Read `N` integers into array `A`
+- Output `count` via `System.out.println`
+
+**Dependencies:**
+- `java.util.Scanner`
+
+**Logic Flow:**
+1. Read integer `N`
+2. Initialize array `A` with `N` elements
+3. Read `N` integers into `A`
+4. Initialize `count` to 0
+5. For `i` from 0 to `N-1` (inclusive):
+   - If `i == N-1`:
+     - Increment `count` by 1
+   - Else if `A[i] == A[i+1]`:
+     - Proceed (no action)
+   - Else if `A[i] < A[i+1]`:
+     - While `i < N-1` and `A[i] <= A[i+1]`:
+       - Increment `i`
+     - Increment `count` by 1
+   - Else (`A[i] > A[i+1]`):
+     - While `i < N-1` and `A[i] >= A[i+1]`:
+       - Increment `i`
+     - Increment `count` by 1
+6. Print `count`
+
+**Control Structures:**
+- `for` loop iterating `i` from 0 to `N-1`
+- Nested `if-else if-else` conditions checking element relationships
+- `while` loops within `A[i] < A[i+1]` and `A[i] > A[i+1]` branches to traverse sequences
+- Conditional breaks in `while` loops when `i` reaches `N-1`

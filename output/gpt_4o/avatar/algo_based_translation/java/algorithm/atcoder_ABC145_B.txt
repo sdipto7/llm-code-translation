@@ -1,0 +1,17 @@
+```
+Algorithm:
+1. Import necessary libraries: java.util.* and java.math.*.
+2. Define a public class `atcoder_ABC145_B`.
+3. Define a static method `cout` with the signature `void cout(String str)` to print the string to the console.
+4. Define the `main` method with the signature `public static void main(String args[])`.
+5. Initialize a `Scanner` object `cin` for reading input from the console.
+6. Declare variables `a` and `b` as empty strings, and `str` as a string. Declare `n` as an integer.
+7. Read an integer from the console and assign it to `n` using `cin.nextInt()`.
+8. Consume the leftover newline using `cin.nextLine()`.
+9. Read a line of input and assign it to `str` using `cin.nextLine()`.
+10. Loop from `i = 0` to `i < n / 2`:
+    a. Append `str.charAt(i)` to `a` for each iteration.
+11. Compare if `str` is equal to the concatenation of `a` with itself.
+12. If the condition is true, call `cout("Yes")`.
+13. If the condition is false, call `cout("No")`.
+```

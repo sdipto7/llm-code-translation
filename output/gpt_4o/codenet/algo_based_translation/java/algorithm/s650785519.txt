@@ -1,0 +1,10 @@
+1. Import the `Scanner` class from the `java.util` package.
+2. Define a class named `Main`.
+3. Define the `main` function with the signature `public static void main(String[] args) throws Exception`.
+4. Inside the `main` function:
+   - Declare a `Scanner` object `sc` to read input from the standard input stream (keyboard).
+   - Declare an integer variable `x`.
+   - Read an integer from input using `sc.nextInt()` and assign it to `x`.
+   - Close the `Scanner` object `sc` to release system resources.
+   - Calculate `(2199 - x) / 200` and store the result in an integer variable `ans`.
+   - Print the value of `ans` to the standard output.

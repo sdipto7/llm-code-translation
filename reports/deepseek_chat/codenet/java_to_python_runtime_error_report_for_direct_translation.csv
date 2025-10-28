@@ -1,0 +1,552 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,s685537842.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s685537842.py"", line 2, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 5 7'
+"
+java,python,s575985145.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s575985145.py"", line 19, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s575985145.py"", line 7, in main
+    id = int(input())
+         ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 2 2 4'
+"
+java,python,s998094687.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s998094687.py"", line 6, in <module>
+    a[0] = int(input())
+           ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 3 5'
+"
+java,python,s490798303.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s490798303.py"", line 9, in <module>
+    person = int(input())
+             ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 3'
+"
+java,python,s428436430.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s428436430.py"", line 23, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s428436430.py"", line 9, in main
+    arr.append(int(input()))
+               ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 5 2 7'
+"
+java,python,s063482767.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s063482767.py"", line 7, in <module>
+    heapq.heappush(queue, int(input()))
+                          ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 8 5 1'
+"
+java,python,s648025110.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s648025110.py"", line 2, in <module>
+    h = [int(input()) for _ in range(n)]
+         ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 2 2 1'
+"
+java,python,s301480578.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s301480578.py"", line 2, in <module>
+    h = [int(input()) for _ in range(n)]
+         ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '10 4 8 7 3'
+"
+java,python,s545439898.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s545439898.py"", line 3, in <module>
+    giving_number = [int(input()) for _ in range(count)]
+                     ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 2 3 4 5'
+"
+java,python,s818271374.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s818271374.py"", line 6, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 10 100'
+"
+java,python,s798589501.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s798589501.py"", line 4, in <module>
+    E = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0 2015'
+"
+java,python,s022525398.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s022525398.py"", line 3, in <module>
+    b = input()
+        ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,s584135649.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s584135649.py"", line 6, in <module>
+    n = int(stdin.readline())
+        ^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0 2 3 4 5\n'
+"
+java,python,s780604068.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s780604068.py"", line 15, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s780604068.py"", line 5, in main
+    data = list(map(int, input().split()))
+                ^^^
+UnboundLocalError: cannot access local variable 'map' where it is not associated with a value
+"
+java,python,s847387793.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s847387793.py"", line 41, in <module>
+    solver.run()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s847387793.py"", line 9, in run
+    n = int(sys.stdin.readline())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 4 3\n'
+"
+java,python,s387083574.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s387083574.py"", line 11, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s387083574.py"", line 6, in main
+    d = {i: int(sys.stdin.readline()) for i in range(1, N+1)}
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 3 1\n'
+"
+java,python,s684030429.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s684030429.py"", line 92, in <module>
+    Main().solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s684030429.py"", line 12, in solve
+    a = int(self.sc.readline())
+        ^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '12 4\n'
+"
+java,python,s514557145.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s514557145.py"", line 231, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s514557145.py"", line 28, in main
+    lazySegTree.apply(l, r + 1, F(D, N))
+TypeError: LazySegTree.apply() takes 3 positional arguments but 4 were given
+"
+java,python,s493101281.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s493101281.py"", line 125, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s493101281.py"", line 16, in main
+    n = sc.next_int()
+        ^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s493101281.py"", line 116, in next_int
+    nl = self.next_long()
+         ^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s493101281.py"", line 95, in next_long
+    if not self.has_next():
+           ^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s493101281.py"", line 80, in has_next
+    while self.has_next_byte() and not self.is_printable_char(self.buffer[self.ptr]):
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s493101281.py"", line 77, in is_printable_char
+    return 33 <= c <= 126
+           ^^^^^^^^^^^^^^
+TypeError: '<=' not supported between instances of 'int' and 'str'
+"
+java,python,s831281137.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s831281137.py"", line 27, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s831281137.py"", line 5, in main
+    N = int(sys.stdin.readline())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 5\n'
+"
+java,python,s835214694.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s835214694.py"", line 2, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 12'
+"
+java,python,s898738430.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s898738430.py"", line 2, in <module>
+    a = [int(input()) for _ in range(n)]
+         ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 3 5 4 2'
+"
+java,python,s973587235.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s973587235.py"", line 3, in <module>
+    minN = int(input()) - 1
+           ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 2 1 1 3'
+"
+java,python,s399184958.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s399184958.py"", line 1, in <module>
+    A = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 2 2'
+"
+java,python,s573993837.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s573993837.py"", line 98, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s573993837.py"", line 15, in main
+    m = int(data[idx+1])
+            ~~~~^^^^^^^
+IndexError: list index out of range
+"
+java,python,s720527488.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s720527488.py"", line 28, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s720527488.py"", line 11, in main
+    l, c = map(int, sys.stdin.readline().split())
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s826491904.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s826491904.py"", line 14, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s826491904.py"", line 6, in main
+    max_num = min_num = int(sc.readline())
+                        ^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 3 7 9\n'
+"
+java,python,s725559666.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s725559666.py"", line 2, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 3 8'
+"
+java,python,s022285498.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s022285498.py"", line 27, in <module>
+    solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s022285498.py"", line 24, in solve
+    task.solve(1, inp, out)
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s022285498.py"", line 16, in solve
+    out.write(f""{countArr[i]}\n"")
+    ^^^^^^^^^
+AttributeError: 'builtin_function_or_method' object has no attribute 'write'
+"
+java,python,s858314534.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s858314534.py"", line 9, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s858314534.py"", line 3, in main
+    A = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 5 7'
+"
+java,python,s443066739.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s443066739.py"", line 21, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s443066739.py"", line 9, in main
+    pre[i] = pre[i - 1] + int(sys.stdin.readline())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 2 3 4 5 6\n'
+"
+java,python,s004995062.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s004995062.py"", line 4, in <module>
+    sb = input()
+         ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,s518927375.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s518927375.py"", line 2, in <module>
+    k = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 2 6'
+"
+java,python,s416486483.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s416486483.py"", line 33, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s416486483.py"", line 29, in main
+    n, s = map(int, sys.stdin.readline().split())
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s552480860.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s552480860.py"", line 2, in <module>
+    h1, m1, h2, m2 = map(int, input().split())
+    ^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 4)
+"
+java,python,s967693306.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s967693306.py"", line 231, in <module>
+    Main().solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s967693306.py"", line 18, in solve
+    n = self.sc.nextInt()
+        ^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s967693306.py"", line 222, in nextInt
+    nl = self.nextLong()
+         ^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s967693306.py"", line 201, in nextLong
+    if not self.hasNext():
+           ^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s967693306.py"", line 186, in hasNext
+    while self.hasNextByte() and not self.isPrintableChar(self.buffer[self.ptr]):
+          ^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s967693306.py"", line 172, in hasNextByte
+    if self.buflen <= 0:
+       ^^^^^^^^^^^^^^^^
+TypeError: '<=' not supported between instances of 'str' and 'int'
+"
+java,python,s699933302.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s699933302.py"", line 1, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '5 14 80'
+"
+java,python,s201062219.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s201062219.py"", line 28, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s201062219.py"", line 7, in main
+    c = int(stdin.readline())
+        ^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 + 2\n'
+"
+java,python,s937747608.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s937747608.py"", line 2, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 5 2 7'
+"
+java,python,s897176066.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s897176066.py"", line 3, in <module>
+    A = [int(input()) for _ in range(N)]
+         ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 6 1 4 5'
+"
+java,python,s505375619.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s505375619.py"", line 3, in <module>
+    v = [int(input()) for _ in range(n)]
+         ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '10 2 5'
+"
+java,python,s962361667.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s962361667.py"", line 2, in <module>
+    w, n = map(int, input().split())
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s987117545.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s987117545.py"", line 19, in <module>
+    Main().run()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s987117545.py"", line 9, in run
+    n = int(self.sc.readline())
+        ^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 2\n'
+"
+java,python,s466963472.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s466963472.py"", line 20, in <module>
+    while read():
+          ^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s466963472.py"", line 7, in read
+    sys.stdin.seek(sys.stdin.tell() - 1)
+                   ^^^^^^^^^^^^^^^^
+io.UnsupportedOperation: underlying stream is not seekable
+"
+java,python,s853705214.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s853705214.py"", line 3, in <module>
+    nums = [int(input()) for _ in range(n)]
+            ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '-10 5 -4'
+"
+java,python,s233008404.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s233008404.py"", line 75, in <module>
+    mainObj.main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s233008404.py"", line 12, in main
+    self.solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s233008404.py"", line 17, in solve
+    self.w = fs.next_int()
+             ^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s233008404.py"", line 67, in next_int
+    return int(self.next())
+               ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s233008404.py"", line 62, in next
+    if self.st is None or not self.st.hasMoreElements():
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'hasMoreElements'
+"
+java,python,s890213274.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s890213274.py"", line 1, in <module>
+    A1 = int(input())
+         ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '5 7 9'
+"
+java,python,s380356166.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s380356166.py"", line 55, in read
+    self.readLen = self.in_.read(self.buffer)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument should be integer or None, not 'list'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s380356166.py"", line 137, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s380356166.py"", line 11, in main
+    solver.solve(1, in_, out)
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s380356166.py"", line 18, in solve
+    K = in_.nextInt()
+        ^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s380356166.py"", line 64, in nextInt
+    self.str[len_] = self.nextChar()
+                     ^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s380356166.py"", line 105, in nextChar
+    c = self.read()
+        ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s380356166.py"", line 57, in read
+    raise RuntimeError
+RuntimeError
+"
+java,python,s902370101.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s902370101.py"", line 4, in <module>
+    array = [int(sys.stdin.readline()) for _ in range(n)]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 3 7 9\n'
+"
+java,python,s081988820.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s081988820.py"", line 91, in <module>
+    main.solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s081988820.py"", line 11, in solve
+    H, W = self.sc.nextInt(), self.sc.nextInt()
+           ^^^^^^^^^^^^^^^
+AttributeError: 'Scanner' object has no attribute 'nextInt'. Did you mean: 'next_int'?
+"
+java,python,s893190600.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s893190600.py"", line 83, in <module>
+    import a
+ModuleNotFoundError: No module named 'a'
+"
+java,python,s036404962.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s036404962.py"", line 2, in <module>
+    X = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '100 17'
+"
+java,python,s125881159.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s125881159.py"", line 5, in <module>
+    d += int(input()) % 2
+         ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 2 3'
+"
+java,python,s012761786.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s012761786.py"", line 3, in <module>
+    from django.db import migrations, models
+ModuleNotFoundError: No module named 'django'
+"
+java,python,s476581255.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s476581255.py"", line 22, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s476581255.py"", line 4, in main
+    a = [int(input()) for _ in range(n)]
+         ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '5 3 2 4 1'
+"
+java,python,s500433274.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s500433274.py"", line 15, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s500433274.py"", line 5, in main
+    a, b = map(int, line.split())
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s047401835.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s047401835.py"", line 19, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s047401835.py"", line 6, in main
+    numbers = [int(sys.stdin.readline()) for _ in range(N)]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '8 12 40\n'
+"
+java,python,s307170605.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s307170605.py"", line 3, in <module>
+    if int(input()) == 0:
+       ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0 2 3 4 5'
+"
+java,python,s523386612.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s523386612.py"", line 5, in <module>
+    count[int(input())] += 1
+          ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 1 2 2'
+"
+java,python,s739337307.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s739337307.py"", line 35, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s739337307.py"", line 5, in main
+    n, m = map(int, sys.stdin.readline().split())
+           ^^^
+UnboundLocalError: cannot access local variable 'map' where it is not associated with a value
+"
+java,python,s832608243.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s832608243.py"", line 4, in <module>
+    a, b = int(input()), int(input())
+           ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 2'
+"
+java,python,s696692583.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s696692583.py"", line 60, in <module>
+    Main().run()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s696692583.py"", line 13, in run
+    enemy1 = self.nextInt()
+             ^^^^^^^^^^^^
+AttributeError: 'Main' object has no attribute 'nextInt'
+"
+java,python,s127819686.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s127819686.py"", line 1, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '81 58'
+"
+java,python,s927992720.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s927992720.py"", line 3, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 + 2'
+"
+java,python,s749703010.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s749703010.py"", line 78, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s749703010.py"", line 41, in main
+    n = sc.nextInt()
+        ^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s749703010.py"", line 66, in nextInt
+    return int(next(self))
+               ^^^^^^^^^^
+TypeError: 'Scanner' object is not an iterator
+"
+java,python,s880132387.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s880132387.py"", line 42, in <module>
+    Main().run()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s880132387.py"", line 17, in run
+    dp = [[math.BigInteger(0) for _ in range(W)] for _ in range(H)]
+           ^^^^^^^^^^^^^^^
+AttributeError: module 'math' has no attribute 'BigInteger'
+"
+java,python,s910447421.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s910447421.py"", line 95, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s910447421.py"", line 12, in main
+    solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s910447421.py"", line 24, in solve
+    ans = min(ans, check(p, q))
+          ^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s910447421.py"", line 56, in min
+    return min(a, b)
+           ^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s910447421.py"", line 56, in min
+    return min(a, b)
+           ^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s910447421.py"", line 56, in min
+    return min(a, b)
+           ^^^^^^^^^
+  [Previous line repeated 994 more times]
+RecursionError: maximum recursion depth exceeded
+"
+java,python,s657273562.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s657273562.py"", line 223, in <module>
+    Main.main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s657273562.py"", line 48, in main
+    n = Main.sc.nextInt()
+        ^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s657273562.py"", line 152, in nextInt
+    return int(self.next())
+               ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s657273562.py"", line 147, in next
+    while self.st is None or not self.st.hasMoreTokens():
+                                 ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'hasMoreTokens'
+"
+java,python,s682242794.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s682242794.py"", line 17, in <module>
+    obj.solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_chat/codenet/direct_translation/java/python/s682242794.py"", line 10, in solve
+    self.high = int(input())
+                ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '30 19'
+"

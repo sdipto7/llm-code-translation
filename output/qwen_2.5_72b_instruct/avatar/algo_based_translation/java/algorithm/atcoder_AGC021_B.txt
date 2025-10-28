@@ -1,0 +1,25 @@
+function main() -> void
+    variable N: int
+    variable x: array of int with size N
+    variable y: array of int with size N
+
+    read N from input
+    for i from 0 to N-1 do
+        read x[i] from input
+        read y[i] from input
+
+    for i from 0 to N-1 do
+        variable thetas: list of double
+        for j from 0 to N-1 do
+            if i != j then
+                add Math.atan2(y[j] - y[i], x[j] - x[i]) to thetas
+
+        sort thetas in natural order
+        add (thetas[0] + 2 * Math.PI) to thetas
+
+        variable ans: double
+        ans = 0
+        for k from 0 to N-2 do
+            ans = max(ans, thetas[k+1] - thetas[k] - Math.PI)
+
+        print ans / (Math.PI * 2)

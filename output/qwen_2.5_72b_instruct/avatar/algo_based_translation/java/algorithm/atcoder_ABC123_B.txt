@@ -1,0 +1,38 @@
+Function Signature: `main(String[] args) throws Exception`
+
+Variable Declarations:
+- `Scanner sc` - for input
+- `int[] a` - array to store 5 integers
+- `int[] r` - array to store remainders of `a` elements modulo 10
+- `TreeMap<Integer, Integer> map` - to map the difference to the number
+- `int ans` - to accumulate the final result
+- `int b` - to store the difference from 10 for non-zero remainders
+- `int last` - to store the number corresponding to the largest difference in `map`
+- `int idx` - index of `last` in the array `a`
+
+Logic Flow:
+1. Initialize `sc` as a new `Scanner` object.
+2. Initialize `a` as an array of 5 integers.
+3. Initialize `r` as an array of 5 integers.
+4. Initialize `map` as a new `TreeMap` object.
+5. For `i` from 0 to 4:
+   - Read an integer from `sc` and store it in `a[i]`.
+   - Compute `r[i] = a[i] % 10`.
+   - If `r[i]` is not 0:
+     - Set `b = 10 - r[i]`.
+     - Put `b` as key and `a[i]` as value in `map`.
+6. If `map` is empty:
+   - For `i` from 0 to 4:
+     - Add `a[i]` to `ans`.
+   - Print `ans`.
+   - Return.
+7. Set `last` to the value in `map` with the last (largest) key.
+8. Find the index `idx` of `last` in `a`.
+9. For `i` from 0 to 4:
+   - If `i` is not equal to `idx`:
+     - If `a[i] % 10` is 0:
+       - Add `a[i]` to `ans`.
+     - Else:
+       - Add `a[i] + (10 - r[i])` to `ans`.
+10. Add `last` to `ans`.
+11. Print `ans`.

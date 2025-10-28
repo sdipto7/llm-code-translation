@@ -1,0 +1,33 @@
+**Algorithm:**
+
+1. **Input:**
+   - Read two integers `N` and `D` from standard input, separated by space.
+   - `N` represents the number of points.
+   - `D` represents the dimensionality of each point.
+
+2. **Data Structures:**
+   - Declare a list `mat` of type `List[List[int]]` to store the points.
+
+3. **Data Collection:**
+   - For `d` in range `0` to `N-1`:
+     - Read a line from standard input, split it into integers, and append as a row to `mat`.
+
+4. **Initialization:**
+   - Import the `math` module.
+   - Initialize integer variable `c` to `0`.
+
+5. **Nested Loops for Point Pairs:**
+   - For `i` from `0` to `len(mat)-2`:
+     - For `j` from `i+1` to `len(mat)-1`:
+       - Compute Euclidean distance `dist` between points `mat[i]` and `mat[j]`:
+         - For each dimension `k`, compute `(mat[i][k] - mat[j][k])**2`.
+         - Sum all squared differences.
+         - Take the square root of the sum.
+       - Check if `dist` is an integer (i.e., `int(dist) == dist`):
+         - If true, increment `c` by `1`.
+
+6. **Output:**
+   - Print the value of `c`.
+
+**Function Signature (if encapsulated):**
+- `def main() -> None:` (No parameters, no return value; uses global input/output)

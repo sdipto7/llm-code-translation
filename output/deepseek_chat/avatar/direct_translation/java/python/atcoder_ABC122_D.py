@@ -1,0 +1,38 @@
+import sys
+import collections
+
+class atcoder_ABC122_D:
+    def __init__(self):
+        self.N = int(sys.stdin.readline())
+        self.MOD = 1000000007
+        self.TOKEN = ["A", "C", "G", "T"]
+        self.memo = [collections.defaultdict(int) for _ in range(self.N + 1)]
+
+    def isOK(self, last4):
+        if "AGC" in last4:
+            return False
+        for i in range(3):
+            val = list(last4)
+            val[i], val[i+1] = val[i+1], val[i]
+            if "AGC" in ''.join(val):
+                return False
+        return True
+
+    def dfs(self, current, last3):
+        if last3 in self.memo[current]:
+            return self.memo[current][last3]
+        if current == self.N:
+            return 1
+        result = 0
+        for c in self.TOKEN:
+            if self.isOK(last3 + c):
+                result = (result + self.dfs(current + 1, last3[1:] + c)) % self.MOD
+        self.memo[current][last3] = result
+        return result
+
+    def calc(self):
+        return self.dfs(0, "TTT")
+
+if __name__ == "__main__":
+    ins = atcoder_ABC122_D()
+    print(ins.calc())

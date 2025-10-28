@@ -1,0 +1,40 @@
+**Function Signature:**
+- No explicit function defined; main script execution
+
+**Variables and Data Types:**
+- x: int
+- y: int
+- a: int
+- b: int
+- games: list[tuple[int, int]]
+- i: int (loop variable)
+- j: int (loop variable)
+
+**Input Operations:**
+- Read one line from standard input
+- Split input by whitespace
+- Convert each split element to integer
+- Assign to variables x, y, a, b
+
+**Logic Flow:**
+1. Initialize empty list 'games'
+2. For i from a to x (inclusive):
+   - If i ≤ b: skip to next iteration
+   - Else:
+     - For j from b to y (inclusive):
+       - If i > j:
+         - Append tuple (i, j) to 'games'
+3. Print length of 'games'
+4. For each tuple in 'games':
+   - Print first element, space, second element
+
+**Control Structures:**
+- For loop: i = a; i ≤ x; i++
+  - If condition: i ≤ b → continue
+  - Else:
+    - For loop: j = b; j ≤ y; j++
+      - If condition: i > j → append (i,j) to games
+
+**Output Operations:**
+- Print integer: len(games)
+- For each tuple in games: print formatted string "{tuple[0]} {tuple[1]}"

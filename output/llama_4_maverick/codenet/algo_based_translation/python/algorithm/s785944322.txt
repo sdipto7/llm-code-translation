@@ -1,0 +1,11 @@
+1. Import the sys module.
+2. Define a function with no parameters that reads input from standard input and processes it.
+   - The function has no return value.
+   - Declare variables a and b of type integer.
+3. Read a line from standard input using sys.stdin.readline and store it in the variable input.
+4. Parse the input into two integers using map(int, input.split()) and assign the values to variables a and b.
+5. Evaluate the value of a using conditional statements.
+   - If a is greater than or equal to 13, output the value of b.
+   - If a is greater than or equal to 6 but less than 13, output the integer division of b by 2.
+   - If a is less than 6, output 0.
+6. The required library is sys.

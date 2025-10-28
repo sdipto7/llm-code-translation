@@ -1,0 +1,29 @@
+- Function Signature:
+  - `main(args: List[String]): Unit`
+
+- Variable Declarations:
+  - `scanner: Scanner`
+  - `a: Int`
+  - `b: Int`
+  - `flag: Boolean`
+
+- Logic Flow:
+  1. Initialize a `Scanner` object to read input from standard input.
+  2. Read two integers from input and assign them to variables `a` and `b`.
+  3. Initialize a boolean variable `flag` to `false`.
+  4. Begin a `for` loop with `i` ranging from 1 to 100,000 inclusive:
+     - Calculate `Math.floor(1.0 * i * 0.08)` and compare it to `a`.
+     - Calculate `Math.floor(0.1 * i)` and compare it to `b`.
+     - If both conditions are true:
+       - Print `i`.
+       - Set `flag` to `true`.
+       - Break out of the loop.
+  5. After the loop, check if `flag` is still `false`:
+     - If true, print `-1`.
+
+- Input/Output Operations:
+  - Input: Read two integers from standard input.
+  - Output: Print an integer based on the logic conditions or `-1` if no integer satisfies the conditions.
+
+- Required Libraries:
+  - `java.util.Scanner`

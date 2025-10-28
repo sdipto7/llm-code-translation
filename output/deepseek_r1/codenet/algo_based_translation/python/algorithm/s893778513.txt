@@ -1,0 +1,21 @@
+- Function Signatures: N/A (script, no functions)
+- Variable Declarations:
+  - n: str (unused input)
+  - l: List[int] from parsed input
+  - b: int (maximum element of l)
+  - s: int (sum of all elements in l)
+- Logic Flow:
+  1. Read n via input()
+  2. Read space-separated integers via input() to create list l
+  3. Compute b = max(l)
+  4. Compute s = sum(l)
+  5. Check if b < (s - b)
+     - True: print("Yes")
+     - False: print("No")
+- Control Structures:
+  - Single if-else block with condition (b < (s - b))
+- Input/Output Operations:
+  - Read two lines from stdin
+  - Final output prints "Yes" or "No"
+- Libraries/Dependencies:
+  - None (uses built-in functions)

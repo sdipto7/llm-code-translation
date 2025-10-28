@@ -1,0 +1,36 @@
+**Algorithm:**
+
+**Function Signature:**  
+`main(args: String[]): void`
+
+**Parameters:**  
+- Standard input: Five space-separated integers (Q, H, S, D, N) representing prices for 0.25L, 0.5L, 1L, 2L volumes and required liters.
+
+**Variables:**  
+- `Q: long` (price for 0.25L)  
+- `H: long` (price for 0.5L)  
+- `S: long` (price for 1L)  
+- `D: long` (price for 2L)  
+- `N: long` (required liters)  
+- `onePrice: long` (minimum cost for 1L via 0.25L×4, 0.5L×2, or 1L)  
+
+**Logic Flow:**  
+1. Read Q, H, S, D, N from input.  
+2. Compute `onePrice = min(Q*4, H*2, S)`.  
+3. If `onePrice ≤ D / 2.0`:  
+   - Total cost = `N * onePrice`.  
+4. Else:  
+   - Total cost = `(N // 2) * D + (N % 2) * onePrice`.  
+5. Print total cost.  
+
+**Control Structures:**  
+- Single conditional:  
+  - **Condition:** Compare `onePrice` (as `double`) with `D / 2.0`.  
+
+**Input/Output:**  
+- Input: Read via `Scanner` (Q, H, S, D, N as `long`).  
+- Output: Print result to standard output.  
+
+**Dependencies:**  
+- `java.util.Scanner` for input.  
+- `java.lang.System` for output.

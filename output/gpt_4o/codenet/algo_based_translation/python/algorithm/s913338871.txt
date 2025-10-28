@@ -1,0 +1,28 @@
+1. Function Signature:
+   - Function Name: `calculate_sum_of_alternate_elements`
+   - Parameters: `numbers: List[int]`
+   - Return Type: `int`
+
+2. Variable Declarations:
+   - `N: int` - Represents the number of elements to skip from the start.
+   - `a: List[int]` - List of integers.
+   - `s: List[int]` - List of alternate elements starting from index `N`.
+
+3. Logic Flow:
+   1. Read an integer input and assign it to `N`.
+   2. Read a line of input, split it by spaces, convert each to an integer, and store the list in `a`.
+   3. Sort the list `a` in non-decreasing order.
+   4. Create a new list `s` by selecting every second element from the list `a` starting from the index `N`.
+   5. Calculate the sum of elements in list `s`.
+   6. Output the calculated sum.
+
+4. Control Structures:
+   - List slicing is used to iterate over alternate elements starting from a specific index.
+
+5. Input/Output Operations:
+   - Input: Reading a single integer for `N`.
+   - Input: Reading a line of integers, splitting them, and converting them into a list `a`.
+   - Output: Printing the sum of the selected elements in the list `s`.
+
+6. Required Libraries:
+   - No external libraries or modules are required.

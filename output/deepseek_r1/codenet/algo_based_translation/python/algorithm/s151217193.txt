@@ -1,0 +1,16 @@
+- Function signatures: None (code is procedural)
+- Variable declarations and types:
+  - R: integer
+  - G: integer
+  - result: integer
+- Execution order:
+  1. Read integer input from standard input → R
+  2. Read integer input from standard input → G
+  3. Calculate result = (G × 2) - R
+  4. Print result to standard output
+- Control structures: None
+- Input/Output operations:
+  - Input: Two sequential integer inputs via stdin
+  - Output: Single line printing calculated result
+- Data processing: Arithmetic operation (multiplication and subtraction)
+- Dependencies: None (uses standard input/output functions)

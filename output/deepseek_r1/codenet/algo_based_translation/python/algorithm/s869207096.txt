@@ -1,0 +1,23 @@
+1. **Function Signature**: Not applicable (script-based)
+2. **Input Operations**:
+   - Read integer `n` from standard input.
+   - Read string `s` from standard input (length = `n`).
+3. **Variable Declarations**:
+   - `n: int` (user input)
+   - `s: str` (user input)
+   - `cnt: int` (initialized to 1)
+4. **Logic Flow**:
+   - Initialize `cnt` to 1.
+   - Iterate `i` from 0 to `n-2` (inclusive) via loop:
+     - If `s[i]` == `s[i+1]`:
+       - Skip iteration (`continue`).
+     - Else:
+       - Increment `cnt` by 1.
+   - Print `cnt` after loop completion.
+5. **Control Structures**:
+   - `for` loop: `i in range(n-1)`
+   - `if` condition: `s[i] == s[i+1]`
+   - `else` clause for increment
+6. **Output Operation**:
+   - Print final value of `cnt`.
+7. **Dependencies**: None (uses built-in functions only).

@@ -1,0 +1,38 @@
+1. Initialize N and M from input
+2. Create empty lists: edges, degs, parity, flag
+3. For i from 0 to N-1:
+   1. edges[i] = empty set
+   2. degs[i] = 0
+   3. parity[i] = 0
+   4. flag[i] = False
+4. For _ from 0 to M-1:
+   1. Read a and b from input
+   2. a = a - 1
+   3. b = b - 1
+   4. Add b to edges[a]
+   5. Add a to edges[b]
+   6. degs[a] = degs[a] + 1
+   7. degs[b] = degs[b] + 1
+5. If M is odd:
+   1. Output -1
+   2. Exit
+6. Q = empty list
+7. For i from 0 to N-1:
+   1. Append (degs[i], i) to Q
+8. Heapify Q
+9. While Q is not empty:
+   1. Remove the smallest element (d, u) from Q
+   2. If flag[u] is True:
+      1. Continue to the next iteration
+   3. flag[u] = True
+   4. For each v in edges[u]:
+      1. Remove u from edges[v]
+      2. If parity[u] is not 0 and v is the first element in edges[u]:
+         1. Output u+1 and v+1
+         2. parity[u] = 1 - parity[u]
+      3. Else:
+         1. Output v+1 and u+1
+         2. parity[v] = 1 - parity[v]
+      4. degs[v] = degs[v] - 1
+      5. Append (degs[v], v) to Q
+      6. Heapify Q

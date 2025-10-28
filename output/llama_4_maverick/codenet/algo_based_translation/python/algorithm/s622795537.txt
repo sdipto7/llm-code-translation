@@ -1,0 +1,12 @@
+1. Read an integer `n` from input.
+2. Initialize an empty dictionary `arr`.
+3. Iterate `n` times:
+   - Read a string `s` from input.
+   - Check if `s` is not a key in `arr`.
+     - If true, add `s` as a key to `arr` with value 1.
+     - If false, increment the value associated with `s` in `arr` by 1.
+4. Find the maximum value `max_count` among the values in `arr`.
+5. Create a list `dic` containing the keys from `arr` where the associated value equals `max_count`.
+6. Sort the list `dic` in ascending order and store it in `out_sort`.
+7. Iterate over the elements in `out_sort`:
+   - Print each element.

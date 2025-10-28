@@ -1,0 +1,34 @@
+Algorithm:
+
+1. Import necessary library:
+   - `java.util.Scanner` for input functionality.
+
+2. Define the main function:
+   - No parameters.
+   - No return type.
+
+3. Initialize a `Scanner` object `sc` to read from standard input.
+
+4. Read an integer `n` from input using `sc.nextInt()`.
+
+5. Declare an integer array `nums` of size `n`.
+
+6. For loop to iterate from `i = 0` to `i < n`:
+   - Read an integer from input using `sc.nextInt()`.
+   - Assign the integer to `nums[i]`.
+
+7. Declare an integer `min` and initialize it to `Integer.MAX_VALUE`.
+
+8. Declare an integer `countNegatives` and initialize it to `0`.
+
+9. Declare a long integer `sum` and initialize it to `0`.
+
+10. For each integer `num` in `nums` array:
+    - Calculate the absolute value of `num` and store it in `abs`.
+    - Add `abs` to `sum`.
+    - Update `min` to the minimum of `min` and `abs`.
+    - If `num` is less than `0`, increment `countNegatives` by `1`.
+
+11. Check if `countNegatives` is even:
+    - If true, output `sum`.
+    - Otherwise, output `sum - (min * 2)`.

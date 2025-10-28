@@ -1,0 +1,50 @@
+**Algorithm:**
+
+1. **Import Modules:**
+   - Import: math, itertools, fractions, heapq, collections, bisect, sys, queue, copy
+   - Set sys recursion limit to 10^7
+   - Define constant `inf` = 10^20
+   - Define constant `mod` = 10^9 + 7
+   - Define list `dd` = [(-1,0), (0,1), (1,0), (0,-1)]
+   - Define list `ddn` = [(-1,0), (-1,1), (0,1), (1,1), (1,0), (1,-1), (0,-1), (-1,-1)]
+
+2. **Function Definitions:**
+   - Function LI(): returns list[int]
+     - Read line from stdin
+     - Split line by spaces
+     - Convert each element to int
+     - Return resulting list
+
+   - Function I(): returns int
+     - Read line from stdin
+     - Convert to int
+     - Return value
+
+   - Function F(): returns float
+     - Read line from stdin
+     - Convert to float
+     - Return value
+
+   - Function LS(): returns list[str]
+     - Read line from stdin
+     - Split line by spaces
+     - Return resulting list
+
+   - Function S(): returns str
+     - Read input from stdin
+     - Return string
+
+3. **Main Function:**
+   - Function main(): returns int
+     - Read four integers from stdin using LI() function
+     - Assign to variables a, b, c, d (all int)
+     - Calculate maximum of:
+        a * c
+        b * d
+        a * d
+        b * c
+     - Return maximum value
+
+4. **Execution:**
+   - Call main() function
+   - Print return value

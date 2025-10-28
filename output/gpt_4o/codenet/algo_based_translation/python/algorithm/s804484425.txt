@@ -1,0 +1,53 @@
+```
+Algorithm: Calculate Maximum Value
+
+1. Import the `itemgetter` function from the `operator` module.
+
+2. Read input values:
+   - Read two integers, `n` and `k`, from input (split by space).
+   - Declare `n` as an integer representing the number of items.
+   - Declare `k` as an integer representing the number of items to be initially selected.
+
+3. Initialize a list `info` of size `n`:
+   - Each element in `info` is a list containing two integers `t` and `d` representing type and deliciousness respectively, read from input.
+
+4. Sort `info` in descending order based on the second element of each sublist (`d`).
+
+5. Initialize lists and variables:
+   - `selected`: List of the first `k` elements from `info`.
+   - `selected_only`: Empty list to store unique type deliciousness.
+   - `selected_chohuku`: Empty list to store duplicate type deliciousness.
+   - `unselected_only`: Empty list to store deliciousness of unselected unique types.
+   - `memo`: Empty dictionary to track types of selected items.
+   - `cnt_type`: Integer set to zero, representing count of unique types.
+
+6. Iterate over each pair `(t, d)` in `selected`:
+   - If `t` is not in `memo`:
+     - Add `t` to `memo`.
+     - Append `d` to `selected_only`.
+   - Else:
+     - Append `d` to `selected_chohuku`.
+
+7. Set `cnt_type` to the length of `memo`.
+
+8. Iterate over each pair `(t, d)` in `info` starting from index `k` to `n`:
+   - If `t` is not in `memo`:
+     - Add `t` to `memo`.
+     - Append `d` to `unselected_only`.
+
+9. Calculate `sum_select` as the sum of `selected_chohuku` and `selected_only`.
+
+10. Calculate `ans` as `cnt_type * cnt_type + sum_select`.
+
+11. Reverse the list `unselected_only`.
+
+12. Iterate over the range from 0 to the minimum of lengths of `selected_chohuku` and `unselected_only`:
+    - Increment `cnt_type` by 1.
+    - Add the last element of `unselected_only` to `sum_select`.
+    - Subtract the last element of `selected_chohuku` from `sum_select`.
+    - Remove the last element from both `unselected_only` and `selected_chohuku`.
+    - Calculate `tmp` as `cnt_type * cnt_type + sum_select`.
+    - Update `ans` to be the maximum of `ans` and `tmp`.
+
+13. Output the value of `ans`.
+```

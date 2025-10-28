@@ -1,0 +1,35 @@
+Libraries: java.util.*, java.io.*, java.nio.charset.StandardCharsets
+
+Main Function:
+Function Signature: public static void main(String[] args) throws IOException
+- InputStreamReader reader = new InputStreamReader(System.in, StandardCharsets.UTF_8)
+- BufferedReader in = new BufferedReader(reader)
+- atcoder_ABC149_B ins = new atcoder_ABC149_B(in)
+- ins.calc()
+- ins.showResult()
+
+Constructor:
+Function Signature: public atcoder_ABC149_B(BufferedReader in) throws IOException
+- String[] tokens = in.readLine().split(" ")
+- A = Long.parseLong(tokens[0])
+- B = Long.parseLong(tokens[1])
+- K = Long.parseLong(tokens[2])
+
+Calc Method:
+Function Signature: void calc()
+- x = A
+- y = B
+- x = A - K
+- if (x < 0)
+    - y = B + x
+    - x = 0
+    - if (y < 0)
+        - y = 0
+
+ShowResult Method:
+Function Signature: void showResult()
+- System.out.println(x + " " + y)
+
+Variable Declarations:
+- long A, B, K
+- long x, y

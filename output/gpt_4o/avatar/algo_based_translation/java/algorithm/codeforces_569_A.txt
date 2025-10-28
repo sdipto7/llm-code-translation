@@ -1,0 +1,34 @@
+1. Import required library:
+   - java.util.Scanner
+
+2. Define main function:
+   - Signature: `public static void main(String[] args)`
+
+3. Initialize Scanner object for input:
+   - Variable: `Scanner in`
+   - Type: `Scanner`
+   - Initialization: `new Scanner(System.in)`
+
+4. Read integer inputs:
+   - Variable: `int T`
+   - Assignment: `T = in.nextInt()`
+   - Variable: `int S`
+   - Assignment: `S = in.nextInt()`
+   - Variable: `int q`
+   - Assignment: `q = in.nextInt()`
+
+5. Initialize variables for algorithm:
+   - Variable: `long previous`
+   - Assignment: `previous = S`
+   - Variable: `int answer`
+   - Initialization: `answer = 0`
+
+6. Loop until condition is met:
+   - Condition: `while (previous < T)`
+
+7. Inside loop:
+   - Increment: `answer++`
+   - Update `previous`: `previous *= q`
+
+8. Output result:
+   - Use: `System.out.println(answer)`

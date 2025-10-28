@@ -1,0 +1,61 @@
+Algorithm:
+
+1. Static variables:
+   - `int mod = 998244353`
+   - `long[][] nchoosek` (size 4001x4001)
+
+2. Main function:
+   - Parameters: `String[] args`
+   - Return: `void`
+
+3. Initialize nchoosek array:
+   - For `i` from 0 to 4000:
+     - Set `nchoosek[i][0] = 1`
+     - Set `nchoosek[i][i] = 1`
+   - For `i` from 2 to 4000:
+     - For `j` from 1 to i-1:
+       - `nchoosek[i][j] = (nchoosek[i-1][j] + nchoosek[i-1][j-1]) % mod`
+
+4. Read input:
+   - `Scanner sc = new Scanner(System.in)`
+   - `int k = sc.nextInt()`
+   - `int n = sc.nextInt()`
+
+5. Process each `i` from 2 to 2*k:
+   - Compute pairs:
+     - If `i > k`:
+       - `pairs = k - (i / 2)`
+     - Else:
+       - `pairs = (i - 1) / 2`
+   - Compute active:
+     - `active = k - 2 * pairs`
+     - If `i % 2 == 0`:
+       - `active -= 1`
+   - Initialize:
+     - `long times2 = 1`
+     - `long total = 0`
+   - Iterate `j` from 0 to pairs:
+     - Compute `choice = (times2 * nchoosek[pairs][j]) % mod`
+     - Update `times2 = (times2 * 2) % mod`
+     - If `active + j - 1 < 0`: skip iteration
+     - Add to `total`:
+       - `choice * nchoosek[n + active - 1][active + j - 1]`
+       - If `i % 2 == 0`: add `choice * nchoosek[n + active - 2][active + j - 1]`
+     - Apply `% mod` to total
+   - Print `total`
+
+6. Control structures:
+   - Nested for-loops for nchoosek initialization
+   - For-loop for i from 2 to 2*k
+   - If-else conditions for pairs calculation
+   - If condition for active adjustment
+   - For-loop for j from 0 to pairs
+   - Continue statement for invalid index prevention
+   - Conditional addition based on i parity
+
+7. Input/Output:
+   - Input via Scanner from System.in
+   - Output via System.out.println for each i's result
+
+8. Dependencies:
+   - `java.util.Scanner` required for input handling

@@ -1,0 +1,30 @@
+Algorithm:
+1. Import necessary dependencies:
+   - Import the `java.util.Scanner` class for input operations.
+
+2. Define the main function:
+   - Signature: `public static void main(String[] args)`
+
+3. Declare variables:
+   - `Scanner scan` to read input from the standard input.
+   - `int a` to store the initial number of candles.
+   - `int b` to store the number of burnt-out candles needed to form a new candle.
+   - `int res` to store the total number of candles that can be burnt.
+
+4. Initialize the scanner:
+   - `scan = new Scanner(System.in)`
+
+5. Read inputs:
+   - Assign `a` the value from `scan.nextInt()`.
+   - Assign `b` the value from `scan.nextInt()`.
+
+6. Initialize result:
+   - Assign `a` to `res` to include the initial candles in the total count.
+
+7. Loop to calculate the total number of candles that can be burnt:
+   - While `a` is greater than or equal to `b`:
+     - Add the integer division of `a` by `b` to `res`.
+     - Update `a` to the sum of the integer division of `a` by `b` and the remainder of `a` divided by `b`.
+
+8. Output the result:
+   - Print the value of `res`.

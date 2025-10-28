@@ -1,0 +1,10 @@
+1. Read an integer input from standard input
+2. Subtract 25 from the input value
+3. Take the absolute value of the result
+4. Multiply the string ' Eve' by the absolute value result
+5. Concatenate 'Christmas' with the multiplied string
+6. Print the resulting string to standard output
+
+Input: integer from stdin
+Output: string printed to stdout
+No external dependencies required

@@ -1,0 +1,64 @@
+Here is the C++ code translated from the provided Python code:
+
+```cpp
+#include <iostream>
+#include <string>
+#include <vector>
+#include <regex>
+
+using namespace std;
+
+string trim(const string& s) {
+    size_t start = s.find_first_not_of(" \t\n");
+    if (start == string::npos) return "";
+    size_t end = s.find_last_not_of(" \t\n");
+    return s.substr(start, end - start + 1);
+}
+
+vector<string> split_sentences(const string& input) {
+    regex re(R"([.?!])");
+    sregex_token_iterator it(input.begin(), input.end(), re, -1);
+    sregex_token_iterator end;
+    vector<string> parts;
+    while (it != end) {
+        parts.push_back(*it);
+        ++it;
+    }
+    return parts;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    cin.ignore();
+    
+    string line;
+    getline(cin, line);
+    
+    vector<string> sentences = split_sentences(line);
+    int ans = 1, sumL = 0;
+    
+    for (const string& part : sentences) {
+        string s = trim(part) + ".";
+        int L = s.length();
+        
+        if (L > 1) {
+            if (L > n) {
+                cout << "Impossible";
+                return 0;
+            }
+            
+            int required = sumL + L + (sumL > 0 ? 1 : 0);
+            if (required > n) {
+                ans++;
+                sumL = L;
+            } else {
+                sumL += L + (sumL > 0 ? 1 : 0);
+            }
+        }
+    }
+    
+    cout << ans;
+    return 0;
+}
+```

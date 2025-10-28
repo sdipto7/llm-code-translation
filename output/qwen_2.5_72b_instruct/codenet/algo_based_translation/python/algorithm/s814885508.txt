@@ -1,0 +1,26 @@
+Function signature: `main()`
+
+Variable declarations and data types:
+- `X: int`
+- `K: int`
+- `D: int`
+- `r: int`
+- `a: int`
+
+Execution order and logic flow:
+1. Read three integers `X`, `K`, and `D` from input.
+2. Calculate integer division result `r` of `X` by `D`.
+3. If absolute value of `r` is greater than `K`:
+   - Print absolute value of `X` minus `K` times `D`.
+   - Exit the program.
+4. Calculate remainder `a` of `X` divided by `D` using `X - r * D`.
+5. Check if `(K - r) % 2` equals 0:
+   - If true, print `a`.
+   - Otherwise, print absolute value of `D - a`.
+
+Input/output operations and data processing logic:
+- Input: Three space-separated integers `X`, `K`, and `D`.
+- Output: Single integer based on the conditions described.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules required.

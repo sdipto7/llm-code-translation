@@ -1,0 +1,17 @@
+1. Initialize variables: x = 0, y = 0, k = 0, flag = True.
+2. Read input string s.
+3. Convert string s to character array ch.
+4. Store initial coordinates (x, y) in a 2D array co at index k.
+5. Increment k.
+6. Iterate through each character in ch.
+7. For each character, update x and y based on the direction (L, R, U, D).
+8. Store updated coordinates (x, y) in co at index k.
+9. Increment k.
+10. Iterate through co from index 0 to k-3.
+11. For each index i, iterate through co from index i+3 to k-1.
+12. Calculate the absolute difference in x and y coordinates (dx, dy) between indices i and j.
+13. Check if (dx <= 1 and dy == 0) or (dy <= 1 and dx == 0).
+14. If the condition is true, set flag to False and break the inner loop.
+15. If flag is False, break the outer loop.
+16. If flag is True, output "OK".
+17. If flag is False, output "BUG".

@@ -1,0 +1,22 @@
+```
+- Function Signature:
+  - No explicit function used, operates in a script-like manner
+  - Requires input from standard input
+  - Output is printed directly to standard output
+
+- Variable Declarations:
+  - n: int
+  - m: List of List of int
+  - a: List of int
+  - i: List of int (used in for loop)
+
+- Execution Flow:
+  1. Read an integer from input and assign it to `n`
+  2. Initialize `m` as a list of lists, where each inner list is populated by reading a line from input, splitting it on spaces, and converting each element to an integer. Repeat this process `n` times.
+  3. Sort the list `m` in descending order based on the first element of each inner list.
+  4. Assign the first list in `m` to `a`.
+  5. Iterate through the sublists of `m` starting from the second element:
+     - If the second element of the current sublist `i` is greater than the second element of `a`, print 'Happy Alex' and terminate the loop.
+     - Otherwise, assign the current sublist `i` to `a`.
+  6. If the loop completes without breaking, print 'Poor Alex'.
+```

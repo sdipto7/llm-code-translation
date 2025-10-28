@@ -1,0 +1,40 @@
+1. Read input from the standard input using a `FastScanner` object.
+2. Initialize variables:
+   - `N`: number of vertices
+   - `to`: adjacency list representation of the graph
+   - `edges`: list of edges in the graph
+   - `dp`: array to store the number of vertices in the subtree rooted at each vertex
+   - `mod`: modulus for modular arithmetic (1e9 + 7)
+3. Perform the following steps:
+   - For `i` = 0 to `N-2`:
+     - Read two integers `A` and `B` representing an edge in the graph.
+     - Add `B` to the adjacency list of `A` and vice versa.
+     - Store the edge (`B`, `A`) in `edges`.
+   - Call the `rec` function with parameters (0, -1) to compute the number of vertices in the subtree rooted at each vertex.
+   - Initialize `mulsum` to 0.
+   - For each edge `e` in `edges`:
+     - Determine the child vertex `child` by comparing the values of `dp` at the two endpoints of the edge.
+     - Compute `a` = `dp[child]` and `b` = `N` - `a`.
+     - Compute `mul` = (`modpow(2, a)` - 1) * (`modpow(2, b)` - 1) mod `mod`.
+     - Add `mul` to `mulsum` and take the modulus `mod`.
+   - Compute `cases` = `modpow(2, N)`.
+   - Compute `PN` = (`mulsum` + (`cases` - 1) mod `mod`) mod `mod`.
+   - Compute `BN` = `N` * `modpow(2, N-1)` mod `mod`.
+   - Compute `WN` = (`PN` - `BN`) mod `mod`.
+   - Compute `ans` = `WN` * `modpow(cases, mod-2)` mod `mod`.
+4. Output `ans` to the standard output.
+
+The `rec` function:
+- takes two parameters: `v` (vertex) and `parent` (parent vertex)
+- returns the number of vertices in the subtree rooted at `v`
+- recursively calls itself for each neighbor of `v` that is not `parent`
+- stores the result in `dp[v]`
+
+The `modpow` function:
+- takes two parameters: `x` (base) and `y` (exponent)
+- returns `x` raised to the power `y` modulo `mod`
+- uses a recursive approach with exponentiation by squaring
+
+The `FastScanner` class:
+- provides methods for reading input from the standard input
+- includes methods for reading integers, longs, doubles, and arrays of these types.

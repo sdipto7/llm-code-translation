@@ -1,0 +1,32 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations:
+- `Scanner sc` of type `Scanner`
+- `int n` of type `int`
+- `List<Long> list` of type `List<Long>`
+- `List<Long> odd` of type `List<Long>`
+- `long sum` of type `long`
+
+Logic flow:
+1. Initialize `sc` with `new Scanner(System.in)`
+2. Read `n` as an integer from `sc`
+3. Initialize `list` as an empty `ArrayList<Long>`
+4. For `i` from `0` to `n-1`:
+   - Read a long integer from `sc`
+   - Add the read long integer to `list`
+5. Initialize `odd` as an empty `ArrayList<Long>`
+6. Initialize `sum` to `0`
+7. For each `i` in `list`:
+   - If `i` modulo `2` equals `0`:
+     - Add `i` to `sum`
+   - Else:
+     - Add `i` to `odd`
+8. Sort `odd` in ascending order
+9. For each `i` in `odd`:
+   - Add `i` to `sum`
+10. If the size of `odd` modulo `2` is not `0`:
+    - Subtract the first element of `odd` from `sum`
+11. Print `sum` to standard output
+
+Required libraries, modules, or dependencies:
+- `java.util.*`

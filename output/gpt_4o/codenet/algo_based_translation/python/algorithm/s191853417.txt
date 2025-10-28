@@ -1,0 +1,27 @@
+- Function signature:
+  - `def calculate_remaining_score(input_string: str) -> int`
+
+- Variable declarations:
+  - `a: int`
+  - `b: int`
+  - `c: int`
+  - `d: int`
+  - `e: int`
+
+- Logic flow:
+  1. Receive a string of space-separated integers as input.
+  2. Split the input string into individual string components.
+  3. Convert each string component to an integer using `map`.
+  4. Assign each converted integer to variables `a`, `b`, `c`, `d`, `e`.
+  5. Calculate the remaining score by subtracting the sum of `a`, `b`, `c`, `d`, and `e` from 15.
+  6. Return the calculated remaining score.
+
+- Control structures:
+  - There are no loops or conditionals in the logic.
+
+- Input/Output operations:
+  - Input: A single string of space-separated integers is expected.
+  - Output: An integer representing the remaining score after calculation.
+
+- Required libraries, modules, or dependencies:
+  - No external libraries or modules are required.

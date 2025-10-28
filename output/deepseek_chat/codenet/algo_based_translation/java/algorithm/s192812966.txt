@@ -1,0 +1,43 @@
+**Function Signature:**
+main(String[] args): void
+
+**Variables:**
+- Scanner scanner: Scanner object for input
+- int w: width input
+- int h: height input
+- int n: number of points input
+- int[] x: array of x-coordinates
+- int[] y: array of y-coordinates
+- int[] a: array of area codes
+- int xmax: maximum x boundary (initialized to w)
+- int xmin: minimum x boundary (initialized to 0)
+- int ymax: maximum y boundary (initialized to h)
+- int ymin: minimum y boundary (initialized to 0)
+- int i: loop counter
+
+**Logic Flow:**
+1. Create Scanner object reading from System.in
+2. Read three integers: w, h, n
+3. Initialize arrays x, y, a with size n
+4. Initialize xmax = w, xmin = 0, ymax = h, ymin = 0
+5. For i from 0 to n-1:
+   - Read x[i], y[i], a[i]
+   - Switch on a[i]:
+     - Case 1: xmin = maximum of xmin and x[i]
+     - Case 2: xmax = minimum of xmax and x[i]
+     - Case 3: ymin = maximum of ymin and y[i]
+     - Case 4: ymax = minimum of ymax and y[i]
+6. Calculate w = maximum of (xmax - xmin) and 0
+7. Calculate h = maximum of (ymax - ymin) and 0
+8. Print w * h
+
+**Control Structures:**
+- For loop: i = 0; i < n; i++
+- Switch statement on a[i] with cases 1, 2, 3, 4
+
+**Input/Output:**
+- Input: integers w, h, n followed by n sets of (x, y, a)
+- Output: integer area calculation
+
+**Dependencies:**
+- java.util.Scanner

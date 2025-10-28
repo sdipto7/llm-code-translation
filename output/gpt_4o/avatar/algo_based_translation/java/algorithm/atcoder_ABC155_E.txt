@@ -1,0 +1,35 @@
+Algorithm:
+1. Import necessary libraries:
+   - `java.io.*`
+   - `java.util.*`
+
+2. Define the main function `main` with signature: `public static void main(String[] args)`
+
+3. Declare and initialize a constant `INF` of type `long` with value `1e15`.
+
+4. Create a `Scanner` object `sc` for reading input.
+
+5. Read a string `number` from input using `sc.next()`.
+
+6. Declare an array `digits` of type `int[]` with size `number.length() + 1`.
+
+7. For each index `i` from `0` to `number.length() - 1`:
+   - Assign `digits[i]` the integer value of the character at position `number.length() - 1 - i` in `number`, by subtracting `'0'`.
+
+8. Initialize an integer variable `bills` to `0`.
+
+9. For each index `i` from `0` to `number.length()`:
+   - If `digits[i]` equals `10`:
+     - Increment `digits[i + 1]` by `1`.
+     - Set `digits[i]` to `0`.
+   - If `digits[i]` is less than `5`:
+     - Add `digits[i]` to `bills`.
+   - Else if `digits[i]` equals `5`:
+     - If `digits[i + 1]` is greater than or equal to `5`:
+       - Increment `digits[i + 1]` by `1`.
+     - Add `5` to `bills`.
+   - Else:
+     - Increment `digits[i + 1]` by `1`.
+     - Add `10 - digits[i]` to `bills`.
+
+10. Print the value of `bills`.

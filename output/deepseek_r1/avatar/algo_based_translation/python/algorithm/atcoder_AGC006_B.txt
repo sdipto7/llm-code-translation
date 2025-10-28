@@ -1,0 +1,83 @@
+**Structured Algorithm Specification**
+
+**Input/Output Operations:**
+- Read two integers `N` and `X` from standard input.
+- Output "No" if `X` is 1 or `2N-1`.
+- Output "Yes" followed by a sequence of integers in all other cases.
+
+**Variable Declarations:**
+- `N`: Integer (input size parameter).
+- `X`: Integer (target value).
+- `xs`: List of integers (output sequence).
+- `ys`: List of integers (temporary list for sequence construction).
+
+**Function Specifications:**
+
+1. **Function `calc`**  
+   **Parameters:**  
+   - `x`: List of integers.  
+   **Return Type:** Integer.  
+
+   **Nested Function `sub`**  
+   **Parameters:**  
+   - `y`: List of integers.  
+   - `debug`: Boolean (default = False).  
+   **Return Type:** List of integers (single element).  
+
+   **Logic:**  
+   1. While `len(y) > 1`:  
+      a. Split `y` into triplets `[y[i], y[i+1], y[i+2]]` for `i` in `0 ≤ i < len(y)-2`.  
+      b. Sort each triplet and keep the middle element.  
+      c. Replace `y` with the list of medians.  
+      d. If `debug=True`, print "D" followed by the current `y`.  
+   2. Return `y` (single-element list).  
+
+   **Main Logic of `calc`:**  
+   1. Call `sub(x)` and store result as `result`.  
+   2. If `result[0] == 2`:  
+      a. Call `sub(x, debug=True)`.  
+      b. Print "=" followed by `x`.  
+   3. Return `result[0]`.  
+
+**Main Algorithm Logic:**
+
+1. **Input Handling:**  
+   Read `N` and `X` from input.  
+
+2. **Edge Case Handling:**  
+   If `X == 1` or `X == 2*N - 1`:  
+   - Print "No".  
+
+3. **Sequence Generation (Other Cases):**  
+   Else:  
+   - Print "Yes".  
+   - **Case 1:** `X == 2*N - 2`:  
+     a. Set `xs = list(range(N-1, X+2)) + list(range(1, N-1))`.  
+   - **Case 2:** All other `X` values:  
+     a. Construct `ys = list(range(1, X-1)) + list(range(X+3, 2*N))`.  
+     b. Split `ys` into three parts:  
+        - Part A: First `max(0, N-3)` elements of `ys`.  
+        - Part B: Elements `[X+2, X-1, X, X+1]`.  
+        - Part C: Remaining elements of `ys` after Part A.  
+     c. Set `xs = Part A + Part B + Part C`.  
+   - Print each element of `xs` line-by-line.  
+
+**Control Flow Structures:**  
+- **Conditionals:**  
+  - Check `X` against boundary values (1 and `2N-1`).  
+  - Branch sequence construction based on `X == 2N-2`.  
+- **Loops:**  
+  - While loop in `sub` to iteratively reduce list length via medians.  
+  - List comprehensions for triplet processing in `sub`.  
+
+**Edge Case Handling:**  
+- Explicit check for `X` at boundaries (1 and `2N-1`) to bypass sequence generation.  
+- Safe list slicing in `ys` partitioning using `max(0, N-3)` to handle small `N`.  
+
+**Dependencies:**  
+- **Imports:** `from itertools import permutations` (declared but unused in provided code).  
+- **Library Functions:** `sorted()`, `range()`, `print()`.  
+
+**Data Flow:**  
+- Input integers drive all conditional logic and sequence construction.  
+- Sequence `xs` is dynamically built using arithmetic on `N` and `X`, ensuring output length `2N-1`.

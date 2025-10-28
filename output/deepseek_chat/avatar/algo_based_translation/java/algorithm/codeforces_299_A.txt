@@ -1,0 +1,28 @@
+**Function Signature:**
+- `main(String[] args)`: void return type
+
+**Variables:**
+- `Scanner in`: Scanner object for input
+- `int n`: integer input from user
+- `int[] a`: integer array of size n
+- `int min`: integer to store minimum value
+- `int value`: integer iterator for enhanced for-loop
+
+**Libraries/Dependencies:**
+- `java.util.Arrays`
+- `java.util.Scanner`
+
+**Algorithm Steps:**
+
+1. Create Scanner object to read from standard input
+2. Read integer n from input
+3. Declare integer array a of size n
+4. For i from 0 to n-1:
+   - Read integer from input and store in a[i]
+5. Sort array a in ascending order
+6. Set min = a[0] (first element after sorting)
+7. For each value in array a:
+   - If value % min != 0:
+     - Print -1
+     - Exit program
+8. Print min

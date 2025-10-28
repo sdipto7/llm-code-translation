@@ -1,0 +1,38 @@
+The code performs the following algorithm:
+
+Function solve():
+- Reads integer N from input
+- Reads N integers into list (ArrayList<Integer>)
+- Initialize max (int) to 0 and output (int) to 0
+- For each index i from 0 to N-1:
+  - If current element list[i] >= max:
+    - Set max = list[i]
+    - Increment output by 1
+- Print output
+
+Input/Output Handling:
+- Uses custom InputIterator to read all input lines at once
+- nextInt() parses next token as integer
+- nextIntArray() splits space-separated integers into ArrayList<Integer>
+- Output via PrintWriter with myout()
+
+Dependencies:
+- Java IO classes: BufferedReader, InputStreamReader, PrintWriter
+- Java utilities: ArrayList, HashMap, Arrays
+
+Control Structures:
+- While loop in InputIterator reads until EOF
+- For loop in solve() iterates N times
+- Conditional check (if) for maintaining current maximum
+
+Data Flow:
+1. Read all input upfront
+2. Convert input tokens to required types
+3. Track running maximum during iteration
+4. Count valid elements meeting criteria
+5. Output final count
+
+Required Libraries:
+- java.util.* (Collections, Maps, Arrays)
+- java.io.* (Streams, BufferedReaders)
+- java.math.* (Not directly used but imported)

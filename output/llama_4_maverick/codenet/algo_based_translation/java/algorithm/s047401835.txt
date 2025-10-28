@@ -1,0 +1,32 @@
+1. Define function `readInput()` with return type `int[]`:
+   - Declare variable `N` of type `int`
+   - Declare list `numbers` of type `int[]`
+   - Read `N` from input
+   - Read `N` integers from input and store in `numbers`
+   - Return `numbers`
+
+2. Define function `processNumbers(numbers: int[])` with return type `int`:
+   - Initialize variable `count` to 0
+   - Initialize variable `N` to the size of `numbers`
+   - Enter a do-while loop that continues as long as the size of `numbers` is equal to `N`
+   - Inside the loop:
+     - Filter `numbers` to include only even integers
+     - Divide each number in `numbers` by 2
+     - Update `numbers` with the new list
+     - If the size of `numbers` is equal to `N`, increment `count`
+   - Exit the loop when the size of `numbers` is not equal to `N`
+   - Return `count`
+
+3. Define function `main()`:
+   - Call `readInput()` and store the result in `numbers`
+   - Call `processNumbers(numbers)` and store the result in `count`
+   - Print `count` to output
+
+Required libraries:
+- Input/Output library for reading from input and writing to output
+- List/Array manipulation library for filtering and mapping numbers
+
+Data types and variable declarations:
+- `N`: `int`
+- `numbers`: `int[]`
+- `count`: `int`

@@ -1,0 +1,51 @@
+Function Signature:
+- `main(String[] args): void`
+
+Variable Declarations and Data Types:
+- `sc: Scanner`
+- `n: int`
+- `a: int[]`
+- `count: int`
+- `now: int`
+- `bef: int`
+- `i: int`
+
+Logic Flow in Execution Order:
+1. Create a `Scanner` object named `sc` to read input from standard input.
+2. Read an integer `n` from the input, representing the number of elements in the array.
+3. Initialize an integer array `a` of size `n`.
+4. For `i` from `0` to `n-1`:
+   - Read an integer from the input and store it in `a[i]`.
+5. Initialize `count` to `1`, `now` to `0`, and `bef` to `0`.
+6. For `i` from `1` to `n-1`:
+   - If `a[i-1] < a[i]`:
+     - Set `now` to `1`.
+   - Else if `a[i-1] > a[i]`:
+     - Set `now` to `-1`.
+   - Else:
+     - Continue to the next iteration.
+   - If `bef` is `0`:
+     - Set `bef` to `now`.
+   - If `bef` is not equal to `now`:
+     - Increment `count` by `1`.
+     - Set `bef` to `0`.
+7. Print the value of `count`.
+
+Control Structures:
+- For loop: `for(int i = 0; i < n; i++)`
+- For loop: `for(int i = 1; i < n; i++)`
+- If statement: `if(a[i-1] < a[i])`
+- Else if statement: `else if(a[i-1] > a[i])`
+- Else statement: `else`
+- If statement: `if(bef == 0)`
+- If statement: `if(bef != now)`
+
+Input/Output Operations and Data Processing Logic:
+- Input:
+  - Read an integer `n`.
+  - Read `n` integers to fill the array `a`.
+- Output:
+  - Print the value of `count`, which represents the number of changes in direction in the array.
+
+Required Libraries, Modules, or Dependencies:
+- `java.util.Scanner`

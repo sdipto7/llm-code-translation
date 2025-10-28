@@ -1,0 +1,60 @@
+**Function Signatures:**
+- `atcoder_ABC122_D()`: Constructor, no parameters, no return
+- `calc()`: No parameters, returns long
+- `isOK(String last4)`: Parameter: String last4, returns boolean
+- `dfs(int current, String last3)`: Parameters: int current, String last3, returns long
+- `main(String[] args)`: Parameter: String[] args, no return
+
+**Variable Declarations:**
+- `int N`
+- `long MOD = 1000000007L`
+- `String[] TOKENS = {"A", "C", "G", "T"}`
+- `Map<String, Long>[] memo`
+- `Scanner in = new Scanner(System.in)`
+- `long result`
+- `char[] vals`
+- `String s`
+
+**Data Types:**
+- Primitive: int, long, boolean, char
+- Objects: String, Scanner, Map, HashMap, String[]
+
+**Logic Flow:**
+1. Constructor reads integer N from standard input
+2. Initialize memo array of size N+1 with HashMaps
+3. calc() calls dfs(0, "TTT")
+4. dfs checks memoization for (current, last3) combination
+5. If current equals N, return 1 (base case)
+6. For each token in TOKENS array:
+   - Construct candidate string: last3 + token
+   - Check if candidate is valid using isOK()
+   - If valid, recursively call dfs with (current+1, last3.substring(1) + token)
+   - Add result modulo MOD
+7. Store result in memo and return
+
+**isOK Function Logic:**
+1. Check if string contains "AGC" → return false if found
+2. For i from 0 to 2:
+   - Create char array from string
+   - Swap characters at positions i and i+1
+   - Convert back to string
+   - Check if swapped string contains "AGC" → return false if found
+3. Return true if no violations found
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < this.memo.length; ++i)`
+- For loop: `for (int i = 0; i < 3; ++i)`
+- For-each loop: `for (String c : TOKENS)`
+- Conditional: `if (this.memo[current].containsKey(last3))`
+- Conditional: `if (current == N)`
+- Conditional: `if (last4.contains("AGC"))`
+- Conditional: `if (s.contains("AGC"))`
+- Conditional: `if (isOK(last3 + c))`
+
+**Input/Output Operations:**
+- Input: Scanner reads integer from System.in
+- Output: System.out.println(ins.calc())
+
+**Required Libraries:**
+- java.util.*
+- java.io.*

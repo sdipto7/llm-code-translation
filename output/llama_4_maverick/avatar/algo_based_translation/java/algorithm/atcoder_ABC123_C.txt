@@ -1,0 +1,6 @@
+1. Read input value N.
+2. Initialize minimum value to the first of five input values.
+3. Iterate four times to read remaining input values.
+4. Update minimum value if a smaller input value is found.
+5. Calculate result using the formula: ceiling(N/minimum value) + 4.
+6. Output the calculated result.

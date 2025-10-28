@@ -1,0 +1,30 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner scan` (Scanner type) initialized with `System.in`
+- `int x` initialized via `Integer.parseInt(scan.next())`
+- `boolean bool` assigned via ternary: `x == 1 ? true : false`
+- `int result` assigned via ternary: `!bool ? 1 : 0`
+- `PrintWriter out` initialized with `System.out`
+
+**Logic Flow:**
+1. Read input string from standard input via `scan.next()`
+2. Convert input to integer `x`
+3. Set `bool` to `true` if `x` equals `1`, else `false`
+4. Set `result` to `1` if `bool` is `false`, else `0`
+5. Initialize `PrintWriter` for output
+6. Print `result` to standard output
+7. Flush output buffer with `out.flush()`
+
+**Control Structures:**
+- Ternary conditional: `x == 1 ? true : false`
+- Ternary conditional: `!bool ? 1 : 0`
+
+**Input/Output:**
+- Input: Single integer read from stdin via `Scanner`
+- Output: Integer `result` (0 or 1) printed to stdout via `PrintWriter`
+
+**Dependencies:**
+- `java.util.*` (for Scanner)
+- `java.io.*` (for PrintWriter, IOException handling)

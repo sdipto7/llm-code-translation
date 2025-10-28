@@ -1,0 +1,12 @@
+1. Define a function `max_common_chars` with return type `int` and no parameters.
+2. Declare variables: `n` of type `int`, `s` of type `str`, `ans` of type `int`, `i` of type `int`, `x` and `y` of type `set[str]`, `z` of type `int`, `w` of type `str`.
+3. Read input: `n = int(input())`, `s = str(input())`.
+4. Initialize `ans = 0`.
+5. Iterate over the range from `0` to `n-1` using `i`: 
+   - For each `i`, create two sets: `x = set(s[:i+1])` and `y = set(s[i+1:])`.
+   - Initialize `z = 0`.
+   - Iterate over each character `w` in `x`: 
+     - If `w` is in `y`, increment `z` by 1.
+   - If `z > ans`, update `ans = z`.
+6. Output `ans` using `print(ans)`.
+7. The required libraries are the built-in Python libraries, specifically those that support input/output operations and set data structures.

@@ -1,0 +1,55 @@
+```
+import java.util.Arrays;
+import java.util.Scanner;
+
+- Function: main
+  - Parameters: String[] args
+  - Return type: void
+  - Logic:
+    - Create an instance of Main
+    - Call the run method
+
+- Function: tr
+  - Parameters: Object... os
+  - Return type: void
+  - Logic:
+    - Output to standard error the deep string representation of os using Arrays.deepToString
+
+- Variable: sc
+  - Type: Scanner
+  - Initialization: new Scanner(System.in)
+
+- Function: run
+  - Parameters: none
+  - Return type: void
+  - Logic:
+    - Loop as long as there is input with sc.hasNext()
+      - Read integer my1 from input
+      - Read integer my2 from input
+      - Read integer enemy1 from input
+      - Declare and initialize boolean array used with size 11
+      - Set used[my1], used[my2], and used[enemy1] to true
+      - Declare and initialize integer all to 0
+      - Declare and initialize integer safe to 0
+      - Loop from integer i = 1 to 10 (inclusive)
+        - If used[i] is false
+          - Increment all by 1
+          - If my1 + my2 + i <= 20, increment safe by 1
+      - If safe * 2 >= all
+        - Output "YES"
+      - Else
+        - Output "NO"
+
+- Function: solve
+  - Parameters: int[][] a
+  - Return type: char
+  - Logic:
+    - Declare and initialize character array s with values {'d', 'o', 'x'}
+    - Loop for side from 1 to 2 (inclusive)
+      - Loop for i from 0 to 2 (inclusive)
+        - If a[i][0], a[i][1], and a[i][2] are equal to side, return s[side]
+        - If a[0][i], a[1][i], and a[2][i] are equal to side, return s[side]
+      - If a[0][0], a[1][1], and a[2][2] are equal to side, return s[side]
+      - If a[0][2], a[1][1], and a[2][0] are equal to side, return s[side]
+    - Return 'd'
+```

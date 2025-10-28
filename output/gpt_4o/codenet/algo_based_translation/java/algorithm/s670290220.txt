@@ -1,0 +1,23 @@
+- Function Signature:
+  - `main(String[] args)`: void
+
+- Variable Declarations:
+  - `sc`: Scanner
+  - `N`: int
+  - `c`: char[]
+
+- Libraries:
+  - `import java.util.*;`
+
+- Logic Flow:
+  1. Instantiate a Scanner object `sc` to read input from standard input.
+  2. Read an integer `N` from input using `sc.nextInt()`.
+  3. Read a string from input using `sc.next()` and convert it to a character array `c` using `toCharArray()`.
+  4. Iterate over each character in the array `c` using a for-loop with index `i` ranging from `0` to `c.length - 1`.
+     - Calculate the new character by shifting the current character `c[i]` by `N` positions in the alphabet.
+     - Convert the character to a zero-based index by subtracting `'A'`.
+     - Add the shift value `N`.
+     - Use modulo 26 to ensure the result wraps around within the alphabet.
+     - Convert back to the character by adding `'A'`.
+     - Assign the resulting character back to `c[i]`.
+  5. Output the modified character array `c` as a string using `System.out.println(c)`.

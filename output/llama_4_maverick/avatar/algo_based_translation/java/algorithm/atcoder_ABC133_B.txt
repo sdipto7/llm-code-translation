@@ -1,0 +1,10 @@
+1. Read two integers N and D from the input.
+2. Create a 2D array of size N x D to store vectors.
+3. Populate the 2D array by reading N vectors, each of dimension D, from the input.
+4. Initialize a variable answer to 0.
+5. Iterate over all pairs of vectors (i, j) where 0 <= i < N-1 and i+1 <= j < N.
+6. For each pair (i, j), calculate the squared Euclidean distance between the two vectors.
+7. Compute the square root of the squared distance.
+8. Check if the square root is an integer by verifying if its fractional part is less than 0.001.
+9. If the square root is an integer, increment the answer by 1.
+10. Output the final value of answer.

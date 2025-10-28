@@ -1,0 +1,41 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void` (Entry point with no parameters)
+
+**Variables:**
+- `N: Integer` (Input size)
+- `A: List of Integer` (Processed input values)
+- `cnt: Integer` (Mismatch counter)
+- `d: Integer` (Parity check value)
+- `i: Integer` (Loop index)
+
+**Logic Flow:**
+1. Read integer `N` from standard input.
+2. Initialize list `A` by iterating `i` from `0` to `N-1`:
+   - Read integer from input.
+   - Compute `(input_value * N) + i` and append to `A`.
+3. Sort `A` in ascending order.
+4. Initialize `cnt` to `0`.
+5. Iterate `i` from `0` to `N-1`:
+   - Compute `remainder = A[i] % N`.
+   - Compute `d = remainder % 2`.
+   - If `d != (i % 2)`, increment `cnt` by `1`.
+6. Output `cnt // 2` via standard output.
+
+**Control Structures:**
+- For-loop (Step 2): Range-based iteration for `N` elements.
+- For-loop (Step 5): Index-based iteration over sorted list.
+- Conditional (Step 5c): Check parity mismatch between `d` and loop index.
+
+**Input/Output Operations:**
+- Read `N` and `N` subsequent integers from stdin.
+- Write final `cnt // 2` to stdout.
+
+**Edge Case Handling:**
+- Implicit handling of `N=0` (no iterations occur in loops).
+- Integer division ensures output is floor value.
+
+**External Dependencies:**
+- Standard input/output functions.
+- Built-in list sorting operation.

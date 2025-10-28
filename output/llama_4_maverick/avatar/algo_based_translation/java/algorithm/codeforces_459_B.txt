@@ -1,0 +1,10 @@
+1. Read the number of elements N from the input.
+2. Read N integers into an array A.
+3. Sort the array A in ascending order.
+4. Identify the minimum element min and the maximum element max in the sorted array A.
+5. Initialize counters mins and maxs to 0.
+6. Iterate through the array A, incrementing mins for each occurrence of min and maxs for each occurrence of max.
+7. If min equals max, calculate the number of pairs as mins * (mins - 1) / 2.
+8. If min does not equal max, calculate the number of pairs as mins * maxs.
+9. Output the difference between max and min, and the calculated number of pairs.
+10. Terminate the process.

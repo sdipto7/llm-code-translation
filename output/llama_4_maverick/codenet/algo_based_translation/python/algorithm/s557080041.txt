@@ -1,0 +1,12 @@
+1. Define a function `check_divisible_by_9` with return type `str` and a parameter `N` of type `str`.
+2. Read input into `N` of type `str`.
+3. Check if `N` equals `0`.
+   - If true, return `'Yes'`.
+4. Convert `N` to a list `L` of integers by iterating over each character `s` in `N`, converting `s` to an integer.
+5. Calculate the sum `X` of all elements in `L`.
+6. Check if `X` is divisible by `9` (i.e., `X % 9 == 0`).
+   - If true, return `'Yes'`.
+   - If false, return `'No'`.
+7. The required input is a string representation of an integer.
+8. The input is processed as a list of integers.
+9. No external libraries or modules are required.

@@ -1,0 +1,9 @@
+1. Define a function `calculate_result` with no parameters and return type `int`.
+2. Declare variables `A`, `B`, `C` of type `int`.
+3. Read input from the user and split it into three parts, then convert these parts to `int` and assign them to `A`, `B`, `C` respectively.
+4. Check the condition `B < C`. If true, return `0`.
+5. If the condition in step 4 is false, check the condition `A * C < B`. If true, return `C`.
+6. If the condition in step 5 is false, calculate `B // A` and return the result.
+7. The required input operation is reading three space-separated integers from the user.
+8. The program uses the `map` function in combination with `split` to process the input. 
+9. Required libraries/modules are those that provide `input`, `map`, and `split` functions, which are part of the Python Standard Library.

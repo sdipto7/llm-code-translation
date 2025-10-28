@@ -1,0 +1,101 @@
+**Algorithm Extraction:**
+
+**Libraries:**
+- java.io.*
+- java.util.*
+
+**Classes:**
+- Main class
+- Scanner class
+- Pair class implementing Comparable<Pair>
+
+**Main Class Variables:**
+- static PrintWriter pw
+- static Scanner sc
+- static ArrayList<Integer>[] adj
+- static boolean[] visit
+- static HashMap<Pair, Integer> dp
+- static HashMap<Integer, Integer> map
+- static int[] least
+- static TreeSet<Integer> prime
+
+**Function Signatures:**
+- static long ceildiv(long x, long y)
+- static int mod(long x, int m)
+- static long gcd(long x, long y)
+- static int Int(boolean x)
+- static void put(TreeMap<Pair, Integer> map, Pair p)
+- static void rem(TreeMap<Pair, Integer> map, Pair p)
+- static void main(String[] args) throws Exception
+- static void fill(int[] arr, int x)
+- static long pow(long a, long pow)
+- static int getpow(int x) throws Exception
+- static void linearsieve(int x)
+- static void printArr(int[] arr)
+- static void printArr(long[] arr)
+- static void printArr(Integer[] arr)
+- static void printArr(char[] arr)
+- static void printArr(ArrayList<Integer> list)
+
+**Scanner Class Methods:**
+- Constructor Scanner(InputStream s)
+- Constructor Scanner(FileReader r)
+- String next() throws IOException
+- int nextInt() throws IOException
+- long nextLong() throws IOException
+- String nextLine() throws IOException
+- double nextDouble() throws IOException
+- int[] nextArr(int n) throws IOException
+- Integer[] nextsort(int n) throws IOException
+- Pair nextPair() throws IOException
+- Pair[] nextPairArr(int n) throws IOException
+- boolean ready() throws IOException
+
+**Pair Class Methods:**
+- Constructor Pair(int x, int y)
+- int hashCode()
+- int compareTo(Pair p)
+- boolean equals(Object obj)
+- Pair clone()
+- String toString()
+- void add(Pair p)
+
+**Main Execution Flow:**
+1. Initialize Scanner with System.in
+2. Initialize PrintWriter with System.out
+3. Read integer n from input
+4. Read n integers into Integer array arr using nextsort()
+5. Sort arr in descending order
+6. If n >= 3:
+   - Create TreeMap<Pair, Integer> with reverse order comparator
+   - Initialize ans = arr[0] + arr[1]
+   - Add Pair(arr[0], arr[1]) to map with count 1
+   - Create pairs p1 = Pair(arr[2], arr[1]) and p2 = Pair(arr[2], arr[0])
+   - Add both p1 and p2 to map
+   - For i from 3 to n-1:
+     - Get first key from map
+     - Remove one occurrence of this pair from map
+     - Add min(p.x, p.y) to ans
+     - Add Pair(p.x, arr[i]) to map
+     - Add Pair(p.y, arr[i]) to map
+   - Print ans
+7. Else:
+   - Print arr[0]
+8. Close PrintWriter
+
+**Control Structures:**
+- If-else for n >= 3 check
+- For loop from i=3 to n-1
+- While loop in pow() function
+- While loop in getpow() function
+- For loop in fill() function
+- For loop in linearsieve() function
+- For loops in printArr() functions
+
+**Data Processing:**
+- Integer array sorting in reverse order
+- TreeMap operations with custom Pair objects
+- Mathematical operations: min, addition
+- Pair comparison based on minimum values
+- Input reading through Scanner class
+- Output writing through PrintWriter

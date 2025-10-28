@@ -1,0 +1,26 @@
+**Function Signature**  
+- `public static void main(String[] args)`  
+
+**Variables**  
+- `Scanner sc` (Scanner object for input)  
+- `int x` (input value)  
+- `int ans` (result)  
+
+**Libraries/Dependencies**  
+- `java.util.Scanner`  
+
+**Logic Flow**  
+1. Read integer `x` from standard input using `Scanner`.  
+2. Close `Scanner` after input.  
+3. Compute `ans` as integer division of `(2199 - x)` by `200`.  
+4. Print `ans` to standard output.  
+
+**Control Structures**  
+- None (no explicit conditionals/loops)  
+
+**Input/Output Operations**  
+- Input: Read integer via `Scanner.nextInt()`  
+- Output: Print result via `System.out.println()`  
+
+**Data Processing**  
+- Arithmetic operation: `(2199 - x) / 200` (integer division)

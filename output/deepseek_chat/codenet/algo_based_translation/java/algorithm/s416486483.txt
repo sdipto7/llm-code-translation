@@ -1,0 +1,32 @@
+**Algorithm:**
+
+Function: split(n: long, k: long) -> long
+  Declare sum: long = 0
+  While n > 0:
+    sum = sum + (n mod k)
+    n = n divided by k (integer division)
+  Return sum
+
+Function: solve(n: long, s: long) -> long
+  Declare k: long
+  For k from 2 to (k*k <= n OR k < 100), increment k by 1:
+    If split(n, k) equals s:
+      Return k
+  While k <= n:
+    Declare a: long = n divided by k (integer division)
+    Declare b: long = n mod k
+    If (a + b - s) mod a equals 0:
+      Declare dk: long = (a + b - s) divided by a
+      If dk >= 0 AND b - dk*a >= 0:
+        Return k + dk
+    Set k = n divided by a (integer division) + 1
+  If n equals s:
+    Return n + 1
+  Return -1
+
+Main program:
+  Import java.util.Scanner
+  Create Scanner object reading from System.in
+  Read next long input as nl
+  Read next long input as sl
+  Call solve(nl, sl) and print result

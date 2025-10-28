@@ -1,0 +1,28 @@
+- Function signatures with parameter and return types:
+  - main(String[] args): void
+
+- Variable declarations and data types:
+  - sc: Scanner
+  - A1: int
+  - A2: int
+  - A3: int
+
+- Complete logic flow in execution order:
+  1. Create a Scanner object named sc to read input.
+  2. Read the first integer from input and store it in A1.
+  3. Read the second integer from input and store it in A2.
+  4. Read the third integer from input and store it in A3.
+  5. Check if the sum of A1, A2, and A3 is greater than or equal to 22.
+  6. If the condition in step 5 is true, print "bust".
+  7. If the condition in step 5 is false, print "win".
+
+- Control structures:
+  - If-else statement with the condition (A1 + A2 + A3) >= 22
+
+- Input/output operations and data processing logic:
+  - Input: Read three integers from the standard input.
+  - Processing: Sum the three integers.
+  - Output: Print "bust" if the sum is 22 or more, otherwise print "win".
+
+- Required libraries, modules, or dependencies:
+  - java.util.Scanner

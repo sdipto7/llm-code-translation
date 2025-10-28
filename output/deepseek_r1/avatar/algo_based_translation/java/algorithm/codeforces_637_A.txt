@@ -1,0 +1,45 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `static void debug(Object... obj)`
+
+**Variables:**
+- `Scanner in` (reads from `System.in`)
+- `PrintWriter pw` (writes to `System.out`)
+- `int n` (input array size)
+- `int[] ara` (stores input numbers)
+- `Map<Integer, Integer> map` (frequency count of numbers)
+- `int v` (temporary storage for input numbers)
+- `int max` (maximum frequency value)
+- `Map<Integer, Integer> mm` (tracks occurrences during second pass)
+
+**Logic Flow:**
+1. Read integer `n` from input.
+2. Initialize array `ara` with size `n`.
+3. Initialize `map` to count frequencies.
+4. For each index `i` from `0` to `n-1`:
+   - Read integer `v` as `ara[i]`
+   - Update `map` to increment count for `v`
+5. Find maximum value `max` from `map.values()`.
+6. Initialize `mm` to track counts during second iteration.
+7. For each index `i` from `0` to `n-1`:
+   - If `ara[i]` not in `mm`, add with count `1`
+   - Else increment `mm` count for `ara[i]`
+   - After each update:
+     - If current count equals `max`:
+       - Print `ara[i]`
+       - Break loop and terminate
+8. Close `pw`.
+
+**Control Structures:**
+- For-loop: `for (int i = 0; i < n; i++)` (twice)
+- Enhanced for-loop: `for (Integer i : map.values())`
+- Conditionals: `if (!map.containsKey(v))`, `if (!mm.containsKey(ara[i]))`, `if (mm.get(ara[i]) == max)`
+
+**I/O Operations:**
+- Input via `Scanner.nextInt()`
+- Output via `PrintWriter.println()`
+- PrintWriter closed after processing
+
+**Dependencies:**
+- `java.io.*` (for I/O classes)
+- `java.util.*` (for Scanner, Map, HashMap, Arrays)

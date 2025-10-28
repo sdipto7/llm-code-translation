@@ -1,0 +1,23 @@
+1. **Function Signature**:
+   - Function: compute_result(n: int, k: int) -> int
+
+2. **Variable Declarations**:
+   - Input variables: n (integer), k (integer)
+   - Intermediate variable: remainder (integer)
+
+3. **Logic Flow**:
+   - Read two integers `n` and `k` from standard input.
+   - Calculate `remainder = k % n`.
+   - If `remainder == 0`, compute `result = n + k`.
+   - Else, compute `result = k - n`.
+   - Print `result`.
+
+4. **Control Structures**:
+   - Conditional: If `k % n == 0`, execute sum branch; else, execute subtraction branch.
+
+5. **Input/Output Operations**:
+   - Input: Read line, split into `n` and `k`, convert to integers.
+   - Output: Print result as integer.
+
+6. **Dependencies**:
+   - No external libraries/modules required.

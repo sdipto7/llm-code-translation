@@ -1,0 +1,46 @@
+- **Libraries/Dependencies**:
+  - `itertools.chain`
+  - `numpy` (as `np`)
+  - `networkx` (as `nx`)
+
+- **Variables**:
+  - `X`: iterator of input lines (type: iterator)
+  - `h`, `w`: integers from input
+  - `C`: 10x10 matrix (numpy array of integers)
+  - `A`: h x w matrix (numpy array of integers)
+  - `G`: directed graph (networkx.DiGraph)
+  - `d`: dictionary mapping integers to integers (keys: 0-9 except 1, values: shortest path lengths)
+  - `s`: integer sum (initialized to 0)
+
+- **Input Operations**:
+  1. Read first line: split into `h` and `w` (integers)
+  2. Read next 10 lines: populate `C` matrix with 10 integers per line
+  3. Read next `h` lines: populate `A` matrix with `w` integers per line
+
+- **Logic Flow**:
+  1. Initialize `X` as iterator over all input lines
+  2. Parse `h` and `w` from first line
+  3. Populate `C` by iterating 10 times, splitting each line into 10 integers
+  4. Populate `A` by iterating `h` times, splitting each line into `w` integers
+  5. Create directed graph `G` with edge weights from `C`
+  6. Compute shortest path lengths:
+     - For each `i` in 0-9:
+       - Skip `i=1`
+       - Calculate shortest path from `i` to 1 in `G` using edge weights
+       - Store result in `d[i]`
+  7. Calculate total sum `s`:
+     - Flatten `A` into 1D sequence using `chain.from_iterable`
+     - For each value `a` in flattened `A`:
+       - Skip if `a` is -1 or 1
+       - Add `d[a]` to `s`
+  8. Print `s`
+
+- **Control Structures**:
+  - Nested loops for populating `C` (10 rows, 10 columns)
+  - Nested loops for populating `A` (`h` rows, `w` columns)
+  - Loop over 0-9 for shortest path computation (excluding `i=1`)
+  - Conditional check `if i == 1: continue` in shortest path loop
+  - Loop over flattened `A` with conditional check `if a == -1 or a == 1: continue`
+
+- **Output Operation**:
+  - Print final value of `s`

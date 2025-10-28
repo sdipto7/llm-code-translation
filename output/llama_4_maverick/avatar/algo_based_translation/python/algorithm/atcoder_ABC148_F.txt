@@ -1,0 +1,18 @@
+1. Import necessary modules and set recursion limit.
+2. Define constants mod and INF.
+3. Define input functions inp and inpl.
+4. Read input values n, ta, and ao.
+5. Adjust ta and ao by subtracting 1.
+6. Initialize an adjacency list g with n empty lists.
+7. Read n-1 edges and populate g.
+8. Initialize ta_dist and ao_dist with None for all nodes.
+9. Set ta_dist[ta] and ao_dist[ao] to 0.
+10. Define a depth-first search function ta_dfs.
+11. Define a depth-first search function ao_dfs.
+12. Call ao_dfs(ao) to compute ao_dist.
+13. Call ta_dfs(ta) to compute ta_dist.
+14. Initialize res to 0.
+15. Iterate over all nodes i.
+16. If ta_dist[i] > ao_dist[i], skip to the next iteration.
+17. Update res to be the maximum of res and ao_dist[i].
+18. Print res - 1.

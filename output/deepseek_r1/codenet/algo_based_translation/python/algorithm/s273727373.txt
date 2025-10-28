@@ -1,0 +1,21 @@
+- **Function Signatures**: Not applicable (script-based code)
+- **Variables**:
+  - `N: int`
+  - `A: List[int]`
+  - `B: List[int]`
+  - `count: int`
+- **Logic Flow**:
+  1. Read integer `N` from standard input.
+  2. Read a line of `N` space-separated integers into list `A`.
+  3. Initialize `B` as a copy of `A`.
+  4. Initialize `count` to `1`.
+  5. Iterate over each element `i` in `A` (original list):
+     - Set `B[i - 1]` to the current value of `count`.
+     - Increment `count` by `1`.
+  6. Print elements of `B` as space-separated values.
+- **Control Structures**:
+  - A `for` loop iterating over elements of `A` in their original order.
+- **Input/Output**:
+  - Input: `N` followed by `N` integers via standard input.
+  - Output: Modified `B` printed as space-separated integers.
+- **Dependencies**: None (uses standard Python functions).

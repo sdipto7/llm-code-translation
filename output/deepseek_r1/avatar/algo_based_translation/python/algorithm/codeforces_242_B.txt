@@ -1,0 +1,71 @@
+**Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main()`: Entry point, no parameters, returns `int`.
+
+**Variable Declarations:**
+- `n`: `int` - Number of intervals.
+- `id`: `int` - Tracks the index of the interval that meets criteria. Initialized to `0`.
+- `l`, `r`: `int` - Track the minimum left and maximum right bounds across all intervals.
+- `li`, `ri`: `int` - Temporarily store input for each new interval.
+
+**Input/Output Operations:**
+- Read `n` from standard input.
+- Read `n` intervals sequentially:
+  - First interval initializes `l` and `r`.
+  - Subsequent intervals read in a loop.
+- Write `-1` (if `id` equals `n`) or `id + 1` to standard output.
+
+**Logic Flow:**
+1. Read `n`.
+2. Initialize `l` and `r` with the first interval.
+3. Loop for `i` from `1` to `n - 1` (1-based iteration count for remaining `n - 1` intervals):
+   a. Read `li` and `ri`.
+   b. If `li ≤ l` and `r ≤ ri`, set `id` to current loop index `i`.
+   c. Else if `li < l` or `ri > r`, set `id` to `n`.
+   d. Update `l` to `min(l, li)` and `r` to `max(r, ri)`.
+4. After loop:
+   - Print `-1` if `id == n`, else print `id + 1`.
+
+**Control Flow Structures:**
+- Loop: `for (i = 1; i < n; i++)`
+- Conditionals:
+  - Check for full enclosure: `if (li <= l && ri >= r)`
+  - Check for boundary expansion: `else if (li < l || ri > r)`
+
+**Edge Cases:**
+- Single interval (`n = 1`) → Output `1`.
+- No interval fully encloses the final range → Output `-1`.
+
+**Dependencies:**
+- `<iostream>` for I/O operations.
+- `<algorithm>` for `min` and `max` functions.
+
+---
+
+**C++ Code:**
+```cpp
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n, l, r;
+    cin >> n;
+    cin >> l >> r;
+    int id = 0;
+    for (int i = 1; i < n; ++i) {
+        int li, ri;
+        cin >> li >> ri;
+        if (li <= l && ri >= r) {
+            id = i;
+        } else if (li < l || ri > r) {
+            id = n;
+        }
+        l = min(l, li);
+        r = max(r, ri);
+    }
+    cout << (id == n ? -1 : id + 1) << endl;
+    return 0;
+}
+```

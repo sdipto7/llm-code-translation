@@ -1,0 +1,33 @@
+Function Signature:
+- main(String[] args) : void
+
+Variables:
+- sc : Scanner (System.in)
+- A : int (user input)
+- B : int (user input)
+
+Libraries/Dependencies:
+- java.util.Scanner
+
+Logic Flow:
+1. Initialize Scanner object for System.in input
+2. Read integer A from standard input
+3. Read integer B from standard input
+4. Evaluate compound conditional:
+   IF (A modulo 3 equals 0) 
+   OR (B modulo 3 equals 0)
+   OR ((A + B) modulo 3 equals 0)
+5. If condition is true:
+   - Output "Possible" to standard output
+6. Else:
+   - Output "Impossible" to standard output
+
+Control Structures:
+- Single if-else statement checking three OR-connected conditions:
+  A % 3 == 0
+  B % 3 == 0
+  (A + B) % 3 == 0
+
+Input/Output:
+- Input: Two space-separated integers from stdin
+- Output: "Possible" or "Impossible" based on condition evaluation

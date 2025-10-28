@@ -1,0 +1,56 @@
+**Function Signatures:**
+- main(): void
+- editorial(N: int, P: List[int]): void
+- WA(N: int, P: List[int]): void
+
+**Variables:**
+- N: int
+- P: List[int]
+- a: List[int] (size N+1)
+- tmp: int
+- max_len: int
+- ans: int
+- i: int
+- p: int
+
+**Algorithm:**
+1. Execute main()
+2. Read integer N from input
+3. Read N integers from input and store in list P
+4. Call editorial(N, P)
+5. If N == 1:
+   - Print 0
+   - Return
+6. Initialize list a of size N+1 with zeros
+7. For each index i and value p in P:
+   - Set a[p] = i
+8. Initialize tmp = 1
+9. Initialize max_len = 1
+10. For i from 1 to N-1:
+    - If a[i] < a[i+1]:
+        - tmp += 1
+        - max_len = max(max_len, tmp)
+    - Else:
+        - tmp = 1
+11. ans = N - max_len
+12. Print ans
+
+**Alternative Path (WA function):**
+1. Initialize tmp = 0
+2. Initialize ans = 0
+3. For each index i and value p in P:
+   - If i == 0 OR P[i-1] + 1 == p:
+        - tmp += 1
+   - Else:
+        - ans = max(ans, tmp)
+        - tmp = 1
+4. Print N - ans
+
+**Input/Output:**
+- Input: First integer N, followed by N integers
+- Output: Single integer result
+
+**Dependencies:**
+- Standard input/output functions
+- Built-in max function
+- List data structure

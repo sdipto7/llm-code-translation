@@ -1,0 +1,45 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `sc: Scanner`
+- `n: int`
+- `array: String[]`
+- `cnt: int`
+- `cnt2: int`
+- `i: int`
+- `a: String`
+
+Complete logic flow in execution order:
+1. Initialize `sc` as a new `Scanner` object to read from standard input.
+2. Read an integer `n` from the input.
+3. Declare `array` as a new `String` array of size `n`.
+4. Initialize `cnt` to 0.
+5. Initialize `cnt2` to 0.
+6. For each integer `i` from 0 to `n-1`:
+   - Read a `String` from the input and assign it to `array[i]`.
+7. Sort `array` in ascending order.
+8. Assign the first element of `array` to `a`.
+9. Increment `cnt` by 1.
+10. For each integer `i` from 0 to `n-1`:
+    - If `a` is equal to `array[i]`:
+        - Do nothing.
+    - Otherwise:
+        - Increment `cnt` by 1.
+    - Assign `array[i]` to `a`.
+11. Print the value of `cnt`.
+
+Control structures:
+- For loop: `for(int i =0; i<n;i++)`
+- For loop: `for(int i=0;i<n;i++)`
+- If-else statement: `if(a.equals(array[i]))`
+
+Input/output operations and data processing logic:
+- Read integer `n` from input.
+- Read `n` strings from input and store them in `array`.
+- Sort `array`.
+- Count the number of unique strings in `array` by comparing each string with the previous one.
+- Print the count of unique strings.
+
+Required libraries, modules, or dependencies:
+- `java.util.*`

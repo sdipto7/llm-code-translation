@@ -1,0 +1,29 @@
+1. Define a function `main` with no parameters and no return type.
+
+2. Import the `java.util.Scanner` library.
+
+3. Declare a variable `scan` of type `Scanner` and initialize it to read from the standard input.
+
+4. Declare an integer variable `n` and assign it the next integer from the input using `scan.nextInt()`.
+
+5. Declare an integer constant `N` and assign it the value `100005`.
+
+6. Declare an array `cnt` of `long` with a size of `21` and initialize all elements to `0`.
+
+7. For loop:
+   - Initialize integer `i` to `0`.
+   - Continue the loop while `i` is less than `n`.
+   - Increment `i` by `1` in each iteration.
+   - Inside the loop, increment the element at index `scan.nextInt() + 10` in the `cnt` array by `1`.
+
+8. Declare a variable `res` of type `long` and initialize it to `0`.
+
+9. For loop:
+   - Initialize integer `i` to `0`.
+   - Continue the loop while `i` is less than `10`.
+   - Increment `i` by `1` in each iteration.
+   - Inside the loop, add the product of `cnt[i]` and `cnt[20 - i]` to `res`.
+
+10. Add the result of `(cnt[10] * (cnt[10] - 1)) / 2` to `res`.
+
+11. Output the value of `res` using `System.out.println(res)`.

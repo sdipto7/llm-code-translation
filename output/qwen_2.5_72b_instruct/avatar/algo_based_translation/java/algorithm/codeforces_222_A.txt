@@ -1,0 +1,30 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner in` as `Scanner`
+- `int n` as `int`
+- `int k` as `int`
+- `int l` as `int` initialized to `0`
+- `int c` as `int` initialized to `1`
+- `int a` as `int` inside the for loop
+
+Logic flow in execution order:
+1. Create a `Scanner` object named `in` to read input.
+2. Read two integers `n` and `k` from the input.
+3. Initialize `l` to `0` and `c` to `1`.
+4. Loop from `0` to `n-1`:
+   1. Read an integer `a` from the input.
+   2. Check if `a` is equal to `l`:
+      - If true, increment `c` by `1`.
+      - If false, set `c` to `1`.
+   3. Set `l` to `a`.
+5. Check if `c + k` is greater than `n`:
+   - If true, print `n - c`.
+   - If false, print `-1`.
+
+Input/output operations and data processing logic:
+- Input: Two integers `n` and `k`, followed by `n` integers.
+- Output: A single integer, either `n - c` or `-1` based on the condition.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

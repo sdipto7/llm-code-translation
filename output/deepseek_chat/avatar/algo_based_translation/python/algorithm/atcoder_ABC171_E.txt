@@ -1,0 +1,9 @@
+1. Import functools.reduce and operator.xor
+2. Read integer N from stdin
+3. Read next line from stdin, split into list of strings, convert each to integer, store in list 'a'
+4. Initialize variable 'total' with reduce operation: apply xor across all elements of 'a' starting with initial value 0
+5. For each element 'ai' in list 'a':
+   - Compute ai XOR total
+   - Convert result to string
+6. Join all resulting strings with space separator
+7. Print the joined string

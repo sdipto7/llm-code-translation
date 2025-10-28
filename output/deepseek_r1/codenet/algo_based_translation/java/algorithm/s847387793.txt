@@ -1,0 +1,77 @@
+Here's the extracted algorithm:
+
+**Input/Output Operations:**
+- Read integers `n`, `m`, `q`
+- Read `q` query tuples (`a`, `b`, `c`, `d`) into arrays, 0-based indexing
+- Output final maximum score
+
+**Data Structures:**
+- int[] a, b, c, d: Query parameters (size q)
+- Global int max: Maximum score tracker
+- int[] array: Current sequence being built in DFS
+
+**Functions:**
+1. `void run()`
+   - Parameters: None
+   - Return: void
+   - Processes input and initiates DFS
+
+2. `void dfs(int[] array)`
+   - Parameters: Current sequence array
+   - Return: void
+   - Contains core generation/scoring logic
+
+**Main Logic Flow:**
+1. **Initialization:**
+   ```python
+   max_score = 0
+   n, m, q = map(int, input().split())
+   queries = [tuple(map(int, input().split())) for _ in range(q)]
+   ```
+
+2. **DFS Sequence Generation:**
+   ```python
+   def dfs(current):
+       nonlocal max_score
+       if len(current) > n:
+           # Scoring logic
+           score = 0
+           for a_i, b_i, c_i, d_i in queries:
+               if current[b_i] - current[a_i] == c_i:
+                   score += d_i
+           max_score = max(max_score, score)
+           return
+       
+       # Generate next element
+       new_arr = current.copy()
+       new_arr.append(new_arr[-1])
+       
+       while new_arr[-1] <= m:
+           dfs(new_arr)
+           new_arr = new_arr[:-1] + [new_arr[-1] + 1]
+   ```
+
+3. **Execution Flow:**
+   - Start with initial sequence `[1]`
+   - Recursively build sequences maintaining non-decreasing order
+   - Score sequences when length exceeds `n`
+   - Track maximum score across all valid sequences
+
+**Control Structures:**
+- Recursive DFS with backtracking
+- While loop for generating valid sequence elements
+- Conditional scoring when sequence length > n
+
+**Key Constraints:**
+- Sequences start with 1
+- Each element ≥ previous
+- Elements ≤ m
+- Query indices use 0-based array access
+
+**Data Processing:**
+- Score calculation checks all queries against generated sequences
+- Maintains maximal score through exhaustive search
+
+**Dependencies:**
+- Requires standard input/output handling
+- No external libraries needed beyond basic list operations

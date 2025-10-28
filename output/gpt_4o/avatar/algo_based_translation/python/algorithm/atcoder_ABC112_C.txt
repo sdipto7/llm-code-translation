@@ -1,0 +1,33 @@
+```plaintext
+Function solve(n: int, ls_xyh: List[Tuple[int, int, int]]) -> str:
+    Declare x0, y0, h0 as Optional[int], initially None
+    Iterate over i from 0 to n - 1:
+        If ls_xyh[i][2] > 0:
+            Assign x0, y0, h0 from ls_xyh[i]
+            Break loop
+    Declare cands as List[Tuple[int, int, int]], initialized with:
+        For cx in range(101):
+            For cy in range(101):
+                Append (cx, cy, h0 + abs(cx - x0) + abs(cy - y0))
+    Iterate over (x, y, h) in ls_xyh:
+        Update cands as List[Tuple[int, int, int]] with:
+            For (cx, cy, ch) in cands:
+                If max(ch - abs(cx - x) - abs(cy - y), 0) == h:
+                    Keep (cx, cy, ch) in cands
+    Assign (xx, yy, hh) from cands[0]
+    Return ' '.join([str(xx), str(yy), str(hh)])
+
+Function readQuestion() -> Tuple[int, List[Tuple[int, int, int]]]:
+    Read ws from standard input, split by whitespace into List[str]
+    Convert ws[0] to integer, assign to n
+    Declare ls_xyh as List[Tuple[int, int, int]], initialized with:
+        For j in range(n):
+            Read from standard input, split by whitespace, map to integers, convert to list, append to ls_xyh
+    Return (n, ls_xyh)
+
+Function main() -> None:
+    Print result of solve with arguments unpacked from readQuestion()
+
+Import sys module
+Call main function
+```

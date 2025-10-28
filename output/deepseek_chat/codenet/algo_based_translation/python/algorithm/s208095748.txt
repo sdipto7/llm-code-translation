@@ -1,0 +1,17 @@
+```python
+def main():
+    input_str = input()
+    input_list = input_str.split()
+    A = int(input_list[0])
+    B = int(input_list[1])
+    C = int(input_list[2])
+    
+    if B < C:
+        print(0)
+    else:
+        if A * C < B:
+            print(C)
+        else:
+            result = B // A
+            print(result)
+```

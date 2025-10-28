@@ -1,0 +1,50 @@
+**Algorithm:**
+
+**Function Signatures:**
+- `public static void main(String[] args) throws IOException`: Entry point with no return value.
+
+**Variables:**
+- `t: int` (number of queries)
+- `s: String[]` (split input line)
+- `pqmax: PriorityQueue<Integer>` (min-heap, natural ordering)
+- `pqmin: PriorityQueue<Integer>` (max-heap, custom comparator)
+- `sumMin: long` (sum of elements in pqmin)
+- `sumMax: long` (sum of elements in pqmax)
+- `sumb: long` (accumulated value from "b" parameters)
+- `min: int` (current median value from pqmin's top)
+
+**Logic Flow:**
+1. Read integer `t` from input.
+2. Initialize `pqmax` as a min-heap, `pqmin` as a max-heap.
+3. Process `t` queries in a loop:
+   - **For each iteration:**
+     a. Split input line into `s`.
+     b. **If** query type is '2':
+        i. Calculate `ans = min * pqmin.size() - sumMin`.
+        ii. Calculate `ans1 = sumMax - (min * pqmax.size())`.
+        iii. Print `min` and `ans + ans1 + sumb`.
+     c. **Else** (query type is '1'):
+        i. Parse `in = int(s[1])` and add `long(s[2])` to `sumb`.
+        ii. **If** `in > min`:
+            - Add `in` to `pqmax`, update `sumMax += in`.
+           **Else**:
+            - Add `in` to `pqmin`, update `sumMin += in`.
+        iii. **If** `pqmin.size() > pqmax.size()`:
+            - Move top of `pqmin` to `pqmax`, adjust `sumMin` and `sumMax`.
+        iv. **If** `pqmax.size() > pqmin.size()`:
+            - Move top of `pqmax` to `pqmin`, adjust `sumMax` and `sumMin`.
+        v. Update `min` to `pqmin.peek()`.
+
+**Control Structures:**
+- `while (t-- > 0)` loop for query processing.
+- Nested `if (s[0].charAt(0) == '2')` to branch query handling.
+- Conditional checks `in > min` for element insertion.
+- Two independent `if` blocks for heap size balancing.
+
+**I/O Operations:**
+- Input via `BufferedReader` from `System.in`.
+- Output via `PrintWriter` to `System.out`, with formatted results for '2' queries.
+
+**Dependencies:**
+- `java.io.*` (I/O classes)
+- `java.util.*` (PriorityQueue, Comparator)

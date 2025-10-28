@@ -1,0 +1,14 @@
+N: integer from input
+ans: list of integers, initially empty
+
+For i from 1 to N inclusive:
+    Calculate sum of integers from 1 to i
+    If sum < N:
+        Continue to next iteration
+    Else:
+        Set ans = [i - 1, sum - N]
+        Break out of loop
+
+For j from 0 to ans[0] inclusive:
+    If j + 1 != ans[1]:
+        Print j + 1

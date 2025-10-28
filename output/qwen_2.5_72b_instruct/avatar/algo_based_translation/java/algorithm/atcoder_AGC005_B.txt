@@ -1,0 +1,43 @@
+- Function signature: `public static void main(String[] args)`
+- Variable declarations and data types:
+  - `Scanner scan`
+  - `int N`
+  - `int[] a = new int[N]`
+  - `int[] leftl = new int[N]`
+  - `int[] rightl = new int[N]`
+  - `ArrayDeque<Integer> que = new ArrayDeque<>()`
+  - `int index`
+  - `long ans`
+- Complete logic flow in execution order:
+  - `scan = new Scanner(System.in)`
+  - `N = scan.nextInt()`
+  - for `i` from `0` to `N-1`:
+    - `a[i] = scan.nextInt()`
+  - `index = 0`
+  - while `index < N`:
+    - while `!que.isEmpty()` and `a[que.peek()] > a[index]`:
+      - `ind = que.poll()`
+      - `rightl[ind] = index - ind - 1`
+    - `que.push(index)`
+    - `index++`
+  - while `!que.isEmpty()`:
+    - `ind = que.poll()`
+    - `rightl[ind] = N - ind - 1`
+  - `index = N - 1`
+  - while `index >= 0`:
+    - while `!que.isEmpty()` and `a[que.peek()] > a[index]`:
+      - `ind = que.poll()`
+      - `leftl[ind] = ind - index - 1`
+    - `que.push(index)`
+    - `index--`
+  - while `!que.isEmpty()`:
+    - `ind = que.poll()`
+    - `leftl[ind] = ind - index - 1`
+  - `ans = 0`
+  - for `i` from `0` to `N-1`:
+    - `ans += (long) a[i] * (leftl[i] + 1) * (rightl[i] + 1)`
+  - `System.out.println(ans)`
+- Required libraries, modules, or dependencies:
+  - `java.util.ArrayDeque`
+  - `java.util.Scanner`
+  - `java.util.stream.IntStream` (not used in the provided code)

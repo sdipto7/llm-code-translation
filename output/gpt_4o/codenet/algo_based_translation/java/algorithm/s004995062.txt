@@ -1,0 +1,30 @@
+Algorithm:
+
+1. Import necessary libraries:
+   - `java.util.Scanner` for handling input operations.
+   - `java.math.BigDecimal` for precise decimal arithmetic operations.
+
+2. Define the main function `main` with no parameters and no return type:
+   - `public static void main(String[] args)`
+
+3. Variable declarations:
+   - Create a `Scanner` object `sc` to read input from standard input.
+
+4. Input operations:
+   - Read the first input string using `sc.next()` and store it in a variable `sa` of type `String`.
+   - Read the second input string using `sc.next()` and store it in a variable `sb` of type `String`.
+
+5. Data processing logic:
+   - Convert the string `sa` to a `BigDecimal` object and store it in a variable `A`.
+   - Convert the string `sb` to a `BigDecimal` object and store it in a variable `B`.
+
+6. Perform arithmetic operation:
+   - Multiply `A` and `B` using `A.multiply(B)`.
+
+7. Set the scale of the result:
+   - Use `setScale(0, BigDecimal.ROUND_DOWN)` to round down the result to zero decimal places.
+
+8. Output operation:
+   - Print the resulting `BigDecimal` object to standard output using `System.out.println()`.
+
+9. End of function.

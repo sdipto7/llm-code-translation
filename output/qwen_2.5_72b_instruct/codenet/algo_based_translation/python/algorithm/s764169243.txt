@@ -1,0 +1,64 @@
+Algorithm:
+
+SegmentTree(size: Integer, default: Any) -> None
+    self.size = 2 ^ (size - 1).bit_length()
+    self.default = default
+    self.seg = [default] * (2 * self.size - 1)
+
+segfunc(x: Any, y: Any) -> Any
+    return max(x, y)
+
+update(k: Integer, x: Any) -> None
+    k += self.size - 1
+    self.seg[k] = x
+    while k:
+        k = (k - 1) // 2
+        self.seg[k] = self.segfunc(self.seg[2 * k + 1], self.seg[2 * k + 2])
+
+query(p: Integer, q: Integer) -> Any
+    if q <= p:
+        return self.default
+    p += self.size - 1
+    q += self.size - 2
+    ret = self.default
+    while q - p > 1:
+        if p & 1 == 0:
+            ret = self.segfunc(ret, self.seg[p])
+        if q & 1 == 1:
+            ret = self.segfunc(ret, self.seg[q])
+            q -= 1
+        p = p // 2
+        q = (q - 1) // 2
+    ret = self.segfunc(self.segfunc(ret, self.seg[p]), self.seg[q])
+    return ret
+
+seg_print() -> None
+    print(self.seg)
+
+main() -> None
+    N = Integer(input())
+    a = List(Integer)(map(Integer, input().split()))
+    ans = List(Integer)([i + 1 for i in range(N)])
+    left_seg = SegmentTree(N, 0)
+    for i, num in enumerate(a):
+        ans[num - 1] *= i + 1 - left_seg.query(0, num)
+        left_seg.update(num - 1, i + 1)
+    right_seg = SegmentTree(N, 0)
+    for i, num in enumerate(a[::-1]):
+        ans[num - 1] *= i + 1 - right_seg.query(0, num)
+        right_seg.update(num - 1, i + 1)
+    print(sum(ans))
+
+Execution Order:
+1. Initialize SegmentTree class with size and default value.
+2. Define segment function to return the maximum of two values.
+3. Define update method to update segment tree with new value.
+4. Define query method to get the maximum value in a range.
+5. Define seg_print method to print the segment tree.
+6. In main, read N and list a.
+7. Initialize ans list with values from 1 to N.
+8. Create left_seg segment tree with size N and default value 0.
+9. Iterate through list a, updating ans and left_seg.
+10. Create right_seg segment tree with size N and default value 0.
+11. Iterate through reversed list a, updating ans and right_seg.
+12. Print the sum of ans list.

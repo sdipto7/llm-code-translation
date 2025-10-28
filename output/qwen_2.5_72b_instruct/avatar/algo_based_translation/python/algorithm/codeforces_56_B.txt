@@ -1,0 +1,33 @@
+Function signature: main() -> None
+Variable declarations and data types:
+- N: int
+- A: List[int]
+- mn: int
+- mx: int
+
+Logic flow in execution order:
+1. Read integer N from input
+2. Read space-separated integers from input, convert to list of integers A
+3. Initialize mn to N + 1
+4. Initialize mx to -1
+5. Loop over range N with index i:
+   a. If i + 1 is not equal to A[i]:
+      i. Update mn to minimum of mn and i
+      ii. Update mx to maximum of mx and i
+6. If mx is equal to -1:
+   a. Print '0 0'
+7. Else:
+   a. Reverse sublist of A from index mn to mx inclusive
+   b. Check if reversed sublist combined with other parts of A is sorted:
+      i. If true:
+         1. Print mn + 1 and mx + 1
+      ii. Else:
+         1. Print '0 0'
+
+Input/output operations and data processing logic:
+- Input: Read integer N and list of integers A
+- Output: Print two integers representing indices or '0 0' if conditions are not met
+- Data processing: Determine indices mn and mx where elements do not match their positions, reverse sublist, check if entire list becomes sorted
+
+Required libraries, modules, or dependencies:
+- No additional libraries required

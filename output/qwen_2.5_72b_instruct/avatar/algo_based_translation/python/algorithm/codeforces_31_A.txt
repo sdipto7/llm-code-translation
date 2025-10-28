@@ -1,0 +1,39 @@
+Function Signature: `main()`
+
+Variable Declarations:
+- `y`: integer
+- `arr`: list of integers
+
+Logic Flow:
+1. Read an integer `y` from input.
+2. Read a line of input, split it by spaces, convert each element to an integer, and store them in list `arr`.
+3. For each index `i` from 0 to the length of `arr` - 1:
+    4. For each index `j` from 0 to the length of `arr` - 1:
+        5. If `i` is equal to `j`, continue to the next iteration of the inner loop.
+        6. For each index `k` from 0 to the length of `arr` - 1:
+            7. If `arr[k]` is not equal to `arr[j]` and `arr[k]` is not equal to `arr[i]` and `arr[k]` is equal to `arr[i] + arr[j]`:
+                8. Print `k + 1`, `j + 1`, `i + 1`.
+                9. Exit the program.
+10. Print `-1`.
+
+Control Structures:
+- For loop for iterating over indices `i` of `arr`.
+- For loop for iterating over indices `j` of `arr`.
+- If statement to check if `i` is equal to `j`.
+- For loop for iterating over indices `k` of `arr`.
+- If statement to check if `arr[k]` is not equal to `arr[j]` and `arr[k]` is not equal to `arr[i]` and `arr[k]` is equal to `arr[i] + arr[j]`.
+
+Input/Output Operations:
+- Read an integer `y` from input.
+- Read a line of input, split by spaces, convert each element to an integer, and store them in list `arr`.
+- Print `k + 1`, `j + 1`, `i + 1` if a valid triplet is found.
+- Print `-1` if no such triplet is found.
+
+Data Processing Logic:
+- The program checks for a triplet `(arr[i], arr[j], arr[k])` such that `arr[i] + arr[j] = arr[k]` and all three elements are distinct.
+- The indices `i`, `j`, and `k` are 0-based in the code but the output indices are 1-based.
+- The program exits immediately after finding the first valid triplet.
+- If no valid triplet is found after checking all possibilities, it outputs `-1`.
+
+Libraries/Modules/Dependencies:
+- No specific libraries or modules are required for this code.

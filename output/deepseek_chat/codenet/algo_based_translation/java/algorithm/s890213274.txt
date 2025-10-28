@@ -1,0 +1,11 @@
+1. Import Scanner class from java.util package
+2. Define public class Main
+3. Define public static void main method with String[] args parameter
+4. Create Scanner object sc reading from System.in
+5. Declare integer variable A1 and assign sc.nextInt()
+6. Declare integer variable A2 and assign sc.nextInt()
+7. Declare integer variable A3 and assign sc.nextInt()
+8. Calculate sum A1 + A2 + A3
+9. If sum >= 22 then print "bust"
+10. Else print "win"
+11. End program

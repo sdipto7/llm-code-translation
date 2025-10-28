@@ -1,0 +1,23 @@
+Function main():
+    Read input: N, M, Q as integers from standard input
+    Declare train as 2D list of integers with dimensions N x N, initialized to 0
+    For M times:
+        Read l, r as integers from standard input
+        Increment train[l-1][r-1] by 1
+
+    Declare accum as list of lists of integers, initialize with [0 for range(N+1)]
+    For i from 0 to N-1:
+        Declare temp as list of integers, initialize with [0]
+        Declare v as integer, initialize to 0
+        For j from 0 to N-1:
+            Add train[i][j] to v
+            Append (accum[-1][j+1] + v) to temp
+        Append temp to accum
+
+    For Q times:
+        Read p, q as integers from standard input
+        Calculate v = accum[q][q] - accum[p-1][q] - accum[q][p-1] + accum[p-1][p-1]
+        Print v
+
+If __name__ equals '__main__':
+    Call main()

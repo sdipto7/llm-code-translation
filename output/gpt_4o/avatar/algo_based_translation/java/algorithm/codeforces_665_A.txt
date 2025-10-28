@@ -1,0 +1,40 @@
+1. Import necessary libraries: `BufferedReader`, `IOException`, `InputStreamReader`, `PrintWriter`, `StringTokenizer`.
+
+2. Define main function: `main(String[] args) throws IOException`
+
+3. Declare and initialize:
+   - `BufferedReader br = new BufferedReader(new InputStreamReader(System.in))`
+   - `PrintWriter pw = new PrintWriter(System.out)`
+
+4. Read input:
+   - Use `StringTokenizer st = new StringTokenizer(br.readLine())`
+   - Declare `int a = Integer.parseInt(st.nextToken())`
+   - Declare `int tA = Integer.parseInt(st.nextToken())`
+
+5. Read next line:
+   - `st = new StringTokenizer(br.readLine())`
+   - Declare `int b = Integer.parseInt(st.nextToken())`
+   - Declare `int tB = Integer.parseInt(st.nextToken())`
+
+6. Read timing input:
+   - `String timing = br.readLine()`
+   - Declare `int hrs = Integer.parseInt(timing.substring(0, 2))`
+   - Declare `int mins = Integer.parseInt(timing.substring(3))`
+
+7. Calculate simulated departure and arrival times:
+   - `int simDeparture = hrs * 60 + mins`
+   - `int simArrival = simDeparture + tA`
+
+8. Initialize counter:
+   - `int counter = 0`
+
+9. Loop through each minute from 300 to 1439:
+   - `for (int i = 300; i < 1440; i += b)`
+     - Declare `int busDeparture = i`
+     - Declare `int busArrival = i + tB`
+     - If condition: `if (busDeparture >= simArrival || simDeparture >= busArrival) continue`
+     - Increment counter: `counter++`
+
+10. Output result:
+    - `pw.println(counter)`
+    - Flush and close writer: `pw.flush()`, `pw.close()`

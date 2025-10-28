@@ -1,0 +1,17 @@
+```
+Function get_nums(num: int, t: int) -> List[int]
+    Initialize a list comprehension
+        For each integer i in the range from 0 to num - 1
+            If i is less than t % num
+                Append t // num + 1 to the list
+            Else
+                Append t // num to the list
+    Return the list
+
+Read a single line of input, split by whitespace, and map to integers: n, k, l, r, sa, sk
+Call get_nums with parameters k and sk, and store the result in a list
+Call get_nums with parameters n - k and sa - sk, and append the result to the previous list
+Convert each element of the list to a string
+Join the strings with a space separator
+Print the resulting string
+```

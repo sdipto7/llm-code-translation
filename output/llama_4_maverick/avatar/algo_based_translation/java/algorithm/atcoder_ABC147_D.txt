@@ -1,0 +1,13 @@
+1. Read the number of elements n from the input.
+2. Initialize a variable div to 10^9 + 7.
+3. Create an array A of size n to store the input elements.
+4. Read n elements from the input and store them in array A.
+5. Initialize a variable ans to 0.
+6. Iterate from i = 0 to 59.
+7. For each i, initialize a variable count1 to 0.
+8. Iterate through the array A and count the number of elements that have the i-th bit set to 1.
+9. Calculate a = count1 * (n - count1).
+10. Left shift a by i places and take the result modulo div.
+11. Add the result from step 10 to ans.
+12. Take ans modulo div.
+13. After the loop completes, output the final value of ans.

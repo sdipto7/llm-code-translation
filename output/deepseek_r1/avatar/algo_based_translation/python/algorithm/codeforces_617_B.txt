@@ -1,0 +1,48 @@
+# Structured Algorithm Specification
+
+**Function/Method Signatures:**
+- N/A (Script-style code with no explicit functions)
+
+**Variable Declarations:**
+- `a: str` (Input string)
+- `count_ones: int` (Count of '1' characters in `a`)
+- `stripped_a: str` (Trimmed version of `a`)
+- `split_parts: List[str]` (List of substrings split by '1')
+- `factors: List[int]` (List of (zeros count + 1) values)
+- `product_result: int` (Result of multiplying all factors)
+
+**Step-by-Step Logic Flow:**
+1. Execute first `input()` call (no value stored)
+2. Assign second `input()` result to `a`
+3. Calculate `count_ones = a.count("1")`
+4. If `count_ones == 0`:
+   1. Print `0`
+5. Else:
+   1. Strip leading/trailing '0' and space characters: `stripped_a = a.strip("0 ")`
+   2. Split `stripped_a` using '1' as delimiter: `split_parts = stripped_a.split('1')`
+   3. Initialize `factors` as empty list
+   4. For each `part` in `split_parts`:
+      1. Append `(part.count("0") + 1)` to `factors`
+   5. Calculate `product_result = prod(factors)`
+   6. Print `product_result`
+
+**Control Flow Structures:**
+- Conditional: Check `count_ones == 0` for early exit
+- Loop: Iterate over `split_parts` to calculate factors
+
+**Input/Output Operations:**
+- Read two sequential inputs (first ignored)
+- Print `0` or computed product based on logic
+
+**Edge Case Handling:**
+- Handles empty input strings implicitly
+- Accounts for strings with no '1' characters
+- Processes empty split segments (resulting in factor = 1)
+
+**External Dependencies:**
+- Import: `from math import prod`
+- Library Functions: 
+  - `str.strip()`
+  - `str.split()`
+  - `str.count()`
+  - `math.prod()`

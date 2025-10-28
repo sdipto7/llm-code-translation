@@ -1,0 +1,8 @@
+1. Read a string from standard input and store it in variable `s` of type string.
+2. Initialize an empty string variable `my_str`.
+3. For each character `c` in string `s`:
+   - If `c` is equal to '0' or '1':
+        Append `c` to `my_str`.
+   - Else if `c` is equal to 'B' and the length of `my_str` is not zero:
+        Remove the last character from `my_str`.
+4. Print the final value of `my_str`.

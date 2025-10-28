@@ -1,0 +1,53 @@
+Function signatures:
+- `void getFail(char b[], int m)`
+- `public static void main(String[] args)`
+
+Variable declarations:
+- `int N = 200 + 10`
+- `int f[] = new int[N]`
+- `char b[] = new char[N]`
+- `int n`
+- `String s1`
+- `String str`
+- `int cnt`
+- `int j = 0`
+- `int len`
+
+Logic flow:
+- Initialize `j` to 0
+- Set `f[0]` and `f[1]` to 0
+- For `i` from 2 to `m`:
+  - While `j > 0` and `b[j + 1] != b[i]`, set `j` to `f[j]`
+  - If `b[j + 1] == b[i]`, increment `j`
+  - Set `f[i]` to `j`
+- Read integer `n`
+- Read string `s1`
+- Read string `str`
+- For `i` from 0 to `n - 1`, set `b[++cnt]` to `str.charAt(i)`
+- For `i` from 0 to `n - 1`, set `b[++cnt]` to `s1.charAt(i)`
+- Call `getFail(b, cnt)`
+- Set `len` to the minimum of `f[cnt]`, `n`, and `n`
+- Print `2 * n - len`
+
+Control structures:
+- For loop with condition `i <= m`
+- While loop with condition `j > 0 && b[j + 1] != b[i]`
+- For loop with condition `i < n`
+- For loop with condition `i < n`
+- Function call to `getFail`
+
+Input/output operations:
+- Read integer from input
+- Read string from input
+- Read string from input
+- Print integer to output
+
+Data processing logic:
+- Concatenate `str` and `s1` into `b`
+- Compute the failure function `f` for the concatenated string
+- Calculate the length of the longest prefix which is also a suffix
+- Compute the result as `2 * n - len`
+
+Required libraries:
+- `java.io.*`
+- `java.util.*`

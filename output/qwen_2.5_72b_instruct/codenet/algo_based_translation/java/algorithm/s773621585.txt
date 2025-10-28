@@ -1,0 +1,30 @@
+Function signatures with parameter and return types:
+- main(String[] args) : void
+
+Variable declarations and data types:
+- HashMap<String, String> map
+- Scanner sc
+- int n
+- String str
+- int i
+
+Complete logic flow in execution order:
+1. Create a new instance of HashMap<String, String> and assign it to map.
+2. Create a new instance of Scanner for standard input and assign it to sc.
+3. Read an integer value from the input and assign it to n.
+4. Read a line of string input and discard it.
+5. For loop starts with initialization i = 0, continues while i < n, and increments i by 1 after each iteration:
+   5.1 Read a line of string input and use it as the key to put an empty string value in the map.
+6. Close the Scanner instance sc.
+7. Print the size of the map.
+
+Control structures:
+- For loop with condition i < n
+
+Input/output operations and data processing logic:
+- Input: An integer n followed by n lines of strings.
+- Output: The size of the map.
+
+Required libraries, modules, or dependencies:
+- java.util.HashMap
+- java.util.Scanner

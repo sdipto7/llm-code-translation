@@ -1,0 +1,44 @@
+**Function Signature:**
+- main(): void
+
+**Variable Declarations:**
+- N: int
+- S: str
+- ans: int
+- tmp: str
+- s: str (loop variable)
+
+**Input Operations:**
+- Read integer N from standard input
+- Read string S from standard input
+
+**Initialization:**
+- ans = 1
+- tmp = first character of S (S[0])
+
+**Loop Structure:**
+- For each character s in string S:
+  - If s != tmp:
+    - ans += 1
+    - tmp = s
+
+**Output Operation:**
+- Print ans
+
+**Logic Flow:**
+1. Read integer N
+2. Read string S
+3. Initialize ans to 1
+4. Initialize tmp to first character of S
+5. Iterate through each character s in S:
+   - Compare s with tmp
+   - If different: increment ans by 1, update tmp to s
+6. Print ans
+
+**Control Structures:**
+- For loop: for s in S:
+- Conditional: if s != tmp:
+
+**Dependencies:**
+- Standard input/output operations
+- No external libraries required

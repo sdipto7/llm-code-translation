@@ -1,0 +1,23 @@
+```
+Function Signature:
+  function countTrendChanges(n: int, a: List[int]) -> int
+
+Variable Declarations:
+  count: int
+  now: int
+  bef: int
+
+Logic Flow:
+1. Initialize count to 1
+2. Initialize now to 0
+3. Initialize bef to 0
+4. Loop from i = 1 to n - 1
+   a. If a[i-1] < a[i], set now to 1
+   b. Else if a[i-1] > a[i], set now to -1
+   c. Else, continue to next iteration
+   d. If bef equals 0, set bef to now
+   e. If bef does not equal now
+      i. Increment count by 1
+      ii. Set bef to 0
+5. Return count
+```

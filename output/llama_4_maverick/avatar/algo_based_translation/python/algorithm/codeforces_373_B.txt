@@ -1,0 +1,25 @@
+1. Define function sum(k)
+   1.1. Initialize ret to 0
+   1.2. Initialize pw to 10
+   1.3. Initialize len to 1
+   1.4. While true
+      1.4.1. Calculate cur as minimum of (pw - 1) and k
+      1.4.2. Calculate prev as pw divided by 10
+      1.4.3. Update ret by adding (cur - prev + 1) multiplied by len
+      1.4.4. If (pw - 1) is greater than or equal to k
+         1.4.4.1. Break the loop
+      1.4.5. Increment len by 1
+      1.4.6. Update pw by multiplying it by 10
+   1.5. Return ret
+
+2. Read input values w, m, k
+3. Initialize lo to 0
+4. Initialize hi to 1e18
+5. While (hi - lo) is greater than 1
+   5.1. Calculate md as average of lo and hi
+   5.2. Calculate c as difference between sum(m + md - 1) and sum(m - 1)
+   5.3. If c multiplied by k is less than or equal to w
+      5.3.1. Update lo to md
+   5.4. Else
+      5.4.1. Update hi to md
+6. Print lo

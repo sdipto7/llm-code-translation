@@ -1,0 +1,30 @@
+1. Read two integer inputs, N and K, from the standard input, separated by a space.
+2. Read N integer inputs from the standard input, representing scores, and store them in a list.
+3. Initialize two integer variables, mae and usiro, to 0 and K, respectively.
+4. Iterate N-K times using a for loop.
+5. Inside the loop, compare the score at index mae with the score at index usiro.
+6. If the score at index mae is less than the score at index usiro, output 'Yes' to the standard output.
+7. Otherwise, output 'No' to the standard output.
+8. Increment mae by 1 and usiro by 1 in each iteration.
+
+Function signature: 
+- Input: N (integer), K (integer), and a list of N scores (integers)
+- Output: N-K 'Yes' or 'No' outputs to the standard output
+
+Variable declarations and data types:
+- N: integer
+- K: integer
+- score: list of integers
+- mae: integer
+- usiro: integer
+
+Required libraries or modules: 
+- input() function for reading from standard input, implicitly available in Python.
+
+Data processing logic:
+- Input is processed as integers and a list of integers.
+- Comparison logic is applied between elements of the list. 
+
+Control structures:
+- for loop iterating N-K times
+- if-else conditional statement comparing scores at indices mae and usiro.

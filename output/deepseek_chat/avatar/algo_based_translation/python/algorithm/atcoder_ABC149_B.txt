@@ -1,0 +1,9 @@
+1. Read a line of input and split into list of strings
+2. Convert each string in list to integer, store in list `cookies`
+3. Calculate `leftOver` = cookies[0] - cookies[2]
+4. Calculate `takahashi` = max(0, leftOver)
+5. If `takahashi` > 0:
+   - Output: string of `takahashi` + space + string of cookies[1]
+6. Else:
+   - Calculate `remaining` = max(0, cookies[1] - abs(leftOver))
+   - Output: string of `takahashi` + space + string of `remaining`

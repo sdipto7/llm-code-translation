@@ -1,0 +1,42 @@
+```
+Function main()
+    Declare Scanner object 'sc'
+    Read integer 'n' from input using 'sc'
+    Read integer 'levels' from input using 'sc'
+    Declare integer 'sum' and initialize to 0
+    Declare integer 'sum2' and initialize to 0
+    Declare integer 'sum3' and initialize to 0
+    Declare integer array 'arr' with size 'levels'
+    Declare integer 'count' and initialize to 0
+
+    For 'i' from 0 to 'levels' - 1
+        Read integer from input and assign to 'arr[i]'
+
+    Read integer 'level2' from input using 'sc'
+    Declare integer 'level3' and assign 'levels + level2'
+    Declare integer array 'arr2' with size 'level3'
+
+    For 'i' from 0 to 'levels' - 1
+        Assign 'arr[i]' to 'arr2[i]'
+
+    For 'i' from 'levels' to 'level3' - 1
+        Read integer from input and assign to 'arr2[i]'
+
+    Declare integer array 'arr3' with size 'n'
+    Declare integer 'j' and initialize to 0
+
+    For 'i' from 0 to 'n' - 1
+        Increment 'j'
+        Assign 'j' to 'arr3[i]'
+
+    For 'i' from 0 to 'n' - 1
+        For 'x' from 0 to 'level3' - 1
+            If 'arr3[i]' equals 'arr2[x]'
+                Increment 'count'
+                Break inner loop
+
+    If 'count' equals 'n'
+        Print "I become the guy."
+    Else
+        Print "Oh, my keyboard!"
+```

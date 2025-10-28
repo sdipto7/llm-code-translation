@@ -1,0 +1,7 @@
+1. Read the number of inputs, n.
+2. Initialize a variable, result, to 0.
+3. Create two arrays, h and g, of size n.
+4. For i from 0 to n-1, read two integers and store them in h[i] and g[i] respectively.
+5. For i from 0 to n-1, iterate through g and compare each element g[j] with h[i].
+6. If h[i] equals g[j], increment result by 1.
+7. Output the value of result.

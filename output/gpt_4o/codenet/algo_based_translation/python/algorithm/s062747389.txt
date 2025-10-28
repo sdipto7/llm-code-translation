@@ -1,0 +1,13 @@
+- Function signature: `def calculate_sum_or_expression(input_str: str) -> int`
+- Variable declarations:
+  - `a: int`
+  - `b: int`
+- Input operation:
+  - Read a single line string `input_str` containing two space-separated integers.
+- Data processing logic:
+  - Use `map` to convert the space-separated string `input_str` into two integers, `a` and `b`.
+- Conditional logic:
+  - If `a` is equal to `b`, return the sum of `a` and `b`.
+  - Otherwise, return the result of the expression `max(a, b) * 2 - 1`.
+- Return type: `int`
+- No required libraries, modules, or dependencies.

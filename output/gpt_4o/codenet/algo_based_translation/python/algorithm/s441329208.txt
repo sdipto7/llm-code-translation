@@ -1,0 +1,27 @@
+1. **Function Signature**
+   - `def compare_strings(s: str, t: str) -> str`
+
+2. **Variable Declarations and Data Types**
+   - `s: str`
+   - `t: str`
+   - `sorted_s: List[str]`
+   - `sorted_t: List[str]`
+
+3. **Logic Flow**
+   - Read input string `s` from standard input, removing any trailing whitespace.
+   - Read input string `t` from standard input, removing any trailing whitespace.
+   - Sort the characters of string `s` in ascending order and assign to `sorted_s`.
+   - Sort the characters of string `t` in ascending order, then reverse it to get descending order, and assign to `sorted_t`.
+   - Compare `sorted_s` with `sorted_t` using lexicographical order.
+   - If `sorted_s` is lexicographically smaller than `sorted_t`, return "Yes".
+   - Otherwise, return "No".
+
+4. **Input/Output Operations and Data Processing Logic**
+   - Input: Two strings read from the standard input.
+   - Output: A string "Yes" or "No" printed to the standard output based on the comparison of sorted strings.
+
+5. **Required Libraries, Modules, or Dependencies**
+   - `sys` module for reading input directly from the standard input.
+
+6. **Control Structures**
+   - Conditional statement to compare `sorted_s` and `sorted_t`.

@@ -1,0 +1,21 @@
+1. Define a function `main()` with no parameters and no return value.
+2. Read an integer `n` from input.
+3. Read a list of `n` integers `v` from input.
+4. Declare two empty lists `ve` and `vo`.
+5. Iterate over the range from 0 to `n//2 - 1`.
+   1. For each iteration `i`, append `v[2*i]` to `ve`.
+   2. For each iteration `i`, append `v[2*i+1]` to `vo`.
+6. Create two `Counter` objects `ce` and `co` from `ve` and `vo` respectively.
+7. Initialize a variable `ans` to `n`.
+8. Check if the most common element in `ce` is not equal to the most common element in `co`.
+   1. If true, update `ans` to `n - ce.most_common()[0][1] - co.most_common()[0][1]`.
+9. Check if the length of `ce` is 1 and the length of `co` is 1.
+   1. If true, update `ans` to `n - ce.most_common()[0][1]`.
+10. Check if the length of `ce` is 1.
+    1. If true, update `ans` to `n - ce.most_common()[0][1] - co.most_common()[1][1]`.
+11. Check if the length of `co` is 1.
+    1. If true, update `ans` to `n - ce.most_common()[1][1] - co.most_common()[0][1]`.
+12. If none of the above conditions are true, update `ans` to the minimum of `n - ce.most_common()[0][1] - co.most_common()[1][1]` and `n - ce.most_common()[1][1] - co.most_common()[0][1]`.
+13. Print the value of `ans`.
+14. Check if the current module is the main module.
+    1. If true, call the `main()` function.

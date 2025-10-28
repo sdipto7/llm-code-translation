@@ -1,0 +1,39 @@
+Algorithm:
+1. Import necessary modules:
+   - `java.util.Arrays`
+   - `java.util.Scanner`
+
+2. Declare the main function `public static void main(String[] args)`.
+
+3. Initialize a `Scanner` object `sc` to read input from the standard input.
+
+4. Read four integers from input:
+   - `v1` using `sc.nextInt()`: the initial velocity.
+   - `v2` using `sc.nextInt()`: the final velocity.
+   - `t` using `sc.nextInt()`: the number of time intervals.
+   - `d` using `sc.nextInt()`: the maximum change in velocity per interval.
+
+5. Declare a 2D array `dp` of `long` with dimensions `[t - 1][1150]` to store maximum distances covered with specific velocities at each time interval.
+
+6. Loop over `i` from `0` to `t - 2` (exclusive):
+   - Fill `dp[i]` with `-1e17` to initialize with a very small value.
+
+7. Set the initial condition for `dp`:
+   - `dp[0][v1] = v1`
+
+8. Declare a variable `long sum = 0` to accumulate the total distance (though not used later).
+
+9. Loop over `i` from `1` to `t - 2` (exclusive):
+   - Loop over `j` from `0` to `1149` (inclusive):
+     - Loop over `x` from `0` to `d` (inclusive):
+       - If `j + x < 1150`, update `dp[i][j]` to be the maximum of its current value and `dp[i - 1][j + x] + j`.
+     - Loop over `x` from `d` down to `0` (inclusive):
+       - If `j - x >= 0`, update `dp[i][j]` to be the maximum of its current value and `dp[i - 1][j - x] + j`.
+
+10. Declare a variable `long ans = Long.MIN_VALUE` to store the maximum distance covered.
+
+11. Loop over `i` from `t - 2` to `t - 1` (exclusive):
+    - Loop over `j` from `0` to `1149` (inclusive):
+      - If `Math.abs(j - v2) <= d`, update `ans` to be the maximum of its current value and `dp[i][j] + v2`.
+
+12. Output the result `ans` using `System.out.println(ans)`.

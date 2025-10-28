@@ -1,0 +1,31 @@
+1. Define a function `count_unmarked_elements` with parameters `N` and `K` of type integers and return type integer.
+2. Initialize an empty list `A` of size `N` with all elements set to 0.
+3. Iterate `K` times, performing the following steps:
+   - Read an integer `d` from input.
+   - Read `d` integers from input, storing them in a list `AA`.
+   - Iterate over the elements of `AA`, marking the corresponding indices in `A` as 1 (adjusting for 0-based indexing).
+4. Initialize a counter `n` to 0.
+5. Iterate over the elements of `A`, incrementing `n` for each element that is 0.
+6. Return the value of `n`.
+7. Read two integers `N` and `K` from input.
+8. Call `count_unmarked_elements` with `N` and `K` and print the result.
+
+Alternatively, a more detailed step-by-step algorithm can be represented as:
+- Function: `main`
+  - Read `N` and `K` from input.
+  - Call `count_unmarked_elements(N, K)`
+  - Print the result.
+
+- Function: `count_unmarked_elements(N: integer, K: integer) -> integer`
+  - Initialize `A` as a list of size `N` with all elements as 0.
+  - For `i` = 1 to `K`
+    - Read `d` from input.
+    - Read `d` integers into list `AA`.
+    - For `j` = 1 to `d`
+      - `index` = `AA[j]` - 1
+      - `A[index]` = 1
+  - Initialize `n` = 0.
+  - For `i` = 0 to `N-1`
+    - If `A[i]` == 0
+      - `n` = `n` + 1
+  - Return `n`

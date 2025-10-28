@@ -1,0 +1,19 @@
+1. Import required library: java.util.Scanner
+2. Define function: main with return type void and parameter args of type String[]
+3. Declare variable: sc of type Scanner and initialize with new Scanner(System.in)
+4. Declare variable: s of type String and assign value from sc.next()
+5. Declare variable: n of type int and assign value from s.length()
+6. Declare variable: ans of type long and initialize with 0
+7. Loop from mask = 0 to (1 << (n - 1)) - 1 with increment 1
+   7.1 Declare variable: sum of type long and initialize with 0
+   7.2 Declare variable: x of type String and initialize with s.charAt(0)
+   7.3 Loop from i = 0 to n - 2 with increment 1
+      7.3.1 If condition: (mask & (1 << i)) >= 1 is true
+         7.3.1.1 Concatenate x with "+" and s.charAt(i + 1)
+      7.3.2 Else
+         7.3.2.1 Concatenate x with s.charAt(i + 1)
+   7.4 Declare variable: split of type String[] and assign value from x.split("\\+")
+   7.5 Loop from i = 0 to split.length - 1 with increment 1
+      7.5.1 Add Long.valueOf(split[i]) to sum
+   7.6 Add sum to ans
+8. Output ans using System.out.println()

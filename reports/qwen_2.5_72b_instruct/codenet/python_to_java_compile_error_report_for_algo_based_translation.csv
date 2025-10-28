@@ -1,0 +1,72 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,s724326345.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/algo_based_translation/python/java/s724326345.java:14: error: integer number too large
+        int ans = 10000000000;
+                  ^
+1 error
+"
+python,java,s908812767.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/algo_based_translation/python/java/s908812767.java:39: error: cannot find symbol
+        System.setRecursionLimit(100000);
+              ^
+  symbol:   method setRecursionLimit(int)
+  location: class System
+1 error
+"
+python,java,s817205687.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/algo_based_translation/python/java/s817205687.java:14: error: cannot find symbol
+        return numbers.stream().reduce(1, Main::lcm);
+                                          ^
+  symbol:   variable Main
+  location: class s817205687
+1 error
+"
+python,java,s993625131.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/algo_based_translation/python/java/s993625131.java:7: error: cannot find symbol
+        List<String> S = Arrays.asList(input.split(""""));
+        ^
+  symbol:   class List
+  location: class s993625131
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s764169243.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/algo_based_translation/python/java/s764169243.java:10: error: int cannot be dereferenced
+        this.size = 1 << ((size - 1).bitLength());
+                                    ^
+1 error
+"
+python,java,s147181072.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/algo_based_translation/python/java/s147181072.java:6: error: incompatible types: java.lang.String cannot be converted to String
+        String input_str = scanner.nextLine();
+                                           ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error
+only showing the first 1 errors, of 3 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s137613418.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/algo_based_translation/python/java/s137613418.java:59: error: cannot find symbol
+        return permSub(IntStream.range(0, n).boxed().collect(Collectors.toList()), new HashSet<>());
+                       ^
+  symbol:   variable IntStream
+  location: class s137613418
+1 error
+only showing the first 1 errors, of 5 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s554393427.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/algo_based_translation/python/java/s554393427.java:12: error: underscore not allowed here
+        for (int _ = 0; _ < N; _++) {
+                        ^
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s681105182.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/algo_based_translation/python/java/s681105182.java:27: error: incompatible types: possible lossy conversion from double to long
+            dif = Math.min(Math.abs(n / 2.0 - a), dif);
+                          ^
+1 error
+"
+python,java,s735480710.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/algo_based_translation/python/java/s735480710.java:17: error: incompatible types: incompatible parameter types in lambda expression
+        List<String> oddIndexedElements = a.subList(1, a.size()).stream().filter((e, i) -> i % 2 == 0).toList();
+                                                                                 ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s238775098.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/codenet/algo_based_translation/python/java/s238775098.java:9: error: underscore not allowed here
+        for (int _ = 0; _ < n; _++) {
+                        ^
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"

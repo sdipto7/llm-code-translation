@@ -1,0 +1,7 @@
+Read integer N from input
+Read next line, split into tokens, convert each to integer, create numpy array A of type int64 from these integers
+Initialize result to 0
+For b from 0 to 59 inclusive:
+    Calculate bs = sum of bits at position b across all elements in A
+    Update result = (result + bs * (N - bs) * (2^b)) mod 1000000007
+Print result

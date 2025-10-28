@@ -1,0 +1,23 @@
+Function signature:  
+main() -> None  
+
+Variable declarations:  
+a: integer  
+b: integer  
+
+Input operations:  
+Read line from standard input  
+Split input string by whitespace  
+Convert first two elements to integers, assign to a and b  
+
+Control structures:  
+If condition (a ≤ b):  
+    Execute: print(a)  
+Else:  
+    Execute: print(a - 1)  
+
+Output operations:  
+Print integer to standard output  
+
+Dependencies:  
+None

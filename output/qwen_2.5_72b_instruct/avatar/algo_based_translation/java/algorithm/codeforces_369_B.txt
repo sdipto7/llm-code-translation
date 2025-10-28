@@ -1,0 +1,48 @@
+Function: main
+Parameters: String[] args
+Return Type: void
+Variables: 
+- Scanner scan
+- int n
+- int k
+- int l
+- int r
+- int sAll
+- int sk
+- int[] ans
+
+Logic Flow:
+1. Initialize Scanner for input
+2. Read n, k, l, r, sAll, sk from input
+3. Call getPoints with n, k, l, r, sAll, sk and store result in ans
+4. Print each element of ans followed by a space
+
+Function: getPoints
+Parameters: int n, int k, int l, int r, int sAll, int sk
+Return Type: int[]
+Variables:
+- int[] ans
+- int idx
+
+Logic Flow:
+1. Initialize ans as an int array of size n
+2. Fill ans array with l
+3. Subtract sk + (n - k) * l from sAll
+4. Subtract k * l from sk
+5. While sk > 0
+   a. Set idx to n - 1
+   b. While sk > 0 and idx >= n - k
+      i. Increment ans[idx]
+      ii. Decrement idx
+      iii. Decrement sk
+6. While sAll > 0
+   a. Set idx to 0
+   b. While sAll > 0 and idx < n - k
+      i. Increment ans[idx]
+      ii. Increment idx
+      iii. Decrement sAll
+7. Return ans
+
+Libraries/Modules/Dependencies:
+- java.util.Arrays
+- java.util.Scanner

@@ -1,0 +1,98 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,atcoder_AGC043_B.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/direct_translation/python/java/atcoder_AGC043_B.java:20: error: cannot find symbol
+        List<Integer> nums = scanner.nextLine().trim().split("" "").stream().map(Integer::parseInt).map(x -> x - 1).collect(Collectors.toList());
+                                                                 ^
+  symbol:   method stream()
+  location: class String[]
+1 error
+"
+python,java,codeforces_61_B.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/direct_translation/python/java/codeforces_61_B.java:29: error: cannot find symbol
+        return Arrays.stream(scanner.nextLine().split("" "")).map(Integer::parseInt).collect(Collectors.toList());
+                                                                                           ^
+  symbol:   variable Collectors
+  location: class codeforces_61_B
+1 error
+only showing the first 1 errors, of 3 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_AGC029_C.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/direct_translation/python/java/atcoder_AGC029_C.java:46: error: cannot find symbol
+        dp.add(new int[]{A.get(0), 0});
+                         ^
+  symbol:   variable A
+  location: class atcoder_AGC029_C
+1 error
+only showing the first 1 errors, of 3 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC119_B.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/direct_translation/python/java/atcoder_ABC119_B.java:21: error: incompatible types: Object cannot be converted to double
+        return new javax.script.ScriptEngineManager().getEngineByName(""JavaScript"").eval(expression);
+                                                                                        ^
+1 error
+"
+python,java,atcoder_ABC112_C.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/direct_translation/python/java/atcoder_ABC112_C.java:28: error: cannot find symbol
+                int h0 = ls_xyh.get(i).get(2);
+                                    ^
+  symbol:   variable i
+  location: class atcoder_ABC112_C
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC107_C.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/direct_translation/python/java/atcoder_ABC107_C.java:43: error: cannot find symbol
+                    p = 0;
+                    ^
+  symbol:   variable p
+  location: class atcoder_ABC107_C
+1 error
+only showing the first 1 errors, of 8 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ARC102_C.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/direct_translation/python/java/atcoder_ARC102_C.java:30: error: cannot find symbol
+                System.out.println(ans.get(ans.size() - i + K));
+                                           ^
+  symbol:   variable ans
+  location: class atcoder_ARC102_C
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC151_A.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/direct_translation/python/java/atcoder_ABC151_A.java:36: error: incompatible types: String cannot be converted to String[]
+        if (result instanceof String[]) {
+            ^
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_55_B.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/direct_translation/python/java/codeforces_55_B.java:41: error: integer number too large
+        int[] ans = {1000000000000000000};
+                     ^
+1 error
+"
+python,java,atcoder_ABC150_C.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/direct_translation/python/java/atcoder_ABC150_C.java:8: error: cannot find symbol
+        List<Integer> p = Arrays.stream(scanner.nextLine().split("" "")).map(Integer::parseInt).collect(Collectors.toList());
+                                                                                                      ^
+  symbol:   variable Collectors
+  location: class atcoder_ABC150_C
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC140_D.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/direct_translation/python/java/atcoder_ABC140_D.java:35: error: yield outside of switch expression
+                    yield number;
+                    ^
+1 error
+"
+python,java,atcoder_AGC028_A.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/direct_translation/python/java/atcoder_AGC028_A.java:20: error: cannot find symbol
+        Set<Integer> set_j = Arrays.stream(Number_j).asDoubleStream().boxed().collect(Collectors.toSet());
+                                                                                      ^
+  symbol:   variable Collectors
+  location: class atcoder_AGC028_A
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC169_D.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/direct_translation/python/java/atcoder_ABC169_D.java:6: error: integer number too large
+    static final long INF = 999999999999999999999999L;
+                            ^
+1 error
+"
+python,java,atcoder_ABC133_E.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/direct_translation/python/java/atcoder_ABC133_E.java:20: error: cannot find symbol
+        int colorNum = f == K ? K - 1 : K - 2;
+                            ^
+  symbol:   variable K
+  location: class atcoder_ABC133_E
+1 error
+only showing the first 1 errors, of 3 total; use -Xmaxerrs if you would like to see more
+"

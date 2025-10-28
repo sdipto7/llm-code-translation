@@ -1,0 +1,45 @@
+- **Libraries/Dependencies**:
+  - `collections.deque`
+
+- **Variables**:
+  - `N: int` (number of nodes)
+  - `M: int` (number of edges)
+  - `G: dict[int, list[int]]` (adjacency list)
+  - `a: int`, `b: int` (temporary edge variables)
+  - `col: list[int]` (size N+1, initialized to -1)
+  - `cnt: int` (counter for connected components)
+  - `i: int` (loop variable)
+  - `que: deque` (BFS queue)
+  - `x: int` (current node in BFS)
+  - `y: int` (adjacent node)
+  - `cmax: int` (maximum component label)
+
+- **Input Operations**:
+  1. Read `N` and `M` from standard input.
+  2. Read `M` pairs of integers `(a, b)` and populate `G`.
+
+- **Logic Flow**:
+  1. Initialize `G` as a dictionary with keys `1..N` and empty list values.
+  2. Initialize `col` with `-1` for all indices `0..N`.
+  3. Set `cnt = 0`.
+  4. Iterate `i` from `1` to `N` (inclusive):
+     - If `col[i] == -1`:
+       - Set `col[i] = cnt`.
+       - Initialize `que` with `[i]`.
+       - While `que` is not empty:
+         - Dequeue `x` from `que`.
+         - For each `y` in `G[x]`:
+           - If `col[y] == -1`:
+             - Set `col[y] = cnt`.
+             - Enqueue `y`.
+       - Increment `cnt` by `1`.
+  5. Compute `cmax = max(col)`.
+  6. Print `cmax`.
+
+- **Control Structures**:
+  - `for _ in range(M):` (edge processing loop)
+  - `for i in range(1, N+1):` (node iteration loop)
+  - `if col[i] < 0:` (unvisited node check)
+  - `while que:` (BFS loop)
+  - `for y in G[x]:` (adjacent node iteration)
+  - `if col[y] < 0:` (unvisited adjacent node check)

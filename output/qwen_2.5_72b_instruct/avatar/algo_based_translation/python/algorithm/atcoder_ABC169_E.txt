@@ -1,0 +1,42 @@
+Function signature: 
+- `resolve()` with no parameters and no return type
+
+Variable declarations and data types:
+- `n` as integer
+- `low` as list of integers
+- `high` as list of integers
+- `a` as integer
+- `b` as integer
+- `hh` as float
+- `ll` as float
+
+Logic flow in execution order:
+1. Input `n` as integer from standard input
+2. Initialize empty lists `low` and `high`
+3. For loop iterating `n` times:
+   - Read two integers `a` and `b` from standard input
+   - Append `a` to `low`
+   - Append `b` to `high`
+4. Sort `low` in ascending order
+5. Sort `high` in ascending order
+6. If `n` is odd:
+   - Calculate result as `high[(n + 1) // 2 - 1] - low[(n + 1) // 2 - 1] + 1`
+   - Print result
+7. Else:
+   - Calculate `hh` as `(high[n // 2 - 1] + high[n // 2]) / 2`
+   - Calculate `ll` as `(low[n // 2 - 1] + low[n // 2]) / 2`
+   - Calculate result as `int((hh - ll) * 2) + 1`
+   - Print result
+
+Control structures:
+- For loop from 0 to `n-1`
+- If-else statement to check if `n` is odd or even
+
+Input/output operations and data processing logic:
+- Read integer `n` from standard input
+- Read pairs of integers `a` and `b` from standard input in a loop
+- Sort lists `low` and `high`
+- Calculate and print the result based on whether `n` is odd or even
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules required

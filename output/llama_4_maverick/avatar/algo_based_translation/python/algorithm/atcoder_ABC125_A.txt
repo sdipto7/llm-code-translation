@@ -1,0 +1,7 @@
+1. Read input values for a, b, and t
+2. Initialize cookie to 0
+3. Initialize time to a
+4. While time is less than or equal to t + 0.5
+5.   Increment cookie by b
+6.   Increment time by a
+7. Output the value of cookie

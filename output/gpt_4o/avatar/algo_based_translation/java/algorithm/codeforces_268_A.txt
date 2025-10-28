@@ -1,0 +1,15 @@
+1. Import the `java.util.Scanner` library.
+2. Define a class `codeforces_268_A`.
+3. Inside the class, define the `main` method with the signature `public static void main(String[] args)`.
+4. Declare a `Scanner` object `sc` and initialize it to read from standard input.
+5. Read an integer `n` from input using `sc.nextLine()` and parse it using `Integer.parseInt`.
+6. Declare an integer variable `result` and initialize it to 0.
+7. Declare an integer array `h` of size `n`.
+8. Declare an integer array `g` of size `n`.
+9. Start a for-loop with control variable `i` from 0 to `n-1`:
+   - Read an integer from input using `sc.nextInt()` and assign it to `h[i]`.
+   - Read an integer from input using `sc.nextInt()` and assign it to `g[i]`.
+10. Start a nested for-loop with control variable `i` from 0 to `n-1`:
+    - Start another nested for-loop with control variable `j` from 0 to `n-1`:
+      - If the condition `h[i] == g[j]` is true, increment `result` by 1.
+11. Output the value of `result` using `System.out.println(result)`.

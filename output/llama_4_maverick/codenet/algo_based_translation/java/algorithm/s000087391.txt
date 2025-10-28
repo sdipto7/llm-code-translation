@@ -1,0 +1,41 @@
+1. Import required libraries: java.util.ArrayList, java.util.Scanner
+2. Define function: main with return type void and parameter args of type String[]
+3. Declare variable: result of type ArrayList<Integer>
+4. Initialize result as new ArrayList<Integer>()
+5. Declare variable: insert of type Scanner
+6. Initialize insert as new Scanner(System.in)
+7. Declare variable: n of type int
+8. Initialize n as -1
+9. Start while loop with condition true
+10. Inside loop:
+    - Declare variable: line of type String
+    - Read input from insert into line using nextLine()
+    - Parse line to int and store in n using Integer.parseInt()
+    - Check if n equals 0
+    - If true, break the loop
+    - For loop with condition i < n and i starting from 0 (loop body is empty)
+    - Read input from insert into line using nextLine()
+    - Declare variable: array2 of type String[]
+    - Split line into array2 using split(" ")
+    - Declare variable: input of type int[]
+    - Initialize input as new int[n]
+    - Declare variable: sum of type int
+    - Initialize sum as 0
+    - For loop with condition i < n and i starting from 0
+        - Inside loop:
+            - Parse array2[i] to int and store in input[i] using Integer.parseInt()
+            - Add input[i] to sum
+    - Declare variable: avg of type double
+    - Calculate avg as sum divided by n (both cast to double)
+    - Declare variable: num of type int
+    - Initialize num as 0
+    - For loop with condition i < n and i starting from 0
+        - Inside loop:
+            - Check if input[i] is less than or equal to avg
+            - If true, increment num by 1
+    - Add num to result using add()
+14. For loop with condition i < result.size() and i starting from 0
+    - Inside loop:
+        - Check if result.get(i) equals -1
+        - If true, print "NONE" to console using System.out.println()
+        - Else, print result.get(i) to console using System.out.println()

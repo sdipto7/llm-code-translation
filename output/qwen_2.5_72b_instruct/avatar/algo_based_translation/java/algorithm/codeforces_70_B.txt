@@ -1,0 +1,40 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations:
+- `BufferedReader br` of type `BufferedReader`
+- `int n` of type `int`
+- `String input` of type `String`
+- `int max` of type `int` initialized to `-1`
+- `int[] msgLength` of type `int[]` with length `input.length() / 2`
+- `int count` of type `int` initialized to `0`
+- `int idx` of type `int` initialized to `0`
+- `char c` of type `char`
+- `int l` of type `int`
+- `int ans` of type `int` initialized to `0`
+
+Execution flow and control structures:
+
+1. Create `BufferedReader` object `br` using `InputStreamReader(System.in)`
+2. Read integer `n` from input
+3. Read string `input` from input
+4. Initialize `msgLength` array with size `input.length() / 2`
+5. Loop through each character `c` in `input`:
+   - If `c` is '.' or '?' or '!':
+     - Set `msgLength[idx]` to `count + 1`
+     - Increment `idx`
+     - Update `max` to be the maximum of `max` and `count + 1`
+     - Skip next character by incrementing `i`
+     - Reset `count` to `0`
+   - Else:
+     - Increment `count`
+6. If `max` is greater than `n`:
+   - Print "Impossible"
+7. Else:
+   - Initialize `ans` to `0`
+   - Loop through each element in `msgLength` until `idx`:
+     - Set `l` to `msgLength[i]`
+     - While `i` is less than `idx - 1` and `l + msgLength[i + 1] + 1` is less than or equal to `n`:
+       - Add `msgLength[i + 1] + 1` to `l`
+       - Increment `i`
+     - Increment `ans`
+   - Print `ans`

@@ -1,0 +1,43 @@
+1. Import the following libraries:
+   - `java.io.*`
+   - `java.util.*`
+
+2. Define the main function:
+   - Signature: `public static void main(String[] args)`
+
+3. Initialize input and output:
+   - Create a `Scanner` object `in` to read from standard input.
+   - Create a `PrintWriter` object `pw` to write to standard output.
+
+4. Read two integers from input:
+   - Declare integer `a` and assign it `in.nextInt()`.
+   - Declare integer `b` and assign it `in.nextInt()`.
+
+5. Initialize counter:
+   - Declare integer `c` and initialize it to `0`.
+
+6. Conditional check for both values equal to 1:
+   - If `a == 1` and `b == 1`, output `0` using `pw.println(0)` and terminate.
+
+7. Execute a loop while at least one of the integers is greater than or equal to 1:
+   - While `a >= 1` or `b >= 1`:
+     - If `a >= b`:
+       - Increment `b` by `1`.
+       - Decrement `a` by `2`.
+     - Else:
+       - Increment `a` by `1`.
+       - Decrement `b` by `2`.
+     - If `a <= 0` or `b <= 0`:
+       - Increment `c` by `1`.
+       - Break the loop.
+     - Increment `c` by `1`.
+
+8. Output the result:
+   - Print the value of `c` using `pw.println(c)`.
+
+9. Close the output stream:
+   - Call `pw.close()` to ensure all output is flushed.
+
+10. Define additional utility functions:
+    - `static void swap(int a, int b)`: Swaps the values of `a` and `b`.
+    - `static void debug(Object...obj)`: Prints the debug information using `System.err.println(Arrays.deepToString(obj))`.

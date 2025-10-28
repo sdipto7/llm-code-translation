@@ -1,0 +1,38 @@
+```
+Function: main()
+    Input: None
+    Output: None
+
+    Step 1: Read integers N, M, Q from input
+        - N: int
+        - M: int
+        - Q: int
+
+    Step 2: Initialize 2D list `train` with dimensions N x N, filled with 0
+        - train: List[List[int]]
+
+    Step 3: Loop M times to read and process train data
+        - For each iteration:
+            - Read integers l, r from input
+            - Increment train[l-1][r-1] by 1
+
+    Step 4: Initialize 2D list `accum` with one row of N+1 zeros
+        - accum: List[List[int]]
+
+    Step 5: Loop through each index i from 0 to N-1
+        - Initialize list `temp` with one zero
+        - Initialize integer `v` to 0
+        - For each index j from 0 to N-1:
+            - Add train[i][j] to `v`
+            - Append accum[-1][j+1] + v to `temp`
+        - Append `temp` to `accum`
+
+    Step 6: Loop Q times to process and output query results
+        - For each iteration:
+            - Read integers p, q from input
+            - Calculate integer `v` using:
+                v = accum[q][q] - accum[p-1][q] - accum[q][p-1] + accum[p-1][p-1]
+            - Output `v`
+
+Dependency: None
+```

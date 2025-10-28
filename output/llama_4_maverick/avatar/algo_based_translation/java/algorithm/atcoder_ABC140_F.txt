@@ -1,0 +1,19 @@
+1. Read the input value N from the input.
+2. Calculate the value of size as 2^N.
+3. Initialize an array S of size 'size' to store integers.
+4. Initialize a boolean array 'spawned' of size 'size' to track spawned elements.
+5. Set the last element of 'spawned' to true.
+6. Read 'size' number of integers from the input and store them in array S.
+7. Sort the array S in ascending order.
+8. Initialize a list 'active' with the last element of S.
+9. Iterate N times:
+   1. Sort the 'active' list in descending order.
+   2. Initialize an empty list 'activated' to store newly activated elements.
+   3. Initialize a variable 'next' to the last index of S.
+   4. Iterate through each element 'slime' in 'active':
+      1. Decrement 'next' until S[next] is less than 'slime' and S[next] is not spawned.
+      2. If 'next' is less than 0, output "No" and terminate.
+      3. Mark S[next] as spawned.
+      4. Add S[next] to 'activated'.
+   5. Add all elements of 'activated' to 'active'.
+10. Output "Yes".

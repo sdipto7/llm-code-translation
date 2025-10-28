@@ -1,0 +1,20 @@
+Function signature: main(String[] args) -> void
+
+Dependencies: java.util.Scanner
+
+Variables:
+- Scanner scan
+- int a
+- int b
+- int c
+
+Algorithm:
+1. Create Scanner object reading from System.in
+2. Read integer input into variable a
+3. Read integer input into variable b
+4. Read integer input into variable c
+5. Close Scanner
+6. Check condition: a < b AND b < c AND a < c
+7. If condition is true: print "Yes"
+8. Else: print "No"
+9. End program

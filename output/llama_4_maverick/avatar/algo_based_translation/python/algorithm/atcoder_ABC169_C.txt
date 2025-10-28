@@ -1,0 +1,14 @@
+1. Import necessary modules
+2. Set recursion limit to 10^6
+3. Define a debug function based on environment variable 'TERM_PROGRAM'
+4. Define input functions: 
+    - input: read a line from standard input and remove trailing newline
+    - LMIIS: read a line, split it into integers, and return as a list
+    - II: read a line and convert it to an integer
+5. Initialize constants: 
+    - P: 10^9 + 7
+    - INF: 10^9 + 10
+6. Read two values from input: sa and sb
+7. Convert sa to integer 'a'
+8. Convert sb to float, multiply by 100, add 0.1, and convert to integer 'b'
+9. Calculate the product of 'a' and 'b', perform integer division by 100, and print the result

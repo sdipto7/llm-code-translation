@@ -1,0 +1,50 @@
+**Algorithm:**
+
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `void run()`
+- `void tr(Object... objects)` (debug utility)
+
+**Variables:**
+- `MOD: long = 1e9 + 7`
+- `sc: Scanner` initialized with `System.in`
+- `cs: char[]` from input string
+- `dp: long[cs.length][13]` (2D array)
+- `base: int = 1`
+
+**Logic Flow:**
+1. Read input string and convert to `char[] cs`
+2. Initialize `dp` array with dimensions `[cs.length][13]`
+3. Iterate over each character position `i` from 0 to `cs.length - 1` (processing digits from right to left):
+   - Compute current character index as `cs[cs.length - 1 - i]`
+   - **If character is '?':**
+     - For each previous remainder `pre` (0-12):
+       - For each possible digit `next` (0-9):
+         - Compute new remainder: `(base * next + pre) % 13`
+         - Update `dp[i][new_remainder] += (i > 0 ? dp[i-1][pre] : (pre == 0 ? 1 : 0))`
+         - Apply modulo `MOD` to `dp[i][new_remainder]`
+   - **Else (fixed digit):**
+     - Convert character to integer `next`
+     - For each previous remainder `pre` (0-12):
+       - Compute new remainder: `(base * next + pre) % 13`
+       - Update `dp[i][new_remainder] += (i > 0 ? dp[i-1][pre] : (pre == 0 ? 1 : 0))`
+       - Apply modulo `MOD` to `dp[i][new_remainder]`
+   - Update `base = (base * 10) % 13`
+4. Output `dp[cs.length - 1][5]` (result modulo `MOD`)
+
+**Control Structures:**
+- Main loop: `for (int i = 0; i < cs.length; ++i)`
+- Nested loops for '?': `for (int pre = 0; pre < 13; ++pre)` and `for (int next = 0; next < 10; ++next)`
+- Conditional branches:
+  - `if (cs[...] == '?')` / `else`
+  - Ternary operators for handling initial state (`i > 0 ? ... : ...`)
+
+**Input/Output:**
+- Input: Single string via `Scanner.next()`
+- Output: Print final count of valid numbers modulo 1e9+7 with remainder 5
+
+**Dependencies:**
+- `java.io.PrintWriter`
+- `java.util.ArrayList`
+- `java.util.Arrays`
+- `java.util.Scanner`

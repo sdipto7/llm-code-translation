@@ -1,0 +1,45 @@
+- **Functions**:
+  - `public static void main(String args[])`: Entry point
+    - **Variables**:
+      - `Scanner scanner = new Scanner(System.in)`
+      - `int n = scanner.nextInt()`
+      - `long ans = 1`
+      - `int mod = (int) Math.pow(10, 9) + 7`
+    - **Logic**:
+      1. Read integer `n` from input
+      2. Initialize `ans` to 1 and `mod` to 10^9 + 7
+      3. Iterate `i` from 2 to `n` (inclusive):
+         1. Iterate `j` starting at 2, incrementing while `(i % j != 0 && j < i) || j == i`
+         2. If `j == i` (indicating `i` is prime):
+            1. Initialize `s = 0`
+            2. Iterate `k` from 1 to `n` (inclusive):
+               - Add `findS(k, i)` to `s`
+            3. Update `ans = (ans * (s + 1)) % mod`
+      4. Print `ans`
+  - `private static int findS(int k, int i)`: Computes exponent of `i` in `k`
+    - **Variables**:
+      - `int s = 0`
+    - **Logic**:
+      1. Iterate `j` starting at `k`, dividing by `i` while `j % i == 0`
+      2. Increment `s` for each division
+      3. Return `s`
+
+- **Control Structures**:
+  - `main`:
+    - Outer `for` loop: `for (int i = 2; i <= n; i++)`
+    - Inner `for` loop: `for (int j = 2; (i % j != 0 && j < i) || j == i; j++)`
+      - Conditional: `if (j == i)`
+      - Nested loop: `for (int k = 1; k <= n; k++)`
+  - `findS`:
+    - `for` loop with condition derived from `j /= i` and `j % i == 0`
+
+- **Data Types**:
+  - Primitives: `int` for counters (`i`, `j`, `k`, `n`, `mod`, `s`), `long` for `ans`
+
+- **Input/Output**:
+  - Input via `Scanner` reading `n`
+  - Output via `System.out.println(ans)`
+
+- **Dependencies**:
+  - Requires `java.util.Scanner` for input handling
+  - Uses `Math.pow()` for modulus calculation

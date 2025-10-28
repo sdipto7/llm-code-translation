@@ -1,0 +1,50 @@
+```plaintext
+Function signature:
+    void memory_management_system(int t, int m)
+
+Variable declarations:
+    int t, m
+    list of int alocuente with size m initialized to 0
+    int ind initialized to 1
+    list of string op
+    int pos
+    int cnt
+
+Algorithm:
+    Parse input to obtain t and m as integers.
+    Initialize a list alocuente with m elements, all set to 0.
+    Set ind to 1.
+
+    For each test case (loop for i from 0 to t-1):
+        Parse input to obtain operation op as a list of strings.
+
+        If op[0] is "alloc":
+            Set pos to 0.
+            For each index j from 0 to m-1:
+                If alocuente[j] equals 0:
+                    Increment pos by 1.
+                    If pos equals the integer value of op[1]:
+                        Set alocuente elements from index j - int(op[1]) + 1 to j inclusive to ind.
+                        Print ind.
+                        Increment ind by 1.
+                        Break the loop.
+                Else:
+                    Set pos to 0.
+            If the loop completes without breaking, print "NULL".
+
+        If op[0] is "erase":
+            Set pos to 0.
+            If the integer value of op[1] is not in alocuente or equals 0:
+                Print "ILLEGAL_ERASE_ARGUMENT".
+            Else:
+                For each index j from 0 to m-1:
+                    If the integer value of op[1] is greater than 0 and equals alocuente[j]:
+                        Set alocuente[j] to 0.
+
+        If op[0] is "defragment":
+            Count the number of zeros in alocuente and set cnt to this count.
+            Remove all zeros from alocuente.
+            Append cnt number of zeros to the end of alocuente.
+
+The function does not return any value. It reads from standard input and writes to standard output.
+```

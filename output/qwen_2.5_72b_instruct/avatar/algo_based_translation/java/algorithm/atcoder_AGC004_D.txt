@@ -1,0 +1,46 @@
+Algorithm:
+- Function: main(String[] args)
+  - Variable: Thread thread
+  - Operation: Create and start new Thread with MyRunnable instance
+
+- Class: MyRunnable implements Runnable
+  - Function: run()
+    - Variable: int n
+    - Variable: int k
+    - Variable: List<Integer> as = new ArrayList<Integer>()
+    - Input: n, k using Scanner from System.in
+    - Loop: for (int i = 0; i < n; i++)
+      - Input: as.add(sc.nextInt() - 1)
+    - Variable: Calculator calculator = new Calculator(n, k, as)
+    - Output: System.out.println(calculator.calculate())
+
+- Class: Calculator
+  - Variable: int k
+  - Variable: int answer = 0
+  - Variable: boolean isCalculate = false
+  - Variable: List<List<Integer>> lists = new ArrayList<List<Integer>>()
+  - Function: Calculator(int n, int k, List<Integer> as)
+    - Assignment: this.k = k
+    - Loop: for (int i = 0; i < n; i++)
+      - Operation: lists.add(new ArrayList<Integer>())
+    - Loop: for (int i = 0; i < n; i++)
+      - Variable: int j = as.get(i)
+      - Conditional: if (0 < i)
+        - Operation: lists.get(j).add(i)
+      - Conditional: else if (0 < j)
+        - Operation: answer++
+  - Function: int calculate()
+    - Conditional: if (!isCalculate)
+      - Operation: dfs(0, 0)
+      - Assignment: isCalculate = true
+    - Return: answer
+  - Function: int dfs(int a, int pre)
+    - Variable: int h = 0
+    - Loop: for (int i : lists.get(a))
+      - Operation: h = Math.max(h, dfs(i, a))
+    - Conditional: if (0 < pre && h == k - 1)
+      - Assignment: h = 0
+      - Operation: answer++
+    - Else
+      - Operation: h++
+    - Return: h

@@ -1,0 +1,33 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations:
+- `Scanner sc` of type `Scanner`
+- `String str` of type `String`
+- `String[] strArr` of type `String[]`
+- `int[] l` of type `int[]` with size 10
+- `int d` of type `int`
+- `int i` of type `int` (loop index)
+- `int[] v` of type `int[]` with size 2
+- `double t` of type `double`
+
+Logic flow:
+- Initialize `sc` as a new `Scanner` object reading from standard input.
+- Enter a `while` loop that continues as long as there are more tokens available in the input.
+- Read the next token as a `String` and assign it to `str`.
+- Split `str` by commas and store the result in `strArr`.
+- Initialize `l` as an integer array of size 10.
+- Initialize `d` to 0.
+- Iterate over `i` from 0 to 9:
+  - Parse `strArr[i]` as an integer and assign it to `l[i]`.
+  - Add `l[i]` to `d`.
+- Initialize `v` as an integer array of size 2.
+- Parse `strArr[10]` as an integer and assign it to `v[0]`.
+- Parse `strArr[11]` as an integer and assign it to `v[1]`.
+- Calculate `t` as the division of `d` by the sum of `v[0]` and `v[1]`, cast to `double`.
+- Reset `d` to 0.
+- Iterate over `i` from 0 to 10:
+  - If `v[0] * t` is less than or equal to `d`, print `i` and break the loop.
+  - Otherwise, add `l[i]` to `d`.
+
+Libraries/modules/dependencies:
+- Import `java.util.*` for using `Scanner`.

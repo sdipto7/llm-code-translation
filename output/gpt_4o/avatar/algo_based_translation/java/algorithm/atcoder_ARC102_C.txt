@@ -1,0 +1,44 @@
+Algorithm:
+
+1. Import `Scanner` from `java.util`.
+
+2. Define a class `atcoder_ARC102_C`.
+
+3. Declare a static integer `mod` with the value `998244353`.
+
+4. Declare a static 2D array `nchoosek` of type `long`.
+
+5. Define the `main` method with `String[] args` parameter.
+
+6. Initialize `nchoosek` as a new 2D array of `long` with dimensions `[4001][4001]`.
+
+7. Loop over `i` from `0` to `4000` (inclusive):
+   - Set `nchoosek[i][0] = 1`.
+   - Set `nchoosek[i][i] = 1`.
+
+8. Loop over `i` from `2` to `4000` (inclusive):
+   - Loop over `j` from `1` to `i - 1` (inclusive):
+     - Calculate `nchoosek[i][j] = (nchoosek[i - 1][j] + nchoosek[i - 1][j - 1]) % mod`.
+
+9. Create a `Scanner` object `sc` to read input from `System.in`.
+
+10. Read an integer `k` using `sc.nextInt()`.
+
+11. Read an integer `n` using `sc.nextInt()`.
+
+12. Loop over `i` from `2` to `2 * k` (inclusive):
+    - Declare an integer `pairs`.
+    - If `i > k`, calculate `pairs = k - i / 2`.
+    - Otherwise, calculate `pairs = (i - 1) / 2`.
+    - Declare an integer `active = k - 2 * pairs`.
+    - If `i % 2 == 0`, decrement `active` by `1`.
+    - Declare a `long` variable `times2 = 1`.
+    - Declare a `long` variable `total = 0`.
+    - Loop over `j` from `0` to `pairs` (inclusive):
+      - Calculate `choice = times2 * nchoosek[pairs][j] % mod`.
+      - Update `times2 = times2 * 2 % mod`.
+      - If `active + j - 1 < 0`, continue to the next iteration.
+      - Increment `total` by `choice * nchoosek[n + active - 1][active + j - 1]`.
+      - If `i % 2 == 0`, increment `total` by `choice * nchoosek[n + active - 2][active + j - 1]`.
+      - Update `total = total % mod`.
+    - Output `total` using `System.out.println(total)`.

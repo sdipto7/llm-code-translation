@@ -1,0 +1,8 @@
+Initialize Scanner object to read from standard input
+Read integer n from input
+Declare array ryuka of long integers with size n + 1
+Set ryuka[0] = 2
+Set ryuka[1] = 1
+For i from 2 to n (inclusive):
+    Set ryuka[i] = ryuka[i - 1] + ryuka[i - 2]
+Print ryuka[n] to standard output

@@ -1,0 +1,11 @@
+1. Import required library: java.util.Scanner
+2. Define function: main with parameter: String[] args and return type: void
+3. Declare variable: sc of type Scanner and initialize with new Scanner(System.in)
+4. Declare variable: n of type int and assign value from sc.nextInt()
+5. Declare array: ryuka of type long[] with size n + 1
+6. Assign ryuka[0] = 2 and ryuka[1] = 1
+7. Loop from i = 2 to n (inclusive) with increment 1
+   - Inside loop: calculate ryuka[i] = ryuka[i - 1] + ryuka[i - 2]
+8. Output ryuka[n] to console using System.out.println()
+9. End function main
+10. End program execution

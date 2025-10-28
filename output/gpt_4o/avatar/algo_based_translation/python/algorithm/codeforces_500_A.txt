@@ -1,0 +1,33 @@
+```
+Algorithm:
+
+1. Import the `sys` module for system-specific parameters and functions.
+
+2. Define input processing:
+   a. Read input values from the standard input.
+   b. Split the input string into two integers `n` and `t`.
+
+3. Declare variables:
+   - `n`: integer, representing the number of cells.
+   - `t`: integer, representing the target cell index (1-indexed).
+   - `s`: list of integers, representing the steps to jump from each cell.
+   - `current_cell`: integer, initialized to 0, representing the current cell index (0-indexed).
+
+4. Populate the `s` list:
+   a. Read the input string.
+   b. Split the string into individual components.
+   c. Convert each component to an integer and store in list `s`.
+
+5. Begin processing the game logic:
+   a. Start a `while` loop that continues as long as `current_cell` is less than or equal to `t`.
+
+6. Within the `while` loop:
+   a. Update `current_cell` by adding the value at `s[current_cell - 1]` to it. This simulates moving to the next cell.
+
+7. Check if the `current_cell` is equal to `t`:
+   a. If true, print "YES" and exit the program using `sys.exit()`.
+
+8. If the loop completes without reaching `t`, print "NO".
+
+9. No return values, as the function operates with input/output directly.
+```

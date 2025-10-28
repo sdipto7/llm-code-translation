@@ -1,0 +1,32 @@
+ALGORITHM:
+
+FUNCTION main():
+    DECLARE Scanner sc = new Scanner(System.in)
+    DECLARE int H = sc.nextInt()
+    DECLARE int W = sc.nextInt()
+    CALL sc.nextLine()
+    DECLARE char[][] S = new char[H][W]
+    
+    FOR i FROM 0 TO H-1:
+        DECLARE String text = sc.nextLine()
+        FOR j FROM 0 TO W-1:
+            S[i][j] = text.charAt(j)
+    
+    FOR i FROM 0 TO H-1:
+        FOR j FROM 0 TO W-1:
+            IF S[i][j] == '.':
+                DECLARE int count = 0
+                FOR a FROM -1 TO 1:
+                    IF (i + a < 0) OR (i + a >= H):
+                        CONTINUE
+                    FOR b FROM -1 TO 1:
+                        IF (j + b < 0) OR (j + b >= W):
+                            CONTINUE
+                        IF S[i+a][j+b] == '#':
+                            INCREMENT count BY 1
+                SET S[i][j] = (char)(count + 48)
+            PRINT S[i][j]
+        PRINT newline
+
+REQUIRED LIBRARIES:
+- java.util.Scanner

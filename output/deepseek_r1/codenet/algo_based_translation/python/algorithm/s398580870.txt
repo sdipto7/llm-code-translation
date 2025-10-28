@@ -1,0 +1,25 @@
+- **Input Operations**:
+  - Read one line from standard input.
+  - Split the input into two integer values `n` (int) and `k` (int) using `map`.
+
+- **Variables**:
+  - `n`: integer, first input value.
+  - `k`: integer, second input value.
+
+- **Control Structures**:
+  - If-Else block:
+    - **Condition**: `k % 2 == 1` (check if `k` is odd).
+    - **True Branch**:
+      - Compute `(n // k) ** 3` (integer division of `n` by `k`, then cube the result).
+      - Print the result.
+    - **False Branch**:
+      - Compute `(n // k) ** 3` (as in the true branch).
+      - Compute `(n + (k // 2)) // k` (integer division of `n + k//2` by `k`).
+      - Cube the second result and add it to the first.
+      - Print the sum.
+
+- **Output Operations**:
+  - Print the computed result to standard output.
+
+- **Dependencies**:
+  - No external libraries or modules required; uses standard input/output functions and integer arithmetic.

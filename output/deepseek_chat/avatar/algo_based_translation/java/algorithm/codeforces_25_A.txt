@@ -1,0 +1,33 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner ob` (Scanner object for input)
+- `int n` (number of elements)
+- `int[] array` (size n+1, 1-indexed)
+- `int odd` (count of odd numbers)
+- `int even` (count of even numbers)
+- `int odd_ind` (index of last odd number)
+- `int even_ind` (index of last even number)
+
+**Libraries:**
+- `java.util.Scanner`
+
+**Logic Flow:**
+1. Initialize Scanner with System.in
+2. Read integer `n`
+3. Create integer array of size `n+1`
+4. For `i` from 1 to n (inclusive):
+   - Read next integer into `array[i]`
+5. Initialize `odd=0`, `even=0`, `odd_ind=0`, `even_ind=0`
+6. For `i` from 1 to n (inclusive):
+   - If `array[i] % 2 == 0`:
+     - Increment `even`
+     - Set `even_ind = i`
+   - Else:
+     - Increment `odd`
+     - Set `odd_ind = i`
+7. If `odd > even`:
+   - Print `even_ind`
+8. Else:
+   - Print `odd_ind`

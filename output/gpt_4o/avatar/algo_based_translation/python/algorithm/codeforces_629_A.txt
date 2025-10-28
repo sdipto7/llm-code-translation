@@ -1,0 +1,28 @@
+```
+Algorithm:
+1. Declare integer variable `n`.
+2. Initialize empty list `cake`.
+3. Declare integer variables `happiness`, `chocCount`, `nfat`, and `posCount` with initial values 0, 0, 1, and 0 respectively.
+4. Input an integer and assign it to `n`.
+5. Loop from 0 to n-1 with iterator `i`:
+   a. Input a string `line`.
+   b. Append `line` to `cake`.
+   c. Loop through each character `j` in `line`:
+      i. If `j` is equal to 'C', increment `chocCount` by 1.
+   d. If `chocCount` is greater than 1:
+      i. Loop from `chocCount` to `chocCount - 2` (inclusive) in reverse with iterator `i`:
+         - Multiply `nfat` by `i`.
+      ii. Increment `happiness` by `nfat / 2`.
+   e. Reset `nfat` to 1.
+   f. Reset `chocCount` to 0.
+6. Loop from 0 to n-1 with iterator `j`:
+   a. Loop from 0 to n-1 with iterator `i`:
+      i. If `cake[i][j]` is equal to 'C', increment `chocCount` by 1.
+   b. If `chocCount` is greater than 1:
+      i. Loop from `chocCount` to `chocCount - 2` (inclusive) in reverse with iterator `i`:
+         - Multiply `nfat` by `i`.
+      ii. Increment `happiness` by `nfat / 2`.
+   c. Reset `nfat` to 1.
+   d. Reset `chocCount` to 0.
+7. Output the integer value of `happiness`.
+```

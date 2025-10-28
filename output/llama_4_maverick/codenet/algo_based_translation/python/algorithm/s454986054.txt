@@ -1,0 +1,18 @@
+1. Define a function `read_input()` with return type integer.
+   - Read an integer from the standard input.
+   - Return the read integer.
+
+2. Define a function `calculate_cube(n: integer)` with return type integer.
+   - Calculate the cube of `n` by raising `n` to the power of 3.
+   - Return the calculated cube.
+
+3. Define a function `print_output(n: integer)`.
+   - Print `n` to the standard output.
+
+4. Execute the following logic flow:
+   - Call `read_input()` and store the result in a variable `n` of type integer.
+   - Call `calculate_cube(n)` and store the result in a variable `cube_n` of type integer.
+   - Call `print_output(cube_n)`.
+
+5. Required libraries/modules: 
+   - Input/Output operations are performed using built-in functions.

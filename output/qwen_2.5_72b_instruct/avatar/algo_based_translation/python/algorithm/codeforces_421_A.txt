@@ -1,0 +1,27 @@
+Function signature: `main()`
+Variable declarations: 
+- `n: int`
+- `a: int`
+- `b: int`
+- `lista: List[int]`
+- `listb: List[int]`
+- `k: int`
+
+Logic flow:
+1. Read a line of input, split by spaces, and convert each element to an integer. Assign the first element to `n`, the second to `a`, and the third to `b`.
+2. Read another line of input, split by spaces, and convert each element to an integer. Store these integers in `lista`.
+3. Read another line of input, split by spaces, and convert each element to an integer. Store these integers in `listb`.
+4. For each integer `k` in the range from 0 to `n-1` (inclusive):
+   - If `k + 1` is in `lista`, print `1` followed by a space without newline.
+   - Otherwise, print `2` followed by a space without newline.
+5. After the loop, print a newline character.
+
+Input/output operations:
+- Input: Three lines from standard input. The first line contains three integers `n`, `a`, and `b`. The second and third lines contain `a` and `b` integers respectively.
+- Output: A single line of space-separated integers, either `1` or `2`, corresponding to the condition in the loop.
+
+Data processing logic:
+- The program checks for each number from 1 to `n` if it exists in `lista`. If it does, it prints `1`; otherwise, it prints `2`.
+
+Required libraries, modules, or dependencies:
+- `List` from `typing` module (implied by list usage, not explicitly imported in the provided code)

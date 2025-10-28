@@ -1,0 +1,29 @@
+1. Read a line of input from the standard input.
+2. Store the input line in a string variable.
+3. Extract the first character from the stored string.
+4. Increment the ASCII value of the extracted character by 1.
+5. Output the resulting character.
+ 
+6. Create a modular arithmetic class instance with a specified modulus.
+7. Define a method to compute the sum of two numbers modulo the modulus.
+   7.1. Add the two numbers and the modulus.
+   7.2. Compute the result modulo the modulus.
+
+8. Define a method to compute the difference of two numbers modulo the modulus.
+   8.1. Subtract the second number from the first and add the modulus.
+   8.2. Compute the result modulo the modulus.
+
+9. Define a method to compute the product of two numbers modulo the modulus.
+   9.1. Multiply the two numbers.
+   9.2. Compute the result modulo the modulus.
+
+10. Define a method to compute the quotient of two numbers modulo the modulus.
+    10.1. Compute the modular multiplicative inverse of the divisor.
+    10.2. Multiply the dividend by the modular inverse.
+    10.3. Compute the result modulo the modulus.
+
+11. Define a method to compute the modular multiplicative inverse of a number.
+    11.1. Initialize variables for the extended Euclidean algorithm.
+    11.2. Perform the extended Euclidean algorithm to find the modular inverse.
+    11.3. Adjust the result to be within the range of the modulus.
+    11.4. Return the modular inverse.

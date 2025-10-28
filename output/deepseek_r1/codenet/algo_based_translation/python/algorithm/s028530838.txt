@@ -1,0 +1,14 @@
+- **Function Signature**: N/A (executed as script)
+- **Variables**:
+  - `x`: string, stores user input
+- **Input Operations**:
+  - Read input from stdin into `x`
+- **Logic Flow**:
+  1. Check if `x.islower()` evaluates to `True`:
+     - If `True`: print `"a"`
+     - Else: print `"A"`
+- **Control Structures**:
+  - Single conditional: `if x.islower()`
+- **Output Operations**:
+  - Print `"a"` or `"A"` based on condition
+- **Dependencies**: None

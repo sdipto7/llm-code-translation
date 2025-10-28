@@ -1,0 +1,34 @@
+
+def split(n, k):
+    total = 0
+    while n > 0:
+        total += n % k
+        n //= k
+    return total
+
+def solve(n, s):
+    k = 2
+    while k * k <= n or k < 100:
+        if split(n, k) == s:
+            return k
+        k += 1
+    while k <= n:
+        a = n // k
+        b = n % k
+        if (a + b - s) % a == 0:
+            dk = (a + b - s) // a
+            if dk >= 0 and b - dk * a >= 0:
+                return k + dk
+        k = n // a + 1
+    if n == s:
+        return n + 1
+    return -1
+
+def main():
+    import sys
+    n, s = map(int, sys.stdin.readline().split())
+    print(solve(n, s))
+
+if __name__ == "__main__":
+    main()
+

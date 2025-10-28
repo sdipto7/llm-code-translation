@@ -1,0 +1,39 @@
+```plaintext
+1. Import the necessary modules:
+   - None required.
+
+2. Define a function `calculate_minimum_difference()`:
+   - Parameters: None
+   - Return type: None
+
+3. Declare variables and their types:
+   - `n`: Integer
+   - `arr`: List of floats
+   - `o`: Integer
+   - `arr_sum`: Float
+   - `res`: Integer
+
+4. Input operations:
+   - Read an integer input and assign it to `n`.
+   - Read a line of input, split it into a list of strings, convert each to a float, and assign the list to `arr`.
+
+5. Data processing logic:
+   - Update `arr` to contain the fractional parts of the original numbers:
+     - Subtract the integer part from each element `x` in `arr` to get its fractional part.
+     - Filter out elements where the fractional part is zero.
+     - Sort the resulting list in ascending order.
+
+6. Calculate `o` as `2 * n - len(arr)`.
+
+7. Calculate `arr_sum` as the sum of all elements in `arr`.
+
+8. Set `res` to a very large integer value (2e9).
+
+9. Loop over `i` from 0 to `n` (inclusive):
+   - Condition: If `i + o >= n`, then:
+     - Update `res` as the minimum of `res` and the absolute value of `i - arr_sum`.
+
+10. Output operations:
+    - Print `res` formatted to three decimal places.
+```
+

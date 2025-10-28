@@ -1,0 +1,15 @@
+1. Read two inputs: an integer pair (X, N) from the first line and a list of N integers from the second line.
+2. Store X and N in integer variables.
+3. Store the list of integers in a list data structure.
+4. Sort the list of integers in ascending order.
+5. Create an empty dictionary to store candidates.
+6. Iterate over a range of integers from -1 to 101.
+7. For each integer i in the range, check if i is present in the sorted list.
+8. If i is not present, calculate the absolute difference between X and i.
+9. Check if the absolute difference is already a key in the dictionary.
+10. If the key exists, append i to the list of values for that key.
+11. If the key does not exist, create a new key-value pair with the absolute difference as the key and a list containing i as the value.
+12. Find the smallest key in the dictionary.
+13. Retrieve the list of values associated with the smallest key.
+14. Find the minimum value in the list.
+15. Output the minimum value.

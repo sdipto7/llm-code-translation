@@ -1,0 +1,47 @@
+**Algorithm:**
+
+**Function Signatures:**
+- `main(String[] args): void`
+- `run(): void`
+
+**Variables:**
+- `N: int` (number of bulbs)
+- `M: int` (number of switches)
+- `a: ArrayList<Integer>` (size N; tracks switch-bitmask for each bulb)
+- `k: int` (number of bulbs connected to a switch)
+- `s: int` (temporary bulb index, 0-based)
+- `p: int` (bitmask of required bulb states)
+- `ans: int` (valid combination counter)
+- `t: int` (computed switch-bitmask for a subset)
+
+**Logic Flow:**
+
+1. Read `N` and `M`.
+2. Initialize `a` with N zeros.
+3. For each switch `i` (0 ≤ i < M):
+   - Read `k`.
+   - For each of `k` bulbs:
+     - Read `s` (convert to 0-based).
+     - Set `a[s] |= (1 << i)` (track switch influence).
+4. Read `M` binary inputs to build `p` as a bitmask.
+5. Iterate all subsets `s` (0 ≤ s < 2^N):
+   - Initialize `t = 0`.
+   - For each bulb `i` (0 ≤ i < N):
+     - If subset `s` includes bulb `i`:
+       - `t ^= a.get(i)` (compute cumulative switch impact).
+   - If `t == p`, increment `ans`.
+6. Output `ans`.
+
+**Control Structures:**
+- Nested loops for switch/bulb input processing.
+- Loop over all 2^N bulb subsets.
+- Conditional inclusion of bulbs in XOR calculation.
+- Equality check for valid state.
+
+**Input/Output:**
+- Scanner reads all inputs sequentially.
+- Final result printed via `System.out.println`.
+
+**Dependencies:**
+- `java.util.Scanner`
+- `java.util.ArrayList`

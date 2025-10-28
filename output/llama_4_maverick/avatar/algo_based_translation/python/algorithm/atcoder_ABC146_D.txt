@@ -1,0 +1,32 @@
+1. Import necessary modules
+2. Define a function bfs with parameters v, N, G, E
+   1. Initialize visited array of size N with all elements as 0
+   2. Initialize queue data structure
+   3. Initialize K as -1
+   4. Initialize node2color array of size N with all elements as -1
+   5. Enqueue v into the queue
+   6. Mark v as visited
+   7. While the queue is not empty
+      1. Dequeue an element q from the queue
+      2. Initialize color as 0
+      3. For each neighbor nex of q
+         1. If nex is visited, continue to the next neighbor
+         2. Mark nex as visited
+         3. Increment color by 1
+         4. If color equals the color of q, increment color by 1
+         5. Assign color to nex in node2color array
+         6. Assign color to the edge between q and nex in E
+         7. Enqueue nex into the queue
+      4. Update K as the maximum of K and color
+   8. Return K
+3. Define a function main
+   1. Read the value of N
+   2. Initialize an adjacency list G with N empty lists
+   3. Initialize an empty dictionary E
+   4. For N-1 iterations
+      1. Read two values a and b
+      2. Append b to the list at index a in G and a to the list at index b in G
+      3. Initialize the edge between a and b in E with value 0
+   5. Call bfs with parameters 0, N, G, E and store the result in K
+   6. Print K
+   7. For each value in E, print the corresponding value

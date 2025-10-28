@@ -1,0 +1,65 @@
+**Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`
+
+**Variables:**
+- `n: int` (Number of nodes)
+- `m: int` (Number of edges)
+- `h: List[int]` (List of node heights)
+- `hp: Dict[int, int]` (Mapping from node ID to height)
+- `path: Dict[int, List[int]]` (Adjacency list representation of graph)
+- `c: int` (Count of "good" nodes)
+- `a: int` (Temporary edge endpoint)
+- `b: int` (Temporary edge endpoint)
+- `i: int` (Current node ID in iteration)
+- `v: List[int]` (Neighbors of current node)
+- `j: int` (Current neighbor node ID)
+- `f: int` (Flag for neighbor height check)
+
+**Logic Flow:**
+1. Read `n` and `m` from first input line via integer splitting
+2. Read `h` from second input line as space-separated integers
+3. Create `hp` by mapping nodes 1..n to corresponding values in `h`
+4. Initialize `path` with keys 1..n, each mapped to an empty list
+5. For `m` iterations:
+   - Read `a` and `b` via integer splitting
+   - Add `b` to `path[a]`
+   - Add `a` to `path[b]`
+6. Initialize `c` to 0
+7. For each key-value pair `(i, v)` in `path`:
+   - Set `f` to 0
+   - For each `j` in `v`:
+     - If `hp[i] <= hp[j]`:
+       - Set `f` to 1
+       - Break inner loop
+   - If `f == 0`:
+     - Increment `c` by 1
+8. Print `c`
+
+**Control Flow Structures:**
+- Sequential execution with:
+  - 2 input parsing blocks
+  - 1 loop for edge processing (runs exactly `m` times)
+  - 1 nested loop structure for node evaluation:
+    - Outer loop iterates over all nodes (1..n)
+    - Inner loop iterates over all neighbors of current node
+    - Conditional break in neighbor loop when taller neighbor found
+  - Final conditional increment based on flag state
+
+**Input/Output Operations:**
+- Input lines read from standard input:
+  - First line: `n` and `m`
+  - Second line: `n` height values
+  - Next `m` lines: pairs of node IDs representing edges
+- Output: Single integer `c` printed to standard output
+
+**Edge Case Handling:**
+- Nodes with empty neighbor lists (isolated nodes) automatically increment `c`
+- Handles nodes with equal heights to neighbors (fails check)
+- Processes node IDs in 1-based numbering system
+
+**External Dependencies:**
+- Standard input/output functions
+- No external libraries beyond basic data structures (dictionary, list)
+- Implicit type conversion from string to integers for all input values

@@ -1,0 +1,29 @@
+Function Signatures:
+- (Procedural script; no explicit functions)
+
+Variables:
+- N: int (input value)
+- S: str (input value)
+- x: int (initial value 1)
+- i: int (loop index)
+
+Input Operations:
+- Read integer N from standard input via int(input())
+- Read string S from standard input via input()
+
+Processing Logic:
+1. Initialize x ← 1
+2. For i in range(N-1):
+   a. Retrieve S[i] and S[i+1]
+   b. If S[i] != S[i+1]:
+      i. x ← x + 1
+
+Output Operation:
+- Print x via print(x)
+
+Control Structures:
+- Loop: for i in range(N-1)
+- Conditional: if S[i] != S[i+1]
+
+Libraries/Dependencies:
+- None (standard input/output only)

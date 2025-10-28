@@ -1,0 +1,35 @@
+**Function Signature:**
+main(String[] args) -> void
+
+**Variables:**
+- Scanner in (Scanner object for input)
+- int x, y, a, b (input integers)
+- int count (counter initialized to 0)
+
+**Input Operations:**
+- Read integer x from standard input
+- Read integer y from standard input
+- Read integer a from standard input
+- Read integer b from standard input
+
+**Algorithm Logic:**
+1. Initialize count to 0
+2. Outer loop: i from a to x (inclusive)
+3. Inner loop: j from b to y (inclusive)
+4. Check condition: if i <= j, skip to next iteration
+5. Otherwise: increment count by 1
+6. After counting: Print total count
+7. Outer loop: i from a to x (inclusive)
+8. Inner loop: j from b to y (inclusive)
+9. Check condition: if i <= j, skip to next iteration
+10. Otherwise: print i and j separated by space
+11. Close Scanner object
+
+**Control Structures:**
+- Nested for loops with range conditions:
+  - Outer: i = a; i <= x; i++
+  - Inner: j = b; j <= y; j++
+- Conditional continue: if (i <= j)
+
+**Required Dependencies:**
+- java.util.Scanner

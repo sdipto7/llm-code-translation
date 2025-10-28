@@ -1,0 +1,33 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- n: int
+- s: str
+- cnt: int
+- i: int (loop counter)
+
+**Input Operations:**
+- Read integer n from standard input
+- Read string s from standard input
+
+**Initialization:**
+- cnt = 1
+
+**Logic Flow:**
+1. For i from 0 to n-2 (inclusive):
+   - If s[i] == s[i+1]:
+     - Continue to next iteration
+   - Else:
+     - cnt = cnt + 1
+
+**Output Operation:**
+- Print cnt
+
+**Control Structures:**
+- for loop: i in range(0, n-1)
+- if condition: s[i] == s[i+1]
+- else block: executed when if condition is false
+
+**Dependencies:**
+- Standard input/output functions

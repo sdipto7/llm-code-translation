@@ -1,0 +1,23 @@
+- Function Signature:
+  - Function name: `generate_christmas_eve_message`
+  - Parameters: `day: int`
+  - Return type: `str`
+
+- Variable Declarations:
+  - `day: int` - the input day of the month
+
+- Logic Flow:
+  1. Read an integer input from the user representing a day of the month.
+  2. Calculate the absolute difference between the input day and 25.
+  3. Create a string by concatenating 'Christmas' and ' Eve' repeated by the calculated difference times.
+  4. Output the generated string.
+
+- Control Structures:
+  - No loops or conditionals are used.
+
+- Input/Output Operations:
+  - Input: Read a single integer from the user.
+  - Output: Print a constructed string based on the input.
+
+- Required Libraries:
+  - No external libraries or modules are required.

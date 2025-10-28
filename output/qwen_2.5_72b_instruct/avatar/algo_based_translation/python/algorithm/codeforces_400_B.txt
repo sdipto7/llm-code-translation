@@ -1,0 +1,31 @@
+Function Signature: `main() -> None`
+
+Variable Declarations:
+- `n: int`
+- `m: int`
+- `c: set[int]`
+- `s: str`
+- `a: int`
+
+Logic Flow:
+1. Read a line of input, split it into two integers, assign the first to `n` and the second to `m`.
+2. Initialize an empty set `c`.
+3. For each integer `i` in the range from `0` to `n-1`:
+   1. Read a line of input and assign it to `s`.
+   2. Calculate the difference between the index of the first occurrence of "S" in `s` and the index of the first occurrence of "G" in `s`.
+   3. Add the calculated difference to the set `c`.
+4. If any element `a` in the set `c` is less than `0`:
+   1. Print `-1`.
+5. Otherwise:
+   1. Print the length of the set `c`.
+
+Input/Output Operations:
+- Input: Two integers `n` and `m` on the first line, followed by `n` lines of strings.
+- Output: A single integer `-1` if any difference is negative, otherwise the size of the set `c`.
+
+Data Processing Logic:
+- For each string, find the positions of "S" and "G", compute their difference, and store unique differences in a set.
+- Check if any difference is negative to determine the output.
+
+Required Libraries/Modules/Dependencies:
+- No external libraries or modules are required.

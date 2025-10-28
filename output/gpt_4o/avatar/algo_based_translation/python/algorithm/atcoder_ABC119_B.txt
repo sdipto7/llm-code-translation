@@ -1,0 +1,38 @@
+```python
+# Function signature: calculate_total_currency(N: int) -> float
+
+# Variable declarations
+# N: int - the number of currency entries
+# x: list of float - list to store converted currency values
+
+# Required libraries
+# No external libraries required
+
+# Input operations
+# Read an integer N from input
+
+# Initialize x as an empty list
+x = []
+
+# Loop to process each currency entry
+# Loop structure: for i in range(N)
+for i in range(N):
+    # Read a string from input
+    input_string = input()
+    
+    # Replace 'JPY' with '* 1.0'
+    # Replace 'BTC' with '* 380000.0'
+    converted_string = input_string.replace('JPY', '* 1.0').replace('BTC', '* 380000.0')
+    
+    # Evaluate the expression to convert to float
+    currency_value = eval(converted_string)
+    
+    # Append the currency_value to the list x
+    x.append(currency_value)
+
+# Calculate the sum of all elements in x
+total_value = sum(x)
+
+# Output the total_value
+print(total_value)
+```

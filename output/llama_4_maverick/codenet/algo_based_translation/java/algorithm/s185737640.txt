@@ -1,0 +1,22 @@
+1. Import the required library: java.util.Scanner
+2. Define a class: Main
+3. Define a function: main with return type void and parameter args of type String[]
+   1. Declare a variable: sc of type Scanner and initialize it with new Scanner(System.in)
+   2. Declare a variable: S of type String and read input from sc into S using nextLine()
+   3. Close the Scanner object sc
+   4. Check if the length of S is odd
+      1. If true, remove the last character from S using substring(0, S.length() - 1)
+      2. If false, remove the last two characters from S using substring(0, S.length() - 2)
+   5. Enter a loop that continues until S is empty
+      1. Check if S is an even string using the function isEvenString(S)
+         1. If true, break out of the loop
+      2. Remove the last two characters from S using substring(0, S.length() - 2)
+   6. Print the length of S
+4. Define a function: isEvenString with return type boolean and parameter s of type String
+   1. Declare two variables: a and b of type String
+   2. Split the string s into two halves and store them in a and b
+      1. a = s.substring(0, s.length()/2)
+      2. b = s.substring(s.length()/2)
+   3. Compare a and b using equals()
+      1. If they are equal, return true
+      2. If they are not equal, return false

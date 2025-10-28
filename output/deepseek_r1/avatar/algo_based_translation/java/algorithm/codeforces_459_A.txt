@@ -1,0 +1,43 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `static void debug(Object... obj)`
+
+**Parameters:**
+- `main`: `String[] args` (command-line arguments)
+- `debug`: `Object... obj` (variable number of objects for debugging)
+
+**Return Types:**
+- Both functions return `void`
+
+**Variables:**
+- `Scanner in = new Scanner(System.in)` (reads input)
+- `PrintWriter pw = new PrintWriter(System.out)` (writes output)
+- `int x1, y1, x2, y2` (input coordinates)
+- `int dif` (difference between coordinates in conditional branches)
+
+**Logic Flow:**
+1. Read `x1`, `y1`, `x2`, `y2` from input using `Scanner`.
+2. Check if `x1 == x2`:
+   - Compute `dif` as absolute difference between `y1` and `y2`.
+   - Print `(x1 + dif, y1)` and `(x1 + dif, y2)`.
+3. Else, check if `y1 == y2`:
+   - Compute `dif` as absolute difference between `x1` and `x2`.
+   - Print `(x1, y1 + dif)` and `(x2, y2 + dif)`.
+4. Else, check if `|x1 - x2| == |y1 - y2|` (diagonal case):
+   - Print `(x1, y2)` and `(x2, y1)`.
+5. If none of the above conditions are met, print `-1`.
+6. Close `PrintWriter` to flush output.
+
+**Control Structures:**
+- `if (x1 == x2)`
+- `else if (y1 == y2)`
+- `else if (Math.abs(x1 - x2) == Math.abs(y1 - y2))`
+- `else`
+
+**Input/Output Operations:**
+- Input: Read four integers via `Scanner`.
+- Output: Print four coordinates as space-separated integers or `-1` via `PrintWriter`.
+
+**Libraries/Dependencies:**
+- `java.io.*` (for `PrintWriter`, `InputStream`, `OutputStream`)
+- `java.util.*` (for `Scanner`, `Arrays`)

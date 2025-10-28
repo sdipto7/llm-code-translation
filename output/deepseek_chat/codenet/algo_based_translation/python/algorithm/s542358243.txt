@@ -1,0 +1,5 @@
+read integer N from standard input
+if N modulo 9 equals 0:
+    print "Yes"
+else:
+    print "No"

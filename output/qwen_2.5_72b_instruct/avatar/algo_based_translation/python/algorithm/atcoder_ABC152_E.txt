@@ -1,0 +1,34 @@
+Function signatures with parameter and return types:
+- `gcd(a, b)` -> integer
+- `lcm(a, b)` -> float
+
+Variable declarations and data types:
+- `MOD` -> integer (constant)
+- `N` -> integer
+- `A` -> list of integers
+- `_lcm` -> integer
+- `s` -> integer (loop variable)
+- `ans` -> integer
+
+Complete logic flow in execution order:
+1. Import `gcd` function from `fractions` module.
+2. Define `lcm` function which takes two integers `a` and `b`, and returns their least common multiple as a float.
+3. Set constant `MOD` to 10^9 + 7.
+4. Read an integer `N` from standard input.
+5. Read a list `A` of `N` integers from standard input, split by spaces.
+6. Initialize `_lcm` to 1.
+7. For each integer `a` in list `A`:
+   - Update `_lcm` to the least common multiple of `_lcm` and `a` using integer division.
+8. Calculate `ans` as the product of `_lcm` and the sum of the modular inverses of elements in `A` modulo `MOD`.
+9. Print `ans` modulo `MOD` as an integer.
+
+Control structures:
+- For loop iterates over each element in list `A`.
+
+Input/output operations and data processing logic:
+- Input: Read integer `N` and list `A` of `N` integers.
+- Output: Print the final result `ans` modulo `MOD`.
+- Data processing: Compute LCM of list `A`, compute sum of modular inverses of elements in `A`, and combine these results to get `ans`.
+
+Required libraries, modules, or dependencies:
+- `fractions` module for `gcd` function

@@ -1,0 +1,11 @@
+1. Set N to the number of inputs
+2. Create a list S of N strings from input
+3. Define march as a list of characters ["M", "A", "R", "C", "H"]
+4. Initialize march_lis as a list of 5 zeros
+5. For each string s in S:
+   6. Check if the first character of s (in uppercase) is in march
+   7. If it is, increment the corresponding count in march_lis
+8. Initialize ans to 0
+9. For each unique combination of three elements (x, y, z) from march_lis:
+   10. Add the product of x, y, and z to ans
+11. Output ans

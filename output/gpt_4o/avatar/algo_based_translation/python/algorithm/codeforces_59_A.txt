@@ -1,0 +1,25 @@
+```
+function processTextInput() -> None
+    declare txt as String
+    txt = input()
+
+    declare cu as Integer
+    cu = 0
+    declare cl as Integer
+    cl = 0
+
+    for each character z in txt
+        if z.islower() is True
+            cl = cl + 1
+        else
+            cu = cu + 1
+
+    if cu > cl
+        declare out as String
+        out = txt.upper()
+    else
+        declare out as String
+        out = txt.lower()
+
+    print(out)
+```

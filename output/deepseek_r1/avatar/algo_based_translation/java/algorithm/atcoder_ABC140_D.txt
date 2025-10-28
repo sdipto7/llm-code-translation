@@ -1,0 +1,52 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner sc` (Scanner)
+- `int N`, `int K`, `String S`
+- `char[] c1`, `char[] c3`
+- `boolean flag` (initialized to `false`)
+- `int count` (initialized to `0`)
+- `String S1`, `String S3`
+- `int sum1`, `int sum3` (initialized to `0`)
+- `char bef` (char)
+- `int count` (reinitialized to `1` for sum calculations)
+
+**Input/Output:**
+- Read `N`, `K`, and `S` via `Scanner`
+- Print maximum of `sum1` and `sum3`
+
+**Logic Flow:**
+1. Convert `S` to two char arrays `c1` and `c3`
+2. Process `c1`:
+   - Iterate `i` from `0` to `N-1`:
+     - If `flag` is `true` and `c1[i]` is 'R':
+       - Set `flag` to `false`, increment `count`
+     - If `count` equals `K`, break loop
+     - If `c1[i]` is 'L':
+       - Set `flag` to `true`, change `c1[i]` to 'R'
+3. Process `c3`:
+   - Iterate `i` from `0` to `N-1`:
+     - If `flag` is `true` and `c3[i]` is 'L':
+       - Set `flag` to `false`, increment `count`
+     - If `count` equals `K`, break loop
+     - If `c3[i]` is 'R':
+       - Set `flag` to `true`, change `c3[i]` to 'L'
+4. Convert `c1` to `S1` and `c3` to `S3`
+5. Calculate `sum1`:
+   - Initialize `count=1`, `bef=S1.charAt(0)`
+   - Iterate `i` from `1` to `N-1`:
+     - If `S1.charAt(i)` equals `bef`: increment `count`
+     - Else: add `count-1` to `sum1`, reset `count=1`, update `bef`
+     - If at last index: add `count-1` to `sum1`
+6. Calculate `sum3` using same logic as `sum1` but with `S3`
+7. Output `Math.max(sum1, sum3)`
+
+**Control Structures:**
+- For loops with bounds `0` to `N-1`
+- If-else blocks checking character values and flag states
+- Break statements when `count` reaches `K`
+- Boolean flag toggling
+
+**Dependencies:**
+- `java.util.Scanner` for input handling

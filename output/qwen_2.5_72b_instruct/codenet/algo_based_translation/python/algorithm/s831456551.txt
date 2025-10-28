@@ -1,0 +1,8 @@
+Function signature: main() -> None
+Variable declarations: A: int, B: int
+Logic flow:
+1. Read input from standard input as a string
+2. Split the string by whitespace to obtain two substrings
+3. Convert the first substring to an integer and assign it to A
+4. Convert the second substring to an integer and assign it to B
+5. Multiply A and B and print the result to standard output

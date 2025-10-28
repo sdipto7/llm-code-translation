@@ -1,0 +1,14 @@
+1. Read two integers x and y from input.
+2. Initialize a turn counter to 0.
+3. Enter a loop that continues indefinitely.
+4. Inside the loop, check if the turn counter is even.
+5. If the turn counter is even, check if x is at least 2 and y is at least 2. If so, subtract 2 from x and y.
+6. If step 5 is not possible, check if x is at least 1 and y is at least 12. If so, subtract 1 from x and 12 from y.
+7. If step 6 is not possible, check if y is at least 22. If so, subtract 22 from y.
+8. If none of steps 5-7 are possible, output "Hanako" and exit the loop.
+9. If the turn counter is not even, check if y is at least 22. If so, subtract 22 from y.
+10. If step 9 is not possible, check if x is at least 1 and y is at least 12. If so, subtract 1 from x and 12 from y.
+11. If step 10 is not possible, check if x is at least 2 and y is at least 2. If so, subtract 2 from x and y.
+12. If none of steps 9-11 are possible, output "Ciel" and exit the loop.
+13. Increment the turn counter.
+14. Repeat steps 3-13.

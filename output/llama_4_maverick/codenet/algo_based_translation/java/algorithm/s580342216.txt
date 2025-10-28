@@ -1,0 +1,76 @@
+1. Import required libraries: 
+   - java.util
+   - java.lang
+   - java.io
+
+2. Define a class `Main` with a `main` method that:
+   - Creates a new instance of the `Solution` class
+
+3. Define a class `Solution` with:
+   - A constructor that:
+     - Initializes a `Scanner` object to read from `System.in`
+     - Enters a loop that continues as long as there is input to read (`scanner.hasNext()`)
+     - Calls the `run_case` method in each iteration
+
+   - A `run_case` method that:
+     - Reads a line from the input using `scanner.nextLine()`
+     - Splits the line into two parts using a regular expression (`\\s+`) and parses them into integers `N` and `K`
+     - Initializes a variable `len` to 0
+     - Enters a loop that continues as long as `N` is greater than 0
+     - In each iteration, divides `N` by `K` and increments `len` by 1
+     - Prints the value of `len` to the output
+
+   - A `strToIntArray` method that:
+     - Takes a `String` as input and splits it into parts using a regular expression (`\\s+`)
+     - Creates an integer array of the same length as the number of parts
+     - Parses each part into an integer and stores it in the corresponding index in the array
+     - Returns the integer array
+
+4. Define a class `LCS` with:
+   - A `lcs` method that:
+     - Takes two `String`s `A` and `B` as input
+     - Initializes a 2D array `dp` with dimensions `(A.length() + 1) x (B.length() + 1)`
+     - Initializes the first row and column of `dp` to 0
+     - Enters a nested loop that iterates over the characters in `A` and `B`
+     - If the current characters in `A` and `B` are the same, sets `dp[i][j]` to `dp[i-1][j-1] + 1`
+     - Otherwise, sets `dp[i][j]` to the maximum of `dp[i-1][j]` and `dp[i][j-1]`
+     - Returns the value of `dp[A.length()][B.length()]`
+
+   - A `getLCS` method that:
+     - Takes two `String`s `X` and `Y` as input
+     - Retrieves the length of the LCS from the `dp` array computed by the `lcs` method
+     - Creates a character array `lcs` to store the LCS
+     - Initializes an index to the last character of the LCS
+     - Enters a loop that starts from the bottom-right corner of the `dp` array and moves diagonally up-left if the current characters in `X` and `Y` are the same, or up or left depending on the larger value in `dp`
+     - Stores the characters of the LCS in the `lcs` array
+     - Returns the LCS as a `String` by converting the `lcs` array to a `String` and truncating it to the correct length
+
+Function signatures:
+- `public Solution()`
+- `private void run_case()`
+- `private int[] strToIntArray(String str)`
+- `public int lcs(String A, String B)`
+- `public String getLCS(String X, String Y)`
+
+Variable declarations and data types:
+- `Scanner scanner`
+- `String line`
+- `int N`, `K`, `len`
+- `int[] res`
+- `int[][] dp`
+- `int sz_a`, `sz_b`, `m`, `n`, `index`, `temp`, `i`, `j`
+- `char[] lcs`
+
+Input/Output operations:
+- Reading input using `scanner.nextLine()`
+- Printing output using `System.out.println(len)`
+
+Data processing logic:
+- Parsing input strings to integers
+- Computing the length of the representation of a number in a given base
+- Computing the longest common subsequence (LCS) between two strings using dynamic programming
+
+Required libraries:
+- `java.util`
+- `java.lang`
+- `java.io`

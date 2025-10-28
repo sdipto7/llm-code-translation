@@ -1,0 +1,16 @@
+1. Import the math module.
+2. Define a function keta with parameter s of type string and return type integer.
+3. Within keta, check if the length of s is less than 2.
+   3.1. If true, return the integer value of s.
+   3.2. If false, proceed to the next step.
+4. Calculate the sum of the digits of s by mapping each character to an integer and summing the results, store this sum in n.
+5. Convert n to a string and recursively call keta with this string.
+6. Define a main function with no parameters.
+7. Within main, read a string input from the user and store it in N.
+8. Call the keta function with N as the argument and store the result.
+9. Check if the result of keta(N) is divisible by 9 with no remainder.
+   9.1. If true, print "Yes".
+   9.2. If false, print "No".
+10. Check if the current module is the main module.
+    10.1. If true, call the main function.
+    10.2. If false, do nothing.

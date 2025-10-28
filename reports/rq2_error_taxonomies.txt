@@ -1,0 +1,81 @@
+1. Runtime Error Taxonomy - 
+
+	A. Dependency & Entry-Point Issues
+
+		Python→Java (Java runtime): ClassNotFoundException, CouldNotFindOrLoadMainClass 
+
+		Java→Python (Python runtime): ModuleNotFoundError, ImportError 
+
+	B. Parsing & Type Conversion Issues
+
+		Python→Java: InputMismatchException, NumberFormatException 
+
+		Java→Python: ValueError, EOFError
+
+	C. Index/Key Access Issues
+
+		Python→Java: ArrayIndexOutOfBoundsException, StringIndexOutOfBoundsException, IndexOutOfBoundsException 
+
+		Java→Python: IndexError, KeyError
+
+	D. Missing State & Invalid Reference
+
+		Python→Java: NullPointerException, NoSuchElementException, UnsupportedOperationException 
+
+		Java→Python: AttributeError, NameError, UnboundLocalError, TypeError
+
+	E. Arithmetic Errors
+
+		Python→Java: ArithmeticException 
+
+		Java→Python: ZeroDivisionError, OverflowError 
+
+	F. Resource Exhaustion
+
+		Python→Java: StackOverflowError, OutOfMemoryError 
+
+		Java→Python: RecursionError 
+
+2. Compile-time Error Taxonomy - 
+
+	A. Import/Namespace Resolution
+
+		Python→Java: Package missing, Cannot find symbol
+
+		Java→Python: (none from your list)
+
+	B. Lexical & Token Errors
+
+		Python→Java: Illegal character
+
+		Java→Python: unexpected character
+
+	C. Incomplete Constructs
+
+		Python→Java: Unclosed string, Illegal line end, Reached EOF while parsing, Missing semicolon
+
+		Java→Python: unterminated string
+
+	D. Structural & Declaration Issues
+
+		Python→Java: Type declaration expected, return type required
+
+		Java→Python: invalid syntax, unexpected indent
+
+	E. Type/Overload Resolution Errors
+
+		Python→Java: Incompatible types, bad operand, No matching method, No suitable constructor
+
+		Java→Python: (none from your list;)
+
+	F. Literal Constraints
+
+		Python→Java: Int literal too large
+
+		Java→Python: (none from your list)
+
+	G. Others
+
+		Python→Java: Other compile error
+
+		Java→Python: (none provided)

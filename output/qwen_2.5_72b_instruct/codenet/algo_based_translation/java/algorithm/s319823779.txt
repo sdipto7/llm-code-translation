@@ -1,0 +1,44 @@
+Function Signature:
+- `main(String[] args): void`
+
+Variable Declarations and Data Types:
+- `Scanner sc: Scanner`
+- `int a: int`
+- `int b: int`
+- `int c: int`
+- `int x: int`
+- `int res: int`
+- `int i: int`
+- `int j: int`
+- `int k: int`
+- `int total: int`
+
+Complete Logic Flow in Execution Order:
+1. Initialize `Scanner` object `sc`.
+2. Read integer `a` from input.
+3. Read integer `b` from input.
+4. Read integer `c` from input.
+5. Read integer `x` from input.
+6. Initialize `res` to 0.
+7. Begin loop for `i` from 0 to `a` inclusive.
+8. Inside loop for `i`, begin nested loop for `j` from 0 to `b` inclusive.
+9. Inside loop for `j`, begin nested loop for `k` from 0 to `c` inclusive.
+10. Calculate `total` as `500*i + 100*j + 50*k`.
+11. If `total` equals `x`, increment `res` by 1.
+12. End loop for `k`.
+13. End loop for `j`.
+14. End loop for `i`.
+15. Print `res`.
+
+Control Structures:
+- Loop for `i`: `for(int i=0 ; i<=a ; i++)`
+- Loop for `j`: `for(int j=0 ; j<=b ; j++)`
+- Loop for `k`: `for(int k=0 ; k<=c ; k++)`
+- Conditional: `if(total==x)`
+
+Input/Output Operations and Data Processing Logic:
+- Read integers `a`, `b`, `c`, and `x` using `Scanner`.
+- Print integer `res` using `System.out.println`.
+
+Required Libraries, Modules, or Dependencies:
+- `java.util.Scanner`

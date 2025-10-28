@@ -1,0 +1,39 @@
+Function Signature: `main()`  
+Parameters: none  
+Return Type: none  
+
+Variable Declarations:  
+`n: int`  
+`s: defaultdict(int)`  
+`l: List[str]`  
+`f: str`  
+`i: int`  
+`v: str`  
+
+Logic Flow:  
+- Read integer `n` from input  
+- Initialize `s` as a defaultdict with default value 0  
+- Initialize `l` as a list by reading `n` strings from input  
+- Set `f` to 'Yes'  
+- Set `i` to -1  
+- For each string `v` in `l`:  
+    - Increment count of `v` in `s` by 1  
+    - If count of `v` in `s` is greater than or equal to 2:  
+        - Set `f` to 'No'  
+    - If `i` is not -1 and last character of `l[i]` is not equal to first character of `v`:  
+        - Set `f` to 'No'  
+    - Increment `i` by 1  
+- Print `f`
+
+Input/Output Operations:  
+- Read integer `n` from standard input  
+- Read `n` strings from standard input  
+- Print string `f` to standard output  
+
+Data Processing Logic:  
+- Count occurrences of each string using defaultdict  
+- Check if any string appears more than once  
+- Verify if last character of previous string matches first character of current string  
+
+Required Libraries, Modules, or Dependencies:  
+`collections.defaultdict`

@@ -1,0 +1,52 @@
+**Algorithm:**
+
+**Main Function:**
+- Initialize inputStream = System.in
+- Initialize outputStream = System.out
+- Create InputReader object 'in' using inputStream
+- Create PrintWriter object 'out' using outputStream
+- Create Solution object 'sol'
+- Call sol.solve(in, out)
+- Close 'out'
+
+**Solution Class:**
+- Method solve(InputReader in, PrintWriter out):
+  - Read integer n = in.nextInt()
+  - Read integer k = in.nextInt()
+  - Read integer array logsLength = in.readArray(n)
+  - Initialize integer min = 1
+  - Initialize integer max = 1000000100
+  - While min < max:
+    - Calculate integer mid = (min + max) / 2
+    - If nei(mid, logsLength, k) returns true:
+      - Set max = mid
+    - Else:
+      - Set min = mid + 1
+  - Print min using out.println(min)
+
+- Method nei(int mid, int[] logsLength, int k):
+  - For each integer log in logsLength:
+    - Calculate k = k - ((log + mid - 1) / mid - 1)
+  - Return k >= 0
+
+**InputReader Class:**
+- Constructor InputReader(InputStream stream):
+  - Initialize BufferedReader reader = new BufferedReader(new InputStreamReader(stream), 32768)
+  - Initialize StringTokenizer tokenizer = null
+
+- Method String next():
+  - While tokenizer is null OR tokenizer has no more tokens:
+    - Try:
+      - Set tokenizer = new StringTokenizer(reader.readLine())
+    - Catch IOException e:
+      - Throw RuntimeException(e)
+  - Return tokenizer.nextToken()
+
+- Method int nextInt():
+  - Return Integer.parseInt(next())
+
+- Method int[] readArray(int n):
+  - Initialize integer array a of size n
+  - For i from 0 to n-1:
+    - Set a[i] = nextInt()
+  - Return a

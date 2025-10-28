@@ -1,0 +1,10 @@
+1. Read the input modulus number.
+2. Read the number of elements 'n' from the input.
+3. Create two lists 'ai' and 'bi' to store the input pairs.
+4. Read 'n' pairs of integers from the input and store them in 'ai' and 'bi'.
+5. Sort 'ai' and 'bi' in ascending order.
+6. If 'n' is odd, calculate the difference between the middle elements of 'bi' and 'ai', then add 1.
+7. If 'n' is even, calculate the average of the two middle elements in 'ai' and 'bi'.
+8. For 'n' even, calculate the difference between the averages of 'bi' and 'ai', multiply by 2, and then add 1.
+9. Output the calculated result.
+10. Close the output stream.

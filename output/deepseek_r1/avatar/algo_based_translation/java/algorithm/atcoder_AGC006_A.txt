@@ -1,0 +1,60 @@
+**Algorithm:**
+
+**Function Signatures:**
+- `static void getFail(char[] b, int m)`
+- `public static void main(String[] args)`
+- `InputReader(InputStream stream)` (constructor)
+- `String next()` (InputReader method)
+- `int nextInt()` (InputReader method)
+
+**Variables:**
+- `static int N = 210`
+- `static int[] f` (size N)
+- `static char[] b` (size N)
+- In main:
+  - `int n`
+  - `String s1`, `String str`
+  - `int cnt = 0`
+  - `InputReader in`, `PrintWriter out`
+
+**Logic Flow:**
+
+1. **Main Execution:**
+   - Initialize `InputReader` and `PrintWriter`.
+   - Read integer `n` from input.
+   - Read strings `s1` and `str` from input.
+   - Fill `b` array:
+     - For `i` from 0 to `n-1`: increment `cnt`, set `b[cnt]` to `str.charAt(i)`.
+     - For `i` from 0 to `n-1`: increment `cnt`, set `b[cnt]` to `s1.charAt(i)`.
+   - Call `getFail(b, cnt)`.
+   - Compute `len = min(f[cnt], n)`.
+   - Output `2 * n - len`.
+
+2. **getFail Function:**
+   - Initialize `j = 0`.
+   - Set `f[0] = 0`, `f[1] = 0`.
+   - For `i` from 2 to `m`:
+     - While `j > 0` and `b[j + 1] != b[i]`: set `j = f[j]`.
+     - If `b[j + 1] == b[i]`: increment `j`.
+     - Set `f[i] = j`.
+
+**Control Structures:**
+- **Loops:**
+  - For loops:
+    - `for (int i = 2; i <= m; i++)` in `getFail`.
+    - `for (int i = 0; i < n; i++)` twice in main.
+  - While loop: `while (j > 0 && b[j + 1] != b[i])` in `getFail`.
+- **Conditionals:**
+  - `if (b[j + 1] == b[i])` in `getFail`.
+
+**Input/Output Operations:**
+- Read `n`, `s1`, `str` via `InputReader`.
+- Output result via `PrintWriter`.
+
+**Dependencies:**
+- `java.io.*` (BufferedReader, InputStream, PrintWriter, etc.)
+- `java.util.*` (StringTokenizer)
+
+**Data Processing:**
+- Concatenate `str` followed by `s1` into array `b`.
+- KMP failure function computation to find maximum overlap between combined string's prefix and suffix.

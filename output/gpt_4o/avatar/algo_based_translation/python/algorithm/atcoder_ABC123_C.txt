@@ -1,0 +1,22 @@
+```plaintext
+Algorithm:
+1. Import necessary libraries:
+   - math for mathematical operations.
+   - numpy as np (although it's imported, it is not used in the code).
+   - fractions and gcd from fractions module (although imported, not used in the code).
+   - statistics (imported but not used).
+   - collections (imported but not used).
+   - functools for reduce (although imported, not used).
+   - itertools (imported but not used).
+
+2. Input: Read an integer N from standard input.
+
+3. Input: Read 5 integers from standard input and store them in a list A.
+
+4. Processing:
+   a. Find the minimum value in the list A.
+   b. Calculate the ceiling of the division of N by the minimum value found in step 4a.
+   c. Add 4 to the result obtained from step 4b.
+
+5. Output: Print the result from step 4c.
+```

@@ -1,0 +1,15 @@
+1. Define a function `main` with return type `void` and parameter `args` of type `String[]`.
+2. Declare a variable `reader` of type `BufferedReader` and initialize it with `new BufferedReader(new InputStreamReader(System.in))`.
+3. Read a line from `reader` and store it in a variable `line` of type `String`.
+4. Split `line` into an array `strs` of type `String[]` using space as the delimiter.
+5. Declare an array `nums` of type `int[]` with the same length as `strs`.
+6. Initialize a variable `top` of type `int` to 0.
+7. Iterate over each element `strs[i]` in `strs` using a `for` loop with `i` ranging from 0 to `strs.length - 1`.
+8. Inside the loop, use a `switch` statement with the condition `strs[i].charAt(0)` to determine the operation to perform.
+9. If the character is '+', decrement `top` by 1 and update `nums[top-1]` to be the sum of `nums[top-1]` and `nums[top]`.
+10. If the character is '-', decrement `top` by 1 and update `nums[top-1]` to be the difference between `nums[top-1]` and `nums[top]`.
+11. If the character is '*', decrement `top` by 1 and update `nums[top-1]` to be the product of `nums[top-1]` and `nums[top]`.
+12. If the character is none of the above, parse `strs[i]` to an `int` and store it in `nums[top]`, then increment `top` by 1.
+13. After the loop, print the value of `nums[0]` to the console.
+14. The function `main` should handle exceptions of type `NumberFormatException` and `IOException`. 
+15. Import the required libraries: `java.io.BufferedReader`, `java.io.IOException`, `java.io.InputStreamReader`, and `java.util.Arrays`.

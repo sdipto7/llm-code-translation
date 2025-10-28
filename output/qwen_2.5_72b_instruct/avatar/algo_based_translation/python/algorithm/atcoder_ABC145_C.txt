@@ -1,0 +1,30 @@
+Function: solve ( N: int, x: List[int], y: List[int] )
+- Variable declarations: indices: List[int], permutations: Iterator[Tuple[int]], distances: List[float], total_distance: float, f: int, t: int, distance: float, result: float
+- Logic:
+  - Initialize indices as a list of integers from 0 to N-1
+  - Generate all permutations of indices
+  - Initialize distances as an empty list
+  - For each permutation in permutations:
+    - Initialize total_distance as 0
+    - For i from 0 to N-2:
+      - Assign f and t as the i-th and (i+1)-th elements of permutation respectively
+      - Calculate distance as the Euclidean distance between points (x[f], y[f]) and (x[t], y[t])
+      - Add distance to total_distance
+    - Append total_distance to distances
+  - Calculate result as the average of all distances
+  - Print result
+  - Return
+
+Function: main ()
+- Variable declarations: tokens: Iterator[str], N: int, x: List[int], y: List[int]
+- Logic:
+  - Define iterate_tokens as a generator function that yields each word from sys.stdin
+  - Initialize tokens as the generator returned by iterate_tokens
+  - Read N as an integer from tokens
+  - Initialize x and y as lists of integers of size N
+  - For i from 0 to N-1:
+    - Read x[i] as an integer from tokens
+    - Read y[i] as an integer from tokens
+  - Call solve with N, x, and y
+
+Required libraries/modules: sys, itertools

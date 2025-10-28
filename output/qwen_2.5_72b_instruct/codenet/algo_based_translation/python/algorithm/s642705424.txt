@@ -1,0 +1,30 @@
+Function Signature: count_segments(N: int, S: str) -> int
+
+Variable Declarations:
+N: int
+S: str
+x: int
+
+Logic Flow:
+1. Read integer N from input
+2. Read string S from input
+3. Initialize x to 1
+4. For i from 0 to N-2:
+    a. If character at index i in S is not equal to character at index i+1 in S:
+        i. Increment x by 1
+5. Print x
+
+Control Structures:
+- For loop with range from 0 to N-2
+- If statement with condition S[i] != S[i+1]
+
+Input/Output Operations:
+- Read integer N from standard input
+- Read string S from standard input
+- Print integer x to standard output
+
+Data Processing Logic:
+- Count segments in string S where segments are defined by consecutive identical characters
+
+Libraries/Modules/Dependencies:
+- No specific libraries or modules required

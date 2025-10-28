@@ -1,0 +1,10 @@
+1. Read input values N, d, and x from the user.
+2. Initialize a variable ans to 0.0.
+3. While N is greater than 0.5, perform the following steps:
+   1. Calculate adnum as d + x * (N - 0.5).
+   2. Add adnum to ans.
+   3. Update d to (N + 1.0) * d / N + (5.0 * x) / (2.0 * N).
+   4. Update x to (1.0 + (2.0 / N)) * x.
+   5. Decrement N by 1.
+4. Format ans to one decimal place with a minimum of 20 fractional digits.
+5. Output the formatted value of ans.

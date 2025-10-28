@@ -1,0 +1,27 @@
+1. Initialize TIME = 0 and VAL = 1
+2. Read N and T from input
+3. Initialize time_value array of size N + 1 with (-1, -1) at index 0 and None at other indices
+4. For i from 1 to N:
+   4.1. Read time and value from input and store as tuple in time_value[i]
+5. Sort time_value array based on VAL (value at index 1 of tuple)
+6. Initialize dp array of size (N + 1) x T with -1
+7. For t from 0 to T - 1:
+   7.1. Set dp[0][t] = 0
+8. For n from 1 to N:
+   8.1. Set dp[n][0] = 0
+   8.2. For t from 1 to T - 1:
+      8.2.1. If time_value[n][TIME] > t:
+         8.2.1.1. Set dp[n][t] = dp[n - 1][t]
+      8.2.2. Else:
+         8.2.2.1. Set dp[n][t] = max(dp[n - 1][t], time_value[n][VAL] + dp[n - 1][t - time_value[n][TIME]])
+9. Initialize val_acum = time_value[N][VAL]
+10. Initialize t = T - 1
+11. Initialize max_val = val_acum + dp[N - 1][t]
+12. For n from N - 1 down to 1:
+   12.1. Set val_acum = val_acum + time_value[n][VAL]
+   12.2. Set t = t - time_value[n + 1][TIME]
+   12.3. If t < 0:
+      12.3.1. Break loop
+   12.4. Else:
+      12.4.1. Set max_val = max(max_val, val_acum + dp[n - 1][t])
+13. Output max_val

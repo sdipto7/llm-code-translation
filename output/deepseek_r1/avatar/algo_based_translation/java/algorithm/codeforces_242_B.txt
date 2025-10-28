@@ -1,0 +1,38 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `int INF = 1_000_000_005` (constant)
+- `Scanner sc = new Scanner(System.in)`
+- `int n` (input)
+- `ArrayList<Integer> a` (stores left endpoints)
+- `ArrayList<Integer> b` (stores right endpoints)
+- `int left = INF` (minimum start)
+- `int right = 0` (maximum end)
+
+**Libraries/Dependencies:**
+- `java.util.ArrayList`
+- `java.util.Scanner`
+- `java.lang.Math`
+
+**Logic Flow:**
+1. Read integer `n` from input using `sc.nextInt()`
+2. Initialize `a` and `b` as empty ArrayLists
+3. Initialize `left` to `INF` and `right` to `0`
+4. Loop for `i` from `0` to `n-1` (inclusive):
+   - Read `a_i = sc.nextInt()` and `b_i = sc.nextInt()`
+   - Add `a_i` to `a` and `b_i` to `b`
+   - Update `left = Math.min(left, a_i)`
+   - Update `right = Math.max(right, b_i)`
+5. Loop for `i` from `0` to `n-1` (inclusive):
+   - If `a.get(i) == left` AND `b.get(i) == right`:
+     - Print `i + 1` (1-based index) and terminate the program
+6. If loop completes without finding a match, print `-1`
+
+**Control Structures:**
+- Two `for` loops with condition `i < n`
+- `if` condition checking equality of interval boundaries with `left` and `right`
+
+**Input/Output:**
+- Input: `n` followed by `n` pairs of integers via `Scanner`
+- Output: 1-based index of the interval matching `[left, right]` or `-1` if none exists

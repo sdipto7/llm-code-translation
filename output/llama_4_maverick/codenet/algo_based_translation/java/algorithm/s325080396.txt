@@ -1,0 +1,40 @@
+## Algorithm
+1. Define a function `main` with no parameters and no return type.
+2. Declare an integer array `R` of size `MAX` (200000) and initialize it.
+3. Declare an integer variable `n` and read its value from standard input using a `Scanner` object.
+4. Iterate from `i = 0` to `n-1`:
+   - Read the `i-th` element of array `R` from standard input.
+5. Initialize two integer variables: `maxv` to `R[1] - R[0]` and `minv` to `R[0]`.
+6. Iterate from `i = 1` to `n-1`:
+   - Update `maxv` to be the maximum of its current value and `R[i] - minv`.
+   - Update `minv` to be the minimum of its current value and `R[i]`.
+7. Output the value of `maxv` to standard output.
+8. The required library is `java.util.Scanner`. 
+
+## Formal Representation
+- Function: `public static void main(String[] args)`
+- Variable Declarations:
+  - `int[] R`
+  - `Scanner in`
+  - `int n`
+  - `int maxv`
+  - `int minv`
+  - `int i`
+- Logic Flow:
+  1. `int[] R = new int[MAX];`
+  2. `Scanner in = new Scanner(System.in);`
+  3. `int n = in.nextInt();`
+  4. `for(int i = 0; i < n; i++)`: `R[i] = in.nextInt();`
+  5. `int maxv = R[1] - R[0];`
+  6. `int minv = R[0];`
+  7. `for(int i = 1; i < n; i++)`:
+     - `maxv = Math.max(maxv, R[i] - minv);`
+     - `minv = Math.min(minv, R[i]);`
+  8. `System.out.println(maxv);`
+- Control Structures:
+  - `for` loop with condition `i < n`
+  - `for` loop with condition `i < n`
+- Input/Output Operations:
+  - `in.nextInt()` to read `n` and elements of `R`
+  - `System.out.println(maxv)` to output the result
+- Required Library: `java.util.Scanner`

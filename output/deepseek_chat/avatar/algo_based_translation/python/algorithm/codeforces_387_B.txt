@@ -1,0 +1,12 @@
+def main():
+    n, m = integers from input split by space
+    round_complexity = list of n integers from input split by space
+    george_complexity = list of m integers from input split by space
+    i = 0
+    j = 0
+    while i < n and j < m:
+        if round_complexity[i] <= george_complexity[j]:
+            i = i + 1
+        j = j + 1
+    result = n - i
+    print result

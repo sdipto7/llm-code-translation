@@ -1,0 +1,14 @@
+1. Initialize an empty graph with n nodes.
+2. Read the number of edges (m) and add them to the graph.
+3. Initialize visited and color arrays for all nodes.
+4. Iterate through all nodes in the graph.
+5. For each unvisited node, perform a Depth-First Search (DFS) traversal.
+6. During DFS, mark the current node as visited and assign it a color.
+7. Recursively visit all neighbors of the current node and assign them the opposite color.
+8. If a visited node is encountered with a different color, mark the graph as non-bipartite for the current connected component.
+9. Count the number of nodes in the current connected component.
+10. If the count is 1, increment the count of single-node components.
+11. If the count is more than 1 and the component is bipartite, increment the count of bipartite components.
+12. Increment the count of total connected components.
+13. Calculate the total result using the counts of single-node components, bipartite components, and total connected components.
+14. Output the total result.

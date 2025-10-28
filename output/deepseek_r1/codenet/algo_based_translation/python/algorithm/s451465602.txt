@@ -1,0 +1,21 @@
+- Function signature: N/A (script execution)
+- Variables:
+  - `n`: integer (input value representing total seconds)
+  - `h`: integer (calculated hours)
+  - `m`: integer (calculated minutes)
+  - `s`: integer (calculated seconds)
+- Logic flow:
+  1. Read integer `n` from standard input
+  2. Calculate `h = floor(n / 3600)` using integer division
+  3. Update `n = n % 3600` (remaining seconds after hours)
+  4. Calculate `m = floor(n / 60)` using integer division
+  5. Update `n = n % 60` (remaining seconds after minutes)
+  6. Assign `s = n` (final seconds)
+  7. Convert `h`, `m`, `s` to strings
+  8. Concatenate strings with colon separators
+  9. Print formatted string to standard output
+- Control structures: None (linear execution)
+- Input/Output:
+  - Input: Single integer from stdin
+  - Output: String in "H:M:S" format to stdout
+- Dependencies: None (uses only built-in functions)

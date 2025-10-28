@@ -1,0 +1,43 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `scanner`: Scanner (static, initialized with System.in)
+- `n`: int (input size)
+- `a[]`: int array of size n+1
+- `b[]`: int array of size n+1
+- `num[]`: int array of size n+1
+- `ss`: String (result string)
+- `ans`: int (maximum chain length)
+- `st[]`: boolean array of size n+1 (visited markers)
+
+**Algorithm:**
+1. Read integer `n` from input
+2. Initialize arrays `a`, `b`, and `num` with size n+1
+3. For i from 1 to n:
+   - Read `a[i]` from input
+4. For i from 1 to n:
+   - Read `b[i]` from input
+5. For i from 1 to n:
+   - Increment `num[b[i]]` by 1
+6. Initialize empty string `ss` and integer `ans` = 0
+7. Initialize boolean array `st` of size n+1 (all false)
+8. For i from 1 to n:
+   - If `a[i]` equals 1:
+     - Set `st[i]` = true
+     - Create StringBuilder `sb`
+     - Set `x` = `b[i]`
+     - Create StringBuilder `sss` and append `i`
+     - Append reversed `sss` to `sb` with leading space
+     - Set `s` = 1
+     - While `st[x]` is false AND `num[x]` equals 1 AND `x` ≠ 0 AND `a[x]` ≠ 1:
+       - Create new StringBuilder `sss` and append `x`
+       - Append reversed `sss` to `sb` with leading space
+       - Set `st[x]` = true
+       - Set `x` = `b[x]`
+       - Increment `s` by 1
+     - If `s` > `ans`:
+       - Set `ans` = `s`
+       - Set `ss` = reversed `sb` converted to string
+9. Print `ans`
+10. Print `ss`

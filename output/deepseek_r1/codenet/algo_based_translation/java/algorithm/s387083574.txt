@@ -1,0 +1,43 @@
+- **Libraries/Modules**:  
+  java.util.Scanner  
+  java.util.Map  
+  java.util.HashMap  
+  java.util.Map.Entry  
+  java.util.stream.Collectors  
+
+- **Function Signatures**:  
+  `public static void main(String[] args)`  
+
+- **Variables**:  
+  - `Scanner sc` initialized with `System.in`  
+  - `int N` initialized via `sc.nextInt()`  
+  - `Map<Integer, Integer> map` initialized as `HashMap<Integer, Integer>`  
+
+- **Input Operations**:  
+  1. Read integer `N` from standard input.  
+  2. Read `N` integers sequentially from input, storing each as the value in `map` with keys `1` to `N`.  
+
+- **Logic Flow**:  
+  1. Iterate `i` from `1` to `N` (inclusive) via loop:  
+     `for (int i = 1; i < N + 1; i++)`  
+     - Insert entry `(i, sc.nextInt())` into `map`.  
+  2. Process `map`:  
+     - Stream over `map.entrySet()`.  
+     - Sort entries by ascending value using `Entry.comparingByValue()`.  
+     - Extract keys from sorted entries via `Map.Entry::getKey`.  
+     - Convert keys to strings via `String::valueOf`.  
+     - Collect results into a `List<String>`.  
+  3. Output:  
+     - Join collected strings with spaces using `String.join(" ", ...)`.  
+     - Print the resulting string.  
+
+- **Control Structures**:  
+  - `for` loop with loop variable `i` from `1` to `N`.  
+  - Stream pipeline with sorting, mapping, and collecting operations.  
+
+- **Return Types**:  
+  - `main` method returns `void`.  
+
+- **Data Processing**:  
+  - Map entries are sorted by their values in ascending order.  
+  - Keys of sorted entries are converted to strings and concatenated with spaces.

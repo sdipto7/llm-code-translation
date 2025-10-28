@@ -1,0 +1,23 @@
+1. Import the `java.util.Scanner` module.
+2. Define a class `Main` with a `public static void main(String[] args)` method.
+3. Within `main`, declare a `Scanner` object named `sc` and initialize it with `System.in`.
+4. Declare an integer variable `intA` and assign it the value returned by `sc.nextInt()`.
+5. Declare a double variable `dbAncer` and calculate its value using `Math.pow(intA, 3)`.
+6. Declare an integer variable `intAncer` and assign it the result of casting `dbAncer` to an integer.
+7. Use `System.out.println` to output the value of `intAncer`.
+8. The program terminates. 
+
+Function Signatures:
+- `public static void main(String[] args)`
+- `Scanner(System.in)`
+- `int nextInt()`
+- `double Math.pow(double, double)`
+
+Variable Declarations:
+- `Scanner sc`
+- `int intA`
+- `double dbAncer`
+- `int intAncer`
+
+Required Libraries/Modules:
+- `java.util.Scanner`

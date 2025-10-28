@@ -1,0 +1,39 @@
+- Function signatures:
+  - public static void main(String[] args)
+
+- Variable declarations and types:
+  - BufferedReader bf
+  - String[] x
+  - int a
+  - int b
+  - int c
+
+- Required libraries/dependencies:
+  - java.io.BufferedReader
+  - java.io.InputStreamReader
+  - java.util.Scanner
+
+- Execution order and logic flow:
+  1. Try block begins
+  2. Initialize BufferedReader with InputStreamReader(System.in)
+  3. Read input line, trim whitespace, split into String array using space delimiter
+  4. Parse array element [0] to integer a
+  5. Parse array element [1] to integer b
+  6. Calculate c = a - (2 * b)
+  7. Check if c < 0
+     - If true: set c = 0
+  8. Print c to standard output
+  9. Catch block for Exception (no handling implemented)
+
+- Control structures:
+  - try-catch block wrapping all operations
+  - Conditional: if (c < 0)
+
+- Input/output operations:
+  - Input: Single line read via BufferedReader
+  - Output: Integer c printed via System.out.println
+  - Data processing:
+    - String splitting
+    - Integer parsing
+    - Arithmetic operation (a - 2b)
+    - Non-negative clamping

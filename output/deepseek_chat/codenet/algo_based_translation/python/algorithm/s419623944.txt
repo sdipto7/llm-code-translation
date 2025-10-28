@@ -1,0 +1,5 @@
+read integer N and integer R from standard input
+if N >= 10:
+    output R
+else:
+    output R + (100 * (10 - N))

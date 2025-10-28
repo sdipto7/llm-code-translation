@@ -1,0 +1,25 @@
+**Function: sum**
+- Parameters: integer k
+- Returns: integer ret
+- Initialize integer ret = 0
+- Initialize integer pw = 10
+- Initialize integer len = 1
+- While true:
+  - Set integer cur = min(pw - 1, k)
+  - Set integer prev = pw // 10
+  - Add (cur - prev + 1) * len to ret
+  - If pw - 1 >= k: break loop
+  - Increment len by 1
+  - Multiply pw by 10
+- Return ret
+
+**Main Program:**
+- Read input line, split into three integers: w, m, k
+- Initialize integer lo = 0
+- Initialize integer hi = 1000000000000000000
+- While hi - lo > 1:
+  - Set integer md = (lo + hi) // 2
+  - Calculate integer c = sum(m + md - 1) - sum(m - 1)
+  - If c * k <= w: set lo = md
+  - Else: set hi = md
+- Print integer lo

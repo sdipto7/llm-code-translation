@@ -1,0 +1,27 @@
+```
+Function: main(args: String[]) -> void
+    Import: java.util.*, java.io.*
+    Variables:
+        sc: Scanner
+        n: int
+        a, b, c: int
+        x, y: int
+    Begin
+        Initialize sc as a new Scanner object to read from standard input
+        Read an integer from sc and assign it to n
+        Initialize a, b, c to 0
+        Loop from i = 0 to n - 1
+            Add the next integer from sc to a
+        End Loop
+        Loop from i = 0 to n - 2
+            Add the next integer from sc to b
+        End Loop
+        Loop from i = 0 to n - 3
+            Add the next integer from sc to c
+        End Loop
+        Set x to a - b
+        Set y to b - c
+        Print x to standard output
+        Print y to standard output
+    End
+```

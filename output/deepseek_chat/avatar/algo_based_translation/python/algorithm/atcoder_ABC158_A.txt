@@ -1,0 +1,6 @@
+Read input string from stdin
+Store input in variable s of type string
+Check if s contains both "A" and "B"
+If both conditions are true, assign "Yes" to result
+Else assign "No" to result
+Print result to stdout

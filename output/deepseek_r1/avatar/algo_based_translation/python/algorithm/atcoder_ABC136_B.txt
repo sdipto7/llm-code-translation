@@ -1,0 +1,49 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main()`: `void`
+  - Parameters: None
+  - Return Type: `void`
+
+**Variables:**
+- `N`: `integer` (Input integer value)
+- `i`: `integer` (Loop counter, initialized to 1)
+- `ans`: `integer` (Result accumulator, initialized to 0)
+
+**Step-by-Step Logic Flow:**
+
+1. **Input Operation:**
+   - Read an integer value `N` from standard input.
+
+2. **Initialization:**
+   - Set `i = 1`, `ans = 0`.
+
+3. **Loop Execution (While):**
+   - **Condition:** `10^i ≤ N`
+   - **Steps:**
+     1. Compute `ans += (10^i - 10^(i - 1))`.
+     2. Update `i += 2`.
+   - **Exit Criteria:** Loop terminates when `10^i > N`.
+
+4. **Post-Loop Calculation:**
+   - Compute `remaining = max(0, N - 10^(i - 1) + 1)`.
+   - Update `ans += remaining`.
+
+5. **Output Operation:**
+   - Print `ans`.
+
+**Control Flow Structures:**
+- **While Loop:** Executes while `10^i ≤ N`. Iterates over odd values of `i` (1, 3, 5, ...).
+- **Conditional Statement:** `max(0, ...)` ensures non-negative addition in the post-loop step.
+
+**Input/Output Operations:**
+- **Input:** Reads `N` via `input()` and converts to `integer`.
+- **Output:** Writes `ans` to standard output.
+
+**Edge Case Handling:**
+- Implicitly handles cases where `N < 10` via `max(0, ...)` in the post-loop step.
+- No explicit error handling for invalid inputs (assumes valid integer input).
+
+**External Dependencies:**
+- Relies on Python’s `input()` and `print()` functions for I/O.
+- No external libraries or imports beyond standard language functions.

@@ -1,0 +1,7 @@
+1. READ age FROM INPUT and CONVERT to INTEGER
+2. IF age EQUALS 1 THEN
+3.     DISPLAY 'Hello World'
+4. ELSE
+5.     READ a AND b FROM INPUT and CONVERT to INTEGER
+6.     COMPUTE sum = a + b
+7.     DISPLAY sum

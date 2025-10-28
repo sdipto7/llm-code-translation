@@ -1,0 +1,44 @@
+Required Libraries:
+- collections (for Counter)
+
+Function Signatures:
+- Not applicable (script-based execution)
+
+Variables:
+- n: integer
+- ls: list of strings
+- c: collections.Counter
+- count: integer
+- ans: list of strings
+- p: list of tuples (string, integer)
+- i: integer (loop variable)
+
+Logic Flow:
+1. Read integer `n` from standard input
+2. Read `n` lines of input into list `ls`
+3. Create Counter `c` from `ls`
+4. Extract `count` = second element of first entry in `c.most_common()`
+5. Initialize empty list `ans`
+6. Store `c.most_common()` in `p`
+7. Iterate through `p` using index `i` from 0 to len(c)-1:
+   a. If `p[i][1]` equals `count`:
+      - Append `p[i][0]` to `ans`
+   b. Else:
+      - Break loop
+8. Sort `ans` lexicographically
+9. Iterate through sorted `ans` and print each element
+
+Control Structures:
+- For loop: range(n) for input collection
+- For loop: range(len(c)) for processing Counter entries
+- If-else condition: p[i][1] == count
+- Break statement on counter mismatch
+
+Input/Output:
+- Input: integer n followed by n strings via standard input
+- Output: sorted list of most frequent strings printed to standard output
+
+Data Processing:
+- String frequency counting using Counter
+- Sorting strings in lexicographical order
+- Filtering entries by maximum frequency count

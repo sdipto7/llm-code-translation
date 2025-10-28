@@ -1,0 +1,69 @@
+- Function signatures with parameter and return types:
+  - `main(String[] args)`: void
+  - `solve(int testNumber, InputReader in, PrintWriter out)`: void
+  - `InputReader(InputStream stream)`: void
+  - `next()`: String
+
+- Variable declarations and data types:
+  - `InputStream inputStream`: InputStream
+  - `OutputStream outputStream`: OutputStream
+  - `InputReader in`: InputReader
+  - `PrintWriter out`: PrintWriter
+  - `TaskB solver`: TaskB
+  - `String x`: String
+  - `Stack<Character> s`: Stack<Character>
+  - `int c`: int
+  - `int i`: int
+  - `Character p`: Character
+  - `Character q`: Character
+  - `BufferedReader reader`: BufferedReader
+  - `StringTokenizer tokenizer`: StringTokenizer
+  - `String nextToken`: String
+
+- Complete logic flow in execution order:
+  1. Initialize `inputStream` to `System.in`.
+  2. Initialize `outputStream` to `System.out`.
+  3. Create `InputReader in` with `inputStream`.
+  4. Create `PrintWriter out` with `outputStream`.
+  5. Create `TaskB solver`.
+  6. Call `solver.solve(1, in, out)`.
+  7. Close `out`.
+
+- Inside `solve` method:
+  1. Read string `x` from `in`.
+  2. Initialize `Stack<Character> s`.
+  3. Initialize `int c` to 0.
+  4. Loop through each character in `x`:
+     - Push character to `s`.
+     - While `s.size()` is greater than 1:
+       - Pop `p` from `s`.
+       - Pop `q` from `s`.
+       - If `(p == '1' && q == '0') || (p == '0' && q == '1')`:
+         - Increment `c`.
+         - Continue.
+       - Else:
+         - Push `q` back to `s`.
+         - Push `p` back to `s`.
+         - Break.
+  5. Print `c * 2` to `out`.
+
+- Inside `InputReader` constructor:
+  1. Initialize `reader` with `BufferedReader` wrapping `InputStreamReader` of `stream`.
+  2. Initialize `tokenizer` to null.
+
+- Inside `next` method:
+  1. While `tokenizer` is null or `tokenizer` has no more tokens:
+     - Try to read line from `reader` and tokenize it, assign to `tokenizer`.
+     - Catch `IOException` and throw `RuntimeException`.
+  2. Return next token from `tokenizer`.
+
+- Required libraries, modules, or dependencies:
+  - `java.io.OutputStream`
+  - `java.io.IOException`
+  - `java.io.InputStream`
+  - `java.io.PrintWriter`
+  - `java.util.Vector`
+  - `java.util.StringTokenizer`
+  - `java.io.BufferedReader`
+  - `java.io.InputStreamReader`
+  - `java.util.Stack`

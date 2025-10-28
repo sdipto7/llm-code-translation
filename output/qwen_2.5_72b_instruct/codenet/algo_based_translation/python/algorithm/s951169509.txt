@@ -1,0 +1,68 @@
+### Algorithm
+
+#### Function Signatures
+- `main()`: No parameters, no return value
+
+#### Variable Declarations and Data Types
+- `H`: Integer
+- `W`: Integer
+- `G`: List of strings
+- `ans`: Integer
+- `sx`: Integer
+- `sy`: Integer
+- `dist`: 2D List of integers
+- `visited`: 2D List of integers
+- `q`: Deque of tuples (Integer, Integer)
+- `x`: Integer
+- `y`: Integer
+- `i`: Integer
+- `j`: Integer
+
+#### Logic Flow and Control Structures
+1. Read `H` and `W` as integers from input.
+2. Initialize `G` as an empty list.
+3. Loop `i` from 0 to `H+1`:
+   - If `i` is 0 or `i` is `H+1`, append a string of `W+2` '#' characters to `G`.
+   - Otherwise, append a string of '#' + input() + '#' to `G`.
+4. Initialize `ans` to 0.
+5. Loop `sx` from 0 to `W+1`:
+   - Loop `sy` from 0 to `H+1`:
+     - If `G[sy][sx]` is '.':
+       - Initialize `dist` as a 2D list of size `(H+2) x (W+2)` with all elements set to `-float('inf')`.
+       - Initialize `visited` as a 2D list of size `(H+2) x (W+2)` with all elements set to -1.
+       - Initialize `q` as an empty deque.
+       - Append `(sx, sy)` to `q`.
+       - Set `dist[sy][sx]` to 0.
+       - Set `visited[sy][sx]` to 1.
+       - While `q` is not empty:
+         - Dequeue `(x, y)` from `q`.
+         - If `G[y][x+1]` is '.' and `visited[y][x+1]` is -1:
+           - Append `(x+1, y)` to `q`.
+           - Set `dist[y][x+1]` to `dist[y][x] + 1`.
+           - Set `visited[y][x+1]` to 1.
+         - If `G[y][x-1]` is '.' and `visited[y][x-1]` is -1:
+           - Append `(x-1, y)` to `q`.
+           - Set `dist[y][x-1]` to `dist[y][x] + 1`.
+           - Set `visited[y][x-1]` to 1.
+         - If `G[y+1][x]` is '.' and `visited[y+1][x]` is -1:
+           - Append `(x, y+1)` to `q`.
+           - Set `dist[y+1][x]` to `dist[y][x] + 1`.
+           - Set `visited[y+1][x]` to 1.
+         - If `G[y-1][x]` is '.' and `visited[y-1][x]` is -1:
+           - Append `(x, y-1)` to `q`.
+           - Set `dist[y-1][x]` to `dist[y][x] + 1`.
+           - Set `visited[y-1][x]` to 1.
+       - Loop `i` from 0 to `W+1`:
+         - Loop `j` from 0 to `H+1`:
+           - Update `ans` to the maximum value between `ans` and `dist[j][i]`.
+6. Print `ans`.
+
+#### Input/Output Operations and Data Processing Logic
+- Read two integers `H` and `W` from input.
+- Read `H` lines of strings, each of length `W`, and pad them with '#' on both sides.
+- For each cell in the padded grid, if it is '.', perform a BFS to find the maximum distance to any other '.' cell.
+- Track the maximum distance found across all starting points.
+- Print the maximum distance.
+
+#### Required Libraries, Modules, or Dependencies
+- `collections.deque`

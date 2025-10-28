@@ -1,0 +1,100 @@
+**Structured Algorithm Specification**
+
+**1. Data Types and Variables**
+- Integer `n`: Number of elements in input array `a`
+- Integer array `a`: Input array of length `n`
+- Integer array `b`: Array of length `n` mapping values to indices
+- Integer array `par`: Union-Find parent array of length `n`
+- Integer array `rank`: Union-Find rank array of length `n`
+- Integer array `size`: Union-Find size array of length `n`
+- Integer `c`: Result accumulator
+- Integer `k`: Current element index in processing loop
+- Integer `l`: Left component size
+- Integer `r`: Right component size
+
+**2. Function Specifications**
+
+**2.1 Root Function**
+- **Signature**: `root(x: Integer) → Integer`
+- **Parameters**: `x` - element to find root for
+- **Return**: Root element of `x` with path compression
+- **Logic**:
+  1. If `par[x]` equals `x`, return `x`
+  2. Recursively find and update `par[x]` to root of `par[x]`
+
+**2.2 Same Function**
+- **Signature**: `same(x: Integer, y: Integer) → Boolean`
+- **Parameters**: `x`, `y` - elements to compare
+- **Return**: True if roots of `x` and `y` are identical, False otherwise
+- **Logic**: Return `root(x) == root(y)`
+
+**2.3 Unite Function**
+- **Signature**: `unite(x: Integer, y: Integer) → void`
+- **Parameters**: `x`, `y` - elements to unite
+- **Logic**:
+  1. Find roots `rx = root(x)`, `ry = root(y)`
+  2. If `rx ≠ ry`:
+      a. Compare ranks:
+          - If `rank[rx] < rank[ry]`:
+              i. Set `par[rx] = ry`
+              ii. Add `size[rx]` to `size[ry]`
+          - Else:
+              i. Set `par[ry] = rx`
+              ii. Add `size[ry]` to `size[rx]`
+              iii. If `rank[rx] == rank[ry]`, increment `rank[rx]` by 1
+
+**3. Main Algorithm**
+
+**3.1 Initialization**
+1. Read input values from standard input:
+   a. Split input into integers
+   b. First integer is `n`
+   c. Remaining integers form array `a` (length `n`)
+2. Initialize arrays:
+   a. `par` as `[0, 1, ..., n-1]`
+   b. `rank` as all 1s
+   c. `size` as all 1s
+   d. `b` as array of 0s
+3. Populate `b`:
+   For each index `i` (0 ≤ i < n):
+   a. Set `b[a[i]-1] = i`
+   
+**3.2 Processing Loop**
+1. Initialize `c = 0`
+2. Iterate through `b` in reverse order:
+   For each `k` in `b` (from last to first element):
+   a. Initialize `l = 1`, `r = 1`
+   b. Check left neighbor (k-1):
+      - If `k > 0` and `a[k-1] > a[k]`:
+          i. Set `l += size[root(k-1)]`
+          ii. Call `unite(k-1, k)`
+   c. Check right neighbor (k+1):
+      - If `k+1 < n` and `a[k+1] > a[k]`:
+          i. Set `r += size[root(k+1)]`
+          ii. Call `unite(k+1, k)`
+   d. Update result: `c += l * r * a[k]`
+
+**3.3 Output**
+1. Print final value of `c`
+
+**4. Control Flow**
+- **Loop Structures**:
+  - For-loop over `b` elements in reverse (sequential processing)
+  - Two conditional blocks for left/right neighbor checks
+- **Conditionals**:
+  - `k > 0` (left boundary check)
+  - `k+1 < n` (right boundary check)
+  - `a[k-1] > a[k]`, `a[k+1] > a[k]` (value comparisons)
+  - `rank[x]` comparisons in unite function
+
+**5. Input/Output**
+- **Input**: Single line from standard input containing space-separated integers
+- **Output**: Single integer `c` printed to standard output
+
+**6. Edge Case Handling**
+- Boundary checks for `k=0` and `k=n-1` prevent index errors
+- Rank comparisons ensure balanced tree structures in Union-Find
+
+**7. Dependencies**
+- Standard input/output operations
+- No external libraries required beyond basic array operations

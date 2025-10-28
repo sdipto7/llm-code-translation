@@ -1,0 +1,27 @@
+1. Define a function `binary_search_count` with parameters `S: list[int]`, `T: list[int]`, `n: int` and return type `int`.
+2. Initialize a variable `ans` of type `int` to 0.
+3. Iterate over each element `i` in `T`.
+4. Check if `i` is equal to the first or last element of `S`. If true, increment `ans` by 1.
+5. If `i` is not equal to the first or last element of `S`, perform the following steps:
+   - Initialize two variables `left` and `right` of type `int` to 0 and `n-1` respectively.
+   - Enter a while loop that continues as long as `right - left` is greater than 1.
+   - Inside the loop, calculate the midpoint `mid` as the integer division of `left + right` by 2.
+   - Check if the element at index `mid` in `S` is equal to `i`. If true, increment `ans` by 1 and break out of the loop.
+   - If the element at index `mid` in `S` is less than `i`, update `left` to `mid`.
+   - If the element at index `mid` in `S` is greater than `i`, update `right` to `mid`.
+6. After iterating over all elements in `T`, return `ans`.
+ 
+Input Operations:
+- Read an integer `n` from input.
+- Read `n` integers into a list `S`.
+- Read an integer `q` from input.
+- Read `q` integers into a list `T`.
+
+Output Operations:
+- Print the result of the function `binary_search_count(S, T, n)`.
+
+Required Libraries/Modules:
+- Built-in input/output operations (no specific libraries required) 
+
+Data Processing Logic:
+- The list `S` is assumed to be sorted in ascending order for the binary search to work correctly.

@@ -1,0 +1,21 @@
+- function signature: main() -> None
+- variable declarations: n (int)
+- logic flow:
+  - read integer input and assign to n
+  - while n modulo 2 equals 0:
+    - divide n by 2 and assign result to n
+  - if n equals 1:
+    - print 'YES'
+  - else:
+    - print 'NO'
+- control structures:
+  - while loop with condition n % 2 == 0
+  - if-else conditional with condition n == 1
+- input/output operations:
+  - input() reads an integer from user
+  - print() outputs 'YES' or 'NO' based on condition
+- data processing logic:
+  - repeatedly divides n by 2 until it is no longer divisible by 2
+  - checks if the final value of n is 1 to determine output
+- required libraries, modules, or dependencies:
+  - no additional libraries or modules required

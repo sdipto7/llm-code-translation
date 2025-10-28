@@ -1,0 +1,45 @@
+```
+Algorithm atcoder_ABC123_B
+
+- Import Scanner from java.util
+- Import TreeMap from java.util
+
+Function main() -> void
+    Declare sc as Scanner instance
+    Declare array a of integers with size 5
+    Declare array r of integers with size 5
+    Declare map as TreeMap<Integer, Integer>
+    
+    For i from 0 to length of a - 1, inclusive
+        Set a[i] to the next integer input from sc
+        Set r[i] to a[i] modulo 10
+        Set b to 10
+        If r[i] is not equal to 0
+            Set b to 10 minus r[i]
+            Add entry to map with b as key and a[i] as value
+
+    Declare ans as integer and set to 0
+
+    If map size is equal to 0
+        For i from 0 to length of a - 1, inclusive
+            Add a[i] to ans
+        Print ans
+        Return from function
+
+    Set last to the value in map for the key map.lastKey()
+    Declare idx as integer and set to 0
+
+    For i from 0 to length of a - 1, inclusive
+        If a[i] is equal to last
+            Set idx to i
+
+    For i from 0 to length of a - 1, inclusive
+        If i is not equal to idx
+            If a[i] modulo 10 is equal to 0
+                Add a[i] to ans
+            Else
+                Add a[i] plus (10 minus r[i]) to ans
+
+    Add last to ans
+    Print ans
+```

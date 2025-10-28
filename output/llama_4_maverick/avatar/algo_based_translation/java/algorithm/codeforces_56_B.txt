@@ -1,0 +1,9 @@
+1. Read the length of the input sequence.
+2. Read the input sequence into an array of integers.
+3. Initialize two pointers, l and r, to 0.
+4. Initialize two boolean flags, flag and isTrue, to false.
+5. Iterate through the array from index 0 to length - 1.
+6. If the current element is not equal to its 1-based index and flag is false, set l to the current 1-based index and set flag to true.
+7. If the current element is not equal to its 1-based index and flag is true, update r to the current 1-based index.
+8. If the difference between the elements at indices r-1 and r-2 is positive, set isTrue to true and exit the loop.
+9. If isTrue is false, output l and r; otherwise, output 0 and 0.

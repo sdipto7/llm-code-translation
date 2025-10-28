@@ -1,0 +1,36 @@
+Function signature: 
+- `main()` -> None
+
+Variable declarations and data types:
+- `n` -> int
+- `a` -> list[int]
+- `b` -> list[int]
+- `c` -> list[int]
+- `x` -> int
+- `y` -> int
+- `z` -> int
+- `i` -> int (loop variable)
+
+Logic flow:
+1. Read an integer `n` from input.
+2. Read a line of input, split it by spaces, convert each split string to an integer, and store the resulting list in `a`.
+3. Read a line of input, split it by spaces, convert each split string to an integer, and store the resulting list in `b`.
+4. Read a line of input, split it by spaces, convert each split string to an integer, and store the resulting list in `c`.
+5. Initialize `x` to 0.
+6. For each integer `i` in list `a`:
+   - Add `i` to `x`.
+7. Initialize `y` to 0.
+8. For each integer `i` in list `b`:
+   - Add `i` to `y`.
+9. Initialize `z` to 0.
+10. For each integer `i` in list `c`:
+    - Add `i` to `z`.
+11. Print the absolute difference between `x` and `y`.
+12. Print the absolute difference between `y` and `z`.
+
+Input/output operations and data processing logic:
+- Input is read from standard input in the form of integers.
+- Output is written to standard output as integers representing absolute differences.
+
+Required libraries, modules, or dependencies:
+- No specific libraries or modules required.

@@ -1,0 +1,48 @@
+1. Import required libraries:
+   - java.io
+   - java.util
+   - java.lang
+   - java.math.BigInteger
+
+2. Define a class `Main` with a `main` method that:
+   - Initializes `InputStream` and `OutputStream` objects for input/output operations.
+   - Creates an `InputReader` object to read input from the input stream.
+   - Creates a `PrintWriter` object to write output to the output stream.
+   - Calls the `solve` method with the `InputReader` and `PrintWriter` objects.
+   - Closes the `PrintWriter` object.
+
+3. Define a static method `solve` with the signature:
+   - `public static void solve(InputReader sc, PrintWriter pw)`
+
+   - Declare a variable `t` of type `int` and initialize it to 1.
+   - Use a `while` loop with the condition `t-- > 0` labeled as `u`.
+   - Inside the loop:
+     - Read two `long` values `n` and `m` using the `nextLong` method of the `InputReader` object.
+     - Check if `n` is 0, and if so, print 0 using the `PrintWriter` object and continue to the next iteration.
+     - Check if `n` is equal to `m`, and if so, print 0 using the `PrintWriter` object and continue to the next iteration.
+     - Check if `n` is greater than `m`, and if so:
+       - Update `n` to be `m + n % m - m`.
+       - Print the minimum of `m - n` and `n` using the `PrintWriter` object.
+       - Continue to the next iteration.
+     - If `n` is not greater than `m`, print the minimum of `m - n` and `n` using the `PrintWriter` object.
+
+4. Define various static methods for different operations:
+   - `swap(char[] chrr, int i, int j)`: Swaps two characters in a character array.
+   - `num(int n)`: Counts the number of set bits in the binary representation of an integer.
+   - `isPrime(int n)`: Checks if an integer is prime.
+   - `gcd(long a, long b)`: Computes the greatest common divisor of two long integers.
+   - `fast_pow(long base, long n, long M)`: Computes the result of `base` raised to the power `n` modulo `M` using exponentiation by squaring.
+   - `modInverse(long n, long M)`: Computes the modular inverse of `n` modulo `M` using the `fast_pow` method.
+   - `feedArr`: Populates arrays of different types (`long`, `double`, `int`, `String`) with values read from the `InputReader` object.
+   - `printArr`: Converts arrays of different types (`int`, `long`, `String`, `double`) to a string representation.
+
+5. Define a static inner class `Pair` with:
+   - Fields: `u`, `v`, `i`, `val` of type `int`.
+   - Constructor: `Pair(int a, int b, int i)`.
+
+6. Define a static inner class `InputReader` with:
+   - Fields: `reader` of type `BufferedReader`, `tokenizer` of type `StringTokenizer`.
+   - Constructor: `InputReader(InputStream stream)` that initializes the `reader` and `tokenizer`.
+   - Methods:
+     - `next()`: Reads the next token from the input stream.
+     - `nextInt()`, `nextLong()`, `nextDouble()`: Parse the next token as `int`, `long`, and `double` respectively.

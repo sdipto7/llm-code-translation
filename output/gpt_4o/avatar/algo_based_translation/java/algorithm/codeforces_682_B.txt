@@ -1,0 +1,29 @@
+```
+Dependencies:
+- java.io.*
+- java.util.*
+
+Function: main
+- Parameters: String[] args
+- Return Type: void
+
+1. Initialize Scanner in to read from System.in.
+2. Initialize PrintWriter pw to write to System.out.
+3. Read integer n using in.nextInt().
+4. Declare ArrayList<Integer> list.
+5. For integer i from 0 to n-1:
+   - Read integer from input and add to list.
+6. Sort list using Collections.sort().
+7. Declare integer c and initialize to 1.
+8. For integer i from 0 to n-1:
+   - If list.get(i) is greater than or equal to c:
+     - Increment c by 1.
+9. Output c using pw.println().
+10. Close PrintWriter pw.
+
+Function: debug
+- Parameters: Object... obj
+- Return Type: void
+
+1. Output Arrays.deepToString(obj) to System.err.
+```

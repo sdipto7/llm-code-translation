@@ -1,0 +1,8 @@
+1. Import Scanner from java.util
+2. Define class Main
+3. Define public static void main method with String[] args parameter
+4. Create Scanner object initialized with System.in
+5. Declare String variable a and assign next input token from Scanner
+6. Declare String variable b and assign next input token from Scanner
+7. Concatenate b and a in that order
+8. Print the concatenated result to standard output

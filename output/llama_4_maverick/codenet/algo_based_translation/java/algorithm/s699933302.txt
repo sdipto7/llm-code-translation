@@ -1,0 +1,16 @@
+1. Import required library: java.util.Scanner
+2. Define function: main with return type void and parameter: String[] args
+3. Declare variable: sc of type Scanner and initialize with new Scanner(System.in)
+4. Declare variables: a, b, c of type int and initialize with:
+   - Parse integer from sc.next()
+   - Parse integer from sc.next()
+   - Parse integer from sc.next()
+5. Declare variable: count of type int and initialize with 0
+6. Start for loop with:
+   - Initialization: int i = a
+   - Condition: i <= b
+   - Increment: i++
+7. Inside the loop:
+   - Check if c % i == 0
+   - If true, increment count by 1
+8. After the loop, print count to the console using System.out.println(count)

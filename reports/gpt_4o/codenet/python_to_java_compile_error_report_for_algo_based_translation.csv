@@ -1,0 +1,34 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,s749244504.java,Compilation Error,"Error: output/gpt_4o/codenet/algo_based_translation/python/java/s749244504.java:4: error: package org.jgrapht.graph does not exist
+import org.jgrapht.graph.DefaultDirectedWeightedGraph;
+                        ^
+1 error
+only showing the first 1 errors, of 11 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s137613418.java,Compilation Error,"Error: output/gpt_4o/codenet/algo_based_translation/python/java/s137613418.java:18: error: cannot find symbol
+    static <T> T load(BufferedReader reader, Function<String, T> converter) throws IOException {
+                                             ^
+  symbol:   class Function
+  location: class s137613418
+1 error
+only showing the first 1 errors, of 3 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s977408144.java,Compilation Error,"Error: output/gpt_4o/codenet/algo_based_translation/python/java/s977408144.java:136: error: incompatible types: List<Boolean> cannot be converted to List<Integer>
+            return result;
+                   ^
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s817205687.java,Compilation Error,"Error: output/gpt_4o/codenet/algo_based_translation/python/java/s817205687.java:21: error: cannot find symbol
+        return numbers.stream().reduce(1, Main::lcm);
+                                          ^
+  symbol:   variable Main
+  location: class s817205687
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s681105182.java,Compilation Error,"Error: output/gpt_4o/codenet/algo_based_translation/python/java/s681105182.java:30: error: incompatible types: possible lossy conversion from double to long
+            long current_dif = Math.abs(n / 2.0 - a);
+                                       ^
+1 error
+"

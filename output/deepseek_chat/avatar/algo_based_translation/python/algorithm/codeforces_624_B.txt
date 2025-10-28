@@ -1,0 +1,11 @@
+1. Import sys module for input reading
+2. Read integer n from standard input
+3. Read list a of n integers from standard input
+4. Initialize pre as positive infinity (float)
+5. Initialize ans as 0 (integer)
+6. Sort list a in descending order
+7. For j from 0 to n-1:
+   a. Calculate: max(0, min(pre - 1, a[j]))
+   b. Add result to ans
+   c. Update pre: max(0, min(pre - 1, a[j]))
+8. Print ans

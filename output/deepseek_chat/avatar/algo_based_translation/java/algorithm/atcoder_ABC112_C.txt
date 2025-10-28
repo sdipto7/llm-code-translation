@@ -1,0 +1,58 @@
+**Function Signatures:**
+- `main(String[] args): void`
+- `check(int n, int[] x, int[] y, int[] h, int cx, int cy): int`
+
+**Variables:**
+- `MAX: int = 100` (constant)
+- `scanner: Scanner` (input stream)
+- `n: int` (number of points)
+- `x: int[]` (x-coordinates of points)
+- `y: int[]` (y-coordinates of points)
+- `h: int[]` (heights of points)
+- `i: int` (loop counter)
+- `j: int` (loop counter)
+- `ch: int` (candidate height)
+- `cx: int` (candidate center x)
+- `cy: int` (candidate center y)
+
+**Logic Flow:**
+
+1. Initialize Scanner with System.in
+2. Read integer n from input
+3. Initialize arrays x, y, h with size n
+4. For i from 0 to n-1:
+   - Read x[i] from input
+   - Read y[i] from input
+   - Read h[i] from input
+5. For i from 0 to MAX:
+   - For j from 0 to MAX:
+     - Call check(n, x, y, h, i, j) and store result in ch
+     - If ch > 0:
+       - Print i, j, ch
+6. Close Scanner
+
+**check function:**
+1. Initialize ch = -1
+2. For i from 0 to n-1:
+   - If h[i] > 0:
+     - Set ch = |x[i] - cx| + |y[i] - cy| + h[i]
+     - Break loop
+3. For i from 0 to n-1:
+   - Calculate expected_height = max(ch - |x[i] - cx| - |y[i] - cy|, 0)
+   - If h[i] != expected_height:
+     - Return -1
+4. Return ch
+
+**Control Structures:**
+- Nested for loops (0 to MAX)
+- For loops (0 to n-1)
+- If conditionals (h[i] > 0, ch > 0, h[i] != expected_height)
+- Break statement
+
+**Input/Output:**
+- Input: n, followed by n lines of x y h values
+- Output: cx cy ch values when valid center found
+
+**Dependencies:**
+- java.util.Scanner
+- java.util.stream.IntStream

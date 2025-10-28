@@ -1,0 +1,33 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner sc`: Scanner object for input
+- `int v1`: initial velocity
+- `int v2`: final velocity
+- `int t`: total time segments
+- `int d`: maximum velocity change per segment
+- `long[][] dp`: 2D array with dimensions [t-1][1150]
+- `long sum`: unused variable
+- `long ans`: result storage
+
+**Libraries:**
+- `java.util.Arrays`
+- `java.util.Scanner`
+
+**Algorithm Steps:**
+1. Read input values: v1, v2, t, d
+2. Initialize dp array with dimensions [t-1][1150]
+3. Fill all dp values with negative infinity (-1e17)
+4. Set initial state: dp[0][v1] = v1
+5. For each time segment i from 1 to t-2:
+   - For each possible velocity j from 0 to 1149:
+     - For each possible acceleration x from 0 to d:
+       - If j+x < 1150: update dp[i][j] = max(dp[i][j], dp[i-1][j+x] + j)
+     - For each possible deceleration x from d down to 0:
+       - If j-x >= 0: update dp[i][j] = max(dp[i][j], dp[i-1][j-x] + j)
+6. Initialize ans to minimum long value
+7. For the last time segment (i = t-2):
+   - For each velocity j from 0 to 1149:
+     - If |j - v2| <= d: update ans = max(ans, dp[t-2][j] + v2)
+8. Print ans

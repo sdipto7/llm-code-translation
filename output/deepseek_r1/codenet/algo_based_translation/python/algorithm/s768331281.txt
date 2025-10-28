@@ -1,0 +1,25 @@
+**Function Signatures:**
+- No explicit functions (executed as script)
+
+**Variable Declarations:**
+- `N: int` (number of strings)
+- `L: int` (input parameter, unused)
+- `S: List[str]` (list of strings to process)
+
+**Logic Flow:**
+1. Read first input line as two space-separated integers `N` and `L`
+2. Read next `N` input lines, strip trailing whitespace from each, and store in list `S`
+3. Sort `S` lexicographically using default string comparison
+4. Concatenate all elements of sorted `S` into a single string
+5. Print concatenated result
+
+**Control Structures:**
+- Implicit loop: List comprehension iterates `N` times to populate `S`
+- `sorted()` function applies internal sorting algorithm
+
+**Input/Output Operations:**
+- Input: Read from stdin via `input()` and `split()`
+- Output: Print concatenated string via `print()`
+
+**Dependencies:**
+- No external libraries required (uses Python built-ins)

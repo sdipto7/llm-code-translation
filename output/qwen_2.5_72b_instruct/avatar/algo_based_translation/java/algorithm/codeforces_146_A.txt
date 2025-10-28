@@ -1,0 +1,34 @@
+Function Signature: `public static void main(String args[])`
+Variable Declarations:
+- `int x = 0`
+- `int y = 0`
+- `int t = 0`
+- `int n = in.nextInt()`
+- `String str = in.next()`
+- `char[] l = new char[str.length()]`
+Libraries/Modules/Dependencies: `java.util.*`, `static java.lang.Math.*`
+
+Logic Flow:
+- Initialize `x`, `y`, `t` to 0
+- Read integer `n` from input
+- Read string `str` from input
+- Convert string `str` to character array `l`
+- For loop from `i = 0` to `n - 1`
+    - If `l[i]` is not '4' and not '7'
+        - Set `t` to 1
+- If `t` is 1
+    - Print "NO"
+- Else
+    - For loop from `i = 0` to `n / 2 - 1`
+        - Add numeric value of `l[i]` to `x`
+    - For loop from `i = n - 1` to `n / 2`
+        - Add numeric value of `l[i]` to `y`
+    - If `x` equals `y`
+        - Print "YES"
+    - Else
+        - Print "NO"
+
+Input/Output Operations:
+- Read integer `n` from standard input
+- Read string `str` from standard input
+- Print "NO" or "YES" based on conditions to standard output

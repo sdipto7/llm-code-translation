@@ -1,0 +1,21 @@
+Algorithm:
+- Import sys module
+- Define input function as sys.stdin.readline
+- Read input string, remove last character (newline), split into two strings a and b
+- Let x = maximum length of a and b
+- Pad a with leading zeros to length x using rjust
+- Pad b with trailing zeros to length x using ljust
+- Initialize empty string s
+- Initialize integer c = 0
+- For i from 0 to x-1:
+    - Let d = integer value of b[i] + integer value of a[x-i-1] + c
+    - If d > 9:
+        - Append second digit of d (as string) to s
+        - Set c = 1
+    - Else:
+        - Append d (as string) to s
+        - Set c = 0
+- If c == 1:
+    - Append '1' to s
+- Reverse s and convert to integer
+- Print the integer result

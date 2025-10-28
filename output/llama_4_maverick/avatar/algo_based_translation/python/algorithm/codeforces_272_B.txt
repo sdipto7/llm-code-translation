@@ -1,0 +1,29 @@
+1. Define function main
+   1.1. Read input (not used)
+   1.2. Read sequence of numbers
+   1.3. Return result of nPairsWithCommonFX with sequence of numbers
+
+2. Define function nPairsWithCommonFX with sequence
+   2.1. Initialize empty dictionary storage
+   2.2. Initialize empty list FXs
+   2.3. For each value in sequence
+      2.3.1. Calculate y = f(value)
+      2.3.2. If y not in storage
+         2.3.2.1. Add y to storage with value as list
+         2.3.2.2. Append y to FXs
+      2.3.3. Else
+         2.3.3.1. Append value to storage[y]
+   2.4. Calculate sum of (length of storage[y])^2 for all y in FXs
+   2.5. Calculate sum of length of storage[y] for all y in FXs
+   2.6. Return (sum from 2.4 - sum from 2.5) / 2
+
+3. Define function f with n
+   3.1. Initialize y = 1
+   3.2. While n not equal to 1
+      3.2.1. If n is odd
+         3.2.1.1. Increment y by 1
+      3.2.2. Divide n by 2 (integer division)
+   3.3. Return y
+
+4. If script is main
+   4.1. Print result of main function

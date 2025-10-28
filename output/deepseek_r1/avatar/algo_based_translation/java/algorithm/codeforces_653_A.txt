@@ -1,0 +1,44 @@
+- **Function Signature**:
+  - `public static void main(String[] args)`
+
+- **Variables**:
+  - `Scanner in`: Reads input from `System.in`
+  - `PrintWriter out`: Writes output to `System.out`
+  - `int n`: Stores the input count of elements
+  - `List<Integer> a`: Stores the list of input integers
+  - `int value`: Temporary variable for reading input integers
+  - `boolean found`: Flag indicating if three consecutive increasing-by-1 elements exist
+
+- **Logic Flow**:
+  1. Read integer `n` from input
+  2. Read `n` integers into list `a`
+  3. Process `a` to remove duplicates and sort in ascending order
+  4. Initialize `found` to `false`
+  5. Iterate through indices of `a` from `0` to `a.size() - 1`:
+     - For each index `i`:
+       - Check if `i+1` and `i+2` are valid indices in `a`
+       - If valid, check if `a.get(i) + 1 == a.get(i+1)` and `a.get(i+1) + 1 == a.get(i+2)`
+       - If condition met, set `found` to `true`
+  6. Print "YES" if `found` is `true`, else print "NO"
+
+- **Control Structures**:
+  - `try-with-resources` block for input/output handling
+  - `for` loop: `for (int i = 0; i < n; i++)` to read elements
+  - `for` loop: `for (int i = 0; i < a.size(); i++)` to check consecutive elements
+  - Nested `if` conditions:
+    - `if (i + 1 < a.size() && i + 2 < a.size())`
+    - `if (a.get(i) + 1 == a.get(i+1) && a.get(i+1) + 1 == a.get(i+2))`
+  - Ternary operator for output: `found ? "YES" : "NO"`
+
+- **Input/Output**:
+  - Input via `Scanner.nextInt()`
+  - Output via `PrintWriter.println()`
+  - Input processed as list of integers
+  - Output depends on presence of three consecutive increasing-by-1 integers
+
+- **Dependencies**:
+  - `java.io.PrintWriter`
+  - `java.util.Scanner`
+  - `java.util.ArrayList`
+  - `java.util.List`
+  - `java.util.stream.Collectors` (for stream operations)

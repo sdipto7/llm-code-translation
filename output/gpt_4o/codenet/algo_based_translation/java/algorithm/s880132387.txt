@@ -1,0 +1,50 @@
+**Algorithm:**
+
+- **Function Signatures:**
+  - `void run()`
+  - `int[] nextIntArray(int n)`
+
+- **Variable Declarations:**
+  - `Scanner sc`: a global `Scanner` object for reading input.
+  - `Random rand`: a global `Random` object.
+  - `int W, H`: integers for width and height of the map.
+  - `char[][] map`: 2D character array for map representation.
+  - `BigInteger[][] dp`: 2D `BigInteger` array for dynamic programming table.
+  - `BigInteger hprev, wprev, max`: `BigInteger` variables for storing previous values and maximum value.
+
+- **Logic Flow:**
+  1. Initialize a continuous loop labeled `TCase`.
+  2. Read integers `W` and `H` from input.
+  3. If both `W` and `H` are zero, exit the loop and terminate the program.
+  4. Initialize `map` as a 2D character array of size `H x W`.
+  5. For each row `h` from `0` to `H-1`:
+     - Read the next line of input and convert it to a character array, storing it in `map[h]`.
+  6. Initialize `dp` as a 2D `BigInteger` array of size `H x W`.
+  7. For each row `h` from `0` to `H-1`:
+     - For each column `w` from `0` to `W-1`:
+       - Initialize `hprev` to `BigInteger.ZERO`.
+       - If `h` is greater than or equal to `1`, set `hprev` to `dp[h-1][w]`.
+       - Initialize `wprev` to `BigInteger.ZERO`.
+       - If `w` is greater than or equal to `1`, set `wprev` to `dp[h][w-1]`.
+       - If the character at `map[h][w]` is a digit:
+         - Determine `max` as the greater of `hprev` and `wprev`.
+         - Set `dp[h][w]` to `max * 10 + numeric value of map[h][w]`.
+       - Otherwise, set `dp[h][w]` to `BigInteger.ZERO`.
+  8. Initialize `max` to `BigInteger.ZERO`.
+  9. For each row `h` from `0` to `H-1`:
+     - For each column `w` from `0` to `W-1`:
+       - If `dp[h][w]` is greater than `max`, update `max`.
+  10. Print the value of `max`.
+
+- **Data Processing Logic:**
+  - Convert the character at `map[h][w]` to a `BigInteger` by multiplying the current `max` by `10` and adding the numeric value of the character.
+
+- **Input/Output Operations:**
+  - Use the `Scanner` object `sc` to read input values.
+  - Use `System.out.println` and `System.out.print` for output.
+
+- **Required Libraries:**
+  - `java.math.BigInteger`
+  - `java.util.Scanner`
+  - `java.util.Random`
+  - `java.lang.System`

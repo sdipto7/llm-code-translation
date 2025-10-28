@@ -1,0 +1,10 @@
+1. Define a function `calculate_unseen_elements` with parameters `N` and `K` of type `int` and return type `int`.
+2. Initialize an empty set `S` to store unique elements.
+3. Iterate `K` times using a for loop with loop counter `i` ranging from 0 to `K-1`.
+4. Within the loop, read an integer `d` from input.
+5. Read `d` integers from input, store them in a list `A`, and convert the list to a set.
+6. Update the set `S` by performing a union operation with the set created from list `A`.
+7. After the loop, calculate the difference between `N` and the size of set `S`.
+8. Return the calculated difference as the result. 
+9. Read two integers `N` and `K` from input, separated by a space.
+10. Call the function `calculate_unseen_elements` with `N` and `K` as arguments and print the returned result.

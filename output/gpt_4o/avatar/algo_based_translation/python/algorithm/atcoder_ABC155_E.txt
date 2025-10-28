@@ -1,0 +1,64 @@
+```plaintext
+import sys
+import clipboard
+
+Define a list of strings: input_methods = ['clipboard', 'file', 'key']
+Initialize integer: using_method = 0
+Select input method: input_method = input_methods[using_method]
+Define lambda function for input: IN = lambda: map(int, input().split())
+Define constant integer: mod = 1000000007
+
+Function main_b() - No parameters, No return value:
+    Read string input: s = input()
+    Initialize integers: pp = 0, na = 0
+    Loop through each character c and index i in reversed string s:
+        Convert character to integer: cc = na + int(c)
+        Reset na to 0
+        If cc <= 4:
+            Increment pp by cc
+        Else:
+            Set na to 1
+            If i is the last index:
+                Increment pp by 1
+            Increment pp by 10 - cc
+    Print integer: pp
+
+Function main() - No parameters, Returns integer:
+    Read string input: s = input()
+    Initialize integers: pmin = 1000, mmin = 0
+    Prepend '0' to string: s = '0' + s
+    Loop through each character c in reversed string s:
+        Convert character to integer: v = int(c)
+        Calculate npmin: npmin = min(pmin + 10 - (v + 1), mmin + 10 - v)
+        Calculate nmmin: nmmin = min(pmin + v + 1, mmin + v)
+        Update pmin: pmin = npmin
+        Update mmin: mmin = nmmin
+    Return minimum of pmin and mmin
+
+Define boolean: isTest = False
+
+Function pa(v) - Parameter: v, No return value:
+    If isTest is True:
+        Print value: v
+
+Function input_clipboard() - No parameters, Returns generator:
+    Import clipboard module
+    Get clipboard text: input_text = clipboard.get()
+    Split text into lines: input_l = input_text.splitlines()
+    Loop through each line l in input_l:
+        Yield line: l
+
+Main execution block:
+    If running on iOS platform:
+        If input_method is 'clipboard':
+            Create generator: ic = input_clipboard()
+            Override input function: input = lambda: ic.__next__()
+        Else if input_method is 'file':
+            Redirect stdin to 'inputFile.txt'
+        Set isTest to True
+    Else:
+        Continue without changes
+    Call main function and store result: ret = main()
+    If ret is not None:
+        Print result: ret
+```

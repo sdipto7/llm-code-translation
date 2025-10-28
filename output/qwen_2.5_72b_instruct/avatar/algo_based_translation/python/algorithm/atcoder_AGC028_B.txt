@@ -1,0 +1,50 @@
+Function signature:
+- `main() -> None`
+
+Variable declarations and data types:
+- `MOD: int`
+- `N: int`
+- `M: int`
+- `A: np.ndarray[int64]`
+- `Nsq: int`
+- `fact: np.ndarray[int64]`
+- `n: int`
+- `inv: np.ndarray[int64]`
+- `j: np.ndarray[int64]`
+- `temp: np.ndarray[int64]`
+- `ans: int`
+
+Logic flow in execution order:
+- Read integer `N` from standard input
+- Initialize `M` to \(10^6\)
+- Read array `A` of integers from standard input and convert it to a numpy array of type `int64`
+- Initialize `Nsq` to \(10^3\)
+- Create a 2D numpy array `fact` of shape `(Nsq, Nsq)` with integers ranging from 0 to \(M-1\) and data type `int64`
+- Set `fact[0, 0]` to 1
+- For each `n` from 1 to \(Nsq-1\):
+  - Multiply each element in the `n`-th column of `fact` by the corresponding element in the \((n-1)\)-th column of `fact`
+  - Take modulo `MOD` for each element in the `n`-th column of `fact`
+- For each `n` from 1 to \(Nsq-1\):
+  - Multiply each element in the `n`-th row of `fact` by the last element of the \((n-1)\)-th row of `fact`
+  - Take modulo `MOD` for each element in the `n`-th row of `fact`
+- Flatten `fact` into a 1D array
+- Create a 1D numpy array `j` with integers from 0 to \(N-1\)
+- Create a 1D numpy array `inv` with integers representing the modular inverses of numbers from 1 to \(N\) using Fermat's Little Theorem
+- Compute the cumulative sum of `inv` modulo `MOD`
+- Compute `temp` as the element-wise sum of `inv[j]` and `inv[N-1-j]`, subtract 1, and take modulo `MOD`
+- Compute `ans` as the sum of element-wise product of `A` and `temp` modulo `MOD`
+- Multiply `ans` by the \(N\)-th element of `fact`
+- Take modulo `MOD` of `ans`
+- Print `ans`
+
+Control structures:
+- For loop with `n` ranging from 1 to \(Nsq-1\) (twice)
+
+Input/output operations and data processing logic:
+- Read integer `N` and array `A` from standard input
+- Perform mathematical operations to compute factorials and modular inverses
+- Print the final result `ans`
+
+Required libraries, modules, or dependencies:
+- `sys`
+- `numpy`

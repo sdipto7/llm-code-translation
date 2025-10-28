@@ -1,0 +1,45 @@
+### Algorithm Extraction
+
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables and Data Types:**
+- `ArrayList<Integer> result`
+- `Scanner insert`
+- `int n = -1`
+- `String line`
+- `String[] array2`
+- `int[] input`
+- `int sum`
+- `double avg`
+- `int num`
+
+**Required Libraries:**
+- `java.util.ArrayList`
+- `java.util.Scanner`
+
+**Logic Flow:**
+
+1. Initialize `result` as an empty ArrayList of Integers
+2. Initialize `insert` as a Scanner reading from System.in
+3. Initialize `n` to -1
+4. Start infinite while loop:
+   - Read next line from input into `line`
+   - Parse `line` to integer and assign to `n`
+   - If `n` equals 0: break out of while loop
+   - For loop from `i = 0` to `i < n` (empty loop body)
+   - Read next line from input into `line`
+   - Split `line` by space into `array2`
+   - Initialize `input` as integer array of size `n`
+   - Initialize `sum` to 0
+   - For loop from `i = 0` to `i < n`:
+     - Parse `array2[i]` to integer and assign to `input[i]`
+     - Add `input[i]` to `sum`
+   - Calculate `avg` as `(double)sum/(double)n`
+   - Initialize `num` to 0
+   - For loop from `i = 0` to `i < n`:
+     - If `input[i] <= avg`: increment `num` by 1
+   - Add `num` to `result` ArrayList
+5. For loop from `i = 0` to `i < result.size()`:
+   - If `result.get(i)` equals -1: print "NONE"
+   - Else: print `result.get(i)`

@@ -1,0 +1,24 @@
+Function signature: `calculate_harmonic_mean(n: int, a: List[int]) -> float`
+
+Variable declarations and data types:
+- `n: int`
+- `a: List[int]`
+- `below: float`
+
+Logic flow in execution order:
+1. Read an integer `n` from the input.
+2. Read a list of integers `a` from the input, splitting by spaces.
+3. Initialize `below` to 0.0.
+4. For each element `i` in the range from 0 to `n-1`:
+   1. Increment `below` by `1 / a[i]`.
+5. Print `1 / below`.
+
+Control structures:
+- For loop iterating from 0 to `n-1`.
+
+Input/output operations and data processing logic:
+- Input: Read an integer `n` and a list of integers `a`.
+- Output: Print the harmonic mean calculated as `1 / below`.
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required.

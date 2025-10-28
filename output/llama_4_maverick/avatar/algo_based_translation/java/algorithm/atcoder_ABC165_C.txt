@@ -1,0 +1,11 @@
+1. Read input values n, m, and q.
+2. Initialize arrays a, b, c, and d of size q.
+3. Populate arrays a, b, c, and d using the input values.
+4. Initialize an empty list to store a sequence of numbers.
+5. Perform a depth-first search (DFS) using the list.
+6. If the list size equals n, calculate a score based on the values in the list and the arrays a, b, c, and d.
+7. Update the maximum score (ans) if the calculated score is higher.
+8. If the list is not empty, iterate from the last number in the list to m, and for each number, add it to the list and recursively perform DFS.
+9. If the list is empty, iterate from 1 to m, and for each number, add it to the list and recursively perform DFS.
+10. After each recursive DFS call, remove the last number added to the list.
+11. Output the maximum score (ans) found during the DFS.

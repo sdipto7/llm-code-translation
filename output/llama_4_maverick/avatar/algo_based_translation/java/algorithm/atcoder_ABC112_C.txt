@@ -1,0 +1,12 @@
+1. Read the number of inputs n.
+2. Initialize three arrays x, y, h of size n.
+3. Read n sets of inputs into the arrays x, y, h.
+4. Iterate over all possible values of cx from 0 to MAX.
+5. For each cx, iterate over all possible values of cy from 0 to MAX.
+6. For each pair (cx, cy), calculate the height ch using the check function.
+7. In the check function, iterate over the array h to find the first non-zero height.
+8. Calculate the height ch using the coordinates (x[i], y[i]) and (cx, cy) where i is the index of the first non-zero height.
+9. Verify if the calculated height ch is consistent with all other coordinates and heights in the arrays x, y, h.
+10. If the height ch is consistent, return ch; otherwise, return -1.
+11. If the check function returns a positive value ch, output cx, cy, and ch.
+12. Continue iterating over all possible values of cx and cy until all pairs are checked.

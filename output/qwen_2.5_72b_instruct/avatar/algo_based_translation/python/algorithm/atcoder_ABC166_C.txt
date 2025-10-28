@@ -1,0 +1,53 @@
+Function signature: main() -> None
+
+Variable declarations and data types:
+- n: int
+- m: int
+- p: list[int]
+- h: list[int]
+- hp: dict[int, int]
+- path: dict[int, list[int]]
+- c: int
+- i: int
+- v: list[int]
+- a: int
+- b: int
+- f: int
+- j: int
+
+Logic flow in execution order:
+1. Read two integers from input and assign them to n and m
+2. Create a list p containing integers from 1 to n
+3. Read a list of m integers from input and assign them to h
+4. Create a dictionary hp where keys are elements from p and values are corresponding elements from h
+5. Initialize an empty dictionary path with keys from 1 to n, each having an empty list as value
+6. For m times:
+   a. Read two integers from input and assign them to a and b
+   b. Append b to the list at key a in path
+   c. Append a to the list at key b in path
+7. Initialize c to 0
+8. For each key-value pair (i, v) in path:
+   a. Initialize f to 0
+   b. For each j in v:
+      i. If hp[i] is less than or equal to hp[j]:
+         1. Set f to 1
+         2. Break the inner loop
+   c. If f is 0:
+      i. Increment c by 1
+9. Print the value of c
+
+Control structures:
+- Loops:
+  - for i in range(m)
+  - for i, v in path.items()
+  - for j in v
+- Conditionals:
+  - if hp[i] <= hp[j]
+  - if f == 0
+
+Input/output operations and data processing logic:
+- Input: Read integers from standard input
+- Output: Print the integer value of c
+
+Required libraries, modules, or dependencies:
+- No specific libraries or modules required

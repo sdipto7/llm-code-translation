@@ -1,0 +1,38 @@
+## Algorithm
+
+1. Import required libraries: 
+   - java.util.*
+
+2. Define a class: Main
+
+3. Define a function: 
+   - `main(String[] args)` with return type void
+
+4. Declare variables:
+   - `sc` of type `Scanner`
+   - `str` of type `String`
+   - `strArr` of type `String[]`
+   - `l` of type `int[]` with size 10
+   - `d` of type `int`
+   - `v` of type `int[]` with size 2
+   - `t` of type `double`
+   - `i` of type `int` (loop counter)
+
+5. Execution flow:
+   1. Initialize `sc` with `new Scanner(System.in)`
+   2. Loop while `sc.hasNext()`
+      1. Read input into `str` using `sc.next()`
+      2. Split `str` into `strArr` using `str.split(",")`
+      3. Initialize `l` with size 10 and `d` to 0
+      4. Loop from `i = 0` to `9`
+         1. Parse `strArr[i]` to `int` and store in `l[i]`
+         2. Add `l[i]` to `d`
+      5. Parse `strArr[10]` and `strArr[11]` to `int` and store in `v[0]` and `v[1]` respectively
+      6. Calculate `t = d / (v[0] + v[1])` as a `double`
+      7. Reset `d` to 0
+      8. Loop from `i = 0` to `10`
+         1. Check if `v[0] * t <= d`
+            1. If true, print `i` and break the loop
+         2. If false, add `l[i]` to `d` (for `i < 10`, since `l` has size 10)
+
+6. Required libraries: java.util.* for Scanner class.

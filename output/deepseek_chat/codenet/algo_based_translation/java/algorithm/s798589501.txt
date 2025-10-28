@@ -1,0 +1,36 @@
+**Function Signature:**
+- main(String[] args) throws Exception
+
+**Variables:**
+- Scanner s (Scanner object for input)
+- int E (first input integer)
+- int Y (second input integer)
+
+**Libraries/Dependencies:**
+- java.util.Scanner
+
+**Algorithm Logic:**
+1. Create Scanner object to read from standard input
+2. Read integer E from input
+3. Read integer Y from input
+4. If E equals 0:
+   - If Y ≤ 1911:
+     - Print "M"
+     - Print Y - 1867
+   - Else if Y ≤ 1925:
+     - Print "T"
+     - Print Y - 1911
+   - Else if Y ≤ 1988:
+     - Print "S"
+     - Print Y - 1925
+   - Else:
+     - Print "H"
+     - Print Y - 1988
+5. Else if E equals 1:
+   - Print 1867 + Y
+6. Else if E equals 2:
+   - Print 1911 + Y
+7. Else if E equals 3:
+   - Print 1925 + Y
+8. Else:
+   - Print 1988 + Y

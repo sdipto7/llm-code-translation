@@ -1,0 +1,26 @@
+Algorithm:
+
+1. Function signature:
+   - Function name: `find_divisors`
+   - Parameters: None
+   - Return type: None
+
+2. Variable declarations:
+   - `n`: integer
+
+3. Input operation:
+   - Read an integer from standard input and assign it to `n`.
+
+4. Loop structure:
+   - Use a `for` loop with the loop variable `i` initialized to `n`, iterating down to 1 (inclusive), decrementing by 1 each iteration.
+
+5. Conditional structure:
+   - Inside the loop, check if `n` is divisible by `i` using the condition `if n % i == 0`.
+
+6. Logic flow:
+   - If the condition is true, execute the following steps:
+     - Assign `i` to `n`.
+     - Print the value of `i` followed by a space, without a newline (`end=' '`).
+
+7. Output operation:
+   - Output is handled by the `print` function, displaying each divisor of the initial value of `n` in descending order.

@@ -1,0 +1,33 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner in` (Scanner object for input)
+- `int n` (input value)
+- `int m` (input value)
+- `int[] arr` (size `n`)
+- `int[] gen` (size 11)
+- `long ans` (initialized to 0)
+
+**Logic Flow:**
+1. Read `n` and `m` via `in.nextInt()`.
+2. Initialize `arr` with size `n` and `gen` with size 11.
+3. Loop for `i` from 0 to `n-1`:
+   - Read `arr[i]` via `in.nextInt()`.
+   - Increment `gen[arr[i]]` by 1.
+4. Nested loops for `i` from 1 to `m` and `k` from 1 to `m`:
+   - If `i != k`, add `(long) gen[i] * gen[k]` to `ans`.
+5. Print `ans / 2`.
+
+**Control Structures:**
+- `for (int i = 0; i < n; i++)`
+- `for (int i = 1; i <= m; i++)`
+  - Nested `for (int k = 1; k <= m; k++)`
+    - `if (i != k)`
+
+**Input/Output:**
+- Input: Read `n`, `m`, and `n` integers for `arr`.
+- Output: Print `ans / 2` as a long integer.
+
+**Dependencies:**
+- `java.util.Scanner`

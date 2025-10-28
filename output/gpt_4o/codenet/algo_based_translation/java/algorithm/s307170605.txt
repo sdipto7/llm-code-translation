@@ -1,0 +1,19 @@
+- Function Signature: `main()` with parameter `args` of type `String[]`, return type `void`.
+- Variable Declarations:
+  - `sc` of type `Scanner`, initialized with `System.in`.
+  - `i` of type `int`.
+- Libraries/Modules: `java.util.*`, `java.io.*`
+- Execution Flow:
+  1. Initialize a `Scanner` object `sc` to read input from the standard input.
+  2. Iterate using a `for` loop with initialization `int i = 0`, condition `i < 5`, and increment `i++`.
+     - Inside the loop, perform the following for each iteration:
+       - Read an integer from input using `sc.nextInt()`.
+       - Check if the integer is equal to `0`:
+         - If true, print the value of `i + 1` to the standard output.
+         - Exit the loop immediately using `break`.
+- Control Structures:
+  - `for` loop to iterate up to 5 times.
+  - `if` conditional to check if the input integer is `0`.
+- Input/Output Operations:
+  - Input: Read an integer from standard input using `sc.nextInt()`.
+  - Output: Print an integer to standard output using `System.out.println()`.

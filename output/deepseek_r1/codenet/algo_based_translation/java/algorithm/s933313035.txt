@@ -1,0 +1,84 @@
+1. Program Structure:
+   - Main class with static main method
+   - Nested static Node class
+
+2. Data Types:
+   - Primitive types: int, long
+   - Objects: Scanner, Node
+   - Node properties: long value, Node left, Node right
+
+3. Variables:
+   - Scanner sc (input reader)
+   - int m (number of operations)
+   - Node tree (root node, initially null)
+   - String command (operation type)
+   - long key (insertion value)
+
+4. Input Handling:
+   - Read integer m from standard input
+   - Read m subsequent commands:
+     - "insert" followed by long integer
+     - "print" (without arguments)
+
+5. Main Logic Flow:
+   a. For each of m operations:
+      i. Read command string
+      ii. If command is "insert":
+          - Read long integer key
+          - If tree root is null:
+              1. Create new root node
+              2. Set root.value = key
+          - Else:
+              1. Call insert(key) on root node
+      iii. Else (print operation):
+          - If tree root exists:
+              1. Call printInOrder() on root
+              2. Print newline
+              3. Call printPreOrder() on root
+              4. Print newline
+
+6. Node Class Methods:
+   a. insert(long newValue):
+      1. If newValue < this.value:
+          - If left child null:
+              1. Create new left node
+              2. Set left.value = newValue
+          - Else:
+              1. Recursively call left.insert(newValue)
+      2. Else (newValue >= this.value):
+          - If right child null:
+              1. Create new right node
+              2. Set right.value = newValue
+          - Else:
+              1. Recursively call right.insert(newValue)
+
+   b. printInOrder():
+      1. If left child exists:
+          - Call left.printInOrder()
+      2. Print current value (prefixed with space)
+      3. If right child exists:
+          - Call right.printInOrder()
+
+   c. printPreOrder():
+      1. Print current value (prefixed with space)
+      2. If left child exists:
+          - Call left.printPreOrder()
+      3. If right child exists:
+          - Call right.printPreOrder()
+
+7. Control Structures:
+   - For loop: for (int i = 0; i < m; i++)
+   - if-else conditional checks for:
+      1. Command type (insert/print)
+      2. Tree root existence
+      3. Node child existence during insertion
+      4. Value comparisons during insertion
+
+8. Input/Output Operations:
+   - System.in for Scanner input
+   - System.out.print for space-separated outputs
+   - System.out.println for newlines after traversals
+
+9. Dependencies:
+   - java.util.Scanner for input handling
+   - Standard Java I/O libraries

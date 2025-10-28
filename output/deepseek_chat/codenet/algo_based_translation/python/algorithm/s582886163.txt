@@ -1,0 +1,6 @@
+Read integer N from input
+Create list capacity_list of 5 integers by reading from input
+Sort capacity_list in ascending order
+Set bottle_neck to first element of capacity_list
+Calculate result = 4 + ((N + bottle_neck - 1) // bottle_neck)
+Print result

@@ -1,0 +1,17 @@
+1. Read input from the input stream.
+2. Create an input reader object to read from the input stream.
+3. Create a print writer object to write to the output stream.
+4. Initialize a task solver object.
+5. Call the solve method on the task solver object with test number 1, input reader, and print writer.
+6. In the solve method:
+   1. Read a string S from the input reader.
+   2. Initialize a score variable to 0.
+   3. Iterate over each character in the string S.
+   4. For each character at index i:
+      1. Determine the expected character 'my' based on whether i is even or odd.
+      2. Get the actual character 'his' at index i from the string S.
+      3. If 'my' is not equal to 'his':
+         1. Increment the score by 1 if 'my' is 'p'.
+         2. Decrement the score by 1 if 'my' is not 'p'.
+   5. Print the final score using the print writer.
+7. Close the print writer to finalize the output.

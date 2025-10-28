@@ -1,0 +1,23 @@
+```
+Function Signature:
+  - Function: process_input
+  - Parameters: None
+  - Return Type: None
+
+Algorithm:
+1. Input Operation:
+   - Read an integer from standard input and assign it to the variable `N`.
+   - Data Type: `N` is an integer.
+
+2. Conditional Logic:
+   - If `N` is even (i.e., `N % 2 == 0`):
+     - Compute `N // 2`.
+     - Output the result to standard output.
+   - Else (i.e., `N` is odd):
+     - Compute `N // 2 + 1`.
+     - Output the result to standard output.
+
+3. Output Operation:
+   - Print the computed result from the conditional logic.
+```
+

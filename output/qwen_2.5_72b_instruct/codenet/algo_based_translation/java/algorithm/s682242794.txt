@@ -1,0 +1,27 @@
+Function Signature:
+- solve() with no parameters and no return type
+
+Variable Declarations and Data Types:
+- int high
+- int low
+- int sa
+
+Logic Flow in Execution Order:
+1. Create an instance of the Scanner class
+2. Start a for loop that iterates 7 times
+3. Inside the loop, read an integer from the scanner and assign it to high
+4. Read another integer from the scanner and assign it to low
+5. Calculate the difference between high and low, assign it to sa
+6. Print the value of sa
+7. End the loop
+8. Close the scanner (not explicitly shown in the code but good practice)
+
+Control Structures:
+- for loop with the condition i < 7
+
+Input/Output Operations and Data Processing Logic:
+- Input: Reads two integers per iteration from the standard input
+- Output: Prints the difference between the two integers (sa) after each iteration
+
+Required Libraries, Modules, or Dependencies:
+- java.util.Scanner

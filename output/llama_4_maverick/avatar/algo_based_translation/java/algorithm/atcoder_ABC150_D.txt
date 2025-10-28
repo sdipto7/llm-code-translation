@@ -1,0 +1,9 @@
+1. Read input values n and m.
+2. Read n integers into array a and divide each by 2.
+3. Initialize lcd to 1.
+4. For i from 0 to n-1, calculate gcd of lcd and a[i], then update lcd to be lcd * a[i] / gcd.
+5. If lcd exceeds m, terminate with output 0.
+6. For i from 0 to n-1, check if (lcd / a[i]) is even.
+7. If any (lcd / a[i]) is even, terminate with output 0.
+8. Calculate (m / lcd + 1) / 2.
+9. Output the result of step 8.

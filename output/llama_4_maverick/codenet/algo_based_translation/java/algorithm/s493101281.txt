@@ -1,0 +1,77 @@
+1. Import required libraries:
+   - java.util
+   - java.io
+
+2. Define a class `Main` with:
+   - `public static final long MOD = 1000000007;`
+   - `public static void main(String[] args)` 
+     - Declare variables:
+       - `FastScanner sc`
+       - `PrintWriter out`
+       - `Integer i, j, k, n = 0, m = 0, h = 0, w = 0, ans = 0`
+       - `long a = 0, b = 0, c = 0, d = 0, x = 0, y = 0, z = 0`
+       - `List<Integer> l = new ArrayList<>();`
+       - `List<String> s = new ArrayList<>();`
+       - `List<Pair> p = new ArrayList<>();`
+
+3. In `main` method:
+   - Initialize `sc` with `FastScanner()`
+   - Initialize `out` with `new PrintWriter(System.out)`
+   - Read `n` using `sc.nextInt()`
+   - Loop from `i = 0` to `n-1`:
+     - Read an integer using `sc.nextInt()` and add it to `l`
+   - Sort `l` using `Collections.sort(l)`
+   - Calculate `l.get(n/2) - l.get(n/2 - 1)`
+   - Print the result using `print()`
+   - Flush `out` using `out.flush()`
+
+4. Define a method:
+   - `private static void print(Object o)`
+     - Print `o.toString()` using `System.out.println()`
+
+5. Define methods:
+   - `private static long lcm(long m, long n)`
+     - Return `m * n / gcd(m, n)`
+   - `private static long gcd(long m, long n)`
+     - If `m < n`, return `gcd(n, m)`
+     - If `n == 0`, return `m`
+     - Otherwise, return `gcd(n, m % n)`
+
+6. Define a class `Pair` with:
+   - Private fields `key` and `value` of type `int`
+   - Constructor `Pair(int key, int value)` to initialize `key` and `value`
+   - `public int getValue()` to return `value`
+   - `public int getKey()` to return `key`
+
+7. Define a class `FastScanner` with:
+   - Private field `in` of type `InputStream` initialized with `System.in`
+   - Private field `buffer` of type `byte[]` with size `1024`
+   - Private fields `ptr` and `buflen` of type `int` initialized with `0`
+   - `private boolean hasNextByte()`
+     - If `ptr < buflen`, return `true`
+     - Otherwise, reset `ptr` to `0` and read into `buffer` from `in`
+     - If the read length is less than or equal to `0`, return `false`
+     - Return `true`
+   - `private int readByte()`
+     - If `hasNextByte()` is `true`, return `buffer[ptr++]`
+     - Otherwise, return `-1`
+   - `private static boolean isPrintableChar(int c)`
+     - Return `true` if `c` is between `33` and `126` (inclusive), `false` otherwise
+   - `public boolean hasNext()`
+     - Skip non-printable characters by incrementing `ptr` while `hasNextByte()` is `true` and the character is not printable
+     - Return `hasNextByte()`
+   - `public String next()`
+     - If `hasNext()` is `false`, throw `NoSuchElementException`
+     - Read and append characters to a `StringBuilder` until a non-printable character is encountered
+     - Return the string representation of the `StringBuilder`
+   - `public long nextLong()`
+     - If `hasNext()` is `false`, throw `NoSuchElementException`
+     - Read a long integer from the input, handling negative numbers and non-numeric characters
+     - Return the long integer
+   - `public int nextInt()`
+     - Read a long integer using `nextLong()`
+     - If the value is outside the range of `int`, throw `NumberFormatException`
+     - Return the integer value
+   - `public double nextDouble()`
+     - Read a string using `next()` and parse it to a double using `Double.parseDouble()`
+     - Return the double value

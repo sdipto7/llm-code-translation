@@ -1,0 +1,10 @@
+read integer n from standard input
+declare integer c = 0
+for integer i from 0 to n-1:
+    read line from standard input
+    split line into list of strings
+    convert each string in list to integer, store as list l1
+    calculate sum of all elements in l1
+    if sum > 1:
+        increment c by 1
+print integer c to standard output

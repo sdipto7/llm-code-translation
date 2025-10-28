@@ -1,0 +1,76 @@
+**Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main()`: void
+
+**Variables:**
+- `N`: int (number of nodes)
+- `adj`: List[List[int]] (adjacency list for tree, size N+1)
+- `que`: deque<int> (processing queue)
+- `seen`: List[int] (node visitation tracker, size N+1)
+- `par`: List[int] (parent pointers, size N+1)
+- `child_num`: List[int] (child count per node, size N+1)
+- `seq`: deque<int> (leaf node processing queue)
+- `a, b, u, v, c, i`: int (temporary node indices)
+
+**Logic Flow:**
+
+1. **Input Initialization:**
+   1.1. Read integer `N` from input
+   1.2. Initialize adjacency list `adj` with N+1 empty lists
+   1.3. Read N-1 edges, populate `adj` bidirectionally
+
+2. **Breadth-First Search (BFS) Setup:**
+   2.1. Initialize `que` with root node 1
+   2.2. Mark node 1 as visited in `seen`
+   2.3. Initialize parent array `par` and child counter `child_num` with zeros
+
+3. **BFS Execution:**
+   3.1. While `que` not empty:
+       a. Dequeue front node `v`
+       b. For each neighbor `u` in `adj[v]`:
+           i. If `u` unvisited (seen[u] == 0):
+               - Mark `u` as visited
+               - Set `par[u] = v`
+               - Increment `child_num[v]`
+               - Enqueue `u`
+
+4. **Leaf Node Collection:**
+   4.1. Initialize `seq` deque
+   4.2. For each node 1 ≤ i ≤ N:
+       - If `child_num[i] == 0`, add to `seq`
+
+5. **Node Elimination Process:**
+   5.1. While `seq` not empty:
+       a. Pop rightmost node `c` from `seq`
+       b. Mark `c` as processed (seen[c] = 0)
+       c. If parent `par[c]` already processed:
+           - Print "First" and terminate
+       d. Mark `par[c]` as processed
+       e. Decrement grandparent's child count: `child_num[par[par[c]]] -= 1`
+       f. If grandparent's child count reaches 0:
+           - Add `par[par[c]]` to `seq`
+
+6. **Final Result:**
+   6.1. After full processing, print "Second"
+
+**Control Flow Structures:**
+- While loops for BFS and elimination processing
+- For loops for edge input and leaf collection
+- Conditional checks for node visitation and child counts
+- Early termination on win condition detection
+
+**Input/Output Operations:**
+- Reads from stdin via sys.stdin.buffer.readline
+- Processes N-1 undirected edges
+- Outputs "First" or "Second" to stdout
+
+**Edge Case Handling:**
+- Single-node trees handled through initialization defaults
+- Proper parent/grandparent existence through tree structure constraints
+- Leaf node processing ensures valid parent references
+
+**External Dependencies:**
+- Python standard libraries: sys, collections.deque
+- Relies on adjacency list tree representation
+- Uses deque for O(1) pop/append operations

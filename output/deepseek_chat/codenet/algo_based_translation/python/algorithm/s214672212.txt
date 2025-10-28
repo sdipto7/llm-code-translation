@@ -1,0 +1,6 @@
+read input string and split into list of strings
+convert each string in list to integer
+store integers in list variable nums of type list[int]
+sort nums in descending order
+calculate result = (first element of nums multiplied by 10) plus second element plus third element
+print result as integer

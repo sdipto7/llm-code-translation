@@ -1,0 +1,44 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `Scanner scanner`: object for reading input
+- `int w`: width of the rectangle
+- `int h`: height of the rectangle
+- `int n`: number of cuts
+- `int[] x`: array to store x-coordinates of cuts
+- `int[] y`: array to store y-coordinates of cuts
+- `int[] a`: array to store direction of cuts
+- `int xmax`: maximum x-coordinate after cuts
+- `int xmin`: minimum x-coordinate after cuts
+- `int ymax`: maximum y-coordinate after cuts
+- `int ymin`: minimum y-coordinate after cuts
+
+Complete logic flow in execution order:
+1. Create a `Scanner` object to read input.
+2. Read integers `w`, `h`, and `n` from input.
+3. Initialize arrays `x`, `y`, and `a` of size `n`.
+4. Initialize `xmax` to `w` and `xmin` to `0`.
+5. Initialize `ymax` to `h` and `ymin` to `0`.
+6. Loop from `i = 0` to `n - 1`:
+   - Read integers `x[i]`, `y[i]`, and `a[i]` from input.
+   - Switch on `a[i]`:
+     - Case `1`: Update `xmin` to the maximum of `xmin` and `x[i]`.
+     - Case `2`: Update `xmax` to the minimum of `xmax` and `x[i]`.
+     - Case `3`: Update `ymin` to the maximum of `ymin` and `y[i]`.
+     - Case `4`: Update `ymax` to the minimum of `ymax` and `y[i]`.
+7. Update `w` to the maximum of `xmax - xmin` and `0`.
+8. Update `h` to the maximum of `ymax - ymin` and `0`.
+9. Print the product of `w` and `h`.
+
+Control structures:
+- Loop: `for(int i = 0; i < n; i++)`
+- Switch: `switch(a[i])`
+- Cases: `case 1`, `case 2`, `case 3`, `case 4`
+
+Input/output operations and data processing logic:
+- Input: Read integers `w`, `h`, `n`, followed by `n` sets of integers `x[i]`, `y[i]`, and `a[i]`.
+- Output: Print the area of the remaining rectangle after applying all cuts.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

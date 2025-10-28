@@ -1,0 +1,29 @@
+Function Signature: `public static void main(String[] args)`
+
+Variable Declarations:
+- `int n`
+- `int i = 0`
+- `int k = 0`
+- `int p = 1` (unused)
+- `boolean flag = true`
+- `int[] a = new int[1000]` (array of size 1000 initialized to 0)
+- `Scanner scan = new Scanner(System.in)`
+
+Logic Flow:
+1. Read integer `n` from standard input.
+2. Initialize `i` to 0.
+3. While `k <= n`:
+   1. Increment `i` by `k`.
+   2. If `i >= n`, repeatedly decrement `i` by `n` until `i < n`.
+   3. Increment the value at index `i` in array `a` by 1.
+   4. Increment `k` by 1.
+4. For `i` from 0 to `n-1`:
+   1. If `a[i] == 0`, set `flag` to `false` and break the loop.
+5. If `flag` is `true`, print "YES" to standard output.
+6. Otherwise, print "NO" to standard output.
+
+Libraries/Modules/Dependencies:
+- `java.util.Scanner`
+- `java.util.*`
+- `java.lang.*`
+- `java.io.*`

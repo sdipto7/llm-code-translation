@@ -1,0 +1,45 @@
+**Function Signature:**
+main(String[] args) -> void
+
+**Required Libraries:**
+java.util.Scanner
+java.lang.*
+
+**Variables:**
+- Scanner scanner
+- int h
+- int w
+- int n
+- int sr
+- int sc
+- String s
+- String t
+- boolean end
+- int usafe
+- int dsafe
+- int lsafe
+- int rsafe
+
+**Algorithm:**
+1. Initialize scanner with System.in
+2. Read integers h, w, n, sr, sc from input
+3. Read strings s and t from input
+4. Set end = false
+5. Set usafe = 1, dsafe = h
+6. For i from n-1 down to 0:
+   - If s.charAt(i) == 'U': increment usafe by 1
+   - Else if s.charAt(i) == 'D': decrement dsafe by 1
+   - If usafe > dsafe: set end = true and break loop
+   - If i > 0:
+     - If t.charAt(i-1) == 'U': set dsafe = min(dsafe + 1, h)
+     - Else if t.charAt(i-1) == 'D': set usafe = max(usafe - 1, 1)
+7. Set lsafe = 1, rsafe = w
+8. For i from n-1 down to 0:
+   - If s.charAt(i) == 'L': increment lsafe by 1
+   - Else if s.charAt(i) == 'R': decrement rsafe by 1
+   - If lsafe > rsafe: set end = true and break loop
+   - If i > 0:
+     - If t.charAt(i-1) == 'L': set rsafe = min(rsafe + 1, w)
+     - Else if t.charAt(i-1) == 'R': set lsafe = max(lsafe - 1, 1)
+9. If sr >= usafe AND sr <= dsafe AND sc >= lsafe AND sc <= rsafe AND NOT end: print "YES"
+10. Else: print "NO"

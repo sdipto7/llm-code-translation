@@ -1,0 +1,28 @@
+Function signature: `calculate_operations(t: int, s: int, q: int) -> int`
+
+Variable declarations and data types:
+- t: int
+- s: int
+- q: int
+- ans: int
+
+Logic flow in execution order:
+1. Read three integers from standard input and assign them to variables t, s, q respectively.
+2. Initialize ans to 0.
+3. Enter while loop with condition (s < t).
+4. Inside loop:
+   - Multiply s by q.
+   - Increment ans by 1.
+5. Continue loop until condition (s < t) is false.
+6. Print the value of ans.
+
+Control structures:
+- While loop with condition (s < t).
+
+Input/output operations and data processing logic:
+- Input: Three space-separated integers t, s, q.
+- Process: Repeatedly multiply s by q and increment ans until s is no longer less than t.
+- Output: Print the number of operations (ans).
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required.

@@ -1,0 +1,36 @@
+Function Signature:
+- `dfs(cur: int, a: int, b: int, c: int) -> int`
+
+Variable Declarations and Data Types:
+- `N: int`
+- `A: int`
+- `B: int`
+- `C: int`
+- `l: List[int]`
+
+Logic Flow:
+1. Read four integers `N`, `A`, `B`, `C` from input.
+2. Read `N` integers and store them in list `l`.
+3. Define function `dfs` which takes four integer parameters `cur`, `a`, `b`, `c` and returns an integer.
+4. In `dfs`:
+   - If `cur` is equal to `N`:
+     - If the minimum of `a`, `b`, `c` is greater than 0, return `abs(A - a) + abs(B - b) + abs(C - c) - 30`.
+     - Otherwise, return `10 ** 9`.
+   - Otherwise:
+     - Recursively call `dfs` with `cur + 1`, `a`, `b`, `c` and store the result in `no_add`.
+     - Recursively call `dfs` with `cur + 1`, `a + l[cur]`, `b`, `c` and add `10` to the result, store it in `add_a`.
+     - Recursively call `dfs` with `cur + 1`, `a`, `b + l[cur]`, `c` and add `10` to the result, store it in `add_b`.
+     - Recursively call `dfs` with `cur + 1`, `a`, `b`, `c + l[cur]` and add `10` to the result, store it in `add_c`.
+     - Return the minimum of `no_add`, `add_a`, `add_b`, `add_c`.
+
+Input/Output Operations:
+- Read integers from input.
+- Print the result of `dfs(0, 0, 0, 0)`.
+
+Data Processing Logic:
+- The algorithm uses depth-first search (DFS) to explore all possible ways to distribute the elements of list `l` into three groups represented by `a`, `b`, `c`.
+- The cost of adding an element to any group is `10`.
+- The goal is to minimize the sum of absolute differences between the target values `A`, `B`, `C` and the sums of the respective groups, with a penalty of `30` subtracted if all groups have at least one element.
+
+Required Libraries, Modules, or Dependencies:
+- No specific libraries or modules are required. The code uses basic Python functionality.

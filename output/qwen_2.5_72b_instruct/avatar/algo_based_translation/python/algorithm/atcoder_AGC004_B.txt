@@ -1,0 +1,41 @@
+Function Signature:
+- `main()`: No parameters, No return type
+
+Variable Declarations and Data Types:
+- `n`: Integer
+- `x`: Integer
+- `a`: List of Integers
+- `b`: 2D List of Integers, initialized with `None`
+- `m`: Integer, used for minimum value calculations
+
+Logic Flow in Execution Order:
+1. Read two integers `n` and `x` from input.
+2. Read a list of `n` integers into list `a`.
+3. Initialize a 2D list `b` of size `n x n` with `None`.
+4. For each index `i` from `0` to `n-1`:
+   - Set `m` to the value of `a[i]`.
+   - For each index `j` from `0` to `n-1`:
+     - Calculate `k` as `i - j`, and if `k` is less than `0`, add `n` to `k`.
+     - Update `m` to be the minimum of `m` and `a[k]`.
+     - Set `b[j][i]` to the value of `m`.
+5. Initialize `m` to a large value (`10 ** 15`).
+6. For each row index `i` and corresponding row `j` in `b`:
+   - Update `m` to be the minimum of `m` and the sum of row `j` plus `x * i`.
+7. Print the value of `m`.
+
+Control Structures:
+- Loop: For `i` from `0` to `n-1`
+- Loop: For `j` from `0` to `n-1`
+- Conditional: If `k < 0`, then `k += n`
+- Loop: For each row index `i` and corresponding row `j` in `b`
+
+Input/Output Operations:
+- Input: Two integers `n` and `x` on the first line, followed by `n` integers on the second line.
+- Output: A single integer, the minimum value of `m`.
+
+Data Processing Logic:
+- Populate the 2D list `b` based on the minimum values in a circular manner from list `a`.
+- Calculate the minimum sum of each row in `b` adjusted by the index multiplied by `x`.
+
+Libraries, Modules, or Dependencies:
+- No external libraries or modules are required.

@@ -1,0 +1,21 @@
+Function signature: `main() -> None`
+
+Variable declarations and data types:
+- `N: int`
+- `K: int`
+
+Execution order and logic flow:
+1. Read input values for `N` and `K` as integers.
+2. Check if `N` modulo `K` equals 0.
+3. If true, print 0.
+4. Otherwise, print 1.
+
+Control structures:
+- Conditional statement: `if N % K == 0:`
+
+Input/output operations and data processing logic:
+- Input: Read two integers `N` and `K` from standard input.
+- Output: Print either 0 or 1 based on the condition.
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required.

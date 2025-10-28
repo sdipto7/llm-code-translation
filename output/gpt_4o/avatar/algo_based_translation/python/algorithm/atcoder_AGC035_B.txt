@@ -1,0 +1,44 @@
+```plaintext
+Algorithm:
+
+Input:
+- Read integers N and M from input which represent the number of nodes and edges in the graph.
+
+Variable Declarations:
+- edges: List of sets, each set holds integers representing connected nodes (undirected edges) for each node, size N.
+- degs: List of integers, degree of each node, size N.
+- parity: List of integers, parity (0 or 1) for each node, size N.
+- flag: List of booleans, indicates if a node has been processed, size N.
+- Q: List of tuples, each tuple contains (degree, node_index).
+
+Execution Logic:
+1. Initialize edges as a list of empty sets for each node.
+2. Initialize degs, parity, and flag as lists of zeroes or False for each node.
+3. For each edge from input (M iterations):
+   a. Read integers a and b.
+   b. Add b-1 to the set of edges for node a-1 and vice versa (since it's undirected).
+   c. Increment the degree of nodes a-1 and b-1.
+4. If M is odd, print -1 and terminate the program.
+5. Populate list Q with tuples of (degree, node_index) for each node.
+6. Transform Q into a min-heap using heapq.heapify.
+7. While Q is not empty:
+   a. Extract the smallest element from Q, which is a tuple (_, u).
+   b. If flag[u] is True, continue to the next iteration.
+   c. Set flag[u] to True (mark node u as processed).
+   d. Iterate over each connected node v in edges[u]:
+      i. Remove u from the set of edges for node v.
+      ii. If parity[u] is not 0 and it's the first edge (i == 0):
+          - Print the edge (u+1, v+1) and toggle parity[u].
+      iii. Else:
+          - Print the edge (v+1, u+1) and toggle parity[v].
+      iv. Decrement the degree of node v.
+      v. Push (degree of v, v) back into the heap Q.
+
+Output:
+- Print pairs of integers representing edges as specified during processing.
+
+Dependencies:
+- numpy
+- collections.deque
+- heapq
+```

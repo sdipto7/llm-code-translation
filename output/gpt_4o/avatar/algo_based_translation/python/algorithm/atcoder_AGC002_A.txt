@@ -1,0 +1,29 @@
+```
+1. Import required modules: bisect, collections, copy, heapq, itertools, math, numpy, string, sys.
+
+2. Define function S() -> str:
+   a. Read a line from standard input, remove trailing whitespace, and return the result as a string.
+
+3. Define function I() -> int:
+   a. Read a line from standard input, remove trailing whitespace, convert to integer, and return the result.
+
+4. Define function LI() -> List[int]:
+   a. Read a line from standard input, remove trailing whitespace, split into strings, convert each to an integer, and return as a list of integers.
+
+5. Define function LS() -> List[str]:
+   a. Read a line from standard input, remove trailing whitespace, split into strings, and return as a list of strings.
+
+6. Read two integers a, b from standard input using LI().
+
+7. If a > 0:
+   a. Output "Positive".
+
+8. Else if a <= 0 and b >= 0:
+   a. Output "Zero".
+
+9. Else:
+   a. If (a + b) % 2 == 0:
+      i. Output "Negative".
+   b. Else:
+      i. Output "Positive".
+```

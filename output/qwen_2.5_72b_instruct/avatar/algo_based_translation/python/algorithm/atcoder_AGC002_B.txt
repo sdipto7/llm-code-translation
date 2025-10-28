@@ -1,0 +1,59 @@
+**Function Signatures:**
+- `input() -> str`
+- `INT() -> int`
+- `MAP() -> map(int)`
+- `LIST() -> list(int)`
+- `ZIP(n: int) -> zip`
+
+**Variable Declarations and Data Types:**
+- `N: int`
+- `M: int`
+- `balls: list(list(int))`
+- `x: int`
+- `y: int`
+- `w_x: int`
+- `r_x: int`
+- `w_y: int`
+- `r_y: int`
+- `ans: int`
+
+**Libraries, Modules, or Dependencies:**
+- `sys`
+- `re`
+- `collections`
+- `math`
+- `itertools`
+- `operator`
+- `copy`
+- `string`
+- `bisect`
+- `fractions`
+- `heapq`
+- `functools`
+
+**Execution Order and Logic Flow:**
+
+1. Import necessary libraries and modules.
+2. Define input handling functions: `input()`, `INT()`, `MAP()`, `LIST()`, `ZIP()`.
+3. Set recursion limit to \(10^9\).
+4. Initialize constants: `INF = float('inf')`, `mod = 10^9 + 7`.
+5. Read integers `N` and `M` using `MAP()`.
+6. Initialize `balls` as a list of lists: `[ [1, 0] for _ in range(N) ]`.
+7. Set the first element of `balls` to `[0, 1]`.
+8. For `M` iterations:
+   - Read integers `x` and `y` using `MAP()`.
+   - Assign `w_x` and `r_x` to the values of `balls[x-1]`.
+   - Assign `w_y` and `r_y` to the values of `balls[y-1]`.
+   - If `w_x >= 1` and `r_x >= 1`:
+     - Decrement `balls[x-1][0]` by 1.
+     - Increment `balls[y-1][1]` by 1.
+   - Else if `w_x == 0`:
+     - Decrement `balls[x-1][1]` by 1.
+     - Increment `balls[y-1][1]` by 1.
+   - Else:
+     - Decrement `balls[x-1][0]` by 1.
+     - Increment `balls[y-1][0]` by 1.
+9. Initialize `ans` to 0.
+10. For each index `i` in range `N`:
+    - If `balls[i][1]` is not 0, increment `ans` by 1.
+11. Print `ans`.

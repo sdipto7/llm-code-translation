@@ -1,0 +1,30 @@
+1. Define a function `reverse_list_input` with no parameters and return type void.
+2. Declare variable `n` of type integer.
+3. Read an integer from standard input and store it in `n`.
+4. Declare a list `x` of type integer array.
+5. Read `n` integers from standard input, separated by spaces, into a list `x`.
+6. Reverse the order of elements in list `x` in-place.
+7. Print the elements of the reversed list `x` to standard output, separated by spaces.
+
+Alternatively, a more detailed step-by-step breakdown:
+1. Start execution.
+2. Read integer `n` from input.
+3. Initialize an empty list `x`.
+4. Read `n` space-separated integers into `x`.
+5. Iterate over the input string to extract integers and store them in `x`.
+6. Reverse the list `x`.
+7. Iterate over the reversed list `x` and print its elements.
+8. End execution. 
+
+In a more formal representation:
+- Function: `main() -> void`
+- Read `n: integer` from input
+- Initialize `x: list[integer]`
+- `x = map_input_to_list(n)`
+- `reverse(x)`
+- `print_list(x)`
+
+Where:
+- `map_input_to_list(n: integer) -> list[integer]`: reads `n` integers from input into a list.
+- `reverse(x: list[integer]) -> void`: reverses the list `x` in-place.
+- `print_list(x: list[integer]) -> void`: prints the elements of `x` to output.

@@ -1,0 +1,38 @@
+Algorithm Extraction:
+
+Function Signature:
+- public static void main(String[] args) → void
+
+Variables:
+- Scanner sc → java.util.Scanner
+- int a ← Integer input
+- int b ← Integer input
+- int sum ← 0
+- int i (loop counter)
+
+Logic Flow:
+1. Import java.util.Scanner
+2. Initialize Scanner with System.in
+3. Read first input token → parse to int → assign to a
+4. Read second input token → parse to int → assign to b
+5. Initialize sum to 0
+6. For loop (i = 0; i < 2; i++):
+   a. If a >= b:
+      i. Add current a to sum
+      ii. Decrement a by 1
+   b. Else:
+      i. Add current b to sum
+      ii. Decrement b by 1
+7. After loop completion, print sum to standard output
+
+Control Structures:
+- for (int i = 0; i < 2; i++)
+  - Runs exactly 2 iterations
+- if (a >= b) with else branch
+
+Input/Output:
+- Input: Two space-separated integers via standard input
+- Output: Single integer result via System.out.println
+
+Dependencies:
+- Requires java.util.Scanner for input handling

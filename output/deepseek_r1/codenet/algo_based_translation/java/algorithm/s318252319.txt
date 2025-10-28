@@ -1,0 +1,31 @@
+- Function signature:  
+main(String[] args) : void  
+
+- Dependencies:  
+java.util.Scanner  
+
+- Variables:  
+Scanner sc (Scanner)  
+String s (user input)  
+int n (last digit)  
+
+- Input:  
+Read string via Scanner from standard input  
+
+- Processing:  
+1. Extract last character of input string using substring(s.length()-1, s.length())  
+2. Parse extracted substring to integer n  
+
+- Conditional checks:  
+if n == 3 → print "bon"  
+else if n ∈ {0,1,6,8} → print "pon"  
+else → print "hon"  
+
+- Control flow:  
+Single sequential flow with chained conditional branches  
+
+- Output:  
+Print result to standard output based on digit value  
+
+- Termination:  
+Close Scanner after processing

@@ -1,0 +1,57 @@
+**Function Signatures:**
+- `public static void main(String[] args) throws Exception`
+- `FastReader()` constructor
+- `String next()`
+- `int nextInt()`
+- `long nextLong()`
+- `double nextDouble()`
+- `String nextLine()`
+
+**Variable Declarations:**
+- `FastReader in = new FastReader()`
+- `int n = in.nextInt()`
+- `TreeSet<Integer> left = new TreeSet<>()`
+- `int[] answer = new int[n]`
+- `int q = in.nextInt()`
+- `int l = in.nextInt() - 1`
+- `int r = in.nextInt() - 1`
+- `int win = in.nextInt()`
+- `int curr = left.ceiling(l)`
+- `StringBuilder ans = new StringBuilder()`
+- `StringTokenizer st`
+- `BufferedReader br`
+
+**Logic Flow:**
+1. Initialize FastReader for input
+2. Read integer n
+3. Create TreeSet "left" and integer array "answer" of size n
+4. Add all indices 0 to n-1 to TreeSet "left"
+5. Read integer q
+6. While q > 0:
+   - Read l, r, win (decrement l and r by 1)
+   - While left.ceiling(l) exists and left.ceiling(l) ≤ r:
+     - Set curr = left.ceiling(l)
+     - Set answer[curr] = win
+     - Remove curr from TreeSet "left"
+   - Set answer[win-1] = 0
+   - Add win-1 to TreeSet "left"
+   - Decrement q
+7. Build output string by appending all elements of answer array
+8. Print output string
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < n; i++)`
+- While loop: `while (q-- > 0)`
+- While loop: `while (left.ceiling(l) != null && left.ceiling(l) <= r)`
+- While loop: `while (st == null || !st.hasMoreElements())`
+- While loop: `while (st == null || st.hasMoreElements())`
+- Try-catch blocks for IOException handling
+
+**Input/Output Operations:**
+- Read from System.in via BufferedReader
+- Parse input using StringTokenizer
+- Write to System.out via println
+
+**Required Libraries:**
+- java.util.*
+- java.io.*

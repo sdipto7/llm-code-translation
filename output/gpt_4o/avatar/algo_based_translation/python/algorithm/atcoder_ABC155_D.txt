@@ -1,0 +1,54 @@
+1. Function Signature:
+   - Function Name: find_kth_smallest_product
+   - Parameters: N (int), K (int), A (List[int])
+   - Return Type: int
+
+2. Variable Declarations:
+   - ll: int
+   - rr: int
+   - x: int
+   - tot: int
+   - l, r, c: int
+
+3. Logic Flow:
+   - Initialize `ll` to -10**18 - 1
+   - Initialize `rr` to 10**18 + 1
+   - Sort the list `A` in non-decreasing order
+   - Start a binary search loop while `ll + 1 < rr`
+     - Set `x` to the average of `ll` and `rr`
+     - Initialize `tot` to 0
+     - Iterate over each element `A[i]` in the list `A`
+       - If `A[i]` is negative
+         - Initialize `l` to -1, `r` to N
+         - Start a while loop while `l + 1 < r`
+           - Set `c` to the average of `l` and `r`
+           - If the product `A[i] * A[c]` is less than `x`
+             - Set `r` to `c`
+           - Else
+             - Set `l` to `c`
+         - Add `N - r` to `tot`
+       - Else (i.e., `A[i]` is non-negative)
+         - Initialize `l` to -1, `r` to N
+         - Start a while loop while `l + 1 < r`
+           - Set `c` to the average of `l` and `r`
+           - If the product `A[i] * A[c]` is less than `x`
+             - Set `l` to `c`
+           - Else
+             - Set `r` to `c`
+         - Add `r` to `tot`
+       - If the square `A[i] * A[i]` is less than `x`
+         - Decrement `tot` by 1
+     - Divide `tot` by 2 and floor the result
+     - If `tot` is less than `K`
+       - Set `ll` to `x`
+     - Else
+       - Set `rr` to `x`
+   - Return `ll`
+
+4. Input/Output Operations:
+   - Input: Read integers `N` and `K` from input
+   - Input: Read a list of integers `A` from input
+   - Output: Print the value of `ll`
+
+5. Libraries/Modules:
+   - No external libraries or modules are required

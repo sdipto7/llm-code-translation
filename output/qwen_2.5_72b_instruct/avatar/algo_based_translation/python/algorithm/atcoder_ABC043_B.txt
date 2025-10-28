@@ -1,0 +1,30 @@
+Function Signature: process_input(s: str) -> str
+
+Variable Declarations:
+- s: str (input string)
+- my_str: str (initialized as empty string to accumulate binary digits and handle 'B' commands)
+
+Logic Flow:
+1. Read input and convert to string s
+2. Initialize an empty string my_str
+3. For each character c in s:
+   a. If c is '0' or '1':
+      i. Append c to my_str
+   b. Else if c is 'B' and my_str is not empty:
+      i. Remove the last character from my_str
+4. Print my_str
+
+Control Structures:
+- For loop iterates over each character in s
+- If-elif statement checks if character is '0' or '1' or 'B' with the condition that my_str is not empty
+
+Input/Output Operations:
+- Input: Reads from standard input and converts to string
+- Output: Prints the final value of my_str
+
+Data Processing Logic:
+- Accumulates binary digits ('0' or '1') in my_str
+- Removes the last character from my_str when 'B' is encountered, provided my_str is not empty
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries or modules required

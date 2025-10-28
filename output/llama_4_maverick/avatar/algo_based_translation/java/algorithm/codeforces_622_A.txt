@@ -1,0 +1,12 @@
+1. Initialize a buffer size.
+2. Create a scanner object with the specified buffer size to read from the standard input.
+3. Create a print writer object with the specified buffer size to write to the standard output.
+4. Define a function to calculate the value at a given index using the formula: 1 + ((index - 1) * index / 2).
+5. Read a long value representing a position from the standard input.
+6. Initialize a variable to store the nearest sequence start index to 1.
+7. While the value at twice the current nearest sequence start index is less than the given position, double the nearest sequence start index.
+8. While the value at the next index of the current nearest sequence start index is less than or equal to the given position, increment the nearest sequence start index.
+9. Calculate the start index of the sequence using the nearest sequence start index.
+10. Calculate the result by subtracting the start index from the given position and adding 1.
+11. Print the result to the standard output using the print writer object.
+12. Close the print writer object.

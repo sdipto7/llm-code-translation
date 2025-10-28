@@ -1,0 +1,11 @@
+1. Read four integers from the input: x, y, a, b.
+2. Initialize a counter variable to 0.
+3. Iterate over the range from a to x (inclusive) using a loop variable i.
+4. For each i, iterate over the range from b to y (inclusive) using a loop variable j.
+5. Inside the inner loop, check if i is less than or equal to j. If true, skip to the next iteration.
+6. If i is greater than j, increment the counter.
+7. After the nested loops finish, output the value of the counter.
+8. Repeat steps 3-4.
+9. Inside the inner loop, check if i is less than or equal to j. If true, skip to the next iteration.
+10. If i is greater than j, output the values of i and j.
+11. Terminate the program.

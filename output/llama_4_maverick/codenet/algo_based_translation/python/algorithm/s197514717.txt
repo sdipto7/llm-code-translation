@@ -1,0 +1,24 @@
+1. Define a function `get_max_value` with no parameters and return type `int`.
+2. Declare a variable `ABC` of type `list[int]`.
+3. Read input from the user and split it into a list of integers, assigning it to `ABC`.
+4. Declare variables `A`, `B`, and `C` of type `int`.
+5. Assign the first element of `ABC` to `A`, the second element to `B`, and the third element to `C`.
+6. Create a list containing three values: `10*A + B + C`, `10*B + C + A`, and `10*C + A + B`.
+7. Find the maximum value in the list created in step 6.
+8. Print the maximum value found in step 7.
+9. The function `get_max_value` returns the printed maximum value.
+
+Alternatively, a more detailed step-by-step algorithm can be represented as:
+
+1. `get_max_value() -> int`
+2. `ABC: list[int] = input().split()`
+3. `ABC: list[int] = list(map(int, ABC))`
+4. `A: int = ABC[0]`
+5. `B: int = ABC[1]`
+6. `C: int = ABC[2]`
+7. `values: list[int] = [10*A + B + C, 10*B + C + A, 10*C + A + B]`
+8. `max_value: int = max(values)`
+9. `print(max_value)`
+10. `return max_value` 
+
+Required libraries: built-in Python libraries (`input`, `map`, `list`, `max`, `print`)

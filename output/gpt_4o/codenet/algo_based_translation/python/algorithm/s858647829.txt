@@ -1,0 +1,31 @@
+1. Function Signature:
+   - Function: check_divisibility
+   - Parameters: a (int), b (int)
+   - Return Type: str
+
+2. Variable Declaration:
+   - a: int
+   - b: int
+   - result: str
+
+3. Logic Flow:
+   - Read two integers from input, a and b.
+   - Check divisibility:
+     - If `a` is divisible by 3 (`a % 3 == 0`), set `result` to 'Possible'.
+     - Else if `b` is divisible by 3 (`b % 3 == 0`), set `result` to 'Possible'.
+     - Else if the sum of `a` and `b` is divisible by 3 (`(a + b) % 3 == 0`), set `result` to 'Possible'.
+     - Else, set `result` to 'Impossible'.
+
+4. Control Structures:
+   - Conditionals: 
+     - `if` condition to check divisibility by 3 for `a`.
+     - `elif` condition to check divisibility by 3 for `b`.
+     - `elif` condition to check divisibility by 3 for the sum of `a` and `b`.
+     - `else` condition if none of the above conditions are met.
+
+5. Input/Output Operations:
+   - Input: Read a line of input, split by whitespace, and convert to integers `a` and `b`.
+   - Output: Print `result`.
+
+6. Required Libraries:
+   - No external libraries or modules are required.

@@ -1,0 +1,37 @@
+```
+- Import necessary libraries: BigInteger, IllegalCharsetNameException, and java.util.*
+
+- Define main function:
+  - Parameters: String[] args
+  - Return type: void
+
+- Declare variables:
+  - n, a, b as integers
+  - list1, list2 as ArrayList<Integer>
+
+- Initialize Scanner object to read input
+
+- Read three integers from input:
+  - n = sc.nextInt()
+  - a = sc.nextInt()
+  - b = sc.nextInt()
+
+- Initialize two ArrayList<Integer> to store lists:
+  - list1 = new ArrayList<>()
+  - list2 = new ArrayList<>()
+
+- Read 'a' integers and add them to list1:
+  - Loop from i = 0 to i < a:
+    - Add sc.nextInt() to list1
+
+- Read 'b' integers and add them to list2:
+  - Loop from i = 0 to i < b:
+    - Add sc.nextInt() to list2
+
+- Loop from i = 0 to i < n:
+  - Check if (i + 1) is in list1:
+    - If true, print "1 " (number 1 followed by a space)
+    - Else, print "2 " (number 2 followed by a space)
+
+- End of main function
+```

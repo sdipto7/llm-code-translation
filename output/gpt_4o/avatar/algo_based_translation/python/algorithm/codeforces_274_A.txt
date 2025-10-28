@@ -1,0 +1,29 @@
+Algorithm:
+
+1. **Function Signature:**
+   - Function name: `calculate_max_different`
+   - Parameters: `num: int`, `k: int`, `arr: List[int]`
+   - Return type: `int`
+
+2. **Variable Declarations:**
+   - `different: Set[int]` - a set to store unique elements
+   - `temp: int` - an integer to store the maximum size of the `different` set
+
+3. **Logic Flow:**
+   - Initialize `different` as an empty set.
+   - Initialize `temp` to 0.
+   - Sort the list `arr`.
+
+4. **Loop through each element in `arr` (denoted as `x`):**
+   - **Condition:** If `x % k != 0` or `x // k` is not in `different`:
+     - Add `x` to the `different` set.
+   - Update `temp` to be the maximum of `len(different)` and `temp`.
+
+5. **Return `temp`.**
+
+6. **Input/Output Operations:**
+   - Input is handled externally by passing parameters to the function.
+   - Output is the return value of the function, which is an integer representing the maximum number of different integers in the set.
+
+7. **Required Libraries, Modules, or Dependencies:**
+   - `List` and `Set` from the `typing` module for type annotations.

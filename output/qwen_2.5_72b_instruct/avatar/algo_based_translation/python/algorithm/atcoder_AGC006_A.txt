@@ -1,0 +1,22 @@
+Function Signature: `main()`
+Variable Declarations: 
+- `n: int`
+- `s: List[str]`
+- `t: List[str]`
+- `cnt: int`
+
+Logic Flow:
+1. Read integer `n` from input
+2. Read string and convert to list `s` from input
+3. Read string and convert to list `t` from input
+4. If `s` is equal to `t`:
+   - Print `n`
+5. Else:
+   - Initialize `cnt` to 0
+   - For `i` from 0 to `n-1`:
+     - For `j` from 0 to `n-i-1`:
+       - If `s[i+j]` is not equal to `t[j]`:
+         - Break inner loop
+       - If `j` is equal to `n-i-1`:
+         - Set `cnt` to `n-i`
+   - Print `2*n - cnt`

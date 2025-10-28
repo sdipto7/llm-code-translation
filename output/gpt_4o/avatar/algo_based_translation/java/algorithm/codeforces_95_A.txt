@@ -1,0 +1,54 @@
+```
+Algorithm:
+1. Function `compare(char[] aa, int i, char[] bb, int j, int m) -> int`:
+   - Declarations:
+     - `char a, b`
+   - While `m > 0`:
+     - `a = Character.toUpperCase(aa[i])`
+     - `b = Character.toUpperCase(bb[j])`
+     - If `a != b`, return `a - b`
+     - Increment `i` and `j`
+     - Decrement `m`
+   - Return `0`
+
+2. Function `main() -> void`:
+   - Declarations:
+     - `int n, m, l`
+     - `char[][] ss`
+     - `char[] cc`
+     - `char c, c_, a, a_`
+     - `boolean[] lucky`
+   - Initialize `n = sc.nextInt()`
+   - Initialize `ss = new char[n][]`
+   - For `i` from `0` to `n-1`:
+     - `ss[i] = sc.next().toCharArray()`
+   - Initialize `cc = sc.next().toCharArray()`
+   - Initialize `m = cc.length`
+   - Initialize `c = sc.next().charAt(0)`
+   - Initialize `c_ = Character.toUpperCase(c)`
+   - Initialize `a = c == 'a' ? 'b' : 'a'`
+   - Initialize `a_ = Character.toUpperCase(a)`
+   - Initialize `lucky = new boolean[m]`
+   - For `j` from `0` to `m-1`:
+     - For `i` from `0` to `n-1`:
+       - Initialize `l = ss[i].length`
+       - If `m - j >= l` and `compare(cc, j, ss[i], 0, l) == 0`:
+         - For `h` from `0` to `l-1`:
+           - `lucky[j + h] = true`
+   - For `j` from `0` to `m-1`:
+     - If `lucky[j]`:
+       - If `Character.toLowerCase(cc[j]) == c`:
+         - `cc[j] = Character.isUpperCase(cc[j]) ? a_ : a`
+       - Else:
+         - `cc[j] = Character.isUpperCase(cc[j]) ? c_ : c`
+   - Print `cc`
+
+3. Input/Output:
+   - Reads multiple strings from standard input
+   - Outputs a modified string to standard output
+
+Dependencies:
+- `java.io.*`
+- `java.util.*`
+- `Character` class for character operations
+```

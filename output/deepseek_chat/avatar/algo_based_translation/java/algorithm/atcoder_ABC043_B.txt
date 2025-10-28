@@ -1,0 +1,52 @@
+```python
+def main():
+    input_stream = sys.stdin
+    output_stream = sys.stdout
+    in_ = LightScanner(input_stream)
+    out = PrintWriter(output_stream)
+    solver = BUnhappyHackingABCEdit()
+    solver.solve(1, in_, out)
+    out.close()
+
+class BUnhappyHackingABCEdit:
+    def solve(self, testNumber, in_, out):
+        s = in_.string()
+        d = []
+        for c in s:
+            if c == '0':
+                d.append('0')
+            elif c == '1':
+                d.append('1')
+            elif c == 'B':
+                if len(d) > 0:
+                    d.pop()
+        out.println(''.join(d))
+
+class LightScanner:
+    def __init__(self, in_):
+        self.reader = BufferedReader(InputStreamReader(in_))
+        self.tokenizer = None
+    
+    def string(self):
+        if self.tokenizer is None or not self.tokenizer.hasMoreTokens():
+            try:
+                self.tokenizer = StringTokenizer(self.reader.readLine())
+            except IOException as e:
+                raise UncheckedIOException(e)
+        return self.tokenizer.nextToken()
+
+class PrintWriter:
+    def __init__(self, output_stream):
+        self.output_stream = output_stream
+    
+    def println(self, text):
+        self.output_stream.write(text + '\n')
+        self.output_stream.flush()
+    
+    def close(self):
+        self.output_stream.close()
+
+import sys
+from java.io import BufferedReader, InputStreamReader, OutputStream, PrintWriter as JavaPrintWriter, IOException, UncheckedIOException
+from java.util import StringTokenizer
+```

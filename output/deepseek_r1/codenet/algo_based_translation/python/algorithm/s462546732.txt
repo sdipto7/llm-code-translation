@@ -1,0 +1,25 @@
+- Function signature: N/A (script execution)
+- Variables:
+  - input_line: string
+  - a_str, b_str: string
+  - a: integer
+  - b: integer
+- Input operation:
+  - Read input line from stdin
+  - Split input_line into a_str and b_str using " " delimiter
+- Data processing:
+  - Convert a_str to integer a
+  - Convert b_str to integer b
+- Control structures:
+  - If condition (a <= b):
+    - When true: print a as integer
+    - When false: print (a - 1) as integer
+- Logic flow:
+  1. Read input
+  2. Split input into two strings
+  3. Convert strings to integers
+  4. Compare a and b
+  5. Execute print based on comparison result
+- Output operations:
+  - Print integer result to stdout
+- Dependencies: None (standard Python environment)

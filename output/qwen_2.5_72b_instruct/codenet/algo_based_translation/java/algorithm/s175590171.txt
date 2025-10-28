@@ -1,0 +1,59 @@
+Function signatures:
+- main(String[] args): void
+- FastScanner(): void
+- hasNextByte(): boolean
+- readByte(): int
+- isPrintableChar(int c): boolean
+- hasNext(): boolean
+- next(): String
+- nextLong(): long
+- nextInt(): int
+- nextDouble(): double
+
+Variable declarations and data types:
+- n: int
+- a: int[]
+- sum: long
+- count: int
+- in: InputStream
+- buffer: byte[]
+- ptr: int
+- buflen: int
+- minus: boolean
+- b: int
+- sb: StringBuilder
+- nl: long
+- c: int
+
+Logic flow in execution order:
+1. Create FastScanner object fs
+2. Read integer n from input
+3. Initialize array a of size n
+4. For i from 0 to n-1:
+   - Read integer and store in a[i]
+5. Sort array a
+6. Initialize sum to 0
+7. Initialize count to 0
+8. For i from 0 to n-2:
+   - Add a[i] to sum
+   - If a[i+1] is less than or equal to 2 times sum:
+     - Increment count by 1
+   - Else:
+     - Set count to 0
+9. Print count + 1
+
+Control structures:
+- For loop: from 0 to n-1 for reading array elements
+- For loop: from 0 to n-2 for processing array elements
+- If-else: checks if a[i+1] is less than or equal to 2*sum
+
+Input/output operations and data processing logic:
+- Read integer n
+- Read n integers into array a
+- Sort array a
+- Calculate sum and count based on the given condition
+- Print final count + 1
+
+Required libraries, modules, or dependencies:
+- java.util.*
+- java.io.*

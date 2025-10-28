@@ -1,0 +1,11 @@
+1. INPUT k, n, w
+2. SPLIT input into k, n, w
+3. CONVERT k, n, w to integers
+4. IF 1 <= k <= 1000 AND 1 <= w <= 1000 THEN
+5.     total = 0
+6.     FOR i FROM 1 TO w DO
+7.         total = total + i * k
+8.     IF total > n THEN
+9.         PRINT total - n
+10.    ELSE
+11.        PRINT 0

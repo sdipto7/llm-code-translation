@@ -1,0 +1,15 @@
+1. Import java.util.Scanner
+2. Define class Main
+3. Define public static void main(String[] args)
+   - Create new Main instance
+   - Call solve method
+4. Declare private Scanner sc initialized with System.in
+5. Define void solve()
+   - Declare int N = sc.nextInt()
+   - Declare int max, min
+   - Read first integer input and assign to both max and min
+   - For loop: i from 1 to N-1 (inclusive)
+     - Declare int in = sc.nextInt()
+     - Set max = maximum of max and in
+     - Set min = minimum of min and in
+   - Print (max - min)

@@ -1,0 +1,47 @@
+Function signatures with parameter and return types:
+- `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `ArrayList md = new ArrayList()`
+- `Scanner in = new Scanner(System.in)`
+- `int n = in.nextInt()`
+- `int[] a = new int[n]`
+- `int[] b = new int[n]`
+- `int temp = 0`
+- `int q = 0`
+- `int w = 0`
+- `int e = 0`
+- `boolean f = false`
+
+Complete logic flow in execution order:
+1. Initialize `Scanner` to read input.
+2. Read integer `n`.
+3. Declare arrays `a` and `b` of size `n`.
+4. Initialize variables `temp`, `q`, `w`, `e`, and `f`.
+5. Loop through indices `i` from `0` to `n-1`:
+   - Read integers into `a[i]` and `b[i]`.
+   - If `temp < a[i]`:
+     - If `q > b[i]`, set `f` to `true`.
+     - Set `q` to `b[i]`.
+     - Set `temp` to `a[i]`.
+   - If `temp > a[i]`:
+     - If `q < b[i]`, set `f` to `true`.
+     - Set `q` to `b[i]`.
+     - Set `temp` to `a[i]`.
+   - If `a[i] > w`:
+     - Set `w` to `a[i]`.
+     - If `b[i] < e`, set `f` to `true`.
+     - Set `e` to `b[i]`.
+   - If `a[i] < w`:
+     - If `b[i] > e`, set `f` to `true`.
+6. If `f` is `true`, print "Happy Alex".
+7. Otherwise, print "Poor Alex".
+
+Input/output operations and data processing logic:
+- Input: Read integer `n`, followed by pairs of integers for arrays `a` and `b`.
+- Output: Print "Happy Alex" if `f` is `true`; otherwise, print "Poor Alex".
+
+Required libraries, modules, or dependencies:
+- `java.util.ArrayList`
+- `java.util.Arrays`
+- `java.util.Scanner`

@@ -1,0 +1,31 @@
+1. Import the `java.util` package to use `Scanner`, `Map`, `HashMap`, and other utilities.
+
+2. Define the `main` function:
+   - Input: `String[] args`
+   - Output: `void`
+
+3. Inside the `main` function:
+   - Declare `Scanner sc` and initialize it to read from system input.
+   - Declare `Integer n` and assign it the integer value of the first input line.
+   - Declare `String vStr` and assign it to the next input line.
+   - Call `str2List(vStr)` and assign the result to `Map<Integer, Integer> vList`.
+   - Declare `String cStr` and assign it to the next input line.
+   - Call `str2List(cStr)` and assign the result to `Map<Integer, Integer> cList`.
+   - Declare `Integer max` and initialize it to 0.
+   - For loop: Iterate `Integer i` from 0 to `n-1` (inclusive).
+     - Calculate `Integer profit` as `vList.get(i) - cList.get(i)`.
+     - If `profit > 0`, add `profit` to `max`.
+   - Print the value of `max`.
+
+4. Define the `str2List` function:
+   - Input: `String str`
+   - Output: `Map<Integer, Integer>`
+   
+5. Inside the `str2List` function:
+   - Split `str` by spaces into a `String[] vArrStr`.
+   - Declare `Map<Integer, Integer> ret` and initialize it as a new `HashMap<>()`.
+   - Declare `Integer key` and initialize it to 0.
+   - For each `String val` in `vArrStr`:
+     - Convert `val` to `Integer` and put it in `ret` with the current `key`.
+     - Increment `key` by 1.
+   - Return `ret`.

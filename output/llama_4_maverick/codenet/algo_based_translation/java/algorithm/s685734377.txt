@@ -1,0 +1,32 @@
+1. Define a function `main()` with no parameters and return type `void`.
+   - Initialize `inputStream` as `System.in` and `outputStream` as `System.out`.
+   - Create a `FastScanner` object `in` with `inputStream`.
+   - Create a `PrintWriter` object `out` with `outputStream`.
+   - Create a `TaskB` object `solver`.
+   - Call `solver.solve(1, in, out)`.
+   - Close `out`.
+
+2. Define a function `solve(int testNumber, FastScanner in, PrintWriter out)` with return type `void`.
+   - Read an integer `n` using `in.nextInt()`.
+   - Declare a 2D char array `a` of size `n x n`.
+   - Define `P = 37` and `Q = 47` as `long`.
+   - Declare two `long` arrays `powP` and `powQ` of size `n + 1`.
+   - Initialize `powP[0]` and `powQ[0]` to `1`.
+   - For `i` from `1` to `n`, calculate `powP[i] = powP[i - 1] * P` and `powQ[i] = powQ[i - 1] * Q`.
+   - For `i` from `0` to `n-1`, read a string using `in.next()`, convert it to a char array, and store it in `a[i]`.
+   - Declare two 2D `long` arrays `hashRow` and `hashCol` of size `n x n`.
+   - For `i` from `0` to `n-1` and `j` from `0` to `n-1`, for `k` from `0` to `n-1`, calculate `hashRow[i][k] += a[i][j] * powP[(j - k + n) % n]` and `hashCol[j][k] += a[i][j] * powP[(i - k + n) % n]`.
+   - Initialize `ans` to `0`.
+   - For `A` from `0` to `n-1` and `B` from `0` to `n-1`, check if for all `i` from `0` to `n-1`, `hashRow[(i + A) % n][B] == hashCol[(i + B) % n][A]`. If true, increment `ans` by `1`.
+   - Print `ans` using `out.println(ans)`.
+
+3. Define a class `FastScanner` with a constructor taking an `InputStream`.
+   - Initialize a `BufferedReader` object `br` with a new `InputStreamReader` using the provided `InputStream`.
+   - Declare a `StringTokenizer` object `st`.
+
+4. Define a function `nextInt()` with return type `int` inside `FastScanner`.
+   - Return the integer parsed from the string obtained by `next()`.
+
+5. Define a function `next()` with return type `String` inside `FastScanner`.
+   - While `st` is `null` or has no more elements, read a line from `br`, tokenize it, and store it in `st`.
+   - Return the next token from `st`.

@@ -1,0 +1,26 @@
+```
+Libraries and Dependencies:
+- Import the following modules: os, sys, io, math, and tokenize.Triple
+
+Input/Output Operations:
+- Function IN() reads an integer input and returns it.
+- Function input() reads a line from standard input as a string.
+- Read an integer n from input using IN().
+- Read two integers l and r from input using input() and map().
+
+Variable Declarations and Data Types:
+- n: integer, the number of intervals.
+- id: integer, initialized to 0.
+- l, r: integers, initial left and right bounds of intervals.
+
+Execution Flow and Logic:
+1. Initialize id to 0.
+2. Read initial interval values l and r.
+3. Loop from i = 1 to n-1 (inclusive):
+   - Read two integers li and ri from input using input() and map().
+   - If li <= l and r <= ri, then update id to i.
+   - Else, if li < l or r < ri, update id to n.
+   - Update l to the minimum of l and li.
+   - Update r to the maximum of r and ri.
+4. After the loop, print -1 if id equals n, otherwise print id + 1.
+```

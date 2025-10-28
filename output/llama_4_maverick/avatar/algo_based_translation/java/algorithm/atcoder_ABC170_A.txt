@@ -1,0 +1,9 @@
+1. Read input line from the standard input.
+2. Split the input line into an array of strings using space as the delimiter.
+3. Initialize a counter variable to 0.
+4. Iterate through each string in the array.
+5. For each string, increment the counter by 1.
+6. Check if the current string is equal to "0".
+7. If the string is "0", stop iterating through the array.
+8. Print the counter value to the standard output.
+9. Close the input and output streams.

@@ -1,0 +1,25 @@
+```
+Function: calculate_max_operation(a: int, b: int) -> int
+
+Variables:
+- a: int
+- b: int
+- results: List[int]
+
+Input:
+- Read a line of input containing two space-separated integers.
+- Extract integers a and b from the input.
+
+Logic:
+1. Initialize a list named results.
+2. Perform the following arithmetic operations:
+   a. Calculate the sum of a and b. Append the result to results.
+   b. Calculate the difference of a and b (a - b). Append the result to results.
+   c. Calculate the product of a and b. Append the result to results.
+3. Determine the maximum value in the results list.
+
+Output:
+- Return the maximum value from the list of results.
+```
+
+

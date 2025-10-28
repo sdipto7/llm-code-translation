@@ -1,0 +1,10 @@
+1. Read the number of elements, n.
+2. Initialize an array, ara, of size n to store the input elements.
+3. Create a map to store the frequency of each element in the array.
+4. Iterate through the array, storing each input element in ara and updating its frequency in the map.
+5. Find the maximum frequency of any element in the map.
+6. Create another map, mm, to track the frequency of elements as they are iterated through ara again.
+7. Iterate through ara again, updating the frequency of each element in mm.
+8. Check if the frequency of the current element in mm equals the maximum frequency found earlier.
+9. If the frequency matches the maximum, print the element and stop iterating.
+10. End the process.

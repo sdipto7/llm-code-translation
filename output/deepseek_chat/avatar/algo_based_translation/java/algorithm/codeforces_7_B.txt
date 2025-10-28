@@ -1,0 +1,83 @@
+**Function Signature:**
+main(String[] args)
+
+**Parameters:**
+- args: String array (command line arguments)
+
+**Return Type:**
+void
+
+**Variables:**
+- Scanner s (input scanner)
+- int t (number of commands)
+- int m (memory size)
+- int[] memory (memory array of size m)
+- int allocIdx (allocation counter, starts at 0)
+- int j (loop counter for commands)
+- String command (input command)
+- int n (size parameter for alloc)
+- int len (current free block length)
+- boolean canAlloc (allocation flag)
+- int i (general loop counter)
+- int x (erase parameter)
+- boolean hasErased (erase success flag)
+- int d (defragment counter)
+
+**Required Libraries:**
+- java.util.Scanner
+
+**Algorithm Flow:**
+
+1. Initialize Scanner with System.in
+2. Read integer t (number of commands)
+3. Read integer m (memory size)
+4. Create integer array 'memory' of size m (all zeros)
+5. Initialize allocIdx = 0
+6. For j from 0 to t-1:
+   a. Read next token as command
+   b. Switch on command:
+   
+   Case "alloc":
+      - Read integer n (allocation size)
+      - Set len = 0, canAlloc = false
+      - For i from 0 to m-1:
+          * If memory[i] == 0: increment len
+          * Else: set len = 0
+          * If len == n:
+               Set canAlloc = true
+               Set len = i - n + 1 (start index)
+               Break loop
+      - If canAlloc is true:
+          * Increment allocIdx
+          * For i from len to len+n-1: set memory[i] = allocIdx
+          * Print allocIdx
+      - Else: print "NULL"
+      - Break switch
+   
+   Case "erase":
+      - Read integer x (block to erase)
+      - If x ≤ 0:
+          * Print "ILLEGAL_ERASE_ARGUMENT"
+          * Break switch
+      - Set hasErased = false
+      - For i from 0 to m-1:
+          * If memory[i] == x:
+               Set memory[i] = 0
+               Set hasErased = true
+      - If hasErased is false: print "ILLEGAL_ERASE_ARGUMENT"
+      - Break switch
+   
+   Case "defragment":
+      - Set d = 0
+      - For i from 0 to m-1:
+          * If memory[i] == 0: increment d
+          * Else: set memory[i-d] = memory[i]
+      - For i from m-d to m-1: set memory[i] = 0
+      - Break switch
+   
+   Default:
+      - Print "h"
+      - Break switch
+
+7. Close Scanner
+8. End program

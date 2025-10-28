@@ -1,0 +1,93 @@
+```
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.InputStream
+import java.io.InputStreamReader
+import java.io.PrintWriter
+import java.util.AbstractMap
+import java.util.StringTokenizer
+
+function main():
+    FastScanner sc = new FastScanner(System.in)
+    PrintWriter out = new PrintWriter(System.out)
+    solve(sc, out)
+    out.flush()
+
+function solve(FastScanner sc, PrintWriter out):
+    String s = sc.next()
+    String[] a = {"a", "e", "i", "o", "u"}
+    for each String str in a:
+        if str.equalsIgnoreCase(s):
+            out.println("vowel")
+            return
+    out.println("consonant")
+
+function gcd(int a, int b) -> int:
+    if a < b:
+        return gcd(b, a)
+    if b == 0:
+        return a
+    return gcd(b, a % b)
+
+function gcd(long a, long b) -> long:
+    if a < b:
+        return gcd(b, a)
+    if b == 0:
+        return a
+    return gcd(b, a % b)
+
+function lcm(int a, int b) -> int:
+    return (a * b) / gcd(a, b)
+
+class Pair<K, V> extends AbstractMap.SimpleEntry<K, V>
+    constructor Pair(K key, V value):
+        super(key, value)
+
+    method swap() -> Pair<V, K>:
+        return new Pair<V, K>(getValue(), getKey())
+
+class FastScanner
+    private BufferedReader reader = null
+    private StringTokenizer tokenizer = null
+    
+    constructor FastScanner(InputStream in):
+        reader = new BufferedReader(new InputStreamReader(in))
+        tokenizer = null
+    
+    method next() -> String:
+        if tokenizer is null or not tokenizer.hasMoreTokens():
+            try:
+                tokenizer = new StringTokenizer(reader.readLine())
+            except IOException e:
+                throw new RuntimeException(e)
+        return tokenizer.nextToken()
+    
+    method nextLine() -> String:
+        if tokenizer is null or not tokenizer.hasMoreTokens():
+            try:
+                return reader.readLine()
+            except IOException e:
+                throw new RuntimeException(e)
+        return tokenizer.nextToken("\n")
+    
+    method nextLong() -> long:
+        return Long.parseLong(next())
+    
+    method nextInt() -> int:
+        return Integer.parseInt(next())
+    
+    method nextDouble() -> double:
+        return Double.parseDouble(next())
+    
+    method nextIntArray(int n) -> int[]:
+        int[] a = new int[n]
+        for int i = 0 to n exclusive:
+            a[i] = nextInt()
+        return a
+    
+    method nextLongArray(int n) -> long[]:
+        long[] a = new long[n]
+        for int i = 0 to n exclusive:
+            a[i] = nextLong()
+        return a
+```

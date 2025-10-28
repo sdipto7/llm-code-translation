@@ -1,0 +1,29 @@
+```
+Input: Two integers `n` and `k` from standard input
+Input: A string `v` from standard input
+
+Variables:
+- `n`: int
+- `k`: int
+- `v`: str
+- `d`: list[str] initialized to ["LEFT", "RIGHT"]
+- `f`: bool
+- `m`: int
+- `a`: list[str] initialized to an empty list
+
+Algorithm:
+1. Read the integers `n` and `k` from input and assign them.
+2. Read the string `v` from input.
+3. Determine the direction:
+   - `f = k - 1 < n - k`
+4. Calculate the minimum number of steps to the nearest end:
+   - `m = min(k - 1, n - k)`
+5. Append direction steps to `a`:
+   - For each `i` in range from 0 to `m` (exclusive):
+     - Append `d[not f]` to list `a`.
+6. For each character `i` in the string `v` traversed in the order determined by `f`:
+   - Append `"PRINT " + i` to list `a`.
+   - Append `d[f]` to list `a`.
+7. Output each element of `a` except the last one, separated by newlines.
+```
+

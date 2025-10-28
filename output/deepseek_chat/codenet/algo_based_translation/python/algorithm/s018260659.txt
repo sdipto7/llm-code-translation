@@ -1,0 +1,35 @@
+**Function Signature:**
+- No explicit function defined; code runs at module level.
+- Input: integer `N` from standard input.
+- Output: prints "Yes" or "No" to standard output.
+
+**Variable Declarations:**
+- `N`: integer (from input)
+- `cnt`: integer, initialized to 1
+
+**Logic Flow:**
+1. Read integer `N` from standard input.
+2. Initialize integer `cnt` to 1.
+3. Enter `while` loop with condition: `cnt <= 9`.
+4. Inside loop:
+   - Check condition: `(N % cnt == 0) and (1 <= N/cnt <= 9)`.
+   - If true:
+        - Print "Yes".
+        - Break out of loop.
+   - Else:
+        - Increment `cnt` by 1.
+5. If loop exits normally (without break), execute `else` clause of while loop:
+   - Print "No".
+
+**Control Structures:**
+- `while cnt <= 9:`
+- `if (N % cnt == 0) and (1 <= N/cnt <= 9):`
+- `else:` (for if condition)
+- `else:` (for while loop)
+
+**Input/Output Operations:**
+- Input: `int(input())`
+- Output: `print('Yes')` or `print('No')`
+
+**Dependencies:**
+- None (uses built-in functions only)

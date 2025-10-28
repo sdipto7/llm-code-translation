@@ -1,0 +1,15 @@
+1. Read input string from the user.
+2. Convert the input string into a character array.
+3. Create an empty hash map to store characters and their frequencies.
+4. Iterate through the character array.
+5. For each character, check if it exists in the hash map.
+6. If the character exists, increment its frequency by 1.
+7. If the character does not exist, add it to the hash map with a frequency of 1.
+8. Initialize a flag to indicate whether the string meets the required condition.
+9. Iterate through the entries in the hash map.
+10. For each entry, check if the frequency is equal to 2.
+11. If any frequency is not equal to 2, set the flag to false and exit the loop.
+12. Check if the flag is true and the size of the hash map is equal to 2.
+13. If both conditions are met, output "Yes".
+14. Otherwise, output "No".
+15. Close the input stream.

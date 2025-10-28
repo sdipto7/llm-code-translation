@@ -1,0 +1,44 @@
+**Function Signature:**
+- `public static void main(String[] args) throws Exception`
+
+**Variables:**
+- `int num = 998244353` (unused constant)
+- `BufferedReader bf = new BufferedReader(new InputStreamReader(System.in))`
+- `PrintWriter out = new PrintWriter(System.out)`
+- `int n = Integer.parseInt(bf.readLine())`
+- `ArrayList<Integer> ai = new ArrayList<Integer>()`
+- `ArrayList<Integer> bi = new ArrayList<Integer>()`
+- `int i` (loop counter)
+- `StringTokenizer st` (inside loop)
+- `double b` (for even case)
+- `double c` (for even case)
+
+**Logic Flow:**
+1. Read integer `n` from input
+2. For `i` from 0 to `n-1`:
+   - Read next line and split into tokens
+   - Parse first token as integer and add to `ai`
+   - Parse second token as integer and add to `bi`
+3. Sort `ai` in ascending order
+4. Sort `bi` in ascending order
+5. If `n % 2 == 1` (odd number of elements):
+   - Calculate median of `bi` at index `bi.size()/2`
+   - Calculate median of `ai` at index `ai.size()/2`
+   - Output `(bi_median - ai_median + 1)`
+6. Else (even number of elements):
+   - Calculate lower median of `ai`: average of elements at indices `ai.size()/2` and `ai.size()/2 - 1`
+   - Calculate lower median of `bi`: average of elements at indices `bi.size()/2` and `bi.size()/2 - 1`
+   - Output `(int)(2 * (bi_lower_median - ai_lower_median) + 1)`
+7. Close output stream
+
+**Control Structures:**
+- `for (int i = 0; i < n; i++)` loop
+- `if (n % 2 == 1)` conditional with `else` branch
+
+**Input/Output:**
+- Input: Reads `n` lines with two integers each
+- Output: Prints one integer result
+
+**Required Libraries:**
+- `java.util.*` (ArrayList, Collections, StringTokenizer)
+- `java.io.*` (BufferedReader, InputStreamReader, PrintWriter)

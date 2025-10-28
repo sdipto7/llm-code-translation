@@ -1,0 +1,9 @@
+1. Read two integers n and m from input.
+2. Initialize an array arr of size n.
+3. Initialize an array gen of size 11 with all elements as 0.
+4. For i ranging from 0 to n-1, read an integer into arr[i] and increment gen[arr[i]] by 1.
+5. Initialize a variable ans to 0.
+6. For i ranging from 1 to m, iterate through the following steps:
+   6.1 For k ranging from 1 to m, iterate through the following steps:
+      6.1.1 If i is not equal to k, increment ans by the product of gen[i] and gen[k].
+7. Print the integer division of ans by 2.

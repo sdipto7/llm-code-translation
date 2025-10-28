@@ -1,0 +1,29 @@
+Function Signature: calculate_difference(X: int, t: int) -> int
+
+Variable Declarations:
+- X: int
+- t: int
+- answer: int
+
+Execution Order:
+1. Read input values as a single line, split by space, and map both to integers. Assign the first value to X and the second to t.
+2. If X is greater than t, compute the difference between X and t, assign the result to answer.
+3. If X is less than or equal to t, assign 0 to answer.
+4. Print the value of answer.
+
+Control Structures:
+- If condition: X > t
+- Else if condition: X <= t
+
+Input/Output Operations:
+- Input: Read a single line of input containing two space-separated integers.
+- Output: Print a single integer representing the computed answer.
+
+Data Processing Logic:
+- Compare the values of X and t.
+- Compute the difference if X is greater than t.
+- Assign 0 if X is less than or equal to t.
+- Output the result.
+
+Libraries/Modules/Dependencies:
+- No external libraries or modules required.

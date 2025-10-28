@@ -1,0 +1,44 @@
+**Function Signature:**
+main(String[] args)
+
+**Parameters:**
+- args: String array
+
+**Return Type:**
+void
+
+**Variables:**
+- Scanner scan (Scanner object)
+- long N (input)
+- long A (input)
+- long B (input)
+- long k = 0
+
+**Input Operations:**
+- Read long N from standard input
+- Read long A from standard input
+- Read long B from standard input
+
+**Logic Flow:**
+1. Check if constraints are satisfied: 1 ≤ N ≤ 10^18, 0 ≤ A, 0 ≤ B, 0 < A+B ≤ 10^18
+2. If A+B ≤ N:
+   - Calculate k = N / (A+B)
+   - If remainder (N - k*(A+B)) > A:
+        Output: A*k + (remainder - (remainder - A))
+   - Else:
+        Output: A*k + remainder
+3. Else if A+B > N and A ≤ N:
+   - Output: A
+4. Else:
+   - Output: N
+
+**Control Structures:**
+- If condition: 1 ≤ N ≤ 10^18 ∧ 0 ≤ A ∧ 0 ≤ B ∧ 0 < A+B ≤ 10^18
+- Nested if-else:
+   - If A+B ≤ N
+   - Else if A+B > N ∧ A ≤ N
+   - Else
+
+**Required Libraries:**
+- java.util.Scanner
+- java.lang.*

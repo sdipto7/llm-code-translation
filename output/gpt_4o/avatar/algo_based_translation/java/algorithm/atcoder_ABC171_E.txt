@@ -1,0 +1,22 @@
+```
+Function: main
+Parameters: None
+Return Type: void
+
+1. Import necessary libraries:
+   - java.util.Scanner
+
+2. Declare variables:
+   - Scanner sc: Initialize scanner for input
+   - int n: Read an integer from input using sc.nextInt()
+   - int[] a: Initialize an integer array of size n
+   - int r: Initialize to 0
+
+3. For loop (int i = 0; i < n; i++):
+   - Read an integer from input and store in a[i]
+   - Perform XOR operation on r with a[i] and update r
+
+4. For loop (int i = 0; i < n; i++):
+   - If i is not 0, print a space without newline
+   - Print result of XOR operation between r and a[i] without newline
+```

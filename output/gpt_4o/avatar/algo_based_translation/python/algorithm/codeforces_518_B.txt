@@ -1,0 +1,53 @@
+```plaintext
+Function Signature:
+- function name: calculate_yay_whoops
+- parameters: none
+- returns: tuple (int, int)
+
+Algorithm:
+1. Input Operations:
+   a. Read input string `s`.
+   b. Read input string `t`.
+
+2. Variable Declarations:
+   a. `freqs`: dictionary to store frequency of each character in `s`.
+   b. `freqt`: dictionary to store frequency of each character in `t`.
+   c. `yay`: integer initialized to 0.
+   d. `whoops`: integer initialized to 0.
+
+3. Frequency Calculation for `s`:
+   a. Iterate over each character `letra` in `s`:
+      i.   If `letra` exists in `freqs`, increment its value by 1.
+      ii.  Otherwise, set `freqs[letra]` to 1.
+
+4. Frequency Calculation for `t`:
+   a. Iterate over each character `letra` in `t`:
+      i.   If `letra` exists in `freqt`, increment its value by 1.
+      ii.  Otherwise, set `freqt[letra]` to 1.
+
+5. Calculate `yay`:
+   a. Iterate over each character `letra` in `freqs.keys()`:
+      i.   While `freqs[letra] > 0` and `letra` is in `freqt` and `freqt[letra] > 0`:
+           - Increment `yay` by 1.
+           - Decrement `freqs[letra]` by 1.
+           - Decrement `freqt[letra]` by 1.
+
+6. Calculate `whoops`:
+   a. Iterate over each character `letra` in `freqs.keys()`:
+      i.   While `freqs[letra] > 0`:
+           - If `letra.islower()` and `letra.upper()` is in `freqt` and `freqt[letra.upper()] > 0`:
+               * Increment `whoops` by 1.
+               * Decrement `freqs[letra]` by 1.
+               * Decrement `freqt[letra.upper()]` by 1.
+           - Else if `letra.isupper()` and `letra.lower()` is in `freqt` and `freqt[letra.lower()] > 0`:
+               * Increment `whoops` by 1.
+               * Decrement `freqs[letra]` by 1.
+               * Decrement `freqt[letra.lower()]` by 1.
+           - Else, break the loop.
+
+7. Output Operations:
+   a. Print `yay` and `whoops`.
+
+Dependencies:
+- None
+```

@@ -1,0 +1,15 @@
+1. Define a function `calculate_result` with no parameters and return type `int`.
+2. Declare variables `R` and `G` of type `int`.
+3. Read input from the user and store it in `R` using an input operation, converting the input to `int`.
+4. Read input from the user and store it in `G` using an input operation, converting the input to `int`.
+5. Calculate the result using the formula `G * 2 - R` and store it in a variable `result` of type `int`.
+6. Output the value of `result` using a print operation.
+7. Return the value of `result` from the function `calculate_result`. 
+
+Alternatively, a more concise representation:
+- Function: `main() -> None`
+- Variables: `R: int`, `G: int`
+- Steps:
+1. `R = int(input())`
+2. `G = int(input())`
+3. `print(G * 2 - R)`

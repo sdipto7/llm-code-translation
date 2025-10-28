@@ -1,0 +1,264 @@
+- Main Class
+  - Function run() : void
+    - Try block
+      - Call new Solver().solve()
+      - Call System.exit(0)
+    - Catch block (Exception | Error e)
+      - Call e.printStackTrace()
+      - Call System.exit(1)
+  - Function main(String[] args) : void
+    - Call new Main().run()
+
+- Solver Class
+  - Variables
+    - Helper hp
+    - int MAXN = 1000006
+    - long MOD = 1000000007
+    - Timer timer
+    - TimerTask task
+    - boolean TESTCASES = false
+  - Constructor Solver()
+    - hp = new Helper(MOD, MAXN)
+    - Call hp.initIO(System.in, System.out)
+    - timer = new Timer()
+    - task = new TimerTask()
+      - Override run() : void
+        - Try block
+          - Call hp.flush()
+          - Call System.exit(0)
+        - Catch block (Exception e) {}  
+  - Function solve() throws Exception : void
+    - int tc = TESTCASES ? hp.nextInt() : 1
+    - For loop (int tce = 1; tce <= tc; ++tce)
+      - Call solve(tce)
+    - Call timer.cancel()
+    - Call hp.flush()
+  - Function solve(int tc) throws Exception : void
+    - Variables
+      - int i, j, k
+      - int N = hp.nextInt()
+      - long K = hp.nextLong()
+      - int[] A = hp.getIntArray(N)
+      - ArrayList<Integer> straight = new ArrayList<>()
+      - ArrayList<Integer> cycle = new ArrayList<>()
+      - boolean[] vis = new boolean[N]
+      - int curr = 0
+    - While loop (!vis[curr])
+      - vis[curr] = true
+      - curr = A[curr] - 1
+    - int st = 0
+    - While loop (st != curr)
+      - Call straight.add(st)
+      - st = A[st] - 1
+    - Call cycle.add(curr)
+    - curr = A[curr] - 1
+    - While loop (curr != cycle.get(0))
+      - Call cycle.add(curr)
+      - curr = A[curr] - 1
+    - If statement (K < straight.size())
+      - Call hp.println(straight.get((int) K) + 1)
+    - Else
+      - K -= straight.size()
+      - Call hp.println(cycle.get((int) (K % cycle.size())) + 1)
+
+- Helper Class
+  - Variables
+    - final long MOD
+    - final int MAXN
+    - final Random rnd
+    - static int[] sieve
+    - static ArrayList<Integer> primes
+    - static long[] factorial
+    - static final int BUFSIZE = 1 << 20
+    - static byte[] buf
+    - static int index, total
+    - static InputStream in
+    - static BufferedWriter bw
+  - Constructor Helper(long mod, int maxn)
+    - MOD = mod
+    - MAXN = maxn
+    - rnd = new Random()
+  - Function setSieve() : void
+    - primes = new ArrayList<>()
+    - sieve = new int[MAXN]
+    - For loop (int i = 2; i < MAXN; ++i)
+      - If statement (sieve[i] == 0)
+        - Call primes.add(i)
+        - For loop (int j = i; j < MAXN; j += i)
+          - sieve[j] = i
+  - Function setFactorial() : void
+    - factorial = new long[MAXN]
+    - factorial[0] = 1
+    - For loop (int i = 1; i < MAXN; ++i)
+      - factorial[i] = factorial[i - 1] * i % MOD
+  - Function getFactorial(int n) : long
+    - If statement (factorial == null)
+      - Call setFactorial()
+    - Return factorial[n]
+  - Function ncr(int n, int r) : long
+    - If statement (r > n)
+      - Return 0
+    - If statement (factorial == null)
+      - Call setFactorial()
+    - long numerator = factorial[n]
+    - long denominator = factorial[r] * factorial[n - r] % MOD
+    - Return numerator * pow(denominator, MOD - 2, MOD) % MOD
+  - Function getLongArray(int size) throws Exception : long[]
+    - long[] ar = new long[size]
+    - For loop (int i = 0; i < size; ++i)
+      - ar[i] = nextLong()
+    - Return ar
+  - Function getIntArray(int size) throws Exception : int[]
+    - int[] ar = new int[size]
+    - For loop (int i = 0; i < size; ++i)
+      - ar[i] = nextInt()
+    - Return ar
+  - Function getStringArray(int size) throws Exception : String[]
+    - String[] ar = new String[size]
+    - For loop (int i = 0; i < size; ++i)
+      - ar[i] = next()
+    - Return ar
+  - Function joinElements(long... ar) : String
+    - StringBuilder sb = new StringBuilder()
+    - For loop (long itr : ar)
+      - Call sb.append(itr).append(" ")
+    - Return sb.toString().trim()
+  - Function joinElements(int... ar) : String
+    - StringBuilder sb = new StringBuilder()
+    - For loop (int itr : ar)
+      - Call sb.append(itr).append(" ")
+    - Return sb.toString().trim()
+  - Function joinElements(String... ar) : String
+    - StringBuilder sb = new StringBuilder()
+    - For loop (String itr : ar)
+      - Call sb.append(itr).append(" ")
+    - Return sb.toString().trim()
+  - Function joinElements(Object... ar) : String
+    - StringBuilder sb = new StringBuilder()
+    - For loop (Object itr : ar)
+      - Call sb.append(itr).append(" ")
+    - Return sb.toString().trim()
+  - Function gcd(long a, long b) : long
+    - Return b == 0 ? a : gcd(b, a % b)
+  - Function gcd(int a, int b) : int
+    - Return b == 0 ? a : gcd(b, a % b)
+  - Function max(long... ar) : long
+    - long ret = ar[0]
+    - For loop (long itr : ar)
+      - ret = Math.max(ret, itr)
+    - Return ret
+  - Function max(int... ar) : int
+    - int ret = ar[0]
+    - For loop (int itr : ar)
+      - ret = Math.max(ret, itr)
+    - Return ret
+  - Function min(long... ar) : long
+    - long ret = ar[0]
+    - For loop (long itr : ar)
+      - ret = Math.min(ret, itr)
+    - Return ret
+  - Function min(int... ar) : int
+    - int ret = ar[0]
+    - For loop (int itr : ar)
+      - ret = Math.min(ret, itr)
+    - Return ret
+  - Function sum(long... ar) : long
+    - long sum = 0
+    - For loop (long itr : ar)
+      - sum += itr
+    - Return sum
+  - Function sum(int... ar) : long
+    - long sum = 0
+    - For loop (int itr : ar)
+      - sum += itr
+    - Return sum
+  - Function shuffle(int[] ar) : void
+    - int r
+    - For loop (int i = 0; i < ar.length; ++i)
+      - r = rnd.nextInt(ar.length)
+      - If statement (r != i)
+        - Swap ar[i] and ar[r] using XOR
+  - Function shuffle(long[] ar) : void
+    - int r
+    - For loop (int i = 0; i < ar.length; ++i)
+      - r = rnd.nextInt(ar.length)
+      - If statement (r != i)
+        - Swap ar[i] and ar[r] using XOR
+  - Function reverse(int[] ar) : void
+    - int r
+    - For loop (int i = 0; i < ar.length; ++i)
+      - r = ar.length - 1 - i
+      - If statement (r > i)
+        - Swap ar[i] and ar[r] using XOR
+  - Function reverse(long[] ar) : void
+    - int r
+    - For loop (int i = 0; i < ar.length; ++i)
+      - r = ar.length - 1 - i
+      - If statement (r > i)
+        - Swap ar[i] and ar[r] using XOR
+  - Function pow(long base, long exp, long MOD) : long
+    - base %= MOD
+    - long ret = 1
+    - While loop (exp > 0)
+      - If statement ((exp & 1) == 1)
+        - ret = ret * base % MOD
+      - base = base * base % MOD
+      - exp >>= 1
+    - Return ret
+  - Function initIO(InputStream is, OutputStream os) : void
+    - Try block
+      - in = is
+      - bw = new BufferedWriter(new OutputStreamWriter(os))
+      - buf = new byte[BUFSIZE]
+    - Catch block (Exception e) {}
+  - Function initIO(String inputFile, String outputFile) : void
+    - Try block
+      - in = new FileInputStream(inputFile)
+      - bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outputFile)))
+      - buf = new byte[BUFSIZE]
+    - Catch block (Exception e) {}
+  - Function scan() throws Exception : int
+    - If statement (index >= total)
+      - index = 0
+      - total = in.read(buf)
+      - If statement (total <= 0)
+        - Return -1
+    - Return buf[index++]
+  - Function next() throws Exception : String
+    - int c
+    - For loop (c = scan(); c <= 32; c = scan())
+    - StringBuilder sb = new StringBuilder()
+    - For loop (; c > 32; c = scan())
+      - Call sb.append((char) c)
+    - Return sb.toString()
+  - Function nextInt() throws Exception : int
+    - int c, val = 0
+    - For loop (c = scan(); c <= 32; c = scan())
+    - boolean neg = c == '-'
+    - If statement (c == '-' || c == '+')
+      - c = scan()
+    - For loop (; c >= '0' && c <= '9'; c = scan())
+      - val = (val << 3) + (val << 1) + (c & 15)
+    - Return neg ? -val : val
+  - Function nextLong() throws Exception : long
+    - int c
+    - long val = 0
+    - For loop (c = scan(); c <= 32; c = scan())
+    - boolean neg = c == '-'
+    - If statement (c == '-' || c == '+')
+      - c = scan()
+    - For loop (; c >= '0' && c <= '9'; c = scan())
+      - val = (val << 3) + (val << 1) + (c & 15)
+    - Return neg ? -val : val
+  - Function print(Object a) throws Exception : void
+    - Call bw.write(a.toString())
+  - Function printsp(Object a) throws Exception : void
+    - Call print(a)
+    - Call print(" ")
+  - Function println() throws Exception : void
+    - Call bw.write("\n")
+  - Function println(Object a) throws Exception : void
+    - Call print(a)
+    - Call println()
+  - Function flush() throws Exception : void
+    - Call bw.flush()

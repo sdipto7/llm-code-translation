@@ -1,0 +1,71 @@
+**Structured Algorithm Specification:**
+
+**1. Function/Method Signatures:**
+- `dfs(int x) -> boolean`: Checks if the connected component containing node x is bipartite.
+
+**2. Variable Declarations:**
+- `n: int` (number of nodes)
+- `m: int` (number of edges)
+- `vis: int[n+1]` (visit/color array, 0=unvisited, 1/2=colors)
+- `ci: int` (count isolated nodes)
+- `cb: int` (count bipartite components)
+- `cc: int` (count non-bipartite components)
+- `g: List<List<int>>` (adjacency list, size n+1)
+
+**3. Input/Output Operations:**
+- Read `n` and `m` from standard input.
+- Read `m` edge pairs, populate adjacency list `g`.
+- Print final computed result using formula: `ci² + 2*ci*(n-ci) + cc² + 2*cb*cc + 2*cb²`
+
+**4. Main Algorithm Logic:**
+```
+1. Initialize ci, cb, cc = 0
+2. Create vis array with n+1 elements initialized to 0
+3. Create adjacency list g with n+1 empty lists
+4. For each of m input edges:
+   4.1 Read u, v
+   4.2 Add v to g[u]
+   4.3 Add u to g[v]
+5. For i from 1 to n inclusive:
+   5.1 If vis[i] == 0:
+       5.1.1 If g[i] is empty:
+           5.1.1.1 ci += 1
+       5.1.2 Else:
+           5.1.2.1 Call dfs(i)
+           5.1.2.2 If return value is True:
+               5.1.2.2.1 cb += 1
+           5.1.2.3 Else:
+               5.1.2.3.1 cc += 1
+6. Compute and print result using formula
+```
+
+**5. DFS Function Logic:**
+```
+1. Initialize stack with tuple (x, 1)
+2. Initialize flag = True
+3. While stack not empty:
+   3.1 Pop (u, col) from stack
+   3.2 If vis[u] != 0:
+       3.2.1 flag = flag AND (vis[u] == col)
+       3.2.2 Continue loop
+   3.3 Set vis[u] = col
+   3.4 For each neighbor v in g[u]:
+       3.4.1 Push (v, 3-col) to stack
+4. Return flag
+```
+
+**6. Control Flow Structures:**
+- Main loop: Fixed iteration (m times) for edge processing
+- For-loop through all nodes (1..n) for component analysis
+- Stack-based iteration in DFS (while stack not empty)
+- Conditional branching for component type classification (isolated/bipartite/non-bipartite)
+
+**7. Edge Case Handling:**
+- Isolated nodes (empty adjacency list) handled separately
+- Proper color conflict detection in bipartite check
+- Unvisited node initialization in DFS
+
+**8. External Dependencies:**
+- Stack data structure (LIFO queue)
+- Input handling for integer parsing
+- No explicit error handling (assumes valid input format)

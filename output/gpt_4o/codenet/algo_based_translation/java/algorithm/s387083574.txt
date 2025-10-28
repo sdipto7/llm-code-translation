@@ -1,0 +1,30 @@
+```
+Algorithm main():
+    Input: None
+    Output: Prints a space-separated string of integers
+
+    Import libraries:
+        java.util.Scanner
+        java.util.Map
+        java.util.HashMap
+        java.util.Map.Entry
+        java.util.stream.Collectors
+
+    Declare sc as Scanner object initialized with System.in
+    Declare N as integer
+    Declare map as HashMap with key and value as Integer
+
+    Read an integer from sc and assign to N
+
+    For each integer i from 1 to N (inclusive):
+        Read an integer from sc
+        Insert key-value pair (i, read integer) into map
+
+    Create a stream from map entry set
+    Sort the stream by entry value using Entry.comparingByValue()
+    Map each entry in the sorted stream to its key
+    Convert each key to a string
+    Collect the mapped keys into a list
+    Join the list elements into a single string with space as separator
+    Print the resulting string
+```

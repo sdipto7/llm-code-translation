@@ -1,0 +1,27 @@
+- Function signature:  
+  `public static void main(String[] args)`
+
+- Variables:  
+  - `Scanner sc = new Scanner(System.in)`  
+  - `int t = sc.nextInt()`  
+  - `int[] count = new int[t + 1]`
+
+- Execution flow:  
+  1. Read integer `t` from input  
+  2. Initialize `count` array with size `t + 1` (all elements 0)  
+  3. Loop `i` from 2 to `t` inclusive (via condition `i < t + 1`):  
+     a. Read integer input  
+     b. Increment `count[input_value]` by 1  
+  4. Loop `i` from 1 to `t` inclusive (via condition `i < t + 1`):  
+     a. Print `count[i]`
+
+- Control structures:  
+  - `for (int i = 2; i < t + 1; i++)`  
+  - `for (int i = 1; i < t + 1; i++)`
+
+- Input/Output operations:  
+  - Input: `t` and `t-1` subsequent integers via `Scanner.nextInt()`  
+  - Output: Print `count[1]` through `count[t]` via `System.out.println`
+
+- Dependencies:  
+  - `java.util.Scanner`

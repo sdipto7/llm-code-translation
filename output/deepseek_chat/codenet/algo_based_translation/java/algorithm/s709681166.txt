@@ -1,0 +1,16 @@
+1. Import java.util.Scanner
+2. Define class Main with public static void main(String[] args)
+3. Declare Scanner sc = new Scanner(System.in)
+4. Declare String s = sc.nextLine()
+5. For i from 0 to s.length()-1:
+   - Declare char c = s.charAt(i)
+   - If Character.isUpperCase(c):
+        c = c + 32
+        Print c
+   - Else if Character.isLowerCase(c):
+        c = c - 32
+        Print c
+   - Else:
+        Print c
+6. Print newline
+7. sc.close()

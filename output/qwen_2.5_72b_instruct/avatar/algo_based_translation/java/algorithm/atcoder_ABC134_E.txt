@@ -1,0 +1,41 @@
+Function: main
+Parameters: String[]
+Return: void
+
+Variables:
+- n: int
+- map: TreeMap<Integer, Integer>
+- num: int
+- val: int
+- key: int
+- ans: int
+
+Libraries:
+- java.util.*
+
+Logic Flow:
+1. Create a Scanner object for input.
+2. Read an integer n from input.
+3. Initialize a TreeMap map to store integer keys and their counts.
+4. Loop n times:
+   1. Read an integer num from input.
+   2. If map does not have a key lower than num:
+      1. Get the current count of num in map, default to 0.
+      2. Increment the count by 1.
+      3. Put the updated count of num in map.
+   3. Otherwise:
+      1. Get the highest key lower than num from map.
+      2. Get the count of the found key from map.
+      3. If the count is 1:
+         1. Remove the key from map.
+      4. Otherwise:
+         1. Decrement the count by 1.
+         2. Put the updated count of the key in map.
+      5. Get the current count of num in map, default to 0.
+      6. Increment the count by 1.
+      7. Put the updated count of num in map.
+5. Initialize ans to 0.
+6. For each key in map:
+   1. Get the count of the key from map.
+   2. Add the count to ans.
+7. Print ans.

@@ -1,0 +1,28 @@
+1. Import the required library: java.util.Scanner
+2. Define a class: Main with a main method 
+   - Method signature: public static void main(String[] args)
+   - Declare a variable: scanner of type Scanner
+   - Initialize scanner with System.in
+   - Declare variables: S and T of type String
+   - Read input from the user using scanner.nextLine() and store it in S and T
+   - Declare a variable: min of type int and initialize it with Integer.MAX_VALUE
+3. Iterate over S using a for loop 
+   - Loop condition: i <= S.length() - T.length()
+   - Initialize loop counter: i = 0
+   - Increment loop counter: i++
+   - Inside the loop:
+     - Extract a substring from S using S.substring(i, i + T.length()) and store it in variable 'a'
+     - Call the function find with 'a' and T as parameters and update min with the minimum value between the current min and the return value of find
+4. After the loop, check if min is not equal to Integer.MAX_VALUE using an if-else statement
+   - If true, print the value of min
+   - Else, print the length of T
+5. Define a function: find with parameters 'a' and 'b' of type String and return type int
+   - Declare a variable: calc of type int and initialize it with 0
+   - Iterate over 'a' using a for loop 
+     - Loop condition: x < a.length()
+     - Initialize loop counter: x = 0
+     - Increment loop counter: x++
+     - Inside the loop:
+       - Compare characters at index x in 'a' and 'b' using a.charAt(x) and b.charAt(x)
+       - If they are not equal, increment calc by 1
+   - Return the value of calc after the loop ends

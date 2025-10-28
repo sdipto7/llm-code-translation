@@ -1,0 +1,10 @@
+1. Read the number of elements N from the input.
+2. Initialize an array A of size N.
+3. Read N integers from the input and store them in array A.
+4. Initialize a counter variable count to 0.
+5. Iterate through array A from index 0 to N-1.
+6. For the last element (i = N-1), increment count by 1.
+7. For other elements, check if the current element is equal to the next element. If so, do nothing.
+8. If the current element is less than the next element, increment i until the current element is greater than the next element or i reaches N-1, then increment count by 1.
+9. If the current element is greater than the next element, increment i until the current element is less than the next element or i reaches N-1, then increment count by 1.
+10. Output the value of count.

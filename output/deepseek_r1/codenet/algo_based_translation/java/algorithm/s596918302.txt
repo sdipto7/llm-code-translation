@@ -1,0 +1,67 @@
+**Algorithm:**
+
+**Main Function:**
+- **Signature:** `void main(String args[])`
+- **Variables:**
+  - `Scanner sc = new Scanner(System.in)`
+  - `int n` (input value)
+  - `int[][] arr` (n x 3 matrix populated via input)
+  - `int ans`
+- **Logic Flow:**
+  1. Read integer `n` from input.
+  2. Initialize `arr` with dimensions `n x 3`.
+  3. Populate `arr` by reading `n * 3` integers from input using nested loops:
+     - Outer loop: `i` from `0` to `n-1`
+     - Inner loop: `j` from `0` to `2`
+  4. Compute `ans` by calling `dpx(arr, n)`.
+  5. Print `ans`.
+
+**min Function:**
+- **Signature:** `int min(int[] arr, int n)`
+- **Logic Flow:**
+  1. If `n == 1`, return `0`.
+  2. If `n == 2`, return absolute difference between `arr[1]` and `arr[0]`.
+  3. For `n > 2`:
+     - Compute `op1 = |arr[n-1] - arr[n-2]| + min(arr, n-1)`
+     - Compute `op2 = |arr[n-1] - arr[n-3]| + min(arr, n-2)`
+     - Return `min(op1, op2)`.
+
+**dpc Function (Recursive Helper):**
+- **Signature:** `int dpc(int[][] arr, int i, int n, int row)`
+- **Variables:**
+  - `int j`, `int k` (indices derived from `i`)
+- **Logic Flow:**
+  1. Base case: If `row == n`, return `0`.
+  2. Determine `j` and `k` based on `i`:
+     - If `i == 1`: `j = 0`, `k = 2`
+     - Else if `i == 0`: `j = 1`, `k = 2`
+     - Else: `j = 0`, `k = 1`
+  3. Return `arr[row][i] + max(dpc(arr, j, n, row+1), dpc(arr, k, n, row+1))`.
+
+**dpx Function (Dynamic Programming):**
+- **Signature:** `int dpx(int[][] arr, int n)`
+- **Variables:**
+  - `int[][] dp` (n x 3 matrix)
+- **Logic Flow:**
+  1. Initialize `dp[0][0] = arr[0][0]`, `dp[0][1] = arr[0][1]`, `dp[0][2] = arr[0][2]`.
+  2. For `i` from `1` to `n-1`:
+     - For each column `in` (0, 1, 2):
+       - Determine `j` and `k` based on `in` (same logic as `dpc`).
+       - Set `dp[i][in] = max(dp[i-1][j], dp[i-1][k]) + arr[i][in]`.
+  3. Return `max(dp[n-1][0], dp[n-1][1], dp[n-1][2])`.
+
+**Control Structures:**
+- **Loops:**
+  - Nested `for` loops in `main` for input.
+  - Iterative `for` loops in `dpx` for DP computation.
+  - Recursive calls in `min` and `dpc`.
+- **Conditionals:**
+  - `if-else` chains in `dpc` and `dpx` to determine `j` and `k`.
+  - Base case checks in `min` and `dpc`.
+
+**Input/Output:**
+- **Input:** Read via `Scanner` in `main` (n followed by n*3 integers).
+- **Output:** Print `ans` as final result.
+
+**Dependencies:**
+- `java.util.Scanner` for input handling.

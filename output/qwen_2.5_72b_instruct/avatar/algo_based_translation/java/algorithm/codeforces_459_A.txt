@@ -1,0 +1,45 @@
+Function signature:
+- main(String[] args): void
+
+Variable declarations and data types:
+- Scanner in
+- PrintWriter pw
+- int x1
+- int y1
+- int x2
+- int y2
+- int dif
+
+Logic flow in execution order:
+1. Initialize Scanner in to read from System.in
+2. Initialize PrintWriter pw to write to System.out
+3. Read four integers x1, y1, x2, y2 from input
+4. If x1 equals x2:
+   a. Calculate dif as the absolute difference between y1 and y2
+   b. Print (x1 + dif), y1, (x1 + dif), y2
+5. Else if y1 equals y2:
+   a. Calculate dif as the absolute difference between x1 and x2
+   b. Print x1, (y1 + dif), x2, (y2 + dif)
+6. Else if the absolute difference between x1 and x2 equals the absolute difference between y1 and y2:
+   a. Print x1, y2, x2, y1
+7. Else:
+   a. Print -1
+8. Close PrintWriter pw
+
+Control structures:
+- If statement with condition x1 == x2
+- Else if statement with condition y1 == y2
+- Else if statement with condition Math.abs(x1 - x2) == Math.abs(y1 - y2)
+- Else statement
+
+Input/output operations:
+- Read four integers from standard input
+- Print four integers or -1 to standard output
+
+Data processing logic:
+- Calculate absolute differences for conditions
+- Determine the appropriate output based on coordinate relationships
+
+Required libraries/modules/dependencies:
+- java.io.*
+- java.util.*

@@ -1,0 +1,15 @@
+Function Signature: main() -> None
+
+Variable Declarations:
+- n: str
+- a: List[str] = ["10", "100", "1000", "10000", "100000"]
+- new: int
+
+Logic Flow:
+1. Read input from the user and assign it to n.
+2. Initialize list a with string values ["10", "100", "1000", "10000", "100000"].
+3. Convert each character in n to an integer, sum these integers, and assign the result to new.
+4. If n is found in list a:
+   a. Print 10.
+5. Else:
+   a. Print the value of new.

@@ -1,0 +1,34 @@
+Algorithm:
+
+Function Signatures:
+- Function: main() → void
+- Function: compute_ans(N: int, A: int, B: int) → int
+
+Variables:
+- N: int
+- A: int
+- B: int
+- quotient: int
+- remainder: int
+- additional: int
+- ans: int
+- input_values: list[str]
+
+Logic Flow:
+1. Read input line from standard input using input().split()
+2. Convert first three elements of input_values to integers N, A, B
+3. Calculate quotient = N // (A + B) using integer division
+4. Calculate remainder = N % (A + B)
+5. Calculate additional = min(A, remainder)
+6. Calculate ans = (A * quotient) + additional
+7. Print ans via standard output
+
+Control Structures:
+- min() function call to determine smaller value between A and remainder
+
+Input/Output:
+- Input: Single line containing three space-separated integers
+- Output: Single integer printed
+
+Dependencies:
+- Standard Python libraries (no external modules required)

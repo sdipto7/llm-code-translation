@@ -1,0 +1,8 @@
+1. Initialize a counter variable to 0.
+2. Read an integer representing the number of test cases.
+3. Loop until the number of test cases is 0.
+4. Within the loop, read three integers: a, b, and c.
+5. Check if at least two of the integers a, b, or c are equal to 1.
+6. If the condition is met, increment the counter variable.
+7. Decrement the test case counter.
+8. Once the loop finishes, output the value of the counter variable.

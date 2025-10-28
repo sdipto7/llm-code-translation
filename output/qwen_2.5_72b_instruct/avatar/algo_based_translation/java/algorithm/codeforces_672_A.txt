@@ -1,0 +1,33 @@
+Function signatures with parameter and return types:
+- `static char[] generateString()`
+- `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `StringBuilder sb`
+- `int i`
+- `Scanner sc`
+- `int n`
+- `char[] result`
+
+Complete logic flow in execution order:
+1. Define `generateString` method
+   - Initialize `StringBuilder sb`
+   - For loop: `i` from 1 to 1000 (inclusive)
+     - Append `i` to `sb`
+   - Convert `sb` to string and then to character array
+   - Return character array
+2. Define `main` method
+   - Initialize `Scanner sc` with standard input
+   - Read integer `n` from input
+   - Call `generateString` method and store result in `result` array
+   - Print character at index `n - 1` from `result` array
+
+Control structures:
+- For loop: `for (int i = 1; i <= 1000; i++)`
+
+Input/output operations and data processing logic:
+- Input: Read integer `n` from standard input
+- Output: Print character at index `n - 1` from generated string
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

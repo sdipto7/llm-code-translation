@@ -1,0 +1,8 @@
+1. Define a function `determine_output` with no parameters and return type `None`.
+2. Declare a variable `n` of type `integer`.
+3. Read an integer input from the user and store it in `n`.
+4. Check if `n` is greater than or equal to 1000.
+5. If the condition is true, output the string 'ABD'.
+6. If the condition is false, output the string 'ABC'.
+
+Required libraries: built-in input/output functions.

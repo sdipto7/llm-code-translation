@@ -1,0 +1,25 @@
+```
+Function Signature:
+    def distribute_candies(n: int, m: int) -> int
+
+Algorithm:
+    Input:
+        - Read a single line of input, splitting it into two integers, n and m
+
+    Variables:
+        - n: int, the number of children
+        - m: int, the number of candies
+        - i: int, initialized to 1, represents the current child's turn
+
+    Logic:
+        - Start a loop that continues as long as m is greater than or equal to i
+            - Subtract i from m
+            - Update i to the next child's turn using the formula (i % n) + 1
+        - Once the loop exits, m holds the number of candies that cannot be distributed
+
+    Output:
+        - Print the remaining number of candies, m
+
+Dependencies:
+    - No external libraries or modules are required
+```

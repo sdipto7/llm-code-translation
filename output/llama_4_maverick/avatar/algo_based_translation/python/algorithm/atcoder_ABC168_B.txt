@@ -1,0 +1,7 @@
+1. Read integer input into K
+2. Read string input into S
+3. If length of S is less than or equal to K then
+4. Output S
+5. Else
+6. Output substring of S from index 0 to K-1 concatenated with '...' 
+7. End if

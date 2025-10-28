@@ -1,0 +1,24 @@
+Function Signature:
+- None (code is executed in the global scope)
+
+Variable Declarations and Data Types:
+- `a`: integer
+- `b`: integer
+
+Logic Flow:
+1. Read a line of input from the user and split it into two parts.
+2. Convert the two parts into integers and assign them to variables `a` and `b`.
+
+Control Structures:
+- Conditional:
+  - If `a` is less than or equal to 8 and `b` is less than or equal to 8, then:
+    - Print "Yay!"
+  - Else:
+    - Print ":("
+
+Input/Output Operations:
+- Input: Read a line of space-separated integers from standard input.
+- Output: Print either "Yay!" or ":(" based on the condition.
+
+Required Libraries:
+- No external libraries, modules, or dependencies are required.

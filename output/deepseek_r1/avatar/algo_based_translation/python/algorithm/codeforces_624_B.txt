@@ -1,0 +1,42 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`
+  - Reads input, processes data, and outputs result
+
+**Variable Declarations:**
+- `n: Integer` (from input)
+- `a: List[Integer]` (from input, length = n)
+- `pre: Float` (initialized to positive infinity)
+- `ans: Integer` (initialized to 0)
+
+**Input/Output Operations:**
+1. Read `n` from standard input via `sys.stdin.readline()`
+2. Read and parse space-separated integers for list `a` via `sys.stdin.readline().split()`
+3. Print final `ans` value via `print(ans)`
+
+**Data Processing Logic:**
+1. Sort `a` in descending order
+2. Iterate through each element in sorted `a`:
+   - Calculate allowable contribution for current element
+   - Accumulate contribution to total answer
+   - Update constraint for subsequent elements
+
+**Control Flow Structures:**
+- Loop: For loop
+  - Range: `j` from 0 to `n-1` inclusive
+  - Body:
+    1. `current_contribution = max(0, min(pre - 1, a[j]))`
+    2. `ans += current_contribution`
+    3. `pre = current_contribution`
+  - Exit: After processing all `n` elements
+
+**Edge Case Handling:**
+- `max(0, ...)` ensures no negative contributions
+- Handles zero values in input array naturally
+- Sorts array before processing to enforce constraint application order
+
+**External Dependencies:**
+- `sys` module for input reading
+- Built-in functions: `map`, `list`, `max`, `min`
+- List sorting with `reverse=True` parameter

@@ -1,0 +1,42 @@
+Function: main
+Parameter: String[] args
+Return Type: void
+
+Variable Declarations:
+- Scanner sc
+- int n
+- int[] v of size 100010
+- Integer[] vo of size 100010
+- Integer[] ve of size 100010
+- Integer[] vt of size 100010
+- int ans
+
+Logic Flow:
+
+1. Initialize sc as a new Scanner reading from System.in
+2. Read n as the next integer input
+3. For i from 0 to n-1:
+   a. Read the next integer input and store it in v[i]
+4. Initialize all elements of vo to 0
+5. Initialize all elements of ve to 0
+6. Initialize all elements of vt to 0
+7. For i from 0 to n-1:
+   a. Increment vt[v[i]] by 1
+   b. If i is even:
+      i. Increment ve[v[i]] by 1
+   c. Else:
+      i. Increment vo[v[i]] by 1
+8. Sort vo in descending order
+9. Sort ve in descending order
+10. Sort vt in descending order
+11. If vo[0] + ve[0] equals vt[0]:
+    a. Set ans to the minimum of (n - vo[0] - ve[1]) and (n - vo[1] - ve[0])
+12. Else:
+    a. Set ans to n - vo[0] - ve[0]
+13. Print ans
+14. Close sc
+
+Libraries:
+- java.util.Arrays
+- java.util.Collections
+- java.util.Scanner

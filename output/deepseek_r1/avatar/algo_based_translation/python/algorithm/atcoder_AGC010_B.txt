@@ -1,0 +1,60 @@
+**Structured Algorithm Specification:**
+
+**Function/Method Signatures:**
+- `main()` → `int`
+  - **Parameters:** None
+  - **Return Type:** `int` (exit code)
+
+**Variables:**
+- `n`: `int` (input integer)
+- `a`: `vector<long long>` (sequence of input integers)
+- `sum_a`: `long long` (sum of elements in `a`)
+- `denominator`: `long long` (computed as `n*(n+1)/2`)
+- `k`: `long long` (quotient of `sum_a` divided by `denominator`)
+- `sum_mod`: `long long` (accumulator for delta modulo checks)
+- `count_non_neg`: `int` (count of non-negative delta values)
+
+**Logic Flow:**
+1. **Input Handling:**
+   1. Read `n` from standard input.
+   2. Read `n` integers into vector `a`.
+
+2. **Initial Validation:**
+   1. Compute `sum_a` as the sum of all elements in `a`.
+   2. Calculate `denominator = n*(n+1)/2`.
+   3. If `sum_a % denominator ≠ 0`, print "NO" and terminate.
+
+3. **Key Computation:**
+   1. Compute `k = sum_a / denominator`.
+   2. Append `a[0]` to `a`.
+
+4. **Final Validation:**
+   1. Iterate over consecutive element pairs in modified `a` (length `n+1`):
+      - For each `i` in `0 ≤ i < n`:
+        1. Get `previous = a[i]` and `current = a[i+1]`.
+        2. Compute `delta = k - previous + current`.
+        3. Add `delta % n` to `sum_mod`.
+        4. Increment `count_non_neg` if `delta ≥ 0`.
+   2. If `sum_mod ≠ 0` OR `count_non_neg ≠ n`, print "NO".
+   3. Else, print "YES".
+
+**Control Flow Structures:**
+- Conditional checks:
+  - Primary division check (`sum_a % denominator`)
+  - Final validation checks (`sum_mod` and `count_non_neg`)
+- Loop:
+  - Fixed iteration from `i=0` to `i=n-1` for pair processing
+
+**Input/Output Operations:**
+- Read from `std::cin`: integer `n` and space-separated integer list
+- Write to `std::cout`: "YES" or "NO" based on validation
+
+**Error Handling/Edge Cases:**
+- Handles division validation to prevent invalid `k` computation
+- Checks for non-negative delta values to ensure valid operation results
+- Manages circular element pairs via array extension
+
+**External Dependencies:**
+- Requires `<iostream>` for I/O operations
+- Requires `<vector>` for dynamic array management
+- Uses standard namespace components (`std::vector`, `std::cin`, `std::cout`)

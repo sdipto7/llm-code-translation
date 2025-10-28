@@ -1,0 +1,45 @@
+1. Import the following Java libraries:
+   - `java.math.*`
+   - `java.util.*`
+   - `java.util.function.*`
+
+2. Define the `main` function with `String[] args` as a parameter:
+   - Declare a `Scanner` object `sc` for input.
+   - Read an integer `N` using `sc.nextInt()`.
+   - Declare an integer array `A` of size `N`.
+
+3. Loop over `i` from `0` to `N-1`:
+   - Read the next integer and assign it to `A[i]`.
+
+4. Close the `Scanner` object `sc`.
+
+5. Declare a `BigInteger` variable `lcm` and initialize it with `BigInteger.ONE`.
+
+6. Loop over each integer `ai` in the array `A`:
+   - Convert `ai` to a `BigInteger` and store it in `a`.
+   - Update `lcm` using the formula: `lcm = lcm.divide(lcm.gcd(a)).multiply(a)`.
+
+7. Declare a `long` variable `mod` and set it to `1000000007`.
+
+8. Calculate `modLcm` as `lcm.remainder(BigInteger.valueOf(mod)).longValue()`.
+
+9. Declare a `long` variable `ans` and initialize it to `0`.
+
+10. Loop over each integer `ai` in the array `A`:
+    - Update `ans` using the formula: `ans = (ans + modDiv(modLcm, ai, mod)) % mod`.
+
+11. Print the value of `ans`.
+
+12. Define a private static function `modDiv` with parameters (`long a`, `long b`, `long mod`) returning `long`:
+    - Return `(a % mod) * modInv(b, mod) % mod`.
+
+13. Define a private static function `modInv` with parameters (`long x`, `long mod`) returning `long`:
+    - Return `modPow(x, mod - 2, mod)`.
+
+14. Define a private static function `modPow` with parameters (`long b`, `long e`, `long mod`) returning `long`:
+    - Declare `long` variables `ans` set to `1` and `x` set to `b % mod`.
+    - Loop while `e` is not equal to `0`:
+      - If `e` is odd (check using `(e & 1) == 1`), update `ans` with `(ans * x) % mod`.
+      - Update `x` with `(x * x) % mod`.
+      - Right shift `e` by `1`.
+    - Return `ans`.

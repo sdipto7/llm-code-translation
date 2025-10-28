@@ -1,0 +1,24 @@
+1. Function Signatures:
+   - No explicit functions; executed as main script.
+
+2. Variable Declarations:
+   - A: integer
+   - B: integer
+
+3. Logic Flow:
+   1. Read input line from standard input.
+   2. Split input into two string values by whitespace.
+   3. Convert both string values to integers using map().
+   4. Assign first integer to A, second integer to B.
+   5. Calculate product of A and B.
+   6. Print product to standard output.
+
+4. Control Structures:
+   - None (strict sequential execution).
+
+5. Input/Output Operations:
+   - Input: Single line from stdin with two space-separated integers.
+   - Output: Single integer (A × B) printed to stdout.
+
+6. Dependencies:
+   - None beyond standard Python environment.

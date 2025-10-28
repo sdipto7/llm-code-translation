@@ -1,0 +1,40 @@
+- Variables:
+  - N: int (input value for number of entries)
+  - m: List[List[List[int]]] (3D array dimensions [4][3][10] initialized to 0)
+  - line: str (temporary string for output construction)
+  - n: List[str] (input line split into string tokens)
+  - b: int (building number from input)
+  - f: int (floor number from input)
+  - r: int (room number from input)
+  - v: int (number of people to add/remove)
+
+- Execution Flow:
+  1. Read integer N from standard input
+  2. Initialize 3D array m with dimensions 4x3x10 filled with zeros
+  3. For each of N input iterations:
+      a. Read and split input line into n
+      b. Convert n[0]-n[3] to integers (b, f, r, v)
+      c. Update m[b-1][f-1][r-1] += v
+  4. For each building (0 <= i < 4):
+      a. For each floor (0 <= j < 3):
+          i. Reset line to empty string
+          ii. For each room (0 <= k < 10):
+              - Append formatted string " {m[i][j][k]}" to line
+          iii. Print line
+      b. If building index < 3:
+          - Print "####################" separator
+
+- Control Structures:
+  - Range-based for loop: N iterations for input processing
+  - Triple nested list comprehensions for 3D array initialization
+  - Triple nested for loops (i, j, k) for output generation
+  - Conditional if (i < 3) for separator printing
+
+- Input/Output:
+  - Inputs via stdin using input()
+  - Output via print() with formatted strings
+  - All values space-separated in output lines
+  - 20-character '#' separators between buildings
+
+- Dependencies:
+  - Standard Python libraries only (no external modules required)

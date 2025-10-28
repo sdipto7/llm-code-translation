@@ -1,0 +1,21 @@
+- Function signature: main(String[] args)
+- Parameter types: String array args
+- Return type: void
+- Import java.io.* and java.util.*
+- Declare Scanner in = new Scanner(System.in)
+- Declare PrintWriter pw = new PrintWriter(System.out)
+- Declare int n = in.nextInt()
+- Declare ArrayList<Integer> list = new ArrayList<>()
+- For loop: i from 0 to n-1, increment by 1
+  - list.add(in.nextInt())
+- Collections.sort(list)
+- Declare int c = 1
+- For loop: i from 0 to n-1, increment by 1
+  - If list.get(i) >= c
+    - Then c = c + 1
+- pw.println(c)
+- pw.close()
+- Function signature: debug(Object... obj)
+- Parameter types: Object varargs obj
+- Return type: void
+- System.err.println(Arrays.deepToString(obj))

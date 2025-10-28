@@ -1,0 +1,15 @@
+
+import sys
+
+def main():
+    tokens = sys.stdin.read().split()
+    K = int(tokens[0])
+    S = tokens[1]
+    if len(S) <= K:
+        print(S)
+    else:
+        print(S[:K] + "...")
+
+if __name__ == "__main__":
+    main()
+

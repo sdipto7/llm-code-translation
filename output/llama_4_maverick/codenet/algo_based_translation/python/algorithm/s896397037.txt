@@ -1,0 +1,22 @@
+1. Define a function `check_string` with no parameters and return type string.
+2. Read a string input from the user and store it in a variable `s` of type string.
+3. Convert the string `s` to a list of characters.
+4. Sort the list of characters in ascending order.
+5. Check the condition: 
+   - the first element of the sorted list is equal to the second element 
+   - and the first element is not equal to the third element 
+   - and the third element is equal to the fourth element.
+6. If the condition is true, return "Yes".
+7. If the condition is false, return "No".
+8. Print the returned string. 
+
+Alternatively in a more formal representation:
+- Function: `check_string() -> str`
+- `s: str` = Read input from user
+- `char_list: list[str]` = Convert `s` to list of characters
+- Sort `char_list` in-place
+- If (`char_list[0] == char_list[1]` and `char_list[0] != char_list[2]` and `char_list[2] == char_list[3]`) then
+  - Return "Yes"
+- Else
+  - Return "No"
+- Print the result of `check_string()`

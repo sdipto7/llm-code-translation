@@ -1,0 +1,46 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> None`: Entry point, executes algorithm and prints result.
+
+**Variables:**
+- `n: int`: Input integer representing number of elements.
+- `w: Dict[int, int]`: Frequency counter mapping integer values to their occurrence counts.
+- `c: int`: Accumulator for pairwise count calculations.
+- `total_pairs: int`: Final result after processing all pairs.
+
+**Logic Flow:**
+1. **Input Operations:**
+   - Read `n` from standard input.
+   - Read next line, split into integers, populate `w` via `Counter`.
+
+2. **Initialization:**
+   - Set `c = 0`.
+
+3. **Main Processing Loop:**
+   - For each key `i` in `w`:
+     - **Conditional Branch (Zero Handling):**
+       - If `i == 0`:  
+         `c += w[i] * (w[i] - 1)`
+     - **Conditional Branch (Non-zero Handling):**
+       - Else if `-i` exists in `w`:  
+         `c += w[i] * w[-i]`
+
+4. **Result Calculation:**
+   - Compute `total_pairs = c // 2`.
+
+5. **Output Operation:**
+   - Print `total_pairs`.
+
+**Control Flow Structures:**
+- Loop over all keys in `w` (exit when all keys processed).
+- If-Else blocks to handle zero vs. non-zero keys.
+- Division by 2 to correct double-counting in non-zero pairs.
+
+**Edge Case Handling:**
+- Zero pairs calculated using combinations formula `k*(k-1)` to avoid self-pairing.
+- Division by 2 ensures non-zero pairs are counted once (prevent bidirectional duplication).
+
+**External Dependencies:**
+- `sys.stdin.readline`: For efficient input reading.
+- `collections.Counter`: For frequency counting of input elements.

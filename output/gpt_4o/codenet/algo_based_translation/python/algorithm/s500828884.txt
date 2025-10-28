@@ -1,0 +1,25 @@
+```
+Function Signature:
+- Function: calculate_minimum_cost
+- Parameters: None
+- Return Type: int
+
+Algorithm:
+1. Input Handling:
+   - Read a single line of input from the user.
+   - Parse the input using `split()` to separate the values based on spaces.
+   - Use `map(int, input().split())` to convert the input values into integers and assign them to variables `n`, `a`, and `b`.
+
+2. Variable Declarations:
+   - `n`: int (the number of items)
+   - `a`: int (the cost per item)
+   - `b`: int (the constant cost)
+
+3. Computation:
+   - Calculate the total cost if each item is bought individually: `individual_cost = n * a`.
+   - Compare `individual_cost` with the constant cost `b`.
+   - Use the `min()` function to determine the smaller cost between `individual_cost` and `b`.
+
+4. Output:
+   - Return the result of the `min()` function which is the minimum of the two computed costs.
+```

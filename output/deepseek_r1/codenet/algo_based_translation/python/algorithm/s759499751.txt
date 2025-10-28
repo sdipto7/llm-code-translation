@@ -1,0 +1,30 @@
+- **Function Signatures**: None (executed as script)
+- **Variables**:
+  - `n: int` (number of characters in string)
+  - `k: int` (number of queries)
+  - `a: list[str]` (input character array)
+  - `c: list[int]` (prefix sum array of "AC" pairs)
+  - `l: int` (query start index)
+  - `r: int` (query end index)
+  - `i: int` (loop index for processing string)
+  - `w: int` (loop index for processing queries)
+- **Logic Flow**:
+  1. Read `n` and `k` from standard input.
+  2. Read a string and convert to a list `a` of characters.
+  3. Initialize `c` with `n` zeros.
+  4. Iterate `i` from `1` to `n-1` (inclusive):
+     - If `a[i] == "C"` and `a[i-1] == "A"`:
+       - Set `c[i] = c[i-1] + 1`
+     - Else:
+       - Set `c[i] = c[i-1]`
+  5. Iterate `k` times:
+     - Read `l` and `r` from standard input.
+     - Output `c[r-1] - c[l-1]`
+- **Control Structures**:
+  - For-loop: `for i in range(1, n)`
+    - Nested conditional: `if a[i] == "C" and a[i-1] == "A"`
+  - For-loop: `for w in range(k)`
+- **Input/Output**:
+  - Input: Read `n`, `k`, `a`, and `k` pairs of `l` and `r`
+  - Output: Print difference between prefix sums for each query range
+- **Dependencies**: None (uses standard input/output)

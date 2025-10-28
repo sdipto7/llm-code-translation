@@ -1,0 +1,30 @@
+**Algorithm:**
+
+1. Import required Java utilities: java.util.Scanner
+2. Declare main function:
+   - Signature: public static void main(String[] args)
+   - Return type: void
+3. Create Scanner object for input:
+   - Scanner sc = new Scanner(System.in)
+4. Declare String variable s:
+   - String s = sc.next()
+5. Conditional checks:
+   - if s equals "Sunny": print "Cloudy"
+   - else if s equals "Cloudy": print "Rainy"
+   - else: print "Sunny"
+6. Input processing:
+   - Read single token from standard input
+   - Compare against predefined strings
+7. Output operation:
+   - Print result to console based on conditional branch
+
+**Python Code:**
+```python
+s = input().strip()
+if s == "Sunny":
+    print("Cloudy")
+elif s == "Cloudy":
+    print("Rainy")
+else:
+    print("Sunny")
+```

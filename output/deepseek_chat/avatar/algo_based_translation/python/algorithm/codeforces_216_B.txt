@@ -1,0 +1,39 @@
+readInts: function returning list of integers from input
+  - Split input string by whitespace, convert each to integer, return as list
+
+dfs: function taking graph (dict of sets), seen (set), node index (integer)
+  - If node in seen: return (0, 0)
+  - Add node to seen
+  - Initialize nodes = 1, edges = number of neighbors
+  - For each neighbor j in graph[node]:
+      - Recursively call dfs(g, seen, j)
+      - Add returned nodes to nodes
+      - Add returned edges to edges
+  - Return (nodes, edges)
+
+solve: function returning boolean
+  - Initialize line0 as empty list
+  - Try to read integers from input into line0
+      - If EOFError: return False
+  - Extract n, m from line0
+  - Initialize g as empty dictionary
+  - Initialize seen as empty set
+  - For i from 1 to n inclusive:
+      - Add g[i] = empty set
+  - For m times:
+      - Read two integers a, b
+      - Add b to g[a]
+      - Add a to g[b]
+  - Initialize ans = 0
+  - For i from 1 to n inclusive:
+      - If i not in seen:
+          - Call dfs(g, seen, i) → nodes, edges
+          - If nodes > 1 AND nodes is odd AND edges == 2 * nodes:
+              - Increment ans by 1
+  - If (n - ans) is odd:
+      - Increment ans by 1
+  - Print ans
+  - Return True
+
+Main execution:
+  - While solve() returns True: continue loop

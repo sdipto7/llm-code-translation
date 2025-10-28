@@ -1,0 +1,36 @@
+- **Function Signature**:
+  - `public static void main(String[] args) throws IOException`
+
+- **Variables**:
+  - `BufferedReader br = new BufferedReader(new InputStreamReader(System.in))`
+  - `String sc = br.readLine()`
+  - `int n = Integer.parseInt(sc)`
+  - `String[] str = new String[n]`
+  - `String[] mark = {"S","H","C","D"}`
+  - Loop variables: `int i`, `String ma`
+
+- **Logic Flow**:
+  1. Read input line and parse as integer `n`
+  2. Initialize string array `str` with length `n`
+  3. Loop `i` from `0` to `n-1` (inclusive):
+     - Read input line and store in `str[i]`
+  4. Loop through each string `ma` in `mark` array:
+     - Loop `i` from `1` to `13` (inclusive):
+       - Create string `st` by concatenating `ma`, space, and string representation of `i`
+       - Check if `st` exists in `str` array using `Arrays.asList(str).contains(st)`
+       - If not found in array: print `st`
+       - If found: continue to next iteration
+
+- **Control Structures**:
+  - `for (int i = 0; i < n; i++)` for input collection
+  - `for (String ma : mark)` iterating through suits
+  - Nested `for (int i = 1; i <= 13; i++)` for card numbers
+  - `if (Arrays.asList(str).contains(st)) { continue; } else { print }` conditional check
+
+- **Input/Output Operations**:
+  - Read from `System.in` via `BufferedReader`
+  - Write missing cards to `System.out`
+
+- **Dependencies**:
+  - `java.io.*` for I/O operations
+  - `java.util.Arrays` for array-to-list conversion

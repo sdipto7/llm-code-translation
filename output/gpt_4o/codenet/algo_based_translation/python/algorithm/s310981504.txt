@@ -1,0 +1,27 @@
+Algorithm:
+
+1. Function Signature:
+   - Define a function `compare_and_print` with no parameters and no return type.
+
+2. Variable Declarations:
+   - Declare variables `a` and `b` of type `int`.
+
+3. Input Operations:
+   - Read a line of input from the user.
+   - Split the input string into two parts based on the space character.
+   - Convert each part into an integer.
+   - Assign the first integer to `a` and the second integer to `b`.
+
+4. Control Flow:
+   - Use an `if` statement to check if `a` is less than or equal to `b`.
+     - If true, execute the following step:
+       - Print the value of `a`.
+   - Use an `else` statement for the case when the above condition is false.
+     - Execute the following step:
+       - Print the value of `a - 1`.
+
+5. Output Operations:
+   - The output is printed directly to the console. No return value from the function.
+
+6. Dependencies:
+   - No external libraries or modules are required.

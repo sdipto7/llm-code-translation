@@ -1,0 +1,73 @@
+Function signatures:
+- main(String[] args) throws IOException
+- sort(int[] a)
+- InputReader constructor(InputStream in)
+- InputReader.readByte(): int
+- InputReader.isSpaceChar(int c): boolean
+- InputReader.skip(): int
+- InputReader.next(): String
+- InputReader.nextInt(): int
+- InputReader.nextLong(): long
+- InputReader.toIntArray(int n): int[]
+
+Variable declarations:
+- InputStream in = System.in
+- PrintWriter out = new PrintWriter(System.out)
+- int INF = Integer.MAX_VALUE/2
+- long LINF = Long.MAX_VALUE/2
+- InputReader ir = new InputReader(in)
+- int m = ir.nextInt()
+- int n = ir.nextInt()
+- int[] manju = ir.toIntArray(m)
+- int[] boxlen = new int[n]
+- int[] boxcost = new int[n]
+- int[][] dp = new int[m+1][n+1]
+
+Logic flow:
+1. Read m and n from input
+2. Read manju array of size m from input
+3. For i from 0 to n-1:
+   - Read boxlen[i] from input
+   - Read boxcost[i] from input
+4. Call sort(manju) to sort the manju array in ascending order
+5. Initialize dp array with dimensions (m+1) x (n+1)
+6. For i from m-1 down to 0:
+   - For j from n-1 down to 0:
+     - Calculate len = min(i + boxlen[j], m)
+     - Initialize cnt = 0
+     - For k from i to len-1:
+       - Add manju[m-1-k] to cnt
+     - Set dp[i][j] = max(dp[len][j+1] + cnt - boxcost[j], dp[i][j+1])
+7. Print dp[0][0]
+8. Flush output
+
+Sort algorithm:
+- For i from a.length-1 down to 1:
+  - Generate random index t between 0 and i
+  - Swap a[i] and a[t]
+- Call Arrays.sort(a) to sort the array
+
+InputReader operations:
+- readByte(): Reads bytes from input stream, handles buffering
+- isSpaceChar(): Returns true if character is whitespace
+- skip(): Skips whitespace characters
+- next(): Reads next token as string
+- nextInt(): Reads next integer
+- nextLong(): Reads next long
+- toIntArray(): Reads n integers into array
+
+Required dependencies:
+- java.io.InputStream
+- java.io.InputStreamReader
+- java.io.IOException
+- java.io.PrintWriter
+- java.util.ArrayDeque
+- java.util.ArrayList
+- java.util.Arrays
+- java.util.Comparator
+- java.util.Deque
+- java.util.HashMap
+- java.util.InputMismatchException
+- java.util.Map
+- java.util.PriorityQueue
+- java.math.BigInteger

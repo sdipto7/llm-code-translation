@@ -1,0 +1,12 @@
+1. READ input string a
+2. DEFINE list vo containing vowels in both lower and upper cases
+3. FOR i FROM length of a - 1 TO 0 DECREMENTING by 1
+4. IF a[i] is ' ' OR a[i] is '?'
+5. CONTINUE to next iteration
+6. ELSE
+7. IF a[i] is in vo
+8. PRINT "YES"
+9. ELSE
+10. PRINT "NO"
+11. BREAK loop
+12. END FOR

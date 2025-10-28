@@ -1,0 +1,27 @@
+Function Signature: 
+public static void main(String[] args)
+
+Variable Declarations:
+Scanner stdIn
+short r
+
+Logic Flow:
+1. Create instance of Scanner for standard input
+2. Read short value from input and assign to r
+3. Check if r is less than 1200
+   - If true, print "ABC" and exit
+4. Check if r is less than 2800
+   - If true, print "ARC" and exit
+5. Print "AGC"
+
+Control Structures:
+Conditional Statements:
+- if (r < 1200)
+- if (r < 2800)
+
+Input/Output Operations:
+- Read short value using stdIn.nextShort()
+- Print "ABC", "ARC", or "AGC" based on the value of r
+
+Required Libraries/Modules/Dependencies:
+- java.util.Scanner

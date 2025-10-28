@@ -1,0 +1,49 @@
+- Function signatures with parameter and return types:
+  - `public static void main(String[] args)`
+  - `public static void dfs(ArrayList<Integer> list)`
+
+- Variable declarations and data types:
+  - `int[] a = null`
+  - `int[] b = null`
+  - `int[] c = null`
+  - `int[] d = null`
+  - `int n = 0`
+  - `int m = 0`
+  - `int q = 0`
+  - `long ans = -100L`
+  - `Scanner sc = new Scanner(System.in)`
+  - `ArrayList<Integer> list`
+
+- Complete logic flow in execution order:
+  - Initialize `n`, `m`, and `q` using `Scanner`
+  - Initialize arrays `a`, `b`, `c`, and `d` of size `q`
+  - Loop through `q` to fill arrays `a`, `b`, `c`, and `d` with input values, adjusting indices by subtracting 1 where necessary
+  - Call `dfs(new ArrayList<Integer>())`
+  - Print `ans`
+
+- Control structures (loops, conditionals) with exact conditions:
+  - Loop from `0` to `q-1` to read input values for `a`, `b`, `c`, and `d`
+  - Conditional inside `dfs` to check if `list.size() == n`
+    - If true, calculate `score` by iterating over `q` and checking if `(list.get(b[i]) - list.get(a[i])) == c[i]`. If true, add `d[i]` to `score`
+    - Update `ans` with the maximum value between `ans` and `score`
+    - Return
+  - Conditional inside `dfs` to check if `list.isEmpty()`
+    - If false, loop from `list.get(list.size() - 1)` to `m`:
+      - Add `num` to `list`
+      - Recursively call `dfs(list)`
+      - Remove last element from `list`
+    - If true, loop from `1` to `m`:
+      - Add `num` to `list`
+      - Recursively call `dfs(list)`
+      - Remove last element from `list`
+
+- Input/output operations and data processing logic:
+  - Read `n`, `m`, and `q` from standard input
+  - Read `q` sets of four integers each from standard input, adjust first two integers by subtracting 1
+  - Use depth-first search (DFS) to explore all possible sequences of length `n` with values from `1` to `m`
+  - Calculate score for each sequence based on given conditions and update `ans` with the highest score found
+  - Print the highest score (`ans`) to standard output
+
+- Required libraries, modules, or dependencies:
+  - `java.util.ArrayList`
+  - `java.util.Scanner`

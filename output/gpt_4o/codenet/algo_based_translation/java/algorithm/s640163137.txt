@@ -1,0 +1,38 @@
+```
+Algorithm SortAndCountSwaps
+
+Input:
+    - BufferedReader for reading input
+    - Integer n
+    - Integer array a of size n
+    - String array elements
+
+Variables:
+    - Integer swapCount
+    - Integer mini
+    - Integer v
+    - String ans
+
+Steps:
+1. Initialize BufferedReader to read input.
+2. Read an integer n from input.
+3. Initialize integer array a with size n.
+4. Read a line of input and split it by spaces into elements array.
+5. Loop from i = 0 to n-1:
+    a. Parse elements[i] to integer and store in a[i].
+6. Initialize swapCount to 0.
+7. Loop from i = 0 to length of a - 1:
+    a. Initialize mini to i.
+    b. Loop from j = i to length of a - 1:
+        i. If a[j] < a[mini], set mini to j.
+    c. If mini is not equal to i:
+        i. Set v to a[mini].
+        ii. Set a[mini] to a[i].
+        iii. Set a[i] to v.
+        iv. Increment swapCount by 1.
+8. Initialize ans to string of a[0].
+9. Loop from i = 1 to length of a - 1:
+    a. Concatenate " " and a[i] to ans.
+10. Output ans.
+11. Output swapCount.
+```

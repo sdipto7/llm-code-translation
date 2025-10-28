@@ -1,0 +1,17 @@
+
+import heapq
+import sys
+
+data = list(map(int, sys.stdin.read().split()))
+n = data[0]
+nums = data[1:n+1]
+
+heapq.heapify(nums)
+
+sum_val = 0
+for _ in range(n - 1):
+    sum_val += heapq.heappop(nums)
+
+last = heapq.heappop(nums)
+print("Yes" if last < sum_val else "No")
+

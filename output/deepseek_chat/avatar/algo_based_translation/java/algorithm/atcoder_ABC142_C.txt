@@ -1,0 +1,33 @@
+**Function Signature:**
+- main(String[] args): void
+
+**Variables:**
+- Scanner scanner: Scanner(System.in)
+- int N: scanner.nextInt()
+- Map<Integer, Integer> idorder: new HashMap<>()
+- int i: loop counter
+- int A: scanner.nextInt()
+
+**Logic Flow:**
+1. Create Scanner object reading from System.in
+2. Read integer N from input
+3. Create empty HashMap idorder
+4. For i from 1 to N (inclusive):
+   - Read integer A from input
+   - Put entry (A, i) in idorder map
+5. For i from 1 to N (inclusive):
+   - Get value from idorder using key i
+   - Print value followed by space
+
+**Control Structures:**
+- for loop: i = 1; i <= N; i++
+- for loop: i = 1; i <= N; i++
+
+**Input/Output:**
+- Input: Reads integer N, then N integers
+- Output: Prints N space-separated integers
+
+**Dependencies:**
+- java.util.Scanner
+- java.util.HashMap
+- java.util.Map

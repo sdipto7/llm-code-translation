@@ -1,0 +1,22 @@
+Algorithm:
+
+- Input: Read a string from the user and store it in `strn`.
+- Convert `strn` to an integer and store it in `n`.
+- Initialize a list `shichigolist` with strings "3", "5", "7".
+- Create a list `shichigo` of lists, with the same length as `strn`, each initialized as an empty list.
+- Loop over the range of the length of `strn` using index `i`:
+  - If `i` is 0:
+    - For each element `j` in `shichigolist`, append `j` to `shichigo[i]`.
+  - Else:
+    - For each element `j` in `shichigo[i-1]`:
+      - For each element `k` in `shichigolist`, append the concatenation of `j` and `k` to `shichigo[i]`.
+- Set `target` to `len(strn) - 1`.
+- Loop over the range of the length of `strn` using index `i`:
+  - For each element `j` in a copy of `shichigo[i]`:
+    - If `i` is `target`:
+      - If the integer value of `j` is greater than `n`, remove `j` from `shichigo[target]`.
+      - Else if `j` does not contain all "3", "5", and "7", remove `j` from `shichigo[target]`.
+    - Else:
+      - If `j` does not contain all "3", "5", and "7", remove `j` from `shichigo[i]`.
+- Calculate the sum of the lengths of each list in `shichigo`.
+- Output: Print the calculated sum.

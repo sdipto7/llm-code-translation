@@ -1,0 +1,42 @@
+```
+Algorithm atcoder_ABC147_D
+    Input: Standard input
+    Output: Standard output
+
+    Variables:
+        n: integer
+        div: long = 10^9 + 7
+        A: array of long of size n
+        ans: long = 0
+        startTime: long
+        endTime: long
+
+    Begin
+        startTime = current system time in milliseconds
+        Read n from standard input
+        Initialize A as an array of long with size n
+        For i from 0 to n-1 do
+            Read A[i] from standard input
+        End For
+        
+        For i from 0 to 59 do
+            a: long = 0
+            count1: long = 0
+            For j from 0 to n-1 do
+                If (A[j] >> i) & 1 equals 1 then
+                    Increment count1 by 1
+                End If
+            End For
+            
+            Set a = count1 * (n - count1)
+            For j from 0 to i-1 do
+                Set a = (a << 1) % div
+            End For
+            
+            Set ans = (ans + a) % div
+        End For
+        
+        Print ans to standard output
+        endTime = current system time in milliseconds
+    End
+```

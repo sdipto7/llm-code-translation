@@ -1,0 +1,7 @@
+1. Read three input values: pandu, vundu, urdu.
+2. Initialize a variable c to 0.
+3. Iterate from 1 to urdu (inclusive) using a counter i.
+4. In each iteration, add the product of i and pandu to c.
+5. After the iteration, check if c is less than vundu.
+6. If c is less than vundu, output 0.
+7. Otherwise, output the difference between c and vundu.

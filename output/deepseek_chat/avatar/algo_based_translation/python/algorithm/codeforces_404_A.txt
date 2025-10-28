@@ -1,0 +1,45 @@
+**Function Signature:**
+- No explicit function defined; code executes at module level
+- Input: integer `n` from standard input, then `n` lines of strings
+- Output: prints "YES" or "NO" to standard output
+
+**Variable Declarations and Data Types:**
+- `n`: integer (size of square matrix)
+- `s`: list of strings (stores input rows)
+- `flag`: integer (unused in logic)
+- `d1`: list of characters (main diagonal elements)
+- `d2`: list of characters (anti-diagonal elements)
+- `rem`: set of characters (non-diagonal elements)
+
+**Execution Order Logic:**
+
+1. Read integer `n` from input
+2. Initialize empty list `s`
+3. For `i` from 0 to `n-1`:
+   - Read string `k` from input
+   - Append `k` to list `s`
+4. Initialize `flag` = 0 (unused)
+5. Initialize empty lists `d1` and `d2`
+6. Initialize empty set `rem`
+7. For `i` from 0 to `n-1`:
+   - For `j` from 0 to `n-1`:
+     - If `i == j`: append `s[i][j]` to `d1`
+     - If `i == n - j - 1`: append `s[i][j]` to `d2`
+     - If `i != j` AND `i != n - j - 1`: add `s[i][j]` to `rem`
+8. If size of `rem` ≠ 1: print "NO"
+9. Else if `d1` ≠ `d2`: print "NO"
+10. Else if size of set(`d1`) ≠ 1: print "NO"
+11. Else if set(`d1`) == `rem`: print "NO"
+12. Else: print "YES"
+
+**Control Structures:**
+- For loop: `for i in range(n)`
+- Nested for loop: `for j in range(n)`
+- Conditional chain: if-elif-elif-elif-else
+
+**Input/Output Operations:**
+- Input: `n = int(input())`, `k = input()`
+- Output: `print('NO')` or `print('YES')`
+
+**Dependencies:**
+- Standard Python libraries only (no imports required)

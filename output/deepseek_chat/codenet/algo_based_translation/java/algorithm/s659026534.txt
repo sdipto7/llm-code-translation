@@ -1,0 +1,9 @@
+Algorithm:
+- Import: java.util.Scanner
+- Function: main(String[] args) returning void
+- Declare: Scanner scan = new Scanner(System.in)
+- Declare: int n = scan.nextInt()
+- Declare: int count = 0
+- For loop: i from 1 to n inclusive, increment by 1
+  - Operation: count = count + i
+- Output: System.out.println(count)

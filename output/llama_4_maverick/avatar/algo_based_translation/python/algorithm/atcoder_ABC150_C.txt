@@ -1,0 +1,8 @@
+1. n = Read Integer Input
+2. Generate all permutations of numbers from 1 to n
+3. Store the generated permutations in orig
+4. p = Read Space Separated Integers as Tuple
+5. q = Read Space Separated Integers as Tuple
+6. pn = Find Index of p in orig
+7. qn = Find Index of q in orig
+8. Print Absolute Difference between pn and qn

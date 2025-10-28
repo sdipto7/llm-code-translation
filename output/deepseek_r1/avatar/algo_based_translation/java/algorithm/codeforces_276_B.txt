@@ -1,0 +1,41 @@
+**Function Signature:**
+- `public static void main(String[] args) throws NumberFormatException, IOException`
+
+**Variables:**
+- `InputStreamReader inputStreamReader` (initialized with `System.in`)
+- `BufferedReader bufferedReader` (initialized with `inputStreamReader`)
+- `PrintWriter writer` (initialized with `System.out`)
+- `String str` (input string read via `bufferedReader`)
+- `Map<Character, Integer> map` (initialized as `HashMap`)
+- `int oddCount` (initialized to `0`)
+
+**Libraries/Dependencies:**
+- `java.io.*`
+- `java.math.BigInteger`
+- `java.util.*`
+
+**Logic Flow:**
+1. Read input string using `bufferedReader.readLine()` and store in `str`.
+2. Initialize `map` to track character frequencies.
+3. Iterate over each character in `str` using index-based loop:
+   - For each character `ch`:
+     - If `ch` exists in `map`, increment its count by 1.
+     - Else, add `ch` to `map` with count `1`.
+4. Iterate over all entries in `map`:
+   - For each entry, check if its value (count) is odd (`entry.getValue() % 2 != 0`).
+   - If true, increment `oddCount` by 1.
+5. After processing all entries:
+   - If `oddCount <= 1` OR `oddCount % 2 != 0`, output "First".
+   - Else, output "Second".
+6. Flush output via `writer.flush()`.
+
+**Control Structures:**
+- Index-based `for` loop: `for (int i = 0; i < str.length(); i++)`
+- Enhanced `for` loop: `for (Map.Entry<Character, Integer> entry : map.entrySet())`
+- Conditional: `if (map.containsKey(ch))` during frequency counting
+- Conditional: `if (entry.getValue() % 2 != 0)` during oddCount calculation
+- Final conditional: `if (oddCount <= 1 || oddCount % 2 != 0)`
+
+**Input/Output:**
+- Input: Single string read from standard input.
+- Output: "First" or "Second" printed to standard output based on parity checks.

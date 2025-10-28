@@ -1,0 +1,37 @@
+Function: `leapyear(n: int) -> str`
+- Input: n (int)
+- Output: "y" (str) if n is a leap year, otherwise "n" (str)
+- Logic:
+  - If n is divisible by 400 or (divisible by 4 and not divisible by 100), return "y"
+  - Otherwise, return "n"
+
+Variables:
+- `n`: int, input from the user
+- `d`: str, initially "f"
+- `ans`: str, "ly" if n is a leap year, otherwise "nly"
+
+Logic Flow:
+1. Read integer input for `n`.
+2. Determine if `n` is a leap year:
+   - If leap year, set `ans` to "ly"
+   - Otherwise, set `ans` to "nly"
+3. Enter an infinite loop:
+   - If `n` is a leap year:
+     - If `d` is "m", set `d` to "w", increment `n`
+     - Else if `d` is "t", set `d` to "th", increment `n`
+     - Else if `d` is "w", set `d` to "f", increment `n`
+     - Else if `d` is "th", set `d` to "sa", increment `n`
+     - Else if `d` is "f", set `d` to "s", increment `n`
+     - Else if `d` is "sa", set `d` to "m", increment `n`
+     - Else if `d` is "s", set `d` to "t", increment `n`
+   - Else (if `n` is not a leap year):
+     - If `d` is "m", set `d` to "t", increment `n`
+     - Else if `d` is "t", set `d` to "w", increment `n`
+     - Else if `d` is "w", set `d` to "th", increment `n`
+     - Else if `d` is "th", set `d` to "f", increment `n`
+     - Else if `d` is "f", set `d` to "sa", increment `n`
+     - Else if `d` is "sa", set `d` to "s", increment `n`
+     - Else if `d` is "s", set `d` to "m", increment `n`
+   - If `d` is "f" and `ans` is "ly" and `leapyear(n)` returns "y", break the loop
+   - Else if `d` is "f" and `ans` is "nly" and `leapyear(n)` returns "n", break the loop
+4. Output the value of `n`

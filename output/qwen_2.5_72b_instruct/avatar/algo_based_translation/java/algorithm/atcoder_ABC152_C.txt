@@ -1,0 +1,43 @@
+Function signatures:
+- `main(String[] args): void`
+- `solve(): int`
+
+Variable declarations and data types:
+- `N: int`
+- `arr: int[]`
+- `sum: int`
+- `q: Queue<Integer>`
+- `sc: Scanner`
+- `i: int`
+
+Logic flow in execution order:
+
+1. `sc = new Scanner(System.in)`
+2. `N = sc.nextInt()`
+3. `arr = new int[N]`
+4. For `i` from `0` to `N - 1`:
+   - `arr[i] = sc.nextInt()`
+5. `sum = 0`
+6. `q = new PriorityQueue<>()`
+7. For `i` from `0` to `N - 1`:
+   - `q.add(arr[i])`
+   - If `arr[i] <= q.peek()`:
+     - `sum++`
+8. Return `sum`
+
+Control structures:
+- For loop with condition `i < N` (two instances)
+- If statement with condition `arr[i] <= q.peek()`
+
+Input/output operations and data processing logic:
+- Read integer `N` from standard input
+- Read array `arr` of size `N` from standard input
+- Initialize `sum` to 0
+- Use a priority queue `q` to manage elements of `arr`
+- For each element in `arr`, add it to `q` and increment `sum` if the element is less than or equal to the smallest element in `q`
+- Print the final value of `sum` to standard output
+
+Required libraries, modules, or dependencies:
+- `java.util.PriorityQueue`
+- `java.util.Queue`
+- `java.util.Scanner`

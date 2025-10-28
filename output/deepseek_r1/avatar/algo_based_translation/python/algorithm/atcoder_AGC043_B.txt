@@ -1,0 +1,89 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures**
+1. `twos_in_factorial(n: int) -> int`
+   - Parameters:
+     - `n`: Integer representing input value
+   - Return: Integer count of factors of 2 in n! prime decomposition
+
+2. `parity_of_nCr(n: int, i: int) -> bool`
+   - Parameters:
+     - `n`: Integer for combination upper value
+     - `i`: Integer for combination lower value
+   - Return: Boolean indicating if n choose i is even (True) or odd (False)
+
+**Main Program Variables**
+- `n: int` - Input integer value
+- `nums: List[int]` - List of input integers adjusted by algorithm
+- `no_one: bool` - Flag indicating original list lacked '1's (initialized False)
+- `is_odd: bool` - Result flag tracking XOR operations (initialized False)
+
+**Algorithm Steps**
+
+1. **Input Handling**
+   1. Read integer `n` from standard input
+   2. Read space-separated integers from input:
+      - Convert each token to integer using `map`
+      - Subtract 1 from each value, store in `nums`
+
+2. **List Adjustment**
+   1. If `1` not present in adjusted `nums` (original values minus 1):
+      1. Divide every element in `nums` by 2 (integer division)
+      2. Set `no_one = True`
+
+3. **Parity Calculation**
+   1. Initialize `is_odd = False`
+   2. Iterate over each `i` (index) and `num` (value) in `nums`:
+      1. If `parity_of_nCr(n - 1, i)` returns False AND `num` is odd (bitwise AND with 1):
+         1. Toggle `is_odd` using XOR assignment (`is_odd ^= True`)
+
+4. **Result Determination**
+   1. If `is_odd` is False:
+      1. Print `0`
+   2. Else:
+      1. Compute `1 << no_one` (bitwise shift left)
+      2. Print result
+
+**Function Logic**
+
+1. **twos_in_factorial**
+   1. Convert `n` to binary string using language equivalent of `bin()`
+   2. Count occurrences of '1' in binary representation
+   3. Return `n - count_of_ones`
+
+2. **parity_of_nCr**
+   1. Calculate `total_twos = twos_in_factorial(n)`
+   2. Calculate `denominator_twos = twos_in_factorial(n - i) + twos_in_factorial(i)`
+   3. Return `(total_twos - denominator_twos) > 0`
+
+**Control Flow Structures**
+- **Conditional in List Adjustment**
+  - Condition: `1 not in nums` after initial conversion
+  - Execution: List transformation and flag set
+- **Loop Structure**
+  - For each index-value pair in `nums`
+  - Condition: `parity_of_nCr(n-1, i) is False AND (num & 1 != 0)`
+  - Execution: Toggle `is_odd`
+- **Final Output Branch**
+  - Condition: `is_odd` state determines output value
+
+**Data Types**
+- All numerical variables: Integer type
+- List elements: Integer type
+- Boolean flags: Primitive boolean type
+
+**Input/Output Operations**
+- Input: Reads two lines from stdin
+  - First line: Single integer
+  - Second line: Space-separated integers
+- Output: Prints either 0, 1, or 2 based on bitwise logic
+
+**Edge Case Handling**
+- Handles input lists containing no original '1's via element halving
+- Correctly processes all combinations (including i=0 where nCr=1 is odd)
+- Handles empty list input (implicitly via Python's list operations)
+
+**Dependencies**
+- Requires function to convert integers to binary string/bit count
+- Relies on bitwise operations for parity checks
+- Assumes input validity (no type checking or error handling)

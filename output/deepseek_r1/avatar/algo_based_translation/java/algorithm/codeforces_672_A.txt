@@ -1,0 +1,34 @@
+**Function Signatures:**
+1. `generateString(): char[]`
+2. `main(String[] args): void`
+
+**Variables:**
+- `StringBuilder sb` (in generateString)
+- `Scanner sc` (in main)
+- `int n` (in main)
+
+**Logic Flow:**
+1. **generateString execution:**
+   - Create new StringBuilder object
+   - Iterate `i` from 1 to 1000 (inclusive):
+     * Append `i` as string to StringBuilder
+   - Convert StringBuilder content to String
+   - Convert String to char array
+   - Return char array
+
+2. **main execution:**
+   - Create Scanner object for System.in
+   - Read integer `n` from input
+   - Call generateString() to get char array
+   - Access element at index `n-1` from char array
+   - Print accessed character
+
+**Control Structures:**
+- For loop: `for (int i = 1; i <= 1000; i++)`
+
+**Input/Output:**
+- Input: Single integer via Scanner.nextInt()
+- Output: Single character via System.out.println()
+
+**Dependencies:**
+- `java.util.Scanner`

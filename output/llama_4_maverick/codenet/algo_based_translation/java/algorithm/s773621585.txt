@@ -1,0 +1,15 @@
+1. Import required libraries: java.util.HashMap, java.util.Scanner.
+2. Define a function `main` with return type `void` and parameter `args` of type `String[]`.
+3. Declare a variable `map` of type `HashMap<String, String>`.
+4. Initialize `map` with a new instance of `HashMap<String, String>`.
+5. Declare a variable `sc` of type `Scanner`.
+6. Initialize `sc` with a new instance of `Scanner(System.in)`.
+7. Declare a variable `n` of type `int`.
+8. Read an integer from `sc` and store it in `n`.
+9. Declare a variable `str` of type `String`.
+10. Read a line from `sc` and store it in `str` (though `str` is not used later).
+11. Start a `for` loop with initialization `i = 0`, condition `i < n`, and increment `i++`.
+12. Inside the loop, read a line from `sc` and put it as a key with an empty string as its value into `map`.
+13. Close `sc`.
+14. Print the size of `map` to the console.
+15. End the `main` function.

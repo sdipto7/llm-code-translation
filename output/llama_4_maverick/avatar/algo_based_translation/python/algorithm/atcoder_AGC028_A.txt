@@ -1,0 +1,18 @@
+1. Read N and M from input and store them as integers.
+2. Read S and T from input and store them as strings.
+3. Convert S and T into lists list_S and list_T.
+4. Generate a list Number_i containing integers from 0 to N-1.
+5. For each i in Number_i, calculate i * M / N and store the results in Number_iMN.
+6. Generate a list Number_j containing integers from 0 to M-1.
+7. Find the intersection of Number_iMN and Number_j, storing the common elements in Kaburi_j.
+8. For each j in Kaburi_j, calculate j * N / M, convert to integer, and store the results in Kaburi_i.
+9. Initialize counter to 0 and Flag to 0.
+10. While counter is less than or equal to the length of Kaburi_i minus 1:
+    10.1. Compare the elements at index Kaburi_i[counter] in list_S and index Kaburi_j[counter] in list_T.
+    10.2. If they are not equal, set Flag to 1 and exit the loop.
+    10.3. Increment counter by 1.
+11. Define a function gcd that takes two parameters a and b:
+    11.1. While b is greater than 0, update a and b to b and the remainder of a divided by b.
+    11.2. Return a.
+12. If Flag is 1, output -1.
+13. Otherwise, output the result of N * M divided by gcd(N, M), converted to an integer.

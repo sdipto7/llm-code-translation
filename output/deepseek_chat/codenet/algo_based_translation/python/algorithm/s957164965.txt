@@ -1,0 +1,45 @@
+**Function Signature:**
+- No explicit function defined; main script execution
+
+**Input Operations:**
+- Read first line: split input into two integers X and N
+- Read second line: split input into list p of integers
+
+**Variable Declarations and Data Types:**
+- X: integer
+- N: integer
+- p: list of integers
+- candidates: dictionary with integer keys and list of integers values
+- i: integer (loop variable)
+- smallest: integer
+- minNum: integer
+
+**Logic Flow:**
+
+1. Sort list p in ascending order
+2. Initialize empty dictionary candidates
+3. Loop i from -1 to 101 (inclusive):
+   - If i exists in list p: skip current iteration
+   - Else:
+     - Calculate absolute difference: diff = |X - i|
+     - If diff not in candidates keys:
+        * Create new entry: candidates[diff] = [i]
+     - Else:
+        * Append i to existing list: candidates[diff].append(i)
+4. Find smallest key in candidates dictionary
+5. Find minimum value in list candidates[smallest]
+6. Print minNum
+
+**Control Structures:**
+- For loop: for i in range(-1, 102)
+- Conditional: if i in p
+- Conditional: if abs(X-i) not in candidates.keys()
+- Dictionary key operations
+- List sorting and min operations
+
+**Output Operation:**
+- Print integer minNum
+
+**Dependencies:**
+- Built-in functions: input(), map(), list(), split(), sort(), abs(), min(), print()
+- No external libraries required

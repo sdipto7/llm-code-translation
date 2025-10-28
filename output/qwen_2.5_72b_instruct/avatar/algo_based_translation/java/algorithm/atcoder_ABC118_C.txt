@@ -1,0 +1,48 @@
+Function Signatures:
+- `main(String[] args): void`
+- `func(ArrayList<Integer> A): ArrayList<Integer>`
+
+Variable Declarations:
+- `n: int` (number of integers)
+- `a: ArrayList<Integer>` (list of integers)
+- `ans: int` (final result)
+- `sc: Scanner` (input scanner)
+- `min: int` (minimum non-zero value in the list)
+
+Logic Flow:
+1. Initialize `sc` as a new `Scanner` object for standard input.
+2. Read integer `n`.
+3. If `n` equals 1, read the next integer and print it, then exit.
+4. For `i` from 0 to `n-1`, read an integer and add it to `a`.
+5. Sort `a`.
+6. If the last element of `a` equals 0, print 0, then exit.
+7. Set `ans` to 0.
+8. While true:
+   - If `a` has only one element, set `ans` to the first element of `a` and break the loop.
+   - Call `func(a)` and update `a` with the returned list.
+9. Print `ans`.
+
+Control Structures:
+- If `n == 1`, execute block and exit.
+- If the last element of `a` equals 0, execute block and exit.
+- While loop continues until `a` has only one element.
+- For loop iterates over each element in `a`.
+- If `a.get(i) == 0`, remove the element and adjust the index.
+- If `min != 0`, set `a.get(i)` to `a.get(i) % min`. If `a.get(i) == 1`, print 1 and exit.
+- Else, set `min` to `a.get(i)`.
+
+Input/Output Operations:
+- Read integer `n` from input.
+- For `i` from 0 to `n-1`, read integers and add them to `a`.
+- Print `ans`.
+
+Data Processing Logic:
+- Sort `a` in ascending order.
+- Remove zeros from `a`.
+- Find the minimum non-zero value in `a` and store it in `min`.
+- Replace each element in `a` with the remainder of the division by `min`.
+- If any element becomes 1, print 1 and exit.
+- Continue the process until `a` has only one element, which becomes `ans`.
+
+Libraries/Modules/Dependencies:
+- `java.util.*`

@@ -1,0 +1,59 @@
+Function signatures and parameter/return types:
+- `doIt()`: void
+- `main(String[] args)`: void
+
+Variable declarations and data types:
+- `sc`: Scanner
+- `MOD`: int, constant value 1000000007
+- `MAX`: int, constant value Integer.MAX_VALUE
+- `LMAX`: long, constant value Long.MAX_VALUE
+- `len`: int, initialized to 1,000,001
+- `N`: int
+- `K`: long
+- `A[]`: int array
+- `used`: Set<Integer>
+- `idx[]`: int array
+- `pos[]`: int array
+- `next`: int, initialized to 0
+- `cur`: int, initialized to 0
+- `a`: long
+- `b`: long
+- `ans`: int
+
+Logic flow in execution order:
+1. Initialize `sc` as a new Scanner object for System.in.
+2. Read `N` as an integer from `sc`.
+3. Read `K` as a long from `sc`.
+4. Initialize `A[]` as an int array of size `N`.
+5. For `i` from 0 to `N-1`, read an integer from `sc`, subtract 1, and store it in `A[i]`.
+6. Initialize `used` as a new HashSet of Integer.
+7. Initialize `idx[]` as an int array of size `N`.
+8. Initialize `pos[]` as an int array of size `N`.
+9. Set `next` to 0.
+10. Set `cur` to 0.
+11. While `used` does not contain `next`:
+    1. Add `next` to `used`.
+    2. Set `idx[next]` to `cur`.
+    3. Set `pos[cur]` to `next`.
+    4. Set `next` to `A[next]`.
+    5. Increment `cur` by 1.
+12. Set `a` to `cur - idx[next]` as a long.
+13. Set `b` to `idx[next]` as a long.
+14. Set `ans` to `(10000 * a + K - b) % a + b` as an int.
+15. If `b` is greater than `K`, set `ans` to `K` as an int.
+16. Print `pos[ans] + 1` to System.out.
+
+Control structures:
+- For loop: Iterates from 0 to `N-1`.
+- While loop: Continues as long as `used` does not contain `next`.
+- If conditional: Checks if `b` is greater than `K`.
+
+Input/output operations and data processing logic:
+- Reads `N` and `K` from standard input.
+- Reads `N` integers from standard input, processes them, and stores them in `A[]`.
+- Uses a HashSet to track visited indices and two arrays to map indices and positions.
+- Computes the final answer based on cycle detection and modular arithmetic.
+- Outputs the result to standard output.
+
+Required libraries, modules, or dependencies:
+- `java.util.*` for Scanner, HashSet.

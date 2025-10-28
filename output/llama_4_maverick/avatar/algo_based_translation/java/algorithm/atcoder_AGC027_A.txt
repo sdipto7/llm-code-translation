@@ -1,0 +1,10 @@
+1. Read the number of elements N and the initial value x from the input.
+2. Read N integers and store them in a list.
+3. Sort the list in ascending order.
+4. Initialize a counter num to 0.
+5. Iterate through the sorted list from the smallest element to the largest.
+6. For each element, check if subtracting the current element from x results in a non-negative value.
+7. If x remains non-negative, subtract the current element from x and increment num.
+8. If x becomes negative, stop iterating.
+9. If num equals N and x is greater than 0, decrement num by 1.
+10. Output the value of num.

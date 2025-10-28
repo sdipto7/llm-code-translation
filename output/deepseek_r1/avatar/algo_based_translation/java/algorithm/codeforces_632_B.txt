@@ -1,0 +1,55 @@
+**Algorithm:**
+
+Function Signature:  
+main(String[] args) → void  
+
+Variables:  
+- n: int (input)  
+- a: int[] (size n)  
+- s: String (length n)  
+- sum: long (initial 0)  
+- ans: long  
+- sum1: long  
+- ch: char  
+
+Input Operations:  
+1. Read integer n from standard input  
+2. Read n integers into array a  
+3. Read string s from standard input  
+
+Logic Flow:  
+1. Initialize sum:  
+   For each index i from 0 to n-1:  
+      if s[i] == 'B' → sum += a[i]  
+
+2. Set ans = sum  
+   Set sum1 = sum  
+
+3. Left-to-right traversal:  
+   For i from 0 to n-1:  
+      if s[i] == 'A' → sum1 += a[i]  
+      else → sum1 -= a[i]  
+      ans = max(ans, sum1)  
+
+4. Reset sum1 = sum  
+
+5. Right-to-left traversal:  
+   For i from n-1 downto 0:  
+      if s[i] == 'A' → sum1 += a[i]  
+      else → sum1 -= a[i]  
+      ans = max(ans, sum1)  
+
+6. Output ans  
+
+Control Structures:  
+- For-loop: 0 ≤ i < n (array initialization)  
+- For-loop: 0 ≤ i < s.length() (sum calculation)  
+- Two sequential for-loops:  
+   a. 0 ≤ i < s.length() (left-to-right adjustment)  
+   b. s.length()-1 ≥ i ≥ 0 (right-to-left adjustment)  
+- Conditional branches: Character checks ('A'/'B')  
+- Math.max operations  
+
+Dependencies:  
+- Requires Java Scanner class for input handling  
+- No external libraries beyond java.util.*

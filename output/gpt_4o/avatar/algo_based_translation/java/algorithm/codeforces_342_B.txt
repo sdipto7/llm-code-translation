@@ -1,0 +1,51 @@
+```plaintext
+Function Signature:
+- main() -> void
+
+Variable Declarations:
+- reader: BufferedReader
+- input: String[]
+- m, s, f, maxT, k, a, b, d, cur: int
+- map: HashMap<Integer, ArrayList<Integer>>
+- actions: StringBuilder
+- M: char
+
+Dependencies:
+- BufferedReader from io
+- InputStreamReader from io
+- ArrayList from util
+- HashMap from util
+
+Algorithm:
+1. Initialize BufferedReader to read from system input.
+2. Read a line of input and split it into a String array `input`.
+3. Parse integers `m`, `s`, `f` from `input` array at indices 1, 2, and 3 respectively.
+4. Initialize `maxT` to -1.
+5. Initialize `map` as a new HashMap with keys as Integer and values as ArrayList of Integers.
+6. While `m` is greater than 0:
+   a. Read a line of input and split it into a String array `mth`.
+   b. Parse integer `k` from `mth` array at index 0.
+   c. Initialize a new ArrayList for key `k` in `map`.
+   d. Add parsed integers at indices 1 and 2 from `mth` to the ArrayList in `map` at key `k`.
+   e. Update `maxT` to the maximum of `maxT` and `k`.
+   f. Decrement `m` by 1.
+7. Declare `actions` as a new StringBuilder.
+8. Determine `M` to be 'R' if `s` is less than `f`, otherwise 'L'.
+9. Set `d` to 1 if `s` is less than `f`, otherwise -1.
+10. Set `cur` to `s`.
+11. Initialize `a` and `b` to -1.
+12. For `t` from 1 to `maxT` inclusive:
+    a. If `map` contains key `t`:
+       i. Set `a` to the first element in the ArrayList at key `t` in `map`.
+       ii. Set `b` to the second element in the ArrayList at key `t` in `map`.
+    b. If `map` contains key `t` and either `cur` is between `a` and `b` inclusive or `cur + d` is between `a` and `b` inclusive:
+       i. Append 'X' to `actions`.
+    c. Else:
+       i. Append `M` to `actions`.
+       ii. Increment `cur` by `d`.
+    d. If `cur` equals `f`, break the loop.
+13. While `cur` is not equal to `f`:
+    a. Append `M` to `actions`.
+    b. Increment `cur` by `d`.
+14. Print the `actions` as a string.
+```

@@ -1,0 +1,29 @@
+```
+Function Signature:
+    def compare_values(X: int, A: int) -> int
+
+Variable Declarations:
+    - X: int
+    - A: int
+    - result: int
+
+Logic Flow:
+1. Input and Data Processing:
+    - Read a line of input from the user.
+    - Split the input string by spaces into a list of strings.
+    - Convert each string in the list to an integer.
+    - Assign the first integer to variable X.
+    - Assign the second integer to variable A.
+
+2. Conditional Logic:
+    - If X is less than A:
+        - Set result to 0.
+    - Else:
+        - Set result to 10.
+
+3. Output:
+    - Print the value of result.
+
+Required Libraries:
+    - No external libraries or dependencies are required.
+```

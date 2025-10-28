@@ -1,0 +1,43 @@
+1. **Function Signatures**
+   - `public static void main(String[] args)`
+
+2. **Variable Declarations**
+   - `Scanner sc = new Scanner(System.in)`
+   - `int n` (stores number of test cases)
+   - `String[] s` (stores split keypad character groups)
+   - `char[][] k` (9-element array of char arrays, each representing key characters)
+   - `char[] c` (stores current input string as char array)
+   - `int l = -1` (track current position in key character array)
+   - `int a = 0` (track current key index)
+
+3. **Initial Setup**
+   - Split string `".,!? :abc:def:ghi:jkl:mno:pqrs:tuv:wxyz"` using ':' delimiter into `s`
+   - Populate `k` by converting each string in `s` to a char array
+
+4. **Input Processing**
+   - Read integer `n` from input
+   - Loop `while (n-- > 0)` to process all test cases
+
+5. **Per-Test Case Logic**
+   - Read input string and convert to char array `c`
+   - For each character `c[i]` in `c`:
+     - If `c[i] != '0'`:
+       - Set `a = (c[i] - '1')` (convert char to 0-based key index)
+       - Increment `l` cyclically: `l = (l + 1) % k[a].length`
+     - Else if `l >= 0`:
+       - Print `k[a][l]`
+       - Reset `l = -1`
+   - Print newline after processing all characters
+
+6. **Control Structures**
+   - While loop: `while (n-- > 0)`
+   - For loop: `for (int i = 0; i < c.length; i++)`
+   - Conditional 1: `if (c[i] != '0')`
+   - Conditional 2: `else if (l >= 0)`
+
+7. **I/O Operations**
+   - Read via `Scanner.nextInt()` and `Scanner.next()`
+   - Output via `System.out.print` and `System.out.println`
+
+8. **Dependencies**
+   - `java.util.Scanner` for input handling

@@ -1,0 +1,34 @@
+1. Import the `product` function from the `itertools` module.
+2. Declare a function with no parameters that returns no value (`void` equivalent).
+3. Within this function:
+   - Read an integer `N` from the input.
+   - Initialize a variable `x` to 1.
+   - Create a list `N_list` containing integers from 1 to `N` (inclusive) using a list comprehension.
+   - Generate a list `n` of all possible 3-tuples using the `product` function with `N_list` and a repeat count of 3.
+   - Calculate the length `m` of the list `n`.
+   - Output the value of `m`.
+4. The required library is `itertools`. 
+
+In a more structured pseudo-code format that captures the detailed algorithm:
+- Function Signature: `main() -> void`
+- Variable Declarations:
+  - `N: integer`
+  - `x: integer`
+  - `N_list: list of integers`
+  - `n: list of 3-tuples`
+  - `m: integer`
+- Logic Flow:
+  1. `N = read_integer_from_input()`
+  2. `x = 1`
+  3. `N_list = generate_list(1, N)`
+  4. `n = product(N_list, 3)`
+  5. `m = length(n)`
+  6. `output(m)` 
+- Control Structures: None explicitly, but the `product` function generates the Cartesian product which involves nested loops.
+- Input/Output Operations:
+  - `read_integer_from_input()` to read `N`
+  - `output(m)` to print the result
+- Data Processing Logic:
+  - Generating `N_list` using a list comprehension equivalent to a loop that iterates from 1 to `N`.
+  - Using the `product` function to generate all 3-tuples from `N_list`.
+  - Calculating the length of `n`.

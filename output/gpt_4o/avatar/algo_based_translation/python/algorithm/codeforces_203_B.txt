@@ -1,0 +1,25 @@
+Function Signature:
+- `solve_case() -> None`
+
+Variable Declarations:
+- `n: int` - number of rows and columns in the grid
+- `m: int` - number of operations to be performed
+- `count: List[List[int]]` - a 2D list initialized with zeros, representing a grid of size `n x n`
+- `ans: int` - variable to store the result, initialized to -1
+- `x, y: int` - coordinates for each operation, adjusted to zero-based indexing
+- `found: bool` - flag to indicate whether a 3x3 grid with a count of 9 is found
+
+Execution Logic:
+1. Read two integers `n` and `m` from input, representing the grid size and number of operations.
+2. Initialize `count` as a 2D list with dimensions `n x n`, filled with zeros.
+3. Set `ans` to -1, indicating no valid operation has been found yet.
+4. Loop over `k` from 0 to `m-1` to process each operation:
+   - Read two integers `x` and `y` from input, representing the coordinates of the operation, and adjust them to zero-based indexing.
+   - Set `found` to `False`.
+   - Iterate over `i` from `x-2` to `x` (inclusive):
+     - Iterate over `j` from `y-2` to `y` (inclusive):
+       - Check if `i` and `j` are within grid bounds (0 to `n-1`):
+         - Increment `count[i][j]` by 1.
+         - If `count[i][j]` equals 9, set `found` to `True`.
+   - If `found` is `True`, set `ans` to `k + 1` and break the loop.
+5. Output the value of `ans`.

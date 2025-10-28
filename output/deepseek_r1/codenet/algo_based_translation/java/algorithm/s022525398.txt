@@ -1,0 +1,39 @@
+**Algorithm Extraction:**
+
+1. **Function Signatures:**
+   - `public static void main(String[] args)`
+
+2. **Variables:**
+   - `Scanner in = new Scanner(System.in)`
+   - `String a`
+   - `String b`
+
+3. **Logic Flow:**
+   - Initialize Scanner to read from standard input
+   - Read first whitespace-delimited token from input into `a`
+   - Read next whitespace-delimited token from input into `b`
+   - Concatenate `b` and `a` (in that order)
+   - Print concatenated string to standard output
+
+4. **Input/Output Operations:**
+   - Input: Two string tokens via Scanner
+   - Output: Concatenated result of second token followed by first token
+
+5. **Control Structures:**
+   - None (linear execution)
+
+6. **Dependencies:**
+   - `java.util.Scanner` library
+
+---
+
+**Generated Python Code:**
+
+```python
+import sys
+
+tokens = sys.stdin.read().split()
+a = tokens[0]
+b = tokens[1]
+print(b + a)
+```

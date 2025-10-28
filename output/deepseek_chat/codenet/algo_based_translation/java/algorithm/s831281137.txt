@@ -1,0 +1,58 @@
+Algorithm:
+- Function signatures:
+  - main(String[] args): void
+  - nlong(): long
+  - nint(): int
+  - nstr(): String
+  - nsToChars(): char[]
+  - nlongs(int n): long[]
+  - nints(int n): int[]
+  - nints(int n, int padL, int padR): int[]
+  - nlongs(int n, int padL, int padR): long[]
+  - nstrs(int n): String[]
+  - nsToChars2D(int h, int w): char[][]
+  - nsToChars2D(int h, int w, int pad): char[][]
+
+- Variables:
+  - Scanner sc: static final
+  - PrintStream so: static final
+  - int N
+  - int W
+  - int[] v: size N+1
+  - int[] w: size N+1
+  - int[][] sumV: dimensions (N+1) x (W+1)
+
+- Execution flow:
+  1. Initialize static Scanner sc with System.in
+  2. Initialize static PrintStream so with System.out
+  3. Execute main method
+  4. Call nint() to read integer N
+  5. Call nint() to read integer W
+  6. Create arrays v and w of size N+1
+  7. For i from 1 to N inclusive:
+     - Call nint() to read v[i]
+     - Call nint() to read w[i]
+  8. Create 2D array sumV with dimensions (N+1) x (W+1)
+  9. For i from 1 to N inclusive:
+     - For i_sum from 0 to w[i]-1:
+        - Set sumV[i][i_sum] = sumV[i-1][i_sum]
+     - For i_sum from w[i] to W inclusive:
+        - Set sumV[i][i_sum] = max(sumV[i-1][i_sum], sumV[i-1][i_sum - w[i]] + v[i])
+  10. Print sumV[N][W] using so.println()
+  11. End main
+
+- Control structures:
+  - For loop: i from 1 to N (inclusive)
+  - For loop: i_sum from 0 to w[i]-1
+  - For loop: i_sum from w[i] to W (inclusive)
+  - Math.max comparison
+
+- Input/output operations:
+  - Scanner reads from System.in
+  - PrintStream writes to System.out
+  - Input: integers N, W, followed by N pairs of integers (v, w)
+  - Output: single integer value
+
+- Required libraries:
+  - java.io.PrintStream
+  - java.util.Scanner

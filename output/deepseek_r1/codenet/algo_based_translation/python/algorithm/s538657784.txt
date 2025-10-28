@@ -1,0 +1,28 @@
+- **Libraries/Dependencies**:  
+  - `math`
+
+- **Input Operations**:  
+  - Read integer `N` from standard input.
+
+- **Variable Declarations**:  
+  - `N`: integer (input value)  
+  - `sqN`: integer (floor of square root of `N`)  
+  - `i`: integer (loop index)  
+  - `divisor`: integer (temporary divisor value)  
+
+- **Execution Flow**:  
+  1. Compute `sqN` as `int(math.sqrt(N))`.  
+  2. Iterate `i` from `0` to `sqN - 1` (inclusive):  
+      a. Calculate `divisor = sqN - i`.  
+      b. If `N % divisor == 0`:  
+          i. Compute result as `(N // divisor + divisor) - 2`.  
+          ii. Print result as integer.  
+          iii. Terminate loop immediately.  
+
+- **Control Structures**:  
+  - `for` loop: `for i in range(sqN):`  
+  - `if` condition: `if N % divisor == 0:`  
+  - `break` statement to exit loop upon finding result.  
+
+- **Output Operations**:  
+  - Print computed result once upon finding the first valid divisor.

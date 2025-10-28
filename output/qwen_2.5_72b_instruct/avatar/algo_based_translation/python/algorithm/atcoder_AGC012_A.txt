@@ -1,0 +1,42 @@
+Algorithm:
+
+function readInts() -> List[int]:
+    return list(map(int, input().split()))
+
+function main():
+    n: int = int(input())
+    A: List[int] = readInts()
+    A.sort()
+    ans: int = 0
+    for i in range(len(A) - 2, len(A) - 2 * n - 1, -2):
+        ans += A[i]
+    print(ans)
+
+required libraries:
+- statistics
+- fractions
+- itertools
+- collections
+- bisect
+- sys
+
+variable declarations:
+- n: int
+- A: List[int]
+- ans: int
+- i: int
+
+input/output operations:
+- input() reads integers from standard input
+- print(ans) writes the result to standard output
+
+data processing logic:
+- readInts reads a line of space-separated integers and converts them to a list of integers
+- main function:
+    - reads an integer n
+    - reads a list of integers A
+    - sorts the list A in ascending order
+    - initializes ans to 0
+    - iterates over the list A starting from the second last element to the len(A) - 2 * n - 1 element with a step of -2
+    - adds every other element starting from the second last to ans
+    - prints the final value of ans

@@ -1,0 +1,28 @@
+- **Function Signatures**: None (procedural code without explicit functions)
+- **Variables**:
+  - `N: int` (number of currency entries)
+  - `mo: list[list[Union[float, str]]]` (stores currency values and units)
+  - `x: float` (temporary currency value)
+  - `u: str` (temporary currency unit)
+  - `okz: float` (total sum in JPY)
+- **Logic Flow**:
+  1. Read integer `N` from standard input
+  2. Initialize empty list `mo`
+  3. Loop `N` times:
+      - Read line from input, split into `x` (as float) and `u` (as string)
+      - Append `[x, u]` to `mo`
+  4. Initialize `okz` to 0.0
+  5. Iterate over each element `i` in `mo`:
+      - If `i[1] == "JPY"`:
+          - Add `i[0]` to `okz`
+      - Else:
+          - Add `i[0] * 380000` to `okz`
+  6. Print `okz` with default formatting
+- **Control Structures**:
+  - `for _ in range(N)` loop for input collection
+  - `for i in mo` loop for currency conversion
+  - `if i[1] == "JPY"` conditional for unit check
+- **Input/Output**:
+  - Input: Read `N` via `input()`, then read `N` lines via `input().split()`
+  - Output: Print final `okz` value via `print(okz)`
+- **Dependencies**: None (uses built-in functions only)

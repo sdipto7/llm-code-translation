@@ -1,0 +1,19 @@
+- **Imported Libraries**: `sys`
+- **Variables**:
+  - `a` (integer)
+  - `b` (integer)
+- **Input Handling**:
+  - Read a line from standard input.
+  - Split the input into two parts and convert to integers for `a` and `b`.
+- **Control Flow**:
+  - If `a >= 13`:
+    - Print `b` as an integer.
+  - Else if `a >= 6`:
+    - Compute `b / 2`, convert to integer via truncation, and print the result.
+  - Else:
+    - Print `0`.
+- **Execution Order**:
+  1. Import `sys`.
+  2. Read input and assign to `a` and `b`.
+  3. Check the value of `a` and execute the corresponding conditional branch.
+  4. Print the result based on the conditions.

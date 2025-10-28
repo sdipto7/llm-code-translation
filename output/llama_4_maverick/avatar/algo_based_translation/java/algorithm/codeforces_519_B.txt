@@ -1,0 +1,9 @@
+1. Read the number of inputs, n.
+2. Initialize variables a, b, and c to 0.
+3. Iterate n times and sum the inputs in variable a.
+4. Iterate n-1 times and sum the inputs in variable b.
+5. Iterate n-2 times and sum the inputs in variable c.
+6. Calculate x as the difference between a and b.
+7. Calculate y as the difference between b and c.
+8. Output x.
+9. Output y.

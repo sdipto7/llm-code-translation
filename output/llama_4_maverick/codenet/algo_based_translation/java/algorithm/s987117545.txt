@@ -1,0 +1,68 @@
+### Algorithm 
+
+1. Import required libraries: 
+   - java.util.*
+
+2. Define a class: Main
+
+3. Declare class properties: 
+   - sc: Scanner object
+   - DEVISOR: long constant with value 1000000007
+
+4. Define main method: 
+   - public static void main(String[] args)
+
+5. Instantiate Main class and call run method: 
+   - new Main().run()
+
+6. Define run method: 
+   - private void run()
+
+7. Within run method:
+   - Read two long values from input: n, k
+   - Initialize ans: long variable to 0
+
+8. Loop from k to n+1 (inclusive):
+   - For each iteration i:
+     - Calculate max: i*(2*n-i+1)/2
+     - Calculate min: i*(i-1)/2
+     - Update ans: ans + (max - min + 1) % DEVISOR
+
+9. Output ans % DEVISOR
+
+### Step-by-Step Logic 
+
+1. `long n = sc.nextLong();`
+2. `long k = sc.nextLong();`
+3. `long ans = 0;`
+4. Loop: `for (long i = k; i <= n+1; i++)`
+   - `long max = i*(2*n-i+1)/2;`
+   - `long min = i*(i-1)/2;`
+   - `ans += (max - min + 1) % DEVISOR;`
+5. `System.out.println(ans % DEVISOR);`
+
+### Formal Representation 
+
+- Function signature: `private void run()`
+- Input parameters: read from `sc` (Scanner object)
+- Return type: void
+- Variable declarations:
+  - `n`: long
+  - `k`: long
+  - `ans`: long
+  - `i`: long (loop counter)
+  - `max`: long
+  - `min`: long
+- Control structures:
+  - `for` loop: `i = k` to `n+1` (inclusive)
+- Input/Output operations:
+  - Read `n` and `k` from input using `sc.nextLong()`
+  - Output `ans % DEVISOR` using `System.out.println()`
+- Data processing logic:
+  - Calculate `max` and `min` for each `i`
+  - Update `ans` using the formula `(max - min + 1) % DEVISOR`
+  - Apply modulo operation to `ans` before outputting
+
+### Required Libraries/Modules 
+
+- java.util.* (for Scanner class)

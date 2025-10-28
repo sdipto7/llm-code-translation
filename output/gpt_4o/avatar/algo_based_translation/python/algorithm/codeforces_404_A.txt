@@ -1,0 +1,34 @@
+Algorithm:
+
+1. Function signature:
+   ```python
+   def check_pattern(n: int, s: List[str]) -> str:
+   ```
+
+2. Variable declarations and data types:
+   - `n`: int - The size of the square matrix.
+   - `s`: List[str] - A list of strings representing the rows of the square matrix.
+   - `flag`: int - A flag used for validation, initialized to 0.
+   - `d1`: List[str] - A list to store the main diagonal elements.
+   - `d2`: List[str] - A list to store the secondary diagonal elements.
+   - `rem`: Set[str] - A set to store the non-diagonal elements.
+
+3. Complete logic flow:
+   - Initialize `flag` to 0.
+   - Initialize `d1` as an empty list.
+   - Initialize `d2` as an empty list.
+   - Initialize `rem` as an empty set.
+
+4. Loop through each index `i` from 0 to `n-1`.
+   - Loop through each index `j` from 0 to `n-1`.
+     - If `i == j`, append `s[i][j]` to `d1`.
+     - If `i == n - j - 1`, append `s[i][j]` to `d2`.
+     - If `i != j` and `i != n - j - 1`, add `s[i][j]` to `rem`.
+
+5. Conditional checks:
+   - If the length of `rem` is not equal to 1, return 'NO'.
+   - If `d1` is not equal to `d2`, return 'NO'.
+   - If the size of the set created from `d1` is not equal to 1, return 'NO'.
+   - If the set created from `d1` is equal to `rem`, return 'NO'.
+
+6. If all conditions are satisfied, return 'YES'.

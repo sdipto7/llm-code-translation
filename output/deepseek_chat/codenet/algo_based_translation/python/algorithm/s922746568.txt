@@ -1,0 +1,14 @@
+1. Read integer n from input
+2. Read string s from input
+3. Count occurrences of 'R' in s, store as r_cnt
+4. Count occurrences of 'G' in s, store as g_cnt
+5. Count occurrences of 'B' in s, store as b_cnt
+6. Initialize ans = r_cnt * g_cnt * b_cnt
+7. For i from 0 to n-1:
+8.     For d from 1 to n-1:
+9.         Calculate j = i + d
+10.        Calculate k = j + d
+11.        If k >= n: break inner loop
+12.        If s[i] ≠ s[j] AND s[j] ≠ s[k] AND s[k] ≠ s[i]:
+13.            Decrement ans by 1
+14. Print ans

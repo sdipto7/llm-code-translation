@@ -1,0 +1,14 @@
+1. Import Scanner from java.util
+2. Declare public class Main
+3. Declare public static void main method taking String[] args parameter with void return type
+4. Create Scanner object initialized with System.in
+5. Read next token from Scanner, parse to int, assign to variable 'count' of type int
+6. Declare int array 'givingNumbers' with size 'count'
+7. For loop: initialize int i=0, condition i < count, increment i by 1
+   - Read next token from Scanner, parse to int, assign to givingNumbers[i]
+8. For loop: initialize int i=count-1, condition 0 <= i, decrement i by 1
+   - Print givingNumbers[i]
+   - If condition: i > 0
+     - Print space character
+9. Print newline
+10. Close Scanner

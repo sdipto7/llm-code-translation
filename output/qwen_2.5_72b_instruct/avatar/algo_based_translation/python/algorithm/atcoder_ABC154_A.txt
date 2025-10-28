@@ -1,0 +1,32 @@
+Function Signature:
+- `solve(S: str, T: str, A: int, B: int, U: str) -> None`
+- `main() -> None`
+
+Variable Declarations and Data Types:
+- `S: str`
+- `T: str`
+- `A: int`
+- `B: int`
+- `U: str`
+- `tokens: generator`
+
+Libraries/Modules/Dependencies:
+- `sys` module
+
+Logic Flow in Execution Order:
+1. Define function `solve` taking parameters `S`, `T`, `A`, `B`, `U` of types `str`, `str`, `int`, `int`, `str` respectively.
+2. Inside `solve`, check if `S` is equal to `U`. If true, decrement `A` by 1.
+3. Inside `solve`, check if `T` is equal to `U`. If true, decrement `B` by 1.
+4. Inside `solve`, print the current values of `A` and `B`.
+5. Inside `solve`, return `None`.
+6. Define function `main` taking no parameters.
+7. Inside `main`, define a nested function `iterate_tokens` that returns a generator.
+8. Inside `iterate_tokens`, for each line in `sys.stdin`, split the line by spaces and yield each word.
+9. Inside `main`, initialize `tokens` as the generator returned by `iterate_tokens`.
+10. Inside `main`, assign the first yielded value from `tokens` to `S`.
+11. Inside `main`, assign the next yielded value from `tokens` to `T`.
+12. Inside `main`, assign the integer value of the next yielded value from `tokens` to `A`.
+13. Inside `main`, assign the integer value of the next yielded value from `tokens` to `B`.
+14. Inside `main`, assign the next yielded value from `tokens` to `U`.
+15. Inside `main`, call the `solve` function with arguments `S`, `T`, `A`, `B`, `U`.
+16. Check if the script is run as the main module. If true, call the `main` function.

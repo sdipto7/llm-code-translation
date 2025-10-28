@@ -1,0 +1,54 @@
+FastReader class:
+- Constructor: initializes BufferedReader and StringTokenizer
+- next(): reads next token from input, returns as String
+- nextInt(): converts next token to int
+- nextLong(): converts next token to long
+- nextDouble(): converts next token to double
+- nextLine(): reads next line from input, returns as String
+
+Function signatures:
+- main(String[] args): void
+- solve(): void
+
+Variable declarations and data types:
+- t: int
+- arr: int[]
+- prevWinner: int
+- i: int
+
+Logic flow in execution order:
+- Initialize FastReader object scan
+- Read number of test cases t (always 1 in this code)
+- While t > 0:
+    - Read integer t (number of elements in array)
+    - Initialize array arr of size t
+    - For i from 0 to t-1:
+        - Read integer and store in arr[i]
+    - Initialize prevWinner to 0
+    - For i from 0 to t-1:
+        - If arr[i] == 1:
+            - If prevWinner == 0:
+                - Set prevWinner to 2
+        - If prevWinner == 2 or prevWinner == 0:
+            - If (arr[i] - 1) % 2 == 0:
+                - Print 2
+                - Set prevWinner to 2
+            - Else:
+                - Print 1
+                - Set prevWinner to 1
+        - Else:
+            - If (arr[i] - 1) % 2 == 0:
+                - Print 1
+                - Set prevWinner to 1
+            - Else:
+                - Print 2
+                - Set prevWinner to 2
+
+Input/output operations and data processing logic:
+- Reads integers from standard input using FastReader
+- Processes the array based on the rules defined in the solve() function
+- Prints 1 or 2 for each element in the array based on conditions
+
+Required libraries, modules, or dependencies:
+- java.util.*
+- java.io.*

@@ -1,0 +1,35 @@
+Algorithm:
+
+1. **Import Required Libraries**
+   - Import `java.io.*` for input-output operations.
+   - Import `java.util.*` for utility classes such as `StringTokenizer`.
+
+2. **Define FastReader Class**
+   - A helper class for fast input reading.
+
+3. **FastReader Class Methods**
+   - `FastReader()`: Constructor initializes `BufferedReader` with `System.in`.
+   - `String next()`: Returns the next token from input. If no token is available, reads a new line and tokenizes it.
+   - `int nextInt()`: Parses and returns the next token as an integer.
+   - `long nextLong()`: Parses and returns the next token as a long integer.
+   - `double nextDouble()`: Parses and returns the next token as a double.
+   - `String nextLine()`: Reads and returns the next line from input.
+
+4. **Main Method Logic**
+   - Create an instance of `FastReader`.
+   - Read an integer `n` using `nextInt()`.
+   - Read an integer `m` using `nextInt()`.
+   - Call `reverse(int n)` function with `m` as argument and store the result in `t`.
+   - Output the sum of `t` and `n`.
+
+5. **reverse Function**
+   - **Signature**: `int reverse(int n)`
+   - **Parameters**: `n` - integer to be reversed.
+   - **Returns**: Reversed integer.
+   - Logic:
+     - If `n` is a single-digit number (`n < 10`), return `n * 10`.
+     - Initialize `t` with value of `n` and `r` as 0.
+     - While `t` is greater than 0:
+       - Update `r` to `(r * 10) + t % 10` (adding the last digit of `t` to `r`).
+       - Update `t` to `t / 10` (removing the last digit from `t`).
+     - Return `r`.

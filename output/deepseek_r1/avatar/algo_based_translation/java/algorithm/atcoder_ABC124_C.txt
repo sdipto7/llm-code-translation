@@ -1,0 +1,37 @@
+- Function: solve(int testNumber, InputReader in, PrintWriter out)
+  - Parameters: 
+    - testNumber: int
+    - in: InputReader (provides next() for string input)
+    - out: PrintWriter (provides println() for output)
+- Variables:
+  - x: String (input string)
+  - a: StringBuilder (copied from x)
+  - b: StringBuilder (copied from x)
+  - a1: int (counter for forward modification)
+  - a2: int (counter for backward modification)
+- Logic Flow:
+  1. Read input string x
+  2. Initialize two string builders a and b with x
+  3. Process string a left-to-right:
+     - For i from 1 to length-1 (inclusive):
+       - If current character == previous character:
+         - Flip current character (1→0 or 0→1)
+         - Increment a1
+  4. Process string b right-to-left:
+     - For i from length-1 down to 1 (inclusive):
+       - If current character == previous character:
+         - Flip previous character (1→0 or 0→1)
+         - Increment a2
+  5. Output minimum value between a1 and a2
+- Control Structures:
+  - Forward loop: for (i = 1; i < x.length(); i++)
+    - if (a.charAt(i) == a.charAt(i-1)) → flip logic
+  - Backward loop: for (i = x.length()-1; i > 0; i--)
+    - if (b.charAt(i) == b.charAt(i-1)) → flip logic
+  - Conditional flips: Check current/previous character value to determine flip
+- I/O Operations:
+  - Input: x = in.next()
+  - Output: out.println(Math.min(a1, a2))
+- Dependencies:
+  - Custom InputReader class for input handling
+  - Java IO classes: BufferedReader, InputStreamReader, StringTokenizer, PrintWriter

@@ -1,0 +1,10 @@
+1. Define a function `calculate_min_sum_of_squared_diffs` with return type `int` and no parameters.
+2. Declare variable `n` of type `int` and read input into it using `int(input())`.
+3. Declare variable `x` of type `list[int]` and initialize it with a list of `n` integers read from input using `list(map(int, input().split()))`.
+4. Declare variable `ans` of type `int` and initialize it with a large value (`10**10`).
+5. Iterate over a range of integers from 0 to 100 (inclusive) using a `for` loop with loop variable `i`.
+6. Inside the loop, create a list `tmp` of type `list[int]` using a list comprehension to calculate the squared differences between `i` and each element in `x`, i.e., `[abs(i - x[j])**2 for j in range(n)]`.
+7. Check if the sum of elements in `tmp` is less than `ans` using an `if` statement with condition `sum(tmp) < ans`.
+8. If the condition is true, update `ans` with the sum of elements in `tmp`, i.e., `ans = sum(tmp)`.
+9. After the loop completes, print the final value of `ans` using `print(ans)`.
+10. The required libraries/modules are the built-in Python modules, specifically the `input()` and `print()` functions, and the `map()` and `abs()` functions.

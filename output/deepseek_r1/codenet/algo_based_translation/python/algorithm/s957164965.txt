@@ -1,0 +1,45 @@
+1. Input Operations:
+   - Read two integers X and N from the first input line
+   - Read N integers from the second input line into list p
+
+2. Data Processing:
+   - Sort list p in ascending order
+   - Initialize empty dictionary candidates with integer keys and list of integers as values
+
+3. Loop through integers i from -1 to 101 (inclusive):
+   - If i exists in p: skip to next iteration
+   - Calculate absolute difference: diff = |X - i|
+   - If diff not in candidates: create new entry with diff as key and [i] as value
+   - Else: append i to existing list in candidates[diff]
+
+4. Find smallest key in candidates dictionary:
+   - smallest = minimum value among all keys in candidates
+
+5. Find minimum value in candidates[smallest] list:
+   - minNum = minimum integer in the list stored at candidates[smallest]
+
+6. Output Operation:
+   - Print minNum
+
+Variables:
+- X: integer
+- N: integer
+- p: list of integers
+- candidates: dictionary (key: integer, value: list of integers)
+- i: integer (loop variable)
+- diff: integer
+- smallest: integer
+- minNum: integer
+
+Control Structures:
+- For loop: iterate i from -1 to 101 (inclusive)
+- Conditional: if i in p -> continue
+- Conditional: if diff not in candidates -> initialize entry, else append
+- Dictionary operations (key checks, list modifications)
+- Minimum value determination for dictionary keys
+- Minimum value determination in list
+
+Dependencies:
+- Standard input handling via input().split()
+- List and dictionary operations
+- Built-in functions: map(), sort(), min(), abs()

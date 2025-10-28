@@ -1,0 +1,74 @@
+**Function Signatures:**
+- `main(String[] args) throws Exception`
+- `modinv(long a, int m) returns long`
+
+**Variables:**
+- `BufferedReader br`
+- `int n`
+- `String[] sa`
+- `int[] a`
+- `int mod = 1000000007`
+- `long p = 1`
+- `long[] q`
+- `long ans = 0`
+- `long val`
+- `long b`
+- `long u = 1`
+- `long v = 0`
+- `long tmp = 0`
+- `long t`
+
+**Logic Flow:**
+
+1. Create BufferedReader from System.in
+2. Read integer n from input
+3. Read next line and split into string array sa
+4. Initialize integer array a of size n
+5. For i from 0 to n-1: parse sa[i] to integer and store in a[i]
+6. Close BufferedReader
+7. Initialize p = 1
+8. For i from 2 to n: p = p * i % mod
+9. Initialize long array q of size n
+10. Set q[0] = 1
+11. For i from 1 to n-1: q[i] = (q[i-1] + modinv(i+1, mod)) % mod
+12. Initialize ans = 0
+13. For i from 0 to n-1:
+    - val = (q[i] + q[n-i-1] - 1) % mod
+    - val = val * a[i] % mod
+    - val = val * p % mod
+    - ans = (ans + val) % mod
+14. Print ans
+15. modinv function:
+    - b = m
+    - u = 1
+    - v = 0
+    - tmp = 0
+    - While b > 0:
+        - t = a / b
+        - a = a - t * b
+        - tmp = a
+        - a = b
+        - b = tmp
+        - u = u - t * v
+        - tmp = u
+        - u = v
+        - v = tmp
+    - u = u % m
+    - If u < 0: u = u + m
+    - Return u
+
+**Control Structures:**
+- For loop: i from 0 to n-1
+- For loop: i from 2 to n
+- For loop: i from 1 to n-1
+- For loop: i from 0 to n-1
+- While loop: while b > 0
+- Conditional: if u < 0
+
+**Input/Output:**
+- Input: integer n, followed by n integers
+- Output: single integer result
+
+**Dependencies:**
+- java.io.BufferedReader
+- java.io.InputStreamReader

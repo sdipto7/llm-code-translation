@@ -1,0 +1,41 @@
+**Algorithm Specification**
+
+**Function/Method Signatures**
+- `main() -> void`
+
+**Variable Declarations**
+- `N: int`
+- `n: array of int`
+- `a: int`
+- `pos: int`
+- `i: int`
+
+**Input/Output Operations**
+1. Read integer `N` from standard input.
+2. Read `N` space-separated integers from standard input, store as array `n`.
+
+**Logic Flow**
+1. Initialize `a = 1`.
+2. Initialize `pos = 0`.
+3. Loop `i` from `1` to `N - 1` (inclusive, step 1):
+   - If `n[pos] > n[i]`:
+     - Increment `a` by 1.
+     - Set `pos = i`.
+4. Print value of `a`.
+
+**Control Flow Structures**
+- For loop: Iterates `i` from 1 to `N - 1`.
+  - Loop exit criteria: `i` exceeds `N - 1`.
+- Conditional inside loop: Executes block only when `n[pos] > n[i]`.
+
+**Data Processing**
+- Convert input string to integer array `n` of length `N`.
+- Track minimum elements via position index `pos`.
+- Count minima transitions in `a`.
+
+**Edge Case Handling**
+- Implicitly handles `N=1` (loop not entered, outputs 1).
+- No explicit error checking for invalid/missing inputs.
+
+**External Dependencies**
+- Requires numpy library for array operations (implicit in original code).

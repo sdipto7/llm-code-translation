@@ -1,0 +1,87 @@
+**Algorithm Specification: String Grid Configuration Check**
+
+**1. Function/Method Signatures**
+
+- **Function `check_columns`**
+  - **Parameters**: 
+    - `a: int` (group size)
+    - `b: int` (number of groups)
+    - `l: List[int]` (binary list of 0s and 1s)
+  - **Return Type**: `bool`
+
+- **Function `solve`**
+  - **Parameters**: None
+  - **Return Type**: `void` (writes to stdout)
+
+**2. Variables and Data Types**
+
+- **Global Variables** (Input Helpers):
+  - All input helper functions use standard input (`sys.stdin`) for reading.
+  
+- **In `solve`**:
+  - `x: str` (input string of 'O' and 'X')
+  - `s: List[int]` (converted to 0s and 1s)
+  - `tot: List[Tuple[int, int]]` (valid configurations as (rows, columns))
+
+- **In `check_columns`**:
+  - `tot: List[List[int]]` (split input into `b` groups of `a` elements each)
+
+**3. Logic Flow**
+
+**3.1. `check_columns` Function**
+1. Initialize `tot` as an empty list.
+2. Split `l` into `b` contiguous groups, each of size `a`:
+   - For `i` in `[0, b-1]`, append sublist `l[i*a : (i+1)*a]` to `tot`.
+3. Transpose `tot` (rows to columns) via `zip(*tot)`.
+4. For each column in the transposed structure:
+   - Compute the sum of its elements.
+   - If any column sum equals `b`, return `True` (all 1s in that column).
+5. If no such column exists, return `False`.
+
+**3.2. `solve` Function**
+1. Read input string `x`.
+2. Convert `x` to a list `s` where 'O' → 0 and 'X' → 1.
+3. Initialize `tot` as an empty list.
+4. Iterate `i` from 1 to 12 (inclusive):
+   - If `12 % i == 0`:
+     - Compute `b = 12 // i`.
+     - Call `check_columns(a=i, b=b, l=s)`.
+     - If `True`, append `(b, i)` to `tot`.
+5. Sort `tot` lexicographically (first by `rows`, then by `columns`).
+6. Output:
+   - The count of valid configurations: `len(tot)`.
+   - Each configuration in `AxB` format separated by spaces.
+
+**4. Control Flow**
+
+- **Loop in `check_columns`**:
+  - Fixed loop for `b` groups (determined by `i`).
+  - Early exit if a valid column is found (return `True`).
+
+- **Loop in `solve`**:
+  - Fixed loop over 12 possible divisors of 12.
+  - Conditional execution of `check_columns` based on divisibility.
+
+**5. Input/Output Operations**
+
+- **Input**:
+  - `instr()` reads the input string via `input()`.
+  - Test case count read via `inp()` (calls `int(input())`).
+
+- **Output**:
+  - Prints the count of valid configurations followed by their dimensions in `RxC` format (e.g., `3 4x3 6x2 12x1`).
+
+**6. Edge Case Handling**
+
+- **All 'O' Input**: No configurations valid (`tot` remains empty).
+- **All 'X' Input**: All 6 possible configurations (divisors of 12) are valid.
+- **Partial Matches**: Only configurations where at least one column is all 'X' are included.
+
+**7. External Dependencies**
+
+- **Imports**:
+  - `sys` for input acceleration (`sys.stdin.readline`).
+  - Standard utilities: `collections`, `heapq`, `math`, `itertools`, `bisect`, `os` (unused in core logic).
+- **Key Functions**:
+  - `zip` for matrix transposition.
+  - List comprehensions for input parsing.

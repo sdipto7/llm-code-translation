@@ -1,0 +1,57 @@
+**Algorithm:**
+
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner sc`: Input scanner
+- `int N`: Number of elements
+- `int K`: Required selection count
+- `int[] S`: Array of N integers (candle positions)
+- `int temp`: Temporary calculation variable
+- `int ans`: Result (initialized to 1000000000)
+
+**Logic Flow:**
+1. Read `N` and `K` from input.
+2. Read `N` integers into array `S`.
+3. If `K == 1`:
+   - Iterate over each element in `S`:
+     - Calculate absolute value of current element.
+     - Update `ans` to minimum between current `ans` and absolute value.
+   - Print `ans`.
+4. Else if `N - K != 0`:
+   - Iterate `i` from `0` to `N - K` (inclusive):
+     - Set `min` = `S[i]`.
+     - Set `max` = `S[i + K - 1]`.
+     - If `min < 0` and `max > 0`:
+       - Calculate `temp` as the minimum of:
+         - `2 * (-min) + max`
+         - `(-min) + 2 * max`
+     - Else:
+       - Set `temp` = maximum of `|min|` and `|max|`.
+     - Update `ans` to minimum between `ans` and `temp`.
+   - Print `ans`.
+5. Else (when `K == N`):
+   - Set `min` = `S[0]`.
+   - Set `max` = `S[N - 1]`.
+   - If `min < 0` and `max > 0`:
+     - Print minimum of `2 * (-min) + max` and `(-min) + 2 * max`.
+   - Else:
+     - Print maximum of `|min|` and `|max|`.
+6. Close scanner.
+
+**Control Structures:**
+- `if (K == 1)`
+- `else if (N - K != 0)`
+- `else`
+- Nested `if (min < 0 && max > 0)`
+- Loops:
+  - `for (int i = 0; i < N; i++)`
+  - `for (int i = 0; i <= N - K; i++)`
+
+**Input/Output:**
+- Input via `Scanner` for `N`, `K`, and array elements.
+- Output via `System.out.println`.
+
+**Dependencies:**
+- `java.util.Scanner`

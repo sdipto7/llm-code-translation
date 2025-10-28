@@ -1,0 +1,15 @@
+```plaintext
+1. Define a function `calculate_min_coins` with parameters `n: int`, `x: int`, and `coin_values: List[int]` returning an `int`.
+
+2. Declare a list `m` of type `List[int]` and assign it with the sorted `coin_values` list.
+
+3. Calculate the sum of all elements in `m` and store it in a variable `total_sum: int`.
+
+4. Calculate the remaining amount after using all coins once by subtracting `total_sum` from `x` and store it in a variable `remaining: int`.
+
+5. Calculate the number of additional coins that can be used by performing integer division of `remaining` by the smallest coin value `m[0]` and store it in a variable `additional_coins: int`.
+
+6. Calculate the total number of coins using all coins once plus the additional coins, store it in a variable `total_coins: int`.
+
+7. Return `total_coins`.
+```

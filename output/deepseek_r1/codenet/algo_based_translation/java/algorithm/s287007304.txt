@@ -1,0 +1,41 @@
+**Algorithm:**
+
+1. **Libraries/Dependencies:**
+   - `java.io.BufferedReader`
+   - `java.io.InputStreamReader`
+
+2. **Function Signatures:**
+   - `public static void main(String[] args)`
+   - `private static String readLine()`
+
+3. **Variables:**
+   - `String[] s` (stores split input)
+   - `int a` (first parsed integer)
+   - `int b` (second parsed integer)
+
+4. **Execution Flow:**
+   - Call `readLine()` to read input
+   - Split input string by spaces into array `s`
+   - Parse `s[0]` to integer `a`
+   - Parse `s[1]` to integer `b`
+   - Check if `b % a == 0`:
+     - True: Compute `a + b` and print
+     - False: Compute `b - a` and print
+   - Terminate program
+
+5. **readLine() Implementation:**
+   - Initialize `BufferedReader` with `InputStreamReader(System.in)`
+   - Attempt to return `reader.readLine()`
+   - Catch exceptions and return error message as String
+
+6. **Control Structures:**
+   - Single `if-else` block checking `b % a == 0`
+   - Try-catch block in `readLine()` for input handling
+
+7. **I/O Operations:**
+   - Read from standard input via BufferedReader
+   - Write to standard output via System.out.println
+   - String splitting and integer parsing logic
+
+8. **Data Flow:**
+   - Input → String → String[] → int × 2 → conditional arithmetic → output

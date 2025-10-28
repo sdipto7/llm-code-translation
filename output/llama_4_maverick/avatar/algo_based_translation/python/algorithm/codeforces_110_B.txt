@@ -1,0 +1,6 @@
+1. Set LUCKY to "abcd"
+2. Read n as an integer input
+3. Initialize s as an empty string
+4. For i from 0 to n-1
+   4.1. Append LUCKY at index (i mod 4) to s
+5. Print s

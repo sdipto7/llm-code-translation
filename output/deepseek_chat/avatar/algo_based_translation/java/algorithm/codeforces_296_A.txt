@@ -1,0 +1,64 @@
+### Algorithm Extraction:
+
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `public void solve(InputReader in, PrintWriter out)`
+- `public InputReader(InputStream stream)`
+- `String next()`
+- `int nextInt()`
+- `long nextLong()`
+- `double nextDouble()`
+- `String nextLine()`
+
+**Variable Declarations:**
+- `InputStream inputStream = System.in`
+- `OutputStream outputStream = System.out`
+- `InputReader in = new InputReader(inputStream)`
+- `PrintWriter out = new PrintWriter(outputStream)`
+- `Task solver = new Task()`
+- `int n = in.nextInt()`
+- `int[] array = new int[1001]`
+- `int index`
+- `int countMax = -1`
+- `BufferedReader reader`
+- `StringTokenizer tokenizer`
+- `String str = ""`
+
+**Data Types:**
+- InputStream, OutputStream, InputReader, PrintWriter, BufferedReader, StringTokenizer
+- int[], int, long, double, String
+
+**Logic Flow:**
+1. Initialize input/output streams
+2. Create InputReader and PrintWriter objects
+3. Create Task object and call solve method
+4. Read integer n from input
+5. Initialize integer array of size 1001 with zeros
+6. For i from 0 to n-1:
+   - Read integer index
+   - Increment array[index] by 1
+7. Find maximum value in array (excluding index 0) and store in countMax
+8. Check if n is even:
+   - If countMax ≤ n/2: output "YES"
+   - Else: output "NO"
+9. Else (n is odd):
+   - If countMax ≤ n/2 + 1: output "YES"
+   - Else: output "NO"
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < n; i++)`
+- For loop: `for (int i = 1; i < array.length; i++)`
+- If-else: `if (n % 2 == 0)`
+- Nested if-else inside both branches
+- While loop: `while (tokenizer == null || !tokenizer.hasMoreElements())`
+- Try-catch blocks for IOException handling
+
+**Input/Output Operations:**
+- Read integers from input stream
+- Write "YES" or "NO" to output stream
+- Read lines from BufferedReader
+- Tokenize input strings
+
+**Required Libraries:**
+- java.io.*
+- java.util.StringTokenizer

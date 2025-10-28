@@ -1,0 +1,22 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,codeforces_397_B.java,Compilation Error,"Error: output/deepseek_chat/avatar/algo_based_translation/python/java/codeforces_397_B.java:9: error: invalid method declaration; return type required
+    public CodeforcesTask397BSolution() {
+           ^
+1 error
+"
+python,java,atcoder_ABC155_E.java,Compilation Error,"Error: output/deepseek_chat/avatar/algo_based_translation/python/java/atcoder_ABC155_E.java:81: error: no suitable constructor found for String(Object)
+        return new String(java.awt.Toolkit.getDefaultToolkit().getSystemClipboard().getData(java.awt.datatransfer.DataFlavor.stringFlavor));
+               ^
+    constructor String.String(String) is not applicable
+      (argument mismatch; Object cannot be converted to String)
+    constructor String.String(char[]) is not applicable
+      (argument mismatch; Object cannot be converted to char[])
+    constructor String.String(byte[]) is not applicable
+      (argument mismatch; Object cannot be converted to byte[])
+    constructor String.String(StringBuffer) is not applicable
+      (argument mismatch; Object cannot be converted to StringBuffer)
+    constructor String.String(StringBuilder) is not applicable
+      (argument mismatch; Object cannot be converted to StringBuilder)
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error
+"

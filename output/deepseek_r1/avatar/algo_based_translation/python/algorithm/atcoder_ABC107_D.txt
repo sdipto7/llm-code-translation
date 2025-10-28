@@ -1,0 +1,99 @@
+**Structured Algorithm Specification**
+
+**1. BIT (Binary Indexed Tree) Class**
+
+**1.1. Data Structures**
+- `size`: Integer (maximum index in the tree)
+- `tree`: Array of integers (size N + 1)
+- `depth`: Integer (not used in operations, initialized to `n.bit_length()`)
+
+**1.2. Methods**
+
+**1.2.1. `__init__(self: BIT, N: integer)`**
+- **Parameters**:
+  - `N`: Integer (size of the tree)
+- **Steps**:
+  1. Set `self.size = N`.
+  2. Initialize `self.tree` as an array of zeros with length `N + 1`.
+  3. Compute `self.depth` as the bit length of `n` (external variable; potential error in original code).
+
+**1.2.2. `_bitsum(self: BIT, i: integer) → integer`**
+- **Parameters**:
+  - `i`: Integer (index for prefix sum calculation)
+- **Steps**:
+  1. Initialize `ret = 0`.
+  2. While `i > 0`:
+     - Add `self.tree[i]` to `ret`.
+     - Update `i` by clearing its least significant bit (via `i ^= i & -i`).
+  3. Return `ret`.
+
+**1.2.3. `bitsum(self: BIT, l: integer, r: integer | None = None) → integer`**
+- **Parameters**:
+  - `l`: Integer (left index)
+  - `r`: Integer | None (optional right index)
+- **Steps**:
+  1. If `r` is `None`, return `_bitsum(l)`.
+  2. Else, return `_bitsum(r) - _bitsum(l)`.
+
+**1.2.4. `bitadd(self: BIT, i: integer, x: integer) → void`**
+- **Parameters**:
+  - `i`: Integer (index to update)
+  - `x`: Integer (value to add)
+- **Steps**:
+  1. Increment `i` by 1.
+  2. While `i <= self.size`:
+     - Add `x` to `self.tree[i]`.
+     - Update `i` by adding the value of its least significant bit (via `i += i & -i`).
+
+**2. Main Algorithm**
+
+**2.1. Input Handling**
+- **Input**:
+  1. Read integer `n` from input.
+  2. Read array `a` of `n` integers from input.
+- **Variables**:
+  - `m`: Integer = `n * (n + 1) // 4`
+  - `_a`: Sorted list of unique elements in `a` with `0` appended.
+  - `d`: Dictionary mapping original values to compressed indices.
+
+**2.2. Coordinate Compression**
+- **Steps**:
+  1. Sort and deduplicate `a` into `_a`, including `0`.
+  2. Map each element in `_a` to its index in `d`.
+  3. Replace elements in `a` with their compressed indices using `d`.
+
+**2.3. Binary Search Setup**
+- **Variables**:
+  - `t`: Array of two integers, initialized to `[len(_a), 0]`.
+- **Loop** (while `t[0] - t[1] > 1`):
+  1. Compute `mid = (t[0] + t[1]) // 2`.
+  2. Update `t[check(mid)] = mid` (where `check(mid)` returns a boolean).
+
+**2.4. `check(X: integer) → boolean` Function**
+- **Parameters**:
+  - `X`: Integer (threshold value for median check)
+- **Variables**:
+  - `b`: Array of integers, starting with `0`, followed by `1`/`-1` based on `a[i] >= X`.
+  - Adjusted prefix sums and BIT instance.
+- **Steps**:
+  1. Compute `b` as prefix sums of transformed array elements.
+  2. Adjust `b` by subtracting its minimum value to ensure non-negativity.
+  3. Initialize BIT with size `max(b) + 2`.
+  4. For each `x` in `b`:
+     - Add the count of elements `≤ x` from BIT to `ans`.
+     - Insert `x` into BIT.
+  5. Return `ans ≥ m`.
+
+**2.5. Output Result**
+- After binary search completes, output `_a[t[1]]`.
+
+**3. Control Flow & Data Types**
+- **Loops**:
+  - Binary search loop: exits when `t[0] - t[1] ≤ 1`.
+  - `_bitsum` loop: exits when `i = 0`.
+  - `bitadd` loop: exits when `i > size`.
+- **Conditionals**:
+  - `bitsum` handles `r` presence via `if r is None`.
+  - Binary search updates `t` based on `check(mid)` result.
+- **Data Types**:
+  - All variables use integers, arrays of integers, and dictionaries for coordinate compression.

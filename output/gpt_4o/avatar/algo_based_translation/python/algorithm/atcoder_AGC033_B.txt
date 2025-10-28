@@ -1,0 +1,51 @@
+```plaintext
+Function Signature:
+- main() -> None
+
+Variable Declarations and Data Types:
+- H, W, N: int
+- s_r, s_c: int
+- S, T: str
+- Judge: bool
+- S_L, S_R, S_U, S_D: int
+- T_L, T_R, T_U, T_D: int
+
+Logic Flow:
+1. Read inputs: H, W, N as integers from a single line.
+2. Read inputs: s_r, s_c as integers from a single line.
+3. Read input string S.
+4. Read input string T.
+5. Initialize Judge as False.
+6. Initialize S_L, S_R, S_U, S_D, T_L, T_R, T_U, T_D to 0.
+
+Loop and Control Structures:
+7. For x in range(N):
+   a. If S[x] is 'L':
+      i. Increment S_L by 1.
+      ii. If S_L - T_R - s_c equals 0, set Judge to True.
+   b. Else if S[x] is 'R':
+      i. Increment S_R by 1.
+      ii. If s_c + (S_R - T_L) equals W + 1, set Judge to True.
+   c. Else if S[x] is 'U':
+      i. Increment S_U by 1.
+      ii. If S_U - T_D - s_r equals 0, set Judge to True.
+   d. Else if S[x] is 'D':
+      i. Increment S_D by 1.
+      ii. If s_r + (S_D - T_U) equals H + 1, set Judge to True.
+
+   e. If T[x] is 'L':
+      i. If S_R - T_L + s_c does not equal 1, increment T_L by 1.
+   f. If T[x] is 'R':
+      i. If s_c + (T_R - S_L) does not equal W, increment T_R by 1.
+   g. If T[x] is 'U':
+      i. If S_D - T_U + s_r does not equal 1, increment T_U by 1.
+   h. If T[x] is 'D':
+      i. If s_r + (T_D - S_U) does not equal H, increment T_D by 1.
+
+Output:
+8. If Judge is True, print 'NO'.
+9. Else, print 'YES'.
+
+Required Libraries, Modules, or Dependencies:
+- None
+```

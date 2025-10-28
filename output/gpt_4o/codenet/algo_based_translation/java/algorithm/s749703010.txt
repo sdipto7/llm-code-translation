@@ -1,0 +1,95 @@
+```plaintext
+Import javax.swing.text.Style
+Import java.io.*
+Import java.util.*
+
+Class Main
+
+    Static class Pair
+        Integer l, r
+        Constructor Pair(Integer a, Integer b)
+            l = a
+            r = b
+        Override String toString()
+            Return l + " " + r
+
+    Static Integer[][][] memo
+    Static Integer[][] a
+    Static Integer n
+
+    Static Integer dp(Integer fliped, Integer idx, Integer msk)
+        If msk equals (1 << n) - 1
+            Return 0
+        If memo[fliped][idx][msk] not equals -1
+            Return memo[fliped][idx][msk]
+        Integer x = Integer.bitCount(msk)
+        Integer ff = 0
+        Integer ans = 1e9
+        For Integer i from 0 to n exclusive
+            If (msk & (1 << i)) equals 0
+                Integer nf = x % 2
+                If idx equals n or a[fliped][idx] less than or equals a[(nf + (ff % 2)) % 2][i]
+                    ans = Math.min(ans, ff + dp((nf + (ff % 2)) % 2, i, msk | 1 << i))
+                Increment ff by 1
+            Else
+                Decrement x by 1
+        memo[fliped][idx][msk] = ans
+        Return ans
+
+    Static Void main(String[] args) throws IOException, InterruptedException
+        Scanner sc = new Scanner(System.in)
+        PrintWriter pw = new PrintWriter(System.out)
+        n = sc.nextInt()
+        a = new Integer[2][n]
+        For Integer i from 0 to n exclusive
+            a[0][i] = sc.nextInt()
+        For Integer i from 0 to n exclusive
+            a[1][i] = sc.nextInt()
+        memo = new Integer[2][n + 1][1 << n]
+        For Integer[][] z in memo
+            For Integer[] x in z
+                Arrays.fill(x, -1)
+        Integer ans = dp(0, n, 0)
+        pw.println(ans >= 1e8 ? -1 : ans)
+        pw.flush()
+
+    Static class Scanner
+        StringTokenizer st
+        BufferedReader br
+        Constructor Scanner(FileReader r)
+            br = new BufferedReader(r)
+        Constructor Scanner(InputStream s)
+            br = new BufferedReader(new InputStreamReader(s))
+        String next() throws IOException
+            While st is null or not st.hasMoreTokens()
+                st = new StringTokenizer(br.readLine())
+            Return st.nextToken()
+        Integer nextInt() throws IOException
+            Return Integer.parseInt(next())
+        Long nextLong() throws IOException
+            Return Long.parseLong(next())
+        String nextLine() throws IOException
+            Return br.readLine()
+        Double nextDouble() throws IOException
+            String x = next()
+            StringBuilder sb = new StringBuilder("0")
+            Double res = 0, f = 1
+            Boolean dec = false, neg = false
+            Integer start = 0
+            If x.charAt(0) equals '-'
+                neg = true
+                Increment start by 1
+            For Integer i from start to x.length() exclusive
+                If x.charAt(i) equals '.'
+                    res = Long.parseLong(sb.toString())
+                    sb = new StringBuilder("0")
+                    dec = true
+                Else
+                    sb.append(x.charAt(i))
+                    If dec
+                        f *= 10
+            res += Long.parseLong(sb.toString()) / f
+            Return res * (neg ? -1 : 1)
+        Boolean ready() throws IOException
+            Return br.ready()
+```

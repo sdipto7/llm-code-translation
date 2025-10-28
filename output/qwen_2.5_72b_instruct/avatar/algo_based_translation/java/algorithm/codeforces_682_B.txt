@@ -1,0 +1,41 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+- `debug(Object... obj): void`
+
+Variable declarations and data types:
+- `Scanner in: Scanner`
+- `PrintWriter pw: PrintWriter`
+- `int n: int`
+- `ArrayList<Integer> list: ArrayList<Integer>`
+- `int c: int`
+- `Object... obj: Object...`
+
+Complete logic flow in execution order:
+- Create a `Scanner` object to read input
+- Create a `PrintWriter` object to write output
+- Read an integer `n` from input
+- Create an `ArrayList<Integer>` named `list`
+- Loop from `0` to `n-1`:
+  - Read an integer from input
+  - Add the integer to `list`
+- Sort `list`
+- Initialize `c` to `1`
+- Loop from `0` to `n-1`:
+  - If `list.get(i)` is greater than or equal to `c`:
+    - Increment `c` by `1`
+- Print `c` using `pw`
+- Close `pw`
+
+Control structures:
+- For loop from `0` to `n-1` to read integers and add them to `list`
+- For loop from `0` to `n-1` to check each element in `list`
+- If statement to compare `list.get(i)` with `c`
+
+Input/output operations and data processing logic:
+- Input: Read an integer `n`, then read `n` integers
+- Process: Store integers in `list`, sort `list`, count how many integers are at least as large as their 1-based index
+- Output: Print the count `c`
+
+Required libraries, modules, or dependencies:
+- `java.io.*`
+- `java.util.*`

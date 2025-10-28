@@ -1,0 +1,29 @@
+Algorithm:
+- Import java.util.*
+- Define class atcoder_ABC143_D
+- Define main method: parameters (String[] args), return void
+  - Declare Scanner scanner = new Scanner(System.in)
+  - Declare int N = scanner.nextInt()
+  - Declare List<Integer> L = new ArrayList<>()
+  - For i from 0 to N-1: L.add(scanner.nextInt())
+  - Call Collections.sort(L)
+  - Declare int count = 0
+  - For i from 0 to N-1:
+    - For j from i+1 to N-1:
+      - Declare int a = L.get(i)
+      - Declare int b = L.get(j)
+      - Declare int res = find(L, j+1, a+b)
+      - Set count = count + res
+  - Print count
+- Define find method: parameters (List<Integer> li, int from, int target), return int
+  - Declare int low = from
+  - Declare int upp = li.size() - 1
+  - Declare int mid = (upp - low + 1) % 2 == 0 ? (low + upp)/2 + 1 : (low + upp)/2
+  - If upp - low < 0: return 0
+  - Else if li.get(from) >= target: return 0
+  - Else if li.get(upp) < target: return upp - low + 1
+  - While upp - low > 1:
+    - If li.get(mid) >= target: set upp = mid
+    - Else: set low = mid
+    - Set mid = (upp - low + 1) % 2 == 0 ? (low + upp)/2 + 1 : (low + upp)/2
+  - Return low - from + 1

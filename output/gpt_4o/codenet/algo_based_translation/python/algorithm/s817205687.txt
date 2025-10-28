@@ -1,0 +1,38 @@
+```plaintext
+Import functools module
+Import math module
+
+Define function lcm(x: int, y: int) -> int:
+    Return integer division of (x * y) by math.gcd(x, y)
+
+Define function lcm_list(numbers: list[int]) -> int:
+    Return functools.reduce(lcm, numbers, 1)
+
+Declare variables N, M as integers, assign input split by spaces and mapped to integers
+Declare list A as list of integers, assign input split by spaces and mapped to integers
+
+Reassign A with a list comprehension: each element a in A divided by 2
+
+Declare variable count_div_2 as None
+
+For each element a in A:
+    Declare variable cnt as 0
+    While a modulo 2 equals 0:
+        Divide a by 2 using floor division
+        Increment cnt by 1
+    If count_div_2 is None:
+        Assign cnt to count_div_2
+    Elif cnt is not equal to count_div_2:
+        Print 0
+        Exit program
+
+Declare variable my_lcm as the result of lcm_list(A)
+If my_lcm is greater than M:
+    Print 0
+    Exit program
+
+Declare variable tmp as integer division of M by my_lcm
+
+Declare variable ans as integer division of (tmp + 1) by 2
+Print ans
+```

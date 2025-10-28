@@ -1,0 +1,49 @@
+```
+Function main() with no parameters and no return type
+    Declare BufferedReader br and initialize with InputStreamReader(System.in)
+    Declare integer t and read an integer from br
+    Declare String array s
+    Declare PriorityQueue<Integer> pqmax
+    Declare PriorityQueue<Integer> pqmin with a custom comparator to reverse natural order
+    Declare long sumMin, sumMax, sumb initialized to 0
+    Declare integer min initialized to 0
+    
+    While t is greater than 0
+        Decrement t
+        Read a line from br, split by spaces, and assign to s
+        
+        If the first character of s[0] is '2'
+            Declare long ans and initialize with min
+            Multiply ans by size of pqmin
+            Subtract sumMin from ans
+            
+            Declare long ans1 and initialize with min
+            Multiply ans1 by size of pqmax
+            Subtract ans1 from sumMax
+            
+            Print min and ans + ans1 + sumb to the output stream
+        Else
+            Parse integer in from s[1]
+            Add parsed long from s[2] to sumb
+            
+            If in is greater than min
+                Add in to pqmax
+                Add in to sumMax
+            Else
+                Add in to pqmin
+                Add in to sumMin
+            
+            If size of pqmin is greater than size of pqmax
+                Add the top element of pqmin to sumMax
+                Subtract the top element of pqmin from sumMin
+                Poll top element from pqmin and add it to pqmax
+            
+            If size of pqmin is less than size of pqmax
+                Subtract the top element of pqmax from sumMax
+                Add the top element of pqmax to sumMin
+                Poll top element from pqmax and add it to pqmin
+            
+            Assign top element of pqmin to min
+
+    Close the output stream
+```

@@ -1,0 +1,46 @@
+```
+import heapq
+
+def process_queries(q: int, queries: list[tuple[int, int, int]]) -> list[tuple[int, int]]:
+    ans: list[tuple[int, int]] = []
+    p1: list[int] = []
+    p2: list[int] = []
+    heapq.heapify(p1)
+    heapq.heapify(p2)
+    sum_b: int = 0
+    sum_p1: int = 0
+    sum_p2: int = 0
+
+    for i in range(q):
+        ql = queries[i]
+        if ql[0] == 2:
+            if len(p1) == len(p2):
+                result = (-p2[0], sum_p1 - len(p1) * (-p2[0]) + len(p2) * (-p2[0]) - sum_p2 + sum_b)
+                ans.append(result)
+            else:
+                result = (p1[0], sum_p1 - len(p1) * p1[0] + len(p2) * p1[0] - sum_p2 + sum_b)
+                ans.append(result)
+        else:
+            sum_b += ql[2]
+            if len(p1) == 0:
+                heapq.heappush(p1, ql[1])
+                sum_p1 += ql[1]
+            elif p1[0] <= ql[1]:
+                heapq.heappush(p1, ql[1])
+                sum_p1 += ql[1]
+            else:
+                heapq.heappush(p2, -ql[1])
+                sum_p2 += ql[1]
+            if len(p1) < len(p2):
+                k = heapq.heappop(p2)
+                heapq.heappush(p1, -k)
+                sum_p2 += k
+                sum_p1 -= k
+            if len(p1) - 1 > len(p2):
+                k = heapq.heappop(p1)
+                heapq.heappush(p2, -k)
+                sum_p1 -= k
+                sum_p2 += k
+
+    return ans
+```

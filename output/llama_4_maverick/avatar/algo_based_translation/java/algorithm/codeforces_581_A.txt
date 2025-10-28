@@ -1,0 +1,7 @@
+1. Read two integers, a and b, from the input.
+2. Initialize a counter, count, to 0.
+3. Enter a loop that continues until either a or b is not greater than 0.
+4. Inside the loop, increment count by 1 and decrement both a and b by 1.
+5. Exit the loop when either a or b is not greater than 0.
+6. Calculate ans as the sum of the integer division of a by 2 and the integer division of b by 2.
+7. Output count and ans.

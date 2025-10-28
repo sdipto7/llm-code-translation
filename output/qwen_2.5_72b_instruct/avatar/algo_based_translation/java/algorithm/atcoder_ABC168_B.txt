@@ -1,0 +1,13 @@
+Function signature: `public static void main(String[] args)`
+Variable declarations: 
+- `Scanner in` of type `Scanner`
+- `int K` of type `int`
+- `String S` of type `String`
+Logic flow:
+1. Create an instance of `Scanner` and assign it to `in`
+2. Read an integer from input and assign it to `K`
+3. Read a string from input and assign it to `S`
+4. If the length of `S` is less than or equal to `K`
+   - Print `S`
+5. Else
+   - Print the substring of `S` from index `0` to `K` (exclusive) concatenated with `"..."`

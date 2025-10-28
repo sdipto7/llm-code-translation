@@ -1,0 +1,68 @@
+```python
+# Function to read input from the standard input and strip newline characters
+def input() -> str
+
+# Function to read an integer from the standard input
+def INT() -> int
+
+# Function to read a space-separated list of integers from the standard input
+def MAP() -> tuple[int, ...]
+
+# Function to read a space-separated list of integers and return it as a list
+def LIST() -> list[int]
+
+# Function to read multiple lines of integers and return a list of tuples
+def ZIP(n: int) -> list[tuple[int, ...]]
+
+# Set recursion limit for the program to a high value
+sys.setrecursionlimit(10**9)
+
+# Define constants
+INF: float = float('inf')
+mod: int = 10**9 + 7
+
+# Import required modules
+import numpy as np
+import sys
+import re
+from collections import deque, defaultdict, Counter
+from math import ceil, sqrt, hypot, factorial, pi, sin, cos, radians
+from itertools import accumulate, permutations, combinations, combinations_with_replacement, product, groupby
+from operator import itemgetter, mul
+from copy import deepcopy, copy
+from string import ascii_lowercase, ascii_uppercase, digits
+from bisect import bisect, bisect_left, insort, insort_left
+from fractions import gcd
+from heapq import heappush, heappop
+from functools import reduce
+
+# Read an integer N from the input
+N: int = INT()
+
+# Read N strings from the input and store them in a list S
+S: list[str] = [input() for _ in range(N)]
+
+# Define a list of characters representing the initials M, A, R, C, H
+march: list[str] = ["M", "A", "R", "C", "H"]
+
+# Initialize a list of size 5 to count the occurrences of each initial
+march_lis: list[int] = [0] * 5
+
+# Iterate over each string in S
+for s in S:
+    # Check if the first character of the string (case insensitive) is in the list 'march'
+    if s[0].upper() in march:
+        # Increment the count for the corresponding initial in 'march_lis'
+        march_lis[march.index(s[0].upper())] += 1
+
+# Initialize a variable to store the final answer
+ans: int = 0
+
+# Iterate over all combinations of three different initials from 'march_lis'
+for x, y, z in combinations(march_lis, 3):
+    # Calculate the number of possible combinations by multiplying the counts of the three initials
+    ans += x * y * z
+
+# Output the final result
+print(ans)
+```

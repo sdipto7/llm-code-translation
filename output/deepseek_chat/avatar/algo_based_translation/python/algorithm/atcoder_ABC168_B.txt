@@ -1,0 +1,25 @@
+**Function Signature:**
+- main(): str
+
+**Variables:**
+- K: int
+- S: str
+
+**Algorithm:**
+1. Read integer input from stdin and assign to K
+2. Read string input from stdin and assign to S
+3. Check if length of S is less than or equal to K
+4. If condition is true, return S
+5. If condition is false, return substring of S from index 0 to K-1 concatenated with '...'
+6. If this module is executed as main program, call main() and print the result
+
+**Input/Output:**
+- Input: Integer K followed by string S from standard input
+- Output: Print result to standard output
+
+**Control Structures:**
+- Conditional: if len(S) <= K
+- Conditional: if __name__ == '__main__'
+
+**Dependencies:**
+- Standard input/output functions

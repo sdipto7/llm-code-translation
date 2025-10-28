@@ -1,0 +1,13 @@
+```
+Function Signature:
+    function calculate_average(A: int, B: int) -> str
+
+Algorithm:
+1. Receive two integer inputs A and B.
+2. Calculate the sum of A and B and store it in a variable, say total_sum.
+3. Check if total_sum is odd by evaluating the condition (total_sum % 2 == 1).
+4. If the condition in step 3 is true, return the string 'IMPOSSIBLE'.
+5. If the condition in step 3 is false, compute the integer division of total_sum by 2.
+6. Return the result of the division from step 5 as a string.
+```
+

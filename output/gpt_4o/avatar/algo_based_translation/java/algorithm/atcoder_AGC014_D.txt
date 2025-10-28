@@ -1,0 +1,61 @@
+```
+Algorithm:
+1. Declare global variables:
+   - `g`: ArrayList<Integer>[] (adjacency list representation of the graph)
+   - `out`: PrintWriter
+
+2. Define function `maxMatching(int v, int p)`:
+   - Parameters: `v` (int, current node), `p` (int, parent node)
+   - Returns: int
+   - Initialize local variables:
+     - `a`: int, initialized to 0 (accumulator for even matchings)
+     - `o`: int, initialized to 0 (accumulator for odd matchings)
+   - Iterate over neighbors `w` in `g[v]`:
+     - If `w == p`, continue to next iteration
+     - Call `maxMatching(w, v)` and store result in `r`
+     - Add integer division `r/2` to `a`
+     - Add remainder `r%2` to `o`
+   - Return `2 * a + Math.min(1, o) + 1`
+
+3. Define function `main(String[] args)`:
+   - Initialize `MyScanner sc` with new instance of `MyScanner`
+   - Initialize `out` with new PrintWriter wrapping BufferedOutputStream(System.out)
+   - Read integer `n` using `sc.nextInt()`
+   - Initialize `g` with new ArrayList<Integer>[n]
+   - Set all elements of `g` to new ArrayList<Integer>() using `Arrays.setAll()`
+   - Loop `i` from 0 to `n-2`:
+     - Read integer `a` using `sc.nextInt()` and subtract 1
+     - Read integer `b` using `sc.nextInt()` and subtract 1
+     - Add `b` to `g[a]`
+     - Add `a` to `g[b]`
+   - Compute `m` as integer division of `maxMatching(0, -1)` by 2
+   - If `2 * m == n`, print "Second" using `out.println()`
+   - Else, print "First" using `out.println()`
+   - Call `out.close()`
+
+4. Define class `MyScanner`:
+   - Declare BufferedReader `br`
+   - Declare StringTokenizer `st`
+   - Constructor `MyScanner()`:
+     - Initialize `br` with new BufferedReader wrapping InputStreamReader(System.in)
+   - Method `String next()`:
+     - While `st` is null or `!st.hasMoreElements()`:
+       - Try to read line using `br.readLine()` and initialize `st` with new StringTokenizer
+       - Catch and print stack trace on IOException
+     - Return `st.nextToken()`
+   - Method `int nextInt()`:
+     - Return `Integer.parseInt(next())`
+   - Method `long nextLong()`:
+     - Return `Long.parseLong(next())`
+   - Method `double nextDouble()`:
+     - Return `Double.parseDouble(next())`
+   - Method `String nextLine()`:
+     - Initialize `str` with empty string
+     - Try to read line using `br.readLine()` into `str`
+     - Catch and print stack trace on IOException
+     - Return `str`
+
+Dependencies:
+- java.io.*
+- java.util.*
+```

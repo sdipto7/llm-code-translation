@@ -1,0 +1,70 @@
+**Function Signatures:**
+- `main(String[] $)` - Entry point method
+- `codeforces_95_A()` - Constructor
+- `compare(char[] aa, int i, char[] bb, int j, int m)` - Returns int
+- `main()` - Main logic method
+
+**Variables:**
+- `Scanner sc` - Input scanner
+- `int n` - Number of forbidden words
+- `char[][] ss` - Array of forbidden word character arrays
+- `char[] cc` - Input text as character array
+- `int m` - Length of input text
+- `char c` - Replacement character
+- `char c_` - Uppercase version of replacement character
+- `char a` - Alternative character (if replacement character is 'a', use 'b'; otherwise use 'a')
+- `char a_` - Uppercase version of alternative character
+- `boolean[] lucky` - Boolean array marking positions that need replacement
+
+**Algorithm Flow:**
+
+1. Initialize PrintWriter with System.out and autoFlush=true
+2. Initialize Scanner with System.in
+3. In main(String[] $):
+   - Create codeforces_95_A instance
+   - Call instance's main() method
+   - Flush output
+
+4. compare(char[] aa, int i, char[] bb, int j, int m):
+   - While m > 0:
+     - Convert aa[i] to uppercase → a
+     - Convert bb[j] to uppercase → b
+     - If a != b: return a - b
+     - Increment i and j
+     - Decrement m
+   - Return 0 if all characters match
+
+5. main() method:
+   - Read integer n
+   - Create ss array of size n
+   - For i from 0 to n-1:
+     - Read next token and convert to char array → ss[i]
+   - Read next token and convert to char array → cc
+   - Set m = cc.length
+   - Read next token and get first character → c
+   - Set c_ = Character.toUpperCase(c)
+   - If c == 'a': set a = 'b', else set a = 'a'
+   - Set a_ = Character.toUpperCase(a)
+   - Create boolean array lucky of size m, initialized to false
+   
+   - For j from 0 to m-1:
+     - For i from 0 to n-1:
+       - Set l = ss[i].length
+       - If m - j >= l AND compare(cc, j, ss[i], 0, l) == 0:
+         - For h from 0 to l-1:
+           - Set lucky[j + h] = true
+   
+   - For j from 0 to m-1:
+     - If lucky[j] is true:
+       - If Character.toLowerCase(cc[j]) == c:
+         - If Character.isUpperCase(cc[j]): set cc[j] = a_
+         - Else: set cc[j] = a
+       - Else:
+         - If Character.isUpperCase(cc[j]): set cc[j] = c_
+         - Else: set cc[j] = c
+   
+   - Print cc character array
+
+**Required Libraries:**
+- java.io.*
+- java.util.*

@@ -1,0 +1,26 @@
+**Function Signature:**
+- main(): None
+
+**Variables:**
+- n: int
+- d: int
+- x: List[int]
+- m: int
+- q: int
+- i: int
+- a: int
+
+**Algorithm:**
+1. Read two integers n and d from input, separated by space
+2. Initialize empty list x
+3. Initialize m = 0
+4. Initialize q = 0
+5. Read next line of input and split into list of strings, assign to x
+6. For each index i in range(len(x)):
+   - Convert x[i] from string to integer
+7. For each index a in range(len(x) - 1):
+   - If x[a] >= x[a + 1]:
+     - Calculate q = integer division of (x[a] - x[a + 1]) by d plus 1
+     - Add q to m
+     - Set x[a + 1] = x[a + 1] + q * d
+8. Print m

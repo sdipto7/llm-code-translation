@@ -1,0 +1,7 @@
+1. Read input from the user.
+2. Split the input into two parts.
+3. Convert the first part to an integer and store it as 'a'.
+4. Convert the second part to an integer and store it as 'b'.
+5. Calculate 'c' by subtracting twice 'b' from 'a'.
+6. If 'c' is less than 0, set 'c' to 0.
+7. Output the value of 'c'.

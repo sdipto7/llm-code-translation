@@ -1,0 +1,12 @@
+1. Initialize a counter `t` to 1.
+2. Decrement `t` until it reaches 0.
+3. For each iteration, call the `solve()` function.
+4. In `solve()`, read an integer `t` representing the number of test cases.
+5. Create an array `arr` of size `t` to store the input values.
+6. Read `t` integers and store them in `arr`.
+7. Initialize a variable `prevWinner` to 0.
+8. Iterate through each element in `arr`.
+9. For each element, check if it is equal to 1. If so, update `prevWinner` to 2 if it is currently 0.
+10. Check the value of `prevWinner`. If it is 0 or 2, determine the winner based on whether `(arr[i] - 1)` is even or odd. If even, the winner is 2; otherwise, it is 1. Update `prevWinner` accordingly.
+11. If `prevWinner` is not 0 or 2 (i.e., it is 1), determine the winner based on whether `(arr[i] - 1)` is even or odd. If even, the winner is 1; otherwise, it is 2. Update `prevWinner` accordingly.
+12. Print the winner for each element in `arr`.

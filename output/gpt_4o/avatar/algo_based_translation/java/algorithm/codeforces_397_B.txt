@@ -1,0 +1,67 @@
+```
+Algorithm codeforces_397_B
+    Declare Integer N
+    Declare Integer MOD = 1000000007
+
+    Function main(args: Array of String) -> void
+        Declare Scanner in
+        Declare PrintWriter out
+        Declare Integer t
+        Set t = in.nextInt()
+        
+        While t > 0
+            Decrement t
+            Declare Long n, a, b
+            Set n = in.nextInt()
+            Set a = in.nextInt()
+            Set b = in.nextInt()
+            
+            If n < a Then
+                out.println("No")
+                Continue to next iteration of while loop
+            End If
+            
+            If a == b Then
+                If n % a == 0 Then
+                    out.println("Yes")
+                Else
+                    out.println("No")
+                End If
+                Continue to next iteration of while loop
+            End If
+            
+            Declare Long x
+            Set x = b / (b - a)
+            
+            If n > x * a Then
+                out.println("Yes")
+                Continue to next iteration of while loop
+            End If
+            
+            Declare Long low = 1
+            Declare Long high = x + 1
+            Declare Long ans = 1
+            
+            While low <= high
+                Declare Long mid
+                Set mid = (low + high) / 2
+                
+                If mid * a < n Then
+                    Set low = mid + 1
+                Else
+                    Set ans = mid
+                    Set high = mid - 1
+                End If
+            End While
+            
+            If n > (ans - 1) * b And n < ans * a Then
+                out.println("No")
+            Else
+                out.println("Yes")
+            End If
+        End While
+        
+        out.close()
+    End Function
+```
+

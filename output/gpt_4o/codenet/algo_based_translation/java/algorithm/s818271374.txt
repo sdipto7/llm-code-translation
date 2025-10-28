@@ -1,0 +1,25 @@
+```
+Algorithm Main
+  Input: None
+  Output: "Yes" or "No" printed to standard output
+
+  Declare sc as Scanner initialized to read from standard input
+  Declare N as integer, read next integer from sc
+  Declare count1 as integer, initialize to 0
+  Declare count2 as integer, initialize to 0
+
+  For i from 0 to N-1 inclusive, do:
+    Declare a as integer, read next integer from sc
+    If a mod 4 equals 0, then:
+      Increment count1 by 1
+    Else if a mod 2 equals 0 and (a divided by 2) mod 2 equals 1, then:
+      Increment count2 by 1
+
+  If count1 is greater than or equal to N divided by 2, then:
+    Print "Yes" to standard output
+  Else if ((N divided by 2 minus count1) multiplied by 2 plus N mod 2) equals count2, then:
+    Print "Yes" to standard output
+  Else:
+    Print "No" to standard output
+```
+

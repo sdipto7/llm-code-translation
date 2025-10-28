@@ -1,0 +1,65 @@
+**Algorithm:**
+
+**Imports:**
+- `java.util.Scanner`
+- `java.util.ArrayList`
+
+**Function Signature:**
+- `public static void main(String[] args)`
+  - Parameters: `String[] args` (command-line arguments)
+  - Return: `void`
+
+**Variables:**
+- `long mod = 1_000_000_007L` (modulus constant)
+- `Scanner sc = new Scanner(System.in)` (input reader)
+- `int n = sc.nextInt()` (input integer)
+- `int k = sc.nextInt()` (input integer)
+- `ArrayList<Integer> len = new ArrayList<>()` (stores block lengths)
+- `int l = 1` (current block start)
+- `int r` (current block end)
+- `int q` (size of `len` list)
+- `long[] dp` (dynamic programming array)
+
+**Execution Flow:**
+1. **Close Scanner:** `sc.close()` after reading `n` and `k`.
+2. **Build Block Lengths:**
+   - While `l <= n`:
+     - Compute `r = n / (n / l)`
+     - Add `r - l + 1` to `len`
+     - Update `l = r + 1`
+3. **Initialize Variables:**
+   - `q = len.size()`
+   - Initialize `dp` with size `k * (q + 1)`
+4. **Base Case Setup:**
+   - For `j` from 1 to `q`:
+     - `dp[j] = len.get(j-1) + dp[j-1]`
+5. **Dynamic Programming Iteration:**
+   - For each `i` from 1 to `k-1`:
+     - For each `j` from 1 to `q`:
+       - Update `dp[i*(q+1) + j]` as:
+         - `dp[i*(q+1) + j - 1] + dp[(i-1)*(q+1) + q - j + 1] * len.get(j-1)`
+         - Apply modulo `mod`
+6. **Output Result:**
+   - Print `dp[k*(q+1) - 1]`
+
+**Control Structures:**
+- `while (l <= n)` loop for block partitioning
+- Nested `for` loops:
+  - `for (int j = 1; j <= q; j++)` for base DP setup
+  - `for (int i = 1; i < k; i++)` for DP layers
+  - Inner `for (int j = 1; j <= q; j++)` for per-block updates
+
+**Data Processing:**
+- Calculate block lengths via integer division properties
+- Use 1D DP array with offset indexing to simulate 2D DP
+- Accumulate combinations of block lengths across layers
+
+**Input/Output:**
+- Input: Two integers `n` and `k` from standard input
+- Output: Single integer result printed to standard output
+
+**Data Types:**
+- All integers (`int`) except `mod` and `dp` array (`long`)
+
+**Dependencies:**
+- Java standard library utilities `Scanner` and `ArrayList` from `java.util` package.

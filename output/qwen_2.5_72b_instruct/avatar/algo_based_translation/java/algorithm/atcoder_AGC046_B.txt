@@ -1,0 +1,49 @@
+Function Signature:
+- `void solve(Scanner sc, PrintWriter pw)`
+- `public static void main(String[] args)`
+
+Variable Declarations and Data Types:
+- `long MOD = 998244353L`
+- `long[][] dp = new long[3001][3001]`
+- `int A = sc.nextInt()`
+- `int B = sc.nextInt()`
+- `int C = sc.nextInt()`
+- `int D = sc.nextInt()`
+- `long ans = 0`
+- `long part = 0`
+
+Libraries, Modules, or Dependencies:
+- `java.io.PrintWriter`
+- `java.util.HashMap`
+- `java.util.Map`
+- `java.util.Scanner`
+
+Logic Flow and Control Structures:
+
+1. Initialize `MOD` to `998244353L`
+2. Initialize 2D array `dp` with dimensions `[3001][3001]`
+3. Read integers `A`, `B`, `C`, `D` from input using `sc.nextInt()`
+4. Set `dp[A][B]` to `1`
+5. Loop over `c` from `A` to `C` (inclusive):
+   - Loop over `d` from `B` to `D` (inclusive):
+     - If `c == A` and `d == B`, continue to next iteration
+     - Initialize `ans` to `0`
+     - If `c > A`:
+       - Set `part` to `dp[c - 1][d]`
+       - Update `ans` to `(part * d)`
+     - If `d > B`:
+       - Set `part` to `dp[c][d - 1]`
+       - Update `ans` to `(ans + (part * c))`
+     - If `c > A` and `d > B`:
+       - Update `ans` to `(ans - (dp[c - 1][d - 1] * (c - 1) * (d - 1)))`
+     - Update `dp[c][d]` to `((ans % MOD) + MOD) % MOD`
+6. Print `dp[C][D]` using `pw.println()`
+
+Main Function Logic Flow and Control Structures:
+
+1. Create `Scanner` object `sc` for reading standard input
+2. Create `PrintWriter` object `pw` for writing to standard output
+3. Create instance of `atcoder_AGC046_B`
+4. Call `solve(sc, pw)` method on instance
+5. Flush and close `pw`
+6. Close `sc`

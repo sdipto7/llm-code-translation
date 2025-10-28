@@ -1,0 +1,29 @@
+- Function signature:  
+  `public static void main(String[] args)` (void return type)
+
+- Variables:  
+  - Scanner `sc` initialized with `System.in`  
+  - int `N` initialized via `sc.nextInt()`  
+  - char array `c` initialized via `sc.next().toCharArray()`
+
+- Logic flow:  
+  1. Read integer `N` from standard input  
+  2. Read next token as character array `c`  
+  3. Iterate through each character index `i` from 0 to `c.length - 1`:  
+     a. Calculate shifted character:  
+        - Subtract ASCII 'A' from `c[i]`  
+        - Add offset `N`  
+        - Apply modulo 26 for wrap-around  
+        - Add ASCII 'A' to convert back to character  
+     b. Update `c[i]` with new value  
+  4. Print modified character array as string
+
+- Control structures:  
+  - `for` loop: `(int i=0; i < c.length; i++)`
+
+- Input/Output:  
+  - Input: Reads integer and string via Scanner  
+  - Output: Prints modified character array using `System.out.println`
+
+- Dependencies:  
+  Requires `java.util.Scanner` for input handling

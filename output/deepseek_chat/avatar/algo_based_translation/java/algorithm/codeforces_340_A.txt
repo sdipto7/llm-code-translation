@@ -1,0 +1,43 @@
+**Function Signature:**
+- `main(String[] sh)`: void
+
+**Variables:**
+- `Scanner s`: Scanner object for input
+- `long x`: input integer
+- `long y`: input integer
+- `long a`: input integer
+- `long b`: input integer
+- `long j = 2`: integer counter
+- `long i`: loop variable
+- `long x1 = 0`: unused
+- `long y1 = 0`: unused
+- `long c = 0`: common multiple candidate
+- `boolean ans = true`: flag for early termination
+- `long count = 0`: unused
+
+**Libraries:**
+- `java.util.Scanner`
+
+**Algorithm Steps:**
+1. Read four integers: `x`, `y`, `a`, `b`
+2. Set `c` to maximum of `x` and `y`
+3. If `c > b`:
+   - Print "0"
+   - Set `ans = false`
+4. While `ans` is true and `c` is not divisible by `min(x,y)`:
+   - If `x > y`:
+        - Set `c = x * j`
+        - Increment `j`
+   - Else:
+        - Set `c = y * j`
+        - Increment `j`
+   - If `c > b`:
+        - Print "0"
+        - Set `ans = false`
+        - Break loop
+5. If `ans` is true:
+   - Find first `i` in range `[a, b]` where `i % c == 0`
+   - If such `i` exists:
+        - Print `((b - i) / c) + 1`
+   - Else:
+        - Print "0"

@@ -1,0 +1,76 @@
+**Algorithm Extraction:**
+
+**Function Signatures:**
+- `main(String[] args): void`
+- `TaskB.solve(int testNumber, InputReader in, PrintWriter out): void`
+- `InputReader.InputReader(InputStream stream): constructor`
+- `InputReader.next(): String`
+
+**Variable Declarations:**
+- `InputStream inputStream: InputStream`
+- `OutputStream outputStream: OutputStream`
+- `InputReader in: InputReader`
+- `PrintWriter out: PrintWriter`
+- `TaskB solver: TaskB`
+- `String x: String`
+- `Stack<Character> s: Stack<Character>`
+- `int c: int`
+- `int i: int`
+- `Character p: Character`
+- `Character q: Character`
+- `BufferedReader reader: BufferedReader`
+- `StringTokenizer tokenizer: StringTokenizer`
+
+**Logic Flow:**
+1. Initialize inputStream to System.in
+2. Initialize outputStream to System.out
+3. Create InputReader instance with inputStream
+4. Create PrintWriter instance with outputStream
+5. Create TaskB instance
+6. Call solver.solve(1, in, out)
+7. Close PrintWriter
+8. In solve method: Read next token from InputReader into x
+9. Initialize empty Stack of Character named s
+10. Initialize integer c to 0
+11. For i from 0 to x.length()-1:
+    - Push character at index i of x onto stack s
+    - While stack size > 1:
+        - Pop top character from s into p
+        - Pop next character from s into q
+        - If (p is '1' and q is '0') OR (p is '0' and q is '1'):
+            - Increment c by 1
+            - Continue while loop
+        - Else:
+            - Push q back onto s
+            - Push p back onto s
+            - Break while loop
+12. Print c * 2
+13. In InputReader constructor: Initialize reader with BufferedReader wrapping InputStreamReader around stream with buffer size 32768
+14. In InputReader.next(): While tokenizer is null or has no more tokens:
+    - Try to read line from reader and create new StringTokenizer
+    - Catch IOException and throw RuntimeException
+    - Return next token from tokenizer
+
+**Control Structures:**
+- For loop: i from 0 to x.length()-1
+- While loop: while s.size() > 1
+- If condition: (p == '1' && q == '0') || (p == '0' && q == '1')
+- While loop in InputReader.next(): while tokenizer == null || !tokenizer.hasMoreTokens()
+- Try-catch block for IOException
+
+**Input/Output Operations:**
+- Read from System.in through InputReader
+- Write to System.out through PrintWriter
+- Read string input via InputReader.next()
+- Output integer result via PrintWriter.println()
+
+**Required Libraries:**
+- java.io.OutputStream
+- java.io.IOException
+- java.io.InputStream
+- java.io.PrintWriter
+- java.util.Vector
+- java.util.StringTokenizer
+- java.io.BufferedReader
+- java.io.InputStreamReader
+- java.util.Stack

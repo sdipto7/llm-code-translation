@@ -1,0 +1,15 @@
+1. Define a function `longest_non_increasing_subsequence_length` with parameters `(N: int, H: list[int])` and return type `int`.
+2. Initialize variables: `count_best` of type `int` to 0 and `count_tmp` of type `int` to 0.
+3. Iterate over the range from 0 to `N-2` (inclusive) using a for loop with loop counter `i`.
+4. Inside the loop, check the condition `H[i] >= H[i+1]`.
+   - If true, increment `count_tmp` by 1.
+   - If false, check if `count_tmp` is greater than `count_best`.
+     - If true, update `count_best` with the value of `count_tmp`.
+     - Reset `count_tmp` to 0.
+5. After the loop, check if `count_tmp` is greater than `count_best`.
+   - If true, update `count_best` with the value of `count_tmp`.
+6. Return `count_best`.
+7. Read an integer `N` from input.
+8. Read a list of `N` integers from input, store it in `H`.
+9. Call the function `longest_non_increasing_subsequence_length` with `N` and `H` as arguments and print the returned result.
+10. Required libraries: built-in Python libraries (`int`, `list`, `input`, `map`, `split`).

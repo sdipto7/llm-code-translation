@@ -1,0 +1,12 @@
+- Import the Scanner class from the java.util package.
+- Define the class Main.
+- Define the main function with signature: `public static void main(String[] args)`.
+  - Declare and initialize a Scanner object for reading from standard input.
+  - Declare variable `A` of type int and assign it the next integer input from the scanner.
+  - Declare variable `B` of type int and assign it the next integer input from the scanner.
+  - Declare variable `T` of type int and assign it the next integer input from the scanner.
+  - Calculate the integer division of `T` by `A`, multiply the result by `B`, and pass the result to the log function.
+- Define a private static function log with signature: `private static void log(String str)`.
+  - Output the string `str` to the standard output.
+- Define a private static function log with signature: `private static void log(int str)`.
+  - Output the integer `str` to the standard output.

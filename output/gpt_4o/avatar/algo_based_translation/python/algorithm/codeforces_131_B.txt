@@ -1,0 +1,27 @@
+```
+Function Signature:
+    def count_pairs_with_sum_zero(n: int, weights: List[int]) -> int
+
+Variable Declarations:
+    - w: Counter (a subclass of dict) to store occurrences of each integer in weights
+    - c: int to store the count of pairs with sum zero
+
+Logic Flow:
+    1. Initialize a Counter `w` to count occurrences of each number in the list `weights`.
+    2. Initialize an integer `c` to zero to keep track of the total pairs with sum zero.
+    3. Iterate over each unique integer `i` in the Counter `w`.
+        a. If `i` equals zero:
+            i. Increment `c` by the product of `w[i]` and `(w[i] - 1)`.
+        b. Else:
+            i. Check if the negation of `i` (i.e., `-i`) exists in the Counter `w`.
+            ii. If `-i` is present, increment `c` by the product of `w[i]` and `w[-i]`.
+    4. Return the integer division of `c` by 2.
+
+Input/Output Operations:
+    - Input: Read integer `n` and list of integers `weights` from standard input.
+    - Output: Print the result of the function which is the count of pairs with sum zero.
+
+Required Libraries:
+    - sys: To read input efficiently using `sys.stdin.readline`.
+    - collections.Counter: To count occurrences of each integer in the list `weights`.
+```

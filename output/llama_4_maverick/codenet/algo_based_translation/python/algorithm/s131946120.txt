@@ -1,0 +1,10 @@
+1. Define a function `read_integer_input` with return type `int` that reads an integer from the input.
+2. Declare a variable `n` of type `int` and assign it the return value of `read_integer_input`.
+3. Define a function `read_string_input` with return type `str` that reads a string from the input.
+4. Initialize an empty list `input_strings` to store strings.
+5. Use a `for` loop that iterates `n` times.
+6. Within the loop, read a string using `read_string_input` and append it to `input_strings`.
+7. Convert the `input_strings` list to a `set` to eliminate duplicates.
+8. Declare a variable `unique_count` of type `int` and assign it the size of the set.
+9. Define a function `print_output` with parameter type `int` and return type `None` that prints the given integer.
+10. Call `print_output` with `unique_count` as the argument.

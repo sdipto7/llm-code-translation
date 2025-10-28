@@ -1,0 +1,43 @@
+**Algorithm:**
+
+**Input:** A string `s` representing a number (read from standard input).  
+**Output:** Integer count of substrings forming numbers divisible by 2019.  
+
+1. **Convert Input:** Convert input string `s` into a list of characters.  
+2. **Initialize Variables:**  
+   - `count_remainder`: Integer array of size 2019, initialized to 0.  
+   - `cnt`: Integer initialized to 0.  
+   - `m`: Integer initialized to 1.  
+   - `current_mod`: Integer initialized to 0.  
+3. **Process Digits in Reverse:**  
+   For each index `i` in range `0` to `len(s)-1` (processing from right to left):  
+   a. Compute digit value: `digit = int(s[len(s) - i - 1])`  
+   b. Update `current_mod`:  
+      `current_mod = (current_mod + digit * m) % 2019`  
+   c. Update `m`:  
+      `m = (m * 10) % 2019`  
+   d. Increment `count_remainder[current_mod]` by 1.  
+4. **Adjust for Zero Remainder Edge Cases:**  
+   Increment `count_remainder[0]` by 1.  
+5. **Calculate Valid Substring Pairs:**  
+   For each remainder `r` in `0..2018`:  
+   a. Add `count_remainder[r] * (count_remainder[r] - 1) // 2` to `cnt`.  
+6. **Output Result:** Print `cnt`.  
+
+**Control Structures:**  
+- Single loop iterating over the string in reverse order.  
+- Final loop iterating over all 2019 possible remainders.  
+
+**Data Types:**  
+- `s`: List of characters.  
+- `count_remainder`: List of integers.  
+- `cnt`, `m`, `current_mod`, `digit`: Integers.  
+
+**Operations:**  
+- Modular arithmetic (`% 2019`).  
+- Integer division for combination calculation.  
+- String-to-integer conversion for individual digits.  
+
+**Dependencies:**  
+- Requires reading from standard input (`input()`).  
+- No external libraries/modules.

@@ -1,0 +1,12 @@
+1. Read the number of beacons, n.
+2. Initialize two arrays, beacon and dp, of size 1000001 with default values.
+3. Iterate from 0 to n-1 and for each iteration:
+   3.1. Read the position and range of a beacon.
+   3.2. Store the range at the corresponding position in the beacon array.
+4. If the range at position 0 is not 0, set dp[0] to 1.
+5. Iterate from 1 to 1000000 and for each iteration:
+   5.1. If the range at the current position is not 0 and is less than the current position, set dp[i] to dp[i - range - 1] + 1.
+   5.2. If the range at the current position is not 0 and is not less than the current position, set dp[i] to 1.
+   5.3. If the range at the current position is 0, set dp[i] to dp[i - 1].
+   5.4. Update the maximum value in dp.
+6. Output the difference between n and the maximum value in dp.

@@ -1,0 +1,48 @@
+1. Import necessary libraries:
+   - `java.io.*`
+   - `java.util.*`
+
+2. Define class `codeforces_203_A`.
+
+3. Define method `solve()`:
+   - Declare and initialize integer variables:
+     - `x`, `t`, `a`, `b`, `da`, `db` using `nextInt()`.
+     - `first`, `second`.
+     - `ok` as a boolean set to `false`.
+   - Loop `i` from `0` to `t-1`:
+     - Compute `first` as `a - (da * i)`.
+     - Loop `j` from `0` to `t-1`:
+       - Compute `second` as `b - (db * j)`.
+       - Check if any of the following conditions are true:
+         - `second + first == x`
+         - `second == x`
+         - `first == x`
+         - `x == 0`
+       - If true, set `ok` to `true` and break the inner loop.
+   - If `ok` is true, print "YES" using `out.print("YES")`.
+   - Otherwise, print "NO" using `out.print("NO")`.
+
+4. Define `main` method with parameters `String[] args`:
+   - Create a new instance of `codeforces_203_A` and call `run()` method.
+
+5. Declare member variables:
+   - `BufferedReader br`
+   - `StringTokenizer st`
+   - `PrintWriter out`
+
+6. Define method `run()`:
+   - Try to:
+     - Initialize `br` with `new BufferedReader(new InputStreamReader(System.in))`.
+     - Initialize `out` with `new PrintWriter(System.out)`.
+     - Call `solve()`.
+     - Close `br` and `out`.
+   - Catch `IOException` and print stack trace.
+
+7. Define method `nextInt()`:
+   - Return the result of `Integer.parseInt(next())`.
+
+8. Define method `next()`:
+   - While `st` is `null` or does not have more tokens:
+     - Try to read a line from `br` and initialize `st` with `new StringTokenizer(br.readLine())`.
+     - If `IOException` occurs, print stack trace and return "END_OF_FILE".
+   - Return the next token from `st` using `st.nextToken()`.

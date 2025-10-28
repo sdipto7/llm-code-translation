@@ -1,0 +1,9 @@
+1. Import the `java.util.Scanner` library.
+2. Define a class `Main` with a `main` method that takes a `String[]` parameter and returns `void`.
+3. Within `main`, declare a `try-with-resources` statement using a `Scanner` object `sc` initialized with `System.in`.
+4. Call the `solve` method, passing `sc` as an argument, and return `void`.
+5. Define a static method `solve` that takes a `Scanner` parameter and returns `void`.
+6. Within `solve`, declare a character array `a` and assign it the result of converting the next input from `sc` to a character array using `toCharArray()`.
+7. Evaluate the condition: if (`a[0]` equals `a[1]`) or (`a[1]` equals `a[2]`) or (`a[2]` equals `a[0]`).
+8. If the condition is true, output "No" to the console using `System.out.println()`.
+9. If the condition is false, output "Yes" to the console using `System.out.println()`.

@@ -1,0 +1,27 @@
+```plaintext
+Function Signature:
+    def find_longest_non_increasing_subsequence(N: int, heights: List[int]) -> int
+
+Variable Declarations:
+    count_best: int
+    count_tmp: int
+    i: int
+
+Execution Order and Logic Flow:
+1. Initialize `count_best` and `count_tmp` to 0.
+2. Start a loop with `i` ranging from 0 to N-2 (inclusive).
+    a. If `heights[i]` is greater than or equal to `heights[i+1]`, increment `count_tmp` by 1.
+    b. Else:
+        i. If `count_tmp` is greater than `count_best`, assign the value of `count_tmp` to `count_best`.
+        ii. Reset `count_tmp` to 0.
+3. After the loop, if `count_tmp` is greater than `count_best`, assign the value of `count_tmp` to `count_best`.
+4. Return `count_best`.
+
+Input/Output Operations:
+- Input `N` as an integer.
+- Input `heights` as a list of integers of length `N`.
+- Output the integer value of `count_best`.
+
+Required Libraries:
+- `List` from typing module.
+```

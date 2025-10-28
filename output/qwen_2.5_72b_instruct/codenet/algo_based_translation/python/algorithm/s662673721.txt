@@ -1,0 +1,17 @@
+Function Signature: `main() -> None`
+
+Variable Declarations:
+- `n: int`
+- `ans: int`
+- `i: int`
+- `j: int`
+
+Logic Flow:
+1. Import `sys` module
+2. Read input from standard input and convert to integer, assign to `n`
+3. Initialize `ans` with `10 ** 18`
+4. Loop `i` from `1` to `int(n ** (1 / 2)) + 1` (inclusive):
+    1. If `n % i` is not equal to `0`, continue to next iteration
+    2. Calculate `j` as `n // i`
+    3. Update `ans` with the minimum value between `ans` and `i + j - 2`
+5. Print `ans`

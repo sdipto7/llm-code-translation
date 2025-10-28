@@ -1,0 +1,24 @@
+### Algorithm
+
+1. Define a function `solve()` with no parameters and return type `void`.
+2. Declare variables:
+   - `S_d`: a list of characters (string) to store the input string.
+   - `T`: a list of characters (string) to store the target string.
+   - `end`: an integer to store the ending index.
+   - `first`: an integer to store the starting index.
+   - `t_i`: an integer to store the index for `T`.
+   - `s_i`: an integer to store the index for `S_d`.
+   - `ans`: a list of characters (string) to store the answer.
+
+3. Read input strings into `S_d` and `T`.
+4. Initialize `end` to the last index of `S_d` and `first` to `end - len(T) + 1`.
+5. While `first >= 0`:
+   - Iterate through `S_d` from `first` to `end` and compare characters with `T`.
+   - If a mismatch is found and the character in `S_d` is not '?', break the loop.
+   - If the loop completes without a mismatch, break the while loop.
+   - Decrement `first` and `end` by 1.
+6. If the while loop completes without finding a match, print 'UNRESTORABLE' and exit.
+7. Create a deep copy of `S_d` in `ans`.
+8. Iterate through `T` and replace the corresponding characters in `ans` from `first` to `end` with characters from `T`.
+9. Replace all '?' in `ans` with 'a' and join the characters into a string.
+10. Print the resulting string.

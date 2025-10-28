@@ -1,0 +1,21 @@
+Function Signature: 
+- main() -> None
+
+Variable Declarations:
+- A: int
+- B: int
+- min: int
+- max: int
+- ans: int
+- i: int
+
+Logic Flow:
+1. Read two space-separated integers from input and assign them to A and B respectively.
+2. Calculate min as B multiplied by 10.
+3. Calculate max as (B + 1) multiplied by 10 then subtract 1.
+4. Initialize ans to -1.
+5. For each integer i from min to max inclusive:
+   a. If the integer part of i multiplied by 0.08 equals A:
+      i. Set ans to i.
+      ii. Break out of the loop.
+6. Print the value of ans.

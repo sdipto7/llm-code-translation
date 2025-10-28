@@ -1,0 +1,11 @@
+1. Read input for a long integer 'a' from the standard input.
+2. Read input for a string 'b' from the standard input.
+3. Convert the string 'b' into a character array 'bChar'.
+4. Determine the length of 'bChar' and store it in 'length'.
+5. Initialize an empty string 'bStr'.
+6. Iterate through each character in 'bChar' using a loop that runs 'length' times.
+7. Inside the loop, check if the current character is not equal to '.'.
+8. If the character is not '.', append it to 'bStr'.
+9. After the loop, convert 'bStr' to an integer 'bInt'.
+10. Calculate the result by multiplying 'a' and 'bInt', then dividing by 100.
+11. Output the result to the standard output.

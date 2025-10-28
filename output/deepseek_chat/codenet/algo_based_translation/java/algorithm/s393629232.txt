@@ -1,0 +1,13 @@
+Algorithm:
+1. Import java.util.Scanner
+2. Define main function with parameter String[] args
+3. Declare Scanner sc initialized to new Scanner(System.in)
+4. Declare int n assigned to sc.nextInt()
+5. Declare int maxv initialized to Integer.MIN_VALUE
+6. Declare int minv assigned to sc.nextInt()
+7. For loop: initialize int i = 1; condition i < n; increment i++
+   - Declare int ri assigned to sc.nextInt()
+   - Assign maxv = Math.max(maxv, ri - minv)
+   - Assign minv = Math.min(minv, ri)
+8. Print maxv using System.out.println
+9. Close sc using sc.close()

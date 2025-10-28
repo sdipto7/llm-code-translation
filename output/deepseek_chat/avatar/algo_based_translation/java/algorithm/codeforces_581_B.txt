@@ -1,0 +1,43 @@
+**Function Signatures:**
+- `main(String[] args)`: void
+- `debug(Object... obj)`: void
+
+**Variable Declarations:**
+- `set: TreeSet<Long>` (static class variable)
+- `in: Scanner` (local to main)
+- `pw: PrintWriter` (local to main)
+- `n: int` (local to main)
+- `a: long[]` (local to main, size n)
+- `dp: long[]` (local to main, size n+1)
+
+**Required Libraries:**
+- java.util.*
+- java.io.*
+
+**Execution Flow:**
+1. Initialize Scanner for System.in and PrintWriter for System.out
+2. Read integer n from input
+3. Create array a of size n and populate with n long values from input
+4. Create dp array of size n+1, initialize all elements to -1
+5. Set dp[n-1] = a[n-1]
+6. Iterate from i = n-1 down to 0:
+   - Set dp[i] = maximum of dp[i+1] and a[i]
+7. Iterate from i = 0 to n-1:
+   - If a[i] > dp[i+1]: output "0 "
+   - Else: output "(dp[i+1] - a[i] + 1) "
+8. Print newline
+9. Close PrintWriter
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < n; i++)` (array population)
+- For loop: `for (int i = n-1; i >= 0; i--)` (dp array population)
+- For loop: `for (int i = 0; i < n; i++)` (output generation)
+- Conditional: `if (a[i] > dp[i+1])` (output decision)
+
+**Input/Output Operations:**
+- Input: Scanner reads n and array values
+- Output: PrintWriter outputs space-separated values followed by newline
+
+**Data Processing:**
+- Computes maximum suffix values in dp array
+- For each element, calculates required increment to exceed next maximum value

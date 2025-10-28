@@ -1,0 +1,28 @@
+Function Signature:  
+convert_seconds_to_hms(n: int) -> None  
+
+Variable Declarations and Data Types:  
+n: int  
+h: int  
+m: int  
+s: int  
+
+Logic Flow in Execution Order:  
+1. Read integer input and assign to n  
+2. Calculate h by performing integer division of n by 3600  
+3. Update n using modulo operation with 3600  
+4. Calculate m by performing integer division of n by 60  
+5. Update n using modulo operation with 60  
+6. Assign n to s  
+7. Print formatted string combining h, m, and s separated by colons  
+
+Control Structures:  
+No loops or conditionals present  
+
+Input/Output Operations and Data Processing Logic:  
+Input: Read integer value from user  
+Processing: Convert total seconds to hours, minutes, and seconds  
+Output: Print time in "h:m:s" format  
+
+Required Libraries, Modules, or Dependencies:  
+No additional libraries or modules required

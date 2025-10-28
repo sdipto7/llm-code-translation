@@ -1,0 +1,28 @@
+1. Read integer `pya` from input
+2. Initialize empty list `arre`
+3. While `pya` > 0:
+   - Decrement `pya` by 1
+   - Read string from input, convert to lowercase, append to `arre`
+4. Read string `oString` from input
+5. Create lowercase version `lowString` of `oString`
+6. Read first character from input, convert to lowercase, store as `letter1`
+7. Set `letter2` to 'a' if `letter1` ≠ 'a', else 'b'
+8. Initialize list `valid` with zeros, length equal to `len(oString)`
+9. Initialize empty set `setcito`
+10. For each string `x` in `arre`:
+    - If `lowString` contains `x`:
+      - Initialize `wat` = 0
+      - While True:
+        - Find next occurrence of `x` in `lowString` starting from index `wat`
+        - If index < 0: break loop
+        - For each index `i` from found index to index + len(x) - 1:
+          - Add `i` to `setcito`
+        - Set `wat` = index + 1
+11. Convert `oString` to list of characters
+12. For each index `i` in `setcito`:
+    - If `lowString[i]` ≠ `letter1`: set `letter` = `letter1`
+    - Else: set `letter` = `letter2`
+    - If original character `oString[i]` is uppercase: set `oString[i]` = uppercase version of `letter`
+    - Else: set `oString[i]` = `letter`
+13. Print each character in modified `oString` without spaces
+14. Print newline

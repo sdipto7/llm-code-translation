@@ -1,0 +1,26 @@
+```
+Algorithm Main
+
+Input: Integer n, followed by n integers
+
+1. Initialize a Scanner object 'sc' for input reading
+2. Read an integer 'n' from input
+3. Declare a HashMap 'map' with Integer keys and Integer values
+
+4. For each integer index 'i' from 0 to n-1:
+   a. Read integer 'a' from input
+   b. If 'map' contains key 'a':
+      i. Increment the value associated with key 'a' in 'map' by 1
+   c. Else:
+      i. Add key 'a' to 'map' with an initial value of 1
+
+5. Declare integer 'ans' and initialize to 0
+
+6. For each integer 'key' in the key set of 'map':
+   a. If the value associated with 'key' in 'map' is odd (value % 2 == 1):
+      i. Increment 'ans' by 1
+
+7. Output the value of 'ans'
+
+End Algorithm
+```

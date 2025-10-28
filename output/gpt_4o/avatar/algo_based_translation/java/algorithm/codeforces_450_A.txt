@@ -1,0 +1,32 @@
+```
+Algorithm codeforces_450_A:
+  Input: None (reads from standard input)
+  Output: Integer (prints to standard output)
+  
+  Declare 'sc' as a Scanner object
+  Read integer 'n' from 'sc'
+  Read integer 'm' from 'sc'
+  
+  Declare 'q1' as a Queue of Integer
+  Declare 'q2' as a Queue of Integer
+  
+  For 'i' from 1 to 'n' inclusive:
+    Read an integer from 'sc' and add it to 'q1'
+    Add 'i' to 'q2'
+  
+  Initialize 'ans' as 0
+  
+  While 'q1' is not empty:
+    If the element at the front of 'q1' is less than or equal to 'm':
+      Remove the element from the front of 'q1'
+      Set 'ans' to the element removed from the front of 'q2'
+    Else if the element at the front of 'q1' is greater than 'm':
+      Remove the element from the front of 'q1' and store it in 'x'
+      Calculate 'val' as 'x' minus 'm'
+      Add 'val' to the end of 'q1'
+      Remove the element from the front of 'q2' and store it in 'val2'
+      Add 'val2' to the end of 'q2'
+  
+  Print 'ans'
+```
+

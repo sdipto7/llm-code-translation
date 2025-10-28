@@ -1,0 +1,9 @@
+1. Read four integer inputs: H, W, A, B.
+2. Check if W is less than 2 times A or H is less than 2 times B.
+3. If the condition in step 2 is true, output -1 and terminate.
+4. Iterate over a range from 0 to H-1.
+5. For each iteration in step 4, iterate over a range from 0 to W-1.
+6. For each iteration in step 5, check if the current row index is less than B and the current column index is less than A, or if the current row index is greater than or equal to B and the current column index is greater than or equal to A.
+7. If the condition in step 6 is true, output 0; otherwise, output 1.
+8. After each inner iteration in step 5, output a newline character.
+9. After completing all iterations in step 4, flush the output buffer.

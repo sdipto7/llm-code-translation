@@ -1,0 +1,57 @@
+- Function signatures with parameter and return types:
+  - `gcd(a: int, b: int) -> int`
+
+- Variable declarations and data types:
+  - `N: int`
+  - `M: int`
+  - `S: str`
+  - `T: str`
+  - `list_S: List[str]`
+  - `list_T: List[str]`
+  - `Number_i: List[int]`
+  - `Number_iMN: List[float]`
+  - `Number_j: List[int]`
+  - `Kaburi_j: List[int]`
+  - `Kaburi_i: List[int]`
+  - `counter: int`
+  - `Flag: int`
+  - `Kaburi_Size: int`
+
+- Complete logic flow in execution order:
+  1. Read integers `N` and `M` from standard input.
+  2. Read strings `S` and `T` from standard input.
+  3. Convert string `S` to a list of characters `list_S`.
+  4. Convert string `T` to a list of characters `list_T`.
+  5. Initialize `Number_i` as a list of integers from 0 to `N-1`.
+  6. Initialize empty list `Number_iMN`.
+  7. For each `i` in `Number_i`, append `i * M / N` to `Number_iMN`.
+  8. Initialize `Number_j` as a list of integers from 0 to `M-1`.
+  9. Find intersection of sets of `Number_iMN` and `Number_j`, convert to list `Kaburi_j`.
+  10. Initialize empty list `Kaburi_i`.
+  11. For each `j` in `Kaburi_j`, append `int(j * N / M)` to `Kaburi_i`.
+  12. Initialize `counter` to 0.
+  13. Initialize `Flag` to 0.
+  14. Set `Kaburi_Size` to length of `Kaburi_i`.
+  15. While `counter` is less than or equal to `Kaburi_Size - 1`:
+      15.1 If character at index `Kaburi_i[counter]` in `list_S` is equal to character at index `Kaburi_j[counter]` in `list_T`, continue.
+      15.2 Otherwise, set `Flag` to 1 and break loop.
+      15.3 Increment `counter` by 1.
+  16. Define function `gcd`:
+      16.1 While `b` is greater than 0:
+          16.1.1 Assign `b` to `a` and `a % b` to `b`.
+      16.2 Return `a`.
+  17. If `Flag` is equal to 1, print `-1`.
+  18. Otherwise, print integer value of `N * M / gcd(N, M)`.
+
+- Control structures:
+  - For loops: Iterate over `Number_i` and `Kaburi_j`.
+  - While loop: Condition is `counter <= Kaburi_Size - 1`.
+  - If-else statement: Condition is `list_S[int(Kaburi_i[counter])] == list_T[int(Kaburi_j[counter])]`.
+
+- Input/output operations and data processing logic:
+  - Read integers `N` and `M` from standard input.
+  - Read strings `S` and `T` from standard input.
+  - Print either `-1` or the integer value of `N * M / gcd(N, M)` to standard output.
+
+- Required libraries, modules, or dependencies:
+  - No external libraries or modules required.

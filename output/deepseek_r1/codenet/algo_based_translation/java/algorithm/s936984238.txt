@@ -1,0 +1,48 @@
+- Dependencies:
+  - `java.util.Scanner`
+  - `java.util.Arrays`
+
+- Variables:
+  - Static `Scanner sc` initialized with `System.in`
+  - Static `int[] score`
+  - Static `int number`
+
+- Function Signatures:
+  - `public static void main(String[] args)`
+  - `static boolean read()`
+  - `static void slove()`
+
+- Logic Flow:
+  1. Execute `main` method:
+     1. Enter loop:
+        1. Call `read()`
+        2. If `read()` returns `false`, exit loop
+        3. Call `slove()`
+        4. Repeat loop
+  2. `read()` method:
+     1. Read integer `number` from input
+     2. If `number` equals 0, return `false`
+     3. Initialize `score` array with size `number`
+     4. For index `i` from 0 to `number-1`:
+        1. Read integer into `score[i]`
+     5. Return `true`
+  3. `slove()` method:
+     1. Sort `score` array in ascending order
+     2. Initialize `sum` to 0
+     3. For index `i` from 1 to `number-2` (inclusive):
+        1. Add `score[i]` to `sum`
+     4. Compute integer division of `sum` by `(number-2)`
+     5. Print result
+
+- Control Structures:
+  - `while (read())` loop in `main`
+  - `if (number == 0)` conditional in `read()`
+  - `for (int i = 0; i < number; i++)` loop in `read()`
+  - `for (int i = 1; i < number-1; i++)` loop in `slove()`
+
+- Input Operations:
+  - Read integer via `sc.nextInt()` for `number`
+  - Read `number` integers via `sc.nextInt()` for `score` array
+
+- Output Operations:
+  - Print result of `sum/(number-2)` via `System.out.println()`

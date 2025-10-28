@@ -1,0 +1,34 @@
+1. Import required libraries: java.util.Scanner
+2. Declare a class Main with the following static variables:
+   - sc: Scanner object
+   - nums: array of strings
+   - N, M, D: integers
+   - room: 2D array of characters
+   - num: integer
+3. Main function:
+   1. Read input line using sc.nextLine() and split it into nums array using space as delimiter.
+   2. Parse nums[0], nums[1], and nums[2] into integers N, M, and D respectively.
+   3. Declare a 2D array room of size N x M.
+   4. Call function inputRoom() to populate room array.
+   5. If M >= D, call function setWE().
+   6. If N >= D, call function setNS().
+   7. Print the value of num.
+   8. Close the Scanner object sc.
+4. Function inputRoom():
+   1. For i from 0 to N-1:
+      1. Read a line using sc.nextLine() into str_room.
+      2. Convert str_room to character array and store it in room[i].
+5. Function setWE():
+   1. For i from 0 to N-1:
+      1. For j from 0 to M-D:
+         1. Initialize canPut to true.
+         2. For k from 0 to D-1:
+            1. If room[i][j+k] equals '#', set canPut to false and break the loop.
+         3. If canPut is true, increment num.
+6. Function setNS():
+   1. For i from 0 to M-1:
+      1. For j from 0 to N-D:
+         1. Initialize canPut to true.
+         2. For k from 0 to D-1:
+            1. If room[j+k][i] equals '#', set canPut to false and break the loop.
+         3. If canPut is true, increment num.

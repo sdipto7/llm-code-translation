@@ -1,0 +1,187 @@
+```plaintext
+UnionFind class:
+- Parent: int array
+- UnionFind(int n): constructor
+  - Initialize Parent array with size n, fill with -1
+- root(int A): int
+  - If Parent[A] < 0, return A
+  - Otherwise, recursively call root on Parent[A], set Parent[A] to result, and return result
+- size(int A): int
+  - Return -Parent[root(A)]
+- connect(int A, int B): boolean
+  - Set A to root(A)
+  - Set B to root(B)
+  - If A equals B, return false
+  - If size of A is less than size of B, swap A and B
+  - Update Parent[A] by adding Parent[B]
+  - Set Parent[B] to A
+  - Return true
+
+Main class:
+- Static variables:
+  - scan: FastScanner
+  - scanner: Scanner
+  - rand: Random
+  - mod: long
+  - eps: double
+  - big: int
+  - PI: double
+- modlcm(long a, long b): long
+  - Return a * b * modint(gcd(a, b), mod)
+- gcd(long a, long b): long
+  - If b > 0, return gcd(b, a % b)
+  - Otherwise, return a
+- lcm(long a, long b): long
+  - Return a * b / gcd(a, b)
+- max(int a, int b): int
+  - Return a if a > b, otherwise return b
+- min(int a, int b): int
+  - Return a if a < b, otherwise return b
+- lmax(long a, long b): long
+  - Return Math.max(a, b)
+- lmin(long a, long b): long
+  - Return Math.min(a, b)
+- factorial(int i): long
+  - If i equals 1, return 1
+  - Otherwise, return i * factorial(i - 1)
+- main(String[] args): void
+  - Read a string from scan
+  - If the character at index 2 equals character at index 3 and character at index 4 equals character at index 5, print "Yes"
+  - Otherwise, print "No"
+- lower_bound(int[] a, int key): int
+  - Initialize right to a.length
+  - Initialize left to 0
+  - While right - left > 1
+    - Calculate mid as (right + left) / 2
+    - If a[mid] < key, set left to mid
+    - Else, set right to mid
+  - Return left
+- upper_bound(int[] a, int key): int
+  - Initialize right to a.length
+  - Initialize left to 0
+  - While right - left > 1
+    - Calculate mid as (right + left) / 2
+    - If a[mid] <= key, set left to mid
+    - Else, set right to mid
+  - Return left
+- isPrime(long n): boolean
+  - If n equals 2, return true
+  - If n < 2 or n is even, return false
+  - Calculate d as square root of n
+  - For i from 3 to d, incrementing by 2
+    - If n % i equals 0, return false
+  - Return true
+- upper_division(int a, int b): int
+  - If a % b equals 0, return a / b
+  - Otherwise, return a / b + 1
+- lupper_division(long a, long b): long
+  - If a % b equals 0, return a / b
+  - Otherwise, return a / b + 1
+- setArray(int a): int[]
+  - Initialize b as int array of size a
+  - For i from 0 to a
+    - Set b[i] to scan.nextInt()
+  - Return b
+- lsetArray(int a): long[]
+  - Initialize b as long array of size a
+  - For i from 0 to a
+    - Set b[i] to scan.nextLong()
+  - Return b
+- reverse(String str): String
+  - Initialize ch as char array of str length
+  - Convert str to char array chch
+  - Initialize a to str length
+  - For i from 0 to upper_division(a, 2)
+    - Set ch[i] to chch[ch length - i - 1]
+    - Set ch[ch length - 1 - i] to chch[i]
+  - Return String.valueOf(ch)
+- printArray(int[] que): void
+  - For i from 0 to que length - 1
+    - Print que[i] followed by space
+  - Print que[que length - 1]
+- doublesort(int[][] a): int[][]
+  - Sort a using comparator comparing first elements
+  - Return a
+- ldoublesort(long[][] a): long[][]
+  - Sort a using comparator comparing first elements
+  - Return a
+- modpow(long x, long n, long mo): long
+  - Initialize sum to 1
+  - While n > 0
+    - If n & 1 equals 1, update sum as sum * x % mo
+    - Update x as x * x % mo
+    - Right shift n by 1
+  - Return sum
+- revch(char[] ch): char[]
+  - Initialize ret as char array of ch length
+  - For i from ch length - 1 to 0, decrementing i, and j from 0 to ch length
+    - Set ret[j] to ch[i]
+  - Return ret
+- revint(int[] ch): int[]
+  - Initialize ret as int array of ch length
+  - For i from ch length - 1 to 0, decrementing i, and j from 0 to ch length
+    - Set ret[j] to ch[i]
+  - Return ret
+- warshall_floyd(int[][] v, int n): void
+  - For k from 0 to n
+    - For i from 0 to n
+      - For j from 0 to n
+        - v[i][j] = min(v[i][j], v[i][k] + v[k][j])
+- modint(long a, long m): long
+  - Initialize b to m, u to 1, v to 0
+  - While b != 0
+    - Calculate t as a / b
+    - Subtract t * b from a
+    - Swap a with b
+    - Subtract t * v from u
+    - Swap u with v
+  - Calculate u modulo m
+  - If u < 0, add m to u
+  - Return u
+
+FastScanner class:
+- in: InputStream
+- buffer: byte array
+- ptr: int
+- buflen: int
+- hasNextByte(): boolean
+  - If ptr < buflen, return true
+  - Otherwise, set ptr to 0
+  - Try to read into buffer, set buflen
+  - If buflen <= 0, return false
+  - Return true
+- readByte(): int
+  - If hasNextByte, return buffer[ptr++]
+  - Otherwise, return -1
+- isPrintableChar(int c): boolean
+  - Return true if c is between 33 and 126
+- hasNext(): boolean
+  - While hasNextByte and not isPrintableChar(buffer[ptr]), increment ptr
+  - Return hasNextByte
+- next(): String
+  - If not hasNext, throw NoSuchElementException
+  - Initialize StringBuilder sb
+  - Read a byte into b
+  - While isPrintableChar(b)
+    - Append b to sb
+    - Read a byte into b
+  - Return sb.toString()
+- nextLong(): long
+  - If not hasNext, throw NoSuchElementException
+  - Initialize n to 0, minus to false
+  - Read a byte into b
+  - If b is '-', set minus to true, read next byte into b
+  - If b is not a digit, throw NumberFormatException
+  - While true
+    - If b is a digit, update n as n * 10 + (b - '0')
+    - Else if b is -1 or not isPrintableChar(b), return n or -n based on minus
+    - Else throw NumberFormatException
+    - Read next byte into b
+- nextInt(): int
+  - Convert nextLong to int, throw NumberFormatException if out of bounds
+  - Return result
+- nextDouble(): double
+  - Return Double.parseDouble(next())
+- nextchar(): char
+  - Try reading a character from System.in, or throw RuntimeException
+```

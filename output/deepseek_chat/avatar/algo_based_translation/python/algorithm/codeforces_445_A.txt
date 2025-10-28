@@ -1,0 +1,12 @@
+1. Read two integers n and m from input
+2. Initialize empty list l
+3. For i from 0 to n-1:
+   a. Read string s from input
+   b. Convert s to list of characters
+   c. For j from 0 to m-1:
+      i. If character at position j equals '.':
+         - If (i + j) is odd: set character to 'W'
+         - Else: set character to 'B'
+   d. Append modified list to l
+4. For each character list c in l:
+   a. Join characters into string and print

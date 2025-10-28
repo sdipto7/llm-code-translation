@@ -1,0 +1,11 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,s824230885.py,Compilation Error,"Error:   File ""output/qwen_2.5_72b_instruct/codenet/direct_translation/java/python/s824230885.py"", line 13
+    def 
+        ^
+SyntaxError: invalid syntax
+"
+java,python,s745776078.py,Compilation Error,"Error:   File ""output/qwen_2.5_72b_instruct/codenet/direct_translation/java/python/s745776078.py"", line 3
+    in = sys.stdin
+    ^^
+SyntaxError: invalid syntax
+"

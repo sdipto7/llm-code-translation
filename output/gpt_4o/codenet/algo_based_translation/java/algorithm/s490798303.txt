@@ -1,0 +1,37 @@
+```
+1. Import necessary libraries: `java.util.*`.
+
+2. Define a class `Main`.
+
+3. Implement `main` method:
+   - Parameters: `String[] args`
+   - Return type: `void`
+
+4. Declare a `Scanner` object for input: `Scanner scanner = new Scanner(System.in);`
+
+5. Read two integers `n` and `k` from input:
+   - `int n = scanner.nextInt();`
+   - `int k = scanner.nextInt();`
+
+6. Declare a map to store integers and their associated lists: 
+   - `Map<Integer, List<Integer>> map = new HashMap<>();`
+
+7. Loop `k` times to process input data:
+   - For `i` from `0` to `k-1`:
+     - Read an integer `d` from input: `int d = scanner.nextInt();`
+     - Loop `d` times to read persons:
+       - For `j` from `0` to `d-1`:
+         - Read an integer `person` from input: `int person = scanner.nextInt();`
+         - Check if `map` does not contain `person` as a key:
+           - If true, initialize a new list for `person`: `map.put(person, new ArrayList<>());`
+         - Add `d` to the list associated with `person`: `map.get(person).add(d);`
+
+8. Initialize an integer `count` to zero: `int count = 0;`
+
+9. Loop `n` times to count persons not in the map:
+   - For `i` from `1` to `n`:
+     - Check if `map` does not contain `i`:
+       - If true, increment `count` by 1: `count++;`
+
+10. Print the value of `count`: `System.out.println(count);`
+```

@@ -1,0 +1,16 @@
+```
+Function Signature:
+- Function: count_unique_strings
+- Parameters: None
+- Returns: int
+
+Algorithm:
+1. Declare variable `n` of type int.
+2. Read an integer input from the user and assign it to `n`.
+3. Declare a list `input_strings` to store strings, initially empty.
+4. Loop `n` times (from 0 to n-1):
+   a. Read a string input from the user and append it to `input_strings`.
+5. Convert `input_strings` to a set to remove duplicates, resulting in a new set `unique_strings`.
+6. Calculate the length of `unique_strings` and store it in `unique_count`.
+7. Return `unique_count`.
+```

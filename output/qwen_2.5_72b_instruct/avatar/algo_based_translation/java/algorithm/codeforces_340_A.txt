@@ -1,0 +1,43 @@
+Function signatures with parameter and return types:
+- `public static void main(String[] sh)`
+
+Variable declarations and data types:
+- `Scanner s`
+- `long x`
+- `long y`
+- `long a`
+- `long b`
+- `long j`
+- `long i`
+- `long x1`
+- `long y1`
+- `long c`
+- `boolean ans`
+- `long count`
+
+Complete logic flow in execution order:
+1. Create a `Scanner` object to read input.
+2. Read four integers `x`, `y`, `a`, `b` from standard input.
+3. Initialize variables: `j = 2`, `i`, `x1 = 0`, `y1 = 0`, `c = 0`.
+4. Set `ans` to `true`.
+5. Assign `c` to the maximum of `x` and `y`.
+6. If `c` is greater than `b`, print "0" and set `ans` to `false`.
+7. While `c` modulo the minimum of `x` and `y` is not equal to 0 and `ans` is `true`:
+   - If `x` is greater than `y`, multiply `c` by `j` and increment `j`.
+   - Otherwise, multiply `c` by `j` and increment `j`.
+   - If `c` is greater than `b`, print "0" and set `ans` to `false`. Break the loop.
+8. If `ans` is `true`:
+   - Initialize `count` to 0.
+   - Set `i` to `a`.
+   - For `i` from `a` to `b`:
+      - If `i` modulo `c` equals 0, break the loop.
+   - If `i` is not equal to `b + 1`, print `((b - i) / c) + 1`.
+   - Otherwise, print "0".
+
+Input/output operations and data processing logic:
+- Read four integers from standard input.
+- Print "0" under certain conditions.
+- Print the number of multiples of `c` between `a` and `b`, inclusive.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

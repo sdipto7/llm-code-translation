@@ -1,0 +1,13 @@
+read input string from standard input
+initialize integer variable cu to 0
+initialize integer variable cl to 0
+for each character z in input string:
+    if z is lowercase letter:
+        increment cl by 1
+    else:
+        increment cu by 1
+if cu > cl:
+    convert entire input string to uppercase and assign to out
+else:
+    convert entire input string to lowercase and assign to out
+print out to standard output

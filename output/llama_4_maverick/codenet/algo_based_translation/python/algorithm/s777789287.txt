@@ -1,0 +1,13 @@
+1. Define a function `solve` with no parameters and return type `None`.
+2. Declare variables `n` and `m` of type `int`.
+3. Read two integers from input, split by space, and store them in `n` and `m` respectively.
+4. Declare a list `a` of type `list[int]`.
+5. Read a list of `n` integers from input, split by space, and store them in `a`.
+6. Sort the list `a` in descending order.
+7. Declare a variable `s` of type `float`.
+8. Calculate the sum of all elements in `a` and divide it by `4*m`, storing the result in `s`.
+9. Check if the `m-1`th element of the sorted list `a` is greater than or equal to `s`.
+10. If the condition is true, print 'Yes' to output.
+11. If the condition is false, print 'No' to output.
+
+Required libraries: built-in Python libraries (`input`, `map`, `list`, `sort`, `sum`, `print`)

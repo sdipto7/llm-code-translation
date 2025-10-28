@@ -1,0 +1,32 @@
+Function signatures with parameter and return types:
+- main() -> None
+
+Variable declarations and data types:
+- n: int
+- w: Counter[int]
+- c: int
+- i: int
+
+Complete logic flow in execution order:
+1. Read an integer from standard input and assign it to n.
+2. Read a line from standard input, split it into substrings, convert each substring to an integer, and count the occurrences of each integer using Counter, assigning the result to w.
+3. Initialize c to 0.
+4. For each unique integer i in w:
+   - If i equals 0:
+     - Add the product of the count of i in w and one less than the count of i in w to c.
+   - Else:
+     - If the negative of i exists in w:
+       - Add the product of the count of i in w and the count of the negative of i in w to c.
+5. Print the integer division of c by 2.
+
+Control structures:
+- For loop: Iterates over each unique element in w.
+- If-Else statement: Checks if i equals 0; if so, performs an operation; otherwise, checks if -i exists in w and performs a different operation if true.
+
+Input/output operations and data processing logic:
+- Input: Reads two lines from standard input. The first line contains an integer n, and the second line contains n integers separated by spaces.
+- Output: Prints an integer that represents half the total count of pairs of numbers where one number is the negative of the other, plus the count of pairs of zeros.
+
+Required libraries, modules, or dependencies:
+- sys: For reading from standard input.
+- collections.Counter: For counting occurrences of each integer.

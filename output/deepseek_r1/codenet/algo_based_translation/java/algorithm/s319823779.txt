@@ -1,0 +1,38 @@
+**Function Signature**  
+- `public static void main(String[] args)`  
+  - Parameters: `String[] args`  
+  - Return type: `void`  
+
+**Variables**  
+- `Scanner sc = new Scanner(System.in)`  
+- `int a`, `int b`, `int c`, `int x` (input values)  
+- `int res = 0` (result counter)  
+- Loop variables: `int i`, `int j`, `int k`  
+
+**Logic Flow**  
+1. Read four integers `a`, `b`, `c`, and `x` from standard input.  
+2. Initialize `res` to 0.  
+3. Iterate `i` from 0 to `a` (inclusive):  
+   - Iterate `j` from 0 to `b` (inclusive):  
+     - Iterate `k` from 0 to `c` (inclusive):  
+       - Calculate `total = 500 * i + 100 * j + 50 * k`.  
+       - If `total == x`, increment `res` by 1.  
+4. After all iterations, print `res`.  
+
+**Control Structures**  
+- Triple nested `for` loops:  
+  - `for (i = 0; i <= a; i++)`  
+  - `for (j = 0; j <= b; j++)`  
+  - `for (k = 0; k <= c; k++)`  
+- Conditional: `if (total == x)`  
+
+**Input/Output**  
+- Input:  
+  - `a = sc.nextInt()`  
+  - `b = sc.nextInt()`  
+  - `c = sc.nextInt()`  
+  - `x = sc.nextInt()`  
+- Output: `System.out.println(res)`  
+
+**Dependencies**  
+- `java.util.Scanner` for input handling.

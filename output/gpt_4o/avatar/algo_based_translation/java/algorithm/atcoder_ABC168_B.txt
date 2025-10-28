@@ -1,0 +1,25 @@
+Function Signature:
+- `main(args: String[]) -> void`
+
+Variable Declarations:
+- `in: Scanner`
+- `K: int`
+- `S: String`
+
+Logic Flow:
+1. Initialize `in` as a new `Scanner` object for reading input.
+2. Read an integer from input and store it in `K`.
+3. Read a string from input and store it in `S`.
+4. Check if the length of `S` is less than or equal to `K`.
+   - If true, print the entire string `S`.
+   - If false, print the substring of `S` from index 0 to `K` followed by `"..."`.
+
+Control Structures:
+- Conditional: `if (S.length() <= K)`
+
+Input/Output Operations:
+- Input: Read integer and string from standard input using `Scanner`.
+- Output: Print a string to standard output using `System.out.println`.
+
+Dependencies:
+- `java.util.Scanner` for reading input from standard input.

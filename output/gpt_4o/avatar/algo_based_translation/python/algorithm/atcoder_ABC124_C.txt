@@ -1,0 +1,30 @@
+```
+Function Signature:
+    def min_changes_to_alternate_binary_string(s: str) -> int
+
+Variable Declarations:
+    import collections
+    s: List[str]
+    even: Counter
+    odd: Counter
+
+Execution Logic:
+    1. Import the collections module.
+    2. Convert the input string `s` into a list of characters.
+    3. Create a `Counter` object `even` to count characters at even indices of `s`.
+    4. Create a `Counter` object `odd` to count characters at odd indices of `s`.
+    5. Calculate `changes_for_pattern_one` as the length of `s` minus the sum of:
+       - The count of '0's in `even` (even-indexed positions)
+       - The count of '1's in `odd` (odd-indexed positions)
+    6. Calculate `changes_for_pattern_two` as the length of `s` minus the sum of:
+       - The count of '1's in `even` (even-indexed positions)
+       - The count of '0's in `odd` (odd-indexed positions)
+    7. Return the minimum of `changes_for_pattern_one` and `changes_for_pattern_two`.
+
+Input/Output:
+    - Input: A binary string `s`.
+    - Output: An integer representing the minimum number of changes needed.
+
+Required Libraries:
+    collections
+```

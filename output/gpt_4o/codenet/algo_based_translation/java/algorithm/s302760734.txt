@@ -1,0 +1,32 @@
+- Function Signature:
+  - `main(args: String[]): void`
+
+- Variable Declarations:
+  - `scanner: Scanner` (imported from `java.util`)
+  - `s: char[]`
+  - `t: char[]`
+  - `check: boolean`
+  - `i: int`
+  - `j: int`
+  - `check2: boolean`
+
+- Logic Flow:
+  1. Initialize `scanner` as a new `Scanner` object for reading input.
+  2. Read a string from input, convert it to a character array, and assign it to `s`.
+  3. Read another string from input, convert it to a character array, and assign it to `t`.
+  4. Initialize `check` as `false`.
+  5. Start a for loop with `i` initialized to `s.length - t.length`; loop while `i >= 0`; decrement `i` by 1 in each iteration:
+     - Initialize `check2` as `true`.
+     - Start an inner for loop with `j` initialized to 0; loop while `j < t.length`; increment `j` by 1 in each iteration:
+       - If `s[i + j]` is not equal to `'?'` and `s[i + j]` is not equal to `t[j]`, set `check2` to `false`.
+     - If `check2` is `true`:
+       - Set `check` to `true`.
+       - Start another inner for loop with `j` initialized to 0; loop while `j < t.length`; increment `j` by 1 in each iteration:
+         - Set `s[i + j]` to `t[j]`.
+     - If `check` is `true`, break out of the loop.
+  6. If `check` is `true`:
+     - Start a for loop with `i` initialized to 0; loop while `i < s.length`; increment `i` by 1 in each iteration:
+       - If `s[i]` is equal to `'?'`, print `'a'`.
+       - Otherwise, print `s[i]`.
+     - Print a new line.
+  7. If `check` is `false`, print "UNRESTORABLE".

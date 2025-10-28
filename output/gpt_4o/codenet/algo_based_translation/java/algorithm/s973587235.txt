@@ -1,0 +1,29 @@
+```
+Function Signature:
+- main() -> void
+
+Variable Declarations:
+- sc: Scanner
+- n: int
+- minN: int
+- h: int
+
+Logic Flow:
+1. Initialize a Scanner object `sc` to read input from standard input.
+2. Read an integer `n` from input.
+3. Read another integer, subtract 1 from it, and store it in `minN`.
+4. Iterate from 0 to `n-2` (inclusive) using a for-loop:
+   a. Read an integer `h` from input.
+   b. If `minN` is equal to `h`, set `minN` to `h`.
+   c. Else if `minN` is equal to `h-1`, set `minN` to `h-1`.
+   d. Else if `minN` is less than `h-1`, set `minN` to `h-1`.
+   e. Else if `minN` is greater than `h`, print "No" and exit the program.
+5. If loop completes, print "Yes".
+
+Input/Output Operations:
+- Input: Read integers from standard input using Scanner.
+- Output: Print "Yes" or "No" to standard output.
+
+Required Libraries:
+- java.util.Scanner
+```

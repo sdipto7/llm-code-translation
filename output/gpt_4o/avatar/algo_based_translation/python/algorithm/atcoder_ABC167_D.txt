@@ -1,0 +1,36 @@
+```
+Algorithm FindKthElementInPath(N: int, K: int, L: List[int]) -> int:
+    Import collections module
+    Declare path as List[int] initialized with [1]
+    Declare ind, count, x, t as int initialized to 0, 0, 1, -1 respectively
+    Declare flag as bool initialized to False
+    Declare Hash as defaultdict with default value 0
+
+    Insert -1 at the start of List L
+
+    For i from 0 to N (inclusive):
+        Set ne to L[x]
+        
+        If Hash[ne] is not 0:
+            Set flag to True
+            Set t to Hash[ne]
+            Break loop
+
+        Append ne to path
+        Increment ind by 1
+        Set Hash[ne] to ind
+        Set x to ne
+
+    If flag is True:
+        Set loop to the sublist of path starting from index t to end
+
+        If K is less than length of path:
+            Return path[K]
+        Else:
+            Set K to K - length of path
+            Set K to K modulo length of loop
+            Return loop[K]
+    Else:
+        Return path[K - 1]
+```
+

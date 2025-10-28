@@ -1,0 +1,55 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `get_nums(num: int, t: int) -> list[int]`
+
+**Variables:**
+- `n: int`
+- `k: int`
+- `l: int` (unused)
+- `r: int` (unused)
+- `sa: int`
+- `sk: int`
+- `ans: list[int]`
+- `quotient: int` (in `get_nums`)
+- `remainder: int` (in `get_nums`)
+- `result: list[int]` (in `get_nums`)
+- `i: int` (loop index in `get_nums`)
+
+**Algorithm Flow:**
+
+**Function get_nums:**
+1. Compute `quotient = t // num`
+2. Compute `remainder = t % num`
+3. Initialize empty list `result`
+4. Loop `i` from `0` to `num - 1` (inclusive):
+   1. If `i < remainder`:
+      1. Append `quotient + 1` to `result`
+   2. Else:
+      1. Append `quotient` to `result`
+5. Return `result`
+
+**Main Program:**
+1. Read six space-separated integers from input: `n`, `k`, `l`, `r`, `sa`, `sk`
+2. Compute `list1 = get_nums(k, sk)`
+3. Compute `list2 = get_nums(n - k, sa - sk)`
+4. Concatenate `ans = list1 + list2`
+5. Convert all elements in `ans` to strings
+6. Join elements with spaces into a single string
+7. Print resulting string
+
+**Control Flow Structures:**
+- **Loop in get_nums:** Fixed iteration from `0` to `num - 1` (sequential)
+- **Conditional in get_nums:** Check `i < remainder` to determine element value
+
+**Input/Output Operations:**
+- Input: Single line with six integers via standard input
+- Output: Space-separated string of integers via standard output
+
+**Edge Case Handling:**
+- Implicitly handles `t = 0` by returning list of zeros
+- Assumes valid input where `num > 0` in `get_nums` calls (no division by zero)
+- Distributes remainder correctly when `t` is not divisible by `num`
+
+**Dependencies:**
+- Standard input/output functions (no external libraries required)

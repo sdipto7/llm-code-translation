@@ -1,0 +1,29 @@
+Function Signature: `solve_case()`
+
+Variable Declarations:
+- `n`, `m`: integers
+- `count`: list of lists of integers, initialized with dimensions `n x n` and all elements set to 0
+- `ans`: integer, initialized to -1
+- `k`: integer, loop variable
+- `x`, `y`: integers, read from input
+- `i`, `j`: integers, loop variables
+- `found`: boolean, initialized to False
+
+Logic Flow:
+1. Read two integers `n` and `m` from input
+2. Initialize `count` as a 2D list with dimensions `n x n` and fill it with zeros
+3. Set `ans` to -1
+4. For each `k` from 0 to `m-1`:
+   1. Read two integers `x` and `y` from input
+   2. Decrement `x` and `y` by 1
+   3. Set `found` to False
+   4. For each `i` from `x-2` to `x`:
+      1. For each `j` from `y-2` to `y`:
+         1. If `i` is between 0 and `n-1` and `j` is between 0 and `n-1`:
+            1. Increment `count[i][j]` by 1
+            2. If `count[i][j]` equals 9:
+               1. Set `found` to True
+   5. If `found` is True:
+      1. Set `ans` to `k + 1`
+      2. Break out of the loop
+5. Print `ans`

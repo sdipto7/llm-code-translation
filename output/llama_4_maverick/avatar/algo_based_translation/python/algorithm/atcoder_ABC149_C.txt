@@ -1,0 +1,14 @@
+1. Input X and convert it to an integer
+2. Initialize a boolean array prime of size 100010 with all values set to True
+3. Set prime[0] to False
+4. Set prime[1] to False
+5. For i ranging from 4 to 100010 in steps of 2, set prime[i] to False
+6. Initialize i to 3
+7. While i squared is less than or equal to 100008
+   7.1. If prime[i] is True
+      7.1.1. For j ranging from i + i to 100008 in steps of i, set prime[j] to False
+   7.2. Increment i by 2
+8. For i ranging from X to 100008
+   8.1. If prime[i] is True
+      8.1.1. Output i
+      8.1.2. Break the loop

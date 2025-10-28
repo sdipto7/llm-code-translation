@@ -1,0 +1,37 @@
+- **Function Signature**:
+  - `public static void main(String[] args)`
+
+- **Variable Declarations**:
+  - `int n` (input length)
+  - `List<Integer> arr = new ArrayList<>()` (stores indices of 1s)
+  - `long result = 1` (final product)
+
+- **Input Operations**:
+  - Read integer `n` via `input.nextInt()`
+  - Loop `n` times, reading integers:
+    - If value is `1`, append the current index to `arr`
+
+- **Control Structures**:
+  - `for (int i = 0; i < n; i++)` (process input values)
+  - `if (arr.isEmpty())` (handle edge case with no 1s)
+  - `for (int i = 1; i < arr.size(); i++)` (compute gaps between consecutive 1s)
+
+- **Logic Flow**:
+  1. Collect indices of all `1` values in input sequence
+  2. If no `1`s exist, output `0`
+  3. Otherwise, multiply consecutive index gaps:
+     - Multiply `result` by `arr.get(i) - arr.get(i - 1)` for all `i >= 1`
+  4. Output final product
+
+- **Data Processing**:
+  - Index gaps between consecutive `1`s represent valid split points
+  - Product of gaps equals total valid ways to split the binary array
+
+- **Output Operations**:
+  - `System.out.println(0)` when no 1s exist
+  - `System.out.println(result)` for computed product
+
+- **Dependencies**:
+  - `java.util.Scanner`
+  - `java.util.ArrayList`
+  - `java.util.List`

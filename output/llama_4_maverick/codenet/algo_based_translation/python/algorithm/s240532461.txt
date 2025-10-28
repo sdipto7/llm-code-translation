@@ -1,0 +1,19 @@
+1. Read two integer inputs from the user and store them in variables N and L.
+2. Initialize an empty list `aji` to store integer values.
+3. Iterate from 1 to N (inclusive) using a loop counter `i`.
+4. For each iteration, calculate `L + i - 1` and append it to the `aji` list.
+5. Check if the minimum value in `aji` is greater than or equal to 0.
+6. If true, remove the smallest element from `aji` by finding its index using `aji.index(min(aji))` and then popping it.
+7. If false, check if the maximum value in `aji` is less than or equal to 0.
+8. If true, remove the largest element from `aji` by finding its index using `aji.index(max(aji))` and then popping it.
+9. If both conditions are false, remove the element with the smallest absolute value from `aji` by finding its index using `aji.index(min(aji, key=abs))` and then popping it.
+10. Calculate the sum of the remaining elements in `aji`.
+11. Output the sum. 
+
+Function signature: `def calculate_sum() -> int`
+- N: integer
+- L: integer
+- `aji`: list of integers
+- Loop counter `i`: integer
+
+Required libraries: built-in Python libraries (`input()`, `map()`, `split()`, `min()`, `max()`, `abs()`, `sum()`, `index()`, `pop()`)

@@ -1,0 +1,38 @@
+**Algorithm:**
+
+**Functions:**
+- `public static void main(String[] args) throws IOException`
+  - Parameters: String array `args`
+  - Return: void
+  - Reads integer `n` from standard input
+  - Calls `solve(n)`
+
+- `public static void solve(int n)`
+  - Parameters: int `n`
+  - Return: void
+  - Computes and prints result
+
+**Variables:**
+- `BufferedReader br` (in `main`)
+- `int n` (input value)
+
+**Logic Flow:**
+1. Initialize `BufferedReader` to read input
+2. Parse integer `n` from input line
+3. Calculate integer division `n / 3`, multiply by 2 (store as intermediate value)
+4. Check if `n % 3 != 0` using ternary operator:
+   - If true: add 1 to intermediate value
+   - If false: add 0
+5. Print final result
+
+**Control Structures:**
+- Ternary conditional: `(n % 3 == 0 ? 0 : 1)`
+
+**Input/Output:**
+- Input: Single integer from stdin via `BufferedReader`
+- Output: Single integer printed via `System.out.println`
+
+**Dependencies:**
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`

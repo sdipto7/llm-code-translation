@@ -1,0 +1,26 @@
+Function signature: `determine_output(s: str) -> None`
+
+Variable declaration: `s: str`
+
+Logic flow:
+1. Read input string `s`
+2. Check if `s` equals 'RRR'
+   - If true, print 3
+3. Otherwise, check if `s` equals 'SSS'
+   - If true, print 0
+4. Otherwise, check if `s` equals 'RRS' or 'SRR'
+   - If true, print 2
+5. If none of the above conditions are met, print 1
+
+Control structures:
+- Conditional statements: `if`, `elif`, `else`
+
+Input/output operations:
+- Input: `input()` reads a string `s`
+- Output: `print(value)` outputs an integer based on the value of `s`
+
+Data processing logic:
+- Compare string `s` to predefined string literals to determine which output to print
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required

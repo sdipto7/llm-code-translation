@@ -1,0 +1,47 @@
+```
+Function solve(N: int, M: int, Q: int, a: List[int], b: List[int], c: List[int], d: List[int]) -> None
+    Declare res as integer and initialize to 0
+
+    Define function rec(A: List[int]) -> None
+        Declare res as nonlocal
+        If length of A equals N
+            Declare ans as integer and initialize to 0
+            For i from 0 to Q - 1
+                If A[b[i] - 1] - A[a[i] - 1] equals c[i]
+                    Increment ans by d[i]
+            Set res to maximum of res and ans
+            Return
+
+        Declare last_max as integer
+        If length of A equals 0
+            Set last_max to 1
+        Else
+            Set last_max to the last element of A
+
+        For i from last_max to M
+            Call rec with A concatenated with [i]
+
+    Call rec with an empty list
+    Print res
+    Return
+
+Function main() -> None
+    Define generator function iterate_tokens() -> Iterator[str]
+        For each line in sys.stdin
+            For each word in line split by whitespace
+                Yield word
+
+    Declare tokens as iterator and initialize with iterate_tokens()
+    Declare N, M, Q as integers and initialize with next tokens converted to integers
+    Declare a, b, c, d as lists of integers with size Q
+    For i from 0 to Q - 1
+        Set a[i] to next token converted to integer
+        Set b[i] to next token converted to integer
+        Set c[i] to next token converted to integer
+        Set d[i] to next token converted to integer
+
+    Call solve with N, M, Q, a, b, c, d
+
+If __name__ equals '__main__'
+    Call main()
+```

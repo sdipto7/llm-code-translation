@@ -1,0 +1,57 @@
+ALGORITHM SPECIFICATION
+
+FUNCTION SIGNATURES:
+- main(): void
+
+VARIABLES:
+- x: int
+- y: int
+- z: int
+- k: int
+- a: List[int]
+- b: List[int]
+- c: List[int]
+- ab: List[int]
+- abc: List[int]
+
+LOGIC FLOW:
+1. Read first input line, split into four integers x, y, z, k
+2. Read three subsequent input lines, convert to integer lists a, b, c
+3. Initialize empty list ab
+4. For i from 0 to x-1:
+    a. For j from 0 to y-1:
+        i. Calculate a[i] + b[j]
+        ii. Append result to ab
+5. Sort ab in descending order
+6. Truncate ab to first min(k, x*y) elements
+7. Initialize empty list abc
+8. For each value in ab:
+    a. For each element in c:
+        i. Calculate value + element
+        ii. Append result to abc
+9. Sort abc in descending order
+10. Print first k elements from abc, each on new line
+
+CONTROL STRUCTURES:
+- Nested loops for list population (steps 4, 8)
+- Sorting operations with reverse order (steps 5, 9)
+- Element truncation using min() function (step 6)
+
+INPUT/OUTPUT:
+- Input from standard input stream
+- Four space-separated integers on first line
+- Three subsequent lines with space-separated integers
+- Output k integers to standard output
+
+ERROR HANDLING:
+- Implicit handling of list bounds through min() function calls
+- Assumes valid integer inputs with correct element counts matching x,y,z
+
+EDGE CASE HANDLING:
+- Limits combined a-b pairs to min(k, x*y) elements
+- Outputs exactly k elements even if total candidates exceed available combinations
+
+EXTERNAL DEPENDENCIES:
+- Standard input/output functions
+- List sorting functionality
+- Integer parsing utilities

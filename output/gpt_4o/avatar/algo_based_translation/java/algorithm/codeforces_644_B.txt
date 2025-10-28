@@ -1,0 +1,42 @@
+```
+Algorithm:
+
+1. Import necessary modules:
+   - Import `java.util.*` for utility classes such as `Scanner` and `LinkedList`.
+
+2. Define main function:
+   - Function: `main(String[] args)`
+   - Parameters: `args` - Array of `String` representing command-line arguments
+   - Return type: `void`
+
+3. Initialize input reader:
+   - Create a `Scanner` object `sc` to read input from standard input.
+
+4. Read input values:
+   - Declare integer `n` and assign `sc.nextInt()` to it, representing the number of tasks.
+   - Declare integer `b` and assign `sc.nextInt()` to it, representing the buffer size.
+
+5. Initialize necessary data structures:
+   - Declare an array `ans` of type `long` with size `n` to store the completion times.
+   - Create a `LinkedList` of type `Long` named `q` to act as a processing queue.
+
+6. Process each task:
+   - Loop over `i` from 0 to `n-1`:
+     - Declare integer `t` and assign `sc.nextInt()` to it, representing the task arrival time.
+     - Declare integer `d` and assign `sc.nextInt()` to it, representing the task duration.
+     - While loop to process the queue:
+       - Condition: `!q.isEmpty()` and `q.getFirst() <= t`
+       - Action: Remove the first element of `q` using `q.pollFirst()`.
+     - Conditional check for buffer availability:
+       - If `q.size() <= b`:
+         - Assign to `ans[i]` the value of `(q.isEmpty() ? t : q.getLast()) + d`.
+         - Add `ans[i]` to the end of the queue `q` using `q.add(ans[i])`.
+       - Else:
+         - Assign `-1` to `ans[i]`.
+
+7. Output results:
+   - Loop over `i` from 0 to `n-1`:
+     - Print `ans[i]` followed by a space using `System.out.print(ans[i] + " ")`.
+
+8. End of algorithm.
+```

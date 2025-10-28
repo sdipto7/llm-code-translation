@@ -1,0 +1,40 @@
+Function signatures with parameter and return types:
+- main(String[] args): void
+
+Variable declarations and data types:
+- Scanner in: Scanner
+- String word1: String
+- String word2: String
+- String word3: String
+- String perm1: String
+- String perm2: String
+- String perm3: String
+- String perm4: String
+- String perm5: String
+- String perm6: String
+- int students: int
+- String testCase: String
+- int i: int
+
+Complete logic flow in execution order:
+1. Create a new Scanner object to read input.
+2. Read three lines of input, remove non-alphabetic characters, convert to lowercase, and store in word1, word2, and word3 respectively.
+3. Concatenate word1, word2, and word3 in six different permutations and store in perm1, perm2, perm3, perm4, perm5, and perm6.
+4. Read the number of students.
+5. Read the next line to clear the buffer.
+6. For i from 0 to students - 1:
+   a. Read a line of input, remove non-alphabetic characters, convert to lowercase, and store in testCase.
+   b. If testCase is equal to perm1, perm2, perm3, perm4, perm5, or perm6, print "ACC".
+   c. Otherwise, print "WA".
+
+Control structures:
+- For loop: i from 0 to students - 1
+- If-Else statement: Checks if testCase matches any of the six permutations
+
+Input/output operations and data processing logic:
+- Input: Reads three lines of text for word1, word2, and word3, a number for students, and then a line for each student's testCase.
+- Output: Prints "ACC" if testCase matches any permutation, otherwise prints "WA".
+- Data processing: Removes non-alphabetic characters, converts to lowercase, and checks against permutations.
+
+Required libraries, modules, or dependencies:
+- java.util.*

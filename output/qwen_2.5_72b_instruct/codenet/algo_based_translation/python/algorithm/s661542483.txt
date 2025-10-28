@@ -1,0 +1,26 @@
+- Function signatures:
+  - `dfs(h: int) -> int`
+
+- Variable declarations and data types:
+  - `H: int`
+  - `count: int`
+  - `h: int` (parameter of `dfs`)
+
+- Complete logic flow in execution order:
+  1. Read an integer input and assign it to `H`.
+  2. Initialize `count` to 0.
+  3. Call `dfs` with `H` as the argument.
+  4. In `dfs`:
+     1. If `h` is equal to 1, return 1.
+     2. Otherwise, recursively call `dfs` with `h // 2` as the argument, multiply the result by 2, add 1, and return the result.
+  5. Print the result of `dfs(H)`.
+
+- Control structures:
+  - Conditional: `if h == 1` in `dfs` function.
+
+- Input/output operations and data processing logic:
+  - Input: Read an integer from the standard input and assign it to `H`.
+  - Output: Print the result of the `dfs` function call.
+
+- Required libraries, modules, or dependencies:
+  - No specific libraries or modules required.

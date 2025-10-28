@@ -1,0 +1,67 @@
+**Function Signature:**
+main() -> None
+
+**Variables:**
+- n: int
+- cake: list of str
+- happiness: int (initialized to 0)
+- chocCount: int (initialized to 0)
+- nfat: int (initialized to 1)
+- line: str
+- i: int (loop counter)
+- j: int (loop counter)
+- posCount: int (initialized to 0)
+
+**Algorithm Flow:**
+
+1. Read integer n from input
+2. Initialize empty list cake
+3. Initialize happiness = 0
+4. Initialize chocCount = 0
+5. Initialize nfat = 1
+6. For i from 0 to n-1:
+   - Read string line from input
+   - Append line to cake list
+   - For each character j in line:
+     - If j equals 'C':
+       - Increment chocCount by 1
+   - If chocCount > 1:
+     - For i from chocCount down to chocCount-1 (inclusive):
+       - Multiply nfat by current i value
+     - Add nfat/2 to happiness
+   - Reset nfat = 1
+   - Reset chocCount = 0
+7. Initialize posCount = 0
+8. For j from 0 to n-1:
+   - For i from 0 to n-1:
+     - If cake[i][j] equals 'C':
+       - Increment chocCount by 1
+   - If chocCount > 1:
+     - For i from chocCount down to chocCount-1 (inclusive):
+       - Multiply nfat by current i value
+     - Add nfat/2 to happiness
+   - Reset nfat = 1
+   - Reset chocCount = 0
+9. Print integer value of happiness
+
+**Input Operations:**
+- Read integer n
+- Read n lines of strings
+
+**Output Operations:**
+- Print final happiness value as integer
+
+**Control Structures:**
+- For loop: range(n)
+- For loop: characters in string
+- If condition: j == 'C'
+- If condition: chocCount > 1
+- For loop: range(chocCount, chocCount-2, -1)
+- Nested for loops: i from 0 to n-1, j from 0 to n-1
+
+**Data Processing:**
+- String input parsing
+- Character counting
+- Factorial-like calculation (nfat = chocCount * (chocCount-1))
+- Integer division and accumulation
+- 2D array traversal (rows then columns)

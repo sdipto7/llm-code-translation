@@ -1,0 +1,64 @@
+**Structured Algorithm Specification**
+
+**1. Program Overview**
+- **Objective**: Calculate the maximum overlapping engagement metric between male and female events.
+- **Input**: Multiple event entries with gender type and date ranges.
+- **Output**: Maximum value of minimum engagement between male and female events across all dates.
+
+**2. Data Structures**
+- **Constants**:
+  - `N: Integer` = 368 (Fixed array size representing day range)
+- **Arrays**:
+  - `m: Integer[N]` (Male event engagement difference array)
+  - `f: Integer[N]` (Female event engagement difference array)
+- **Variables**:
+  - `a: Integer` (Prefix sum accumulator for male events)
+  - `b: Integer` (Prefix sum accumulator for female events)
+  - `c: Integer` (Maximum minimum engagement value)
+
+**3. Function/Method Signatures**
+- Not applicable (Procedural implementation)
+  
+**4. Control Flow & Operations**
+1. **Initialization**:
+   - Set all elements in `m` and `f` arrays to 0.
+  
+2. **Event Processing Loop**:
+   - Read number of events `T` from input.
+   - For each event in `T`:
+     - Read and parse event data into `gender (String)`, `start_day (Integer)`, `end_day (Integer)`.
+     - Convert `end_day` to exclusive range: `end_day += 1`.
+     - Update difference array:
+       - If `gender == 'M'`: 
+         - `m[start_day] += 2`
+         - `m[end_day] -= 2`
+       - Else:
+         - `f[start_day] += 2`
+         - `f[end_day] -= 2`
+
+3. **Prefix Sum Calculation & Result Computation**:
+   - Initialize `a = 0`, `b = 0`, `c = 0`.
+   - For each `i` from 0 to `N-1`:
+     - Update prefix sums: 
+       - `a += m[i]`
+       - `b += f[i]`
+     - Compute `current_min = min(a, b)`
+     - If `current_min > c`: Update `c = current_min`
+
+4. **Output**:
+   - Print `c`.
+
+**5. Input/Output Specifications**
+- **Input Format**:
+  - First line: `T` (Number of events)
+  - Subsequent `T` lines: `gender start_day end_day` (Space-separated)
+- **Output Format**: Single integer `c`.
+
+**6. Edge Case Handling**
+- **Day Range Overflow**: Events with `end_day + 1 >= N` will be recorded at index `N-1`.
+- **Zero Events**: Returns 0 when `T=0` (default initialization of `c`).
+- **No Overlaps**: Correctly handles cases where male/female events never overlap.
+
+**7. External Dependencies**
+- **Imports**: `sys` module for input reading.
+- **Functions**: `sys.stdin.readline` for input processing.

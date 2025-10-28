@@ -1,0 +1,114 @@
+Function Signatures:
+- `public static void main(String[] args)`
+- `public void solve(int testNumber, LightScanner in, LightWriter out)`
+- `public LightScanner(InputStream in)`
+- `public String string()`
+- `public int ints()`
+- `public long longs()`
+- `public LightWriter(Writer out)`
+- `public LightWriter(OutputStream out)`
+- `public LightWriter print(char c)`
+- `public LightWriter print(String s)`
+- `public LightWriter ans(String s)`
+- `public LightWriter ans(long l)`
+- `public LightWriter ansln(long... n)`
+- `public LightWriter ln()`
+- `public void close()`
+- `public static long min(long... v)`
+- `public static int lowerBound(long[] a, long t)`
+- `public static int lowerBound(long[] a, long t, int min)`
+
+Variable Declarations and Data Types:
+- `InputStream inputStream`
+- `OutputStream outputStream`
+- `LightScanner in`
+- `LightWriter out`
+- `DLazyFaith solver`
+- `int a`
+- `int b`
+- `int q`
+- `long[] s`
+- `long[] t`
+- `long x`
+- `long sl`
+- `long tl`
+- `long sr`
+- `long tr`
+- `BufferedReader reader`
+- `StringTokenizer tokenizer`
+- `Writer out`
+- `boolean autoflush`
+- `boolean breaked`
+- `long[] a`
+- `long t`
+- `int min`
+- `int max`
+- `int mid`
+- `long[] v`
+
+Logic Flow:
+1. `main`:
+   - Initialize `inputStream` to `System.in`
+   - Initialize `outputStream` to `System.out`
+   - Create `LightScanner` object `in` with `inputStream`
+   - Create `LightWriter` object `out` with `outputStream`
+   - Create `DLazyFaith` object `solver`
+   - Call `solver.solve(1, in, out)`
+   - Close `out`
+
+2. `solve`:
+   - Read `a`, `b`, and `q` using `in.ints()`
+   - Initialize `s` with length `a + 2` and `t` with length `b + 2`
+   - Set `s[0]` and `t[0]` to `-10_000_000_000L`
+   - For `i` from `0` to `a-1`, set `s[i + 1]` to `in.longs()`
+   - For `i` from `0` to `b-1`, set `t[i + 1]` to `in.longs()`
+   - Set `s[a + 1]` and `t[b + 1]` to `20_000_000_000L`
+   - For `i` from `0` to `q-1`:
+     - Read `x` using `in.longs()`
+     - Calculate `sl` as `x - s[Math.max(0, ArrayUtil.lowerBound(s, x + 1) - 1)]`
+     - Calculate `tl` as `x - t[Math.max(0, ArrayUtil.lowerBound(t, x + 1) - 1)]`
+     - Calculate `sr` as `s[ArrayUtil.lowerBound(s, x)] - x`
+     - Calculate `tr` as `t[ArrayUtil.lowerBound(t, x)] - x`
+     - Write minimum of `Math.max(sl, tl)`, `Math.max(sr, tr)`, `2 * sl + tr`, `2 * tl + sr`, `sl + 2 * tr`, `tl + 2 * sr` to `out` using `out.ansln(IntMath.min(...))`
+
+3. `LightScanner`:
+   - Constructor initializes `reader` with `BufferedReader` wrapping `InputStreamReader` of `in`
+   - `string`:
+     - If `tokenizer` is `null` or has no more tokens, read new line and tokenize
+     - Return next token
+   - `ints` returns parsed integer from `string`
+   - `longs` returns parsed long from `string`
+
+4. `LightWriter`:
+   - Constructor initializes `out` with `BufferedWriter` wrapping `OutputStreamWriter` of `out`
+   - Overloaded constructor initializes `out` with `Writer`
+   - `print` writes character or string to `out` and handles `IOException`
+   - `ans` writes string with space if not already broken
+   - `ans` writes long value converting to string
+   - `ansln` writes long values followed by newline
+   - `ln` writes newline and flushes if `autoflush` is true
+   - `close` closes `out` and handles `IOException`
+
+5. `IntMath.min`:
+   - Returns minimum value from `long` array using streams and `min` method
+
+6. `ArrayUtil.lowerBound`:
+   - Finds first index `i` where `a[i]` is not less than `t` starting from `min`
+   - Uses binary search to find index
+
+Libraries and Modules:
+- `java.io.OutputStream`
+- `java.io.IOException`
+- `java.io.InputStream`
+- `java.util.Arrays`
+- `java.util.stream.LongStream`
+- `java.io.BufferedWriter`
+- `java.io.InputStreamReader`
+- `java.io.UncheckedIOException`
+- `java.util.OptionalLong`
+- `java.nio.charset.Charset`
+- `java.util.StringTokenizer`
+- `java.io.Writer`
+- `java.io.OutputStreamWriter`
+- `java.io.BufferedReader`
+- `java.util.NoSuchElementException`

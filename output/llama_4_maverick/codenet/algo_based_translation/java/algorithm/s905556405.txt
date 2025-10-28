@@ -1,0 +1,12 @@
+1. Import the required library: java.util.*
+2. Define a class: Main
+3. Define a static method: main with parameter args of type String[] and return type void
+4. Declare a variable: sc of type Scanner and initialize it with a new Scanner object using System.in
+5. Declare an array: numlist of type int with size 5
+6. Declare a variable: k of type int
+7. Iterate from 0 to 4 using a for loop with condition i < 5, incrementing i by 1 in each iteration
+   - Inside the loop, read an integer from the input using sc.nextInt() and store it in numlist at index i
+8. Read an integer from the input using sc.nextInt() and store it in k
+9. Check the condition: (numlist[4] - numlist[0]) > k
+   - If the condition is true, print ":(" to the output using System.out.println()
+   - If the condition is false, print "Yay!" to the output using System.out.println()

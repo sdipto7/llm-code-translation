@@ -1,0 +1,30 @@
+Function signature: `calculate_shortage(k: int, n: int, w: int) -> int`
+
+Variable declarations and data types:
+- `k: int`
+- `n: int`
+- `w: int`
+- `total: int`
+
+Logic flow in execution order:
+1. Read input values `k`, `n`, and `w` as strings.
+2. Split the input string into individual components.
+3. Convert `k`, `n`, and `w` from strings to integers.
+4. Initialize `total` to 0.
+5. Start a loop from 1 to `w` inclusive:
+   a. Calculate `i * k` and add it to `total`.
+6. After the loop, check if `total` is greater than `n`:
+   a. If true, calculate `total - n` and print the result.
+   b. If false, print 0.
+
+Control structures:
+- Loop: `for i in range(1, w + 1)`
+- Conditional: `if 1 <= k and w <= 1000`
+- Conditional: `if total > n`
+
+Input/output operations and data processing logic:
+- Input: Read a single line of input containing three space-separated integers.
+- Output: Print a single integer representing either the shortage (`total - n`) if `total` exceeds `n`, or 0 if `total` does not exceed `n`.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules are required.

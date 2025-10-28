@@ -1,0 +1,51 @@
+**Algorithm Specification:**
+
+**Function/Method:**
+- `main() -> void`
+  - Reads input, processes game logic, outputs winner
+  - **Parameters:** None
+  - **Return:** None
+
+**Variables:**
+- `x: int` - Number of twigs (initial value from input)
+- `y: int` - Number of diamonds (initial value from input)
+- `a: int` - Player turn indicator (0: Ciel, 1: Hanako, initialized to 0)
+
+**Input/Output Operations:**
+1. Read `x` and `y` from standard input via `input().split()` and convert to integers.
+
+**Control Flow:**
+1. Initialize `a = 0`
+2. **While** loop executes while any of these conditions hold:
+   - `x >= 0 AND y >= 22`
+   - `x >= 1 AND y >= 12`
+   - `x >= 2 AND y >= 2`
+3. **Loop Body:**
+   - **If** `a == 0` (Ciel's turn):
+     1. **If** `x >= 2 AND y >= 2`:
+        - `x -= 2`
+        - `y -= 2`
+     2. **Else if** `x >= 1 AND y >= 12`:
+        - `x -= 1`
+        - `y -= 12`
+     3. **Else** (implicit `y >= 22` from loop condition):
+        - `y -= 22`
+   - **Else** (Hanako's turn, `a == 1`):
+     1. **If** `y >= 22`:
+        - `y -= 22`
+     2. **Else if** `x >= 1 AND y >= 12`:
+        - `x -= 1`
+        - `y -= 12`
+     3. **Else** (implicit `x >= 2 AND y >= 2` from loop condition):
+        - `x -= 2`
+        - `y -= 2`
+   - Toggle player: `a = 1 - a`
+4. **Post-Loop:**
+   - Output `'Hanako'` if `a == 0` else `'Ciel'` via `print(['Ciel', 'Hanako'][1 - a])`
+
+**Edge Case Handling:**
+- Implicitly managed via loop condition checks before each iteration, ensuring moves are only made when resources allow.
+- All subtraction operations assume validity due to prior loop condition checks.
+
+**External Dependencies:**
+- Uses Python standard input/output functions. No external libraries required.

@@ -1,0 +1,93 @@
+Function Signatures:
+- `long ceildiv(long x, long y)`
+- `int mod(long x, int m)`
+- `long gcd(long x, long y)`
+- `int Int(boolean x)`
+- `void put(TreeMap<Pair, Integer> map, Pair p)`
+- `void rem(TreeMap<Pair, Integer> map, Pair p)`
+- `void main(String[] args) throws Exception`
+- `void fill(int[] arr, int x)`
+- `long pow(long a, long pow)`
+- `int getpow(int x) throws Exception`
+- `void linearsieve(int x)`
+- `void printArr(int[] arr)`
+- `void printArr(long[] arr)`
+- `void printArr(Integer[] arr)`
+- `void printArr(char[] arr)`
+- `void printArr(ArrayList<Integer> list)`
+
+Variable Declarations and Data Types:
+- `PrintWriter pw`
+- `Scanner sc`
+- `ArrayList<Integer>[] adj`
+- `boolean[] visit`
+- `HashMap<Pair, Integer> dp`
+- `HashMap<Integer, Integer> map`
+- `TreeMap<Pair, Integer> map`
+- `long ans`
+- `Pair p1`
+- `Pair p2`
+- `Pair p`
+- `int pow`
+- `int[] least`
+- `TreeSet<Integer> prime`
+- `StringTokenizer st`
+- `BufferedReader br`
+- `int[] arr`
+- `Integer[] arr`
+- `Pair[] arr`
+- `Pair p`
+- `Pair p`
+
+Complete Logic Flow in Execution Order:
+1. Initialize `sc` as `new Scanner(System.in)` and `pw` as `new PrintWriter(System.out)`.
+2. Read integer `n` from input.
+3. Read and sort an array of `n` integers in descending order.
+4. If `n >= 3`:
+   1. Create a `TreeMap<Pair, Integer>` named `map` with reverse order comparator.
+   2. Set `ans` to sum of first two elements of sorted array.
+   3. Add pairs `(arr[0], arr[1])`, `(arr[2], arr[1])`, and `(arr[2], arr[0])` to `map`.
+   4. For each `i` from 3 to `n-1`:
+      1. Retrieve and remove the smallest `Pair` `p` from `map`.
+      2. Add the minimum value between `p.x` and `p.y` to `ans`.
+      3. Add pairs `(p.x, arr[i])` and `(p.y, arr[i])` to `map`.
+5. Otherwise, set `ans` to the first element of the sorted array.
+6. Print `ans`.
+7. Close `pw`.
+
+Control Structures:
+- `if (n >= 3)`
+- `for (int i = 0; i < 30; i++)`
+- `while (pow > 0)`
+- `if ((pow & 1) == 1)`
+- `a *= a`
+- `pow >>= 1`
+- `while (true)`
+- `if (sc.nextInt() == 0)`
+- `pow *= x`
+- `if (sc.nextInt() == 1)`
+- `pow *= x`
+- `if (least[i] == 0)`
+- `least[i] = i`
+- `prime.add(i)`
+- `for (int y : prime)`
+- `if (i * y <= x)`
+- `least[i * y] = y`
+- `else break`
+- `for (int i = 0; i < arr.length - 1; i++)`
+- `for (int i = 0; i < arr.length - 1; i++)`
+- `for (int i = 0; i < arr.length; i++)`
+- `for (int i = 0; i < arr.length; i++)`
+- `for (int i = 0; i < list.size(); i++)`
+
+Input/Output Operations and Data Processing Logic:
+- Read integers from input using `sc.nextInt()`.
+- Sort array of integers in descending order.
+- Use `TreeMap` to maintain pairs with their counts.
+- Update and retrieve values from `TreeMap` based on specific conditions.
+- Calculate `ans` by adding values based on conditions.
+- Print `ans` to output.
+
+Required Libraries, Modules, or Dependencies:
+- `java.io.*`
+- `java.util.*`

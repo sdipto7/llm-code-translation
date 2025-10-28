@@ -1,0 +1,35 @@
+Function Signature: main()
+Parameters: None
+Return Type: None
+
+Variable Declarations:
+- n: str
+- l: List[int]
+- b: int
+- s: int
+
+Execution Order:
+1. Read input string n
+2. Read input string, split by spaces, convert each element to int, and store in list l
+3. Find the maximum value in list l and store in variable b
+4. Calculate the sum of all elements in list l and store in variable s
+5. If b is less than s - b, execute the following:
+   a. Print 'Yes'
+6. Otherwise, execute the following:
+   a. Print 'No'
+
+Control Structures:
+- If-Else statement with condition: b < s - b
+
+Input/Output Operations:
+- Read input from standard input twice
+- Print 'Yes' or 'No' to standard output based on condition
+
+Data Processing Logic:
+- Convert input string to list of integers
+- Determine the maximum value in the list
+- Compute the sum of the list elements
+- Compare the maximum value to the sum of the remaining elements
+
+Required Libraries/Modules/Dependencies:
+- None

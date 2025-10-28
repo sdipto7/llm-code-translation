@@ -1,0 +1,38 @@
+MOD = 1000000007
+
+function main():
+    in = standard input reader
+    solve(in)
+
+function solve(BufferedReader in):
+    line = read line from in
+    xx = convert line to integer array
+    min = minimum of xx[0] and xx[1]
+    max = maximum of xx[0] and xx[1]
+    
+    if min == max:
+        f = factorial(min)
+        res = (2 * f * f) % MOD
+    else if min + 1 == max:
+        f = factorial(min)
+        res = (f * ((f * max) % MOD)) % MOD
+    else:
+        res = 0
+    
+    print res
+
+function factorial(int n):
+    res = 1
+    for i from 2 to n inclusive:
+        res = (res * i) % MOD
+    return res
+
+function toInt(String s):
+    return integer conversion of s
+
+function toInts(String s):
+    split s by space into array a
+    o = new integer array of length a.length
+    for i from 0 to a.length-1:
+        o[i] = toInt(a[i])
+    return o

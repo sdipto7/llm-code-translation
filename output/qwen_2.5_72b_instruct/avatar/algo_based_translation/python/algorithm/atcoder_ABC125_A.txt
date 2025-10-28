@@ -1,0 +1,31 @@
+Function signature:
+- main() -> None
+
+Variable declarations:
+- a: int
+- b: int
+- t: int
+- cookie: int
+- time: int
+
+Logic flow:
+1. Read input values for a, b, and t as integers
+2. Initialize cookie to 0
+3. Initialize time to a
+4. While time is less than or equal to t + 0.5:
+   1. Increment cookie by b
+   2. Increment time by a
+5. Print the value of cookie
+
+Control structures:
+- While loop with condition: time <= t + 0.5
+
+Input/output operations:
+- Read three integers from standard input
+- Print the final value of cookie to standard output
+
+Data processing logic:
+- Cumulatively adds b to cookie at intervals of a until the time exceeds t + 0.5
+
+Required libraries, modules, or dependencies:
+- None

@@ -1,0 +1,43 @@
+1. Import the following Java classes:
+   - `BufferedReader` from `java.io`
+   - `IOException` from `java.io`
+   - `InputStreamReader` from `java.io`
+   - `PrintWriter` from `java.io`
+
+2. Define a public class `codeforces_147_A`.
+
+3. Define a public static method `isLatinLetter` with the signature:
+   - Input: `char c`
+   - Return: `boolean`
+   - Logic:
+     - Check if `c` is between 'a' and 'z' inclusive.
+     - Return `true` if the condition is met, otherwise return `false`.
+
+4. Define a public static method `isPunctuation` with the signature:
+   - Input: `char c`
+   - Return: `boolean`
+   - Logic:
+     - Check if `c` is one of the following characters: '.', ',', '!', '?'.
+     - Return `true` if any condition is met, otherwise return `false`.
+
+5. Define the `main` method with the signature:
+   - Input: `String[] args`
+   - Exception: `throws IOException`
+   - Logic:
+     - Create a `BufferedReader` object `br` initialized with `new InputStreamReader(System.in)`.
+     - Create a `PrintWriter` object `pw` initialized with `System.out`.
+     - Read a line of text from the input using `br.readLine()` and store it in a `String` variable `s`.
+     - Initialize a `StringBuilder` object `sb`.
+     - Determine the length of `s` and store it in an `int` variable `n`.
+     - Append the first character of `s` (`s.charAt(0)`) to `sb`.
+     - Iterate over the string `s` starting from index 1 to `n-1`:
+       - Assign the current character `s.charAt(i)` to a `char` variable `c`.
+       - If `c` is a Latin letter (`isLatinLetter(c)` returns `true`):
+         - If the previous character `s.charAt(i - 1)` is not a Latin letter (`isLatinLetter(s.charAt(i - 1))` returns `false`):
+           - Append a space character `' '` to `sb`.
+         - Append `c` to `sb`.
+       - Else if `c` is a punctuation character (`isPunctuation(c)` returns `true`):
+         - Append `c` to `sb`.
+     - Print the content of `sb` using `pw.println(sb)`.
+     - Flush the `PrintWriter` object `pw` using `pw.flush()`.
+     - Close the `PrintWriter` object `pw` using `pw.close()`.

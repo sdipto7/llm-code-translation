@@ -1,0 +1,27 @@
+```
+Import 'accumulate' function from 'itertools' module
+
+Declare 'n' and 'q' as integers
+Read a line of input, split by space, and convert to integers, assign to 'n' and 'q'
+
+Declare 's' as a string
+Read a line of input and assign to 's'
+
+Declare 'problems' as a list of lists of integers
+For each range from 0 to 'q' (exclusive):
+    Read a line of input, split by space, convert to integers, and append to 'problems'
+
+Define function 'count' with parameters 'total' (int), 'i' (int), returns int
+    If substring of 's' from index 'i-1' to 'i+1' equals 'AC':
+        Return 'total' + 1
+    Else:
+        Return 'total'
+
+Declare 'cumsum' as a list of integers
+Initialize with 'accumulate' function, starting from list [0] followed by range from 1 to 'n'
+Use 'count' function as the accumulating function
+
+For each 'l', 'r' in 'problems':
+    Calculate 'cumsum[r - 1] - cumsum[l - 1]'
+    Output the result
+```

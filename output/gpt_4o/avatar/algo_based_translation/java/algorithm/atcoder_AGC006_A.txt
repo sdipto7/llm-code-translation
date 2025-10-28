@@ -1,0 +1,80 @@
+```
+Dependencies:
+- java.io.*
+- java.util.*
+
+Algorithm:
+
+1. Declare constants:
+   - N: integer, set to 210
+
+2. Declare variables:
+   - f: integer array of size N
+   - b: character array of size N
+
+3. Define function `getFail` with parameters:
+   - b: character array
+   - m: integer
+
+4. Initialize `getFail` function:
+   - Set j to 0
+   - Set f[0] and f[1] to 0
+
+5. Loop from i = 2 to m (inclusive):
+   - While loop: while j > 0 and b[j+1] != b[i]
+     - Set j to f[j]
+   - If condition: if b[j+1] == b[i]
+     - Increment j
+   - Set f[i] to j
+
+6. Define `main` function:
+   - Create InputReader instance `in` with System.in
+   - Create PrintWriter instance `out` with System.out
+
+7. Read inputs:
+   - n: integer, using `in.nextInt()`
+   - s1: string, using `in.next()`
+   - str: string, using `in.next()`
+
+8. Initialize `cnt` to 0
+
+9. Loop from i = 0 to n (exclusive):
+   - Increment cnt
+   - Set b[cnt] to str.charAt(i)
+
+10. Loop from i = 0 to n (exclusive):
+    - Increment cnt
+    - Set b[cnt] to s1.charAt(i)
+
+11. Call `getFail` function with arguments b and cnt
+
+12. Compute `len`:
+    - Set len to the minimum of f[cnt], n, and n
+
+13. Output result:
+    - Print 2 * n - len using `out.println()`
+    - Flush output using `out.flush()`
+
+14. Define class `InputReader`:
+    - Declare variables:
+      - reader: BufferedReader
+      - tokenizer: StringTokenizer
+
+15. Initialize `InputReader` constructor with parameter:
+    - stream: InputStream
+
+16. Set reader to BufferedReader wrapping InputStreamReader of stream with buffer size 32768
+17. Set tokenizer to null
+
+18. Define method `next` returning String:
+    - While tokenizer is null or !tokenizer.hasMoreTokens():
+      - Try block:
+        - Set tokenizer to new StringTokenizer with reader.readLine()
+      - Catch block for IOException:
+        - Throw new RuntimeException with caught exception
+
+19. Return next token from tokenizer using `tokenizer.nextToken()`
+
+20. Define method `nextInt` returning int:
+    - Return integer parsed from `next()`
+```

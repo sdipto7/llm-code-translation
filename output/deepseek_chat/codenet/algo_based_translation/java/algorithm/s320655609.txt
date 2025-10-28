@@ -1,0 +1,46 @@
+**Function Signatures:**
+- `Main() throws IOException`
+- `void calc()`
+- `public static void main(String[] args) throws IOException`
+
+**Variables:**
+- `List<Long> constraints = new ArrayList<>()`
+- `long N`
+- `long result`
+- `InputStreamReader reader`
+- `BufferedReader in`
+- `long min = Long.MAX_VALUE`
+- `long time`
+
+**Logic Flow:**
+1. Create `InputStreamReader` with `System.in` and `StandardCharsets.UTF_8`
+2. Create `BufferedReader` from `InputStreamReader`
+3. Read first line from input and parse to `long`, assign to `N`
+4. For loop from `i = 0` to `i < 5`:
+   - Read line from input and parse to `long`
+   - Add parsed value to `constraints` list
+5. Close `BufferedReader`
+6. Call `calc()` method
+7. Initialize `min` to `Long.MAX_VALUE`
+8. For each element `c` in `constraints`:
+   - Set `min` to minimum of current `min` and `c`
+9. Calculate `time = N / min`
+10. If `N % min != 0`:
+    - Increment `time` by 1
+11. Add 4 to `time`
+12. Assign `time` to `result`
+13. Print `result`
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < 5; ++i)`
+- For-each loop: `for (Long c : this.constraints)`
+- Conditional: `if (this.N % min != 0)`
+
+**Input/Output:**
+- Input: Read 6 lines from standard input
+- Output: Print single long value to standard output
+
+**Dependencies:**
+- `java.util.*`
+- `java.io.*`
+- `java.nio.charset.StandardCharsets`

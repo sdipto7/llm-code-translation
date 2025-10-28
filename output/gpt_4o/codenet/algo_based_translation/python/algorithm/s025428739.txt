@@ -1,0 +1,13 @@
+```
+Algorithm:
+
+1. Declare variables A and B of type integer.
+2. Use input() function to read a line of input from the user.
+3. Use map() to convert the input string into two integers and assign them to A and B.
+4. Declare a list lst to store integers.
+5. Append the result of A + B to the list lst.
+6. Append the result of A - B to the list lst.
+7. Append the result of A * B to the list lst.
+8. Use the max() function to find the largest integer in the list lst.
+9. Print the largest integer found in the list lst.
+```

@@ -1,0 +1,50 @@
+**Algorithm:**
+
+1. **Import required modules:**
+   - collections
+   - heapq
+   - sys
+   - math
+   - itertools
+   - bisect
+   - io.BytesIO, io.IOBase
+   - os
+
+2. **Define helper functions:**
+   - value(): returns tuple of integers from input().split()
+   - values(): returns tuple of integers from sys.stdin.readline().split()
+   - inlst(): returns list of integers from input().split()
+   - inlsts(): returns list of integers from sys.stdin.readline().split()
+   - inp(): returns integer from input()
+   - inps(): returns integer from sys.stdin.readline()
+   - instr(): returns string from input()
+   - stlst(): returns list of strings from input().split()
+
+3. **Define function help(a: int, b: int, l: list[int]) -> bool:**
+   - Initialize empty list tot
+   - For i from 0 to b-1:
+        Append sublist l[i*a : i*a + a] to tot
+   - For each tuple i in zip(*tot):
+        If sum(i) equals b: return True
+   - Return False
+
+4. **Define function solve():**
+   - Initialize empty list tot
+   - Read string x from input
+   - Initialize empty list s
+   - For each character i in x:
+        If i is 'O': append 0 to s
+        Else: append 1 to s
+   - For i from 1 to 12:
+        If 12 is divisible by i:
+            If help(i, 12//i, s) returns True:
+                Append tuple (12//i, i) to tot
+   - Print number of elements in tot (without newline)
+   - For each tuple (a, b) in tot sorted by first element:
+        Print formatted string "axb" (without newline)
+   - Print newline
+
+5. **Main execution block:**
+   - Read integer n = number of test cases
+   - For i from 0 to n-1:
+        Call solve()

@@ -1,0 +1,15 @@
+1. Read an integer n from input
+2. Initialize ans to 1 and sumL to 0
+3. Read a string from input and split it into sentences using [.?!] as delimiters
+4. For each sentence s in the split string
+   1. Strip leading and trailing whitespace from s and append a '.'
+   2. Calculate the length L of the modified s
+   3. If L is greater than 1
+      1. If L is greater than n
+         1. Output "Impossible" and exit
+      2. If sumL + L + (1 if sumL > 0 else 0) is greater than n
+         1. Increment ans by 1
+         2. Set sumL to L
+      3. Else
+         1. Increment sumL by L + (1 if sumL > 0 else 0)
+5. Output ans

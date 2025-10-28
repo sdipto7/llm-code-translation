@@ -1,0 +1,35 @@
+```plaintext
+Algorithm:
+1. Function Signature:
+   - Function name: calculate_unmarked_positions
+   - Parameters: N (int), K (int), group_sizes (List[int]), groups (List[List[int]])
+   - Return type: int
+
+2. Variable Declarations:
+   - A: List[int], initially an empty list
+   - n: int, initialized to 0
+
+3. Logic Flow:
+   1. Initialize A as a list of zeros with length N.
+      - For i from 0 to N-1, append 0 to A.
+   2. For i from 0 to K-1, execute the following:
+      - d = group_sizes[i]
+      - AA = groups[i]
+      - For j from 0 to d-1, execute the following:
+        - Set A[AA[j] - 1] to 1.
+   3. Initialize n to 0.
+   4. For i from 0 to N-1, execute the following:
+      - If A[i] is equal to 0, increment n by 1.
+   5. Return n.
+
+4. Control Structures:
+   - For loops: Iterate over ranges for initializing A and modifying it based on input groups.
+   - If condition: Check if an element in A is 0 to count unmarked positions.
+
+5. Input/Output Operations:
+   - Inputs: N (number of elements), K (number of groups), group_sizes (list of group sizes), groups (list of lists containing group elements)
+   - Output: The number of unmarked positions in A.
+
+6. Required Libraries, Modules, or Dependencies:
+   - None.
+```

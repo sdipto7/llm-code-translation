@@ -1,0 +1,62 @@
+**Algorithm:**
+
+**Functions:**
+- `MyRunnable.run()`: void  
+  - Parameters: None  
+  - Reads inputs (n: int, k: int, as: List<Integer> via Scanner)  
+  - Constructs `Calculator` with (n, k, as)  
+  - Calls `calculate()` and prints result  
+
+- `Calculator` constructor:  
+  - Parameters: (n: int, k: int, as: List<Integer>)  
+  - Initializes `lists` (adjacency list) with n empty lists  
+  - For each i (0 ≤ i < n):  
+    - j = as.get(i)  
+    - If i ≠ 0: add i to `lists[j]`  
+    - Else if j > 0: increment `answer` by 1  
+
+- `Calculator.calculate()`: int  
+  - If `!isCalculate`:  
+    - Call `dfs(0, 0)`  
+    - Set `isCalculate` = true  
+  - Return `answer`  
+
+- `Calculator.dfs(a: int, pre: int)`: int  
+  - Initialize h = 0  
+  - For each i in `lists[a]`:  
+    - h = max(h, `dfs(i, a)`)  
+  - If pre ≠ 0 AND h == k - 1:  
+    - h = 0  
+    - Increment `answer` by 1  
+  - Else:  
+    - h += 1  
+  - Return h  
+
+**Variables:**  
+- `n`: int (number of nodes)  
+- `k`: int (max allowed depth constraint)  
+- `as`: List<Integer> (parent indices, 0-based after adjustment)  
+- `lists`: List<List<Integer>> (adjacency list for tree)  
+- `answer`: int (result accumulator)  
+- `isCalculate`: boolean (cache flag)  
+
+**Logic Flow:**  
+1. Read input values (n, k, as).  
+2. Build adjacency list `lists` where each node points to its children.  
+3. Correct root node (index 0) if original parent ≠ 0.  
+4. Perform DFS from root (0) to calculate subtree depths.  
+5. During DFS, split subtree when depth reaches k-1 (non-root nodes).  
+6. Accumulate split count in `answer`.  
+
+**Control Structures:**  
+- `try-with-resources` for Scanner input handling.  
+- For-loops to process input and build adjacency list.  
+- Recursive DFS with conditional subtree splitting.  
+- Conditional checks for root correction and depth thresholds.  
+
+**Input/Output:**  
+- Input via `Scanner` from stdin: n, k, followed by n integers.  
+- Output `answer` via `System.out.println`.  
+
+**Dependencies:**  
+- Java SE libraries: `ArrayList`, `List`, `Scanner`, `Thread` (for stack size optimization).

@@ -1,0 +1,28 @@
+- Function signature:
+  - `public static void main(String[] args)`
+- Variables:
+  - `Scanner sc = new Scanner(System.in)` (Scanner object)
+  - `int n` initialized via `sc.nextInt()`
+  - `int d = 0`
+  - `int i = 0` (loop counter)
+- Logic flow:
+  1. Read integer `n` from standard input
+  2. Initialize `d` to 0
+  3. Loop: `for (i from 0 to n-1 inclusive)`
+     - Read next integer from input
+     - Compute `(input_value % 2)`
+     - Add result to `d`
+  4. After loop completion:
+     - Check if `d % 2 == 0`
+     - Print "YES" if true, "NO" if false
+- Control structures:
+  - `for` loop with condition `i < n`
+  - Ternary conditional operator for final output decision
+- Input operations:
+  - Read single integer via `Scanner.nextInt()`
+  - Read `n` subsequent integers via repeated `Scanner.nextInt()`
+- Output operations:
+  - Print "YES" or "NO" via `System.out.println`
+- Dependencies:
+  - `java.util.Scanner`
+  - `java.lang.System`

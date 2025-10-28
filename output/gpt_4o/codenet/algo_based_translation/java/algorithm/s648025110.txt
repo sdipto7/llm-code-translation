@@ -1,0 +1,31 @@
+```
+Algorithm Main
+
+Dependencies:
+    - Import the Scanner class from java.util
+
+Function Signature:
+    - Function main(args: Array of Strings): void
+
+Variable Declarations:
+    - Declare a Scanner object 'sc' for input reading
+    - Declare integer variable 'n'
+    - Declare integer array 'h'
+    - Declare integer variable 'ans' initialized to 0
+    - Declare integer variable 'out' initialized to 0
+
+Execution Flow:
+    - Read an integer 'n' from input using 'sc'
+    - Initialize integer array 'h' with size 'n'
+    - For loop from 0 to n-1, do:
+        - Read an integer and assign it to h[i]
+
+    - For loop over each element 'i' in array 'h', do:
+        - If 'out' is less than 'h[i]':
+            - Add the difference 'h[i] - out' to 'ans'
+            - Set 'out' to 'h[i]'
+        - Else:
+            - Set 'out' to 'h[i]'
+
+    - Print the value of 'ans'
+```

@@ -1,0 +1,40 @@
+Function signatures:
+- `solve() -> None`
+- `main() -> None`
+
+Variable declarations and data types:
+- `n: int`
+- `dp: List[int]`
+- `num: int`
+- `idx: int`
+- `INF: int = 10 ** 20`
+- `MOD: int = 1000000007`
+
+Logic flow in execution order:
+1. `solve()` function:
+   1.1. Read integer `n` from input.
+   1.2. Initialize list `dp` with a single element `-INF`.
+   1.3. For each of the next `n` integers:
+      1.3.1. Read integer `num` from input.
+      1.3.2. Negate `num`.
+      1.3.3. If `num` is greater than or equal to the last element of `dp`:
+         1.3.3.1. Append `num` to `dp`.
+      1.3.4. Else:
+         1.3.4.1. Find the index `idx` where `num` should be inserted in `dp` to maintain sorted order using `bisect_right`.
+         1.3.4.2. Replace the element at `idx` in `dp` with `num`.
+   1.4. Print the length of `dp` minus one.
+
+2. `main()` function:
+   2.1. Read integer `n` from input.
+   2.2. For `n` times:
+      2.2.1. Call `solve()` function.
+
+Execution starts with `solve()` function directly when the script is run.
+
+Input/output operations and data processing logic:
+- Input is read using `sys.stdin.readline` and processed to integers.
+- Output is the length of the `dp` list minus one, printed to the console.
+
+Required libraries, modules, or dependencies:
+- `sys` for input operations.
+- `bisect_left`, `bisect_right` from `bisect` module for finding insertion points in the list.

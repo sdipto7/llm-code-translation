@@ -1,0 +1,32 @@
+Function signature: `main() -> None`
+
+Variable declarations and data types:
+- `N: int`
+- `Hs: List[int]`
+- `ans: int`
+- `maxH: int`
+
+Logic flow in execution order:
+1. Read integer `N` from input.
+2. Read a line of input, split it into strings, convert each string to an integer, and store the resulting list in `Hs`.
+3. Initialize `ans` to 0.
+4. Initialize `maxH` to 0.
+5. For each integer `H` in `Hs`:
+   - If `maxH` is less than or equal to `H`:
+     - Increment `ans` by 1.
+     - Set `maxH` to `H`.
+6. Print the value of `ans`.
+
+Control structures:
+- Loop: `for H in Hs`
+- Conditional: `if maxH <= H`
+
+Input/output operations and data processing logic:
+- Input operations:
+  - Read integer `N` from input.
+  - Read a line of input, split it into substrings, convert each substring to an integer, and store the resulting list in `Hs`.
+- Output operation:
+  - Print the value of `ans`.
+
+Required libraries, modules, or dependencies:
+- `typing.List` for type annotation

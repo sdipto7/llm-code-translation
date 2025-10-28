@@ -1,0 +1,13 @@
+1. READ n FROM INPUT
+2. READ array a OF SIZE n FROM INPUT
+3. INITIALIZE current_level TO 0
+4. INITIALIZE counter TO 0
+5. INITIALIZE counter_turns TO -1
+6. WHILE counter IS LESS THAN SIZE OF a
+7.   INCREMENT counter_turns BY 1
+8.   FOR EACH ELEMENT i IN a FROM INDEX 0 TO SIZE OF a - 1
+9.     IF a[i] IS NOT EQUAL TO -1 AND a[i] IS LESS THAN OR EQUAL TO counter
+10.      INCREMENT counter BY 1
+11.      SET a[i] TO -1
+12.   REVERSE THE ORDER OF ELEMENTS IN a
+13. PRINT counter_turns

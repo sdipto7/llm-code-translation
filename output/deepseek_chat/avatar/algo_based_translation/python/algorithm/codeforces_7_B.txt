@@ -1,0 +1,36 @@
+Initialize integer variables t and m from input
+Initialize list alocuente of size m with zeros
+Initialize integer ind to 1
+
+For i from 0 to t-1:
+    Read input line and split into list op
+    If op[0] equals 'alloc':
+        Initialize integer pos to 0
+        For j from 0 to m-1:
+            If alocuente[j] equals 0:
+                Increment pos by 1
+                If pos equals integer value of op[1]:
+                    Set slice alocuente[j - int(op[1]) + 1 : j + 1] to list of int(op[1]) elements with value ind
+                    Print ind
+                    Increment ind by 1
+                    Break inner loop
+            Else:
+                Set pos to 0
+        Else (if inner loop completes without break):
+            Print "NULL"
+    
+    If op[0] equals 'erase':
+        Initialize integer pos to 0
+        If integer value of op[1] not in alocuente OR integer value of op[1] equals 0:
+            Print 'ILLEGAL_ERASE_ARGUMENT'
+        Else:
+            For j from 0 to m-1:
+                If integer value of op[1] > 0 AND alocuente[j] equals integer value of op[1]:
+                    Set alocuente[j] to 0
+    
+    If op[0] equals 'defragment':
+        Initialize integer cnt to 0
+        Set cnt to count of zeros in alocuente
+        Set alocuente to list containing all non-zero elements from alocuente
+        For j from 0 to cnt-1:
+            Append 0 to alocuente

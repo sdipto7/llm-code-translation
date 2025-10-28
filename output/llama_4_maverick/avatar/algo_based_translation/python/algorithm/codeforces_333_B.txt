@@ -1,0 +1,11 @@
+1. READ input into variable I
+2. PARSE I into two integers n and m
+3. INITIALIZE array b of size 2n with all elements set to 1
+4. SET b[0], b[n-1], b[n], and b[2n-1] to 0
+5. LOOP m times:
+   1. READ input into variables r and c
+   2. SET b[r-1] and b[n+c-1] to 0
+6. IF n is odd and b[n/2] is 1 and b[n+n/2] is 1:
+   1. SET b[n/2] to 0
+7. CALCULATE sum of all elements in array b
+8. OUTPUT the sum

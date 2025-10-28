@@ -1,0 +1,30 @@
+```
+Function Signature:
+    - Function Name: determine_output
+    - Parameters: s (string)
+    - Return Type: integer
+
+Variable Declarations:
+    - s: string (input string)
+
+Complete Logic Flow:
+    1. Read input string `s`.
+    2. If `s` is equal to 'RRR', return 3.
+    3. Else if `s` is equal to 'SSS', return 0.
+    4. Else if `s` is equal to 'RRS' or `s` is equal to 'SRR', return 2.
+    5. Else, return 1.
+
+Control Structures:
+    - Conditional Statements:
+        - if condition: s == 'RRR'
+        - elif condition: s == 'SSS'
+        - elif condition: s == 'RRS' or s == 'SRR'
+        - else
+
+Input/Output Operations:
+    - Input: Read a string from the standard input.
+    - Output: Print an integer based on the conditions.
+
+Required Libraries, Modules, or Dependencies:
+    - None
+```

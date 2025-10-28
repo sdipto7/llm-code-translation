@@ -1,0 +1,33 @@
+Algorithm:
+
+Function Signatures:
+- None (Script-style code)
+
+Variables:
+- H: Integer
+- W: Integer
+- h: Integer
+- w: Integer
+- ans: Integer
+
+Logic Flow:
+1. Read first line from standard input:
+   - Split into two parts, convert to integers → H, W
+2. Read second line from standard input:
+   - Split into two parts, convert to integers → h, w
+3. Calculate:
+   ans = (H × W) - [(h × W) + (w × H) - (h × w)]
+4. Print ans via standard output
+
+Control Structures:
+- None (Linear execution)
+
+Input/Output:
+- Input operations:
+  - Read two separate lines from stdin
+  - Each line split into two space-separated integers
+- Output operation:
+  - Print integer ans via stdout
+
+Dependencies:
+- None (Uses standard input/output functions)

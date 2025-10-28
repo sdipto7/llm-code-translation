@@ -1,0 +1,32 @@
+1. Initialize variables K and N from input values.
+2. Define a function cmb(n, r, mod) to calculate combinations.
+   1. If r is less than 0 or greater than n, return 0.
+   2. Set r to the minimum of r and n - r.
+   3. Return the product of g1[n], g2[r], and g2[n - r] modulo mod.
+
+3. Define mod as 998244353 and __N as 8000.
+4. Initialize lists g1, g2, and inverse with initial values.
+5. Iterate from 2 to __N (inclusive).
+   1. Append the product of g1[-1] and i modulo mod to g1.
+   2. Append the product of -inverse[mod % i] and (mod // i) modulo mod to inverse.
+   3. Append the product of g2[-1] and inverse[-1] modulo mod to g2.
+
+6. Define a function kumiawase(p, q) to calculate combinations with repetition.
+   1. Return cmb(p + q - 1, q - 1, mod).
+
+7. Define a function solve(n) to calculate the solution for a given n.
+   1. Assert that n is less than or equal to K + 1.
+   2. Initialize ans to 0.
+   3. Calculate kumi as (n - 1) // 2.
+   4. Iterate from 0 to kumi (inclusive).
+      1. If p is greater than N, break the loop.
+      2. Calculate a value using 2^p, cmb(kumi, p, mod), and kumiawase(N - p, p + (K - kumi * 2 - int(n % 2 == 0))).
+      3. Add the calculated value to ans.
+      4. If n is even and N - p - 1 is non-negative, add another value using 2^p, cmb(kumi, p, mod), and kumiawase(N - p - 1, p + (K - kumi * 2 - int(n % 2 == 0))) to ans.
+   5. Return ans.
+
+8. Initialize an empty list ans.
+9. Iterate from 2 to 2 * K (inclusive).
+   1. If i is less than or equal to K + 1, calculate tmp as solve(i) modulo 998244353.
+   2. Append tmp to ans and print tmp.
+   3. If i is greater than K + 1, print the element at index -i + K in ans.

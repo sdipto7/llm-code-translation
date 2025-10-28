@@ -1,0 +1,8 @@
+1. READ input into n
+2. INITIALIZE a with ["10", "100", "1000", "10000", "100000"]
+3. CALCULATE sum of digits of n by MAP integer conversion over n and SUM the results, STORE in new
+4. CHECK if n is in a
+5. IF true THEN 
+    6. OUTPUT 10
+ELSE 
+    7. OUTPUT new

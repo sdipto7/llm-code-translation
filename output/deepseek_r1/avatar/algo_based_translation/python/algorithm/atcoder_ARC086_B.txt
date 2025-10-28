@@ -1,0 +1,62 @@
+**Algorithm Specification**
+
+**1. Program Overview**
+- **Objective**: Transform an array into a non-decreasing or non-increasing sequence with minimal operations based on the element with maximum absolute value.
+- **Constraints**: Operations consist of adding a chosen element's value to another element.
+
+**2. Data Structures**
+- **Variables**:
+  - `N` (int): Size of the input array.
+  - `a` (List[int]): Input array of integers.
+  - `max_val` (int): Maximum absolute value found in the array.
+  - `max_sign` (int): Sign of the element with `max_val` (1, -1, 0).
+  - `max_index` (int): Index of the element with `max_val`.
+
+**3. Functions/Methods**
+- **my_sign(x: int) → int**:
+  - **Return**: 1 if `x > 0`, -1 if `x < 0`, 0 otherwise.
+
+**4. Algorithm Steps**
+
+**Step 1: Input Handling**
+1. Read integer `N` from standard input.
+2. Read `N` integers into array `a`.
+
+**Step 2: Find Key Element**
+3. Initialize `max_val = 0`, `max_sign = 0`, `max_index = -1`.
+4. For each index `i` and value `a0` in `a`:
+   - Compute absolute value `abs_a0 = |a0|`.
+   - If `abs_a0 > max_val`:
+     - Update `max_val = abs_a0`.
+     - Update `max_sign = my_sign(a0)`.
+     - Update `max_index = i`.
+
+**Step 3: Decision and Operation Generation**
+5. If `max_sign == 0`:
+   - Print `0` (no operations needed).
+6. Else:
+   - Total operations = `2*N -1`. Print this value.
+   - **Phase 1**: Propagate max element to all positions.
+     - For each position `i` in 0..N-1:
+       - Print operation `(max_index+1) → (i+1)` (1-based indices).
+   - **Phase 2**:
+     - **If `max_sign == 1`**:
+       - For `i` from 0 to N-2:
+         - Print operation `(i+1) → (i+2)` (left-to-right accumulation).
+     - **Else**:
+       - For `i` from N-1 down to 1:
+         - Print operation `(i+1) → (i)` (right-to-left accumulation).
+
+**5. Control Flow**
+- Conditional branches based on `max_sign` determine operation sequence direction.
+- Loop structures:
+  - Linear scan of array (O(N)).
+  - Two linear phases of operation generation (O(N)).
+
+**6. Edge Cases**
+- All elements zero: `max_sign` remains 0, output 0.
+- Single element array: 1 operation in phase 1, no phase 2 operations.
+
+**7. External Dependencies**
+- Input/Output: Standard input/output via system libraries.
+- Mathematical function: Absolute value calculation.

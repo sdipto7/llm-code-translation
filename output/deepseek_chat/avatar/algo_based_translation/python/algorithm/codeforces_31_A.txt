@@ -1,0 +1,44 @@
+**Function Signature:**
+- No explicit function defined; code executes at module level
+- Inputs: None (reads from stdin)
+- Output: Prints to stdout or returns exit code
+
+**Variables and Data Types:**
+- y: integer (first input value, unused in algorithm)
+- arr: list of integers (second input value)
+- i: integer (loop counter)
+- j: integer (loop counter)
+- k: integer (loop counter)
+
+**Required Dependencies:**
+- None (uses built-in functions only)
+
+**Algorithm Logic:**
+
+1. Read integer input and assign to variable y (unused)
+2. Read space-separated integers from input and convert to list arr
+3. Begin triple nested loop structure:
+   - Outer loop: i from 0 to len(arr)-1
+     - Middle loop: j from 0 to len(arr)-1
+       - If i equals j: skip to next j iteration
+       - Inner loop: k from 0 to len(arr)-1
+         - Check if arr[k] ≠ arr[j] AND arr[k] ≠ arr[i] AND arr[k] = arr[i] + arr[j]
+         - If condition met:
+            - Print (k+1, j+1, i+1)
+            - Exit program immediately
+4. If no valid triple found after all iterations: print -1
+
+**Control Structures:**
+- For loop: i in range(len(arr))
+- For loop: j in range(len(arr))
+- Conditional: if i == j: continue
+- For loop: k in range(len(arr))
+- Conditional: if arr[k] != arr[j] and arr[k] != arr[i] and arr[k] == arr[i] + arr[j]
+- Exit statement: exit() on successful find
+- Fallback: print(-1) if no solution found
+
+**Input/Output Operations:**
+- Input: integer from stdin (y)
+- Input: space-separated integers from stdin (arr)
+- Output: either three indices (1-indexed) or -1
+- Early termination on successful find

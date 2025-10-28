@@ -1,0 +1,51 @@
+Function signatures and parameter and return types:
+- `codeforces_67_B()` - constructor
+- `public static void main(String[] $)` - static method, no parameters, no return type
+- `void main()` - instance method, no parameters, no return type
+
+Variable declarations and data types:
+- `Scanner sc` - object of type Scanner
+- `int n` - integer
+- `int k` - integer
+- `int[] bb` - array of integers
+- `int[] aa` - array of integers
+- `int m` - integer
+- `int a` - integer
+- `int j` - integer
+- `int j_` - integer
+- `int i` - integer
+
+Logic flow in execution order:
+
+1. Constructor `codeforces_67_B()`
+   - Call to `super(System.out, true)`
+
+2. Static method `main(String[] $)`
+   - Create instance `o` of `codeforces_67_B`
+   - Call `o.main()`
+   - Call `o.flush()`
+
+3. Instance method `main()`
+   - Read integer `n` from input
+   - Read integer `k` from input
+   - Initialize array `bb` of size `n`
+   - For loop (`i` from 0 to `n-1`)
+     - Read integer and assign to `bb[i]`
+   - Initialize array `aa` of size `n`
+   - Initialize integer `m` to 0
+   - For loop (`a` from `n-1` to 0)
+     - Initialize integer `j` to 0
+     - While loop (`bb[a] > 0`)
+       - If (`aa[j] >= a + k`)
+         - Decrement `bb[a]`
+       - Increment `j`
+     - For loop (`j_` from `m++` to `j+1`)
+       - Assign `aa[j_]` to `aa[j_-1]`
+     - Assign `aa[j]` to `a`
+   - For loop (`i` from 0 to `n-1`)
+     - Print `aa[i] + 1` followed by space
+   - Print newline
+
+Required libraries, modules, or dependencies:
+- `java.io.*`
+- `java.util.*`

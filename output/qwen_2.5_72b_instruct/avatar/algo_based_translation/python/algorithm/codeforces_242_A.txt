@@ -1,0 +1,31 @@
+Function Signature:
+- main() -> None
+
+Variable Declarations and Data Types:
+- x, y, a, b: int
+- games: List[Tuple[int, int]]
+
+Logic Flow in Execution Order:
+1. Read input values x, y, a, b as integers from the standard input.
+2. Initialize an empty list named games to store tuples of integers.
+3. Start a for loop with variable i ranging from a to x inclusive.
+4. Inside the outer loop, check if i is less than or equal to b.
+   - If true, continue to the next iteration of the outer loop.
+   - If false, start a nested for loop with variable j ranging from b to y inclusive.
+5. Inside the nested loop, check if i is greater than j.
+   - If true, append the tuple (i, j) to the games list.
+6. After both loops complete, print the length of the games list.
+7. Iterate over each element i in the games list and print the elements of the tuple separated by a space.
+
+Control Structures:
+- For loop: for i in range(a, x + 1)
+- Conditional: if i <= b: continue
+- Nested for loop: for j in range(b, y + 1)
+- Conditional: if i > j: games.append((i, j))
+
+Input/Output Operations and Data Processing Logic:
+- Input: Read four space-separated integers from the standard input.
+- Output: First, print the number of valid (i, j) pairs. Then, print each pair on a new line with the integers separated by a space.
+
+Required Libraries, Modules, or Dependencies:
+- No specific imports are required as the code uses basic Python constructs.

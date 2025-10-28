@@ -1,0 +1,10 @@
+1. Define a function `determine_suffix` with parameter `input_str` of type string and return type string.
+2. Extract the last character from `input_str` and store it in variable `last_digit` of type string.
+3. Convert `last_digit` to an integer and store it in variable `n` of type integer.
+4. Check if `n` is equal to 2, 4, 5, 7, or 9 using a conditional statement with the condition `n == 2 or n == 4 or n == 5 or n == 7 or n == 9`.
+5. If the condition in step 4 is true, return the string "hon".
+6. If the condition in step 4 is false, check if `n` is equal to 0, 1, 6, or 8 using a conditional statement with the condition `n == 0 or n == 1 or n == 6 or n == 8`.
+7. If the condition in step 6 is true, return the string "pon".
+8. If the conditions in steps 4 and 6 are false, return the string "bon".
+9. Read a string input from the user and store it in `input_str`.
+10. Call the function `determine_suffix` with `input_str` as the argument and print the returned result.

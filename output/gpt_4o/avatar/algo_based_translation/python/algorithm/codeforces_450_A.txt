@@ -1,0 +1,27 @@
+1. Function Signature:
+   - No function is explicitly defined in the provided code.
+
+2. Input Operations:
+   - Read two integers `n` and `m` from input, separated by space.
+   - Read a list of `n` integers from input, separated by space.
+
+3. Variable Declarations:
+   - `n`: Integer, the size of the list.
+   - `m`: Integer, the divisor.
+   - `l`: List of integers, the input list of numbers.
+   - `l2`: List of integers, to store the results of division.
+   - `mx`: Integer, to store the maximum value in `l2`.
+   - `ind`: Integer, to store the index of the last occurrence of `mx`.
+
+4. Logic Flow:
+   - Initialize `l2` as an empty list.
+   - Loop over each integer `i` in list `l`:
+     - If `i` modulo `m` equals zero:
+       - Append `i` divided by `m` to `l2`.
+     - Else:
+       - Append `i` divided by `m`, rounded up to the nearest integer, to `l2`.
+   - Determine the maximum value `mx` in the list `l2`.
+   - Loop over the range from 0 to `n-1`:
+     - If the value at index `i` in `l2` equals `mx`:
+       - Set `ind` to `i`.
+   - Output the value of `ind` incremented by 1.

@@ -1,0 +1,20 @@
+Function `run(s: str, t: str) -> str`
+- Import `collections` module
+- Declare variable `ss` as `list[int]`
+  - Assign `ss` with the sorted list of values from the `Counter` object created from string `s`
+- Declare variable `tt` as `list[int]`
+  - Assign `tt` with the sorted list of values from the `Counter` object created from string `t`
+- Conditional check: `if ss == tt`
+  - If True, return `'Yes'`
+  - Else, return `'No'`
+
+Function `main() -> None`
+- Declare variable `s` as `str`
+  - Assign `s` with input from the user
+- Declare variable `t` as `str`
+  - Assign `t` with input from the user
+- Print the result of the call to `run(s, t)`
+
+Execution starts with:
+- Check if the script is run as the main module
+  - If True, call `main()`

@@ -1,0 +1,35 @@
+Function Signature: `main() -> None`
+
+Variable Declarations:
+- `N: int`
+- `K: int`
+- `score: List[int]`
+- `mae: int` initialized to 0
+- `usiro: int` initialized to K
+
+Logic Flow:
+1. Read integers `N` and `K` from input.
+2. Read a list of integers `score` of length `N` from input.
+3. Initialize `mae` to 0.
+4. Initialize `usiro` to `K`.
+5. Loop from 0 to `N-K-1`:
+   - If `score[mae]` is less than `score[usiro]`, print 'Yes'.
+   - Otherwise, print 'No'.
+   - Increment `mae` by 1.
+   - Increment `usiro` by 1.
+
+Control Structures:
+- For loop: Iterates from 0 to `N-K-1`.
+- If-Else statement: Checks if `score[mae] < score[usiro]`.
+
+Input/Output Operations:
+- Reads integers `N` and `K` from standard input.
+- Reads a list of integers `score` from standard input.
+- Prints 'Yes' or 'No' based on the comparison of elements in `score`.
+
+Data Processing Logic:
+- Compares each element `score[mae]` with `score[usiro]` where `usiro` is `mae + K`.
+- Outputs 'Yes' if `score[mae]` is less than `score[usiro]`; otherwise, outputs 'No'.
+
+Required Libraries, Modules, or Dependencies:
+- `List` from the `typing` module for type annotation.

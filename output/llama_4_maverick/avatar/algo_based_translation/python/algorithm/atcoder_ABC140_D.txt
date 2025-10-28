@@ -1,0 +1,13 @@
+1. Initialize MOD to 10^9 + 7
+2. Read N and K from input
+3. Read string S from input
+4. Initialize seg_cnt to 0
+5. For i from 0 to N-2
+   5.1 If S[i] is not equal to S[i+1]
+      5.1.1 Increment seg_cnt by 1
+6. Calculate cur_happy as N - 1 - seg_cnt
+7. If 2 * K is greater than or equal to seg_cnt
+   7.1 Set ans to N - 1
+8. Else
+   8.1 Set ans to cur_happy + 2 * K
+9. Print ans

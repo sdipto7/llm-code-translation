@@ -1,0 +1,88 @@
+**Algorithm:**
+
+**Main Program:**
+1. Read integer `mapNum` from input
+2. For each map index `i` from 0 to `mapNum-1`:
+   - If `i > 0`, print empty line
+   - Read integers `h` (height) and `w` (width)
+   - Create 2D char array `battleTown` of size `h`×`w`
+   - For each row `j` from 0 to `h-1`:
+     - Read next line and convert to char array
+     - For each column `k` from 0 to `w-1`:
+       - Store character in `battleTown[j][k]`
+       - If character is tank direction ('^', 'v', '<', '>'):
+         - Set `x = j`, `y = k` (tank position)
+   - Read integer `bomberActNum`
+   - Read next line and convert to char array `bomberAct`
+   - If tank position is valid (`0 ≤ x < h` and `0 ≤ y < w`):
+     - For each action index `l` from 0 to `bomberActNum-1`:
+       - If action is 'U':
+         - Set current position to '^'
+         - If position above is within bounds and is '.':
+           - Move tank up: set above to '^', current to '.', decrement `x`
+       - If action is 'D':
+         - Set current position to 'v'
+         - If position below is within bounds and is '.':
+           - Move tank down: set below to 'v', current to '.', increment `x`
+       - If action is 'L':
+         - Set current position to '<'
+         - If position left is within bounds and is '.':
+           - Move tank left: set left to '<', current to '.', decrement `y`
+       - If action is 'R':
+         - Set current position to '>'
+         - If position right is within bounds and is '.':
+           - Move tank right: set right to '>', current to '.', increment `y`
+       - If action is 'S':
+         - Call `moveBomber(x, y)`
+     - Print final map state:
+       - For each row `s` from 0 to `h-1`:
+         - For each column `k` from 0 to `w-1`:
+           - Print character at `battleTown[s][k]`
+         - Print newline
+
+**Function moveBomber(int a, int b):**
+1. If position `(a,b)` is valid:
+   - If tank direction is '^':
+     - For positions above from `a-1` down to 0:
+       - If brick wall '*': destroy it (set to '.') and return
+       - If steel wall '#': return
+       - Else: move up (decrement `a`)
+         - If `a` reaches 0: return
+   - If tank direction is 'v':
+     - For positions below from `a+1` to `h-1`:
+       - If brick wall '*': destroy it and return
+       - If steel wall '#': return
+       - Else: move down (increment `a`)
+         - If `a` reaches `h`: return
+   - If tank direction is '<':
+     - For positions left from `b-1` down to 0:
+       - If brick wall '*': destroy it and return
+       - If steel wall '#': return
+       - Else: move left (decrement `b`)
+         - If `b` reaches 0: return
+   - If tank direction is '>':
+     - For positions right from `b+1` to `w-1`:
+       - If brick wall '*': destroy it and return
+       - If steel wall '#': return
+       - Else: move right (increment `b`)
+         - If `b` reaches `w`: return
+
+**Data Structures:**
+- `mapNum`: int (number of maps)
+- `h`, `w`: int (map dimensions)
+- `battleTown`: char[][] (game map)
+- `bomberActNum`: int (number of actions)
+- `bomberAct`: char[] (action sequence)
+- `x`, `y`: int (tank position coordinates)
+
+**Input/Output:**
+- Input: Scanner reading integers and strings
+- Output: Print final map state after processing all actions
+
+**Control Structures:**
+- For loops (nested and sequential)
+- If-else conditionals
+- While loops (implicit in moveBomber's directional loops)
+
+**Dependencies:**
+- java.util.Scanner

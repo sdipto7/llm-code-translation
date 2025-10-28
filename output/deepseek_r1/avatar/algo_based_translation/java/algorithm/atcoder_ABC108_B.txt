@@ -1,0 +1,56 @@
+**Algorithm:**
+
+**Function Signatures:**
+- `public static int[] revpos(int[] p, int[] q)`  
+  _Parameters:_ Two integer arrays `p` (size 2), `q` (size 2)  
+  _Returns:_ Integer array (size 2)
+
+- `public static void main(String[] args)`  
+  _Parameters:_ String array `args` (unused)  
+  _Returns:_ void
+
+**Variables and Data Types:**
+- `vec`: int[2] (temporary vector)  
+- `tmp`: int (temporary storage for vector element)  
+- `newpos`: int[2] (resultant position)  
+- `input`: int[4] (stores user input values)  
+- `position`: int[4][2] (stores four 2D coordinates)  
+- `output`: int[4] (final result to print)  
+- `scan`: Scanner (reads input from stdin)
+
+**Logic Flow:**
+
+1. **revpos Function:**  
+   a. Compute vector `vec` as element-wise subtraction: `vec[i] = p[i] - q[i]` for `i ∈ {0,1}`.  
+   b. Rotate `vec` 90 degrees clockwise:  
+      - Swap `vec[0]` and `vec[1]`.  
+      - Negate the new `vec[1]`.  
+   c. Compute `newpos` as element-wise addition: `newpos[i] = q[i] + vec[i]` for `i ∈ {0,1}`.  
+   d. Return `newpos`.
+
+2. **main Function:**  
+   a. Initialize `input` array by reading four integers from stdin.  
+   b. Initialize `position` with four `[0,0]` entries.  
+   c. Assign `position[0]` to `[input[0], input[1]]` and `position[1]` to `[input[2], input[3]]`.  
+   d. Compute `position[2]` via `revpos(position[0], position[1])`.  
+   e. Compute `position[3]` via `revpos(position[1], position[2])`.  
+   f. Check if `position[0]` equals `revpos(position[2], position[3])` (object equality, not content). If true, print "OK".  
+   g. Populate `output` array with coordinates of `position[2]` and `position[3]`.  
+   h. Print each element of `output` in order.
+
+**Control Structures:**
+- **For Loops:**  
+  - Iterate over `vec` (size 2) in `revpos`.  
+  - Iterate over `input` (size 4) to read values.  
+  - Iterate over `output` (size 4) to print values.  
+- **Conditional:**  
+  - `if (position[0] == revpos(position[2], position[3]))` (checks object reference equality).
+
+**Input/Output Operations:**
+- Input: Four integers read via `Scanner` from stdin.  
+- Output:  
+  - Prints "OK" if the conditional is satisfied.  
+  - Prints four integers: coordinates of `position[2]` followed by `position[3]`.
+
+**Dependencies:**
+- `java.util.Scanner` for input handling.

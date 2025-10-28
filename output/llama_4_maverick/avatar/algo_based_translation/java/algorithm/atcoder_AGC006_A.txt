@@ -1,0 +1,15 @@
+1. Initialize an array `f` of size `N` to store the failure function values and a character array `b` of size `N`.
+2. Define a function `getFail` that takes a character array `b` and its length `m` as input.
+3. Within `getFail`, initialize `j` to 0 and set `f[0]` and `f[1]` to 0.
+4. Iterate from `i = 2` to `m`.
+5. For each `i`, while `j > 0` and `b[j + 1]` is not equal to `b[i]`, update `j` to `f[j]`.
+6. If `b[j + 1]` equals `b[i]`, increment `j` by 1.
+7. Set `f[i]` to `j`.
+8. In the main function, read an integer `n` and two strings `s1` and `str`.
+9. Initialize a counter `cnt` to 0.
+10. Iterate from `i = 0` to `n-1` and store characters of `str` in `b[++cnt]`.
+11. Iterate from `i = 0` to `n-1` and store characters of `s1` in `b[++cnt]`.
+12. Call `getFail` with `b` and `cnt` as arguments.
+13. Calculate `len` as the minimum of `f[cnt]` and `n`.
+14. Output `2 * n - len`.
+15. Flush the output buffer.

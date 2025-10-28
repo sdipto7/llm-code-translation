@@ -1,0 +1,28 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations:
+- `Scanner sc` for input
+- `PrintWriter out` for output
+- `int n` for number of elements
+- `int[] arr` array to store integers
+- `int cnt` counter for divisions
+- `boolean flag` to check if all numbers are even
+
+Logic flow:
+1. Read integer `n` using `sc.nextInt()`
+2. Initialize array `arr` of size `n`
+3. For loop from 0 to `n-1`: read integers and store in `arr`
+4. Set `cnt` to 0
+5. Set `flag` to true
+6. While loop: continue until `flag` is false
+   - For loop from 0 to `n-1`: 
+     - If `arr[i] % 2 != 0`, set `flag` to false and break
+     - Else, set `arr[i] = arr[i] / 2`
+   - If `flag` is true, increment `cnt`
+   - Else, break
+7. Print `cnt` using `out.println(cnt)`
+8. Flush output using `out.flush()`
+
+Libraries/modules/dependencies:
+- `java.io.PrintWriter`
+- `java.util.Scanner`

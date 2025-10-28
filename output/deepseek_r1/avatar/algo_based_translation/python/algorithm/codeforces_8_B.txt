@@ -1,0 +1,66 @@
+**Algorithm Specification:**
+
+**1. Function/Method Signature**
+- `main() -> void`
+  - No parameters
+  - Outputs result via print statement
+
+**2. Variable Declarations & Data Types**
+- `record_of_movements: string` (input string)
+- `x: integer` (initial 0)
+- `y: integer` (initial 0)
+- `d_movement: dictionary<char, tuple<integer, integer>>` (keys: 'L', 'R', 'U', 'D'; values: coordinate deltas)
+- `d: dictionary<tuple<integer, integer>, string>` (keys: visited coordinates, values: empty strings)
+- `bug: boolean` (initial False)
+- `move: char` (iteration variable for input string)
+- `temp: tuple<integer, integer>` (stores previous coordinate)
+- `step: char` (iteration variable for direction keys in d_movement)
+
+**3. Input/Output Operations**
+- Read `record_of_movements` via standard input
+- Print "BUG" or "OK" to standard output
+
+**4. Step-by-Step Logic Flow**
+4.1. Initialize `x = 0`, `y = 0`
+4.2. Initialize `d_movement` with direction mappings:
+    - 'L': (0, -1)
+    - 'R': (0, 1)
+    - 'U': (1, 0)
+    - 'D': (-1, 0)
+4.3. Initialize `d` with initial position {(0, 0): ''}
+4.4. Set `bug = False`
+4.5. For each `move` in `record_of_movements`:
+    4.5.1. Store current position: `temp = (x, y)`
+    4.5.2. Update `x` and `y` using `d_movement[move]`
+    4.5.3. If (x, y) NOT in `d`:
+        4.5.3.1. For each `step` in `d_movement`:
+            4.5.3.1.1. Calculate `new_pos = (x + d_movement[step][0], y + d_movement[step][1])`
+            4.5.3.1.2. If `new_pos != temp` AND `new_pos` exists in `d`:
+                4.5.3.1.2.1. Set `bug = True`
+                4.5.3.1.2.2. Break loop
+    4.5.4. Else (if (x, y) exists in `d`):
+        4.5.4.1. Set `bug = True`
+    4.5.5. If `bug` is True:
+        4.5.5.1. Break movement loop
+    4.5.6. Add `(x, y)` to `d` with value ''
+4.6. After loop completion:
+    4.6.1. Print "BUG" if `bug` is True
+    4.6.2. Print "OK" otherwise
+
+**5. Control Flow Structures**
+- Sequential execution with:
+  - For-loop (4.5) iterating over input characters
+  - Nested for-loop (4.5.3.1) iterating over direction keys
+  - Conditional checks (4.5.3, 4.5.4, 4.5.5)
+  - Break statements for early termination
+
+**6. Error Handling & Edge Cases**
+- Detects immediate revisits through `d` membership check (4.5.4)
+- Prevents false positives by verifying adjacent cells other than previous position (4.5.3.1)
+- Processes empty input string gracefully (no iterations in 4.5)
+- Handles all valid movement characters per problem constraints
+
+**7. Dependencies**
+- No external libraries or imports required
+- Uses standard input/output functions
+- Relies on native dictionary and tuple data structures

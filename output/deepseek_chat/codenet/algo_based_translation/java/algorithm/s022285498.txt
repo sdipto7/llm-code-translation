@@ -1,0 +1,57 @@
+**Algorithm:**
+
+1. **Main Function:**
+   - Start a new thread with stack size 1<<26 to execute `solve()`.
+
+2. **solve():**
+   - Initialize `inputStream` to System.in.
+   - Initialize `outputStream` to System.out.
+   - Create `InputReader` object `in` with `inputStream`.
+   - Create `PrintWriter` object `out` with `outputStream`.
+   - Create `Task` object `task`.
+   - Call `task.solve(1, in, out)`.
+   - Close `out`.
+
+3. **Task.solve(int testNumber, InputReader in, PrintWriter out):**
+   - Read integer `n` from input.
+   - Declare integer array `countArr` of size `n+1` (initialized to zeros).
+   - For `x` from 1 to 100 (inclusive):
+     - For `y` from 1 to 100 (inclusive):
+       - For `z` from 1 to 100 (inclusive):
+         - Compute `value = x*x + y*y + z*z + x*y + x*z + y*z`.
+         - If `value > n`, break inner loop (z-loop).
+         - Else, increment `countArr[value]`.
+   - For `i` from 1 to `n` (inclusive):
+     - Print `countArr[i]` to output.
+
+4. **sort(double[] arr):**
+   - Convert `arr` to `Double[]` object array.
+   - Sort the object array.
+   - Copy sorted values back to original array.
+
+5. **sort(int[] arr):**
+   - Convert `arr` to `Integer[]` object array.
+   - Sort the object array.
+   - Copy sorted values back to original array.
+
+6. **sort(long[] arr):**
+   - Convert `arr` to `Long[]` object array.
+   - Sort the object array.
+   - Copy sorted values back to original array.
+
+7. **InputReader Class:**
+   - Constructor(InputStream stream):
+     - Initialize `reader` as BufferedReader with InputStreamReader(stream) and buffer size 32768.
+     - Initialize `tokenizer` as null.
+   - next():
+     - While `tokenizer` is null or has no more tokens:
+       - Read line from `reader` and tokenize.
+     - Return next token.
+   - nextInt(): Parse next token as integer.
+   - nextLong(): Parse next token as long.
+   - nextDouble(): Parse next token as double.
+
+**Required Dependencies:**
+- java.io.*
+- java.util.Arrays
+- java.util.StringTokenizer

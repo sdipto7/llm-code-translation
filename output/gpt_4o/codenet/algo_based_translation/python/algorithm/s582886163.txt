@@ -1,0 +1,25 @@
+1. Function signature:
+   - `def calculate_min_time(N: int, capacities: List[int]) -> int`
+
+2. Variable declarations and data types:
+   - `capacity_list: List[int]`
+   - `bottle_neck: int`
+   - `result: int`
+
+3. Logic flow:
+   - Read an integer input `N`, representing the number of items to process.
+   - Gather 5 integer inputs into a list `capacity_list`, representing the capacities of 5 different paths.
+   - Sort `capacity_list` in ascending order.
+   - Assign the smallest capacity from the sorted list to `bottle_neck`.
+   - Calculate the minimum time required using the formula: `result = 4 + int((N + bottle_neck - 1) / bottle_neck)`.
+   - Output the result.
+
+4. Control structures:
+   - Loop: Use a loop to collect 5 integer inputs for `capacity_list`.
+
+5. Input/output operations:
+   - Input: Read integer values for `N` and the 5 capacities.
+   - Output: Print the calculated minimum time.
+
+6. Required libraries, modules, or dependencies:
+   - `List` from `typing` for type annotations.

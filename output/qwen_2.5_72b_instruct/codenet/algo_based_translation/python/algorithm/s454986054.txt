@@ -1,0 +1,26 @@
+Function Signature:
+- main() -> None
+
+Variable Declarations:
+- n: int
+
+Logic Flow:
+1. Prompt user for input and read an integer value.
+2. Assign the read integer value to variable n.
+3. Compute the cube of n (n raised to the power of 3).
+4. Print the result of the cube computation.
+
+Control Structures:
+- No control structures (loops, conditionals) are present.
+
+Input/Output Operations:
+- Input: Read an integer from the user.
+- Output: Print the cube of the input integer.
+
+Data Processing Logic:
+- Convert the input string to an integer.
+- Calculate the cube of the integer using the exponentiation operator (**).
+- Output the result.
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries, modules, or dependencies are required.

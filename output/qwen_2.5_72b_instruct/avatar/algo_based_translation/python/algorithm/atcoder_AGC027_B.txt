@@ -1,0 +1,36 @@
+Function signature:
+- main() -> None
+
+Variable declarations and data types:
+- N: int
+- X: int
+- A: List[int]
+- S: List[int]
+- ans: float
+- k: int
+- s: int
+- E: int
+- j: int
+
+Logic flow in execution order:
+1. Read input values from standard input using open(0).read().split()
+2. Convert the first value to N (int)
+3. Convert the second value to X (int)
+4. Convert the remaining values to list A (List[int])
+5. Create list S by accumulating values from list A (List[int])
+6. Initialize ans to infinity (float)
+7. Begin loop over S with index k starting from 1:
+   1. Calculate E as k * X + 2 * sum(S[j] for j in range(N - 2 * k - 1, -1, -k))
+   2. Update ans to the minimum of ans and E
+8. Print ans + N * X + 5 * S[-1]
+
+Control structures:
+- Loop: for k, s in enumerate(S, 1)
+- Conditional: ans = min(ans, E)
+
+Input/output operations and data processing logic:
+- Input: Read from standard input, split into integers, assign first to N, second to X, rest to A
+- Output: Print final result calculated from ans, N, X, and S
+
+Required libraries, modules, or dependencies:
+- itertools.accumulate

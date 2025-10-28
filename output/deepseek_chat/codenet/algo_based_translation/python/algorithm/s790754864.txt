@@ -1,0 +1,12 @@
+1. Import math module
+2. Read two integers N and K from input
+3. Compute R = N - K
+4. Set mod = 1000000007
+5. Define function fact(n, r):
+   - Return math.factorial(n) divided by (math.factorial(n-r) multiplied by math.factorial(r))
+6. For i from 1 to K (inclusive):
+   - If (N - K + 1) < i:
+        Set ans = 0
+   - Else:
+        Set ans = fact(R+1, i) multiplied by fact(K-1, i-1)
+   - Print (ans converted to integer) modulo mod

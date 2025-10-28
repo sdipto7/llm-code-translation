@@ -1,0 +1,53 @@
+**Algorithm:**
+
+1. **Class BIT:**
+   - **__init__(self, N: int):**
+     - Initialize `size` as integer N
+     - Initialize `tree` as list of zeros with length N+1
+     - Initialize `depth` as bit_length of n (note: uses global n, which may be problematic)
+
+   - **_bitsum(self, i: int) -> int:**
+     - Initialize `ret` = 0
+     - While i > 0:
+       - Add tree[i] to ret
+       - Update i = i XOR (i AND -i)
+     - Return ret
+
+   - **bitsum(self, l: int, r: Optional[int] = None) -> int:**
+     - If r is None: return _bitsum(l)
+     - Else: return _bitsum(r) - _bitsum(l)
+
+   - **bitadd(self, i: int, x: int):**
+     - Increment i by 1
+     - While i <= size:
+       - Add x to tree[i]
+       - Increment i by (i AND -i)
+
+2. **Main Program:**
+   - Read integer n from input
+   - Calculate m = n*(n+1)//4
+   - Read list a of n integers from input
+   - Create empty dictionary d
+   - Create sorted list _a from union of set(a) and {0}
+   - For each index i and value x in _a:
+     - Set d[x] = i
+   - Map original list a to new values using dictionary d
+   - Define function check(X: int) -> bool:
+     - Initialize list b with [0] followed by transformed values from a:
+       - For each y in a: value = (1 if y >= X else -1)
+     - Compute prefix sums: for i from 0 to n-1: b[i+1] += b[i]
+     - Find minimum value c in b
+     - Adjust b: subtract c from each element
+     - Create BIT instance with size max(b)+2
+     - Initialize ans = 0
+     - For each x in b:
+       - Add bitsum(x+1) to ans
+       - Call bitadd(x, 1)
+     - Return ans >= m
+
+   - Initialize list t = [len(_a), 0]
+   - While t[0] - t[1] > 1:
+     - mid = (t[0] + t[1]) // 2
+     - If check(mid) is True: set t[0] = mid
+     - Else: set t[1] = mid
+   - Print _a[t[1]]

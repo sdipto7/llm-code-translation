@@ -1,0 +1,24 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,s817205687.java,Compilation Error,"Error: output/deepseek_chat/codenet/algo_based_translation/python/java/s817205687.java:16: error: cannot find symbol
+        return numbers.stream().reduce(1, Main::lcm);
+                                          ^
+  symbol:   variable Main
+  location: class s817205687
+1 error
+"
+python,java,s086522214.java,Compilation Error,"Error: output/deepseek_chat/codenet/algo_based_translation/python/java/s086522214.java:4: error: package org.apache.commons.math3.util does not exist
+import org.apache.commons.math3.util.ArithmeticUtils;
+                                    ^
+1 error
+"
+python,java,s124725275.java,Compilation Error,"Error: output/deepseek_chat/codenet/algo_based_translation/python/java/s124725275.java:7: error: integer number too large
+    static final int INF = 2147483648;
+                           ^
+1 error
+"
+python,java,s749244504.java,Compilation Error,"Error: output/deepseek_chat/codenet/algo_based_translation/python/java/s749244504.java:3: error: package org.jgrapht does not exist
+import org.jgrapht.Graph;
+                  ^
+1 error
+only showing the first 1 errors, of 12 total; use -Xmaxerrs if you would like to see more
+"

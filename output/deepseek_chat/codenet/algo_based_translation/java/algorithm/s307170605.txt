@@ -1,0 +1,15 @@
+Algorithm:
+- Import java.util.Scanner
+- Declare public class Main
+- Declare public static void main method with String[] args parameter
+- Create Scanner object sc initialized with System.in
+- Initialize integer variable i to 0
+- Loop while i < 5:
+  - Read next integer input using sc.nextInt()
+  - If input equals 0:
+    - Print (i + 1) to standard output
+    - Break out of loop
+  - Increment i by 1
+- End loop
+- End main method
+- End class

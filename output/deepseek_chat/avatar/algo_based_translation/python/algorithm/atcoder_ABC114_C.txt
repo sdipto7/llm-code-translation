@@ -1,0 +1,14 @@
+N = integer input from user
+
+function aaa(n: string) -> integer:
+    if integer conversion of n > N:
+        return 0
+    if set of digits in integer conversion of n equals {'7','5','3'}:
+        ans = 1
+    else:
+        ans = 0
+    for each character i in string "753":
+        ans = ans + aaa(n + i)
+    return ans
+
+print result of aaa("0")

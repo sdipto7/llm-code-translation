@@ -1,0 +1,9 @@
+1. Read two integers n and m from input
+2. Calculate sa as the minimum between the count of '-' in the input string and n minus the count of '-'
+3. Initialize an empty list ss
+4. Repeat the following steps m times:
+   4.1 Read two integers a and b from input
+   4.2 Calculate b as (b - a) modulo 2
+   4.3 Check if b is odd and less than or equal to 2 times sa
+   4.4 If true, append "1\n" to ss; otherwise, append "0\n" to ss
+5. Print the concatenation of all elements in ss

@@ -1,0 +1,40 @@
+mod: integer constant = 998244353
+nchoosek: 2D array of long integers with dimensions [4001][4001]
+
+Initialize nchoosek:
+  For i from 0 to 4000:
+    Set nchoosek[i][0] = 1
+    Set nchoosek[i][i] = 1
+  For i from 2 to 4000:
+    For j from 1 to i-1:
+      nchoosek[i][j] = (nchoosek[i-1][j] + nchoosek[i-1][j-1]) % mod
+
+Read input integers k and n
+
+For i from 2 to 2*k:
+  If i > k:
+    pairs = k - i/2 (integer division)
+  Else:
+    pairs = (i - 1)/2 (integer division)
+  
+  active = k - 2 * pairs
+  
+  If i % 2 == 0:
+    active = active - 1
+  
+  times2 = 1
+  total = 0
+  
+  For j from 0 to pairs:
+    choice = (times2 * nchoosek[pairs][j]) % mod
+    times2 = (times2 * 2) % mod
+    
+    If active + j - 1 >= 0:
+      total = total + choice * nchoosek[n + active - 1][active + j - 1]
+      
+      If i % 2 == 0:
+        total = total + choice * nchoosek[n + active - 2][active + j - 1]
+      
+      total = total % mod
+  
+  Print total

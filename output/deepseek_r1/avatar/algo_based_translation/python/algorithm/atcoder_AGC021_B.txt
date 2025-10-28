@@ -1,0 +1,57 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`
+
+**Variable Declarations:**
+- `N: int` (Number of points)
+- `XY: List[Tuple[int, int]]` (List of point coordinates)
+- `D: List[float]` (Sorted list of angles for current point)
+- `ans: float` (Maximum uncovered angular segment)
+- `i: int` (Current point index)
+- `x: int, y: int` (Coordinates of current point)
+- `X: int, Y: int` (Coordinates of other points)
+- `a: float, b: float` (Consecutive angles in sorted list)
+
+**Step-by-Step Logic Flow:**
+
+1. **Input Handling:**
+    1. Read all input as a single string.
+    2. Split into a list of integers.
+    3. Extract `N` (first element).
+    4. Convert remaining elements into `XY` as list of (x, y) tuples.
+
+2. **Per-Point Processing:**
+    1. For each (`i`, (`x`, `y`)) in `XY`:
+        1. Initialize empty list `D`.
+        2. For each (`j`, (`X`, `Y`)) in `XY`:
+            1. If `j` ≠ `i`:
+                1. Compute `angle = math.atan2(X - x, Y - y)`
+                2. Append `angle` to `D`.
+        3. Sort `D` in ascending order.
+        4. Append `D[0] + 2 * math.pi` to `D` (wrap-around angle).
+        5. Set `ans = 0.0`
+        6. For each consecutive (`a`, `b`) in `zip(D, D[1:])`:
+            1. Compute `diff = b - a`
+            2. If `diff >= math.pi`:
+                1. Set `ans = diff - math.pi`
+        7. Output `ans / (2 * math.pi)`
+
+**Control Flow Structures:**
+- Outer loop: Iterate through all points (0 ≤ `i` < `N`)
+- Inner loop 1: Gather angles from other points (0 ≤ `j` < `N`, `j` ≠ `i`)
+- Conditional 1: Skip processing when `j` == `i`
+- Inner loop 2: Process consecutive angle pairs in sorted list `D`
+- Conditional 2: Update `ans` if angular gap ≥ π
+
+**Input/Output Operations:**
+- Input: Read from standard input as space-separated integers
+- Output: Print one normalized angle per line for each point
+
+**Error Handling Mechanisms:**
+- No explicit error handling for invalid `N` values (e.g., `N`=1 causes out-of-bounds access in empty `D` list)
+- Assumes valid numeric input format
+
+**External Dependencies:**
+- `math.atan2` for angle calculation
+- `math.pi` constant for circular computations

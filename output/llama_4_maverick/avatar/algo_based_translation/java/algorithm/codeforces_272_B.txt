@@ -1,0 +1,14 @@
+1. Initialize a reader to read input from the standard input and a writer to write output to the standard output.
+2. Read an integer n from the input.
+3. Create an array a of size 33 and initialize all elements to 0.
+4. For i ranging from 0 to n-1, perform the following steps:
+   4.1. Read an integer x from the input.
+   4.2. Calculate the number of set bits in the binary representation of x.
+   4.3. Increment the count in array a at the index equal to the number of set bits calculated in step 4.2.
+5. Initialize a variable answer to 0.
+6. For i ranging from 0 to 32, perform the following steps:
+   6.1. Calculate the sum of the first (a[i] - 1) positive integers using the formula (1 + a[i] - 1) / 2.0 * (a[i] - 1).
+   6.2. Add the sum calculated in step 6.1 to answer.
+7. Cast answer to a long integer.
+8. Write the result from step 7 to the output.
+9. Close the output writer.

@@ -1,0 +1,23 @@
+- Function Signatures:
+  - main(String[] args) : void
+
+- Variable Declarations and Data Types:
+  - sc : Scanner
+  - x : int
+  - y : int
+  - z : int
+
+- Logic Flow in Execution Order:
+  1. Create a new Scanner object to read input from the standard input stream.
+  2. Read the next integer from the scanner and assign it to x.
+  3. Read the next integer from the scanner and assign it to y.
+  4. Read the next integer from the scanner and assign it to z.
+  5. Print z, x, and y in that order, separated by spaces.
+  6. Close the scanner to free up system resources.
+
+- Input/Output Operations and Data Processing Logic:
+  - Input: Three integers from the standard input.
+  - Output: The three integers in the order z, x, y, separated by spaces.
+
+- Required Libraries, Modules, or Dependencies:
+  - java.util.Scanner

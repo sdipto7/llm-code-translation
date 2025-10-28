@@ -1,0 +1,83 @@
+mod: integer constant = 1000000007
+to: list of lists of integers
+dp: list of integers
+
+main:
+  Read integer N from input
+  Initialize to as empty list with N empty ArrayLists
+  Initialize edges as 2D integer array with dimensions (N-1) x 2
+  For i from 0 to N-2:
+    Read integers A and B from input, subtract 1 from each
+    Add B to to[A]
+    Add A to to[B]
+    Set edges[i][0] = B
+    Set edges[i][1] = A
+  
+  Initialize dp as integer array of size N
+  Call rec(0, -1)
+  
+  Initialize mulsum as long = 0
+  For each edge e in edges:
+    candidate1 = e[0]
+    candidate2 = e[1]
+    child = candidate1
+    If dp[candidate1] > dp[candidate2]:
+      child = candidate2
+    
+    a = dp[child] as long
+    b = N - a as long
+    
+    mul = ((modpow(2, a) - 1) * (modpow(2, b) - 1)) % mod
+    mulsum = (mulsum + mul) % mod
+  
+  cases = modpow(2, N)
+  PN = (mulsum + (cases - 1 + mod) % mod) % mod
+  BN = (N * modpow(2, N-1)) % mod
+  WN = (PN - BN + mod) % mod
+  ans = (WN * modpow(cases, mod-2)) % mod
+  Print ans
+
+rec(v: integer, parent: integer) -> integer:
+  res = 1
+  For each next in to[v]:
+    If next == parent: continue
+    res = res + rec(next, v)
+  dp[v] = res
+  Return res
+
+modpow(x: long, y: long) -> long:
+  If y == 0: return 1
+  If y % 2 != 0: return (x * modpow(x, y-1)) % mod
+  tmp = modpow(x, y/2)
+  Return (tmp * tmp) % mod
+
+FastScanner class:
+  reader: BufferedReader
+  tokenizer: StringTokenizer
+  
+  Constructor(InputStream in):
+    reader = new BufferedReader(new InputStreamReader(in))
+    tokenizer = null
+  
+  next() -> String:
+    If tokenizer is null or has no more tokens:
+      tokenizer = new StringTokenizer(reader.readLine())
+    Return tokenizer.nextToken()
+  
+  nextLine() -> String:
+    If tokenizer is null or has no more tokens:
+      Return reader.readLine()
+    Return tokenizer.nextToken("\n")
+  
+  nextLong() -> long: Return Long.parseLong(next())
+  nextInt() -> int: Return Integer.parseInt(next())
+  nextDouble() -> double: Return Double.parseDouble(next())
+  nextIntArray(n: int) -> int[]: 
+    a = new int[n]
+    For i from 0 to n-1: a[i] = nextInt()
+    Return a
+  
+  nextLongArray(n: int) -> long[]:
+    a = new long[n]
+    For i from 0 to n-1: a[i] = nextLong()
+    Return a

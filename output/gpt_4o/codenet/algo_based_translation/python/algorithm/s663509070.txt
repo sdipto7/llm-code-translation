@@ -1,0 +1,34 @@
+```plaintext
+Algorithm:
+
+1. Import the math module for mathematical operations.
+
+2. Define input variables:
+   - N: int - the number of points.
+   - D: int - the number of dimensions for each point.
+   - Read a single line of input, split by space, and map each to an integer to assign to N and D.
+
+3. Initialize an empty list:
+   - mat: List[List[int]] - to store the points in the space.
+
+4. For loop to read each point:
+   - Loop variable 'd' from 0 to N-1:
+     - Read a line of input, split by space, map each to an integer, and append to 'mat'.
+
+5. Initialize a counter:
+   - c: int - to count the number of pairs of points with an integer distance.
+
+6. Nested loop to calculate distances between all pairs of points:
+   - Outer loop variable 'i' from 0 to N-2:
+     - Inner loop variable 'j' from i+1 to N-1:
+       - Calculate the Euclidean distance 'dist' between the ith and jth points:
+         - Use list comprehension and zip to compute the squared differences for each dimension.
+         - Sum the squared differences.
+         - Take the square root of the sum.
+       - Check if 'dist' is an integer:
+         - Convert 'dist' to an integer and compare with 'dist'.
+         - If true, increment 'c' by 1.
+
+7. Output the result:
+   - Print the value of 'c'.
+```

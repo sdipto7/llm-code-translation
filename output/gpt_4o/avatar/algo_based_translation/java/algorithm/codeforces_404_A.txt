@@ -1,0 +1,28 @@
+1. Import the `java.util.Scanner` library.
+2. Define the `main` method with `String[] args` as a parameter.
+3. Initialize a `Scanner` object `sc` for reading input.
+4. Read an integer `n` from input using `sc.nextInt()`.
+5. Declare a 2D character array `arr` of size `n x n`.
+6. Declare a string array `str` of size `n`.
+7. For `i` from 0 to `n-1`:
+   - Assign `sc.next()` to `str[i]`.
+8. For `i` from 0 to `n-1`:
+   - For `j` from 0 to `n-1`:
+     - Assign `str[i].charAt(j)` to `arr[i][j]`.
+9. Assign `arr[0][0]` to character `a`.
+10. Assign `arr[0][1]` to character `b`.
+11. If `a` is equal to `b`:
+    - Print "NO" and exit.
+12. Declare a boolean variable `res` and set it to `true`.
+13. For `i` from 0 to `n-1`:
+    - For `j` from 0 to `n-1`:
+      - If `i` is equal to `j` or `i + j` is equal to `n - 1`:
+        - If `arr[i][j]` is not equal to `a`:
+          - Set `res` to `false` and break from the inner loop.
+      - Otherwise:
+        - If `arr[i][j]` is not equal to `b`:
+          - Set `res` to `false` and break from the inner loop.
+14. If `res` is `true`:
+    - Print "YES".
+15. Otherwise:
+    - Print "NO".

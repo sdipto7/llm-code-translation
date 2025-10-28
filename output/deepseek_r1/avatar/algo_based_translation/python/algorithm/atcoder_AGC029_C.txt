@@ -1,0 +1,84 @@
+**Structured Algorithm Specification**
+
+**1. Program Structure**
+- **Input Processing**
+  - Read input string
+  - Split into integer list `A` ([int])
+  - Process `A` to maintain non-increasing order:
+    1. Keep first element `A[0]`
+    2. Add subsequent elements `j` only if preceding element `i >= j`
+  - `N` := length of processed `A` (int)
+
+**2. Function: cut**
+- **Signature**
+  - Parameters: `array` (list of (int, int)), `index` (int)
+  - Return: list of (int, int)
+- **Logic**
+  1. If `index < 1`, return empty list
+  2. If `index <= array[0][0]`, return `[(index, array[0][1])]`
+  3. Iterate `_` from `len(array)-1` down to `1`:
+     - If `array[_-1][0] < index`:
+       - Return `array[:_]` concatenated with `[(index, array[_][1])]`
+  4. Fallback return empty list (unreachable under valid inputs)
+
+**3. Function: is_possible**
+- **Signature**
+  - Parameter: `K` (int)
+  - Return: bool
+- **Variables**
+  - `dp`: list of (int, int) tuples tracking segments and their split counts
+- **Logic**
+  1. Initialize `dp` with `[(A[0], 0)]`
+  2. For each `a` in `A[1:]`:
+     a. If `a <= dp[-1][0]`:
+        - Update `dp` via `cut(dp, a)`
+     b. Else:
+        - Append `(a, 0)` to `dp`
+     c. Set `is_added` = False
+     d. Iterate `j` from `len(dp)-1` down to `0`:
+        i. If `dp[j][1] < K-1`:
+           - New segment: `cut(dp, dp[j][0]-1)`
+           - Append `(dp[j][0], dp[j][1]+1)`
+           - If new last element's value `< a`: append `(a, 0)`
+           - Set `is_added` = True, break loop
+     e. If `!is_added`: return False
+  3. Return True
+
+**4. Function: bis**
+- **Signature**
+  - Parameters: `x` (int), `y` (int)
+  - Return: int
+- **Logic**
+  1. If `y == x+1`: return `y`
+  2. Compute `mid` = `(x+y)//2`
+  3. If `is_possible(mid)`:
+     - Return `bis(x, mid)`
+  4. Else:
+     - Return `bis(mid, y)`
+
+**5. Control Flow**
+- Main execution:
+  1. Process input to create `A`
+  2. Execute `bis(0, N)`
+  3. Print result
+
+**6. Data Types**
+- `A`: list of integers
+- `N`: integer
+- `cut`:
+  - Input/Output: list of (int, int) tuples
+- `is_possible`:
+  - `dp`: list of (int, int) tuples
+- `bis`: All parameters and returns are integers
+
+**7. Input/Output**
+- Input: Single line of space-separated integers
+- Output: Single integer result of binary search
+
+**8. Edge Case Handling**
+- Empty input not explicitly handled (assumes non-empty)
+- `cut` handles index bounds with early returns
+- Binary search base case `y == x+1` prevents infinite recursion
+
+**9. Dependencies**
+- No external library dependencies (random import unused)

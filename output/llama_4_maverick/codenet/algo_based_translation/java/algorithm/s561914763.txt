@@ -1,0 +1,19 @@
+1. Import required libraries: java.util.HashSet, java.util.Scanner, java.util.Set.
+2. Declare a class Main with static sets ODD and EVE of type Set<String>.
+3. Initialize ODD and EVE with specific string values in a static block.
+   - ODD = {"R", "U", "D"}
+   - EVE = {"L", "U", "D"}
+4. Define a main function with parameter args of type String[] and return type void.
+5. Inside main:
+   - Declare a Scanner object sc and initialize it with System.in.
+   - Read a string N from the input using sc.nextLine().
+   - Convert N to a character array tap.
+   - Declare a boolean variable isGood and initialize it to true.
+   - Iterate over the characters in tap using a for loop with index i ranging from 0 to N.length() - 1.
+     - Check if (i + 1) is even.
+       - If even, call isMatch(EVE, tap[i]) and set isGood to the result. If false, break the loop.
+       - If odd, call isMatch(ODD, tap[i]) and set isGood to the result. If false, break the loop.
+6. Define a function isMatch with parameters set of type Set<String> and c of type char, returning a boolean.
+   - Inside isMatch, convert c to a string using String.valueOf(c) and check if it exists in set.
+   - Return true if c is in set; otherwise, return false.
+7. After the loop in main, print "Yes" if isGood is true; otherwise, print "No".

@@ -1,0 +1,11 @@
+1. READ n
+2. INITIALIZE empty LIST l
+3. FOR i FROM 0 TO n-1
+   4. READ num
+   5. APPEND num TO l
+5. SET ans TO n - 1
+6. SET last TO 0
+7. FOR EACH i IN l
+   8. INCREMENT ans BY abs(last - i) + 1
+   9. SET last TO i
+10. PRINT ans

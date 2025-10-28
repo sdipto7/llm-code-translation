@@ -1,0 +1,45 @@
+**Structured Algorithm Specification**
+
+**1. Function/Method Signatures**  
+- Not applicable (script-based execution; no explicit functions defined)
+
+**2. Variable Declarations and Data Types**  
+- `a: int`  
+- `b: int`  
+- `t: int`  
+- `cookie: int` (initial value: `0`)  
+- `time: int` (initial value: `a`)  
+
+**3. Input/Output Operations**  
+- **Input**: Read a single line from standard input, split into three space-separated integers `a`, `b`, `t`  
+- **Output**: Print final value of `cookie`  
+
+**4. Step-by-Step Logic Flow**  
+1. Read input string and parse into integers `a`, `b`, `t`.  
+2. Initialize `cookie` to `0`.  
+3. Initialize `time` to `a`.  
+4. **Loop Control**:  
+   - **Condition**: `time <= (t + 0.5)` (evaluate as floating-point comparison)  
+   - **Loop Body**:  
+      a. Add `b` to `cookie`.  
+      b. Increment `time` by `a`.  
+   - **Exit Criteria**: When `time > (t + 0.5)`  
+5. Print `cookie` after loop termination.  
+
+**5. Control Flow Structures**  
+- **While Loop**:  
+  ```python  
+  while time <= (t + 0.5):  
+      cookie += b  
+      time += a  
+  ```  
+
+**6. Error Handling Mechanisms**  
+- No explicit error handling for:  
+  - Non-integer inputs  
+  - Division by zero if `a = 0`  
+  - Negative/edge-case values (assumes valid input)  
+
+**7. External Dependencies**  
+- Uses `input()` and `split()` for reading data (standard Python functions).  
+- No external libraries or imports required.

@@ -1,0 +1,26 @@
+```
+Function Signature:
+    function find_next_alphabet(s: str) -> None
+
+Variables:
+    alphabets: list of str = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    i: int
+
+Logic Flow:
+    1. Initialize a list 'alphabets' containing all lowercase English alphabets from "a" to "z".
+    2. Iterate over the range from 0 to the length of 'alphabets' list.
+        a. For each iteration, check if the current alphabet at index 'i' matches the input string 's'.
+        b. If a match is found:
+            i. Print the alphabet located at the index 'i + 1' in the 'alphabets' list.
+
+Control Structures:
+    - A for loop iterating over the range of indices of the 'alphabets' list.
+    - An if conditional checking for equality between the current alphabet and the input string.
+
+Input/Output Operations:
+    - Input operation: Read a string 's' from standard input.
+    - Output operation: Print the alphabet that is immediately next to the matched alphabet in the list.
+
+Libraries/Modules:
+    - No external libraries or modules are required.
+```

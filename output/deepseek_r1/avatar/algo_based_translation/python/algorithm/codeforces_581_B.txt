@@ -1,0 +1,38 @@
+**Structured Algorithm Specification**
+
+**Function Signature**  
+- Function Name: `main`  
+- Parameters: None  
+- Return Type: void  
+
+**Variable Declarations**  
+- `n`: Integer (Input size, read from standard input)  
+- `arr`: List of integers (Size `n`, initialized with parsed input values)  
+- `ans`: List of integers (Size `n`, initialized to zeros)  
+- `mx`: Integer (Initialized to `arr[n - 1]` if `n > 0`)  
+
+**Input/Output Operations**  
+1. Read integer `n` from standard input.  
+2. Read a line of whitespace-separated integers, parse to list, and truncate to first `n` elements for `arr`.  
+3. Print elements of `ans` space-separated to standard output.  
+
+**Control Flow & Logic**  
+1. **Initialization**  
+   - Assign `ans` as a list of `n` zeros.  
+   - If `n > 0`, set `mx` to `arr[n - 1]`.  
+
+2. **Main Loop**  
+   - Iterate `i` from `n - 2` down to `0` (inclusive, step -1):  
+      a. Compute `ans[i]` as `max(0, mx - arr[i] + 1)`.  
+      b. Update `mx` to `arr[i]` if `arr[i] > mx`.  
+
+3. **Termination**  
+   - Output `ans` after loop completion.  
+
+**Edge Cases & Assumptions**  
+- Assumes valid input format: `n` is a non-negative integer, followed by at least `n` integers.  
+- If `n = 0`, `arr` is empty, but accessing `mx` (via `arr[n - 1]`) will fail (no explicit error handling as per original code).  
+
+**Dependencies**  
+- Relies on standard input/output functions for data handling.  
+- Uses built-in `max()` function for value comparison.

@@ -1,0 +1,30 @@
+main:
+- Read integer n from input
+- Declare integer array arr of size n
+- Read first element of arr from input
+- For i from 1 to n-1:
+  - Read integer x from input
+  - Set arr[i] = x + arr[i-1]
+- Read integer m from input
+- Declare integer array q of size m
+- For i from 0 to m-1:
+  - Read q[i] from input
+- For k from 0 to m-1:
+  - Call fun(arr, q[k], n, m) and add 1 to result
+  - Print result
+
+fun(int[] arr, int q, int n, int m):
+- Initialize integer res = 0
+- Initialize integers i = 0, j = n
+- While i <= j:
+  - Calculate md = i + (j - i) / 2
+  - If arr[md] equals q:
+    - Return md
+  - Else if arr[md] > q:
+    - Set res = md
+    - Set j = md - 1
+  - Else:
+    - Set i = md + 1
+- Return res
+
+Required: java.util.Scanner, java.io.IOException

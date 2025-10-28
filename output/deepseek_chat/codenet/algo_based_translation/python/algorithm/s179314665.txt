@@ -1,0 +1,5 @@
+Read integers A and B from standard input
+If A is less than 10 AND B is less than 10:
+    Multiply A by B and print the result
+Else:
+    Print -1

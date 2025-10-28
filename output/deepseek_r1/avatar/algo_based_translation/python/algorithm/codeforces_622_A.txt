@@ -1,0 +1,46 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- No explicit function (script execution)
+- Input: `n: int` (read from standard input)
+- Output: `int` (printed to standard output)
+
+**Variable Declarations:**
+- `n: int` (input value)
+- `l: int` (initial value: 1)
+- `r: int` (initial value: `n`)
+- `mid: int` (temporary midpoint calculation)
+- `idxcnt: int` (sum calculation)
+
+**Step-by-Step Logic Flow:**
+1. Read integer `n` from standard input.
+2. Initialize `l = 1`.
+3. Initialize `r = n`.
+4. While `l < r`:
+   1. Compute `mid = l + (r - l) // 2`.
+   2. Compute `idxcnt = (mid * (mid + 1)) // 2`.
+   3. If `idxcnt < n`:
+      1. Set `l = mid + 1`.
+   4. Else:
+      1. Set `r = mid`.
+5. Decrement `l` by 1 after loop exit.
+6. Recompute `idxcnt = (l * (l + 1)) // 2`.
+7. Compute result as `n - idxcnt`.
+8. Print result as integer.
+
+**Control Flow Structures:**
+- Loop: `While l < r` (binary search loop)
+  - Exit when `l >= r`
+- Conditional inside loop: `If idxcnt < n` determines search direction
+
+**Input/Output Operations:**
+- Input: Single integer read via `input()` and cast to `int`.
+- Output: Result computed as `n - idxcnt` printed via `print()`.
+
+**Error Handling:**
+- No explicit error handling for invalid inputs (assumes valid integer input).
+- No handling for edge cases where `n <= 0`.
+
+**External Dependencies:**
+- Unused import: `from cmd import IDENTCHARS` (no impact on logic).
+- Standard library dependencies: `input()` and `print()` functions.

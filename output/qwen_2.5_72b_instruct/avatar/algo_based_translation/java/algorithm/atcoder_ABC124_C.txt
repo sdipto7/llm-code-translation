@@ -1,0 +1,73 @@
+Function signatures and parameter types:
+- `main(String[] args)`: void
+- `solve(int testNumber, InputReader in, PrintWriter out)`: void
+- `InputReader(InputStream stream)`: void
+- `next()`: String
+
+Variable declarations and data types:
+- `InputStream inputStream`: InputStream
+- `OutputStream outputStream`: OutputStream
+- `InputReader in`: InputReader
+- `PrintWriter out`: PrintWriter
+- `CColoringColorfully solver`: CColoringColorfully
+- `String x`: String
+- `StringBuilder a`: StringBuilder
+- `StringBuilder b`: StringBuilder
+- `int a1`: int
+- `int a2`: int
+- `BufferedReader reader`: BufferedReader
+- `StringTokenizer tokenizer`: StringTokenizer
+
+Logic flow and control structures:
+- `main`:
+  - Initialize `inputStream` to `System.in`
+  - Initialize `outputStream` to `System.out`
+  - Create `InputReader` object `in` with `inputStream`
+  - Create `PrintWriter` object `out` with `outputStream`
+  - Create `CColoringColorfully` object `solver`
+  - Call `solver.solve(1, in, out)`
+  - Close `out`
+- `solve`:
+  - Read string `x` using `in.next()`
+  - Initialize `a` and `b` as `StringBuilder` objects with `x`
+  - Initialize `a1` and `a2` to 0
+  - Loop from 1 to length of `x` - 1 (inclusive):
+    - If `a.charAt(i)` equals `a.charAt(i - 1)`:
+      - If `a.charAt(i)` equals '1':
+        - Set `a.charAt(i)` to '0'
+      - Else:
+        - Set `a.charAt(i)` to '1'
+      - Increment `a1`
+  - Loop from length of `x` - 1 to 1 (inclusive):
+    - If `b.charAt(i)` equals `b.charAt(i - 1)`:
+      - If `b.charAt(i - 1)` equals '1':
+        - Set `b.charAt(i - 1)` to '0'
+      - Else:
+        - Set `b.charAt(i - 1)` to '1'
+      - Increment `a2`
+  - Print minimum of `a1` and `a2`
+- `InputReader`:
+  - Initialize `reader` with `BufferedReader` wrapping `InputStreamReader` of `stream` with buffer size 32768
+  - Initialize `tokenizer` to `null`
+- `next`:
+  - While `tokenizer` is `null` or `tokenizer` has no more tokens:
+    - Try:
+      - Read line from `reader` and set `tokenizer` to `StringTokenizer` of the line
+    - Catch `IOException`:
+      - Throw `RuntimeException` with caught exception
+  - Return next token from `tokenizer`
+
+Input/output operations and data processing logic:
+- Read input string `x` from standard input using `InputReader`
+- Process string `x` to transform it into two different strings `a` and `b` by flipping consecutive duplicate characters
+- Count the number of flips required for each transformation (`a1` for forward processing, `a2` for backward processing)
+- Output the minimum number of flips required
+
+Required libraries, modules, or dependencies:
+- `java.io.OutputStream`
+- `java.io.IOException`
+- `java.io.InputStream`
+- `java.io.PrintWriter`
+- `java.util.StringTokenizer`
+- `java.io.BufferedReader`
+- `java.io.InputStreamReader`

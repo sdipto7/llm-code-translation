@@ -1,0 +1,24 @@
+Algorithm:
+- Import: java.util.Arrays, java.util.Scanner
+- Declare public class codeforces_306_A
+- Declare public static Scanner input = Scanner(System.in)
+- Declare public static void main(String[] args)
+  - Declare int n = input.nextInt()
+  - Declare int m = input.nextInt()
+  - Declare int[] a = new int[m]
+  - If condition: n % m == 0
+    - Then: For i from 0 to a.length-1
+      - Set a[i] = n / m
+  - Else:
+    - Declare int sub = n / m
+    - For i from 0 to a.length-1
+      - Set a[i] = sub
+    - Declare int test = n - (sub * m)
+    - Declare int count = 0
+    - For i from 0 to test-1
+      - Set a[count] = a[count] + 1
+      - Set count = count + 1
+      - If count >= a.length
+        - Then: Set count = 0
+  - For i from a.length-1 down to 0
+    - Print a[i] + " "

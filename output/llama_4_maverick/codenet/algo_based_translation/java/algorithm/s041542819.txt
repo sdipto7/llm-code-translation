@@ -1,0 +1,56 @@
+1. Define the main function:
+   - `main(String[] args)` 
+   - Input: Command line arguments
+   - Output: None
+
+2. Within `main`:
+   - Initialize `InputStream inputStream` to `System.in`
+   - Initialize `OutputStream outputStream` to `System.out`
+   - Create `LightScanner in` object with `inputStream`
+   - Create `LightWriter out` object with `outputStream`
+   - Create `DLazyFaith solver` object
+   - Call `solver.solve(1, in, out)`
+   - Call `out.close()`
+
+3. Define `DLazyFaith` class with method `solve`:
+   - `solve(int testNumber, LightScanner in, LightWriter out)`
+   - Input: `testNumber`, `LightScanner` object, `LightWriter` object
+   - Output: None
+
+4. Within `solve`:
+   - Read integers `a`, `b`, `q` using `in.ints()`
+   - Declare long arrays `s` and `t` of sizes `a + 2` and `b + 2` respectively
+   - Initialize `s[0]` and `t[0]` to `-10_000_000_000L`
+   - Read `a` long values into `s` starting from index `1`
+   - Read `b` long values into `t` starting from index `1`
+   - Initialize `s[a + 1]` and `t[b + 1]` to `20_000_000_000L`
+   - Loop `q` times:
+     - Read long value `x` using `in.longs()`
+     - Calculate `sl = x - s[Math.max(0, ArrayUtil.lowerBound(s, x + 1) - 1)]`
+     - Calculate `tl = x - t[Math.max(0, ArrayUtil.lowerBound(t, x + 1) - 1)]`
+     - Calculate `sr = s[ArrayUtil.lowerBound(s, x)] - x`
+     - Calculate `tr = t[ArrayUtil.lowerBound(t, x)] - x`
+     - Calculate minimum of six values: `Math.max(sl, tl)`, `Math.max(sr, tr)`, `2 * sl + tr`, `2 * tl + sr`, `sl + 2 * tr`, `tl + 2 * sr` using `IntMath.min`
+     - Output the minimum value using `out.ansln`
+
+5. Define `LightScanner` class:
+   - Constructor takes `InputStream` and initializes `BufferedReader`
+   - `string()` method:
+     - Checks if `tokenizer` is null or has no more tokens
+     - If so, reads a line from `reader` and creates a new `StringTokenizer`
+     - Returns the next token from `tokenizer`
+   - `ints()` and `longs()` methods parse the result of `string()` to `int` and `long` respectively
+
+6. Define `LightWriter` class:
+   - Constructors take `Writer` or `OutputStream` and initialize `out`
+   - `print(char c)` and `print(String s)` methods write to `out`
+   - `ans(String s)` and `ans(long l)` methods print a value followed by a space if not at the start of a line
+   - `ansln(long... n)` method prints multiple values followed by a newline
+   - `ln()` method prints a newline and optionally flushes `out` if `autoflush` is true
+   - `close()` method closes `out`
+
+7. Define `IntMath` class with `min(long... v)` method:
+   - Returns the minimum of the input long values using `Arrays.stream().min()`
+
+8. Define `ArrayUtil` class with `lowerBound(long[] a, long t)` and `lowerBound(long[] a, long t, int min)` methods:
+   - Performs binary search on the input array to find the index of the first element greater than or equal to `t`

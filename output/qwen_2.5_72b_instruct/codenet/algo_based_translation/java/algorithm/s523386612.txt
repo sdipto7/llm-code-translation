@@ -1,0 +1,29 @@
+Function Signature: 
+- `main(String[] args)`: void
+
+Variable Declarations and Data Types:
+- `sc`: Scanner
+- `t`: int
+- `count`: int[]
+
+Logic Flow in Execution Order:
+1. Create a new Scanner object `sc` to read input.
+2. Read an integer `t` from the input.
+3. Initialize an integer array `count` of size `t+1` with all elements set to 0.
+4. Loop from `i = 2` to `i <= t`:
+   - Read an integer from the input.
+   - Increment the element at the index equal to the read integer in the `count` array.
+5. Loop from `i = 1` to `i <= t`:
+   - Print the value of the element at index `i` in the `count` array.
+
+Control Structures:
+- For loop with condition `i <= t` for initializing and reading input.
+- For loop with condition `i <= t` for printing the count array.
+
+Input/Output Operations and Data Processing Logic:
+- Read an integer `t` which represents the number of elements to process.
+- Read `t-1` integers, each representing an index in the `count` array, and increment the corresponding element in the `count` array.
+- Print the values of the `count` array from index `1` to `t`.
+
+Required Libraries:
+- `java.util.Scanner`

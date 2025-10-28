@@ -1,0 +1,36 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `n: int` (input value)
+- `i: int` (initialized to 0)
+- `k: int` (initialized to 0)
+- `flag: boolean` (initialized to `true`)
+- `a: int[1000]` (array initialized to 0s)
+
+**Input Operations:**
+- Read integer `n` from standard input
+
+**Logic Flow:**
+1. Set `i = 0`
+2. Loop while `k <= n`:
+   - Add `k` to `i`
+   - While `i >= n`: subtract `n` from `i`
+   - Increment `a[i]` by 1
+   - Increment `k` by 1
+3. Loop through indices `0` to `n-1`:
+   - If `a[index] == 0`:
+     - Set `flag` to `false`
+     - Break loop
+4. Print "YES" if `flag` is `true`, else print "NO"
+
+**Control Structures:**
+- `while (k <= n)` loop for processing steps
+- Nested `while (i >= n)` for modular reduction
+- `for (i = 0; i < n; ++i)` loop for coverage check
+- `if (a[index] == 0)` conditional with early exit
+
+**Required Libraries:**
+- `java.util.*`
+- `java.lang.*`
+- `java.io.*`

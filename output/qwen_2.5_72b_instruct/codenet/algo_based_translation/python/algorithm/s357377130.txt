@@ -1,0 +1,36 @@
+Function signature with parameter and return types:
+- `main() -> None`
+
+Variable declarations and data types:
+- `A: int`
+- `B: int`
+- `K: int`
+- `i: int`
+
+Complete logic flow in execution order:
+1. Read input values for `A`, `B`, and `K` as integers.
+2. If `A + K - 1 >= B - K + 1`:
+   - While `A <= B`:
+     - Print `A`.
+     - Increment `A` by 1.
+3. Else:
+   - Initialize `i` to 0.
+   - While `i <= K - 1`:
+     - Print `A + i`.
+     - Increment `i` by 1.
+   - While `B - K + 1 <= B`:
+     - Print `B - K + 1`.
+     - Decrement `K` by 1.
+
+Control structures with exact conditions:
+- If statement: `A + K - 1 >= B - K + 1`
+- While loop: `A <= B`
+- While loop: `i <= K - 1`
+- While loop: `B - K + 1 <= B`
+
+Input/output operations and data processing logic:
+- Input: Read three integers `A`, `B`, and `K`.
+- Output: Print integers based on the logic flow described above.
+
+Required libraries, modules, or dependencies:
+- No specific libraries or modules required.

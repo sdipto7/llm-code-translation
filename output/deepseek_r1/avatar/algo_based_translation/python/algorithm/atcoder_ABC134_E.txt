@@ -1,0 +1,61 @@
+**Structured Algorithm Specification**
+
+**1. Function/Method Signatures**
+- `binary_search(key: Integer) -> Integer`
+- `main() -> Void`
+
+**2. Variable Declarations and Data Types**
+- `N: Integer` (number of input elements)
+- `ans: List of Lists of Integers` (initially empty)
+- `A: Integer` (temporary storage for each input element)
+- `idx: Integer` (index result from binary search)
+- In `binary_search`:
+  - `bad: Integer` (initialized to -1)
+  - `good: Integer` (initialized to len(ans))
+  - `mid: Integer` (middle index during search)
+
+**3. Input/Output Operations**
+- Input:
+  - Read integer `N` from standard input
+  - Read `N` integers sequentially from standard input
+- Output:
+  - Write length of `ans` to standard output
+
+**4. Algorithm Logic**
+
+**4.1 binary_search Function**
+1. Initialize `bad = -1`
+2. Initialize `good = len(ans)`
+3. While `good - bad > 1`:
+   1. Calculate `mid = (bad + good) // 2`
+   2. If `ans[mid][-1] < key`:
+      1. Set `good = mid`
+   3. Else:
+      1. Set `bad = mid`
+4. Return `good`
+
+**4.2 Main Logic**
+1. Read integer `N` from input
+2. Initialize empty list `ans`
+3. Repeat `N` times:
+   1. Read integer `A` from input
+   2. Call `binary_search(A)` to get `idx`
+   3. If `idx == len(ans)`:
+      1. Append new list `[A]` to `ans`
+   4. Else:
+      1. Append `A` to `ans[idx]`
+4. Output `len(ans)`
+
+**5. Control Flow Structures**
+- While loop in `binary_search`: Continues until search range > 1
+- For loop in main logic: Iterates exactly N times
+- Conditional in main logic: Branches based on binary search result comparison with ans length
+
+**6. Edge Case Handling**
+- Empty `ans` list initialization handles first element insertion
+- Binary search returns len(ans) when all existing sublist ends are <= key, triggering new sublist creation
+- Maintains strictly increasing sequence requirements for sublist ends via binary search conditions
+
+**7. External Dependencies**
+- Standard input for reading integer values
+- No external libraries or non-standard functions required

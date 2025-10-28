@@ -1,0 +1,39 @@
+**Algorithm:**
+
+**Main Function:**
+- Declare integer variable `n` and read from input
+- Declare integer array `a` of size 33
+- For `i` from 0 to `n-1`:
+    - Read integer `x`
+    - Call `rec(x)` to get integer result `k`
+    - Increment `a[k]` by 1
+- Declare double variable `answer` initialized to 0
+- For `i` from 0 to `a.length-1`:
+    - Calculate `summ = (1 + (a[i] - 1)) / 2.0 * (a[i] - 1)`
+    - Add `summ` to `answer`
+- Print `answer` cast to long integer
+- Close output stream
+
+**Function rec(long x):**
+- Declare integer variable `answer` initialized to 0
+- For `k` from 31 down to 0:
+    - If `(x & (1 << k)) != 0`:
+        - Increment `answer` by 1
+- Return `answer`
+
+**FastReader Class:**
+- BufferedReader `br`
+- StringTokenizer `st`
+- Constructor initializes `br` with InputStreamReader(System.in)
+- next(): While `st` is null or has no more tokens, read line and create new StringTokenizer
+- nextInt(): Parse next token as integer
+- nextLong(): Parse next token as long
+- nextDouble(): Parse next token as double
+- nextLine(): Read entire line from input
+
+**Required Libraries:**
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader
+- java.io.PrintWriter
+- java.util.StringTokenizer

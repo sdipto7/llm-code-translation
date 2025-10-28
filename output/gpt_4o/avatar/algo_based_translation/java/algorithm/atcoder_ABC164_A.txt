@@ -1,0 +1,39 @@
+```
+Algorithm atcoder_ABC164_A
+  Input: None
+  Output: Prints "unsafe" or "safe" based on the relationship between Sheep and Wolve
+
+  Dependencies:
+    Import Scanner class from java.util package
+    Import ArrayList class from java.util package
+
+  Variable Declarations:
+    scan: Scanner - a Scanner object for reading input
+    scList: ArrayList<String> - a list to store input lines
+    numlist: Array of String - to store split values of the first line of input
+    Sheep: Integer - to store the number of Sheep
+    Wolve: Integer - to store the number of Wolves
+
+  Begin
+    Initialize scan as a new Scanner object using System.in
+    Initialize scList as a new ArrayList of Strings
+
+    Loop: Infinite loop (for i = 0; i >= 0; i++)
+      Try
+        Read a line from input using scan.nextLine()
+        Add the line to scList
+      Catch Exception
+        Break the loop
+
+    numlist ← Split the first element of scList by space character
+
+    Sheep ← Convert numlist[0] to Integer
+    Wolve ← Convert numlist[1] to Integer
+
+    If Wolve >= Sheep Then
+      Print "unsafe"
+    Else
+      Print "safe"
+    End If
+  End
+```

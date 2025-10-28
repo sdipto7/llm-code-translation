@@ -1,0 +1,61 @@
+```plaintext
+Algorithm
+
+1. Import necessary libraries: sys.
+2. Set recursion limit to 10^7 using sys.setrecursionlimit.
+3. Define constants:
+   - inf as 10^20 (integer).
+   - eps as 1.0 / 10^10 (float).
+   - mod as 10^9 + 7 (integer).
+   - dd as list of tuples for 4-directional movement.
+   - ddn as list of tuples for 8-directional movement.
+
+4. Define function LI() -> list of int:
+   - Read a line from standard input using sys.stdin.readline().
+   - Split the line into components and convert each to an integer.
+   - Return the list of integers.
+
+5. Define function LI_() -> list of int:
+   - Read a line from standard input using sys.stdin.readline().
+   - Split the line into components, convert each to an integer, and subtract 1.
+   - Return the list of integers.
+
+6. Define function LF() -> list of float:
+   - Read a line from standard input using sys.stdin.readline().
+   - Split the line into components and convert each to a float.
+   - Return the list of floats.
+
+7. Define function LS() -> list of str:
+   - Read a line from standard input using sys.stdin.readline().
+   - Split the line into components.
+   - Return the list of strings.
+
+8. Define function I() -> int:
+   - Read a line from standard input using sys.stdin.readline().
+   - Convert the line to an integer.
+   - Return the integer.
+
+9. Define function F() -> float:
+   - Read a line from standard input using sys.stdin.readline().
+   - Convert the line to a float.
+   - Return the float.
+
+10. Define function S() -> str:
+    - Read a line from standard input using input().
+    - Return the string.
+
+11. Define function pf(s: str):
+    - Print the string s and flush the output.
+
+12. Define function main() -> int or str:
+    - Declare variable s of type str and assign S().
+    - Declare variable k of type int and assign I().
+    - Declare variable l of type int and initialize to 0.
+    - Iterate over each character c in string s:
+      - If character c is not '1', break the loop.
+      - Increment l by 1.
+    - If l is greater than or equal to k, return 1.
+    - Return the character at index l in string s.
+
+13. Print the result of calling main().
+```

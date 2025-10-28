@@ -1,0 +1,44 @@
+**Function Signature:**
+- No explicit function; main script execution
+- Input: integer `n` from standard input
+- Output: integer printed to standard output
+
+**Variable Declarations:**
+- `li`: empty list (List[int])
+- `ind`: integer initialized to 0
+- `i`: integer loop variable (1 to 370)
+- `temp`: empty list (List[int])
+- `p`, `q`: integer copies of `i`
+- `count`: integer initialized to 0
+- `x`: integer digit extracted from `q`
+
+**Logic Flow:**
+1. Initialize empty list `li`
+2. Initialize `ind` to 0
+3. For each integer `i` from 1 to 370 (inclusive):
+   - Initialize empty list `temp`
+   - Set `p = i`, `q = i`
+   - Set `count = 0`
+   - While `p != 0`:
+     - `p = p // 10`
+     - `count = count + 1`
+   - If `count == 1`:
+     - Append `i` to `li`
+   - If `count == 2`:
+     - Reset `temp` to empty list
+     - While `q != 0`:
+       - `x = q % 10`
+       - `q = q // 10`
+       - Append `x` to `temp`
+     - Concatenate reversed `temp` to `li`
+   - If `count == 3`:
+     - Reset `temp` to empty list
+     - While `q != 0`:
+       - `x = q % 10`
+       - `q = q // 10`
+       - Append `x` to `temp`
+     - Concatenate reversed `temp` to `li`
+4. Remove last element from `li`
+5. Remove last element from `li`
+6. Read integer `n` from standard input
+7. Print element at index `n-1` from `li`

@@ -1,0 +1,48 @@
+Function signature:
+- main(String[]): void
+
+Variable declarations and data types:
+- Scanner in: new Scanner(System.in)
+- int n: integer input from user
+- int[] a: array of integers of size n
+- int[] b: array of integers of size n, initialized to 0
+- int s: integer initialized to -1
+- int tem: integer initialized to 1
+- int q: integer initialized to 0
+
+Logic flow in execution order:
+- Read integer n from input
+- Initialize array a of size n
+- Initialize array b of size n with 0 values
+- Initialize s to -1
+- Initialize tem to 1
+- Initialize q to 0
+- While there are more inputs:
+    - Increment s by 1
+    - If tem equals 1:
+        - For i from 0 to n-1:
+            - If a[i] is less than or equal to q and b[i] is 0:
+                - Set b[i] to 1
+                - Increment q by 1
+        - Set tem to 0
+    - Else:
+        - For i from n-1 to 0:
+            - If a[i] is less than or equal to q and b[i] is 0:
+                - Set b[i] to 1
+                - Increment q by 1
+        - Set tem to 1
+- Print value of s
+
+Control structures:
+- While loop: while (in.hasNext())
+- For loop: for (int i = 0; i < n; i++)
+- For loop: for (int i = n - 1; i >= 0; i--)
+- If condition: if (tem == 1)
+- If condition: if (a[i] <= q && b[i] == 0)
+
+Input/output operations and data processing logic:
+- Input: Read integer n and then n integers for array a
+- Output: Print integer s after processing all inputs
+
+Required libraries, modules, or dependencies:
+- java.util.*

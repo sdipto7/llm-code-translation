@@ -1,0 +1,42 @@
+**Function Signature**
+- `public static void main(String args[])`: No return type, accepts String array as parameter
+
+**Variables**
+- `Scanner sc = new Scanner(System.in)`
+- `int N`: Input array size
+- `int[] A`: Array of integers with size N
+- `int min = Integer.MAX_VALUE`
+- `int count = 0`
+- `long sum = 0`
+- Loop variable `int i = 0`
+
+**Input Operations**
+- Read `N` via `sc.nextInt()`
+- For each `i` from 0 to N-1:
+  - Read `A[i]` via `sc.nextInt()`
+
+**Processing Logic**
+1. Loop through all elements in array A:
+   - If `A[i] < 0`: Increment `count` by 1
+   - Update `min` to be the minimum between current `min` and `Math.abs(A[i])`
+   - Add `Math.abs(A[i])` to `sum`
+2. Close scanner with `sc.close()`
+3. If `count % 2 == 0`:
+   - Print `sum`
+4. Else:
+   - Print `sum - min * 2`
+
+**Control Structures**
+- `for(int i = 0; i < N; i++)` loop
+- `if(A[i] < 0)` conditional inside loop
+- Final `if(count % 2 == 0)` conditional
+
+**Libraries**
+- `java.util.Scanner`
+
+**Data Types**
+- All input values and array elements: `int`
+- `sum` stored as `long` to prevent integer overflow
+
+**Output Operations**
+- Final result printed via `System.out.println` with either `sum` or `sum - min*2`

@@ -1,0 +1,20 @@
+1. Import the `java.util` package for input handling.
+2. Define the `main` function, which takes an array of strings `args` as parameters and returns void.
+3. Declare a `Scanner` object `sc` for input reading.
+4. Declare an array `str` of type `String` with size 4 to store input strings.
+5. Initialize an integer `i` to -1.
+6. Use a while loop with the condition `i != 3` to iterate over the input process:
+   - Increment `i` by 1.
+   - Assign the next input string from `sc` to `str[i]`.
+7. Declare two integers `u` and `yes`, initializing `u` to -1 and `yes` to 0.
+8. Initialize `i` to -1 for the next loop.
+9. Use a while loop with the condition `u != 2` to iterate over rows of the grid:
+   - Increment `u` by 1.
+   - Initialize `i` to -1.
+   - Use a nested while loop with the condition `i != 2` to iterate over columns:
+     - Increment `i` by 1.
+     - Check the condition for a 2x2 square of similar characters:
+       - If `(str[u].charAt(i) == str[u].charAt(i + 1) && (str[u + 1].charAt(i) == str[u].charAt(i) || str[u + 1].charAt(i + 1) == str[u].charAt(i))) || (str[u + 1].charAt(i) == str[u + 1].charAt(i + 1) && (str[u].charAt(i) == str[u + 1].charAt(i) || str[u].charAt(i + 1) == str[u + 1].charAt(i)))`
+       - If true, set `yes` to 1, print "YES", and break the inner loop.
+10. If `yes` is 1, break the outer loop.
+11. After the loops, if `yes` is 0, print "NO".

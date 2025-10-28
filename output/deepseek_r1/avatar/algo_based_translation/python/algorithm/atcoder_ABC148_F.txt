@@ -1,0 +1,51 @@
+Here is the JavaScript code translated from the provided Python code:
+
+```javascript
+const input = require('fs').readFileSync(0, 'utf-8').trim().split(/\s+/);
+let ptr = 0;
+
+const n = parseInt(input[ptr++]);
+let ta = parseInt(input[ptr++]) - 1;
+let ao = parseInt(input[ptr++]) - 1;
+
+const graph = Array.from({ length: n }, () => []);
+for (let i = 0; i < n - 1; i++) {
+    const a = parseInt(input[ptr++]) - 1;
+    const b = parseInt(input[ptr++]) - 1;
+    graph[a].push(b);
+    graph[b].push(a);
+}
+
+const taDist = new Array(n).fill(undefined);
+taDist[ta] = 0;
+
+const aoDist = new Array(n).fill(undefined);
+aoDist[ao] = 0;
+
+function taDfs(node) {
+    for (const v of graph[node]) {
+        if (taDist[v] !== undefined) continue;
+        taDist[v] = taDist[node] + 1;
+        taDfs(v);
+    }
+}
+
+function aoDfs(node) {
+    for (const v of graph[node]) {
+        if (aoDist[v] !== undefined) continue;
+        aoDist[v] = aoDist[node] + 1;
+        aoDfs(v);
+    }
+}
+
+aoDfs(ao);
+taDfs(ta);
+
+let res = 0;
+for (let i = 0; i < n; i++) {
+    if (taDist[i] > aoDist[i]) continue;
+    res = Math.max(res, aoDist[i]);
+}
+
+console.log(res - 1);
+```

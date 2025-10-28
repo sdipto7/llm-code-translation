@@ -1,0 +1,27 @@
+```
+Algorithm AGC034_B:
+
+1. Define function `solve(testNumber: int, in: Scanner, out: PrintWriter): void`
+   - Declare `s: String`
+   - Declare `cnt: long` and initialize to 0
+   - Declare `tmp: long` and initialize to 0
+
+2. Initialize `s` by reading next input from `in` and replacing all occurrences of "BC" with "D"
+
+3. For each character `i` in `s` from 0 to `s.length() - 1`, do:
+   - If `s.charAt(i) == 'A'`
+     - Increment `tmp` by 1
+   - Else if `s.charAt(i) == 'D'`
+     - Increment `cnt` by `tmp`
+   - Else
+     - Assign 0 to `tmp`
+
+4. Print `cnt` using `out.println(cnt)`
+
+Dependencies:
+- Import `java.io.OutputStream`
+- Import `java.io.IOException`
+- Import `java.io.InputStream`
+- Import `java.io.PrintWriter`
+- Import `java.util.Scanner`
+```

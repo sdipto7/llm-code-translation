@@ -1,0 +1,51 @@
+**Function Signatures:**
+- `main(String[] args): void`
+- `swap(int a, int b): void`
+- `debug(Object... obj): void`
+
+**Variables:**
+- `Scanner in`
+- `PrintWriter pw`
+- `int a`
+- `int b`
+- `int c`
+- `int t` (in swap function)
+
+**Libraries/Dependencies:**
+- `java.io.*`
+- `java.math.BigInteger`
+- `java.util.*`
+
+**Algorithm Flow:**
+
+1. Initialize Scanner `in` with System.in
+2. Initialize PrintWriter `pw` with System.out
+3. Read integers `a` and `b` from input
+4. Initialize counter `c` to 0
+5. If both `a` and `b` equal 1:
+   - Print 0
+   - Skip to step 12
+6. Else:
+   - While `a` >= 1 OR `b` >= 1:
+     - If `a` >= `b`:
+       - Increment `b` by 1
+       - Decrement `a` by 2
+     - Else:
+       - Increment `a` by 1
+       - Decrement `b` by 2
+     - If `a` <= 0 OR `b` <= 0:
+       - Increment `c` by 1
+       - Break loop
+     - Else:
+       - Increment `c` by 1
+7. Print value of `c`
+8. Close PrintWriter `pw`
+9. End main
+
+**swap function:**
+- Assign `b` to temporary variable `t`
+- Assign `a` to `b`
+- Assign `t` to `a`
+
+**debug function:**
+- Print debug information using Arrays.deepToString

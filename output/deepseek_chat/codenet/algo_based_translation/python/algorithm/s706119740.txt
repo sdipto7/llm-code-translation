@@ -1,0 +1,8 @@
+1. Read input line from standard input
+2. Split input string by whitespace into list of strings
+3. Convert each string element to integer
+4. Sort resulting list of integers in ascending order
+5. Assign sorted list to variable 'candy'
+6. Check if sum of first two elements equals third element
+7. If condition true: output "Yes"
+8. Else: output "No"

@@ -1,0 +1,55 @@
+Function Signatures:
+- main()
+
+Variable Declarations and Data Types:
+- t: int
+- m: int
+- alocuente: List[int]
+- ind: int
+- op: List[str]
+- pos: int
+- j: int
+- cnt: int
+
+Logic Flow:
+1. Read t and m as integers from input.
+2. Initialize alocuente as a list of zeros of length m.
+3. Initialize ind to 1.
+4. For i from 0 to t-1:
+   - Read op as a list of strings from input.
+   - If the first element of op is 'alloc':
+     - Initialize pos to 0.
+     - For j from 0 to m-1:
+       - If alocuente[j] is 0:
+         - Increment pos by 1.
+         - If pos equals the second element of op converted to an integer:
+           - Set elements from j - second element of op converted to an integer + 1 to j in alocuente to ind.
+           - Print ind.
+           - Increment ind by 1.
+           - Break the loop.
+       - Else:
+         - Set pos to 0.
+     - If no position found:
+       - Print "NULL".
+   - If the first element of op is 'erase':
+     - Initialize pos to 0.
+     - If the second element of op converted to an integer is not in alocuente or equals 0:
+       - Print 'ILLEGAL_ERASE_ARGUMENT'.
+     - Else:
+       - For j from 0 to m-1:
+         - If the second element of op converted to an integer is greater than 0 and alocuente[j] equals the second element of op converted to an integer:
+           - Set alocuente[j] to 0.
+   - If the first element of op is 'defragment':
+     - Initialize cnt to the count of 0 in alocuente.
+     - Update alocuente to a list containing non-zero elements of alocuente.
+     - Append cnt zeros to alocuente.
+
+Input/Output Operations and Data Processing Logic:
+- Input consists of t lines where each line contains an operation ('alloc', 'erase', 'defragment') and possibly additional arguments.
+- Output depends on the operation:
+  - For 'alloc', outputs the index assigned or "NULL" if allocation fails.
+  - For 'erase', outputs 'ILLEGAL_ERASE_ARGUMENT' if the argument is invalid.
+  - For 'defragment', no output.
+
+Required Libraries, Modules, or Dependencies:
+- No specific libraries or modules required. Uses built-in Python functionality.

@@ -1,0 +1,28 @@
+**Algorithm:**
+
+**Input Operations:**
+- Read three integers `n`, `a`, `b` from standard input via `input().split()` and map to `int`.
+
+**Variables:**
+- `n: int` (input value)
+- `a: int` (input value)
+- `b: int` (input value)
+- `ans: int` (calculated result)
+- `r: int` (remainder portion)
+
+**Execution Flow:**
+1. Compute initial portion of `ans`:
+   - `ans = (n // (a + b)) * a`
+2. Compute remainder when `n` is divided by `(a + b)`:
+   - `remainder = n % (a + b)`
+3. Determine `r` as the minimum between `remainder` and `a`:
+   - `r = min(remainder, a)`
+4. Add `r` to `ans`:
+   - `ans += r`
+5. Output `ans` via `print(ans)`.
+
+**Control Structures:**
+- Implicit conditional in `min(remainder, a)` to select the smaller value.
+
+**Output Operations:**
+- Print final `ans` to standard output.

@@ -1,0 +1,40 @@
+**Algorithm:**
+
+1. **Input Parsing:**
+   - Read integers H, W from input.
+   - Read start coordinates (si, sj) and end coordinates (ti, tj), adjusted to 0-based indexing by subtracting 1.
+   - Read H lines of grid data, converting each cell to 1 (wall) or 0 (passable) based on '#' and '.'.
+
+2. **Data Initialization:**
+   - Initialize a 2D distance array D with dimensions HxW, filled with -1 (unvisited).
+   - Create a deque and insert the starting position (si, sj) with cost 0.
+
+3. **Processing Loop:**
+   - While the deque is not empty:
+     a. Dequeue the front element (current cost c, coordinates i, j).
+     b. If D[i][j] is already visited (≠ -1), skip processing.
+     c. Set D[i][j] = c.
+     d. For all 25 possible neighbor cells (di, dj) in the range ±2:
+        i. Calculate new coordinates ni = i + di, nj = j + dj.
+        ii. Check boundaries: ni ∈ [0, H-1], nj ∈ [0, W-1].
+        iii. Check if cell is unvisited (D[ni][nj] == -1) and passable (S[ni][nj] == 0).
+        iv. If valid:
+            - If movement is direct adjacent (|di| ≤1, |dj| ≤1, and either di or dj is 0):
+                * Add (ni, nj) to front of deque with cost c (prioritize).
+            - Else (warp movement):
+                * Add (ni, nj) to end of deque with cost c + 1.
+
+4. **Termination:**
+   - Output D[ti][tj] (cost to reach target) after processing completes.
+
+**Data Structures:**
+- Deque (double-ended queue) for 0-1 BFS, enabling O(1) insertion at both ends.
+- 2D array D for tracking minimum warp costs.
+- 2D array S representing the grid (0=passable, 1=blocked).
+
+**Control Flow:**
+- Main loop processes cells in deque order, prioritizing adjacent moves (cost 0) over warps (cost 1).
+- All 25 neighboring cells are evaluated for each processed cell.
+
+**Dependencies:**
+- Requires `sys` for input handling and `collections.deque` for efficient queue operations.

@@ -1,0 +1,9 @@
+1. Read the number of test cases.
+2. For each test case, read a string of 12 characters.
+3. Check if the string is a solution for the following column counts: 1, 2, 3, 4, 6, 12.
+4. For each column count, verify if all characters at positions that are equivalent modulo the column count are 'X'.
+5. For each column count that results in a valid solution, append the corresponding grid configuration to a list of solutions.
+6. Count the total number of valid solutions found.
+7. Output the count of valid solutions.
+8. Output the list of grid configurations that are valid solutions.
+9. Repeat steps 3-8 for each test case.

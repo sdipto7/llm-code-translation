@@ -1,0 +1,23 @@
+Function Signature: `task4(A: int, B: int, n: int) -> Union[int, str]`
+
+Variable Declarations and Data Types:
+- A: int
+- B: int
+- n: int
+- X: int
+
+Logic Flow in Execution Order:
+1. Loop over X from -1000 to 1000 inclusive:
+   a. If A * (X ** n) equals B:
+      i. Return X
+2. If no solution found in loop:
+   a. Return "No solution"
+
+Input/Output Operations and Data Processing Logic:
+1. Read input from standard input and split into three parts A, B, and n
+2. Convert A, B, and n from strings to integers
+3. Call function task4 with A, B, and n as arguments
+4. Print the result of task4
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries, modules, or dependencies required

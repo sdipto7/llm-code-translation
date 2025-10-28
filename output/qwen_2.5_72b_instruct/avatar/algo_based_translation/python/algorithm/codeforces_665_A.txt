@@ -1,0 +1,28 @@
+function main() -> void
+    a: int, at: int
+    b: int, bt: int
+    t1: int, t2: int
+    st: int
+    fin: int
+    now: int = 0
+    ans: int = 0
+
+    a, at = input().split()
+    a = int(a)
+    at = int(at)
+    b, bt = input().split()
+    b = int(b)
+    bt = int(bt)
+    t1, t2 = input().split(':')
+    t1 = int(t1)
+    t2 = int(t2)
+
+    st = t2 + (t1 - 5) * 60
+    fin = st + at
+
+    while now < fin and now < 1140:
+        if now + bt > st:
+            ans += 1
+        now += b
+
+    print(ans)

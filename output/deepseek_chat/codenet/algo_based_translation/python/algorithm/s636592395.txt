@@ -1,0 +1,5 @@
+Read integer N from input
+Read list A of N integers from input
+Sort list A in ascending order
+Compute ans as last element of A minus first element of A
+Print ans

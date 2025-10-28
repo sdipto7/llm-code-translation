@@ -1,0 +1,38 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- n: int
+- v: list[int]
+- ve: list[int]
+- vo: list[int]
+- ce: collections.Counter
+- co: collections.Counter
+- ans: int
+
+**Required Libraries:**
+- collections
+
+**Algorithm:**
+1. Read integer n from input
+2. Read list v of n integers from input
+3. Initialize empty lists ve and vo
+4. For i from 0 to (n//2)-1:
+   - Append v[2*i] to ve
+   - Append v[2*i+1] to vo
+5. Create frequency counter ce for ve
+6. Create frequency counter co for vo
+7. Set ans = n
+8. If most common element in ce ≠ most common element in co:
+   - ans = n - frequency of most common in ce - frequency of most common in co
+9. Else if ce has only 1 unique element AND co has only 1 unique element:
+   - ans = n - frequency of most common in ce
+10. Else if ce has only 1 unique element:
+    - ans = n - frequency of most common in ce - frequency of second most common in co
+11. Else if co has only 1 unique element:
+    - ans = n - frequency of second most common in ce - frequency of most common in co
+12. Else:
+    - ans = minimum of:
+        (n - frequency of most common in ce - frequency of second most common in co)
+        (n - frequency of second most common in ce - frequency of most common in co)
+13. Print ans

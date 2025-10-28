@@ -1,0 +1,27 @@
+- Import `random` module
+- Read input using `input()`
+- Declare `A` as a list of integers from the split input
+- Modify `A` to include only elements where the current element is less than or equal to the previous one
+- Declare `N` as the length of `A`
+- Define `cut(array: list of tuples, index: int) -> list of tuples`:
+  - If `index < 1`, return empty list
+  - If `index <= array[0][0]`, return list with single tuple `(index, array[0][1])`
+  - For loop from end of `array` to beginning:
+    - If `array[_ - 1][0] < index`, return sliced `array` up to `_` plus tuple `(index, array[_][1])`
+- Define `is_possible(K: int) -> bool`:
+  - Initialize `dp` as list with single tuple `(A[0], 0)`
+  - For loop through elements `a` in `A[1:]`:
+    - If `a <= dp[-1][0]`, update `dp` using `cut(dp, a)`
+    - Else, append tuple `(a, 0)` to `dp`
+    - Set `is_added` to `False`
+    - For loop from end of `dp` to beginning:
+      - If `dp[j][1] < K - 1`, update `dp` using `cut(dp, dp[j][0] - 1)`, append tuple `(dp[j][0], dp[j][1] + 1)`
+      - If `dp[-1][0] < a`, append tuple `(a, 0)` to `dp`
+      - Set `is_added` to `True` and break
+    - If `not is_added`, return `False`
+  - Return `True`
+- Define `bis(x: int, y: int) -> int`:
+  - If `y == x + 1`, return `y`
+  - Else if `is_possible((x + y) // 2)`, return recursive call `bis(x, (x + y) // 2)`
+  - Else, return recursive call `bis((x + y) // 2, y)`
+- Print result of `bis(0, N)`

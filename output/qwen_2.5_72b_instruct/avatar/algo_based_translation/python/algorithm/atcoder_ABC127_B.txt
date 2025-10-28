@@ -1,0 +1,27 @@
+Function Signature: `calculate_and_print_sequence(r: int, D: int, x: int) -> None`
+
+Variable Declarations:
+- `r`: int
+- `D`: int
+- `x`: int
+- `i`: int
+
+Logic Flow:
+1. Read input values for `r`, `D`, and `x` as integers.
+2. For each integer `i` from 2 to 11 (inclusive):
+   - Calculate the value of the expression `(r ** (i - 1)) * (x + D / (1 - r)) - D / (1 - r)`.
+   - Convert the result to an integer.
+   - Print the resulting integer value.
+
+Control Structures:
+- Loop: For loop with `i` ranging from 2 to 11 (inclusive).
+
+Input/Output Operations:
+- Input: Read a single line of input containing three space-separated integers `r`, `D`, and `x`.
+- Output: Print an integer value for each iteration of the loop from 2 to 11.
+
+Data Processing Logic:
+- For each value of `i` in the specified range, compute the given formula and print the result.
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries or modules are required.

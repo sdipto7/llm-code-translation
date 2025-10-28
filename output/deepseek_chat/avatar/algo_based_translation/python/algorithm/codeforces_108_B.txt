@@ -1,0 +1,12 @@
+Function s():
+    Read and discard first input line
+    Read next input line and split into list of strings
+    Convert list of strings to list of integers
+    Sort the list of integers in ascending order
+    For i from 1 to length(list)-1:
+        If current element != previous element AND current element < (previous element * 2):
+            Return 'YES'
+    Return 'NO'
+
+Main:
+    Call function s() and print the returned value

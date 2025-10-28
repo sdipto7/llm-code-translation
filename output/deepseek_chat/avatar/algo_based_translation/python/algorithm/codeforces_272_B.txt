@@ -1,0 +1,47 @@
+1. Function main():
+   - Parameters: none
+   - Return type: integer
+   - Read first input line (ignored)
+   - Read second input line, split into integers, pass to nPairsWithCommonFX
+   - Return result from nPairsWithCommonFX
+
+2. Function nPairsWithCommonFX(sequence):
+   - Parameters: list of integers
+   - Return type: integer
+   - Initialize empty dictionary storage
+   - Initialize empty list FXs
+   - For each value in sequence:
+        - Compute y = f(value)
+        - If y not in storage keys:
+            - Add key y to storage with value [value]
+            - Append y to FXs
+        - Else:
+            - Append value to storage[y]
+   - Compute total_pairs = sum(len(storage[y]) * len(storage[y]) for all y in FXs)
+   - Compute total_elements = sum(len(storage[y]) for all y in FXs)
+   - Return (total_pairs - total_elements) // 2
+
+3. Function f(n):
+   - Parameters: integer n
+   - Return type: integer
+   - Initialize y = 1
+   - While n != 1:
+        - If n % 2 != 0 (n is odd):
+            - Increment y by 1
+        - Set n = n // 2 (integer division)
+   - Return y
+
+4. Main execution:
+   - If __name__ == '__main__':
+        - Call main() and print result
+
+5. Input operations:
+   - First input() call reads and ignores first line
+   - Second input() reads line, splits by whitespace, converts to integers
+
+6. Data structures:
+   - storage: dictionary mapping integers to lists of integers
+   - FXs: list of integers
+   - sequence: list of integers
+
+7. No external libraries or modules required

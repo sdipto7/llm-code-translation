@@ -1,0 +1,24 @@
+Function: run(s: str, t: str) -> str
+Variable Declarations:
+- ss: List[int] (sorted list of character counts in string s)
+- tt: List[int] (sorted list of character counts in string t)
+Logic Flow:
+1. Count the frequency of each character in string s using collections.Counter(s) and convert to a list of values.
+2. Sort the list of character counts from step 1 and assign to ss.
+3. Count the frequency of each character in string t using collections.Counter(t) and convert to a list of values.
+4. Sort the list of character counts from step 3 and assign to tt.
+5. Compare ss and tt.
+6. If ss is equal to tt, return 'Yes'.
+7. Otherwise, return 'No'.
+
+Function: main() -> None
+Variable Declarations:
+- s: str (input string)
+- t: str (input string)
+Logic Flow:
+1. Read input string s from the user.
+2. Read input string t from the user.
+3. Call run(s, t) and print the result.
+
+Required Libraries/Modules:
+- collections (for collections.Counter)

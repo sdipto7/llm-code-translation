@@ -1,0 +1,25 @@
+1. Define function gcd(a, b)
+   1.1. If b equals 0
+      1.1.1. Return a
+   1.2. Else
+      1.2.1. Return gcd(b, a mod b)
+
+2. Define function ruiseki_lr(array)
+   2.1. Define operation op as gcd(a, b)
+   2.2. Initialize e to 0
+   2.3. Set n to the length of array
+   2.4. Create arrays left and right of size n + 1
+   2.5. Initialize all elements of left and right to e
+   2.6. For i from 0 to n - 1
+      2.6.1. left[i + 1] = op(left[i], array[i])
+   2.7. For i from n - 1 to 0
+      2.7.1. right[i] = op(right[i + 1], array[i])
+   2.8. Return left and right
+
+3. Read integer n
+4. Read array a of n integers
+5. Call ruiseki_lr(a) and store result in left and right
+6. Initialize ans to 0
+7. For i from 0 to n - 1
+   7.1. ans = maximum of gcd(left[i], right[i + 1]) and ans
+8. Print ans

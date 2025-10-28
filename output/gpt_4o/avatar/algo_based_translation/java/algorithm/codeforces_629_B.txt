@@ -1,0 +1,32 @@
+1. Import required libraries:
+   - Import `java.util.Scanner`.
+
+2. Define the `main` function:
+   - Signature: `void main(String[] args)`
+
+3. Initialize variables:
+   - Create a `Scanner` object `sc` for input reading.
+   - Declare an integer `n` to store the number of friends, and read its value using `sc.nextInt()`.
+   - Declare an integer array `FfriendPerDay` of size 367 initialized to zeros to track the number of female friends available each day.
+   - Declare an integer array `MfriendPerDay` of size 367 initialized to zeros to track the number of male friends available each day.
+   - Declare an integer `answer` initialized to 0 to store the maximum number of pairs that can be formed.
+
+4. Loop over the number of friends:
+   - For `i` from 0 to `n - 1` (inclusive):
+     - Read a character `c` using `sc.next().charAt(0)` to determine the gender ('M' or 'F').
+     - Read two integers `a` and `b` using `sc.nextInt()` to represent the start and end days of availability.
+
+5. Inner loop over days of availability:
+   - For `j` from `a` to `b` (inclusive):
+     - If `c` is 'M', increment `MfriendPerDay[j]`.
+     - Else, increment `FfriendPerDay[j]`.
+
+6. Determine the maximum number of pairs:
+   - Compare `MfriendPerDay[j]` and `FfriendPerDay[j]` for the current day `j`.
+   - If `MfriendPerDay[j]` is less than `FfriendPerDay[j]`:
+     - If `MfriendPerDay[j]` is greater than `answer`, update `answer` to `MfriendPerDay[j]`.
+   - Else:
+     - If `FfriendPerDay[j]` is greater than `answer`, update `answer` to `FfriendPerDay[j]`.
+
+7. Output the result:
+   - Print `answer * 2` to display the maximum number of pairs that can be formed.

@@ -1,0 +1,28 @@
+1. Import required libraries: java.util.*
+2. Define a class: Main
+3. Define a main function with signature: public static void main(String[] args) throws java.lang.Exception
+   - Declare a Scanner object: sc of type Scanner
+   - Initialize sc with System.in
+   - Declare an integer variable: count
+   - Read count from sc using nextInt()
+   - Loop from 0 to count-1 using a for loop with loop counter i
+     - Read three integers: y, m, d from sc using nextInt()
+     - Call a function Answer with parameters y, m, d and print the result using System.out.println()
+4. Define a function Answer with signature: public static int Answer(int y, int m, int d)
+   - Declare an integer variable: result and initialize it to 1
+   - Check if y is divisible by 3 using if (y % 3 == 0)
+     - If true, increment result by (20 - d)
+     - Else check if m is even using else if (m % 2 == 0)
+       - If true, increment result by (19 - d)
+       - Else increment result by (20 - d)
+   - Loop from m+1 to 10 using a for loop with loop counter m
+     - Check if y is divisible by 3 using if (y % 3 == 0)
+       - If true, increment result by 20
+       - Else check if m is even using if (m % 2 == 0)
+         - If true, increment result by 19
+         - Else increment result by 20
+   - Loop from y+1 to 999 using a for loop with loop counter y
+     - Check if y is divisible by 3 using if (y % 3 == 0)
+       - If true, increment result by 200
+       - Else increment result by 195
+   - Return result

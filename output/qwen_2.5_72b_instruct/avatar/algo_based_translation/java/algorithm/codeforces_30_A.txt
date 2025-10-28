@@ -1,0 +1,27 @@
+Function signatures with parameter and return types:
+- main(String[]): void
+- solve(Scanner): void
+
+Variable declarations and data types:
+- A: int
+- B: int
+- n: int
+- neg: boolean
+- x: int
+
+Complete logic flow in execution order:
+
+1. Create a new instance of codeforces_30_A and call solve with a new Scanner for System.in.
+2. In solve:
+   - Read three integers A, B, and n from the scanner.
+   - If A is 0:
+     - If B is 0, print 1 and return.
+     - Otherwise, print "No solution" and return.
+   - If B modulo A is not 0, print "No solution" and return.
+   - Divide B by A.
+   - Set neg to true if B is less than 0, otherwise false.
+   - If neg is true and n modulo 2 is 0, print "No solution" and return.
+   - If neg is true, set B to -B.
+   - For x from 0 to B (inclusive):
+     - If x to the power of n equals B, print -x if neg is true, otherwise print x, and return.
+   - Print "No solution".

@@ -1,0 +1,28 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- input1: str (from first input())
+- input2: str (from second input())
+- result: int (return value from sum())
+
+**Logic Flow:**
+1. Read first input string from stdin → input1
+2. Read second input string from stdin → input2
+3. For each corresponding character pair (char1 from input1, char2 from input2):
+   - Apply lambda function: lambda x, y: 1 if x == y else 0
+4. Map generates sequence of 1s (match) and 0s (no match)
+5. Sum all values in mapped sequence
+6. Print resulting sum
+
+**Control Structures:**
+- Implicit iteration through map() over input strings
+- Conditional comparison (x == y) for each character pair
+
+**Input/Output:**
+- Input: Two strings from stdin
+- Output: Integer count of matching character positions printed to stdout
+
+**Dependencies:**
+- Built-in functions: input(), map(), sum(), print()
+- No external libraries required

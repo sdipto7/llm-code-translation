@@ -1,0 +1,49 @@
+Function signatures:
+- main(String[] args): void
+- findS(int k, int i): int
+
+Variable declarations and data types:
+- Scanner scanner: for input
+- int n: input number
+- long ans: to store the final result, initialized to 1
+- int mod: modulus value, set to \(10^9 + 7\)
+- int i, j, k: loop indices
+- int s: to accumulate sum of powers of prime factors
+
+Logic flow in execution order:
+- Create a Scanner object to read input
+- Read integer n from input
+- Initialize ans to 1 and mod to \(10^9 + 7\)
+- Loop over i from 2 to n
+  - Loop over j from 2 to i
+    - If j equals i or i is divisible by j
+      - If j equals i
+        - Initialize s to 0
+        - Loop over k from 1 to n
+          - Add result of findS(k, i) to s
+        - Update ans to \((ans * (s + 1)) \mod mod\)
+- Print ans
+
+Control structures:
+- for loop for i from 2 to n
+- for loop for j from 2 to i with condition \((i \% j \neq 0 \land j < i) \lor j == i\)
+- if statement with condition \(j == i\)
+- for loop for k from 1 to n
+- if statement within findS with condition \(j \% i == 0\)
+
+Input/output operations:
+- Read integer n from standard input
+- Print long ans to standard output
+
+Data processing logic:
+- Determine if a number i is prime by checking divisibility from 2 to i
+- For each prime i, calculate the sum s of powers of i in numbers from 1 to n
+- Update ans by multiplying it with \((s + 1)\) and taking modulo \(10^9 + 7\)
+
+Required libraries:
+- java.util.Scanner
+
+Function findS logic:
+- Initialize s to 0
+- While k is divisible by i, divide k by i and increment s
+- Return s

@@ -1,0 +1,13 @@
+1. Define a function `count_segments` with no parameters and return type integer.
+2. Declare variable `n` of type integer.
+3. Read an integer input from the user and store it in `n`.
+4. Declare variable `s` of type string.
+5. Read a string input from the user and store it in `s`.
+6. Declare variable `cnt` of type integer and initialize it to 1.
+7. Start a for loop iterating from 0 to `n-2` (inclusive).
+8. Inside the loop, compare the character at index `i` and `i+1` in string `s`.
+9. If the characters are equal, continue to the next iteration.
+10. If the characters are not equal, increment `cnt` by 1.
+11. After the loop finishes, print the value of `cnt`.
+12. The program terminates. 
+ Required libraries: built-in input/output functions.

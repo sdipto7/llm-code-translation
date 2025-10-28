@@ -1,0 +1,25 @@
+- Function: func(a: int) -> None
+- Variables:
+  - a: int (input from user)
+  - digits: list[int] (initialized empty)
+  - temp: int (initialized to a)
+  - result: int
+- Execution flow:
+  1. Read integer input from user and store in variable a
+  2. Call func(a)
+  3. Initialize temp with value of a
+  4. While temp is not equal to 0:
+      a. Calculate temp % 10 and append to digits list
+      b. Update temp to temp // 10
+  5. Calculate sum of all elements in digits, store in result
+  6. If result equals 1:
+      a. Print '10'
+  7. Else:
+      a. Print result
+- Control structures:
+  - While loop: while temp != 0
+  - Conditional: if result == 1
+- Input/Output:
+  - Input: Single integer via standard input
+  - Output: Print either '10' or sum result to standard output
+- Dependencies: None

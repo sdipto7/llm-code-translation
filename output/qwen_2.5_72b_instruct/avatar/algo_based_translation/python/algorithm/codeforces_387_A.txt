@@ -1,0 +1,31 @@
+Function Signature: `calculate_time_difference() -> None`
+
+Variable Declarations:
+- `h1: int`
+- `m1: int`
+- `h2: int`
+- `m2: int`
+
+Logic Flow:
+1. Read input as a string and split by ':' to get two parts. Convert both parts to integers and assign to `h1` and `m1` respectively.
+2. Convert `h1` hours to minutes and add to `m1`.
+3. Read another input as a string and split by ':' to get two parts. Convert both parts to integers and assign to `h2` and `m2` respectively.
+4. Convert `h2` hours to minutes and add to `m2`.
+5. Subtract `m2` from `m1` and update `m2` with the result.
+6. Calculate `m2` modulo 1440 and update `m2` with the result.
+7. Calculate hours by integer division of `m2` by 60.
+8. Calculate minutes by modulo operation of `m2` by 60.
+9. Print the result in the format "HH:MM" where HH is zero-padded to two digits and MM is zero-padded to two digits.
+
+Input/Output Operations:
+- Input: Two time strings in "HH:MM" format.
+- Output: A time string in "HH:MM" format representing the difference between the two input times, modulo 24 hours.
+
+Data Processing Logic:
+- Convert times from "HH:MM" format to total minutes since midnight.
+- Calculate the difference between the two times.
+- Handle the case where the second time is later than the first by using modulo 1440.
+- Convert the difference back to "HH:MM" format for output.
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries or modules required.

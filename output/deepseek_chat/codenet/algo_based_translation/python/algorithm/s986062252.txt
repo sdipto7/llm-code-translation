@@ -1,0 +1,21 @@
+**Function Definitions:**
+- `il(func: Callable = int) -> List[int]`: Reads a line from stdin, strips whitespace, splits into tokens, applies `func` to each token, returns list.
+- `ils(n: int, s: str = "int(input())") -> List[Any]`: Evaluates `s` `n` times, returns list of results.
+- `gcd(a: int, b: int) -> int`: Recursively computes greatest common divisor using Euclidean algorithm.
+- `lcm(a: int, b: int) -> int`: Computes least common multiple using `gcd`.
+
+**Main Execution:**
+1. Read integers `n` and `m` from stdin using `il()`.
+2. Read string `s` from stdin.
+3. Read string `t` from stdin.
+4. Compute `aa = gcd(n, m)`.
+5. Compute `bb = lcm(n, m)`.
+6. Compute `cc = aa // bb` (unused).
+7. For `i` in range `[0, aa-1]`:
+   - Check if `s[n//aa * i] != t[m//aa * i]`:
+     - If true, print `-1` and exit.
+8. Print `bb`.
+
+**Libraries/Dependencies:**
+- `sys.stdin` for input reading.
+- Built-in functions: `map`, `eval`, `input`, `range`, `print`, `exit`.

@@ -1,0 +1,37 @@
+Function Signature:
+- main(String[] args) : void
+
+Variable Declarations:
+- n : int
+- a : int
+- b : int
+- c : int
+- x : int
+- y : int
+- sc : Scanner
+
+Logic Flow:
+1. Initialize n, a, b, c to 0
+2. Create a Scanner object sc to read input
+3. Read n as an integer from input
+4. Loop i from 0 to n-1 (inclusive):
+   - Read an integer from input
+   - Add the read integer to a
+5. Loop i from 0 to n-2 (inclusive):
+   - Read an integer from input
+   - Add the read integer to b
+6. Loop i from 0 to n-3 (inclusive):
+   - Read an integer from input
+   - Add the read integer to c
+7. Calculate x as a - b
+8. Calculate y as b - c
+9. Print x
+10. Print y
+
+Input/Output Operations:
+- Input: Read integers from standard input
+- Output: Print integers x and y to standard output
+
+Libraries/Modules:
+- java.util.Scanner
+- java.io.IOException

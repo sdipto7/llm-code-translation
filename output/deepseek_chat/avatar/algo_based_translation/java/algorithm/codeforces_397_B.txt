@@ -1,0 +1,76 @@
+**Function Signature:**
+main(String[] args)
+- Parameters: String array args
+- Return type: void
+
+**Variables:**
+- Scanner in (input scanner)
+- PrintWriter out (output writer)
+- int t (test case count)
+- long n (input value)
+- long a (input value)
+- long b (input value)
+- long x (calculated value)
+- long low (binary search lower bound)
+- long high (binary search upper bound)
+- long ans (binary search result)
+- long mid (binary search midpoint)
+
+**Logic Flow:**
+1. Initialize Scanner with System.in
+2. Initialize PrintWriter with System.out
+3. Read integer t (number of test cases)
+4. While t > 0:
+   - Decrement t
+   - Read long n
+   - Read long a
+   - Read long b
+   - If n < a:
+     - Print "No"
+     - Continue to next iteration
+   - If a == b:
+     - If n % a == 0:
+       - Print "Yes"
+     - Else:
+       - Print "No"
+     - Continue to next iteration
+   - Calculate x = b / (b - a)
+   - If n > x * a:
+     - Print "Yes"
+     - Continue to next iteration
+   - Set low = 1
+   - Set high = x + 1
+   - Set ans = 1
+   - While low <= high:
+     - Calculate mid = (low + high) / 2
+     - If mid * a < n:
+       - Set low = mid + 1
+     - Else:
+       - Set ans = mid
+       - Set high = mid - 1
+   - If n > (ans - 1) * b AND n < ans * a:
+     - Print "No"
+   - Else:
+     - Print "Yes"
+5. Close PrintWriter
+
+**Control Structures:**
+- While loop: t-- > 0
+- If condition: n < a
+- If condition: a == b
+- If condition: n % a == 0
+- If condition: n > x * a
+- While loop: low <= high
+- If condition: mid * a < n
+- If condition: n > (ans - 1) * b && n < ans * a
+
+**Input/Output Operations:**
+- Input: nextInt() for t, n, a, b
+- Output: println() for "Yes"/"No" responses
+
+**Required Dependencies:**
+- java.io.IOException
+- java.io.InputStream
+- java.io.PrintWriter
+- java.util.Scanner
+- java.util.InputMismatchException

@@ -1,0 +1,23 @@
+1. Import the necessary library for input operations:
+   - Import `java.util.Scanner` for reading input from the user.
+
+2. Define the `main` function:
+   - Signature: `public static void main(String[] args)`
+   - Parameters: `args` of type `String array`
+   - Return type: `void`
+
+3. Declare and initialize a `Scanner` object:
+   - Variable: `sc`
+   - Data Type: `Scanner`
+   - Initialization: `new Scanner(System.in)`
+
+4. Read integer inputs from the user:
+   - Declare integer variable `x` and assign it the value of `sc.nextInt()`.
+   - Declare integer variable `y` and assign it the value of `sc.nextInt()`.
+   - Declare integer variable `z` and assign it the value of `sc.nextInt()`.
+
+5. Close the scanner to release resources:
+   - Call `sc.close()`.
+
+6. Output the integers in a specific order:
+   - Print the integers in the order: `z`, `x`, `y` using `System.out.println(z + " " + x + " " + y)`.

@@ -1,0 +1,39 @@
+```plaintext
+Algorithm
+
+Inputs:
+- First input line: A string containing two integers separated by space, representing n and m.
+- Next m lines: Each line contains two integers separated by space, representing pairs (a1, b1).
+
+Outputs:
+- For each integer i from 1 to n, output the sum of occurrences of i in both lists a and b.
+
+Function Signature:
+- No function is defined, logic is executed in the main flow.
+
+Variable Declarations:
+- n (int): Number of nodes.
+- m (int): Number of pairs.
+- a (list of int): List to store the first elements of each pair.
+- b (list of int): List to store the second elements of each pair.
+- a1, b1 (int): Temporary variables to store input pairs.
+
+Algorithm Steps:
+1. Read the first line of input and parse it into two integers n and m.
+2. Initialize two empty lists a and b.
+3. Loop m times to read pairs of integers:
+   - In each iteration, read a line of input and parse it into two integers, a1 and b1.
+   - Append a1 to list a.
+   - Append b1 to list b.
+4. Loop through integers i from 1 to n:
+   - For each i, calculate the count of i in list a and list b.
+   - Output the sum of these counts for each i.
+
+Control Structures:
+- A loop that iterates m times to read input pairs.
+- A loop that iterates from 1 to n to count and output occurrences.
+
+Dependencies:
+- Uses standard input and output functions.
+- Uses list methods such as append and count.
+```

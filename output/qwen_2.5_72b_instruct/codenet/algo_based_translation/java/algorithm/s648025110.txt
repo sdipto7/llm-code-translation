@@ -1,0 +1,29 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations:
+- `Scanner sc` of type `Scanner`
+- `int n` of type `int`
+- `int[] h` of type `array of int`
+- `int ans` of type `int`
+- `int out` of type `int`
+
+Logic flow:
+1. Create a new `Scanner` object for reading input from standard input.
+2. Read an integer `n` from the input.
+3. Initialize an array `h` of size `n`.
+4. For each index `i` from 0 to `n-1`, read an integer and store it in `h[i]`.
+5. Initialize `ans` to 0.
+6. Initialize `out` to 0.
+7. For each index `i` from 0 to `h.length-1`:
+   - If `out` is less than `h[i]`:
+     - Add the difference between `h[i]` and `out` to `ans`.
+     - Set `out` to `h[i]`.
+   - Otherwise, set `out` to `h[i]`.
+8. Print the value of `ans`.
+
+Input/output operations:
+- Read integers from standard input using `sc.nextInt()`.
+- Print the final value of `ans` to standard output using `System.out.println(ans)`.
+
+Libraries/modules/dependencies:
+- `java.util.Scanner`

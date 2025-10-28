@@ -1,0 +1,26 @@
+Function Signature:
+- `public static void main(String[] args)`
+
+Variable Declarations and Data Types:
+- `Scanner sc = new Scanner(System.in)`
+- `int N`
+- `int[] map = new int[N * 2]`
+- `int max = 0`
+
+Logic Flow and Control Structures:
+1. Read an integer `N` from standard input.
+2. Initialize an array `map` of size `N * 2`.
+3. For loop from `i = 0` to `i < N * 2` (inclusive):
+   - Read an integer from standard input and store it in `map[i]`.
+4. Sort the array `map`.
+5. For loop from `i = 0` to `i < N * 2` (inclusive) with step size 2:
+   - Add the minimum of `map[i]` and `map[i + 1]` to `max`.
+6. Print the value of `max` to standard output.
+
+Input/Output Operations:
+- Read integer `N` from standard input.
+- Read `N * 2` integers from standard input and store them in `map`.
+- Output the value of `max` to standard output.
+
+Libraries and Modules:
+- `java.util.*`

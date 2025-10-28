@@ -1,0 +1,47 @@
+Algorithm:
+
+Function Signatures:
+- main: void
+  - Parameters: None
+  - Return type: void
+
+Variable Declarations:
+- w: int
+- h: int
+- n: int
+- x: int[] (size n)
+- y: int[] (size n)
+- a: int[] (size n)
+- xmax: int (initial value = w)
+- xmin: int (initial value = 0)
+- ymax: int (initial value = h)
+- ymin: int (initial value = 0)
+
+Logic Flow:
+1. Read integers w, h, n from input
+2. Initialize x, y, a arrays with size n
+3. For i from 0 to n-1 (inclusive):
+   a. Read x[i], y[i], a[i] from input
+   b. Execute switch-case based on a[i]:
+      - Case 1: xmin = maximum of xmin and x[i]
+      - Case 2: xmax = minimum of xmax and x[i]
+      - Case 3: ymin = maximum of ymin and y[i]
+      - Case 4: ymax = minimum of ymax and y[i]
+4. Compute w = max(xmax - xmin, 0)
+5. Compute h = max(ymax - ymin, 0)
+6. Output w * h
+
+Control Structures:
+- For loop:
+  - Iteration: i from 0 to n-1 (0-based index)
+- Switch statement:
+  - Conditions: a[i] values (1, 2, 3, 4)
+  - No default case
+
+Input/Output Operations:
+- Read 3 integers from stdin (w, h, n)
+- Read n triplets of integers (x, y, a) sequentially
+- Write integer result (w * h) to stdout
+
+Required Libraries/Dependencies:
+- java.util.Scanner (for input handling in Java implementation)

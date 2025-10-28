@@ -1,0 +1,33 @@
+- **Function Signature**:  
+  `void main(String[] args)`  
+
+- **Variables**:  
+  - `Scanner input` (reads from `System.in`)  
+  - `PrintWriter out` (writes to `System.out`)  
+  - `int n` (number of entries)  
+  - 2D array `int[][] vec` (size `n x 4`, stores entries: speed, RAM, HDD, price)  
+  - `int ans` (index of selected entry, initialized to 500)  
+  - `int ansprice` (minimum valid price, initialized to 20000)  
+
+- **Input Processing**:  
+  1. Read integer `n` from input.  
+  2. For each of `n` entries, read four integers into `vec[i][0]`, `vec[i][1]`, `vec[i][2]`, `vec[i][3]`.  
+
+- **Algorithm Logic**:  
+  1. Iterate over each entry `i` (from `0` to `n-1`):  
+     a. Initialize flag `fl = 1` (assume entry `i` is not outdated).  
+     b. Iterate over all entries `j` (from `0` to `n-1`):  
+        - If `vec[i][0] < vec[j][0]`, `vec[i][1] < vec[j][1]`, and `vec[i][2] < vec[j][2]`, set `fl = 0` (entry `i` is outdated).  
+     c. If `fl == 1` (entry `i` is valid):  
+        - If `vec[i][3] < ansprice`, update `ansprice = vec[i][3]` and `ans = i + 1`.  
+
+- **Output**:  
+  Print the 1-based index `ans` of the selected entry.  
+
+- **Control Structures**:  
+  - Nested `for` loops (outer loop for each entry, inner loop for comparison).  
+  - `if` conditions for checking outdated status and price comparison.  
+
+- **Dependencies**:  
+  - `java.util.Scanner` (input handling)  
+  - `java.io.PrintWriter` (output handling, though unused in final print)

@@ -1,0 +1,22 @@
+- Function Signatures:
+  - `main(String[] args) throws IOException`
+
+- Variable Declarations and Data Types:
+  - `BufferedReader br` initialized to read from `System.in`
+  - `String line` to store input line
+  - `String[] list` to store split input
+  - `int x` to store first integer from input
+  - `int a` to store second integer from input
+  - `int y` to store third integer from input
+  - `String h` initialized to "NO"
+
+- Logic Flow:
+  - Read a line of input using `br.readLine()`
+  - Split the input line by spaces into `list`
+  - Parse the first element of `list` to integer `x`
+  - Parse the second element of `list` to integer `a`
+  - Parse the third element of `list` to integer `y`
+  - Check if any of `x`, `a`, `y` is equal to 5 or 7 using condition `x == 5 | x == 7 | a == 5 | a == 7 | y == 5 | y == 7`
+    - If true, check if the sum of `x`, `a`, `y` equals 17 using condition `x + y + a == 17`
+      - If true, set `h` to "YES"
+  - Print the value of `h`

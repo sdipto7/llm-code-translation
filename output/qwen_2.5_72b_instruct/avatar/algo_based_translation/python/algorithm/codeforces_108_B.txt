@@ -1,0 +1,30 @@
+Function Signature: `s() -> str`
+
+Variable Declarations and Data Types:
+- `a`: List[int]
+
+Logic Flow in Execution Order:
+1. Call `input()`, discard the result.
+2. Call `input()`, split the result by spaces, convert each to int, and store in list `a`.
+3. Sort list `a` in ascending order.
+4. Loop through list `a` starting from index 1:
+   - If `a[i]` is not equal to `a[i-1]` and `a[i]` is less than `a[i-1] * 2`:
+     - Return 'YES'
+5. If loop completes without returning 'YES':
+   - Return 'NO'
+
+Control Structures:
+- Loop: `for i in range(1, len(a))`
+- Conditional: `if a[i] != a[i-1] and a[i] < a[i-1] * 2`
+
+Input/Output Operations:
+- Input: Two calls to `input()`, discard the first, process the second into a list of integers.
+- Output: Print the result of function `s()`.
+
+Data Processing Logic:
+- Convert input string into a list of integers.
+- Sort the list.
+- Check consecutive elements in the sorted list for the specified condition.
+
+Libraries/Modules/Dependencies:
+- No external libraries or modules are used.

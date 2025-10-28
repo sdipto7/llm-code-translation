@@ -1,0 +1,58 @@
+```plaintext
+Algorithm:
+
+Constants:
+- MAX: integer (100)
+
+Functions:
+1. main(args: array of String) -> void
+    - Variables:
+        - scanner: Scanner (System.in)
+        - n: integer
+        - x: array of integers (size n)
+        - y: array of integers (size n)
+        - h: array of integers (size n)
+        - i: integer (loop)
+        - j: integer (loop)
+        - ch: integer
+    - Logic Flow:
+        a. Read integer n from input
+        b. Initialize x, y, h arrays with n elements
+        c. For each index in 0..n-1:
+            i. Read x[i], y[i], h[i] from input
+        d. For i from 0 to MAX inclusive:
+            i. For j from 0 to MAX inclusive:
+                A. Call check(n, x, y, h, i, j) -> store in ch
+                B. If ch > 0:
+                    I. Print i, j, ch
+                    II. Exit loops (implicit via return if correct solution)
+2. check(n: integer, x: array of integers, y: array of integers, h: array of integers, cx: integer, cy: integer) -> integer
+    - Variables:
+        - ch: integer (initialized to -1)
+        - i: integer (loop)
+    - Logic Flow:
+        a. For i from 0 to n-1:
+            i. If h[i] > 0:
+                A. ch = |x[i] - cx| + |y[i] - cy| + h[i]
+                B. Break loop
+        b. For i from 0 to n-1:
+            i. expected_h = max(ch - |x[i] - cx| - |y[i] - cy|, 0)
+            ii. If h[i] != expected_h:
+                A. Return -1
+        c. Return ch
+
+Input Processing:
+- Read all input values via Scanner in sequential order:
+    1. n
+    2. n triplets of x, y, h values
+
+Control Structures:
+- Nested for-loops in main (0 <= i <= MAX, 0 <= j <= MAX)
+- forEach loop for initial data input
+- Two sequential for-loops in check function
+- Conditional checks for h[i] > 0 and h[i] != expected_h
+
+Dependencies:
+- Requires java.util.Scanner for input handling
+- Uses java.util.stream.IntStream for initial data input
+```

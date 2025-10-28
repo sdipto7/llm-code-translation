@@ -1,0 +1,29 @@
+- **Input/Output Dependencies**: Java Scanner for input, PrintStream for output
+- **Functions**:
+  - main method: Returns void, parameters String[] args
+  - Helper methods: nlong(), nint(), nstr(), nsToChars(), nlongs(n), nints(n), nstrs(n), nsToChars2D(h,w,pad)
+- **Variables**:
+  - Static Scanner `sc`, PrintStream `so`
+  - int N (item count), W (max weight capacity)
+  - int[] v (item values), w (item weights)
+  - int[][] sumV (DP table for max values)
+- **Execution Flow**:
+  1. Read N and W via nint()
+  2. Initialize v[1..N] and w[1..N] arrays
+  3. Populate v and w by reading N pairs via nint()
+  4. Initialize sumV[N+1][W+1] with default 0 values
+  5. For each item i from 1 to N:
+      a. For weight sums i_sum from 0 to w[i]-1:
+          - Set sumV[i][i_sum] = sumV[i-1][i_sum]
+      b. For weight sums i_sum from w[i] to W:
+          - Compute sumV[i][i_sum] as max of:
+              * sumV[i-1][i_sum] (exclude item i)
+              * sumV[i-1][i_sum - w[i]] + v[i] (include item i)
+  6. Output sumV[N][W] via PrintStream
+- **Control Structures**:
+  - Nested loops: Outer i loop (1-N) with inner i_sum loops
+  - Conditional value selection via Math.max
+- **Data Flow**:
+  - DP table built bottom-up
+  - Weight bounds determine copy vs. max selection logic
+  - Final result stored in last cell of DP table

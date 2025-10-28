@@ -1,0 +1,75 @@
+**Structured Algorithm Specification**
+
+**1. Function/Method Signatures**
+- `dfs(links: List[Set[int]], n: int, k: int, v: int, p: int) -> Tuple[int, int]`
+  - Parameters:
+    - `links`: Adjacency list of tree nodes (0-based indices)
+    - `n`: Total node count
+    - `k`: Height threshold for edge cutting
+    - `v`: Current node index
+    - `p`: Parent node index
+  - Returns: Tuple (current height from leaf, cumulative cut count)
+
+**2. Variable Declarations**
+- Global:
+  - `sys` module for input handling
+- In `dfs`:
+  - `height_from_leaf: int` (initial 0)
+  - `cut_count: int` (initial 0)
+  - `u: int` (loop variable for child nodes)
+- Main:
+  - `n: int`, `k: int`, `aaa: List[int]` (input parameters)
+  - `links: List[Set[int]]` (size n)
+  - `ans: int` (final result)
+  - `i: int`, `a: int` (loop variables)
+
+**3. Logic Flow**
+**3.1 Main Program**
+1. Read all input values as integers via `sys.stdin.buffer.read()`
+2. Parse first two values as `n` and `k`
+3. Parse remaining values into list `aaa` (size `n`)
+4. Initialize `links` with `n` empty sets
+5. For each `i` in 0..n-1:
+   1. Compute `a = aaa[i] - 1`
+   2. Add `i` to `links[a]`
+6. Call `dfs(links, n, k, 0, 0)` and store cuts in `ans`
+7. If `aaa[0]` (original input) ≠ 1: increment `ans` by 1
+8. Print `ans`
+
+**3.2 DFS Function**
+1. For each child `u` in `links[v]`:
+   1. Skip iteration if `u == 0`
+   2. Recursively call `dfs` for node `u`, store results `hgt` and `cut`
+   3. Update `height_from_leaf = max(height_from_leaf, hgt)`
+   4. Accumulate `cut_count += cut`
+2. Increment `height_from_leaf` by 1
+3. If `p ≠ 0` AND `height_from_leaf == k`:
+   1. Reset `height_from_leaf = 0`
+   2. Increment `cut_count += 1`
+4. Return (`height_from_leaf`, `cut_count`)
+
+**4. Control Flow Structures**
+- **Main Program**
+  - For-loop: Iterates n times to build adjacency list
+  - Conditional: Checks root's original parent in input
+- **DFS**
+  - For-loop: Processes all children of current node
+  - Conditional skipping: `continue` if child is 0
+  - Recursive calls: Process subtree depth-first
+  - Post-order conditional: Node cutting logic
+
+**5. Input/Output Operations**
+- Input: Reads space-separated integers via `sys.stdin`
+  - Format: `n k a1 a2 ... an`
+- Output: Single integer `ans` via `print()`
+
+**6. Edge Case Handling**
+- Root node special case (additional cut if original parent ≠ 1)
+- Leaf nodes automatically return height 1
+- Prevents parent loopback checks (`u == 0` skip)
+- Reset height precisely when reaching threshold `k`
+
+**7. External Dependencies**
+- `sys` module for:
+  - `sys.stdin.buffer.read()`
+  - `sys.setrecursionlimit()` (Python-specific optimization)

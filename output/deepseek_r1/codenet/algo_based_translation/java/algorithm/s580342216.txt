@@ -1,0 +1,75 @@
+// Function Signatures and Variables:
+Main class:
+- main(String[] args) : void
+
+Solution class:
+- scanner : Scanner
+- Constructor() : Initializes scanner, loops on hasNext() to call run_case()
+- run_case() : void
+  - Variables: String line, int N, int K, int len
+  - Reads input line, splits into N and K
+  - While N > 0: divides N by K, increments len
+  - Prints len
+- strToIntArray(String str) : int[]
+  - Variables: String[] vals, int sz, int[] res
+
+LCS class:
+- dp : int[][]
+- lcs(String A, String B) : int
+  - Variables: int sz_a, sz_b
+  - Creates 2D dp array
+  - Initializes dp first row/column to 0
+  - Nested loops for i (1 to sz_a) and j (1 to sz_b)
+    - Compares A.charAt(i-1) and B.charAt(j-1)
+    - Updates dp[i][j] based on match status
+- getLCS(String X, String Y) : String
+  - Variables: int m, n, index, temp, char[] lcs, i, j
+  - Backtracks through dp array from (m,n) to (0,0)
+  - Builds lcs array in reverse order
+  - Returns substring of reconstructed LCS
+
+// Logic Flow and Control Structures:
+Solution Constructor:
+1. Initialize scanner
+2. Loop while scanner.hasNext():
+   a. Call run_case()
+
+run_case():
+1. Read line from input
+2. Split line into two integers N and K
+3. Initialize len = 0
+4. While loop (N > 0):
+   a. N = N / K
+   b. len++
+5. Print len
+
+lcs():
+1. Initialize dp array with dimensions (A.length+1) x (B.length+1)
+2. Set first row and column to 0
+3. For i from 1 to A.length():
+   a. For j from 1 to B.length():
+      i. If A[i-1] == B[j-1]: dp[i][j] = dp[i-1][j-1] + 1
+      ii. Else: dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+4. Return dp[A.length()][B.length()]
+
+getLCS():
+1. Initialize index = dp[m][n], temp = index
+2. Create lcs array of size index+1
+3. Set i = m, j = n
+4. While (i > 0 && j > 0):
+   a. If X[i-1] == Y[j-1]:
+      i. Store character in lcs[index-1]
+      ii. Decrement i, j, index
+   b. Else if dp[i-1][j] > dp[i][j-1]: decrement i
+   c. Else: decrement j
+5. Return lcs substring from 0 to temp
+
+// Input/Output Operations:
+- Input through Scanner reading System.in
+- Line parsing via split("\\s+") for space-separated values
+- Output via System.out.println for length calculation result
+
+// Dependencies:
+- java.util.Scanner
+- java.lang (auto-imported)
+- java.io (for potential IOExceptions)

@@ -1,0 +1,50 @@
+Function signature: main()
+
+Variable declarations and data types:
+- s: string
+- q: integer
+- qs: list of lists of strings
+- n: boolean
+- left: string
+- right: string
+- operation: list of strings
+- t: string
+- f: integer
+- c: string
+
+Complete logic flow in execution order:
+1. Read a string input and assign it to s
+2. Read an integer input and assign it to q
+3. Initialize an empty list qs
+4. For i in range q do:
+   - Read a line of input, split it by spaces, and append the resulting list to qs
+5. Set n to False
+6. Set left to an empty string
+7. Set right to an empty string
+8. For each operation in qs do:
+   - If the first element of operation is '1' then:
+     - Toggle the value of n
+   - If the first element of operation is '2' then:
+     - Assign the elements of operation to t, f, and c respectively
+     - Convert f to integer
+     - If n is True then:
+       - Set f to 1 if f is not equal to 1, otherwise set f to 2
+     - If f is equal to 1 then:
+       - Prepend c to left
+     - Else if f is equal to 2 then:
+       - Append c to right
+9. Concatenate left, s, and right, and assign the result back to s
+10. If n is True then:
+    - Print the reverse of s
+    - Otherwise, print s
+
+Input/output operations and data processing logic:
+- Read a string input
+- Read an integer q
+- Read q lines of input and process each line based on the operation type ('1' or '2')
+- Modify the strings left and right based on the operation type and parameters
+- Concatenate the strings left, s, and right
+- Print the final string, possibly reversed
+
+Required libraries, modules, or dependencies:
+- None

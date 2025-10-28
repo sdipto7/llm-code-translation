@@ -1,0 +1,36 @@
+```
+Function signature:
+    - main() : void
+
+Variable declarations:
+    - sc : Scanner
+    - H : int
+    - W : int
+    - S : char[][]
+
+Logic flow:
+1. Initialize a Scanner object 'sc' to read input.
+2. Read an integer 'H' from input.
+3. Read an integer 'W' from input.
+4. Consume the remaining newline character.
+5. Declare a 2D character array 'S' with dimensions [H][W].
+6. For each row index 'i' from 0 to H-1, execute:
+    a. Read a line of text from input and store in 'text'.
+    b. For each column index 'j' from 0 to W-1, execute:
+        i. Assign the character at position 'j' in 'text' to S[i][j].
+7. Close the Scanner 'sc'.
+8. For each row index 'i' from 0 to H-1, execute:
+    a. For each column index 'j' from 0 to W-1, execute:
+        i. If S[i][j] is '.', then:
+            - Initialize 'count' as 0.
+            - For each offset 'a' from -1 to 1, execute:
+                - If (i + a) is out of bounds (less than 0 or greater than or equal to H), continue to the next iteration of the loop.
+                - For each offset 'b' from -1 to 1, execute:
+                    - If (j + b) is out of bounds (less than 0 or greater than or equal to W), continue to the next iteration of the loop.
+                    - If S[i + a][j + b] equals '#', increment 'count' by 1.
+            - Assign the character representation of 'count' (offset by 48) to S[i][j].
+        ii. Print S[i][j] to output without a newline.
+    b. Print a newline character to output.
+Dependencies:
+    - import java.util.Scanner
+```

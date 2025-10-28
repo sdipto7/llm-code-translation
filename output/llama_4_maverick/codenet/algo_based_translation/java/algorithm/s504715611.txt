@@ -1,0 +1,112 @@
+1. Import required libraries:
+   - java.io.IOException
+   - java.io.InputStream
+   - java.util.Arrays
+   - java.util.NoSuchElementException
+   - java.util.Random
+   - java.util.Scanner
+
+2. Define a class `UnionFind` with:
+   - Integer array `Parent`
+   - Constructor `UnionFind(int n)`:
+     - Initialize `Parent` with size `n`
+     - Fill `Parent` with `-1`
+   - Method `int root(int A)`:
+     - If `Parent[A]` is less than `0`, return `A`
+     - Otherwise, return `Parent[A] = root(Parent[A])`
+   - Method `int size(int A)`:
+     - Return `-Parent[root(A)]`
+   - Method `boolean connect(int A, int B)`:
+     - Find roots of `A` and `B`
+     - If roots are the same, return `false`
+     - If size of `A` is less than size of `B`, swap `A` and `B`
+     - Update `Parent[A]` and `Parent[B]`
+     - Return `true`
+
+3. Define a class `Main` with:
+   - Static `FastScanner` object `scan`
+   - Static `Scanner` object `scanner`
+   - Static `Random` object `rand`
+   - Static long `mod = 1000000007`
+   - Static double `eps = 1.0E-14`
+   - Static int `big = Integer.MAX_VALUE`
+   - Static double `PI = 3.14159265358979323846262338327950288`
+   - Static method `long modlcm(long a, long b)`:
+     - Return `a * b * modint(gcd(a, b), mod)`
+   - Static method `long gcd(long a, long b)`:
+     - If `b` is greater than `0`, return `gcd(b, a % b)`
+     - Otherwise, return `a`
+   - Static method `long lcm(long a, long b)`:
+     - Return `a * b / gcd(a, b)`
+   - Static method `int max(int a, int b)`:
+     - Return maximum of `a` and `b`
+   - Static method `int min(int a, int b)`:
+     - Return minimum of `a` and `b`
+   - Static method `long lmax(long a, long b)`:
+     - Return maximum of `a` and `b`
+   - Static method `long lmin(long a, long b)`:
+     - Return minimum of `a` and `b`
+   - Static method `long factorial(int i)`:
+     - If `i` is `1`, return `1`
+     - Otherwise, return `i * factorial(i - 1)`
+   - Main method `public static void main(String[] args)`:
+     - Read a string using `scan.next()`
+     - Check if characters at indices `2` and `3` are equal and characters at indices `4` and `5` are equal
+     - Print "Yes" if condition is true, "No" otherwise
+
+4. Define static methods:
+   - `int lower_bound(int[] a, int key)`:
+     - Perform binary search to find lower bound of `key` in `a`
+   - `int upper_bound(int[] a, int key)`:
+     - Perform binary search to find upper bound of `key` in `a`
+   - `boolean isPrime(long n)`:
+     - Check if `n` is prime
+   - `int upper_division(int a, int b)`:
+     - Return ceiling of `a / b`
+   - `long lupper_division(long a, long b)`:
+     - Return ceiling of `a / b`
+   - `int[] setArray(int a)`:
+     - Read `a` integers using `scan.nextInt()` and store in an array
+   - `long[] lsetArray(int a)`:
+     - Read `a` long integers using `scan.nextLong()` and store in an array
+   - `String reverse(String str)`:
+     - Reverse the input string
+   - `void printArray(int[] que)`:
+     - Print elements of the input array
+   - `int[][] doublesort(int[][] a)`:
+     - Sort 2D array `a` based on first element of each sub-array
+   - `long[][] ldoublesort(long[][] a)`:
+     - Sort 2D array `a` based on first element of each sub-array
+   - `long modpow(long x, long n, long mo)`:
+     - Calculate `x` raised to the power `n` modulo `mo`
+   - `char[] revch(char[] ch)`:
+     - Reverse the input character array
+   - `int[] revint(int[] ch)`:
+     - Reverse the input integer array
+   - `void warshall_floyd(int[][] v, int n)`:
+     - Perform Warshall-Floyd algorithm on the input graph
+   - `long modint(long a, long m)`:
+     - Calculate modular inverse of `a` modulo `m`
+
+5. Define a class `FastScanner` with:
+   - InputStream object `in`
+   - Byte array `buffer`
+   - Integer `ptr` and `buflen`
+   - Method `boolean hasNextByte()`:
+     - Check if there are more bytes to read
+   - Method `int readByte()`:
+     - Read the next byte
+   - Method `boolean isPrintableChar(int c)`:
+     - Check if `c` is a printable character
+   - Method `boolean hasNext()`:
+     - Check if there is more input
+   - Method `String next()`:
+     - Read the next string
+   - Method `long nextLong()`:
+     - Read the next long integer
+   - Method `int nextInt()`:
+     - Read the next integer
+   - Method `double nextDouble()`:
+     - Read the next double
+   - Method `char nextchar()`:
+     - Read the next character

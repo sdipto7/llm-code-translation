@@ -1,0 +1,56 @@
+**Algorithm:**
+
+1. **Main Function:**
+   - Parameters: String[] args
+   - Return: void
+   - Declare Scanner sc = new Scanner(System.in)
+   - Read integer n from input
+   - Initialize g as ArrayList<ArrayList<Edge>>
+   - For i from 0 to n-1: add new ArrayList<Edge> to g
+   - For i from 0 to n-2:
+        Read integer a and b from input
+        Subtract 1 from both a and b
+        Add new Edge(i, b) to g[a]
+        Add new Edge(i, a) to g[b]
+   - Initialize ans as int array of size n-1
+   - Call dfs(0, -1, -1)
+   - Initialize max = 0
+   - For each temp in ans: max = maximum(max, temp)
+   - Print max
+   - For each c in ans: print c
+
+2. **DFS Function:**
+   - Parameters: int to, int color, int parents
+   - Return: void
+   - Initialize k = 1
+   - For each Edge e in g[to]:
+        If e.to == parents: continue
+        If k == color: increment k by 1
+        Set ans[e.id] = k
+        Call dfs(e.to, k, to)
+        Increment k by 1
+
+3. **Edge Class:**
+   - Constructor: Parameters int id, int to
+        Set this.id = id
+        Set this.to = to
+   - Fields: int id, int to
+
+4. **Data Structures:**
+   - ArrayList<ArrayList<Edge>> g
+   - int[] ans
+   - Scanner for input
+
+5. **Control Flow:**
+   - Main: sequential execution with for loops
+   - DFS: recursive traversal with for loop and conditional continue
+   - Edge: simple constructor
+
+6. **Input/Output:**
+   - Input: n, followed by n-1 pairs of integers
+   - Output: maximum color count followed by color assignments for each edge
+
+7. **Dependencies:**
+   - java.util.ArrayList
+   - java.util.List
+   - java.util.Scanner

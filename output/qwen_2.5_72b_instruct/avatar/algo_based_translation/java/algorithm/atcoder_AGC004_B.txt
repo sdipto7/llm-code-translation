@@ -1,0 +1,29 @@
+function main()
+    variable N: integer
+    variable x: long
+    variable srimeList: list of long
+    variable costList: list of array of long
+    variable result: list of long
+
+    N = read integer from input
+    x = read long from input
+
+    for i from 0 to N-1 do
+        srimeList.add(read long from input)
+
+    for i from 0 to N-1 do
+        costList.add(new array of long with size N)
+
+    for i from 0 to N-1 do
+        costList.get(i)[0] = srimeList.get(i)
+        for castNum from 1 to N-1 do
+            costList.get(i)[castNum] = min(costList.get(i)[castNum-1], srimeList.get((i - castNum + N) % N))
+
+    for i from 0 to N-1 do
+        variable j = i
+        variable sum: long = i * x
+        for each costArray in costList do
+            sum = sum + costArray[j]
+        result.add(sum)
+
+    print(min(result))

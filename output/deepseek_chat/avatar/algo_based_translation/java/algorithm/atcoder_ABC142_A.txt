@@ -1,0 +1,25 @@
+Function signature:
+main(String[] args) throws Exception
+
+Variables:
+- BufferedReader br (BufferedReader)
+- double input
+- double countOdd
+- BigDecimal result (BigDecimal)
+
+Libraries:
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader
+- java.math.BigDecimal
+- java.math.RoundingMode
+
+Logic flow:
+1. Create BufferedReader from System.in
+2. Read line from BufferedReader and parse to double
+3. Calculate countOdd = round(input / 2)
+4. Create BigDecimal from countOdd / input
+5. Set BigDecimal scale to 10 with HALF_UP rounding
+6. Print BigDecimal result
+7. Catch IOException or NumberFormatException: print stack trace and exit
+8. Catch any other Exception: print stack trace and exit

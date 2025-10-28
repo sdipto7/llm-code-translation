@@ -1,0 +1,36 @@
+**Function Signature:**
+- No explicit function defined; main script execution
+
+**Input Operations:**
+- Read integer `n` from standard input
+- Read next line, split into list of integers `l` of length `n`
+
+**Variable Declarations:**
+- `n`: integer (number of elements)
+- `l`: list of integers (input numbers)
+- `high`: integer, initialized to 1 (current consecutive count)
+- `tower`: integer, initialized to `n` (number of distinct values)
+- `maximum`: integer, initialized to 1 (maximum consecutive count)
+
+**Data Processing:**
+- Sort list `l` in ascending order
+
+**Loop Structure:**
+- For loop: `i` from 1 to `n-1` (inclusive)
+  - Condition: if `l[i] == l[i-1]`
+    - Then: decrement `tower` by 1, increment `high` by 1
+  - Else:
+    - Condition: if `high > maximum`
+      - Then: set `maximum = high`
+    - Reset `high = 1`
+
+**Post-Loop Check:**
+- Condition: if `high > maximum`
+  - Then: set `maximum = high`
+
+**Output Operation:**
+- Print `maximum` and `tower` as space-separated values
+
+**Dependencies:**
+- Built-in functions: `input`, `int`, `map`, `list`, `split`, `sort`, `print`
+- No external libraries required

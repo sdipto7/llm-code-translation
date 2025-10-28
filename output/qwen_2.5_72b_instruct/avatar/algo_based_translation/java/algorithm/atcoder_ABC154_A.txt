@@ -1,0 +1,31 @@
+- Function signature: `public static void main(String[] args)` with no return type
+- Variable declarations and data types:
+  - `BufferedReader in` for reading input
+  - `String[] str` for storing first line of input split by spaces
+  - `StringTokenizer st` for tokenizing second line of input
+  - `int a` for storing first integer from second line of input
+  - `int b` for storing second integer from second line of input
+  - `String u` for storing third line of input
+- Logic flow in execution order:
+  1. Initialize `BufferedReader` to read from standard input
+  2. Read first line of input, split by spaces, and store in `str`
+  3. Read second line of input and tokenize using `StringTokenizer`
+  4. Parse first token from `StringTokenizer` as integer and store in `a`
+  5. Parse second token from `StringTokenizer` as integer and store in `b`
+  6. Read third line of input and store in `u`
+  7. Check if `u` is equal to first element of `str`
+     - If true, print `a - 1` followed by `b`
+     - If false, print `a` followed by `b - 1`
+- Control structures:
+  - Conditional (if-else) checking equality of `u` and `str[0]`
+- Input/output operations and data processing logic:
+  - Read input from standard input using `BufferedReader`
+  - Split and tokenize input lines
+  - Parse integers from tokens
+  - Compare strings for equality
+  - Print results to standard output
+- Required libraries, modules, or dependencies:
+  - `java.io.BufferedReader`
+  - `java.io.InputStreamReader`
+  - `java.io.IOException`
+  - `java.util.StringTokenizer`

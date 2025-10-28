@@ -1,0 +1,29 @@
+Function signature: `check_string_symmetry() -> None`
+
+Variable declarations:
+- `n`: integer
+- `s`: string
+
+Logic flow:
+1. Read an integer `n` from input.
+2. Read a string `s` from input.
+3. Check if `n` is odd:
+   - If true, print 'No'.
+4. Otherwise, check if the first half of `s` is equal to the second half of `s`:
+   - If true, print 'Yes'.
+5. If neither condition is met, print 'No'.
+
+Control structures:
+- If-else statement for checking if `n` is odd.
+- Another if-else statement for comparing the halves of the string.
+
+Input/output operations:
+- Input: Read integer `n` and string `s` from standard input.
+- Output: Print 'Yes' or 'No' to standard output depending on the checks.
+
+Data processing logic:
+- Check the parity of `n`.
+- Split the string `s` into two halves and compare them.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules are required.

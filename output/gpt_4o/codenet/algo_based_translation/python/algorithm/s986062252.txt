@@ -1,0 +1,34 @@
+```
+1. Import the 'stdin' module from 'sys'.
+
+2. Define 'il' as a lambda function that reads a line from standard input, strips any trailing whitespace, splits it into a list of strings, converts each string to an integer, and returns the list of integers.
+
+3. Define 'ils' as a lambda function that takes two parameters, 'n' and 's' (defaulting to "int(input())"). It evaluates the expression 's' for 'n' times and returns a list of the results.
+
+4. Define a function 'gcd(a: int, b: int) -> int':
+   a. If 'a' is less than 'b', call 'gcd(b, a)' and return its result.
+   b. If 'b' is 0, return 'a'.
+   c. Otherwise, call 'gcd(b, a % b)' and return its result.
+
+5. Define a function 'lcm(a: int, b: int) -> int':
+   a. Return the result of 'a * b // gcd(a, b)'.
+
+6. Declare variables 'n: int' and 'm: int' and assign them the result of calling 'il()'.
+
+7. Declare a variable 's: str' and assign it the result of calling 'input()'.
+
+8. Declare a variable 't: str' and assign it the result of calling 'input()'.
+
+9. Declare a variable 'aa: int' and assign it the result of calling 'gcd(n, m)'.
+
+10. Declare a variable 'bb: int' and assign it the result of calling 'lcm(n, m)'.
+
+11. Declare a variable 'cc: int' and assign it the result of 'aa // bb'.
+
+12. Execute a 'for' loop iterating 'i' over the range from 0 to 'aa':
+    a. If 's[n // aa * i]' is not equal to 't[m // aa * i]':
+       i. Print '-1'.
+       ii. Exit the program.
+
+13. Print the value of 'bb'.
+```

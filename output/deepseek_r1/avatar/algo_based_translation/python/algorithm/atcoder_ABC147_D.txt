@@ -1,0 +1,40 @@
+- **Function/Method Signatures**:
+  - `main() -> None`: Entry point with no parameters, returns nothing.
+
+- **Variable Declarations**:
+  - `N: int`: Integer input from user.
+  - `A: int64[]`: Array of 64-bit integers parsed from input.
+  - `result: int = 0`: Accumulator for final result (modulo 1e9+7).
+  - `b: int`: Loop variable (0 ≤ b < 60).
+  - `bs: int`: Count of elements with the b-th bit set.
+
+- **Step-by-Step Logic**:
+  1. Read integer `N` from standard input.
+  2. Read next line of input, split into space-separated strings, convert each to `int64`, store in array `A`.
+  3. Initialize `result` to 0.
+  4. For `b` in range 0 to 59 (inclusive):
+      a. Compute `bs` as the sum of `(element >> b) & 1` for all elements in `A`.
+      b. Calculate term `bs * (N - bs) * (1 << b)`.
+      c. Update `result = (result + term) % 1000000007`.
+  5. Print `result` to standard output.
+
+- **Control Flow**:
+  - Loop: `for b in 0..59`
+    - Exit when `b >= 60`.
+    - Body computes bitwise contribution for each bit position.
+
+- **Input/Output**:
+  - Input:
+    - First line: Single integer `N`.
+    - Second line: `N` space-separated integers.
+  - Output:
+    - Single integer `result` printed after all bit positions processed.
+
+- **Error Handling**:
+  - None explicitly implemented. Assumes valid input format and correct number of elements.
+
+- **External Dependencies**:
+  - `numpy` for:
+    - `fromiter` to create `int64` array.
+    - Vectorized bitwise operations `(A >> b) & 1`.
+  - Input handling via Python `input()` and `map(int, ...)`.

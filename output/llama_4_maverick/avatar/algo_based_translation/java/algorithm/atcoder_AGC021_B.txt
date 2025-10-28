@@ -1,0 +1,15 @@
+1. Read the number of points N from the input.
+2. Read N pairs of coordinates (x, y) from the input and store them in two separate arrays.
+3. Iterate over each point i from 0 to N-1.
+4. For each point i, create a list to store the angles of other points relative to it.
+5. Iterate over each point j from 0 to N-1, excluding point i.
+6. Calculate the angle of point j relative to point i using atan2(y[j] - y[i], x[j] - x[i]) and add it to the list.
+7. Sort the list of angles in ascending order.
+8. Append the first angle plus 2π to the end of the list.
+9. Initialize a variable to store the maximum angle difference.
+10. Iterate over the sorted list of angles.
+11. For each angle k, calculate the difference between the next angle and the current angle minus π.
+12. Update the maximum angle difference if the calculated difference is larger.
+13. Calculate the final answer by dividing the maximum angle difference by 2π.
+14. Output the final answer.
+15. Repeat steps 3-14 for each point.

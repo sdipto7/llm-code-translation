@@ -1,0 +1,9 @@
+- Import java.util.Scanner for input operations
+- Define class Main
+  - Define method main with signature: void main(String[] args)
+    - Declare Scanner object 'sc' to read input
+    - Read input as a string using sc.next(), convert it to an integer, and assign to variable 'x'
+    - Declare an integer variable 'x'
+    - Check condition: if x is less than 1200
+      - If true, output "ABC"
+      - If false, output "ARC"

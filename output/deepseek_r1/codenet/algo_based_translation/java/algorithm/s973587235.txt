@@ -1,0 +1,43 @@
+# Algorithm Extraction
+
+Function Signature:
+- public static void main(String[] args) → void
+
+Variables:
+- Scanner sc (System.in)
+- int n (first input)
+- int minN (initialized as second input -1)
+- int h (per iteration)
+- int i (loop counter)
+
+Input Operations:
+1. Read integer n from standard input
+2. Read integer x and set minN = x - 1
+
+Processing Logic:
+1. For i from 0 to (n - 2) inclusive:
+   a. Read integer h from input
+   b. Check:
+      - If minN == h → set minN = h
+      - Else if minN == h - 1 → set minN = h - 1
+      - Else if minN < h - 1 → set minN = h - 1
+      - Else if minN > h → print "No" and terminate program
+
+Control Flow:
+- Sequential execution with 1 loop iteration
+- Four mutually exclusive condition checks per iteration:
+  1. Equality check (minN == h)
+  2. Adjacent value check (minN == h-1)
+  3. Lower bound check (minN < h-1)
+  4. Upper bound violation (minN > h)
+
+Termination Conditions:
+- Immediate termination if any minN > h case occurs
+- Normal termination after loop completion
+
+Output Operations:
+- Print "No" and exit if violation detected
+- Print "Yes" if all elements processed without violations
+
+Required Dependencies:
+- java.util.Scanner

@@ -1,0 +1,28 @@
+Function signature:
+- `public static void main(String[] args) throws IOException`
+
+Variable declarations and data types:
+- `Scanner sc` as `Scanner`
+- `BufferedWriter bw` as `BufferedWriter`
+- `int H` as `int`
+- `int W` as `int`
+- `int A` as `int`
+- `int B` as `int`
+
+Logic flow:
+1. Initialize `Scanner` for input and `BufferedWriter` for output.
+2. Read `H`, `W`, `A`, `B` from standard input.
+3. Check if `W < 2 * A || H < 2 * B`.
+   - If true, print `-1` and return.
+4. For `i` from `0` to `H - 1`:
+   - For `j` from `0` to `W - 1`:
+     - If `(i < B && j < A) || (i >= B && j >= A)`, write `"0"` to `bw`.
+     - Else, write `"1"` to `bw`.
+   - Write a new line to `bw`.
+5. Flush `bw`.
+
+Required libraries, modules, or dependencies:
+- `java.io.BufferedWriter`
+- `java.io.IOException`
+- `java.io.OutputStreamWriter`
+- `java.util.Scanner`

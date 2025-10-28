@@ -1,0 +1,11 @@
+1. Define a function `compare_strings` with no parameters and return type `None`.
+2. Declare variables `a` and `b` of type `str`.
+3. Read input from the user and split it into two parts, assigning the results to `a` and `b`.
+4. Evaluate the condition `a < b`.
+5. If the condition is `True`, print the string `<`.
+6. If the condition is `False`, evaluate the condition `a > b`.
+7. If `a > b` is `True`, print the string `>`.
+8. If `a > b` is `False`, print the string `=`.
+9. The function execution ends. 
+
+Required libraries: built-in input/output functions (no explicit import necessary)

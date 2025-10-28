@@ -1,0 +1,40 @@
+1. Import Scanner from java.util package
+2. Define class atcoder_AGC002_B
+3. Define main method with parameter String[] args and return type void
+4. Declare and initialize Scanner object sc
+5. Declare and initialize integer variable N with input from sc
+6. Declare and initialize integer variable M with input from sc
+7. Declare and initialize array B of type Box with size N
+8. Initialize first element of B (B[0]) with new Box(1, true)
+9. For loop from i = 1 to i < N (inclusive), step 1
+   1. Initialize B[i] with new Box(1, false)
+10. For loop from i = 0 to i < M (inclusive), step 1
+    1. Declare and initialize integer variable x with input from sc minus 1
+    2. Declare and initialize integer variable y with input from sc minus 1
+    3. Call moveTo method on B[x] passing B[y] as argument
+11. Declare and initialize integer variable counter with 0
+12. Enhanced for loop over each Box object b in B
+    1. If b.red is true
+       1. Increment counter by 1
+13. Print counter value
+
+14. Define class Box
+15. Declare public integer variable num
+16. Declare public boolean variable red
+17. Define constructor with parameters int n and boolean r
+    1. Assign n to num
+    2. Assign r to red
+18. Define method moveTo with parameter Box other and return type void
+    1. If num equals 0
+       1. Return
+    2. Else if num equals 1
+       1. Assign 0 to num
+       2. Increment other.num by 1
+       3. If red is true
+          1. Assign true to other.red
+       4. Assign false to red
+    3. Else
+       1. Decrement num by 1
+       2. Increment other.num by 1
+       3. If red is true
+          1. Assign true to other.red

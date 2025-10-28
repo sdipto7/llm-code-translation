@@ -1,0 +1,61 @@
+```
+Function signatures:
+- solve(in: BufferedReader) -> void
+- f(n: int) -> long
+- toInt(s: String) -> int
+- toInts(s: String) -> int[]
+- e(o: Object) -> void
+
+Variable declarations and data types:
+- long MOD = 1000000007
+- int[] xx
+- int min, max
+- long res, f, res (in f function)
+- String[] a
+- int[] o
+
+Algorithm:
+
+1. Define a constant MOD with value 1000000007.
+
+2. Implement solve function:
+   a. Read a line from input 'in' and convert it into an integer array 'xx' using toInts function.
+   b. Calculate 'min' as the minimum of xx[0] and xx[1].
+   c. Calculate 'max' as the maximum of xx[0] and xx[1].
+   d. Declare a long variable 'res'.
+   e. If 'min' is equal to 'max':
+      i. Calculate 'f' as the factorial of 'min' using the f function.
+      ii. Set 'res' as (2 * f * f) % MOD.
+   f. Else if 'min + 1' is equal to 'max':
+      i. Calculate 'f' as the factorial of 'min' using the f function.
+      ii. Set 'res' as (f * ((f * max) % MOD)) % MOD.
+   g. Else set 'res' to 0.
+   h. Print 'res'.
+
+3. Implement f function:
+   a. Initialize a long variable 'res' to 1.
+   b. Loop from 'i' equals 2 to 'n', inclusive:
+      i. Update 'res' as (res * i) % MOD.
+   c. Return 'res'.
+
+4. Implement toInt function:
+   a. Convert string 's' to an integer and return the result.
+
+5. Implement toInts function:
+   a. Split the string 's' using space as the delimiter and store in string array 'a'.
+   b. Initialize an integer array 'o' with the same length as 'a'.
+   c. Loop over each element in 'a':
+      i. Convert each element in 'a' to an integer using toInt and store in 'o'.
+   d. Return 'o'.
+
+6. Implement e function:
+   a. Print the object 'o' to the standard error.
+
+7. Define main function:
+   a. Create a BufferedReader object 'in' for standard input.
+   b. Create an instance of Main and call the solve function with 'in'.
+
+Dependencies:
+- java.util.*
+- java.io.*
+```

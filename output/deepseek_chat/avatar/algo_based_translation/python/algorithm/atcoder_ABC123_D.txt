@@ -1,0 +1,22 @@
+Read integers x, y, z, k from input
+Read list a of x integers from input
+Read list b of y integers from input
+Read list c of z integers from input
+
+Initialize empty list ab
+For i from 0 to x-1:
+    For j from 0 to y-1:
+        Append a[i] + b[j] to list ab
+
+Sort list ab in descending order
+
+Initialize empty list abc
+Let limit = min(k, x*y)
+For i from 0 to limit-1:
+    For j from 0 to z-1:
+        Append ab[i] + c[j] to list abc
+
+Sort list abc in descending order
+
+For i from 0 to k-1:
+    Print abc[i]

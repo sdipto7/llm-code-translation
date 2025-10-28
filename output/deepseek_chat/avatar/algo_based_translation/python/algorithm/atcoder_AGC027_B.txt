@@ -1,0 +1,9 @@
+Read input: N, X, and list A from stdin
+Convert input to integers
+Compute cumulative sum list S of A using accumulate
+Initialize ans to positive infinity
+For k from 1 to length of S (inclusive):
+    Calculate E = k * X + 2 * sum of S[j] for j from N-2*k-1 down to 0 with step -k
+    Update ans to minimum of current ans and E
+Compute final result = ans + N * X + 5 * last element of S
+Print final result

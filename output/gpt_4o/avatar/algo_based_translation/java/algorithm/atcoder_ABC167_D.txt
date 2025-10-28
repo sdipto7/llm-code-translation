@@ -1,0 +1,50 @@
+```
+Algorithm atcoder_ABC167_D:
+    Input: None (reads from standard input)
+    Output: Prints an integer to standard output
+
+    Declare variables:
+        sc as Scanner initialized with System.in
+        MOD as final integer with value 1000000007
+        MAX as final integer with value Integer.MAX_VALUE
+        LMAX as final long with value Long.MAX_VALUE
+        len as integer with value 1000001
+
+    Function doIt():
+        Declare variables:
+            N as integer
+            K as long
+            A as integer array of size N
+            used as Set of Integers
+            idx as integer array of size N
+            pos as integer array of size N
+            next as integer initialized to 0
+            cur as integer initialized to 0
+
+        Read integer input N
+        Read long input K
+
+        For i from 0 to N - 1:
+            Read integer input and assign to A[i] after subtracting 1
+
+        While next is not in used:
+            Add next to used set
+            Assign cur to idx[next]
+            Assign next to pos[cur]
+            Assign A[next] to next
+            Increment cur by 1
+
+        Compute a as long with value cur - idx[next]
+        Compute b as long with value idx[next]
+
+        Compute ans as integer with value ( (10000 * a + K - b) % a + b )
+        
+        If b is greater than K:
+            Assign K to ans
+
+        Print pos[ans] + 1
+
+    Main Function:
+        Create new instance of atcoder_ABC167_D
+        Call doIt() method on the instance
+```

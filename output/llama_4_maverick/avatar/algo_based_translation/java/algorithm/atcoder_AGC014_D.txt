@@ -1,0 +1,15 @@
+1. Read the number of nodes n in the graph.
+2. Initialize an adjacency list representation of the graph g with n nodes.
+3. For i = 0 to n-2:
+   1. Read two node indices a and b.
+   2. Add b to the adjacency list of a and a to the adjacency list of b.
+4. Define a function maxMatching(v, p):
+   1. Initialize variables a and o to 0.
+   2. For each neighbor w of v:
+      1. If w equals p, skip to the next neighbor.
+      2. Compute r = maxMatching(w, v).
+      3. Increment a by r/2 (integer division).
+      4. Increment o by r%2.
+   3. Return 2*a + min(1, o) + 1.
+5. Compute m = maxMatching(0, -1)/2 (integer division).
+6. If 2*m equals n, output "Second"; otherwise, output "First".

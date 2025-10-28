@@ -1,0 +1,37 @@
+1. Required library:
+   - java.util.Scanner
+
+2. Function signature:
+   - main method: public static void main(String[] args)
+
+3. Variable declarations:
+   - Scanner scanner = new Scanner(System.in)
+   - int h = scanner.nextInt()
+   - int a = scanner.nextInt()
+
+4. Execution flow:
+   a. Read integer input for h
+   b. Read integer input for a
+   c. Compare h modulus a with 0 using equality check
+   d. If comparison is true:
+      - Calculate h divided by a
+      - Print result as integer
+   e. If comparison is false:
+      - Calculate (h divided by a) + 1
+      - Print result as integer
+
+5. Control structures:
+   - Single if-else block:
+     if (h % a == 0)
+     else
+
+6. Input operations:
+   - Two consecutive nextInt() calls on Scanner instance
+
+7. Output operations:
+   - System.out.println() call with calculated value
+
+8. Data processing:
+   - Integer division
+   - Modulus calculation
+   - Arithmetic addition (only in else branch)

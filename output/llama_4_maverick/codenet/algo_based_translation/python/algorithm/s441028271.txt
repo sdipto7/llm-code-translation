@@ -1,0 +1,9 @@
+1. Define a function `calculate_difference` with parameters `a`, `b`, `c`, `k` of type integers and return type integer.
+2. Declare variables `a`, `b`, `c`, `k` of type integer.
+3. Read input from the user and split it into four parts.
+4. Convert the input parts to integers using a mapping function and store them in `a`, `b`, `c`, `k`.
+5. Check if `k` is even by verifying if the remainder of `k` divided by 2 equals 0.
+6. If `k` is even, calculate the difference between `a` and `b`.
+7. If `k` is odd, calculate the difference between `b` and `a`.
+8. Output the calculated difference.
+9. The required library is the built-in input/output functionality and integer mapping.

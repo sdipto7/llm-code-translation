@@ -1,0 +1,11 @@
+1. Read two integer inputs, N and x, from the standard input, where N is the number of elements and x is the threshold value.
+2. Initialize a list 'a' of size N with integer values read from the standard input.
+3. Initialize a variable 'cnt' of type integer to 0.
+4. Iterate over the list 'a' from the second element (index 1) to the last element.
+5. For each element at index 'i', calculate the sum 'tmp' of the current element and its previous element.
+6. Check if 'tmp' is greater than 'x'.
+7. If 'tmp' is greater than 'x', then check if the difference between 'tmp' and 'x' is greater than the current element 'a[i]'.
+8. If the difference is greater than 'a[i]', update 'a[i-1]' to be 'tmp - a[i] - x' and set 'a[i]' to 0.
+9. If the difference is not greater than 'a[i]', update 'a[i]' to be 'a[i] - (tmp - x)'.
+10. Increment 'cnt' by the difference between 'tmp' and 'x'.
+11. After iterating over the entire list, output the value of 'cnt' to the standard output.

@@ -1,0 +1,14 @@
+1. Read the number of inputs, n.
+2. Initialize an empty TreeMap to store key-value pairs.
+3. Repeat the following steps n times:
+   1. Read an integer, num.
+   2. Check if there is a key in the TreeMap that is less than num.
+   3. If no such key exists, increment the value associated with num in the TreeMap.
+   4. If such a key exists, retrieve the key and its associated value.
+   5. Decrement the value associated with the retrieved key.
+   6. If the decremented value is zero, remove the key from the TreeMap.
+   7. Increment the value associated with num in the TreeMap.
+4. Initialize a variable, ans, to zero.
+5. Iterate over the keys in the TreeMap.
+6. For each key, add its associated value to ans.
+7. Output the final value of ans.

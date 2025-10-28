@@ -1,0 +1,11 @@
+1. Import the java.util library.
+2. Define a class named Main with a public access modifier.
+3. Declare a public static method main with a parameter of type String[] args and return type void.
+4. Inside the main method:
+   - Declare a variable sc of type Scanner and initialize it with a new Scanner object that reads from System.in.
+   - Declare an integer variable n and assign it the next integer value read from sc.
+   - Evaluate the expression (n/10)%111==0.
+   - If the expression is true, print "Yes" to the console.
+   - If the expression is false, evaluate the expression (n%1000)%111==0.
+   - If the second expression is true, print "Yes" to the console.
+   - If both expressions are false, print "No" to the console.

@@ -1,0 +1,15 @@
+1. Read two integers n and m from the input.
+2. Create two empty queues, q1 and q2.
+3. For i ranging from 1 to n, perform the following steps:
+   3.1. Read an integer from the input and add it to q1.
+   3.2. Add i to q2.
+4. Initialize a variable ans to 0.
+5. While q1 is not empty, perform the following steps:
+   5.1. Check the front element of q1.
+   5.2. If the front element of q1 is less than or equal to m, then:
+      5.2.1. Remove the front element from q1.
+      5.2.2. Remove the front element from q2 and store it in ans.
+   5.3. If the front element of q1 is greater than m, then:
+      5.3.1. Remove the front element from q1, subtract m from it, and add the result back to q1.
+      5.3.2. Remove the front element from q2, and add it back to q2.
+6. Output the value of ans.

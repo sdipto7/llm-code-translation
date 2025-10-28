@@ -1,0 +1,23 @@
+from collections import deque
+
+Input: Read two integers N and M from standard input
+Initialize graph G as dictionary with keys 1 to N, values as empty lists
+For M times:
+    Read two integers a and b from standard input
+    Append b to G[a]
+    Append a to G[b]
+Initialize list col of length N+1 with all elements set to -1
+Initialize integer cnt to 0
+For i from 1 to N inclusive:
+    If col[i] < 0:
+        Set col[i] to cnt
+        Initialize queue que containing i
+        While que is not empty:
+            Pop front element x from que
+            For each neighbor y in G[x]:
+                If col[y] < 0:
+                    Set col[y] to cnt
+                    Append y to que
+        Increment cnt by 1
+Find maximum value in col list
+Print maximum value

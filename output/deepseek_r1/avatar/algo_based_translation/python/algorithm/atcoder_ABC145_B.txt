@@ -1,0 +1,43 @@
+**Structured Algorithm Specification:**
+
+**Function/Method Signatures:**
+- Not applicable (procedural code with no defined functions)
+
+**Variable Declarations:**
+- `n`: Integer (input value)
+- `s`: String (input value)
+- `half`: Integer (derived from `n // 2`)
+
+**Step-by-Step Logic Flow:**
+1. Read integer `n` from standard input.
+2. Read string `s` from standard input.
+3. If `n` is odd:
+   1. Print "No".
+   2. Terminate execution.
+4. Else (if `n` is even):
+   1. Compute `half = n // 2` (integer division).
+   2. Extract substring `s[0 : half]`.
+   3. Extract substring `s[half : ]`.
+   4. Compare the two substrings for equality.
+   5. If equal:
+      1. Print "Yes".
+   6. Else:
+      1. Print "No".
+
+**Control Flow Structures:**
+- Conditional:
+  - `if n % 2 != 0` (Check odd `n`)
+  - `elif` (Check substring equality when `n` is even)
+  - `else` (Handle non-matching substrings)
+
+**Input/Output Operations:**
+- Input: Two sequential standard inputs (integer `n`, string `s`).
+- Output: Print "Yes" or "No" based on conditions.
+
+**Error Handling & Edge Cases:**
+- Assumes valid integer input for `n` and string input for `s`.
+- Handles odd `n` as invalid case.
+- No validation for mismatched `n` and actual length of `s`.
+
+**External Dependencies:**
+- None (uses only basic input/output and string operations).

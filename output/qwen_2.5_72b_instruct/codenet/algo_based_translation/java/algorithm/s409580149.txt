@@ -1,0 +1,162 @@
+Function Signatures and Variable Declarations:
+
+- `static void solve()`
+- `static double rec(int i, int j, int k)`
+- `static void reverse(int ar[])`
+- `static void reverse(long ar[])`
+- `static void reverse(double ar[])`
+- `static void reverse(char ar[])`
+- `static String getReverse(String s)`
+- `static <T> void reverse(List<T> ls)`
+- `static <T> void reverse(T[] ar)`
+- `static void sbnl()`
+- `static int lowerBound(int[] a, int x)`
+- `static int upperBound(int[] a, int x)`
+- `static int rlowerBound(int[] a, int x)`
+- `static int rupperBound(int[] a, int x)`
+- `static int lowerBound(long[] a, long x)`
+- `static int upperBound(long[] a, long x)`
+- `static int rlowerBound(long[] a, long x)`
+- `static int rupperBound(long[] a, long x)`
+- `static int lowerBound(double[] a, double x)`
+- `static int upperBound(double[] a, double x)`
+- `static int rlowerBound(double[] a, double x)`
+- `static int rupperBound(double[] a, double x)`
+- `static int lowerBound(char[] a, char x)`
+- `static int upperBound(char[] a, char x)`
+- `static int rlowerBound(char[] a, char x)`
+- `static int rupperBound(char[] a, char x)`
+- `static <T> int lowerBound(List<T> ls, T x)`
+- `static <T> int upperBound(List<T> ls, T x)`
+- `static <T> int rupperBound(List<T> ls, T x)`
+- `static <T> int rlowerBound(List<T> ls, T x)`
+- `static int[] concat(int x, int arr[])`
+- `static int[] concat(int arr[], int x)`
+- `static long[] concat(long x, long arr[])`
+- `static long[] concat(long arr[], long x)`
+- `static int max(int x, int y)`
+- `static int min(int x, int y)`
+- `static int max(int x, int y, int z)`
+- `static int min(int x, int y, int z)`
+- `static long max(long x, long y)`
+- `static long min(long x, long y)`
+- `static long max(long x, long y, long z)`
+- `static long min(long x, long y, long z)`
+- `static double max(double x, double y)`
+- `static double min(double x, double y)`
+- `static double max(double x, double y, double z)`
+- `static double min(double x, double y, double z)`
+- `static void sort(int[] ar)`
+- `static void sort(long[] ar)`
+- `static void sort(double[] ar)`
+- `static void sort(char[] ar)`
+- `static void rsort(int[] ar)`
+- `static void rsort(long[] ar)`
+- `static void rsort(double[] ar)`
+- `static void rsort(char[] ar)`
+- `static void fill(int arr[], int x)`
+- `static void fill(long arr[], long x)`
+- `static void fill(boolean arr[], boolean x)`
+- `static void fill(double arr[], double x)`
+- `static void fill(int arr[][], int x)`
+- `static void fill(long arr[][], long x)`
+- `static void fill(double arr[][], double x)`
+- `static void fill(boolean arr[][], boolean x)`
+- `static long plus(long x, long y)`
+- `static long sub(long x, long y)`
+- `static long mul(long x, long y)`
+- `static long div(long x, long y)`
+- `static long pow(long x, long y)`
+- `public static void main(String[] args) throws Exception`
+- `private static int readByte()`
+- `private static boolean isSpaceChar(int c)`
+- `private static int skip()`
+- `private static double nd()`
+- `private static char nc()`
+- `private static String ns()`
+- `private static char[] ns(int n)`
+- `private static char[][] nm(int n, int m)`
+- `private static int[] na(int n)`
+- `private static long[] nla(int n)`
+- `private static int ni()`
+- `private static long nl()`
+
+Variables and Data Types:
+
+- `int n`
+- `int a[]`
+- `double dp[][][]`
+- `int cnt[]`
+- `double ans`
+- `double ret`
+- `double p`, `pi`, `pj`, `pk`
+- `InputStream is`
+- `PrintWriter out`
+- `String INPUT`
+- `StringBuffer sb`
+- `long mod`
+- `int dx[] = {-1, 0, 1, 0}`
+- `int dy[] = {0, -1, 0, 1}`
+- `int dx8[] = {-1, -1, -1, 0, 0, 1, 1, 1}`
+- `int dy8[] = {-1, 0, 1, -1, 1, -1, 0, 1}`
+- `int inf`
+- `long linf`
+- `double dinf`
+- `double eps`
+- `double pi`
+
+Logic Flow and Control Structures:
+
+1. `solve()`:
+   - Read `n` using `ni()`
+   - Read array `a` using `na(n)`
+   - Initialize `dp` array with `-1`
+   - Set `dp[0][0][0]` to `0`
+   - Count occurrences of `1`, `2`, and `3` in `a` and store in `cnt`
+   - Call `rec(cnt[0], cnt[1], cnt[2])` and store result in `ans`
+   - Print `ans` using `out.println(ans)`
+
+2. `rec(int i, int j, int k)`:
+   - If `dp[i][j][k]` is not `-1`, return `dp[i][j][k]`
+   - Initialize `ret` to `0`
+   - Calculate `p`, `pi`, `pj`, `pk`
+   - Update `ret` with `1/p`
+   - If `i > 0`, add `pi/p * rec(i-1, j, k)` to `ret`
+   - If `j > 0`, add `pj/p * rec(i+1, j-1, k)` to `ret`
+   - If `k > 0`, add `pk/p * rec(i, j+1, k-1)` to `ret`
+   - Store `ret` in `dp[i][j][k]` and return `ret`
+
+3. Reverse functions for different data types:
+   - Reverse an array or list in place
+   - Return reversed string
+
+4. Binary search functions (`lowerBound`, `upperBound`, `rlowerBound`, `rupperBound`) for different data types:
+   - Perform binary search to find position of element in sorted array or list
+
+5. Concatenation functions for arrays of different data types:
+   - Concatenate element to beginning or end of array
+
+6. Min/Max functions for different data types:
+   - Return minimum or maximum value among given values
+
+7. Sort functions for arrays of different data types:
+   - Sort array in ascending or descending order
+
+8. Fill functions for arrays and 2D arrays of different data types:
+   - Fill array with specified value
+
+9. MOD calculation functions:
+   - Perform arithmetic operations under modulo `mod` (addition, subtraction, multiplication, division, exponentiation)
+
+10. `main(String[] args)`:
+    - Set up input and output streams
+    - Call `solve()`
+    - Flush output stream
+
+11. Input reading functions:
+    - Read byte, check space character, skip whitespace, read double, read character, read string, read character array, read 2D character array, read integer array, read long array, read integer, read long
+
+Libraries and Modules:
+
+- `java.io.*`
+- `java.util.*`

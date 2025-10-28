@@ -1,0 +1,15 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class atcoder_ABC070_B {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] A = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        if (A[1] <= A[2] || A[3] <= A[0]) {
+            System.out.println(0);
+        } else {
+            Arrays.sort(A);
+            System.out.println(A[2] - A[1]);
+        }
+    }
+}

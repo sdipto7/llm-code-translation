@@ -1,0 +1,29 @@
+- **Libraries/Modules**:
+  - `math` (imported but unused)
+
+- **Function Signatures**:
+  - `keta(s: str) -> int`
+  - `main() -> None`
+
+- **Variables**:
+  - `N: str` (input string in `main`)
+  - `n: int` (sum of digits during recursion in `keta`)
+
+- **Execution Flow**:
+  1. Read input string `N` in `main`.
+  2. Call `keta(N)`:
+     - If `len(s) < 2`, return `int(s)`.
+     - Else, compute `n` as the sum of all digits in `s`.
+     - Recursively call `keta` with the string representation of `n`.
+  3. In `main`, check if `keta(N) % 9 == 0`:
+     - If true, print "Yes".
+     - Else, print "No".
+
+- **Control Structures**:
+  - Recursion in `keta` until digit sum becomes a single digit.
+  - Conditional in `keta` to terminate recursion when `len(s) < 2`.
+  - Conditional in `main` to determine output based on `keta(N) % 9`.
+
+- **Input/Output**:
+  - Input: String `N` from standard input (digits only).
+  - Output: "Yes" if the digital root of `N` is divisible by 9, else "No".

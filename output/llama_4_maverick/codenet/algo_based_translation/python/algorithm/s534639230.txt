@@ -1,0 +1,20 @@
+1. Import the Counter class from the collections module.
+2. Define a function solve with no parameters and no return value.
+3. Declare a variable N of type integer and read its value from standard input.
+4. Declare a list D of integers and read its elements from standard input, splitting the input string by spaces and converting each part to an integer.
+5. Declare a variable mod of type integer and assign it the value 998244353.
+6. Check if the first element of D is not equal to 0. If true, then:
+   - Print 0 to standard output.
+   - Exit the function.
+7. Create a Counter object cnt from the list D.
+8. Check if the count of 0 in cnt is greater than 1. If true, then:
+   - Print 0 to standard output.
+   - Exit the function.
+9. Declare a variable res of type integer and initialize it to 1.
+10. Find the maximum value in the list D.
+11. Iterate over a range from 1 to the maximum value found in step 10 (inclusive).
+12. For each iteration i in the range:
+    - Check if the count of (i-1) in cnt is equal to 0 or 1. If true, then skip to the next iteration.
+    - Calculate the value of res as (res * (cnt[i-1] raised to the power of cnt[i])) modulo mod.
+    - Update res to be its remainder when divided by mod.
+13. Print the final value of res to standard output.

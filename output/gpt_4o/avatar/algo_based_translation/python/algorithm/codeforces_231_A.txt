@@ -1,0 +1,6 @@
+- Input: Read an integer `n` from standard input.
+- Declare an integer variable `c` and initialize it to 0.
+- Loop `i` from 0 to `n-1`:
+  - Read a line from standard input, split it by spaces, and convert each element to an integer to form a list `l1`.
+  - If the sum of elements in list `l1` is greater than 1, increment `c` by 1.
+- Output the value of `c` to standard output.

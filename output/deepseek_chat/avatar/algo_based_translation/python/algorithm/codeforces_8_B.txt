@@ -1,0 +1,58 @@
+**Function Signature:**
+- No explicit function defined; main script execution
+- Input: string `record_of_movements` from stdin
+- Output: prints "BUG" or "OK" to stdout
+
+**Variables and Data Types:**
+- `record_of_movements`: string (input sequence)
+- `x`: integer (current x-coordinate)
+- `y`: integer (current y-coordinate)
+- `d_movement`: dictionary mapping char to tuple (movement vectors)
+- `d`: dictionary mapping coordinate tuples to empty strings (visited positions)
+- `bug`: boolean (error flag)
+- `move`: char (current movement character)
+- `temp`: tuple (previous coordinate position)
+- `step`: char (movement direction key during validation)
+
+**Execution Flow:**
+1. Read input string `record_of_movements`
+2. Initialize `x = 0`, `y = 0`
+3. Initialize movement dictionary:
+   - 'L' → (0, -1)
+   - 'R' → (0, 1)
+   - 'U' → (1, 0)
+   - 'D' → (-1, 0)
+4. Initialize visited positions dictionary `d` with starting position (0,0) → ''
+5. Initialize `bug = False`
+6. For each character `move` in `record_of_movements`:
+   - Store current position: `temp = (x, y)`
+   - Update coordinates: `x += d_movement[move][0]`, `y += d_movement[move][1]`
+   - If new position `(x,y)` not in visited dictionary `d`:
+     - For each direction `step` in `d_movement`:
+       - Calculate neighbor position: `(x + d_movement[step][0], y + d_movement[step][1])`
+       - If neighbor is not previous position `temp` AND neighbor exists in `d`:
+         - Set `bug = True`
+         - Break inner loop
+   - Else (position already visited):
+     - Set `bug = True`
+   - If `bug` is True:
+     - Break outer loop
+   - Add new position to visited dictionary: `d[(x,y)] = ''`
+7. After loop:
+   - If `bug` is True: print "BUG"
+   - Else: print "OK"
+
+**Control Structures:**
+- For loop: `for move in record_of_movements:`
+- Nested for loop: `for step in d_movement:`
+- Conditional: `if (x,y) not in d:`
+- Conditional: `if neighbor != temp and neighbor in d:`
+- Conditional: `else` (when position already visited)
+- Conditional: `if bug:` (break condition)
+
+**Input/Output Operations:**
+- Input: `input()` for movement sequence
+- Output: `print('BUG')` or `print('OK')`
+
+**Dependencies:**
+- None (uses only built-in Python functions)

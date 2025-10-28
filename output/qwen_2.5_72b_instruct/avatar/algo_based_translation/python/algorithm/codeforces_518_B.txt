@@ -1,0 +1,36 @@
+Function signature: `main() -> None`
+
+Variable declarations and data types:
+- `s, t: str`
+- `freqs, freqt: dict[str, int]`
+- `yay, whoops: int`
+
+Execution order and logic flow:
+
+1. Read two strings `s` and `t` from input.
+2. Initialize empty dictionaries `freqs` and `freqt` to store character frequencies.
+3. Initialize counters `yay` and `whoops` to 0.
+4. For each character `letra` in string `s`:
+   - If `letra` is in `freqs`, increment `freqs[letra]` by 1.
+   - Otherwise, set `freqs[letra]` to 1.
+5. For each character `letra` in string `t`:
+   - If `letra` is in `freqt`, increment `freqt[letra]` by 1.
+   - Otherwise, set `freqt[letra]` to 1.
+6. For each key `letra` in `freqs.keys()`:
+   - While `freqs[letra] > 0` and `letra` is in `freqt` and `freqt[letra] > 0`:
+     - Increment `yay` by 1.
+     - Decrement `freqs[letra]` by 1.
+     - Decrement `freqt[letra]` by 1.
+7. For each key `letra` in `freqs.keys()`:
+   - While `freqs[letra] > 0`:
+     - If `letra` is lowercase and `letra.upper()` is in `freqt.keys()` and `freqt[letra.upper()] > 0`:
+       - Increment `whoops` by 1.
+       - Decrement `freqs[letra]` by 1.
+       - Decrement `freqt[letra.upper()]` by 1.
+     - Else if `letra` is uppercase and `letra.lower()` is in `freqt.keys()` and `freqt[letra.lower()] > 0`:
+       - Increment `whoops` by 1.
+       - Decrement `freqs[letra]` by 1.
+       - Decrement `freqt[letra.lower()]` by 1.
+     - Else:
+       - Break out of the loop.
+8. Print `yay` and `whoops`.

@@ -1,0 +1,23 @@
+Function: gcd(a: int, b: int) -> int
+- If b == 0, return a
+- Else, return gcd(b, a % b)
+
+Function: ruiseki_lr(array) -> (list, list)
+- op = lambda a, b: gcd(a, b)
+- e = 0
+- n = len(array)
+- left = [e] * (n + 1)
+- right = [e] * (n + 1)
+- For i from 0 to n-1:
+    - left[i + 1] = op(left[i], array[i])
+- For i from n-1 to 0:
+    - right[i] = op(right[i + 1], array[i])
+- Return (left, right)
+
+- n = int(input())
+- a = list(map(int, input().split()))
+- (left, right) = ruiseki_lr(a)
+- ans = 0
+- For i from 0 to n-1:
+    - ans = max(gcd(left[i], right[i + 1]), ans)
+- print(ans)

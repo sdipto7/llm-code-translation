@@ -1,0 +1,15 @@
+1. Read two integers n and x from input
+2. Read n integers into a list a
+3. Sort the list a in ascending order
+4. Initialize a variable ans to 0
+5. If the smallest element in a is greater than x, then 
+   5.1. Output 0
+   5.2. Terminate the program
+6. For each element i in the sorted list a, 
+   6.1. If i is greater than x, then 
+      6.1.1. Set x to 0
+      6.1.2. Exit the loop
+   6.2. Subtract i from x
+   6.3. Increment ans by 1
+7. If x is not equal to 0, then decrement ans by 1
+8. Output the value of ans

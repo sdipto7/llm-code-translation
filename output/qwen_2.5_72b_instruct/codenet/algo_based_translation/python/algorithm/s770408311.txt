@@ -1,0 +1,24 @@
+Function Signature: main() -> None
+
+Variable Declarations and Data Types:
+- n: int
+- res: List[str]
+
+Logic Flow in Execution Order:
+1. Read an integer value from standard input and assign it to n.
+2. Initialize an empty list res to store strings.
+3. Loop from 0 to n-1 (inclusive) using the loop variable i:
+   a. Read a string from standard input and assign it to a.
+   b. Append the string a to the list res.
+4. Convert the list res to a set to remove duplicates, then calculate the length of this set.
+5. Print the length of the set to standard output.
+
+Control Structures:
+- For loop with range(n)
+
+Input/Output Operations and Data Processing Logic:
+- Input: Read an integer and n strings from standard input.
+- Output: Print the number of unique strings to standard output.
+
+Required Libraries, Modules, or Dependencies:
+- No external libraries or modules required.

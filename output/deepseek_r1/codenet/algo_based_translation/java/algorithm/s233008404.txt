@@ -1,0 +1,68 @@
+**Algorithm:**
+
+**Data Structures:**
+- `colorMtr`: 2D String array storing grid cell values ("#" or ".")
+- `h`, `w`, `k`: integers for grid dimensions and target black cell count
+- `hPattern`, `wPattern`: integers representing bitmask patterns for row/column selection
+
+**Functions:**
+1. `main(String[] args)`
+   - Parameters: Command-line arguments (unused)
+   - Return: void
+   - Calls `solve()` on Main instance
+
+2. `solve()`
+   - Return: void
+   - Reads input via FastScanner
+   - Populates grid dimensions and color matrix
+   - Iterates through all possible row/column selection patterns
+   - Counts valid patterns using `judge()`
+   - Prints total valid count
+
+3. `judge(int hPattern, int wPattern)`
+   - Parameters: Bitmask integers for rows and columns
+   - Return: boolean indicating if pattern satisfies k black cells
+   - Converts bitmask patterns to selection arrays
+   - Counts non-excluded black cells
+   - Returns true if count matches k
+
+4. `pow(int base, int n)`
+   - Parameters: Base integer and exponent
+   - Return: integer result of base^n
+   - Uses exponentiation by squaring
+
+**Control Flow:**
+1. Input Phase:
+   - Read h, w, k using FastScanner
+   - Read h lines of grid data into colorMtr
+
+2. Pattern Generation:
+   - Calculate total row patterns (2^h) and column patterns (2^w) via pow(2, h) and pow(2, w)
+
+3. Pattern Evaluation:
+   - For each hPattern from 0 to hPatternMax:
+     - For each wPattern from 0 to wPatternMax:
+       - Convert hPattern to bit array where 1=selected row
+       - Convert wPattern to bit array where 1=selected column
+       - Initialize black cell counter
+       - For each cell (i,j) in grid:
+         - If row i or column j is selected (bit=1), skip
+         - If cell is "#", increment counter
+       - If counter equals k, increment answer
+
+4. Output Result:
+   - Print final answer count
+
+**Data Processing:**
+- Bitmask interpretation: Each bit in hPattern/wPattern represents whether to exclude a row/column
+- Cell evaluation: Only count cells where neither their row nor column is excluded
+
+**Input/Output:**
+- Input: Reads from stdin via BufferedReader and StringTokenizer
+  - First line: h w k
+  - Next h lines: grid rows
+- Output: Single integer printed to stdout
+
+**Dependencies:**
+- Java IO classes: BufferedReader, InputStreamReader, StringTokenizer
+- No external libraries beyond standard Java SE

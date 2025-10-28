@@ -1,0 +1,7 @@
+Read four integers from standard input: a, b, c, k
+If k is even (k % 2 == 0):
+    Calculate result = a - b
+    Print result
+Else:
+    Calculate result = b - a
+    Print result

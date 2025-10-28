@@ -1,0 +1,148 @@
+**Function Signatures:**
+- `void run()` in class `Solver`
+- `private void dfs(int[] array)` in class `Solver`
+- `public FastScanner()` in class `FastScanner`
+- `private boolean hasNextByte()` in class `FastScanner`
+- `private int readByte()` in class `FastScanner`
+- `private boolean isPrintableChar(int c)` in class `FastScanner`
+- `public boolean hasNext()` in class `FastScanner`
+- `public String next()` in class `FastScanner`
+- `public long nextLong()` in class `FastScanner`
+- `public int nextInt()` in class `FastScanner`
+- `public double nextDouble()` in class `FastScanner`
+- `public int[] nextIntArray(int n)` in class `FastScanner`
+- `public long[] nextLongArray(int n)` in class `FastScanner`
+
+**Variable Declarations and Data Types:**
+- `int n, m, q;` in class `Solver`
+- `int max = 0;` in class `Solver`
+- `int[] a, b, c, d;` in class `Solver`
+- `final FastScanner sc;` in class `Solver`
+- `final PrintWriter writer;` in class `Solver`
+- `byte[] buffer = new byte[1024];` in class `FastScanner`
+- `int ptr = 0;` in class `FastScanner`
+- `int buflen = 0;` in class `FastScanner`
+- `InputStream in = System.in;` in class `FastScanner`
+
+**Logic Flow and Execution Order:**
+
+1. **Main Method:**
+   - Initialize `FastScanner sc`
+   - Initialize `PrintWriter w` using `System.out`
+   - Create instance of `Solver` with `sc` and `w`, call `run()`
+   - Flush `w`
+
+2. **run Method in Solver:**
+   - Read integers `n`, `m`, `q` from `sc`
+   - Initialize arrays `a`, `b`, `c`, `d` of size `q`
+   - For each `i` from `0` to `q-1`:
+     - Read integers `a[i]`, `b[i]`, `c[i]`, `d[i]` from `sc`
+   - Call `dfs(new int[]{1})`
+   - Print `max` to `writer`
+
+3. **dfs Method in Solver:**
+   - If `array.length > n`:
+     - Initialize `score = 0`
+     - For each `i` from `0` to `q-1`:
+       - If `array[b[i]] - array[a[i]] == c[i]`:
+         - Increment `score` by `d[i]`
+     - Update `max` to be the maximum of `max` and `score`
+     - Return
+   - Create `newArray` of length `array.length + 1`
+   - Copy elements of `array` to `newArray`
+   - Set last element of `newArray` to last element of `array`
+   - While `newArray[newArray.length - 1] <= m`:
+     - Call `dfs(newArray)`
+     - Increment last element of `newArray` by `1`
+
+4. **Constructor FastScanner:**
+   - Initialize `in` to `System.in`
+   - Initialize `buffer` to array of size `1024`
+   - Set `ptr = 0`
+   - Set `buflen = 0`
+
+5. **hasNextByte Method in FastScanner:**
+   - If `ptr < buflen`:
+     - Return `true`
+   - Else:
+     - Reset `ptr` to `0`
+     - Read from `in` into `buffer` and set `buflen`
+     - If `buflen <= 0`:
+       - Return `false`
+     - Return `true`
+
+6. **readByte Method in FastScanner:**
+   - If `hasNextByte()`:
+     - Return `buffer[ptr++]`
+   - Else:
+     - Return `-1`
+
+7. **isPrintableChar Method in FastScanner:**
+   - Return `true` if `33 <= c && c <= 126`
+   - Else:
+     - Return `false`
+
+8. **hasNext Method in FastScanner:**
+   - While `hasNextByte()` and `!isPrintableChar(buffer[ptr])`:
+     - Increment `ptr`
+   - Return `hasNextByte()`
+
+9. **next Method in FastScanner:**
+   - If `!hasNext()`:
+     - Throw `NoSuchElementException`
+   - Initialize `StringBuilder sb`
+   - Read byte `b` from `readByte()`
+   - While `isPrintableChar(b)`:
+     - Append `b` to `sb`
+     - Read next byte into `b`
+   - Return `sb.toString()`
+
+10. **nextLong Method in FastScanner:**
+    - If `!hasNext()`:
+      - Throw `NoSuchElementException`
+    - Initialize `n = 0`
+    - Initialize `minus = false`
+    - Read byte `b` from `readByte()`
+    - If `b == '-'`:
+      - Set `minus = true`
+      - Read next byte into `b`
+    - If `b < '0' || '9' < b`:
+      - Throw `NumberFormatException`
+    - While `true`:
+      - If `'0' <= b && b <= '9'`:
+        - Multiply `n` by `10`
+        - Add `b - '0'` to `n`
+      - Else if `b == -1 || !isPrintableChar(b)`:
+        - Return `minus ? -n : n`
+      - Else:
+        - Throw `NumberFormatException`
+      - Read next byte into `b`
+
+11. **nextInt Method in FastScanner:**
+    - Read long `nl` from `nextLong()`
+    - If `nl < Integer.MIN_VALUE || nl > Integer.MAX_VALUE`:
+      - Throw `NumberFormatException`
+    - Return `(int) nl`
+
+12. **nextDouble Method in FastScanner:**
+    - Parse double from `next()`
+    - Return parsed double
+
+13. **nextIntArray Method in FastScanner:**
+    - Initialize array `a` of size `n`
+    - For each `i` from `0` to `n-1`:
+      - Read integer into `a[i]` from `nextInt()`
+    - Return `a`
+
+14. **nextLongArray Method in FastScanner:**
+    - Initialize array `a` of size `n`
+    - For each `i` from `0` to `n-1`:
+      - Read long into `a[i]` from `nextLong()`
+    - Return `a`
+
+**Required Libraries, Modules, or Dependencies:**
+- `java.io.IOException`
+- `java.io.InputStream`
+- `java.io.PrintWriter`
+- `java.util.Arrays`
+- `java.util.NoSuchElementException`

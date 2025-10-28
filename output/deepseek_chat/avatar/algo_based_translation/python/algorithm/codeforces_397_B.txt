@@ -1,0 +1,38 @@
+**Algorithm:**
+
+1. **Class Definition:** `CodeforcesTask397BSolution`
+   - **Data Members:**
+     - `result`: string, initially empty
+     - `t`: integer, initially 0
+     - `queries`: list of lists of integers, initially empty
+
+2. **Method:** `__init__(self)`
+   - Initialize `result` to empty string
+   - Initialize `t` to 0
+   - Initialize `queries` to empty list
+
+3. **Method:** `read_input(self)`
+   - Read integer `t` from standard input
+   - For `t` times:
+     - Read a line from standard input
+     - Split line by space and convert each part to integer
+     - Append resulting list to `queries`
+
+4. **Method:** `process_task(self)`
+   - Initialize empty list `res`
+   - For each `query` in `queries`:
+     - Calculate `k` = integer division of `query[0]` by `query[1]`
+     - If `k * query[2] >= query[0]`:
+       - Append "Yes" to `res`
+     - Else:
+       - Append "No" to `res`
+   - Join all elements of `res` with newline characters and assign to `self.result`
+
+5. **Method:** `get_result(self)`
+   - Return `self.result`
+
+6. **Main Execution Block:**
+   - Create instance of `CodeforcesTask397BSolution`
+   - Call `read_input()`
+   - Call `process_task()`
+   - Print result of `get_result()`

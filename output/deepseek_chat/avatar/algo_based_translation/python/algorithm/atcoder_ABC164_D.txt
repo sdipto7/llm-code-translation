@@ -1,0 +1,12 @@
+Read input string s and set integer l = 2019
+Initialize list m with length l+1: first element 1, remaining elements 0
+Initialize integers a = 0 and r = 0
+Reverse string s and iterate over each character e with index i:
+    Convert e to integer
+    Compute power: (10^i) mod l
+    Multiply integer e by computed power mod result
+    Add result to a
+    Compute remainder: a mod l
+    Add m[remainder] to r
+    Increment m[remainder] by 1
+After loop completion, output r

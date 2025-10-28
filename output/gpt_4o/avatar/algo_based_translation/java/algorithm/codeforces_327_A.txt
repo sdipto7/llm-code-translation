@@ -1,0 +1,26 @@
+1. Import the `java.util.Scanner` library.
+2. Define the `main` method with the signature: `public static void main(String[] args)`.
+3. Create a `Scanner` object called `scanner` to read input from the standard input.
+4. Check if the scanner has a next input using `scanner.hasNext()`.
+5. Read an integer `n` from the input, representing the number of elements in the array.
+6. Declare an integer array `arr` of size `n`.
+7. Use a `for` loop with an index `i` from `0` to `n-1` to populate the array `arr` with integers from input using `scanner.nextInt()`.
+8. Declare an integer variable `max` and initialize it with `Integer.MIN_VALUE`.
+9. Use a nested `for` loop with index `i` from `0` to `n-1` and index `j` from `i` to `n-1` to iterate over all subarrays of `arr`.
+   - Declare an integer `x` and initialize it to `0`.
+   - Declare an integer array `brr` of size `n`.
+   - Copy all elements from `arr` to `brr` using a `for-each` loop over `arr` and increment `x`.
+   - Use another `for` loop with index `k` from `i` to `j` to iterate over the selected subarray:
+     - If `brr[k]` equals `0`, set `brr[k]` to `1`.
+     - Else, set `brr[k]` to `0`.
+   - Call the `checKNo` function with `brr` as an argument to get the count of `1`s in `brr`.
+   - If the returned count is greater than `max`, update `max` with this count.
+10. After processing all subarrays, check if `n` equals `1`.
+    - If `arr[0]` equals `1`, print `0`.
+    - Else, print `1`.
+11. If `n` is not `1`, print the value of `max`.
+12. Define a private static method `checKNo` with the signature: `private static int checKNo(int[] brr)`.
+    - Declare an integer `val` and initialize it to `0`.
+    - Use a `for-each` loop to iterate over each element `i` in `brr`:
+      - If `i` equals `1`, increment `val` by `1`.
+    - Return `val`.

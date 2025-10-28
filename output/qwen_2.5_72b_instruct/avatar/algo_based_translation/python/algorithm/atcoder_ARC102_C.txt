@@ -1,0 +1,53 @@
+Function signatures:
+- `dprint(*x) -> x`
+- `cmb(n: int, r: int, mod: int) -> int`
+- `kumiawase(p: int, q: int) -> int`
+- `solve(n: int) -> int`
+
+Variable declarations and data types:
+- `K: int`
+- `N: int`
+- `mod: int = 998244353`
+- `__N: int = 8000`
+- `g1: List[int] = [1, 1]`
+- `g2: List[int] = [1, 1]`
+- `inverse: List[int] = [0, 1]`
+- `ans: List[int] = []`
+
+Logic flow:
+1. Input two integers `K` and `N`.
+2. Define `dprint` as a lambda function that returns its arguments.
+3. Define `cmb` function to calculate combinations modulo `mod`:
+   - If `r < 0` or `r > n`, return 0.
+   - Set `r` to the minimum of `r` and `n - r`.
+   - Return `(g1[n] * g2[r] * g2[n - r]) % mod`.
+4. Define `kumiawase` function to calculate combinations with repetition modulo `mod`:
+   - Return `cmb(p + q - 1, q - 1, mod)`.
+5. Precompute factorials and their inverses in `g1` and `g2` lists up to `__N`:
+   - For `i` from 2 to `__N`:
+     - Append `(g1[-1] * i) % mod` to `g1`.
+     - Append `(-inverse[mod % i] * (mod // i)) % mod` to `inverse`.
+     - Append `(g2[-1] * inverse[-1]) % mod` to `g2`.
+6. Define `solve` function to calculate the solution for a given `n`:
+   - Assert `n <= K + 1`.
+   - Initialize `ans` to 0.
+   - Set `kumi` to `(n - 1) // 2`.
+   - For `p` from 0 to `kumi`:
+     - If `p > N`, break the loop.
+     - Add `(2 ** p * cmb(kumi, p, mod) * kumiawase(N - p, p + (K - kumi * 2 - int(n % 2 == 0))))` to `ans`.
+     - If `n % 2 == 0` and `N - p - 1 >= 0`, add `(2 ** p * cmb(kumi, p, mod) * kumiawase(N - p - 1, p + (K - kumi * 2 - int(n % 2 == 0))))` to `ans`.
+   - Return `ans`.
+7. For `i` from 2 to `2 * K`:
+   - If `i <= K + 1`, calculate `tmp` as `solve(i) % mod`, append `tmp` to `ans`, and print `tmp`.
+   - Else, print `ans[-i + K]`.
+
+Input/output operations:
+- Read two integers `K` and `N` from input.
+- Print calculated values for each `i` in the range from 2 to `2 * K`.
+
+Data processing logic:
+- Precompute factorials and their modular inverses up to a predefined limit.
+- Use precomputed values to efficiently calculate combinations and combinations with repetition.
+- Use these calculations to solve the problem for each `n` in the specified range and store results for reuse.
+
+No external libraries or modules are required.

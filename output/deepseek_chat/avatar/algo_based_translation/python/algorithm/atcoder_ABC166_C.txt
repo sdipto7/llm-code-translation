@@ -1,0 +1,19 @@
+1. Read two integers n and m from input
+2. Create list p containing integers from 1 to n inclusive
+3. Read n integers from input and store in list h
+4. Create dictionary hp mapping each element in p to corresponding element in h
+5. Initialize dictionary path with keys 1 to n, each with empty list value
+6. For m times:
+   a. Read two integers a and b from input
+   b. Append b to path[a]
+   c. Append a to path[b]
+7. Initialize counter c to 0
+8. For each key i and value v in path.items():
+   a. Initialize flag f to 0
+   b. For each value j in v:
+      i. If hp[i] <= hp[j]:
+         1. Set f to 1
+         2. Break inner loop
+   c. If f equals 0:
+      i. Increment c by 1
+9. Print value of c

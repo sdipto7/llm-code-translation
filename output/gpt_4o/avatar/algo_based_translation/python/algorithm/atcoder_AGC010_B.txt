@@ -1,0 +1,24 @@
+```
+Function: main
+    Input: None
+    Output: None
+    Variables:
+        - n: int
+        - a: List[int]
+        - k: float
+
+    Begin
+        Read integer input and assign to n
+        Read a line of space-separated integers, convert to list of int, and assign to a
+        If sum(a) modulo (n * (n + 1) / 2) is not zero
+            Print "NO"
+        Else
+            Assign sum(a) divided by (n * (n + 1) / 2) to k
+            Append a[0] to list a
+            If sum of [(k - i + j) modulo n for i, j in zip(a[1:], a)] is not zero 
+                OR sum of [(k - i + j) divided by n is greater than or equal to zero for i, j in zip(a[1:], a)] is not equal to n
+                Print "NO"
+            Else
+                Print "YES"
+    End
+```

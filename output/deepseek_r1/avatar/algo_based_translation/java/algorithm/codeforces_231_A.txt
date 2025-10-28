@@ -1,0 +1,37 @@
+```algorithm
+Algorithm:
+
+Function: main
+Parameters: String[] args (unused)
+Return Type: void
+Dependencies: java.util.Scanner
+
+Variables:
+- Scanner sc: initialized with System.in
+- int t: input from sc.nextInt()
+- int count: initialized to 0
+- int a, b, c: per-iteration input values
+
+Execution Flow:
+1. Initialize scanner: sc = new Scanner(System.in)
+2. Read integer t from input
+3. Initialize count = 0
+4. While loop:
+   - Condition: t-- > 0 (post-decrement check)
+   - Loop Body:
+     a. Read three integers a, b, c from input
+     b. Check if at least two of {a, b, c} are 1:
+        - (a == 1 && b == 1) ||
+        - (a == 1 && c == 1) ||
+        - (b == 1 && c == 1) ||
+        - (a == 1 && b == 1 && c == 1)
+     c. If condition true: increment count
+5. After loop: Print count to standard output
+
+Input Operations:
+- Single integer t via sc.nextInt()
+- Three integers per iteration via sc.nextInt() calls
+
+Output Operations:
+- Single integer count via System.out.println()
+```

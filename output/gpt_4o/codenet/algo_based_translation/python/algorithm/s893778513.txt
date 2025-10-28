@@ -1,0 +1,21 @@
+```
+1. Declare a function `can_form_triangle()` with no parameters and no return type.
+
+2. Declare a variable `n` of type `str`.
+   - Assign the result of `input()` to `n`.
+
+3. Declare a variable `l` of type `List[int]`.
+   - Assign the result of `map(int, input().split())` converted to a list to `l`.
+
+4. Declare a variable `b` of type `int`.
+   - Assign the result of `max(l)` to `b`.
+
+5. Declare a variable `s` of type `int`.
+   - Assign the result of `sum(l)` to `s`.
+
+6. Conditional statement:
+   - If `b < s - b` is true:
+     - Execute `print('Yes')`.
+   - Else:
+     - Execute `print('No')`.
+```

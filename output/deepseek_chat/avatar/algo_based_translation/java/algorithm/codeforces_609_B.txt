@@ -1,0 +1,39 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner in`: Scanner object for input
+- `int n`: number of elements
+- `int m`: number of genres
+- `int[] arr`: array of size n to store genre IDs
+- `int[] gen`: array of size 11 to count occurrences per genre
+- `long ans`: accumulator for result
+
+**Logic Flow:**
+1. Initialize Scanner with System.in
+2. Read integer n
+3. Read integer m
+4. Initialize integer array arr of size n
+5. Initialize integer array gen of size 11 (indexes 0-10)
+6. For i from 0 to n-1:
+   - Read integer into arr[i]
+   - Increment gen[arr[i]] by 1
+7. Initialize long ans to 0
+8. For i from 1 to m:
+   - For k from 1 to m:
+     - If i != k:
+       - Add (long)gen[i] * gen[k] to ans
+9. Print ans divided by 2
+
+**Control Structures:**
+- For loop: i = 0; i < n; i++
+- For loop: i = 1; i <= m; i++
+- Nested for loop: k = 1; k <= m; k++
+- Conditional: if (i != k)
+
+**Input/Output:**
+- Input: n, m, followed by n integers
+- Output: single integer (ans/2)
+
+**Dependencies:**
+- java.util.Scanner

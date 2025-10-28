@@ -1,0 +1,28 @@
+Function signature: `public static void main(String[] args)`
+Variable declarations:
+- `Scanner scanner` of type `Scanner`
+- `long n` of type `long`
+- `int sqrt` of type `int`
+- `int answer` of type `int`
+- `int i` of type `int`
+- `int count` of type `int`
+- `int j` of type `int`
+
+Logic flow in execution order:
+1. Create a `Scanner` object to read input from `System.in`.
+2. Read a `long` value from input and assign it to `n`.
+3. Calculate the square root of `n` and cast it to `int`, assigning it to `sqrt`.
+4. Initialize `answer` to 0.
+5. For loop starting with `i = 2` and incrementing `i` by 1 until `i` is greater than `sqrt`:
+   1. Initialize `count` to 0.
+   2. While loop checking if `n % i` equals 0:
+      1. Divide `n` by `i` and assign the result back to `n`.
+      2. Increment `count` by 1.
+   3. For loop starting with `j = 1` and incrementing `j` by 1 until `count - j` is less than 0:
+      1. Subtract `j` from `count`.
+      2. Increment `answer` by 1.
+6. If `n` is greater than 1, increment `answer` by 1.
+7. Print the value of `answer`.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

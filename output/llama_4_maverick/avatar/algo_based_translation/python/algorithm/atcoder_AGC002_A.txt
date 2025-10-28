@@ -1,0 +1,7 @@
+1. Read two integer inputs, a and b.
+2. If a is greater than 0, then output 'Positive'.
+3. Else if a is less than or equal to 0 and b is greater than or equal to 0, then output 'Zero'.
+4. Else 
+    4.1 Calculate the sum of a and b.
+    4.2 If the sum is even, then output 'Negative'.
+    4.3 Else output 'Positive'.

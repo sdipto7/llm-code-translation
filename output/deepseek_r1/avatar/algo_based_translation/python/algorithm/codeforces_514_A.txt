@@ -1,0 +1,53 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signature**  
+- `process_input() -> int`  
+  - *Parameters*: None  
+  - *Return Type*: Integer  
+
+**Variables**  
+- `ip: string` (Input string)  
+- `st: string` (Result accumulator)  
+- `i: string` (Loop variable for individual characters)  
+- `n: int` (Temporary digit calculation)  
+
+**Input/Output Operations**  
+1. Read `ip` from standard input.  
+2. Output final result as integer via `print(int(st))`.  
+
+**Logic Flow**  
+1. Initialize `st` as an empty string.  
+2. If length of `ip` is not 1:  
+   a. If `ip[0]` equals `'9'`:  
+      - Append `'9'` to `st`.  
+      - Update `ip` to `ip[1:]` (remove first character).  
+   b. Iterate over each character `i` in the updated `ip`:  
+      - Convert `i` to integer.  
+      - If integer value > 4:  
+          - Compute `n = 9 - integer(i)`.  
+          - Append `str(n)` to `st`.  
+      - Else:  
+          - Append `i` to `st`.  
+3. Else:  
+   - Set `st` to `ip`.  
+4. Return `int(st)` as final result.  
+
+**Control Flow Structures**  
+- *Conditional*:  
+  - `if len(ip) != 1` (check input length)  
+  - `if ip[0] == '9'` (handle leading 9)  
+  - `if int(i) > 4` (digit inversion condition)  
+- *Loop*:  
+  - `for i in ip` (process each character sequentially)  
+
+**Edge Case Handling**  
+- Input with length 1 is directly propagated.  
+- Leading `'9'` is preserved when input length >1.  
+- Digits >4 are inverted using `9 - digit`.  
+
+**Error Handling**  
+- No explicit error handling (assumes valid numeric string input).  
+
+**Dependencies**  
+- Relies on `input()` for data acquisition and `print()` for output.  
+- No external libraries or additional imports.

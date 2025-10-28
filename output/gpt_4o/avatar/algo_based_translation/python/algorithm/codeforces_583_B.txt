@@ -1,0 +1,32 @@
+Function signature:
+- `main_function() -> None`
+
+Variable declarations and data types:
+- `n: int`
+- `a: List[int]`
+- `current_level: int`
+- `counter: int`
+- `counter_turns: int`
+
+Logic flow:
+1. Read an integer from input and assign to `n`.
+2. Read a line of input, split by spaces, convert each split item to an integer, and assign to the list `a`.
+3. Initialize `current_level` to 0.
+4. Initialize `counter` to 0.
+5. Initialize `counter_turns` to -1.
+
+Control structures:
+- Use a `while` loop with the condition `counter < len(a)`:
+  - Increment `counter_turns` by 1.
+  - Use a `for` loop to iterate over the range of the length of `a`:
+    - Check if `a[i]` is not equal to -1 and `a[i]` is less than or equal to `counter`:
+      - Increment `counter` by 1.
+      - Set `a[i]` to -1.
+  - Reverse the list `a`.
+
+Input/output operations:
+- Read input values using `input()`.
+- Output the value of `counter_turns` using `print()`.
+
+Required libraries, modules, or dependencies:
+- None.

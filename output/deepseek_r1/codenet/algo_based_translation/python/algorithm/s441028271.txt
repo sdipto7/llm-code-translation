@@ -1,0 +1,17 @@
+- Function: Not applicable (script code)
+- Parameters: None (reads from standard input)
+- Variables:
+  - a: int
+  - b: int
+  - c: int (unused)
+  - k: int
+- Input: Single line with four space-separated integers via input()
+- Logic:
+  1. Read and parse four integers a, b, c, k from input
+  2. Check if k modulo 2 equals 0
+  3. If true: calculate a - b and print result
+  4. If false: calculate b - a and print result
+- Control Structures:
+  - Single conditional: if (k % 2 == 0) with else branch
+- Output: Single integer result printed to stdout
+- Dependencies: None (standard input/output only)

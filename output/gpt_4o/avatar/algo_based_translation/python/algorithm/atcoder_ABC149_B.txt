@@ -1,0 +1,33 @@
+```
+Function Signature:
+    None
+
+Variables:
+    cookies: List of integers
+    leftOver: Integer
+    takahashi: Integer
+
+Logic Flow:
+    1. Read a line of input from the user.
+    2. Split the input string into separate components based on spaces.
+    3. Convert each component to an integer and store them in a list called `cookies`.
+    4. Calculate `leftOver` as the difference between the first and third elements of `cookies`.
+    5. Calculate `takahashi` as the maximum between 0 and `leftOver`.
+    6. If `takahashi` is greater than 0, concatenate `takahashi` and the second element of `cookies` as strings separated by a space.
+    7. If `takahashi` is not greater than 0, calculate the maximum between 0 and the difference between the second element of `cookies` and the absolute value of `leftOver`. Concatenate `takahashi` and this result as strings separated by a space.
+    8. Print the resulting string.
+
+Control Structures:
+    - Conditional: If `takahashi > 0`
+
+Input/Output Operations:
+    - Input: Read a single line of input from the user.
+    - Output: Print a formatted string based on calculated conditions.
+
+Dependencies:
+    - Requires `input()` for reading data from the user.
+    - Requires `print()` for output to the console.
+    - Requires `int()` for converting string to integer.
+    - Requires `max()` for calculating the maximum value.
+    - Requires `abs()` for calculating the absolute value.
+```

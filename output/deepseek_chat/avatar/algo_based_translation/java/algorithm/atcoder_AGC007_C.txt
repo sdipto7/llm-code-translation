@@ -1,0 +1,19 @@
+Algorithm:
+- Import java.math.BigDecimal
+- Import java.text.DecimalFormat
+- Import java.util.Scanner
+- Declare main function with String[] args parameter
+- Create Scanner object reading from System.in
+- Read double N from input
+- Read double d from input
+- Read double x from input
+- Initialize BigDecimal ans with value "0.0"
+- While loop condition: N > 0.5
+  - Calculate BigDecimal adnum = BigDecimal.valueOf(d + x * (N - 0.5))
+  - Add adnum to ans
+  - Update d: d = (N + 1.0) * d / N + (5.0 * x) / (2.0 * N)
+  - Update x: x = (1.0 + (2.0 / N)) * x
+  - Decrement N: N = N - 1
+- After loop: Create DecimalFormat object with pattern "#.#"
+- Set minimum fraction digits to 20
+- Format ans using DecimalFormat and print result

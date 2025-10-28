@@ -1,0 +1,60 @@
+Function Signatures:
+- `void solve()`
+- `public static void main(String[] args)`
+- `private void m()`
+- `public FastScanner()`
+- `public FastScanner(InputStream stream)`
+- `public void close()`
+- `public int nextInt()`
+- `public long nextLong()`
+- `public double nextDouble()`
+- `public char nextChar()`
+- `public String nextStr()`
+- `public String nextLine()`
+- `public int[] nextIntArray(int n)`
+- `public int[] nextIntArrayDec(int n)`
+- `public int[] nextIntArray1Index(int n)`
+- `public long[] nextLongArray(int n)`
+- `public long[] nextLongArrayDec(int n)`
+- `public long[] nextLongArray1Index(int n)`
+- `public double[] nextDoubleArray(int n)`
+
+Variable Declarations and Data Types:
+- `FastScanner in`
+- `PrintWriter out`
+- `final static int MOD = (int)1e9+7`
+- `int N`
+- `int[] A`
+- `long ans = 0`
+- `long sum = A[N-1]`
+- `int sign = 1`
+- `int b`
+- `long ret`
+- `double div`
+- `StringBuilder sb`
+- `int[] res`
+- `long[] res`
+- `double[] res`
+
+Logic Flow and Control Structures:
+1. `main` calls `new Main().m()`
+2. `m` initializes `in` with `System.in` and `out` with `System.out`, then calls `solve`
+3. `solve` reads `N` using `in.nextInt()` and initializes array `A` of size `N` with integers read from `in.nextIntArray(N)`
+4. Initializes `ans` to `0` and `sum` to `A[N-1]`
+5. For loop starts from `i = N - 2` down to `0`:
+   - Updates `ans` by adding `(sum * A[i]) % MOD` to it and taking modulo `MOD`
+   - Updates `sum` by adding `A[i]` to it and taking modulo `MOD`
+6. After loop, `ans` is printed using `out.println(ans)`
+7. `out.flush()`, `in.close()`, and `out.close()` are called in `m`
+
+Input/Output Operations:
+- Input: Reads integer `N` and array `A` of size `N` from standard input
+- Output: Prints `ans` to standard output
+
+Data Processing Logic:
+- Computes cumulative sum and weighted sum of array elements, ensuring all operations are performed modulo `MOD`
+
+Libraries, Modules, or Dependencies:
+- `java.io.*`
+- `java.util.*`
+- `java.math.BigDecimal`

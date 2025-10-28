@@ -1,0 +1,40 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `public static void util(ArrayList<Long> arr, String[] ops, int idx)`
+
+**Variable Declarations:**
+- `min` (static long)
+- `sc` (Scanner)
+- `arr` (ArrayList<Long>)
+- `ops` (String[3])
+- `i`, `j`, `k` (int indices)
+- `a` (ArrayList<Long>)
+- `res` (long)
+
+**Logic Flow:**
+1. Initialize `min` to `Long.MAX_VALUE`
+2. Read 4 long values into `arr`
+3. Read 3 strings into `ops`
+4. Call `util(arr, ops, 0)`
+5. Print `min`
+
+**util Function Logic:**
+1. If `idx == 3`: set `min` to minimum of current `min` and `arr.get(0)`, then return
+2. For each pair `(i,j)` where `i < j`:
+   - Create new list `a` containing all elements from `arr` except those at positions `i` and `j`
+   - If `ops[idx]` equals "+": `res = arr.get(i) + arr.get(j)`
+   - Else: `res = arr.get(i) * arr.get(j)`
+   - Add `res` to `a`
+   - Recursively call `util(a, ops, idx + 1)`
+
+**Control Structures:**
+- For loops: `for (int i = 0; i < 4; i++)`, `for (int i = 0; i < 3; i++)`, `for (int i = 0; i < arr.size(); i++)`, `for (int j = i+1; j < arr.size(); j++)`, `for (int k = 0; k < arr.size(); k++)`
+- Conditional: `if (idx == 3)`, `if (k != j && k != i)`, `if (idx < 3 && ops[idx].equals("+"))`
+
+**Input/Output:**
+- Input: 4 numbers, 3 operators via Scanner
+- Output: Minimum result value printed
+
+**Dependencies:**
+- `java.util.Scanner`
+- `java.util.ArrayList`

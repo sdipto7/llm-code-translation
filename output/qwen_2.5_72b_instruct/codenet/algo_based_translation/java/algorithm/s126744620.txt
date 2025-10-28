@@ -1,0 +1,40 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `sc: Scanner`
+- `n: int`
+- `k: int`
+- `a: int[]`
+- `x: Integer[]`
+- `ans: int`
+- `i: int`
+- `p1: Integer`
+- `p2: Integer`
+
+Complete logic flow in execution order:
+1. Initialize `sc` as a new `Scanner` object for reading input.
+2. Read integer `n` from input.
+3. Read integer `k` from input.
+4. Initialize array `a` of size `n`.
+5. For each index `i` from 0 to `n-1`, read an integer from input and store it in `a[i]`.
+6. Initialize array `x` of size 200010 with all elements set to 0.
+7. For each index `i` from 0 to `n-1`, increment `x[a[i] - 1]` by 1.
+8. Sort array `x` using a custom comparator that compares two integers `p1` and `p2` by their difference `p1 - p2`.
+9. Initialize `ans` to 0.
+10. For each index `i` from 0 to `200010 - k - 1`, add `x[i]` to `ans`.
+11. Print the value of `ans`.
+
+Control structures:
+- For loop: `for(int i = 0 ; i < n ; i++)`
+- For loop: `for(int i = 0 ; i < n ; i++)`
+- For loop: `for(int i = 0 ; i <= 200010 - k - 1 ; i++)`
+
+Input/output operations and data processing logic:
+- Read integers from standard input using `sc.nextInt()`.
+- Write the final result `ans` to standard output using `System.out.println(ans)`.
+
+Required libraries, modules, or dependencies:
+- `java.util.Arrays`
+- `java.util.Comparator`
+- `java.util.Scanner`

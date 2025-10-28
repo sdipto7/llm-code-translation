@@ -1,0 +1,50 @@
+STRUCTURED ALGORITHM SPECIFICATION:
+
+FUNCTION:
+- Name: calculate_square_points
+- Parameters:
+  - input_str: string
+- Return type: string
+
+VARIABLES:
+- p: list of strings
+- x1: integer
+- y1: integer
+- x2: integer
+- y2: integer
+- DIF1: integer
+- DIF2: integer
+- x3: integer
+- y3: integer
+- x4: integer
+- y4: integer
+
+LOGIC FLOW:
+1. Split input_str using space delimiter into list p
+2. Convert p[0] to integer x1
+3. Convert p[1] to integer y1
+4. Convert p[2] to integer x2
+5. Convert p[3] to integer y2
+6. Calculate DIF1 = x2 - x1
+7. Calculate DIF2 = y2 - y1
+8. Calculate x3 = x2 - DIF2
+9. Calculate y3 = y2 + DIF1
+10. Calculate x4 = x1 - DIF2
+11. Calculate y4 = y1 + DIF1
+12. Concatenate x3, y3, x4, y4 as space-separated string
+13. Return concatenated string
+
+CONTROL FLOW:
+- Linear execution with no conditional branches or loops
+
+INPUT/OUTPUT:
+- Input: Single line string with four space-separated integers
+- Output: Single line string with four space-separated integers representing coordinates
+
+ERROR HANDLING:
+- No explicit error handling
+- Assumes valid input format with exactly four space-separated integers
+
+EXTERNAL DEPENDENCIES:
+- Standard input/output functions for reading input and printing output
+- No additional libraries or imports required

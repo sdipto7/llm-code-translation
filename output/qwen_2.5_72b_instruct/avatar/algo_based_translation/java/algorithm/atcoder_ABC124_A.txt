@@ -1,0 +1,33 @@
+Function signature:
+- main(String[] args): void
+
+Variable declarations and data types:
+- Scanner sc: Scanner
+- int a: integer
+- int b: integer
+- int sum: integer
+- int i: integer
+
+Logic flow in execution order:
+1. Initialize Scanner object to read input.
+2. Read first integer input and assign to variable `a`.
+3. Read second integer input and assign to variable `b`.
+4. Initialize variable `sum` to 0.
+5. Start a for loop that iterates 2 times (i from 0 to 1).
+6. Inside loop:
+   - Check if `a` is greater than or equal to `b`.
+   - If true, add `a` to `sum`, then decrement `a` by 1.
+   - If false, add `b` to `sum`, then decrement `b` by 1.
+7. After loop, print the value of `sum`.
+
+Control structures:
+- For loop: iterates 2 times (i from 0 to 1).
+- If-else conditional: checks if `a` is greater than or equal to `b`.
+
+Input/output operations and data processing logic:
+- Read two integers from standard input.
+- Perform arithmetic operations based on conditional checks.
+- Print the resulting sum to standard output.
+
+Required libraries, modules, or dependencies:
+- java.util.Scanner

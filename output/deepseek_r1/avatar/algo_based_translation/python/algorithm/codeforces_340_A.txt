@@ -1,0 +1,60 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+1. `G(a: int, b: int) -> int`
+2. `L(a: int, b: int) -> int`
+
+**Variable Declarations:**
+- `l: list[str]` (input values as strings)
+- `x: int`, `y: int`, `a: int`, `b: int` (parsed integer inputs)
+- `lcm: int` (result of LCM calculation)
+
+**Logic Flow:**
+
+**Function G (GCD):**
+1. Initialize parameters: integer `a`, integer `b`.
+2. Enter loop:
+   - 2.1 Check condition: `a % b != 0`
+   - 2.2 If true:
+       - Reassign `a = b`
+       - Reassign `b = a % b`
+       - Repeat loop step 2.1
+   - 2.3 If false: exit loop
+3. Return `b`
+
+**Function L (LCM):**
+1. Initialize parameters: integer `a`, integer `b`.
+2. Calculate `gcd_value = G(a, b)`
+3. Compute and return `(a * b) // gcd_value`
+
+**Main Program:**
+1. Read input line via `input().split(' ')`, store in `l`.
+2. Parse elements:
+   - `x = int(l[0])`
+   - `y = int(l[1])`
+   - `a = int(l[2])`
+   - `b = int(l[3])`
+3. Compute `lcm = L(x, y)`
+4. Calculate result:
+   - `count = (b // lcm) - ((a - 1) // lcm)`
+5. Output result via `print(count)`
+
+**Control Flow Structures:**
+- While loop in `G` with exit condition `a % b == 0`
+- Sequential execution in `L` and main program
+
+**Input/Output Operations:**
+- Input: Single line of space-separated integers from stdin
+- Output: Integer result printed to stdout
+
+**Error Handling:**
+- No explicit error handling
+- Implicit assumptions:
+  - Input contains exactly four space-separated integers
+  - `x` and `y` are non-zero (to prevent division/modulo by zero in GCD)
+
+**External Dependencies:**
+- Standard library functions:
+  - `input()` for reading stdin
+  - `print()` for writing stdout
+  - `str.split()` for input parsing

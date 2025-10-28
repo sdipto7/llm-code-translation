@@ -1,0 +1,8 @@
+1. Read input from user and discard it
+2. Read a string input from user and store it in 'a'
+3. Remove leading and trailing whitespace and '0' from 'a'
+4. Split 'a' into substrings separated by '1'
+5. For each substring, count the number of '0' in it and add 1 to the count
+6. If 'a' contains no '1', then result = 0
+7. Otherwise, result = product of the counts obtained in step 5
+8. Print the result

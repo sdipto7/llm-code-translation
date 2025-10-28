@@ -1,0 +1,9 @@
+1. Read a line of input and split into two strings by whitespace
+2. Assign first string to variable A (type: string)
+3. Assign second string to variable B (type: string)
+4. Convert A to integer and store back in A (type: int)
+5. Remove all '.' characters from B and store result back in B (type: string)
+6. Convert B to integer and store back in B (type: int)
+7. Multiply A and B (both integers)
+8. Perform integer division of result by 100
+9. Print the result of the division

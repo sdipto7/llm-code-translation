@@ -1,0 +1,51 @@
+**Algorithm:**
+
+1. **Input Parameters:**
+   - Integers: h (grid height), w (grid width), n (number of moves), sr (start row), sc (start column)
+   - Strings: s (sequence of moves), t (opponent's response sequence)
+
+2. **Variables:**
+   - Boolean: end (flag for early termination)
+   - Integers: usafe (upper safe row), dsafe (lower safe row), lsafe (left safe column), rsafe (right safe column)
+
+3. **Vertical Safety Calculation:**
+   - Initialize usafe = 1, dsafe = h
+   - For i from n-1 downto 0:
+     - If s[i] == 'U': increment usafe
+     - Else if s[i] == 'D': decrement dsafe
+     - If usafe > dsafe: set end = true, break loop
+     - If i > 0 and t[i-1] == 'U': increment dsafe (capped at h)
+     - Else if i > 0 and t[i-1] == 'D': decrement usafe (capped at 1)
+
+4. **Horizontal Safety Calculation:**
+   - Initialize lsafe = 1, rsafe = w
+   - For i from n-1 downto 0:
+     - If s[i] == 'L': increment lsafe
+     - Else if s[i] == 'R': decrement rsafe
+     - If lsafe > rsafe: set end = true, break loop
+     - If i > 0 and t[i-1] == 'L': increment rsafe (capped at w)
+     - Else if i > 0 and t[i-1] == 'R': decrement lsafe (capped at 1)
+
+5. **Final Check:**
+   - If sr is within [usafe, dsafe] AND sc is within [lsafe, rsafe] AND end is false: Output "YES"
+   - Else: Output "NO"
+
+6. **I/O Operations:**
+   - Read h, w, n, sr, sc, s, t from standard input
+   - Write "YES" or "NO" to standard output
+
+7. **Control Structures:**
+   - Two nested loops iterating from n-1 to 0 (reverse order)
+   - Conditional branches based on character comparisons ('U', 'D', 'L', 'R')
+   - Conditional checks for safety range validity (usafe <= dsafe, lsafe <= rsafe)
+   - Early termination with break on invalid ranges
+   - Clamping operations during opponent response handling
+
+8. **Data Types:**
+   - All coordinates and counts as integers (32-bit)
+   - Strings s and t (1-based index access via charAt)
+   - Boolean flag for termination
+
+**Dependencies:**
+- Java Standard Library: Scanner for input, System for output
+- No external modules required

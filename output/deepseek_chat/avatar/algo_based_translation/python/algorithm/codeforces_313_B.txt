@@ -1,0 +1,15 @@
+Algorithm:
+- Read input string `soz`
+- Initialize list `a` of integers with length len(soz)+1, all elements set to 0
+- For i from 1 to len(soz)-1 (inclusive):
+  - Set a[i] = a[i-1]
+  - If soz[i-1] == soz[i]:
+    - Increment a[i] by 1
+- Read integer n
+- Initialize empty list `arr`
+- For i from 0 to n-1:
+  - Read two space-separated values m and l
+  - Calculate value = a[int(l)-1] - a[int(m)-1]
+  - Append value to `arr`
+- For each element in `arr`:
+  - Print the element

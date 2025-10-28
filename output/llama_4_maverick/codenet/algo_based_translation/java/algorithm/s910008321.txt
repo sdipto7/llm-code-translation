@@ -1,0 +1,8 @@
+1. Import the required library: java.util.Scanner
+2. Define a function main with parameters (String[] args) and return type void
+3. Declare a variable scanner of type Scanner and initialize it with a new Scanner object using System.in
+4. Declare variables h and a of type int
+5. Read input from the user using scanner.nextInt() and store the values in h and a respectively
+6. Check the condition if (h % a == 0)
+7. If the condition is true, calculate h / a and output the result using System.out.println()
+8. If the condition is false, calculate h / a + 1 and output the result using System.out.println()

@@ -1,0 +1,5 @@
+1. Read an integer input from standard input and assign to variable `x` of type int
+2. Calculate integer division of `x` by 100, resulting in an integer value
+3. Create a string consisting of the character "3" repeated by the result from step 2
+4. Format the string "ai1333{}" by inserting the string from step 3 into the placeholder
+5. Print the formatted string to standard output

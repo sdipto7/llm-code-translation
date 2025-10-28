@@ -1,0 +1,41 @@
+Algorithm:
+
+Function Signatures:
+- public static void main(String[] args) throws IOException
+
+Variables:
+- int x (input value)
+- int count = 0
+- int tmp (stores original x value)
+- FastReader sc (input handler)
+- PrintWriter pw (output handler)
+
+Input/Output Operations:
+- Read integer x using sc.nextInt()
+- Print count via System.out
+
+Logic Flow:
+1. Initialize count ← 0
+2. Store input x in tmp
+3. Reset x ← 0
+4. While loop: while x != 360
+   a. x ← x + tmp
+   b. If x > 360:
+      i. x ← x - 360
+   c. count ← count + 1
+5. Print count
+
+Control Structures:
+- While loop with condition (x != 360)
+- If conditional check (x > 360) inside loop
+
+Dependencies:
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader
+- java.io.PrintWriter
+- java.util.StringTokenizer
+
+Data Processing:
+- Cumulative sum with modulus-like adjustment (via subtraction) when exceeding 360
+- Counts required iterations to reach exact 360 through repeated addition

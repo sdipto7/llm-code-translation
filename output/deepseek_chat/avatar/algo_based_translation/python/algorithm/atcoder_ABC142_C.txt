@@ -1,0 +1,7 @@
+N = integer input from user
+A = list of tuples: for each index i and value x in split input string, create tuple (i+1, integer(x))
+A_ = sort list A by second element of each tuple (the integer value)
+A__ = list containing only first elements (original indices) from each tuple in A_
+For each element i in all elements of A__ except last:
+    print i followed by space (no newline)
+Print last element of A__ (with newline)

@@ -1,0 +1,26 @@
+```
+1. Import the math module for mathematical operations.
+
+2. Read two integers from input:
+   - Declare `n` as an integer, representing the number of points.
+   - Declare `d` as an integer, representing the dimensionality of each point.
+
+3. Initialize a list `points` to store `n` points, where each point is a list of `d` integers:
+   - Use a list comprehension and loop `n` times.
+   - For each iteration, read `d` integers from input and store them as a list in `points`.
+
+4. Define a function `dist(x: List[int], y: List[int]) -> float`:
+   - Initialize a float variable `tmp` to 0.0.
+   - Loop over the range `d`:
+     - For each index `i`, add the square of the difference between `x[i]` and `y[i]` to `tmp`.
+   - Return the square root of `tmp` using `math.sqrt`.
+
+5. Initialize an integer variable `count` to 0 to count pairs of points with integer distances.
+
+6. Loop over the list `points` with index `i` and element `elm`:
+   - For each `i`, loop over the range from `i + 1` to `n` with index `j`:
+     - Calculate the distance between `elm` and `points[j]` using `dist`.
+     - If the calculated distance is an integer, increment `count` by 1.
+
+7. Print the value of `count`.
+```

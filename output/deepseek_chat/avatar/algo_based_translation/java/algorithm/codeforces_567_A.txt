@@ -1,0 +1,32 @@
+Function signature:
+main(String[] args) -> void
+
+Dependencies:
+- java.util.Scanner
+- javax.swing.JOptionPane
+
+Variables:
+- Scanner s
+- int a
+- int[] ar
+- int max = 0
+- int min = 0
+- int i (loop counter)
+
+Algorithm:
+1. Create Scanner object reading from System.in
+2. Read integer 'a' from input
+3. Create integer array 'ar' of size 'a'
+4. Initialize max = 0, min = 0
+5. For i from 0 to ar.length-1:
+   - Read integer from input and store in ar[i]
+6. For i from 0 to ar.length-1:
+   - Calculate max = maximum of (ar[i] - ar[0]) and (ar[ar.length-1] - ar[i])
+   - If i == 0:
+        min = ar[i+1] - ar[i]
+   - Else if i == ar.length-1:
+        min = ar[i] - ar[i-1]
+   - Else:
+        min = minimum of (ar[i] - ar[i-1]) and (ar[i+1] - ar[i])
+   - Print min + " " + max
+7. End program

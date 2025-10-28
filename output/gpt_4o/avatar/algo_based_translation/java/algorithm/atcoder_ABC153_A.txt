@@ -1,0 +1,31 @@
+```
+Function Signature:
+- Function: main
+- Parameters: args (String array)
+- Return Type: void
+- Throws: IOException
+
+Variable Declarations:
+- BufferedReader in
+- String array str
+- Integer h
+- Integer a
+- Integer num initialized to 0
+
+Execution Logic:
+1. Create a BufferedReader object `in` to read input from the standard input stream.
+2. Read a line of input using `in.readLine()` and split it by spaces, storing the result in the String array `str`.
+3. Parse the first element of `str` as an integer and assign it to `h`.
+4. Parse the second element of `str` as an integer and assign it to `a`.
+5. Initialize an integer variable `num` to 0.
+6. Enter a for-loop with initialization `int i = 1`, condition `h > 0`, and increment `i++`.
+    - Within the loop, subtract `a` from `h` and assign the result back to `h`.
+    - Increment `num` by 1.
+7. Exit the loop when `h` is less than or equal to 0.
+8. Print the value of `num` to the standard output.
+
+Libraries/Dependencies:
+- java.io.BufferedReader
+- java.io.InputStreamReader
+- java.io.IOException
+```

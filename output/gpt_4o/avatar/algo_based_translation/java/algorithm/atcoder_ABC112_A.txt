@@ -1,0 +1,36 @@
+```plaintext
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.io.IOException
+import java.util.ArrayList
+import java.util.List
+
+class atcoder_ABC112_A:
+    BufferedReader br = null
+
+    function main(args: Array<String>): void
+        declare n: int
+        n = Integer.parseInt(read(1)[0])
+        if n == 1 then
+            System.out.println("Hello World")
+        else
+            declare strs: Array<String>
+            strs = read(2)
+            System.out.println(Integer.parseInt(strs[0]) + Integer.parseInt(strs[1]))
+
+    function read(len: int): Array<String>
+        declare strList: List<String> = new ArrayList<String>()
+        try
+            if br is null then
+                br = new BufferedReader(new InputStreamReader(System.in))
+            for i from 0 to len - 1 do
+                strList.add(br.readLine())
+        catch IOException
+        return strList.toArray(new Array<String>(0))
+
+    function close(): void
+        try
+            if br is not null then
+                br.close()
+        catch IOException
+```

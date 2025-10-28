@@ -1,0 +1,32 @@
+- **Function/Method Signatures**:
+  - Not applicable (script-based execution flow)
+
+- **Variable Declarations**:
+  - `n: int` (input integer)
+  - `l: List[int]` (input list of integers)
+  - `c: int` (counter initialized to 0)
+
+- **Algorithm Steps**:
+  1. Read integer `n` from standard input.
+  2. Read a line of space-separated integers from standard input and store them in list `l`.
+  3. Sort `l` in non-decreasing order.
+  4. Initialize `c` to 0.
+  5. Iterate over each element `i` in sorted list `l`:
+     - If `i > c`:
+       - Increment `c` by 1.
+  6. Print `c + 1`.
+
+- **Control Flow**:
+  - Single loop over sorted `l`, executing a conditional increment of `c` when `i > c`.
+
+- **Input/Output**:
+  - Input: `n` (integer), followed by list `l` (space-separated integers).
+  - Output: Single integer `c + 1`.
+
+- **Edge Cases**:
+  - Handles empty input lists (outputs 1).
+  - Correctly processes duplicate values and varying list lengths.
+
+- **External Dependencies**:
+  - Imports: `sys` (for input reading), `math` (unused), `array` (unused).
+  - Uses `sys.stdin.readline` and input parsing lambdas.

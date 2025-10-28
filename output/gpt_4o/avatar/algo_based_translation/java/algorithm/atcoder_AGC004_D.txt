@@ -1,0 +1,61 @@
+```
+Algorithm:
+1. Import the necessary packages:
+   - Import `java.util.ArrayList`.
+   - Import `java.util.List`.
+   - Import `java.util.Scanner`.
+
+2. Define the main class `atcoder_AGC004_D` with the `main` method:
+   - Signature: `public static void main(String[] args)`
+   - Start a new thread with a `MyRunnable` instance and execute it.
+
+3. Define the `MyRunnable` class implementing `Runnable` interface:
+   - Method `run`:
+     - Signature: `public void run()`
+     - Declare integer variables `n` and `k`.
+     - Declare a `List<Integer>` named `as` initialized as a new `ArrayList`.
+     - Use a `Scanner` to read input:
+       - Read integer `n`.
+       - Read integer `k`.
+       - Loop `i` from 0 to `n-1`:
+         - Read an integer, subtract 1, and add to the list `as`.
+     - Create a `Calculator` object with `n`, `k`, and `as`.
+     - Call the `calculate` method on the `Calculator` object and print the result.
+
+4. Define the `Calculator` class:
+   - Private integer field `k`.
+   - Private integer field `answer` initialized to 0.
+   - Private boolean field `isCalculate` initialized to false.
+   - Private `List<List<Integer>>` named `lists` initialized as a new `ArrayList`.
+
+   - Constructor `Calculator`:
+     - Signature: `Calculator(int n, int k, List<Integer> as)`
+     - Assign `k` to the class field `k`.
+     - Loop `i` from 0 to `n-1`:
+       - Add a new `ArrayList<Integer>` to `lists`.
+     - Loop `i` from 0 to `n-1`:
+       - Retrieve integer `j` from `as` at index `i`.
+       - If `i` is greater than 0:
+         - Add `i` to `lists` at index `j`.
+       - Else if `j` is greater than 0:
+         - Increment `answer`.
+
+   - Method `calculate`:
+     - Signature: `int calculate()`
+     - If `isCalculate` is false:
+       - Call `dfs` with parameters 0, 0.
+       - Set `isCalculate` to true.
+     - Return `answer`.
+
+   - Method `dfs` (Depth First Search):
+     - Signature: `private int dfs(int a, int pre)`
+     - Declare integer `h` initialized to 0.
+     - For each integer `i` in `lists` at index `a`:
+       - Set `h` to the maximum of `h` and the result of `dfs(i, a)`.
+     - If `pre` is greater than 0 and `h` is equal to `k - 1`:
+       - Set `h` to 0.
+       - Increment `answer`.
+     - Else:
+       - Increment `h`.
+     - Return `h`.
+```

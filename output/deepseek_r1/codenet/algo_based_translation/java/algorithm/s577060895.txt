@@ -1,0 +1,26 @@
+1. **Function Signatures**
+   - `public static void main(String[] args)`
+
+2. **Variables**
+   - `Scanner sc = new Scanner(System.in)` (Scanner object)
+   - `long n` (input value)
+   - `double sqrt` (square root of `n`)
+   - `double nearNum` (floored value of `sqrt`)
+   - `long ans` (result to print)
+
+3. **Logic Flow**
+   - Read input line as `long n`
+   - Compute `sqrt = Math.sqrt(n)`
+   - Compute `nearNum = Math.floor(sqrt)`
+   - Compute `ans = (long) Math.pow(nearNum, 2)`
+   - Print `ans`
+
+4. **Control Structures**
+   - No loops or conditionals (direct sequential execution)
+
+5. **Input/Output Operations**
+   - Input: `n` read via `Scanner.nextLine()` and parsed to `long`
+   - Output: `ans` printed via `System.out.println()`
+
+6. **Dependencies**
+   - `import java.util.Scanner`

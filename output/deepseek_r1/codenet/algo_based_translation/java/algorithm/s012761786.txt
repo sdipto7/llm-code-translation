@@ -1,0 +1,40 @@
+**Algorithm:**
+
+1. **Input Reading:**
+   - Read `n: long`, `a: long`, `b: long` from standard input.
+
+2. **Variable Declarations:**
+   - Compute `sa: long = absolute difference between a and b`.
+   - Initialize `ans: long = 0`.
+
+3. **Conditional Logic:**
+   - **If** `sa % 2 == 0` (even difference):
+     - Set `ans = sa / 2`.
+   - **Else** (odd difference):
+     - Compute:
+       - `AAA: long = minimum of (n - a) and (a - 1)`
+       - `BBB: long = minimum of (n - b) and (b - 1)`
+     - Set `ans = minimum of AAA and BBB`.
+     - Decrement `sa: sa = sa - 1`.
+     - Increment `ans: ans = ans + 1`.
+     - Add `sa / 2` to `ans`.
+
+4. **Output:**
+   - Print `ans`.
+
+**Function Signatures:**
+- `main(String[] args): void`
+- `next(): String`
+- `nextInt(): int`
+- `nextLong(): long`
+- `nextDouble(): double`
+- `splitString(String s): String[]`
+- `splitChar(String s): char[]`
+- `charToInt(char aaa): int`
+- `maxInt(int[] a, int lng): int`
+- `minInt(int[] a, int lng): int`
+- `maxLong(long[] a, int lng): long`
+- `minLong(long[] a, int lng): long`
+
+**Dependencies:**
+- `java.util.Scanner` for input handling.

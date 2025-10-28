@@ -1,0 +1,20 @@
+- Required Libraries/Dependencies:
+  - from collections import deque
+- Input Operations:
+  - Read integer `n: int` from stdin
+  - Read list `a: list[str]` from stdin via split()
+- Variables:
+  - `n: int` (unused)
+  - `a: list[str]` (input list)
+  - `b: list[str]` (processed list)
+- Data Processing:
+  1. Slice `a[1::2]` (odd indices), reverse it with `[::-1]`
+  2. Slice `a[::2]` (even indices)
+  3. Concatenate reversed odd indices slice with even indices slice to create `b`
+- Control Structures:
+  - if len(a) % 2 == 0:
+    - Output: space-joined `b`
+  - else:
+    - Reverse `b` and output as space-joined string
+- Output Operations:
+  - Print final result via `print()` with joined string

@@ -1,0 +1,14 @@
+1. Import Scanner from java.util
+2. Define class Main
+3. Define main method with parameter String[] args
+4. Create Scanner object reading from System.in
+5. Declare integer variable A, assign next integer input
+6. Declare integer variable B, assign next integer input
+7. Declare integer variable T, assign next integer input
+8. Calculate integer division T divided by A
+9. Multiply result by B
+10. Call log method with integer result
+11. Define private static method log with String parameter str
+12. Print str to System.out
+13. Define private static method log with integer parameter str
+14. Print str to System.out

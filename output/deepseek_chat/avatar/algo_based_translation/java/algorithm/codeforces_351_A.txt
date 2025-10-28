@@ -1,0 +1,43 @@
+```python
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.io.IOException
+import java.util.StringTokenizer
+import java.lang.Math
+
+function main(args: Array<String>): void
+    throws IOException
+    
+    Initialize BufferedReader br = new BufferedReader(new InputStreamReader(System.in))
+    Initialize StringBuilder sb = new StringBuilder()
+    
+    Read integer n = Integer.parseInt(br.readLine())
+    Initialize StringTokenizer st = new StringTokenizer(br.readLine())
+    Initialize Double[] arr = new Double[2 * n]
+    Initialize int non_int = 0
+    Initialize double sum_before = 0.0
+    Initialize double sum = 0.0
+    
+    For i from 0 to (2 * n - 1):
+        Read double num = Double.parseDouble(st.nextToken())
+        Set sum_before = sum_before + num
+        If num != Math.floor(num):
+            Set non_int = non_int + 1
+        Set sum = sum + Math.floor(num)
+        Set arr[i] = num
+    
+    Calculate double max_sum = Math.min(n, non_int) + sum
+    Calculate double min_sum = Math.max(0, non_int - n) + sum
+    
+    Initialize double ans
+    
+    If min_sum > sum_before:
+        Set ans = min_sum - sum_before
+    Else if max_sum < sum_before:
+        Set ans = sum_before - max_sum
+    Else:
+        Calculate double x = sum_before - Math.floor(sum_before)
+        Set ans = Math.min(1.0 - x, x)
+    
+    Print formatted string "%.3f" with ans
+```

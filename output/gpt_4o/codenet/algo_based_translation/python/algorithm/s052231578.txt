@@ -1,0 +1,21 @@
+```plaintext
+Algorithm AtCoderBeginnerContest111:
+
+1. Import the `bisect` module from the Python standard library.
+
+2. Define a function `find_smallest_111_multiple(N: int) -> int`:
+   a. Declare a list `arr` of integers initialized with values [111, 222, 333, 444, 555, 666, 777, 888, 999].
+   
+3. Within the function:
+   a. Use the `bisect_left` function from the `bisect` module to find the index `ans_idx` where `N` can be inserted in `arr` to maintain sorted order.
+      - The `bisect_left` function takes parameters:
+        i. `arr`: The list of integers.
+        ii. `N`: The integer to be inserted.
+        
+   b. Return the value at index `ans_idx` from the list `arr`.
+
+4. In the main execution flow:
+   a. Read an integer input `N` from the user.
+   b. Call the `find_smallest_111_multiple` function with `N` and store the result.
+   c. Print the result.
+```

@@ -1,0 +1,29 @@
+**Algorithm:**
+
+**Function Signatures:**
+- `void solve()`: No parameters, no return. Main logic function.
+- `int ni()`: Reads integer from input, returns int.
+- `Scanner sc`: Scanner object for input handling.
+
+**Variables:**
+- `int a`: First input integer.
+- `int b`: Second input integer.
+
+**Logic Flow:**
+1. Initialize Scanner to read from standard input.
+2. Call `solve()` method.
+3. Read integer `a` via `ni()`.
+4. Read integer `b` via `ni()`.
+5. Compute `a - 2 * b`.
+6. Calculate maximum between 0 and computed value using `Math.max`.
+7. Print result.
+
+**Control Structures:**
+- Single conditional operation via `Math.max(0, a-2*b)` (implicitly checks if result is negative).
+
+**Input/Output:**
+- Input: Two integers via Scanner.
+- Output: Print result of `Math.max(0, a-2*b)`.
+
+**Dependencies:**
+- `java.util.Scanner` for input handling.

@@ -1,0 +1,44 @@
+```python
+Algorithm:
+Function: main()
+Parameters: (args: List[str])
+Return type: void
+
+Imports/Dependencies:
+- java.util.Arrays
+- java.util.Scanner
+
+Variables:
+- in: Scanner (System.in)
+- n: int = in.nextInt()
+- ans: List[Long] = new Long[n]
+- count: Long = ans[n-1] (initialized after sorting)
+- i: int (loop counters)
+
+Logic Flow:
+1. Read integer n from input
+2. Initialize ans array with n Long elements read from input
+3. Sort ans array in ascending order using Arrays.sort()
+4. Initialize count with ans[n-1]
+5. For i from n-2 downto 0:
+   a. If ans[i] < ans[i+1]:
+      - Add ans[i] to count
+   b. Else:
+      - While ans[i] >= ans[i+1]:
+          i. Decrement ans[i] by 1
+      - If ans[i] > 0:
+          i. Add ans[i] to count
+6. Print count
+
+Control Structures:
+- for loop: i from 0 to n-1 (array initialization)
+- Arrays.sort() on ans
+- for loop: i from n-2 downto 0
+- if-else statement comparing ans[i] and ans[i+1]
+- while loop with condition ans[i] >= ans[i+1]
+- if statement checking ans[i] > 0
+
+Input/Output:
+- Input: n followed by n space-separated integers via Scanner
+- Output: Final count value printed to standard output
+```

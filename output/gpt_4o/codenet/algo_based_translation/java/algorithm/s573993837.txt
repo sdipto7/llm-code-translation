@@ -1,0 +1,249 @@
+```plaintext
+Algorithm Main
+    Input: none
+    Output: none
+    Variables: inputStream (InputStream), outputStream (OutputStream), in (InputReader), out (PrintWriter)
+    Begin
+        inputStream ← System.in
+        outputStream ← System.out
+        in ← new InputReader(inputStream)
+        out ← new PrintWriter(outputStream)
+        Call solve(in, out)
+        out.close()
+    End
+
+Algorithm solve
+    Input: sc (InputReader), pw (PrintWriter)
+    Output: none
+    Variables: t (int), n (long), m (long)
+    Begin
+        t ← 1
+        While t > 0 do
+            t ← t - 1
+            n ← sc.nextLong()
+            m ← sc.nextLong()
+            If n = 0 Then
+                pw.println(0)
+                Continue While
+            End If
+            If n = m Then
+                pw.println(0)
+                Continue While
+            End If
+            If n > m Then
+                n ← m + n % m
+                n ← n - m
+                pw.println(Math.min(m - n, n))
+                Continue While
+            End If
+            pw.println(Math.min(m - n, n))
+        End While
+    End
+
+Algorithm swap
+    Input: chrr (char[]), i (int), j (int)
+    Output: none
+    Variables: temp (char)
+    Begin
+        temp ← chrr[i]
+        chrr[i] ← chrr[j]
+        chrr[j] ← temp
+    End
+
+Algorithm num
+    Input: n (int)
+    Output: (int)
+    Variables: a (int)
+    Begin
+        a ← 0
+        While n > 0 do
+            a ← a + (n & 1)
+            n ← n >> 1
+        End While
+        Return a
+    End
+
+Algorithm isPrime
+    Input: n (int)
+    Output: (boolean)
+    Begin
+        If n ≤ 1 Then
+            Return false
+        End If
+        If n ≤ 3 Then
+            Return true
+        End If
+        If n % 2 = 0 or n % 3 = 0 Then
+            Return false
+        End If
+        For i ← 5 to √n step 6 do
+            If n % i = 0 or n % (i + 2) = 0 Then
+                Return false
+            End If
+        End For
+        Return true
+    End
+
+Algorithm gcd
+    Input: a (long), b (long)
+    Output: (long)
+    Begin
+        If b = 0 Then
+            Return a
+        End If
+        If a > b Then
+            Return gcd(b, a % b)
+        End If
+        Return gcd(a, b % a)
+    End
+
+Algorithm fast_pow
+    Input: base (long), n (long), M (long)
+    Output: (long)
+    Variables: halfn (long)
+    Begin
+        If n = 0 Then
+            Return 1
+        End If
+        If n = 1 Then
+            Return base
+        End If
+        halfn ← fast_pow(base, n / 2, M)
+        If n % 2 = 0 Then
+            Return (halfn * halfn) % M
+        End If
+        Return (((halfn * halfn) % M) * base) % M
+    End
+
+Algorithm modInverse
+    Input: n (long), M (long)
+    Output: (long)
+    Begin
+        Return fast_pow(n, M - 2, M)
+    End
+
+Algorithm feedArr
+    Input: arr (long[]), sc (InputReader)
+    Output: none
+    Begin
+        For i from 0 to length of arr - 1 do
+            arr[i] ← sc.nextLong()
+        End For
+    End
+
+Algorithm feedArr
+    Input: arr (double[]), sc (InputReader)
+    Output: none
+    Begin
+        For i from 0 to length of arr - 1 do
+            arr[i] ← sc.nextDouble()
+        End For
+    End
+
+Algorithm feedArr
+    Input: arr (int[]), sc (InputReader)
+    Output: none
+    Begin
+        For i from 0 to length of arr - 1 do
+            arr[i] ← sc.nextInt()
+        End For
+    End
+
+Algorithm feedArr
+    Input: arr (String[]), sc (InputReader)
+    Output: none
+    Begin
+        For i from 0 to length of arr - 1 do
+            arr[i] ← sc.next()
+        End For
+    End
+
+Algorithm printArr
+    Input: arr (int[])
+    Output: (String)
+    Variables: sbr (StringBuilder)
+    Begin
+        sbr ← new StringBuilder()
+        For each i in arr do
+            sbr.append(i + " ")
+        End For
+        Return sbr.toString()
+    End
+
+Algorithm printArr
+    Input: arr (long[])
+    Output: (String)
+    Variables: sbr (StringBuilder)
+    Begin
+        sbr ← new StringBuilder()
+        For each i in arr do
+            sbr.append(i + " ")
+        End For
+        Return sbr.toString()
+    End
+
+Algorithm printArr
+    Input: arr (String[])
+    Output: (String)
+    Variables: sbr (StringBuilder)
+    Begin
+        sbr ← new StringBuilder()
+        For each i in arr do
+            sbr.append(i + " ")
+        End For
+        Return sbr.toString()
+    End
+
+Algorithm printArr
+    Input: arr (double[])
+    Output: (String)
+    Variables: sbr (StringBuilder)
+    Begin
+        sbr ← new StringBuilder()
+        For each i in arr do
+            sbr.append(i + " ")
+        End For
+        Return sbr.toString()
+    End
+
+Class InputReader
+    Attributes: reader (BufferedReader), tokenizer (StringTokenizer)
+
+    Constructor InputReader
+        Input: stream (InputStream)
+        Begin
+            reader ← new BufferedReader(new InputStreamReader(stream), 32768)
+            tokenizer ← null
+        End
+
+    Method next
+        Output: (String)
+        Begin
+            While tokenizer = null or not tokenizer.hasMoreTokens() do
+                Try
+                    tokenizer ← new StringTokenizer(reader.readLine())
+                Catch IOException e
+                    Throw new RuntimeException(e)
+            End While
+            Return tokenizer.nextToken()
+        End
+
+    Method nextInt
+        Output: (int)
+        Begin
+            Return Integer.parseInt(next())
+        End
+
+    Method nextLong
+        Output: (long)
+        Begin
+            Return Long.parseLong(next())
+        End
+
+    Method nextDouble
+        Output: (double)
+        Begin
+            Return Double.parseDouble(next())
+        End
+End Class
+```

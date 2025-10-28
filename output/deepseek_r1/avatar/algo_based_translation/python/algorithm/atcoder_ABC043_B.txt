@@ -1,0 +1,39 @@
+**Structured Algorithm Specification**
+
+**1. Function/Method Signatures**
+- **Function**: `process_input_string() -> str`
+  - **Parameters**: None
+  - **Return Type**: `str`
+
+**2. Variable Declarations**
+- `s: str` (Input string)
+- `my_str: str` (Temporary string for processing)
+- `c: str` (Loop iterator for characters in `s`)
+
+**3. Input/Output Operations**
+- **Input**: Read `s` from standard input via `s = input().strip()`
+- **Output**: Print final value of `my_str` via `print(my_str)`
+
+**4. Data Processing Logic**
+1. Initialize `my_str` as empty string: `my_str = ""`
+2. Iterate through each character `c` in `s` sequentially:
+   - If `c` is `'0'` or `'1'`:
+     - Append `c` to `my_str`
+   - Else if `c` is `'B'` and `len(my_str) > 0`:
+     - Remove last character from `my_str`
+
+**5. Control Flow Structures**
+- **Loop**: `for c in s:`
+  - **Exit Criteria**: All characters in `s` processed
+- **Conditionals**:
+  - `if c == '0' or c == '1'`
+  - `elif c == 'B' and len(my_str) != 0`
+
+**6. Edge Case Handling**
+- Check `len(my_str) != 0` before removing characters when encountering `'B'` to prevent underflow
+
+**7. Error Handling**
+- Implicit handling via conditional checks; no explicit exceptions
+
+**8. Dependencies**
+- Standard input/output functions only. No external libraries required.

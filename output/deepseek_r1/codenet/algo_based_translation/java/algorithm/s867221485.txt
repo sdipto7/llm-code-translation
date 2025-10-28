@@ -1,0 +1,42 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `N`: int (input length)
+- `s`: String (input string)
+- `flag`: boolean (initialized to `false`, unused)
+- `ans`: int (initialized to `0`)
+- `hen`: int (initialized to `0`, unused)
+- `sha`: int (initialized to `0`)
+- `dot`: int (initialized to `0`)
+- `temp`: int (initialized to `0`, unused)
+- `first`: boolean (initialized to `true`)
+
+**Logic Flow:**
+1. Read integer `N` from standard input.
+2. Read string `s` from standard input.
+3. Initialize `ans=0`, `sha=0`, `dot=0`, `first=true`.
+4. For each character in `s`:
+   - If character is `#`:
+     1. Set `first` to `false`.
+     2. If `sha` ≤ `dot`:
+        - Add `sha` to `ans`.
+        - Reset `sha` and `dot` to `0`.
+        - Set `first` to `true`.
+     3. Increment `sha` by 1.
+   - Else (character is `.`):
+     1. Increment `dot` by 1.
+5. After loop completes:
+   - If `sha` ≤ `dot`, add `sha` to `ans` and set `dot=0`.
+6. Print `ans + dot` to standard output.
+
+**Control Structures:**
+- `for` loop iterating `N` times.
+- Multiple `if` conditions: checking character type and comparing `sha`/`dot` values.
+
+**Input/Output:**
+- Uses `Scanner` to read inputs.
+- Outputs final result via `System.out.println`.
+
+**Dependencies:**
+- `java.util.Scanner` for input handling.

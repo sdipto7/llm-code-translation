@@ -1,0 +1,10 @@
+1. Read two integers n and k from the input.
+2. Initialize variables l to 0 and c to 1.
+3. Iterate n times:
+   3.1. Read an integer a from the input.
+   3.2. If a equals l, increment c by 1.
+   3.3. Otherwise, set c to 1.
+   3.4. Update l to a.
+4. If the sum of c and k is greater than n, proceed to step 5; otherwise, proceed to step 6.
+5. Output the difference between n and c.
+6. Output -1.

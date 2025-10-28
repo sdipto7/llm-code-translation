@@ -1,0 +1,32 @@
+```plaintext
+Algorithm:
+
+1. Read input and initialize variables:
+   - Parse two integers N and X from user input.
+   - Import the permutations function from itertools.
+
+2. Define a function `calc` with parameter `x` (list of integers):
+   - Define a nested function `sub` with parameters `y` (list of integers) and `debug` (integer, default 0):
+     - If `debug` is non-zero, print "D" followed by the list `y`.
+     - While the length of `y` is greater than 1:
+       - Update `y` to be a list where each element is the median of every consecutive triplet in the original `y`.
+       - If `debug` is non-zero, print "D" followed by the updated list `y`.
+     - Return the first element of `y`.
+
+   - Call `sub` with `x` and assign the result to `y`.
+   - If the first element of `y` is 2:
+     - Call `sub` with `x` and debug = 1.
+     - Print "=" followed by the list `x`.
+   - Return the first element of `y`.
+
+3. Check conditions based on the value of X:
+   - If X is 1 or X equals N * 2 - 1, print "No".
+   - Otherwise:
+     - Print "Yes".
+     - If X equals N * 2 - 2:
+       - Create a list `xs` containing elements from N - 1 to X + 2, followed by elements from 1 to N - 2.
+     - Otherwise:
+       - Create a list `ys` containing elements from 1 to X - 1, followed by elements from X + 3 to N * 2.
+       - Create a list `xs` by taking the first N - 3 elements of `ys`, followed by [X + 2, X - 1, X, X + 1], and then the remaining elements of `ys`.
+     - For each element `x` in `xs`, print `x`.
+```

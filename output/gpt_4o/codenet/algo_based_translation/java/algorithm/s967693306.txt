@@ -1,0 +1,134 @@
+1. Import required libraries:
+   - `java.io.*`
+   - `java.util.*`
+
+2. Define class `Main` with constants:
+   - `INF` (long): `Long.MAX_VALUE / 2`
+   - `MOD` (int): `1_000_000_007`
+   - `SIZE` (int): `1_000_000`
+
+3. Declare arrays:
+   - `fac` (long[]): size `SIZE`
+   - `inv` (long[]): size `SIZE`
+   - `finv` (long[]): size `SIZE`
+
+4. Instantiate `FastScanner` as `sc`.
+
+5. Define `main` method:
+   - Call `new Main().solve()`
+
+6. Define `solve` method:
+   - Read integers `n`, `m` using `sc.nextInt()`
+   - Initialize `map` as `HashMap<Integer, Integer>`
+   - For loop from `i=0` to `m-1`:
+     - Read integers `s`, `c` using `sc.nextInt()`
+     - If `map.get(s)` is not null and not equal to `c`, print `-1` and exit
+     - Put `(s, c)` in `map`
+   - For loop from `i=0` to `999`:
+     - Convert `i` to string `s`
+     - If `s.length()` is less than `n`, continue
+     - Initialize `flag` as `true`
+     - For loop from `j=0` to `n-1`:
+       - If `map.get(j+1)` is not null and not equal to `s.charAt(j)` as integer, or `map.get(j+1)` is null and `s.charAt(j)` is not `0`:
+         - If `map.get(j+1)` is null, `j` is `0`, and `s.charAt(j)` is `1`, continue
+         - Set `flag` to `false` and break
+     - If `flag` is true and `s.length()` equals `n`, print `s` and exit
+   - Print `-1`
+
+7. Define function `gcd` with parameters `a` (long), `b` (long), returns long:
+   - If `b` is `0`, return `a`
+   - Else return `gcd(b, a % b)`
+
+8. Define function `lcm` with parameters `a` (long), `b` (long), returns long:
+   - Return `a * b / gcd(a, b)`
+
+9. Define function `inv` with parameter `a` (long), returns long:
+   - Return `pow(a, MOD - 2)`
+
+10. Define function `pow` with parameters `a` (long), `r` (long), returns long:
+    - Initialize `sum` as `1`
+    - While `r > 0`:
+      - If `(r & 1) == 1`, multiply `sum` by `a` and mod by `MOD`
+      - Square `a` and mod by `MOD`
+      - Right shift `r` by 1
+    - Return `sum`
+
+11. Define function `modFact` with parameter `n` (long), returns long:
+    - If `n == 0`, return `1`
+    - Else return `n * modFact(n - 1) % MOD`
+
+12. Define function `fact` with parameter `n` (long), returns long:
+    - If `n == 0`, return `1`
+    - Else return `n * fact(n - 1)`
+
+13. Define function `initCOMB` without parameters:
+    - Set `fac[0]`, `fac[1]`, `finv[0]`, `finv[1]` to `1`
+    - Set `inv[1]` to `1`
+    - For loop from `i=2` to `SIZE-1`:
+      - Calculate `fac[i]`, `inv[i]`, `finv[i]`
+
+14. Define function `modComb` with parameters `n` (int), `r` (int), returns long:
+    - If `n < r` or `n < 0` or `r < 0`, return `0`
+    - Return `fac[n] * finv[r] % MOD * finv[n - r] % MOD`
+
+15. Define function `comb` with parameters `n` (long), `r` (long), returns long:
+    - Initialize `num` as `1`
+    - For loop from `i=1` to `r`:
+      - Update `num`
+    - Return `num`
+
+16. Define function `isPrime` with parameter `a` (long), returns boolean:
+    - If `a <= 1`, return `false`
+    - For loop from `i=2` to `sqrt(a)`:
+      - If `a % i == 0`, return `false`
+    - Return `true`
+
+17. Define function `nextPermutation` with parameter `s` (String), returns String:
+    - Convert `s` to `ArrayList<Character>` `list`
+    - Initialize `pivotPos` as `-1`, `pivot` as `0`
+    - For loop from `list.size() - 2` to `0`:
+      - If `list[i] < list[i+1]`, set `pivotPos` and `pivot`, break
+    - If `pivotPos` is `-1`, return null
+    - Initialize `L` as `pivotPos + 1`, `R` as `list.size() - 1`
+    - Initialize `minPos` as `-1`, `min` as `Character.MAX_VALUE`
+    - For loop from `R` to `L`:
+      - If `pivot < list[i]` and `list[i] < min`, update `min` and `minPos`
+    - Swap `list[pivotPos]` and `list[minPos]`
+    - Sort `list` sublist from `L` to `R`
+    - Return `list` as `String`
+
+18. Define function `nextPermutation` with parameter `a` (long[]), returns boolean:
+    - For loop from `a.length - 1` to `1`:
+      - If `a[i-1] < a[i]`, find `swapIndex`, swap elements, sort, return true
+    - Return false
+
+19. Define function `find` with parameters `dest` (long), `a` (long[]), `s` (int), `e` (int), returns int:
+    - If `s == e`, return `s`
+    - Calculate `m`
+    - Return recursive call based on condition
+
+20. Define function `elimination` with parameters `a` (int[][]), `b` (int[]):
+    - Initialize `n` as `a.length`
+    - For loop `k` from `0` to `n-2`:
+      - For loop `i` from `k+1` to `n-1`:
+        - Calculate `f`, update `a[i][j]` and `b[i]`
+      - For loop `i` from `n-1` to `0`:
+        - For loop `j` from `i+1` to `n-1`, update `b[i]`
+        - Divide `b[i]` by `a[i][i]`
+
+21. Define class `Pair` implementing `Comparable<Pair>`:
+    - Attributes `a`, `b` (long)
+    - Constructor with parameters `i`, `j`
+    - Override `compareTo` method
+
+22. Define class `FastScanner`:
+    - Attributes: `in` (InputStream), `buffer` (byte[]), `ptr` (int), `buflen` (int)
+    - Methods:
+      - `hasNextByte` returns boolean
+      - `readByte` returns int
+      - `isPrintableChar` with parameter `c` (int), returns boolean
+      - `hasNext` returns boolean
+      - `next` returns String
+      - `nextLong` returns long
+      - `nextInt` returns int
+      - `nextDouble` returns double

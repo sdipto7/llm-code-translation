@@ -1,0 +1,6 @@
+1. Read the input value N from the standard input.
+2. Initialize a variable ans to 0.
+3. Iterate over the range from 1 to N (inclusive) using a variable i.
+4. For each i, calculate the value of (N // i).
+5. Calculate the sum i * (N // i) * ((N // i) + 1) // 2 and add it to ans.
+6. After iterating over the range, output the final value of ans.

@@ -1,0 +1,32 @@
+Algorithm:
+- Function: (implicit script, no explicit function)
+- Parameters: None
+- Return type: None
+
+Variables:
+- N: integer (input value)
+- A: list of integers (input list, then modified)
+- ans: integer (initial value: absolute of last element of original A)
+- diff: list of integers (length N)
+- i: integer (loop index)
+- dif: integer (temporary difference calculation)
+
+Execution Steps:
+1. Read integer N from standard input.
+2. Read N integers from standard input, store in list A.
+3. Initialize ans with absolute value of A[-1].
+4. Prepend 0 and append 0 to A (new length: N+2).
+5. Initialize diff as list of N zeros.
+6. Loop i from 1 to N (inclusive):
+    a. Calculate dif = (abs(A[i] - A[i-1]) + abs(A[i] - A[i+1])) - abs(A[i-1] - A[i+1])
+    b. Add abs(A[i] - A[i-1]) to ans
+    c. Assign diff[i-1] = dif
+7. Loop i from 0 to N-1 (inclusive):
+    a. Print (ans - diff[i]) to standard output
+
+Input/Output:
+- Input: Read N and A via standard input
+- Output: Print N lines, each containing ans - diff[i]
+
+Dependencies:
+- None (uses built-in functions: input(), int(), abs(), print())

@@ -1,0 +1,36 @@
+Function signature: `main() -> None`
+
+Variable declarations and data types:
+- `N: int`
+- `D: int`
+- `mat: List[List[int]]`
+- `c: int`
+- `dist: float`
+- `i: int`
+- `j: int`
+- `x: int`
+- `y: int`
+
+Logic flow in execution order:
+1. Read two integers `N` and `D` from input.
+2. Initialize an empty list `mat` to store the input matrices.
+3. For each integer `d` in the range from 0 to `N-1`, read `D` integers from input, convert them to a list of integers, and append this list to `mat`.
+4. Import the `math` module.
+5. Initialize a counter variable `c` to 0.
+6. For each integer `i` in the range from 0 to `len(mat)-2`:
+   - For each integer `j` in the range from `i+1` to `len(mat)-1`:
+     - Calculate the Euclidean distance `dist` between `mat[i]` and `mat[j]` using the formula `sqrt(sum([(x-y)**2 for x, y in zip(mat[i], mat[j])]))`.
+     - If `dist` is an integer (i.e., `int(dist) == dist`), increment the counter `c` by 1.
+7. Print the value of `c`.
+
+Control structures:
+- Loops: Two nested `for` loops.
+- Conditionals: An `if` statement to check if `dist` is an integer.
+
+Input/output operations and data processing logic:
+- Input: Read two integers `N` and `D`, then read `N` lines of `D` integers each.
+- Data processing: Calculate Euclidean distances between all pairs of matrices and count how many of these distances are integers.
+- Output: Print the count of integer distances.
+
+Required libraries, modules, or dependencies:
+- `math` module for the `sqrt` function.

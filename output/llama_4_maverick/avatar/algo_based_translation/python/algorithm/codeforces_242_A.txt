@@ -1,0 +1,11 @@
+1. Read four integers: x, y, a, b
+2. Initialize an empty list: games
+3. Iterate from a to x (inclusive)
+   3.1. For each iteration value i, check if i is less than or equal to b
+   3.2. If i is less than or equal to b, skip to the next iteration
+   3.3. If i is greater than b, iterate from b to y (inclusive)
+      3.3.1. For each iteration value j, check if i is greater than j
+      3.3.2. If i is greater than j, add the pair (i, j) to the games list
+4. Print the size of the games list
+5. Iterate over the games list
+   5.1. For each pair in the games list, print the pair in the format "first_value second_value"

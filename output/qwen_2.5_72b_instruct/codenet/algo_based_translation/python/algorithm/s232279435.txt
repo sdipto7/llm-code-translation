@@ -1,0 +1,45 @@
+Function signature: `main()`
+
+Variable declarations:
+- `n` as integer
+- `s` as string
+- `ans` as integer
+- `i` as integer (loop variable)
+- `x` as set
+- `y` as set
+- `z` as integer
+- `w` as character (loop variable)
+
+Complete logic flow in execution order:
+1. Read integer input and assign to `n`
+2. Read string input and assign to `s`
+3. Initialize `ans` to 0
+4. For each `i` from 0 to `n-1`:
+   - Create set `x` from substring `s[0:i+1]`
+   - Create set `y` from substring `s[i+1:n]`
+   - Initialize `z` to 0
+   - For each character `w` in `x`:
+     - If `w` is in `y`:
+       - Increment `z` by 1
+   - If `z` is greater than `ans`:
+     - Assign `z` to `ans`
+5. Print `ans`
+
+Control structures:
+- For loop: `for i in range(n)`
+- For loop: `for w in x`
+- If condition: `if w in y`
+- If condition: `if z > ans`
+
+Input/output operations:
+- Read integer input
+- Read string input
+- Print integer `ans`
+
+Data processing logic:
+- Convert substrings to sets
+- Find common characters between two sets
+- Count and update the maximum count of common characters
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required

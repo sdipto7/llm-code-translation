@@ -1,0 +1,15 @@
+1. Read input until no more input is available.
+2. For each input, read an integer `n`.
+3. Initialize two arrays `a` and `b` of size `n`.
+4. Initialize a variable `s` to -1.
+5. Populate array `a` with `n` integers from the input and initialize array `b` with zeros.
+6. Initialize a variable `tem` to 1 and a variable `q` to 0.
+7. Repeat until `q` equals `n`.
+8. Increment `s` by 1.
+9. If `tem` equals 1, iterate through array `a` from index 0 to `n-1`.
+10. For each index `i`, if `a[i]` is less than or equal to `q` and `b[i]` equals 0, set `b[i]` to 1 and increment `q`.
+11. Set `tem` to 0.
+12. If `tem` equals 0, iterate through array `a` from index `n-1` to 0.
+13. For each index `i`, if `a[i]` is less than or equal to `q` and `b[i]` equals 0, set `b[i]` to 1 and increment `q`.
+14. Set `tem` to 1.
+15. Output the value of `s`.

@@ -1,0 +1,15 @@
+read input string
+split input string by '.' into list l
+convert first element of l to list of characters s
+convert second element of l to list of characters p
+convert first character of p to integer i
+if last character of s equals '9'
+    print "GOTO Vasilisa."
+else if last character of s not equal '9' and i less than 5
+    convert s to string
+    print s
+else
+    convert s to string
+    convert s to integer and add 1
+    convert result to string
+    print result

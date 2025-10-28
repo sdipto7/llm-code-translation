@@ -1,0 +1,37 @@
+Function signature: `main() -> None`
+
+Variable declarations and data types:
+- `n: int`
+- `L: int`
+- `R: int`
+- `QL: int`
+- `QR: int`
+- `W: List[int]`
+- `sum_el: List[int]`
+- `answer: int`
+- `energy: int`
+- `i: int`
+
+Logic flow in execution order:
+1. Read space-separated integers `n`, `L`, `R`, `QL`, `QR` from standard input.
+2. Read space-separated integers into list `W` of size `n`.
+3. Initialize list `sum_el` with a single element `0`.
+4. For `i` from `1` to `n` (inclusive):
+   - Append to `sum_el` the sum of `W[i-1]` and `sum_el[i-1]`.
+5. Set `answer` to `QR * (n - 1) + sum_el[n] * R`.
+6. For `i` from `1` to `n` (inclusive):
+   - Set `energy` to `L * sum_el[i] + R * (sum_el[n] - sum_el[i])`.
+   - If `i > (n - i)`:
+     - Set `energy` to `energy + (i - (n - i) - 1) * QL`.
+   - Else if `(n - i) > i`:
+     - Set `energy` to `energy + ((n - i) - i - 1) * QR`.
+   - If `energy < answer`:
+     - Set `answer` to `energy`.
+7. Print `answer` to standard output.
+
+Input/output operations and data processing logic:
+- Input is taken from standard input in two lines: first line contains five integers, second line contains `n` integers.
+- Output is the minimum energy value printed to standard output.
+
+Required libraries, modules, or dependencies:
+- `List` from `typing` module

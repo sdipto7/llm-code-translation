@@ -1,0 +1,9 @@
+1. Import the `java.util.Scanner` library.
+2. Define a class `Main` with a `main` method that takes an array of `String` arguments and returns `void`.
+3. Declare a `Scanner` object named `scan` and initialize it with `System.in`.
+4. Declare three integer variables `a`, `b`, and `c`.
+5. Read three integer inputs from the user using `scan.nextInt()` and store them in `a`, `b`, and `c` respectively.
+6. Close the `Scanner` object `scan` using `scan.close()`.
+7. Evaluate the conditional statement `if (a < b && b < c && a < c)`.
+8. If the condition is true, output the string "Yes" to the console using `System.out.println("Yes")`.
+9. If the condition is false, output the string "No" to the console using `System.out.println("No")`.

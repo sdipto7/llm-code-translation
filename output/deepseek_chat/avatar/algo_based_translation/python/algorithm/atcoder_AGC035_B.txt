@@ -1,0 +1,42 @@
+import numpy as np
+from collections import deque
+import heapq
+
+Read integers N and M from input
+Initialize edges as list of sets with size N
+Initialize degs as list of zeros with size N
+Initialize parity as list of zeros with size N
+Initialize flag as list of False values with size N
+
+For M times:
+    Read integers a and b from input
+    Add (b-1) to edges[a-1]
+    Add (a-1) to edges[b-1]
+    Increment degs[a-1] by 1
+    Increment degs[b-1] by 1
+
+If M mod 2 ≠ 0:
+    Print -1
+    Exit program
+
+Initialize Q as empty list
+For each index i and value d in degs:
+    Append tuple (d, i) to Q
+
+Convert Q to min-heap using heapq.heapify
+
+While Q is not empty:
+    Pop smallest element from Q into (_, u)
+    If flag[u] is True:
+        Continue to next iteration
+    Set flag[u] to True
+    For each index i and vertex v in edges[u]:
+        Remove u from edges[v]
+        If parity[u] ≠ 0 and i == 0:
+            Print (u+1, v+1)
+            Set parity[u] to 1 - parity[u]
+        Else:
+            Print (v+1, u+1)
+            Set parity[v] to 1 - parity[v]
+        Decrement degs[v] by 1
+        Push tuple (degs[v], v) onto heap Q

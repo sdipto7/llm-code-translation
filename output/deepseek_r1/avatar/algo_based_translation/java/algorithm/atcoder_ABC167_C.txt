@@ -1,0 +1,42 @@
+- Function signature:  
+  `public static void main(String[] args)`  
+  Parameters: String array `args`  
+  Return type: `void`
+
+- Variables:  
+  - `n` (int): Number of items  
+  - `m` (int): Number of target parameters  
+  - `x` (int): Required minimum for each parameter  
+  - `min` (int): Minimum cost initialized to `Integer.MAX_VALUE`  
+  - `a` (int[][]): 2D array storing cost (index 0) and parameters (indices 1..m) per item  
+  - `status` (int[]): Array tracking selected items for current combination  
+  - `res` (int[]): Array storing accumulated cost (index 0) and parameters (indices 1..m)  
+
+- Logic flow:  
+  1. Read `n`, `m`, `x` from standard input  
+  2. Populate `a` with `n` rows containing `m+1` integers each  
+  3. Iterate through all possible combinations (2ⁿ) using bitmasking:  
+     a. Generate binary representation of current combination index  
+     b. Set `status` array bits (1=selected, 0=not selected)  
+     c. Calculate cumulative cost and parameters in `res` for selected items  
+     d. Validate if all parameters in `res[1..m]` meet or exceed `x`  
+     e. Update `min` if valid and cheaper than previous minimum  
+  4. Output `-1` if no valid combination found, else output `min`
+
+- Control structures:  
+  - Nested `for` loops:  
+    - Outer loop: `for (int i = 0; i < Math.pow(2, n); i++)`  
+    - Bit check loop: `for (int j = 0; j < n; j++)`  
+    - Accumulation loop: `for (int j = 0; j < n; j++)` with nested `for (int k = 0; k <= m; k++)`  
+    - Validation loop: `for (int j = 1; j <= m; j++)`  
+  - Conditional checks:  
+    - `if ((1 & i >> j) == 1)` for bitmask evaluation  
+    - `if (res[j] < x)` for parameter validation  
+    - `if (flag)` for minimum cost update  
+
+- Input/Output:  
+  - Input via `Scanner` reading from `System.in`  
+  - Output via `System.out.println` for final result  
+
+- Dependencies:  
+  - `java.util.Scanner` for input handling

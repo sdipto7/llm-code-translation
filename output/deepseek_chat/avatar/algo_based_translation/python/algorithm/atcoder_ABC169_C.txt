@@ -1,0 +1,51 @@
+**Function Signatures:**
+- main(): void
+
+**Variables:**
+- stdin: file object
+- environ: dict
+- dbg: function (lambda)
+- input: function (lambda)
+- LMIIS: function (lambda)
+- II: function (lambda)
+- P: int (constant)
+- INF: int (constant)
+- sa: str
+- sb: str
+- a: int
+- b: int
+
+**Libraries/Modules:**
+- sys.setrecursionlimit
+- sys.stdin
+- os.environ
+- collections.defaultdict
+- collections.deque
+- collections.Counter
+- math.ceil
+- math.floor
+- math.gcd
+- itertools.accumulate
+- itertools.combinations
+- itertools.combinations_with_replacement
+
+**Execution Flow:**
+1. Set recursion limit to 1,000,000
+2. Define debug function dbg that prints if 'TERM_PROGRAM' in environ, else no-op
+3. Define input function that reads line from stdin and strips whitespace
+4. Define LMIIS function that reads line, splits, and converts to list of integers
+5. Define II function that reads line and converts to integer
+6. Set constant P = 1,000,000,007
+7. Set constant INF = 1,000,000,010
+8. Read input line and split into two strings sa and sb
+9. Convert sa to integer a
+10. Convert sb to float, multiply by 100, add 0.1, convert to integer b
+11. Calculate (a * b) // 100 and print result
+
+**Control Structures:**
+- Conditional in dbg definition: if 'TERM_PROGRAM' in environ
+- No loops present in main execution path
+
+**Input/Output:**
+- Input: One line from stdin containing two space-separated values
+- Output: Print integer result of calculation

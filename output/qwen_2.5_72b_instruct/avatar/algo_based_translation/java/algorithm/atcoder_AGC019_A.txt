@@ -1,0 +1,32 @@
+Function Signature:
+- `main(String[] args): void`
+
+Variable Declarations:
+- `sc: Scanner`
+- `Q: long`
+- `H: long`
+- `S: long`
+- `D: long`
+- `N: long`
+- `onePrice: long`
+
+Logic Flow:
+1. Initialize `sc` to new `Scanner(System.in)`
+2. Assign `Q` to `sc.nextLong()`
+3. Assign `H` to `sc.nextLong()`
+4. Assign `S` to `sc.nextLong()`
+5. Assign `D` to `sc.nextLong()`
+6. Assign `N` to `sc.nextLong()`
+7. Calculate `onePrice` as `Math.min(Math.min(Q * 4, H * 2), S)`
+8. If `(double) onePrice <= (double) D / 2`:
+   - Print `N * onePrice`
+9. Else:
+   - Print `(N / 2) * D + (N % 2) * onePrice`
+
+Input/Output Operations:
+- Input: Read 5 long integers from standard input
+- Output: Print a single long integer to standard output
+
+Libraries/Modules/Dependencies:
+- `java.util.Scanner`
+- `static java.lang.System.out`

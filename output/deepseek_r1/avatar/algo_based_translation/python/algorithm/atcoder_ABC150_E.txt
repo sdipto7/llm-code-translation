@@ -1,0 +1,42 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void` (Implicit entry point)
+
+**Variable Declarations:**
+- `n: integer`
+- `c: array of integers`
+- `mod: integer` (Value: 10^9 + 7)
+- `b: integer`
+- `a: integer`
+- `ans: integer`
+- `i: integer` (Loop index)
+
+**Input/Output Operations:**
+1. Read `n` from standard input as integer.
+2. Read space-separated integers from standard input into array `c`.
+3. Print value of `ans` to standard output after computation.
+
+**Data Processing Logic:**
+1. Sort array `c` in descending order.
+2. Compute `b` as (2^(2n-2)) modulo `mod` using efficient modular exponentiation.
+3. Compute `a` as (2 * `b`) modulo `mod`.
+4. Initialize `ans` to 0.
+5. Iterate over each index `i` from 0 to (n-1) inclusive:
+   1. Compute contribution term as `c[i] * (a + i * b)`
+   2. Accumulate term into `ans` with modulo `mod` at each step
+
+**Control Flow Structures:**
+- For loop:
+  - Range: `i` from 0 to `n-1` (inclusive)
+  - Exit criteria: When all `n` elements have been processed
+  - Operations: Term calculation and modular accumulation
+
+**Edge Case Handling:**
+- Implicit handling of maximum input size through use of modular arithmetic
+- No explicit error checking (assumes valid integer inputs and sufficient array size)
+
+**External Dependencies:**
+- Standard input/output functions
+- Built-in modular exponentiation (3-argument `pow` function)
+- Array sorting utility

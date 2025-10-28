@@ -1,0 +1,25 @@
+Function Signature:
+- read_input() -> int
+- main() -> None
+
+Variables:
+- N: int (input number)
+- cnt: int (loop counter, initialized to 1)
+
+Algorithm:
+1. Read integer input N using input()
+2. Initialize cnt to 1
+3. While loop:
+   - Condition: cnt <= 9
+   - Execute:
+     a. If N % cnt == 0:
+        i. Calculate quotient = N / cnt
+        ii. Check if 1 <= quotient <= 9
+        iii. If both conditions true:
+            - Print "Yes"
+            - Break loop
+     b. Else:
+        - Increment cnt by 1
+4. If loop completes without breaking:
+   - Print "No"
+5. Program termination

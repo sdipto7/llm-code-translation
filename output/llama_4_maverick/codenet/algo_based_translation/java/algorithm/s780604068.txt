@@ -1,0 +1,14 @@
+- Function signature: `public static void main(String[] args)`
+- Import the `java.util` library for `Scanner` and `Arrays` classes
+- Declare a `Scanner` object `sc` to read input from `System.in`
+- Declare an integer `N` to store the input size
+- Read `N` from `System.in` using `sc.nextInt()`
+- Declare an integer array `map` of size `N * 2`
+- Iterate from `0` to `N * 2 - 1` using a for loop with increment `i++`
+  - Read an integer from `System.in` using `sc.nextInt()` and store it in `map[i]`
+- Sort the `map` array in ascending order using `Arrays.sort(map)`
+- Declare an integer `max` to store the maximum sum and initialize it to `0`
+- Iterate from `0` to `N * 2 - 1` using a for loop with increment `i += 2`
+  - Calculate the minimum of `map[i]` and `map[i + 1]` using `Math.min(map[i], map[i + 1])`
+  - Add the minimum value to `max`
+- Output the value of `max` to `System.out` using `System.out.println(max)`

@@ -1,0 +1,36 @@
+- **Function**: main (no parameters, no return type)
+- **Variables**:
+  - `strn: String` (input string)
+  - `n: Integer` (parsed from `strn`)
+  - `shichigolist: List[String]` = `["3", "5", "7"]`
+  - `shichigo: List[List[String]]` (initialized as empty lists)
+  - `target: Integer`
+  - Loop counters: `i, j, k: Integer`
+- **Logic Flow**:
+  1. Read `strn` from input
+  2. Parse `n` as integer from `strn`
+  3. Initialize `shichigo` with `len(strn)` empty lists
+  4. For each `i` from 0 to `len(strn)-1`:
+     - If `i == 0`:
+       - Populate `shichigo[i]` with elements from `shichigolist`
+     - Else:
+       - For each `j` in `shichigo[i-1]`:
+         - Append `j + k` to `shichigo[i]` for each `k` in `shichigolist`
+  5. Set `target = len(strn) - 1`
+  6. For each `i` from 0 to `len(strn)-1`:
+     - For each `j` in `shichigo[i]` (iterating over a copy of the list):
+       - If `i == target`:
+         - Remove `j` if `int(j) > n` OR `j.count("3") == 0` OR `j.count("5") == 0` OR `j.count("7") == 0`
+       - Else:
+         - Remove `j` if `j.count("3") == 0` OR `j.count("5") == 0` OR `j.count("7") == 0`
+  7. Calculate sum of `len(shichigo[i])` for all `i`
+  8. Print the sum
+- **Control Structures**:
+  - Nested `for` loops for list population (depth=3)
+  - Conditional branch on `i == 0` during population
+  - Conditional branch on `i == target` during filtering
+  - Compound logical conditions with `and`/`or` during removal checks
+- **I/O Operations**:
+  - Input: `strn = input()`
+  - Output: `print(sum)`
+- **Dependencies**: None (standard Python environment)

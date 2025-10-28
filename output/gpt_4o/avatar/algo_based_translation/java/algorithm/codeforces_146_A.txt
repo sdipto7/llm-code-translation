@@ -1,0 +1,42 @@
+1. Import necessary libraries:
+   - `import java.util.*`
+   - `import static java.lang.Math.*`
+
+2. Define the main function:
+   - `main(String args[])` with no return type.
+
+3. Initialize variables:
+   - `int x = 0` to store the sum of the first half of the string's numeric values.
+   - `int y = 0` to store the sum of the second half of the string's numeric values.
+   - `int t = 0` to serve as a flag to indicate if any character is not '4' or '7'.
+   - `int n` to store the length of the input string.
+
+4. Create a `Scanner` object `in` to read input.
+
+5. Read input:
+   - Read an integer `n` from input using `in.nextInt()`.
+   - Read a string `str` from input using `in.next()`.
+
+6. Convert the string to a character array:
+   - Declare `char l[]` array with the length equal to `str.length()`.
+   - Assign `l` to `str.toCharArray()`.
+
+7. Loop through each character in `l` to check if all characters are either '4' or '7':
+   - Iterate `i` from 0 to `n-1`.
+     - If `l[i]` is not '4' and `l[i]` is not '7', set `t = 1`.
+
+8. Conditional check based on the flag `t`:
+   - If `t == 1`, output "NO".
+
+9. If `t != 1` (meaning all characters are '4' or '7'):
+   - Calculate the sum of the first half of the character array:
+     - Iterate `i` from 0 to `(n/2) - 1`.
+     - Add the numeric value of `l[i]` to `x` using `Character.getNumericValue(l[i])`.
+
+   - Calculate the sum of the second half of the character array:
+     - Iterate `i` from `n - 1` to `(n/2)`.
+     - Add the numeric value of `l[i]` to `y` using `Character.getNumericValue(l[i])`.
+
+10. Compare sums of the two halves:
+    - If `x == y`, output "YES".
+    - Otherwise, output "NO".

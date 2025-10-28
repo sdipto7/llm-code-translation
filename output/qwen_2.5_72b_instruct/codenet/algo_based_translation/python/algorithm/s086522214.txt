@@ -1,0 +1,54 @@
+Function signatures with parameter and return types:
+- `prime_decomposition(n: int) -> List[int]`
+- `digit(i: int) -> List[int]`
+- `getNearestValueIndex(list: List[int], num: int) -> int`
+
+Variable declarations and data types:
+- `i: int`
+- `table: List[int]`
+- `idx: int`
+- `N: int`
+- `X: int`
+- `x: List[int]`
+- `P: List[int]`
+- `Y: List[int]`
+- `n: int`
+- `nstr: str`
+- `c: str`
+- `ABT: Zip`
+- `result: int`
+- `A: List`
+- `B: List`
+- `totAB: List`
+- `dp: List[float]`
+- `k: int`
+- `h: List[int]`
+- `S: str`
+- `T: List[str]`
+- `date: int`
+
+Complete logic flow in execution order:
+1. Import necessary libraries: `collections`, `scipy.misc`, `sys`, `numpy`, `math`, `operator.itemgetter`, `itertools`, `copy`.
+2. Define `prime_decomposition` function:
+   - Initialize `i` to 2.
+   - Initialize `table` as an empty list.
+   - While `i * i` is less than or equal to `n`:
+     - While `n` modulo `i` equals 0:
+       - Divide `n` by `i`.
+       - Append `i` to `table`.
+     - Increment `i` by 1.
+   - If `n` is greater than 1, append `n` to `table`.
+   - Return `table`.
+3. Define `digit` function:
+   - If `i` is greater than 0, recursively call `digit` with `i // 10` and concatenate result with `[i % 10]`.
+   - Else, return an empty list.
+4. Define `getNearestValueIndex` function:
+   - Convert `list` to a numpy array.
+   - Calculate absolute differences between each element in `list` and `num`.
+   - Find index of the minimum difference.
+   - Return the index.
+5. Read input string `S`.
+6. Split `S` by '/' and store in `T`.
+7. Concatenate `T[1]` and `T[2]` and convert to integer, storing in `date`.
+8. If `date` is less than or equal to 430, print 'Heisei'.
+9. Else, print 'TBD'.

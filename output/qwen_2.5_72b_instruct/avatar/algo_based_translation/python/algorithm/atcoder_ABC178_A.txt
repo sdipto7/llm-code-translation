@@ -1,0 +1,34 @@
+Function signature:
+- solve(tc) with parameter tc of type integer and no return type
+
+Variable declarations and data types:
+- a of type integer
+- tcs of type integer initialized to 1
+- tc of type integer initialized to 1
+
+Logic flow in execution order:
+1. Import os module
+2. Import stdin and stdout from sys module
+3. Define function solve with parameter tc
+4. Read a line from stdin, strip whitespace, convert to integer and assign to a
+5. If a is equal to 0, print 1; otherwise, print 0
+6. Initialize tcs to 1
+7. Initialize tc to 1
+8. While tc is less than or equal to tcs:
+   8.1 Call function solve with argument tc
+   8.2 Increment tc by 1
+
+Control structures:
+- Conditional statement: if a == 0 then print 1 else print 0
+- Loop: while tc <= tcs
+
+Input/output operations:
+- Read integer from stdin
+- Print integer to stdout
+
+Data processing logic:
+- Compare the value of a to 0 and output 1 if true, otherwise output 0
+
+Required libraries, modules, or dependencies:
+- os
+- sys (specifically stdin and stdout)

@@ -1,0 +1,47 @@
+Here is the algorithm extracted from the Java code:
+
+**Parameters and Variables:**
+- Input integers N, M
+- Array of LinkedLists<Integer> (size 100001) named 'list'
+- PriorityQueue<Integer> 'pqueue' with reverse order (max-heap)
+- Integer 'res' initialized to 0
+
+**Logic Flow:**
+1. Read N and M from standard input
+2. Initialize list[] array (each entry starts as null)
+3. Process N input pairs:
+   ```python
+   for _ in 0..N-1:
+       a = next_int()
+       b = next_int()
+       if list[a] is null:
+           list[a] = new LinkedList
+       list[a].add(b)
+   ```
+4. Initialize priority queue with reverse ordering (max-heap)
+5. Iterate through days 1 to M:
+   ```python
+   for i in 1..M:
+       if list[i] exists:
+           pqueue.add_all(list[i])
+       if pqueue not empty:
+           res += pqueue.poll()
+   ```
+6. Output final res value
+
+**Data Structures:**
+- Array of LinkedLists for O(1) access to daily tasks
+- Max-heap priority queue to efficiently retrieve largest values
+
+**Key Operations:**
+- Group rewards by their eligibility day using array index
+- Accumulate maximum possible reward for each day using priority queue
+- Greedy selection of highest available reward each day
+
+**Input/Output:**
+- Input format: N M followed by N pairs of integers (a, b)
+- Output: Single integer representing maximum total reward
+
+**Dependencies:**
+- Requires priority queue with efficient insertion and max extraction
+- Needs input parsing for integers (custom scanner implementation in original code)

@@ -1,0 +1,21 @@
+Algorithm:
+- Import java.util.Scanner
+- Define class Main
+- Define main method with parameter String[] args
+  - Declare Scanner sc initialized with System.in
+  - Declare String s initialized with sc.next()
+  - Declare int n initialized with s.length()
+  - Declare long ans initialized to 0
+  - For loop: int mask from 0 to (1 << (n - 1)) - 1
+    - Declare long sum initialized to 0
+    - Declare String x initialized with first character of s
+    - For loop: int i from 0 to n - 2
+      - If (mask & (1 << i)) >= 1
+        - Append "+" and next character to x
+      - Else
+        - Append next character to x
+    - Declare String[] split initialized with x.split("\\+")
+    - For loop: int i from 0 to split.length - 1
+      - Add Long.valueOf(split[i]) to sum
+    - Add sum to ans
+  - Print ans

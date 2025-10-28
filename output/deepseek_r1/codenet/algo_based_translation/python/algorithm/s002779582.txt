@@ -1,0 +1,29 @@
+- Function: Main execution (no explicit function)
+- Parameters: None
+- Return type: None
+- Variables:
+  - N: int (input value)
+  - Hs: list[int] (input list)
+  - ans: int (initialized to 0)
+  - maxH: int (initialized to 0)
+  - H: int (current element in iteration)
+- Logic Flow:
+  1. Read integer N from standard input
+  2. Read space-separated integers and store in list Hs
+  3. Initialize ans to 0
+  4. Initialize maxH to 0
+  5. Iterate through each element H in Hs:
+     a. Check if maxH <= current H
+     b. If true:
+        - Increment ans by 1
+        - Set maxH to current H
+  6. Print ans after processing all elements
+- Control Structures:
+  - For loop: for H in Hs
+  - Conditional: if maxH <= H
+- Input Operations:
+  - Read integer via input() and convert to int
+  - Read string via input(), split into substrings, convert to list of integers
+- Output Operations:
+  - Print final ans as integer
+- Dependencies: None (uses standard input/output)

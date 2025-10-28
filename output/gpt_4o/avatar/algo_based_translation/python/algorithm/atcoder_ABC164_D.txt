@@ -1,0 +1,24 @@
+```
+Function Signature:
+    def compute_remainders(s: str) -> int
+
+Variable Declarations and Data Types:
+    s: str  # Input string representing a number
+    l: int = 2019  # Constant for modulo operation
+    m: List[int]  # List of integers for counting remainders
+    a: int = 0  # Accumulator for the progressive sum of digits
+    r: int = 0  # Counter for the number of valid substrings
+    i: int  # Loop variable for index
+    e: str  # Loop variable for current character in string
+
+Logic Flow:
+1. Initialize l with the value 2019.
+2. Initialize list m with size l, first element is 1 and the rest are 0.
+3. Initialize integer a to 0.
+4. Initialize integer r to 0.
+5. Reverse iterate over the string s with index i and character e:
+   a. Convert character e to integer and multiply by 10 raised to the power of i modulo l, then add to a.
+   b. Increment r by the value of m at index a % l.
+   c. Increment the value of m at index a % l by 1.
+6. Output the value of r.
+```

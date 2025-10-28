@@ -1,0 +1,19 @@
+1. Read princess
+2. Read dragon
+3. Read t
+4. Read f
+5. Read c
+6. If dragon <= princess Then
+7.   Output 0
+8.   Exit
+9. End If
+10. result = 0
+11. position = t * princess
+12. position = position + (princess * position) / (dragon - princess)
+13. While position < c Do
+14.   result = result + 1
+15.   position = position + (princess * position) / dragon
+16.   position = position + (princess * f)
+17.   position = position + (princess * position) / (dragon - princess)
+18. End While
+19. Output result

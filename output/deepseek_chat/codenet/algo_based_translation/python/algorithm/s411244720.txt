@@ -1,0 +1,20 @@
+**Function Signature:**
+- main() -> None
+
+**Variables:**
+- N: int
+- K: int
+- S: set[int]
+- i: int
+- d: int
+- A: list[int]
+
+**Algorithm:**
+1. Read first input line and split into two integers: N and K
+2. Initialize empty set S
+3. Loop i from 0 to K-1 (inclusive):
+   - Read integer d
+   - Read next input line and split into list of integers A
+   - Convert A to set and union with S, storing result in S
+4. Calculate N - len(S)
+5. Print result

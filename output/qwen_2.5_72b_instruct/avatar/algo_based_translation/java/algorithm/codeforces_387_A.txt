@@ -1,0 +1,28 @@
+Function signature:
+- main(String[] args) throws IOException
+
+Variable declarations and data types:
+- Scanner sc
+- String[] s
+- String[] t
+- LocalTime x
+- LocalTime y
+
+Execution order and logic flow:
+- Create a Scanner object to read input from standard input
+- Read the first input string, split it by ":" into array s
+- Read the second input string, split it by ":" into array t
+- Convert the first element of s to an integer, use it as the hour, and the second element to an integer, use it as the minute to create a LocalTime object x
+- Convert the first element of t to an integer, use it as the hour, and the second element to an integer, use it as the minute to create a LocalTime object y
+- Subtract the hour and minute of y from x
+- Print the result of the subtraction
+
+Input/output operations and data processing logic:
+- Input: Two strings representing times in HH:MM format
+- Processing: Convert strings to LocalTime objects, perform time subtraction
+- Output: Resulting LocalTime after subtraction
+
+Required libraries, modules, or dependencies:
+- java.io.IOException
+- java.time.LocalTime
+- java.util.Scanner

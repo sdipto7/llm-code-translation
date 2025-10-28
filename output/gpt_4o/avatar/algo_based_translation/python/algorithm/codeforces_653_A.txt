@@ -1,0 +1,38 @@
+```
+Algorithm:
+
+1. Function signature:
+   - Name: check_consecutive_triplets
+   - Parameters: None
+   - Return type: None
+
+2. Variable declarations:
+   - n: integer
+   - l: list of integers
+
+3. Execution flow:
+   a. Read an integer input and assign it to variable `n`.
+   
+   b. Read a line of input, split it by spaces, convert each part to an integer, and store the result in the list `l`.
+   
+   c. Sort the list `l` in non-decreasing order.
+   
+   d. Iterate over each integer `i` in list `l`:
+      i. Check if both `i + 1` and `i + 2` exist in list `l`.
+         - If both numbers are present, print 'YES' and exit the loop.
+   
+   e. If the loop completes without finding such a triplet, print 'NO'.
+
+4. Control structures:
+   - For loop: Iterate over each element `i` in the sorted list `l`.
+   - If condition: Check if `i + 1` and `i + 2` are in the list `l`.
+   - Break statement: Exit the loop if the condition is met.
+   - Else statement: Execute after the loop if the loop is not exited via the break statement.
+
+5. Input/Output operations:
+   - Use `input()` to read data from standard input.
+   - Use `print()` to output 'YES' or 'NO'.
+
+6. Required libraries, modules, or dependencies:
+   - None
+```

@@ -1,0 +1,38 @@
+```plaintext
+Function Signature:
+    function count_divisible_subsequences(s: str) -> int
+
+Variable Declarations:
+    s: List[str]
+    mods: List[int]
+    countRemainder: List[int]
+    cnt: int
+    m: int
+    mod: int
+    i: int
+
+Logic Flow:
+1. Convert the input string `s` into a list of characters.
+2. Initialize a list `mods` with zeros, with the same length as `s`.
+3. Initialize a list `countRemainder` with 2019 zeros.
+4. Initialize `cnt` to 0.
+5. Initialize `m` to 1.
+6. Initialize `mod` to 0.
+7. For each index `i` from 0 to the length of `s` - 1, perform the following:
+   a. Update `mod` by adding the integer value of `s[len(s) - i - 1]` multiplied by `m`.
+   b. Update `mod` with `mod % 2019`.
+   c. Update `m` by multiplying it by 10.
+   d. Update `m` with `m % 2019`.
+   e. Increment `countRemainder[mod]` by 1.
+8. Increment `countRemainder[0]` by 1.
+9. For each index `i` from 0 to 2018, perform the following:
+   a. Update `cnt` by adding `countRemainder[i] * (countRemainder[i] - 1) / 2` to it.
+10. Return the value of `cnt`.
+
+Input/Output Operations:
+- Input: A string `s` is read from standard input.
+- Output: The integer `cnt` is printed to standard output.
+
+Required Libraries, Modules, or Dependencies:
+- None
+```

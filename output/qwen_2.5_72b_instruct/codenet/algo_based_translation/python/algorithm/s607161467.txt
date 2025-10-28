@@ -1,0 +1,29 @@
+Function signature:
+- Function name: main
+- Parameters: None
+- Return type: None
+
+Variable declarations and data types:
+- R: int
+
+Logic flow in execution order:
+1. Read integer input from user and assign it to R
+2. If R is less than 1200:
+   - Print "ABC"
+3. Else if R is less than 2800:
+   - Print "ARC"
+4. Else:
+   - Print "AGC"
+
+Control structures:
+- Conditional statements:
+  - If R < 1200
+  - Else if R < 2800
+  - Else
+
+Input/output operations and data processing logic:
+- Input: Read integer value from user
+- Output: Print string based on the value of R
+
+Required libraries, modules, or dependencies:
+- No specific libraries, modules, or dependencies required

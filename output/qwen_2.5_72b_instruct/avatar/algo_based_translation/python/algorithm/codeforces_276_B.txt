@@ -1,0 +1,26 @@
+Function signature: `main()`
+
+Variable declarations:
+- `s` (list of characters)
+- `x` (boolean)
+- `dt` (dictionary with character keys and integer values)
+- `i` (character)
+- `key` (character)
+- `value` (integer)
+- `cnt` (integer)
+
+Logic flow:
+1. Read a string input from the user and convert it to a list of characters `s`.
+2. Initialize `x` to `True`.
+3. Initialize an empty dictionary `dt`.
+4. Iterate over each character `i` in the list `s`:
+   - If `i` is a key in `dt`, increment the value associated with `i` by 1.
+   - Otherwise, add `i` as a key in `dt` with a value of 1.
+5. Initialize `cnt` to 0.
+6. Set `x` to `True`.
+7. Iterate over each key-value pair `(key, value)` in `dt`:
+   - If `value` is odd and `cnt` is less than 1, increment `cnt` by 1.
+   - Else if `value` is odd and `cnt` is greater than or equal to 1, set `x` to `False` and break the loop.
+8. If `x` is `True`, print "First".
+9. Else if `x` is `False` and the length of `s` is even, print "Second".
+10. Else if `x` is `False` and the length of `s` is odd, print "First".

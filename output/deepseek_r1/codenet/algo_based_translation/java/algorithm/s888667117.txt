@@ -1,0 +1,49 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner in` (initialized with `System.in`)
+- `PrintStream out` (assigned `System.out`)
+- `PrintStream err` (assigned `System.err`)
+- `String Si` (input string)
+- `char[] S` (reversed version of `Si`)
+- `long[] dp` (size 13, initialized with `dp[0] = 1`)
+- `int i` (loop index for processing characters)
+- `int d` (initialized to 1, updated as `d * 10 % 13` each iteration)
+- `long[] nd` (new DP array created per iteration)
+- `char c` (current character in `S`)
+- `int x` (computed value based on digit and `d`)
+- `int xi` (loop variable for wildcard digits 0-9)
+- `int j` (loop index for remainder values 0-12)
+- `int ni` (computed index `(j + x) % 13`)
+
+**Logic Flow:**
+1. Read input string `Si`.
+2. Reverse `Si` and convert to `char[] S`.
+3. Initialize `dp` array with `dp[0] = 1`.
+4. Loop for each character in `S` (index `i`), updating `d` as `d * 10 % 13`:
+   - Create new array `nd` initialized to zeros.
+   - If current character `c` is a digit:
+     - Compute `x = (c - '0') * d`.
+     - For each `j` (0-12): Set `nd[(j + x) % 13] = dp[j]`.
+   - Else (wildcard '?'):
+     - For each `xi` (0-9):
+       - Compute `x = xi * d`.
+       - For each `j` (0-12): Add `dp[j]` to `nd[(j + x) % 13]` modulo `1000000007`.
+   - Replace `dp` with `nd`.
+5. Output `dp[5]` after processing all characters.
+
+**Control Structures:**
+- For-loop: `for (i = 0, d = 1; i < S.length; i++, d = d * 10 % 13)`
+- If-else: Branch on `Character.isDigit(c)`
+- Nested for-loops for processing digits/wildcards and remainders
+
+**Input/Output:**
+- Input: Read `Si` via `in.next()`
+- Output: Print `dp[5]` via `out.println`
+- Debug logs: Print `d`, `i`, `S[i]`, and `nd` array via `err`
+
+**Dependencies:**
+- `java.io.*` (for IO classes)
+- `java.util.*` (for Scanner, Arrays)
+- `java.util.stream.*` (imported but unused in logic)

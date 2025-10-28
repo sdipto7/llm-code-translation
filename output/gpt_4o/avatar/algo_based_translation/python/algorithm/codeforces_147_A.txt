@@ -1,0 +1,31 @@
+```
+Function Signature:
+    process_string() -> None
+
+Variable Declarations:
+    s: str
+    res: List[str]
+    punctuation: List[str]
+
+Algorithm:
+    1. Read a string input from the user and store it in variable `s`.
+    2. Initialize an empty list `res` to store processed characters.
+    3. Define a list `punctuation` containing the characters [',', '.', '!', '?'].
+    4. Loop over the indices `i` from 0 to the length of `s`:
+        a. If `i` is greater than or equal to 1:
+            i. If `s[i]` is an empty string:
+                - If the last element in `res` is not an empty string, append `s[i]` to `res`.
+                - Otherwise, continue to the next iteration.
+            ii. Else:
+                - If `s[i]` is in `punctuation`:
+                    - If the last element in `res` is an empty string, remove the last element from `res`.
+                    - Append `s[i]` to `res`.
+                    - Append an empty string to `res`.
+                - Otherwise, append `s[i]` to `res`.
+        b. Else (when `i` is 0):
+            i. If `s[i]` is an empty string, continue to the next iteration.
+            ii. If `s[i]` is in `punctuation`, continue to the next iteration.
+            iii. Otherwise, append `s[i]` to `res`.
+    5. Join the elements of `res` into a single string with no separator and print the result.
+```
+

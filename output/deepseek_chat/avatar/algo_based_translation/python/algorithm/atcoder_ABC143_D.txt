@@ -1,0 +1,44 @@
+**Function Signatures:**
+- bisect_right(arr: list[int], x: int) -> int
+- bisect_left(arr: list[int], x: int) -> int
+
+**Variables:**
+- n: int (first input value)
+- l: list[int] (remaining input values)
+- ans: int (initialized to 0)
+- i: int (loop index)
+- j: int (loop index)
+- a: int (element at index i)
+- b: int (element at index j)
+- right: int (result of bisect_left)
+- left: int (result of bisect_right)
+- tmp: int (temporary count)
+
+**Logic Flow:**
+1. Read all input integers from stdin
+2. Assign first integer to n, remaining integers to list l
+3. Sort list l in ascending order
+4. Initialize ans to 0
+5. For i from 0 to n-1:
+   - For j from i+1 to n-1:
+     - Set a = l[i]
+     - Set b = l[j]
+     - Find index where a+b would be inserted in l (bisect_left)
+     - Find index where max(a-b, b-a) would be inserted in l (bisect_right)
+     - Calculate tmp = max(0, right - left)
+     - If i is between left and right (exclusive right), decrement tmp by 1
+     - If j is between left and right (exclusive right), decrement tmp by 1
+     - Add tmp to ans
+6. Print ans divided by 3 (integer division)
+
+**Control Structures:**
+- Nested for loops: for i in range(n), for j in range(i+1, n)
+- Conditional: if left <= i < right
+- Conditional: if left <= j < right
+
+**Input/Output:**
+- Input: Read integers from standard input
+- Output: Print integer result
+
+**Dependencies:**
+- bisect module (bisect_right, bisect_left)

@@ -1,0 +1,70 @@
+**Algorithm:**
+
+**Global Variables:**
+- `mapNum`: int (number of maps)
+- `h`: int (map height)
+- `w`: int (map width)
+- `battleTown`: 2D char array (grid representation)
+- `bomberActNum`: int (number of tank actions)
+- `bomberAct`: char array (sequence of tank actions)
+- `x`: int (tank's row position)
+- `y`: int (tank's column position)
+
+**Functions:**
+1. `main(String[] args)`
+2. `moveBomber(int a, int b)`
+
+**Input Handling:**
+1. Read `mapNum`
+2. For each map:
+   - Read `h` and `w`
+   - Initialize `battleTown` with dimensions h x w
+   - Read h rows, populate `battleTown`, detect initial tank position (x,y) by checking for '^', 'v', '<', '>'
+   - Read `bomberActNum` and `bomberAct` string
+   - Process each action in `bomberAct`:
+     - **Movement Actions (U/D/L/R):**
+       - Update tank's direction in current cell
+       - If next cell in movement direction is '.' and within bounds:
+         - Move tank to next cell, set previous cell to '.'
+         - Update x or y coordinate
+     - **Shoot Action (S):**
+       - Call `moveBomber(x, y)`
+   - After processing all actions, print updated `battleTown` grid row by row
+
+**moveBomber Function Logic:**
+Parameters: `a` (row), `b` (column)
+1. Check current tank direction in `battleTown[a][b]`:
+   - **Up ('^'):**
+     - Iterate from a-1 to 0:
+       - If cell contains '*': replace with '.' and exit
+       - If cell contains '#': exit
+       - Else continue upward
+   - **Down ('v'):**
+     - Iterate from a+1 to h-1:
+       - If cell contains '*': replace with '.' and exit
+       - If cell contains '#': exit
+       - Else continue downward
+   - **Left ('<'):**
+     - Iterate from b-1 to 0:
+       - If cell contains '*': replace with '.' and exit
+       - If cell contains '#': exit
+       - Else continue leftward
+   - **Right ('>'):**
+     - Iterate from b+1 to w-1:
+       - If cell contains '*': replace with '.' and exit
+       - If cell contains '#': exit
+       - Else continue rightward
+
+**Control Structures:**
+- Nested loops for map processing and action execution
+- Conditional checks for grid boundaries and cell content during movement/shooting
+- For loops with range constraints for projectile traversal
+- Switch-like conditionals (if-else chain) for direction handling
+
+**Output Operations:**
+- Print each row of `battleTown` as concatenated characters after processing all actions for a map
+- No output between characters in a row
+- Empty line printed between map outputs except after last map
+
+**Dependencies:**
+- `java.util.Scanner` for input handling

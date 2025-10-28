@@ -1,0 +1,10 @@
+1. Read the input year.
+2. Check if the input year is a leap year.
+3. Initialize a sum to 0.
+4. Start a loop from the next year of the input year.
+5. For each year in the loop, check if it is a leap year.
+6. If the year is a leap year, add 366 to the sum; otherwise, add 365.
+7. Check if the sum is divisible by 7.
+8. If the sum is divisible by 7, check if the current year's leap status matches the input year's leap status.
+9. If the leap statuses match, output the current year and stop.
+10. If the leap statuses do not match, continue to the next iteration of the loop.

@@ -1,0 +1,44 @@
+- **Function Signature**:
+  - `public static void main(String[] args)`
+    - Parameters: `String[] args`
+    - Return type: `void`
+
+- **Variable Declarations**:
+  - `Scanner sc = new Scanner(System.in)` (Scanner object for input)
+  - `int N = sc.nextInt()` (number of input words)
+  - `HashMap<Integer, String> map = new HashMap<>()` (stores words with indices as keys)
+  - `boolean ans = true` (result flag)
+  - `HashMap<Integer, String> past = new HashMap<>()` (tracks previously seen words)
+  - `String next = ""` (holds the last character of the current word for validation)
+
+- **Logic Flow**:
+  1. Read integer `N` from input.
+  2. Populate `map` with `N` words (indexed 0 to N-1) from input.
+  3. Initialize `ans` as `true`.
+  4. Iterate over each word in `map` using index `i` from 0 to N-1:
+     - **Check for duplicates**:
+       - If `past` contains the current word (`map.get(i)`), set `ans` to `false` and exit loop.
+     - Add current word to `past`.
+     - **Validate word chain (for i > 0)**:
+       - If `i != 0`, check if `next` (last character of previous word) matches the first character of the current word (`map.get(i).substring(0, 1)`). If not, set `ans` to `false` and exit loop.
+     - Update `next` to the last character of the current word (`map.get(i).substring(length-1, length)`).
+  5. Print "Yes" if `ans` is `true`, else print "No".
+
+- **Control Structures**:
+  - **For loop**:
+    - `for (int i = 0; i < N; i++)` (twice: populating `map` and validation loop)
+  - **Conditionals**:
+    - `if (past.containsValue(map.get(i)))` (duplicate check)
+    - `if (i != 0)` (skip first word)
+    - `if (!next.equals(map.get(i).substring(0, 1)))` (word chain validation)
+
+- **Input/Output Operations**:
+  - Input:
+    - Read `N` via `sc.nextInt()`.
+    - Read `N` words via `sc.next()`.
+  - Output:
+    - Print "Yes" or "No" based on `ans`.
+
+- **Dependencies**:
+  - `java.util.HashMap` (for storing words and tracking duplicates)
+  - `java.util.Scanner` (for user input handling)

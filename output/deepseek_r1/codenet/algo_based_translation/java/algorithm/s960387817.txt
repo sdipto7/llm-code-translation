@@ -1,0 +1,30 @@
+- **Function Signatures**
+  - `public static void main(String[] args)`
+
+- **Variables**
+  - `n: int` (input count)
+  - `set: Set<Integer>` initialized as `HashSet<Integer>`
+  - `scanner: Scanner` initialized with `System.in`
+
+- **Logic Flow**
+  1. Open input scanner with try-with-resources
+  2. Read integer `n` from scanner
+  3. Initialize empty integer set
+  4. Iterate `n` times via `IntStream.range(0, n)`
+      - Read integer from scanner in each iteration
+      - Add integer to set (automatic deduplication)
+  5. Print set size via `System.out.println(set.size())`
+
+- **Control Structures**
+  - Try-with-resources block for scanner
+  - Stream iteration `IntStream.range(0, n).forEach()`
+
+- **Input/Output**
+  - Input: Read `n` integers from standard input
+  - Output: Print count of unique integers
+
+- **Dependencies**
+  - `java.util.HashSet`
+  - `java.util.Scanner`
+  - `java.util.Set`
+  - `java.util.stream.IntStream`

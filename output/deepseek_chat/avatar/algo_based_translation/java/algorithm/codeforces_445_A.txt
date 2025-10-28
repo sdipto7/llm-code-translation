@@ -1,0 +1,43 @@
+**Function Signature:**
+- `public static void main(String[] args) throws IOException`
+
+**Variables:**
+- `BufferedReader buf` initialized with `new BufferedReader(new InputStreamReader(System.in))`
+- `String[] inp` initialized by splitting the first input line into individual characters
+- `int n` parsed from `inp[0]`
+- `int m` parsed from `inp[1]`
+- `String[] ans` of size `n`
+- `String str` for each line read
+- `StringBuilder temp` initialized as empty string
+
+**Logic Flow:**
+1. Read first input line and split into array of strings `inp`
+2. Parse `n` from `inp[0]` and `m` from `inp[1]`
+3. Initialize string array `ans` with length `n`
+4. For `i` from 0 to `n-1`:
+   - Read next input line into `str`
+   - Initialize empty `StringBuilder temp`
+   - For `j` from 0 to `m-1`:
+     - If character at `str.charAt(j)` equals '-':
+       - Append '-' to `temp`
+     - Else:
+       - If `(i + j) % 2 == 1`:
+         - Append 'W' to `temp`
+       - Else:
+         - Append 'B' to `temp`
+   - Store `temp.toString()` in `ans[i]`
+5. For `i` from 0 to `n-1`:
+   - Print `ans[i]`
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < n; i++)`
+- Nested for loop: `for (int j = 0; j < m; j++)`
+- Conditional: `if (str.charAt(j) == '-')`
+- Conditional: `if ((i + j) % 2 == 1)`
+
+**Input/Output:**
+- Input: Reads from standard input using BufferedReader
+- Output: Prints results to standard output using System.out.println
+
+**Dependencies:**
+- `java.io.*` (BufferedReader, InputStreamReader, IOException)

@@ -1,0 +1,25 @@
+Function Signature: main() -> None
+
+Variable Declarations:
+input_string: str
+output_string: str
+
+Logic Flow:
+1. Call input() to read a string from the standard input.
+2. Assign the result to input_string.
+3. Call replace() on input_string with arguments "," and " ".
+4. Assign the result to output_string.
+5. Call print() with output_string as the argument to display the result on the standard output.
+
+Input/Output Operations:
+- Read a string from the standard input using input().
+- Write a string to the standard output using print().
+
+Data Processing Logic:
+- Replace all occurrences of "," with " " in the input string.
+
+Control Structures:
+- No loops or conditionals present in the code.
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries, modules, or dependencies required.

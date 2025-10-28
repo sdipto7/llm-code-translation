@@ -1,0 +1,39 @@
+- Function signature:  
+  `function main(): void`
+
+- Variables:  
+  - `N: int`, `K: int` (input values)  
+  - `A: list[int]` (length N, initialized to 0)  
+  - `d: int` (temporary storage for count of snacks)  
+  - `AA: list[int]` (temporary list of people with snacks)  
+  - `n: int` (final count of people without snacks, initialized to 0)  
+
+- Execution flow:  
+  1. Read `N` and `K` from standard input (space-separated)  
+  2. Initialize list `A` with `N` zeros  
+  3. Loop `K` times:  
+      a. Read integer `d` from standard input  
+      b. Read `d` space-separated integers into list `AA`  
+      c. For each integer `x` in `AA` (indices 0 to d-1):  
+          i. Set `A[AA[x] - 1] = 1`  
+  4. Loop through all elements in `A` (indices 0 to N-1):  
+      a. If `A[i] == 0`, increment `n` by 1  
+  5. Print `n`  
+
+- Control structures:  
+  - For loop: `for i in 0 to K-1` (process K snack distributions)  
+  - Nested for loop: `for j in 0 to d-1` (process each person in a snack distribution)  
+  - For loop: `for i in 0 to N-1` (count people without snacks)  
+  - Conditional: `if A[i] == 0` (zero-check condition)  
+
+- Input operations:  
+  - Read via `input().split()` for initial N/K values  
+  - `d` read via `int(input())`  
+  - `AA` values read via `list(map(int, input().split()))`  
+
+- Output operation:  
+  - Final value of `n` printed via `print(n)`  
+
+- Dependencies:  
+  - Standard input/output facilities only  
+  - No external libraries required

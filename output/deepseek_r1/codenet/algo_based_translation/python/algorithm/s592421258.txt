@@ -1,0 +1,21 @@
+- Function signatures: None (script uses top-level code)
+- Variables:
+  - `I`: function reference to `input` (built-in function)
+  - `s`: str (result of first input multiplied by 2)
+  - Implicit input1: str (first user input via `I()`)
+  - Implicit input2: str (second user input via `I()`)
+- Execution flow:
+  1. Assign `I = input`
+  2. Read first input string from user (`input1 = I()`)
+  3. Assign `s = input1 + input1` (string concatenation)
+  4. Read second input string from user (`input2 = I()`)
+  5. Evaluate boolean condition `input2 in s`
+  6. Create list `['No', 'Yes']`
+  7. Index list with `1` if condition true, `0` otherwise
+  8. Print resulting string value
+- Control structures:
+  - Implicit conditional via list indexing: `['No','Yes'][condition_result]`
+- Input/Output:
+  - Two sequential stdin reads using `input()`
+  - One stdout print operation
+- Dependencies: None (uses Python built-ins only)

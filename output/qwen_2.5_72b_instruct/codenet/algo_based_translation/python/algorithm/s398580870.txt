@@ -1,0 +1,26 @@
+Function signature: `calculate_result(n: int, k: int) -> None`
+
+Variable declarations:
+- `n: int`
+- `k: int`
+
+Logic flow:
+1. Read input values for `n` and `k` as integers.
+2. If `k` modulo 2 equals 1:
+   - Calculate `(n // k) ** 3` and print the result.
+3. Else:
+   - Calculate `(n // k) ** 3 + ((n + k // 2) // k) ** 3` and print the result.
+
+Control structures:
+- Conditional statement: If `k % 2 == 1` then execute block 1 else execute block 2.
+
+Input/output operations:
+- Input: Read space-separated integers `n` and `k` from standard input.
+- Output: Print a single integer result to standard output.
+
+Data processing logic:
+- Perform integer division of `n` by `k`.
+- Depending on whether `k` is odd or even, compute and print either `(n // k) ** 3` or `(n // k) ** 3 + ((n + k // 2) // k) ** 3`.
+
+Required libraries, modules, or dependencies:
+- No additional libraries, modules, or dependencies are required.

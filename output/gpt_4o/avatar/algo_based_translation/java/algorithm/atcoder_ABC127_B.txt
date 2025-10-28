@@ -1,0 +1,91 @@
+```
+Dependencies:
+- java.io.*
+- java.nio.CharBuffer
+- java.util.NoSuchElementException
+
+Algorithm:
+1. Define main function:
+   - Parameters: String[] args
+   - Return type: void
+   - Initialize SimpleScanner instance with System.in
+   - Initialize PrintWriter instance with System.out
+   - Declare integer variable r, initialized with scanner.nextInt()
+   - Declare integer variable d, initialized with scanner.nextInt()
+   - Declare long integer variable x, initialized with scanner.nextLong()
+
+2. Execute a for loop that iterates 10 times with index i ranging from 0 to 9:
+   - Update x using the formula: x = r * x - d
+   - Print the value of x using writer.println(x)
+
+3. Close the PrintWriter instance using writer.close()
+
+4. Define SimpleScanner class:
+   - Constants:
+     - BUFFER_SIZE: int = 10240
+
+   - Private member variables:
+     - in: Readable
+     - buffer: CharBuffer
+     - eof: boolean
+
+   - Constructor SimpleScanner:
+     - Parameters: InputStream in
+     - Initialize in with a BufferedReader wrapping InputStreamReader of the input stream
+     - Initialize buffer with CharBuffer.allocate(BUFFER_SIZE)
+     - Set buffer's limit to 0
+     - Set eof to false
+
+   - Private method read:
+     - Parameters: none
+     - Return type: char
+     - If buffer does not have remaining characters:
+       - Clear the buffer
+       - Declare integer n
+       - Try reading from 'in' into buffer, assigning number of characters read to n
+       - Catch IOException and set n to -1
+       - If n is less than or equal to 0, set eof to true and return null character '\0'
+       - Flip the buffer
+     - Return the next character from buffer using buffer.get()
+
+   - Private method checkEof:
+     - Parameters: none
+     - Return type: void
+     - If eof is true, throw NoSuchElementException
+
+   - Public method nextChar:
+     - Parameters: none
+     - Return type: char
+     - Call checkEof
+     - Read and store a character in variable b
+     - Call checkEof again
+     - Return character b
+
+   - Public method next:
+     - Parameters: none
+     - Return type: String
+     - Declare character b
+     - Loop while b is a whitespace character:
+       - Read character b
+       - Call checkEof
+     - Declare StringBuilder sb
+     - Loop while not eof and b is not a whitespace character:
+       - Append b to sb
+       - Read and store character b
+     - Return sb.toString()
+
+   - Public method nextInt:
+     - Parameters: none
+     - Return type: int
+     - Return Integer.valueOf(next())
+
+   - Public method nextLong:
+     - Parameters: none
+     - Return type: long
+     - Return Long.valueOf(next())
+
+   - Public method nextDouble:
+     - Parameters: none
+     - Return type: double
+     - Return Double.parseDouble(next())
+```

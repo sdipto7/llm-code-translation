@@ -1,0 +1,49 @@
+
+import java.util.*;
+
+public class atcoder_ABC166_C {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+        int[] p = new int[n];
+        for (int i = 0; i < n; i++) {
+            p[i] = i + 1;
+        }
+        int[] h = new int[n];
+        for (int i = 0; i < n; i++) {
+            h[i] = scanner.nextInt();
+        }
+        Map<Integer, Integer> hp = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            hp.put(p[i], h[i]);
+        }
+        Map<Integer, List<Integer>> path = new HashMap<>();
+        for (int i = 1; i <= n; i++) {
+            path.put(i, new ArrayList<>());
+        }
+        for (int i = 0; i < m; i++) {
+            int a = scanner.nextInt();
+            int b = scanner.nextInt();
+            path.get(a).add(b);
+            path.get(b).add(a);
+        }
+        int c = 0;
+        for (Map.Entry<Integer, List<Integer>> entry : path.entrySet()) {
+            int i = entry.getKey();
+            List<Integer> v = entry.getValue();
+            boolean f = false;
+            for (int j : v) {
+                if (hp.get(i) <= hp.get(j)) {
+                    f = true;
+                    break;
+                }
+            }
+            if (!f) {
+                c++;
+            }
+        }
+        System.out.println(c);
+    }
+}
+

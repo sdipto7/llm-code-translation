@@ -1,0 +1,7 @@
+- Import `Scanner` class from `java.util`.
+- Define the `main` function with `String[] args` parameter and return type `void`.
+- Declare a `Scanner` object `stdIn` to read input from the standard input.
+- Declare a variable `n` of type `long`.
+- Read a `long` integer input from the user and assign it to `n` using `stdIn.nextLong()`.
+- Calculate the expression `n * (n + 1) / 2 - n`.
+- Print the result of the calculation to the standard output.

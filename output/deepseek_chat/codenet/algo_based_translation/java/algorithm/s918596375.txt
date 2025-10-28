@@ -1,0 +1,52 @@
+main:
+- Input: System.in (standard input)
+- Output: PrintWriter(System.out) (standard output)
+- Call solve(sc, out)
+
+solve(FastScanner sc, PrintWriter out):
+- Declare String s = sc.next()
+- Declare String[] a = {"a","e","i","o","u"}
+- For each String str in a:
+  - If str.equalsIgnoreCase(s) then:
+    - Print "vowel"
+    - Return from function
+- Print "consonant"
+
+gcd(int a, int b):
+- If a < b: return gcd(b, a)
+- If b == 0: return a
+- Else: return gcd(b, a % b)
+
+gcd(long a, long b):
+- If a < b: return gcd(b, a)
+- If b == 0: return a
+- Else: return gcd(b, a % b)
+
+lcm(int a, int b):
+- Return (a * b) / gcd(a, b)
+
+Pair<K, V> class:
+- Extends AbstractMap.SimpleEntry<K, V>
+- Constructor(K key, V value)
+- swap() method returns new Pair<V, K>(getValue(), getKey())
+
+FastScanner class:
+- BufferedReader reader
+- StringTokenizer tokenizer
+- Constructor(InputStream in): initializes reader with InputStreamReader(in)
+- next(): reads next token from input
+- nextLine(): reads next line from input
+- nextLong(): returns next token as long
+- nextInt(): returns next token as int
+- nextDouble(): returns next token as double
+- nextIntArray(int n): returns array of n integers
+- nextLongArray(int n): returns array of n longs
+
+Required imports:
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStream
+- java.io.InputStreamReader
+- java.io.PrintWriter
+- java.util.AbstractMap
+- java.util.StringTokenizer

@@ -1,0 +1,30 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- n: int (number of elements)
+- l: list[int] (list of integers)
+
+**Input Operations:**
+- Read integer n from standard input
+- Read next line, split into list of strings, convert to integers, store in list l
+
+**Data Processing:**
+- Sort list l in ascending order
+
+**Control Flow:**
+- For each element i in sorted list l:
+  - Check if both i+1 and i+2 exist in list l
+  - If both exist:
+    - Print "YES"
+    - Break out of loop
+- If loop completes without finding consecutive triple (i, i+1, i+2):
+  - Print "NO"
+
+**Output Operations:**
+- Print "YES" if consecutive triple found
+- Print "NO" if no consecutive triple found
+
+**Dependencies:**
+- Standard input/output functions
+- List operations and sorting

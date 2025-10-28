@@ -1,0 +1,39 @@
+**Functions:**
+- `read()`: boolean
+  - Checks if next input token is integer
+  - If true, reads integer into `d` and returns true
+  - Otherwise returns false
+
+- `solve()`: int
+  - Initializes `ans` to 0
+  - Loops with `i` from 1 while `i * d < 600`
+    - Calculates `x = i * d`
+    - Calculates `y = x * x`
+    - Adds `y * d` to `ans`
+  - Returns `ans`
+
+- `main(String[] args)`: void
+  - While `read()` returns true
+    - Calls `solve()` and prints result
+
+**Variables:**
+- `sc`: Scanner (static, initialized to System.in)
+- `d`: int (static)
+
+**Control Flow:**
+1. Program starts at `main`
+2. Enters while loop calling `read()`
+3. `read()` checks scanner has next integer
+4. If true: reads integer to `d`, returns true
+5. If false: returns false, breaking loop
+6. When `read()` returns true, calls `solve()`
+7. `solve()` calculates integral sum
+8. Prints result
+9. Repeats until input exhausted
+
+**Input/Output:**
+- Input: Reads integers from standard input
+- Output: Prints integer results to standard output
+
+**Dependencies:**
+- `java.util.Scanner`

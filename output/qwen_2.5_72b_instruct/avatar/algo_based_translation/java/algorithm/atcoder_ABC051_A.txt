@@ -1,0 +1,30 @@
+Function Signature:
+- `public static void main(String[] args)` throws IOException
+
+Variable Declarations and Data Types:
+- `BufferedReader br` 
+- `StringBuilder sb`
+- `String a`
+
+Logic Flow in Execution Order:
+1. Create a `BufferedReader` object to read input from standard input.
+2. Create a `StringBuilder` object to build the output string.
+3. Read a line of input from the `BufferedReader` and store it in the variable `a`.
+4. Replace all occurrences of the comma (`,`) character in the string `a` with a space (` `) character.
+5. Append the modified string to the `StringBuilder` object `sb`.
+6. Print the content of the `StringBuilder` object `sb` to the standard output.
+
+Control Structures:
+- No loops or conditionals are present in the code.
+
+Input/Output Operations and Data Processing Logic:
+- Input: Reads a single line of text from the console.
+- Output: Prints the modified string (with commas replaced by spaces) to the console.
+- Data Processing: Replaces commas with spaces in the input string.
+
+Required Libraries, Modules, or Dependencies:
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.util.*`
+- `java.math.*`

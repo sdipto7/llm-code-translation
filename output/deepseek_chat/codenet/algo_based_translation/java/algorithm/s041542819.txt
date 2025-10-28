@@ -1,0 +1,98 @@
+**Algorithm:**
+
+1. **Main Function:**
+   - Parameters: String[] args
+   - Return: void
+   - Initialize inputStream = System.in
+   - Initialize outputStream = System.out
+   - Create LightScanner object 'in' with inputStream
+   - Create LightWriter object 'out' with outputStream
+   - Create DLazyFaith object 'solver'
+   - Call solver.solve(1, in, out)
+   - Call out.close()
+
+2. **DLazyFaith.solve:**
+   - Parameters: int testNumber, LightScanner in, LightWriter out
+   - Return: void
+   - Read integers a, b, q from input
+   - Initialize long array s of size a+2
+   - Initialize long array t of size b+2
+   - Set s[0] = t[0] = -10000000000L
+   - For i from 0 to a-1: read long value into s[i+1]
+   - For i from 0 to b-1: read long value into t[i+1]
+   - Set s[a+1] = t[b+1] = 20000000000L
+   - For i from 0 to q-1:
+     - Read long x from input
+     - Calculate idx_s = ArrayUtil.lowerBound(s, x+1)
+     - Calculate sl = x - s[max(0, idx_s - 1)]
+     - Calculate idx_t = ArrayUtil.lowerBound(t, x+1)
+     - Calculate tl = x - t[max(0, idx_t - 1)]
+     - Calculate sr = s[ArrayUtil.lowerBound(s, x)] - x
+     - Calculate tr = t[ArrayUtil.lowerBound(t, x)] - x
+     - Calculate minimum of:
+       - max(sl, tl)
+       - max(sr, tr)
+       - 2*sl + tr
+       - 2*tl + sr
+       - sl + 2*tr
+       - tl + 2*sr
+     - Output the minimum value followed by newline
+
+3. **LightScanner:**
+   - Fields: BufferedReader reader, StringTokenizer tokenizer
+   - Constructor: LightScanner(InputStream in)
+   - string(): String
+     - If tokenizer is null or has no more tokens: read line from reader and create new tokenizer
+     - Return next token from tokenizer
+   - ints(): int
+     - Return Integer.parseInt(string())
+   - longs(): long
+     - Return Long.parseLong(string())
+
+4. **LightWriter:**
+   - Fields: Writer out, boolean autoflush, boolean breaked
+   - Constructors: LightWriter(Writer out), LightWriter(OutputStream out)
+   - print(char c): LightWriter
+     - Write character to output
+     - Set breaked = false
+   - print(String s): LightWriter
+     - Write string to output
+     - Set breaked = false
+   - ans(String s): LightWriter
+     - If not breaked: print space
+     - Print string
+   - ans(long l): LightWriter
+     - Call ans with string representation of long
+   - ansln(long... n): LightWriter
+     - For each long in n: call ans(long).ln()
+   - ln(): LightWriter
+     - Print system line separator
+     - Set breaked = true
+     - If autoflush: flush output
+   - close(): void
+     - Close output writer
+
+5. **IntMath.min:**
+   - Parameters: long... v
+   - Return: long
+   - Return minimum value from input array v
+   - Throw NoSuchElementException if array is empty
+
+6. **ArrayUtil.lowerBound:**
+   - Parameters: long[] a, long t
+   - Return: int
+   - Call lowerBound(a, t, 0)
+   - Parameters: long[] a, long t, int min
+   - Return: int
+   - Initialize max = a.length
+   - While min < max:
+     - mid = (min + max) / 2
+     - If t <= a[mid]: max = mid
+     - Else: min = mid + 1
+   - Return min
+
+**Required Dependencies:**
+- java.io.* (InputStream, OutputStream, BufferedReader, InputStreamReader, Writer, BufferedWriter, OutputStreamWriter)
+- java.util.* (Arrays, StringTokenizer, OptionalLong, NoSuchElementException)
+- java.nio.charset.Charset
+- java.util.stream.LongStream

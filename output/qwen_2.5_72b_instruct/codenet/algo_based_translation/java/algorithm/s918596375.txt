@@ -1,0 +1,79 @@
+Main:
+- Function Signature: `public static void main(String[] args)`
+- Variable Declarations: 
+  - `FastScanner sc` initialized with `System.in`
+  - `PrintWriter out` initialized with `System.out`
+- Logic Flow:
+  - Calls `solve(sc, out)`
+  - Calls `out.flush()`
+
+solve:
+- Function Signature: `public static void solve(FastScanner sc, PrintWriter out)`
+- Variable Declarations: 
+  - `String s` assigned `sc.next()`
+  - `String[] a` array of strings `{"a","e","i","o","u"}`
+- Logic Flow:
+  - For each `str` in `a`:
+    - If `str.equalsIgnoreCase(s)`:
+      - Calls `out.println("vowel")`
+      - Returns
+  - Calls `out.println("consonant")`
+
+gcd (int):
+- Function Signature: `public static int gcd(int a, int b)`
+- Logic Flow:
+  - If `a < b`: Returns `gcd(b, a)`
+  - If `b == 0`: Returns `a`
+  - Else: Returns `gcd(b, a % b)`
+
+gcd (long):
+- Function Signature: `public static long gcd(long a, long b)`
+- Logic Flow:
+  - If `a < b`: Returns `gcd(b, a)`
+  - If `b == 0`: Returns `a`
+  - Else: Returns `gcd(b, a % b)`
+
+lcm:
+- Function Signature: `public static int lcm(int a, int b)`
+- Logic Flow:
+  - Returns `(a * b) / gcd(a, b)`
+
+Pair:
+- Extends `AbstractMap.SimpleEntry<K, V>`
+- Constructor: `public Pair(final K key, final V value)`
+- Method:
+  - `public Pair<V, K> swap()`: Returns new `Pair<V, K>(getValue(), getKey())`
+
+FastScanner:
+- Constructor: `public FastScanner(InputStream in)`
+  - Initializes `reader` with `BufferedReader` and `InputStreamReader`
+  - Initializes `tokenizer` with `null`
+- Methods:
+  - `next`:
+    - If `tokenizer == null || !tokenizer.hasMoreTokens()`:
+      - Tries to read line into `tokenizer`, catches `IOException`
+    - Returns `tokenizer.nextToken()`
+  - `nextLine`:
+    - If `tokenizer == null || !tokenizer.hasMoreTokens()`:
+      - Tries to read line, catches `IOException`
+    - Returns `tokenizer.nextToken("\n")`
+  - `nextLong`: Returns `Long.parseLong(next())`
+  - `nextInt`: Returns `Integer.parseInt(next())`
+  - `nextDouble`: Returns `Double.parseDouble(next())`
+  - `nextIntArray(int n)`:
+    - Declares `int[] a` of size `n`
+    - For `i` from `0` to `n-1`: Assigns `nextInt()` to `a[i]`
+    - Returns `a`
+  - `nextLongArray(int n)`:
+    - Declares `long[] a` of size `n`
+    - For `i` from `0` to `n-1`: Assigns `nextLong()` to `a[i]`
+    - Returns `a`
+
+Required Libraries:
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStream`
+- `java.io.InputStreamReader`
+- `java.io.PrintWriter`
+- `java.util.AbstractMap`
+- `java.util.StringTokenizer`

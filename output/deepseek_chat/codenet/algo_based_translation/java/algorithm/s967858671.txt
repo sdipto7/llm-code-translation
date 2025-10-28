@@ -1,0 +1,33 @@
+- Function signature: public static void main(String[] args)
+- Parameter: String array args
+- Return type: void
+- Variable declarations:
+  - int[] Num
+  - Scanner n
+  - int i
+  - int a
+  - int b
+- Logic flow:
+  1. Declare integer array Num
+  2. Initialize Num with size 11
+  3. Create Scanner object n reading from System.in
+  4. For i from 0 to 9 (inclusive):
+      - Read integer input from scanner
+      - Store input in Num[i]
+  5. For a from 9 down to 0 (inclusive):
+      - For b from 0 to a-1 (inclusive):
+          - If Num[b] < Num[b+1]:
+              - Set Num[10] = Num[b]
+              - Set Num[b] = Num[b+1]
+              - Set Num[b+1] = Num[10]
+  6. Print Num[0]
+  7. Print Num[1]
+  8. Print Num[2]
+- Control structures:
+  - For loop: i = 0; i < 10; i++
+  - For loop: a = 9; a >= 0; a--
+  - For loop: b = 0; b < a; b++
+  - Conditional: if (Num[b] < Num[b+1])
+- Input operations: Scanner.nextInt() for 10 integers
+- Output operations: System.out.println for Num[0], Num[1], Num[2]
+- Required libraries: java.util.Scanner

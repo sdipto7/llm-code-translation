@@ -1,0 +1,14 @@
+1. Import necessary modules and functions.
+2. Define a function `solution`.
+3. Within `solution`, read a line of input and count the frequency of each character using a counter, storing it as `bought_count`.
+4. Read another line of input and count the frequency of each character using a counter, storing it as `made_count`.
+5. Initialize a variable `res` to 0.
+6. Iterate over each color in `made_count`.
+7. For each color, check if it exists in `bought_count`.
+8. If a color is not found in `bought_count`, return and print -1.
+9. If the color exists, increment `res` by the minimum count between `bought_count` and `made_count` for that color.
+10. After iterating over all colors, print the value of `res`.
+11. Define a `main` function.
+12. Within `main`, set `t` to 1.
+13. Iterate `t` times, calling the `solution` function in each iteration.
+14. Execute the `main` function.

@@ -1,0 +1,22 @@
+Algorithm:
+
+1. Import the `Scanner` class from the `java.util` package.
+
+2. Define the `main` function with the signature:
+   - `public static void main(String[] args)`
+
+3. Inside the `main` function:
+   - Declare a `Scanner` object `scan` for input operations.
+     - `Scanner scan = new Scanner(System.in);`
+
+4. Declare and initialize two integer variables:
+   - `int X = scan.nextInt();` // Read an integer input from the user and assign it to `X`.
+   - `int t = scan.nextInt();` // Read another integer input from the user and assign it to `t`.
+
+5. Implement a conditional structure:
+   - If `X` is greater than or equal to `t`:
+     - Calculate `X-t` and print the result.
+     - `System.out.println(X-t);`
+   - Else if `X` is less than `t`:
+     - Print `0`.
+     - `System.out.print(0);`

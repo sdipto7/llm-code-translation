@@ -1,0 +1,12 @@
+1. Define a function `solver` with no parameters and no return value.
+2. Read an integer `N` from input.
+3. Declare a list `action` to store `N` lists of 3 integers each.
+4. For `i` ranging from 0 to `N-1`, read 3 integers from input, store them in a list, and append this list to `action`.
+5. Declare a 2D list `dp` with `N` rows and 3 columns, initialized with zeros.
+6. For `i` ranging from 0 to 2, set `dp[0][i]` to `action[0][i]`.
+7. For `i` ranging from 1 to `N-1`, perform the following operations:
+   - Set `dp[i][0]` to the maximum of `dp[i-1][1] + action[i][0]` and `dp[i-1][2] + action[i][0]`.
+   - Set `dp[i][1]` to the maximum of `dp[i-1][0] + action[i][1]` and `dp[i-1][2] + action[i][1]`.
+   - Set `dp[i][2]` to the maximum of `dp[i-1][0] + action[i][2]` and `dp[i-1][1] + action[i][2]`.
+8. Print the maximum value in the last row of `dp`, i.e., `max(dp[N-1])`.
+9. The function `solver` uses the built-in `input`, `int`, `map`, `split`, `max` functions and list data type.

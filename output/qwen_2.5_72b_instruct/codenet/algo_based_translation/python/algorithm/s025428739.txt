@@ -1,0 +1,28 @@
+Function signature:
+- Function name: main
+- Parameters: None
+- Return type: None
+
+Variable declarations and data types:
+- A: integer
+- B: integer
+- lst: list of integers
+
+Logic flow in execution order:
+1. Read input from standard input, split it into two parts, convert each part to an integer, and assign them to A and B respectively.
+2. Initialize an empty list named lst.
+3. Compute the sum of A and B, convert the result to an integer, and append it to lst.
+4. Compute the difference between A and B, convert the result to an integer, and append it to lst.
+5. Compute the product of A and B, convert the result to an integer, and append it to lst.
+6. Find the maximum value in lst and print it to standard output.
+
+Control structures:
+- No loops are present.
+- No conditionals are present.
+
+Input/output operations and data processing logic:
+- Input: Read two integers from standard input separated by whitespace.
+- Output: Print the maximum value from the list lst to standard output.
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules are required.

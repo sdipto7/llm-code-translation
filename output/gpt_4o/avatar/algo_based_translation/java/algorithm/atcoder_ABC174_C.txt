@@ -1,0 +1,52 @@
+1. **Function Signatures:**
+   - `readInt(): int`
+   - `solve(): int`
+
+2. **Variable Declarations:**
+   - `BufferedReader br`: Reads input from the standard input stream.
+   - `PrintWriter pw`: Writes output to the standard output stream.
+   - `StringTokenizer st`: Tokenizes input strings.
+   - `int K`: Stores the integer input value.
+   - `int ans`: Stores the number of iterations required to satisfy the condition.
+   - `int remainder`: Stores the current remainder during the iteration process.
+
+3. **Logic Flow:**
+
+   - **Input Reading:**
+     - Initialize `BufferedReader` to read from `System.in`.
+     - Initialize `PrintWriter` to write to `System.out`.
+     - Call `solve()` function and print its result.
+
+   - **Function `readInt()`:**
+     - While `st` is `null` or `st` does not have more tokens:
+       - Read a line from `BufferedReader`.
+       - Initialize `StringTokenizer` with the read line.
+     - Return the next token as an integer.
+
+   - **Function `solve()`:**
+     - Read integer `K` using `readInt()`.
+     - If `K` is divisible by 2 or 5, return `-1`.
+     - If `K` is divisible by 7, divide `K` by 7.
+     - Multiply `K` by 9.
+     - Initialize `ans` to 1.
+     - Calculate `remainder` as `10 % K`.
+     - While `remainder` is not equal to 1:
+       - Increment `ans`.
+       - Update `remainder` to `(remainder * 10) % K`.
+     - Return `ans`.
+
+4. **Control Structures:**
+   - Conditional statements to check divisibility (`if` statements).
+   - A `while` loop to iterate until the remainder is 1.
+
+5. **Input/Output Operations:**
+   - Input is read using `BufferedReader` and `StringTokenizer`.
+   - Output is written using `PrintWriter`.
+
+6. **Dependencies:**
+   - `java.io.BufferedReader`
+   - `java.io.InputStreamReader`
+   - `java.io.PrintWriter`
+   - `java.io.BufferedWriter`
+   - `java.io.OutputStreamWriter`
+   - `java.util.StringTokenizer`

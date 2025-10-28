@@ -1,0 +1,32 @@
+Function signature: `main()`
+- No parameters or return type specified
+
+Variable declarations and data types:
+- `n`, `m`: integers
+- `li`: list of lists of integers
+- `p`: tuple of integers
+- `q`: set of integers
+- `r`: set of integers
+- `v`: set of integers
+- `ans`: integer
+- `i`: integer
+- `s`: set of integers
+- `u`: list of integers
+- `w`: integer
+
+Logic flow in execution order:
+1. Import `itertools` module
+2. Read `n`, `m` as integers from input and split by space
+3. Read `m` lines of input, convert each line to a list of integers, discard the first element, and store in `li`
+4. Read a line of input, convert to a tuple of integers, and store in `p`
+5. Create set `q` containing all unique elements from the flattened list of `li`
+6. Create set `r` containing integers from 1 to `n`
+7. Compute set `v` as the difference between `r` and `q`
+8. Initialize `ans` to 0
+9. Loop over `i` from 0 to length of `q` inclusive:
+   - Loop over all combinations `s` of length `i` from set `q`:
+      - Convert `s` to a set
+      - Loop over each pair `(u, w)` from `li` and `p`:
+         - If the length of the intersection of `s` and `u` modulo 2 is not equal to `w`, break the loop
+      - If the inner loop completes without breaking, increment `ans` by 2 raised to the power of the length of `v`
+10. Print `ans`

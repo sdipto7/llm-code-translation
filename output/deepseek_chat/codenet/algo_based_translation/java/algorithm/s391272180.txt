@@ -1,0 +1,30 @@
+import java.util.Scanner
+
+main function:
+  declare Scanner sc = new Scanner(System.in)
+  declare StringBuilder s
+  declare StringBuilder t
+  s = new StringBuilder(sc.next())
+  t = new StringBuilder(sc.next())
+  declare boolean flag = false
+  
+  for int i from 0 to s.length() - 1:
+    s = new StringBuilder(Rotate(s))
+    if t.toString().equals(s.toString()):
+      set flag = true
+      break loop
+  
+  if flag == true:
+    print "Yes"
+  else:
+    print "No"
+
+Rotate function (parameter: StringBuilder str, returns: StringBuilder):
+  declare int len = str.length()
+  declare char t = str.charAt(0)
+  
+  for int i from 0 to len - 2:
+    str.setCharAt(i, str.charAt(i + 1))
+  
+  str.setCharAt(len - 1, t)
+  return str

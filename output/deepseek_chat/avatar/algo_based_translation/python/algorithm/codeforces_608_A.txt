@@ -1,0 +1,10 @@
+Algorithm:
+- Import sys module
+- Define input function as sys.stdin.readline
+- Read first line of input, split into two integers: n and s
+- Initialize variable c as integer with value 0
+- For loop: iterate n times
+  - Read each subsequent line, split into two integers: f and t
+  - Calculate x = t - (s - f)
+  - If x > c then set c = x
+- After loop: print s + c

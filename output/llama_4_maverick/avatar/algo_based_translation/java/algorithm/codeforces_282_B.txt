@@ -1,0 +1,14 @@
+1. Read the number of inputs, n.
+2. Initialize an empty character array of size n.
+3. Initialize two variables, s1 and s2, to 0.
+4. Initialize a flag variable to 0 and a counter j to 0.
+5. Iterate n times:
+   1. Read two integers, x and y.
+   2. Calculate temp1 = s1 + x and temp2 = s2 + y.
+   3. Check if the absolute difference between temp1 and s2 is less than or equal to 500.
+      1. If true, update s1 to s1 + x and store 'A' at the jth index of the character array. Increment j.
+   4. Else, check if the absolute difference between temp2 and s1 is less than or equal to 500.
+      1. If true, update s2 to s2 + y and store 'G' at the jth index of the character array. Increment j.
+   5. If both conditions are false, set the flag to 1 and exit the loop.
+6. If the flag is 1, output -1.
+7. Else, create a string from the character array and output it.

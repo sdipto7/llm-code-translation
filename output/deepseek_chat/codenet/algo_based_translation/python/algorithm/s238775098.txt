@@ -1,0 +1,9 @@
+read integer n from input
+initialize res as 0 (float)
+for n iterations:
+    read a line from input and split into two parts: x (string) and u (string)
+    if u equals "BTC":
+        convert x to float and multiply by 380000, add result to res
+    else:
+        convert x to integer and add to res
+print res

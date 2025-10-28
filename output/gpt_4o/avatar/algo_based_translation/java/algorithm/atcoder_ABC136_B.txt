@@ -1,0 +1,31 @@
+Function Signature: `main(args: String[]) -> void`
+
+- Import necessary library: `java.util.Scanner`
+- Declare and initialize a `Scanner` object `stdIn` for reading input.
+- Read an integer `N` from input using `stdIn.nextInt()`.
+
+Variables:
+- `N`: Integer, holds the input number.
+- `count`: Integer, initialized to 0, used to store the number of digits in `N`.
+- `temp`: Integer, initialized to `N`, used for counting digits.
+- `ans`: Integer, initialized to 0, used for storing the final result.
+
+Logic Flow:
+
+1. Determine the number of digits in `N`:
+   - While `temp` is greater than 0:
+     - Divide `temp` by 10.
+     - Increment `count` by 1.
+
+2. Calculate the answer based on the number of digits:
+   - For `i` from 1 to `count` (inclusive):
+     - If `i` equals `count`:
+       - If `i` is odd:
+         - Increment `ans` by `(N - 10^(i-1) + 1)`.
+     - Else (for `i` not equal to `count`):
+       - If `i` is 1:
+         - Increment `ans` by 9.
+       - Else if `i` is odd:
+         - Increment `ans` by `(10^i - 10^(i-1))`.
+
+3. Output the result `ans` using `System.out.println(ans)`.

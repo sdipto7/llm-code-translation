@@ -1,0 +1,38 @@
+- Import necessary libraries: Scanner, BufferedReader, IOException, InputStreamReader, PrintWriter, MalformedInputException, StringTokenizer, Arrays, HashSet.
+- Define the main function with no parameters and void return type.
+  - Initialize FastScanner instance `in`.
+  - Initialize Scanner instance `sc` for standard input.
+  - Initialize PrintWriter instance `o` for standard output.
+  - Declare integer `n` and assign the next integer input from `sc`.
+  - Declare integer `s` and assign the next integer input from `sc`.
+  - Declare integer `max` and initialize it to 0.
+  - Start a while loop with condition `n-- > 0`.
+    - Declare integer `f` and assign the next integer input from `sc`.
+    - Declare integer `t` and assign the next integer input from `sc`.
+    - If condition `max < f + t` is true:
+      - Assign `max` the value of `f + t`.
+  - Print the maximum value between `max` and `s` using `o.println`.
+  - Close the PrintWriter using `o.close`.
+- Define class FastScanner.
+  - Declare BufferedReader `br` initialized with InputStreamReader for System.in.
+  - Declare StringTokenizer `st` initialized with an empty string.
+  - Define method `next` with return type String.
+    - While `st` has no more elements:
+      - Try to assign `st` a new StringTokenizer from the next line read by `br`.
+      - Catch and print stack trace of IOException.
+    - Return the next token from `st`.
+  - Define method `nextLine` with return type String.
+    - Declare String `str` and initialize it to an empty string.
+    - Try to assign `str` the next line read by `br`.
+    - Catch and print stack trace of IOException.
+    - Return `str`.
+  - Define method `nextByte` with return type byte.
+    - Return the parsed byte from `next`.
+  - Define method `nextShort` with return type short.
+    - Return the parsed short from `next`.
+  - Define method `nextInt` with return type int.
+    - Return the parsed integer from `next`.
+  - Define method `nextLong` with return type long.
+    - Return the parsed long from `next`.
+  - Define method `nextDouble` with return type double.
+    - Return the parsed double from `next`.

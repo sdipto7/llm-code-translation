@@ -1,0 +1,8 @@
+1. Read the number of elements, n.
+2. Create an array of size n to store the elements.
+3. Read n elements and store them in the array.
+4. Sort the array in ascending order.
+5. Iterate through the sorted array from the first element to the second last element.
+6. For each element, check if the next element is less than twice the current element and not equal to it.
+7. If the condition is met, output "YES" and terminate.
+8. If the iteration completes without finding a valid pair, output "NO".

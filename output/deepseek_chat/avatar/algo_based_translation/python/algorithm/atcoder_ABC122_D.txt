@@ -1,0 +1,23 @@
+**Function ok(last4: str) -> bool:**
+- Initialize loop i from 0 to 3
+- Convert last4 to list t
+- If i >= 1: swap t[i] and t[i-1]
+- Convert t back to string and check if 'AGC' appears ≥1 times
+- Return False if 'AGC' found in any iteration
+- Return True if no 'AGC' found in all iterations
+
+**Function dfs(cur: int, last3: str) -> int:**
+- If last3 exists in memo[cur]: return memo[cur][last3]
+- If cur == n: return 1
+- Initialize ret = 0
+- For each character c in "ACGT":
+  - If ok(last3 + c) returns True:
+    - ret = (ret + dfs(cur + 1, last3[1:] + c)) % mod
+- Store memo[cur][last3] = ret
+- Return ret
+
+**Main execution:**
+- Read integer n from input
+- Set mod = 1000000007
+- Initialize memo as list of dictionaries of length n+1
+- Call dfs(0, 'TTT') and print result

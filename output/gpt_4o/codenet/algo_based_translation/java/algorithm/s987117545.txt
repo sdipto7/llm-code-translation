@@ -1,0 +1,38 @@
+- Function Signature:
+  - `main(args: String[]): void`
+  - `run(): void`
+
+- Variable Declarations:
+  - `sc: Scanner`
+  - `DEVISOR: long`
+  - `n: long`
+  - `k: long`
+  - `ans: long`
+  - `i: long`
+  - `max: long`
+  - `min: long`
+
+- Logic Flow:
+  1. Initialize `sc` as a new `Scanner` for standard input.
+  2. Initialize `DEVISOR` with the value `1000000007`.
+  3. Call `run()` method.
+  
+- In `run()` method:
+  1. Read `n` as a long integer using `sc.nextLong()`.
+  2. Read `k` as a long integer using `sc.nextLong()`.
+  3. Initialize `ans` to 0.
+  4. Start a loop with `i` ranging from `k` to `n+1` (inclusive).
+     - Calculate `max` as `i * (2 * n - i + 1) / 2`.
+     - Calculate `min` as `i * (i - 1) / 2`.
+     - Update `ans` by adding `(max - min + 1) % DEVISOR`.
+  5. Output `ans % DEVISOR` using `System.out.println`.
+
+- Control Structures:
+  - For loop: `for (long i = k; i <= n+1; i++)`
+
+- Input/Output Operations:
+  - Input: `n` and `k` are read from standard input.
+  - Output: Print `ans % DEVISOR` to standard output.
+
+- Required Libraries:
+  - `java.util.*` for `Scanner` class.

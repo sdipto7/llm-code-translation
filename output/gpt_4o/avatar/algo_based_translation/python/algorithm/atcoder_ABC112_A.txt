@@ -1,0 +1,20 @@
+```
+Function: main() -> None
+
+Variables:
+- age: int
+- a: int
+- b: int
+
+Algorithm:
+1. Read an integer input from the user and assign it to the variable 'age'.
+2. If the value of 'age' is equal to 1:
+   - Print the string 'Hello World'.
+3. Otherwise:
+   - Initialize a list comprehension to execute two iterations.
+     - For each iteration (2 iterations total), read an integer input from the user.
+     - Convert each input to an integer.
+     - Assign the first input to 'a' and the second input to 'b'.
+   - Calculate the sum of 'a' and 'b'.
+   - Print the result of the calculation.
+```

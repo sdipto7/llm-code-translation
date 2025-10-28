@@ -1,0 +1,55 @@
+**Structured Algorithm Specification:**
+
+**Problem:**  
+Calculate the minimum cost to buy exactly `n` liters of soda using the most cost-effective combination of bottle options (0.25L, 0.5L, 1L, 2L), given their respective prices.
+
+**Inputs:**  
+- `q: int` (Price for 0.25L)  
+- `h: int` (Price for 0.5L)  
+- `s: int` (Price for 1L)  
+- `d: int` (Price for 2L)  
+- `n: int` (Required liters, ≥1)  
+
+**Output:**  
+- `total_cost: int` (Minimum cost to buy `n` liters)  
+
+**Variables:**  
+- `best1L: int` (Minimum cost for 1L)  
+- `best2L: int` (Minimum cost for 2L)  
+
+**Steps:**  
+1. **Calculate `best1L`:**  
+   1.1 Compute cost for 1L using four 0.25L bottles: `cost_0_25 = 4 * q`  
+   1.2 Compute cost for 1L using two 0.5L bottles: `cost_0_5 = 2 * h`  
+   1.3 Use direct 1L cost: `cost_1 = s`  
+   1.4 Set `best1L = min(cost_0_25, cost_0_5, cost_1)`  
+
+2. **Calculate `best2L`:**  
+   2.1 Compute cost for 2L using one 2L bottle: `cost_2 = d`  
+   2.2 Compute cost for 2L using two 1L bottles: `cost_1_twice = 2 * best1L`  
+   2.3 Set `best2L = min(cost_2, cost_1_twice)`  
+
+3. **Determine Total Cost:**  
+   3.1 Calculate the number of 2L increments: `pairs = n // 2`  
+   3.2 Check if `n` is even:  
+       - **If** `n % 2 == 0`:  
+           - `total_cost = best2L * pairs`  
+       - **Else**:  
+           - `total_cost = (best2L * pairs) + best1L`  
+
+**Control Flow:**  
+- Conditional check on `n % 2` to split computation between even and odd cases.  
+
+**Edge Cases:**  
+- Ensures optimal selection even when combining smaller bottles is cheaper than larger ones.  
+- Handles `n = 1` (odd case) by using `best1L` directly.  
+
+**Dependencies:**  
+- `min()` function for cost comparisons.  
+- Integer arithmetic and division.  
+
+**Function Signatures:**  
+```python
+def calculate_min_cost(q: int, h: int, s: int, d: int, n: int) -> int:
+    # Implementation as per steps above
+```

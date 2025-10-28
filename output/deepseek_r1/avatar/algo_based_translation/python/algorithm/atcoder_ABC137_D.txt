@@ -1,0 +1,60 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void` (Entry point, no parameters)
+
+**Variables:**
+- `n: Integer` (Number of job entries)
+- `m: Integer` (Maximum jobs to select)
+- `x: MinHeap<Tuple<Integer, Integer>>` (Heap storing (-day, -salary) tuples)
+- `y: MinHeap<Integer>` (Heap storing selected salaries)
+- `day: Integer` (Temporary storage for job day)
+- `salary: Integer` (Temporary storage for job salary)
+- `d: Integer` (Popped day value from x)
+- `s: Integer` (Popped salary value from x)
+- `r: Integer` (Remaining available slots calculation)
+
+**Step-by-Step Logic Flow:**
+1. **Input Operations:**
+   1. Read `n` and `m` from standard input as integers
+   2. Initialize empty min-heap `x`
+   3. For `i` from 0 to n-1:
+      1. Read `day` and `salary` from input
+      2. Insert `(-day, -salary)` into heap `x`
+
+2. **Heap Processing:**
+   1. Initialize empty min-heap `y`
+   2. While `x` is not empty:
+      1. Extract minimum element `(d, s)` from `x`
+      2. Calculate `remaining_slots = m - current_size_of(y)`
+      3. Convert `required_days = -d`, `current_salary = -s`
+      4. If `remaining_slots >= required_days`:
+         1. Insert `current_salary` into heap `y`
+      5. Else:
+         1. Insert `current_salary` into heap `y`
+         2. Extract and discard minimum element from `y`
+   3. Continue loop until `x` is empty
+
+3. **Output Operation:**
+   1. Calculate sum of all elements in heap `y`
+   2. Print total sum
+
+**Control Flow Structures:**
+- For-loop: Iterates exactly `n` times for input processing
+- While-loop: Continues until heap `x` is depleted
+- Conditional: Checks `remaining_slots >= required_days` to decide heap insertion strategy
+
+**Input/Output Operations:**
+- Input: Reads from standard input with space-separated integers
+- Output: Writes single integer sum to standard output
+
+**Edge Case Handling:**
+- Processes jobs with day requirements exceeding remaining slots by maintaining exactly `m` highest salaries
+- Handles cases where multiple jobs have same day by prioritizing higher salaries through tuple ordering
+- Automatically discards lowest salaries when exceeding capacity using min-heap properties
+
+**External Dependencies:**
+- Min-heap data structure implementation required
+- Heap operations: insert, extract-minimum
+- Input parsing for integer values
+- Summation function for final output

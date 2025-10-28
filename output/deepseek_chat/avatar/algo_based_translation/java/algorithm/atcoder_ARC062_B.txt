@@ -1,0 +1,34 @@
+Algorithm:
+- Import required classes: OutputStream, IOException, InputStream, PrintWriter, StringTokenizer, BufferedReader, InputStreamReader
+- Define main function: parameters (String[] args), return void
+  - Initialize inputStream = System.in
+  - Initialize outputStream = System.out
+  - Create InputReader object with inputStream
+  - Create PrintWriter object with outputStream
+  - Create TaskD solver object
+  - Call solver.solve(1, InputReader, PrintWriter)
+  - Close PrintWriter
+
+- Define static class TaskD
+  - Define solve function: parameters (int testNumber, InputReader in, PrintWriter out), return void
+    - Read string S from InputReader
+    - Initialize integer score = 0
+    - For loop: i from 0 to S.length() - 1
+      - Initialize char my: if i is even then 'g', else 'p'
+      - Initialize char his = character at index i of S
+      - If my != his
+        - If my equals 'p': add 1 to score
+        - Else: subtract 1 from score
+    - Print score using PrintWriter
+
+- Define static class InputReader
+  - Declare BufferedReader reader
+  - Declare StringTokenizer tokenizer
+  - Constructor: parameter (InputStream stream)
+    - Initialize reader with BufferedReader(InputStreamReader(stream), 32768)
+    - Set tokenizer = null
+  - Define next function: no parameters, returns String
+    - While tokenizer is null or has no more tokens
+      - Try to read line from reader and create new StringTokenizer
+      - Catch IOException and throw RuntimeException
+    - Return next token from tokenizer

@@ -1,0 +1,40 @@
+```
+Function: calculate_sequence(n: int, a: List[int]) -> List[int]
+  Input:
+    - n: Integer, the number of elements in the list 'a'
+    - a: List of integers, input sequence of numbers
+  Output:
+    - List of integers, processed sequence as described
+
+  Variable Declarations:
+    - m1: Integer, initialized to the sum of a list comprehension divided by 2
+    - result: String, representation of m1
+    - m: List of integers, size n, initialized with None values
+    - i: Integer, loop index
+
+  Execution Logic:
+    1. Compute m1:
+       a. Initialize m1 to the integer division of the sum of a list comprehension by 2.
+       b. The list comprehension iterates over indices from 0 to n-1.
+       c. For each index i, compute a[i] multiplied by (-1) raised to the power of i.
+       d. Sum all results of the list comprehension.
+
+    2. Initialize result as the string representation of m1.
+
+    3. Initialize m as a list of None with size n.
+    
+    4. Set m[0] to m1.
+
+    5. Loop from i = 1 to n-1:
+       a. Set m[i] to the value of a[i-1] minus m[i-1].
+
+    6. Prepare the output:
+       a. Create a list by multiplying each element of m by 2.
+       b. Convert each element to a string.
+
+    7. Output the result:
+       a. Join the list of strings with a space delimiter and print the result.
+
+Dependencies:
+  - No external libraries or modules required.
+```

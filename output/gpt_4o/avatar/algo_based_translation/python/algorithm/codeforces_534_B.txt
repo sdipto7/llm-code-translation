@@ -1,0 +1,37 @@
+```plaintext
+Function Signature:
+    calculate_distance(v1: int, v2: int, t: int, d: int) -> int
+
+Variable Declarations:
+    v1, v2, t, d: int
+    a: int
+    v: int
+    distance: int
+    i: int (loop variable)
+
+Logic Flow:
+1. Initialize variables:
+    a = 1
+    v = v1
+    distance = 0
+
+2. Loop over the range from 0 to t-1 (inclusive):
+    For each iteration with index i:
+    
+    a. Check the condition if v - v2 > (t - i - 1) * d:
+        - If true:
+            i. Set a to -1
+            ii. Calculate v as (t - i - 1) * d + v2
+        
+    b. Add the current value of v to distance
+    
+    c. Update v by adding a * d to v
+
+3. After loop ends, return the total distance calculated.
+
+Input/Output Operations:
+- Input: Read two lines of input from the user, split each line by space, and convert them to integers v1, v2, t, d respectively.
+- Output: Print the computed distance.
+
+No external libraries or modules are required.
+```

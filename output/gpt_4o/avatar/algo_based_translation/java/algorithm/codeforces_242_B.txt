@@ -1,0 +1,27 @@
+```
+Algorithm:
+1. Import the necessary libraries:
+   - java.util.ArrayList
+   - java.util.Scanner
+   - java.lang.Math
+
+2. Declare a class named `codeforces_242_B`.
+
+3. Declare a constant integer `INF` with a value of 1e9 + 5.
+
+4. Implement the `main` method:
+   - Initialize a `Scanner` object `sc` to read input from the standard input.
+   - Declare an integer `n` and assign it the next integer input from `sc`.
+   - Initialize two `ArrayList<Integer>` objects named `a` and `b`.
+   - Declare two integer variables `left` initialized to `INF` and `right` initialized to 0.
+   - Use a `for` loop that iterates from `i = 0` to `i < n`:
+     - Add the next integer input from `sc` to the list `a`.
+     - Add the next integer input from `sc` to the list `b`.
+     - Update `left` to the minimum of `left` and the `i`-th element of `a`.
+     - Update `right` to the maximum of `right` and the `i`-th element of `b`.
+   - Use another `for` loop that iterates from `i = 0` to `i < n`:
+     - If the `i`-th element of `a` is equal to `left` and the `i`-th element of `b` is equal to `right`:
+       - Print `i + 1`.
+       - Return from the `main` method.
+   - Print `-1`.
+```

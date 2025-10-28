@@ -1,0 +1,38 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+- `Rotate(StringBuilder str): StringBuilder`
+
+Variable declarations and data types:
+- `sc: Scanner`
+- `s: StringBuilder`
+- `t: StringBuilder`
+- `flag: boolean`
+- `i: int`
+- `len: int`
+- `t: char`
+
+Logic flow in execution order:
+1. Create a `Scanner` object to read input.
+2. Initialize `StringBuilder` objects `s` and `t` with the next two words from the input.
+3. Set `flag` to `false`.
+4. Loop through each character index `i` of `s`:
+   - Rotate `s` by calling `Rotate(s)`.
+   - Check if `t` is equal to `s`:
+     - If true, set `flag` to `true` and break the loop.
+5. Check `flag`:
+   - If `true`, print "Yes".
+   - Otherwise, print "No".
+
+Control structures:
+- Loop: `for(int i=0; i<s.length(); i++)`
+- Conditional: `if(t.toString().equals(s.toString()))`
+- Conditional: `if(flag==true)`
+
+Input/output operations and data processing logic:
+- Read two words from input.
+- Rotate the first word `s` and check if it matches the second word `t`.
+- Print "Yes" if a match is found, otherwise print "No".
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`
+- `java.lang.StringBuilder`

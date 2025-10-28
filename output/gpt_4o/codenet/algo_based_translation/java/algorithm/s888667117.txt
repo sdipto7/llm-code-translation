@@ -1,0 +1,49 @@
+1. Function Signature:
+   - `main()`: No parameters and no return type.
+
+2. Variable Declarations:
+   - `Scanner in`: Reads input from standard input.
+   - `PrintStream out`: Writes output to standard output.
+   - `PrintStream err`: Writes error/debug information to standard error.
+   - `String Si`: Stores the input string.
+   - `char[] S`: Reversed character array of the input string.
+   - `long[] dp`: Array of long integers initialized with 13 elements.
+   - `long[] nd`: Array of long integers used for temporary calculations.
+   - `int i, d, x, j, xi, ni`: Integer variables used for loop indexing and calculations.
+   - `char c`: Character variable for storing current character.
+
+3. Execution Logic:
+   - Read a string `Si` from input.
+   - Reverse the string `Si` and convert it to a character array `S`.
+   - Initialize an array `dp` of size 13 with `dp[0] = 1`.
+   - Loop over each character `S[i]` of the reversed string:
+     - Initialize `d` to 1 and multiply it by 10 modulo 13 with each iteration.
+     - Initialize a new array `nd` of size 13.
+     - Print debug information about `d`, `i`, and `S[i]`.
+     - If the character `S[i]` is a digit:
+       - Calculate `x` as the numeric value of `S[i]` multiplied by `d`.
+       - Loop over `j` from 0 to 12:
+         - Set `nd[(j + x) % 13]` to `dp[j]`.
+     - Otherwise, for each digit `xi` from 0 to 9:
+       - Calculate `x` as `xi` multiplied by `d`.
+       - Loop over `j` from 0 to 12:
+         - Calculate `ni` as `(j + x) % 13`.
+         - Update `nd[ni]` as `(nd[ni] + dp[j]) % 1000000007`.
+     - Print the `nd` array for debugging.
+     - Assign `nd` to `dp`.
+   - Print `dp[5]` as the result.
+
+4. Control Structures:
+   - For loop iterating over each character of the reversed string.
+   - Conditional check to determine if a character is a digit.
+   - Nested for loops for digit and remainder calculations.
+
+5. Input/Output Operations:
+   - Read input using `Scanner`.
+   - Output result using `PrintStream`.
+   - Output debug information using `System.err`.
+
+6. Required Libraries:
+   - `java.io.*` for I/O operations.
+   - `java.util.*` for utility classes.
+   - `java.util.stream.*` for stream operations (although not used explicitly in logic).

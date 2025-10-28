@@ -1,0 +1,31 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations:
+- `Scanner sc` of type `Scanner`
+- `List<Long> list` of type `List<Long>`
+- `long x`
+- `long r`
+- `int pow` initialized to 0
+- `long newNumber` initialized to 0
+
+Logic flow:
+1. Create a new `Scanner` object for reading input.
+2. Create an empty `ArrayList` of `Long` type to store digits.
+3. Read a `long` value from input and store it in `x`.
+4. While `x` is greater than 0:
+   a. Calculate the remainder of `x` divided by 10 and store it in `r`.
+   b. If `9 - r` is less than `r`:
+      i. If `x / 10` is 0 and `9 - r` is 0, add `r` to `list`.
+      ii. Otherwise, add `9 - r` to `list`.
+   c. Otherwise, add `r` to `list`.
+   d. Update `x` by performing integer division by 10.
+5. For each element in `list`:
+   a. Multiply the element by `10` raised to the power of `pow` and add the result to `newNumber`.
+   b. Increment `pow` by 1.
+6. Print `newNumber`.
+
+Libraries/modules/dependencies:
+- `java.util.ArrayList`
+- `java.util.List`
+- `java.util.Scanner`
+- `java.lang.Math`

@@ -1,0 +1,36 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `startTime`: long
+- `sc`: Scanner
+- `n`: int
+- `div`: long = 1000000007
+- `A`: long[] of size n
+- `ans`: long = 0
+- `i`: int (loop counter)
+- `j`: int (loop counter)
+- `a`: long
+- `count1`: long
+
+**Logic Flow:**
+1. Record start time
+2. Create Scanner for System.in
+3. Read integer n from input
+4. Initialize div as 10^9 + 7
+5. Initialize array A of size n
+6. Initialize ans to 0
+7. For i from 0 to n-1: read long values into A[i]
+8. For i from 0 to 59:
+   - Set a to 0
+   - Set count1 to 0
+   - For j from 0 to n-1:
+     - If bit i of A[j] is set: increment count1
+   - Calculate a = count1 * (n - count1)
+   - For j from 0 to i-1:
+     - Left shift a by 1
+     - Apply modulo div to a
+   - Add a to ans
+   - Apply modulo div to ans
+9. Print ans
+10. Record end time

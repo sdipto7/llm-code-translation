@@ -1,0 +1,36 @@
+function signatures with parameter and return types:
+- main(String[] args): void
+
+variable declarations and data types:
+- Scanner scan: Scanner
+- ArrayList<String> scList: ArrayList<String>
+- int i: int
+- String[] numlist: String[]
+- int Sheep: int
+- int Wolve: int
+
+complete logic flow in execution order:
+1. Initialize Scanner object named 'scan' to read input from standard input.
+2. Initialize an empty ArrayList of Strings named 'scList'.
+3. Enter a loop that continues indefinitely until an exception is thrown.
+4. Inside the loop, attempt to read a line of text using 'scan.nextLine()' and add it to 'scList'.
+5. If an exception occurs during reading, exit the loop.
+6. After exiting the loop, split the first element of 'scList' by spaces and store the result in 'numlist'.
+7. Parse the first element of 'numlist' as an integer and assign it to 'Sheep'.
+8. Parse the second element of 'numlist' as an integer and assign it to 'Wolve'.
+9. Check if 'Wolve' is greater than or equal to 'Sheep'.
+10. If true, print the string "unsafe".
+11. Otherwise, print the string "safe".
+
+control structures:
+- for loop: for (int i = 0; i >= 0; i++) - infinite loop until interrupted by exception
+- try-catch block: try { ... } catch (Exception e) { break; } - breaks loop on exception
+- if-else statement: if (Wolve >= Sheep) { ... } else { ... } - checks safety condition
+
+input/output operations and data processing logic:
+- Input: Reads lines of text from standard input until an exception occurs.
+- Output: Prints either "unsafe" or "safe" based on the comparison of 'Wolve' and 'Sheep'.
+- Data Processing: Splits input string into parts, parses integers, and compares values.
+
+required libraries, modules, or dependencies:
+- java.util.*: For using Scanner and ArrayList classes.

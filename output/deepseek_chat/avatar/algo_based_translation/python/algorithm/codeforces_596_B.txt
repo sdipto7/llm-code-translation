@@ -1,0 +1,7 @@
+1. Read integer `n` from standard input
+2. Read next line, split into tokens, convert each to integer, store in list `r`
+3. Initialize `ans` to absolute value of first element in `r`
+4. For `i` from 1 to `n-1` (inclusive):
+   - Calculate absolute difference between `r[i]` and `r[i-1]`
+   - Add result to `ans`
+5. Print final value of `ans`

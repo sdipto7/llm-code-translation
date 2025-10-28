@@ -1,0 +1,19 @@
+
+import sys
+
+def main():
+    try:
+        line = sys.stdin.readline().strip()
+        x = line.split()
+        a = int(x[0])
+        b = int(x[1])
+        c = a - b * 2
+        if c < 0:
+            c = 0
+        print(c)
+    except Exception:
+        pass
+
+if __name__ == "__main__":
+    main()
+

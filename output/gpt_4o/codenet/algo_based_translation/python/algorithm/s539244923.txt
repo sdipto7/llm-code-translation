@@ -1,0 +1,14 @@
+- Function signature: `def compute_result(n: int, k: int) -> int`
+- Input: Read a single line of input, split the line by spaces, and convert the results to integers `n` and `k`.
+- Variables:
+  - `n`: integer, number from input representing the first integer
+  - `k`: integer, number from input representing the second integer
+- Logic flow:
+  - Compute the remainder of `k` divided by `n` using the modulus operator (`k % n`).
+  - Conditional:
+    - If the remainder is equal to 0 (`k % n == 0`), execute the true branch:
+      - Calculate the sum of `n` and `k` (`n + k`).
+    - Else (the remainder is not 0), execute the false branch:
+      - Calculate the difference between `k` and `n` (`k - n`).
+- Return the result of the conditional calculation.  
+- Output: Print the result to the standard output.

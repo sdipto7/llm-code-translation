@@ -1,0 +1,22 @@
+**Algorithm:**
+
+**Input:**
+- Read integer `N` from standard input.
+
+**Variables:**
+- `N`: Integer (user input).
+
+**Logic Flow:**
+1. Check if `N % 9 == 0`:
+   - **True**: Print "Yes".
+   - **False**: Print "No".
+
+**Control Structures:**
+- Single `if-else` conditional based on the result of `N % 9`.
+
+**Input/Output Operations:**
+- Input: `N = int(input())`.
+- Output: Print "Yes" or "No" based on condition.
+
+**Dependencies:**
+- None (standard input/output functions only).

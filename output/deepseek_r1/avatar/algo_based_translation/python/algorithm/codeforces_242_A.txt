@@ -1,0 +1,45 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`
+
+**Variables:**
+- `x: int`
+- `y: int`
+- `a: int`
+- `b: int`
+- `games: List[Tuple[int, int]]`
+- `i: int` (loop variable)
+- `j: int` (loop variable)
+
+**Input Operations:**
+1. Read four space-separated integers from standard input: `x, y, a, b`
+
+**Processing Logic:**
+1. Initialize empty list: `games = []`
+2. Outer loop: Iterate `i` from `a` to `x` (inclusive), step +1
+   - 2.1 If `i <= b`: skip iteration (continue)
+   - 2.2 Else:
+       - 2.2.1 Inner loop: Iterate `j` from `b` to `y` (inclusive), step +1
+           - 2.2.1.1 If `i > j`: append tuple `(i, j)` to `games`
+3. Calculate `len(games)`
+
+**Output Operations:**
+1. Print integer `len(games)`
+2. For each tuple in `games`:
+   - 2.1 Print `${tuple.first} ${tuple.second}`
+
+**Control Flow Structures:**
+- Outer loop range: `a <= i <= x` with termination at `i > x`
+- Inner loop range: `b <= j <= y` with termination at `j > y`
+- Conditional 2.1: skips non-qualifying `i` values
+- Conditional 2.2.1.1: filters valid `(i,j)` pairs
+
+**Edge Case Handling:**
+- Automatically handles cases where `a > x` (empty outer loop)
+- Handles `b > y` (empty inner loop when outer loop executes)
+- Implicitly skips pairs where `i <= j`
+
+**Dependencies:**
+- Standard input/output functions
+- No external libraries required

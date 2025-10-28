@@ -1,0 +1,68 @@
+**Structured Algorithm Specification**
+
+**Function Signatures:**
+1. `leapyear(n: int) -> str`
+   - **Parameters:**  
+     - `n`: Integer representing a year
+   - **Returns:**  
+     - "y" if `n` is a leap year, "n" otherwise
+
+**Variables:**
+- `n`: Integer (Input year, modified during iteration)
+- `d`: String (Day of week identifier, initial value "f")
+- `ans`: String (Leap status of input year: "ly" for leap, "nly" for non-leap)
+
+**Input/Output Operations:**
+- Read integer from standard input, store in `n`
+- Print final value of `n` after loop termination
+
+**Control Flow & Logic:**
+
+1. **Leap Year Check Function (`leapyear`):**
+   - **Condition 1:** If `n % 400 == 0` → Return "y"
+   - **Condition 2:** If `n % 4 == 0` AND `n % 100 != 0` → Return "y"
+   - **Else:** Return "n"
+
+2. **Main Execution Flow:**
+   1. Initialize `n` with user input
+   2. Set `d = "f"`
+   3. Determine initial leap status:
+      - **If** `leapyear(n) == "y"` → `ans = "ly"`
+      - **Else** → `ans = "nly"`
+   4. **While True Loop:**
+      1. **Check current year's leap status:**
+         - **If leap year (`leapyear(n) == "y`"):**
+           - Update `d` based on leap year transitions:
+             | Current `d` | Next `d` |
+             |-------------|----------|
+             | "m"         | "w"      |
+             | "t"         | "th"     |
+             | "w"         | "f"      |
+             | "th"        | "sa"     |
+             | "f"         | "s"      |
+             | "sa"        | "m"      |
+             | "s"         | "t"      |
+           - Increment `n` by 1
+         - **Else (non-leap year):**
+           - Update `d` based on non-leap transitions:
+             | Current `d` | Next `d` |
+             |-------------|----------|
+             | "m"         | "t"      |
+             | "t"         | "w"      |
+             | "w"         | "th"     |
+             | "th"        | "f"      |
+             | "f"         | "sa"     |
+             | "sa"        | "s"      |
+             | "s"         | "m"      |
+           - Increment `n` by 1
+      2. **Break Condition Checks:**
+         - **If** `d == "f"` AND `ans == "ly"` AND `leapyear(n) == "y"` → Exit loop
+         - **Else If** `d == "f"` AND `ans == "nly"` AND `leapyear(n) == "n"` → Exit loop
+   5. Print final value of `n`
+
+**Edge Case Handling:**
+- Implicitly handles year 0 via modulo arithmetic
+- Assumes valid integer input (no type/range validation)
+
+**External Dependencies:**
+- Uses `input()` for reading data (no external libraries)

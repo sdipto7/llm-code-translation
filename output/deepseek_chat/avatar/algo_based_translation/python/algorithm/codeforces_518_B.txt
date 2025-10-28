@@ -1,0 +1,40 @@
+**Algorithm:**
+
+1. **Input:**
+   - Read two strings `s` and `t` from standard input.
+
+2. **Initialize:**
+   - Create two dictionaries: `freqs` (to count frequency of characters in `s`) and `freqt` (to count frequency of characters in `t`).
+   - Initialize integers `yay = 0` and `whoops = 0`.
+
+3. **Count Frequencies:**
+   - For each character `letra` in string `s`:
+     - If `letra` exists as a key in `freqs`, increment its value by 1.
+     - Else, add `letra` as a key with value 1.
+   - For each character `letra` in string `t`:
+     - If `letra` exists as a key in `freqt`, increment its value by 1.
+     - Else, add `letra` as a key with value 1.
+
+4. **Count Exact Matches (yay):**
+   - For each key `letra` in `freqs`:
+     - While `freqs[letra] > 0` AND `letra` is a key in `freqt` AND `freqt[letra] > 0`:
+       - Increment `yay` by 1.
+       - Decrement `freqs[letra]` by 1.
+       - Decrement `freqt[letra]` by 1.
+
+5. **Count Case-Insensitive Matches (whoops):**
+   - For each key `letra` in `freqs`:
+     - While `freqs[letra] > 0`:
+       - If `letra` is lowercase AND its uppercase version exists as a key in `freqt` AND `freqt[letra.upper()] > 0`:
+         - Increment `whoops` by 1.
+         - Decrement `freqs[letra]` by 1.
+         - Decrement `freqt[letra.upper()]` by 1.
+       - Else if `letra` is uppercase AND its lowercase version exists as a key in `freqt` AND `freqt[letra.lower()] > 0`:
+         - Increment `whoops` by 1.
+         - Decrement `freqs[letra]` by 1.
+         - Decrement `freqt[letra.lower()]` by 1.
+       - Else:
+         - Break out of the while loop.
+
+6. **Output:**
+   - Print `yay` and `whoops` separated by a space.

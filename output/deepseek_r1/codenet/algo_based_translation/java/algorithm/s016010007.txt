@@ -1,0 +1,50 @@
+The algorithm involves reading input points and determining the relative position of query points to a given line segment using vector cross and dot products. Here's the detailed breakdown:
+
+**Input/Output Operations:**
+- Read line from input, split into 4 integers: x0, y0, x1, y1 → create points p0(x0,y0), p1(x1,y1)
+- Read integer q (number of queries)
+- For each query:
+  - Read line with x2, y2 → create p2(x2,y2)
+  - Process p2 and append result to output buffer
+- Print all results after processing queries
+
+**Data Structures:**
+- Custom Point2D class:
+  - Attributes: double x, y
+  - Methods:
+    - diff(b): returns new Point2D(this.x - b.x, this.y - b.y)
+    - norm(): returns x² + y² (squared length)
+    - equals(a,b): checks equality with 1e-10 tolerance
+- Vector class (inherits Point2D):
+  - Methods:
+    - cross(a,b): returns a.x*b.y - a.y*b.x
+    - dot(a,b): returns a.x*b.x + a.y*b.y
+
+**Execution Flow:**
+1. Initialize p0 and p1 from first input line
+2. For each query point p2:
+   a. Create vector a = p1 - p0
+   b. Create vector b = p2 - p0
+   c. Compute cross = a.x*b.y - a.y*b.x
+   d. Evaluate conditions in order:
+      - If cross > 1e-10 → "COUNTER_CLOCKWISE"
+      - If cross < -1e-10 → "CLOCKWISE"
+      - If dot(a,b) < -1e-10 → "ONLINE_BACK"
+      - If a.norm() < b.norm() → "ONLINE_FRONT"
+      - Else → "ON_SEGMENT"
+
+**Control Structures:**
+- For loop: Iterate exactly q times for queries
+- Sequential if-else conditions in jadgeClockwise with early returns
+- Floating point comparisons using epsilon (1e-10) tolerance
+
+**Function Signatures:**
+- Main.run(): void (entry point)
+- jadgeClockwise(p0: Point2D, p1: Point2D, p2: Point2D): String
+- Point2D.diff(b: Point2D): Point2D
+- Vector.cross(a: Point2D, b: Point2D): double
+
+**Dependencies:**
+- Inherits from java.awt.geom.Point2D.Double
+- Uses java.io.BufferedReader/InputStreamReader for input
+- Requires exact floating point comparisons using 1e-10 epsilon

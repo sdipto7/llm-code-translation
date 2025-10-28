@@ -1,0 +1,15 @@
+- Function signature: `main(String[] args)` with return type `void`
+- Import `java.util.Scanner`
+- Declare `stdIn` of type `Scanner`
+- Initialize `stdIn` with `new Scanner(System.in)`
+- Declare `n` and `m` of type `int`
+- Read `n` and `m` from `System.in` using `stdIn.nextInt()`
+- Declare `dp` as an array of `int` with size `n + 2`
+- Initialize `dp[n + 1]` to `0` and `dp[n]` to `1`
+- Loop `m` times:
+  - Read an `int` from `System.in` using `stdIn.nextInt()`
+  - Set `dp` at the read index to `-1`
+- Loop from `n - 1` down to `0`:
+  - If `dp[i]` equals `-1`, set `dp[i]` to `0`
+  - Else, set `dp[i]` to `(dp[i + 1] + dp[i + 2]) % 1000000007`
+- Output `dp[0]` to `System.out` using `System.out.println()`

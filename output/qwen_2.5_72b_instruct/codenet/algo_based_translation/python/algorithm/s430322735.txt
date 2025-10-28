@@ -1,0 +1,49 @@
+Function signature: `main() -> None`
+
+Variable declarations and data types:
+- `n: int`
+- `lst: List[str]`
+- `pair: int`
+- `st: str`
+- `i: int`
+- `sorted_list: List[str]`
+- `pre: str`
+- `tmp_cnt: int`
+- `cnt: int`
+- `j: int`
+
+Logic flow in execution order:
+1. Read integer `n` from standard input
+2. Initialize empty list `lst` to store strings
+3. Initialize variable `pair` to 0 (not used in the code)
+4. Loop `n` times:
+   - Read string input
+   - Sort the characters of the string
+   - Join sorted characters into a new string `st`
+   - Append `st` to `lst`
+5. Sort `lst` alphabetically
+6. Append 'end' to `lst`
+7. Initialize `pre` to an empty string
+8. Initialize `tmp_cnt` to 0
+9. Initialize `cnt` to 0
+10. Loop through each element `i` in `lst`:
+    - If `i` is equal to `pre`:
+      - Increment `tmp_cnt` by 1
+    - Else:
+      - Calculate sum of integers from 1 to `tmp_cnt` (inclusive) using list comprehension and add to `cnt`
+      - Reset `tmp_cnt` to 0
+      - Update `pre` to `i`
+11. Print `cnt` to standard output
+
+Control structures:
+- For loop iterating `n` times
+- For loop iterating through elements in `lst`
+- If-Else conditional structure comparing `i` and `pre`
+
+Input/output operations and data processing logic:
+- Input: Integer `n`, followed by `n` lines of strings
+- Output: Single integer value `cnt`
+- Data processing: Sorting strings, counting occurrences of identical strings, calculating sum of sequence numbers
+
+Required libraries, modules, or dependencies:
+- None

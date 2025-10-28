@@ -1,0 +1,17 @@
+1. Read N from input
+2. Read N integers into array P
+3. If N equals 1 then
+   1. Print 0
+   2. Return
+4. Create array a of size N + 1 and initialize all elements to 0
+5. For i from 0 to N - 1
+   1. Set a[P[i]] to i
+6. Initialize tmp to 1 and max_len to 1
+7. For i from 1 to N - 1
+   1. If a[i] is less than a[i + 1] then
+      1. Increment tmp by 1
+      2. Set max_len to maximum of max_len and tmp
+   2. Else
+      1. Set tmp to 1
+8. Calculate ans as N - max_len
+9. Print ans

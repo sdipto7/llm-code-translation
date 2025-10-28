@@ -1,0 +1,9 @@
+1. Define a function `main()` with no parameters and no return type.
+2. Declare variables `A`, `B`, `C`, `X`, `Y` of type integer.
+3. Read input from the user and split it into 5 parts, then convert each part to an integer and assign to `A`, `B`, `C`, `X`, `Y` respectively.
+4. Initialize a variable `ans` of type integer with a value of $10^{10}$.
+5. Start a loop that iterates over a range of values from 0 to `max(X, Y)` (inclusive) and assigns the current iteration value to `k`.
+6. Inside the loop, calculate `total` as `2 * C * k + A * max(0, X - k) + B * max(0, Y - k)`.
+7. Check if `total` is less than `ans`. If true, update `ans` with the value of `total`.
+8. After the loop completes, print the value of `ans` to the output.
+9. Check if the current script is being run as the main module. If true, call the `main()` function.

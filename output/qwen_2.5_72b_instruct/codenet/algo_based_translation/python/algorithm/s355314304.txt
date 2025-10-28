@@ -1,0 +1,27 @@
+Function signature: `calculate_adjustment(n: int) -> int`
+
+Variable declarations: 
+- n: int
+- result: int
+
+Logic flow:
+1. Read integer input from user and assign to n
+2. If n modulo 1000 equals 0:
+   - Set result to 0
+3. Else:
+   - Set result to 1000 minus (n modulo 1000)
+4. Print result
+
+Control structures:
+- If-Else statement with condition `n % 1000 == 0`
+
+Input/output operations:
+- Read integer from input
+- Print integer result
+
+Data processing logic:
+- Modulo operation to find remainder of n divided by 1000
+- Arithmetic operation to calculate difference between 1000 and the remainder
+
+Libraries/modules/dependencies:
+- None required

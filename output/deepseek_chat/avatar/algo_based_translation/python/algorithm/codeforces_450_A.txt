@@ -1,0 +1,39 @@
+**Algorithm:**
+
+1. Read two integers `n` and `m` from standard input
+2. Read a list of `n` integers `l` from standard input
+3. Initialize an empty list `l2`
+4. For each integer `i` in list `l`:
+   - If `i` is divisible by `m` (`i % m == 0`):
+     - Append `i // m` to `l2`
+   - Else:
+     - Append `i // m + 1` to `l2`
+5. Find the maximum value `mx` in list `l2`
+6. Initialize variable `ind` to store index
+7. Iterate through indices `0` to `n-1`:
+   - If `l2[i]` equals `mx`:
+     - Set `ind = i`
+8. Print `ind + 1` (converting from 0-indexed to 1-indexed position)
+
+**Function Signature:**
+- No explicit function defined - main execution flow
+
+**Variables:**
+- `n`: integer (number of elements)
+- `m`: integer (divisor)
+- `l`: list of integers (input numbers)
+- `l2`: list of integers (transformed values)
+- `i`: integer (loop variable/element)
+- `mx`: integer (maximum value)
+- `ind`: integer (index position)
+
+**Control Structures:**
+- For loop: `for i in l` (process each element)
+- Conditional: `if i % m == 0` (divisibility check)
+- For loop: `for i in range(n)` (find index of maximum)
+- Conditional: `if l2[i] == mx` (max value check)
+
+**Input/Output:**
+- Input: Two integers `n` and `m` on first line
+- Input: List of `n` integers on second line
+- Output: Single integer (1-indexed position of maximum)

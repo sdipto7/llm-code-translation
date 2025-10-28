@@ -1,0 +1,41 @@
+1. Import dependencies: `itertools.chain`, `numpy as np`, and `networkx as nx`.
+
+2. Read input:
+   - `X` (iterator): Read lines from standard input.
+   - `h` (int), `w` (int): Parse the first line to get height and width.
+
+3. Initialize matrix `C`:
+   - `C` (np.ndarray): Create a 10x10 integer matrix initialized with zeros.
+
+4. Populate matrix `C`:
+   - Loop over `i` from 0 to 9:
+     - Read the next line and split into integers.
+     - Loop over `j`, `c` (int) from enumerated integers:
+       - Set `C[i, j] = c`.
+
+5. Initialize matrix `A`:
+   - `A` (np.ndarray): Create an `h x w` integer matrix initialized with zeros.
+
+6. Populate matrix `A`:
+   - Loop over `i` from 0 to `h-1`:
+     - Read the next line and split into integers.
+     - Loop over `j`, `a` (int) from enumerated integers:
+       - Set `A[i, j] = a`.
+
+7. Create directed graph `G`:
+   - `G` (nx.DiGraph): Create a directed graph from matrix `C`.
+
+8. Calculate shortest paths:
+   - `d` (dict): Initialize an empty dictionary.
+   - Loop over `i` from 0 to 9:
+     - If `i == 1`, skip to next iteration.
+     - Otherwise, calculate shortest path length from node `i` to node `1` in graph `G` with weight 'weight', and store in `d[i]`.
+
+9. Calculate sum `s`:
+   - `s` (int): Initialize sum to 0.
+   - Iterate over `a` from flattening matrix `A` using `chain.from_iterable(A)`:
+     - If `a == -1` or `a == 1`, skip to next iteration.
+     - Otherwise, add `d[a]` to `s`.
+
+10. Output result:
+    - Print the value of `s`.

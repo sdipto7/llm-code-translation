@@ -1,0 +1,12 @@
+1. Read input: N, XY coordinates
+2. Parse input into N and list of XY coordinates
+3. Convert list into pairs of (x, y) coordinates
+4. For each (x, y) in XY coordinates:
+   1. Calculate atan2((X - x), (Y - y)) for all other (X, Y) in XY coordinates
+   2. Sort the calculated atan2 values in ascending order into list D
+   3. Append (D[0] + 2 * pi) to the end of list D
+   4. Initialize ans to 0
+   5. Iterate through list D with pairs of adjacent elements (a, b):
+      1. If (b - a) is greater than or equal to pi:
+         1. Update ans to (b - a) - pi
+   6. Print ans / (2 * pi)

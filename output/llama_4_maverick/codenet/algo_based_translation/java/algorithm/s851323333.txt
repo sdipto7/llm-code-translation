@@ -1,0 +1,19 @@
+1. Import required libraries: java.util.LinkedList, java.util.Scanner
+2. Define main class: Main
+3. Define main function: main(String[] args) with return type void
+4. Declare local variables: 
+   - scan of type Scanner
+   - list of type LinkedList<Integer>
+5. Initialize scan with new Scanner(System.in)
+6. Initialize list with new LinkedList<Integer>()
+7. Enter while loop with condition: scan.hasNextInt() == true
+8. Inside the loop:
+   - Declare local variable: a of type int
+   - Assign a = scan.nextInt()
+   - Enter if conditional with condition: a == 0
+   - If true: 
+     - Perform output operation: System.out.println(list.pop())
+   - If false:
+     - Perform operation: list.push(a)
+9. Exit while loop when condition is false
+10. End program execution.

@@ -1,0 +1,35 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations:
+- `long INF = (long) 1e15`
+- `Scanner sc`
+- `String number`
+- `int[] digits`
+- `int bills = 0`
+
+Logic flow:
+1. Initialize `INF` as a constant long value of \(1 \times 10^{15}\).
+2. Create a `Scanner` object to read input.
+3. Read a string `number` from standard input.
+4. Initialize an integer array `digits` of size `number.length() + 1`.
+5. For each character in the string `number` (in reverse order):
+   1. Convert the character to an integer and store it in the corresponding position in `digits`.
+6. Initialize `bills` to 0.
+7. For each index `i` from 0 to `number.length()` inclusive:
+   1. If `digits[i]` equals 10:
+      1. Increment `digits[i + 1]` by 1.
+      2. Set `digits[i]` to 0.
+   2. If `digits[i]` is less than 5:
+      1. Add `digits[i]` to `bills`.
+   3. Else if `digits[i]` equals 5:
+      1. If `digits[i + 1]` is greater than or equal to 5:
+         1. Increment `digits[i + 1]` by 1.
+      2. Add 5 to `bills`.
+   4. Else:
+      1. Increment `digits[i + 1]` by 1.
+      2. Add `10 - digits[i]` to `bills`.
+8. Print the value of `bills`.
+
+Libraries/modules/dependencies:
+- `java.io.*`
+- `java.util.*`

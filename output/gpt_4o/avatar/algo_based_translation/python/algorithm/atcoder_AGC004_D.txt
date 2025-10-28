@@ -1,0 +1,39 @@
+```
+1. Import the sys module and set the recursion limit to 10^6.
+
+2. Define a function dfs with parameters:
+   - links: List of sets representing adjacency list of a tree
+   - n: Integer representing number of nodes
+   - k: Integer representing the maximum height from the root to be considered
+   - v: Integer representing current node
+   - p: Integer representing parent node
+   The function returns a tuple of two integers: (height_from_leaf, cut_count).
+
+3. Inside dfs:
+   - Initialize height_from_leaf as 0 (integer).
+   - Initialize cut_count as 0 (integer).
+   - Iterate over each node u in links[v]:
+     - If u is 0, continue to the next iteration.
+     - Call dfs recursively with arguments (links, n, k, u, v) and unpack the results into hgt and cut.
+     - Update height_from_leaf to be the maximum of height_from_leaf and hgt.
+     - Add cut to cut_count.
+   - Increment height_from_leaf by 1.
+   - If p is not 0 and height_from_leaf equals k:
+     - Set height_from_leaf to 0.
+     - Increment cut_count by 1.
+   - Return the tuple (height_from_leaf, cut_count).
+
+4. Read input from stdin, split it into integers, and unpack into variables n, k, and aaa (list of integers).
+
+5. Initialize links as a list of empty sets with length n.
+
+6. Iterate over each pair (i, a) from enumerate(aaa):
+   - Decrement a by 1.
+   - Add i to links[a].
+
+7. Call dfs with arguments (links, n, k, 0, 0) and unpack the result into _ and ans.
+
+8. If aaa[0] is not equal to 1, increment ans by 1.
+
+9. Print the value of ans.
+```

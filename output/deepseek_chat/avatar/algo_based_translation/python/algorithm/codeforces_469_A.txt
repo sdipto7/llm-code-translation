@@ -1,0 +1,21 @@
+Read integer max_level from standard input
+Read first list of integers x from standard input (space separated)
+Read second list of integers y from standard input (space separated)
+
+Remove first element from list x
+Remove first element from list y
+
+Convert list x to set x
+Convert list y to set y
+
+If 0 is present in set x:
+    Remove 0 from set x
+Else if 0 is present in set y:
+    Remove 0 from set y
+
+Create set z as union of sets x and y
+
+If length of set z equals max_level:
+    Print "I become the guy."
+Else:
+    Print "Oh, my keyboard!"

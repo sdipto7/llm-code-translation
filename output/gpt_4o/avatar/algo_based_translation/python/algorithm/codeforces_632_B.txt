@@ -1,0 +1,35 @@
+```
+Function main() -> int:
+    Call input() to read and discard a line
+    Declare variable pieces as tuple of tuples, where each tuple contains:
+        - Integer from mapping int over input().split() and
+        - Corresponding character from second input()
+    Return result of Bob_sMaxStrength(pieces)
+
+Function Bob_sMaxStrength(pieces: Tuple[Tuple[int, str], ...]) -> int:
+    Declare integers pScore, sScore, pMaxScore, sMaxScore
+    Initialize pScore, sScore, pMaxScore, sMaxScore as sum of integers from pieces where second element is 'B'
+    
+    For each piece in pieces:
+        If second element of piece is 'A':
+            Increment pScore by first element of piece
+            If pScore is greater than pMaxScore:
+                Assign pScore to pMaxScore
+        Else:
+            Decrement pScore by first element of piece
+    
+    For each index i from len(pieces) - 1 to 0 (inclusive), decrementing by 1:
+        If second element of pieces[i] is 'A':
+            Increment sScore by first element of pieces[i]
+            If sScore is greater than sMaxScore:
+                Assign sScore to sMaxScore
+        Else:
+            Decrement sScore by first element of pieces[i]
+    
+    If pMaxScore is greater than sMaxScore:
+        Return pMaxScore
+    Return sMaxScore
+
+If __name__ is '__main__':
+    Print result of calling main()
+```

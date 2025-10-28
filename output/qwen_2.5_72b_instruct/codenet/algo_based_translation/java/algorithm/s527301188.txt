@@ -1,0 +1,35 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `BufferedReader reader`
+- `String[] strs`
+- `int[] nums`
+- `int top`
+
+Logic flow in execution order:
+1. Create `BufferedReader` object for reading input.
+2. Read a line of input and split it into string array `strs`.
+3. Initialize integer array `nums` with the same length as `strs`.
+4. Initialize `top` to 0.
+5. Loop through each element in `strs`:
+   a. Switch based on the first character of the current string element:
+      - Case '+': Decrement `top`, then set `nums[top-1]` to `nums[top-1] + nums[top]`.
+      - Case '-': Decrement `top`, then set `nums[top-1]` to `nums[top-1] - nums[top]`.
+      - Case '*': Decrement `top`, then set `nums[top-1]` to `nums[top-1] * nums[top]`.
+      - Default: Parse the current string element to integer and assign it to `nums[top]`, then increment `top`.
+6. Print the value of `nums[0]`.
+
+Control structures:
+- Switch statement with conditions for '+', '-', '*', and default case.
+- For loop iterating over `strs` array.
+
+Input/output operations and data processing logic:
+- Input: Reads a line of space-separated values from standard input.
+- Output: Prints the final result stored in `nums[0]`.
+- Data processing: Parses integers, performs arithmetic operations based on operators, and updates the `nums` array accordingly.
+
+Required libraries, modules, or dependencies:
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.util.Arrays`

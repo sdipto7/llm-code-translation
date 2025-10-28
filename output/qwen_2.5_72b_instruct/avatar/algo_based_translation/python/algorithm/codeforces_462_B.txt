@@ -1,0 +1,47 @@
+Function signatures with parameter and return types:
+- function main() -> None
+
+Variable declarations and data types:
+- n: int
+- k: int
+- s: str
+- count: List[int] (size 26, initialized to 0)
+- c: str
+- res: int (initialized to 0)
+- i: int
+
+Logic flow in execution order:
+1. Read n and k as integers from input, separated by space.
+2. Read string s from input.
+3. Initialize count as a list of 26 zeros.
+4. For each character c in string s:
+   - Increment count[ord(c) - ord("A")] by 1.
+5. Sort count in descending order.
+6. Initialize res to 0.
+7. For i from 0 to 25:
+   - If count[i] is greater than or equal to k:
+     - Add k * k to res.
+     - Print res.
+     - Exit the program.
+   - Otherwise:
+     - Subtract count[i] from k.
+     - Add count[i] ** 2 to res.
+8. Print res.
+
+Control structures:
+- Loops:
+  - For loop: for c in s
+  - For loop: for i in range(26)
+- Conditionals:
+  - If condition: if count[i] >= k
+
+Input/output operations and data processing logic:
+- Read two integers from input.
+- Read a string from input.
+- Process the string to count occurrences of each letter.
+- Sort the counts in descending order.
+- Calculate the result based on the given conditions.
+- Print the result.
+
+Required libraries, modules, or dependencies:
+- None required

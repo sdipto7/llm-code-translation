@@ -1,0 +1,27 @@
+- Function signature:  
+  `public static void main(String[] args)`
+
+- Variables:  
+  `Scanner sc = new Scanner(System.in)`  
+  `int n = sc.nextInt()`
+
+- Logic flow:  
+  1. Read integer input `n` from standard input  
+  2. Check if integer division of `n` by 10 results in a number divisible by 111:  
+     `if ((n / 10) % 111 == 0)`  
+     - If true: print "Yes"  
+  3. If first condition fails, check if last three digits of `n` are divisible by 111:  
+     `else if ((n % 1000) % 111 == 0)`  
+     - If true: print "Yes"  
+  4. If both conditions fail: print "No"
+
+- Control structures:  
+  - Sequential execution  
+  - If-else conditional branching
+
+- Input/Output:  
+  - Input: Single integer via `Scanner`  
+  - Output: "Yes" or "No" based on conditions
+
+- Dependencies:  
+  `java.util.Scanner`

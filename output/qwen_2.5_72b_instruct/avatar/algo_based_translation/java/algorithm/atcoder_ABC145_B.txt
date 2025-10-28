@@ -1,0 +1,37 @@
+Function signatures with parameter and return types:
+- `void cout(String str)`
+- `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `String a`
+- `String b`
+- `String str`
+- `int n`
+
+Complete logic flow in execution order:
+1. Initialize `Scanner cin` to read input from standard input.
+2. Initialize empty string `a`.
+3. Initialize empty string `b`.
+4. Initialize empty string `str`.
+5. Initialize integer `n`.
+6. Read integer `n` from input.
+7. Consume the remaining newline character after reading integer `n`.
+8. Read string `str` from input.
+9. Loop from `0` to `n / 2 - 1` (inclusive):
+   - Append character at index `i` of `str` to `a`.
+10. If `str` is equal to concatenation of `a` with itself:
+    - Call `cout("Yes")`.
+11. Else:
+    - Call `cout("No")`.
+
+Control structures:
+- `for` loop with condition `i < n / 2`
+- `if` statement with condition `str.equals(a + a)`
+
+Input/output operations and data processing logic:
+- Read integer `n` from standard input.
+- Read string `str` from standard input.
+- Output "Yes" or "No" based on the condition check.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

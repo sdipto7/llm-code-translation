@@ -1,0 +1,28 @@
+Function: solve_case
+Parameters: None
+Return: None
+
+Input:
+- Read integers n, m from input
+- Initialize count as 2D list of size n×n with zeros
+- Initialize ans = -1
+
+For k from 0 to m-1:
+    Read integers x, y from input
+    Decrement x and y by 1
+    Set found = False
+    
+    For i from x-2 to x:
+        For j from y-2 to y:
+            If i >= 0 and i < n and j >= 0 and j < n:
+                Increment count[i][j] by 1
+                If count[i][j] == 9:
+                    Set found = True
+    
+    If found is True:
+        Set ans = k + 1
+        Break out of loop
+
+Print ans
+
+Dependencies: Standard input/output operations

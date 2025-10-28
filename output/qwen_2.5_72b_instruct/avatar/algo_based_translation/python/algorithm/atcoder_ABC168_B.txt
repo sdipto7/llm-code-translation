@@ -1,0 +1,16 @@
+- Function signature: `main()` with no parameters, returns a string
+- Variable declarations: 
+  - `K` of type integer
+  - `S` of type string
+- Logic flow:
+  - Read an integer `K` from standard input
+  - Read a string `S` from standard input
+  - Check if the length of `S` is less than or equal to `K`
+    - If true, return `S`
+    - If false, return the substring of `S` from index 0 to `K` concatenated with '...'
+- Control structures:
+  - Conditional: `if len(S) <= K`
+- Input/output operations:
+  - Input: Read `K` and `S` from standard input
+  - Output: Print the result of `main()` to standard output
+- Required libraries, modules, or dependencies: None

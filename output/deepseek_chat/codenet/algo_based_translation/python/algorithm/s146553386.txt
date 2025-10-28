@@ -1,0 +1,14 @@
+Read integer n from input
+Initialize list a as empty list
+For i in range(0, 2):
+    Read line from input, split into integers, convert to list, append to a
+Reverse the order of elements in a[1]
+Import numpy module
+Compute cumulative sum of a[0] using numpy.cumsum, store in res_0
+Compute cumulative sum of a[1] using numpy.cumsum, store in res_1
+Initialize ans as 0
+For i in range(0, n):
+    Set check = res_0[i] + res_1[n-1-i]
+    If check > ans:
+        Set ans = check
+Print ans

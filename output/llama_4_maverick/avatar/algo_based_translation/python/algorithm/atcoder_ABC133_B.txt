@@ -1,0 +1,16 @@
+1. Read n and d from input
+2. Initialize points as an empty list
+3. For i from 1 to n:
+   1. Read a point from input
+   2. Append the point to points
+4. Define function dist(x, y):
+   1. Initialize tmp to 0.0
+   2. For i from 0 to d-1:
+      1. tmp = tmp + (x[i] - y[i])^2
+   3. Return square root of tmp
+5. Initialize count to 0
+6. For i from 0 to n-1:
+   1. For j from i+1 to n-1:
+      1. If dist(points[i], points[j]) is an integer:
+         1. count = count + 1
+7. Print count

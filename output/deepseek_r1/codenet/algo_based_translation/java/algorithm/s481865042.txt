@@ -1,0 +1,26 @@
+<<algorithm>>
+1. Import java.util.Scanner
+2. Function: main(String[] args) returns void
+3. Declare variables:
+   - Scanner sc = new Scanner(System.in)
+   - String s = sc.next()
+   - long k = sc.nextLong()
+   - StringBuffer sb = new StringBuffer()
+4. For loop:
+   - Initialize: int i = 0
+   - Condition: i < s.length()
+   - Increment: i++
+   - Loop body:
+     a. Calculate required moves: 26 - (s.charAt(i) - 'a')
+     b. If (required moves <= k) && (s.charAt(i) != 'a')
+         i. Subtract required moves from k
+         ii. Append 'a' to sb
+     c. Else:
+         i. Append s.charAt(i) to sb
+5. After loop:
+   - If (k > 0)
+     a. char t = sb.charAt(sb.length() - 1)
+     b. sb.delete(sb.length() - 1, sb.length())
+     c. Append (char)('a' + (t - 'a' + k) % 26) to sb
+6. Output sb.toString() via System.out.println
+<<algorithm>>

@@ -1,0 +1,25 @@
+Function Signature: `main(String[] args) -> void`
+
+Variable Declarations:
+- `sc` of type `Scanner`
+- `nextInt1` of type `int`
+- `nextInt2` of type `int`
+
+Execution Order:
+1. Create a new instance of `Scanner` object `sc` for reading input from standard input.
+2. Read an integer from the standard input and store it in `nextInt1`.
+3. Read another integer from the standard input and store it in `nextInt2`.
+4. Compute the modulus of `nextInt1` with 500.
+5. Compare the result of the modulus operation with `nextInt2` using the condition `modulus <= nextInt2`.
+6. If the condition is true, output the string "Yes" to the standard output.
+7. If the condition is false, output the string "No" to the standard output.
+
+Control Structures:
+- Conditional: `if (modulus <= nextInt2)`
+
+Input/Output Operations:
+- Input: Two integers from standard input using `sc.nextInt()`.
+- Output: String "Yes" or "No" to standard output based on the condition.
+
+Libraries/Modules/Dependencies:
+- `java.util.Scanner`

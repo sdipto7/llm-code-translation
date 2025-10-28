@@ -1,0 +1,50 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`  
+  *Processes input, determines level completion status.*
+
+**Variables:**
+- `max_level: int`  
+  *Stores maximum game level.*
+- `x: List[int]` (initial) → `Set[int]` (processed)  
+  *Stores first player's levels.*
+- `y: List[int]` (initial) → `Set[int]` (processed)  
+  *Stores second player's levels.*
+- `z: Set[int]`  
+  *Union of processed x and y sets.*
+
+**Input Operations:**
+1. Read `max_level` from stdin as integer.
+2. Read next line, split into integers:  
+   a. Create `x` list by removing first element (count).  
+3. Read next line, split into integers:  
+   a. Create `y` list by removing first element (count).
+
+**Data Processing:**
+1. Convert `x` list to set.
+2. Convert `y` list to set.
+3. Remove 0 from `x` if present (using `discard`).  
+   a. If 0 not in `x`, remove from `y` if present.
+4. Compute `z = x ∪ y`.
+
+**Control Flow:**
+1. If `0` in `x`:  
+   - **Condition:** `0 in x`  
+   - **Action:** `x.discard(0)`  
+2. Else if `0` in `y`:  
+   - **Condition:** `0 in y`  
+   - **Action:** `y.discard(0)`  
+3. If `len(z) == max_level`:  
+   - **True:** Print "I become the guy."  
+   - **False:** Print "Oh, my keyboard!"
+
+**Edge Case Handling:**
+- Explicit removal of invalid level 0 from union calculation.
+- Validation requires all levels 1 to `max_level` to be present in `z`.
+
+**Output Operations:**
+- Print result based on union size equivalence to `max_level`.
+
+**Dependencies:**
+- No external libraries. Uses standard input and set operations.

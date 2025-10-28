@@ -1,0 +1,58 @@
+**Structured Algorithm Specification**
+
+**Function Signature**
+- `function resolve(): void`
+
+**Variables**
+- `n: integer` (Number of intervals)
+- `low: List<integer>` (Stores lower bounds of intervals)
+- `high: List<integer>` (Stores upper bounds of intervals)
+- `a: integer` (Temporary storage for lower bound input)
+- `b: integer` (Temporary storage for upper bound input)
+- `hh: float` (Intermediate median calculation for upper bounds in even case)
+- `ll: float` (Intermediate median calculation for lower bounds in even case)
+
+**Input/Output Operations**
+- Read `n` from standard input
+- Read `n` pairs of integers from standard input, storing first in `low`, second in `high`
+- Print final result to standard output
+
+**Control Flow & Logic**
+
+1. **Initialization**
+   1.1. Read integer `n` from input
+   1.2. Initialize empty lists `low` and `high`
+
+2. **Data Collection**
+   2.1. For `i` in range [0, n-1]:
+        - Read two space-separated integers `a` and `b`
+        - Append `a` to `low`
+        - Append `b` to `high`
+
+3. **Data Processing**
+   3.1. Sort `low` in non-decreasing order
+   3.2. Sort `high` in non-decreasing order
+
+4. **Odd/Even Case Handling**
+   4.1. If `n % 2 != 0` (Odd case):
+        - Compute median index: `median_index = (n + 1) // 2 - 1`
+        - Calculate result: `result = high[median_index] - low[median_index] + 1`
+        - Print `result`
+
+   4.2. Else (Even case):
+        - Calculate upper median: `hh = (high[n//2 - 1] + high[n//2]) / 2`
+        - Calculate lower median: `ll = (low[n//2 - 1] + low[n//2]) / 2`
+        - Compute result: `result = (hh - ll) * 2 + 1`
+        - Print `result` as integer
+
+**Edge Case Handling**
+- Assumes `n ≥ 1` per input constraints
+- Implicit handling of singleton list case through median calculation
+- Integer conversion in even case ensures whole number output
+
+**External Dependencies**
+- Uses built-in functions:
+  - `input()` for data reading
+  - `print()` for output
+  - `sort()` for list sorting
+  - `map()` and `split()` for input parsing

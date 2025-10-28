@@ -1,0 +1,10 @@
+Read input line and split into list of strings
+Convert each element in list to integer
+Store result in variable A (list of integers)
+
+If element at index 1 of A is less than or equal to element at index 2 of A OR element at index 3 of A is less than or equal to element at index 0 of A:
+    Print integer 0
+Else:
+    Sort list A in ascending order
+    Calculate difference between element at index 2 and element at index 1 of sorted A
+    Print the resulting integer value

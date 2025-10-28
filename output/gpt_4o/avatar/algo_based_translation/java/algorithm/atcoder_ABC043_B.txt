@@ -1,0 +1,57 @@
+```
+Algorithm: atcoder_ABC043_B
+
+Function Main:
+  - Input: String[] args
+  - Variables:
+    - InputStream inputStream = System.in
+    - OutputStream outputStream = System.out
+    - LightScanner in = new LightScanner(inputStream)
+    - PrintWriter out = new PrintWriter(outputStream)
+    - BUnhappyHackingABCEdit solver = new BUnhappyHackingABCEdit()
+  - Logic:
+    - Call solver.solve(1, in, out)
+    - Close out
+
+Function BUnhappyHackingABCEdit.solve:
+  - Input: int testNumber, LightScanner in, PrintWriter out
+  - Variables:
+    - String s = in.string()
+    - StringBuilder d = new StringBuilder()
+  - Logic:
+    - For each character c in s converted to character array:
+      - Switch on character c:
+        - Case '0':
+          - Append "0" to d
+        - Case '1':
+          - Append "1" to d
+        - Case 'B':
+          - If d.length() > 0:
+            - Set d length to current length - 1
+            - Trim d to size
+    - Print d using out.println(d)
+
+Class LightScanner:
+  - Variables:
+    - BufferedReader reader
+    - StringTokenizer tokenizer
+  - Constructor LightScanner(InputStream in):
+    - Initialize reader with BufferedReader(new InputStreamReader(in))
+  - Function string:
+    - While tokenizer is null or does not have more tokens:
+      - Try:
+        - Read next line from reader and initialize tokenizer with StringTokenizer
+      - Catch IOException e:
+        - Throw new UncheckedIOException(e)
+    - Return next token from tokenizer
+
+Dependencies:
+  - java.io.OutputStream
+  - java.io.IOException
+  - java.io.InputStream
+  - java.io.PrintWriter
+  - java.io.UncheckedIOException
+  - java.util.StringTokenizer
+  - java.io.BufferedReader
+  - java.io.InputStreamReader
+```

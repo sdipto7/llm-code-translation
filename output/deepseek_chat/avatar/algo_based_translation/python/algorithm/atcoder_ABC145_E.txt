@@ -1,0 +1,32 @@
+**Algorithm:**
+
+1. Import required modules: `sys`, `operator.itemgetter`
+2. Read input using `sys.stdin.readline`
+3. Define constants: `TIME = 0`, `VAL = 1`
+4. Read first line: integers `N` (number of items) and `T` (total time capacity)
+5. Initialize `time_value` list with `N+1` elements: `[(-1, -1)] + [None]*N`
+6. For `i` from 1 to `N`:
+   - Read and parse next line into tuple `(time, value)`
+   - Store at `time_value[i]`
+7. Sort `time_value` by `VAL` (value) in ascending order
+8. Initialize DP table `dp` with dimensions `(N+1) × T`, all values set to `-1`
+9. Initialize base cases:
+   - For `t` from 0 to `T-1`: `dp[0][t] = 0`
+   - For `n` from 1 to `N`: `dp[n][0] = 0`
+10. Fill DP table:
+    - For `n` from 1 to `N`:
+      - For `t` from 1 to `T-1`:
+        - If `time_value[n][TIME] > t`:
+          - `dp[n][t] = dp[n-1][t]`
+        - Else:
+          - `dp[n][t] = max(dp[n-1][t], time_value[n][VAL] + dp[n-1][t - time_value[n][TIME]])`
+11. Initialize variables for final calculation:
+    - `val_acum = time_value[N][VAL]`
+    - `t = T - 1`
+    - `max_val = val_acum + dp[N-1][t]`
+12. For `n` from `N-1` down to 1:
+    - `val_acum += time_value[n][VAL]`
+    - `t -= time_value[n+1][TIME]`
+    - If `t < 0`: break loop
+    - Else: `max_val = max(max_val, val_acum + dp[n-1][t])`
+13. Print `max_val`

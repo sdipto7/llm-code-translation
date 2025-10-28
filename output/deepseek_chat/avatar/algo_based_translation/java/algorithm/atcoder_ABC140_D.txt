@@ -1,0 +1,76 @@
+**Function Signature:**
+main(String[] args) -> void
+
+**Input:**
+- Read integer N from stdin
+- Read integer K from stdin
+- Read string S from stdin
+
+**Variables:**
+- char[] c1 = S converted to char array
+- char[] c3 = S converted to char array
+- boolean flag = false
+- int count = 0
+- String S1, S3
+- int sum1 = 0, sum3 = 0
+- char bef
+- int i (loop index)
+
+**Algorithm Flow:**
+
+1. Initialize Scanner for input
+2. Read N, K, and S
+3. Convert S to char arrays c1 and c3
+
+4. Process c1 array:
+   - For i from 0 to N-1:
+     - If flag is true AND c1[i] is 'R':
+       - Set flag = false
+       - Increment count
+     - If count equals K: break loop
+     - If c1[i] is 'L':
+       - Set flag = true
+       - Set c1[i] = 'R'
+
+5. Reset flag = false and count = 0
+
+6. Process c3 array:
+   - For i from 0 to N-1:
+     - If flag is true AND c3[i] is 'L':
+       - Set flag = false
+       - Increment count
+     - If count equals K: break loop
+     - If c3[i] is 'R':
+       - Set flag = true
+       - Set c3[i] = 'L'
+
+7. Convert c1 and c3 back to strings S1 and S3
+
+8. Calculate happiness sum1 for S1:
+   - Initialize count = 1, sum1 = 0
+   - Set bef = first character of S1
+   - For i from 1 to N-1:
+     - If current character equals bef:
+       - Increment count
+       - If at last index: add (count-1) to sum1
+     - Else:
+       - Set bef = current character
+       - Add (count-1) to sum1
+       - Reset count = 1
+
+9. Calculate happiness sum3 for S3:
+   - Initialize count = 1, sum3 = 0
+   - Set bef = first character of S3
+   - For i from 1 to N-1:
+     - If current character equals bef:
+       - Increment count
+       - If at last index: add (count-1) to sum3
+     - Else:
+       - Set bef = current character
+       - Add (count-1) to sum3
+       - Reset count = 1
+
+10. Output maximum of sum1 and sum3
+
+**Required Libraries:**
+- java.util.Scanner

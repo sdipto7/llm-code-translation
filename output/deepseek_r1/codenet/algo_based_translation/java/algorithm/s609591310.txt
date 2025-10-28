@@ -1,0 +1,61 @@
+Algorithm:
+
+Function Signatures:
+- public static void main(String[] args)
+
+Variables:
+- int ans = 0
+- Scanner sc = new Scanner(System.in)
+- int n (input)
+- int[] list (size n)
+- int[100000] numlist1 (all initialized to 0)
+- int[100000] numlist2 (all initialized to 0)
+- int max11 = 0, max12 = 0, max21 = 0, max22 = 0
+- int val1 = 0, val2 = 0
+
+Logic Flow:
+1. Read integer n from input
+2. Initialize list array with n elements from input
+3. Initialize numlist1 and numlist2 arrays with 100000 elements (all zeros)
+4. Populate numlist1 and numlist2:
+   For i from 0 to n-1 (step 2):
+      Increment numlist1[list[i]-1] by 1
+      Increment numlist2[list[i+1]-1] by 1
+5. Find top two frequencies in numlist1 and numlist2:
+   For i from 0 to 99999:
+      Process numlist1:
+         If numlist1[i] >= max11:
+             max12 = max11
+             max11 = numlist1[i]
+             val1 = i
+         Else if numlist1[i] > max12:
+             max12 = numlist1[i]
+      Process numlist2:
+         If numlist2[i] >= max21:
+             max22 = max21
+             max21 = numlist2[i]
+             val2 = i
+         Else if numlist2[i] > max22:
+             max22 = numlist2[i]
+6. Calculate answer:
+   If val1 != val2:
+       ans = n - (max11 + max21)
+   Else:
+       ans = n - max(max12 + max21, max11 + max22)
+7. Print ans
+
+Control Structures:
+- For loop: "for(int i=0; i<n; i++)" (list initialization)
+- For loop: "for(int i=0; i<100000; i++)" (numlist initialization)
+- For loop: "for(int i=0; i<n; i+=2)" (frequency counting)
+- For loop: "for(int i=0; i<100000; i++)" (finding maxima)
+- If-elif blocks within frequency analysis loop
+- Conditional check "if(val1 != val2)" for final calculation
+
+Input/Output:
+- Read n via Scanner.nextInt()
+- Read list elements via Scanner.nextInt()
+- Print ans via System.out.println()
+
+Dependencies:
+- java.util.Scanner (required for input handling)

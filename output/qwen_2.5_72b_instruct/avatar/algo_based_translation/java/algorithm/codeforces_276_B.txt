@@ -1,0 +1,35 @@
+Function signature: `public static void main(String[] args) throws NumberFormatException, IOException`
+Variable declarations:
+- `InputStreamReader inputStreamReader`
+- `BufferedReader bufferedReader`
+- `PrintWriter writer`
+- `String str`
+- `Map<Character, Integer> map`
+- `int oddCount`
+
+Complete logic flow:
+1. Initialize `inputStreamReader` with `System.in`.
+2. Initialize `bufferedReader` with `inputStreamReader`.
+3. Initialize `writer` with `System.out`.
+4. Read a line from `bufferedReader` and store it in `str`.
+5. Initialize `map` as a `HashMap`.
+6. Initialize `oddCount` to 0.
+7. For loop iterating from `i = 0` to `str.length() - 1`:
+   - Get character `ch` at index `i` from `str`.
+   - If `map` contains key `ch`, increment its value by 1.
+   - Otherwise, add `ch` to `map` with a value of 1.
+8. For each `entry` in `map.entrySet()`:
+   - If `entry.getValue()` is odd (i.e., `entry.getValue() % 2 != 0`), increment `oddCount` by 1.
+9. If `oddCount` is less than or equal to 1 or `oddCount` is odd (i.e., `oddCount % 2 != 0`):
+   - Print "First" using `writer`.
+10. Else:
+    - Print "Second" using `writer`.
+11. Flush `writer`.
+
+Required libraries, modules, or dependencies:
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.io.PrintWriter`
+- `java.util.HashMap`
+- `java.util.Map`

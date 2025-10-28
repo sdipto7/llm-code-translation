@@ -1,0 +1,318 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,codeforces_369_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_369_B.py"", line 18, in <module>
+    ans = get_points(n, k, l, r, sAll, sk)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_369_B.py"", line 12, in get_points
+    ans[idx] += 1
+    ~~~^^^^^
+IndexError: list index out of range
+"
+java,python,codeforces_272_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_272_B.py"", line 25, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_272_B.py"", line 16, in main
+    x = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '7 1\n'
+"
+java,python,codeforces_222_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_222_A.py"", line 6, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '20 1 19 2 18 3 17 4 16 5 15 6 14 7 13 8 12 9 11 10'
+"
+java,python,atcoder_ABC133_E.py,Runtime Error,"Test Index: 21 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC133_E.py"", line 38, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC133_E.py"", line 30, in main
+    nodes[0].set_parent(K, -1, 0, nodes)
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC133_E.py"", line 18, in set_parent
+    nodes[n].set_parent(K, self.index, count, nodes)
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC133_E.py"", line 18, in set_parent
+    nodes[n].set_parent(K, self.index, count, nodes)
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC133_E.py"", line 18, in set_parent
+    nodes[n].set_parent(K, self.index, count, nodes)
+  [Previous line repeated 995 more times]
+RecursionError: maximum recursion depth exceeded
+"
+java,python,codeforces_356_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_356_A.py"", line 2, in <module>
+    from sortedcontainers import SortedSet
+ModuleNotFoundError: No module named 'sortedcontainers'
+"
+java,python,atcoder_AGC027_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_AGC027_B.py"", line 27, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_AGC027_B.py"", line 6, in main
+    N = int(sys.stdin.readline())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '16 10\n'
+"
+java,python,atcoder_ABC169_E.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC169_E.py"", line 5, in <module>
+    n = int(sys.stdin.readline().strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '787430935 930572076'
+"
+java,python,atcoder_ABC167_D.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC167_D.py"", line 26, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC167_D.py"", line 3, in main
+    N = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '200000 678997213818168535'
+"
+java,python,codeforces_617_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_617_B.py"", line 4, in <module>
+    if int(input().split()[0]) == 1:
+           ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,atcoder_AGC024_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_AGC024_B.py"", line 16, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_AGC024_B.py"", line 5, in main
+    map_dict = {P[i]: i for i in range(N)}
+                ~^^^
+IndexError: list index out of range
+"
+java,python,atcoder_ABC118_C.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC118_C.py"", line 33, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC118_C.py"", line 8, in main
+    nums.append(int(input()))
+                ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '5 13 8 1000000000'
+"
+java,python,codeforces_469_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_469_A.py"", line 3, in <module>
+    levels = int(input())
+             ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '74 96 32 63 12 69 72 99 15 22 1 41 79 77 71 31 20 28 75 73 85 37 38 59 42 100 86 89 55 87 68 4 24 57 52 8 92 27 56 98 95 58 34 9 45 14 11 36 66 76 61 19 25 23 78 49 90 26 80 43 70 13 65 10 5 74 81 21
+"
+java,python,atcoder_ABC146_D.py,Runtime Error,"Test Index: 11 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC146_D.py"", line 37, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC146_D.py"", line 30, in main
+    dfs(0, -1, -1, g, ans)
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC146_D.py"", line 17, in dfs
+    dfs(e.to, k, to, g, ans)
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC146_D.py"", line 17, in dfs
+    dfs(e.to, k, to, g, ans)
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC146_D.py"", line 17, in dfs
+    dfs(e.to, k, to, g, ans)
+  [Previous line repeated 995 more times]
+RecursionError: maximum recursion depth exceeded
+"
+java,python,codeforces_25_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_25_A.py"", line 24, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_25_A.py"", line 6, in main
+    array[i] = int(input())
+               ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '88 96 66 51 14 88 2 92 18 72 18 88 20 30 4 82 90 100 24 46'
+"
+java,python,codeforces_450_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_450_A.py"", line 8, in <module>
+    q1.append(int(input().split()[0]))
+                  ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,atcoder_ABC123_D.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC123_D.py"", line 6, in <module>
+    k = int(sys.stdin.readline())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 6\n'
+"
+java,python,atcoder_ABC126_E.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC126_E.py"", line 48, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC126_E.py"", line 32, in main
+    n = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '6 5'
+"
+java,python,codeforces_296_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_296_A.py"", line 51, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_296_A.py"", line 47, in main
+    task.solve(in_reader, out_stream)
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_296_A.py"", line 28, in solve
+    index = in_reader.next_int()
+            ^^^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_296_A.py"", line 12, in next_int
+    return int(self.next())
+               ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_296_A.py"", line 9, in next
+    return self.stream.readline().strip().split()[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+"
+java,python,codeforces_456_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_456_A.py"", line 43, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_456_A.py"", line 7, in main
+    x, y = map(int, input().split())
+    ^^^^
+ValueError: invalid literal for int() with base 10: '3679...'
+"
+java,python,atcoder_ABC125_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC125_A.py"", line 2, in <module>
+    sec = int(input())
+          ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 2 9'
+"
+java,python,codeforces_474_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_474_B.py"", line 18, in <module>
+    arr[0] = int(input())
+             ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 7 3 4 9'
+"
+java,python,atcoder_AGC019_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_AGC019_A.py"", line 2, in <module>
+    Q, H, S, D, N = map(int, input().split())
+    ^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 5, got 4)
+"
+java,python,atcoder_ABC171_E.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC171_E.py"", line 14, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC171_E.py"", line 6, in main
+    a[i] = int(input())
+           ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '429880476 952730022 767701192 621578777 960800330 936109539 322126147 719960733 528524886 51132735 104786104 915384707 272441325 270941792 398864362 262047821 115278283 680775089 945172413 190657328 
+"
+java,python,codeforces_333_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_333_B.py"", line 53, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_333_B.py"", line 28, in main
+    m = in_reader.next_int()
+        ^^^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_333_B.py"", line 12, in next_int
+    return int(self.next())
+               ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_333_B.py"", line 9, in next
+    return self.input_stream.readline().strip().split()[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+"
+java,python,codeforces_131_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_131_B.py"", line 6, in <module>
+    x = int(sys.stdin.readline().strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '10 -10'
+"
+java,python,atcoder_ABC178_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC178_B.py"", line 31, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC178_B.py"", line 27, in main
+    a[i] = in_reader.next_long()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC178_B.py"", line 15, in next_long
+    return int(self.next())
+               ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC178_B.py"", line 9, in next
+    return self.input_stream.readline().strip().split()[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+"
+java,python,codeforces_534_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_534_B.py"", line 26, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_534_B.py"", line 5, in main
+    v1, v2, t, d = map(int, sys.stdin.readline().split())
+    ^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 4, got 2)
+"
+java,python,atcoder_ABC123_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC123_B.py"", line 2, in <module>
+    from sortedcontainers import SortedDict
+ModuleNotFoundError: No module named 'sortedcontainers'
+"
+java,python,atcoder_AGC004_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_AGC004_B.py"", line 18, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_AGC004_B.py"", line 3, in main
+    N = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2000 500000000'
+"
+java,python,atcoder_AGC035_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_AGC035_B.py"", line 41, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_AGC035_B.py"", line 31, in main
+    print(-1)
+    ^^^^^
+UnboundLocalError: cannot access local variable 'print' where it is not associated with a value
+"
+java,python,codeforces_609_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_609_B.py"", line 17, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_609_B.py"", line 7, in main
+    arr[i] = int(input())
+             ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '7 4 5 5 10 10 5 8 5 7 4 5 4 6 8 8 2 6 3 3 10 7 10 8 6 2 7 3 9 7 7 2 4 5 2 4 9 5 10 1 10 5 10 4 1 3 4 2 6 9 9 9 10 6 2 5 6 1 8 10 4 10 3 4 10 5 5 4 10 4 5 3 7 10 2 7 3 6 9 6 1 6 5 5 4 6 6 4 4 1 5 1 6 
+"
+java,python,codeforces_171_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_171_A.py"", line 30, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_171_A.py"", line 22, in main
+    fr = FastReader()
+         ^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_171_A.py"", line 4, in __init__
+    self.input_list = list(map(int, input().split()))
+                                    ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,atcoder_ABC134_E.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC134_E.py"", line 2, in <module>
+    from sortedcontainers import SortedDict
+ModuleNotFoundError: No module named 'sortedcontainers'
+"
+java,python,atcoder_ABC169_C.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC169_C.py"", line 16, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC169_C.py"", line 3, in main
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0 9.98'
+"
+java,python,atcoder_ABC104_C.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC104_C.py"", line 40, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC104_C.py"", line 5, in main
+    D = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '10 1280600'
+"
+java,python,codeforces_189_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_189_A.py"", line 15, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_189_A.py"", line 4, in main
+    a, b, c = map(int, input().split())
+                       ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,codeforces_342_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_342_B.py"", line 39, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_342_B.py"", line 9, in main
+    t, a, b = map(int, sys.stdin.readline().split())
+    ^^^^^^^
+ValueError: invalid literal for int() with base 10: '1...'
+"
+java,python,codeforces_387_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_387_A.py"", line 16, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_387_A.py"", line 7, in main
+    t2 = s[1].split("":"")
+         ~^^^
+IndexError: list index out of range
+"
+java,python,codeforces_148_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/avatar/algo_based_translation/java/python/codeforces_148_B.py"", line 2, in <module>
+    VP, VD, T, F, C = map(int, input().split())
+    ^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 5, got 1)
+"

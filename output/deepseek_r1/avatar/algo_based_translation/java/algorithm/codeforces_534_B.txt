@@ -1,0 +1,55 @@
+Algorithm:
+
+Function: main()
+Parameters: None
+Return Type: void
+
+Input Operations:
+- Read integers v1, v2, t, d from standard input using Scanner
+
+Variables:
+- long[][] dp = new long[t-1][1150]
+- long sum (unused)
+- long ans = Long.MIN_VALUE
+
+Initialization:
+- Fill all elements in dp with -1e17
+- Set dp[0][v1] = v1
+
+Logic Flow:
+1. For each time step i from 1 to t-2 (inclusive):
+    a. For each speed value j from 0 to 1149 (inclusive):
+        i. For each speed change x from 0 to d (inclusive):
+            - If j + x < 1150:
+                Update dp[i][j] = max(dp[i][j], dp[i-1][j+x] + j)
+        ii. For each speed change x from d down to 0 (inclusive):
+            - If j - x >= 0:
+                Update dp[i][j] = max(dp[i][j], dp[i-1][j-x] + j)
+
+2. For the final time step i = t-2:
+    a. For each speed value j from 0 to 1149 (inclusive):
+        - If |j - v2| <= d:
+            Update ans = max(ans, dp[i][j] + v2)
+
+Output Operation:
+- Print ans to standard output
+
+Control Structures:
+- Nested for loops:
+    - i loop: 1 ≤ i < t-1 (time steps)
+    - j loop: 0 ≤ j < 1150 (speed values)
+    - x loops: 0 ≤ x ≤ d (speed changes)
+- Conditional checks:
+    - Array bounds checks (j + x < 1150, j - x ≥ 0)
+    - Final speed compatibility check (|j - v2| ≤ d)
+- Math.max operations for value comparisons
+
+Dependencies:
+- java.util.Arrays (for array initialization)
+- java.util.Scanner (for input handling)
+- Java standard Math library
+
+Data Types:
+- All integer values stored as long for dp array and calculations
+- Input values read as int but stored in long variables
+- Speed values capped at 1149 based on array dimensions

@@ -1,0 +1,8 @@
+1. Read the input value n.
+2. Read the input value levels.
+3. Read levels number of integers into an array arr.
+4. Read the input value level2.
+5. Read level2 number of integers into the remaining spaces of array arr2, after copying the elements of arr into arr2.
+6. Create an array arr3 of size n and fill it with numbers from 1 to n.
+7. Compare each element of arr3 with the elements of arr2 and count the number of matches.
+8. If the count is equal to n, then output "I become the guy." else output "Oh, my keyboard!".

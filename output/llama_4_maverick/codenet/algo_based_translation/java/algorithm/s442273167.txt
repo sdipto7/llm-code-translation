@@ -1,0 +1,20 @@
+1. Import required library: java.util.Scanner
+2. Define class Main with main method: 
+   - public static void main(String[] args)
+3. Declare local variables:
+   - Scanner sc
+   - int n
+   - int[] l
+   - int[] r
+   - int sum
+   - int i
+4. Execution order:
+   1. Create a new Scanner object: sc = new Scanner(System.in)
+   2. Read integer input: n = sc.nextInt()
+   3. Initialize arrays: l = new int[n], r = new int[n]
+   4. Loop through range(n):
+      - Read integer inputs: l[i] = sc.nextInt(), r[i] = sc.nextInt()
+   5. Initialize sum: sum = 0
+   6. Loop through range(n):
+      - sum += r[i] - l[i] + 1
+   7. Output sum: System.out.println(sum)

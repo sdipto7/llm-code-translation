@@ -1,0 +1,39 @@
+**Function Signature:**
+- solve(): void (no parameters, no return value)
+
+**Variables and Data Types:**
+- S_d: list of characters (from input string)
+- T: list of characters (from input string)
+- end: integer (index position)
+- first: integer (index position)
+- t_i: integer (index counter)
+- s_i: integer (index counter)
+- ans: list of characters (deep copy of S_d)
+
+**Libraries/Dependencies:**
+- copy module (for deepcopy operation)
+
+**Algorithm Flow:**
+
+1. Read input string S_d and convert to character list
+2. Read input string T and convert to character list
+3. Initialize end = len(S_d) - 1
+4. Initialize first = end - len(T) + 1
+5. Enter while loop with condition: first >= 0
+6. Inside while loop:
+   - Initialize t_i = 0
+   - Enter for loop with s_i from first to end (inclusive)
+   - Check if T[t_i] ≠ S_d[s_i] AND S_d[s_i] ≠ '?'
+   - If condition is true: break out of for loop
+   - Else: increment t_i by 1
+   - If for loop completes without break: break out of while loop
+7. If while loop completes without break:
+   - Print 'UNRESTORABLE'
+   - Exit program with code 0
+8. Create deep copy of S_d as ans
+9. Initialize t_i = 0
+10. Enter for loop with i from first to end (inclusive)
+    - Set ans[i] = T[t_i]
+    - Increment t_i by 1
+11. Convert ans list to string and replace all '?' with 'a'
+12. Print the resulting string

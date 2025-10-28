@@ -1,0 +1,31 @@
+- **Libraries/Dependencies**
+  - `java.util.Scanner`
+  - `java.math.BigDecimal`
+
+- **Function Signature**
+  - `public static void main(String[] args)`
+
+- **Variables**
+  - `Scanner sc` initialized with `System.in`
+  - `String sa` initialized via `sc.next()`
+  - `String sb` initialized via `sc.next()`
+  - `BigDecimal A` initialized with `sa`
+  - `BigDecimal B` initialized with `sb`
+  - `BigDecimal result` computed as `A.multiply(B).setScale(0, BigDecimal.ROUND_DOWN)`
+
+- **Execution Logic**
+  1. Create `Scanner` instance for input reading
+  2. Read `sa` from standard input
+  3. Read `sb` from standard input
+  4. Convert `sa` to `BigDecimal` and assign to `A`
+  5. Convert `sb` to `BigDecimal` and assign to `B`
+  6. Compute product of `A` and `B` using `multiply()`
+  7. Set scale of product to 0 with rounding mode `ROUND_DOWN`
+  8. Print resulting value to standard output
+
+- **Input/Output**
+  - Input: Two space-separated numeric strings via standard input
+  - Output: Product truncated to integer value via `System.out.println`
+
+- **Control Structures**
+  - No explicit conditionals or loops; purely sequential execution

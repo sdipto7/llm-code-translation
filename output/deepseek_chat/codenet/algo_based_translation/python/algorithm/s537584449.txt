@@ -1,0 +1,13 @@
+1. Read integer input from standard input and assign to variable 'a'
+2. Define function 'func' with parameter 'a' (integer type)
+3. Initialize empty list 'digits'
+4. Assign value of 'a' to variable 'temp'
+5. While loop condition: temp != 0
+   - Append (temp % 10) to 'digits' list
+   - Set temp = integer division of temp by 10
+6. Calculate sum of all elements in 'digits' list and assign to 'result'
+7. If condition: result == 1
+   - Print '10'
+8. Else condition:
+   - Print value of 'result'
+9. Call function 'func' with argument 'a'

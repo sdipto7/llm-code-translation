@@ -1,0 +1,23 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- A: int
+- B: int
+- min: int
+- max: int
+- ans: int
+- i: int
+
+**Algorithm:**
+1. Read two integers from standard input, assign to A and B
+2. Calculate min = B * 10
+3. Calculate max = (B + 1) * 10 - 1
+4. Initialize ans = -1
+5. For i from min to max (inclusive):
+   - Calculate temp = i * 0.08
+   - Convert temp to integer
+   - If integer value equals A:
+        - Set ans = i
+        - Break loop
+6. Print ans

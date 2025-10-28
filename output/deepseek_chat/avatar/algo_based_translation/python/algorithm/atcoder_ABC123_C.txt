@@ -1,0 +1,8 @@
+1. Import required modules: math, numpy, fractions, statistics, collections, functools, itertools
+2. Read integer input N from stdin
+3. Read 5 integer inputs from stdin and store in list A
+4. Find minimum value in list A
+5. Calculate N divided by minimum value (as float)
+6. Apply math.ceil to the result
+7. Add 4 to the ceiled result
+8. Print the final result

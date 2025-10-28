@@ -1,0 +1,6 @@
+1. Read two integers from input, separated by a space.
+2. Store the first integer in 'vamshi' and the second integer in 'z'.
+3. Calculate the integer division of 'vamshi' by 'z'.
+4. Add 1 to the result of the integer division.
+5. Multiply the result from step 4 by 'z'.
+6. Output the result of the multiplication.

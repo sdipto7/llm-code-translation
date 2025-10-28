@@ -1,0 +1,48 @@
+**Algorithm:**
+
+1. **Import Modules:**
+   - sys
+   - math
+   - defaultdict from collections
+
+2. **Set Recursion Limit:**
+   - Set sys.setrecursionlimit to 10^7
+
+3. **Function Definitions:**
+   - Function `input()`: Returns sys.stdin.readline()[:-1] (removes newline)
+   - Variable `mod`: Set to 10^9 + 7
+   - Function `I()`: Returns int(input())
+   - Function `II()`: Returns map(int, input().split())
+   - Function `III()`: Returns list(map(int, input().split()))
+   - Function `Line(N, num)`:
+        If N <= 0: Return list of empty lists repeated `num` times
+        Else if num == 1: Return list of N integers from input
+        Else: Read N lines, each containing `num` integers, transpose and return as separate lists
+   - Function `my_sign(x)`: Returns (x > 0) - (x < 0)
+
+4. **Main Execution:**
+   - Read integer N using I()
+   - Read list `a` of N integers using III()
+   - Initialize:
+        max_val = 0 (integer)
+        max_sign = 0 (integer)
+        max_index = -1 (integer)
+   - For each index i and value a0 in list a:
+        If absolute value of a0 > max_val:
+            max_val = abs(a0)
+            max_sign = my_sign(a0)
+            max_index = i
+   - If max_sign == 0:
+        Print "0"
+   - Else if max_sign == 1:
+        Print (2 * N - 1)
+        For i from 0 to N-1:
+            Print (max_index + 1, i + 1)
+        For i from 0 to N-2:
+            Print (i + 1, i + 2)
+   - Else (max_sign == -1):
+        Print (2 * N - 1)
+        For i from 0 to N-1:
+            Print (max_index + 1, i + 1)
+        For i from N-1 down to 1:
+            Print (i + 1, i)

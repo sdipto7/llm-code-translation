@@ -1,0 +1,36 @@
+1. Import the sys module.
+2. Define a function `main()` with no parameters and no return type.
+3. Within `main()`, define a class `SegmentTree` with the following properties and methods:
+   - An initializer method `__init__(self, size: int, default)` that takes two parameters: `size` and `default`.
+     - Initialize `self.size` to 2 raised to the power of the bit length of `size-1`.
+     - Initialize `self.default` to `default`.
+     - Initialize `self.seg` to a list of length `2*self.size-1` with all elements set to `default`.
+   - A method `segfunc(self, x, y)` that takes two parameters and returns their maximum.
+   - A method `update(self, k: int, x)` that updates the value at index `k` in `self.seg` to `x` and propagates the change upwards.
+     - Add `self.size-1` to `k`.
+     - Set `self.seg[k]` to `x`.
+     - While `k` is greater than 0, update `k` to `(k-1)//2` and set `self.seg[k]` to the result of `segfunc` applied to its two child nodes.
+   - A method `query(self, p: int, q: int)` that returns the result of `segfunc` applied to the elements in the range `[p, q)` in `self.seg`.
+     - If `q` is less than or equal to `p`, return `self.default`.
+     - Add `self.size-1` to `p` and `self.size-2` to `q`.
+     - Initialize `ret` to `self.default`.
+     - While `q-p` is greater than 1, perform the following steps:
+       - If `p` is even, update `ret` to the result of `segfunc` applied to `ret` and `self.seg[p]`.
+       - If `q` is odd, update `ret` to the result of `segfunc` applied to `ret` and `self.seg[q]`, then decrement `q`.
+       - Update `p` to `p//2` and `q` to `(q-1)//2`.
+     - Update `ret` to the result of `segfunc` applied to `ret`, `self.seg[p]`, and `self.seg[q]`.
+     - Return `ret`.
+   - A method `seg_print(self)` that prints the contents of `self.seg`.
+4. Read an integer `N` from standard input.
+5. Read `N` integers from standard input into a list `a`.
+6. Initialize a list `ans` of length `N` with elements set to their 1-based indices.
+7. Create an instance `left_seg` of `SegmentTree` with `N` and 0 as arguments.
+8. Iterate over `a` with indices and values:
+   - For each value `num`, update `ans[num-1]` by multiplying it with the difference between the current index plus 1 and the result of `left_seg.query(0, num)`.
+   - Update `left_seg` at index `num-1` with the current index plus 1.
+9. Create an instance `right_seg` of `SegmentTree` with `N` and 0 as arguments.
+10. Iterate over the reverse of `a` with indices and values:
+    - For each value `num`, update `ans[num-1]` by multiplying it with the difference between the current index plus 1 and the result of `right_seg.query(0, num)`.
+    - Update `right_seg` at index `num-1` with the current index plus 1.
+11. Print the sum of the elements in `ans`.
+12. Call `main()` if the script is run as the main module.

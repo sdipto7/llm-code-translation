@@ -1,0 +1,41 @@
+- Function signatures:
+  - `main(String[] args)`: void
+  - `MaxInt(int x, int[] a)`: int
+  - `MinInt(int y, int[] b)`: int
+  - `CheckWar(int a, int b)`: void
+
+- Variable declarations and data types:
+  - `m`: int
+  - `n`: int
+  - `x`: int
+  - `y`: int
+  - `a`: int[]
+  - `b`: int[]
+  - `x_max`: int
+  - `y_min`: int
+  - `bignum`: int
+  - `smallnum`: int
+
+- Logic flow in execution order:
+  1. Read `m`, `n`, `x`, `y` from input.
+  2. Initialize array `a` of size `m`.
+  3. Read `m` integers and fill array `a`.
+  4. Initialize array `b` of size `n`.
+  5. Read `n` integers and fill array `b`.
+  6. Call `MaxInt(x, a)` and store result in `x_max`.
+  7. Call `MinInt(y, b)` and store result in `y_min`.
+  8. Call `CheckWar(x_max, y_min)`.
+
+- Control structures:
+  - For loop to fill array `a` with `m` integers.
+  - For loop to fill array `b` with `n` integers.
+  - For loop in `MaxInt` to find the maximum value between `x` and elements of `a`.
+  - For loop in `MinInt` to find the minimum value between `y` and elements of `b`.
+  - If-else statement in `CheckWar` to compare `a` and `b`.
+
+- Input/output operations:
+  - Input: `m`, `n`, `x`, `y`, `a` (array of `m` integers), `b` (array of `n` integers).
+  - Output: "War" if `x_max >= y_min`, otherwise "No War".
+
+- Required libraries:
+  - `java.util.*` for `Scanner` class.

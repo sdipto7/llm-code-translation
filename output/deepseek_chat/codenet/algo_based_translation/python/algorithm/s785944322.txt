@@ -1,0 +1,19 @@
+```python
+import sys
+
+def main():
+    input_line = sys.stdin.readline()
+    a, b = map(int, input_line.split())
+    
+    if a >= 13:
+        result = b
+    elif a >= 6:
+        result = b // 2
+    else:
+        result = 0
+        
+    print(result)
+
+if __name__ == "__main__":
+    main()
+```

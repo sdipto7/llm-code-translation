@@ -1,0 +1,15 @@
+Function Signature:
+- main() -> None
+
+Variable Declarations and Data Types:
+- stdin: str
+- s: str
+- result: str
+
+Logic Flow in Execution Order:
+1. Call input() function to read a string from standard input and assign it to stdin
+2. Assign value of stdin to s
+3. Check if "A" is in s and if "B" is in s
+   - If both conditions are true, assign "Yes" to result
+   - Otherwise, assign "No" to result
+4. Print the value of result

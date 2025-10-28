@@ -1,0 +1,49 @@
+**Algorithm:**
+
+1. **Imports:**
+   - `sys.stdin` for input reading
+
+2. **Function Definitions:**
+   - `il(func=int) -> list[int]`: Read line from stdin, split into elements, apply `func` to each
+   - `gcd(a: int, b: int) -> int`: 
+      - If a < b: return `gcd(b, a)`
+      - If b == 0: return a
+      - Return `gcd(b, a % b)`
+   - `lcm(a: int, b: int) -> int`: Return `(a * b) // gcd(a, b)`
+
+3. **Variables:**
+   - `n: int`, `m: int` from input via `il()`
+   - `s: str` from input
+   - `t: str` from input
+   - `aa: int` = `gcd(n, m)`
+   - `bb: int` = `lcm(n, m)`
+
+4. **Execution Flow:**
+   - For `i` in range `0` to `aa - 1`:
+     - Calculate `s_index` = `(n // aa) * i`
+     - Calculate `t_index` = `(m // aa) * i`
+     - If `s[s_index] != t[t_index]`:
+       - Print `-1`
+       - Terminate program
+   - Print `bb`
+
+5. **Termination Conditions:**
+   - Early exit occurs if any mismatched character comparison
+   - Final output is LCM value if all checks pass
+
+**Data Flow:**
+- Input variables read via STDIN
+- Calculations use integer arithmetic
+- Character comparisons done at calculated indices
+- Output written to STDOUT
+
+**Control Structures:**
+- Recursive calls in `gcd`
+- For-loop with range `aa`
+- Conditional checks for index comparisons
+- Early termination via `exit()` on failure case
+
+**Input/Output:**
+- Reads integers `n, m` from first input line
+- Reads strings `s, t` from next two lines
+- Outputs `-1` or LCM based on validation checks

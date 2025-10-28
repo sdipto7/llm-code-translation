@@ -1,0 +1,11 @@
+1. Read the number of elements N from the input.
+2. Initialize an array A of size N.
+3. Read N integers from the input and store them in array A.
+4. Initialize three arrays M, L, and R, each of size N.
+5. Set L[0] to A[0].
+6. For i from 1 to N-1, calculate L[i] as the greatest common divisor (GCD) of L[i-1] and A[i].
+7. Set R[N-1] to A[N-1].
+8. For i from N-2 to 0, calculate R[i] as the GCD of R[i+1] and A[i].
+9. Initialize the answer as the maximum of L[N-2] and R[1].
+10. For i from 1 to N-2, calculate the GCD of L[i-1] and R[i+1] and update the answer if it is greater than the current answer.
+11. Output the final answer.

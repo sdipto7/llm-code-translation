@@ -1,0 +1,44 @@
+Function signatures:
+- `main(String[] args)`: void
+- `solve(int testNumber, Scanner in, PrintWriter out)`: void
+
+Variable declarations and data types:
+- `InputStream inputStream`: InputStream
+- `OutputStream outputStream`: OutputStream
+- `Scanner in`: Scanner
+- `PrintWriter out`: PrintWriter
+- `TaskC solver`: TaskC
+- `int n`: int
+- `long[] cnt`: long array of size 5
+- `String str`: String
+- `long res`: long
+
+Logic flow in execution order:
+1. Initialize `inputStream` to `System.in`
+2. Initialize `outputStream` to `System.out`
+3. Initialize `in` to `new Scanner(inputStream)`
+4. Initialize `out` to `new PrintWriter(outputStream)`
+5. Create new instance of `TaskC` and assign to `solver`
+6. Call `solver.solve(1, in, out)`
+7. Close `out`
+
+Inside `solve`:
+1. Read integer `n` from `in`
+2. Initialize `cnt` as a long array of size 5 and fill with 0
+3. For loop from `i = 0` to `i < n`:
+   a. Read string `str` from `in`
+   b. If first character of `str` is 'M', increment `cnt[0]`
+   c. Else if first character of `str` is 'A', increment `cnt[1]`
+   d. Else if first character of `str` is 'R', increment `cnt[2]`
+   e. Else if first character of `str` is 'C', increment `cnt[3]`
+   f. Else if first character of `str` is 'H', increment `cnt[4]`
+4. Calculate `res` as the sum of all combinations of products of three different elements in `cnt`
+5. Print `res` to `out`
+
+Required libraries/modules/dependencies:
+- `java.io.OutputStream`
+- `java.io.IOException`
+- `java.io.InputStream`
+- `java.io.PrintWriter`
+- `java.util.Arrays`
+- `java.util.Scanner`

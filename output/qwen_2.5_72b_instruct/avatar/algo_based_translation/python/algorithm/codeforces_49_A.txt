@@ -1,0 +1,27 @@
+Function signature: `main()`
+
+Variable declarations and data types:
+- `a`: string
+- `vo`: list of strings
+- `i`: integer
+
+Logic flow in execution order:
+1. Read input value and store it in `a`.
+2. Initialize `vo` with a list of vowels (both lowercase and uppercase).
+3. Start a loop from the last index of `a` to the first index (`range(len(a) - 1, -1, -1)`):
+   - If the current character `a[i]` is a space or a question mark, continue to the next iteration.
+   - Otherwise, check if `a[i]` is in the list `vo`:
+     - If true, print "YES" and break the loop.
+     - If false, print "NO" and break the loop.
+
+Control structures:
+- Loop: `for i in range(len(a) - 1, -1, -1)`
+  - Condition: `if a[i] == ' ' or a[i] == '?'`
+  - Condition: `if a[i] in vo`
+
+Input/output operations and data processing logic:
+- Input: `input()`
+- Output: `print("YES")` or `print("NO")`
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules required.

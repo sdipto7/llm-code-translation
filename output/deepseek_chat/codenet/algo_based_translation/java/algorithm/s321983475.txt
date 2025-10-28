@@ -1,0 +1,7 @@
+1. Import java.util.Scanner
+2. Declare main function: public static void main(String[] args)
+3. Create Scanner object: Scanner sc = new Scanner(System.in)
+4. Read three integers: w = sc.nextInt(), a = sc.nextInt(), b = sc.nextInt()
+5. Calculate: difference = Math.max(a, b) - Math.min(a, b) - w
+6. If difference < 0: print 0
+7. Else: print difference

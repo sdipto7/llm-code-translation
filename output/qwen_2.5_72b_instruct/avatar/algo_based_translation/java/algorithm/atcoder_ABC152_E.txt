@@ -1,0 +1,56 @@
+Function signatures:
+- `public static void main(String[] args)`
+- `private static long modDiv(long a, long b, long mod)`
+- `private static long modInv(long x, long mod)`
+- `private static long modPow(long b, long e, long mod)`
+
+Variable declarations and data types:
+- `int N`
+- `int[] A`
+- `BigInteger lcm`
+- `long mod`
+- `long modLcm`
+- `long ans`
+- `Scanner sc`
+- `BigInteger a`
+- `long y`
+- `long ans` (in modPow)
+- `long x` (in modPow)
+
+Logic flow in execution order:
+1. Initialize `Scanner sc` to read input.
+2. Read integer `N`.
+3. Declare array `A` of size `N`.
+4. Loop through `i` from 0 to `N-1`:
+   - Read integer and assign to `A[i]`.
+5. Close `sc`.
+6. Initialize `BigInteger lcm` to `BigInteger.ONE`.
+7. Loop through each element `ai` in `A`:
+   - Convert `ai` to `BigInteger a`.
+   - Update `lcm` using formula `lcm = lcm.divide(lcm.gcd(a)).multiply(a)`.
+8. Set `mod` to 1000000007.
+9. Calculate `modLcm` as `lcm.remainder(BigInteger.valueOf(mod)).longValue()`.
+10. Initialize `ans` to 0.
+11. Loop through each element `ai` in `A`:
+    - Update `ans` using formula `ans = (ans + modDiv(modLcm, ai, mod)) % mod`.
+12. Print `ans`.
+
+Control structures:
+- For loop for reading elements into `A`.
+- For loop for updating `lcm`.
+- For loop for calculating final `ans`.
+- While loop in `modPow` for `y != 0`.
+- If statement inside `modPow` for `(y & 1) == 1`.
+
+Input/output operations:
+- Input: Integer `N`, followed by `N` integers for array `A`.
+- Output: Single long integer `ans`.
+
+Data processing logic:
+- Calculate LCM of array `A` using BigInteger operations.
+- Compute modular inverse and power for modular division.
+- Sum up contributions of each element in `A` to the final result using modular arithmetic.
+
+Required libraries, modules, or dependencies:
+- `java.math.BigInteger`
+- `java.util.Scanner`

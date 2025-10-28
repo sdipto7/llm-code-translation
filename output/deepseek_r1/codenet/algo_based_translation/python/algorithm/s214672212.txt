@@ -1,0 +1,29 @@
+- Function signature:  
+  (Script-based execution, no explicit function)
+
+- Variables:  
+  nums: list<int>  
+
+- Input operations:  
+  Read line from standard input  
+  Split input string by spaces into list<string>  
+  Convert list elements to integers using map  
+  Store result in nums  
+
+- Data processing:  
+  Sort nums in descending order (mutates list)  
+
+- Computation:  
+  Calculate result as (nums[0] * 10) + nums[1] + nums[2]  
+
+- Output operations:  
+  Print computed result as integer  
+
+- Execution flow:  
+  1. Read and parse input  
+  2. Sort list descending  
+  3. Compute value from first three elements  
+  4. Output result  
+
+- Dependencies:  
+  Uses built-in functions only (input, map, list, sort, print)

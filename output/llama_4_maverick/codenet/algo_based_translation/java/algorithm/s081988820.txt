@@ -1,0 +1,75 @@
+1. Read input values H and W.
+2. Initialize a 2D array c of size 10x10.
+3. Read input values into the 2D array c.
+4. Initialize an array min of size 10 with initial values set to c[i][1] for i = 0 to 9.
+5. Perform the following operations 10 times:
+   - For each i from 0 to 9, update min[i] to be the minimum of its current value and the sum of c[i][j] and min[j] for all j from 0 to 9.
+6. Initialize a variable ans to 0.
+7. For each h from 1 to H and w from 1 to W:
+   - Read an input value A.
+   - If A is non-negative, add min[A] to ans.
+8. Output the value of ans.
+
+Required data types and structures:
+- 2D array c of size 10x10 to store input values.
+- Array min of size 10 to store minimum values.
+- Variables H, W, ans, h, w, A to store input and intermediate results.
+
+Input/Output operations:
+- Read input values H and W.
+- Read input values into the 2D array c.
+- Read input values A for each h and w.
+- Output the final value of ans.
+
+Control structures:
+- Loop to read input values into the 2D array c.
+- Loop to initialize the array min.
+- Loop to update the array min 10 times.
+- Nested loops to read input values A and update ans.
+- Conditional statement to check if A is non-negative.
+
+Function signatures:
+- No specific function signatures are required as the algorithm can be implemented in a single main function.
+
+Libraries/Modules:
+- Standard input/output libraries (e.g., java.util.Scanner in Java). 
+
+Here's a simple representation of the algorithm in a structured format:
+
+```java
+public static void main(String[] args) {
+    int H = readInt();
+    int W = readInt();
+    int[][] c = new int[10][10];
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            c[i][j] = readInt();
+        }
+    }
+    int[] min = new int[10];
+    for (int i = 0; i < 10; i++) {
+        min[i] = c[i][1];
+    }
+    for (int tc = 0; tc < 10; tc++) {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                min[i] = Math.min(min[i], c[i][j] + min[j]);
+            }
+        }
+    }
+    int ans = 0;
+    for (int h = 1; h <= H; h++) {
+        for (int w = 1; w <= W; w++) {
+            int A = readInt();
+            if (A >= 0) {
+                ans += min[A];
+            }
+        }
+    }
+    System.out.println(ans);
+}
+
+private static int readInt() {
+    // implement reading an integer from input
+}
+```

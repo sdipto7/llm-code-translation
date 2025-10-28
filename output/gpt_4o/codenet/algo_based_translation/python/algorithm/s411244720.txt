@@ -1,0 +1,30 @@
+```plaintext
+Function Signature:
+    def calculate_unselected_items(N: int, K: int, selections: List[Tuple[int, List[int]]]) -> int
+
+Variable Declarations:
+    - N: int (the total number of items)
+    - K: int (the number of selection rounds)
+    - S: set (a set to store unique selected items)
+    - i: int (loop counter)
+    - d: int (the number of items selected in each round)
+    - A: List[int] (list of selected items in each round)
+
+Logic Flow:
+1. Initialize an empty set S to store unique selected items.
+2. Loop K times (from i = 0 to K - 1):
+   a. For each iteration, retrieve the number of items selected, d, and the list of selected items, A.
+   b. Convert A to a set and update S with the union of S and this set.
+3. Calculate the number of unselected items as the difference between the total number of items, N, and the size of set S.
+4. Return the number of unselected items.
+
+Control Structures:
+- For loop: for i in range(K)
+
+Input/Output Operations:
+- Input: N, K, and selections (a list of tuples containing d and A for each selection round)
+- Output: The number of unselected items
+
+Required Libraries:
+- No external libraries required
+```

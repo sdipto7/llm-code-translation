@@ -1,0 +1,102 @@
+function signatures with parameter and return types:
+- `main_b() -> None`
+- `main() -> int`
+- `pa(v: Any) -> None`
+- `input_clipboard() -> Generator[str, None, None]`
+
+variable declarations and data types:
+- `input_methods: List[str]`
+- `using_method: int`
+- `input_method: str`
+- `mod: int`
+- `s: str`
+- `pp: int`
+- `na: int`
+- `cc: int`
+- `i: int`
+- `c: str`
+- `pmin: int`
+- `mmin: int`
+- `v: int`
+- `npmin: int`
+- `nmmin: int`
+- `ret: Optional[int]`
+- `ic: Generator[str, None, None]`
+- `input_text: str`
+- `input_l: List[str]`
+- `l: str`
+- `isTest: bool`
+
+complete logic flow in execution order:
+1. Import `sys` library
+2. Define `input_methods` list with strings 'clipboard', 'file', 'key'
+3. Initialize `using_method` to 0
+4. Assign `input_methods[using_method]` to `input_method`
+5. Define `IN` lambda function to map integers from split input string
+6. Set `mod` to 1000000007
+7. Define `main_b` function:
+   - Read input string `s`
+   - Initialize `pp` to 0
+   - Initialize `na` to 0
+   - Iterate over reversed `s` with index `i` and character `c`:
+     - Calculate `cc` as `na + int(c)`
+     - Reset `na` to 0
+     - If `cc` <= 4, add `cc` to `pp`
+     - Else, set `na` to 1
+       - If `i` equals length of `s` minus 1, add 1 to `pp`
+       - Add 10 - `cc` to `pp`
+   - Print `pp`
+8. Define `main` function:
+   - Read input string `s`
+   - Initialize `pmin` to 1000
+   - Initialize `mmin` to 0
+   - Prepend '0' to `s`
+   - Iterate over reversed `s` with character `c`:
+     - Convert `c` to integer `v`
+     - Calculate `npmin` as minimum of `pmin + 10 - (v + 1)` and `mmin + 10 - v`
+     - Calculate `nmmin` as minimum of `pmin + v + 1` and `mmin + v`
+     - Update `pmin` to `npmin`
+     - Update `mmin` to `nmmin`
+   - Return minimum of `pmin` and `mmin`
+9. Define `pa` function:
+   - If `isTest` is True, print `v`
+10. Define `input_clipboard` function:
+    - Import `clipboard` library
+    - Get clipboard text `input_text`
+    - Split `input_text` by lines to `input_l`
+    - Yield each line `l` from `input_l`
+11. Check if script is run as main:
+    - If platform is 'ios':
+      - If `input_method` is 'clipboard':
+        - Initialize `ic` as `input_clipboard()` generator
+        - Redefine `input` to lambda function to get next item from `ic`
+      - Else if `input_method` is 'file':
+        - Redirect `sys.stdin` to 'inputFile.txt'
+      - Set `isTest` to True
+    - Call `main` and assign result to `ret`
+    - If `ret` is not None, print `ret`
+
+control structures:
+- Loops:
+  - `for i, c in enumerate(s[::-1])` in `main_b`
+  - `for c in s[::-1]` in `main`
+  - `for l in input_l` in `input_clipboard`
+- Conditionals:
+  - `if cc <= 4` in `main_b`
+  - `if i == len(s) - 1` in `main_b` inside previous if block
+  - `if input_method == input_methods[0]` in main execution block
+  - `elif input_method == input_methods[1]` in main execution block
+  - `if isTest` in `pa`
+
+input/output operations and data processing logic:
+- Read input string `s` using `input()`
+- Split input string by spaces and convert to integers using `map(int, input().split())` in `IN` lambda function
+- Print calculated value `pp` in `main_b`
+- Return calculated minimum value in `main`
+- Print returned value `ret` if not None in main execution block
+- Use `clipboard.get()` to read clipboard text in `input_clipboard`
+- Yield lines from clipboard text in `input_clipboard`
+
+required libraries, modules, or dependencies:
+- `sys` library
+- `clipboard` library (only imported conditionally based on platform and input method)

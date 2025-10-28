@@ -1,0 +1,15 @@
+1. Read n and k from input
+2. Initialize x to 0
+3. If k is less than or equal to maximum of (n squared divided by 2) and (n squared minus (n squared divided by 2))
+4. Then 
+    4.1 Print 'YES'
+    4.2 For i from 0 to n-1
+        4.2.1 For j from 0 to n-1
+            4.2.1.1 If (i modulus 2 equals j modulus 2) and x is less than k
+                4.2.1.1.1 Print 'L'
+                4.2.1.1.2 Increment x by 1
+            4.2.1.2 Else
+                4.2.1.2.1 Print 'S'
+        4.2.2 Print new line
+5. Else 
+    5.1 Print 'NO'

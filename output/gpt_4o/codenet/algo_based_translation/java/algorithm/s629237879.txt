@@ -1,0 +1,22 @@
+```
+- Import required Java libraries: java.io.* and java.util.Arrays
+
+Function main:
+- Parameters: String[] args
+- Return type: void
+- Declare BufferedReader br to read input from System.in
+- Read a line of input using br.readLine() and store in String variable sc
+- Convert sc to an integer n using Integer.parseInt
+- Declare a String array str with size n
+- Loop from i = 0 to n-1
+  - Read a line of input using br.readLine() and assign it to str[i]
+
+Declare String array mark initialized with {"S", "H", "C", "D"}
+
+For each String ma in mark:
+  - Loop from i = 1 to 13 (inclusive)
+    - Convert i to a String s using Integer.toString
+    - Concatenate ma, a space, and s to form String st
+    - If st is not present in str (use Arrays.asList(str).contains(st) for checking)
+      - Print st to the console
+```

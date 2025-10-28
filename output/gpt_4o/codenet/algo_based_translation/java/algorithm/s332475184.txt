@@ -1,0 +1,89 @@
+```plaintext
+Algorithm:
+1. Import necessary libraries: java.util.*, java.io.*
+
+2. Declare class: Main
+   - Declare static integer array: counter
+   - Declare static List of List of Integers: graph
+
+3. Define main method with signature: void main(String[] args)
+   - Initialize FastScanner object: fs
+   - Read integer n using fs.nextInt()
+   - Read integer q using fs.nextInt()
+   - Initialize graph as an ArrayList of LinkedLists of Integers with size n
+   - Initialize counter array with size n
+
+4. Loop from i = 0 to n-2
+   - Read integer a using fs.nextInt() and decrement by 1
+   - Read integer b using fs.nextInt() and decrement by 1
+   - Add b to graph at index a
+   - Add a to graph at index b
+
+5. Loop from i = 0 to q-1
+   - Increment counter at index (fs.nextInt() - 1) by fs.nextInt()
+
+6. Call dfs function with arguments: 0, -1, 0
+
+7. Initialize StringJoiner: sj with delimiter " "
+8. Loop from i = 0 to n-1
+   - Add String value of counter[i] to sj
+
+9. Print sj as a string
+
+10. Define dfs method with signature: void dfs(int v, int par, long val)
+    - Loop through each Integer i in graph at index v
+      - If i is not equal to par
+        - Call dfs with arguments: i, v, val + counter[v]
+    - Increment counter at index v by val
+
+11. Define FastScanner class
+    - Declare InputStream: in initialized to System.in
+    - Declare byte array: buffer with size 1024
+    - Declare integer: ptr initialized to 0
+    - Declare integer: buflen initialized to 0
+
+12. Define method hasNextByte with signature: boolean hasNextByte()
+    - If ptr is less than buflen, return true
+    - Otherwise, set ptr to 0
+    - Try reading bytes into buffer and store result in buflen
+    - If buflen is less than or equal to 0, return false
+    - Return true
+
+13. Define method readByte with signature: int readByte()
+    - If hasNextByte() is true, return buffer[ptr++] else return -1
+
+14. Define method isPrintableChar with signature: boolean isPrintableChar(int c)
+    - Return true if c is between 33 and 126 inclusive
+
+15. Define method hasNext with signature: boolean hasNext()
+    - While hasNextByte() is true and buffer[ptr] is not printable, increment ptr
+    - Return result of hasNextByte()
+
+16. Define method next with signature: String next()
+    - If hasNext() is false, throw NoSuchElementException
+    - Initialize StringBuilder: sb
+    - Read byte into b using readByte()
+    - While b is printable, append character to sb, and read next byte into b
+    - Return sb as a string
+
+17. Define method nextLong with signature: long nextLong()
+    - If hasNext() is false, throw NoSuchElementException
+    - Declare long n initialized to 0
+    - Declare boolean minus initialized to false
+    - Read byte into b using readByte()
+    - If b is '-', set minus to true and read next byte into b
+    - If b is not a digit, throw NumberFormatException
+    - Loop indefinitely
+      - If b is a digit, update n by multiplying by 10 and adding b - '0'
+      - Else if b is -1 or not printable, return n negated if minus is true, else return n
+      - Else, throw NumberFormatException
+      - Read next byte into b using readByte()
+
+18. Define method nextInt with signature: int nextInt()
+    - Call nextLong() and store result in long nl
+    - If nl is outside integer range, throw NumberFormatException
+    - Return nl cast to int
+
+19. Define method nextDouble with signature: double nextDouble()
+    - Return result of Double.parseDouble(next())
+```

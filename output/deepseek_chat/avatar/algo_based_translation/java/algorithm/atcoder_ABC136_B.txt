@@ -1,0 +1,31 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `stdIn`: Scanner (input stream)
+- `N`: int (input number)
+- `count`: int (digit count)
+- `temp`: int (temporary copy of N)
+- `ans`: int (result accumulator)
+- `i`: int (loop counter)
+
+**Libraries:**
+- `java.util.Scanner`
+
+**Algorithm:**
+1. Initialize Scanner to read from standard input
+2. Read integer N from input
+3. Initialize count = 0, temp = N, ans = 0
+4. While temp > 0:
+   - Divide temp by 10 (integer division)
+   - Increment count by 1
+5. For i from 1 to count (inclusive):
+   - If i equals count:
+     - If i is odd (i % 2 == 1):
+       - Add (N - 10^(i-1) + 1 to ans
+   - Else:
+     - If i equals 1:
+       - Add 9 to ans
+     - Else if i is odd (i % 2 == 1):
+       - Add (10^i - 10^(i-1)) to ans
+6. Print ans

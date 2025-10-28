@@ -1,0 +1,41 @@
+Function Signatures:
+- `public static void main(String[] args)`
+- `static void swap(int a, int b)`
+- `static void debug(Object... obj)`
+
+Variable Declarations and Data Types:
+- `Scanner in`
+- `PrintWriter pw`
+- `int a`
+- `int b`
+- `int c`
+- `int t` (local to `swap` method)
+- `Object... obj` (varargs for `debug` method)
+
+Logic Flow and Control Structures:
+1. Initialize `in` as `new Scanner(System.in)`
+2. Initialize `pw` as `new PrintWriter(System.out)`
+3. Read integer `a` from `in`
+4. Read integer `b` from `in`
+5. Initialize `c` to `0`
+6. If `a == 1 && b == 1`, then:
+   - Print `0` using `pw.println(0)`
+7. Else, do the following:
+   - While `a >= 1 || b >= 1`:
+     - If `a >= b`, then:
+       - Increment `b` by `1`
+       - Decrement `a` by `2`
+     - Else:
+       - Increment `a` by `1`
+       - Decrement `b` by `2`
+     - If `a <= 0 || b <= 0`, then:
+       - Increment `c` by `1`
+       - Break the loop
+     - Increment `c` by `1`
+8. Print `c` using `pw.println(c)`
+9. Close `pw` using `pw.close()`
+
+Required Libraries, Modules, or Dependencies:
+- `java.io.*`
+- `java.math.BigInteger`
+- `java.util.*`

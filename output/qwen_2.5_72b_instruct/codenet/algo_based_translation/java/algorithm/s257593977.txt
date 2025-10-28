@@ -1,0 +1,26 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `BASE: int` (constant)
+- `scanner: Scanner`
+- `inputNumber: int` (implicitly through `nextInt()`)
+
+Complete logic flow in execution order:
+1. Declare constant `BASE` with value 3.
+2. Create an instance of `Scanner` to read input from standard input.
+3. Read an integer from the standard input and store it implicitly.
+4. Compute the power of the input number raised to `BASE`.
+5. Cast the result of the power computation to `int`.
+6. Print the casted result to the standard output.
+
+Control structures:
+- No loops or conditionals present.
+
+Input/output operations and data processing logic:
+- Read an integer from the standard input.
+- Compute the power of the input number raised to `BASE`.
+- Print the result to the standard output.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

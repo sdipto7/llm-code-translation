@@ -1,0 +1,38 @@
+```
+Algorithm Main:
+
+  - Initialize:
+    - Import:
+      - java.util.*
+      - java.io.*
+      - java.nio.charset.StandardCharsets
+
+  - Class Main:
+    - Variables:
+      - constraints: List of Long initialized as an empty ArrayList
+      - N: long
+      - result: long
+
+  - Constructor Main():
+    - InputStreamReader reader = new InputStreamReader(System.in, StandardCharsets.UTF_8)
+    - BufferedReader in = new BufferedReader(reader)
+    - N = Parse Long from in.readLine()
+    - For i from 0 to 4:
+      - Parse Long from in.readLine() and add to constraints
+    - Close in
+
+  - Method calc():
+    - Variables:
+      - min: long initialized to Long.MAX_VALUE
+    - For each c in constraints:
+      - Set min to minimum of min and c
+    - time = N / min
+    - If N % min is not equal to 0:
+      - Increment time by 1
+    - Increment time by 4
+    - Set result to time
+
+  - Main method:
+    - Call new Main() and assign to ins
+    - Output ins.result
+```

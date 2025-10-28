@@ -1,0 +1,26 @@
+Function signature: main(String[] args)  
+Variable declarations:  
+- Scanner sc  
+- String s  
+
+Logic flow:  
+1. Create a Scanner object to read input from standard input.  
+2. Read a string input from the user and store it in variable s.  
+3. Check if s equals "Sunny":  
+   - If true, print "Cloudy".  
+4. Else, check if s equals "Cloudy":  
+   - If true, print "Rainy".  
+5. Else:  
+   - Print "Sunny".  
+
+Control structures:  
+- Conditional (if-else if-else) with conditions:  
+  - s.equals("Sunny")  
+  - s.equals("Cloudy")  
+
+Input/output operations:  
+- Input: Read a single string from the user.  
+- Output: Print one of the strings "Cloudy", "Rainy", or "Sunny" based on the input.  
+
+Libraries/modules/dependencies:  
+- java.util.Scanner

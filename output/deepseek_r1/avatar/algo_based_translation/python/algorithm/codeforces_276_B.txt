@@ -1,0 +1,55 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures**
+- `main() -> None`: Entry point procedure. No parameters. Returns nothing.
+
+**Variable Declarations**
+- `s: list[str]`: Stores input characters.
+- `x: bool`: Flag indicating validity of palindrome permutation condition.
+- `dt: dict[str, int]`: Character frequency dictionary.
+- `cnt: int`: Counter for characters with odd frequencies.
+- `key: str`, `value: int`: Iteration variables for dictionary entries.
+
+**Step-by-Step Logic Flow**
+1. Read input string and convert to character list:
+   - `s = list(input())`
+2. Initialize `x` as `True`.
+3. Initialize empty dictionary `dt`.
+4. Populate frequency dictionary:
+   - Loop: For each `i` in `s`:
+     1. If `i` exists in `dt`: `dt[i] += 1`
+     2. Else: `dt[i] = 1`
+5. Reset `cnt` to 0.
+6. Reset `x` to `True`.
+7. Check odd frequencies:
+   - Loop: For each `(key, value)` in `dt.items()`:
+     1. If `value % 2 != 0`:
+         - If `cnt < 1`: `cnt += 1`
+         - Else: `x = False`, exit loop
+8. Determine output:
+   - If `x` is `True`: Print "First"
+   - Else:
+     1. If `len(s) % 2 == 0`: Print "Second"
+     2. Else: Print "First"
+
+**Control Flow Structures**
+- Sequential execution with two loops:
+  1. For-loop (frequency counting): Iterates over input characters once
+  2. For-loop (odd count check): Iterates over dictionary entries once
+- Conditional branching:
+  - Nested if-else in frequency check loop
+  - Three-way branch at output decision (if-elif-elif)
+
+**Input/Output Operations**
+- Input: Single string via `input()`
+- Output: "First" or "Second" printed to stdout
+
+**Edge Case Handling**
+- Empty string: Treated as valid palindrome (`x` remains True)
+- Single-character input: Valid via "First" output
+- All even counts: Valid via "First" output
+- Multiple odd counts: Decision depends on input length parity
+
+**External Dependencies**
+- None beyond standard I/O operations
+- No external libraries or imports required

@@ -1,0 +1,39 @@
+**Structured Algorithm Specification:**
+
+**1. Function/Method Signatures**
+- `main()`: No parameters. Return type: void.
+
+**2. Variable Declarations**
+- `a`: integer (initial value from input)
+- `b`: integer (initial value from input)
+- `c`: integer (initialized to 0)
+- `i`: integer (loop counter)
+
+**3. Input/Output Operations**
+- Input: Read one line from standard input, split into two space-separated integers for `a` and `b`.
+- Output: Write final value of `c` to standard output.
+
+**4. Step-by-Step Logic Flow**
+1. Read input line and parse into integers `a` and `b`.
+2. Initialize `c` to 0.
+3. Loop for `i` in range [0, 2) (2 iterations total):
+   1. Add `max(a, b)` to `c`.
+   2. Execute conditional:
+      - If `a >= b`: Decrement `a` by 1.
+      - Else: Decrement `b` by 1.
+4. Output the final value of `c`.
+
+**5. Control Flow Structures**
+- For-loop: Executes exactly 2 times. Loop variable `i` starts at 0, increments by 1 after each iteration, terminates when `i >= 2`.
+- Conditional in loop:
+  - Condition: `a >= b`
+  - True branch: `a = a - 1`
+  - False branch: `b = b - 1`
+
+**6. Error Handling & Edge Cases**
+- No explicit error handling for invalid/non-integer input.
+- No constraints validation for `a` or `b` becoming negative during execution.
+
+**7. External Dependencies**
+- Standard input/output functions for data handling.
+- `max()` function used for value comparison.

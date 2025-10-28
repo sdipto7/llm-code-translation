@@ -1,0 +1,51 @@
+**Function Signatures:**
+- `public static boolean dfs(int currpos, int[] arr, int target)`
+- `public static void main(String[] args) throws Exception`
+
+**Variables and Data Types:**
+- `Scanner sc` (Scanner object for input)
+- `int n` (integer)
+- `int goal` (integer)
+- `int[] arr` (integer array of size n-1)
+- `boolean isFound` (boolean)
+- `boolean teleport` (boolean)
+
+**Logic Flow:**
+1. Create Scanner object for reading input
+2. Read integer `n` from input
+3. Read integer `goal` from input
+4. Create integer array `arr` of size n-1
+5. For each index `i` from 0 to n-2 (inclusive):
+   - Read integer value into `arr[i]`
+6. Call `dfs(1, arr, goal)` and store result in `isFound`
+7. If `isFound` is true:
+   - Print "YES"
+8. Else:
+   - Print "NO"
+9. Close Scanner
+
+**DFS Function Logic:**
+1. If `currpos` equals `target`:
+   - Return true
+2. If `currpos` equals `arr.length + 1`:
+   - Return false
+3. Calculate next position: `currpos + arr[currpos - 1]`
+4. Recursively call `dfs` with new position and store result in `teleport`
+5. If `teleport` is true:
+   - Return true
+6. Return false
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < n - 1; i++)`
+- If condition: `if (currpos == target)`
+- If condition: `if (currpos == arr.length + 1)`
+- If condition: `if (teleport)`
+- If condition: `if (isFound)`
+
+**Input/Output Operations:**
+- Input: Read integers using `sc.nextInt()`
+- Output: Print "YES" or "NO" using `System.out.println()`
+
+**Required Libraries:**
+- `java.util.Scanner`
+- `java.util.*` (imported but only Scanner used)

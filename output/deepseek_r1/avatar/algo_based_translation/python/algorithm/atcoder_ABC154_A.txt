@@ -1,0 +1,72 @@
+**Structured Algorithm Specification**
+
+**1. Function/Method Signatures**
+- `solve(S: str, T: str, A: int, B: int, U: str) -> void`
+  - Reduces `A` by 1 if `U` matches `S`, reduces `B` by 1 if `U` matches `T`, then prints `A B`
+- `main() -> void`
+  - Orchestrates input processing and calls `solve`
+- `iterate_tokens() -> Generator[str, None, None]` (nested in `main`)
+  - Generates input tokens from stdin
+
+**2. Variable Declarations & Data Types**
+- In `main`:
+  - `tokens: Generator[str, None, None]` (input token generator)
+  - `S: str`, `T: str`, `U: str` (input strings)
+  - `A: int`, `B: int` (input integers)
+- In `solve`:
+  - Parameters `S`, `T`, `U` (str)
+  - Parameters `A`, `B` (int) - modified by reference
+
+**3. Logic Flow**
+
+**3.1 main()**
+1. Define nested token generator `iterate_tokens`
+2. Initialize `tokens` generator
+3. Read `S` via `next(tokens)`
+4. Read `T` via `next(tokens)`
+5. Read and convert `A` via `int(next(tokens))`
+6. Read and convert `B` via `int(next(tokens))`
+7. Read `U` via `next(tokens)`
+8. Invoke `solve(S, T, A, B, U)`
+
+**3.2 solve()**
+1. Compare `U` with `S`:
+   - If equal: `A = A - 1`
+2. Compare `U` with `T`:
+   - If equal: `B = B - 1`
+3. Print `A` and `B` separated by space
+
+**4. Control Flow Structures**
+- `iterate_tokens`:
+  - Outer loop: `for line in sys.stdin`
+  - Inner loop: `for word in line.split()`
+- `solve`:
+  - Two independent `if` conditions (no else/elif)
+- `main`:
+  - Sequential execution with no loops beyond token generation
+
+**5. Input/Output Operations**
+- Input:
+  - Reads from `sys.stdin` via generator
+  - Input order: `S` -> `T` -> `A` -> `B` -> `U`
+  - Type conversions: `A` and `B` converted from str to int
+- Output:
+  - Single print statement in `solve`: space-separated `A B`
+
+**6. Error Handling & Edge Cases**
+- No explicit error handling
+- Assumes input format correctness:
+  - Exactly 5 space-separated tokens in order
+  - `A` and `B` convertible to integers
+- Edge case handling:
+  - Handles `U == S`, `U == T`, both, or neither
+  - Allows `S == T` scenario (double decrement if `U` matches both)
+
+**7. External Dependencies**
+- Imports:
+  - `sys` module for stdin access
+- Library Functions:
+  - `sys.stdin` for input streaming
+  - `str.split()` for tokenization
+  - `int()` for type conversion
+  - `print()` for output

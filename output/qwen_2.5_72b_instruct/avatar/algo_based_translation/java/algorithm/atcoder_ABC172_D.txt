@@ -1,0 +1,28 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner sc` of type `Scanner`
+- `int n` of type `int`
+- `long ans` of type `long`
+- `int i` of type `int`
+
+Logic flow in execution order:
+1. Create a new `Scanner` object `sc` to read input from `System.in`.
+2. Read an integer `n` from the input.
+3. Initialize `ans` to 0.
+4. Start a `for` loop with `i` initialized to 1; continue while `i` is less than `n + 1`; increment `i` by 1 in each iteration:
+   - Calculate `(long) i * ((long) n / (long) i) * (((long) n / (long) i) + 1) / 2` and add the result to `ans`.
+5. Print the value of `ans`.
+
+Control structures:
+- `for` loop with condition `i < n + 1`
+
+Input/output operations:
+- Read an integer `n` from the standard input.
+- Print the final value of `ans` to the standard output.
+
+Data processing logic:
+- For each `i` from 1 to `n`, compute the sum of products of `i` and the number of multiples of `i` up to `n`, add this to `ans`.
+
+Required libraries/modules/dependencies:
+- `java.util.Scanner`

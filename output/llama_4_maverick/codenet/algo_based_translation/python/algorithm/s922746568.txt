@@ -1,0 +1,14 @@
+1. Read an integer `n` from input.
+2. Read a string `s` of length `n` from input.
+3. Initialize counters for 'R', 'G', 'B' in `s`:
+   - `r_cnt` = count of 'R' in `s`
+   - `g_cnt` = count of 'G' in `s`
+   - `b_cnt` = count of 'B' in `s`
+4. Calculate initial answer `ans` = `r_cnt` * `g_cnt` * `b_cnt`.
+5. Iterate over `i` from 0 to `n-1`:
+   - For each `i`, iterate over `d` from 0 to `n-1`:
+     - Calculate `j` = `i` + `d` and `k` = `j` + `d`.
+     - If `k` >= `n`, break the inner loop.
+     - Check if `s[i]`, `s[j]`, and `s[k]` are all different.
+     - If they are different, decrement `ans` by 1.
+6. Output the final value of `ans`.

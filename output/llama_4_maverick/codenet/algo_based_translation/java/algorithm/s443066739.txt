@@ -1,0 +1,67 @@
+1. Import required libraries:
+   - java.io
+   - java.util
+   - java.math
+   - java.util.concurrent
+
+2. Define a class `Main` with the following members:
+   - Static variables:
+     - `br`: BufferedReader initialized with new InputStreamReader(System.in)
+     - `sc`: FastScanner object initialized with `br`
+     - `out`: PrintWriter object initialized with System.out
+     - `rnd`: Random object
+
+3. Define the `main` function with the following signature:
+   - `public static void main(String args[]) throws Exception`
+
+4. Within the `main` function:
+   - Declare an integer variable `n` and assign it the return value of `sc.nextInt()`
+   - Declare a long array `pre` of size `n+1`
+
+5. Iterate from `i=1` to `n` (inclusive) using a for loop:
+   - For each iteration, calculate `pre[i]` as `pre[i-1] + sc.nextLong()`
+
+6. Declare a long variable `min` and initialize it with `Long.MAX_VALUE`
+
+7. Iterate from `i=1` to `n-1` (inclusive) using a for loop:
+   - For each iteration:
+     - Calculate `val1` as `pre[i]` and `val2` as `pre[n] - pre[i]`
+     - Update `min` with the minimum of its current value and the absolute difference between `val1` and `val2`
+
+8. Print the value of `min` to `out`
+   - Close `out`
+
+9. Define a class `FastScanner` with the following members:
+   - Instance variable `in` of type BufferedReader
+   - Instance variable `st` of type StringTokenizer
+
+10. Define a constructor for `FastScanner` that takes a BufferedReader object as a parameter and assigns it to `in`
+
+11. Define the following methods within `FastScanner`:
+    - `nextToken()`: 
+      - Returns a String
+      - Throws Exception
+      - Logic: 
+        - While `st` is null or `st` has no more tokens:
+          - Read a line from `in` and create a new StringTokenizer `st` with the line
+        - Return the next token from `st`
+
+    - `next()`: 
+      - Returns a String
+      - Throws Exception
+      - Logic: Return the result of `nextToken().toString()`
+
+    - `nextInt()`: 
+      - Returns an int
+      - Throws Exception
+      - Logic: Parse the result of `nextToken()` to an integer and return it
+
+    - `nextLong()`: 
+      - Returns a long
+      - Throws Exception
+      - Logic: Parse the result of `nextToken()` to a long and return it
+
+    - `nextDouble()`: 
+      - Returns a double
+      - Throws Exception
+      - Logic: Parse the result of `nextToken()` to a double and return it

@@ -1,0 +1,55 @@
+**Function Signature**
+- `solve() -> None`
+
+**Input/Output Operations**
+- Read two strings from standard input, convert to lists of characters: `S_d`, `T`
+- Print "UNRESTORABLE" if no valid position found
+- Print modified string if solution exists
+
+**Variables**
+- `S_d: list[str]` (input base string with wildcards)
+- `T: list[str]` (target substring)
+- `end: int` (trailing index for comparison window)
+- `first: int` (leading index for comparison window)
+- `t_i: int` (index tracker for target string)
+- `ans: list[str]` (result storage)
+- `s_i: int` (index for scanning S_d during comparison)
+
+**Control Structures**
+1. Main loop: `while first >= 0`
+   - Nested character comparison: `for s_i in range(first, end+1)`
+   - Break condition: `if T[t_i] != S_d[s_i] AND S_d[s_i] != '?'`
+   - Early exit: `else: break` when valid window found
+   - Window adjustment: `first -= 1; end -= 1` after failed match
+
+2. Fallback condition: `else:` after main loop
+   - Print "UNRESTORABLE" and exit
+
+3. Reconstruction phase: `for i in range(first, end+1)`
+   - Character replacement from T to answer
+
+**Data Processing**
+1. Initialize window boundaries:
+   - `end = len(S_d) - 1`
+   - `first = end - len(T) + 1`
+
+2. Sliding window validation:
+   - Compare T with current S_d window
+   - Allow matches where S_d contains T characters or '?'
+   - Terminate search when valid window found
+
+3. Solution construction:
+   - Deep copy S_d to preserve original
+   - Replace validated window with T characters
+   - Convert remaining '?' to 'a' in final string
+
+**Dependencies**
+- `import copy` for `deepcopy` operation
+
+**Execution Flow**
+1. Read input strings
+2. Initialize sliding window parameters
+3. Search for rightmost valid substring position
+4. Handle no-solution case
+5. Build solution using found position
+6. Replace wildcards and output result

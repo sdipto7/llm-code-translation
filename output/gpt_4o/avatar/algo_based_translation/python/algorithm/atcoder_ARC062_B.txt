@@ -1,0 +1,47 @@
+```plaintext
+Function Signature:
+    Function: calculate_score
+    Parameters: None
+    Returns: int
+
+Variable Declarations:
+    s: List of str
+    num_g: int
+    num_p: int
+    score: int
+    x: str
+
+Execution Logic:
+1. Read input from the user and convert it into a list of characters.
+   - s = list(input())
+
+2. Initialize num_g, num_p, and score to 0.
+   - num_g = 0
+   - num_p = 0
+   - score = 0
+
+3. Iterate over each character x in the list s.
+   For each character x in s:
+   - if x is equal to 'g':
+     a. Check if the difference between num_g and num_p is greater than 0.
+        If True:
+            i. Increment score by 1.
+            ii. Increment num_p by 1.
+        Else:
+            i. Assign score to itself (no change).
+            ii. Increment num_g by 1.
+   - elif x is equal to 'p':
+     a. Check if the difference between num_g and num_p is greater than 0.
+        If True:
+            i. Assign score to itself (no change).
+            ii. Increment num_p by 1.
+        Else:
+            i. Decrement score by 1.
+            ii. Increment num_g by 1.
+
+4. Print the final score value.
+   - print(score)
+
+Required Libraries:
+    None
+```

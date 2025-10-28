@@ -1,0 +1,36 @@
+Function Signature:
+- `main()` -> None
+
+Variable Declarations:
+- `record_of_movements` : String
+- `x` : Integer
+- `y` : Integer
+- `d_movement` : Dictionary with Keys as String and Values as Tuple of Integer
+- `d` : Dictionary with Keys as Tuple of Integer and Values as String
+- `bug` : Boolean
+
+Logic Flow:
+1. `record_of_movements` = Input()
+2. `x` = 0
+3. `y` = 0
+4. `d_movement` = {'L': (0, -1), 'R': (0, 1), 'U': (1, 0), 'D': (-1, 0)}
+5. `d` = {(x, y): ''}
+6. `bug` = False
+7. For each `move` in `record_of_movements`:
+    1. `temp` = (x, y)
+    2. `x` += `d_movement[move][0]`
+    3. `y` += `d_movement[move][1]`
+    4. If (x, y) not in `d`:
+        1. For each `step` in `d_movement`:
+            1. If (x + `d_movement[step][0]`, y + `d_movement[step][1]`) != `temp` and (x + `d_movement[step][0]`, y + `d_movement[step][1]`) in `d`:
+                1. `bug` = True
+                2. Break
+    5. Else:
+        1. `bug` = True
+    6. If `bug`:
+        1. Break
+    7. `d[x, y]` = ''
+8. If `bug`:
+    1. Output 'BUG'
+9. Else:
+    1. Output 'OK'

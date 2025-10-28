@@ -1,0 +1,48 @@
+**Algorithm:**
+
+1. **Main Function:**
+   - Parameters: `String args[]` (command-line arguments), returns `void`
+   - Variables:
+     - `Scanner sc` (reads input)
+     - `int n` (input)
+     - `int[] arr` (size `n`)
+     - `int m` (input)
+     - `int[] q` (size `m`)
+   - Logic Flow:
+     1. Read `n` via `sc.nextInt()`
+     2. Initialize `arr[0]` with `sc.nextInt()`
+     3. For `i` from 1 to `n-1`:
+        - Read `x` via `sc.nextInt()`
+        - Set `arr[i] = arr[i-1] + x`
+     4. Read `m` via `sc.nextInt()`
+     5. Initialize `q` by reading `m` integers
+     6. For each `k` from 0 to `m-1`:
+        - Print `fun(arr, q[k], n, m) + 1`
+
+2. **Function `fun`:**
+   - Parameters: `int[] arr`, `int q`, `int n`, `int m`; returns `int`
+   - Variables:
+     - `int res = 0`
+     - `int i = 0`, `int j = n`
+   - Logic Flow:
+     1. While `i <= j`:
+        - Compute `md = i + (j - i) / 2`
+        - If `arr[md] == q`: return `md`
+        - Else if `arr[md] > q`:
+           - Set `res = md`
+           - Set `j = md - 1`
+        - Else: Set `i = md + 1`
+     2. Return `res`
+
+3. **Input/Output Operations:**
+   - Read all values via `Scanner` from `System.in`
+   - Write results via `System.out.println`
+
+4. **Dependencies:**
+   - `java.util.*` (for `Scanner`)
+   - `java.io.*` (for `IOException` handling)
+
+**Control Structures:**
+- Sequential execution in `main`
+- `for` loops for array initialization (0-based indices)
+- `while (i <= j)` in binary search with nested `if-else` conditions

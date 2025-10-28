@@ -1,0 +1,48 @@
+1. Import the following libraries:
+   - `java.util.Arrays`
+   - `java.util.Collections`
+   - `java.util.Scanner`
+
+2. Define the main function:
+   - Signature: `public static void main(String[] args)`
+
+3. Declare and initialize variables:
+   - `Scanner sc = new Scanner(System.in)`
+   - `int n = Integer.parseInt(sc.next())`
+   - `int[] v = new int[100010]`
+   - `Integer[] vo = new Integer[100010]`
+   - `Integer[] ve = new Integer[100010]`
+   - `Integer[] vt = new Integer[100010]`
+
+4. Populate array `v`:
+   - Loop from `i = 0` to `i < n`
+     - `v[i] = Integer.parseInt(sc.next())`
+
+5. Initialize arrays `vo`, `ve`, `vt` with zeroes:
+   - Use `Arrays.fill(vo, 0)`
+   - Use `Arrays.fill(ve, 0)`
+   - Use `Arrays.fill(vt, 0)`
+
+6. Populate arrays `ve`, `vo`, and `vt`:
+   - Loop from `i = 0` to `i < n`
+     - Increment `vt[v[i]]`
+     - If `i % 2 == 0`, increment `ve[v[i]]`
+     - Else, increment `vo[v[i]]`
+
+7. Sort arrays `vo`, `ve`, `vt` in descending order:
+   - Use `Arrays.sort(vo, Collections.reverseOrder())`
+   - Use `Arrays.sort(ve, Collections.reverseOrder())`
+   - Use `Arrays.sort(vt, Collections.reverseOrder())`
+
+8. Determine the minimum number of changes needed:
+   - Declare `int ans = 0`
+   - If `vo[0] + ve[0] == vt[0]`
+     - Set `ans = Math.min(n - vo[0] - ve[1], n - vo[1] - ve[0])`
+   - Else
+     - Set `ans = n - vo[0] - ve[0]`
+
+9. Output the result:
+   - Use `System.out.println(ans)`
+
+10. Close the scanner:
+    - Use `sc.close()`

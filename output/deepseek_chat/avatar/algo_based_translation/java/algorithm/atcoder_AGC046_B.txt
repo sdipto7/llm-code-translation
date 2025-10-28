@@ -1,0 +1,38 @@
+Algorithm:
+- MOD: long constant = 998244353L
+- dp: 2D long array [3001][3001]
+- Function solve(Scanner sc, PrintWriter pw):
+  - A = sc.nextInt()
+  - B = sc.nextInt()
+  - C = sc.nextInt()
+  - D = sc.nextInt()
+  - dp[A][B] = 1
+  - For c from A to C (inclusive):
+    - For d from B to D (inclusive):
+      - If c == A and d == B: continue
+      - ans = 0
+      - If c > A:
+        - part = dp[c-1][d]
+        - ans = part * d
+      - If d > B:
+        - part = dp[c][d-1]
+        - ans = ans + (part * c)
+      - If c > A and d > B:
+        - ans = ans - (dp[c-1][d-1] * (c-1) * (d-1))
+      - dp[c][d] = ((ans % MOD) + MOD) % MOD
+  - pw.println(dp[C][D])
+
+- Function main(String[] args):
+  - sc = Scanner(System.in)
+  - pw = PrintWriter(System.out)
+  - Create atcoder_AGC046_B instance
+  - Call solve(sc, pw)
+  - pw.flush()
+  - pw.close()
+  - sc.close()
+
+Required imports:
+- java.io.PrintWriter
+- java.util.HashMap
+- java.util.Map
+- java.util.Scanner

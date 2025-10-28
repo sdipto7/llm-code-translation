@@ -1,0 +1,11 @@
+1. Read input string from the user.
+2. Convert the input string into a character array.
+3. Initialize a 2D array dp with dimensions equal to the length of the character array and 13.
+4. Initialize a variable base to 1.
+5. Iterate over the character array from right to left.
+6. For each character, check if it is '?'.
+7. If the character is '?', iterate over all possible digits (0-9) and update dp accordingly.
+8. If the character is not '?', update dp based on the digit represented by the character.
+9. Update the base variable by multiplying it with 10 and taking the modulus with 13.
+10. After iterating over the entire character array, return the value stored in dp at the last index and the 5th index (0-indexed).
+11. Ensure all updates to dp are done modulo 1e9 + 7.

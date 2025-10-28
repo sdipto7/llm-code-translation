@@ -1,0 +1,41 @@
+1. Define a class `Main` with a constructor `Main(FastScanner in, PrintWriter out, int test)` that takes input from `in`, writes output to `out`, and uses `test` for test case identification.
+   - Read an integer `N` from `in`.
+   - Declare an integer array `A` of size `N`.
+   - Iterate from `i = 0` to `N-1`, reading integers from `in` and storing them in `A[i]`.
+   - Sort `A` in ascending order.
+
+2. Initialize a `long` variable `res` to 0.
+
+3. Create a `PriorityQueue` named `q` with a custom comparator that compares `int[]` elements based on the minimum of their two elements in descending order.
+   - Add an `int[]` containing `{A[N-1], A[N-1]}` to `q`.
+
+4. Iterate from `i = N-2` to 0.
+   - Remove the top element from `q` and store it in `place`.
+   - Add the minimum of `place[0]` and `place[1]` to `res`.
+   - Add two new `int[]` elements to `q`: `{place[0], A[i]}` and `{A[i], place[1]}`.
+
+5. Write the value of `res` to `out`.
+
+6. In the `main` method:
+   - Create a `PrintWriter` named `out` to write to `System.out`.
+   - Create a `FastScanner` named `in` to read from `System.in`.
+   - Iterate from `t = 1` to 1.
+     - Create an instance of `Main` with `in`, `out`, and `t`.
+
+7. Close `out`.
+
+The `FastScanner` class:
+- Has a constructor `FastScanner(InputStream stream)` that takes an input stream.
+- Has methods:
+  - `int read()`: reads a byte from the input stream.
+  - `boolean isSpaceChar(int c)`: checks if a character is a space, newline, carriage return, tab, or -1.
+  - `boolean isEndline(int c)`: checks if a character is a newline, carriage return, or -1.
+  - `int nextInt()`: reads an integer from the input stream.
+  - `long nextLong()`: reads a long from the input stream.
+  - `double nextDouble()`: reads a double from the input stream.
+  - `String next()`: reads a string from the input stream until a space character is encountered.
+  - `String nextLine()`: reads a line from the input stream until an endline character is encountered.
+
+Required libraries and modules:
+- `java.util`
+- `java.io`

@@ -1,0 +1,12 @@
+1. Read integer `n` from input
+2. Read next line, split into tokens, convert each to float, store as list `arr`
+3. Filter `arr`: for each element `x`, compute fractional part `x - int(x)`
+4. Keep only non-zero fractional parts, then sort resulting list
+5. Compute `o = 2 * n - len(arr)` (count of zero fractional parts)
+6. Compute `arr_sum` as sum of all elements in filtered list
+7. Initialize `res` to 2000000000 (large value)
+8. For `i` from 0 to `n` (inclusive):
+   - If `i + o >= n`:
+     - Compute absolute difference `abs(i - arr_sum)`
+     - Update `res` to minimum of current `res` and computed difference
+9. Print `res` formatted to 3 decimal places

@@ -1,0 +1,28 @@
+Here's the Python code translated from the provided Java code:
+
+```python
+import sys
+
+inp = list(sys.stdin.readline().strip())
+n = int(inp[0])
+m = int(inp[1])
+ans = []
+for i in range(n):
+    s = sys.stdin.readline().strip()
+    row = []
+    for j in range(m):
+        if s[j] == '-':
+            row.append('-')
+        else:
+            row.append('W' if (i + j) % 2 else 'B')
+    ans.append(''.join(row))
+print('\n'.join(ans))
+```
+
+This code preserves all the original functionality and logic flow, including:
+1. Input handling using sys.stdin
+2. Character-by-character processing
+3. Chessboard pattern generation based on (i+j) parity
+4. Output formatting
+
+Note: The input reading logic for dimensions matches the original Java code's behavior of splitting on individual characters, which may require the first input line to contain contiguous digits (e.g., "34" instead of "3 4").

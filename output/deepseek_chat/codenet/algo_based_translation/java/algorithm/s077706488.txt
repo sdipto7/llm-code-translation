@@ -1,0 +1,15 @@
+Algorithm:
+- Import: java.util.Scanner
+- Function: main(String[] args)
+  - Declare Scanner stdIn = new Scanner(System.in)
+  - Declare int N = stdIn.nextInt()
+  - Declare int X = stdIn.nextInt()
+  - Declare int[] m = new int[N]
+  - Assign m[0] = stdIn.nextInt()
+  - Assign X = X - m[0]
+  - Declare int min = m[0]
+  - For loop: i from 1 to N-1 (inclusive)
+    - Assign m[i] = stdIn.nextInt()
+    - Assign X = X - m[i]
+    - If m[i] < min then assign min = m[i]
+  - Print: N + (X / min)

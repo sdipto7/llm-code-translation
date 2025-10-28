@@ -1,0 +1,38 @@
+**Function Signature:**
+- `main(String[] args)` → void
+
+**Variables:**
+- `Scanner sc` (input scanner)
+- `int N` (number of observation towers)
+- `long M` (number of roads)
+- `long[] H` (array of tower heights, size N)
+- `boolean[] ans` (array of boolean flags, size N)
+- `int temp1`, `int temp2` (temporary road endpoints)
+- `int ans2` (counter for good towers)
+
+**Libraries/Dependencies:**
+- `java.util.Scanner`
+
+**Algorithm Steps:**
+
+1. Initialize Scanner `sc` with System.in
+2. Read integer `N` from input
+3. Read long `M` from input
+4. Initialize array `H` of size N with long values
+5. Initialize array `ans` of size N with all values set to true
+6. For i from 0 to N-1:
+   - Read long value into `H[i]`
+7. For i from 0 to M-1:
+   - Read integer `temp1`
+   - Read integer `temp2`
+   - If `H[temp1-1] < H[temp2-1]`:
+        Set `ans[temp1-1]` to false
+   - Else if `H[temp1-1] > H[temp2-1]`:
+        Set `ans[temp2-1]` to false
+   - Else:
+        Set both `ans[temp1-1]` and `ans[temp2-1]` to false
+8. Initialize `ans2` to 0
+9. For i from 0 to N-1:
+   - If `ans[i]` is true:
+        Increment `ans2` by 1
+10. Print `ans2`

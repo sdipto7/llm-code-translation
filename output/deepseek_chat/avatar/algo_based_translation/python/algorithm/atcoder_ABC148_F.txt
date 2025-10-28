@@ -1,0 +1,67 @@
+**Algorithm Extraction:**
+
+**Imports:**
+- collections.Counter
+- collections.defaultdict
+- collections.deque
+- heapq.heappop
+- heapq.heappush
+- heapq.heapify
+- sys
+- bisect
+- math
+- itertools
+- pprint
+- fractions
+
+**Configuration:**
+- Set recursion limit: sys.setrecursionlimit(100000000)
+- mod = 1000000007
+- INF = float('inf')
+
+**Function Definitions:**
+- inp(): int
+  - Read integer from stdin
+  - Return: int
+
+- inpl(): list[int]
+  - Read line from stdin
+  - Split by space and convert to integers
+  - Return: list of integers
+
+**Main Execution:**
+1. Read n, ta, ao = inpl()
+2. Decrement ta and ao by 1
+3. Initialize adjacency list g: list[list[int]] of size n
+4. For i in range(n-1):
+   - Read a, b = inpl()
+   - Decrement a and b by 1
+   - Add b to g[a]
+   - Add a to g[b]
+
+5. Initialize ta_dist: list[Optional[int]] of size n, all None
+6. Set ta_dist[ta] = 0
+7. Initialize ao_dist: list[Optional[int]] of size n, all None
+8. Set ao_dist[ao] = 0
+
+**Function Definitions:**
+- ta_dfs(node: int): None
+  - For each neighbor v in g[node]:
+    - If ta_dist[v] is not None: continue
+    - Set ta_dist[v] = ta_dist[node] + 1
+    - Call ta_dfs(v)
+
+- ao_dfs(node: int): None
+  - For each neighbor v in g[node]:
+    - If ao_dist[v] is not None: continue
+    - Set ao_dist[v] = ao_dist[node] + 1
+    - Call ao_dfs(v)
+
+**Execution:**
+9. Call ao_dfs(ao)
+10. Call ta_dfs(ta)
+11. Initialize res = 0
+12. For i in range(n):
+    - If ta_dist[i] > ao_dist[i]: continue
+    - res = max(res, ao_dist[i])
+13. Print res - 1

@@ -1,0 +1,5 @@
+Read two integers from standard input, storing them as variables a and b.
+If both a is less than or equal to 8 and b is less than or equal to 8:
+    Print "Yay!"
+Else:
+    Print ":("

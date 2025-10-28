@@ -1,0 +1,6 @@
+Read two integers A and B from input, split by space
+Read a string and convert to list of characters S
+Check if the character at index A in S is equal to '-'
+Check if the total count of '-' characters in S is exactly 1
+If both conditions are true, output "Yes"
+Otherwise, output "No"

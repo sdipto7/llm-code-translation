@@ -1,0 +1,86 @@
+### Algorithm
+
+#### Function Signatures and Variable Declarations
+
+- `main(String[] args)`: void
+- `sort(int[] a)`: void
+- `InputReader(InputStream in)`: InputReader
+- `readByte()`: int
+- `isSpaceChar(int c)`: boolean
+- `skip()`: int
+- `next()`: String
+- `nextInt()`: int
+- `nextLong()`: long
+- `toIntArray(int n)`: int[]
+
+Variables:
+- `InputStream in`
+- `PrintWriter out`
+- `int m, n`
+- `int[] manju, boxlen, boxcost`
+- `int[][] dp`
+- `InputReader ir`
+- `byte[] buffer`
+- `int curbuf, lenbuf`
+- `StringBuilder sb`
+- `int b, c, res`
+- `long res`
+- `boolean minus`
+
+#### Logic Flow
+
+1. Initialize `InputStream in` and `PrintWriter out` with `System.in` and `System.out` respectively.
+2. Create an instance of `InputReader` with `in`.
+3. Read `m` and `n` using `ir.nextInt()`.
+4. Read `m` integers into `manju` using `ir.toIntArray(m)`.
+5. Read `n` pairs of integers into `boxlen` and `boxcost`.
+6. Call `sort(manju)` to sort the `manju` array.
+7. Initialize a 2D array `dp` with dimensions `(m+1) x (n+1)`.
+8. Iterate over `i` from `m-1` to `0` and `j` from `n-1` to `0`.
+   - Calculate `len = min(m, i + boxlen[j])`.
+   - Initialize `cnt = 0`.
+   - Iterate from `i` to `len-1` and sum `manju[m-1-k]` into `cnt`.
+   - Update `dp[i][j]` with the maximum of its current value, `dp[len][j+1] + cnt - boxcost[j]`, and `dp[i][j+1]`.
+9. Print `dp[0][0]` using `out.println()`.
+10. Flush `out` using `out.flush()`.
+
+#### Control Structures
+
+- Loop: `for (int i = m-1; i >= 0; i--)`
+- Loop: `for (int j = n-1; j >= 0; j--)`
+- Loop: `for (int k = i; k < len; k++)`
+- Conditional: `if (lenbuf == -1)`
+- Conditional: `if (curbuf >= lenbuf)`
+- Conditional: `if (c == '-')`
+- Conditional: `if (c < '0' || c > '9')`
+- Conditional: `while ((b = readByte()) != -1 && isSpaceChar(b))`
+- Conditional: `while (!isSpaceChar(b))`
+- Conditional: `while (isSpaceChar(c))`
+
+#### Input/Output Operations
+
+- `in.read(buffer)`
+- `out.println(dp[0][0])`
+- `out.flush()`
+
+#### Data Processing Logic
+
+- The `sort` function shuffles the array and then sorts it using `Arrays.sort()`.
+- The `InputReader` class reads input from the stream and provides methods to read integers, longs, and strings.
+
+#### Required Libraries and Modules
+
+- `java.io.InputStream`
+- `java.io.InputStreamReader`
+- `java.io.IOException`
+- `java.io.PrintWriter`
+- `java.util.ArrayDeque`
+- `java.util.ArrayList`
+- `java.util.Arrays`
+- `java.util.Comparator`
+- `java.util.Deque`
+- `java.util.HashMap`
+- `java.util.InputMismatchException`
+- `java.util.Map`
+- `java.util.PriorityQueue`
+- `java.math.BigInteger`

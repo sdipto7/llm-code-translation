@@ -1,0 +1,38 @@
+```plaintext
+Function Signature:
+- resolve() -> None
+
+Variable Declarations:
+- n: int
+- low: list of int
+- high: list of int
+- a: int
+- b: int
+- hh: float
+- ll: float
+
+Algorithm:
+1. Read an integer 'n' from input.
+2. Initialize empty lists 'low' and 'high'.
+3. For each index 'i' from 0 to n-1:
+   a. Read two integers 'a' and 'b' from input.
+   b. Append 'a' to the 'low' list.
+   c. Append 'b' to the 'high' list.
+4. Sort the 'low' list in ascending order.
+5. Sort the 'high' list in ascending order.
+6. If 'n' is odd:
+   a. Calculate the median of the 'high' list using the index (n + 1) // 2 - 1.
+   b. Calculate the median of the 'low' list using the index (n + 1) // 2 - 1.
+   c. Output the difference between the medians of 'high' and 'low' plus 1.
+7. If 'n' is even:
+   a. Calculate 'hh' as the average of the two middle elements of the 'high' list using indices n // 2 - 1 and n // 2.
+   b. Calculate 'll' as the average of the two middle elements of the 'low' list using indices n // 2 - 1 and n // 2.
+   c. Output twice the difference between 'hh' and 'll' plus 1, converted to an integer.
+
+Input/Output Operations:
+- Input: Read integers from the standard input.
+- Output: Print the calculated integer value to the standard output.
+
+Required Libraries:
+- None
+```

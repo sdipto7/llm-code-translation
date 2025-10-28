@@ -1,0 +1,31 @@
+```
+Algorithm:
+1. Import required libraries: `java.io.*` and `java.util.StringTokenizer`.
+2. Define the main class `codeforces_313_B` with a `main` method.
+   - Parameters: `String[] args`
+   - Throws: `IOException`
+3. In the `main` method:
+   - Create a `BufferedReader` object `br` to read from `System.in`.
+   - Create a `PrintWriter` object `pw` to write to `System.out`.
+   - Instantiate the `Fast` class as `f`.
+   - Call the `sol` method of `f`, passing `br` and `pw`.
+   - Close the `PrintWriter` `pw`.
+4. Define the `Fast` class with a method `sol`.
+   - Parameters: `BufferedReader br`, `PrintWriter pw`
+   - Throws: `IOException`
+5. In the `sol` method:
+   - Read a line from `br` and create a `StringTokenizer` `st` with it.
+   - Extract the string `s` from `st`.
+   - Declare an integer array `cum` with length `s.length() + 1`.
+   - Initialize `cum[0]` and `cum[s.length()]` to 0.
+   - For each integer `i` from 1 to `s.length() - 1`:
+     - If `s.charAt(i)` equals `s.charAt(i - 1)`, set `cum[i]` to `cum[i - 1] + 1`.
+     - Else, set `cum[i]` to `cum[i - 1]`.
+   - Read another line from `br` and initialize `st` with it.
+   - Parse an integer `q` from `st`.
+   - While `q` is not zero:
+     - Decrement `q`.
+     - Read a line from `br` and initialize `st` with it.
+     - Parse integers `l` and `r` from `st`, where `r` is decremented by 1.
+     - Compute `cum[r] - cum[l - 1]` and print it using `pw.println`.
+```

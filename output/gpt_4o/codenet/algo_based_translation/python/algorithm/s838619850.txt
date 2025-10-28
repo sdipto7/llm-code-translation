@@ -1,0 +1,41 @@
+```
+Function Signature:
+    def minimal_difference(S: str, T: str) -> int
+
+Variable Declarations:
+    S: str
+    T: str
+    N: int
+    M: int
+    ans: int
+    i: int
+    S_2: str
+    j: int
+    cnt: int
+
+Logic Flow:
+1. Read input string S.
+2. Read input string T.
+3. Determine the length of S and assign it to N.
+4. Determine the length of T and assign it to M.
+5. Initialize ans to M.
+6. Loop over the range from 0 to N-M+1:
+    a. Assign the substring of S from index i to i+M to S_2.
+    b. Initialize cnt to 0.
+    c. Loop over the range from 0 to M:
+        i. If the character at index j in T is not equal to the character at index j in S_2, increment cnt by 1.
+    d. Assign the minimum of ans and cnt to ans.
+7. Output the value of ans.
+
+Control Structures:
+- for loop with condition `i in range(N-M+1)`
+- inner for loop with condition `j in range(M)`
+- if conditional with condition `T[j] != S_2[j]`
+
+Input/Output Operations:
+- Input: Read two strings, S and T.
+- Output: Print the integer result stored in ans.
+
+Required Libraries, Modules, or Dependencies:
+- None
+```

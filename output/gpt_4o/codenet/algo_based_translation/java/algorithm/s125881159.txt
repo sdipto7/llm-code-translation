@@ -1,0 +1,27 @@
+Algorithm:
+1. Import necessary libraries:
+   - Import `java.util.Scanner` for input handling.
+   - Import `java.lang.System` for input/output operations.
+
+2. Define the main function:
+   - Function signature: `public static void main(String[] args)`
+   - Parameters: `args` is an array of strings (command line arguments).
+   - Return type: `void` (no return value).
+
+3. Initialize input handling:
+   - Create an instance of `Scanner` named `sc` to read from standard input (`System.in`).
+
+4. Declare and initialize variables:
+   - `int n`: Read an integer from input using `sc.nextInt()`. This represents the number of subsequent integers to process.
+   - `int d`: Initialize to `0`. This will store the count of odd integers.
+
+5. Process each integer:
+   - Loop over a range from `0` to `n - 1` using a `for` loop with loop variable `i`:
+     - Read an integer from input using `sc.nextInt()`.
+     - Check if the integer is odd using the condition `sc.nextInt() % 2`.
+     - If the integer is odd, increment `d` by `1`.
+
+6. Determine the output:
+   - Use a conditional expression to check if `d` is even by evaluating `d % 2 == 0`.
+   - If `d` is even, print `"YES"` using `System.out.println()`.
+   - If `d` is odd, print `"NO"` using `System.out.println()`.

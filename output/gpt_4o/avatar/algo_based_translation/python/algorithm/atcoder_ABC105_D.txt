@@ -1,0 +1,27 @@
+- Function Signature:
+  - Input: None
+  - Output: None (prints an integer)
+
+- Variable Declarations:
+  - `N`: int
+  - `M`: int
+  - `A`: numpy.ndarray of int64
+  - `cum_remainders`: numpy.ndarray of int64
+  - `remainder_counts`: collections.Counter
+  - `combinations`: int
+  - `count`: int
+
+- Required Libraries:
+  - `sys` for reading standard input
+  - `collections.Counter` for counting occurrences
+  - `numpy` for numerical operations
+
+- Logic Flow:
+  1. Read a line of input from standard input and split it into two integers, `N` and `M`.
+  2. Read a second line of input, split it into a list of integers, and store it in a numpy array `A` of type `int64`.
+  3. Create a new array by horizontally stacking `0` to the front of `A`, then compute the cumulative sum modulo `M` of this array and store it in `cum_remainders`.
+  4. Count the occurrences of each unique value in `cum_remainders` using `collections.Counter` and store it in `remainder_counts`.
+  5. Initialize `combinations` to zero.
+  6. Iterate over each `count` in the values of `remainder_counts`.
+     - For each `count`, add `count * (count - 1) // 2` to `combinations`.
+  7. Print the value of `combinations`.

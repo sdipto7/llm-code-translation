@@ -1,0 +1,45 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main()`: void (Entry point, no parameters or return)
+
+**Variables:**
+- `n`: int (Number of characters in the string)
+- `m`: int (Number of queries)
+- `sa`: int (Minimum count between '-' and non-'-' characters)
+- `ss`: List[str] (Result strings for each query)
+- `a`: int (First query parameter, adjusted to compute `b`)
+- `b`: int (Second query parameter, adjusted during processing)
+
+**Logic Flow:**
+1. **Input Handling:**
+   - Read `n` and `m` from input (space-separated integers).
+   - Read next input line and count occurrences of '-'; assign to `sa`.
+   - Reassign `sa` as `min(n - sa, sa)`.
+   - Initialize empty list `ss`.
+
+2. **Process Queries:**
+   - For exactly `m` iterations:
+     1. Read `a` and `b` (space-separated integers).
+     2. Compute adjusted `b` as `b - a`.
+     3. Evaluate condition: `(b % 2 == 1) AND (b <= 2 * sa)`.
+     4. Append "1\n" to `ss` if condition is true; append "0\n" otherwise.
+
+3. **Output:**
+   - Join all elements in `ss` into a single string.
+   - Print the resulting string.
+
+**Control Flow Structures:**
+- Loop: `for _ in range(m)` (Fixed iteration count of `m`)
+- Conditional: Ternary logic for appending "1\n" or "0\n" based on boolean evaluation.
+
+**Input/Output:**
+- Inputs via `input()`: Two initial integers, one string, `m` pairs of integers.
+- Output via `print()`: Concatenated results from `ss`.
+
+**Edge Case Handling:**
+- Implicit handling of `sa` as the minimum valid count between two possibilities.
+- Assumes valid integer inputs and properly formatted query pairs.
+
+**External Dependencies:**
+- Standard input/output functions (no external libraries required).

@@ -1,0 +1,54 @@
+**Algorithm:**
+
+**Input:**
+- Integers N, Q
+- Q queries: each query provides (l, r, D) where l and r are 1-indexed indices
+
+**Data Structures:**
+- MOD2 = 998244353 (prime modulus)
+- tenmod: array of length N+1 storing powers of 10 modulo MOD2
+- inv9: modular inverse of 9 modulo MOD2
+
+**Classes:**
+- S (Segment tree node):
+  - Fields: sum (long), l (int), r (int)
+  - Static E: identity element with sum=0, l=MAX_VALUE/2, r=MIN_VALUE/2
+  - op(S s1, S s2): returns new S with sum = (s1.sum + s2.sum) % MOD2, l = min(s1.l, s2.l), r = max(s1.r, s2.r)
+  - map(F f, S s): computes geometric series value for range [s.l, s.r] with digit D
+
+- F (Lazy propagation function):
+  - Fields: D (long), N (int)
+  - Static I: identity function with D=0, N=0
+  - composite(F f, F g): returns new F(f.D, f.N) - only the most recent update matters
+
+**Functions:**
+- modInv(x): returns x^(MOD2-2) mod MOD2 using modPow
+- modPow(x, y): computes x^y mod MOD2 using exponentiation by squaring
+
+**Initialization:**
+1. Precompute tenmod[0..N] where tenmod[i] = 10^i mod MOD2
+2. Initialize segment tree with N nodes:
+   - Each node i gets: S(tenmod[N-i-1], i, i)
+3. Create lazy segment tree with:
+   - Operator: S::op
+   - Identity: S.E
+   - Mapping function: S::map
+   - Composition function: F::composite
+   - Identity function: F.I
+
+**Query Processing:**
+For each query (l, r, D):
+1. Convert l, r to 0-indexed: l = l-1, r = r-1
+2. Apply lazy update on range [l, r+1] with F(D, N)
+3. Output the sum from the root node (allProd().sum)
+
+**Lazy Segment Tree Operations:**
+- build: constructs segment tree from initial array
+- push: propagates lazy updates to children
+- pushTo: pushes updates along path to specific nodes
+- updateFrom: updates parent nodes from children
+- apply(range): applies function to range and handles lazy propagation
+
+**Input Handling:**
+- InputReader class handles efficient reading of input data
+- Supports reading integers, longs, doubles, arrays and character maps

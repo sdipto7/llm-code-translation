@@ -1,0 +1,28 @@
+- Function signature:  
+  `public static void main(String[] args)` (void return, String array parameter)  
+
+- Variables:  
+  - `Scanner sc` (Scanner type)  
+  - `int A1`, `int A2`, `int A3`  
+
+- Execution flow:  
+  1. Create `Scanner` object reading from `System.in`  
+  2. Read next integer from input → store in `A1`  
+  3. Read next integer from input → store in `A2`  
+  4. Read next integer from input → store in `A3`  
+  5. Calculate sum `A1 + A2 + A3`  
+  6. If sum `>= 22`:  
+     - Print "bust" to standard output  
+  7. Else:  
+     - Print "win" to standard output  
+
+- Control structures:  
+  - Single `if` condition: `(A1 + A2 + A3) >= 22`  
+  - `else` clause for all cases not meeting condition  
+
+- Input/Output:  
+  - Input: Three consecutive integers from standard input  
+  - Output: "bust" or "win" string based on sum comparison  
+
+- Dependencies:  
+  - Requires `java.util.Scanner` for input handling

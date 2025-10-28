@@ -1,0 +1,30 @@
+**Function Signature:**
+- `public static void main(String[] args) throws IOException`
+
+**Imports/Dependencies:**
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.util.*`
+- `java.math.*`
+
+**Variables:**
+- `BufferedReader br` initialized with `new BufferedReader(new InputStreamReader(System.in))`
+- `StringBuilder sb` initialized as empty
+- `String a` initialized via `br.readLine()`
+
+**Logic Flow:**
+1. Declare and initialize `BufferedReader br` for input reading
+2. Declare and initialize `StringBuilder sb` for output construction
+3. Read input line into `String a` using `br.readLine()`
+4. Replace all commas (",") in `a` with spaces (" ") using `a.replace(",", " ")`
+5. Append modified string to `sb`
+6. Print contents of `sb` via `System.out.println`
+
+**Control Structures:**
+- No explicit loops or conditionals
+
+**Input/Output:**
+- Input: Single line read from standard input
+- Processing: String replacement operation
+- Output: Modified string written to standard output

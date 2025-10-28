@@ -1,0 +1,15 @@
+1. Input n, L, R, QL, QR
+2. Input array W of size n
+3. Initialize sum_el array of size n+1 with sum_el[0] = 0
+4. For i from 1 to n:
+   4.1 sum_el[i] = W[i-1] + sum_el[i-1]
+5. Initialize answer = QR * (n-1) + sum_el[n] * R
+6. For i from 1 to n:
+   6.1 energy = L * sum_el[i] + R * (sum_el[n] - sum_el[i])
+   6.2 If i > (n-i):
+      6.2.1 energy = energy + (i - (n-i) - 1) * QL
+   6.3 Else If (n-i) > i:
+      6.3.1 energy = energy + ((n-i) - i - 1) * QR
+   6.4 If energy < answer:
+      6.4.1 answer = energy
+7. Output answer

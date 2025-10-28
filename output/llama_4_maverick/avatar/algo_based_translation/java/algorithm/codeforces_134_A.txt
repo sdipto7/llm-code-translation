@@ -1,0 +1,12 @@
+1. Read the number of elements, n.
+2. Initialize an array of size n to store the elements.
+3. Initialize a variable, sum, to store the sum of the elements.
+4. Iterate from 0 to n-1 and store each input element in the array.
+5. For each element stored in the array, add it to the sum.
+6. Initialize a counter, c, to count the number of valid elements.
+7. Initialize a string to store the indices of valid elements.
+8. Iterate from 0 to n-1 over the array.
+9. For each element, check if (sum - current element) is divisible by (n - 1) and if the result equals the current element.
+10. If the condition is met, increment the counter and append the index + 1 to the string.
+11. Print the counter.
+12. Print the string containing the indices of valid elements.

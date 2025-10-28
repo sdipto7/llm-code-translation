@@ -1,0 +1,6 @@
+1. Read first input string and store in variable `s`
+2. Read second input string and store in variable `search_str`
+3. Concatenate `s` with itself to create `doubled_s`
+4. Check if `search_str` is a substring of `doubled_s`
+5. If substring exists: output "Yes"
+6. If substring does not exist: output "No"

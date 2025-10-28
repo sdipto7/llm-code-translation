@@ -1,0 +1,35 @@
+Algorithm:
+
+1. Import the necessary libraries:
+   - `java.io.BufferedReader`
+   - `java.io.IOException`
+   - `java.io.InputStreamReader`
+
+2. Define the main function:
+   - Signature: `public static void main(String[] args) throws IOException`
+
+3. Declare and initialize variables:
+   - `BufferedReader br` to read input from the console.
+   - `String line` to store the input line from the console.
+
+4. Read the input:
+   - Use `br.readLine()` to read a line from the input and assign it to `line`.
+
+5. Process the input data:
+   - Split `line` into an array of strings `list` using the delimiter `" "` (space).
+
+6. Convert input data to integers:
+   - `int x = Integer.parseInt(list[0])`
+   - `int a = Integer.parseInt(list[1])`
+   - `int y = Integer.parseInt(list[2])`
+
+7. Initialize output variable:
+   - `String h = "NO"`
+
+8. Evaluate conditions:
+   - If any of `x`, `a`, or `y` equals `5` or `7`:
+     - Check if the sum of `x`, `a`, and `y` equals `17`.
+     - If true, set `h = "YES"`.
+
+9. Output the result:
+   - Print the value of `h` using `System.out.println(h)`.

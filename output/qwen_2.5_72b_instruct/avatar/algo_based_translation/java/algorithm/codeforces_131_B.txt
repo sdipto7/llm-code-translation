@@ -1,0 +1,36 @@
+Function signature:
+- `main(String[] args)`: void
+
+Variable declarations and data types:
+- `scan`: Scanner
+- `n`: int
+- `N`: int (constant, value 100005)
+- `cnt`: long[]
+- `res`: long
+- `i`: int
+
+Logic flow in execution order:
+1. Initialize `scan` as a new Scanner object for reading input.
+2. Read an integer `n` from the input.
+3. Define a constant `N` with a value of 100005.
+4. Initialize an array `cnt` of type long with size 21.
+5. Loop `i` from 0 to `n-1`:
+   - Read an integer from the input, add 10 to it, and increment the corresponding index in `cnt`.
+6. Initialize `res` to 0.
+7. Loop `i` from 0 to 9:
+   - Add the product of `cnt[i]` and `cnt[20-i]` to `res`.
+8. Add the result of `(cnt[10] * (cnt[10] - 1)) / 2` to `res`.
+9. Print the value of `res`.
+
+Control structures:
+- For loop with condition `i < n` for reading inputs and updating `cnt`.
+- For loop with condition `i < 10` for calculating the result.
+
+Input/output operations and data processing logic:
+- Read an integer `n` from the input.
+- Read `n` integers from the input, adjust each by adding 10, and count occurrences in `cnt`.
+- Calculate the number of pairs `(i, j)` where `i + j = 10` using counts in `cnt`.
+- Print the result.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

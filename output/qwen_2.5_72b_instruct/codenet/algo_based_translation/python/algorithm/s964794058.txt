@@ -1,0 +1,50 @@
+Function signature: main() -> None
+
+Variable declarations:
+- memTime: int
+- memLate: List[int]
+- colorList: List[int]
+- memColor: int
+- highLate: int
+- color: int
+- member: int
+- minColor: int
+- maxColor: int
+
+Logic flow:
+1. memTime = int(input())
+2. memLate = input().split()
+3. memLate = [int(i) for i in memLate]
+4. colorList = []
+5. memColor = 0
+6. highLate = 0
+7. for color in range(memTime):
+    7.1 member = memLate[color]
+    7.2 if member // 400 >= 8:
+        7.2.1 highLate += 1
+    7.3 elif ((member // 400) in colorList) == False:
+        7.3.1 colorList.append(member // 400)
+8. maxColor = len(colorList) + highLate
+9. minColor = len(colorList)
+10. if minColor == 0:
+    10.1 minColor = 1
+11. print(str(minColor) + " " + str(maxColor))
+
+Input/output operations:
+- Input: two lines, first line is an integer memTime, second line is a space-separated string of integers memLate
+- Output: a single line with two space-separated integers, minColor and maxColor
+
+Data processing logic:
+- Read an integer memTime representing the number of members.
+- Read a list of integers memLate representing the lateness of each member.
+- Initialize an empty list colorList to store unique color identifiers.
+- Initialize highLate to count members with lateness // 400 >= 8.
+- For each member's lateness value:
+    - If the lateness value divided by 400 is 8 or more, increment highLate.
+    - If the lateness value divided by 400 is not already in colorList, add it to colorList.
+- Calculate maxColor as the sum of the length of colorList and highLate.
+- Determine minColor as the length of colorList, ensuring it is at least 1.
+- Print minColor and maxColor.
+
+Required libraries, modules, or dependencies:
+- No specific libraries or modules required

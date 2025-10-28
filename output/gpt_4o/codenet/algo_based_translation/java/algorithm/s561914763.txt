@@ -1,0 +1,21 @@
+- Import required libraries: HashSet, Scanner, Set from java.util package.
+- Declare two static Set<String> variables: ODD and EVE.
+- Initialize the ODD set with strings: "R", "U", "D".
+- Initialize the EVE set with strings: "L", "U", "D".
+- Define the main function with a void return type and no parameters:
+  - Declare Scanner object `sc` for input reading.
+  - Read a line of input from the user and store it in a String variable `N`.
+  - Convert the String `N` into a character array `tap`.
+  - Declare a boolean variable `isGood` and initialize it to true.
+  - For loop from `i = 0` to `i < N.length()`:
+    - If `(i + 1) % 2 == 0` (i is even in 1-based index):
+      - If `isMatch(EVE, tap[i])` returns false:
+        - Set `isGood` to false.
+        - Break the loop.
+    - Else (i is odd in 1-based index):
+      - If `isMatch(ODD, tap[i])` returns false:
+        - Set `isGood` to false.
+        - Break the loop.
+  - Output "Yes" if `isGood` is true, otherwise output "No".
+- Define the method `isMatch` with parameters `Set<String> set` and `char c`, returning a boolean:
+  - Return the result of `set.contains(String.valueOf(c))`.

@@ -1,0 +1,33 @@
+Function signature: main() -> None
+
+Variable declarations:
+- N: int
+- A: list of int
+- cnt: int
+- i: int
+- d: int
+
+Logic flow:
+1. Read an integer input and assign it to N.
+2. Create a list A of N integers where each element is calculated as (input integer * N) + i for i ranging from 0 to N-1.
+3. Sort the list A.
+4. Initialize cnt to 0.
+5. Loop over each index i from 0 to N-1:
+   - Calculate d as (A[i] % N) % 2.
+   - If d % 2 is not equal to i % 2, increment cnt by 1.
+6. Print the integer division of cnt by 2.
+
+Input/output operations:
+- Read a single integer from standard input to initialize N.
+- Read N integers from standard input to calculate the elements of A.
+- Print a single integer to standard output which is the result of cnt // 2.
+
+Data processing logic:
+- The list A is generated based on the formula provided.
+- The list A is sorted to ensure the elements are in ascending order.
+- The loop checks the parity of the remainder of each element in A divided by N and compares it with the parity of its index.
+- The counter cnt is incremented whenever the parities do not match.
+- The final result is half of the count of mismatched parities, indicating the number of swaps needed to make the parities match.
+
+Libraries/modules/dependencies:
+- No external libraries or modules are required.

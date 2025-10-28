@@ -1,0 +1,59 @@
+1. Import required modules: 
+   - re
+   - math
+   - collections (specifically defaultdict)
+   - itertools
+   - copy (specifically deepcopy)
+   - random
+   - heapq (specifically heappop and heappush)
+   - time
+   - os
+   - queue
+   - sys
+   - datetime
+   - functools (specifically lru_cache)
+
+2. Define constants:
+   - alphabet: a string of lowercase English letters
+   - mod: an integer representing a modulus value (10^9 + 7)
+   - inf: an integer representing infinity (10^20)
+
+3. Define utility functions:
+   - yn(b: bool): prints "yes" if b is True, "no" otherwise
+   - Yn(b: bool): prints "Yes" if b is True, "No" otherwise
+   - YN(b: bool): prints "YES" if b is True, "NO" otherwise
+   - is_power(a: int, b: int): checks if a is a power of b
+   - bin_(num: int, size: int): converts num to a binary list of length size
+   - get_facs(n: int, mod_: int): calculates factorials up to n modulo mod_
+   - comb(n: int, r: int, mod: int, fac: list): calculates combinations using precomputed factorials
+   - next_comb(num: int, size: int): generates the next combination in lexicographic order
+   - get_primes(n: int, type: str): generates prime numbers up to n
+   - is_prime(num: int): checks if num is prime
+   - ifelse(a: bool, b, c): returns b if a is True, c otherwise
+   - join(A: list, c: str): joins elements of A with c
+   - factorize(n: int, type_: str): factorizes n into prime factors
+   - floor_(n: int, x: int): calculates the floor of n divided by x
+   - ceil_(n: int, x: int): calculates the ceiling of n divided by x
+   - hani(x, min_, max_): clamps x to the range [min_, max_]
+   - seifu(x): returns the sign of x
+
+4. Define a class union_find with methods:
+   - __init__(self, n: int): initializes the union-find data structure
+   - find(self, x: int): finds the representative of the set containing x
+   - same(self, x: int, y: int): checks if x and y are in the same set
+   - link(self, x: int, y: int): merges the sets containing x and y
+   - unite(self, x: int, y: int): merges the sets containing x and y
+   - size(self): returns the number of distinct sets
+
+5. Define the main function:
+   - main(): 
+     1. reads two integers n and l from input
+     2. reads n strings into a list S
+     3. sorts S in lexicographic order
+     4. prints the concatenated strings in S
+
+6. Set up the input/output environment:
+   - readline = sys.stdin.readline
+   - sys.setrecursionlimit(2000000)
+
+7. Call the main function.

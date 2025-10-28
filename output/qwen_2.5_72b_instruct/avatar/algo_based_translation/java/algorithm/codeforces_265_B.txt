@@ -1,0 +1,30 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner scn` of type `Scanner`
+- `int n` 
+- `int[] arr` of type array of integers
+- `int ans`
+
+Complete logic flow in execution order:
+1. Initialize `scn` as a new `Scanner` object with `System.in`
+2. Read integer `n` from `scn`
+3. Initialize `arr` as an integer array of size `n`
+4. Loop from `i = 0` to `i < arr.length` (exclusive):
+   1. Read integer from `scn` and assign it to `arr[i]`
+5. Assign `ans` the value `arr[0] + 1`
+6. Loop from `i = 1` to `i < arr.length` (exclusive):
+   1. Calculate `Math.abs(arr[i] - arr[i - 1]) + 2`
+   2. Add result to `ans`
+7. Print `ans` to standard output
+
+Control structures:
+- Loop: `for (int i = 0; i < arr.length; i++)`
+- Loop: `for (int i = 1; i < arr.length; i++)`
+
+Input/output operations and data processing logic:
+- Input: Read integer `n` and then read `n` integers to fill `arr`
+- Output: Print the final value of `ans`
+
+Required libraries, modules, or dependencies:
+- `java.io.Scanner`

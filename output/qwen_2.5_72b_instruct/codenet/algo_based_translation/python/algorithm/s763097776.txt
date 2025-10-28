@@ -1,0 +1,38 @@
+Function: main()
+Parameters: None
+Return Type: None
+
+Variable Declarations:
+n: integer
+p: list of integers
+p_copy: list of integers
+count: integer
+
+Logic Flow:
+1. Read integer value from input and assign it to n
+2. Read space-separated string values from input, convert each to integer, and store them in list p
+3. Create a copy of list p and assign it to p_copy
+4. Sort list p in ascending order
+5. Initialize count to 0
+6. Loop through indices from 0 to n-1:
+   a. If element at current index in sorted list p is not equal to element at the same index in original list p_copy:
+      i. Increment count by 1
+7. If count is equal to 0 or count is equal to 2:
+   a. Print "YES"
+8. Otherwise:
+   a. Print "NO"
+
+Input Operations:
+- Read integer value for n
+- Read space-separated string values and convert them to integers for list p
+
+Output Operations:
+- Print "YES" or "NO" based on the value of count
+
+Data Processing Logic:
+- Copying list p to p_copy
+- Sorting list p
+- Comparing elements in p and p_copy to count mismatches
+
+Required Libraries, Modules, or Dependencies:
+- No external libraries or modules required

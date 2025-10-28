@@ -1,0 +1,14 @@
+1. Initialize a graph with m+1 nodes.
+2. Create an adjacency list representation of the graph.
+3. Read n edges and add them to the graph.
+4. Initialize a boolean array `seen` of size m+1 to keep track of visited nodes.
+5. For each unvisited node i from 1 to m:
+   1. Perform a Depth-First Search (DFS) traversal starting from node i.
+   2. During DFS, mark the current node as visited.
+   3. For each neighbor of the current node that is not its parent:
+      1. Increment a counter for the number of nodes visited in the current DFS traversal.
+      2. Recursively perform DFS on the neighbor.
+      3. If a cycle is detected during the DFS traversal, return a value indicating a cycle.
+   4. If a cycle is detected during the DFS traversal and the count of visited nodes is odd, increment a counter for nodes to be removed.
+6. If the total number of nodes minus the number of nodes to be removed is odd, increment the counter for nodes to be removed.
+7. Output the total number of nodes to be removed.

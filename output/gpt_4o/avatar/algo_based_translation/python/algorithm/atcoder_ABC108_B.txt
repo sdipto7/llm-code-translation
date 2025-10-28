@@ -1,0 +1,32 @@
+```
+Function Signature:
+    calculate_coordinates(input_str: str) -> str
+
+Variable Declarations:
+    p: List[str]
+    x1, y1, x2, y2: int
+    DIF1, DIF2: int
+    x3, y3, x4, y4: int
+
+Execution Order:
+1. Read a line of input as a string and split it by spaces into a list of strings `p`.
+2. Convert the first element of `p` to an integer and assign it to `x1`.
+3. Convert the second element of `p` to an integer and assign it to `y1`.
+4. Convert the third element of `p` to an integer and assign it to `x2`.
+5. Convert the fourth element of `p` to an integer and assign it to `y2`.
+6. Calculate the difference between `x2` and `x1`, assign to `DIF1`.
+7. Calculate the difference between `y2` and `y1`, assign to `DIF2`.
+8. Calculate `x3` as `x2 - DIF2`.
+9. Calculate `y3` as `y2 + DIF1`.
+10. Calculate `x4` as `x1 - DIF2`.
+11. Calculate `y4` as `y1 + DIF1`.
+12. Convert `x3`, `y3`, `x4`, `y4` to strings and concatenate them with spaces in between.
+13. Return the concatenated string as the output.
+
+Input/Output Operations:
+- Input: A single string representing four space-separated integers.
+- Output: A string of four space-separated integers.
+
+Required Libraries, Modules, or Dependencies:
+- None
+```

@@ -1,0 +1,47 @@
+```plaintext
+Algorithm:
+
+1. Import necessary libraries:
+   - heapq, collections, itertools, sys, bisect, string, math, time
+
+2. Define functions for input operations:
+   - I(): Read an integer from standard input.
+   - MI(): Read and unpack multiple integers from a single input line.
+   - LI(): Read a list of integers from a single input line.
+   - LI_(): Read a list of integers from a single input line, subtracting 1 from each.
+   - StoI(): Convert a string input to a list of integers based on character position in the alphabet.
+   - ItoS(nn: int) -> str: Convert an integer to a corresponding lowercase alphabet character.
+   - input(): Read a line from standard input, stripping trailing whitespace.
+   - show(*inp, end='\n'): Print input values if show_flg is True.
+
+3. Define constants:
+   - YN: List of strings ['No', 'Yes']
+   - MOD: Integer 10**9 + 7
+   - inf: Floating-point positive infinity
+   - IINF: Integer 10**10
+   - l_alp: String of lowercase alphabets
+   - u_alp: String of uppercase alphabets
+   - ts: Current time in seconds since the epoch
+   - nums: List of strings from '1' to '10'
+
+4. Set recursion limit to 10**6.
+
+5. Initialize show_flg as False.
+
+6. Define the main function:
+   - Read an integer N using I().
+   - Declare two lists s and t of size N, initialized with zeros.
+   - For each index i from 0 to N-1:
+     - Read a string and an integer from input, assign them to s[i] and t[i] respectively.
+     - Convert t[i] to an integer.
+   - Read a string X from input.
+   - Initialize variable xi as 0.
+   - For each index i from 0 to N-1:
+     - If s[i] is equal to X, set xi to i, then break the loop.
+   - Initialize ans as 0.
+   - For each index i from 0 to N-1:
+     - If xi is less than i, add t[i] to ans.
+   - Print the value of ans.
+
+7. Execute the main function if the script is run as the main module.
+```

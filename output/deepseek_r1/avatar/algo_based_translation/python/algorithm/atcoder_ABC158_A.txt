@@ -1,0 +1,46 @@
+ALGORITHM SPECIFICATION:
+
+FUNCTIONAL ELEMENTS:
+1. Main execution flow
+   - Parameters: None
+   - Return: void
+
+VARIABLES:
+1. stdin: string
+2. s: string
+3. result: string
+
+LOGIC FLOW:
+1. Read input from standard input stream
+2. Assign input value to variable stdin
+3. Assign variable s with value from stdin
+4. Check if both characters 'A' and 'B' are present in s:
+   4.1 If ('A' ∈ s ∧ 'B' ∈ s) → result = "Yes"
+   4.2 Else → result = "No"
+5. Write result to standard output stream
+
+CONTROL STRUCTURES:
+- Single conditional branch (ternary expression)
+  - Condition: Presence check of two distinct characters in string
+  - Branches: Two possible assignments based on check result
+
+I/O OPERATIONS:
+- Input: Single read operation from stdin (text input)
+- Output: Single write operation to stdout (text output)
+
+DATA PROCESSING:
+- String containment checks using 'in' operator
+- Boolean logic conjunction (AND operation)
+
+EDGE CASES:
+- Empty input string handled implicitly (both checks fail → "No")
+- Single character input handled implicitly
+- Multiple occurrences of either character handled correctly
+
+ERROR HANDLING:
+- No explicit error handling
+- Implicit handling of non-string input (relies on Python type system)
+
+DEPENDENCIES:
+- Standard input/output facilities
+- No external libraries or modules required

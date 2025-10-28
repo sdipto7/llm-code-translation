@@ -1,0 +1,20 @@
+from fractions import gcd as gcd_function
+
+def lcm(a: int, b: int) -> int:
+    return a * b // gcd_function(a, b)
+
+MOD: int = 10 ** 9 + 7
+
+N: int = int(input())
+A: list[int] = list(map(int, input().split()))
+
+_lcm: int = 1
+
+for a in A:
+    _lcm = _lcm * a // gcd_function(_lcm, a)
+
+inverse_sum: int = sum([pow(s, MOD - 2, MOD) for s in A])
+
+ans: int = _lcm * inverse_sum % MOD
+
+print(int(ans % MOD))

@@ -1,0 +1,29 @@
+Function Signature: `perform_operations(a: int, b: int) -> int`
+
+Variable Declarations:
+- `a: int`
+- `b: int`
+- `x: List[int]`
+
+Logic Flow:
+1. Read two integers from input, assign to `a` and `b`
+2. Calculate the sum of `a` and `b`, append result to list `x`
+3. Calculate the difference of `a` and `b`, append result to list `x`
+4. Calculate the product of `a` and `b`, append result to list `x`
+5. Find the maximum value in list `x`
+6. Print the maximum value
+
+Control Structures:
+- No loops or conditionals present
+
+Input/Output Operations:
+- Read space-separated integers from input
+- Print the maximum result from operations
+
+Data Processing Logic:
+- Perform arithmetic operations: addition, subtraction, multiplication
+- Store results in list
+- Determine and return the maximum result
+
+Required Libraries/Modules:
+- `sys` (implied by input function)

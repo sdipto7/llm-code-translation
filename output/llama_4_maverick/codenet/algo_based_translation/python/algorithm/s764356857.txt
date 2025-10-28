@@ -1,0 +1,52 @@
+## Step 1: Define the function signature with parameter and return types
+The given Python code does not have a defined function. We will encapsulate it within a function `find_number` that takes no parameters and returns an integer.
+
+## Step 2: Identify variable declarations and data types
+The variables are A, B, min, max, ans, and i. A and B are integers input by the user. min, max, ans, and i are also integers.
+
+## Step 3: Outline the complete logic flow in execution order
+1. Read two integers A and B from the input.
+2. Calculate the minimum and maximum values based on B.
+3. Initialize ans to -1.
+4. Iterate over the range from min to max (inclusive).
+5. Check if the integer part of i * 0.08 equals A.
+6. If the condition is met, assign i to ans and exit the loop.
+7. Print the value of ans.
+
+## Step 4: Specify control structures with exact conditions
+- The loop iterates over `range(min, max+1)`.
+- The conditional checks if `int(i * 0.08) == A`.
+
+## Step 5: Detail input/output operations and data processing logic
+- Input: Two integers A and B separated by a space.
+- Output: The integer ans.
+- Data processing: Calculate min and max based on B, iterate to find i such that `int(i * 0.08) == A`.
+
+## Step 6: List required libraries, modules, or dependencies
+No explicit libraries or modules are used beyond built-in Python functionality.
+
+## Step 7: Translate the detailed algorithm into the required format
+1. Define a function `find_number` that takes no arguments and returns an integer.
+2. Within `find_number`, read two integers A and B.
+3. Calculate min = B * 10 and max = (B+1) * 10 - 1.
+4. Initialize ans = -1.
+5. For i in range(min, max+1), check if int(i * 0.08) == A.
+6. If true, set ans = i and break the loop.
+7. Return ans.
+8. Call `find_number` and print its return value.
+
+The final answer is: 
+```python
+def find_number() -> int:
+    A, B = map(int, input().split())
+    min_val = B * 10
+    max_val = (B+1) * 10 - 1
+    ans = -1
+    for i in range(min_val, max_val + 1):
+        if int(i * 0.08) == A:
+            ans = i
+            break
+    return ans
+
+print(find_number())
+```

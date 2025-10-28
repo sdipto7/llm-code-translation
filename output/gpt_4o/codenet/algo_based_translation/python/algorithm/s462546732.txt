@@ -1,0 +1,12 @@
+```
+Algorithm:
+1. Define a function `compare_and_print` with parameters `input_str: str` and return type `None`.
+2. Inside the function, declare two variables `a_str: str` and `b_str: str`.
+3. Split `input_str` using the space delimiter and assign the resulting values to `a_str` and `b_str`.
+4. Convert `a_str` to an integer and store it in a variable `a: int`.
+5. Convert `b_str` to an integer and store it in a variable `b: int`.
+6. Use an if-else conditional structure:
+   - If the condition `a <= b` is true, print the value of `a`.
+   - Otherwise, print the value of `a - 1`.
+7. No external libraries, modules, or dependencies are required.
+```

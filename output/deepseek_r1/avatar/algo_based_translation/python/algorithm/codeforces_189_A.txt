@@ -1,0 +1,53 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signature**  
+- Name: `cutRibbon`  
+- Parameters: None  
+- Return Type: `void`  
+
+**Variables**  
+1. `arr`: Array of integers (size 4). Initially stores input values.  
+2. `length`: Integer. Represents the total ribbon length.  
+3. `ans`: Integer. Tracks the maximum number of pieces. Initialized to `0`.  
+4. `k`, `i`, `j`: Loop counters (integers).  
+5. `check`: Integer. Stores remaining ribbon length after partial calculations.  
+
+**Input/Output Operations**  
+1. Read one line from standard input and split into four space-separated integers.  
+2. Print the result (`ans` or quotient) to standard output.  
+
+**Control Flow**  
+1. **Input Handling**  
+   - Parse input string into `arr` (converted to integers).  
+   - Assign `length = arr[0]`.  
+   - Sort `arr[1:4]` in ascending order.  
+
+2. **Direct Divisibility Check**  
+   - If `length % arr[0] == 0`:  
+     - Compute quotient `length / arr[0]`, print, and exit.  
+
+3. **Branch Based on Segment Equality**  
+   - **Case 1**: `arr[0] == arr[1]` (smallest two segments equal)  
+     - Iterate `i` from `0` to `length // arr[2]` (inclusive):  
+       - Compute `check = length - (i * arr[2])`.  
+       - If `check >= 0` and `check % arr[0] == 0`:  
+         - Update `ans = max(ans, i + (check // arr[0]))`.  
+
+   - **Case 2**: `arr[0] != arr[1]`  
+     - Iterate `i` from `0` to `length // arr[2]` (inclusive):  
+       - Iterate `j` from `0` to `(length - (i * arr[2])) // arr[1]` (inclusive):  
+         - Compute `check = length - (i * arr[2] + j * arr[1])`.  
+         - If `check >= 0` and `check % arr[0] == 0`:  
+           - Update `ans = max(ans, i + j + (check // arr[0]))`.  
+
+4. **Output Result**  
+   - Print `ans`.  
+
+**Edge Case Handling**  
+- Ensures non-negative `check` in all iterations.  
+- Maximizes `ans` through exhaustive search of valid segment combinations.  
+
+**External Dependencies**  
+- Relies on standard input/output functions.  
+- Uses integer division and modulo operations.  
+- No external libraries beyond basic input parsing and arithmetic.

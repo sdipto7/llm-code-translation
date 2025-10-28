@@ -1,0 +1,11 @@
+1. Import necessary mathematical functions
+2. Define function next_int
+   2.1 Return integer value from user input
+3. Define function next_ints
+   3.1 Return list of integers from user input separated by spaces
+4. Set n to the result of next_int
+5. Initialize t to 0
+6. Loop from 0 to n-1
+   6.1 If (current loop index + 1) is odd
+      6.1.1 Increment t by 1
+7. Print the result of t divided by n

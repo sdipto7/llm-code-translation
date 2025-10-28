@@ -1,0 +1,36 @@
+```
+Function Signature:
+    def calculate_attempts(princess: int, dragon: int, t: int, f: int, c: int) -> int
+
+Variable Declarations:
+    result: int
+    position: float
+
+Algorithm:
+1. Read integer input for `princess`.
+2. Read integer input for `dragon`.
+3. Read integer input for `t`.
+4. Read integer input for `f`.
+5. Read integer input for `c`.
+
+6. If `dragon` is less than or equal to `princess`, then:
+    a. Print `0`.
+    b. Terminate the function execution.
+
+7. Initialize `result` to `0`.
+
+8. Calculate initial `position` as `t * princess`.
+9. Increment `position` by `princess * position / (dragon - princess)`.
+
+10. While `position` is less than `c`, do:
+    a. Increment `result` by `1`.
+    b. Increment `position` by `princess * position / dragon`.
+    c. Increment `position` by `princess * f`.
+    d. Increment `position` by `princess * position / (dragon - princess)`.
+
+11. Print `result`.
+12. Return `result`.
+
+Required Libraries:
+    - None
+```

@@ -1,0 +1,19 @@
+**Function Definitions:**
+- Define function `check` with parameters: `lis` (list of integers), `k` (integer), `mid` (integer)
+  - For each element `i` in `lis`:
+    - If `i` modulo `mid` equals 0: increment `k` by 1
+    - Subtract integer division of `i` by `mid` from `k`
+  - Return boolean: `k >= 0`
+
+**Main Execution:**
+- Read two integers `n` and `k` from standard input
+- Read list `lis` of `n` integers from standard input
+- Initialize integer `a` to 1
+- Initialize integer `b` to maximum value in `lis`
+- Initialize integer `ans` to `b`
+- While `a` <= `b`:
+  - Compute integer `mid` as floor division of (`a` + `b`) by 2
+  - Call `check(lis, k, mid)`:
+    - If returns True: set `ans` to `mid`, set `b` to `mid - 1`
+    - Else: set `a` to `mid + 1`
+- Print integer `ans`

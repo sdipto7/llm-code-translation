@@ -1,0 +1,46 @@
+1. **Input/Output Operations:**
+   - Import java.util.Scanner
+   - Read S from standard input as String
+   - Read T from standard input as String
+
+2. **Variables:**
+   - String S: input string
+   - String T: comparison string
+   - int min: initialized to Integer.MAX_VALUE
+   - int i: loop index (0 ≤ i ≤ S.length() - T.length())
+   - int calc: character mismatch counter in find()
+   - int x: character index in find()
+
+3. **Main Function Logic:**
+   - For i from 0 to (S.length() - T.length()) inclusive:
+     - Extract substring: S.substring(i, i+T.length())
+     - Call find(substring, T) → get mismatch count
+     - Update min = minimum of current min and mismatch count
+   - After loop:
+     - If min ≠ Integer.MAX_VALUE → print min
+     - Else → print T.length()
+
+4. **find Function:**
+   - Parameters: String a (S substring), String b (T)
+   - Initialize calc = 0
+   - For x from 0 to a.length()-1:
+     - If a.charAt(x) != b.charAt(x) → increment calc
+   - Return calc as int
+
+5. **Control Structures:**
+   - Main loop: for(int i=0; i<=S.length()-T.length(); i++)
+   - find loop: for(int x=0; x<a.length(); x++)
+   - Conditional in find: if(a.charAt(x) != b.charAt(x))
+   - Post-loop conditional: if(min != Integer.MAX_VALUE)
+
+6. **Data Processing:**
+   - Substring extraction with length matching T
+   - Character-by-character comparison between substring and T
+   - Accumulate minimum difference across all valid substrings
+
+7. **Function Signatures:**
+   - public static void main(String[] args)
+   - public static int find(String a, String b)
+
+8. **Dependencies:**
+   - Requires java.util.Scanner for input handling

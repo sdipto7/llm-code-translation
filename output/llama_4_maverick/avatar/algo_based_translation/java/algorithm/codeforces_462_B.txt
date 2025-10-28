@@ -1,0 +1,12 @@
+1. Read input values for n and k.
+2. Initialize an array of 26 objects to store the count of each letter from 'A' to 'Z'.
+3. Read a string s of length n.
+4. Count the occurrences of each letter in the string s and store them in the array.
+5. Initialize a variable ans to 0 to store the final result.
+6. Iterate k times.
+7. Within each iteration, sort the array of objects based on the count of letters in descending order.
+8. Determine the minimum between the count of the most frequent letter and the remaining iterations (k - current iteration).
+9. Add the square of the minimum value to ans.
+10. Subtract the minimum value from the count of the most frequent letter.
+11. Increment the iteration counter by the minimum value minus 1.
+12. Output the final result stored in ans.

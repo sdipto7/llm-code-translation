@@ -1,0 +1,16 @@
+1. Import the `Scanner` class from the `java.util` package.
+2. Define the `main` function with no parameters and a `void` return type.
+3. Initialize a `Scanner` object named `in` to read input from the standard input.
+4. Declare integer variables `x`, `y`, `a`, `b`.
+5. Read integers from input and assign them to `x`, `y`, `a`, `b` respectively using `in.nextInt()`.
+6. Declare an integer variable `count` and initialize it to 0.
+7. Start a for loop with an integer `i` initialized to `a`; continue while `i` is less than or equal to `x`; increment `i` by 1 in each iteration:
+   - Start a nested for loop with an integer `j` initialized to `b`; continue while `j` is less than or equal to `y`; increment `j` by 1 in each iteration:
+     - Check if `i` is less than or equal to `j`. If true, continue to the next iteration of the inner loop.
+     - Increment `count` by 1.
+8. Print the value of `count`.
+9. Start another for loop with an integer `i` initialized to `a`; continue while `i` is less than or equal to `x`; increment `i` by 1 in each iteration:
+   - Start a nested for loop with an integer `j` initialized to `b`; continue while `j` is less than or equal to `y`; increment `j` by 1 in each iteration:
+     - Check if `i` is less than or equal to `j`. If true, continue to the next iteration of the inner loop.
+     - Print the values of `i` and `j` separated by a space.
+10. Close the `Scanner` object `in`.

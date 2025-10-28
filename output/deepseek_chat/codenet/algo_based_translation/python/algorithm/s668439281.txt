@@ -1,0 +1,20 @@
+import collections
+
+n: int = int(input())
+ls: list[str] = [input() for i in range(n)]
+c: collections.Counter = collections.Counter(ls)
+
+count: int = c.most_common()[0][1]
+ans: list[str] = []
+p: list[tuple[str, int]] = c.most_common()
+
+for i in range(len(c)):
+    if p[i][1] == count:
+        ans.append(p[i][0])
+    else:
+        break
+
+ans: list[str] = sorted(ans)
+
+for i in ans:
+    print(i)

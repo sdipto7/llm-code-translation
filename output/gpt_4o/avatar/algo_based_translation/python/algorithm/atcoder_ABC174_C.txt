@@ -1,0 +1,37 @@
+```
+- Import the following modules:
+  - `stdin`, `stdout`, and `setrecursionlimit` from the `sys` module
+  - `gcd`, `ceil`, and `sqrt` from the `math` module
+  - `Counter` from the `collections` module
+  - `bisect_left` and `bisect_right` from the `bisect` module
+
+- Declare a constant `mod` as an integer with value 1000000007
+
+- Define a function:
+  - Signature: `ii1() -> int`
+  - Description: Reads an integer from standard input and returns it
+
+- Define a function:
+  - Signature: `is1() -> str`
+  - Description: Reads a string from standard input and returns it
+
+- Define a function:
+  - Signature: `iia() -> List[int]`
+  - Description: Reads a line of integers from standard input, splits them, and returns as a list of integers
+
+- Define a function:
+  - Signature: `isa() -> List[str]`
+  - Description: Reads a line of strings from standard input, splits them, and returns as a list of strings
+
+- Set the recursion limit to 100000 using `setrecursionlimit(100000)`
+
+- Read an integer `k` from standard input using `ii1()`
+
+- Initialize an integer variable `t` with the value 0
+
+- Iterate over the range from 1 to `k` inclusive:
+  - For each `i`, update `t` using the formula `(t % k) * 10 + 7`
+  - If `t` modulo `k` equals 0, output `i` using `print(i)` and terminate the loop
+
+- If the loop completes without breaking, output `-1` using `print(-1)`
+```

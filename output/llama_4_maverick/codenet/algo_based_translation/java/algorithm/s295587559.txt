@@ -1,0 +1,25 @@
+1. Define function `main` with no parameters and return type `void`.
+2. Declare variable `in` of type `Scanner` and initialize it with `new Scanner(System.in)`.
+3. Declare variable `num` of type `int[]` and initialize it with an array of size equal to the next integer input from `in`.
+4. Iterate over the indices of `num` using a `for` loop with counter `i` ranging from 0 to `num.length - 1`.
+   1. Assign `i + 1` to `num[i]`.
+5. Declare variable `count` of type `int` and initialize it with the next integer input from `in`.
+6. Declare variable `pt` of type `Pattern` and initialize it with the result of `Pattern.compile("(\\d+),(\\d+)")`.
+7. Declare variable `line` of type `int[]` with size 2.
+8. Iterate `count` times using a `for` loop with counter `i` ranging from 0 to `count - 1`.
+   1. Declare variable `next` of type `String` and initialize it with the next input from `in` using `pt` as the delimiter.
+   2. Iterate over the indices of `line` using a `for` loop with counter `j` ranging from 0 to `line.length - 1`.
+      1. Declare variable `matcher` of type `Matcher` and initialize it with the result of `pt.matcher(next)`.
+      2. Call `matcher.matches()`.
+      3. Assign the result of `Integer.parseInt(matcher.group(j + 1)) - 1` to `line[j]`.
+   3. Declare variable `change` of type `int` and initialize it with `num[line[0]]`.
+   4. Assign `num[line[1]]` to `num[line[0]]`.
+   5. Assign `change` to `num[line[1]]`.
+9. Iterate over the indices of `num` using a `for` loop with counter `i` ranging from 0 to `num.length - 1`.
+   1. Output `num[i]` to the console followed by a newline.
+10. End function `main`. 
+
+Required libraries: 
+- `java.util.Scanner`
+- `java.util.regex.Matcher`
+- `java.util.regex.Pattern`

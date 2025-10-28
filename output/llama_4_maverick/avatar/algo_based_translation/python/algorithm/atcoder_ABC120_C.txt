@@ -1,0 +1,12 @@
+1. Import necessary modules and functions.
+2. Set recursion limit to 10^8 and define constants INF and MOD.
+3. Define main function.
+4. Read input string s.
+5. Check if all characters in s are the same.
+6. If true, print 0 and exit.
+7. Count frequency of each character in s using Counter.
+8. Find the minimum frequency value among the counted characters.
+9. Calculate ans by multiplying the minimum frequency by 2.
+10. Print ans.
+11. Check if the script is being run directly.
+12. If true, call the main function.

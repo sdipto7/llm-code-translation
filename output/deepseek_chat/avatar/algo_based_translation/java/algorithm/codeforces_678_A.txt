@@ -1,0 +1,28 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner scan`: Scanner object for input
+- `int n`: integer input
+- `int k`: integer input
+- `int z`: integer initialized to 0
+
+**Logic Flow:**
+1. Create Scanner object to read from standard input
+2. Read integer `n` from input
+3. Read integer `k` from input
+4. Increment `n` by 1
+5. Check if `n % k != 0`
+   - If true: set `z = k - (n % k)`
+   - If false: `z` remains 0
+6. Print result of `n + z`
+
+**Control Structures:**
+- One conditional: `if (n % k != 0)`
+
+**Input/Output:**
+- Input: Two integers from standard input
+- Output: Single integer result printed to standard output
+
+**Dependencies:**
+- `java.util.Scanner`

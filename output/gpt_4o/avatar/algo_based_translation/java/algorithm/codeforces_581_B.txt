@@ -1,0 +1,32 @@
+```
+Algorithm codeforces_581_B:
+
+1. Import required libraries:
+   - java.util.*
+   - java.io.*
+
+2. Declare a class named `codeforces_581_B`.
+
+3. Declare a static TreeSet of Long named `set`.
+
+4. Define the `main` function with parameter `args` of type `String[]`:
+   a. Initialize a Scanner object `in` for reading input.
+   b. Initialize a PrintWriter object `pw` for writing output.
+   c. Read an integer `n` using `in.nextInt()`.
+   d. Declare a long array `a` of size `n`.
+   e. For each index `i` from `0` to `n-1`, do:
+      - Assign `a[i]` the value read by `in.nextLong()`.
+   f. Declare a long array `dp` of size `n+1`.
+   g. Fill the `dp` array with `-1` using `Arrays.fill(dp, -1)`.
+   h. Set `dp[n-1]` to `a[n-1]`.
+   i. For each index `i` from `n-1` to `0`, do:
+      - Assign `dp[i]` the value `Math.max(dp[i+1], a[i])`.
+   j. For each index `i` from `0` to `n-1`, do:
+      - If `a[i]` is greater than `dp[i+1]`, print `0` followed by a space using `pw.print()`.
+      - Otherwise, print `(dp[i+1] - a[i] + 1)` followed by a space using `pw.print()`.
+   k. Print a newline using `pw.println()`.
+   l. Close the PrintWriter `pw` using `pw.close()`.
+
+5. Define a static method `debug` with parameter `obj` of type `Object...`:
+   a. Print debug information using `System.err.println(Arrays.deepToString(obj))`.
+```

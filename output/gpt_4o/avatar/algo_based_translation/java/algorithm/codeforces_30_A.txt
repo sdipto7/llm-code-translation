@@ -1,0 +1,40 @@
+```
+Function main(args: String[]): void
+    Call solve(scanner: Scanner) with new Scanner(System.in)
+
+Function solve(sc: Scanner): void
+    Declare integer A = sc.nextInt()
+    Declare integer B = sc.nextInt()
+    Declare integer n = sc.nextInt()
+
+    If A equals 0 Then
+        If B equals 0 Then
+            Output 1
+        Else
+            Output "No solution"
+        Return
+
+    If B modulo A is not equal to 0 Then
+        Output "No solution"
+        Return
+
+    B = B divided by A
+    Declare boolean neg = B < 0
+
+    If neg is true And n modulo 2 equals 0 Then
+        Output "No solution"
+        Return
+
+    If neg is true Then
+        B = -B
+
+    For integer x from 0 to B inclusive Do
+        If Math.pow(x, n) equals B Then
+            If neg is true Then
+                Output -x
+            Else
+                Output x
+            Return
+
+    Output "No solution"
+```

@@ -1,0 +1,8 @@
+from itertools import product
+
+N: int = int(input())
+x: int = 1
+N_list: list[int] = [x+1 for x in range(N)]
+n: list[tuple[int, ...]] = list(product(N_list, repeat=3))
+m: int = len(n)
+print(m)

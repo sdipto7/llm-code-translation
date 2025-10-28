@@ -1,0 +1,47 @@
+Function Signature:
+- Function Name: calculate_score
+- Parameters: input_string (str)
+- Return Type: int
+
+Variable Declarations and Data Types:
+- s (list of str)
+- num_g (int)
+- num_p (int)
+- score (int)
+
+Logic Flow in Execution Order:
+1. s = list(input_string)
+2. num_g = 0
+3. num_p = 0
+4. score = 0
+5. for x in s:
+   - if x == 'g':
+     - if num_g - num_p > 0:
+       - score += 1
+       - num_p += 1
+     - else:
+       - score = score
+       - num_g += 1
+   - elif x == 'p':
+     - if num_g - num_p > 0:
+       - score = score
+       - num_p += 1
+     - else:
+       - score -= 1
+       - num_g += 1
+6. print(score)
+
+Control Structures:
+- for x in s: (loop)
+- if x == 'g': (conditional)
+  - if num_g - num_p > 0: (nested conditional)
+- elif x == 'p': (conditional)
+  - if num_g - num_p > 0: (nested conditional)
+
+Input/Output Operations and Data Processing Logic:
+- Input: Takes a string from the user and converts it into a list of characters.
+- Processing: Iterates through each character in the list, updating the count of 'g' and 'p', and adjusting the score based on the conditions specified.
+- Output: Prints the final score after processing all characters in the input string.
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries, modules, or dependencies are required.

@@ -1,0 +1,59 @@
+1. Import necessary libraries: `java.util.*` and `java.io.*`.
+
+2. Define a class `Main` with:
+   - A static integer `mod` initialized to `1e9 + 7`.
+   - A static list `to` of type `List<ArrayList<Integer>>`.
+   - A static integer array `dp`.
+
+3. Define the `main` method:
+   - Create an instance of `FastScanner` with `System.in`.
+   - Read an integer `N`.
+   - Initialize `to` as a new `ArrayList`.
+   - Loop from `0` to `N-1` and add a new `ArrayList<Integer>` to `to`.
+   - Declare a 2D integer array `edges` of size `[N-1][2]`.
+   - Loop from `0` to `N-2` (inclusive):
+     - Read two integers `A` and `B`.
+     - Decrement both `A` and `B` by `1`.
+     - Add `B` to `to.get(A)` and `A` to `to.get(B)`.
+     - Store `B` and `A` in `edges[i][0]` and `edges[i][1]`.
+   - Initialize `dp` as a new integer array of size `N`.
+   - Call `rec` with `0` and `-1`.
+   - Initialize a long `mulsum` to `0`.
+   - For each `int[] e` in `edges`:
+     - Declare integers `candidate1` and `candidate2` assigned to `e[0]` and `e[1]`.
+     - Set `child` to `candidate1`.
+     - If `dp[candidate1]` is greater than `dp[candidate2]`, set `child` to `candidate2`.
+     - Declare long `a` as `dp[child]` and long `b` as `N - a`.
+     - Calculate `mul` as `(modpow(2, a) - 1) * (modpow(2, b) - 1) % mod`.
+     - Add `mul` to `mulsum` and take modulo `mod`.
+   - Calculate `cases` as `modpow(2, N)`.
+   - Calculate `PN` as `(mulsum + (cases - 1 + mod) % mod) % mod`.
+   - Calculate `BN` as `N * modpow(2, N-1) % mod`.
+   - Calculate `WN` as `(PN - BN + mod) % mod`.
+   - Calculate `ans` as `WN * modpow(cases, mod-2)` and take modulo `mod`.
+   - Print `ans`.
+
+4. Define `rec` method with parameters `int v` and `int parent`:
+   - Initialize integer `res` to `1`.
+   - For each `int next` in `to.get(v)`:
+     - If `next` equals `parent`, continue to next iteration.
+     - Add the result of `rec(next, v)` to `res`.
+   - Assign `res` to `dp[v]` and return `res`.
+
+5. Define `modpow` method with parameters `long x` and `long y`:
+   - If `y` equals `0`, return `1`.
+   - If `y` is odd, return `x * modpow(x, y-1) % mod`.
+   - Declare a long `tmp` as `modpow(x, y/2)`.
+   - Return `tmp * tmp % mod`.
+
+6. Define `FastScanner` class with:
+   - Private `BufferedReader reader`.
+   - Private `StringTokenizer tokenizer`.
+   - Constructor `FastScanner(InputStream in)` initializing `reader` with a new `BufferedReader` and `tokenizer` to `null`.
+   - Method `String next()` to fetch the next token.
+   - Method `String nextLine()` to read the next line.
+   - Method `long nextLong()` to parse next token as `long`.
+   - Method `int nextInt()` to parse next token as `int`.
+   - Method `double nextDouble()` to parse next token as `double`.
+   - Method `int[] nextIntArray(int n)` to return an array of `int` with `n` elements.
+   - Method `long[] nextLongArray(int n)` to return an array of `long` with `n` elements.

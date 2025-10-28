@@ -1,0 +1,25 @@
+Function signature: `main()`
+Variable declarations and data types:
+- `n`: integer
+- `q`: list of lists of strings
+- `count`: integer
+
+Logic flow in execution order:
+1. Read integer `n` from input.
+2. Initialize empty list `q`.
+3. Initialize integer `count` to 0.
+4. For loop over range `n`:
+   - Read string from input, split it into a list of strings `a`, and append `a` to `q`.
+5. For loop over each element `j` in `q`:
+   - For loop over each element `k` in `q`:
+     - If `k` is equal to `j`, continue to next iteration.
+     - Else if first element of `j` is equal to last element of `k`, increment `count` by 1.
+     - Else, continue to next iteration.
+6. Print value of `count`.
+
+Input/output operations and data processing logic:
+- Input: Reads integer `n` followed by `n` lines of space-separated strings.
+- Output: Prints the integer `count` which represents the number of pairs `(j, k)` where `j` and `k` are different lists in `q` and the first element of `j` matches the last element of `k`.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules required.

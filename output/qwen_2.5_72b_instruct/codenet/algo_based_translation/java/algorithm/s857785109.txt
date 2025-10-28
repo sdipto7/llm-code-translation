@@ -1,0 +1,27 @@
+Function Signature:
+- `main(String[] args)`: void
+
+Variable Declarations:
+- `sc`: Scanner
+- `n`: int
+
+Logic Flow:
+1. Create a Scanner object `sc` to read input from standard input.
+2. Read an integer `n` from the scanner.
+3. Check if `(n/10) % 111 == 0`:
+   - If true, print "Yes".
+   - Otherwise, check if `(n % 1000) % 111 == 0`:
+     - If true, print "Yes".
+     - Otherwise, print "No".
+
+Control Structures:
+- If-Else Statement:
+  - Condition 1: `(n/10) % 111 == 0`
+  - Condition 2: `(n % 1000) % 111 == 0`
+
+Input/Output Operations:
+- Input: Read an integer `n` from standard input.
+- Output: Print "Yes" or "No" based on the conditions.
+
+Libraries/Modules/Dependencies:
+- `java.util.Scanner`

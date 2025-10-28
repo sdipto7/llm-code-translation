@@ -1,0 +1,28 @@
+```
+Function Signature: None (code is procedural and executed as a script)
+
+1. Declare variable `n` as integer, read input, and convert to integer.
+   - Input: A single integer from standard input.
+
+2. Declare variable `arr` as a list of integers.
+   - Process input: Read a line from standard input, strip any extraneous whitespace, split by spaces, map each to an integer, convert to a list, and slice the first `n` elements.
+
+3. Declare variable `ans` as a list of integers initialized with zeros, with length `n`.
+   - Initialization: `[0] * n`
+
+4. Declare variable `mx` as integer, initialized to the last element of `arr`.
+   - Expression: `mx = arr[-1]`
+
+5. Loop control structure: Iterate `i` from `n-2` down to `0`, inclusive, decrementing by 1.
+   - For each iteration:
+     a. Update `ans[i]` with the maximum value between `0` and `mx - arr[i] + 1`.
+         - Expression: `ans[i] = max(0, mx - arr[i] + 1)`
+     b. Conditional: If `arr[i]` is greater than `mx`, update `mx` to `arr[i]`.
+         - Condition: `if arr[i] > mx:`
+         - Action: `mx = arr[i]`
+
+6. Output: Print elements of `ans` list separated by spaces.
+   - Print: `print(*ans)`
+
+Required Libraries: None
+```

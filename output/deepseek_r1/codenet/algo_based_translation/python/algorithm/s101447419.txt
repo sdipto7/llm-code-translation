@@ -1,0 +1,61 @@
+Function: main()
+Parameters: None
+Return: void
+Variables:
+- n: int (input integer)
+- v: list[int] (input list)
+- ve: list[int] (elements from even indices)
+- vo: list[int] (elements from odd indices)
+- ce: collections.Counter (frequency count of ve)
+- co: collections.Counter (frequency count of vo)
+- ans: int (result to print)
+
+Libraries/Dependencies: collections.Counter
+
+Logic Flow:
+1. Read integer n from standard input
+2. Read list v of integers from standard input
+3. Split v into two lists:
+   - ve contains elements at even indices (0, 2, 4...)
+   - vo contains elements at odd indices (1, 3, 5...)
+4. Create frequency counters ce for ve and co for vo
+5. Initialize ans with value n (maximum possible changes)
+6. Compare most common elements from ce and co:
+   a. If top elements differ:
+      ans = n - (top_ce_count + top_co_count)
+   b. Else if both counters have only 1 unique element:
+      ans = n - top_ce_count
+   c. Else if ce has 1 unique element:
+      ans = n - (top_ce_count + second_co_count)
+   d. Else if co has 1 unique element:
+      ans = n - (second_ce_count + top_co_count)
+   e. Else:
+      ans = minimum between:
+           (n - top_ce_count - second_co_count)
+           and
+           (n - second_ce_count - top_co_count)
+7. Print final ans value
+
+Control Structures:
+- For loop: iterate n//2 times to split elements
+- Conditional chain:
+  1. ce.most_common()[0][0] != co.most_common()[0][0]
+  2. len(ce) == 1 and len(co) == 1
+  3. len(ce) == 1
+  4. len(co) == 1
+  5. Else block with min() calculation
+
+Input/Output:
+- Input: Two lines from stdin
+  First: integer n
+  Second: space-separated integers
+- Output: Single integer printed to stdout
+
+Edge Case Handling:
+- When all elements are identical in either/both even/odd positions
+- When multiple candidates exist for optimal replacement strategy
+
+Data Processing:
+- List slicing via index calculation (2*i and 2*i+1)
+- Frequency counting using collections.Counter
+- Comparison of Counter results and frequency values

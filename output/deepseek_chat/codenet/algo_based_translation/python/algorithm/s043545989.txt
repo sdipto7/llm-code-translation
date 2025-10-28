@@ -1,0 +1,14 @@
+Read integer N from input
+Read list a of N integers from input
+Create Counter object B from list a
+Extract keys from B into list k
+Extract values from B into list v
+
+If length of B equals 3 AND XOR of all elements in k equals 0 AND all values in v are equal:
+    Print "Yes"
+Else if length of B equals 2 AND 0 is in k AND (first value equals twice second value OR second value equals twice first value):
+    Print "Yes"
+Else if length of B equals 1 AND 0 is in k:
+    Print "Yes"
+Else:
+    Print "No"

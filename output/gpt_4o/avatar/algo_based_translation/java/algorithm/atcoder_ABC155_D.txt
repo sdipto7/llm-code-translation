@@ -1,0 +1,41 @@
+```
+Algorithm:
+1. Import necessary libraries: java.util.* and java.math.*
+2. Declare class `atcoder_ABC155_D`
+3. Declare static variables:
+   - int `mod` initialized to 1000000007
+   - int arrays `DX` and `DY` with values {-1, 0, 1, 0} and {0, -1, 0, 1} respectively
+   - int `n`
+   - long `k`
+   - long array `a`
+4. Define main method:
+   - Create `Scanner` object `fs` for input
+   - Read integer `n` from input
+   - Read long `k` from input
+   - Initialize long array `a` with size `n`
+   - For loop from 0 to `n-1`, read each element into array `a`
+   - Sort array `a`
+   - Declare long `INF` as 1000000000000000001
+   - Initialize long `l` to `-INF` and `r` to `INF`
+   - While loop with condition `l + 1 < r`:
+     - Calculate `c` as `(l + r) / 2`
+     - If `check(c)` returns true, set `l` to `c`, else set `r` to `c`
+   - Print `l`
+5. Define static method `check` with parameter `x` (long) and return type `boolean`:
+   - Declare long `tot` initialized to 0
+   - For loop from 0 to `n-1`:
+     - Set `now` to `a[i]`
+     - Declare int `l` initialized to 0 and `r` initialized to `n`
+     - If `now >= 0`:
+       - While loop with condition `l < r`:
+         - Calculate `c` as `(l + r) / 2`
+         - If `now * a[c] < x`, set `l` to `c + 1`, else set `r` to `c`
+       - Increment `tot` by `l`
+     - Else:
+       - While loop with condition `l < r`:
+         - Calculate `c` as `(l + r) / 2`
+         - If `now * a[c] >= x`, set `l` to `c + 1`, else set `r` to `c`
+       - Increment `tot` by `(n - l)`
+     - If `(long)a[i] * a[i] < x`, decrement `tot` by 1
+   - If `tot / 2 < k`, return true, else return false
+```

@@ -1,0 +1,52 @@
+**Function Signature:**
+- main(String[] args): void
+
+**Variables:**
+- Scanner sc: Scanner object for input
+- String[] str: array of 4 strings
+- int i: index variable initialized to -1
+- int u: index variable initialized to -1
+- int yes: flag variable initialized to 0
+
+**Input Operations:**
+- Read 4 strings from standard input and store in str array
+
+**Logic Flow:**
+1. Initialize i to -1
+2. While i != 3:
+   - Increment i by 1
+   - Read next input string and store in str[i]
+3. Initialize u to -1 and i to -1
+4. Initialize yes to 0
+5. While u != 2:
+   - Increment u by 1
+   - Set i to -1
+   - While i != 2:
+     - Increment i by 1
+     - Check if:
+       (str[u].charAt(i) == str[u].charAt(i+1) AND 
+        (str[u+1].charAt(i) == str[u].charAt(i) OR 
+         str[u+1].charAt(i+1) == str[u].charAt(i)))
+       OR
+       (str[u+1].charAt(i) == str[u+1].charAt(i+1) AND 
+        (str[u].charAt(i) == str[u+1].charAt(i) OR 
+         str[u].charAt(i+1) == str[u+1].charAt(i)))
+     - If condition is true:
+       - Set yes to 1
+       - Print "YES"
+       - Break inner loop
+   - If yes == 1:
+     - Break outer loop
+6. If yes == 0:
+   - Print "NO"
+
+**Control Structures:**
+- While loop: i != 3 (input reading)
+- While loop: u != 2 (outer grid traversal)
+- While loop: i != 2 (inner grid traversal)
+- If condition: pattern matching condition
+- If condition: yes == 1 (break outer loop)
+- If condition: yes == 0 (output "NO")
+
+**Dependencies:**
+- java.util.Scanner

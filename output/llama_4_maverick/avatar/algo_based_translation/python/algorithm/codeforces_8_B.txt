@@ -1,0 +1,24 @@
+1. READ record_of_movements FROM INPUT
+2. INITIALIZE x TO 0
+3. INITIALIZE y TO 0
+4. DEFINE d_movement AS DICTIONARY WITH KEYS 'L', 'R', 'U', 'D' AND VALUES (0, -1), (0, 1), (1, 0), (-1, 0) RESPECTIVELY
+5. INITIALIZE d AS DICTIONARY WITH KEY (x, y)
+6. INITIALIZE bug TO FALSE
+7. FOR EACH move IN record_of_movements
+   1. STORE (x, y) IN temp
+   2. UPDATE x BY ADDING d_movement[move][0] TO x
+   3. UPDATE y BY ADDING d_movement[move][1] TO y
+   4. IF (x, y) NOT IN d THEN
+      1. FOR EACH step IN d_movement
+         1. IF (x + d_movement[step][0], y + d_movement[step][1]) NOT EQUAL TO temp AND (x + d_movement[step][0], y + d_movement[step][1]) IN d THEN
+            1. SET bug TO TRUE
+            2. BREAK LOOP
+   5. ELSE
+      1. SET bug TO TRUE
+   6. IF bug THEN
+      1. BREAK LOOP
+   7. ADD (x, y) TO d
+8. IF bug THEN
+   1. PRINT 'BUG'
+ELSE
+   1. PRINT 'OK'

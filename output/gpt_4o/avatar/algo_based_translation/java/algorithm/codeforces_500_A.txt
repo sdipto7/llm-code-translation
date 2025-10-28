@@ -1,0 +1,43 @@
+**Function Signatures:**
+- `dfs(currpos: int, arr: List[int], target: int) -> bool`
+- `main() -> None`
+
+**Algorithm Steps:**
+
+1. **Import Libraries:**
+   - Import `java.util.Scanner`.
+
+2. **Function `dfs`:**
+   - **Parameters:** 
+     - `currpos` (int): current position in the array.
+     - `arr` (int[]): array representing teleport distances.
+     - `target` (int): target position to reach.
+   - **Return Type:** boolean
+   - **Logic:**
+     - Check if `currpos` is equal to `target`:
+       - If true, return `true`.
+     - Check if `currpos` is equal to `arr.length + 1`:
+       - If true, return `false`.
+     - Recursively call `dfs` with updated `currpos` (`currpos + arr[currpos - 1]`), `arr`, and `target`.
+     - If the recursive call returns `true`, return `true`.
+     - Otherwise, return `false`.
+
+3. **Function `main`:**
+   - **Variables:**
+     - `sc` (Scanner): used for reading input.
+     - `n` (int): number of positions in the game.
+     - `goal` (int): target position to reach.
+     - `arr` (int[]): array of teleport distances.
+     - `isFound` (boolean): result of the `dfs` function.
+   - **Logic:**
+     - Initialize `sc` as a new `Scanner` for reading standard input.
+     - Read integer `n` from input using `sc.nextInt()`.
+     - Read integer `goal` from input using `sc.nextInt()`.
+     - Initialize `arr` as an integer array of size `n - 1`.
+     - Use a `for` loop to iterate from `0` to `n - 2`:
+       - For each iteration, read an integer using `sc.nextInt()` and assign it to `arr[i]`.
+     - Call `dfs` with initial position `1`, `arr`, and `goal`, storing the result in `isFound`.
+     - Check if `isFound` is `true`:
+       - If true, print `"YES"`.
+       - Otherwise, print `"NO"`.
+     - Close the `Scanner` `sc` using `sc.close()`.

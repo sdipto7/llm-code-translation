@@ -1,0 +1,49 @@
+Algorithm:
+
+Function Signatures:
+- main(String[] args): void
+- solve(int testNumber, InputReader in, PrintWriter out): void
+- InputReader(InputStream stream): constructor
+- next(): String
+
+Variables:
+- x: String (input string)
+- s: Stack<Character> (character stack)
+- c: int (counter initialized to 0)
+- p: Character (temporary storage for stack element)
+- q: Character (temporary storage for stack element)
+- reader: BufferedReader (input handler)
+- tokenizer: StringTokenizer (input parser)
+
+Logic Flow:
+1. Initialize input reader and output writer
+2. Read input string x
+3. Initialize empty character stack s
+4. Initialize counter c = 0
+5. For each character in x (index i from 0 to x.length()-1):
+   5.1 Push current character to stack s
+   5.2 While stack size > 1:
+       5.2.1 Pop top element p from stack
+       5.2.2 Pop next element q from stack
+       5.2.3 If (p == '1' AND q == '0') OR (p == '0' AND q == '1'):
+           5.2.3.1 Increment c by 1
+           5.2.3.2 Continue checking stack (repeat loop)
+       5.2.4 Else:
+           5.2.4.1 Push q back to stack
+           5.2.4.2 Push p back to stack
+           5.2.4.3 Exit while loop
+6. Output c * 2
+
+Control Structures:
+- For loop: Iterate through each character of input string
+- Nested while loop: Process stack until only 0-1 elements remain
+- If-else condition: Check for complementary character pairs ('0'-'1' or '1'-'0')
+
+Input/Output:
+- Input: Single string via InputReader
+- Output: Integer result via PrintWriter (c * 2)
+- Data Processing: Stack-based elimination of complementary adjacent pairs
+
+Dependencies:
+- java.io.* (InputStream, OutputStream, IOException, PrintWriter, BufferedReader, InputStreamReader)
+- java.util.* (Vector, StringTokenizer, Stack)

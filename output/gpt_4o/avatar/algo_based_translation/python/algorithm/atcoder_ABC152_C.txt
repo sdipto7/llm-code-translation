@@ -1,0 +1,26 @@
+```plaintext
+1. Import the numpy library as np.
+
+2. Define a function that takes no parameters and returns an integer:
+   a. Read an integer input from the user and store it in variable N (type: int).
+
+3. Declare an empty list n (type: list of int).
+   a. Read a line of input from the user, split the string by spaces, and convert each element to an integer.
+   b. Store the list of integers in variable n.
+
+4. Convert the list n into a numpy array and store it back in n (type: numpy array of int).
+
+5. Initialize a variable a with the value 1 (type: int).
+
+6. Initialize a variable pos with the value 0 (type: int).
+
+7. Begin a for loop iterating over the range from 1 to N (exclusive):
+   a. Check if the element at position pos in n is greater than the element at position i in n.
+   b. If the condition is true:
+      i. Increment the value of a by 1.
+      ii. Update the value of pos to i.
+
+8. Print the value of a.
+
+9. End of function.
+```

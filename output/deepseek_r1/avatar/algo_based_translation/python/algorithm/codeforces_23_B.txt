@@ -1,0 +1,45 @@
+**Structured Algorithm Specification:**
+
+**Function/Method Signature:**  
+- Procedure `Main()`  
+  - Parameters: None  
+  - Return Type: Void  
+
+**Variables:**  
+- `n`: Integer (input count)  
+- `i`: Integer (loop counter, range: 0 ≤ i < n)  
+- `a`: Integer (temporary input value per iteration)  
+
+**Step-by-Step Logic:**  
+1. Read integer `n` from standard input.  
+2. Iterate `i` from `0` to `n - 1` (inclusive):  
+   1. Read integer `a` from standard input.  
+   2. If `a < 2`:  
+      1. Write `0` to standard output.  
+   3. Else (implicit `a ≥ 2`):  
+      1. Compute `result = a - 2`.  
+      2. Write `result` to standard output.  
+
+**Control Flow Structures:**  
+- Loop:  
+  - Type: Count-controlled (`for` loop)  
+  - Range: `0` to `n - 1`  
+  - Exit Criteria: After `n` iterations  
+- Conditionals:  
+  - `If a < 2`: Execute step 2.2.1  
+  - Else (implicit `a ≥ 2`): Execute step 2.3.1–2.3.2  
+
+**Input/Output Operations:**  
+- Inputs:  
+  - Read `n` (integer)  
+  - Read `a` (integer) `n` times  
+- Outputs:  
+  - Write `0` if `a < 2`  
+  - Write `a - 2` if `a ≥ 2`  
+
+**Edge Case Handling:**  
+- Values `a < 2` (including negative integers) output `0`.  
+- Value `a = 2` outputs `0`.  
+
+**External Dependencies:**  
+- None (relies on standard input/output functions only).

@@ -1,0 +1,26 @@
+1. Read input: N, u, v
+2. Initialize edges as an empty list for each node from 0 to N-1
+3. For i = 0 to N-2:
+   1. Read input: a, b
+   2. Add b to edges[a]
+   3. Add a to edges[b]
+4. Initialize array d of size N with all elements as Integer.MAX_VALUE
+5. Set d[u] = 0
+6. Perform DFS from node u using edges and update distances in d
+7. Initialize array e of size N with all elements as Integer.MAX_VALUE
+8. Set e[v] = 0
+9. Perform DFS from node v using edges and update distances in e
+10. Initialize q = -1
+11. For each node i from 0 to N-1:
+    1. If d[i] < e[i] and e[i] > q:
+        1. Update q = e[i]
+12. If q <= 0:
+    1. Output 0
+13. Else:
+    1. Output q - 1
+
+### DFS Function Steps:
+1. For each neighbor nu of node u:
+   1. If d[nu] == Integer.MAX_VALUE:
+      1. Set d[nu] = d[u] + 1
+      2. Perform DFS from node nu using edges and update distances in d

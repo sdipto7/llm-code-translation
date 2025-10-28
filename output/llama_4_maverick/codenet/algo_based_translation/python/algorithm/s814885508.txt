@@ -1,0 +1,11 @@
+1. Define a function `main()` with no parameters and no return value.
+2. Read three integer inputs from the user and store them in variables `X`, `K`, and `D` of type `int`.
+3. Calculate `r` = `X` divided by `D` using integer division (`//`) and store it in `r` of type `int`.
+4. Check if the absolute value of `r` is greater than `K`.
+   4.1. If true, calculate `abs(X) - K * D` and print the result.
+   4.2. Exit the program.
+5. If the condition in step 4 is false, calculate `a` = `X` - `r` * `D` and store it in `a` of type `int`.
+6. Check if (`K` - `r`) modulo 2 equals 0.
+   6.1. If true, print `a`.
+   6.2. If false, calculate `abs(D - a)` and print the result.
+7. The program terminates after executing the `main()` function when the script is run directly.

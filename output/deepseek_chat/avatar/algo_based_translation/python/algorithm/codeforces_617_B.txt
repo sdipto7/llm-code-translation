@@ -1,0 +1,14 @@
+1. Import the `prod` function from the `math` module
+2. Read and discard the first input line
+3. Read the second input line and store it as string variable `a`
+4. Count occurrences of "1" in string `a`
+5. If count equals 0:
+   - Print 0
+6. Else:
+   - Strip all "0" and space characters from both ends of `a`
+   - Split the resulting string by "1" character into a list of substrings
+   - For each substring in the resulting list:
+     - Count occurrences of "0" in the substring
+     - Add 1 to this count
+   - Calculate the product of all values in the resulting list
+   - Print the product

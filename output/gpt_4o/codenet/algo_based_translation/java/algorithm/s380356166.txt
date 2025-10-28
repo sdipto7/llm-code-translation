@@ -1,0 +1,71 @@
+```
+Algorithm:
+
+1. Main
+   - InputStream inputStream = System.in
+   - OutputStream outputStream = System.out
+   - Initialize MyInput instance `in` with inputStream
+   - Initialize PrintWriter `out` with outputStream
+   - Initialize Solver instance `solver`
+   - Call solver.solve(1, in, out)
+   - Close `out`
+
+2. Solver.solve(testNumber: int, in: MyInput, out: PrintWriter) -> void
+   - int ans = 0
+   - int K = in.nextInt()
+   - int S = in.nextInt()
+   - int wk = 0
+   - Loop for int x from 0 to K (inclusive)
+     - Loop for int y from 0 to K (inclusive)
+       - wk = S - x - y
+       - If wk >= 0 and wk <= K
+         - Increment ans
+   - Print ans to `out`
+
+3. MyInput
+   - BufferedReader `in`
+   - static int pos
+   - static int readLen
+   - static char[] buffer of size 8192
+   - static char[] str of size 8000
+   - static boolean[] isDigit of size 256
+   - static boolean[] isSpace of size 256
+   - static boolean[] isLineSep of size 256
+   - Static block to initialize isDigit, isSpace, isLineSep arrays
+   - MyInput(InputStream is)
+     - Initialize `in` with BufferedReader wrapping InputStreamReader of `is`
+   - int read() -> int
+     - If pos >= readLen
+       - Set pos = 0
+       - Try to read into buffer and set readLen
+       - Catch IOException and throw RuntimeException
+       - If readLen <= 0, throw EndOfFileRuntimeException
+     - Increment pos and return buffer[pos - 1]
+   - int nextInt() -> int
+     - int len = 0
+     - str[len++] = nextChar()
+     - len = reads(len, isSpace)
+     - Initialize int i = 0 and ret = 0
+     - If str[0] == '-', set i = 1
+     - Loop for i from i to len
+       - ret = ret * 10 + str[i] - '0'
+     - If str[0] == '-', ret = -ret
+     - Return ret
+   - char nextChar() -> char
+     - Infinite loop
+       - int c = read()
+       - If !isSpace[c], return (char) c
+   - int reads(len: int, accept: boolean[]) -> int
+     - Try
+       - Infinite loop
+         - int c = read()
+         - If accept[c], break
+         - If str.length == len
+           - Create new char[] rep with size str.length * 3 / 2
+           - Copy str to rep
+           - Assign rep to str
+         - str[len++] = (char) c
+     - Catch EndOfFileRuntimeException
+     - Return len
+   - static class EndOfFileRuntimeException extends RuntimeException
+```

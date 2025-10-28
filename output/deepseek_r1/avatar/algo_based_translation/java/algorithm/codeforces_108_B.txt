@@ -1,0 +1,31 @@
+**Algorithm:**
+
+- **Imports:**
+  - `java.util.Arrays`
+  - `java.util.Scanner`
+
+- **Function Signature:**
+  - `public static void main(String[] args)`
+
+- **Variables:**
+  - `Scanner in = new Scanner(System.in)` (Scanner object for input)
+  - `int n` (read from input, represents array size)
+  - `int[] a` (array of integers, size `n`)
+  - `int i` (loop index variables)
+
+- **Input Operations:**
+  1. Read integer `n` via `in.nextInt()`.
+  2. Initialize array `a` with size `n`.
+  3. Read `n` integers via `in.nextInt()`, storing them sequentially in `a`.
+
+- **Data Processing:**
+  1. Sort array `a` in non-decreasing order using `Arrays.sort(a)`.
+
+- **Control Flow:**
+  1. Loop: `for (i from 0 to a.length - 2 inclusive)`:
+     - **Condition**: Check if `a[i + 1] < 2 * a[i]` **AND** `a[i] != a[i + 1]`.
+       - If **true**: Print `"YES"` and terminate the program immediately (`return`).
+  2. If loop completes without termination: Print `"NO"`.
+
+- **Output Operations:**
+  - Print `"YES"` or `"NO"` based on the loop evaluation.

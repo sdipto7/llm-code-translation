@@ -1,0 +1,13 @@
+1. Read input string `s` from the user.
+2. Read input string `t` from the user.
+3. Define a function `check(a: str, b: str) -> int` that takes two string parameters `a` and `b` and returns an integer.
+   1. Initialize a variable `s` of type `int` to 0.
+   2. Iterate over the characters of `a` and `b` in parallel using `zip(a, b)`.
+      1. For each pair of characters `i` and `j`, increment `s` by 1 if `i` is not equal to `j`.
+   3. Return the value of `s`.
+4. Initialize a variable `ans` of type `int` to 10^6.
+5. Iterate over the range of indices of string `s` using `range(len(s))`.
+   1. For each index `i`, extract a substring `a` from `s` starting at index `i` to the end of `s`.
+   2. Check if the length of `a` is greater than or equal to the length of `t`.
+      1. If true, calculate the result of `check(t, a[:len(t)])` and update `ans` to be the minimum of its current value and the result.
+6. Print the final value of `ans`.

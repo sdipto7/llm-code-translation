@@ -1,0 +1,32 @@
+Function Signature: `public static void main(String[] args)`
+Parameters: `String[] args` (not used within the function)
+Return Type: `void`
+
+Variable Declarations and Data Types:
+- `Scanner sc` (for reading input)
+- `int N` (to store the integer input)
+- `char c[]` (to store the character array input)
+
+Logic Flow in Execution Order:
+1. Create a new `Scanner` object for reading input from standard input.
+2. Read an integer `N` from the input.
+3. Read a string from the input and convert it to a character array `c`.
+4. Loop through each element of the character array `c` using index `i`.
+   - For each character `c[i]`, perform the following steps:
+     - Subtract 'A' from `c[i]` to get a zero-based index of the character in the alphabet.
+     - Add `N` to the zero-based index to shift the character by `N` positions in the alphabet.
+     - Use modulo 26 to wrap around the alphabet if necessary.
+     - Add 'A' back to the result to convert it back to a character.
+     - Assign the resulting character back to `c[i]`.
+5. Print the modified character array `c` as a string.
+
+Control Structures:
+- `for` loop: Iterates over each character in the array `c` with `i` ranging from 0 to `c.length - 1`.
+
+Input/Output Operations and Data Processing Logic:
+- Input: Reads an integer and a string from standard input.
+- Output: Prints the modified character array `c` as a string to standard output.
+- Data Processing: Shifts each character in the array `c` by `N` positions in the alphabet, wrapping around if necessary.
+
+Required Libraries, Modules, or Dependencies:
+- `java.util.Scanner`

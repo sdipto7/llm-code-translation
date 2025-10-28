@@ -1,0 +1,26 @@
+Function Signature:
+- main() : void
+
+Variable Declarations:
+- sc : Scanner
+- num : int
+
+Logic Flow:
+1. Initialize a Scanner object `sc` to read input from standard input.
+2. Read an integer from input using `sc.nextInt()` and assign it to the integer variable `num`.
+3. If `num` is less than 1200, execute the following:
+   - Output the string "ABC" to standard output.
+4. Otherwise, execute the following:
+   - Output the string "ARC" to standard output.
+
+Control Structures:
+- Conditional: if (num < 1200)
+  - Then: Output "ABC"
+  - Else: Output "ARC"
+
+Input/Output Operations:
+- Input: Read an integer from standard input.
+- Output: Print "ABC" or "ARC" to standard output depending on the condition.
+
+Required Libraries:
+- java.util.Scanner for reading input.

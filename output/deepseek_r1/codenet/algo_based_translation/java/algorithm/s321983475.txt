@@ -1,0 +1,25 @@
+- Function Signature:
+  - `public static void main(String[] args)` (void return, String array parameter)
+- Variables:
+  - `Scanner sc` (java.util.Scanner type)
+  - `int w`, `int a`, `int b`, `int answer`
+- Input Operations:
+  - Read three integers via Scanner from System.in sequentially: `w = sc.nextInt()`, `a = sc.nextInt()`, `b = sc.nextInt()`
+- Processing Logic:
+  1. Calculate difference between maximum of (a, b) and minimum of (a, b)
+  2. Subtract w from the calculated difference
+  3. Store result in `answer`
+- Control Structures:
+  - If-else:
+    - Condition: `if (answer < 0)`
+    - True branch: Output 0 via `System.out.println(0)`
+    - False branch: Output `answer` via `System.out.println(answer)`
+- Dependencies:
+  - `java.util.Scanner` (imported via `java.util.*`)
+- Execution Flow:
+  1. Initialize Scanner
+  2. Read three integers
+  3. Compute positional difference between a and b
+  4. Subtract w from difference
+  5. Output 0 if result negative, else output result
+  6. Close scanner (implicit in Java)

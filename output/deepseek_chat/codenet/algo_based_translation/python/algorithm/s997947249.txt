@@ -1,0 +1,5 @@
+read integers N and K from input
+if N modulo K equals 0:
+    output integer 0
+else:
+    output integer 1

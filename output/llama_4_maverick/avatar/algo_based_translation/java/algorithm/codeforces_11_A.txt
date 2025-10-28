@@ -1,0 +1,10 @@
+1. Read two integers n and d from the input.
+2. Initialize an array of size n to store integers.
+3. Read n integers from the input and store them in the array.
+4. Initialize a variable result to 0.
+5. Iterate through the array from the second element to the last element.
+6. For each element, calculate the difference between the current element and its previous element.
+7. If the difference is greater than or equal to 0, calculate the number of times d fits into the difference and add 1 to it.
+8. Add the calculated value to result.
+9. Update the current element by adding the product of the calculated value and d to it.
+10. After iterating through the entire array, output the value of result.

@@ -1,0 +1,33 @@
+1. Initialize a scanner to read input from the user.
+2. Read two integers, N and M, using the scanner.
+3. Create an array of N Box objects, B.
+4. Initialize the first Box object in B with a count of 1 and a red flag set to true.
+5. Initialize the remaining N-1 Box objects in B with a count of 1 and a red flag set to false.
+6. For M iterations, read two integers, x and y, using the scanner.
+7. Subtract 1 from x and y to adjust the indices.
+8. Call the moveTo method on the Box object at index x in B, passing the Box object at index y in B as an argument.
+9. Iterate through the Box objects in B.
+10. For each Box object, check if the red flag is true.
+11. Count the number of Box objects with the red flag set to true.
+12. Output the count of Box objects with the red flag set to true.
+
+OR in a more detailed and structured algorithmic representation:
+
+1. Read N and M.
+2. Create Box array B of size N.
+3. For i from 0 to N-1:
+   4. If i is 0, initialize B[i] with count 1 and red flag true.
+   5. Else, initialize B[i] with count 1 and red flag false.
+6. For i from 0 to M-1:
+   7. Read x and y.
+   8. Adjust x and y by subtracting 1.
+   9. Call moveTo on B[x] with B[y] as the target.
+10. Initialize counter to 0.
+11. For each Box b in B:
+    12. If b's red flag is true, increment counter.
+13. Output counter.
+
+The moveTo method's steps are as follows:
+1. If the current count is 0, return without any changes.
+2. If the current count is 1, set the current count to 0, increment the target's count by 1, and if the current Box is red, set the target's red flag to true. Then, set the current Box's red flag to false.
+3. If the current count is more than 1, decrement the current count by 1, increment the target's count by 1, and if the current Box is red, set the target's red flag to true.

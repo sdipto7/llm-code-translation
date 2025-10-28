@@ -1,0 +1,27 @@
+1. Define a function `calculate_result` with no parameters and return type `None`.
+2. Declare variables `x`, `a`, `b`, and `result` of type `int`.
+3. Read an integer input from the user and store it in `x`.
+4. Read an integer input from the user and store it in `a`.
+5. Read an integer input from the user and store it in `b`.
+6. Calculate the result of the expression `(x - a) % b` and store it in `result`.
+7. Output the value of `result` to the console.
+8. The program terminates. 
+
+Alternatively, in a more structured format:
+- Function: `main() -> None`
+  1. `x: int = read_integer_input()`
+  2. `a: int = read_integer_input()`
+  3. `b: int = read_integer_input()`
+  4. `result: int = calculate_modulo(x, a, b)`
+  5. `output_result(result)`
+
+- Function: `read_integer_input() -> int`
+  1. Read an integer from the standard input.
+  2. Return the read integer.
+
+- Function: `calculate_modulo(x: int, a: int, b: int) -> int`
+  1. Calculate `(x - a) % b`.
+  2. Return the calculated result.
+
+- Function: `output_result(result: int) -> None`
+  1. Output `result` to the standard output.

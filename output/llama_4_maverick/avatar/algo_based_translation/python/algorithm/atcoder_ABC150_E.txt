@@ -1,0 +1,11 @@
+1. mod ← 10^9 + 7
+2. n ← read_integer_input()
+3. c ← read_array_of_integers()
+4. sort_array_in_reverse_order(c)
+5. b ← power(2, 2*n - 2, mod)
+6. a ← 2 * b mod mod
+7. ans ← 0
+8. for i from 0 to n-1 do
+    8.1 ans ← ans + c[i] * (a + i * b)
+    8.2 ans ← ans mod mod
+9. print(ans)

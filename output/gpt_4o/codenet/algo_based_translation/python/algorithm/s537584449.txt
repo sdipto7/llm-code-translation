@@ -1,0 +1,28 @@
+```
+Function Signature:
+    func(a: int) -> None
+
+Algorithm:
+1. Input Operation:
+    - Read an integer from the user and store it in variable `a`.
+
+2. Function `func` Execution:
+    - Declare a list `digits` to store integer values.
+    - Initialize a variable `temp` with the value of `a`.
+
+3. While Loop:
+    - Condition: `temp != 0`
+        a. Compute `temp % 10` and append the result to the list `digits`.
+        b. Update `temp` with the quotient of `temp` divided by 10, using integer division.
+
+4. Sum Calculation:
+    - Calculate the sum of all elements in the list `digits` and store it in variable `result`.
+
+5. Conditional Check:
+    - If `result` is equal to 1:
+        a. Output the string '10'.
+    - Else:
+        a. Output the value of `result`.
+
+6. End of Function.
+```

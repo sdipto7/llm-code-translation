@@ -1,0 +1,8 @@
+1. Define a function `calculate_result` with no parameters and return type `int`.
+2. Declare variables `X`, `h`, `a`, and `y` with data type `int`.
+3. Read an integer input from the user and store it in `X`.
+4. Perform integer division of `X` by 500 and store the result in `h`.
+5. Calculate the remainder of `X` divided by 500, perform integer division of the result by 5, and store it in `a`.
+6. Calculate `y` by multiplying `h` by 1000 and adding the product of `a` and 5.
+7. Output the value of `y`.
+8. The program requires no external libraries or modules.

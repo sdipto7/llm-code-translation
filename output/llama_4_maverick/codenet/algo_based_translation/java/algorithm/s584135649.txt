@@ -1,0 +1,16 @@
+1. Import the required library: java.util.Scanner
+2. Define a class: Main
+3. Define a function: main with return type void and parameter type String[] args
+4. Declare a variable: sc of type Scanner and initialize it with a new Scanner object using System.in
+5. Declare a variable: i of type int and initialize it with 0
+6. Start a for loop with:
+   - Initialization: i = 1
+   - Condition: i <= 5
+   - Increment: i++
+7. Inside the loop:
+   - Declare a variable: n of type int
+   - Read an integer input from the user using sc.nextInt() and store it in n
+   - Check if n equals 0 using an if statement
+   - If the condition is true, break out of the loop
+8. After the loop:
+   - Print the value of i to the console using System.out.println(i)

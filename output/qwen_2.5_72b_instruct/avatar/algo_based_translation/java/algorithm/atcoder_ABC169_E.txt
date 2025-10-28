@@ -1,0 +1,34 @@
+Function signature: `public static void main(String[] args) throws Exception`
+
+Variable declarations:
+- `int num = 998244353`
+- `BufferedReader bf = new BufferedReader(new InputStreamReader(System.in))`
+- `PrintWriter out = new PrintWriter(System.out)`
+- `int n = Integer.parseInt(bf.readLine())`
+- `ArrayList<Integer> ai = new ArrayList<Integer>()`
+- `ArrayList<Integer> bi = new ArrayList<Integer>()`
+- `StringTokenizer st`
+- `int i`
+- `double b`
+- `double c`
+
+Logic flow:
+1. Initialize `num` to 998244353
+2. Initialize `bf` to read input from standard input
+3. Initialize `out` to write output to standard output
+4. Read integer `n` from input
+5. Loop `i` from 0 to `n-1`:
+   - Tokenize the next line of input into `st`
+   - Parse first token of `st` as integer and add to `ai`
+   - Parse second token of `st` as integer and add to `bi`
+6. Sort `ai` in ascending order
+7. Sort `bi` in ascending order
+8. If `n` is odd:
+   - Calculate median of `bi` as `bi.get(bi.size() / 2)`
+   - Calculate median of `ai` as `ai.get(ai.size() / 2)`
+   - Print result of `median of bi - median of ai + 1`
+9. Else if `n` is even:
+   - Calculate average of middle two elements of `ai` as `(ai.get(ai.size() / 2) + ai.get(ai.size() / 2 - 1) + 0.0) / 2` and assign to `b`
+   - Calculate average of middle two elements of `bi` as `(bi.get(bi.size() / 2) + bi.get(bi.size() / 2 - 1) + 0.0) / 2` and assign to `c`
+   - Print result of `2 * (c - b) + 1` cast to integer
+10. Close `out`

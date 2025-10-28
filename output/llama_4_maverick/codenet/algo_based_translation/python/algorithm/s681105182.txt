@@ -1,0 +1,25 @@
+1. Import the sys module.
+2. Set the recursion limit to 10^7 using sys.setrecursionlimit().
+3. Define the following functions:
+   - LI(): returns a list of integers from the input line, split by spaces.
+   - LI_(): returns a list of integers from the input line, split by spaces, and subtracts 1 from each integer.
+   - LF(): returns a list of floats from the input line, split by spaces.
+   - LS(): returns a list of strings from the input line, split by spaces.
+   - II(): returns an integer from the input line.
+   - SI(): returns a string from the input line, stripped of leading/trailing whitespaces.
+4. Declare constants:
+   - INF = 10^18
+   - MOD = 10^9 + 7
+5. Define the main function with no parameters and no return value.
+6. Inside main():
+   1. Read an integer N using II() and store it in the variable N.
+   2. Read a list of integers using LI() and store it in the variable a_li.
+   3. Sort the list a_li in ascending order.
+   4. Store the last element of the sorted list a_li in the variable n.
+   5. Initialize the variable dif with INF and prev_dif with dif.
+   6. Iterate through all elements except the last one in the sorted list a_li.
+      1. For each element a, update dif to be the minimum of its current value and the absolute difference between n/2 and a.
+      2. Check if dif is not equal to prev_dif.
+         1. If true, update r to be a and prev_dif to be dif.
+   7. Print the values of n and r.
+7. Call the main function.

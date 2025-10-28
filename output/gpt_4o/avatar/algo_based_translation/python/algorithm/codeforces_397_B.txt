@@ -1,0 +1,28 @@
+Algorithm:
+
+1. Define a class `CodeforcesTask397BSolution`.
+   - Initialize the class with:
+     - `self.result` as an empty string.
+     - `self.t` as an integer initialized to 0.
+     - `self.queries` as an empty list.
+
+2. Implement `read_input(self)` method:
+   - Read an integer from input and assign it to `self.t`.
+   - For each index in the range from 0 to `self.t` (exclusive):
+     - Read a line of input, split it by spaces, convert each element to an integer, and append the resulting list to `self.queries`.
+
+3. Implement `process_task(self)` method:
+   - Initialize an empty list `res`.
+   - For each `query` in `self.queries`:
+     - Compute `k` as the integer division of `query[0]` by `query[1]`.
+     - If `k * query[2]` is greater than or equal to `query[0]`, append "Yes" to `res`, otherwise append "No".
+   - Join the elements of `res` with newline characters and assign the result to `self.result`.
+
+4. Implement `get_result(self)` method:
+   - Return `self.result`.
+
+5. In the main execution block:
+   - Create an instance of `CodeforcesTask397BSolution` named `Solution`.
+   - Call `Solution.read_input()`.
+   - Call `Solution.process_task()`.
+   - Print the result of `Solution.get_result()`.

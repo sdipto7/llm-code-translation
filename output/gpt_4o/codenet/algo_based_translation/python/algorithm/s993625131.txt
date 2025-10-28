@@ -1,0 +1,31 @@
+1. Function Signature:
+   - `longest_acgt_substring(input: str) -> int`
+
+2. Variable Declarations:
+   - `S: List[str]` - a list of characters derived from the input string.
+   - `count: int` - an integer to keep track of the current length of a substring containing only 'A', 'C', 'G', or 'T'.
+   - `record: int` - an integer to store the maximum length of valid substrings found.
+
+3. Logic Flow:
+   1. Read a string input and convert it into a list of characters `S`.
+   2. Initialize `count` to 0.
+   3. Initialize `record` to 0.
+   4. Iterate over each character in the list `S` using its index `i`.
+      - If the character `S[i]` is 'A', 'C', 'G', or 'T':
+        - Increment `count` by 1.
+      - Otherwise:
+        - If `count` is greater than `record`, then update `record` to be equal to `count`.
+        - Reset `count` to 0.
+   5. After the loop, if `count` is greater than `record`, update `record` to be equal to `count`.
+
+4. Control Structures:
+   - A `for` loop iterating over indices of list `S`.
+   - An `if` statement to check if the current character is one of 'A', 'C', 'G', or 'T'.
+   - Another `if` statement inside the `else` block to compare `count` and `record`.
+
+5. Input/Output Operations:
+   - The input is read as a string and converted to a list of characters.
+   - The output is the integer `record`, which is printed.
+
+6. Libraries/Modules/Dependencies:
+   - No external libraries or modules are required.

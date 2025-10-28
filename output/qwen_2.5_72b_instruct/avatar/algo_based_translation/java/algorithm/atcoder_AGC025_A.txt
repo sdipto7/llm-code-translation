@@ -1,0 +1,21 @@
+Function: sum (int a) -> int
+- Variable: int ans = 0
+- While a >= 10
+  - ans += a % 10
+  - a /= 10
+- ans += a
+- Return ans
+
+Main Function: main (String[] args) -> void
+- Variable: Scanner stdIn
+- Variable: int N = stdIn.nextInt()
+- Variable: int n
+- If N % 2 == 0
+  - n = N / 2
+- Else
+  - n = (N + 1) / 2
+- Variable: int ans = sum(1) + sum(N - 1)
+- For int A = 1 to A <= n
+  - If sum(A) + sum(N - A) < ans
+    - ans = sum(A) + sum(N - A)
+- Output: System.out.println(ans)

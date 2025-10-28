@@ -1,0 +1,44 @@
+1. Import required libraries: `java.io.PrintStream` and `java.util.Scanner`.
+2. Define a class `Main` with static variables: `sc` of type `Scanner` and `so` of type `PrintStream`.
+3. Define the `main` method with parameter `args` of type `String[]` and return type `void`.
+   1. Read an integer `N` using the `nint` method.
+   2. Read an integer `W` using the `nint` method.
+   3. Declare two integer arrays `v` and `w` of size `N+1`.
+   4. Iterate from `i = 1` to `N` (inclusive).
+      1. Read an integer and store it in `v[i]` using the `nint` method.
+      2. Read an integer and store it in `w[i]` using the `nint` method.
+   5. Declare a 2D integer array `sumV` of size `(N+1) x (W+1)`.
+   6. Iterate from `i = 1` to `N` (inclusive).
+      1. Iterate from `i_sum = 0` to `w[i] - 1` (inclusive).
+         1. Assign `sumV[i][i_sum] = sumV[i-1][i_sum]`.
+      2. Iterate from `i_sum = w[i]` to `W` (inclusive).
+         1. Assign `sumV[i][i_sum] = max(sumV[i-1][i_sum], sumV[i-1][i_sum-w[i]] + v[i])`.
+   7. Print `sumV[N][W]` to the output stream using `so.println`.
+4. Define the following static methods:
+   1. `nlong`: Read a `long` value from the input stream using `sc.nextLong` and return it.
+   2. `nint`: Read an `int` value from the input stream using `sc.nextInt` and return it.
+   3. `nstr`: Read a `String` value from the input stream using `sc.next` and return it.
+   4. `nsToChars`: Read a `String` value from the input stream using `sc.next`, convert it to a character array using `toCharArray`, and return it.
+   5. `nlongs(n)`: Call `nlongs(n, 0, 0)` and return the result.
+   6. `nints(n)`: Call `nints(n, 0, 0)` and return the result.
+   7. `nints(n, padL, padR)`: 
+      1. Declare a `int` array `a` of size `padL + n + padR`.
+      2. Iterate from `i = 0` to `n-1` (inclusive).
+         1. Read an `int` value using `nint` and store it in `a[padL + i]`.
+      3. Return `a`.
+   8. `nlongs(n, padL, padR)`: 
+      1. Declare a `long` array `a` of size `padL + n + padR`.
+      2. Iterate from `i = 0` to `n-1` (inclusive).
+         1. Read a `long` value using `nlong` and store it in `a[padL + i]`.
+      3. Return `a`.
+   9. `nstrs(n)`: 
+      1. Declare a `String` array `a` of size `n`.
+      2. Iterate from `i = 0` to `n-1` (inclusive).
+         1. Read a `String` value using `nstr` and store it in `a[i]`.
+      3. Return `a`.
+   10. `nsToChars2D(h, w)`: Call `nsToChars2D(h, w, 0)` and return the result.
+   11. `nsToChars2D(h, w, pad)`:
+       1. Declare a 2D character array `a2` of size `(h + pad*2) x (w + pad*2)`.
+       2. Iterate from `i = 0` to `h-1` (inclusive).
+          1. Read a `String` value using `nsToChars`, and copy its characters to `a2[pad + i]` starting from index `pad` using `System.arraycopy`.
+       3. Return `a2`.

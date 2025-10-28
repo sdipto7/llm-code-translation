@@ -1,0 +1,32 @@
+1. Read input string and split by space into list xxs
+2. Assign:
+   x = int(xxs[0])
+   t = int(xxs[1])
+   a = int(xxs[2])
+   b = int(xxs[3])
+   da = int(xxs[4])
+   db = int(xxs[5])
+
+3. Define function main() with no parameters, returns string
+4. If x equals 0:
+   - Print "YES"
+   - Return "Result Found"
+
+5. Calculate:
+   a_time = minimum of (a divided by da) and (t - 1)
+   b_time = minimum of (b divided by db) and (t - 1)
+
+6. For i from 0 to a_time (inclusive):
+   For j from 0 to b_time (inclusive):
+      If (a - da*i) equals x OR (b - db*j) equals x:
+         - Print "YES"
+         - Return "Result Found"
+      If (a - da*i) + (b - db*j) equals x:
+         - Print "YES"
+         - Return "Result Found"
+
+7. Return "Result Not Found"
+
+8. Call main() and store result in ff
+9. If ff equals "Result Not Found":
+   - Print "NO"

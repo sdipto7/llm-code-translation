@@ -1,0 +1,19 @@
+function main():
+    print(solve())
+
+function solve() -> int:
+    sc = Scanner(System.in)
+    N = sc.nextInt() as int
+    arr = new int[N]
+    for i from 0 to N-1:
+        arr[i] = sc.nextInt()
+    
+    sum = 0
+    q = new PriorityQueue<Integer>()
+    
+    for i from 0 to arr.length-1:
+        q.add(arr[i])
+        if arr[i] <= q.peek():
+            sum = sum + 1
+    
+    return sum

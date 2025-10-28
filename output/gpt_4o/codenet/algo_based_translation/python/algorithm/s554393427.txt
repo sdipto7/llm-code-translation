@@ -1,0 +1,17 @@
+```
+Algorithm:
+1. Declare integer variable `N`.
+2. Read integer input and assign it to `N`.
+3. Declare list `mo` to store currency data.
+4. Loop `N` times:
+   a. Read a line of input and split it into two parts: `x` and `u`.
+   b. Convert `x` to a float.
+   c. Append list `[x, u]` to `mo`.
+5. Declare float variable `okz` and initialize it to 0.
+6. Iterate over each element `i` in list `mo`:
+   a. Check if `i[1]` is equal to "JPY":
+      i. Add `i[0]` to `okz`.
+   b. Otherwise:
+      i. Add `i[0] * 380000` to `okz`.
+7. Print the value of `okz`.
+```

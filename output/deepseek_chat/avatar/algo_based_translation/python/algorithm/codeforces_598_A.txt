@@ -1,0 +1,12 @@
+Read integer t from input
+Define function solve(n):
+    s = (1 + n) * n // 2
+    t = 1
+    While t <= n:
+        s = s - 2 * t
+        t = t * 2
+    Return s
+
+For each of t iterations:
+    Read integer n from input
+    Call solve(n) and print result

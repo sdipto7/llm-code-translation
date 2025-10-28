@@ -1,0 +1,23 @@
+Function signature: main() -> None
+
+Variable declarations:
+x: int
+y: int
+a: int
+b: int
+c: int
+p: List[int]
+q: List[int]
+r: List[int]
+pq: List[int]
+
+Logic flow:
+1. Read six integers from input and assign them to x, y, a, b, c
+2. Read next x integers from input, sort them in descending order, and take the first x elements, assign to p
+3. Read next y integers from input, sort them in descending order, and take the first y elements, assign to q
+4. Read next integers from input, sort them in descending order, assign to r
+5. Concatenate p and q, sort the result in ascending order, assign to pq
+6. For i from 0 to min(x+y, a, b, c) - 1 do
+   a. If pq[i] < r[i] then
+      i. Assign r[i] to pq[i]
+7. Print the sum of pq

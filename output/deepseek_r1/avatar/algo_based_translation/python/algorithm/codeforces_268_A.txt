@@ -1,0 +1,59 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main()` -> `void`  
+  *No parameters, executes the program logic.*
+
+**Variable Declarations:**
+- `n: Integer` (Input: read from stdin)  
+- `q: List[List[String]]` (Stores split input lines)  
+- `count: Integer` (Initial value: 0)  
+- `i: Integer` (Loop index for input collection)  
+- `j: List[String]` (Outer loop element from `q`)  
+- `k: List[String]` (Inner loop element from `q`)  
+- `a: List[String]` (Temporary storage for split input line)  
+
+**Step-by-Step Logic Flow:**
+1. Read integer `n` from standard input.  
+2. Initialize `q` as an empty list.  
+3. Initialize `count` to `0`.  
+4. Loop `i` from `0` to `n-1` (inclusive):  
+   4.1 Read a line from standard input.  
+   4.2 Split the line into a list of strings (`a`) using whitespace delimiter.  
+   4.3 Append `a` to `q`.  
+5. For each `j` in `q`:  
+   5.1 For each `k` in `q`:  
+      5.1.1 If `k == j` (element-wise equality), skip to next iteration.  
+      5.1.2 Else:  
+            - Check if `j[0]` (first element of `j`) equals `k[-1]` (last element of `k`).  
+            - If true, increment `count` by `1`.  
+6. Print `count` to standard output.  
+
+**Control Flow Structures:**
+- **Loop**: `for i in range(n)` (exact iteration count: `n`)  
+- **Nested Loops**:  
+  - Outer: `for j in q` (iterates over all elements in `q`)  
+  - Inner: `for k in q` (iterates over all elements in `q` for each `j`)  
+- **Conditionals**:  
+  - `if k == j`: Skips comparison of identical elements (content-wise).  
+  - `elif j[0] == k[-1]`: Determines whether to increment `count`.  
+
+**Input/Output Operations:**
+- Input:  
+  - Read `n` via `input()`, cast to `int`.  
+  - Read `n` lines via `input()`, split into lists of strings.  
+- Output:  
+  - Print final `count` value.  
+
+**Error Handling Mechanisms:**
+- **Assumptions**:  
+  - `n` is a non-negative integer.  
+  - All input lines contain at least one token (no empty sublists in `q`).  
+- **Unhandled Cases**:  
+  - Invalid `n` (non-integer input).  
+  - Empty lines causing `IndexError` when accessing `j[0]` or `k[-1]`.  
+
+**External Dependencies:**
+- Uses `input()` for reading data.  
+- Uses `split()` method for string tokenization.  
+- No external libraries or modules beyond standard runtime.

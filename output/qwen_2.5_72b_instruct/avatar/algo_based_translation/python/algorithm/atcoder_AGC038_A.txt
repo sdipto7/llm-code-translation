@@ -1,0 +1,43 @@
+Function Signature: `solve(H: int, W: int, A: int, B: int)`
+Variable Declarations: 
+- `answer`: List[List[str]] initialized as a 2D list of size HxW filled with "0"
+
+Logic Flow:
+1. Initialize `answer` as a 2D list of size HxW filled with "0"
+2. For each row index `i` from 0 to H-1:
+   - For each column index `j` from 0 to W-1:
+     - If `i` is less than B:
+       - If `j` is less than A:
+         - Set `answer[i][j]` to "0"
+       - Else:
+         - Set `answer[i][j]` to "1"
+     - Else:
+       - If `j` is less than A:
+         - Set `answer[i][j]` to "1"
+       - Else:
+         - Set `answer[i][j]` to "0"
+3. For each row index `i` from 0 to H-1:
+   - Print the joined string of `answer[i]`
+
+Function Signature: `main()`
+Variable Declarations:
+- `tokens`: Generator object from `iterate_tokens()`
+- `H`: int, next token converted to integer
+- `W`: int, next token converted to integer
+- `A`: int, next token converted to integer
+- `B`: int, next token converted to integer
+
+Logic Flow:
+1. Define nested function `iterate_tokens()`:
+   - For each line in standard input:
+     - For each word in line split by spaces:
+       - Yield word
+2. Create generator object `tokens` from `iterate_tokens()`
+3. Assign `H` as next value from `tokens` converted to integer
+4. Assign `W` as next value from `tokens` converted to integer
+5. Assign `A` as next value from `tokens` converted to integer
+6. Assign `B` as next value from `tokens` converted to integer
+7. Call `solve(H, W, A, B)`
+
+Required Libraries, Modules, or Dependencies:
+- `sys` module

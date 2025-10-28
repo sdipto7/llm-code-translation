@@ -1,0 +1,16 @@
+n: integer = read integer from standard input
+p: list of integers = read next line, split by spaces, convert each element to integer
+p_copy: list of integers = create a copy of list p
+
+sort list p in ascending order
+
+count: integer = 0
+
+for i from 0 to n-1:
+    if element at index i in p is not equal to element at index i in p_copy:
+        increment count by 1
+
+if count equals 0 OR count equals 2:
+    print "YES"
+else:
+    print "NO"

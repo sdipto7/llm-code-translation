@@ -1,0 +1,27 @@
+Function Signatures:
+- None (executed as a script)
+
+Variable Declarations:
+- S: string (stores user input)
+
+Logic Flow:
+1. Read input into S via standard input.
+2. Check if S is 'Sunny':
+   a. If true, print 'Cloudy'.
+3. Check if S is 'Cloudy':
+   a. If true, print 'Rainy'.
+4. Check if S is 'Rainy':
+   a. If true, print 'Sunny'.
+
+Control Structures:
+- Three sequential if statements:
+  1. if S == 'Sunny'
+  2. if S == 'Cloudy'
+  3. if S == 'Rainy'
+
+Input/Output Operations:
+- Input: Read string S from stdin.
+- Output: Print 'Cloudy', 'Rainy', or 'Sunny' to stdout based on S's value.
+
+Required Libraries/Dependencies:
+- None (uses built-in input/output functions).

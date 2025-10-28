@@ -1,0 +1,31 @@
+Function Signature: `main() -> None`
+
+Variable Declarations:
+- `N: int`
+- `K: int`
+- `S: set[int]`
+- `i: int`
+- `d: int`
+- `A: list[int]`
+
+Logic Flow:
+1. Read a line of input, split it into two integers, and assign them to `N` and `K`.
+2. Initialize an empty set `S`.
+3. Loop `K` times:
+   1. Read an integer `d` from input.
+   2. Read a line of input, split it into integers, convert them to a list `A`.
+   3. Update set `S` to be the union of `S` and the set created from list `A`.
+4. Calculate the difference between `N` and the size of set `S`.
+5. Print the result of the difference.
+
+Input/Output Operations:
+- Input: Read integers from standard input.
+- Output: Print an integer to standard output.
+
+Data Processing Logic:
+- The algorithm reads the number of elements `N` and the number of subsets `K`.
+- For each subset, it reads the size `d` and the elements of the subset, then adds these elements to the set `S`.
+- After processing all subsets, it calculates how many elements from 1 to N are not in any of the subsets and prints this count.
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries or modules are required.

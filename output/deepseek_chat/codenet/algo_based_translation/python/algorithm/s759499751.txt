@@ -1,0 +1,29 @@
+**Function Signature:**
+main() -> None
+
+**Variables:**
+- n: int, k: int (from input)
+- a: list[str] (from input)
+- c: list[int] (length n, initialized to zeros)
+- w: int (loop counter)
+- l: int, r: int (from input)
+
+**Algorithm:**
+1. Read first line input: split into n and k (integers)
+2. Read second line input: convert to list of characters 'a'
+3. Initialize list 'c' of length n with zeros
+4. For i from 1 to n-1 (inclusive):
+   - If a[i] equals 'C' AND a[i-1] equals 'A':
+        c[i] = c[i-1] + 1
+   - Else:
+        c[i] = c[i-1]
+5. For w from 0 to k-1 (inclusive):
+   - Read input line: split into l and r (integers)
+   - Print c[r-1] - c[l-1]
+
+**Input/Output:**
+- Input: First line contains n k, second line contains string, subsequent k lines contain l r
+- Output: k lines of integer results
+
+**Dependencies:**
+- Standard input/output operations

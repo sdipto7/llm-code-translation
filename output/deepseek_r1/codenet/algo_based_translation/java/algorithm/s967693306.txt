@@ -1,0 +1,45 @@
+**Algorithm:**
+
+1. **Input Reading and Initialization:**
+   - Read integers `n` (number of digits) and `m` (number of constraints).
+   - Initialize a map to store constraints where key is the 1-based digit position and value is the required digit.
+
+2. **Constraint Validation:**
+   - For each of `m` constraints:
+     - Read position `s` and digit `c`.
+     - If `s` already exists in the map with a different `c`, immediately output `-1` and terminate.
+
+3. **Brute-force Search for Valid Number:**
+   - Iterate `i` from 0 to 999:
+     - Convert `i` to string `s`.
+     - If `s` length is not exactly `n`, skip.
+     - Initialize flag `valid` as true.
+     - For each digit position `j` (0-based index in string):
+       - Get current digit value `d`.
+       - Check if position `j+1` has a constraint:
+         - If constrained and digit mismatch: mark invalid.
+         - If unconstrained and digit ≠ 0:
+           - Allow only if position is first (j=0) and digit is 1.
+           - Otherwise, mark invalid.
+     - If all digits valid and length is `n`:
+       - Output `s` and terminate.
+
+4. **Fallback Output:**
+   - If no valid number found after all iterations, output `-1`.
+
+**Data Structures:**
+- `HashMap<Integer, Integer>` for constraints.
+
+**Control Flow:**
+- Immediate termination if conflicting constraints.
+- Loop through candidate numbers sequentially (0 to 999).
+- String conversion and per-digit validation with early termination on mismatches.
+
+**Edge Cases:**
+- `n=1` allows 0 as valid start.
+- Unconstrained leading digit defaults to 1 if possible.
+- Check for invalid numbers like leading zeros when `n>1`.
+
+**Input/Output:**
+- Reads from standard input using fast scanner.
+- Outputs first valid candidate or `-1` via standard output.

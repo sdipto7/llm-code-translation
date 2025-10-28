@@ -1,0 +1,32 @@
+Algorithm:
+
+1. Define a class `Job` that implements `Comparable<Job>`:
+   - Declare two integer variables `a` and `b`.
+   - Constructor `Job(int a, int b)` initializes `this.a` and `this.b`.
+   - Override the method `compareTo(Job otherJob)`:
+     - If `otherJob.a` is equal to `this.a`, return `this.b - otherJob.b`.
+     - Otherwise, return `this.a - otherJob.a`.
+
+2. Define the main function `main(String[] args)`:
+   - Import the necessary libraries: `Collections`, `PriorityQueue`, `Queue`, and `Scanner`.
+   - Create a `Scanner` object `sc` for reading input from the standard input.
+   - Read a line from input, split it by "␣", and store it in a string array `line`.
+   - Parse `line[0]` to an integer and assign to `N`.
+   - Parse `line[1]` to an integer and assign to `M`.
+   - Initialize a priority queue `q` of type `Queue<Job>`.
+   - Loop `i` from 0 to `N - 1`:
+     - Read a line from input, split it by "␣", and store it in `line`.
+     - Parse `line[0]` to an integer `a`.
+     - Parse `line[1]` to an integer `b`.
+     - Add a new `Job(a, b)` to the priority queue `q`.
+   - Declare an integer `cnt` and initialize it to 0.
+   - Initialize a priority queue `jobQ` of type `Queue<Integer>` with elements in reverse order.
+   - Loop `i` from 1 to `M`:
+     - While `q` is not empty:
+       - Get the `Job` object at the front of the queue `q` and assign it to `job`.
+       - If `job.a` is less than or equal to `i`:
+         - Remove the front element from `q`, get its `b` value, and add it to `jobQ`.
+       - Else, break the loop.
+     - If `jobQ` is not empty:
+       - Remove the highest `b` value from `jobQ` and add it to `cnt`.
+   - Print the value of `cnt`.

@@ -1,0 +1,8 @@
+1. Read the number of elements N from the input.
+2. Create an empty map to store the elements and their corresponding indices.
+3. Iterate from 1 to N and read an element A from the input for each iteration.
+4. Store the element A and its index i in the map.
+5. Iterate from 1 to N.
+6. For each iteration i, retrieve the index stored in the map for the element i.
+7. Print the retrieved index.
+8. Print a space after printing the index.

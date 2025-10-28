@@ -1,0 +1,24 @@
+Function signature:
+- main(String[] args): void
+
+Variable declarations and data types:
+- n: int
+- a: int
+- b: int
+- list1: ArrayList<Integer>
+- list2: ArrayList<Integer>
+- i: int
+
+Logic flow:
+1. Create a Scanner object to read input.
+2. Read three integers n, a, and b from the input.
+3. Initialize two ArrayLists of Integer type, list1 and list2.
+4. For i from 0 to a-1, read an integer from the input and add it to list1.
+5. For i from 0 to b-1, read an integer from the input and add it to list2.
+6. For i from 0 to n-1:
+   - If list1 contains the integer i+1, print "1" followed by a space.
+   - Otherwise, print "2" followed by a space.
+7. Terminate the program.
+
+Required libraries:
+- java.util.*

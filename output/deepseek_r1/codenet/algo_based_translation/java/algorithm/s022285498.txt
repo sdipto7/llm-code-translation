@@ -1,0 +1,26 @@
+- Function: solve (testNumber: int, in: InputReader, out: PrintWriter) → void
+  - Variables:
+    - n: int (input value)
+    - countArr: int[] (size n+1)
+  - Logic Flow:
+    1. Read n using in.nextInt()
+    2. Initialize countArr with all zeros
+    3. Iterate x from 1 to 100 (inclusive):
+       a. Iterate y from 1 to 100 (inclusive):
+          i. Iterate z from 1 to 100 (inclusive):
+             - Compute value = x² + y² + z² + x*y + x*z + y*z
+             - If value > n → break innermost (z) loop
+             - Else → increment countArr[value] by 1
+    4. Iterate i from 1 to n (inclusive):
+       - Print countArr[i] using out.println()
+- Control Structures:
+  - Triple nested for-loops (x, y, z) with range [1, 100]
+  - Conditional break when value exceeds n
+  - Post-processing loop for output generation
+- Data Processing:
+  - Arithmetic computation of quadratic formula
+  - Array index counting for valid values
+  - Sequential output of counts
+- Dependencies:
+  - Java IO classes: BufferedReader, InputStream, PrintWriter
+  - Java Util classes: Arrays, StringTokenizer

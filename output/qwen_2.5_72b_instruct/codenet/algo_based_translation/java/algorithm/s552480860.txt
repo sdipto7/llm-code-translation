@@ -1,0 +1,31 @@
+Function signature: `public static void main(String[] args) throws Exception`
+
+Variable declarations and data types:
+- `Scanner sc` of type `Scanner`
+- `int h1` of type `int`
+- `int m1` of type `int`
+- `int h2` of type `int`
+- `int m2` of type `int`
+- `int k` of type `int`
+- `int t1` of type `int`
+- `int t2` of type `int`
+
+Logic flow in execution order:
+1. Initialize `Scanner` object `sc`
+2. Read `h1` from input
+3. Read `m1` from input
+4. Read `h2` from input
+5. Read `m2` from input
+6. Read `k` from input
+7. Calculate `t1` as `h1 * 60 + m1`
+8. Calculate `t2` as `h2 * 60 + m2`
+9. Print `t2 - t1 - k`
+
+Control structures: No loops or conditionals present
+
+Input/output operations and data processing logic:
+- Input: Read five integers from standard input representing hours and minutes of two times and a duration in minutes
+- Output: Print the difference in minutes between the two times minus the duration `k`
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

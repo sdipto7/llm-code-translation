@@ -1,0 +1,64 @@
+Algorithm:
+Function signature: main() -> None
+
+Variable declarations:
+- n: int
+- m: int
+- x: int
+- c: np.ndarray with shape (n, m+1) containing integers
+- pre: np.ndarray with shape (n) containing integers from 0 to n-1
+- l: List of lists of integers
+- rem: List of integers
+- ans: int
+
+Logic flow:
+1. Read integers n, m, x from input
+2. Initialize c as a 2D numpy array of size (n, m+1) with integers from input
+3. Initialize pre as a numpy array containing integers from 0 to n-1
+4. Initialize empty list l
+5. Initialize empty list rem
+6. Initialize ans as 0
+7. For i in range from 1 to n+1:
+    a. For combination j in combinations of pre of length i:
+        i. Append list of j to l
+8. For i in range from 1 to m+1:
+    a. For index j and combination k in enumerated l:
+        i. Initialize ca as 0
+        ii. For each element ii in k:
+            1. Add c[ii][i] to ca
+        iii. If ca is less than x:
+            1. Insert j at the beginning of rem
+        iv. Else:
+            1. Pass
+    b. If rem is not empty:
+        i. For each element j in rem:
+            1. Remove element at index j from l
+        ii. Reset rem to an empty list
+    c. If l is empty:
+        i. Print -1
+        ii. Break
+9. Else:
+    a. For each combination i in l:
+        i. Initialize ca as 0
+        ii. For each element j in i:
+            1. Add c[j][0] to ca
+        iii. If ans is 0:
+            1. Set ans to ca
+        iv. Else:
+            1. Set ans to the minimum of ans and ca
+    b. Print ans
+
+Input/Output operations:
+- Read n, m, x from input
+- Read c from input
+- Print either -1 or the minimum possible value of ans
+
+Data processing logic:
+- Generate all possible combinations of indices from 0 to n-1
+- For each combination, check if the sum of the i-th skill levels is at least x
+- Remove combinations that do not meet the requirement for each skill level
+- Find the combination with the minimum cost if any combinations remain
+
+Required libraries:
+- numpy
+- itertools

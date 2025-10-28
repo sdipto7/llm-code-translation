@@ -1,0 +1,50 @@
+**Algorithm:**
+
+1. **Input Operations:**
+   - Read five integers _x_, _y_, _a_, _b_, _c_ from input, separated by spaces.  
+     `(Type: int)`
+
+2. **Data Processing:**
+   - Read list _p_:  
+     - Read space-separated integers.  
+     - Sort in descending order.  
+     - Keep top _x_ elements.  
+     `(Type: List[int])`
+   - Read list _q_:  
+     - Read space-separated integers.  
+     - Sort in descending order.  
+     - Keep top _y_ elements.  
+     `(Type: List[int])`
+   - Read list _r_:  
+     - Read space-separated integers.  
+     - Sort in descending order (retain all elements).  
+     `(Type: List[int])`
+
+3. **Combine and Sort:**  
+   - Concatenate _p_ and _q_ into _pq_.  
+   - Sort _pq_ in ascending order.  
+     `(Type: List[int])`
+
+4. **Element Replacement:**  
+   - Iterate _i_ from 0 to `min(x + y, a + b, c) - 1`:  
+     - **Condition:** If `pq[i] < r[i]`, replace `pq[i]` with `r[i]`.
+
+5. **Output:**  
+   - Compute sum of _pq_ and print the result.
+
+**Control Structures:**  
+- **Loop:** `for i in range(min(x + y, a + b, c))` with nested conditional `if pq[i] < r[i]`.  
+- **Sorting:** Descending for _p_, _q_, _r_; ascending for _pq_.  
+
+**Variables:**  
+- _x_, _y_, _a_, _b_, _c_: `int`  
+- _p_, _q_, _r_, _pq_: `List[int]`  
+
+**Dependencies:**  
+- Uses standard input/output and list operations. No external libraries required.  
+
+**Function Signature (if modularized):**  
+```python  
+def main() -> None:  
+    # Implements the above algorithm  
+```

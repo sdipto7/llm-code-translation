@@ -1,0 +1,42 @@
+1. **Function Signature**
+   - `main(String[] args): void`
+
+2. **Variable Declarations**
+   - `FastReader sc`: Instance of `FastReader` class for input
+   - `PrintWriter pw`: Instance of `PrintWriter` for output
+   - `int x`: Stores the integer input value
+   - `int count`: Counter initialized to 0
+   - `int tmp`: Temporary variable to store the initial value of `x`
+
+3. **Execution Flow**
+   - Initialize `FastReader` instance `sc` for reading input
+   - Initialize `PrintWriter` instance `pw` for writing output
+   - Read integer input using `sc.nextInt()` and store it in `x`
+   - Initialize `count` to 0
+   - Assign `x` to `tmp`
+   - Set `x` to 0
+   
+4. **Control Structures**
+   - Use a `while` loop with condition `x != 360`
+     - Inside the loop:
+       - Increment `x` by `tmp`
+       - If `x` exceeds 360, subtract 360 from `x`
+       - Increment `count` by 1
+
+5. **Output Operation**
+   - Print the value of `count` using `System.out.println(count)`
+
+6. **Dependencies**
+   - Import `java.io.BufferedReader`
+   - Import `java.io.IOException`
+   - Import `java.io.InputStreamReader`
+   - Import `java.io.PrintWriter`
+   - Import `java.util.StringTokenizer`
+
+7. **FastReader Class**
+   - Contains a constructor initializing `BufferedReader` with `InputStreamReader(System.in)`
+   - Method `next()`: Reads and returns the next token as a `String`
+   - Method `nextInt()`: Parses the next token as an `int`
+   - Method `nextLong()`: Parses the next token as a `long`
+   - Method `nextDouble()`: Parses the next token as a `double`
+   - Method `nextLine()`: Reads and returns the next line as a `String`

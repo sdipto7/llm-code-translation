@@ -1,0 +1,21 @@
+Read integer n from input
+Declare integer array c of size n-1
+Declare integer array s of size n-1  
+Declare integer array f of size n-1
+
+For i from 0 to n-2:
+    Read c[i] from input
+    Read s[i] from input
+    Read f[i] from input
+
+For i from 0 to n-2:
+    Initialize integer time = s[i] + c[i]
+    For j from i+1 to n-2:
+        If time modulo f[j] != 0:
+            time = time + f[j] - (time modulo f[j])
+        If time < s[j]:
+            time = s[j]
+        time = time + c[j]
+    Print time
+
+Print 0

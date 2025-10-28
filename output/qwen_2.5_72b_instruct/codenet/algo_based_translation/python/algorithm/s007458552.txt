@@ -1,0 +1,32 @@
+Function signatures with parameter and return types:
+- `LI() -> List[int]`
+- `LI_() -> List[int]`
+- `LS() -> List[str]`
+- `II() -> int`
+- `SI() -> str`
+- `main() -> str`
+
+Variable declarations and data types:
+- `n: int`
+- `S: str`
+- `C: Counter[str]`
+
+Complete logic flow in execution order:
+1. Read an integer `n` from standard input.
+2. Read a string `S` from standard input.
+3. Count the occurrences of each character in `S` using `Counter` and store in `C`.
+4. Compare the count of 'R' in `C` with `n - C['R']`.
+5. If `C['R']` is greater than `n - C['R']`, return 'Yes'.
+6. Otherwise, return 'No'.
+
+Control structures:
+- Conditional: `if C['R'] > n - C['R']`
+
+Input/output operations and data processing logic:
+- Input: Read integer `n` and string `S` from standard input.
+- Processing: Count characters in `S` and compare counts.
+- Output: Print 'Yes' or 'No' based on comparison.
+
+Required libraries, modules, or dependencies:
+- `sys` for reading input from standard input.
+- `collections.Counter` for counting occurrences of characters.

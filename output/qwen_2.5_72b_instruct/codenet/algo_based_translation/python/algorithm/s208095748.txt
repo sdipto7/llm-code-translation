@@ -1,0 +1,26 @@
+Function signature: `main() -> None`
+
+Variable declarations and data types:
+- `A: int`
+- `B: int`
+- `C: int`
+
+Logic flow in execution order:
+1. Read three integers from standard input and assign them to variables `A`, `B`, and `C`.
+2. Check if `B` is less than `C`.
+   - If true, print `0` and exit.
+3. Check if the product of `A` and `C` is less than `B`.
+   - If true, print `C` and exit.
+4. Otherwise, print the integer division of `B` by `A`.
+
+Control structures:
+- Conditional: `if B < C`
+- Conditional: `elif A * C < B`
+- Conditional: `else`
+
+Input/output operations and data processing logic:
+- Input: Read three space-separated integers from standard input.
+- Output: Print an integer based on the conditions specified.
+
+Required libraries, modules, or dependencies:
+- No specific imports required. Uses built-in functions `map`, `int`, and `input`.

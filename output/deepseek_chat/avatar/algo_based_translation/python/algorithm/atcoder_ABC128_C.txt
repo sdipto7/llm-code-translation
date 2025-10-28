@@ -1,0 +1,44 @@
+**Function Signature:**
+- `main()`: No parameters, returns None
+
+**Variables and Data Types:**
+- `n`: int
+- `m`: int
+- `li`: list[list[int]]
+- `p`: tuple[int]
+- `q`: set[int]
+- `r`: set[int]
+- `v`: set[int]
+- `ans`: int
+- `i`: int
+- `s`: set[int] (within loop)
+- `u`: list[int] (within loop)
+- `w`: int (within loop)
+
+**Required Libraries:**
+- `itertools`
+
+**Algorithm Steps:**
+
+1. Import itertools module
+2. Read two integers `n` and `m` from input
+3. Read `m` lines, each containing:
+   - First integer discarded
+   - Remaining integers stored as list in `li`
+4. Read a tuple `p` of integers from input
+5. Create set `q` containing all elements from all lists in `li`
+6. Create set `r` containing integers from 1 to `n`
+7. Create set `v` as difference between `r` and `q`
+8. Initialize `ans` to 0
+9. For `i` from 0 to length of `q` (inclusive):
+10. For each combination `s` of `q` elements taken `i` at a time:
+11. Convert `s` to set
+12. For each pair `(u, w)` from `li` and `p`:
+13. Calculate intersection between `s` and set `u`
+14. If size of intersection modulo 2 ≠ `w`:
+15. Break inner loop
+16. Else (if inner loop completes without break):
+17. Add 2^(size of `v`) to `ans`
+18. Print `ans`
+19. If script is executed directly:
+20. Call `main()`

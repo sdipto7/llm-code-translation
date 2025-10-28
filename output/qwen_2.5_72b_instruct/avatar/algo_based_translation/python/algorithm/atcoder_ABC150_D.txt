@@ -1,0 +1,48 @@
+Algorithm:
+- Function: main()
+  - Parameters: None
+  - Return Type: None
+- Variable Declarations:
+  - n: int
+  - num: int
+  - num_set: set of int
+  - two_times_set: set of int
+  - i: int
+  - j: int
+  - num_list: list of int
+  - lcm: int
+- Logic Flow:
+  - Read two integers n and num from input
+  - Read a set of integers num_set from input
+  - Initialize an empty set two_times_set
+  - For each integer i in num_set:
+    - For each integer j from 1 to 29:
+      - Integer divide i by 2
+      - If i is odd:
+        - Add j to two_times_set
+        - Break the inner loop
+    - If the length of two_times_set is not equal to 1:
+      - Print 0
+      - Break the outer loop
+  - Else:
+    - Convert num_set to a list num_list
+    - Initialize lcm with the first element of num_list
+    - For each integer i from 1 to length of num_list - 1:
+      - Update lcm as the least common multiple of lcm and num_list[i]
+    - Print the result of (num - lcm // 2) // lcm + 1
+- Control Structures:
+  - For loop over num_set
+  - For loop over range(1, 30)
+  - If statement to check if i is odd
+  - If statement to check if the length of two_times_set is not equal to 1
+- Input/Output Operations:
+  - Read two integers from input
+  - Read a set of integers from input
+  - Print an integer as output
+- Data Processing Logic:
+  - Check the number of times elements in num_set can be divided by 2 before becoming odd
+  - Calculate the least common multiple of elements in num_set
+  - Compute the final result based on the least common multiple and the input value num
+- Required Libraries/Modules/Dependencies:
+  - fractions
+  - math

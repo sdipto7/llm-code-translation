@@ -1,0 +1,42 @@
+```
+Function Signature:
+- sum(k: int) -> int
+
+Variable Declarations:
+- ret: int
+- pw: int
+- len: int
+- cur: int
+- prev: int
+- w: int
+- m: int
+- k: int
+- lo: int
+- hi: int
+- md: int
+- c: int
+
+Function Logic for sum(k):
+1. Initialize ret to 0.
+2. Initialize pw to 10.
+3. Initialize len to 1.
+4. Begin an infinite loop:
+   - Set cur to the minimum of (pw - 1) and k.
+   - Set prev to pw divided by 10.
+   - Update ret by adding (cur - prev + 1) multiplied by len.
+   - If (pw - 1) is greater than or equal to k, break the loop.
+   - Increment len by 1.
+   - Multiply pw by 10.
+5. Return ret.
+
+Main Logic:
+1. Read integers w, m, and k from input.
+2. Initialize lo to 0.
+3. Initialize hi to 1e18 cast to integer.
+4. Begin a loop with condition (hi - lo > 1):
+   - Compute md as the integer division of (lo + hi) by 2.
+   - Compute c as the result of calling sum(m + md - 1) minus the result of calling sum(m - 1).
+   - If (c * k) is less than or equal to w, set lo to md.
+   - Otherwise, set hi to md.
+5. Print the value of lo.
+```

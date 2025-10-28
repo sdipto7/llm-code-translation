@@ -1,0 +1,21 @@
+```plaintext
+1. Import the following functions and modules:
+   - `reduce` from the `functools` module
+   - `xor` from the `operator` module
+
+2. Read an integer input `N` representing the number of integers, and store it as `N` (int).
+
+3. Read a line of input containing `N` space-separated integers and convert them into a list of integers `a` (List[int]).
+
+4. Compute the cumulative XOR of all elements in the list `a` using the `reduce` function with the `xor` operator, starting with an initial value of 0. Store the result in `total` (int).
+
+5. Initialize an empty list `result` (List[str]).
+
+6. Iterate over each element `ai` in the list `a`:
+   - Compute the XOR of `ai` with `total`.
+   - Convert the result to a string and append it to the `result` list.
+
+7. Join all elements of the `result` list into a single string, separated by spaces.
+
+8. Print the resulting string.
+```

@@ -1,0 +1,41 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures**
+- `main() -> void`
+
+**Variable Declarations**
+- `age: int`
+- `a: int`
+- `b: int`
+
+**Input/Output Operations**
+1. Read integer from standard input → `age`
+2. If `age == 1`: Output "Hello World" via standard output
+3. Else:
+   - Read first integer from standard input → `a`
+   - Read second integer from standard input → `b`
+   - Output `a + b` via standard output
+
+**Control Flow Structures**
+- Conditional:
+  - `if (age == 1)`
+    - Execute: Output "Hello World"
+  - `else`
+    - Execute: Read `a` and `b`, output sum
+
+**Step-by-Step Logic Flow**
+1. Read `age` as integer
+2. If `age` equals 1:
+   1. Print "Hello World"
+3. Else:
+   1. Read integer `a`
+   2. Read integer `b`
+   3. Compute `a + b`
+   4. Print result
+
+**Edge Case Handling**
+- Explicit check for `age == 1` to determine alternate input/output paths
+
+**External Dependencies**
+- Standard input/output functions
+- Integer type conversion from string input

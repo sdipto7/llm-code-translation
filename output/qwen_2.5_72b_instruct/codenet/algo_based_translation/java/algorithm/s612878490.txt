@@ -1,0 +1,39 @@
+Function Signature: `main(String[] args) throws IOException`
+
+Variable Declarations:
+- `BufferedReader br` initialized with `new BufferedReader(new InputStreamReader(System.in))`
+- `String line`
+- `String[] words`
+- `int N`
+- `int M`
+- `int[] shortage` of size `M`
+- `int ans` initialized to `0`
+
+Logic Flow:
+1. Read a line from standard input and store it in `line`.
+2. Parse `N` as the integer value from the substring of `line` before the first space.
+3. Parse `M` as the integer value from the substring of `line` after the first space.
+4. Initialize `shortage` array of size `M`.
+5. Loop from `i = 0` to `M - 1`:
+   - Read a line from standard input and store it in `line`.
+   - Parse `A` as the integer value from the substring of `line` before the first space.
+   - Calculate `shortage[i]` as `N - A` if `N > A`, otherwise `0`.
+6. Sort the `shortage` array.
+7. Loop from `i = 0` to `M - 2`:
+   - Add `shortage[i]` to `ans`.
+8. Print `ans` to standard output.
+
+Control Structures:
+- For loop: `for (int i = 0; i < M; i++)`
+- For loop: `for (int i = 0; i < M - 1; i++)`
+- Conditional: `if (N > A)`
+
+Input/Output Operations:
+- Input: Read lines from standard input using `br.readLine()`.
+- Output: Print `ans` to standard output using `System.out.println(ans)`.
+
+Libraries/Modules/Dependencies:
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.util.Arrays`

@@ -1,0 +1,36 @@
+**Algorithm:**
+
+**Input:**
+- Four long integers: a0, a1, a2, a3
+
+**Variables:**
+- long[4] a: Array to store input values
+- FastReader in: Input reader object
+
+**Execution Flow:**
+1. Initialize FastReader object for input
+2. Read four long integers into array a
+3. Calculate four products:
+   - product1 = a[0] * a[2]
+   - product2 = a[1] * a[3]
+   - product3 = a[0] * a[3]
+   - product4 = a[1] * a[2]
+4. Find maximum value among:
+   - product1
+   - product2
+   - product3
+   - product4
+5. Output the maximum value
+
+**Control Structures:**
+- For loop: for (int i = 0; i < 4; i++) to read input values
+- Nested Math.max calls to find maximum of four values
+
+**Output:**
+- Print the maximum product value
+
+**Dependencies:**
+- java.util.*
+- java.lang.*
+- java.io.*
+- BufferedReader, InputStreamReader, StringTokenizer, IOException

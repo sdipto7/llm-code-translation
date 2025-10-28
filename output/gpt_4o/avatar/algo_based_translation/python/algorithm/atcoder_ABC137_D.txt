@@ -1,0 +1,36 @@
+```plaintext
+Function Signature:
+    def calculate_maximum_salary(n: int, m: int, jobs: List[Tuple[int, int]]) -> int
+
+Variable Declarations:
+    x: List[Tuple[int, int]]  # A max-heap to store jobs by day and salary with negative values
+    y: List[int]  # A max-heap to store selected job salaries as negative values
+    day: int  # Job day (negative for max-heap)
+    salary: int  # Job salary (negative for max-heap)
+    d: int  # Popped job day from heap x
+    s: int  # Popped job salary from heap x
+    r: int  # Remaining days to fill with jobs
+
+Execution Logic:
+1. Initialize an empty list x for job storage as a max-heap.
+2. Initialize an empty list y for selected salaries as a max-heap.
+3. For i in range(n), read input for each job:
+   - Parse job day and salary from input.
+   - Push the tuple (-day, -salary) into heap x.
+4. While heap x is not empty, iterate:
+   - Pop the tuple (d, s) from heap x.
+   - Calculate r as m minus the length of list y (remaining days to fill).
+   - If r is greater than or equal to -d (day limit of the job):
+     - Push -s (salary) into heap y.
+   - Else:
+     - Push -s into heap y and pop the smallest element from y to maintain size.
+5. Return the sum of elements in list y, which represents the maximum total salary.
+
+Input/Output Operations:
+- Input: Read two integers n and m.
+- Input: Read n pairs of integers for day and salary.
+- Output: Print the sum of elements in list y.
+
+Required Libraries:
+- heapq for maintaining the max-heaps.
+```

@@ -1,0 +1,5 @@
+n: integer = input integer from user
+for i from n down to 1 (inclusive):
+    if n modulo i equals 0:
+        set n to i
+        print i with space separator (no newline)

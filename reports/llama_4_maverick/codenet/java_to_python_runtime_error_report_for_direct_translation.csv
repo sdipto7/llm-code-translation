@@ -1,0 +1,327 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,s523386612.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s523386612.py"", line 5, in <module>
+    count[int(input())] += 1
+          ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 1 2 2'
+"
+java,python,s584572995.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s584572995.py"", line 103, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s584572995.py"", line 70, in main
+    N = int(input())
+            ^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s584572995.py"", line 48, in <lambda>
+    input = lambda: sys.stdin.readline().rstrip('\r\n')
+                    ^^^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s584572995.py"", line 45, in <lambda>
+    self.readline = lambda: self.buffer.readline().decode('ascii')
+                            ^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s584572995.py"", line 26, in readline
+    b = os.read(self._fd, max(os.fstat(self._fd).st_size, 8192))
+        ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'?
+Exception ignored in: <__main__.IOWrapper object at 0x7e530cd32f60>
+Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s584572995.py"", line 35, in flush
+    os.write(self._fd, self.buffer)
+    ^^
+NameError: name 'os' is not defined
+"
+java,python,s584135649.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s584135649.py"", line 4, in <module>
+    n = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0 2 3 4 5'
+"
+java,python,s937747608.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s937747608.py"", line 2, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 5 2 7'
+"
+java,python,s699933302.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s699933302.py"", line 2, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '5 14 80'
+"
+java,python,s325080396.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s325080396.py"", line 7, in <module>
+    maxv = R[1] - R[0]
+           ~^^^
+IndexError: list index out of range
+"
+java,python,s824230885.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s824230885.py"", line 34, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s824230885.py"", line 23, in main
+    list = list(map(int, input[input_index].split()))
+           ^^^^
+UnboundLocalError: cannot access local variable 'list' where it is not associated with a value
+"
+java,python,s505375619.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s505375619.py"", line 25, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s505375619.py"", line 11, in main
+    v[i] = int(sys.stdin.readline().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '10 2 5'
+"
+java,python,s965025950.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s965025950.py"", line 2, in <module>
+    x = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 2 3'
+"
+java,python,s126744620.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s126744620.py"", line 5, in <module>
+    a = list(map(int, input().split())) if n == 1 else list(map(int, ' '.join([input() for _ in range(n)]).split()))
+                                                                               ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,s514557145.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s514557145.py"", line 230, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s514557145.py"", line 226, in main
+    lazy_segtree.apply_range(l, r + 1, F(d, n))
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s514557145.py"", line 103, in apply_range
+    self.push_to_range(l, r)
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s514557145.py"", line 47, in push_to_range
+    self.push(l >> i)
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s514557145.py"", line 36, in push
+    self.all_apply(2 * k, self.lazy[k])
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s514557145.py"", line 31, in all_apply
+    self.data[k] = self.mapping(f, self.data[k])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s514557145.py"", line 213, in mapping
+    c = (tenmod[f.n - s.l] - tenmod[f.n - s.r - 1]) % MOD2
+         ~~~~~~^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not float
+"
+java,python,s127819686.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s127819686.py"", line 2, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '81 58'
+"
+java,python,s036404962.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s036404962.py"", line 2, in <module>
+    X = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '100 17'
+"
+java,python,s831281137.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s831281137.py"", line 58, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s831281137.py"", line 5, in main
+    N = nint()
+        ^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s831281137.py"", line 21, in nint
+    return int(sys.stdin.readline())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 5\n'
+"
+java,python,s307170605.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s307170605.py"", line 3, in <module>
+    if int(input()) == 0:
+       ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0 2 3 4 5'
+"
+java,python,s725559666.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s725559666.py"", line 2, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 3 8'
+"
+java,python,s835214694.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s835214694.py"", line 2, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 12'
+"
+java,python,s316260310.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s316260310.py"", line 117, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s316260310.py"", line 113, in main
+    solver.solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s316260310.py"", line 78, in solve
+    self.solve_tc(tce + 1)
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s316260310.py"", line 81, in solve_tc
+    N = int(sys.stdin.readline())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 5\n'
+"
+java,python,s773621585.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s773621585.py"", line 6, in <module>
+    map[input()] = """"
+        ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,s858314534.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s858314534.py"", line 5, in <module>
+    A = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 5 7'
+"
+java,python,s847387793.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s847387793.py"", line 132, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s847387793.py"", line 128, in main
+    Solver(sc).run()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s847387793.py"", line 96, in run
+    n = self.sc.next_int()
+        ^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s847387793.py"", line 75, in next_int
+    nl = self.next_long()
+         ^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s847387793.py"", line 51, in next_long
+    if not self.has_next():
+           ^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s847387793.py"", line 34, in has_next
+    while self.has_next_byte() and not self.is_printable_char(self.buffer[self.ptr]):
+          ^^^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s847387793.py"", line 17, in has_next_byte
+    self.buflen = self.input_stream.readinto(self.buffer)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: '_io.TextIOWrapper' object has no attribute 'readinto'. Did you mean: 'readline'?
+"
+java,python,s196249385.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s196249385.py"", line 53, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s196249385.py"", line 25, in main
+    cumsum[i + 1] = cumsum[i] + a[i]
+                                ~^^^
+IndexError: list index out of range
+"
+java,python,s004995062.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s004995062.py"", line 12, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s004995062.py"", line 6, in main
+    sb = input().split()[0]
+         ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,s500433274.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s500433274.py"", line 5, in <module>
+    a, b = map(int, line.split())
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s391272180.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s391272180.py"", line 11, in <module>
+    if s[1] == s[0]:
+       ~^^^
+IndexError: list index out of range
+"
+java,python,s962361667.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s962361667.py"", line 3, in <module>
+    w, n = map(int, sys.stdin.readline().split())
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s291405468.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s291405468.py"", line 2, in <module>
+    a, b = map(int, input().split())
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s416486483.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s416486483.py"", line 32, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s416486483.py"", line 28, in main
+    n, s = map(int, input().split())
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s012761786.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s012761786.py"", line 27, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s012761786.py"", line 6, in main
+    n = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '5 2 4\n'
+"
+java,python,s682242794.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s682242794.py"", line 20, in <module>
+    obj.main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s682242794.py"", line 16, in main
+    self.solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s682242794.py"", line 10, in solve
+    self.high = int(input())
+                ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '30 19'
+"
+java,python,s518927375.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s518927375.py"", line 17, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s518927375.py"", line 3, in main
+    k = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 2 6'
+"
+java,python,s609591310.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s609591310.py"", line 39, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s609591310.py"", line 5, in main
+    list = list(map(int, input().split()))
+           ^^^^
+UnboundLocalError: cannot access local variable 'list' where it is not associated with a value
+"
+java,python,s910008321.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s910008321.py"", line 2, in <module>
+    h = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '10 4'
+"
+java,python,s818271374.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s818271374.py"", line 6, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 10 100'
+"
+java,python,s511234019.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s511234019.py"", line 2, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 1'
+"
+java,python,s684030429.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s684030429.py"", line 110, in <module>
+    main.solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s684030429.py"", line 13, in solve
+    a = self.ni()
+        ^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s684030429.py"", line 18, in ni
+    return int(self.sc().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '12 4'
+"
+java,python,s387083574.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s387083574.py"", line 5, in <module>
+    map[i] = int(input())
+             ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 3 1'
+"
+java,python,s566905615.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s566905615.py"", line 2, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '50 100 120'
+"
+java,python,s573993837.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s573993837.py"", line 82, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s573993837.py"", line 10, in main
+    solve(input_reader, output_writer)
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s573993837.py"", line 17, in solve
+    n = input_reader.next_long()
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s573993837.py"", line 66, in next_long
+    return int(self.next())
+               ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/llama_4_maverick/codenet/direct_translation/java/python/s573993837.py"", line 58, in next
+    line = self.stream.readline().decode().strip()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'decode'. Did you mean: 'encode'?
+"

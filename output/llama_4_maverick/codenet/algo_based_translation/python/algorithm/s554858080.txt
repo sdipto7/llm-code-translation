@@ -1,0 +1,23 @@
+1. Define a function `check_divisibility_by_four` with return type `str` and no parameters.
+2. Read input from the user and store it in a variable `input_str` of type `list[str]`.
+3. Split the input string into a list of substrings using space as the delimiter and store it in `input_list` of type `list[str]`.
+4. Join the elements of `input_list` into a single string `num` of type `str`.
+5. Convert the string `num` to an integer `num_int` of type `int`.
+6. Check if `num_int` is divisible by 4 using the modulo operator (`%`).
+7. If the remainder of `num_int` divided by 4 is 0, return `'YES'`; otherwise, return `'NO'`.
+8. Print the result returned by the function.
+
+Or more formally:
+- Function: `check_divisibility_by_four() -> str`
+- Variable Declarations:
+  - `input_list: list[str]`
+  - `num: str`
+  - `num_int: int`
+  - `result: str`
+- Logic Flow:
+  1. `input_list = input().split()`
+  2. `num = ''.join(input_list)`
+  3. `num_int = int(num)`
+  4. If `num_int % 4 == 0`, then `result = 'YES'`, else `result = 'NO'`
+  5. Output `result`
+- Required Libraries/Modules: built-in Python libraries (`input`, `split`, `join`, `int`, `print`)

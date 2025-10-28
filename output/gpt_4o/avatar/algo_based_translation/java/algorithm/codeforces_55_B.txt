@@ -1,0 +1,35 @@
+```
+Algorithm:
+
+1. Declare a static variable `min` of type `long` and initialize it to `Long.MAX_VALUE`.
+
+2. Main function `main(String[] args)`:
+   - Create a `Scanner` object `sc` to read input from the standard input.
+   - Initialize `min` to `Long.MAX_VALUE`.
+   - Create an `ArrayList<Long>` named `arr`.
+   - Loop 4 times (`i` from 0 to 3):
+     - Read a long integer from input and add it to `arr`.
+   - Create a `String[]` array `ops` of size 3.
+   - Loop 3 times (`i` from 0 to 2):
+     - Read a string from input and assign it to `ops[i]`.
+   - Call the function `util(arr, ops, 0)`.
+   - Print the value of `min`.
+
+3. Function `util(ArrayList<Long> arr, String[] ops, int idx)`:
+   - If `idx` is equal to 3:
+     - Update `min` to the minimum of `min` and the first element of `arr`.
+     - Return from the function.
+   - Loop over `arr` with index `i` from 0 to `arr.size() - 1`:
+     - Loop over `arr` with index `j` from `i + 1` to `arr.size() - 1`:
+       - Create a new `ArrayList<Long>` named `a`.
+       - Loop over `arr` with index `k` from 0 to `arr.size() - 1`:
+         - If `k` is not equal to `j` and `k` is not equal to `i`:
+           - Add `arr.get(k)` to `a`.
+       - Declare a variable `res` of type `long`.
+       - If `idx` is less than 3 and `ops[idx]` is equal to "+":
+         - Set `res` to `arr.get(i) + arr.get(j)`.
+       - Else:
+         - Set `res` to `arr.get(i) * arr.get(j)`.
+       - Add `res` to `a`.
+       - Recursively call `util(a, ops, idx + 1)`.
+```

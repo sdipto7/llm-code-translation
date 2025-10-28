@@ -1,0 +1,24 @@
+**Function Signature:**
+- main(): None (implicit)
+
+**Variables:**
+- X: int (input value)
+- prime: list[bool] of size 100010
+
+**Algorithm:**
+1. Read integer input X from standard input
+2. Initialize prime as list of 100010 boolean values, all set to True
+3. Set prime[0] = False
+4. Set prime[1] = False
+5. For i from 4 to 100009 (inclusive), stepping by 2:
+   - Set prime[i] = False
+6. Set i = 3
+7. While i*i <= 100008:
+   - If prime[i] is True:
+     - For j from i+i to 100007 (inclusive), stepping by i:
+       - Set prime[j] = False
+   - Increment i by 2
+8. For i from X to 100007 (inclusive):
+   - If prime[i] is True:
+     - Print i
+     - Break out of loop

@@ -1,0 +1,35 @@
+Function Signature:  
+main(String[] args): void  
+
+Variable Declarations and Data Types:  
+Scanner scan: Scanner  
+int size: int  
+int[][] graph: int[][]  
+int id: int  
+int cols: int  
+int[] row: int[]  
+
+Logic Flow in Execution Order:  
+- Create a new Scanner object to read input from System.in  
+- Read an integer input for size  
+- Initialize a 2D integer array graph with dimensions size x size  
+- Initialize id to 0  
+- Initialize cols to 0  
+- Initialize row as an empty integer array  
+
+Outer Loop (i from 0 to size - 1):  
+- Read an integer input for id  
+- Read an integer input for cols  
+- Reinitialize row as an integer array with length size  
+Inner Loop (j from 0 to cols - 1):  
+- Read an integer input, subtract 1, and set the corresponding index in row to 1  
+- Set the row at index id - 1 in graph to the current row array  
+
+Outer Loop (i from 0 to length of graph - 1):  
+Inner Loop (j from 0 to length of graph[i] - 1):  
+- Print the value at graph[i][j]  
+- If j is less than length of graph[i] - 1, print a space  
+- After inner loop, print a newline character  
+
+Required Libraries, Modules, or Dependencies:  
+java.util.Scanner

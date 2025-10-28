@@ -1,0 +1,16 @@
+1. Initialize variables: n, k, and an array a of size n.
+2. Read input: n, k, and elements of array a from the input.
+3. Sort array a in ascending order.
+4. Initialize two variables, l and r, to negative infinity and positive infinity respectively.
+5. Perform binary search: while l + 1 is less than r, calculate the midpoint c = (l + r) / 2.
+6. Check if the condition is met at c by calling the check function with c as the argument.
+7. If check(c) returns true, update l to c; otherwise, update r to c.
+8. Repeat steps 5-7 until l + 1 is not less than r.
+9. The check function calculates the total count of pairs (i, j) such that a[i] * a[j] is less than the given argument x.
+10. In the check function, iterate through each element a[i] in array a.
+11. For each a[i], perform binary search to find the count of elements a[j] such that a[i] * a[j] is less than x.
+12. If a[i] is non-negative, count the number of elements a[j] such that a[i] * a[j] is less than x by finding the appropriate index using binary search.
+13. If a[i] is negative, count the number of elements a[j] such that a[i] * a[j] is less than x by finding the appropriate index using binary search.
+14. Adjust the count for the case when a[i] * a[i] is less than x to avoid double counting.
+15. Return true if the total count is less than 2*k; otherwise, return false.
+16. Output the value of l after the binary search is completed.

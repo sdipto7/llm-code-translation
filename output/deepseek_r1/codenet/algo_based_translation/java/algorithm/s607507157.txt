@@ -1,0 +1,27 @@
+Function signature:
+- public static void main(String[] args) -> void
+
+Variables:
+- Scanner sc = new Scanner(System.in)
+- int n = sc.nextInt()
+
+Logic flow:
+1. Read integer input from standard input
+2. Check if either:
+   - (n modulo 10) equals 9
+   - (integer division of n by 10) equals 9
+3. If either condition is true:
+   - Print "Yes" to standard output
+4. Else:
+   - Print "No" to standard output
+
+Control structures:
+- Single if-else block with compound condition:
+  if (n % 10 == 9 || n / 10 == 9)
+
+Input/Output:
+- Input: Single integer via Scanner.nextInt()
+- Output: "Yes" or "No" via System.out.println()
+
+Dependencies:
+- java.util.Scanner

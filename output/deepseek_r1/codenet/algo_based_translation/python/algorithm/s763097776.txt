@@ -1,0 +1,43 @@
+1. Function and Variables:
+   - No explicit functions; executed as main script
+   - Input variables:
+     - n: Integer from stdin
+     - p: List of integers from stdin
+   - Local variables:
+     - p_copy: List of integers (copy of original p)
+     - count: Integer initialized to 0
+
+2. Execution Steps:
+   a. Read integer n from standard input
+   b. Read space-separated integers from stdin into list p
+   c. Create a deep copy of p into p_copy
+   d. Sort list p in ascending order
+   e. Initialize count = 0
+   f. For i from 0 to n-1 (inclusive):
+      i. If p[i] != p_copy[i]:
+          - Increment count by 1
+   g. After loop completion:
+      i. If count == 0 OR count == 2:
+          - Print "YES"
+      ii. Else:
+          - Print "NO"
+
+3. Control Structures:
+   - For loop with range 0 ≤ i < n
+   - Conditional check p[i] != p_copy[i] inside loop
+   - Final conditional check count ∈ {0, 2}
+
+4. Data Types:
+   - All list elements: Integer
+   - All variables: Explicit integers except p/p_copy (lists)
+
+5. Input/Output:
+   - Input Format:
+     - First line: Single integer n
+     - Second line: n space-separated integers
+   - Output Format:
+     - "YES" or "NO" based on count value
+
+6. Dependencies:
+   - Requires Python list operations (sort, indexing)
+   - No external libraries/modules

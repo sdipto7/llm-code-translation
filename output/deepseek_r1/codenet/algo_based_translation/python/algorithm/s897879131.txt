@@ -1,0 +1,49 @@
+Function:
+- Name: count_combinations
+- Parameters: R (int), G (int), B (int), N (int)
+- Return type: int
+
+Variables:
+- score: int (initialized to 0)
+- i: int (loop counter)
+- j: int (loop counter)
+- remaining: int (calculated as N - i*R - j*G)
+
+Logic Flow:
+1. Read input line containing four space-separated integers R, G, B, N
+2. Initialize score to 0
+3. Outer loop: i from 0 to (N divided by R using integer division) inclusive:
+   a. Calculate max_i = N // R
+   b. Iterate i from 0 to max_i
+4. Inner loop for each i:
+   a. Calculate current_remaining_after_i = N - (i * R)
+   b. Calculate max_j = current_remaining_after_i // G using integer division
+   c. Iterate j from 0 to max_j inclusive
+5. For each j:
+   a. Calculate remaining = current_remaining_after_i - (j * G)
+   b. Check two conditions with AND:
+      i. remaining >= 0
+      ii. remaining mod B == 0
+   c. If both conditions true: increment score by 1
+6. After all loops complete: output score
+
+Input/Output:
+- Input: Single line with four integers from standard input
+- Output: Integer result printed to standard output
+
+Control Structures:
+- Two nested for loops
+  - Outer loop: range(N//R + 1)
+  - Inner loop: range((N - i*R)//G + 1)
+- Conditional if with compound condition:
+  (remaining >= 0) AND ((remaining) % B == 0)
+
+Data Processing:
+- Input values parsed as integers
+- Mathematical calculations:
+  - i*R, j*G
+  - remaining = N - i*R - j*G
+  - Division using integer division (//)
+  - Modulo operation (%)
+
+Dependencies: None (standard input/output operations only)

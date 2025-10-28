@@ -1,0 +1,35 @@
+**Algorithm:**
+
+1. **Function Signature:**
+   - `main()`: Entry point method with no parameters or return value.
+
+2. **Variables:**
+   - `n`: Integer (read from input)
+   - `array`: Array of integers with size `n`
+   - `max`: Integer initialized to `0`
+   - `min`: Integer initialized to `10000`
+   - `i`: Integer loop counter
+
+3. **Input Operations:**
+   - Read integer `n` from standard input.
+   - Read `n` integers sequentially into `array`.
+
+4. **Processing Logic:**
+   - Loop: Iterate `i` from `0` to `n-1` (inclusive):
+     - Store input integer in `array[i]`.
+     - **Conditional Updates:**
+       - If `array[i] > max`: Set `max = array[i]`.
+       - If `array[i] < min`: Set `min = array[i]`.
+
+5. **Output Operation:**
+   - Compute `max - min` and print the result.
+
+6. **Control Structures:**
+   - Single `for` loop with iteration count `n`.
+   - Two independent `if` statements inside the loop for updating `max` and `min`.
+
+7. **Data Types:**
+   - All variables (`n`, `array`, `max`, `min`, `i`) use 32-bit integer type.
+
+8. **Dependencies:**
+   - Relies on standard input/output for data handling.

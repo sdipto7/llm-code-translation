@@ -1,0 +1,60 @@
+**Function Signature:**
+- No explicit function defined; code executes at module level.
+- Input: string from stdin (space-separated integers)
+- Output: prints string to stdout
+
+**Variables and Data Types:**
+- given: string
+- l1: list of integers
+- x1, y1, x2, y2: integers
+- denominator: integer
+- numerator: integer
+- quotient: float (if denominator != 0)
+- d: integer
+- x3, y3, x4, y4: integers
+
+**Required Libraries:**
+- math
+
+**Algorithm Logic:**
+
+1. Read input string from stdin
+2. Split input string into list of strings using space as delimiter
+3. Convert each element in list to integer
+4. Assign:
+   - x1 = first integer
+   - y1 = second integer
+   - x2 = third integer
+   - y2 = fourth integer
+5. Calculate denominator = x2 - x1
+6. Calculate numerator = y2 - y1
+7. If denominator ≠ 0:
+   - Calculate quotient = numerator / denominator
+8. If numerator == 0:
+   - Calculate d = integer square root of ((x2-x1)² + (y2-y1)²)
+   - Set x4 = x1
+   - Set x3 = x2
+   - Set y3 = y2 + d
+   - Set y4 = y1 + d
+   - Print formatted string: "x3 y3 x4 y4"
+9. Else if denominator == 0:
+   - Set y4 = y2
+   - Set y3 = y1
+   - Calculate d = integer square root of ((x2-x1)² + (y2-y1)²)
+   - Set x4 = x1 + d
+   - Set x3 = x2 + d
+   - Print formatted string: "x3 y3 x4 y4"
+10. Else if quotient == 1:
+    - Set x4 = x2
+    - Set x3 = x1
+    - Set y4 = y1
+    - Set y3 = y2
+    - Print formatted string: "x3 y3 x4 y4"
+11. Else if quotient == -1:
+    - Set x4 = x1
+    - Set x3 = x2
+    - Set y4 = y2
+    - Set y3 = y1
+    - Print formatted string: "x3 y3 x4 y4"
+12. Else:
+    - Print "-1"

@@ -1,0 +1,59 @@
+- Function signatures:
+  - `public static void main(String[] args)`
+  - `private static void setWE()`
+  - `private static void setNS()`
+  - `private static void inputRoom()`
+
+- Variable declarations and data types:
+  - `Scanner sc = new Scanner(System.in)`
+  - `String[] nums = sc.nextLine().split(" ")`
+  - `int N = Integer.parseInt(nums[0])`
+  - `int M = Integer.parseInt(nums[1])`
+  - `char[][] room = new char[N][M]`
+  - `int D = Integer.parseInt(nums[2])`
+  - `int num = 0`
+  - `boolean canPut = true`
+  - `String str_room = ""`
+
+- Logic flow in execution order:
+  - Initialize `Scanner` for input
+  - Read first line of input and split into `nums` array
+  - Parse `N`, `M`, and `D` from `nums`
+  - Initialize `room` with dimensions `N x M`
+  - Call `inputRoom()` to fill `room` with characters from input
+  - Check if `M >= D`, if true, call `setWE()`
+  - Check if `N >= D`, if true, call `setNS()`
+  - Print `num`
+  - Close `Scanner`
+
+- Control structures:
+  - `if (M >= D)` with condition `M >= D`
+  - `if (N >= D)` with condition `N >= D`
+  - `for (int i = 0; i < N; i++)` in `setWE()`
+  - `for (int j = 0; j < M - D + 1; j++)` in `setWE()`
+  - `for (int k = 0; k < D; k++)` in `setWE()`
+  - `if (Main.room[i][j + k] == '#')` in `setWE()`
+  - `if (canPut == true)` in `setWE()`
+  - `for (int i = 0; i < M; i++)` in `setNS()`
+  - `for (int j = 0; j < N - D + 1; j++)` in `setNS()`
+  - `for (int k = 0; k < D; k++)` in `setNS()`
+  - `if (Main.room[j + k][i] == '#')` in `setNS()`
+  - `if (canPut == true)` in `setNS()`
+  - `for (int i = 0; i < N; i++)` in `inputRoom()`
+  - `str_room = sc.nextLine()` in `inputRoom()`
+
+- Input/output operations:
+  - `sc.nextLine()` to read input
+  - `sc.nextLine().split(" ")` to split input into array
+  - `str_room.toCharArray()` to convert string to char array
+  - `System.out.println(num)` to print final result
+
+- Data processing logic:
+  - Read room dimensions and obstacle size from input
+  - Fill room with characters from input
+  - Check west-east placement of obstacles
+  - Check north-south placement of obstacles
+  - Count valid obstacle placements
+
+- Required libraries:
+  - `java.util.Scanner`

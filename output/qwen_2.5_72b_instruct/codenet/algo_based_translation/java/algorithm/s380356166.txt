@@ -1,0 +1,114 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+- `solve(int testNumber, MyInput in, PrintWriter out): void`
+- `read(): int`
+- `nextInt(): int`
+- `nextLong(): long`
+- `nextString(): String`
+- `nextDChar(): char[]`
+- `nextChar(): char`
+- `reads(int len, boolean[] accept): int`
+
+Variable declarations and data types:
+- `InputStream inputStream`
+- `OutputStream outputStream`
+- `PrintWriter out`
+- `Solver solver`
+- `int ans`
+- `int K`
+- `int S`
+- `int wk`
+- `BufferedReader in`
+- `static int pos`
+- `static int readLen`
+- `static char[] buffer`
+- `static char[] str`
+- `static boolean[] isDigit`
+- `static boolean[] isSpace`
+- `static boolean[] isLineSep`
+- `int len`
+- `int i`
+- `int ret`
+- `long ret`
+- `String ret`
+- `char[] ret`
+- `int c`
+
+Complete logic flow in execution order:
+1. Initialize `inputStream` to `System.in` and `outputStream` to `System.out`.
+2. Create `MyInput` object `in` with `inputStream`.
+3. Create `PrintWriter` object `out` with `outputStream`.
+4. Create `Solver` object `solver`.
+5. Call `solver.solve(1, in, out)`.
+6. Close `out`.
+
+Inside `solve`:
+1. Initialize `ans` to 0.
+2. Read `K` and `S` from `in`.
+3. Initialize `wk` to 0.
+4. For each `x` from 0 to `K`:
+   - For each `y` from 0 to `K`:
+     - Set `wk` to `S - x - y`.
+     - If `wk` is between 0 and `K` inclusive, increment `ans`.
+5. Print `ans` using `out`.
+
+Inside `read`:
+1. If `pos` is equal to or greater than `readLen`, reset `pos` to 0 and read from `buffer` into `readLen`.
+2. If `readLen` is less than or equal to 0, throw `MyInput.EndOfFileRuntimeException`.
+3. Return character at position `pos` in `buffer` and increment `pos`.
+
+Inside `nextInt`:
+1. Initialize `len` to 0.
+2. Set `str[len]` to next character from `nextChar`.
+3. Set `len` to result of `reads(len, isSpace)`.
+4. Initialize `i` to 0 and `ret` to 0.
+5. If `str[0]` is '-', set `i` to 1.
+6. For each `i` from current value to `len`, multiply `ret` by 10 and add `str[i] - '0'`.
+7. If `str[0]` is '-', negate `ret`.
+8. Return `ret`.
+
+Inside `nextLong`:
+1. Initialize `len` to 0.
+2. Set `str[len]` to next character from `nextChar`.
+3. Set `len` to result of `reads(len, isSpace)`.
+4. Initialize `i` to 0 and `ret` to 0.
+5. If `str[0]` is '-', set `i` to 1.
+6. For each `i` from current value to `len`, multiply `ret` by 10 and add `str[i] - '0'`.
+7. If `str[0]` is '-', negate `ret`.
+8. Return `ret`.
+
+Inside `nextString`:
+1. Read characters using `nextDChar` and trim the resulting string.
+2. Return the trimmed string.
+
+Inside `nextDChar`:
+1. Initialize `len` to 0.
+2. Set `len` to result of `reads(len, isSpace)`.
+3. Create `char[] ret` of length `len + 1`.
+4. Copy characters from `str` to `ret` up to `len`.
+5. Set `ret[len]` to 0x00.
+6. Return `ret`.
+
+Inside `nextChar`:
+1. While true:
+   - Read character `c` using `read`.
+   - If `c` is not a space, return `c` as a character.
+
+Inside `reads`:
+1. Initialize `len` to parameter `len`.
+2. While true:
+   - Read character `c` using `read`.
+   - If `c` is in `accept`, break the loop.
+   - If `str` length is equal to `len`, expand `str` to 1.5 times its current length.
+   - Set `str[len]` to `c` and increment `len`.
+3. Return `len`.
+
+Required libraries, modules, or dependencies:
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStream`
+- `java.io.InputStreamReader`
+- `java.io.OutputStream`
+- `java.io.PrintWriter`
+- `java.util.AbstractMap`
+- `java.util.Comparator`

@@ -1,0 +1,28 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,atcoder_AGC004_D.java,Compilation Error,"Error: output/gpt_4o/avatar/direct_translation/python/java/atcoder_AGC004_D.java:12: error: incompatible types: int cannot be converted to int[]
+            int[] result = dfs(links, n, k, u, v);
+                              ^
+1 error
+only showing the first 1 errors, of 3 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_61_B.java,Compilation Error,"Error: output/gpt_4o/avatar/direct_translation/python/java/codeforces_61_B.java:28: error: cannot find symbol
+        return Arrays.stream(input().split("" "")).map(Integer::parseInt).collect(Collectors.toList());
+                                                                                ^
+  symbol:   variable Collectors
+  location: class codeforces_61_B
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_397_B.java,Compilation Error,"Error: output/gpt_4o/avatar/direct_translation/python/java/codeforces_397_B.java:41: error: cannot find symbol
+        CodeforcesTask397BSolution solution = new CodeforcesTask397BSolution();
+        ^
+  symbol:   class CodeforcesTask397BSolution
+  location: class codeforces_397_B
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC171_E.java,Compilation Error,"Error: output/gpt_4o/avatar/direct_translation/python/java/atcoder_ABC171_E.java:17: error: local variables referenced from a lambda expression must be final or effectively final
+                              .mapToObj(ai -> String.valueOf(ai ^ total))
+                                                                  ^
+1 error
+"

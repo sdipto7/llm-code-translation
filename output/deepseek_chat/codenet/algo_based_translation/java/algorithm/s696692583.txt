@@ -1,0 +1,38 @@
+**Algorithm:**
+
+1. **Main Function:**
+   - Signature: `main(String[] args)`
+   - Initialize Scanner object for input
+   - Call `run()` method
+
+2. **Run Method:**
+   - Signature: `run()`
+   - While scanner has next input:
+     - Read three integers: `my1`, `my2`, `enemy1`
+     - Create boolean array `used` of size 11 (indexes 0-10)
+     - Mark positions `my1`, `my2`, `enemy1` as used in the array
+     - Initialize counters: `all = 0`, `safe = 0`
+     - For each integer `i` from 1 to 10:
+       - If `used[i]` is false:
+         - Increment `all` by 1
+         - If `my1 + my2 + i <= 20`, increment `safe` by 1
+     - If `safe * 2 >= all`:
+       - Print "YES"
+     - Else:
+       - Print "NO"
+
+3. **Solve Method:**
+   - Signature: `solve(int[][] a)`
+   - Returns: `char`
+   - Define character array `s = {'d', 'o', 'x'}`
+   - For `side` from 1 to 2:
+     - Check horizontal lines (rows 0-2, all columns equal to `side`)
+     - Check vertical lines (columns 0-2, all rows equal to `side`)
+     - Check main diagonal (positions [0][0], [1][1], [2][2] equal to `side`)
+     - Check anti-diagonal (positions [0][2], [1][1], [2][0] equal to `side`)
+     - If any winning condition found, return `s[side]`
+   - Return 'd' if no winner found
+
+**Required Dependencies:**
+- `java.util.Scanner`
+- `java.util.Arrays.deepToString`

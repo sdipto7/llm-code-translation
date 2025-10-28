@@ -1,0 +1,47 @@
+**Function Signature:**
+- `public static void main(String[] args)`  
+  - Parameters: `String[] args`  
+  - Return type: `void`
+
+**Variables:**
+- `Scanner ob` (Scanner object)  
+- `int n`  
+- `int[] array` (size `n + 1`)  
+- `int odd = 0`  
+- `int even = 0`  
+- `int odd_ind = 0`  
+- `int even_ind = 0`  
+- Loop variable `int i = 1` (twice)  
+
+**Logic Flow:**
+1. Import `java.util.Scanner`.  
+2. Initialize `Scanner ob` with `System.in`.  
+3. Read integer `n` via `ob.nextInt()`.  
+4. Declare `array` with size `n + 1`.  
+5. Loop `i` from `1` to `n` (inclusive):  
+   - Read `array[i]` via `ob.nextInt()`.  
+6. Loop `i` from `1` to `n` (inclusive):  
+   - If `array[i] % 2 == 0`:  
+     - Increment `even`.  
+     - Set `even_ind = i`.  
+   - Else:  
+     - Increment `odd`.  
+     - Set `odd_ind = i`.  
+7. If `odd > even`:  
+   - Print `even_ind`.  
+8. Else:  
+   - Print `odd_ind`.  
+
+**Control Structures:**
+- `for (int i = 1; i <= n; i++)` (twice)  
+- `if (array[i] % 2 == 0)` (inside second loop)  
+- `if (odd > even)` (final conditional)  
+
+**Input/Output Operations:**
+- Input:  
+  - Read `n` and array elements via `Scanner`.  
+- Output:  
+  - Print `even_ind` or `odd_ind` based on parity counts.  
+
+**Dependencies:**
+- `java.util.Scanner` (required for input handling).

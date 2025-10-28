@@ -1,0 +1,87 @@
+**Algorithm Specification**
+
+**1. Class Structure**
+- **Class Name**: `ProblemSolution`
+- **Methods**:
+  - `initialize()`
+    - **Return Type**: `void`
+    - **Function**: Initialize internal state
+  - `readInput()`
+    - **Return Type**: `void`
+    - **Function**: Read input values from standard input
+  - `processQueries()`
+    - **Return Type**: `void`
+    - **Function**: Process stored queries and compute results
+  - `getOutput()`
+    - **Return Type**: `string`
+    - **Function**: Return formatted output string
+
+**2. Data Structures**
+- **Internal State**:
+  - `result`: String (initialized as empty)
+  - `testCaseCount`: Integer (initialized to 0)
+  - `queryList`: List of lists (each sublist contains 3 integers)
+- **Processing Variables**:
+  - `resultsList`: List of strings ("Yes"/"No") for temporary storage
+
+**3. Input/Output Operations**
+- **Input**:
+  - Read `testCaseCount` as first input line
+  - Read `testCaseCount` subsequent lines:
+    - Split each line into 3 space-separated integers
+    - Append as sublist to `queryList`
+- **Output**:
+  - Join all entries in `resultsList` with newline separators
+  - Return concatenated string via `getOutput()`
+
+**4. Control Flow & Logic**
+
+**4.1 Initialization Phase**
+1. `initialize()`
+   - Set `result` = ""
+   - Set `testCaseCount` = 0
+   - Initialize `queryList` as empty list
+
+**4.2 Input Reading**
+1. `readInput()`
+   - Read integer `testCaseCount` from input
+   - For `testCaseCount` iterations:
+      - Read line from input
+      - Split into 3 integers [n, l, r]
+      - Append [n, l, r] to `queryList`
+
+**4.3 Query Processing**
+1. `processQueries()`
+   - Initialize `resultsList` as empty list
+   - For each query [n, l, r] in `queryList`:
+      - **Step 1**: Compute `k` = integer division (n // l)
+      - **Step 2**: Calculate `product` = k * r
+      - **Step 3**: Evaluate condition (product >= n)
+      - **Branch**:
+        - If true: Append "Yes" to `resultsList`
+        - Else: Append "No" to `resultsList`
+   - **Post-loop**: Join `resultsList` with "\n" into `result`
+
+**4.4 Output Generation**
+1. `getOutput()`
+   - Return `result` string
+
+**5. Edge Case Handling**
+- Explicitly handles division with `l=1` (allows maximum k)
+- Correctly processes when `k*r` exactly equals `n`
+- Valid for `n=0` (if permitted by problem constraints)
+
+**6. Execution Flow**
+1. Create `ProblemSolution` instance
+2. Execute `readInput()`
+3. Execute `processQueries()`
+4. Output result via `getOutput()`
+
+**7. External Dependencies**
+- Requires standard input/output system
+- No external libraries or packages used
+
+**8. Constraints Assumptions**
+- All input values are valid integers
+- 1 ≤ l ≤ r ≤ n (implied by problem context)
+- Input format strictly follows specification (3 integers per query)

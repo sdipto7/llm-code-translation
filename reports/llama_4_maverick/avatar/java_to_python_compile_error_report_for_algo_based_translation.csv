@@ -1,0 +1,6 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,atcoder_ABC142_C.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/algo_based_translation/java/python/atcoder_ABC142_C.py"", line 18
+    However, a more accurate representation would be 
+               ^^^^
+SyntaxError: invalid syntax
+"

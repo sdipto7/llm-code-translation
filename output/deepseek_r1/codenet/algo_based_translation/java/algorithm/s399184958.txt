@@ -1,0 +1,27 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner sc = new Scanner(System.in)`
+- `int A = sc.nextInt()`
+- `int B = sc.nextInt()`
+- `int C = sc.nextInt()`
+
+**Logic Flow:**
+1. Read integer input for `A`
+2. Read integer input for `B`
+3. Read integer input for `C`
+4. Check if `A == B`, `B == C`, and `C == A` are all true
+5. If condition is true: Print "Yes"
+6. If condition is false: Print "No"
+
+**Control Structures:**
+- Single `if-else` conditional:
+  - Condition: `(A == B && B == C && C == A)`
+
+**Input/Output:**
+- Input: Three integers from standard input via `Scanner`
+- Output: "Yes" if all three integers are equal, "No" otherwise
+
+**Dependencies:**
+- `java.util.Scanner` (imported via `java.util.*`)

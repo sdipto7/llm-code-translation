@@ -1,0 +1,38 @@
+Here is the algorithm extracted from the Python code:
+
+---
+
+**Input Operations:**
+1. Read integers `N` (number of elements) and `M` (number of operations) from standard input.
+2. Read list `A` (array of integers) from standard input.
+3. Sort `A` in non-decreasing order.
+
+**Processing Logic:**
+1. While `M > 0`:
+   a. Halve the largest element (`A[-1] = A[-1] // 2`) and decrement `M` by 1.
+   b. Initialize `i = -2` (index for previous elements).
+   c. While `M > 0` and `i >= -N` (prevent out-of-bounds) and `A[i] >= A[-1]` (element is >= the modified largest):
+      - Halve `A[i]` (`A[i] = A[i] // 2`).
+      - Decrement `M` by 1.
+      - Decrement `i` by 1 (move leftward).
+   d. Sort `A` again to maintain non-decreasing order.
+
+**Output Operation:**
+1. Compute and print the sum of elements in `A`.
+
+**Variables:**
+- `N`: Integer (number of elements in `A`).
+- `M`: Integer (remaining operations).
+- `A`: List of integers (sorted array).
+- `i`: Integer (index for inner loop traversal).
+
+**Control Structures:**
+- Outer loop: `while M > 0`.
+- Inner loop: `while M > 0 and i >= -N and A[i] >= A[-1]`.
+
+**Data Types:**
+- All variables are integers or lists of integers.
+
+**Dependencies:**
+- Standard input/output operations.
+- Built-in sorting and list manipulation.

@@ -1,0 +1,33 @@
+Function signature: process_input(input_string: str) -> None
+
+Variable declarations and data types:
+- input_string: str
+- l: List[str]
+- s: List[str]
+- p: List[str]
+- i: int
+
+Logic flow in execution order:
+1. Read input_string as a string from the user.
+2. Split input_string by '.' into l, resulting in a list of two strings.
+3. Assign the first element of l to s as a list of characters.
+4. Assign the second element of l to p as a list of characters.
+5. Convert the first element of p to an integer and assign to i.
+
+Control structures:
+- If the last element of s is '9':
+    - Print "GOTO Vasilisa."
+- Else if the last element of s is not '9' and i is less than 5:
+    - Join elements of s into a string.
+    - Print the joined string.
+- Else:
+    - Join elements of s into a string.
+    - Convert the joined string to an integer, add 1, and convert back to a string.
+    - Print the resulting string.
+
+Input/output operations and data processing logic:
+- Input: A string representing a number with a decimal point.
+- Output: A string based on the conditions specified in the control structures.
+
+Required libraries, modules, or dependencies:
+- No specific libraries or modules are required.

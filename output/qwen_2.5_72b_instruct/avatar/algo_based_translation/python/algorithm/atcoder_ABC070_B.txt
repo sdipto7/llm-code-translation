@@ -1,0 +1,14 @@
+- Function signature: `main()` with no parameters and no return type
+- Variable declarations and data types: `A` as a list of integers
+- Logic flow in execution order:
+  1. Read input from standard input, split by spaces, convert each element to integer, and store in list `A`
+  2. Check if `A[1]` is less than or equal to `A[2]` or if `A[3]` is less than or equal to `A[0]`
+  3. If condition is true, print `0`
+  4. If condition is false, sort list `A` in ascending order
+  5. Print the difference between the third and second elements of sorted list `A`
+- Control structures:
+  - Conditional: `if A[1] <= A[2] or A[3] <= A[0]:` and `else:`
+- Input/output operations and data processing logic:
+  - Input: Read a line from standard input, split into substrings, convert each substring to an integer, and store in list `A`
+  - Output: Print `0` if condition is met, otherwise print the difference between the third and second elements of sorted list `A`
+- Required libraries, modules, or dependencies: No specific imports required

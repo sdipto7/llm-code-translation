@@ -1,0 +1,7 @@
+1. Define a function `main` with no parameters and return type `void`.
+2. Declare a variable `in` of type `Scanner` and initialize it with a new `Scanner` object reading from `System.in`.
+3. Declare a variable `c` of type `String` and assign it the result of calling `in.next()`.
+4. Declare a variable `letter` of type `Character` and assign it the first character of `c` obtained by calling `c.charAt(0)`.
+5. Increment the value of `letter` by 1 using the `++` operator.
+6. Call `System.out.println` with `letter` as the argument to print its value.
+7. Import the `java.util.Scanner` class.

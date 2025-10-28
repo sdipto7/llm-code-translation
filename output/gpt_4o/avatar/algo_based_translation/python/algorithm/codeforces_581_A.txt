@@ -1,0 +1,32 @@
+1. Function Signature:
+   - Function Name: `calculate_min_max_difference`
+   - Parameters: None
+   - Return Type: Tuple[int, int]
+
+2. Variable Declarations:
+   - `a`: int
+   - `b`: int
+   - `min_value`: int
+   - `max_value`: int
+   - `difference`: int
+
+3. Logic Flow:
+   - Read a single line of input from the user.
+   - Split the input string by spaces into a list of strings.
+   - Convert the list of strings to a list of integers using `map`.
+   - Assign the first integer to variable `a`.
+   - Assign the second integer to variable `b`.
+   - Calculate `min_value` as the minimum of `a` and `b` using the `min` function.
+   - Calculate `max_value` as the maximum of `a` and `b` using the `max` function.
+   - Calculate `difference` as the integer division of the subtraction of `min_value` from `max_value` by 2.
+   - Return a tuple containing `min_value` and `difference`.
+
+4. Control Structures:
+   - No loops or conditionals are present.
+
+5. Input/Output Operations:
+   - Input is read from standard input using `input()`.
+   - Output is returned as a tuple of integers.
+
+6. Required Libraries:
+   - No external libraries or modules are required.

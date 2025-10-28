@@ -1,0 +1,28 @@
+- Function: 
+  - Name: main
+  - Parameters: String[] args
+  - Return: void
+
+- Variables:
+  - Scanner in
+  - String c
+  - Character letter
+
+- Libraries/Dependencies: 
+  - java.util.Scanner
+
+- Logic Flow:
+  1. Initialize Scanner with System.in
+  2. Read next input token as String c
+  3. Extract first character from c (charAt(0)) and store as Character letter
+  4. Increment letter by 1 using ++ operator
+  5. Print letter via System.out.println
+
+- Control Structures: None beyond sequential execution
+
+- Input/Output:
+  - Input: Single character string from standard input
+  - Output: Next Unicode character printed to standard output
+
+- Data Processing:
+  - Character increment operation handles ASCII/Unicode rollover automatically

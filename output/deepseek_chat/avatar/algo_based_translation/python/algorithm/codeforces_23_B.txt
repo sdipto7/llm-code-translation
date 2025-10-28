@@ -1,0 +1,7 @@
+Read integer n from input
+For i from 0 to n-1:
+    Read integer a from input
+    If a < 2:
+        Print 0
+    If a >= 2:
+        Print a - 2

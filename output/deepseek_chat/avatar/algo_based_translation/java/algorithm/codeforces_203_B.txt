@@ -1,0 +1,17 @@
+Scanner in = new Scanner(System.in)
+int N = in.nextInt()
+int M = in.nextInt()
+int[][] black = new int[N+2][N+2]
+
+for m from 1 to M inclusive:
+    int x = in.nextInt()
+    int y = in.nextInt()
+    
+    for xx from x-1 to x+1 inclusive:
+        for yy from y-1 to y+1 inclusive:
+            increment black[xx][yy] by 1
+            if black[xx][yy] equals 9:
+                print m
+                terminate program
+
+print "-1"

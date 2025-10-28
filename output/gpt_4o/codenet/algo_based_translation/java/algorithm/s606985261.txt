@@ -1,0 +1,12 @@
+- Import the `Scanner` class from the `java.util` package.
+- Declare the `main` function with the signature `void main(String[] args)`.
+- Create a `Scanner` object `sc` to read input from the standard input.
+- Read a string `s` from the input using `sc.next()`.
+- Declare an integer variable `total` and initialize it to `0`.
+- Start a loop with integer `i` initialized to `0`, continue the loop while `i` is less than the length of `s`, and increment `i` by `1` after each iteration.
+  - Inside this loop, start another loop with integer `j` initialized to `i + 1`, continue the loop while `j` is less than the length of `s`, and increment `j` by `1` after each iteration.
+    - Inside the inner loop, check if the character at index `i` of `s` is equal to the character at index `j` of `s`.
+      - If they are equal, increment the `total` variable by `1`.
+- After both loops complete, check if `total` is equal to `2`.
+  - If `total` is `2`, print "Yes" to the standard output.
+  - Otherwise, print "No" to the standard output.

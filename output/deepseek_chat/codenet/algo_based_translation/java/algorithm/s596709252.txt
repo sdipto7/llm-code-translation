@@ -1,0 +1,4 @@
+read integer x from standard input
+read integer y from standard input
+read integer z from standard input
+print z followed by space followed by x followed by space followed by y

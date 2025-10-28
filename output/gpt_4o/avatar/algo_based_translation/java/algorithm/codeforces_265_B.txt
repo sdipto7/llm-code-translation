@@ -1,0 +1,36 @@
+1. Import necessary libraries:
+   - Import `java.io.*`
+   - Import `java.util.*`
+
+2. Define the main function:
+   - Function signature: `public static void main(String[] args)`
+
+3. Create a `Scanner` object:
+   - Variable: `Scanner scn`
+   - Data type: `Scanner`
+   - Initialize with `new Scanner(System.in)`
+
+4. Read an integer input `n`:
+   - Variable: `int n`
+   - Use `scn.nextInt()` to read the input
+
+5. Declare an integer array `arr` of size `n`:
+   - Data type: `int[]`
+   - Initialize with `new int[n]`
+
+6. Populate the array `arr` with inputs:
+   - Loop: `for (int i = 0; i < arr.length; i++)`
+     - Read integer input using `scn.nextInt()`
+     - Assign to `arr[i]`
+
+7. Initialize an integer variable `ans`:
+   - Variable: `int ans`
+   - Set initial value to `arr[0] + 1`
+
+8. Calculate the total steps required:
+   - Loop: `for (int i = 1; i < arr.length; i++)`
+     - Compute `Math.abs(arr[i] - arr[i-1]) + 2`
+     - Add the computed value to `ans`
+
+9. Output the result:
+   - Use `System.out.println(ans)` to print `ans`

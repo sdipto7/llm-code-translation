@@ -1,0 +1,16 @@
+1. Input Operations:
+   - Read integer `n` from standard input via `input()` and convert to int
+   - Read space-separated values from next input line, convert to list of integers `x` (length n implied)
+2. Data Processing:
+   - Reverse order of elements in list `x` using in-place reversal method `x.reverse()`
+3. Output Operation:
+   - Print reversed list elements space-separated using unpack operator `*x`
+4. Variables:
+   - n: int (number of elements, though not directly used after input)
+   - x: List[int] (stores input numbers and reversed result)
+5. Execution Flow:
+   - Sequential execution without loops/conditionals
+   - All operations performed in main scope (no functions)
+6. Dependencies:
+   - Uses Python built-in functions (input, int, map, list, print)
+   - No external libraries/modules required

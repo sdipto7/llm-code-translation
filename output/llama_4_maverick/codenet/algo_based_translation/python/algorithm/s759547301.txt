@@ -1,0 +1,13 @@
+1. Define a function `get_next_weather` with a parameter `weather` of type string and return type string.
+2. Inside `get_next_weather`, check if `weather` equals 'Sunny', if true, return 'Cloudy'.
+3. If `weather` does not equal 'Sunny', check if it equals 'Cloudy', if true, return 'Rainy'.
+4. If `weather` is neither 'Sunny' nor 'Cloudy', check if it equals 'Rainy', if true, return 'Sunny'.
+5. Read a string input from the user and store it in variable `S` of type string.
+6. Call `get_next_weather` with `S` as the argument and print the returned value.
+
+Alternatively, a more optimized version:
+1. Define a dictionary `weather_cycle` with keys 'Sunny', 'Cloudy', 'Rainy' and corresponding values 'Cloudy', 'Rainy', 'Sunny'.
+2. Define a function `get_next_weather` with a parameter `weather` of type string and return type string.
+3. Inside `get_next_weather`, return the value from `weather_cycle` corresponding to the key `weather`.
+4. Read a string input from the user and store it in variable `S` of type string.
+5. Call `get_next_weather` with `S` as the argument and print the returned value.

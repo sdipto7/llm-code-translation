@@ -1,0 +1,8 @@
+1. Read two integer values from input and store them in variables N and K.
+2. Read a string from input and store it as a list of characters in S.
+3. Check the character at index K-1 in S.
+   - If the character is 'A', replace it with 'a'.
+   - If the character is 'B', replace it with 'b'.
+   - If the character is neither 'A' nor 'B', replace it with 'c'.
+4. Join the characters in S into a single string and store it in ans.
+5. Output the value of ans.

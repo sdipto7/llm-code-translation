@@ -1,0 +1,38 @@
+- **Function Signature**  
+  `main(String[] args) : void`  
+
+- **Variables**  
+  - `Scanner in`  
+  - `String word1`, `word2`, `word3` (sanitized inputs)  
+  - `String perm1`, `perm2`, `perm3`, `perm4`, `perm5`, `perm6` (permutations of words)  
+  - `int students` (number of test cases)  
+  - `String testCase` (sanitized student input)  
+  - `int i` (loop counter)  
+
+- **Libraries/Dependencies**  
+  `java.util.*` (Scanner)  
+
+- **Input Logic**  
+  1. Read and sanitize three input lines:  
+     - Remove non-alphabetic characters using regex `[^a-zA-Z]`  
+     - Convert to lowercase  
+     - Assign to `word1`, `word2`, `word3`  
+  2. Read `students` (number of test cases)  
+  3. Consume leftover newline after integer input with `in.nextLine()`  
+
+- **Data Processing**  
+  1. Generate all permutations of `word1`, `word2`, `word3` concatenated:  
+     - `perm1 = word1+word2+word3`  
+     - `perm2 = word1+word3+word2`  
+     - `perm3 = word2+word1+word3`  
+     - `perm4 = word2+word3+word1`  
+     - `perm5 = word3+word2+word1`  
+     - `perm6 = word3+word1+word2`  
+
+- **Control Flow**  
+  1. Loop `i` from `0` to `students-1`:  
+     - Read and sanitize `testCase` (same as word1/word2/word3 processing)  
+     - Check if `testCase` matches any permutation (`perm1` to `perm6`)  
+       - **Condition**: `testCase.equals(perm1) || ... || testCase.equals(perm6)`  
+     - If match: Print `"ACC"`  
+     - Else: Print `"WA"`

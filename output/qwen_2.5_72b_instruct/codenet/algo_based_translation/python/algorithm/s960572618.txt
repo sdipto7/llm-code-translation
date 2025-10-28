@@ -1,0 +1,18 @@
+Function signature: check_identical_strings() -> None
+
+Variable declarations:
+a: str
+b: str
+c: str
+
+Logic flow:
+1. Read a line of input from the user.
+2. Strip any leading or trailing whitespace from the input.
+3. Split the stripped input into three parts using whitespace as the delimiter.
+4. Assign the first part to variable a.
+5. Assign the second part to variable b.
+6. Assign the third part to variable c.
+7. If a is equal to b and b is equal to c, then:
+   a. Print "Yes".
+8. Otherwise:
+   a. Print "No".

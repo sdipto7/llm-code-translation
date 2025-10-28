@@ -1,0 +1,40 @@
+Function signature: `calculate_minimum_distance(n: int, k: int) -> int`
+
+Variable declarations and data types:
+- `n: int`
+- `k: int`
+- `tmp: int`
+- `ans: int`
+
+Logic flow in execution order:
+1. Read two integers `n` and `k` from input
+2. If `n > k`:
+   - Calculate `tmp = n % k`
+   - If `tmp >= k - tmp`:
+     - Set `ans = k - tmp`
+   - Else:
+     - Set `ans = tmp`
+3. Else if `n < k`:
+   - If `n >= k - n`:
+     - Set `ans = k - n`
+   - Else:
+     - Set `ans = n`
+4. Else (when `n == k`):
+   - Set `ans = 0`
+5. Print `ans`
+
+Control structures:
+- Conditionals:
+  - `if n > k`
+  - `if tmp >= k - tmp`
+  - `elif n < k`
+  - `if n >= k - n`
+  - `else` (for `n == k`)
+
+Input/output operations and data processing logic:
+- Input: Two space-separated integers `n` and `k`
+- Output: Single integer `ans`, which is the minimum distance to the nearest multiple of `k`
+- Data processing: Modulo operation and comparison to determine minimum distance
+
+Required libraries, modules, or dependencies:
+- `numpy` (though not used in the logic, mentioned in the import statement)

@@ -1,0 +1,28 @@
+Function signature: main() -> None
+Parameters: None
+Return type: None
+
+Variables:
+- W: integer
+- H: integer  
+- x: integer
+- y: integer
+- r: integer
+
+Input operation: Read one line from standard input, split by whitespace, convert each element to integer, assign to W, H, x, y, r respectively
+
+Logic flow:
+1. Check condition: x >= r AND (W - r) >= x
+2. If condition is true:
+   - Check condition: y >= r AND (H - r) >= y
+   - If condition is true: print 'Yes'
+   - Else: print 'No'
+3. Else: print 'No'
+
+Control structures:
+- If-else conditional: if x >= r and (W - r) >= x
+- Nested if-else conditional: if y >= r and (H - r) >= y
+
+Output operations: Print 'Yes' or 'No' to standard output
+
+Required dependencies: None (uses built-in functions)

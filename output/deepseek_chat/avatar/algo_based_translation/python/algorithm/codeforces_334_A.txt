@@ -1,0 +1,9 @@
+1. Read integer input `n` from standard input
+2. Declare integer variables `i` and `j`
+3. Initialize `i` to 1
+4. Initialize `j` to `n * n`
+5. While `i` is less than `j`:
+   - Print `i` and `j` separated by space
+   - Increment `i` by 1
+   - Decrement `j` by 1
+6. End program when loop condition fails

@@ -1,0 +1,32 @@
+**Function Signature:**
+```plaintext
+determine_winner(A: int, B: int) -> str
+```
+
+**Variable Declarations:**
+- `A: int` - Input integer representing Alice's card
+- `B: int` - Input integer representing Bob's card
+
+**Logic Flow:**
+1. Read two space-separated integers from standard input, convert them to integers, and assign them to variables `A` and `B`.
+2. If `A` is equal to `B`, return the string "Draw".
+3. If `A` is equal to 1, return the string "Alice".
+4. If `B` is equal to 1, return the string "Bob".
+5. If `A` is greater than `B`, return the string "Alice".
+6. Otherwise, return the string "Bob".
+
+**Control Structures:**
+- Conditional statements:
+  - `if A == B`
+  - `elif A == 1`
+  - `elif B == 1`
+  - `elif A > B`
+  - `else`
+
+**Input/Output Operations:**
+- Input: Two integers read from standard input
+- Output: A string printed to standard output indicating the winner ("Draw", "Alice", or "Bob")
+
+**Dependencies:**
+- `map` function for converting input strings to integers
+- `input` function for reading input

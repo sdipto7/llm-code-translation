@@ -1,0 +1,29 @@
+Function Signature:
+- `def check_hyphen_format(A: int, B: int, S: str) -> str:`
+
+Variable Declarations and Data Types:
+- `A`: integer
+- `B`: integer
+- `S`: list of characters (strings of length 1)
+
+Complete Logic Flow:
+1. Parse two integers `A` and `B` from the input using `map(int, input().split())`.
+2. Parse a string `S` from the input using `input()`.
+3. Convert the string `S` into a list of characters.
+4. Check if the character at index `A` of the list `S` is a hyphen ('-').
+5. Count the number of hyphens ('-') in the list `S`.
+6. If the character at index `A` is a hyphen and the count of hyphens in `S` is exactly 1, return "Yes".
+7. Otherwise, return "No".
+
+Control Structures:
+- Conditional: `if S[A] == '-' and S.count('-') == 1:`
+  - If true, execute print("Yes")
+  - Else, execute print("No")
+
+Input/Output Operations:
+- Input: Read two integers from the first line.
+- Input: Read a string from the second line.
+- Output: Print "Yes" or "No" based on the condition.
+
+Required Libraries, Modules, or Dependencies:
+- No external libraries or modules are required.

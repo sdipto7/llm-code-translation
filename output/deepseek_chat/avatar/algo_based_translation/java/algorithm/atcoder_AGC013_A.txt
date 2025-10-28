@@ -1,0 +1,47 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner stdIn`: Scanner object for input
+- `int N`: integer, length of array
+- `int[] A`: integer array of size N
+- `int count`: integer, initialized to 0
+- `int i`: integer loop index
+
+**Logic Flow:**
+1. Read integer N from standard input
+2. Initialize integer array A of size N
+3. For i from 0 to N-1: read integers into A[i]
+4. Set count = 0
+5. For i from 0 to N-1:
+   - If i equals N-1: increment count by 1
+   - Else if A[i] equals A[i+1]: do nothing
+   - Else if A[i] < A[i+1]:
+        While A[i] <= A[i+1]:
+            Increment i by 1
+            If i equals N-1: break loop
+        Increment count by 1
+   - Else (A[i] > A[i+1]):
+        While A[i] >= A[i+1]:
+            Increment i by 1
+            If i equals N-1: break loop
+        Increment count by 1
+6. Print count
+
+**Control Structures:**
+- For loop: i from 0 to N-1
+- If-else if-else conditions:
+    - i == N-1
+    - A[i] == A[i+1]
+    - A[i] < A[i+1]
+    - A[i] > A[i+1]
+- While loops:
+    - While A[i] <= A[i+1] (with break condition i == N-1)
+    - While A[i] >= A[i+1] (with break condition i == N-1)
+
+**Input/Output:**
+- Input: First integer N, then N integers
+- Output: Single integer count
+
+**Dependencies:**
+- java.util.Scanner

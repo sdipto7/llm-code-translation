@@ -1,0 +1,3 @@
+Read integer input from standard input and store as n
+Calculate result = (n multiplied by 2 plus 1) integer divided by 3
+Print result

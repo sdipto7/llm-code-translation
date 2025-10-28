@@ -1,0 +1,50 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `public static void util(ArrayList<Long> arr, String[] ops, int idx)`
+
+**Variables:**
+- `static long min` initialized to `Long.MAX_VALUE`
+- `Scanner sc` in `main` for input
+- `ArrayList<Long> arr` in `main` with 4 elements from input
+- `String[] ops` in `main` with 3 elements from input
+- `ArrayList<Long> a` in `util` during recursion (stores remaining elements after pair removal)
+- `long res` in `util` (result of pairwise operation)
+
+**Input/Output:**
+- Input: 4 space-separated integers followed by 3 space-separated operators ("+" or "*")
+- Output: Minimum possible value after applying all operations sequentially via all possible combinations
+
+**Logic Flow:**
+1. Initialize `min` to maximum possible `long` value
+2. Read 4 numbers into `arr` and 3 operators into `ops`
+3. Call `util(arr, ops, 0)`
+4. If `idx == 3` in `util`:
+   - Set `min` to the smaller value between current `min` and the only remaining element in `arr`
+   - Return
+5. Else for all i < j pairs in `arr`:
+   - Create new list `a` containing all elements except those at positions `i` and `j`
+   - Calculate `res`:
+     - If `ops[idx]` is "+": `res = arr.get(i) + arr.get(j)`
+     - Else: `res = arr.get(i) * arr.get(j)`
+   - Add `res` to `a`
+   - Recursively call `util(a, ops, idx + 1)`
+6. After recursion completes, print `min`
+
+**Control Structures:**
+- For loops:
+  - `for (int i=0; i<4; i++)` (input reading)
+  - `for (int i=0; i<3; i++)` (op input reading)
+  - Nested `for (i=0; i<arr.size(); i++)` and `for (j=i+1; j<arr.size(); j++)` (pair iteration)
+  - `for (k=0; k<arr.size(); k++)` (element exclusion during pair processing)
+- Conditional branches:
+  - `if (idx == 3)`
+  - `if (ops[idx].equals("+"))` for operation selection
+
+**Data Processing:**
+- Recursively reduces the list size from 4 → 3 → 2 → 1 elements through all possible pair combinations
+- Applies operations in the order specified by `ops` array
+- Tracks minimum value across all possible operation application orders and operand pairings
+
+**Dependencies:**
+- `java.util.Scanner`
+- `java.util.ArrayList`

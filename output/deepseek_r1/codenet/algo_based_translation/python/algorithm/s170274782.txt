@@ -1,0 +1,41 @@
+**Algorithm:**
+
+1. **Input Operations:**
+   - Read integer `N` from standard input.
+   - Read two lines of input, each containing space-separated integers. Store these as lists `A[0]` and `A[1]`.
+
+2. **Variable Declarations:**
+   - `N: int` (number of elements per list)
+   - `A: List[List[int]]` (contains two integer lists)
+   - `ans: List[int]` (stores intermediate results)
+   - `count: int` (temporary counter for sum calculation)
+   - `baselis: List[int]` (alias for `A[0]`)
+   - `groundlis: List[int]` (alias for `A[1]`)
+
+3. **Logic Flow:**
+   - Initialize empty list `ans`.
+   - Iterate `i` from `0` to `N-1` inclusive:
+     - Reset `count` to `0`
+     - Calculate sum of elements `baselis[0]` to `baselis[i]`
+     - Calculate sum of elements `groundlis[i]` to `groundlis[N-1]`
+     - Sum both results, append to `ans`
+   - Output maximum value in `ans`
+
+4. **Control Structures:**
+   - `for _ in range(2):` loop for input collection
+   - `for i in range(N):` loop for main calculation
+   - Implicit list slicing from start to `i+1` (exclusive) and `i` to `N`
+
+5. **Data Processing:**
+   - List slicing and summation via `sum()`
+   - Maximum value extraction via `max()`
+
+6. **Function Signature:**
+   ```python
+   def main() -> None:
+       # Implementation
+   ```
+   (Inputs handled via STDIN, output via STDOUT)
+
+7. **Dependencies:**
+   - None (uses only built-in functions)

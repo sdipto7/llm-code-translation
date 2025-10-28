@@ -1,0 +1,22 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `int n`
+- `List<Integer> arr`
+- `long result`
+
+Logic flow:
+1. Import `java.util.*`
+2. Create `Scanner` object named `input`
+3. Read integer `n` from input
+4. Initialize `arr` as an empty `ArrayList` of `Integer`
+5. Loop from `0` to `n-1`:
+    - Read next integer from input
+    - If integer is `1`, add current index `i` to `arr`
+6. If `arr` is empty:
+    - Print `0`
+7. Else:
+    - Set `result` to `1`
+    - Loop from `1` to `size of arr - 1`:
+        - Multiply `result` by difference between `arr.get(i)` and `arr.get(i-1)`
+    - Print `result`

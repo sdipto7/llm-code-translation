@@ -1,0 +1,18 @@
+1. Read two integer inputs, x and y, from the user.
+2. Initialize a variable a to 0.
+3. Enter a while loop that continues as long as the following conditions are met:
+   - x is greater than or equal to 0 and y is greater than or equal to 22
+   - or x is greater than or equal to 1 and y is greater than or equal to 12
+   - or x is greater than or equal to 2 and y is greater than or equal to 2
+4. Inside the loop, check the value of a.
+5. If a is true (1), perform the following conditional operations:
+   - If y is greater than or equal to 22, decrement y by 22.
+   - Else if x is greater than or equal to 1 and y is greater than or equal to 12, decrement x by 1 and y by 12.
+   - Else, decrement x by 2 and y by 2.
+6. If a is false (0), perform the following conditional operations:
+   - If x is greater than or equal to 2 and y is greater than or equal to 2, decrement x by 2 and y by 2.
+   - Else if x is greater than or equal to 1 and y is greater than or equal to 12, decrement x by 1 and y by 12.
+   - Else, decrement y by 22.
+7. Toggle the value of a (i.e., set it to 1 - a).
+8. Once the while loop exits, determine the winner based on the final value of a.
+9. Output 'Ciel' if a is 0, otherwise output 'Hanako'.

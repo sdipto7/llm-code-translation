@@ -1,0 +1,73 @@
+**Algorithm Extraction:**
+
+**Libraries/Modules:**
+- sys
+- clipboard (conditional)
+
+**Input Methods:**
+- input_methods = ['clipboard', 'file', 'key']
+- using_method = 0
+- input_method = input_methods[using_method]
+
+**Functions:**
+
+1. **IN() -> tuple[int]:**
+   - Read input line
+   - Split by spaces
+   - Convert each element to integer
+   - Return tuple of integers
+
+2. **main_b() -> void:**
+   - Read string s from input
+   - Initialize pp = 0, na = 0
+   - For each character c in reversed s (with index i):
+     - cc = na + integer value of c
+     - Set na = 0
+     - If cc ≤ 4:
+       - pp += cc
+     - Else:
+       - Set na = 1
+       - If i == len(s)-1:
+         - pp += 1
+       - pp += 10 - cc
+   - Print pp
+
+3. **main() -> int:**
+   - Read string s from input
+   - Initialize pmin = 1000, mmin = 0
+   - Prepend '0' to s
+   - For each character c in reversed s:
+     - v = integer value of c
+     - npmin = min(pmin + 10 - (v + 1), mmin + 10 - v)
+     - nmmin = min(pmin + v + 1, mmin + v)
+     - pmin = npmin
+     - mmin = nmmin
+   - Return min(pmin, mmin)
+
+4. **pa(v: any) -> void:**
+   - If isTest is True:
+     - Print v
+
+5. **input_clipboard() -> generator[str]:**
+   - Import clipboard
+   - Get input text from clipboard
+   - Split text into lines
+   - Yield each line
+
+**Main Execution Flow:**
+- Check if platform is 'ios'
+- If input_method is 'clipboard':
+  - Create input_clipboard generator
+  - Set input function to generator.next
+- Else if input_method is 'file':
+  - Open 'inputFile.txt' as stdin
+- Set isTest = True if platform is 'ios'
+- Call main() and store return value in ret
+- If ret is not None:
+  - Print ret
+
+**Variables:**
+- mod = 1000000007 (int)
+- isTest = False (bool)
+- ic: generator[str] (conditional)
+- ret: int (from main())

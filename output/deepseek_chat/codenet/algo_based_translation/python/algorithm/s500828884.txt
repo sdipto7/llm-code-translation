@@ -1,0 +1,5 @@
+read integer n, integer a, integer b from standard input
+set cost1 = n multiplied by a
+set cost2 = b
+set result = minimum value between cost1 and cost2
+print result to standard output

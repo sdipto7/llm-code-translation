@@ -1,0 +1,28 @@
+```
+Function Signature:
+- Function Name: max_subarray_sum
+- Parameters: None
+- Return Type: None
+
+Variable Declarations:
+- n: int
+- res: int
+- s: int
+- a: int
+
+Logic Flow:
+1. Enter an infinite loop.
+   a. Read an integer input from the user and assign it to variable `n`.
+   b. If `n` equals 0, break the loop.
+   c. Initialize `res` to a very large negative integer (-1111111111).
+   d. Initialize `s` to 0.
+   e. For each integer `i` from 0 to `n-1` (inclusive):
+      i.   Read an integer input from the user and assign it to variable `a`.
+      ii.  Calculate the maximum of `s + a` and `a`, and assign this value to `s`.
+      iii. Calculate the maximum of `s` and `res`, and assign this value to `res`.
+   f. Print the value of `res`.
+
+Dependencies:
+- The code requires the standard input function to read user inputs and the print function for output.
+- No external libraries or modules are required.
+```

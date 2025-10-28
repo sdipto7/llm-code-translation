@@ -1,0 +1,39 @@
+```plaintext
+Function signature:
+    def find_minimum_problems(D: int, G: int, PC: List[Tuple[int, int]]) -> int
+
+Variables:
+    ans: int
+    i: int
+    score: int
+    problem: int
+    j: int
+    left: int
+    tmp: int
+
+Logic Flow:
+1. Initialize `ans` to a large number (10^9).
+2. Iterate over all possible combinations `i` from 0 to 2^D - 1:
+    a. Initialize `score` to 0.
+    b. Initialize `problem` to 0.
+    c. For each `j` from 0 to D - 1:
+        i. If the j-th bit of `i` is set (i.e., `(i >> j) & 1` is true):
+            - Add to `score` the value `100 * (j + 1) * PC[j][0] + PC[j][1]`.
+            - Add to `problem` the number of problems `PC[j][0]`.
+    d. If `score` is greater than `G`, skip to the next combination.
+    e. Calculate `left` as `G - score`.
+    f. For each `j` from 0 to D - 1:
+        i. If the j-th bit of `i` is set, continue to the next `j`.
+        ii. If `left` is greater than the total score possible with topic `j`:
+            - Pass (do nothing).
+        iii. Else:
+            - Calculate `tmp` as `(left + (100 * (j + 1)) - 1) // (100 * (j + 1))`.
+            - Update `ans` with the minimum of `ans` and `problem + min(tmp, PC[j][0])`.
+3. Output `ans`.
+
+Input/Output:
+- Input: Read integers `D` and `G`.
+- Read list `PC` of tuples (int, int) of length `D`.
+- Output: Print the integer `ans`.
+```
+

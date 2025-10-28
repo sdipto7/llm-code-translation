@@ -1,0 +1,7 @@
+1. Read the number of inputs n from the standard input.
+2. Read n space-separated integers into a list w.
+3. Initialize a variable c to 2.
+4. For each integer i in the list w:
+   4.1. If i equals 1, then print the value of c.
+   4.2. If i is even but not 1, then toggle the value of c between 1 and 2, and print the new value of c.
+   4.3. If i is odd, then print the current value of c.

@@ -1,0 +1,11 @@
+1. Read an integer n from the input.
+2. Read a string of length n from the input.
+3. Convert the string into a character array.
+4. Check each character in the array to see if it is not equal to '4' or '7'.
+5. If any character is not '4' or '7', mark it as invalid.
+6. If the input is invalid, output "NO".
+7. If the input is valid, calculate the sum of the first half of the digits in the character array.
+8. Calculate the sum of the second half of the digits in the character array.
+9. Compare the two sums.
+10. If the sums are equal, output "YES".
+11. If the sums are not equal, output "NO".

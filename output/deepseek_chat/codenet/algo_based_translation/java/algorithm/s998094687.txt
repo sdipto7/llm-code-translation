@@ -1,0 +1,27 @@
+**Function Signature:**
+main(String[] args): void
+
+**Variables:**
+- Scanner sc (final)
+- int n
+- int[] a (size 3)
+
+**Libraries/Dependencies:**
+- java.lang.Math.*
+- java.util.Scanner
+- java.util.Arrays
+
+**Algorithm:**
+1. Create Scanner object reading from standard input
+2. Read integer n from input
+3. Initialize integer array a with size 3
+4. For i from 0 to n-1:
+   - Read integer into a[0]
+   - Read integer into a[1]
+   - Read integer into a[2]
+   - Sort array a in ascending order
+   - If a[2]² equals a[0]² + a[1]²:
+     - Print "YES"
+   - Else:
+     - Print "NO"
+5. End loop

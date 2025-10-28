@@ -1,0 +1,9 @@
+1. Read two integers N and M from input.
+2. Initialize a 2D array "black" of size (N+2) x (N+2) with all elements as 0.
+3. Iterate from 1 to M.
+4. For each iteration, read two integers x and y from input.
+5. For x and y, iterate over the 3x3 sub-grid centered at (x, y).
+6. For each cell (xx, yy) in the 3x3 sub-grid, increment the value of black[xx][yy] by 1.
+7. Check if the value of black[xx][yy] is equal to 9 after incrementing.
+8. If the value is 9, output the current iteration number and terminate.
+9. If the loop completes M iterations without finding a cell with value 9, output -1.

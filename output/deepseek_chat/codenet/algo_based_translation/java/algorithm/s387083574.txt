@@ -1,0 +1,13 @@
+read integer N from standard input
+create an empty HashMap named map with Integer keys and Integer values
+for i from 1 to N inclusive:
+    read integer value from standard input
+    put (i, value) into map
+
+create stream from map.entrySet()
+sort stream entries by comparing their values in ascending order
+map each entry to its key
+map each key to its string representation
+collect results into a list
+join list elements with space separator
+print resulting string

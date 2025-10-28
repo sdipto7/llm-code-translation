@@ -1,0 +1,46 @@
+FUNCTION/METHOD SIGNATURES:
+- main() → void
+
+VARIABLE DECLARATIONS:
+- n: integer
+- l: list of integers
+- high: integer
+- tower: integer
+- maximum: integer
+- i: integer
+
+STEP-BY-STEP LOGIC:
+1. Read integer n from standard input
+2. Read space-separated integer values from standard input and store in list l
+3. Sort list l in non-decreasing order
+4. Initialize high = 1, tower = n, maximum = 1
+5. Iterate i from 1 to n-1 (inclusive):
+   5.1 If l[i] equals l[i-1]:
+        5.1.1 Decrement tower by 1
+        5.1.2 Increment high by 1
+   5.2 Else:
+        5.2.1 If high > maximum:
+                5.2.1.1 Set maximum = high
+        5.2.2 Reset high = 1
+6. After loop completion:
+   6.1 If high > maximum:
+        6.1.1 Set maximum = high
+7. Print maximum and tower as space-separated integers
+
+CONTROL FLOW STRUCTURES:
+- For loop: for i in range 1 to n-1
+- Conditional (branch 1): if l[i] == l[i-1]
+- Conditional (branch 2): else clause with nested if high > maximum check
+- Post-loop conditional: if high > maximum check
+
+INPUT/OUTPUT OPERATIONS:
+- Read integer from stdin using input()
+- Read and parse space-separated integers from stdin
+- Print two space-separated integers to stdout
+
+ERROR HANDLING:
+- No explicit error handling. Assumes valid integer inputs and proper list length matching n.
+
+EXTERNAL DEPENDENCIES:
+- Built-in functions: input(), list(), map(), split(), sort(), print()
+- No external libraries or modules required

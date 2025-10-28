@@ -1,0 +1,27 @@
+**Function Signatures:**
+- `na(): List[int]` - no parameters, returns list of integers
+
+**Variable Declarations:**
+- `n: int`
+- `x: int`
+- `a: List[int]`
+- `ans: int`
+
+**Input Operations:**
+- Read first line: split input, convert to integers, assign to n and x
+- Read second line: split input, convert to integers, sort ascending, assign to a
+
+**Logic Flow:**
+1. Initialize `ans = 0`
+2. If first element of sorted list `a[0] > x`:
+   - Print `0`
+   - Exit program
+3. For each element `i` in list `a`:
+   - If `i > x`:
+     - Set `x = 0`
+     - Break loop
+   - Subtract `i` from `x`
+   - Increment `ans` by 1
+4. If `x != 0`:
+   - Decrement `ans` by 1
+5. Print `ans`

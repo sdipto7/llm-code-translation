@@ -1,0 +1,26 @@
+- Function signatures with parameter and return types:
+  - `main() -> None`
+
+- Variable declarations and data types:
+  - `n: int`
+  - `a: List[str]`
+  - `b: List[str]`
+
+- Complete logic flow in execution order:
+  1. Read integer `n` from input.
+  2. Read a line of input, split it by spaces, and convert each element to string, storing the result in list `a`.
+  3. Initialize an empty list `b`.
+  4. Slice list `a` to get elements at odd indices, reverse the sliced list, and concatenate it with elements at even indices from `a`, storing the result in `b`.
+  5. Check if the length of `a` is even.
+     - If true, join elements of `b` with spaces and print the result.
+     - If false, reverse list `b`, join the elements with spaces, and print the result.
+
+- Control structures (loops, conditionals) with exact conditions:
+  - Conditional: `if len(a) % 2 == 0`
+
+- Input/output operations and data processing logic:
+  - Input: Read an integer `n` and a list of strings `a`.
+  - Output: Print a space-separated string based on the conditions specified.
+
+- Required libraries, modules, or dependencies:
+  - `collections.deque` (not used in the logic, but imported in the original code)

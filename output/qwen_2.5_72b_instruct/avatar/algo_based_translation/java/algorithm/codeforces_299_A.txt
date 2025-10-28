@@ -1,0 +1,37 @@
+Function Signature: `public static void main(String[] args)`
+
+Variable Declarations:
+- `Scanner in` of type `Scanner`
+- `int n` of type `int`
+- `int[] a` of type `int[]`
+- `int min` of type `int`
+- `int value` of type `int` (used in for-each loop)
+
+Logic Flow:
+1. Create an instance of `Scanner` for reading input.
+2. Read an integer `n` from the input.
+3. Initialize an array `a` of size `n`.
+4. For each index `i` from `0` to `n-1`:
+   - Read an integer from the input and assign it to `a[i]`.
+5. Sort the array `a` in ascending order.
+6. Assign the first element of `a` to `min`.
+7. For each `value` in `a`:
+   - If `value` modulo `min` is not equal to `0`:
+     - Print `-1` to the output.
+     - Exit the program.
+8. Print `min` to the output.
+
+Control Structures:
+- For loop: `for (int i = 0; i < n; i++)`
+- For-each loop: `for (int value : a)`
+- If statement: `if (value % min != 0)`
+
+Input/Output Operations:
+- `Scanner in = new Scanner(System.in)` to initialize the input reader.
+- `in.nextInt()` to read integers from the input.
+- `System.out.println(-1)` to print `-1` to the output.
+- `System.out.println(min)` to print the value of `min` to the output.
+
+Libraries/Modules/Dependencies:
+- `java.util.Arrays`
+- `java.util.Scanner`

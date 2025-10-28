@@ -1,0 +1,53 @@
+1. Initialize a class BIT with attributes size, tree, and depth
+   1.1. Set size to input N
+   1.2. Initialize tree as an array of size N+1 with all elements as 0
+   1.3. Calculate depth as the bit length of N
+
+2. Define a method _bitsum in class BIT
+   2.1. Initialize ret to 0
+   2.2. While i is greater than 0
+      2.2.1. Add tree[i] to ret
+      2.2.2. Update i to i XOR (i AND -i)
+   2.3. Return ret
+
+3. Define a method bitsum in class BIT
+   3.1. If r is None
+      3.1.1. Return _bitsum(l)
+   3.2. Else
+      3.2.1. Return _bitsum(r) - _bitsum(l)
+
+4. Define a method bitadd in class BIT
+   4.1. Increment i by 1
+   4.2. While i is less than or equal to size
+      4.2.1. Add x to tree[i]
+      4.2.2. Update i to i + (i AND -i)
+
+5. Read input n
+6. Calculate m as n*(n+1)/4
+
+7. Read input array a
+8. Create a dictionary d
+9. Create a sorted set _a from the elements of a and 0
+10. For each element x in _a
+    10.1. Map x to its index i in dictionary d
+
+11. Update array a by replacing each element x with its corresponding value in dictionary d
+
+12. Define a function check(X)
+    12.1. Create array b by prefix summing the array obtained by mapping each element y in a to 2*(y>=X) - 1
+    12.2. Find the minimum element c in b
+    12.3. Update array b by subtracting c from each element
+    12.4. Initialize a BIT object bit with max(b) + 2
+    12.5. Initialize ans to 0
+    12.6. For each element x in b
+        12.6.1. Add bitsum(x+1) to ans
+        12.6.2. Perform bitadd(x, 1)
+    12.7. Return whether ans is greater than or equal to m
+
+13. Initialize array t with [len(_a), 0]
+
+14. While the difference between t[0] and t[1] is greater than 1
+    14.1. Calculate mid as the average of t[0] and t[1]
+    14.2. Update t based on the result of check(mid)
+
+15. Print the element in _a at index t[1]

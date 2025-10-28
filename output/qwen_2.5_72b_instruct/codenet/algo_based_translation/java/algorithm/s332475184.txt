@@ -1,0 +1,61 @@
+Function signatures:
+- `main(String[] args)`
+- `dfs(int v, int par, long val)`
+- `FastScanner()`
+- `hasNextByte() -> boolean`
+- `readByte() -> int`
+- `isPrintableChar(int c) -> boolean`
+- `hasNext() -> boolean`
+- `next() -> String`
+- `nextLong() -> long`
+- `nextInt() -> int`
+- `nextDouble() -> double`
+
+Variable declarations and data types:
+- `int[] counter`
+- `List<List<Integer>> graph`
+- `FastScanner fs`
+- `int n`
+- `int q`
+- `Integer a`
+- `Integer b`
+- `long val`
+
+Logic flow in execution order:
+1. Create an instance of `FastScanner`.
+2. Read `n` (number of nodes) and `q` (number of queries).
+3. Initialize `graph` as an ArrayList of LinkedLists.
+4. Initialize `counter` as an array of integers of size `n`.
+5. For `i` from `0` to `n-2`:
+   - Read `a` and `b` (node connections).
+   - Add `b-1` to `graph.get(a-1)`.
+   - Add `a-1` to `graph.get(b-1)`.
+6. For `i` from `0` to `q-1`:
+   - Read node index and value.
+   - Increment `counter` at node index-1 by value.
+7. Call `dfs(0, -1, 0)`.
+8. Create `StringJoiner` for output.
+9. For `i` from `0` to `n-1`:
+   - Add `counter[i]` to `StringJoiner`.
+10. Print the concatenated string from `StringJoiner`.
+
+Control structures:
+- For loop for initializing graph: `for(int i=0;i<n;i++)`
+- For loop for reading edges: `for(int i=0;i<n-1;i++)`
+- For loop for reading queries: `for(int i=0;i<q;i++)`
+- For loop in `dfs` for traversing neighbors: `for(Integer i: graph.get(v))`
+- If condition in `dfs` for checking parent: `if(i!=par)`
+- While loop in `hasNextByte` for reading bytes: `while(hasNextByte() && !isPrintableChar(buffer[ptr]))`
+- While loop in `readByte` for reading bytes: `while(hasNextByte())`
+- If condition in `nextLong` for handling negative numbers: `if(b == '-')`
+- If condition in `nextLong` for digit check: `if(b < '0' || '9' < b)`
+- While loop in `nextLong` for reading digits: `while(true)`
+- If condition in `nextInt` for range check: `if(nl < Integer.MIN_VALUE || nl > Integer.MAX_VALUE)`
+
+Input/output operations and data processing logic:
+- Use `FastScanner` to read integers from input.
+- Use `StringJoiner` to concatenate and print the final results.
+
+Required libraries, modules, or dependencies:
+- `java.util.*` for `ArrayList`, `LinkedList`, `List`, `StringJoiner`, `NoSuchElementException`
+- `java.io.*` for `InputStream`, `IOException`

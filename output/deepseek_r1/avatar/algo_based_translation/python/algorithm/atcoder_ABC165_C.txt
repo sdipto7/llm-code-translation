@@ -1,0 +1,53 @@
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+void generate_sequences(int N, int M, int Q, const vector<int>& a, const vector<int>& b, 
+                        const vector<int>& c, const vector<int>& d, vector<int>& current, int& result) {
+    if (current.size() == N) {
+        int score = 0;
+        for (int i = 0; i < Q; ++i) {
+            if (current[b[i] - 1] - current[a[i] - 1] == c[i]) {
+                score += d[i];
+            }
+        }
+        result = max(result, score);
+        return;
+    }
+    
+    int start = current.empty() ? 1 : current.back();
+    for (int next_val = start; next_val <= M; ++next_val) {
+        current.push_back(next_val);
+        generate_sequences(N, M, Q, a, b, c, d, current, result);
+        current.pop_back();
+    }
+}
+
+void solve(int N, int M, int Q, const vector<int>& a, const vector<int>& b, 
+           const vector<int>& c, const vector<int>& d) {
+    int max_score = 0;
+    vector<int> sequence;
+    generate_sequences(N, M, Q, a, b, c, d, sequence, max_score);
+    cout << max_score << endl;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    
+    int N, M, Q;
+    cin >> N >> M >> Q;
+    
+    vector<int> a(Q), b(Q), c(Q), d(Q);
+    for (int i = 0; i < Q; ++i) {
+        cin >> a[i] >> b[i] >> c[i] >> d[i];
+    }
+    
+    solve(N, M, Q, a, b, c, d);
+    
+    return 0;
+}
+```

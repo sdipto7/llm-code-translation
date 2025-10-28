@@ -1,0 +1,16 @@
+1. Import the required library: java.util.Scanner
+2. Define a function: main with return type void and parameter args of type String[]
+3. Declare a variable sc of type Scanner and initialize it with a new Scanner object using System.in
+4. Declare a variable n of type int and assign it the next integer input from sc
+5. Declare a variable maxv of type int and initialize it with Integer.MIN_VALUE
+6. Declare a variable minv of type int and assign it the next integer input from sc
+7. Start a for loop with:
+   - Initialization: int i = 1
+   - Condition: i < n
+   - Increment: i++
+8. Inside the loop:
+   - Declare a variable ri of type int and assign it the next integer input from sc
+   - Update maxv with the maximum of maxv and (ri - minv)
+   - Update minv with the minimum of minv and ri
+9. After the loop, output maxv to the console using System.out.println
+10. Close the Scanner object sc using sc.close()

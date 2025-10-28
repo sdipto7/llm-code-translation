@@ -1,0 +1,45 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures**  
+- `main()`: No parameters. Returns `void`.  
+  - *Input*: Reads from standard input.  
+  - *Output*: Writes to standard output.  
+
+**Variable Declarations**  
+- `n`: Integer (initialized from input).  
+- `m`: Integer (initialized from input, modified in loop).  
+- `i`: Integer (initialized to `1`).  
+
+**Step-by-Step Logic Flow**  
+1. Read two space-separated integers from standard input, assign to `n` and `m`.  
+2. Initialize `i` to `1`.  
+3. Enter loop:  
+   a. Check if `m >= i`:  
+      - If true:  
+        i. Subtract `i` from `m` (update `m = m - i`).  
+        ii. Update `i` to `(i % n) + 1`.  
+        iii. Repeat loop (return to Step 3a).  
+      - If false: Exit loop.  
+4. Write the final value of `m` to standard output.  
+
+**Control Flow Structures**  
+- *While Loop*:  
+  - *Condition*: `m >= i`.  
+  - *Exit Criteria*: `m < i`.  
+- *No explicit conditionals* beyond the loop check.  
+
+**Input/Output Operations**  
+- *Input*: Single line containing two integers via `input()`.  
+- *Output*: Single integer result via `print()`.  
+
+**Error Handling and Edge Cases**  
+- *Preconditions*:  
+  - Input must be two valid integers.  
+  - `n` must be a positive integer (to avoid division by zero in `i % n`).  
+- *Edge Cases*:  
+  - Handles `m < i` on initial iteration (loop exits immediately).  
+  - Correctly computes cyclic increment of `i` via modulo arithmetic.  
+
+**External Dependencies**  
+- Uses Python’s `input()` and `print()` functions.  
+- No external libraries or imports required.

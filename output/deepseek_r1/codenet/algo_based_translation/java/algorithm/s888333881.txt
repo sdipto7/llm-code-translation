@@ -1,0 +1,53 @@
+**Algorithm:**
+
+1. **Input Parsing:**
+   - Read integer `n` and binary string `s`.
+
+2. **Initialization:**
+   - Create boolean array `flaged` of size `n`, where `flaged[i] = true` if `s[i] == '1'`.
+   - Compute `pop1st` as the count of `true` values in `flaged`.
+
+3. **Modular Calculations:**
+   - Compute `surp1` by iterating through `flaged`, building a value modulo `(pop1st + 1)`.
+   - If `pop1st > 1`, compute `surp9` by iterating through `flaged`, building a value modulo `(pop1st - 1)`.
+
+4. **Processing Each Position:**
+   - For each position `p` in `0..n-1`:
+     - **Case 1:** If `flaged[p]` is true (original bit is 1):
+       - If `pop1st == 1`, output 0.
+       - Else:
+         - Compute `dw = (surp9 - pow(2, n-p-1, pop1st-1)) % (pop1st-1)`, adjusted to be non-negative.
+         - Initialize `ans = 1`.
+         - While `dw != 0`:
+           - Set `count` to the number of set bits in `dw`.
+           - Update `dw = dw % count`.
+           - Increment `ans`.
+         - Output `ans`.
+     - **Case 2:** If `flaged[p]` is false (original bit is 0):
+       - Compute `dw = (surp1 + pow(2, n-p-1, pop1st+1)) % (pop1st+1)`.
+       - Initialize `ans = 1`.
+       - While `dw != 0`:
+         - Set `count` to the number of set bits in `dw`.
+         - Update `dw = dw % count`.
+         - Increment `ans`.
+       - Output `ans`.
+
+**Supporting Functions:**
+- `pow(base, exponent, mod):`
+  - Computes `(base^exponent) % mod` using binary exponentiation.
+- `countFlagged(num):`
+  - Returns the number of set bits in the binary representation of `num`.
+
+**Data Types:**
+- Integer variables for indices and counts (`n`, `p`, `ans`, `count`).
+- Long integers for large calculations (`pop1st`, `surp1`, `surp9`, `dw`).
+
+**Control Flow:**
+- For loops for iterating over the string and positions.
+- Conditional checks for bit values and population count.
+- While loops for reducing `dw` via modulo operations.
+
+**Dependencies:**
+- Modular arithmetic operations.
+- Binary exponentiation for efficient power calculations.
+- Bit manipulation for counting set bits.

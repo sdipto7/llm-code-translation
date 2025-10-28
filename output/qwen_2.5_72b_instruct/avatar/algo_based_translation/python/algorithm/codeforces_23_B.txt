@@ -1,0 +1,32 @@
+Function Signature: `main()`
+
+Variable Declarations:
+- `n` as Integer
+- `i` as Integer
+- `a` as Integer
+
+Logic Flow:
+1. Read an integer input and assign it to `n`.
+2. For each integer `i` from 0 to `n-1` (inclusive):
+   1. Read an integer input and assign it to `a`.
+   2. If `a` is less than 2:
+      1. Print 0.
+   3. If `a` is greater than or equal to 2:
+      1. Print `a - 2`.
+
+Control Structures:
+- For loop: Iterates `n` times with index `i`.
+- If statement: Checks if `a` is less than 2.
+- If statement: Checks if `a` is greater than or equal to 2.
+
+Input/Output Operations:
+- Input: Reads an integer for `n`.
+- Input: Reads an integer for `a` in each iteration of the loop.
+- Output: Prints 0 if `a` is less than 2.
+- Output: Prints `a - 2` if `a` is greater than or equal to 2.
+
+Data Processing Logic:
+- Compares the value of `a` to determine the output based on the conditions provided.
+
+Required Libraries, Modules, or Dependencies:
+- No specific libraries or modules required. Uses basic Python functionality.

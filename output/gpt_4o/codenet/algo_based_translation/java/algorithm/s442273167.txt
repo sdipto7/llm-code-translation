@@ -1,0 +1,29 @@
+```plaintext
+Algorithm:
+
+1. Import necessary libraries:
+   - Import `Scanner` class from `java.util` package for input handling.
+
+2. Define `main` function with no parameters and no return type:
+   - Create an instance of `Scanner` to read input from standard input.
+
+3. Variable Declarations:
+   - Declare integer `n` to store the number of intervals.
+   - Declare integer array `l` of size `n` to store the start points of intervals.
+   - Declare integer array `r` of size `n` to store the end points of intervals.
+   - Declare integer `sum` initialized to 0 to store the total sum of interval lengths.
+
+4. Input Handling:
+   - Read an integer from input and assign it to `n`.
+
+5. Loop through each interval index `i` from 0 to `n-1`:
+   - Read an integer from input and assign it to `l[i]` as the start point of the interval.
+   - Read an integer from input and assign it to `r[i]` as the end point of the interval.
+
+6. Loop through each interval index `i` from 0 to `n-1`:
+   - Calculate the length of the interval as `r[i] - l[i] + 1`.
+   - Add the calculated interval length to `sum`.
+
+7. Output the total sum of all interval lengths:
+   - Print the value of `sum`.
+```

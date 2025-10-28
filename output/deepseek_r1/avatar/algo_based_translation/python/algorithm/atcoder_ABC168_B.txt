@@ -1,0 +1,32 @@
+**Algorithm Specification**
+
+**1. Function/Method Signatures**
+- `main() -> str`: Main function with no parameters, returns a string.
+
+**2. Variable Declarations and Data Types**
+- `K: int`: Integer input value.
+- `S: str`: String input value.
+
+**3. Logic Flow**
+  1. Read integer input `K` from standard input.
+  2. Read string input `S` from standard input.
+  3. Compute the length of `S` using `len(S)`.
+  4. If `len(S)` is less than or equal to `K`:
+      - Return `S` unmodified.
+  5. Else:
+      - Slice `S` to retain the first `K` characters.
+      - Concatenate the sliced substring with `'...'`.
+      - Return the resulting string.
+
+**4. Control Flow Structures**
+- Conditional: `if len(S) <= K: ... else: ...`
+
+**5. Input/Output Operations**
+- Input: Two sequential inputs via `input()` (first parsed as integer, second as string).
+- Output: Print the result of `main()` to standard output.
+
+**6. Edge Case Handling**
+- Explicit check for `len(S) <= K` prevents unnecessary truncation.
+
+**7. External Dependencies**
+- None beyond standard input/output functions.

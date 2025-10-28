@@ -1,0 +1,74 @@
+**Algorithm Extraction:**
+
+**Data Structures:**
+- Global integer variable `ans` initialized to 100
+- Global 2D integer array `balls` of size N×2
+- Global integer variable `N`
+- Global boolean array `taken` of size N
+
+**Main Function:**
+1. Read integer `N` from input
+2. Set `ans = N`
+3. Initialize `balls` as N×2 array
+4. For i from 0 to N-1:
+   - Read two integers and store in `balls[i][0]` and `balls[i][1]`
+5. Sort `balls` by first coordinate in ascending order
+6. Call `solve()`
+7. For i from 0 to N-1:
+   - Swap coordinates: `balls[i][0] = balls[i][1]`, `balls[i][1] = balls[i][0]`
+8. Sort `balls` by new first coordinate (previously second coordinate) in ascending order
+9. Call `solve()`
+10. Print `ans`
+
+**Solve Function:**
+1. For `add` from 1 to N-1:
+   - Initialize `taken` as boolean array of size N (all false)
+   - Calculate `p = balls[add][0] - balls[0][0]`
+   - Calculate `q = balls[add][1] - balls[0][1]`
+   - Set `ans = min(ans, check(p, q))`
+
+**Check Function (parameters: integers p, q):**
+1. Initialize integer `ret = 0`
+2. While true:
+   - Set boolean `added = false`
+   - Set integer `start = 0`
+   - Set integers `x = -1`, `y = -1`
+   - For i from 0 to N-1:
+     - If `taken[i]` is false:
+       - Set `added = true`
+       - Increment `ret`
+       - Set `start = i`
+       - Set `taken[i] = true`
+       - Set `x = balls[i][0] + p`
+       - Set `y = balls[i][1] + q`
+       - Break loop
+   - If `added` is false: break while loop
+   - For i from `start+1` to N-1:
+     - If `balls[i][0] == x` AND `balls[i][1] == y`:
+       - Set `taken[i] = true`
+       - Set `x = x + p`
+       - Set `y = y + q`
+3. Return `ret`
+
+**Utility Functions:**
+- `max(double a, double b)`: return maximum of two doubles
+- `min(double a, double b)`: return minimum of two doubles
+- `min(long a, long b)`: return minimum of two longs
+- `max(long a, long b)`: return maximum of two longs
+- `min(int a, int b)`: return minimum of two integers
+- `max(int a, int b)`: return maximum of two integers
+- `abs(long x)`: return absolute value of long
+- `ceil(long num, long den)`: return ceiling division result
+- `GCD(long a, long b)`: return greatest common divisor using Euclidean algorithm
+- `FastExp(long base, long exp, long mod)`: return base^exp mod mod using exponentiation by squaring
+- `ModInv(long num, long mod)`: return modular inverse using Fermat's little theorem
+- `pop(long x)`: return number of set bits in binary representation
+
+**Input/Output Classes:**
+- `FastScanner`: BufferedReader with StringTokenizer for input parsing
+- `OutPut`: PrintWriter for output operations with flush methods
+
+**Required Libraries:**
+- java.io.*
+- java.math.*
+- java.util.*

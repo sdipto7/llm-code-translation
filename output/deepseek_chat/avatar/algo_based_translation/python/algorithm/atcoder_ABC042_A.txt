@@ -1,0 +1,26 @@
+**Function Signature:**
+- No explicit function defined; code executes at module level.
+
+**Variables:**
+- `ABC`: tuple of integers
+
+**Input:**
+- Read a line from standard input, split into tokens, convert each token to integer, store as tuple `ABC`
+
+**Logic Flow:**
+1. Count occurrences of integer `5` in tuple `ABC`
+2. If count equals 2:
+   - Calculate sum of all elements in `ABC`
+   - If sum equals 17: print "YES"
+   - Else: print "NO"
+3. Else (count not equal to 2): print "NO"
+
+**Control Structures:**
+- One `if` condition: `ABC.count(5) == 2`
+- Nested conditional: `sum(ABC) == 17`
+
+**Output:**
+- Print "YES" or "NO" based on conditions
+
+**Dependencies:**
+- Built-in functions: `input()`, `map()`, `int()`, `tuple()`, `split()`, `count()`, `sum()`, `print()`

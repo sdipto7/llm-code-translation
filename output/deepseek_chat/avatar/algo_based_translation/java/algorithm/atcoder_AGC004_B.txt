@@ -1,0 +1,35 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner scan`: Scanner object for input
+- `int N`: integer from input
+- `long x`: long integer from input
+- `List<Long> srimeList`: ArrayList of Long with size N
+- `List<Long[]> costList`: ArrayList of Long arrays
+- `List<Long> result`: ArrayList of Long
+- `int i`, `int castNum`, `int j`: loop counters and indices
+
+**Libraries:**
+- `java.util.ArrayList`
+- `java.util.List`
+- `java.util.Scanner`
+
+**Algorithm:**
+1. Read integer N from input
+2. Read long x from input
+3. Initialize srimeList with N long values from input
+4. Initialize costList as empty ArrayList
+5. For i from 0 to N-1:
+   - Add new Long array of size N to costList
+6. For i from 0 to N-1:
+   - Set costList[i][0] = srimeList[i]
+   - For castNum from 1 to N-1:
+        - Set index = (i - castNum + N) % N
+        - Set costList[i][castNum] = min(costList[i][castNum-1], srimeList[index])
+7. Initialize result as empty ArrayList
+8. For i from 0 to N-1:
+   - Set j = i
+   - Calculate sum = sum of costList[k][j] for all k from 0 to N-1
+   - Add (i * x + sum) to result
+9. Find minimum value in result and print it

@@ -1,0 +1,48 @@
+**Algorithm:**
+
+**Dependencies:**  
+- `java.util.ArrayList`  
+- `java.util.List`  
+- `java.util.Scanner`  
+
+**Function Signature:**  
+- `public static void main(String[] args)`  
+
+**Variables:**  
+- `Scanner sc = new Scanner(System.in)`  
+- `List<Long> list = new ArrayList<>()`  
+- `long x = sc.nextLong()`  
+- `long r` (temporary digit storage)  
+- `int pow = 0` (power index for digit reconstruction)  
+- `long newNumber = 0` (output number)  
+
+**Logic Flow:**  
+1. Read `x` from standard input.  
+2. **While** `x > 0`:  
+   - Compute `r = x % 10`  
+   - **If** `(9 - r) < r`:  
+     - **If** `(x / 10 == 0)` **AND** `(9 - r == 0)`:  
+       - Add `r` to `list`  
+     - **Else**:  
+       - Add `(9 - r)` to `list`  
+   - **Else**:  
+     - Add `r` to `list`  
+   - Update `x = x / 10`  
+3. **For** each index `i` in `list` (starting from 0):  
+   - Compute `newNumber += list.get(i) * (10^pow)`  
+   - Increment `pow` by 1  
+4. Print `newNumber`  
+
+**Control Structures:**  
+- `while (x > 0)` loop for digit extraction  
+- Nested `if (9 - r < r)` and `if (x / 10 == 0 && 9 - r == 0)` conditionals  
+- `for` loop with `i` iterating over list indices  
+
+**I/O Operations:**  
+- Input: Single `long` value via `Scanner`  
+- Output: Final computed `newNumber` via `System.out.println`  
+
+**Data Processing:**  
+- Digits of `x` are processed from least significant to most significant.  
+- Each digit is potentially replaced by `9 - digit` if it reduces the value, except when it would create a leading zero.  
+- Digits are stored in reverse order and reconstructed into the final number.

@@ -1,0 +1,41 @@
+1. Import necessary library:
+   - Import `java.util.Scanner`.
+
+2. Define `main` function:
+   - No parameters.
+   - Return type: `void`.
+
+3. Initialize scanner:
+   - Create a `Scanner` object `sc` to read from standard input.
+
+4. Input reading:
+   - Read an integer `n` from input using `sc.nextInt()`.
+
+5. Variable declarations:
+   - Declare a character array `ch` with size `n`.
+   - Declare integers `s1` and `s2` initialized to `0`.
+   - Declare integers `i` and `j` initialized to `0`.
+   - Declare integer `flag` initialized to `0`.
+   - Declare integer `dif` (unused in logic).
+
+6. Loop through each index `i` from `0` to `n-1`:
+   - Read two integers `x` and `y` using `sc.nextInt()`.
+   - Calculate `temp1 = s1 + x`.
+   - Calculate `temp2 = s2 + y`.
+   - If `Math.abs(temp1 - s2) <= 500`:
+     - Add `x` to `s1`.
+     - Assign `'A'` to `ch[j]`.
+     - Increment `j`.
+     - Continue to next iteration.
+   - If `Math.abs(temp2 - s1) <= 500`:
+     - Add `y` to `s2`.
+     - Assign `'G'` to `ch[j]`.
+     - Increment `j`.
+     - Continue to next iteration.
+   - If neither condition is met, set `flag = 1` and break the loop.
+
+7. Post-loop result handling:
+   - If `flag == 1`, print `-1`.
+   - Otherwise:
+     - Convert character array `ch` to a `String` `ans`.
+     - Print `ans`.

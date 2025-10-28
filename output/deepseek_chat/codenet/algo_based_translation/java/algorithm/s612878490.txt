@@ -1,0 +1,35 @@
+**Function Signature:**
+main(String[] args) throws IOException
+
+**Variables:**
+- BufferedReader br
+- String line
+- String[] words
+- int N
+- int M
+- int[] shortage
+- int A
+- int ans
+
+**Libraries/Imports:**
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader
+- java.util.Arrays
+- static java.lang.Integer.parseInt
+
+**Algorithm:**
+1. Initialize BufferedReader for standard input
+2. Read first line from input
+3. Extract integer N from substring before first space
+4. Extract integer M from substring after first space
+5. Create integer array 'shortage' of size M
+6. For i from 0 to M-1:
+   - Read next line
+   - Extract integer A from substring before first space
+   - Set shortage[i] = N - A if N > A, otherwise 0
+7. Sort 'shortage' array in ascending order
+8. Initialize ans = 0
+9. For i from 0 to M-2:
+   - Add shortage[i] to ans
+10. Print ans

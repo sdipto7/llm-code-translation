@@ -1,0 +1,62 @@
+**Function Signatures:**
+- `static BigInteger C(int n, int m)`
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner sc` (Scanner object for input)
+- `int n, p` (input values)
+- `int k0 = 0` (count of even numbers)
+- `int k1 = 0` (count of odd numbers)
+- `BigInteger ans` (final result)
+- `BigInteger add` (temporary sum for combinations)
+- `int x` (temporary input number)
+
+**Libraries/Dependencies:**
+- `java.util.*` (Scanner)
+- `java.math.*` (BigInteger)
+
+**Logic Flow:**
+
+1. **Read Inputs:**
+   - Read `n` (total numbers) and `p` (parity target: 0=even, 1=odd)
+   - For each of `n` numbers:
+     - Read integer `x`
+     - Increment `k1` if `x % 2 == 1`, else increment `k0`
+
+2. **Initialize Result:**
+   - Set `ans = 1`
+   - Multiply `ans` by 2^k0 (loop `k0` times: `ans *= 2`)
+
+3. **Calculate Combination Sum:**
+   - If `p == 0`:
+     - Initialize `add = 0`
+     - Sum combinations `C(i, k1)` for all even `i` from 0 to `k1` (inclusive) with step 2
+     - Multiply `ans` by `add`
+   - Else (`p == 1`):
+     - Initialize `add = 0`
+     - Sum combinations `C(i, k1)` for all odd `i` from 1 to `k1` (inclusive) with step 2
+     - Multiply `ans` by `add`
+
+4. **Output:**
+   - Print `ans`
+
+**Control Structures:**
+- Loops:
+  - `for (int i = m - n + 1; i <= m; i++)` (compute numerator in `C`)
+  - `for (int i = 1; i <= n; i++)` (compute denominator in `C`)
+  - `for (int i = 0; i < n; i++)` (process input numbers)
+  - `for (int i = 0; i < k0; i++)` (multiply ans by 2^k0)
+  - `for (int i = 0; i <= k1; i += 2)` (even combinations)
+  - `for (int i = 1; i <= k1; i += 2)` (odd combinations)
+  
+- Conditionals:
+  - `if (x % 2 == 1)` (count parity)
+  - `if (p == 0)` (select combination parity)
+
+**Input/Output Operations:**
+- `Scanner` reads from `System.in`
+- `System.out.println(ans)` outputs result
+
+**Data Processing:**
+- Combination calculation via multiplicative formula
+- Parity-based subset counting using binary choices for even numbers and combinatorial sums for odd numbers

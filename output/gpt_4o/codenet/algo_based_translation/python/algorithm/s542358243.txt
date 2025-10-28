@@ -1,0 +1,14 @@
+Algorithm:
+
+1. Input Operation:
+   - Read an integer from standard input and assign it to a variable `N` of type `int`.
+
+2. Conditional Check:
+   - Check if `N` is divisible by 9:
+     - Use the modulus operator `%` to calculate `N % 9`.
+     - If the result is equal to 0, execute the following:
+       - Output the string 'Yes' to standard output.
+     - Otherwise, execute the following:
+       - Output the string 'No' to standard output.
+
+3. End.

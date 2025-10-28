@@ -1,0 +1,31 @@
+```
+Function main() -> None
+    Import setrecursionlimit from sys
+    Import stdin from sys
+    Import environ from os
+    Import defaultdict from collections
+    Import deque from collections
+    Import Counter from collections
+    Import ceil from math
+    Import floor from math
+    Import gcd from math
+    Import accumulate from itertools
+    Import combinations from itertools
+    Import combinations_with_replacement from itertools
+    Call setrecursionlimit with argument 10**6
+    Declare dbg as a lambda function that takes variable arguments
+        If 'TERM_PROGRAM' is in environ
+            dbg is assigned a lambda function that prints its arguments
+        Else
+            dbg is assigned a lambda function that takes variable arguments and returns 0
+    Declare input as a lambda function that reads a line from stdin and removes trailing whitespace
+    Declare LMIIS as a lambda function that returns a list of integers mapped from the input split by spaces
+    Declare II as a lambda function that returns an integer from input
+    Declare P as integer 10**9 + 7
+    Declare INF as integer 10**9 + 10
+    Read a string from input, split by space, and assign to sa and sb
+    Declare a as integer converted from sa
+    Declare b as integer converted from (float converted from sb multiplied by 100 plus 0.1)
+    Print the result of integer division of a multiplied by b by 100
+Call main()
+```

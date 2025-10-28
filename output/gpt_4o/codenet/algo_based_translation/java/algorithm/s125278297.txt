@@ -1,0 +1,29 @@
+```
+Algorithm:
+1. Import necessary libraries:
+   - `java.util.Scanner` for input operations.
+
+2. Declare a class `Main` with the following components:
+   - A static `Scanner` object `scanner` for reading input.
+
+3. Define the `main` method with signature:
+   - `public static void main(String[] args)`
+
+4. Inside the `main` method:
+   - Declare an integer variable `h` and assign it the next input integer from `scanner`.
+   - Declare an integer variable `w` and assign it the next input integer from `scanner`.
+   - Declare a string array `ans` with a length of `h`.
+
+5. Use a for loop to iterate through the range from `0` to `h-1`:
+   - For each iteration:
+     - Assign to `ans[i]` the result of concatenating the string `"#"`, the next input string from `scanner`, and the string `"#"`.
+
+6. Print a string composed of `w+2` `'#'` characters:
+   - Construct the string using `String.valueOf(new char[w + 2]).replace('\0', '#')`.
+
+7. Use a for-each loop to iterate over each string `s` in `ans`:
+   - For each `s`, print the string.
+
+8. Print another string composed of `w+2` `'#'` characters:
+   - Construct the string using `String.valueOf(new char[w + 2]).replace('\0', '#')`.
+```

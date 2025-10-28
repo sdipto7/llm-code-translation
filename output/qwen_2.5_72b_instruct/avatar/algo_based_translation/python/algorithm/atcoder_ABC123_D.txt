@@ -1,0 +1,34 @@
+Function: main()
+Parameters: None
+Return Type: None
+
+Variable Declarations:
+x: Integer
+y: Integer
+z: Integer
+k: Integer
+a: List of Integers
+b: List of Integers
+c: List of Integers
+ab: List of Integers
+abc: List of Integers
+i: Integer
+j: Integer
+
+Logic Flow:
+- Read a line of input and split it into four integers: x, y, z, k
+- Read the next line of input, split it into integers, and store them in list a
+- Read the next line of input, split it into integers, and store them in list b
+- Read the next line of input, split it into integers, and store them in list c
+- Initialize an empty list ab
+- For each integer i from 0 to x-1:
+    - For each integer j from 0 to y-1:
+        - Append the sum of a[i] and b[j] to list ab
+- Sort list ab in descending order
+- Initialize an empty list abc
+- For each integer i from 0 to min(k, x*y)-1:
+    - For each integer j from 0 to z-1:
+        - Append the sum of ab[i] and c[j] to list abc
+- Sort list abc in descending order
+- For each integer i from 0 to k-1:
+    - Print the i-th element of abc

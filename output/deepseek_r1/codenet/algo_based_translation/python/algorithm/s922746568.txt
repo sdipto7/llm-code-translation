@@ -1,0 +1,41 @@
+**Function Signature**  
+Not applicable (script code without explicit functions)
+
+**Input Operations**  
+1. Read integer `n` from standard input.  
+2. Read string `s` from standard input.  
+
+**Variable Declarations**  
+- `n: int` (length of the string)  
+- `s: str` (input string of length `n`)  
+- `r_cnt: int` (count of 'R' characters in `s`)  
+- `g_cnt: int` (count of 'G' characters in `s`)  
+- `b_cnt: int` (count of 'B' characters in `s`)  
+- `ans: int` (initialized as `r_cnt * g_cnt * b_cnt`)  
+- `i: int` (loop index for outer loop, range `0 ≤ i < n`)  
+- `d: int` (loop index for inner loop, range `d ≥ 0`)  
+- `j: int` (computed as `i + d`)  
+- `k: int` (computed as `j + d` or `i + 2d`)  
+
+**Logic Flow**  
+1. Compute `r_cnt`, `g_cnt`, and `b_cnt` via `s.count()`.  
+2. Initialize `ans = r_cnt * g_cnt * b_cnt`.  
+3. Iterate `i` from `0` to `n - 1` (inclusive):  
+    - For each `i`, iterate `d` starting from `0` upwards:  
+        - Compute `j = i + d`.  
+        - Compute `k = j + d`.  
+        - If `k >= n`, terminate the inner loop.  
+        - If `s[i] != s[j]`, `s[j] != s[k]`, and `s[k] != s[i]`, decrement `ans` by `1`.  
+4. Print `ans` after all iterations.  
+
+**Control Structures**  
+- Outer loop: `for i in range(n)`  
+- Inner loop: `for d in range(n)` with early termination via `break` when `k >= n`  
+- Conditional: `if k >= n: break`  
+- Conditional: `if s[i] != s[j] and s[j] != s[k] and s[k] != s[i]`  
+
+**Output Operation**  
+Print final value of `ans` via `print(ans)`.  
+
+**Dependencies**  
+None (only standard input/output operations).

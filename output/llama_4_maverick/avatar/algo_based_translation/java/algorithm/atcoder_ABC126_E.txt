@@ -1,0 +1,22 @@
+1. Read the number of elements `n` from the input.
+2. Initialize a Union-Find Tree data structure with `n` elements.
+3. Read the number of operations `m` from the input.
+4. For `m` times, perform the following steps:
+   4.1. Read three integers `x`, `y`, and `z` from the input.
+   4.2. Subtract 1 from `x` and `y`.
+   4.3. Unite the sets containing `x` and `y` using the Union-Find Tree.
+5. Initialize a counter `cnt` to 0.
+6. For each element `i` from 0 to `n-1`, perform the following step:
+   6.1. If `i` is the representative of its set in the Union-Find Tree, increment `cnt` by 1.
+7. Output the value of `cnt`. 
+
+### Union-Find Tree Operations:
+1. Initialize the Union-Find Tree with `n` elements, where each element is initially in its own set.
+2. To find the representative of an element `x`, perform the following steps:
+   2.1. If `x` is the representative of its set, return `x`.
+   2.2. Otherwise, recursively find the representative of the parent of `x` and update the parent of `x` to the representative.
+3. To unite two sets containing `x` and `y`, perform the following steps:
+   3.1. Find the representatives of `x` and `y`.
+   3.2. If the representatives are the same, return.
+   3.3. Otherwise, merge the two sets by making one representative the parent of the other based on their ranks.
+   3.4. Update the rank of the new representative if necessary.

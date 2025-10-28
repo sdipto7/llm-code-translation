@@ -1,0 +1,28 @@
+1. Function Signature:
+   - Function: `calculate_difference`
+   - Parameters: `A: int`, `B: int`
+   - Return Type: `int`
+
+2. Variable Declarations:
+   - `A`: `int`
+   - `B`: `int`
+   - `ans`: `int`
+
+3. Logic Flow:
+   1. Read a line of input from the user.
+   2. Split the input string by spaces to get two separate string values.
+   3. Convert the two string values to integers and assign them to variables `A` and `B`.
+   4. Calculate the expression `A - 2 * B` and assign the result to `ans`.
+   5. Check if `ans` is less than `0`:
+      - If true, set `ans` to `0`.
+   6. Print the value of `ans`.
+
+4. Control Structures:
+   - Conditional: `if ans < 0`
+
+5. Input/Output Operations:
+   - Input: Read a single line of space-separated integers.
+   - Output: Print a single integer result.
+
+6. Required Libraries:
+   - None

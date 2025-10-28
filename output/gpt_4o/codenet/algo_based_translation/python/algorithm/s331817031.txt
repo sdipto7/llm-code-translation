@@ -1,0 +1,32 @@
+1. Function signature:
+   - None (code operates in the global scope)
+
+2. Variable declarations:
+   - `h`: integer, the height of the grid
+   - `w`: integer, the width of the grid
+   - `l`: list of lists of strings, represents the grid
+   - `tmp`: integer, initialized to 0, tracks the furthest column with a `#` encountered in any row
+
+3. Logic flow:
+   - Read two integers from input, separated by space, and assign them to `h` and `w`.
+   - Initialize an empty list `l`.
+   - Loop from 0 to `h-1`:
+     - Read a line of input, split it into individual characters, and convert it into a list of strings.
+     - Append the list of strings to `l`.
+   - Initialize `tmp` to 0.
+   - Loop through each row index `i` from 0 to `h-1`:
+     - Loop through each column index `j` from 0 to `w-1`:
+       - If the element `l[i][j]` is equal to `"#"`:
+         - If `j` is less than `tmp`, output "Impossible" and terminate the program.
+         - Otherwise, update `tmp` to `j`.
+   - If the loops complete without triggering the termination, output "Possible".
+
+4. Control structures:
+   - Nested loops iterate over the grid's rows and columns.
+   - Conditional statements check the presence of `"#"` and compare column indices.
+
+5. Input/output operations:
+   - Input: Read grid dimensions and grid lines from standard input.
+   - Output: Print "Impossible" or "Possible" to standard output.
+
+6. No external libraries, modules, or dependencies are required.

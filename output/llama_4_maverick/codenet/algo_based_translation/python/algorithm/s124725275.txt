@@ -1,0 +1,41 @@
+1. Import necessary libraries:
+   - sys
+   - itertools (product, permutations, combinations)
+   - collections (deque)
+
+2. Set recursion limit to 1 << 25 using sys.setrecursionlimit()
+3. Define readline and read functions for input operations
+4. Define exit function to print output and exit the program
+5. Define mina function to subtract a value from input elements
+6. Define a_int function to read an integer from input
+7. Define ints function to read a list of integers from input
+8. Define read_col function to read column-wise input
+9. Define read_map_as function to read a grid and replace characters
+10. Define grid_dijkstra function (not used in the given code)
+
+11. Initialize:
+    - MOD = 10^9 + 7
+    - INF = 2^31
+
+12. Read input:
+    - H, W (integers)
+    - si, sj (integers, then subtract 1 from each)
+    - ti, tj (integers, then subtract 1 from each)
+
+13. Read grid S of size HxW using read_map_as function
+
+14. Initialize:
+    - D (grid of size HxW with all elements as -1)
+
+15. Perform 0-1 BFS:
+    - Initialize a deque que with (0, si, sj)
+    - While que is not empty:
+        - Dequeue (c, i, j)
+        - If D[i][j] != -1, continue
+        - Set D[i][j] = c
+        - For each neighboring cell (ni, nj) in a 5x5 grid centered at (i, j):
+            - If (ni, nj) is within grid boundaries and D[ni][nj] == -1 and S[ni][nj] != 1:
+                - If (ni, nj) is adjacent to (i, j) (i.e., |di| + |dj| = 1), enqueue (c, ni, nj) at the front
+                - Otherwise, enqueue (c + 1, ni, nj) at the back
+
+16. Print D[ti][tj] as the output.

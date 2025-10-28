@@ -1,0 +1,26 @@
+```
+Function: calculate_min_max(n: int, m: int) -> Tuple[int, int] or str
+
+Variables:
+- n: int
+- m: int
+- min: int
+- max: int
+
+Algorithm:
+1. Parse two integers n and m from input.
+2. If n < 1:
+   a. If m < 1:
+      i. Return tuple (n, m).
+   b. Return "Impossible".
+3. If m > n:
+   a. Set min = m.
+   b. Set max = n + m - 1.
+   c. Return tuple (min, max).
+4. If m <= n:
+   a. Set min = n.
+   b. Set max = n + m - 1.
+   c. If m == 0:
+      i. Set max = n.
+   d. Return tuple (min, max).
+```

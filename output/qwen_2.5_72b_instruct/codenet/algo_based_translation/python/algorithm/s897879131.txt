@@ -1,0 +1,36 @@
+Function signature: 
+calculate_score(R: int, G: int, B: int, N: int) -> int
+
+Variable declarations and data types:
+R: int
+G: int
+B: int
+N: int
+score: int
+i: int
+j: int
+
+Logic flow in execution order:
+1. Read four integer values: R, G, B, N from input
+2. Initialize score to 0
+3. Begin a loop over i from 0 to N // R (inclusive)
+    4. Begin a loop over j from 0 to (N - i * R) // G (inclusive)
+        5. If N - i * R - j * G is greater than or equal to 0 and (N - i * R - j * G) modulo B is equal to 0
+            6. Increment score by 1
+7. Print the value of score
+
+Control structures:
+- Loop: for i in range(N // R + 1)
+- Loop: for j in range((N-i * R) // G + 1)
+- Conditional: if N - i * R - j * G >= 0 and (N - i * R - j * G) % B == 0
+
+Input/output operations:
+- Read: R, G, B, N = map(int, input().split())
+- Output: print(score)
+
+Data processing logic:
+- Calculate the number of combinations (i, j) such that i * R + j * G + k * B = N for some integer k >= 0
+- Increment score for each valid combination
+
+Required libraries, modules, or dependencies:
+- None

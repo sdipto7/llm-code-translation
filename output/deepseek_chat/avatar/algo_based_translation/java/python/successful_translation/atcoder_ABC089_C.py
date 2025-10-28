@@ -1,0 +1,36 @@
+
+import sys
+from collections import defaultdict
+
+def main():
+    n = int(sys.stdin.readline().strip())
+    cnt = defaultdict(int)
+    
+    for i in range(n):
+        s = sys.stdin.readline().strip()
+        first_char = s[0]
+        if first_char == 'M':
+            cnt['M'] += 1
+        elif first_char == 'A':
+            cnt['A'] += 1
+        elif first_char == 'R':
+            cnt['R'] += 1
+        elif first_char == 'C':
+            cnt['C'] += 1
+        elif first_char == 'H':
+            cnt['H'] += 1
+
+    keys = ['M', 'A', 'R', 'C', 'H']
+    counts = [cnt[key] for key in keys]
+    
+    total = 0
+    for i in range(5):
+        for j in range(i+1, 5):
+            for k in range(j+1, 5):
+                total += counts[i] * counts[j] * counts[k]
+    
+    print(total)
+
+if __name__ == "__main__":
+    main()
+

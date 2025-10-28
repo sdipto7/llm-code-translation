@@ -1,0 +1,36 @@
+Function Signature: `calculate_result(s: str) -> int`
+
+Variable Declarations:
+- `s: str` (input string)
+- `l: int` (constant value set to 2019)
+- `m: List[int]` (list initialized with 1 at index 0 and 0s up to index 2018)
+- `a: int` (accumulator for the reversed string digits multiplied by powers of 10)
+- `r: int` (result accumulator)
+
+Logic Flow:
+1. Read input string `s`
+2. Initialize `l` to 2019
+3. Initialize `m` as a list with 2019 elements, setting the first element to 1 and the rest to 0
+4. Initialize `a` to 0
+5. Initialize `r` to 0
+6. Loop through each character `e` in the reversed string `s` with index `i`:
+   - Convert `e` to an integer and multiply by 10 raised to the power of `i` modulo `l`, add the result to `a`
+   - Add the value at index `a % l` in `m` to `r`
+   - Increment the value at index `a % l` in `m` by 1
+7. Print `r`
+
+Control Structures:
+- For loop iterating over the reversed string `s` with `enumerate`
+
+Input/Output Operations:
+- Read input string `s` from standard input
+- Print the final result `r` to standard output
+
+Data Processing Logic:
+- Process each digit of the input string in reverse order
+- Calculate a running total `a` of the digits weighted by decreasing powers of 10 modulo 2019
+- Use `a % l` to index into `m`, accumulating `r` based on previous occurrences of the same index
+- Update `m` to reflect the new occurrence of the index
+
+Required Libraries, Modules, or Dependencies:
+- None (uses built-in functions and data types)

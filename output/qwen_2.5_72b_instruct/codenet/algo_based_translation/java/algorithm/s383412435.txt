@@ -1,0 +1,22 @@
+- Function signature: `main(String[] args)`
+- Variable declarations: 
+  - `Scanner sc` for input
+  - `int N` for number of elements
+  - `long[] a` for array of elements
+  - `int tmp` for temporary count of duplicates
+  - `int ans` for final answer
+- Logic flow:
+  1. Initialize `Scanner` for input
+  2. Read `N`, the number of elements
+  3. Initialize array `a` of size `N`
+  4. Read `N` integers into array `a`
+  5. Sort array `a`
+  6. If `N == 1` and `a[0] > 1`, set `ans` to 1
+  7. Else, iterate over array `a` with index `j`:
+     - If `j == 0` or current element `a[j]` is not equal to previous element `a[j-1]`, initialize `tmp` to 1
+     - Iterate over array `a` with index `i` starting from `j+1`:
+       - If current element `a[j]` is equal to `a[i]`, increment `tmp`
+       - Else, break the inner loop
+     - If `tmp > a[j]`, add `tmp - a[j]` to `ans`
+     - Else if `tmp < a[j]`, add `tmp` to `ans`
+- Output: Print `ans`

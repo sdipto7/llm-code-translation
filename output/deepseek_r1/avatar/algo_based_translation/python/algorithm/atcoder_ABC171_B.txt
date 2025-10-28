@@ -1,0 +1,48 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main()` → `void` (Entry point procedure)
+
+**Variable Declarations:**
+- `n`: Integer (unused after initialization)
+- `k`: Integer
+- `input_values`: List of integers (from second input line)
+- `sorted_values`: List of integers (sorted ascending)
+- `total`: Integer
+
+**Step-by-Step Logic Flow:**
+1. Read first input line:
+   - Split into two space-separated integers `n` and `k`
+2. Read second input line:
+   - Split into space-separated integers → `input_values`
+3. Sort `input_values` in ascending order → `sorted_values`
+4. Extract first `k` elements from `sorted_values` (or all elements if `k > len(sorted_values)`)
+5. Calculate sum of extracted elements → `total`
+6. Print `total`
+
+**Control Flow Structures:**
+- Linear execution with no explicit loops or conditionals
+
+**Input/Output Operations:**
+- Input:
+  - First line: Two integers `n` and `k`
+  - Second line: Sequence of integers (arbitrary count, processed as list)
+- Output: Single integer (sum of k smallest values)
+
+**Error Handling:**
+- No explicit error handling for:
+  - Non-integer inputs
+  - Insufficient elements in second input line
+  - Negative/zero `k` values
+- Relies on language runtime for input parsing errors
+
+**Edge Case Handling:**
+- Automatically handles `k > len(sorted_values)` by summing all elements
+- Processes empty input lists as sum=0 (implicitly via sum of empty slice)
+
+**External Dependencies:**
+- Built-in functions/methods:
+  - Input reading: `input()`
+  - Type conversion: `int()`, `map()`
+  - List operations: `split()`, `sorted()`, `sum()`, slice operator `[:k]`
+  - Output: `print()`

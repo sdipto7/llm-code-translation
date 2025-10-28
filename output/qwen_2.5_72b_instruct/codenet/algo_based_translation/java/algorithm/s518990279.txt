@@ -1,0 +1,25 @@
+Function: main
+Parameters: String[] args (not used)
+Return Type: void
+
+Variable Declarations:
+- BufferedReader br
+- int ans
+- String inputed
+- int i
+
+Libraries/Modules:
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader
+
+Logic Flow:
+1. Initialize BufferedReader br to read input from standard input.
+2. Start an infinite loop:
+   1. Read a line of input into inputed.
+   2. If inputed length is 1 and equals "0", break the loop.
+   3. Initialize ans to 0.
+   4. For each character in inputed:
+      1. Convert character to integer by subtracting '0' and add to ans.
+   5. Print ans followed by newline.
+3. Catch IOException and print stack trace if exception occurs.

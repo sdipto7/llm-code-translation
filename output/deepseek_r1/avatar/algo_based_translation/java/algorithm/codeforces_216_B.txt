@@ -1,0 +1,66 @@
+```python
+Functions:
+- dfs(child: int, par: int) -> int:
+  1. If seen[child] is True:
+     - Return cycle
+  2. Set seen[child] = True
+  3. For each i in graph[child]:
+     a. If i != par:
+        i. Increment count by 1
+        ii. Recursively call dfs(i, child)
+        iii. If return value equals cycle:
+             - Return cycle
+  4. Return path
+
+Main logic:
+1. Read integers m and n from input
+2. Initialize graph as list of (m + 1) empty linked lists
+3. Initialize seen array of size (m + 1) with False values
+4. Read n pairs of integers (x, y):
+   a. Add y to graph[x]
+   b. Add x to graph[y]
+5. Initialize toremove = 0
+6. For each i from 1 to m:
+   a. If not seen[i]:
+      i. Set count = 0
+      ii. Call dfs(i, 0)
+      iii. If return value equals cycle:
+           - If count % 2 == 1:
+               * toremove += 1
+7. If (m - toremove) % 2 == 1:
+   a. toremove += 1
+8. Print toremove
+
+Variables:
+Global:
+- count: int
+- seen: list[bool]
+- path = 0 (constant)
+- cycle = 1 (constant)
+- graph: list[list[int]]
+
+Local in main:
+- m: int
+- n: int
+- toremove: int
+- x: int, y: int (per iteration)
+- i: int (loop variables)
+
+Data Structures:
+- Linked lists used for graph adjacency list representation
+- Boolean array for visited nodes
+
+Control Structures:
+- For loops (range-based and iterator-based)
+- If-else conditionals
+- Recursive function calls
+- Modulo operations for parity checks
+
+Input/Output:
+- Scanner class for reading standard input
+- System.out.println for final output
+
+Dependencies:
+- java.util.Scanner
+- java.util.LinkedList
+```

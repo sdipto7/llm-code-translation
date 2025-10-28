@@ -1,0 +1,12 @@
+1. Initialize a variable INF to a large integer value (1e9 + 5).
+2. Read an integer n from the input.
+3. Create two empty lists a and b to store integers.
+4. Initialize two variables, left and right, to INF and 0 respectively.
+5. Iterate n times:
+   5.1. Read two integers and append them to lists a and b respectively.
+   5.2. Update left to be the minimum of left and the last element added to a.
+   5.3. Update right to be the maximum of right and the last element added to b.
+6. Iterate through the lists a and b:
+   6.1. Check if the current element in a is equal to left and the corresponding element in b is equal to right.
+   6.2. If the condition is met, output the current index plus one and terminate.
+7. If the loop completes without finding a match, output -1.

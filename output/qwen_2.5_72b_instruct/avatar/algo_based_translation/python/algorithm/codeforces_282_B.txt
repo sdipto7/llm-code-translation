@@ -1,0 +1,39 @@
+Function signatures:
+- `main()` -> `None`
+
+Variable declarations and data types:
+- `firstline` -> `int`
+- `total` -> `int`
+- `memory` -> `list` of `str`
+- `x` -> `int`
+- `A` -> `int`
+- `G` -> `int`
+
+Execution order and logic flow:
+1. Read an integer from input and assign it to `firstline`.
+2. Initialize `total` to 0.
+3. Initialize `memory` as an empty list.
+4. Loop `firstline` times:
+   a. Read a line of input, split it into two integers, and assign them to `A` and `G`.
+   b. If `total + A` is less than or equal to 500:
+      i. Add `A` to `total`.
+      ii. Append "A" to `memory`.
+   c. Else:
+      i. Subtract `G` from `total`.
+      ii. Append "G" to `memory`.
+5. Print the concatenated string of elements in `memory`.
+
+Control structures:
+- For loop: `for x in range(firstline)`
+- If-Else: `if total + A <= 500: ... else: ...`
+
+Input/output operations:
+- Input: Read integers from standard input.
+- Output: Print a string to standard output.
+
+Data processing logic:
+- Accumulate values in `total` based on conditions and store corresponding actions in `memory`.
+- Adjust `total` by subtracting `G` when `total + A` exceeds 500.
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required.

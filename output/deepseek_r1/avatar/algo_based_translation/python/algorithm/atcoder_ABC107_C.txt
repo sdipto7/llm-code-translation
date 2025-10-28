@@ -1,0 +1,63 @@
+**Structured Algorithm Specification for Python to C++ Transcompilation**
+
+**Function Signatures:**
+1. `int check(int k, const vector<int>& pos, const vector<int>& neg)`
+   - **Parameters:**
+     - `k`: int - required number of non-zero points to visit
+     - `pos`: const vector<int>& - list of positive numbers
+     - `neg`: const vector<int>& - list of negative numbers
+   - **Return:** int - minimum required distance
+
+2. `int main()`
+   - **Return:** 0 on successful execution
+
+**Variables and Data Types:**
+- `N`, `K`: int - input values for point count and required selections
+- `lst`: vector<int> - stores all input numbers
+- `pos`, `neg`: vector<int> - stores positive and negative values from `lst`
+- `zeros`: int - count of zero values in input
+- Loop counters: `i` (int), range-based loop variables
+- Intermediate variables: `p_size`, `n_size`, `p`, `m`, `option1`, `option2`, `ans`
+
+**Algorithmic Steps:**
+
+1. **Input Handling:**
+   1.1 Read `N` and `K` from standard input
+   1.2 Read `N` integers into `lst`
+
+2. **Data Preprocessing:**
+   2.1 Iterate through `lst`:
+     - Count zeros in `zeros`
+     - Add positives to `pos`
+     - Add negatives to `neg`
+   2.2 Adjust `K` by subtracting `zeros` (account for zero selections)
+
+3. **Distance Calculation (check function):**
+   3.1 Initialize `ans` to 1,000,000,000
+   3.2 For each `j` from 0 to `k`:
+     - If `j` exceeds positive count or `k-j` exceeds negative count: skip
+     - Calculate `p` as `pos[j-1]` if `j>0`, else 0
+     - Calculate `m` as `neg[neg.size()-(k-j)]` if `k-j>0`, else 0
+     - Compute two movement options:
+       - `option1 = 2*p + (-m)` (visit positives first)
+       - `option2 = p + 2*(-m)` (visit negatives first)
+     - Update `ans` with minimum of current value and both options
+
+4. **Result Output:**
+   4.1 Call `check(K, pos, neg)` and print result
+
+**Control Flow:**
+- Main loop in `check`: iterates `k+1` times (0 ≤ j ≤ k)
+- Conditional skipping of invalid (j, k-j) combinations
+- Conditional value assignments for `p` and `m` based on selection counts
+- Minimum distance calculation with two movement strategies
+
+**Edge Cases and Error Handling:**
+- Automatic handling of zero values via K adjustment
+- Implicit handling of invalid ranges through loop skipping
+- Large initial `ans` value (1e9) for cases with insufficient non-zero points
+
+**External Dependencies:**
+- `<iostream>` for IO operations
+- `<vector>` for dynamic array storage
+- No explicit error handling for invalid inputs beyond problem constraints

@@ -1,0 +1,22 @@
+```plaintext
+Algorithm:
+
+1. Define a function `compute_score_difference(n: int, rounds: List[List[int]]) -> int`.
+
+2. Declare variables:
+   - `ls: List[List[int]]` to store the list of rounds.
+
+3. Initialize `ls` with `rounds` which is a list of lists, each containing two integers.
+
+4. Sort `ls` in descending order based on the sum of each sub-list using the sorting key `lambda x: sum(x)`.
+
+5. Declare variables `taka: int` and `aoki: int` and initialize both to 0 to store the scores of two players.
+
+6. Iterate over the sorted list `ls` using a loop with index `i` ranging from 0 to the length of `ls`:
+   - If `i` is even, add `ls[i][0]` to `taka`.
+   - If `i` is odd, add `ls[i][1]` to `aoki`.
+
+7. Calculate the difference between `taka` and `aoki` scores.
+
+8. Return the result of `taka - aoki`.
+```

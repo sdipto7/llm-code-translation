@@ -1,0 +1,56 @@
+Function signatures:
+- `inp() -> int`
+- `inpl() -> List[int]`
+- `ta_dfs(node: int) -> None`
+- `ao_dfs(node: int) -> None`
+
+Variable declarations and data types:
+- `n: int`
+- `ta: int`
+- `ao: int`
+- `g: List[List[int]]`
+- `ta_dist: List[Optional[int]]`
+- `ao_dist: List[Optional[int]]`
+- `res: int`
+- `a: int`
+- `b: int`
+- `v: int`
+- `node: int`
+- `i: int`
+
+Logic flow in execution order:
+1. Import required modules: `collections`, `heapq`, `sys`, `bisect`, `math`, `itertools`, `pprint`, `fractions`.
+2. Set system recursion limit to `10 ** 8`.
+3. Define constant `mod` as `10 ** 9 + 7`.
+4. Define constant `INF` as `float('inf')`.
+5. Define function `inp()` to read an integer from standard input.
+6. Define function `inpl()` to read a list of integers from standard input.
+7. Read `n`, `ta`, `ao` as a list of integers using `inpl()`.
+8. Decrement `ta` and `ao` by 1.
+9. Initialize graph `g` as a list of empty lists of size `n`.
+10. For `i` from `0` to `n - 2`:
+    - Read `a`, `b` as a list of integers using `inpl()`.
+    - Decrement `a` and `b` by 1.
+    - Append `b` to `g[a]`.
+    - Append `a` to `g[b]`.
+11. Initialize `ta_dist` as a list of `None` of size `n`.
+12. Set `ta_dist[ta]` to `0`.
+13. Initialize `ao_dist` as a list of `None` of size `n`.
+14. Set `ao_dist[ao]` to `0`.
+15. Define function `ta_dfs(node: int)`:
+    - For each `v` in `g[node]`:
+        - If `ta_dist[v]` is not `None`, continue.
+        - Set `ta_dist[v]` to `ta_dist[node] + 1`.
+        - Call `ta_dfs(v)`.
+16. Define function `ao_dfs(node: int)`:
+    - For each `v` in `g[node]`:
+        - If `ao_dist[v]` is not `None`, continue.
+        - Set `ao_dist[v]` to `ao_dist[node] + 1`.
+        - Call `ao_dfs(v)`.
+17. Call `ao_dfs(ao)`.
+18. Call `ta_dfs(ta)`.
+19. Initialize `res` to `0`.
+20. For `i` from `0` to `n - 1`:
+    - If `ta_dist[i]` is greater than `ao_dist[i]`, continue.
+    - Set `res` to the maximum of `res` and `ao_dist[i]`.
+21. Print `res - 1`.

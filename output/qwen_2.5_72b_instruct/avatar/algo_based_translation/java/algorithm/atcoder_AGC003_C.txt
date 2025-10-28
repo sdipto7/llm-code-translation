@@ -1,0 +1,45 @@
+Function signature: `main(String[] args)`
+
+Variable declarations and data types:
+- `N` as `int`
+- `map` as `HashMap<Integer, Integer>`
+- `nums` as `PriorityQueue<Integer>`
+- `tmp` as `int`
+- `bin` as `int` initialized to `0`
+- `diff` as `int` initialized to `0`
+- `num` as `int`
+- `idx` as `int`
+- `ans` as `int`
+
+Logic flow in execution order:
+1. Create a `Scanner` object to read input.
+2. Read integer `N`.
+3. Initialize `map` to store integers and their indices.
+4. Initialize `nums` as a priority queue to store integers.
+5. Loop from `0` to `N-1`:
+   - Read integer `tmp`.
+   - Add `tmp` to `nums`.
+   - Put `tmp` and its index `i` into `map`.
+6. While `nums` is not empty:
+   - Poll `num` from `nums`.
+   - Get `idx` from `map` using `num`.
+   - If `(bin % 2) != (idx % 2)`, increment `diff`.
+   - Increment `bin`.
+   - Set `bin` to `bin % 2`.
+7. Calculate `ans` as `diff / 2`.
+8. Print `ans`.
+
+Control structures:
+- `for` loop from `0` to `N-1`.
+- `while` loop until `nums` is empty.
+- `if` statement checking `(bin % 2) != (idx % 2)`.
+
+Input/output operations and data processing logic:
+- Read integer `N`.
+- Read `N` integers and store them in `nums` and their indices in `map`.
+- Process each integer in sorted order from `nums`.
+- Count mismatches between the binary index `bin` and the original index `idx`.
+- Calculate and print half the count of mismatches.
+
+Required libraries, modules, or dependencies:
+- `java.util.*` for `Scanner`, `HashMap`, and `PriorityQueue`.

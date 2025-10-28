@@ -1,0 +1,33 @@
+Function Signature: `main() -> None`
+
+Variable Declarations:
+- `l: int`
+- `r: int`
+- `curr: int`
+- `s: int`
+- `first: int`
+- `second: int`
+- `ans: int`
+- `i: int`
+- `rev: str`
+- `k: str`
+
+Complete Logic Flow:
+
+1. Read input values for `l` and `r` as integers from standard input.
+2. Set `curr` to `r`.
+3. Initialize `s` to 0.
+4. While `curr` is not zero:
+   a. Increment `s` by 1.
+   b. Divide `curr` by 10 using integer division.
+5. Calculate `first` as 10 raised to the power of `s`.
+6. Calculate `second` as `first` divided by 2.
+7. Initialize `ans` to -1.
+8. For each value `i` in the list `[l, r, first, second]`:
+   a. If `i` is between `l` and `r` inclusive:
+      i. Set `curr` to `i`.
+      ii. Initialize `rev` to an empty string.
+      iii. For each character `k` in the string representation of `curr`:
+           1. Append the string representation of `9 - int(k)` to `rev`.
+      iv. Update `ans` to the maximum of `ans` and the product of the integer representation of `rev` and `curr`.
+9. Print `ans`.

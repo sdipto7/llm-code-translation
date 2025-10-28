@@ -1,0 +1,71 @@
+**Function Signatures:**
+- `int dfs(int a, int c)`
+- `void run()`
+- `static void main(String[] args)`
+
+**Variable Declarations:**
+- `ArrayList<Integer>[] graph`
+- `boolean[] visited`
+- `int[] color`
+- `long one`
+- `long bipartite`
+- `long count`
+- `boolean mujun`
+- `Scanner scan`
+- `int n`
+- `int m`
+- `int u`
+- `int v`
+- `int i`
+- `int kind`
+
+**Logic Flow:**
+
+1. Create Scanner object for input
+2. Read integers n and m from input
+3. Initialize graph as array of ArrayLists with size n
+4. For i from 0 to n-1: initialize graph[i] as new ArrayList<Integer>
+5. For i from 0 to m-1:
+   - Read u and v from input (decrement by 1)
+   - Add v to graph[u]
+   - Add u to graph[v]
+6. Initialize visited as boolean array of size n
+7. Initialize color as int array of size n, fill with -1
+8. Set one = 0, bipartite = 0, count = 0
+9. For i from 0 to n-1:
+   - If visited[i] is true: continue
+   - Increment count
+   - Set mujun = false
+   - Call dfs(i, 0) and store result in kind
+   - If kind == 1: increment one
+   - Else if mujun is false: increment bipartite
+10. Calculate total = one × (2 × n - one) + (count - one) × (count - one) + bipartite × bipartite
+11. Print total
+
+**dfs Function Logic:**
+1. If visited[a] is true:
+   - If color[a] >= 0 and color[a] != c: set mujun = true
+   - Return 0
+2. Set visited[a] = true
+3. Set color[a] = c
+4. Initialize total = 1
+5. For each b in graph[a]:
+   - Add dfs(b, 1 - c) to total
+6. Return total
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < n; ++i)`
+- For loop: `for (int i = 0; i < m; ++i)`
+- For loop: `for (int b : graph[a])`
+- Conditional: `if (visited[a])`
+- Conditional: `if (color[a] >= 0 && color[a] != c)`
+- Conditional: `if (visited[i]) continue`
+- Conditional: `if (kind == 1)`
+- Conditional: `else if (!mujun)`
+
+**Input/Output Operations:**
+- Input: `scan.nextInt()` for n, m, u, v
+- Output: `System.out.println(total)`
+
+**Required Libraries:**
+- `java.util.*` (specifically ArrayList, Arrays, Scanner)

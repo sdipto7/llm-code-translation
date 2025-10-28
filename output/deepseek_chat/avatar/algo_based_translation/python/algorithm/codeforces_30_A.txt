@@ -1,0 +1,26 @@
+Function name: task4
+Parameters: 
+- A: integer
+- B: integer  
+- n: integer
+Return type: integer or string
+
+Variables:
+- X: integer (loop counter from -1000 to 1000)
+
+Logic flow:
+1. For each integer X from -1000 to 1000 inclusive:
+   a. Calculate A multiplied by (X raised to the power of n)
+   b. If result equals B:
+      i. Return X immediately
+2. If no X satisfies the equation after checking all values:
+   a. Return string "No solution"
+
+Main execution:
+1. Read input line and split into three strings
+2. Convert first string to integer A
+3. Convert second string to integer B  
+4. Convert third string to integer n
+5. Call task4(A, B, n) and print result
+
+No external libraries or modules required.

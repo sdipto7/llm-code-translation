@@ -1,0 +1,38 @@
+1. Function signature:
+   - `main` method: `public static void main(String[] args)`
+
+2. Variables:
+   - Scanner `sc` initialized with `System.in`
+   - String `s` from `sc.next()`
+   - int `n` = `s.length()`
+   - long `ans` = 0
+   - int `mask` in range [0, 1<<(n-1))
+   - long `sum` per mask iteration
+   - String `x` built from characters of `s`
+   - String array `split` from `x.split("\\+")`
+
+3. Logic flow:
+   - Read input string using Scanner
+   - Iterate all possible bitmask patterns (0 to 2^(n-1)-1):
+     - Build expression string `x` by inserting '+' based on bitmask
+     - Split `x` using '+' as delimiter
+     - Convert split parts to long values and calculate their sum
+     - Accumulate sum in `ans`
+   - Print final `ans`
+
+4. Control structures:
+   - Outer for-loop: `for (int mask = 0; mask < (1 << (n-1)); mask++)`
+   - Inner for-loop: `for (int i = 0; i < n-1; i++)`
+   - Conditional: `if ((mask & (1<<i)) >= 1)` for '+' insertion
+   - Split processing loop: `for (int i = 0; i < split.length; i++)`
+
+5. Operations:
+   - Input: Read String via `Scanner.next()`
+   - String manipulation: Concatenation with dynamic '+' insertion
+   - Type conversion: `Long.valueOf()` for string-to-number conversion
+   - Arithmetic: Bitwise operations for mask checking, summation of values
+   - Output: `System.out.println(ans)`
+
+6. Dependencies:
+   - `java.util.Scanner` for input handling
+   - String splitting with regex `\\+`

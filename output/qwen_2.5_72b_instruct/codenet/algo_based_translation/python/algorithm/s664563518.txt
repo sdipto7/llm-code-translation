@@ -1,0 +1,56 @@
+Function signatures with parameter and return types:
+- `I()` -> `int`
+- `MI()` -> `map(int, str)`
+- `LI()` -> `List[int]`
+- `LI_()` -> `List[int]`
+- `StoI()` -> `List[int]`
+- `ItoS(nn: int)` -> `str`
+- `input()` -> `str`
+- `show(*inp, end='\n')` -> `None`
+- `main()` -> `None`
+
+Variable declarations and data types:
+- `N: int`
+- `s: List[str]`
+- `t: List[int]`
+- `xi: int`
+- `ans: int`
+
+Logic flow in execution order:
+1. Call `main()`.
+2. Initialize `N` by calling `I()`.
+3. Initialize `s` as a list of `N` zeros.
+4. Initialize `t` as a list of `N` zeros.
+5. Loop over `range(N)`:
+   - For each `i`, update `s[i]` and `t[i]` by splitting input, converting the second value to an integer.
+6. Read a string `X` by calling `input()`.
+7. Initialize `xi` to 0.
+8. Loop over `range(N)`:
+   - If `s[i]` equals `X`, set `xi` to `i` and break the loop.
+9. Initialize `ans` to 0.
+10. Loop over `range(N)`:
+    - If `xi` is less than `i`, add `t[i]` to `ans`.
+11. Print `ans`.
+
+Control structures:
+- For loops: `for i in range(N)`
+- If condition: `if s[i] == X`
+- If condition inside loop: `if xi < i`
+
+Input/output operations and data processing logic:
+- Input operations:
+  - `N = I()`
+  - `s[i], t[i] = map(str, input().split())`
+  - `X = input()`
+- Output operations:
+  - `print(ans)`
+
+Required libraries, modules, or dependencies:
+- `heapq` (functions used: `heappush`, `heappop`, `heapify`)
+- `collections` (classes used: `deque`, `defaultdict`, `Counter`)
+- `itertools` (functions used: `permutations`, `combinations`, `accumulate`)
+- `sys` (functions used: `stdin.readline`, `setrecursionlimit`)
+- `bisect`
+- `string` (constants used: `ascii_lowercase`, `ascii_uppercase`)
+- `math`
+- `time` (function used: `time`)

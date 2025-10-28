@@ -1,0 +1,28 @@
+Function Signature:
+- Function name: calculate_minimum_cost
+- Parameters: n (int), a (int), b (int)
+- Return type: int
+
+Variable Declarations and Data Types:
+- n: int
+- a: int
+- b: int
+- cost: int
+
+Logic Flow:
+1. Input operation: Read a line of input from the user containing three space-separated integers and assign them to variables n, a, and b.
+2. Data processing logic: Calculate the minimum cost by comparing the product of n and a with b.
+3. Output operation: Print the minimum cost.
+
+Control Structures:
+- Conditional structure: Use the min function to determine the smaller value between n * a and b.
+
+Input/Output Operations and Data Processing Logic:
+1. Read the input values as a single line of space-separated integers.
+2. Split the input line into three separate strings.
+3. Convert the three strings into integers n, a, and b.
+4. Compute the cost as the minimum of n * a and b.
+5. Output the computed cost to the console.
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries or modules are required. The code uses built-in Python functions.

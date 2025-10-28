@@ -1,0 +1,23 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations:
+- `int n`
+- `int result` initialized to 0
+- `int[] h` of size `n`
+- `int[] g` of size `n`
+
+Libraries/modules/dependencies:
+- `import java.util.*`
+
+Execution order and logic flow:
+1. Create a `Scanner` object to read input from `System.in`.
+2. Read an integer `n` from the input.
+3. Initialize an array `h` of size `n`.
+4. Initialize an array `g` of size `n`.
+5. For each index `i` from 0 to `n-1`:
+   - Read an integer and assign it to `h[i]`.
+   - Read an integer and assign it to `g[i]`.
+6. For each index `i` from 0 to `n-1`:
+   - For each index `j` from 0 to `n-1`:
+     - If `h[i]` is equal to `g[j]`, increment `result` by 1.
+7. Print the value of `result`.

@@ -1,0 +1,35 @@
+Algorithm:
+
+Function:
+- Name: main
+- Parameters: None
+- Return Type: void
+
+Variables:
+- N: integer
+- K: integer
+- S: list of characters
+- ans: string
+
+Input Operations:
+1. Read N and K via standard input (split by whitespace)
+2. Read S as string via standard input, convert to character list
+
+Processing Logic:
+1. Check character at index K-1 in S:
+   a. If == 'A': set to 'a'
+   b. Else if == 'B': set to 'b'
+   c. Else: set to 'c'
+2. Join modified character list into string 'ans'
+
+Output Operation:
+1. Print 'ans' via standard output
+
+Control Structures:
+- Conditional:
+  if S[K-1] == 'A'
+  elif S[K-1] == 'B'
+  else
+
+Dependencies:
+- Standard input/output functions (no external libraries required)

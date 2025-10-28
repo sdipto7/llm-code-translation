@@ -1,0 +1,9 @@
+1. Read the number of elements, n
+2. Read a list of n integers into w
+3. Calculate the sum of all elements in w and store it in x
+4. Initialize an empty list d
+5. Iterate over the range from 0 to n-1
+6. For each index i, check if (x - w[i]) / (n - 1) equals w[i]
+7. If the condition is true, append i + 1 to d
+8. Print the length of d
+9. Print the elements of d separated by spaces

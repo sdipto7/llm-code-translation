@@ -1,0 +1,125 @@
+```plaintext
+Algorithm Main:
+
+  Function Solver.run() -> void:
+    Declare n, m, q as int
+    Declare max as int, initialize to 0
+    Declare a, b, c, d as int arrays
+    Assign n = sc.nextInt()
+    Assign m = sc.nextInt()
+    Assign q = sc.nextInt()
+    Initialize a, b, c, d with size q
+    For i from 0 to q - 1 do:
+      Assign a[i] = sc.nextInt()
+      Assign b[i] = sc.nextInt()
+      Assign c[i] = sc.nextInt()
+      Assign d[i] = sc.nextInt()
+    End For
+    Call dfs with argument [1]
+    writer.println(max)
+  
+  Function Solver.dfs(array: int[]) -> void:
+    If array.length > n:
+      Declare score as int, initialize to 0
+      For i from 0 to q - 1 do:
+        If array[b[i]] - array[a[i]] == c[i]:
+          score += d[i]
+      End For
+      max = max of max and score
+      Return
+    End If
+
+    Declare newArray as int array with length array.length + 1
+    Copy array to newArray from index 0 to array.length
+    Set last element of newArray to array[array.length - 1]
+
+    While newArray's last element <= m do:
+      Call dfs(newArray)
+      Increment newArray's last element by 1
+    End While
+  
+  Function FastScanner.hasNextByte() -> boolean:
+    If ptr < buflen:
+      Return true
+    Else:
+      Set ptr = 0
+      Try:
+        Set buflen = in.read(buffer)
+      Catch IOException:
+        Print stack trace
+      If buflen <= 0:
+        Return false
+    Return true
+  
+  Function FastScanner.readByte() -> int:
+    If hasNextByte() is true:
+      Return buffer[ptr++]
+    Else:
+      Return -1
+  
+  Function FastScanner.isPrintableChar(c: int) -> boolean:
+    Return 33 <= c <= 126
+  
+  Function FastScanner.hasNext() -> boolean:
+    While hasNextByte() and not isPrintableChar(buffer[ptr]) do:
+      Increment ptr
+    Return hasNextByte()
+  
+  Function FastScanner.next() -> String:
+    If hasNext() is false:
+      Throw NoSuchElementException
+    Declare sb as StringBuilder
+    Set b = readByte()
+    While isPrintableChar(b) is true do:
+      Append b to sb
+      Set b = readByte()
+    Return sb.toString()
+  
+  Function FastScanner.nextLong() -> long:
+    If hasNext() is false:
+      Throw NoSuchElementException
+    Declare n as long, initialize to 0
+    Declare minus as boolean, initialize to false
+    Set b = readByte()
+    If b == '-':
+      Set minus = true
+      Set b = readByte()
+    If b not in range '0' to '9':
+      Throw NumberFormatException
+    While true do:
+      If '0' <= b <= '9':
+        n = n * 10 + (b - '0')
+      Else if b == -1 or not isPrintableChar(b):
+        Return -n if minus is true else n
+      Else:
+        Throw NumberFormatException
+      Set b = readByte()
+  
+  Function FastScanner.nextInt() -> int:
+    Declare nl as long, initialize to nextLong()
+    If nl < Integer.MIN_VALUE or nl > Integer.MAX_VALUE:
+      Throw NumberFormatException
+    Return cast nl to int
+  
+  Function FastScanner.nextDouble() -> double:
+    Return parse next() as double
+  
+  Function FastScanner.nextIntArray(n: int) -> int[]:
+    Declare a as int array with size n
+    For i from 0 to n - 1 do:
+      Set a[i] = nextInt()
+    Return a
+  
+  Function FastScanner.nextLongArray(n: int) -> long[]:
+    Declare a as long array with size n
+    For i from 0 to n - 1 do:
+      Set a[i] = nextLong()
+    Return a
+
+Main Execution:
+  Create FastScanner instance sc
+  Open PrintWriter stream w to System.out
+  Create Solver instance with sc and w
+  Call Solver.run()
+  Flush writer w
+```

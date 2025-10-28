@@ -1,0 +1,31 @@
+1. Import required libraries: java.util and java.math.
+2. Define a public class Main with a public static void main method that takes a String array as a parameter.
+3. Declare a Scanner object sc and initialize it with System.in.
+4. Declare two String variables sa and sb.
+5. Read input from the Scanner object into sa and sb using the next method.
+6. Declare two BigDecimal objects A and B, and initialize them with sa and sb respectively.
+7. Multiply A and B using the multiply method, and set the scale of the result to 0 with rounding mode ROUND_DOWN using the setScale method.
+8. Print the result to the console using System.out.println.
+
+Function signature: 
+- public static void main(String[] args)
+
+Variable declarations and data types:
+- Scanner sc
+- String sa, sb
+- BigDecimal A, B
+
+Logic flow:
+1. Read sa and sb from input.
+2. Initialize A and B with sa and sb.
+3. Multiply A and B.
+4. Set scale of the result to 0 with ROUND_DOWN.
+5. Print the result.
+
+Control structures: None
+
+Input/Output operations:
+- Read sa and sb from input using sc.next().
+- Print the result using System.out.println.
+
+Required libraries: java.util, java.math.

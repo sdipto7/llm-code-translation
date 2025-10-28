@@ -1,0 +1,27 @@
+Function Signature:
+- `main() -> None`
+
+Variable Declarations and Data Types:
+- `a: int`
+- `b: int`
+
+Logic Flow in Execution Order:
+1. Read a line of input from the standard input.
+2. Split the input line by spaces.
+3. Convert the split strings to integers and assign them to `a` and `b`.
+4. If `a` is equal to `b`, compute the sum of `a` and `b`.
+5. Otherwise, compute `max(a, b) * 2 - 1`.
+6. Print the result of either step 4 or step 5.
+
+Control Structures:
+- Conditional (if-else):
+  - Condition: `a == b`
+  - If true: Execute `a + b`
+  - If false: Execute `max(a, b) * 2 - 1`
+
+Input/Output Operations and Data Processing Logic:
+- Input: Read a single line of input containing two space-separated integers.
+- Output: Print a single integer which is either the sum of `a` and `b` if they are equal, or `max(a, b) * 2 - 1` if they are not equal.
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries or modules are required.

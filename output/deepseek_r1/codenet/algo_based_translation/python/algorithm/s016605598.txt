@@ -1,0 +1,52 @@
+- **Libraries**: heapq (for heap operations)
+- **Variables**:
+  - const: integer (accumulates sum of 'b' values from type 1 queries)
+  - left: max-heap (stored as min-heap with negated values via heapq)
+  - right: min-heap
+  - q: integer (number of queries)
+  - cnt: integer (count of type 1 operations)
+  - left_sum: integer (sum of elements in left heap)
+  - right_sum: integer (sum of elements in right heap)
+- **Input**:
+  - Read integer q from input
+  - For q iterations, read each query as a list of integers
+- **Logic Flow**:
+  1. For each query:
+     - If query type is 1:
+       a. Extract a and b from the query
+       b. Add b to `const`
+       c. If `cnt` is even:
+          i. If `right` heap is empty:
+             - Push -a to `left` heap
+             - Add a to `left_sum`
+             - Increment `cnt`
+             - Continue to next iteration
+          ii. Else:
+             - Pop smallest element `c` from `right` heap
+             - Subtract `c` from `right_sum`
+             - If a <= c:
+                * Push -a to `left` heap
+                * Push c back to `right` heap
+                * Add a to `left_sum` and c to `right_sum`
+             - Else:
+                * Push -c to `left` heap
+                * Push a to `right` heap
+                * Add c to `left_sum` and a to `right_sum`
+       d. Else (`cnt` is odd):
+          i. Pop largest element (-c) from `left` heap
+          ii. Add c to `left_sum` (since stored as -c)
+          iii. If a <= c:
+               - Push -a to `left` heap
+               - Push c to `right` heap
+               - Add a to `left_sum` and subtract c from `right_sum`
+             - Else:
+               - Push -c back to `left` heap
+               - Push a to `right` heap
+               - Subtract c from `left_sum` and add a to `right_sum`
+       e. Increment `cnt` by 1
+     - Else (query type is 2):
+       a. Compute `tmp` as the maximum value in `left` heap (-left[0])
+       b. Calculate result as `const - left_sum + right_sum + tmp * (cnt % 2)`
+       c. Print `tmp` and the result
+- **Output**:
+  - For each type 2 query, print two integers: median candidate `tmp` and computed result

@@ -1,0 +1,40 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner sc = new Scanner(System.in)`
+- `int n = sc.nextInt()`
+- `int m = sc.nextInt()`
+- `Queue<Integer> q1 = new LinkedList<>()`
+- `Queue<Integer> q2 = new LinkedList<>()`
+- `int ans = 0`
+- `int i = 1`
+- `int x`
+- `int val`
+- `int val2`
+
+Logic flow:
+1. Initialize `n` and `m` by reading integers from the input.
+2. Initialize two queues `q1` and `q2` to store integers and their corresponding positions.
+3. Loop from `1` to `n` (inclusive):
+   - Read an integer from the input and add it to `q1`.
+   - Add the current loop index to `q2`.
+4. Initialize `ans` to `0`.
+5. While `q1` is not empty:
+   - If the front element of `q1` is less than or equal to `m`:
+     - Remove the front element from `q1`.
+     - Remove the front element from `q2` and assign it to `ans`.
+   - Else if the front element of `q1` is greater than `m`:
+     - Remove the front element from `q1` and store it in `x`.
+     - Calculate `val` as `x - m`.
+     - Add `val` to `q1`.
+     - Remove the front element from `q2` and store it in `val2`.
+     - Add `val2` to `q2`.
+6. Print the value of `ans`.
+
+Input/output operations:
+- Read integers `n` and `m` from the standard input.
+- Read `n` integers from the standard input and store them in `q1`.
+- Print the final value of `ans` to the standard output.
+
+Libraries/modules/dependencies:
+- `java.util.*` for using `Scanner`, `Queue`, and `LinkedList` classes.

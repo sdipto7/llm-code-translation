@@ -1,0 +1,32 @@
+**Function Signatures:**
+- main(): void
+
+**Variable Declarations:**
+- readline: function (reads from stdin)
+- MOD: int = 1000000007
+- INF: float = positive infinity
+- N: int (input value)
+- s: set[int] = {1, 2, 4, 8, 16, 32, 64}
+- ans: int = 0
+- i: int (loop counter)
+
+**Logic Flow:**
+1. Set recursion limit to 100000
+2. Read integer N from standard input
+3. Initialize set s with powers of 2 up to 64
+4. Initialize ans to 0
+5. For i from 1 to N (inclusive):
+   - If i is in set s:
+     - Set ans = i
+6. Print ans
+
+**Control Structures:**
+- For loop: for i in range(1, N+1)
+- Conditional: if i in s
+
+**Input/Output Operations:**
+- Input: Read integer N from stdin
+- Output: Print integer ans to stdout
+
+**Dependencies:**
+- sys module (for stdin access and recursion limit)

@@ -1,0 +1,36 @@
+**Algorithm:**
+
+**Function Signature:**
+- `void solve()`: No parameters, returns void.
+
+**Variables:**
+- `int N`: Input array size.
+- `int[] A`: Array of integers with size N.
+- `long ans`: Result accumulator, initialized to 0.
+- `long sum`: Cumulative sum variable, initialized to `A[N-1]`.
+
+**Logic Flow:**
+1. Read integer `N` from input.
+2. Read array `A` of size `N` from input.
+3. Initialize `ans = 0` and `sum = A[N-1]`.
+4. Iterate backward with `i` from `N-2` to `0` (inclusive):
+   - Compute `ans += (sum * A[i]) % MOD`
+   - Apply modulo to `ans` with `ans %= MOD`
+   - Update `sum += A[i]`
+   - Apply modulo to `sum` with `sum %= MOD`
+5. Print `ans` as the final result.
+
+**Control Structures:**
+- Single `for` loop:
+  - Loop variable: `i` starting at `N-2`, decrementing by 1 until `i >= 0`.
+  - Loop body contains sequential operations for updating `ans` and `sum`.
+
+**Input/Output Operations:**
+- Uses custom `FastScanner` for reading input values.
+- Reads `N` via `nextInt()`.
+- Reads array `A` via `nextIntArray(N)`.
+- Writes output via `PrintWriter.println(ans)`.
+
+**Dependencies:**
+- Java standard libraries: `java.io.*`, `java.util.*`, `java.math.BigDecimal`.
+- Custom `FastScanner` class for optimized input parsing.

@@ -1,0 +1,23 @@
+```
+Algorithm: Determine Safety Based on Strength and Weight
+
+1. Import the necessary module:
+   - Import `sys` module.
+
+2. Define the `main` function without parameters and return type:
+   - Function signature: `main()`
+
+3. Declare variables and read input:
+   - S, W: integers
+   - Read input from the standard input using `input()` function.
+   - Parse the input into two integers S and W using `map(int, input().split())`.
+
+4. Implement the decision-making logic:
+   - Conditional statement: `if S <= W`
+     - If true, output "unsafe" using the `print()` function.
+     - Else, output "safe" using the `print()` function.
+
+5. Ensure the script runs the main function when executed as a standalone program:
+   - Check if the script is executed as the main program using `if __name__ == '__main__':`
+     - Call the `main()` function.
+```

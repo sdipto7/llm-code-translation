@@ -1,0 +1,53 @@
+Function signatures:
+- `Main(FastScanner in, PrintWriter out, int test)`
+- `FastScanner(InputStream stream)`
+- `int read()`
+- `boolean isSpaceChar(int c)`
+- `boolean isEndline(int c)`
+- `int nextInt()`
+- `long nextLong()`
+- `double nextDouble()`
+- `String next()`
+- `String nextLine()`
+
+Variable declarations and data types:
+- `int N`
+- `int[] A`
+- `long res`
+- `PriorityQueue<int[]> q`
+- `int a`
+- `int[] place`
+- `InputStream stream`
+- `byte[] buf`
+- `int curChar`
+- `int numChars`
+
+Logic flow in execution order:
+1. Initialize `N` with the next integer input.
+2. Initialize array `A` of size `N`.
+3. For each index `i` from `0` to `N-1`, set `A[i]` to the next integer input.
+4. Sort array `A`.
+5. Initialize `res` to `0`.
+6. Initialize `PriorityQueue` `q` with a comparator that sorts by the minimum of the two elements in descending order.
+7. Add an array `[A[N-1], A[N-1]]` to `q`.
+8. For each index `i` from `N-2` to `0`:
+   - Set `a` to `A[i]`.
+   - Remove the head of `q` and store it in `place`.
+   - Add the minimum of `place[0]` and `place[1]` to `res`.
+   - Add arrays `[place[0], a]` and `[a, place[1]]` to `q`.
+9. Print `res`.
+
+Control structures:
+- For loop: `for (int i = 0; i < N; i++)`
+- For loop: `for (int i = N - 2; i >= 0; i--)`
+- Comparator in `PriorityQueue` initialization: `Comparator.comparingInt((int[] e) -> Math.min(e[0], e[1])).reversed()`
+
+Input/output operations and data processing logic:
+- Read `N` and array `A` from input.
+- Sort array `A`.
+- Use a priority queue to maintain pairs of values and process them to maximize the sum of minimums.
+- Print the final result `res`.
+
+Required libraries, modules, or dependencies:
+- `java.util.*`
+- `java.io.*`

@@ -1,0 +1,11 @@
+1. Read input from standard input and store it in variables a and b after splitting the input string into two parts and removing the newline character.
+2. Determine the maximum length between a and b and store it in x.
+3. Pad a with leading zeros and b with trailing zeros to make their lengths equal to x.
+4. Initialize an empty string s to store the result and a carry variable c to 0.
+5. Iterate from 0 to x-1.
+6. In each iteration, calculate d as the sum of the (x-i-1)th character of a, the ith character of b, and the carry c.
+7. If d is greater than 9, append the last digit of d to s and set c to 1.
+8. Otherwise, append d to s and set c to 0.
+9. After the loop, if c is 1, append '1' to s.
+10. Reverse the string s and convert it to an integer.
+11. Print the resulting integer.

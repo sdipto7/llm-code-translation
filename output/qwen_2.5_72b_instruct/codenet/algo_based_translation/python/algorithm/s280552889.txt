@@ -1,0 +1,28 @@
+Function Signature: `calculate_output(N: int) -> int`
+
+Variable Declarations:
+- N: int
+
+Logic Flow:
+1. Read an integer input and assign it to N
+2. If N modulo 2 equals 0:
+   - Calculate N integer division by 2
+   - Print the result
+3. Else:
+   - Calculate N integer division by 2 plus 1
+   - Print the result
+
+Control Structures:
+- If-Else statement with condition N % 2 == 0
+
+Input/Output Operations:
+- Input: Read an integer from the user
+- Output: Print an integer to the console
+
+Data Processing Logic:
+- Check if the number N is even or odd
+- If even, divide by 2
+- If odd, divide by 2 and add 1
+
+Libraries/Modules/Dependencies:
+- No additional libraries or modules required

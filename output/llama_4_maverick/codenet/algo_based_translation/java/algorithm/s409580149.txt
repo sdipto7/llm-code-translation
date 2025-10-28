@@ -1,0 +1,62 @@
+1. Import necessary libraries:
+   - java.io
+   - java.util
+
+2. Define a class `Main` with the following static variables and methods:
+
+   - Static variables:
+     - `n`: integer
+     - `a`: array of integers
+     - `dp`: 3D array of doubles
+     - `mod`: long constant
+     - `dx`, `dy`, `dx8`, `dy8`: integer arrays
+     - `inf`, `linf`: integer and long constants
+     - `dinf`, `eps`, `pi`: double constants
+     - `sb`: StringBuilder
+     - `is`: InputStream
+     - `out`: PrintWriter
+     - `INPUT`: String
+
+   - Static methods:
+     1. `solve()`: void
+        - Read `n` from input
+        - Read `n` integers into array `a`
+        - Initialize `dp` with dimensions `(n+1) x (n+1) x (n+1)` and fill with `-1`
+        - Set `dp[0][0][0] = 0`
+        - Count occurrences of `1`, `2`, and `3` in array `a` into `cnt` array
+        - Call `rec(cnt[0], cnt[1], cnt[2])` and store result in `ans`
+        - Print `ans` to output
+
+     2. `rec(i, j, k)`: double
+        - If `dp[i][j][k]` is not `-1`, return `dp[i][j][k]`
+        - Calculate `p = (i + j + k) / n`, `pi = i / n`, `pj = j / n`, `pk = k / n`
+        - Initialize `ret = 1 / p`
+        - If `i > 0`, add `pi / p * rec(i-1, j, k)` to `ret`
+        - If `j > 0`, add `pj / p * rec(i+1, j-1, k)` to `ret`
+        - If `k > 0`, add `pk / p * rec(i, j+1, k-1)` to `ret`
+        - Store `ret` in `dp[i][j][k]` and return `ret`
+
+     3. Various utility methods for:
+        - Reversing arrays and lists
+        - Binary search (lower and upper bounds)
+        - Concatenating arrays
+        - Min and max operations
+        - Sorting arrays
+        - Filling arrays with a value
+        - MOD calculations (plus, sub, mul, div, pow)
+
+     4. `main(args)`: void
+        - Initialize `is` and `out` based on `INPUT`
+        - Call `solve()`
+        - Flush `out`
+
+     5. Input reading methods:
+        - `readByte()`: int
+        - `isSpaceChar(c)`: boolean
+        - `skip()`: int
+        - `ns()`: String
+        - `ns(n)`: char array
+        - `na(n)`: int array
+        - `nla(n)`: long array
+        - `ni()`: int
+        - `nl()`: long

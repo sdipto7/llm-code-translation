@@ -1,0 +1,12 @@
+- Import the `java.util.Scanner` class for input operations.
+- Define the `main` function with signature `public static void main(String[] args)`.
+- Declare a `Scanner` object `sc` for reading input.
+- Declare an integer array `numlist` of size 5.
+- Declare an integer variable `k`.
+- For loop with initialization `i=0`, condition `i<5`, and increment `i++`:
+  - Read an integer from input using `sc.nextInt()` and assign it to `numlist[i]`.
+- Read an integer from input using `sc.nextInt()` and assign it to `k`.
+- If condition `(numlist[4] - numlist[0]) > k`:
+  - Print `":("` to the console.
+- Else:
+  - Print `"Yay!"` to the console.

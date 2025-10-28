@@ -1,0 +1,35 @@
+```
+Algorithm CalculateRemainingItems
+  Input: None (reads an integer from standard input)
+  Output: Integer (prints the result to standard output)
+
+  Variables:
+    n: Integer
+    l: Integer
+    r: Integer
+    mid: Integer
+    idxcnt: Float
+
+  Begin
+    Read integer from input and assign to n
+    Set l to 1
+    Set r to n
+
+    While l < r Do
+      Set mid to l + (r - l) // 2
+      Set idxcnt to mid * (mid + 1) / 2
+
+      If idxcnt < n Then
+        Set l to mid + 1
+      Else
+        Set r to mid
+      End If
+    End While
+
+    Decrement l by 1
+    Set idxcnt to l * (l + 1) / 2
+
+    Print int(n - idxcnt)
+  End
+```
+

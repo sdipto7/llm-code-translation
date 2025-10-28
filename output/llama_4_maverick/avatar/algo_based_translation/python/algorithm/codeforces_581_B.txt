@@ -1,0 +1,8 @@
+1. Read integer n from input
+2. Read n integers from input and store them in array arr
+3. Initialize array ans of size n with all elements as 0
+4. Initialize variable mx with the last element of arr
+5. Iterate from n-2 to 0 with step -1
+   5.1. Calculate ans[i] as maximum of 0 and (mx - arr[i] + 1)
+   5.2. If arr[i] is greater than mx, update mx with arr[i]
+6. Print all elements of ans

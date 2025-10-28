@@ -1,0 +1,29 @@
+Function Signature: `find_largest_square_less_than_n(n: int) -> None`
+
+Variable Declarations:
+- `n: int`
+- `i: int`
+
+Logic Flow:
+1. Read an integer `n` from input.
+2. Initialize `i` to 1.
+3. Loop while `i` is less than 100,000:
+   - If `i * i` is greater than `n`:
+     - Print `(i - 1) * (i - 1)`.
+     - Exit the program.
+
+Control Structures:
+- For loop: `for i in range(1, 10 ** 5)`
+- If condition: `if i * i > n`
+
+Input/Output Operations:
+- Input: `n` from user
+- Output: Print `(i - 1) * (i - 1)`
+
+Data Processing Logic:
+- Start with `i` as 1.
+- Increment `i` until `i * i` exceeds `n`.
+- Once exceeded, output the square of the previous `i` value.
+
+Required Libraries, Modules, or Dependencies:
+- None

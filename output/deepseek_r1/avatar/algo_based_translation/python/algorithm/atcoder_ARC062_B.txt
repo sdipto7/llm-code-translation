@@ -1,0 +1,47 @@
+**Structured Algorithm Specification:**
+
+**Function/Method Signature:**
+- `function process_game(s: string) -> integer`
+
+**Variable Declarations:**
+- `s: list<char>` (converted from input string)
+- `num_g: integer` (initialized to 0)
+- `num_p: integer` (initialized to 0)
+- `score: integer` (initialized to 0)
+- `x: char` (loop iterator)
+
+**Step-by-Step Logic Flow:**
+1. Convert input string `s` to a list of characters.
+2. Initialize `num_g` = 0, `num_p` = 0, `score` = 0.
+3. For each character `x` in list `s`:
+   1. If `x` == 'g':
+      1. If `num_g` - `num_p` > 0:
+         1. Increment `score` by 1
+         2. Increment `num_p` by 1
+      2. Else:
+         1. Increment `num_g` by 1
+   2. Else if `x` == 'p':
+      1. If `num_g` - `num_p` > 0:
+         1. Increment `num_p` by 1
+      2. Else:
+         1. Decrement `score` by 1
+         2. Increment `num_g` by 1
+4. Return `score` as output
+
+**Control Flow Structures:**
+- Loop: `for x in s` (iterates through all characters in sequence)
+- Conditional branches:
+  - `if x == 'g'` with nested `if num_g - num_p > 0`
+  - `elif x == 'p'` with nested `if num_g - num_p > 0`
+
+**Input/Output Operations:**
+- Input: String `s` containing only 'g' and 'p' characters
+- Output: Integer `score` calculated through game rules
+
+**Edge Case Handling:**
+- Implicit handling of unbalanced g/p ratios through `num_g`/`num_p` comparison
+- Correctly maintains non-negative difference between produced and consumed pairs
+
+**External Dependencies:**
+- None (pure algorithm with no library calls)
+- Assumes input contains only 'g' and 'p' characters

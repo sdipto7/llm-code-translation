@@ -1,0 +1,67 @@
+```
+Algorithm atcoder_AGC005_B
+
+1. Import necessary libraries:
+   - Import `ArrayDeque` from `java.util`.
+   - Import `Scanner` from `java.util`.
+   - Import `IntStream` from `java.util.stream`.
+
+2. Define the main function:
+   - Function signature: `main(String[] args)`
+
+3. Initialize input handling:
+   - Create a `Scanner` object, `scan`, to read input.
+
+4. Read input:
+   - Read an integer `N` using `scan.nextInt()`.
+
+5. Initialize and populate array `a`:
+   - Declare an integer array `a` of size `N`.
+   - For each integer `i` from `0` to `N-1`, perform:
+     - Assign the `i-th` element of `a` to `scan.nextInt()`.
+
+6. Declare arrays `leftl` and `rightl`:
+   - Declare `leftl` as an integer array of size `N`.
+   - Declare `rightl` as an integer array of size `N`.
+
+7. Initialize a deque for processing:
+   - Declare `que` as an `ArrayDeque<Integer>`.
+
+8. Calculate right limits for each element:
+   - Initialize `index` to `0`.
+   - While `index` is less than `N`, perform:
+     - While `que` is not empty and `a[que.peek()]` is greater than `a[index]`, perform:
+       - Poll from `que` and store in `ind`.
+       - Set `rightl[ind]` to `index - ind - 1`.
+     - Push `index` onto `que`.
+     - Increment `index`.
+
+9. Finalize right limits:
+   - While `que` is not empty, perform:
+     - Poll from `que` and store in `ind`.
+     - Set `rightl[ind]` to `N - ind - 1`.
+
+10. Calculate left limits for each element:
+    - Set `index` to `N - 1`.
+    - While `index` is greater than or equal to `0`, perform:
+      - While `que` is not empty and `a[que.peek()]` is greater than `a[index]`, perform:
+        - Poll from `que` and store in `ind`.
+        - Set `leftl[ind]` to `ind - index - 1`.
+      - Push `index` onto `que`.
+      - Decrement `index`.
+
+11. Finalize left limits:
+    - While `que` is not empty, perform:
+      - Poll from `que` and store in `ind`.
+      - Set `leftl[ind]` to `ind - index - 1`.
+
+12. Calculate the final result:
+    - Declare `ans` as a long and initialize to `0`.
+    - For each integer `i` from `0` to `N-1`, perform:
+      - Add `(long) a[i] * (leftl[i] + 1) * (rightl[i] + 1)` to `ans`.
+
+13. Output the result:
+    - Print `ans`.
+
+End Algorithm
+```

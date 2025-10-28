@@ -1,0 +1,3 @@
+read integer input from standard input and assign to variable n of type int
+compute n raised to the power of 3
+print the result to standard output

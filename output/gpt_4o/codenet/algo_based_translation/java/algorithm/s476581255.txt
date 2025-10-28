@@ -1,0 +1,32 @@
+```
+Dependencies:
+- Import Scanner from java.util for input operations.
+
+Function Signatures:
+- main(String[] args): void
+- bubbleSort(int[] a, int n): int
+
+Algorithm:
+1. Initialize Scanner object `sc` for reading input.
+2. Read an integer `n` from input using `sc.nextInt()`.
+3. Declare an integer array `a` with size `n`.
+4. Iterate over a range from 0 to `n` (exclusive):
+   - Read an integer from input and store it in `a[i]`.
+5. Call `bubbleSort(a, n)` and store the result in `count`.
+6. Iterate over a range from 0 to `n` (exclusive):
+   - If `i` is less than `n-1`, print `a[i]` followed by a space.
+   - Otherwise, print `a[i]` followed by a newline.
+7. Print the value of `count`.
+
+bubbleSort Function:
+1. Declare a boolean variable `flag` and set it to true.
+2. Declare an integer variable `count` and initialize it to 0.
+3. While `flag` is true:
+   - Set `flag` to false.
+   - Iterate over a range from `n-1` to 1 (inclusive, decrement by 1):
+     - If `a[j]` is less than `a[j-1]`:
+       - Swap `a[j]` and `a[j-1]` using a temporary variable `free`.
+       - Increment `count` by 1.
+       - Set `flag` to true.
+4. Return `count`.
+```

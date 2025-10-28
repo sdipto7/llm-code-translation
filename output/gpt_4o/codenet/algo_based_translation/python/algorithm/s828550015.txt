@@ -1,0 +1,19 @@
+Function Signature:
+- No specific function is defined, but the algorithm can be encapsulated in a function if needed.
+- Input: None (input is read from standard input)
+- Output: None (result is printed to standard output)
+
+Algorithm:
+1. Read a single line of input and split it into five integers `x`, `y`, `a`, `b`, `c`. Assign these to variables `x`, `y`, `a`, `b`, `c` (all of type `int`).
+2. Read another line of input, split it into integers, convert each to an `int`, and store them in a list. Sort this list in descending order and take the first `x` elements. Assign the result to variable `p` (type `List[int]`).
+3. Read another line of input, split it into integers, convert each to an `int`, and store them in a list. Sort this list in descending order and take the first `y` elements. Assign the result to variable `q` (type `List[int]`).
+4. Read another line of input, split it into integers, convert each to an `int`, and store them in a list. Sort this list in descending order. Assign the result to variable `r` (type `List[int]`).
+5. Concatenate lists `p` and `q`, sort the resulting list in ascending order, and assign it to variable `pq` (type `List[int]`).
+6. Initialize a loop with an iteration variable `i`, ranging from `0` to `min(x+y, a+b, c) - 1`.
+   - For each iteration:
+     - If the element at index `i` in `pq` is less than the element at index `i` in `r`, then replace the element at index `i` in `pq` with the element at index `i` in `r`.
+7. Calculate the sum of all elements in `pq`.
+8. Print the calculated sum.
+
+Libraries/Dependencies:
+- No external libraries are required.

@@ -1,0 +1,43 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `n: int` (unused input)
+- `m: int` (number of submissions)
+- `map: HashMap<Integer, Integer>` (tracks question status: negative values for AC, positive for WA count)
+- `countAc: int` (total accepted questions, initialized to 0)
+- `countWaAll: int` (total penalty from WA before AC, initialized to 0)
+
+**Libraries/Dependencies:**
+- `java.util.*` (Scanner, HashMap)
+- `java.math.*` (imported but unused)
+
+**Logic Flow:**
+1. Read `n` and `m` from input.
+2. For each of `m` submissions:
+   - Read `question` (integer) and `waOrAc` (string "WA" or "AC").
+   - If `question` not in `map`:
+     - If `waOrAc` is "WA": insert `(question, 1)` into `map`.
+     - Else (AC): insert `(question, -1)` into `map` and increment `countAc` by 1.
+   - Else:
+     - Retrieve `countWa` from `map` for `question`.
+     - If `countWa < 0` (AC already recorded): skip processing.
+     - Else:
+       - If `waOrAc` is "WA": update `map` entry to `countWa + 1`.
+       - Else (AC):
+         - Update `map` entry to `-countWa`.
+         - Increment `countAc` by 1.
+         - Add `countWa` to `countWaAll`.
+3. After all submissions, print `countAc` and `countWaAll` separated by a space.
+
+**Control Structures:**
+- Try-with-resources block for `Scanner`.
+- For loop iterating `m` times.
+- Nested if-else blocks checking:
+  - Presence of `question` in `map`.
+  - Value of `waOrAc` ("WA" or "AC").
+  - Current status of `question` (negative for AC, positive WA count).
+
+**Input/Output Operations:**
+- Read inputs via `Scanner` from `System.in`.
+- Output final `countAc` and `countWaAll` via `System.out.println`.

@@ -1,0 +1,10 @@
+1. Read n and q from input
+2. Read string s from input
+3. Read q problems from input and store in problems
+4. Initialize cumsum using accumulate function with custom count function
+   4.1. count function takes total and i as input
+   4.2. If substring of s from i-1 to i+1 is 'AC', return total + 1, else return total
+   4.3. accumulate function applies count to a list of numbers from 0 to n-1
+   4.4. Store the result in cumsum
+5. For each problem (l, r) in problems
+   5.1. Print cumsum[r-1] - cumsum[l-1]

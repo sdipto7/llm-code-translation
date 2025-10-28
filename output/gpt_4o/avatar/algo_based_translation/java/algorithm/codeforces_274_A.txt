@@ -1,0 +1,40 @@
+1. Import necessary libraries:
+   - `java.util.Scanner`
+   - `java.util.HashSet`
+   - `java.util.Arrays`
+
+2. Define the main function:
+   - Function signature: `public static void main(String[] args)`
+
+3. Initialize input scanner:
+   - Declare `Scanner sc = new Scanner(System.in)`
+
+4. Read input values:
+   - Declare `int n` and assign `sc.nextInt()`
+   - Declare `long k` and assign `sc.nextLong()`
+
+5. Initialize array and set:
+   - Declare `long[] arr = new long[n]`
+   - Declare `HashSet<Long> set = new HashSet<>();`
+
+6. Populate the array:
+   - Loop from `int i = 0` to `i < n`
+     - Assign `arr[i] = sc.nextLong()`
+
+7. Sort the array:
+   - Use `Arrays.sort(arr)`
+
+8. Initialize count:
+   - Declare `int count = 0`
+
+9. Iterate through the array:
+   - Loop from `int i = 0` to `i < n`
+     - Check if `arr[i] % k != 0`
+       - If true, increment `count` and add `arr[i]` to `set`
+     - Otherwise, check if `set` does not contain `arr[i] / k`
+       - If true, increment `count` and add `arr[i]` to `set`
+
+10. Output the result:
+    - Print `count` using `System.out.println(count)`
+
+11. End of the main function.

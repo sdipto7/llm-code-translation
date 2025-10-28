@@ -1,0 +1,5 @@
+1. Read two integer inputs from the user and store them in S and W.
+2. Compare the values of S and W.
+3. If S is less than or equal to W, then output "unsafe".
+4. Otherwise, output "safe".
+5. Terminate the program.

@@ -1,0 +1,8 @@
+1. Define a function `is_circle_inside_rectangle` with parameters `width`, `height`, `center_x`, `center_y`, `radius` of type integers and return type string.
+2. Read input values for `width`, `height`, `center_x`, `center_y`, `radius` from standard input and store them in corresponding integer variables.
+3. Check if `center_x` is greater than or equal to `radius` and `width - radius` is greater than or equal to `center_x`.
+4. If the condition in step 3 is true, then check if `center_y` is greater than or equal to `radius` and `height - radius` is greater than or equal to `center_y`.
+5. If the condition in step 4 is true, return 'Yes'.
+6. If the condition in step 4 is false, return 'No'.
+7. If the condition in step 3 is false, return 'No'.
+8. Print the result returned by the logic flow to standard output.

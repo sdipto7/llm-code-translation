@@ -1,0 +1,40 @@
+- **Functions**:
+  - `lcm(x: int, y: int) -> int`  
+    Return: `(x * y) // math.gcd(x, y)`
+  
+  - `lcm_list(numbers: list[int]) -> int`  
+    Return: `reduce(lcm, numbers, 1)`
+
+- **Variables**:
+  - `N: int`, `M: int` (from input)
+  - `A: list[int]` (input list modified by `A = [a//2 for a in A]`)
+  - `count_div_2: Optional[int]` (initial `None`)
+  - `cnt: int` (temporary division count)
+  - `my_lcm: int` (result of `lcm_list(A)`)
+  - `tmp: int` (calculated as `M // my_lcm`)
+  - `ans: int` (calculated as `(tmp + 1) // 2`)
+
+- **Execution Flow**:
+  1. Read `N`, `M` from input
+  2. Read and convert `A` from input, then replace each element with `a//2`
+  3. Iterate through each element in modified `A`:
+     - While current element is even: divide by 2 and increment `cnt`
+     - If first element: set `count_div_2 = cnt`
+     - For subsequent elements: if `cnt != count_div_2`, print `0` and exit
+  4. Compute `my_lcm = lcm_list(A)`
+  5. If `my_lcm > M`: print `0` and exit
+  6. Calculate `tmp = M // my_lcm`
+  7. Calculate `ans = (tmp + 1) // 2`
+  8. Print `ans`
+
+- **Control Structures**:
+  - `for a in A` loop with nested `while a % 2 == 0` loop
+  - Conditional checks: `if count_div_2 is None`, `elif cnt != count_div_2`, `if my_lcm > M`
+
+- **Input/Output**:
+  - Inputs: Two lines containing `N M` and space-separated `A` elements
+  - Outputs: `0` (if invalid) or computed `ans`
+
+- **Dependencies**:
+  - `math.gcd`
+  - `functools.reduce`

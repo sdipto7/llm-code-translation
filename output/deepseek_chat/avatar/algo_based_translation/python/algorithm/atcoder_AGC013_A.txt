@@ -1,0 +1,53 @@
+**Function Signatures:**
+- `input() -> str`
+- `INT() -> int`
+- `MAP() -> map[int]`
+- `LIST() -> list[int]`
+- `ZIP(n: int) -> zip[tuple[int]]`
+
+**Variables:**
+- `sys` (module)
+- `re` (module)
+- `deque` (class)
+- `defaultdict` (class)
+- `Counter` (class)
+- `ceil`, `sqrt`, `hypot`, `factorial`, `pi`, `sin`, `cos`, `radians` (functions)
+- `groupby`, `accumulate`, `permutations`, `combinations`, `product` (functions)
+- `itemgetter`, `mul` (functions)
+- `deepcopy` (function)
+- `ascii_lowercase`, `ascii_uppercase`, `digits` (strings)
+- `bisect`, `bisect_left` (functions)
+- `gcd` (function)
+- `heappush`, `heappop` (functions)
+- `reduce` (function)
+- `N: int`
+- `A: list[int]`
+- `i: int`
+- `ans: int`
+- `INF: float = float('inf')`
+- `mod: int = 10**9 + 7`
+
+**Logic Flow:**
+1. Set recursion limit to 10^9
+2. Read integer N from input
+3. Read list A of N integers from input
+4. Compress consecutive duplicates in A using groupby, keep only first occurrence of each group
+5. Update N to length of compressed list
+6. Initialize i = 1 and ans = 0
+7. While i < N - 1:
+   - If current element A[i] is a local maximum (A[i-1] < A[i] > A[i+1]) OR local minimum (A[i-1] > A[i] < A[i+1]):
+     - Increment ans by 1
+     - Increment i by 1
+   - Increment i by 1
+8. Print ans + 1
+
+**Control Structures:**
+- While loop: `while i < N - 1:`
+- Conditional: `if A[i-1] < A[i] > A[i+1] or A[i-1] > A[i] < A[i+1]:`
+
+**Input/Output:**
+- Input: Reads integer N and list A from stdin
+- Output: Prints integer result to stdout
+
+**Dependencies:**
+- sys, re, collections, math, itertools, operator, copy, string, bisect, fractions, heapq, functools

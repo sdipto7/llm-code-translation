@@ -1,0 +1,39 @@
+Function Signature:
+- `main(String[] args)`
+
+Variable Declarations and Data Types:
+- `Scanner sc` for input scanning
+- `int n` to store the number of elements
+- `ArrayList<Integer> a` to store the list of integers
+- `int value` to temporarily hold each integer read from input
+- `int result` to store the final result
+- `int pos` initialized to 0 to store the position where the difference exceeds 15
+- `int flag` initialized to 0 to indicate if a position is found where difference exceeds 15
+
+Logic Flow:
+1. Initialize `sc` to scan input from `System.in`.
+2. Read `n` which represents the number of integers.
+3. Initialize `a` as an `ArrayList` to store integers.
+4. Loop from `i = 0` to `i < n` to read each integer value from input:
+   - Assign `sc.nextInt()` to `value`.
+   - Add `value` to `a`.
+5. Check if the first element of `a` is greater than 15:
+   - If true, set `result` to 15.
+   - Else:
+     - Loop from `i = 1` to `i < n`:
+       - Check if the difference between `a.get(i)` and `a.get(i - 1)` is greater than 15:
+         - If true, set `pos` to `i - 1`, set `flag` to 1, and break loop.
+     - Check if `flag` is equal to 1:
+       - If true, set `result` to `a.get(pos) + 15`.
+       - Else, set `result` to `a.get(n - 1) + 15`.
+6. Check if `result` is greater than 90:
+   - If true, set `result` to 90.
+7. Print `result`.
+
+Input/Output Operations and Data Processing Logic:
+- Reads integers from standard input.
+- Processes the list of integers to determine the result based on the specified conditions.
+- Outputs the result as an integer.
+
+Required Libraries, Modules, or Dependencies:
+- `java.util.*` for using `Scanner` and `ArrayList`.

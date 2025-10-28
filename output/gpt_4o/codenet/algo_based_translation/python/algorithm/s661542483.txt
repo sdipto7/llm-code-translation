@@ -1,0 +1,15 @@
+1. Input Operation:
+   - Read an integer input from the user and store it in variable `H` (data type: int).
+
+2. Variable Declaration:
+   - Declare a variable `count` and initialize it to 0 (data type: int).
+
+3. Function Definition:
+   - Define a function named `dfs` with a parameter `h` (data type: int) and a return type of int.
+
+4. Function Logic Flow:
+   - If `h` is equal to 1, return 1.
+   - Otherwise, recursively call the function `dfs` with the argument `h // 2`. Multiply the result by 2 and add 1. Return this value.
+
+5. Output Operation:
+   - Call the function `dfs` with the argument `H` and print the returned result.

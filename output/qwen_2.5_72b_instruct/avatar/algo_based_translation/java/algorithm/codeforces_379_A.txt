@@ -1,0 +1,25 @@
+Function signature: `public static void main(String[] args)`
+Parameter type: `String[]`
+Return type: `void`
+
+Variable declarations and data types:
+- `Scanner scan` of type `Scanner`
+- `int a` 
+- `int b`
+- `int res`
+
+Execution order and logic flow:
+1. Create a `Scanner` object named `scan` for reading input.
+2. Read an integer value and assign it to `a`.
+3. Read another integer value and assign it to `b`.
+4. Assign the value of `a` to `res`.
+5. Enter a `while` loop that continues as long as `a >= b`.
+6. Inside the loop, add the result of `a / b` to `res`.
+7. Update `a` to the sum of `a / b` and `a % b`.
+8. Once the loop exits, print the value of `res`.
+
+Input/output operations:
+- Input: Two integers `a` and `b` read from standard input.
+- Output: Print the final value of `res` to standard output.
+
+Required library: `java.util.Scanner`

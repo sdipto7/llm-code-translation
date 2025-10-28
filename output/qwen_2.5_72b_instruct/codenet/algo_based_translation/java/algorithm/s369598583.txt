@@ -1,0 +1,29 @@
+Function Signature: `public static void main(String[] args)`
+
+Variable Declarations:
+- `Scanner sc` of type `Scanner`
+- `int N` of type `int`
+- `int count` of type `int`
+- `int next` of type `int`
+
+Logic Flow:
+1. Create a new `Scanner` object to read input from standard input.
+2. Read an integer `N` from the input.
+3. Initialize `count` to 0.
+4. Initialize `next` to 10.
+5. Start a for loop with `i` initialized to 1, loop until `i` is less than or equal to `N`, increment `i` by 1 in each iteration.
+6. Inside the loop, increment `count` by 1.
+7. Check if `i` is equal to `next - 1`.
+8. If true, set `i` to `next * 10 - 1` and multiply `next` by 100.
+9. After the loop ends, print the value of `count`.
+
+Control Structures:
+- For loop: `for(int i = 1; i <= N; i++)`
+- If statement: `if(i == next - 1)`
+
+Input/Output Operations:
+- Read an integer `N` from standard input using `sc.nextInt()`.
+- Print the final value of `count` to standard output using `System.out.println(count)`.
+
+Libraries/Modules/Dependencies:
+- `java.util.Scanner`

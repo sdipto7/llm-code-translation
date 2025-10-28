@@ -1,0 +1,20 @@
+- **Function Signatures**: None (procedural code)
+- **Variables**:
+  - `N`: Integer (input total days)
+  - `M`: Integer (input number of elements)
+  - `A`: List of integers (input daily usage values)
+  - `A_sum`: Integer (sum of elements in `A`)
+- **Logic Flow**:
+  1. Read first input line, split into two integers `N` and `M`.
+  2. Read second input line, split into `M` integers stored in `A`.
+  3. Calculate sum of elements in `A` and store in `A_sum`.
+  4. Compute `N - A_sum`.
+  5. If result is ≥ 0: output `N - A_sum`.
+  6. Else: output `-1`.
+- **Control Structures**:
+  - **Conditional**: Ternary check `N - A_sum >= 0`.
+- **Input/Output**:
+  - Input 1: Read line, split into `N` and `M`.
+  - Input 2: Read line, split into `M` integers for `A`.
+  - Output: Print computed result or `-1`.
+- **Dependencies**: None (standard input/output only).

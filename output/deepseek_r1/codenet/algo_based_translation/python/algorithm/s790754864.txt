@@ -1,0 +1,36 @@
+**Algorithm:**
+
+**Dependencies:**
+- `math` module (specifically `math.factorial`)
+
+**Input:**
+- Two integers `N` and `K` read from standard input (split by whitespace)
+
+**Variables:**
+- `R: int` (computed as `N - K`)
+- `mod: int` (constant `10^9 + 7`)
+- `i: int` (loop variable from `1` to `K`)
+- `ans: int` (result for each iteration)
+
+**Function Definitions:**
+- `fact(n: int, r: int) -> int`:
+  - Compute combination formula: `n! / ((n - r)! * r!)`
+  - Return integer division result of the factorial calculation
+
+**Execution Flow:**
+1. Read `N` and `K` from input
+2. Compute `R = N - K`
+3. Iterate `i` from `1` to `K` (inclusive):
+   - If `N - K + 1 < i`:
+     - Set `ans = 0`
+   - Else:
+     - Compute `ans = fact(R + 1, i) * fact(K - 1, i - 1)`
+   - Compute `ans % mod`
+   - Print the result
+
+**Control Structures:**
+- For loop: `for i in 1..K`
+- Conditional: `if (N - K + 1) < i`
+
+**Output:**
+- Print `ans % mod` for each `i` (one value per line)

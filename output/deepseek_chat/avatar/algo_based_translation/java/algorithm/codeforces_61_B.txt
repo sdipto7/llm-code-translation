@@ -1,0 +1,37 @@
+**Function Signature:**
+main(String[] args)
+
+**Variables:**
+- Scanner in (input scanner)
+- String word1 (processed first input line)
+- String word2 (processed second input line)
+- String word3 (processed third input line)
+- String perm1 through perm6 (all permutations of word concatenations)
+- int students (number of test cases)
+- String testCase (processed student input line)
+
+**Libraries:**
+- java.util.Scanner
+
+**Algorithm:**
+1. Initialize Scanner object for input
+2. Read first line, remove non-alphabetic characters, convert to lowercase → store as word1
+3. Read second line, remove non-alphabetic characters, convert to lowercase → store as word2
+4. Read third line, remove non-alphabetic characters, convert to lowercase → store as word3
+5. Generate all 6 permutations of concatenating word1, word2, word3:
+   - perm1 = word1 + word2 + word3
+   - perm2 = word1 + word3 + word2
+   - perm3 = word2 + word1 + word3
+   - perm4 = word2 + word3 + word1
+   - perm5 = word3 + word2 + word1
+   - perm6 = word3 + word1 + word2
+6. Read integer input → store as students
+7. Consume remaining newline character
+8. For i from 0 to students-1:
+   a. Read next line
+   b. Remove non-alphabetic characters, convert to lowercase → store as testCase
+   c. If testCase equals any of perm1 through perm6:
+        Print "ACC"
+      Else:
+        Print "WA"
+9. End program

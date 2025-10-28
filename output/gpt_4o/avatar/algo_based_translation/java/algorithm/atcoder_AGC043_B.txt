@@ -1,0 +1,51 @@
+```
+Algorithm:
+1. Function: cal
+   - Parameters: s (String), c (char)
+   - Return Type: int
+   - Variables:
+     - n (int): length of s
+     - m (int): n - 1
+     - ans (int): initialized to 0
+   - Logic:
+     - Iterate over each character index i in s from 0 to n-1.
+       - If s.charAt(i) equals c and (m & i) equals i, toggle ans using XOR with 1.
+     - Return ans.
+
+2. Function: solve
+   - Parameters: None
+   - Return Type: void
+   - Variables:
+     - n (int): read from input using sc.nextInt()
+     - s (String): read from input using sc.next()
+     - sb (StringBuilder): initialized as an empty StringBuilder
+   - Logic:
+     - Iterate from i = 1 to n-1.
+       - Append the absolute difference between s.charAt(i) and s.charAt(i-1) to sb.
+     - If n equals 2, print sb.charAt(0) and return.
+     - Convert sb to a String, assign back to s.
+     - If s contains the character '1':
+       - Print the result of cal(s, '1').
+     - Else:
+       - Print the result of cal(s, '2') multiplied by 2.
+
+3. Main Program:
+   - Initialize out as a PrintWriter with BufferedOutputStream(System.out).
+   - Initialize sc as a new instance of MyScanner.
+   - Create a new instance of atcoder_AGC043_B and call the solve method.
+   - Close the out PrintWriter.
+
+4. Class: MyScanner
+   - Variables:
+     - br (BufferedReader): initialized with InputStreamReader(System.in)
+     - st (StringTokenizer): initialized as null
+   - Methods:
+     - next (String):
+       - While st is null or !st.hasMoreElements():
+         - Read a line from br and assign it to st as a new StringTokenizer.
+       - Return the next token from st.
+     - nextInt (int): Parse and return the next token as an int.
+     - nextLong (long): Parse and return the next token as a long.
+     - nextDouble (double): Parse and return the next token as a double.
+```
+

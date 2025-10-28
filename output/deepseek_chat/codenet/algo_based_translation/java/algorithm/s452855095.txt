@@ -1,0 +1,34 @@
+**Function Signature:**
+main(String[] args) -> void
+
+**Variables:**
+- Scanner sc: input scanner
+- PrintWriter out: output writer
+- int n: array size
+- int[] arr: integer array of size n
+- int cnt: operation counter
+- boolean flag: operation status flag
+
+**Libraries:**
+- java.io.PrintWriter
+- java.util.Scanner
+
+**Algorithm:**
+1. Initialize Scanner with System.in
+2. Initialize PrintWriter with System.out
+3. Read integer n from input
+4. Create integer array arr of size n
+5. For i from 0 to n-1: read integer into arr[i]
+6. Set cnt = 0
+7. Set flag = true
+8. While true:
+   - For i from 0 to n-1:
+     - If arr[i] is odd (arr[i] % 2 != 0):
+       - Set flag = false
+       - Break inner loop
+     - Else:
+       - Set arr[i] = arr[i] / 2
+   - If flag is true: increment cnt by 1
+   - Else: break outer loop
+9. Output cnt
+10. Flush output writer

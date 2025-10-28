@@ -1,0 +1,44 @@
+**Algorithm:**
+
+1. **Import Dependencies:**
+   - heapq: heappush, heappop, heapify
+   - collections: deque, defaultdict, Counter
+   - itertools: permutations, combinations, accumulate
+   - sys
+   - bisect
+   - string
+   - math
+   - time
+
+2. **Define Helper Functions:**
+   - I(): returns int(input())
+   - MI(): returns map(int, input().split())
+   - LI(): returns list[int] from input split
+   - LI_(): returns list[int] from input split with each element decremented by 1
+   - StoI(): returns list[int] of ASCII values minus 97 from input string
+   - ItoS(int nn): returns char from ASCII value nn+97
+   - input(): returns sys.stdin.readline().rstrip()
+   - show(*inp, end='\n'): prints inputs if show_flg is True
+   - Constants: YN, MOD, inf, IINF, l_alp, u_alp, nums
+   - Set recursion limit to 10**6
+   - Initialize show_flg = False
+
+3. **Main Function:**
+   - Read integer N
+   - Initialize two arrays s (string[]) and t (int[]) of size N
+   - For i from 0 to N-1:
+        Read string s[i] and integer t[i]
+   - Read string X
+   - Initialize xi = 0
+   - For i from 0 to N-1:
+        If s[i] equals X:
+            Set xi = i
+            Break loop
+   - Initialize ans = 0
+   - For i from 0 to N-1:
+        If i > xi:
+            Add t[i] to ans
+   - Print ans
+
+4. **Execution:**
+   - Call main() if script is executed directly

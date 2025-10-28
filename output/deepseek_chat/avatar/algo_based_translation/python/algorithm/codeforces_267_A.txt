@@ -1,0 +1,59 @@
+**Function Signature:**
+- Function: substract(a: int, b: int) -> int
+
+**Variables:**
+- total: int (local variable within function)
+- n: int (main program variable)
+- lst: list[int] (main program variable)
+- i: int (loop index variable)
+- a: int (function parameter/main program input)
+- b: int (function parameter/main program input)
+
+**Logic Flow:**
+
+**Function substract:**
+1. Check if a > b
+   - If true:
+     - Initialize total = 0
+     - While a > 0 AND b > 0:
+       - Add integer division (a / b) to total
+       - Set a = remainder of a divided by b
+       - If a > 0:
+         - Add integer division (b / a) to total
+         - Set b = remainder of b divided by a
+     - Return total
+2. Check if a < b
+   - If true:
+     - Initialize total = 0
+     - While a > 0 AND b > 0:
+       - Add integer division (b / a) to total
+       - Set b = remainder of b divided by a
+       - If b > 0:
+         - Add integer division (a / b) to total
+         - Set a = remainder of a divided by b
+     - Return total
+3. Check if a == b
+   - If true: return 1
+
+**Main Program:**
+1. Read integer n from input
+2. Initialize empty list lst
+3. For i from 0 to n-1:
+   - Read two integers a and b from input (space separated)
+   - Call substract(a, b) and append result to lst
+4. For each element in lst:
+   - Print the element
+
+**Control Structures:**
+- If-else conditions: a > b, a < b, a == b
+- While loops: while (a > 0 and b > 0)
+- For loops: for i in range(0, n)
+
+**Input/Output Operations:**
+- Input: integer n, followed by n lines each containing two integers
+- Output: n lines containing integer results from substract function
+
+**Dependencies:**
+- Standard input/output functions (input(), print())
+- Integer conversion (int())
+- List data structure

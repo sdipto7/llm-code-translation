@@ -1,0 +1,29 @@
+```
+Libraries/Modules:
+- java.util.Scanner
+- java.util.stream.IntStream
+
+Function Signature:
+- main(String[] args): void
+- solve(double[] x, String[] u): double
+
+Algorithm:
+
+1. Initialize a Scanner object `sc` for reading input.
+2. Read an integer `N` from input using `sc.nextInt()`.
+3. Declare a double array `x` of size `N`.
+4. Declare a String array `u` of size `N`.
+5. Loop `i` from 0 to `N` (exclusive):
+   - Assign `sc.nextDouble()` to `x[i]`.
+   - Assign `sc.next()` to `u[i]`.
+6. Print the result of `solve(x, u)`.
+7. Close the Scanner object `sc`.
+
+Function solve(x, u):
+1. Use IntStream to iterate over the range from 0 to length of `x` (exclusive).
+2. Map each index `i` to a double value:
+   - Multiply `x[i]` by 1 if `u[i]` is equal to "JPY".
+   - Multiply `x[i]` by 380000 if `u[i]` is not equal to "JPY".
+3. Sum all mapped double values.
+4. Return the calculated sum.
+```

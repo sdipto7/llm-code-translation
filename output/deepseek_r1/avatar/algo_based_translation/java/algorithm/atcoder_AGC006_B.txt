@@ -1,0 +1,46 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `public static void print(int x, int n)`
+
+**Variables:**
+- `Scanner scanner` (in `main`)
+- `int n` (input, in `main`)
+- `int x` (input, in `main`)
+- `int max = n * 2 - 1` (in `print`)
+- `String sep = System.lineSeparator()` (in `print`)
+- `String ans` (constructed via stream, in `print`)
+
+**Logic Flow:**
+1. **Main:**
+   - Read integers `n` and `x` from standard input using `Scanner`.
+   - Call `print(x, n)`.
+
+2. **Print:**
+   - Calculate `max = n * 2 - 1`.
+   - If `x == 1` or `x == max`:
+     - Print "No".
+     - Terminate the method.
+   - Else:
+     - Print "Yes".
+     - Generate a sequence starting from `x + n - 1`, spanning `max` consecutive integers.
+     - For each integer `e` in this sequence:
+       - Compute `(e % max + 1)`.
+     - Join all computed values using line separators into a single string `ans`.
+     - Print `ans`.
+
+**Control Structures:**
+- In `print`:
+  - Conditional: `if (x == 1 || x == max)`
+  - IntStream range: `IntStream.range(x + n - 1, x + n + max - 1)`
+  - Mapping: Convert each stream element to `(e % max + 1)`
+  - Collect results into a `StringBuilder` with line separators.
+
+**Input/Output:**
+- Input: Read `n` and `x` via `Scanner`.
+- Output:
+  - "No" if invalid, "Yes" otherwise.
+  - Generated sequence printed as lines (each value on a new line).
+
+**Dependencies:**
+- `java.util.Scanner`
+- `java.util.stream.IntStream`

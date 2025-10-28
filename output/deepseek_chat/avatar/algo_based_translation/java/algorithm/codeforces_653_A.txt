@@ -1,0 +1,35 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `in`: Scanner (input stream)
+- `out`: PrintWriter (output stream)
+- `n`: int
+- `a`: List<Integer>
+- `value`: int
+- `found`: boolean
+
+**Libraries/Dependencies:**
+- java.io.PrintWriter
+- java.util.*
+- java.util.stream.Collectors
+
+**Algorithm:**
+1. Initialize Scanner `in` with System.in
+2. Initialize PrintWriter `out` with System.out
+3. Read integer `n` from input
+4. Create empty ArrayList `a` of Integers
+5. For `i` from 0 to `n-1`:
+   - Read integer `value` from input
+   - Add `value` to list `a`
+6. Process list `a`:
+   - Remove duplicate elements
+   - Sort elements in ascending order
+   - Convert back to List
+7. Initialize boolean `found` to false
+8. For `i` from 0 to `a.size()-1`:
+   - If `i+1 < a.size()` AND `i+2 < a.size()`:
+     - If `a[i] + 1 == a[i+1]` AND `a[i+1] + 1 == a[i+2]`:
+       - Set `found` to true
+9. Print "YES" if `found` is true, else print "NO"
+10. Close resources (auto-close with try-with-resources)

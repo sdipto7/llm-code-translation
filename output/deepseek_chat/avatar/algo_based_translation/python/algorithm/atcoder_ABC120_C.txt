@@ -1,0 +1,14 @@
+**Algorithm:**
+1. Import modules: `deque`, `Counter`, `product`, `permutations`, `combinations`, `itemgetter`, `heappop`, `heappush`, `bisect_left`, `bisect_right`, `bisect`, `gcd`, `ceil`, `floor`, `sqrt`, `cos`, `sin`, `pi`, `factorial`, `sys`.
+2. Define input functions: `read`, `readline`, `readlines` from `sys.stdin.buffer`.
+3. Set recursion limit to `10**8`.
+4. Define constants: `INF` as `float('inf')`, `MOD` as `10**9 + 7`.
+5. Define function `main` with no parameters and no return type.
+6. Inside `main`:
+   - Read string `s` from standard input.
+   - Check if length of set of `s` equals 1:
+     - If true, print `0` and exit program.
+   - Create Counter `a` from string `s`.
+   - Compute `ans` as minimum value in `a.values()` multiplied by 2.
+   - Print `ans`.
+7. If module is executed as main, call `main`.

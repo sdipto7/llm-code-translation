@@ -1,0 +1,27 @@
+Function name: main
+Parameters: None
+Return type: None
+
+Variables:
+- a: int
+- b: int
+
+Logic Flow:
+1. Read input line from standard input
+2. Split input into two string tokens using whitespace separator
+3. Convert both tokens to integers using map()
+4. Assign first integer to variable 'a'
+5. Assign second integer to variable 'b'
+6. Calculate product of a and b
+7. Print product to standard output
+
+Control Structures:
+None (strict linear execution)
+
+Input/Output:
+- Input: Single line containing two space-separated integers
+- Processing: Convert input to integers, multiply them
+- Output: Single integer result printed with newline
+
+Dependencies:
+None (uses only built-in functions)

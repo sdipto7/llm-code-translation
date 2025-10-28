@@ -1,0 +1,22 @@
+1. Read N and P from input
+2. Define a function combi(N, K)
+   1. Initialize a to 1
+   2. For i from 0 to K-1
+      1. Multiply a by N-i
+   3. For j from 0 to K-1
+      1. Divide a by j+1
+   4. Return a
+3. Initialize ans to 0
+4. Read a list of integers into lis
+5. Create a new list ls by taking the modulus of each element in lis with 2
+6. Count the number of 1s in ls and store it in one
+7. Count the number of 0s in ls and store it in zero
+8. Initialize pattern_a and pattern_b to 0
+9. For j from 0 to zero
+   1. Add combi(zero, j) to pattern_b
+10. Initialize time to 0
+11. While time is less than or equal to one
+   1. If time is congruent to P modulo 2
+      1. Add combi(one, time) to pattern_a
+   2. Increment time by 1
+12. Print the product of pattern_a and pattern_b as an integer

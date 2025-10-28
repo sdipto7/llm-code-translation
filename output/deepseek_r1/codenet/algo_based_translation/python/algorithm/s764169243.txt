@@ -1,0 +1,68 @@
+Algorithm:
+
+1. Function Definitions:
+   - main() -> None:
+     - Input: Read integer N and list of integers a via sys.stdin.buffer.readline
+     - Output: Print sum of ans list
+   - class SegmentTree:
+     - __init__(self: SegmentTree, size: int, default: int) -> None
+     - segfunc(self: SegmentTree, x: int, y: int) -> int: returns max(x, y)
+     - update(self: SegmentTree, k: int, x: int) -> None
+     - query(self: SegmentTree, p: int, q: int) -> int
+     - seg_print(self: SegmentTree) -> None
+
+2. Data Structures:
+   - Segment tree with:
+     - size: next power of two >= input size
+     - seg array: size 2*size-1 initialized with default values
+   
+3. Variables:
+   - N: int (array length)
+   - a: list[int] (input array)
+   - ans: list[int] initialized with [1, 2,..., N]
+   - left_seg: SegmentTree instance with default value 0
+   - right_seg: SegmentTree instance with default value 0
+   - i: int (loop index)
+   - num: int (element from a)
+
+4. Execution Flow:
+   a. Initialize left_seg:
+      1. For each (i, num) in enumerate(a):
+         - ans[num-1] *= (i+1) - left_seg.query(0, num)
+         - left_seg.update(num-1, i+1)
+   
+   b. Initialize right_seg:
+      1. For each (i, num) in enumerate(reversed(a)):
+         - ans[num-1] *= (i+1) - right_seg.query(0, num)
+         - right_seg.update(num-1, i+1)
+   
+   c. Compute and print sum(ans)
+
+5. Query Logic (SegmentTree.query):
+   a. If q <= p: return default
+   b. Adjust p and q for tree structure:
+      - p = p + size-1
+      - q = q + size-2
+   c. Initialize ret = default
+   d. While q - p > 1:
+      - If p is even: combine ret with seg[p]
+      - If q is odd: combine ret with seg[q], decrement q
+      - Move p and q up one level
+   e. Combine remaining elements and return ret
+
+6. Update Logic (SegmentTree.update):
+   a. Start at leaf node (k + size-1)
+   b. Update value and propagate upwards:
+      - While k > 0: recalculate parent nodes using segfunc
+
+7. Control Structures:
+   - While loop in query with condition q-p > 1
+   - For loops iterating through a and reversed(a)
+   - Conditional checks (p&1 == 0 and q&1 == 1) in query
+
+8. Input/Output:
+   - Input via sys.stdin.buffer.readline for fast reading
+   - Output sum of ans via print()
+
+9. Dependencies:
+   - sys module for input handling

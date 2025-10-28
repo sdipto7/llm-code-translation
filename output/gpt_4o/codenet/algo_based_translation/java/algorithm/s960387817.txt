@@ -1,0 +1,19 @@
+1. Import the following modules: `java.util.HashSet`, `java.util.Scanner`, `java.util.Set`, `java.util.stream.IntStream`.
+
+2. Define the `main` function with no parameters and a return type of `void`.
+
+3. Declare a variable `scanner` of type `Scanner`, and initialize it to read from `System.in`.
+
+4. Use a `try-with-resources` block to ensure the scanner is closed after the block is executed.
+
+5. Inside the `try` block, perform the following steps:
+
+   - Read an integer `n` from the scanner input.
+
+   - Declare a variable `set` of type `Set<Integer>`, and initialize it as a new instance of `HashSet<Integer>`.
+
+   - Use an `IntStream` to iterate over a range from `0` to `n` (exclusive). For each iteration `i`, perform the following:
+     - Read the next integer from the scanner input.
+     - Add the integer to the `set`.
+
+   - Output the size of the `set` using `System.out.println()` to display the number of unique integers collected.

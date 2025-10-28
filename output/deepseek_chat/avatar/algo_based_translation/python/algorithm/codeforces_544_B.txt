@@ -1,0 +1,31 @@
+**Function Signature:**  
+None (main script, no function)
+
+**Variables:**  
+- n: int  
+- k: int  
+- x: int  
+- i: int (loop index)  
+- j: int (loop index)  
+
+**Input:**  
+Read two integers n and k from standard input.
+
+**Logic Flow:**  
+1. Read n and k from input  
+2. Initialize x = 0  
+3. If k <= maximum of (n²//2) and (n² - n²//2):  
+   - Print "YES"  
+   - For i from 0 to n-1:  
+     - For j from 0 to n-1:  
+       - If (i mod 2 == j mod 2) AND (x < k):  
+         - Print 'L' without newline  
+         - Increment x by 1  
+       - Else:  
+         - Print 'S' without newline  
+     - Print newline  
+4. Else:  
+   - Print "NO"  
+
+**Output:**  
+Prints either "YES" followed by an n x n grid pattern or "NO"

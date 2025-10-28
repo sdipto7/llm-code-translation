@@ -1,0 +1,30 @@
+1. FUNCTION substract(a, b)
+   1.1 IF a > b THEN
+      1.1.1 total = 0
+      1.1.2 WHILE a > 0 AND b > 0 DO
+         1.1.2.1 total = total + INTEGER_DIVISION(a, b)
+         1.1.2.2 a = REMAINDER(a, b)
+         1.1.2.3 IF a > 0 THEN
+            1.1.2.3.1 total = total + INTEGER_DIVISION(b, a)
+            1.1.2.3.2 b = REMAINDER(b, a)
+      1.1.3 RETURN total
+   1.2 ELSE IF a < b THEN
+      1.2.1 total = 0
+      1.2.2 WHILE a > 0 AND b > 0 DO
+         1.2.2.1 total = total + INTEGER_DIVISION(b, a)
+         1.2.2.2 b = REMAINDER(b, a)
+         1.2.2.3 IF b > 0 THEN
+            1.2.2.3.1 total = total + INTEGER_DIVISION(a, b)
+            1.2.2.3.2 a = REMAINDER(a, b)
+      1.2.3 RETURN total
+   1.3 ELSE IF a == b THEN
+      1.3.1 RETURN 1
+
+2. n = INTEGER(INPUT())
+3. CREATE EMPTY LIST lst
+4. FOR i FROM 0 TO n-1 DO
+   4.1 a, b = INTEGER(INPUT()), INTEGER(INPUT())
+   4.2 APPEND substract(a, b) TO lst
+
+5. FOR EACH element IN lst DO
+   5.1 PRINT element

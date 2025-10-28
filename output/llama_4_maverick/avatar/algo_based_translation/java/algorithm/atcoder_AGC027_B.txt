@@ -1,0 +1,12 @@
+1. Initialize a variable INF to store the maximum integer value.
+2. Read the input values N and X.
+3. Read N integers into an array x.
+4. Calculate the prefix sum of the array x and store it in xsum.
+5. Initialize ans with the value X * N + 5 * xsum[N].
+6. Iterate from i = 1 to N-1.
+7. For each i, calculate the initial cost as X * i + 5 * (xsum[N] - xsum[N-i]).
+8. For each i, iterate with j starting from 5 and incrementing by 2, and k starting from N-i and decrementing by i.
+9. In each iteration of the inner loop, update cost by adding j * (xsum[k] - xsum[max(k-i, 0)]).
+10. If cost exceeds ans, break the inner loop.
+11. Update ans with the minimum of ans and cost.
+12. Output the value ans + N * X.

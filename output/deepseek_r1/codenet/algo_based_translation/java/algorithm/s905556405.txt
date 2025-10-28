@@ -1,0 +1,20 @@
+Algorithm:
+- Function: main (args: String[]), return type: void
+- Variables:
+  - numlist: int[5]
+  - k: int
+  - sc: Scanner (java.util.Scanner)
+  - i: int (loop counter)
+- Input Operations:
+  - Initialize Scanner with System.in
+  - Read 5 integers sequentially into numlist[0] to numlist[4] using sc.nextInt()
+  - Read sixth integer into k using sc.nextInt()
+- Logic Flow:
+  1. Loop: for i from 0 to 4 (inclusive)
+     - Store input in numlist[i]
+  2. Compare difference between numlist[4] and numlist[0]
+  3. Conditional: if (numlist[4] - numlist[0]) > k
+     - Output ":(" using System.out.println
+  4. Else
+     - Output "Yay!" using System.out.println
+- Dependencies: java.util.Scanner

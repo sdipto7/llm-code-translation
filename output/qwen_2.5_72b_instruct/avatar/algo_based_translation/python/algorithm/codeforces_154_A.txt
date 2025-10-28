@@ -1,0 +1,42 @@
+Function Signature: `main() -> None`
+
+Variable Declarations:
+- `s: str`
+- `n: int`
+- `ans: int`
+- `i: int` (loop variable)
+- `x: str`
+- `a: int`
+- `b: int`
+- `j: str` (loop variable)
+
+Execution Order and Logic Flow:
+
+1. Read a string `s` from input.
+2. Read an integer `n` from input.
+3. Initialize `ans` to 0.
+4. For each integer `i` from 0 to `n-1`:
+   1. Read a string `x` from input.
+   2. Initialize `a` to 0.
+   3. Initialize `b` to 0.
+   4. For each character `j` in `s`:
+      1. If `j` is equal to the first character of `x`:
+         1. Increment `a` by 1.
+      2. Else if `j` is equal to the second character of `x`:
+         1. Increment `b` by 1.
+      3. Else:
+         1. Add the minimum of `a` and `b` to `ans`.
+         2. Set `a` to 0.
+         3. Set `b` to 0.
+   5. Add the minimum of `a` and `b` to `ans`.
+5. Print the value of `ans`.
+
+Input/Output Operations:
+- Input: Reads a string, an integer, and `n` strings.
+- Output: Prints an integer.
+
+Data Processing Logic:
+- Counts occurrences of two specified characters in a string.
+- Calculates the sum of the minimum counts of these characters between interruptions by other characters.
+
+No external libraries, modules, or dependencies are required.

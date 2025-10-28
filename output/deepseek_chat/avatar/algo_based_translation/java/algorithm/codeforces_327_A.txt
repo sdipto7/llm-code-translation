@@ -1,0 +1,63 @@
+**Algorithm Extraction:**
+
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `private static int checKNo(int[] brr)`
+
+**Variables:**
+- `Scanner scanner` (Scanner object)
+- `int n` (integer)
+- `int[] arr` (integer array of size n)
+- `int max = Integer.MIN_VALUE` (integer)
+- `int x` (integer)
+- `int[] brr` (integer array of size n)
+- `int count` (integer)
+- `int val = 0` (integer)
+
+**Input Operations:**
+- Read integer `n` from standard input
+- Read `n` integers into array `arr`
+
+**Logic Flow:**
+1. If input exists:
+   - Read integer `n`
+   - Initialize array `arr` of size `n`
+   - Read `n` integers into `arr`
+   - Initialize `max` to minimum integer value
+   
+2. For each starting index `i` from 0 to n-1:
+   - For each ending index `j` from `i` to n-1:
+     - Initialize `x` to 0
+     - Create copy `brr` of array `arr`
+     - For each index `k` from `i` to `j`:
+       - If `brr[k]` equals 0, set to 1
+       - Else set `brr[k]` to 0
+     - Call `checKNo(brr)` and store result in `count`
+     - If `count` > `max`, update `max` = `count`
+   
+3. If `n` equals 1:
+   - If `arr[0]` equals 1, output 0
+   - Else output 1
+   
+4. Else:
+   - Output `max`
+
+**checKNo Function:**
+- Initialize `val` to 0
+- For each element `i` in array `brr`:
+  - If `i` equals 1, increment `val`
+- Return `val`
+
+**Control Structures:**
+- `if (scanner.hasNext())`
+- `for (int i = 0; i < n; i++)`
+- `for (int j = i; j < n; j++)`
+- `for (int k : arr)`
+- `for (int k = i; k <= j; k++)`
+- `if (brr[k] == 0)`
+- `if (count > max)`
+- `if (n == 1)`
+- `if (arr[0] == 1)`
+
+**Dependencies:**
+- `java.util.Scanner`

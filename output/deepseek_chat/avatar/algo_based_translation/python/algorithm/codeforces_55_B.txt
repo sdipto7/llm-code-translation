@@ -1,0 +1,61 @@
+**Function Signature:**
+- Function Name: rememberTheNumber
+- Parameters: 
+  - nums: list of integers
+  - i: integer
+  - operations: list of strings
+  - ans: list of one integer element
+- Return Type: void (no return value)
+
+**Variables:**
+- nums: list of integers (input parameter)
+- i: integer (input parameter)
+- operations: list of strings (input parameter)
+- ans: list of one integer element (input/output parameter)
+- j: integer (loop index)
+- k: integer (loop index)
+- s: integer (temporary storage)
+- t: integer (temporary storage)
+
+**Algorithm Logic:**
+
+1. If i >= 3, return immediately (base case)
+2. For j from 0 to 3 (inclusive):
+3.   For k from j+1 to 3 (inclusive):
+4.     If nums[j] != -1 AND nums[k] != -1:
+5.       Store nums[j] in s
+6.       Set nums[j] = -1
+7.       Store nums[k] in t
+8.       If operations[i] equals '+':
+9.         Set nums[k] = s + t
+10.      Else if operations[i] equals '*':
+11.        Set nums[k] = s * t
+12.      If i == 2 AND nums[k] < ans[0]:
+13.        Set ans[0] = nums[k]
+14.      Recursively call rememberTheNumber(nums, i+1, operations, ans)
+15.      Restore nums[j] = s
+16.      Restore nums[k] = t
+
+**Main Program:**
+1. Read input line and split into list of integers → nums
+2. Read input line and split into list of strings → operations
+3. Initialize ans = [very large integer] (10000000000000000000000000)
+4. Call rememberTheNumber(nums, 0, operations, ans)
+5. Print ans[0]
+
+**Data Processing:**
+- Input: Two lines from stdin
+- First line: 4 integers separated by spaces
+- Second line: 3 strings separated by spaces
+- Output: Single integer printed to stdout
+
+**Control Structures:**
+- Recursive function with base case (i >= 3)
+- Nested loops: outer loop j (0-3), inner loop k (j+1 to 3)
+- Conditional checks: nums[j] != -1 AND nums[k] != -1
+- Conditional operations: check operations[i] for '+' or '*'
+- Conditional update: if i == 2 AND nums[k] < ans[0]
+
+**Dependencies:**
+- Standard input/output operations
+- No external libraries required

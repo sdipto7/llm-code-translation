@@ -1,0 +1,24 @@
+```
+function I() -> int:
+    return int(input())
+
+function MI() -> tuple[int, int, int]:
+    return map(int, input().split())
+
+function LI() -> list[int]:
+    return list(map(int, input().split()))
+
+function main() -> None:
+    constant mod = 10**9 + 7
+    variable N, A, B: int = MI()
+    variable ans: int = 0
+    variable rep: int = N // (A + B)
+    ans = ans + rep * A
+    variable res: int = N - rep * (A + B)
+    ans = ans + min(res, A)
+    print(ans)
+
+import sys
+input = sys.stdin.readline
+main()
+```

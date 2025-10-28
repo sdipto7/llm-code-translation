@@ -1,0 +1,49 @@
+### Algorithm
+
+1. Import required libraries:
+   - `java.util.Scanner`
+   - `java.util.Arrays`
+
+2. Function signatures:
+   - `void tr(Object... os)`
+   - `void run()`
+   - `char solve(int[][] a)`
+
+3. Variable declarations:
+   - `Scanner sc`
+   - `int my1`, `my2`, `enemy1`
+   - `boolean[] used` of size 11
+   - `int all`, `safe`
+   - `int[][] a` (2D array of integers)
+   - `char[] s` (array of characters)
+
+4. Execution order:
+   1. Initialize a new instance of the class and call `run()`.
+   2. In `run()`:
+      - Loop indefinitely until `sc.hasNext()` returns false.
+      - Inside the loop:
+         1. Read three integers: `my1`, `my2`, `enemy1` using `sc.nextInt()`.
+         2. Create a `boolean[] used` of size 11 and mark `my1`, `my2`, `enemy1` as true.
+         3. Initialize `all` and `safe` to 0.
+         4. Loop through `i` from 1 to 10.
+            - If `used[i]` is false, increment `all`.
+            - If `my1 + my2 + i <= 20`, increment `safe`.
+         5. Check if `safe * 2 >= all`. 
+            - If true, print "YES".
+            - If false, print "NO".
+
+5. The `solve(int[][] a)` function:
+   1. Define a `char[] s` with values {'d', 'o', 'x'}.
+   2. Loop through `side` from 1 to 2.
+      - For each `side`, check rows and columns of `a` for a match.
+      - Check diagonals of `a` for a match.
+      - If a match is found for `side`, return `s[side]`.
+   3. If no match is found for either side, return 'd'.
+
+6. Input/Output operations:
+   - Read integers from the input using `sc.nextInt()`.
+   - Print "YES" or "NO" to the output based on the condition.
+
+7. Data processing logic:
+   - The code processes the input integers to determine whether to print "YES" or "NO".
+   - The `solve` function checks for a winning condition in a Tic-Tac-Toe game represented by the 2D array `a`.

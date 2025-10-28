@@ -1,0 +1,99 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,s291405468.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s291405468.py"", line 2, in <module>
+    x, y = map(int, input().split())
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s319823779.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s319823779.py"", line 13, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s319823779.py"", line 3, in main
+    a, b, c, x = map(int, input().split())
+    ^^^^^^^^^^
+ValueError: not enough values to unpack (expected 4, got 1)
+"
+java,python,s325080396.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s325080396.py"", line 15, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s325080396.py"", line 7, in main
+    maxv = R[1] - R[0]
+           ~^^^
+IndexError: list index out of range
+"
+java,python,s720527488.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s720527488.py"", line 28, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s720527488.py"", line 11, in main
+    a, b = map(int, sys.stdin.readline().split())
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s399184958.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s399184958.py"", line 2, in <module>
+    A = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 2 2'
+"
+java,python,s648025110.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s648025110.py"", line 16, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s648025110.py"", line 4, in main
+    h = [int(input()) for _ in range(n)]
+         ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 2 2 1'
+"
+java,python,s523386612.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s523386612.py"", line 14, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s523386612.py"", line 8, in main
+    num = int(sys.stdin.readline())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 1 2 2\n'
+"
+java,python,s125278297.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s125278297.py"", line 18, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s125278297.py"", line 5, in main
+    h = int(sys.stdin.readline())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 3\n'
+"
+java,python,s962361667.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s962361667.py"", line 4, in <module>
+    w, n = map(int, sys.stdin.readline().split())
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s452855095.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s452855095.py"", line 5, in <module>
+    arr = [int(sys.stdin.readline()) for _ in range(n)]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '8 12 40\n'
+"
+java,python,s910008321.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s910008321.py"", line 2, in <module>
+    h = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '10 4'
+"
+java,python,s818271374.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s818271374.py"", line 6, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 10 100'
+"
+java,python,s584135649.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s584135649.py"", line 4, in <module>
+    n = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0 2 3 4 5'
+"
+java,python,s682242794.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s682242794.py"", line 17, in <module>
+    obj.solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/algo_based_translation/java/python/s682242794.py"", line 10, in solve
+    self.high = int(input())
+                ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '30 19'
+"

@@ -1,0 +1,15 @@
+1. READ input into ip
+2. INITIALIZE st to empty string
+3. IF length of ip is not equal to 1 THEN
+    4. IF first character of ip is '9' THEN
+        5. APPEND '9' to st
+        6. REMOVE first character from ip
+    7. FOR EACH character i in ip DO
+        8. IF integer value of i is greater than 4 THEN
+            9. CALCULATE n as 9 minus integer value of i
+            10. APPEND string representation of n to st
+        11. ELSE
+            12. APPEND i to st
+13. ELSE
+    14. SET st to ip
+15. PRINT integer value of st

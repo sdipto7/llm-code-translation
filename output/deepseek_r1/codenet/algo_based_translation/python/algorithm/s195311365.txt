@@ -1,0 +1,16 @@
+- Function signature: None (script-style execution)
+- Variables:
+  - `s`: string (initialized from standard input)
+- Input operation:
+  - Read entire line from standard input into variable `s`
+- Logic flow:
+  1. Check if `len(s)` equals 2:
+     - If true: output `s` to standard output
+     - If false: 
+         a. Create reversed string via slice operation `s[::-1]`
+         b. Output reversed string to standard output
+- Control structures:
+  - Single conditional: `if len(s) == 2` with `else` branch
+- Output operations:
+  - One print statement in each conditional branch
+- Dependencies: None (uses standard Python features)

@@ -1,0 +1,49 @@
+**Function Signatures:**
+- `public static void solve()`
+- `public static long getValueAtIndex(long index)`
+- `public static void main(String[] args) throws Exception`
+- `public static class in`
+  - `static void init(InputStream input)`
+  - `static String next() throws IOException`
+  - `static int nextInt() throws IOException`
+  - `static double nextDouble() throws IOException`
+  - `static long nextLong() throws IOException`
+
+**Variable Declarations:**
+- `Scanner sc` initialized with `BufferedReader` wrapping `InputStreamReader(System.in)` with buffer size `BUFFERSIZE`
+- `PrintWriter out` initialized with `BufferedOutputStream(System.out, BUFFERSIZE)`
+- `long position` assigned from `sc.nextLong()`
+- `long nrstSeqStartIndx` initialized to `1`
+- `long startIndex` assigned from `getValueAtIndex(nrstSeqStartIndx)`
+
+**Constants:**
+- `BUFFERSIZE = 512000`
+
+**Logic Flow:**
+1. Initialize input scanner and output writer with buffer size `BUFFERSIZE`
+2. Call `solve()` method
+3. Read `position` as long integer from input
+4. Set `nrstSeqStartIndx` to `1`
+5. While `getValueAtIndex(nrstSeqStartIndx * 2)` is less than `position`:
+   - Multiply `nrstSeqStartIndx` by `2`
+6. While `getValueAtIndex(nrstSeqStartIndx + 1)` is less than or equal to `position`:
+   - Increment `nrstSeqStartIndx` by `1`
+7. Calculate `startIndex` as `getValueAtIndex(nrstSeqStartIndx)`
+8. Print `(position - startIndex) + 1`
+9. Close output writer
+
+**getValueAtIndex Function:**
+- Returns `1 + ((index - 1) * index / 2)`
+
+**Input Handling:**
+- `in.init(System.in)` initializes buffered reader
+- `next()` reads next token
+- `nextInt()`, `nextDouble()`, `nextLong()` parse corresponding types
+
+**Control Structures:**
+- `while (getValueAtIndex(nrstSeqStartIndx * 2) < position)`
+- `while (getValueAtIndex(nrstSeqStartIndx + 1) <= position)`
+
+**Dependencies:**
+- `java.io.*`
+- `java.util.*`

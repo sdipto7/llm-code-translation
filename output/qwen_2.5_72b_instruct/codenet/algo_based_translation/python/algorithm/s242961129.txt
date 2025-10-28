@@ -1,0 +1,18 @@
+- Function signature: main() -> None
+- Variable declarations: 
+  - N: int
+  - A: List[int]
+  - ans: int
+  - diff: List[int]
+- Logic flow:
+  - Input N as integer
+  - Input a list of N integers into A
+  - Initialize ans as absolute value of the last element of A
+  - Prepend and append 0 to A
+  - Initialize diff as a list of N zeros
+  - For i from 1 to N (inclusive):
+    - Calculate dif as absolute difference between A[i] and A[i-1] plus absolute difference between A[i] and A[i+1] minus absolute difference between A[i-1] and A[i+1]
+    - Add absolute difference between A[i] and A[i-1] to ans
+    - Assign dif to diff[i-1]
+  - For i from 0 to N-1 (inclusive):
+    - Print ans minus diff[i]

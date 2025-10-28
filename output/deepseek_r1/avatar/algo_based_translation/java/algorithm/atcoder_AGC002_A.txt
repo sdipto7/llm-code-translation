@@ -1,0 +1,31 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner scanner = new Scanner(System.in)` (Scanner type)
+- `int a` (input integer)
+- `int b` (input integer)
+
+**Logic Flow:**
+1. Read integer `a` from standard input.
+2. Read integer `b` from standard input.
+3. If `a > 0`, output "Positive".
+4. Else if `b >= 0`, output "Zero".
+5. Else:
+   - Calculate `(b - a + 1)`
+   - If the result is even, output "Positive".
+   - Else, output "Negative".
+
+**Control Structures:**
+- `if (a > 0)`
+- `else if (b >= 0)`
+- `else` block containing:
+  - `if ((b - a + 1) % 2 == 0)`
+  - `else`
+
+**Input/Output:**
+- Input via `Scanner.nextInt()`
+- Output via `System.out.println()` with "Positive", "Zero", or "Negative"
+
+**Dependencies:**
+- `java.util.Scanner`

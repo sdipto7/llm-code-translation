@@ -1,0 +1,11 @@
+1. Define a function `get_user_input` with return type `Tuple[int, int]`.
+2. Within `get_user_input`, read a line of input from the user and split it into two parts.
+3. Convert the two parts to integers and return them as a tuple.
+4. Define a function `calculate_max_result` with parameters `a` and `b` of type `int` and return type `int`.
+5. Within `calculate_max_result`, create a list `results` containing the sum, difference, and product of `a` and `b`.
+6. Return the maximum value from the `results` list.
+7. Define a `main` function with no parameters and no return value.
+8. Within `main`, call `get_user_input` to obtain two integers `a` and `b`.
+9. Call `calculate_max_result` with `a` and `b` and store the result.
+10. Print the result obtained from `calculate_max_result`.
+11. Call the `main` function to start the program execution.

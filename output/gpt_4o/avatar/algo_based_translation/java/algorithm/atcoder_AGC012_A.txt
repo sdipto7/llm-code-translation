@@ -1,0 +1,28 @@
+```
+Function: main()
+  Dependencies:
+    - Import Scanner from java.util
+    - Import Arrays.sort from java.util
+    - Import Math from java.lang for static methods (though not used)
+  
+  Variables:
+    - sc: Scanner instance for input
+    - n: integer, number of groups of three numbers (input)
+    - array: array of integers with length 3 * n
+    - head: integer, index for accessing array
+    - res: long, stores the result of the sum
+
+  Execution Flow:
+    1. Create a Scanner object to read input.
+    2. Read an integer n from input, which represents the number of groups.
+    3. Declare an integer array of size 3 * n.
+    4. Iterate over the array indices from 0 to 3 * n - 1:
+       - Read an integer from input and assign it to the current index of array.
+    5. Sort the array in non-decreasing order using Arrays.sort method.
+    6. Initialize head to the second last index of the array (3 * n - 2).
+    7. Initialize res to 0 to store the sum of selected numbers.
+    8. Iterate n times:
+       - Add the value at index head of the array to res.
+       - Decrement head by 2 to skip to the next appropriate index.
+    9. Print the value of res to the standard output.
+```

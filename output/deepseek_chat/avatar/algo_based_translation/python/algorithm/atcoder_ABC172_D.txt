@@ -1,0 +1,11 @@
+import sys
+def read_string(): return sys.stdin.readline().rstrip()
+def read_int(): return int(read_string())
+def read_string_list(): return [s for s in read_string().split()]
+def read_int_list(): return [int(n) for n in read_string().split()]
+N: int = read_int()
+ans: int = 0
+for i in range(1, N + 1):
+    term: int = i * (N // i) * (N // i + 1) // 2
+    ans += term
+print(ans)

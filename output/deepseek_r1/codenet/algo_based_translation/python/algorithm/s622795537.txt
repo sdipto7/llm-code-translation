@@ -1,0 +1,30 @@
+1. **Function Signature**: N/A (script executes directly without functions)
+2. **Variables**:
+   - `n: int` (input count)
+   - `arr: dict[str, int]` (frequency counter)
+   - `s: str` (temporary input string)
+   - `max_count: int` (maximum frequency value)
+   - `dic: list[str]` (keys with maximum frequency)
+   - `out_sort: list[str]` (sorted output list)
+3. **Input Operations**:
+   - Read integer `n` from standard input
+   - Read `n` strings sequentially into `s`
+4. **Logic Flow**:
+   - Initialize empty dictionary `arr`
+   - Loop `i` from 0 to `n-1`:
+     - Read string `s`
+     - If `s` not in `arr`:
+       - Set `arr[s] = 1`
+     - Else:
+       - Increment `arr[s]` by 1
+   - Compute `max_count` as maximum value in `arr.values()`
+   - Populate `dic` with keys from `arr` where value equals `max_count`
+   - Generate `out_sort` by sorting `dic` lexicographically
+   - Iterate through `out_sort` and print each element
+5. **Control Structures**:
+   - `for i in range(n):` loop
+   - `if s not in arr:` conditional
+   - List comprehension `[key[0] for key in arr.items() if key[1] == max_count]`
+6. **Output Operations**:
+   - Print each element of `out_sort` sequentially
+7. **Dependencies**: None (uses standard input/output and built-in functions)

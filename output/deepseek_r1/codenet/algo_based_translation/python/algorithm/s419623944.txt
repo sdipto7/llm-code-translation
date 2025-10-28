@@ -1,0 +1,28 @@
+- **Function Signatures**
+  - Not applicable (script-based code without defined functions)
+
+- **Variable Declarations**
+  - `N: int` (input value)
+  - `R: int` (input value)
+
+- **Input Operations**
+  - Read a single line from standard input.
+  - Split the line into two parts and convert them to integers `N` and `R`.
+
+- **Logic Flow**
+  1. Check if `N >= 10`
+  2. If true:
+      - Output `R` to standard output.
+  3. Else:
+      - Calculate `diff = (10 - N)`
+      - Compute `result = R + (100 * diff)`
+      - Output `result` to standard output.
+
+- **Control Structures**
+  - Conditional: `if N >= 10` with branches for true/false cases.
+
+- **Output Operations**
+  - Directly print `R` or `R + 100*(10-N)` based on the condition.
+
+- **Dependencies**
+  - None (uses built-in functions for input/output).

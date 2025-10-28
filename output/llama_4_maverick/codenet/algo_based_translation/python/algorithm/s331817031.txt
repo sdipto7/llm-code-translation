@@ -1,0 +1,10 @@
+1. Read two integer values from input and store them in variables `h` and `w` representing height and width.
+2. Initialize an empty list `l` to store a 2D grid of characters.
+3. Iterate `h` times, reading a line of characters in each iteration, converting it into a list of characters, and appending it to `l`.
+4. Initialize a variable `tmp` to 0 to keep track of the last seen column index with `#`.
+5. Iterate over each element in the 2D grid `l` using nested loops for rows (`i` from 0 to `h-1`) and columns (`j` from 0 to `w-1`).
+6. Inside the nested loops, check if the current element `l[i][j]` is equal to `#`.
+7. If `l[i][j]` is `#`, check if the current column index `j` is less than `tmp`.
+8. If `j` is less than `tmp`, print "Impossible" and terminate the program.
+9. If `j` is not less than `tmp`, update `tmp` with the value of `j`.
+10. After iterating over all elements in the grid without terminating, print "Possible".

@@ -1,0 +1,7 @@
+1. Import the sys module.
+2. Define aliases for sys.stdin.read, sys.stdin.readline, and sys.stdin.readlines as read, readline, and readlines respectively.
+3. Set the recursion limit to 10^7 using sys.setrecursionlimit.
+4. Read a line from standard input, remove trailing newline characters using rstrip, sort the characters in ascending order, and store the result in variable s.
+5. Read another line from standard input, remove trailing newline characters using rstrip, sort the characters in ascending order, reverse the sorted characters to get descending order, and store the result in variable t.
+6. Compare s and t lexicographically.
+7. If s is lexicographically less than t, print "Yes"; otherwise, print "No".

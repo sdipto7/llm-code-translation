@@ -1,0 +1,23 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `BufferedReader br` (initialized with `System.in`)
+- `int ans`
+- `String inputed`
+
+**Libraries/Dependencies:**
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+
+**Logic Flow:**
+1. Initialize `br` as `BufferedReader` reading from `System.in`
+2. Enter infinite loop:
+   1. Read line from `br` into `inputed`
+   2. If `inputed.length() == 1` AND `inputed.equals("0")`: break loop
+   3. Set `ans = 0`
+   4. For each `i` from 0 to `inputed.length() - 1`:
+      1. Add `(inputed.charAt(i) - '0')` to `ans`
+   5. Print `ans` followed by newline
+3. Handle `IOException` by printing stack trace if occurs

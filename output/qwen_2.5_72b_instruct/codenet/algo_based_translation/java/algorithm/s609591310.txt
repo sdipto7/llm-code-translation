@@ -1,0 +1,46 @@
+function main() {
+    variable ans of type int initialized to 0
+    variable sc of type Scanner initialized with System.in
+
+    variable n of type int read from sc
+    array list of size n of type int
+    for i from 0 to n-1 do
+        list[i] = sc.nextInt()
+
+    array numlist1 of size 100000 of type int
+    array numlist2 of size 100000 of type int
+    for i from 0 to 99999 do
+        numlist1[i] = 0
+        numlist2[i] = 0
+
+    for i from 0 to n-1 step by 2 do
+        numlist1[list[i]-1] += 1
+        numlist2[list[i+1]-1] += 1
+
+    variable max11 of type int initialized to 0
+    variable max12 of type int initialized to 0
+    variable max21 of type int initialized to 0
+    variable max22 of type int initialized to 0
+    variable val1 of type int initialized to 0
+    variable val2 of type int initialized to 0
+    for i from 0 to 99999 do
+        if numlist1[i] >= max11 then
+            max12 = max11
+            max11 = numlist1[i]
+            val1 = i
+        else if numlist1[i] >= max12 then
+            max12 = numlist1[i]
+        if numlist2[i] >= max21 then
+            max22 = max21
+            max21 = numlist2[i]
+            val2 = i
+        else if numlist2[i] >= max22 then
+            max22 = numlist2[i]
+
+    if val1 != val2 then
+        ans = n - max11 - max21
+    else
+        ans = n - Math.max(max12 + max21, max11 + max22)
+
+    print ans
+}

@@ -1,0 +1,22 @@
+```
+Function: process_input() -> None
+
+Declare variable ABC of type tuple[int]
+
+Execute the following steps:
+    1. Read a line of input from the standard input.
+    2. Split the input string into a list of substrings using space as a delimiter.
+    3. Convert each substring in the list to an integer.
+    4. Store the resulting integers as a tuple in the variable ABC.
+
+Conditional structure:
+    If the count of the integer 5 in the tuple ABC is equal to 2:
+        1. Calculate the sum of all integers in the tuple ABC.
+        2. If the sum is equal to 17, output 'YES' to the standard output.
+        3. Otherwise, output 'NO' to the standard output.
+    Else:
+        1. Output 'NO' to the standard output.
+
+Required libraries, modules, or dependencies:
+    - No external libraries or modules are required.
+```

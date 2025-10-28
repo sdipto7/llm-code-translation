@@ -1,0 +1,16 @@
+1. Read two integers `n` and `m` from input, where `n` and `m` are of type `int`.
+2. Declare a list `a` of type `list[int]` and read `n` integers into it from input.
+3. Sort the list `a` in ascending order.
+4. Declare a list `ope` of type `list[list[int]]` and read `m` lists of two integers each into it from input.
+5. Sort the list `ope` in descending order based on the second element of each sublist.
+6. Initialize a variable `j` of type `int` to 0.
+7. Iterate over the list `a` using a for loop with index `i` ranging from 0 to `n-1`.
+8. Inside the loop, check if the current element `a[i]` is less than `ope[j][1]`.
+9. If the condition is true, set `a[i]` to `ope[j][1]`, decrement `ope[j][0]` by 1.
+10. Check if `ope[j][0]` equals 0.
+11. If `ope[j][0]` equals 0, increment `j` by 1.
+12. Check if `j` equals the length of `ope`.
+13. If `j` equals the length of `ope`, exit the loop.
+14. If the condition in step 8 is false, exit the loop.
+15. Calculate the sum of all elements in the list `a`.
+16. Output the sum calculated in step 15.

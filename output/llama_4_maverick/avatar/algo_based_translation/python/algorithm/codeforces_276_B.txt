@@ -1,0 +1,21 @@
+1. READ input into list s
+2. INITIALIZE dictionary dt
+3. FOR EACH character i in s
+   3.1 IF i exists in dt THEN
+      3.1.1 INCREMENT dt[i] by 1
+   3.2 ELSE
+      3.2.1 SET dt[i] to 1
+4. INITIALIZE counter cnt to 0
+5. INITIALIZE flag x to TRUE
+6. FOR EACH key-value pair in dt
+   6.1 IF value is odd AND cnt is less than 1 THEN
+      6.1.1 INCREMENT cnt by 1
+   6.2 ELSE IF value is odd AND cnt is greater than or equal to 1 THEN
+      6.2.1 SET x to FALSE
+      6.2.2 BREAK the loop
+7. IF x is TRUE THEN
+   7.1 PRINT "First"
+8. ELSE IF x is FALSE AND length of s is even THEN
+   8.1 PRINT "Second"
+9. ELSE IF x is FALSE AND length of s is odd THEN
+   9.1 PRINT "First"

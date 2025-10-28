@@ -1,0 +1,13 @@
+1. READ N
+2. READ V as a list of integers separated by spaces
+3. READ C as a list of integers separated by spaces
+4. INITIALIZE list with 0
+5. INITIALIZE ans to 0
+6. INITIALIZE X to 0
+7. INITIALIZE Y to 0
+8. FOR i FROM 0 TO N-1
+    8.1 IF V[i] - C[i] > 0 THEN
+        8.1.1 X = V[i]
+        8.1.2 Y = C[i]
+        8.1.3 APPEND X - Y TO list
+9. PRINT SUM of list

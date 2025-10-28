@@ -1,0 +1,70 @@
+**Structured Algorithm Specification**
+
+**1. Function Specifications**
+- **Function**: `substract(a: int, b: int) -> int`
+  - **Parameters**: Two integers `a`, `b`
+  - **Return**: Integer total calculated via iterative division/modulus operations
+
+**2. Variables and Data Types**
+- `total: int` (accumulated result)
+- `n: int` (number of input pairs)
+- `lst: List[int]` (stores results for each input pair)
+- `a: int`, `b: int` (input values per test case)
+
+**3. Logic Flow**
+
+**3.1 `substract` Function Logic**
+1. **Case 1**: `a > b`
+   - Initialize `total = 0`
+   - **Loop**: While `a > 0` AND `b > 0`
+     1. Add `a // b` to `total`
+     2. Update `a = a % b`
+     3. If `a > 0`:
+        - Add `b // a` to `total`
+        - Update `b = b % a`
+   - Return `total`
+   
+2. **Case 2**: `a < b`
+   - Initialize `total = 0`
+   - **Loop**: While `a > 0` AND `b > 0`
+     1. Add `b // a` to `total`
+     2. Update `b = b % a`
+     3. If `b > 0`:
+        - Add `a // b` to `total`
+        - Update `a = a % b`
+   - Return `total`
+
+3. **Case 3**: `a == b`
+   - Return `1`
+
+**3.2 Main Program Logic**
+1. Read integer `n` from input
+2. Initialize empty list `lst`
+3. **Loop**: `n` times
+   1. Read two integers `a`, `b` from input
+   2. Append `substract(a, b)` to `lst`
+4. **Loop**: For each result in `lst`
+   1. Print the result
+
+**4. Control Structures**
+- **Conditionals**:
+  - `a > b`, `a < b`, `a == b` to select calculation path
+  - Nested `if` checks during loop iterations (`a > 0`, `b > 0`)
+- **Loops**:
+  - `while a > 0 AND b > 0` (terminates when either becomes ≤0)
+  - `for` loops for input processing and output
+
+**5. Input/Output Operations**
+- **Input**:
+  - Read `n` via `input()`
+  - Read `n` lines of space-separated integers via `input().split()`
+- **Output**:
+  - Print each element of `lst` sequentially
+
+**6. Edge Case Handling**
+- Direct return of `1` when `a == b`
+- Loop termination when either `a` or `b` reaches ≤0, preventing infinite loops
+
+**7. Dependencies**
+- No external libraries required beyond standard input handling
+- Assumes valid integer inputs (no type/format validation)

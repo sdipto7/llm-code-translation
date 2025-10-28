@@ -1,0 +1,29 @@
+```plaintext
+- Import the 'atan2' and 'pi' functions from the 'math' module.
+
+- Read integers from standard input and store them as a list 'XY'.
+  - Data type: List of integers
+
+- Parse the first integer as 'N'.
+  - Data type: Integer
+
+- Separate the remaining integers into pairs and store them as a list of tuples 'XY'.
+  - Data type: List of tuples of integers
+
+- For each index 'i' and tuple '(x, y)' in the enumeration of 'XY':
+  - Calculate the angles from point '(x, y)' to all other points '(X, Y)' in 'XY' using 'atan2', excluding the point at index 'i'.
+  - Store the calculated angles in a list 'D' and sort it.
+    - Data type: List of floats
+
+  - Append 'D[0] + 2 * pi' to the list 'D'.
+
+  - Initialize 'ans' to 0.
+    - Data type: Float
+
+  - For each pair of consecutive angles 'a' and 'b' in 'D':
+    - If the difference 'b - a' is greater than or equal to 'pi':
+      - Update 'ans' to '(b - a) - pi'.
+        - Data type: Float
+
+  - Print the result of 'ans / (2 * pi)'.
+```

@@ -1,0 +1,27 @@
+```
+function count_unobstructed_peaks(n: int, m: int, heights: List[int], connections: List[Tuple[int, int]]) -> int:
+    declare p as List[int] = list of integers from 1 to n
+    declare h as List[int] = heights
+    declare hp as Dictionary[int, int] = map each element of p to corresponding element in h
+    
+    declare path as Dictionary[int, List[int]] = initialize with empty lists for each key from 1 to n
+
+    for i from 0 to m - 1 do
+        (a, b) = connections[i]
+        append b to path[a]
+        append a to path[b]
+
+    declare c as int = 0
+
+    for i, v in elements of path do
+        declare f as int = 0
+        for j in elements of v do
+            if hp[i] <= hp[j] then
+                set f = 1
+                break loop
+
+        if f == 0 then
+            increment c by 1
+
+    return c
+```

@@ -1,0 +1,23 @@
+- Function Signature:
+  - `main(args: String[]): void`
+
+- Variable Declarations:
+  - `stdIn: Scanner`
+  - `r: short`
+
+- Execution Order:
+  1. Initialize a `Scanner` object named `stdIn` to read input from the standard input stream.
+  2. Read a `short` integer from the input using `stdIn` and store it in the variable `r`.
+
+- Control Structures:
+  - Conditional Statements:
+    - If `r < 1200`, output "ABC" and terminate the program.
+    - Else if `r < 2800`, output "ARC" and terminate the program.
+    - Else, output "AGC".
+
+- Input/Output Operations:
+  - Input: Read a `short` integer from the standard input.
+  - Output: Print "ABC", "ARC", or "AGC" to the standard output based on the value of `r`.
+
+- Required Libraries:
+  - `java.util.Scanner` for reading input from the standard input.

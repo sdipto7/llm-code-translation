@@ -1,0 +1,57 @@
+**Algorithm:**
+
+**Dependencies:**
+- `java.util.Scanner`
+
+**Function Signatures:**
+- `public static void main(String[] args)`
+  - Parameters: `String[] args`
+  - Return: `void`
+- `private static int checKNo(int[] brr)`
+  - Parameters: `int[] brr`
+  - Return: `int`
+
+**Variables:**
+- `Scanner scanner` (Instantiated with `System.in`)
+- `int n` (Input array size)
+- `int[] arr` (Array to store input integers)
+- `int max` (Initialized to `Integer.MIN_VALUE`)
+- Loop counters `i`, `j`, `k`, `x` (all `int`)
+- `int[] brr` (Temporary array for modification)
+- `int val` (In `checKNo`, counts 1s)
+
+**Logic Flow:**
+1. **Input Handling:**
+   - Check if input exists via `scanner.hasNext()`.
+   - Read `n` using `scanner.nextInt()`.
+   - Initialize `arr` with size `n`, populated via loop reading `n` integers.
+
+2. **Main Logic:**
+   - If `n == 1`:
+     - Output `0` if `arr[0] == 1`, else `1`.
+   - Else:
+     - Iterate all subarrays via nested loops:
+       - Outer loop: `i` from `0` to `n-1`.
+       - Inner loop: `j` from `i` to `n-1`.
+       - For each subarray `[i, j]`:
+         - Create a copy `brr` of `arr`.
+         - Flip values in `brr` between indices `i` and `j` (inclusive): `0` ↔ `1`.
+         - Compute 1s count in `brr` via `checKNo`.
+         - Update `max` if the count exceeds current `max`.
+     - After processing all subarrays, output `max`.
+
+3. **Helper Function `checKNo`:**
+   - Iterate through `brr` using a for-each loop.
+   - Count occurrences of `1` in `brr`.
+   - Return the count.
+
+**Control Structures:**
+- `if (scanner.hasNext())` guards input reading.
+- Nested `for` loops for `i`, `j`, `k` (explicit ranges: `i < n`, `j < n`, `k` from `i` to `j`).
+- Conditional `if (brr[k] == 0)...else...` for flipping values.
+- Conditional `if (count > max)` to update maximum.
+- Post-loop `if (n == 1)...else...` for final output.
+
+**Input/Output Operations:**
+- Read `n` and array elements via `scanner.nextInt()`.
+- Final output via `System.out.println()` based on conditions.

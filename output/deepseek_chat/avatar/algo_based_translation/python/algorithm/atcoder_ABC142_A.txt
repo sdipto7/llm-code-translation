@@ -1,0 +1,24 @@
+```python
+import math
+
+def next_int():
+    input_str = input()
+    return int(input_str)
+
+def next_ints():
+    input_str = input()
+    split_str = input_str.split()
+    mapped_ints = map(int, split_str)
+    return list(mapped_ints)
+
+n = next_int()
+t = 0
+
+for i in range(n):
+    condition = (i + 1) & 1
+    if condition != 0:
+        t += 1
+
+result = t / n
+print(result)
+```

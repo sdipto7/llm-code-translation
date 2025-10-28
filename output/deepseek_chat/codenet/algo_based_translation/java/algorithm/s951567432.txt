@@ -1,0 +1,7 @@
+1. Import java.util.Scanner
+2. Define main function with parameter String[] args
+3. Declare integer variable count and initialize with integer input from standard input
+4. Declare integer variable total and initialize to 0
+5. For loop: initialize integer ix = 1, condition ix <= count, increment ix by 1
+   - Add ix to total in each iteration
+6. Print total to standard output

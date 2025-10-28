@@ -1,0 +1,25 @@
+1. Import the required library: java.util.Scanner
+2. Define a class: Main
+3. Define a function: main with parameters (String[] args) and return type void
+   1. Declare a variable: sc of type Scanner and initialize it with new Scanner(System.in)
+   2. Declare a variable: n of type int and initialize it with sc.nextInt()
+   3. Declare an array: a of type int[] with size n
+   4. Loop from i = 0 to n-1
+      1. Assign a[i] with sc.nextInt()
+   5. Declare a variable: count of type int and initialize it with the result of bubbleSort(a, n)
+   6. Loop from i = 0 to n-1
+      1. If i < n-1, print a[i] followed by a space
+      2. Else, print a[i] followed by a newline
+   7. Print count followed by a newline
+
+4. Define a function: bubbleSort with parameters (int[] a, int n) and return type int
+   1. Declare a variable: flag of type boolean and initialize it with true
+   2. Declare a variable: count of type int and initialize it with 0
+   3. Loop while flag is true
+      1. Assign flag with false
+      2. Loop from j = n-1 to 1
+         1. If a[j] < a[j-1]
+            1. Swap a[j] and a[j-1]
+            2. Increment count by 1
+            3. Assign flag with true
+   4. Return count

@@ -1,0 +1,42 @@
+**Function Signature:**
+- `main(String[] args)`: Entry point, no return type
+
+**Variables:**
+- `Scanner in`: Input scanner
+- `int n`: Number of elements
+- `int[] a`: Array of integers of size n
+- `int[] b`: Array of integers of size n (visited markers)
+- `int s`: Step counter, initialized to -1
+- `int tem`: Direction flag, initialized to 1
+- `int q`: Count of processed elements, initialized to 0
+
+**Libraries:**
+- `java.util.Scanner`
+
+**Logic Flow:**
+1. Create Scanner object for input
+2. While scanner has next token:
+   - Read integer n
+   - Initialize array a of size n
+   - Initialize array b of size n with zeros
+   - Set s = -1
+   - For i from 0 to n-1:
+     - Read a[i]
+     - Set b[i] = 0
+   - Set tem = 1
+   - Set q = 0
+   - While q != n:
+     - Increment s by 1
+     - If tem == 1:
+       - For i from 0 to n-1:
+         - If a[i] <= q AND b[i] == 0:
+           - Set b[i] = 1
+           - Increment q by 1
+       - Set tem = 0
+     - Else:
+       - For i from n-1 down to 0:
+         - If a[i] <= q AND b[i] == 0:
+           - Set b[i] = 1
+           - Increment q by 1
+       - Set tem = 1
+   - Print s

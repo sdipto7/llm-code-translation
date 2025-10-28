@@ -1,0 +1,19 @@
+1. Initialize an empty list li and a variable ind to 0.
+2. For i ranging from 1 to 370:
+   1. Initialize an empty list temp and variables p, q to i.
+   2. Initialize a variable count to 0.
+   3. While p is not equal to 0:
+      1. Perform integer division of p by 10 and store the result back in p.
+      2. Increment count by 1.
+   4. If count equals 1:
+      1. Append i to li.
+   5. If count equals 2 or count equals 3:
+      1. Clear temp.
+      2. While q is not equal to 0:
+         1. Calculate the remainder of q divided by 10 and store it in x.
+         2. Perform integer division of q by 10 and store the result back in q.
+         3. Append x to temp.
+      3. Concatenate the reverse of temp to li.
+3. Remove the last two elements from li.
+4. Read an integer n from input.
+5. Print the (n-1)th element of li.

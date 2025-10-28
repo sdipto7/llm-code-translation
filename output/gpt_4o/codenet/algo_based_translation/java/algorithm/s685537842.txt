@@ -1,0 +1,31 @@
+Algorithm:
+
+1. Import necessary library:
+   - Import `java.util.Scanner` for input operations.
+
+2. Define the main function:
+   - Function signature: `public static void main(String[] args)`
+
+3. Initialize input handling:
+   - Create a `Scanner` object `sc` to read input.
+
+4. Read input values:
+   - Declare and initialize integer `a` by reading from `sc.nextInt()`.
+   - Declare and initialize integer `b` by reading from `sc.nextInt()`.
+   - Declare and initialize integer `t` by reading from `sc.nextInt()`.
+
+5. Initialize computation variables:
+   - Declare double `time` and initialize it to `0`.
+   - Declare integer `count` and initialize it to `0`.
+
+6. Process logic with a loop:
+   - While loop condition: `time < t + 0.5`
+     - Inside the loop:
+       - Increment `count` by `b`.
+       - Increment `time` by `a`.
+       - Check condition: `if time > t + 0.5`
+         - If true, decrement `count` by `b`.
+         - Exit loop using `break`.
+
+7. Output result:
+   - Print the value of `count` using `System.out.println(count)`.

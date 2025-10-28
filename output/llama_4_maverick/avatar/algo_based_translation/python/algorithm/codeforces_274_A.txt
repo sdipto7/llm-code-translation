@@ -1,0 +1,10 @@
+1. Read two integers num and k from input
+2. Read num integers into array arr
+3. Initialize an empty set different
+4. Initialize a variable temp to 0
+5. Sort array arr in ascending order
+6. For each element x in arr
+   6.1 If x is not divisible by k or x divided by k is not in different
+      6.1.1 Add x to different
+   6.2 Update temp to be the maximum of the size of different and temp
+7. Print temp

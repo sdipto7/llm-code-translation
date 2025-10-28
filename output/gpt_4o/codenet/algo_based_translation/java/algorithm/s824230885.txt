@@ -1,0 +1,81 @@
+```plaintext
+Algorithm:
+
+1. Import necessary libraries:
+   - java.util.*
+   - java.io.*
+   - java.math.*
+
+2. Define class Main.
+
+3. Define static class InputIterator:
+   - Declare variables:
+     - inputLine as ArrayList<String> with initial capacity 1024
+     - index as int, initialized to 0
+     - max as int
+     - read as String
+   - Constructor InputIterator():
+     - Create BufferedReader br using InputStreamReader(System.in)
+     - Loop to read input lines:
+       - While (read = br.readLine()) is not null, add read to inputLine
+     - Set max to inputLine.size()
+   - Method boolean hasNext():
+     - Return (index < max)
+   - Method String next():
+     - If hasNext() is true, return inputLine.get(index++).
+     - Else, throw IndexOutOfBoundsException with message "There is no more input".
+
+4. Declare static variables:
+   - CONVSTR as HashMap<Integer, String>
+   - ii as InputIterator (initialized)
+   - out as PrintWriter (initialized with System.out)
+
+5. Define static methods:
+   - void flush(): Call out.flush()
+   - void myout(Object t): Call out.println(t)
+   - void myerr(Object t): Print "debug:" to System.err, then print t
+   - String next(): Return ii.next()
+   - boolean hasNext(): Return ii.hasNext()
+   - int nextInt(): Return Integer.parseInt(next())
+   - long nextLong(): Return Long.parseLong(next())
+   - double nextDouble(): Return Double.parseDouble(next())
+   - ArrayList<String> nextStrArray(): Return myconv(next(), 8)
+   - ArrayList<String> nextCharArray(): Return myconv(next(), 0)
+   - ArrayList<Integer> nextIntArray():
+     - Declare input as ArrayList<String> and initialize with nextStrArray()
+     - Declare ret as ArrayList<Integer> with size of input
+     - Loop over input:
+       - For each element, parse it as Integer and add to ret
+     - Return ret
+   - ArrayList<Long> nextLongArray():
+     - Declare input as ArrayList<String> and initialize with nextStrArray()
+     - Declare ret as ArrayList<Long> with size of input
+     - Loop over input:
+       - For each element, parse it as Long and add to ret
+     - Return ret
+   - String myconv(Object list, int no):
+     - Declare joinString and get it from CONVSTR using no
+     - If list is String[], return String.join(joinString, (String[])list)
+     - Else if list is ArrayList, return String.join(joinString, (ArrayList)list)
+     - Else, throw ClassCastException with message "Don't join"
+   - ArrayList<String> myconv(String str, int no):
+     - Declare splitString and get it from CONVSTR using no
+     - Return new ArrayList<String> with elements from str.split(splitString)
+
+6. Define main method:
+   - Add entries to CONVSTR:
+     - CONVSTR.put(8, " ")
+     - CONVSTR.put(9, "\n")
+     - CONVSTR.put(0, "")
+   - Call solve()
+   - Call flush()
+
+7. Define static method solve():
+   - Declare N as int and initialize with nextInt()
+   - Declare list as ArrayList<Integer> and initialize with nextIntArray()
+   - Declare max as int, initialized to 0
+   - Declare output as int, initialized to 0
+   - Loop from i = 0 to N - 1:
+     - If max <= list.get(i), set max to list.get(i) and increment output
+   - Call myout(output)
+```

@@ -1,0 +1,17 @@
+- Function: main
+- Parameters: String[] args
+- Return type: void
+- Variables:
+  - Scanner sc (Scanner type)
+  - String s (String type)
+  - int n (int type)
+- Logic flow:
+  1. Create Scanner object reading from System.in
+  2. Read next token from input as String s
+  3. Extract last character from s using substring
+  4. Parse substring to integer n
+  5. Check if n equals 3: if true, print "bon"
+  6. Else check if n equals 0, 1, 6, or 8: if true, print "pon"
+  7. Else print "hon"
+  8. Close Scanner
+- Required imports: java.util.Scanner

@@ -1,0 +1,34 @@
+```
+Required Libraries:
+- java.util.Scanner
+
+Algorithm:
+
+Function: main()
+- Input: None
+- Output: void
+- Declare variable: Scanner scanner
+- Initialize scanner as a new instance of Scanner with System.in
+- Declare variable: String S
+- Assign S with the next line of input from scanner
+- Declare variable: String T
+- Assign T with the next line of input from scanner
+- Declare variable: int min
+- Initialize min with Integer.MAX_VALUE
+- For loop: int i from 0 to (S.length() - T.length()) inclusive
+  - Update min with the minimum value between current min and result of find(S.substring(i, i + T.length()), T)
+- If condition: min is not equal to Integer.MAX_VALUE
+  - Output: Print min
+- Else
+  - Output: Print T.length()
+
+Function: find(String a, String b)
+- Input: String a, String b
+- Output: int
+- Declare variable: int calc
+- Initialize calc to 0
+- For loop: int x from 0 to a.length() exclusive
+  - If condition: a.charAt(x) is not equal to b.charAt(x)
+    - Increment calc by 1
+- Return calc
+```

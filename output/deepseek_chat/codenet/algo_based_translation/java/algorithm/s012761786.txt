@@ -1,0 +1,36 @@
+**Input Processing:**
+- Read three long integers: n, a, b
+
+**Variable Declarations:**
+- long sa = absolute_difference(a, b)
+- long ans = 0
+
+**Main Logic:**
+IF sa % 2 == 0:
+    ans = sa / 2
+ELSE:
+    long AAA = minimum((n - a), (a - 1))
+    long BBB = minimum((n - b), (b - 1))
+    ans = minimum(AAA, BBB)
+    sa = sa - 1
+    ans = ans + 1
+    ans = ans + (sa / 2)
+
+**Output:**
+- Print ans
+
+**Helper Functions:**
+- next(): returns next string from input scanner
+- nextInt(): returns next integer from input scanner
+- nextLong(): returns next long from input scanner
+- nextDouble(): returns next double from input scanner
+- splitString(String s): returns array of single-character strings
+- splitChar(String s): returns character array
+- charToInt(char aaa): converts char digit to integer
+- maxInt(int[] a, int lng): returns maximum value in array
+- minInt(int[] a, int lng): returns minimum value in array
+- maxLong(long[] a, int lng): returns maximum value in array
+- minLong(long[] a, int lng): returns minimum value in array
+
+**Required Dependencies:**
+- java.util.Scanner

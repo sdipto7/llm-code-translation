@@ -1,0 +1,77 @@
+```
+Algorithm codeforces_7_B
+    Input: List of strings args
+    Dependencies: Scanner, System
+
+    Initialize Scanner s with System input
+    Integer t = next integer input from s
+    Integer m = next integer input from s
+    Initialize Integer array memory of size m with all elements set to 0
+    Integer allocIdx = 0
+
+    For j from 0 to t (exclusive), do:
+        String command = next string input from s
+
+        Switch based on command:
+            Case "alloc":
+                Integer n = next integer input from s
+                Integer len = 0
+                Boolean canAlloc = false
+
+                For i from 0 to m (exclusive), do:
+                    If memory[i] equals 0, then
+                        Increment len
+                    Else
+                        Set len to 0
+
+                    If len equals n, then
+                        Set canAlloc to true
+                        Set len = i - n + 1
+                        Break the loop
+
+                If canAlloc is true, then
+                    Increment allocIdx
+                    For i from len to len + n (exclusive), do:
+                        Set memory[i] = allocIdx
+                    Output allocIdx
+                Else
+                    Output "NULL"
+                End Case
+
+            Case "erase":
+                Integer x = next integer input from s
+
+                If x is less than or equal to 0, then
+                    Output "ILLEGAL_ERASE_ARGUMENT"
+                    Break the case
+
+                Boolean hasErased = false
+
+                For i from 0 to m (exclusive), do:
+                    If memory[i] equals x, then
+                        Set memory[i] = 0
+                        Set hasErased to true
+
+                If hasErased is false, then
+                    Output "ILLEGAL_ERASE_ARGUMENT"
+                End Case
+
+            Case "defragment":
+                Integer d = 0
+
+                For i from 0 to m (exclusive), do:
+                    If memory[i] equals 0, then
+                        Increment d
+                    Else
+                        Set memory[i - d] = memory[i]
+
+                For i from m - d to m (exclusive), do:
+                    Set memory[i] = 0
+                End Case
+
+            Default:
+                Output "h"
+                End Case
+
+    Close Scanner s
+```

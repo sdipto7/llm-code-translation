@@ -1,0 +1,46 @@
+# Algorithm
+
+**Function Signature**  
+- `public static void main(String[] args) throws IOException`
+
+**Dependencies**  
+- `java.util.*`  
+- `java.io.*`  
+
+**Variables**  
+- `BufferedReader br`: reads input  
+- `PrintWriter pw`: writes output  
+- `StringTokenizer s`: tokenizes input  
+- `int n`: number of elements  
+- `HashMap<Integer, Integer> hm`: stores frequency of each integer  
+- `int ans`: final result  
+
+**Input Handling**  
+1. Read first line, parse `n` from first token.  
+2. Read second line, tokenize values.  
+
+**Data Processing**  
+1. Initialize `hm` as empty HashMap.  
+2. For each of `n` tokens:  
+    a. Parse token to `val` (integer).  
+    b. Update `hm`: increment count for `val` by 1 (default 0 if absent).  
+
+**Logic Flow**  
+1. Initialize `ans` to 0.  
+2. For each key `val` in `hm`:  
+    a. Retrieve count `num = hm.get(val)`.  
+    b. If `num > val`:  
+        - Add `(num - val)` to `ans`.  
+    c. Else if `num < val`:  
+        - Add `num` to `ans`.  
+
+**Output**  
+- Print `ans` and close resources.  
+
+**Control Structures**  
+- For loop (0 to n-1) for input processing  
+- Enhanced for loop over `hm.keySet()`  
+- If-else conditional branch for count comparisons  
+
+**Execution Order**  
+1. Read input → populate frequency map → calculate adjustments → output result.

@@ -1,0 +1,29 @@
+Function signature: `main(String[] args)`
+
+Variable declarations:
+- `Scanner sc` of type `Scanner`
+- `int[] x` of size 3
+- `int max` initialized to 0
+- `int k`
+- `List<Long>[] a` of size 3
+- `List<Long> ans`
+
+Logic flow:
+1. Create `Scanner` object `sc` to read input.
+2. Read three integers into array `x`.
+3. For each element in `x`, read the respective number of long integers into lists stored in array `a`.
+4. Close `Scanner` object `sc`.
+5. For each combination of indices `i`, `j`, `m` (where `0 <= i < x[0]`, `0 <= j < x[1]`, `0 <= m < x[2]`), if `(i + 1) * (j + 1) * (m + 1) <= k`, compute the sum of the `i`-th largest element from `a[0]`, `j`-th largest element from `a[1]`, and `m`-th largest element from `a[2]`, and add this sum to list `ans`.
+6. Sort list `ans` in ascending order.
+7. Print the `k` largest elements from `ans` in descending order.
+
+Input operations:
+- Read three integers for array `x`.
+- Read `x[0]`, `x[1]`, and `x[2]` long integers for lists `a[0]`, `a[1]`, and `a[2]` respectively.
+- Read integer `k`.
+
+Output operations:
+- Print `k` largest elements from `ans` in descending order.
+
+Libraries/Modules:
+- `java.util.*`

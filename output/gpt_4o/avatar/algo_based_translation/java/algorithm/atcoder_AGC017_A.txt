@@ -1,0 +1,48 @@
+```
+Dependencies:
+- java.util.Scanner
+- java.math.BigInteger
+
+Function Signature:
+- C(n: int, m: int) -> BigInteger
+
+Variable Declarations:
+- `res`: BigInteger
+- `n`, `p`, `k0`, `k1`, `x`, `i`: int
+- `ans`, `add`: BigInteger
+
+Algorithm:
+1. Define function C(n: int, m: int) -> BigInteger:
+   - Initialize `res` as BigInteger with value "1".
+   - For `i` from (m - n + 1) to m (inclusive), do:
+     - Set `res` to `res` multiplied by BigInteger.valueOf(i).
+   - For `i` from 1 to n (inclusive), do:
+     - Set `res` to `res` divided by BigInteger.valueOf(i).
+   - Return `res`.
+
+2. In `main` function:
+   - Initialize Scanner `sc` to read from standard input.
+   - Read integer `n` from input.
+   - Read integer `p` from input.
+   - Initialize `k0` to 0.
+   - Initialize `k1` to 0.
+   - For `i` from 0 to n - 1, do:
+     - Read integer `x` from input.
+     - If `x` modulo 2 is 1, increment `k1`.
+     - Else, increment `k0`.
+   - Initialize `ans` as BigInteger with value "1".
+   - For `i` from 0 to k0 - 1, do:
+     - Set `ans` to `ans` multiplied by BigInteger.valueOf(2).
+   - If `p` equals 0:
+     - Initialize `add` as BigInteger with value "0".
+     - For `i` from 0 to k1 (inclusive) with step 2, do:
+       - Add C(i, k1) to `add`.
+     - Set `ans` to `ans` multiplied by `add`.
+     - Output `ans`.
+   - Else:
+     - Initialize `add` as BigInteger with value "0".
+     - For `i` from 1 to k1 (inclusive) with step 2, do:
+       - Add C(i, k1) to `add`.
+     - Set `ans` to `ans` multiplied by `add`.
+     - Output `ans`.
+```

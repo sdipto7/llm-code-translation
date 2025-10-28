@@ -1,0 +1,55 @@
+Function Signature:
+- `public static void main(String[] args)`
+
+Variable Declarations and Data Types:
+- `Scanner sc`
+- `final int N`
+- `int K`
+- `StringBuilder S`
+- `boolean firstTime`
+- `int step`
+- `StringBuilder T`
+- `StringBuilder revU`
+- `String sDash`
+- `char c`
+
+Logic Flow in Execution Order:
+
+1. Create a `Scanner` object to read input.
+2. Read `N` (integer).
+3. Read `K` (integer).
+4. Read a string and store it in `StringBuilder S`.
+5. Initialize `firstTime` to `true`.
+6. Initialize `step` to `1`.
+
+While Loop (`K > 0`):
+1. Create a copy of `S` in `StringBuilder T` and reverse `T`.
+2. Concatenate `S` and `T`, then reverse the result to get `StringBuilder revU`.
+3. Set `sDash` to the original `S` as a string.
+4. For Loop (`i` from `N` down to `0` with decrement of `step`):
+   - Extract substring of `revU` from index `i` to `i + N` and store it in `tmp`.
+   - If `sDash` is lexicographically greater than `tmp`, update `sDash` to `tmp`.
+   - Else:
+     - If `firstTime` is `false`, break the loop.
+5. If `firstTime` is `true`:
+   - Set `firstTime` to `false`.
+   - If `Math.pow(2, K)` is greater than `N`:
+     - Get the first character of `sDash` and store it in `c`.
+     - For Loop (`i` from `0` to `N - 1`):
+       - Print `c`.
+     - Print a newline.
+     - Exit the program.
+6. Else:
+   - Double the value of `step`.
+7. Decrement `K`.
+8. Update `S` to `sDash` reversed.
+
+After While Loop:
+- Print `S` reversed.
+
+Input/Output Operations and Data Processing Logic:
+- Input: Integer `N`, integer `K`, and a string.
+- Output: The resulting string after processing.
+
+Required Libraries, Modules, or Dependencies:
+- `java.util.Scanner`

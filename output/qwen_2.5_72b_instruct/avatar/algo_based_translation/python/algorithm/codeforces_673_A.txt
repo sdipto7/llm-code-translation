@@ -1,0 +1,42 @@
+Function signature:
+- Function name: main
+- Parameters: None
+- Return type: None
+
+Variable declarations and data types:
+- n: int
+- arr: list of int
+- i: int
+
+Logic flow in execution order:
+1. Read an integer n from input.
+2. Read a space-separated string of integers from input, convert it to a list of integers, and assign it to arr.
+3. If the first element of arr is greater than 15, print 15 and exit.
+4. Else, iterate over arr starting from the second element:
+    - For each element at index i, check if the difference between arr[i] and arr[i-1] is greater than 15.
+        - If true, print arr[i-1] + 15 and exit loop.
+5. If loop completes without printing, check if the last element of arr is equal to 90 or if arr[-1] + 15 is greater than or equal to 90.
+    - If true, print 90.
+    - Else, print arr[-1] + 15.
+
+Control structures:
+- If statement: 
+    - Condition: arr[0] > 15
+- For loop:
+    - Range: 1 to len(arr)
+    - If statement inside loop:
+        - Condition: arr[i] - arr[i-1] > 15
+        - Action: print(arr[i-1] + 15) and break
+- Else clause after loop:
+    - If statement:
+        - Condition: arr[-1] == 90 or arr[-1] + 15 >= 90
+        - Action: print(90)
+    - Else clause:
+        - Action: print(arr[-1] + 15)
+
+Input/output operations and data processing logic:
+- Input: Reads an integer n and a space-separated list of integers.
+- Output: Prints an integer based on specified conditions.
+
+Required libraries, modules, or dependencies:
+- None

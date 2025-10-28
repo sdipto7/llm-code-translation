@@ -1,0 +1,40 @@
+```
+Algorithm
+
+1. Import the 'collections' module for using the 'Counter' class.
+
+2. Read an integer input 'n' representing the number of subsequent string inputs.
+   - Declare 'n' as an integer.
+
+3. Initialize a list 'ls' to store string inputs.
+   - Data type: List of strings.
+
+4. Use a for loop to iterate 'n' times to collect string inputs:
+   - For each iteration, read a string input and append it to the list 'ls'.
+
+5. Create a 'Counter' object 'c' from the list 'ls' to count the occurrences of each string.
+   - Data type: collections.Counter
+
+6. Retrieve the highest count of occurrences in the 'Counter' object:
+   - Access the most common element's count using 'c.most_common()[0][1]'.
+   - Store this count in variable 'count'.
+   - Data type: Integer.
+
+7. Initialize an empty list 'ans' to store strings with the highest occurrence count.
+   - Data type: List of strings.
+
+8. Store the list of (element, count) tuples in 'p' by calling 'c.most_common()'.
+   - Data type: List of tuples (string, integer).
+
+9. Iterate over the range of the length of the 'Counter' object 'c':
+   - For each index 'i', check if the count 'p[i][1]' equals 'count':
+     - If true, append the element 'p[i][0]' to the list 'ans'.
+     - If false, exit the loop (all subsequent counts are lower).
+
+10. Sort the list 'ans' alphabetically.
+
+11. Iterate over each element in the sorted list 'ans':
+    - Print each element.
+
+End of Algorithm
+```

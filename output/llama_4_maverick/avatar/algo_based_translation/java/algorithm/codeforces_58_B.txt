@@ -1,0 +1,7 @@
+1. Read an integer n from the input.
+2. Output the value of n.
+3. Initialize a variable m with the value of n.
+4. Iterate from n-1 down to 1.
+5. For each iteration, check if m is divisible by the current number i.
+6. If m is divisible by i, output the value of i and update m to be i.
+7. Continue iterating until i reaches 1.

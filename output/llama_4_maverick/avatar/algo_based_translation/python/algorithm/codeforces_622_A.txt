@@ -1,0 +1,12 @@
+1. INPUT n
+2. INITIALIZE l = 1, r = n
+3. WHILE l < r
+   3.1. CALCULATE mid = l + (r - l) / 2
+   3.2. CALCULATE idxcnt = mid * (mid + 1) / 2
+   3.3. IF idxcnt < n THEN
+         3.3.1. UPDATE l = mid + 1
+      ELSE
+         3.3.2. UPDATE r = mid
+4. DECREMENT l by 1
+5. CALCULATE idxcnt = l * (l + 1) / 2
+6. OUTPUT n - idxcnt

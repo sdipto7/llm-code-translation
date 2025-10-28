@@ -1,0 +1,24 @@
+```
+Function: gen(number: int, four: int, seven: int) -> None
+    Variables:
+        l: list of int
+        limit: int = 10000000000
+    Logic:
+        If number > limit, return from the function
+        If number > 0 and four == seven, append number to l
+        Call gen with number * 10 + 4, four + 1, seven
+        Call gen with number * 10 + 7, four, seven + 1
+
+Function: main() -> None
+    Variables:
+        l: list of int
+        n: int
+        ans: int = 0
+    Logic:
+        Call gen with 0, 0, 0
+        Sort list l in-place
+        Read integer input from standard input and store in n
+        For each val in l:
+            If val >= n, set ans = val and break the loop
+        Print ans to standard output
+```

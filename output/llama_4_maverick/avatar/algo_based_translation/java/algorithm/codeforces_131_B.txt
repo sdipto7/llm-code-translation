@@ -1,0 +1,12 @@
+1. Initialize a Scanner object to read input from the standard input.
+2. Read an integer 'n' representing the number of inputs to follow.
+3. Define a constant 'N' (not used in the given code, so it can be omitted in the algorithm).
+4. Create an array 'cnt' of size 21 to store counts of numbers.
+5. Iterate 'n' times:
+   5.1. Read an integer 'x'.
+   5.2. Increment the count in 'cnt' at index 'x + 10'.
+6. Initialize a variable 'res' to 0 to store the result.
+7. Iterate from 'i = 0' to '9':
+   7.1. Add the product of 'cnt[i]' and 'cnt[20 - i]' to 'res'.
+8. Add the value of '(cnt[10] * (cnt[10] - 1)) / 2' to 'res'.
+9. Output the value of 'res'.

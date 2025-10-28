@@ -1,0 +1,34 @@
+Function: main
+Parameters: String[] args
+Return type: void
+
+Variable declarations:
+- Scanner scanner
+- int A
+- int B
+- int T
+
+Logic flow:
+1. Create a new Scanner object to read input from the standard input stream.
+2. Read the first integer input and assign it to A.
+3. Read the second integer input and assign it to B.
+4. Read the third integer input and assign it to T.
+5. Calculate the value of (T / A) * B.
+6. Call the log function with the result of the calculation.
+
+Function: log
+Parameters: String str
+Return type: void
+
+Logic flow:
+1. Print the value of str to the standard output stream.
+
+Function: log
+Parameters: int str
+Return type: void
+
+Logic flow:
+1. Print the value of str to the standard output stream.
+
+Libraries:
+- java.util.Scanner

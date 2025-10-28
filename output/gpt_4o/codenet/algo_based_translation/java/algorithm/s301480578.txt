@@ -1,0 +1,28 @@
+1. Import required libraries:
+   - Import `java.util.Scanner` for user input.
+
+2. Function signature:
+   - `public static void main(String[] args)`: Main function with no parameters and no return value.
+
+3. Variable declarations:
+   - `Scanner sc`: Declare a `Scanner` object for reading input.
+   - `int n`: Declare an integer `n` to store the number of elements in the array.
+   - `int[] h`: Declare an integer array `h` of size `n` to store the elements.
+   - `int max`: Declare an integer `max` initialized to 0 to store the maximum count of consecutive non-increasing sequence lengths.
+   - `int count`: Declare an integer `count` within the loop to count consecutive non-increasing elements.
+
+4. Input operations:
+   - Read an integer `n` from the user using `sc.nextInt()`.
+   - Initialize the array `h` of size `n`.
+   - Use a `for` loop to iterate from 0 to `n-1` to read `n` integers and store them in the array `h` using `sc.nextInt()`.
+
+5. Logic for finding the maximum length of non-increasing subarray:
+   - Iterate over the array with a `for` loop with loop variable `l` from 0 to `n-2`.
+   - Initialize `count` to 0 at the beginning of each iteration of the outer loop.
+   - Use a `while` loop with the condition `l < n - 1 && h[l] >= h[l + 1]` to iterate as long as the current element is greater than or equal to the next element.
+     - Increment `l` by 1.
+     - Increment `count` by 1.
+   - Update `max` to be the maximum of `max` and `count` using `Math.max(max, count)`.
+
+6. Output operation:
+   - Print the value of `max` using `System.out.println(max)`.

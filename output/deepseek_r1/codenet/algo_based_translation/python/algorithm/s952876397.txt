@@ -1,0 +1,42 @@
+# Function Signature
+# Input parameters: None (reads from stdin)
+# Return type: None (outputs to stdout)
+
+# Variables:
+# n: int
+# s: str
+# left: int
+# i: str (loop variable)
+# left1: int
+# right1: int
+# i: int (loop variable)
+
+# Logic Flow:
+1. Read integer n from standard input
+2. Read string s from standard input
+3. Initialize left = 0
+4. For each character i in s:
+   a. If i == ')': increment left by 1
+   b. Else: exit loop
+5. Initialize left1 = 0, right1 = 0
+6. For i in range(left, n):
+   a. If s[i] == '(': increment right1 by 1
+   b. Else if right1 > 0: decrement right1 by 1
+   c. Else: increment left1 by 1
+7. Set left1 += left
+8. For each integer in range(right1): append ')' to s
+9. For each integer in range(left1): prepend '(' to s
+10. Print modified s
+
+# Control Structures:
+- Sequential execution
+- For loop (step 4) with break condition
+- For loop (step 6) with range
+- If-elif-else (step 6a-6c)
+- For loops (steps 8-9) for string modification
+
+# Input/Output:
+- Input: two lines from stdin (n, s)
+- Output: single line to stdout (modified s)
+
+# Dependencies: None

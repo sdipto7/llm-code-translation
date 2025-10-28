@@ -1,0 +1,49 @@
+- Dependencies: java.io.BufferedReader, java.io.IOException, java.io.InputStreamReader, java.io.PrintWriter
+
+- Function Signatures:
+  1. `isLatinLetter(char c) : boolean`
+  2. `isPunctuation(char c) : boolean`
+  3. `main(String[] args) : void throws IOException`
+
+- Variables:
+  - `BufferedReader br`
+  - `PrintWriter pw`
+  - `String s`
+  - `StringBuilder sb`
+  - `int n`
+
+- Execution Flow:
+  1. Initialize `br` with `BufferedReader(new InputStreamReader(System.in))`
+  2. Initialize `pw` with `PrintWriter(System.out)`
+  3. Read input line into `s`
+  4. Initialize `sb` with first character of `s`
+  5. Store `s.length()` in `n`
+  6. Loop `i` from 1 to `n-1`:
+     a. Get `c = s.charAt(i)`
+     b. If `isLatinLetter(c)`:
+        i. Check if `isLatinLetter(s.charAt(i-1))` is false
+        ii. If true, append space to `sb`
+        iii. Append `c` to `sb`
+     c. Else if `isPunctuation(c)`:
+        i. Append `c` to `sb`
+  7. Print `sb` contents via `pw`
+  8. Flush and close `pw`
+
+- Control Structures:
+  - For-loop: `for (int i=1; i<n; i++)`
+  - If-else branching based on character type checks
+  - Logical negation operator in step 6.b.i
+
+- Character Validation Logic:
+  - Latin letters: `c >= 'a' && c <= 'z'`
+  - Punctuation: `c` matches `.` `,` `!` `?`
+
+- I/O Operations:
+  - Input: Single line read via `BufferedReader`
+  - Output: Processed string via `PrintWriter` with automatic flushing
+  - No intermediate I/O operations during processing
+
+- Data Processing:
+  - Build modified string with enforced space separation between non-Latin characters
+  - Preserve original punctuation placement
+  - No modification of first character

@@ -1,0 +1,79 @@
+Function Signatures and Parameter/Return Types:
+- `exit(*argv, **kwarg) -> None`
+- `mina(*argv, sub=1) -> List[int]`
+- `a_int() -> int`
+- `ints() -> List[int]`
+- `read_col(H: int) -> Tuple[List[int], ...]`
+- `read_map_as(H: int, replace={'#': 1, '.': 0}, pad=None) -> List[List[int]]`
+- `grid_dijkstra(grid: List[List[int]], si: int, sj: int) -> List[List[int]]`
+
+Variable Declarations and Data Types:
+- `H: int`
+- `W: int`
+- `si: int`
+- `sj: int`
+- `ti: int`
+- `tj: int`
+- `S: List[List[int]]`
+- `D: List[List[int]]`
+- `que: deque[Tuple[int, int, int]]`
+- `c: int`
+- `i: int`
+- `j: int`
+- `di: int`
+- `dj: int`
+- `ni: int`
+- `nj: int`
+- `nc: int`
+- `ret: List[List[int]]`
+- `pad: int`
+- `s: str`
+- `replace: Dict[str, int]`
+- `grid: List[List[int]]`
+- `que: List[Tuple[int, int, int]]`
+- `si: int`
+- `sj: int`
+- `H: int`
+- `W: int`
+- `D: List[List[int]]`
+- `c: int`
+- `i: int`
+- `j: int`
+- `di: int`
+- `dj: int`
+- `ni: int`
+- `nj: int`
+- `nc: int`
+- `ret: List[List[int]]`
+- `pad: int`
+- `s: str`
+- `replace: Dict[str, int]`
+
+Logic Flow and Control Structures:
+1. Set recursion limit to 2^25.
+2. Define `exit` to print arguments and exit.
+3. Define `mina` to subtract `sub` from all arguments and return as list.
+4. Define `a_int` to read an integer from input.
+5. Define `ints` to read a list of integers from input.
+6. Define `read_col` to read `H` lines of integers and return as transposed list of lists.
+7. Define `read_map_as` to read `H` lines of characters, replace them based on `replace` dictionary, and return as 2D list. If `pad` is provided, pad the resulting grid.
+8. Define `grid_dijkstra` to perform Dijkstra's algorithm on a grid, starting from `(si, sj)`, and return the distance matrix `D`.
+9. Read `H`, `W`, `(si, sj)`, and `(ti, tj)`.
+10. Read the grid `S` using `read_map_as`.
+11. Initialize distance matrix `D` with -1 (representing infinity).
+12. Initialize queue `que` with the starting position `(0, si, sj)`.
+13. While queue is not empty:
+    - Dequeue `(c, i, j)`.
+    - If `D[i][j]` is not -1, continue.
+    - Set `D[i][j]` to `c`.
+    - For each direction `(di, dj)` in `product([-2, -1, 0, 1, 2], repeat=2)`:
+        - Calculate new position `(ni, nj)`.
+        - Skip if out of bounds, already visited, on start cell, or contains a wall.
+        - Calculate new cost `nc` based on whether the move is a step or a warp.
+        - Enqueue `(nc, ni, nj)` with higher priority for steps.
+14. Print the distance to the target cell `D[ti][tj]`.
+
+Libraries and Modules:
+- `sys`
+- `collections.deque`
+- `itertools.product`

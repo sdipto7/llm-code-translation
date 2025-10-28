@@ -1,0 +1,38 @@
+**Algorithm:**
+
+**Imports:**
+- `itertools.combinations_with_replacement`
+- `sys`
+
+**Function Definitions:**
+- `LI() -> map[int, int]`
+  - Read line from standard input, strip trailing whitespace, split into integers, return as map
+
+**Main Logic:**
+1. Read integers `N`, `M`, `Q` via `LI()`
+2. Initialize empty list `Q_groups: list[list[int]]`
+3. Loop `Q` times:
+   - Read 4 integers via `LI()`, convert to list, append to `Q_groups`
+4. Initialize `max_score: int = 0`
+5. Generate all combinations with replacement via `combinations_with_replacement(range(1, M+1), N)`, iterate each as `p: tuple[int,...]`
+   - Initialize `temp_score: int = 0`
+   - Iterate each query `q: list[int]` in `Q_groups`:
+     - Calculate indices: `q[1]-1` (element b), `q[0]-1` (element a)
+     - If `p[b] - p[a] == q[2]`:
+       - Add `q[3]` to `temp_score`
+   - Update `max_score` to maximum of current `max_score` and `temp_score`
+6. Print `max_score`
+
+**Data Structures:**
+- `Q_groups`: List of Q entries, each containing 4 integers [a, b, c, d]
+- `p`: Tuple representing candidate sequence of length N
+
+**Control Flow:**
+- Sequential execution with nested loops:
+  - Outer loop: combination generation (cartesian product)
+  - Middle loop: process all queries per combination
+  - Inner conditional: check sequence constraint
+
+**I/O Operations:**
+- All input via `sys.stdin.readline`
+- Final output via `print(max_score)`

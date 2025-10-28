@@ -1,0 +1,3 @@
+read string input from standard input and store in variable N (type: string)
+concatenate the string "ABC" with the string value of N
+print the concatenated result to standard output

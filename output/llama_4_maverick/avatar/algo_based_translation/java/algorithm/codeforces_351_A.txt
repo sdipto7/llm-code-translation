@@ -1,0 +1,14 @@
+1. Read the number of elements n from the input.
+2. Read 2n numbers from the input and store them in an array.
+3. Initialize variables: non_int to count non-integer numbers, sum_before to store the sum of the numbers, and sum to store the sum of the floor values of the numbers.
+4. Iterate through the array of numbers:
+   4.1. Update sum_before by adding the current number.
+   4.2. Check if the current number is not an integer; if so, increment non_int.
+   4.3. Update sum by adding the floor value of the current number.
+5. Calculate max_sum as the minimum of n and non_int plus sum.
+6. Calculate min_sum as the maximum of 0 and (non_int - n) plus sum.
+7. Compare sum_before with min_sum and max_sum:
+   7.1. If min_sum is greater than sum_before, calculate the answer as min_sum - sum_before.
+   7.2. If max_sum is less than sum_before, calculate the answer as sum_before - max_sum.
+   7.3. Otherwise, calculate the fractional part x of sum_before and determine the answer as the minimum between 1 - x and x.
+8. Output the answer rounded to three decimal places.

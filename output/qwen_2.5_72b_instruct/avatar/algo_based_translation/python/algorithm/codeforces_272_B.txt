@@ -1,0 +1,36 @@
+- Function Signature: `main() -> int`
+  - No parameters
+  - Returns an integer
+- Function Signature: `nPairsWithCommonFX(sequence: List[int]) -> int`
+  - Takes a list of integers as input
+  - Returns an integer
+- Function Signature: `f(n: int) -> int`
+  - Takes an integer as input
+  - Returns an integer
+- Variable Declarations:
+  - `storage: Dict[int, List[int]]` (in `nPairsWithCommonFX`)
+  - `FXs: List[int]` (in `nPairsWithCommonFX`)
+  - `y: int` (in `f`)
+- Execution Flow:
+  - `main` calls `input()` to read a line (not used)
+  - `main` reads another line, splits it into integers, and calls `nPairsWithCommonFX` with the list of integers
+  - `nPairsWithCommonFX` initializes `storage` as an empty dictionary and `FXs` as an empty list
+  - For each `value` in `sequence`:
+    - Calls `f(value)` and stores result in `y`
+    - If `y` is not in `storage`:
+      - Adds `y` to `storage` with `value` in a new list
+      - Appends `y` to `FXs`
+    - Otherwise:
+      - Appends `value` to the existing list in `storage` under key `y`
+  - Calculates the sum of the square of lengths of lists in `storage` for each key in `FXs`
+  - Subtracts the sum of lengths of lists in `storage` for each key in `FXs`
+  - Divides the result by 2 and returns it
+- Control Structures:
+  - For loop in `nPairsWithCommonFX` iterates over each `value` in `sequence`
+  - If-else statement in `nPairsWithCommonFX` checks if `y` is in `storage`
+  - While loop in `f` continues until `n` is 1
+  - If-else statement in `f` checks if `n` is odd
+- Input/Output:
+  - `main` reads two lines of input from the user
+  - `main` prints the result returned by `nPairsWithCommonFX`
+- No external libraries, modules, or dependencies required

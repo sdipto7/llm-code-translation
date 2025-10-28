@@ -1,0 +1,73 @@
+**Structured Algorithm Specification:**
+
+**Function/Method Signatures:**  
+*Not applicable (script-based approach)*  
+
+**Variables:**  
+- `n`: Integer (Input)  
+- `x`: List of Integers (Input)  
+- `a`: List of Integers (Elements at even indices of `x`)  
+- `b`: List of Integers (Elements at odd indices of `x`)  
+- `cnta`: List of Integers (Size 100003, initialized to 0)  
+- `cntb`: List of Integers (Size 100003, initialized to 0)  
+- `vala`, `vala1`: Integer (Most & second-most frequent values in `a`)  
+- `maxCnta`, `maxCnta1`: Integer (Frequencies of `vala`, `vala1`)  
+- `valb`, `valb1`: Integer (Most & second-most frequent values in `b`)  
+- `maxCntb`, `maxCntb1`: Integer (Frequencies of `valb`, `valb1`)  
+- `res`, `resa`, `resb`, `resa1`, `resb1`: Integer (Result calculations)  
+
+**Step-by-Step Logic Flow:**  
+
+1. **Input Reading**  
+   1.1. Read integer `n` from standard input.  
+   1.2. Read list of integers `x` from standard input.  
+
+2. **Split Input into `a` and `b`**  
+   2.1. For each index `i` in `0` to `n-1`:  
+       - If `i % 2 == 0`, append `x[i]` to `a`.  
+       - Else, append `x[i]` to `b`.  
+
+3. **Initialize Frequency Counters**  
+   3.1. Create `cnta` as a list of 100003 zeros.  
+   3.2. Create `cntb` as a list of 100003 zeros.  
+
+4. **Count Frequencies for `a`**  
+   4.1. For each `i` in `a`, increment `cnta[i]` by 1.  
+
+5. **Find Dominant Values in `a`**  
+   5.1. Set `vala = 0`, `maxCnta = 0`.  
+   5.2. For each `i` in `a`:  
+       - If `cnta[i] > maxCnta`, update `maxCnta = cnta[i]` and `vala = i`.  
+   5.3. Set `vala1 = 0`, `maxCnta1 = 0`.  
+   5.4. For each `i` in `a`:  
+       - If `cnta[i] > maxCnta1` and `i != vala`, update `maxCnta1 = cnta[i]` and `vala1 = i`.  
+
+6. **Repeat Steps 4-5 for `b`**  
+   *(Update `cntb`, `valb`, `maxCntb`, `valb1`, `maxCntb1`)*  
+
+7. **Calculate Minimum Changes**  
+   7.1. If `vala != valb`:  
+       - Compute `res = (len(a) - maxCnta) + (len(b) - maxCntb)`.  
+       - Print `res`.  
+   7.2. Else:  
+       - Compute `resa` as count of elements in `a` where `i != vala`.  
+       - Compute `resa1` as count of elements in `a` where `i != vala1`.  
+       - Compute `resb` as count of elements in `b` where `i != valb`.  
+       - Compute `resb1` as count of elements in `b` where `i != valb1`.  
+       - Print `min(resa + resb1, resa1 + resb)`.  
+
+**Control Flow Structures:**  
+- **Loops**: Index-based iteration over input lists, frequency counting loops.  
+- **Conditionals**: Branching based on index parity, comparisons for frequency dominance, and value equality checks.  
+
+**Input/Output Operations:**  
+- Read `n` and `x` via `input()`.  
+- Output result via `print()`.  
+
+**Edge Case Handling:**  
+- Handles empty `a` or `b` (e.g., `n=1`).  
+- Correctly processes cases where all elements in `a` or `b` are identical.  
+- Defaults to 0 for second-most frequent values if none exist.  
+
+**External Dependencies:**  
+- None (Standard input/output only).

@@ -1,0 +1,49 @@
+**Function Signature:**
+main(String[] args) throws IOException
+
+**Required Libraries:**
+java.io.BufferedReader
+java.io.IOException
+java.io.InputStreamReader
+java.io.PrintWriter
+java.util.StringTokenizer
+
+**Variable Declarations:**
+- BufferedReader br
+- PrintWriter pw
+- StringTokenizer st
+- int a
+- int tA
+- int b
+- int tB
+- String timing
+- int hrs
+- int mins
+- int simDeparture
+- int simArrival
+- int counter
+- int i (loop variable)
+
+**Algorithm Flow:**
+1. Initialize BufferedReader with System.in
+2. Initialize PrintWriter with System.out
+3. Read first line and tokenize
+4. Parse first token to int a
+5. Parse second token to int tA
+6. Read second line and tokenize
+7. Parse first token to int b
+8. Parse second token to int tB
+9. Read third line to String timing
+10. Extract substring(0,2) and parse to int hrs
+11. Extract substring(3) and parse to int mins
+12. Calculate simDeparture = hrs * 60 + mins
+13. Calculate simArrival = simDeparture + tA
+14. Initialize counter = 0
+15. For loop: i from 300 to 1439 (inclusive), increment by b
+16. Calculate busDeparture = i
+17. Calculate busArrival = i + tB
+18. If busDeparture >= simArrival OR simDeparture >= busArrival: continue
+19. Else: increment counter
+20. Print counter
+21. Flush PrintWriter
+22. Close PrintWriter

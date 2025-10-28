@@ -1,0 +1,46 @@
+**Structured Algorithm Specification:**
+
+1. **Input Operations:**
+   - Read two integers `n` (number of elements) and `num` (upper bound) from standard input.
+   - Read a space-separated list of integers and store it in a set `num_set`.
+
+2. **Variable Declarations:**
+   - `n`: Integer type.
+   - `num`: Integer type.
+   - `num_set`: Set of integers.
+   - `two_times_set`: Set of integers (initially empty).
+   - `lcm`: Integer type (uninitialized until computation phase).
+
+3. **Processing Logic:**
+   - **Loop 1:** Iterate over each element `i` in `num_set`:
+     - Initialize temporary variable `temp = i`.
+     - **Loop 2:** Iterate `j` from 1 to 29 (inclusive):
+       - Update `temp = temp // 2`.
+       - **Conditional 1:** If `temp % 2 != 0`:
+         - Add `j` to `two_times_set`.
+         - Break Loop 2.
+     - **Conditional 2:** After processing each `i`, check `len(two_times_set) != 1`:
+       - If true: Print `0`, terminate all processing.
+   - **Conditional 3:** After all elements in `num_set` are processed:
+     - Convert `num_set` to list `num_list`.
+     - Compute LCM of all elements in `num_list`:
+       - Initialize `lcm` with `num_list[0]`.
+       - **Loop 3:** For each subsequent element in `num_list`:
+         - Update `lcm = (lcm * element) // gcd(lcm, element)`.
+     - Compute result via formula: `((num - lcm // 2) // lcm) + 1`.
+     - Print the result.
+
+4. **Control Flow Criteria:**
+   - **Loop 2 Exit:** When `temp` becomes odd or `j` reaches 29.
+   - **Loop 1 Exit:** Early exit if `two_times_set` size exceeds 1 during any iteration.
+   - **Conditional 3 Execution:** Only if all elements are processed without early termination.
+
+5. **Output Operations:**
+   - Either print `0` (if exponents vary) or the computed result (if valid).
+
+6. **Edge Case Handling:**
+   - Implicit handling of maximum division attempts via fixed upper bound (j ≤ 29).
+   - Formula ensures non-negative result via integer division truncation.
+
+7. **External Dependencies:**
+   - `fractions.gcd()` for LCM computation (assumes non-zero inputs).

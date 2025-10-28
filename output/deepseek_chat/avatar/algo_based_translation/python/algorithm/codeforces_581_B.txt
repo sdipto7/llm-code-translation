@@ -1,0 +1,11 @@
+n: integer from input
+arr: list of integers from input, truncated to length n
+ans: list of integers of length n, initialized to zeros
+mx: integer, initialized to last element of arr
+
+for i from n-2 down to 0 (inclusive):
+    ans[i] = max(0, mx - arr[i] + 1)
+    if arr[i] > mx:
+        mx = arr[i]
+
+print all elements of ans separated by spaces

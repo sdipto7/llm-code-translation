@@ -1,0 +1,14 @@
+1. Import required libraries: java.io.BufferedReader, java.io.IOException, java.io.InputStreamReader, java.nio.charset.StandardCharsets.
+2. Define a class Main with a main method that takes String[] args as input and throws IOException.
+3. Declare variables: InputStreamReader reader, BufferedReader in, String[] str, int n, double d, int cnt.
+4. Initialize reader with InputStreamReader(System.in, StandardCharsets.UTF_8) and in with BufferedReader(reader).
+5. Read a line from in and split it into str using " " as the delimiter.
+6. Parse str[0] to int and store it in n, and parse str[1] to int (then implicitly convert to double) and store it in d.
+7. Initialize cnt to 0.
+8. Loop from i = 0 to n-1:
+   - Read a line from in and split it into str using " " as the delimiter.
+   - Parse str[0] to double and store it in x, and parse str[1] to double and store it in y.
+   - Check if Math.sqrt(x*x + y*y) is less than or equal to d.
+   - If true, increment cnt by 1.
+9. Print cnt to the console using System.out.println.
+10. The program terminates.

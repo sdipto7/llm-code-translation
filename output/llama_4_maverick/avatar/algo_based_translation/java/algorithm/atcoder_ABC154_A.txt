@@ -1,0 +1,7 @@
+1. Read a line of input and split it into an array of strings using space as the delimiter.
+2. Read another line of input and tokenize it into integers.
+3. Parse the tokenized integers into two separate integer variables.
+4. Read a third line of input into a string variable.
+5. Compare the string variable with the first element of the array of strings obtained in step 1.
+6. If they are equal, calculate and output the value of the first integer variable minus one, followed by the second integer variable.
+7. If they are not equal, output the value of the first integer variable, followed by the second integer variable minus one.

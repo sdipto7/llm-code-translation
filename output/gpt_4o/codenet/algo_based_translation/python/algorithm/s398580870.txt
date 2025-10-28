@@ -1,0 +1,29 @@
+```
+Function signature:
+- function calculate_value(n: int, k: int) -> int
+
+Algorithm:
+1. Declare variables:
+   - n, k: integers (input parameters)
+   - result: integer
+
+2. Control flow:
+   - If k is odd (k % 2 == 1):
+     - Calculate the cube of the integer division of n by k: (n // k) ** 3
+     - Assign the result to the variable 'result'
+
+   - Else (k is even):
+     - Calculate the cube of the integer division of n by k: (n // k) ** 3
+     - Calculate the cube of the integer division of n + k//2 by k: ((n + k // 2) // k) ** 3
+     - Sum both cubes
+     - Assign the sum to the variable 'result'
+
+3. Return the 'result' as the output of the function
+
+Input/Output operations:
+- The function takes two integer inputs, n and k
+- The function outputs a single integer, which is the calculated result based on the above logic
+
+Dependencies:
+- No external libraries or modules are required
+```

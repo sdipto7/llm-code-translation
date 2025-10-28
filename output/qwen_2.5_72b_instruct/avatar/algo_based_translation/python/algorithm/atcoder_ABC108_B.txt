@@ -1,0 +1,37 @@
+Function Signature: `main()`
+Parameter Types: None
+Return Type: None
+
+Variable Declarations and Data Types:
+- `p`: List of strings
+- `x1, y1, x2, y2`: Integers
+- `DIF1, DIF2`: Integers
+- `x3, y3, x4, y4`: Integers
+
+Execution Order:
+1. Read input as a single line string and split by space to form list `p`.
+2. Convert first element of `p` to integer and assign to `x1`.
+3. Convert second element of `p` to integer and assign to `y1`.
+4. Convert third element of `p` to integer and assign to `x2`.
+5. Convert fourth element of `p` to integer and assign to `y2`.
+6. Calculate difference between `x2` and `x1` and assign to `DIF1`.
+7. Calculate difference between `y2` and `y1` and assign to `DIF2`.
+8. Calculate `x3` as `x2 - DIF2`.
+9. Calculate `y3` as `y2 + DIF1`.
+10. Calculate `x4` as `x1 - DIF2`.
+11. Calculate `y4` as `y1 + DIF1`.
+12. Print `x3`, `y3`, `x4`, `y4` separated by spaces.
+
+Control Structures:
+- No loops or conditionals present.
+
+Input/Output Operations:
+- Input: Read a single line of space-separated integers.
+- Output: Print four space-separated integers.
+
+Data Processing Logic:
+- Reads coordinates of two points.
+- Computes coordinates of two additional points forming a parallelogram with the input points.
+
+Required Libraries, Modules, or Dependencies:
+- No external libraries or modules required.

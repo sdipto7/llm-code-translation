@@ -1,0 +1,33 @@
+Function Signature:
+- function_name: count_segments
+- parameters: s (str)
+- return_type: int
+
+Variable Declarations:
+- n (int)
+- s (str)
+- cnt (int)
+
+Logic Flow:
+1. Read an integer n from the input
+2. Read a string s from the input
+3. Initialize cnt to 1
+4. For i from 0 to n-2 do:
+   - If s[i] is equal to s[i+1] then continue to the next iteration
+   - Else increment cnt by 1
+5. Print the value of cnt
+
+Control Structures:
+- For loop with range from 0 to n-2
+- If-Else conditional statement with condition s[i] == s[i+1]
+
+Input/Output Operations:
+- Read integer n from input
+- Read string s from input
+- Print the integer value of cnt
+
+Data Processing Logic:
+- Count the number of segments in the string s where a segment is defined as a contiguous run of the same character
+
+Libraries/Modules/Dependencies:
+- No external libraries or modules required

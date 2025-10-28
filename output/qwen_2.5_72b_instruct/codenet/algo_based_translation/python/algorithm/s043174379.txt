@@ -1,0 +1,26 @@
+Function signature: `calculate_area(H: int, W: int, h: int, w: int) -> int`
+
+Variable declarations and data types:
+- H: int
+- W: int
+- h: int
+- w: int
+- ans: int
+
+Logic flow in execution order:
+1. Read two integers H and W from standard input.
+2. Read two integers h and w from standard input.
+3. Calculate the area of the outer rectangle using the formula H * W.
+4. Calculate the overlapping area of the inner rectangles using the formula h * W + w * H - h * w.
+5. Subtract the overlapping area from the area of the outer rectangle to get ans.
+6. Print the value of ans.
+
+Control structures:
+- No loops or conditionals present.
+
+Input/output operations and data processing logic:
+1. Input: Two lines of space-separated integers.
+2. Output: A single integer representing the calculated area.
+
+Required libraries, modules, or dependencies:
+- None required.

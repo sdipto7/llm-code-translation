@@ -1,0 +1,18 @@
+1. Initialize input and output streams.
+2. Create an input reader and a print writer.
+3. Instantiate a solution object.
+4. Call the solve method on the solution object, passing the input reader and print writer.
+5. Read two integers, n and k, using the input reader.
+6. Read an array of n integers, logsLength, using the input reader.
+7. Initialize two variables, min and max, to 1 and a large number (1e9 + 1000), respectively.
+8. Perform a binary search between min and max.
+9. In each iteration of the binary search, calculate the midpoint, mid.
+10. Check if the condition nei(mid, logsLength, k) is true.
+11. If nei(mid, logsLength, k) is true, update max to mid.
+12. If nei(mid, logsLength, k) is false, update min to mid + 1.
+13. Continue the binary search until min is no longer less than max.
+14. Once the binary search ends, print the value of min using the print writer.
+15. Close the print writer.
+16. In the nei method, iterate through each log in logsLength.
+17. For each log, subtract the number of cuts required ((log + mid - 1) / mid - 1) from k.
+18. Return true if k is greater than or equal to 0 after iterating through all logs; otherwise, return false.

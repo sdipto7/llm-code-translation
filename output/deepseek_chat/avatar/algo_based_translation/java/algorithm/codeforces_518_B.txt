@@ -1,0 +1,61 @@
+**Function Signatures:**
+- main(String[] args): void
+- reverse(Character ch): Character
+
+**Variables:**
+- Scanner scan: Input scanner
+- StringBuilder s: Input string (converted to mutable)
+- String t: Input string
+- int ura: Counter for exact matches
+- int opa: Counter for case-reversed matches
+- Map<Character, Integer> tmap: Frequency count of characters in t
+- int length: Length of string s
+- Character ch: Temporary character storage
+- Integer num: Temporary integer storage
+- int inum: Temporary integer conversion
+- Character rch: Case-reversed character
+
+**Algorithm Flow:**
+
+1. Initialize Scanner object for input
+2. Read first input string into StringBuilder s
+3. Read second input string into String t
+4. Initialize ura = 0, opa = 0
+5. Create HashMap tmap for Character keys and Integer values
+6. For each character in t (index i from 0 to t.length()-1):
+   - Get character at position i
+   - If character not in tmap: add with count 1
+   - Else: increment existing count by 1
+
+7. Set length = s.length()
+8. For i from 0 to length-1:
+   - Get character at position i from s
+   - Get count from tmap for this character
+   - If count is null: skip to next iteration
+   - Convert count to int inum
+   - If inum == 1: remove character from tmap
+   - Else: put character in tmap with count inum-1
+   - Replace character in s at position i with 'Я'
+   - Increment ura by 1
+
+9. For i from 0 to length-1:
+   - Get character at position i from s
+   - If character is 'Я': skip to next iteration
+   - Call reverse(ch) to get case-reversed character rch
+   - Get count from tmap for rch
+   - If count is null: skip to next iteration
+   - Convert count to int inum
+   - If inum == 1: remove rch from tmap
+   - Else: put rch in tmap with count inum-1
+   - Increment opa by 1
+
+10. Print ura and opa separated by space
+
+**reverse function:**
+- If ch is lowercase: return uppercase equivalent
+- Else: return lowercase equivalent
+
+**Required Libraries:**
+- java.util.Scanner
+- java.util.HashMap
+- java.util.Map

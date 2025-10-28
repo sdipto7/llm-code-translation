@@ -1,0 +1,40 @@
+**Function signatures:**
+- `solution()`: no parameters, returns None
+- `main()`: no parameters, returns None
+
+**Variables and data types:**
+- `line`: string (from input)
+- `bought_count`: Counter[str]
+- `made_cout`: Counter[str]
+- `res`: int
+- `color`: str
+- `t`: int
+- `_`: int (loop counter)
+
+**Required libraries:**
+- `collections.defaultdict`
+- `collections.deque`
+- `functools.lru_cache`
+- `heapq.heappush`
+- `heapq.heappop`
+- `typing.Counter`
+- `bisect.bisect_right`
+- `bisect.bisect_left`
+- `math`
+
+**Execution flow:**
+1. Call `main()`
+2. Set `t = 1`
+3. For loop: iterate once (range(1))
+4. Call `solution()`
+5. Read first input line into `line`
+6. Create Counter from `line` characters → `bought_count`
+7. Read second input line into `line`
+8. Create Counter from `line` characters → `made_cout`
+9. Initialize `res = 0`
+10. For each `color` in `made_cout` keys:
+    - If `color` not in `bought_count`: print -1 and return from `solution()`
+    - Else: add minimum of `bought_count[color]` and `made_cout[color]` to `res`
+11. Print `res`
+12. Return from `solution()`
+13. Return from `main()`

@@ -1,0 +1,24 @@
+1. Import required libraries: java.util.*
+2. Define a function main with parameters (String[] args) and return type void, throwing Exception.
+3. Declare a variable s of type Scanner and initialize it with new Scanner(System.in).
+4. Declare variables E and Y of type int.
+5. Read input from s into E and Y using s.nextInt().
+6. Check the value of E.
+   - If E equals 0, 
+     - Check the value of Y.
+       - If Y is less than or equal to 1911, 
+         - Output "M" followed by the result of Y - 1867.
+       - Else if Y is less than or equal to 1925, 
+         - Output "T" followed by the result of Y - 1911.
+       - Else if Y is less than or equal to 1988, 
+         - Output "S" followed by the result of Y - 1925.
+       - Else, 
+         - Output "H" followed by the result of Y - 1988.
+   - Else if E equals 1, 
+     - Output the result of 1867 + Y.
+   - Else if E equals 2, 
+     - Output the result of 1911 + Y.
+   - Else if E equals 3, 
+     - Output the result of 1925 + Y.
+   - Else, 
+     - Output the result of 1988 + Y.

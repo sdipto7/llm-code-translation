@@ -1,0 +1,16 @@
+```
+Function G(a: int, b: int) -> int:
+    While a % b is not equal to 0:
+        Assign a the value of b
+        Assign b the value of a % b
+    Return b
+
+Function L(a: int, b: int) -> int:
+    Return the integer division of a * b by G(a, b)
+
+Declare l as a list of strings obtained by splitting user input on spaces
+Declare x, y, a, b as integers converted from the first, second, third, and fourth elements of l respectively
+Declare lcm as the result of calling L(x, y)
+
+Output the result of integer division of b by lcm minus integer division of (a - 1) by lcm
+```

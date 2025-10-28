@@ -1,0 +1,48 @@
+Here's the step-by-step algorithm extracted from the Java code:
+
+**Function Signatures:**
+- `main()`: No parameters, returns `void`
+
+**Variables:**
+- `N`, `M`: `int` (from input)
+- `shortage`: `int[]` of size `M`
+- `ans`: `int` initialized to 0
+
+**Libraries/Dependencies:**
+- `java.io.BufferedReader`
+- `java.io.InputStreamReader`
+- `java.io.IOException`
+- `java.util.Arrays`
+
+**Logic Flow:**
+1. Read input line containing `N` and `M`
+2. Initialize `shortage` array with size `M`
+3. For each of `M` input lines:
+   - Read integer `A` from the first part of the line (before first space)
+   - Calculate `shortage[i]` as `N - A` if `N > A`, else `0`
+4. Sort `shortage` array in ascending order
+5. Sum all elements in `shortage` except the last element
+6. Print the computed sum
+
+**Control Structures:**
+- Loop `M` times for input processing
+- Conditional check `N > A` for each `A`
+- Loop `M-1` times for sum calculation
+
+**Input/Output:**
+- Reads from STDIN: first line contains `N M`, followed by `M` lines with integers
+- Writes sum to STDOUT
+
+---
+
+**Python Code (Translated Algorithm):**
+
+```python
+n, m = map(int, input().split())
+shortage = []
+for _ in range(m):
+    a = int(input().split(' ', 1)[0])
+    shortage.append(n - a if n > a else 0)
+shortage.sort()
+print(sum(shortage[:-1]))
+```

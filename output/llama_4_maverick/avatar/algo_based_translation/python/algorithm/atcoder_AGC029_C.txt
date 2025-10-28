@@ -1,0 +1,25 @@
+1. Input data from the user
+2. Parse input data into a list A
+3. Filter list A to include only elements where the current element is greater than or equal to the previous one, prepending the first element
+4. Determine the length N of the filtered list A
+5. Define a function cut(array, index) that:
+   1. If index is less than 1, return an empty list
+   2. If index is less than or equal to the first element's first value in array, return a list containing a tuple of (index, first element's second value in array)
+   3. Otherwise, iterate through array in reverse order and return a subset of array up to the first element whose first value is less than index, appending a tuple (index, corresponding element's second value)
+6. Define a function is_possible(K) that:
+   1. Initialize a dynamic programming list dp with the first element of A and a counter 0
+   2. Iterate through the remaining elements of A
+   3. For each element a, check if it is less than or equal to the first value of the last element in dp
+      1. If true, update dp by cutting it at a using the cut function
+      2. If false, append a new tuple (a, 0) to dp
+   4. Check if any element in dp can be incremented
+      1. Iterate through dp in reverse order
+      2. If an element's counter is less than K-1, increment its counter and update dp accordingly
+      3. If no such element is found, return False
+   5. If the iteration completes without returning False, return True
+7. Define a binary search function bis(x, y) that:
+   1. If y equals x+1, return y
+   2. Otherwise, check if is_possible((x+y)/2) is True
+      1. If true, recursively call bis(x, (x+y)/2)
+      2. If false, recursively call bis((x+y)/2, y)
+8. Call bis(0, N) and print the result

@@ -1,0 +1,18 @@
+```
+Function: calculate_borrow_amount
+Parameters: None
+Return Type: None
+
+1. Input: Read a single line of input and split it into three strings: k, n, w.
+2. Convert k, n, w into integers.
+3. Declare integer variable total and initialize it to 0.
+4. Conditional: Check if 1 <= k and w <= 1000.
+   - If true:
+     a. Loop: For i from 1 to w (inclusive):
+        i. Compute i * k and add to total.
+     b. Conditional: Check if total > n.
+        - If true:
+          i. Output: Print total - n.
+        - Else:
+          i. Output: Print 0.
+```

@@ -1,0 +1,83 @@
+Algorithm:
+
+1. Program Structure
+   - Class: atcoder_ABC126_E
+   - Nested Class: UnionFindTree
+
+2. Functions and Signatures
+   - atcoder_ABC126_E.doIt(): void
+       Parameters: None
+       Return: void
+   - UnionFindTree.UnionFindTree(int n)
+       Parameters: int n
+       Return: constructor
+   - UnionFindTree.find(int x): int
+       Parameters: int x
+       Return: int
+   - UnionFindTree.unite(int x, int y): void
+       Parameters: int x, int y
+       Return: void
+   - UnionFindTree.same(int x, int y): boolean
+       Parameters: int x, int y
+       Return: boolean
+   - main(String[] args): void
+
+3. Variables and Data Types
+   - In atcoder_ABC126_E:
+       - Scanner sc: initialized with System.in
+       - int MOD = 1000000007
+       - int n: read via sc.nextInt()
+       - UnionFindTree utf: initialized with n
+       - int m: read via sc.nextInt()
+       - int x, y, z: read per edge
+       - int cnt: initialized to 0
+   - In UnionFindTree:
+       - int n: size of structure
+       - int[] par: parent array
+       - int[] rank: rank array
+
+4. Logic Flow
+   - doIt() Execution:
+       1. Read integer n from input
+       2. Initialize UnionFindTree with size n
+       3. Read integer m from input
+       4. For i from 0 to m-1:
+           a. Read x, y, z (convert x,y to 0-based)
+           b. Call utf.unite(x, y)
+       5. Initialize cnt = 0
+       6. For i from 0 to n-1:
+           a. If utf.par[i] == i: increment cnt
+       7. Print cnt
+
+   - UnionFindTree.find(int x):
+       1. If par[x] == x: return x
+       2. Else: set par[x] = find(par[x]) (path compression) and return
+
+   - UnionFindTree.unite(int x, int y):
+       1. x = find(x)
+       2. y = find(y)
+       3. If x == y: return
+       4. If rank[x] < rank[y]: set par[x] = y
+       5. Else:
+           a. Set par[y] = x
+           b. If rank[x] == rank[y]: increment rank[x] by 1
+
+5. Control Structures
+   - For loop (edge processing):
+       for (int i = 0; i < m; i++)
+   - For loop (root counting):
+       for (int i = 0; i < n; i++)
+   - if-else in find():
+       if (par[x] == x)
+   - Multiple conditionals in unite():
+       if (x == y)
+       if (rank[x] < rank[y])
+       if (rank[x] == rank[y])
+
+6. Input/Output Operations
+   - Input via Scanner:
+       sc.nextInt() for n, m, x, y, z
+   - Output via System.out.println(cnt)
+
+7. Dependencies
+   - Import: java.util.* (for Scanner)

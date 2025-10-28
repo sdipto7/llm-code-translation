@@ -1,0 +1,47 @@
+**Input:**
+- Read integer `numNode` (number of nodes)
+- Read integer `numEdge` (number of edges)
+
+**Data Structures:**
+- Declare `connect` as array of ArrayLists of integers (size `numNode`)
+- Initialize each `connect[i]` as empty ArrayList
+- Declare `visited` as integer array (size `numNode`)
+- Declare `odd` as boolean array (size `numNode`)
+- Declare `print` as StringBuilder
+
+**Edge Processing:**
+- For each edge (0 to `numEdge-1`):
+  - Read integers `a` and `b` (subtract 1 to convert to 0-indexed)
+  - Add `b` to `connect[a]`
+  - Add `a` to `connect[b]`
+
+**Validation:**
+- If `numEdge` is odd:
+  - Print "-1"
+  - Terminate program
+
+**DFS Initialization:**
+- Initialize all `visited` elements to 0
+- Initialize all `odd` elements to false
+- Call `dfs(0, -1)`
+
+**DFS Function (parameters: current node `crt`, parent node `parent`):**
+- Set `visited[crt]` to 1
+- Get adjacency list `crtConnect = connect[crt]`
+- For each `child` in `crtConnect`:
+  - If `child == parent` OR `visited[child] == 1`: skip
+  - Else if `visited[child] == 2`:
+    - Append `(crt+1) (child+1)` to `print` with newline
+    - Toggle `odd[crt]` (true↔false)
+  - Else (unvisited child):
+    - Recursively call `dfs(child, crt)`
+    - If `odd[child]` is true:
+      - Append `(child+1) (crt+1)` to `print` with newline
+      - Toggle `odd[child]`
+    - Else:
+      - Append `(crt+1) (child+1)` to `print` with newline
+      - Toggle `odd[crt]`
+- Set `visited[crt]` to 2
+
+**Output:**
+- Print contents of `print` StringBuilder

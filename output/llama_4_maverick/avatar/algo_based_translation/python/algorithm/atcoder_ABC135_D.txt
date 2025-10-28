@@ -1,0 +1,28 @@
+1. Set mod = 10^9 + 7
+2. Read input string S
+3. Calculate n = length of S
+4. If n == 1
+   4.1. If S == '5' or S == '?'
+      4.1.1. Print 1
+   4.2. Else
+      4.2.1. Print 0
+   4.3. Exit
+5. Initialize dp = 2D array of size n x 13 with all elements as 0
+6. For i from 0 to n-1
+   6.1. If i == 0
+      6.1.1. If S[i] != '?'
+         6.1.1.1. dp[i][int(S[i])] = 1
+      6.1.2. Else
+         6.1.2.1. For j from 0 to 9
+            6.1.2.1.1. dp[i][j] = 1
+   6.2. Else
+      6.2.1. If S[i] != '?'
+         6.2.1.1. For k from 0 to 12
+            6.2.1.1.1. dp[i][(k*10 + int(S[i])) % 13] = dp[i][(k*10 + int(S[i])) % 13] + dp[i-1][k]
+      6.2.2. Else
+         6.2.2.1. For j from 0 to 9
+            6.2.2.1.1. For k from 0 to 12
+               6.2.2.1.1.1. dp[i][(k*10 + j) % 13] = dp[i][(k*10 + j) % 13] + dp[i-1][k]
+      6.2.3. For k from 0 to 12
+         6.2.3.1. dp[i][k] = dp[i][k] % mod
+7. Print dp[n-1][5]

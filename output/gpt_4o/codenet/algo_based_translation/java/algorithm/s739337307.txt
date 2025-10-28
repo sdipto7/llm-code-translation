@@ -1,0 +1,44 @@
+```
+Function Signature:
+- Function: main
+- Parameters: None
+- Return Type: void
+
+Variable Declarations:
+- n (int)
+- m (int)
+- map (HashMap<Integer, Integer>)
+- countAc (int)
+- countWaAll (int)
+- question (int)
+- waOrAc (String)
+- countWa (int)
+
+Execution Flow:
+1. Initialize Scanner to read input.
+2. Read integer n from input.
+3. Read integer m from input.
+4. Initialize map as a HashMap<Integer, Integer>.
+5. Initialize countAc to 0.
+6. Initialize countWaAll to 0.
+7. Loop from 0 to m-1 (inclusive):
+   a. Read an integer question from input.
+   b. Read a string waOrAc from input.
+   c. If map does not contain question as a key:
+      i. If waOrAc equals "WA", insert key question with value 1 into map.
+      ii. Else, insert key question with value -1 into map and increment countAc by 1.
+   d. Else (map contains question as a key):
+      i. Retrieve the value countWa associated with key question from map.
+      ii. If countWa is negative, do nothing.
+      iii. Else:
+         - If waOrAc equals "WA", replace map entry for key question with value countWa + 1.
+         - Else, replace map entry for key question with value -countWa, increment countAc by 1, and increment countWaAll by countWa.
+8. Print countAc and countWaAll separated by a space.
+
+Input/Output Operations:
+- Input: Read integers n and m, followed by m pairs of (integer, string) using Scanner.
+- Output: Print the values of countAc and countWaAll.
+
+Dependencies:
+- java.util.*, java.math.*
+```

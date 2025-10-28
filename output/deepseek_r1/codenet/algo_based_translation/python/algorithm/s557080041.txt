@@ -1,0 +1,32 @@
+Function signature:
+- function main() -> void
+
+Variables:
+- N: string (from user input)
+- L: list of integers
+- X: integer
+
+Algorithm:
+1. Read input value into variable N as string
+2. Check if N equals integer 0:
+   - If true: print 'Yes' and terminate
+3. Else:
+   a. Convert N to string (redundant step)
+   b. Split string N into list of characters L
+   c. Convert each character in L to integer
+   d. Calculate X as sum of all integers in L
+   e. Check if X modulo 9 equals 0:
+      - If true: print 'Yes'
+      - Else: print 'No'
+
+Input/Output:
+- Single input via standard input
+- Outputs 'Yes' or 'No' based on divisibility by 9 check
+
+Control structures:
+- Initial if-else for zero check
+- List comprehension for digit conversion
+- Final if-else for sum divisibility check
+
+Dependencies:
+- None required (standard input/output operations only)

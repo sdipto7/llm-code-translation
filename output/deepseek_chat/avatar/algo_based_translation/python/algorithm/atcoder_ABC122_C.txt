@@ -1,0 +1,24 @@
+**Input Processing:**
+- Read integers n and q from input
+- Read string s from input
+- Read q lines, each containing two integers, store as list of lists 'problems'
+
+**Function Definition:**
+- Define function count(total: int, i: int) -> int:
+  - If substring s[i-1:i+1] equals 'AC':
+    - Return total + 1
+  - Else:
+    - Return total
+
+**Data Processing:**
+- Create list [0] + list(range(1, n))
+- Apply accumulate function with count function as operation
+- Store result as list 'cumsum'
+
+**Output Processing:**
+- For each pair (l, r) in problems:
+  - Calculate cumsum[r-1] - cumsum[l-1]
+  - Print result
+
+**Required Dependencies:**
+- itertools.accumulate

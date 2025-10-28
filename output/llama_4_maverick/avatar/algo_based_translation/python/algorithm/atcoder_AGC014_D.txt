@@ -1,0 +1,32 @@
+1. Initialize N as the integer value of the input.
+2. Create an adjacency list adj of size N + 1.
+3. For N - 1 iterations:
+   1. Read two integers a and b from the input.
+   2. Add b to adj[a] and a to adj[b].
+4. Initialize a queue que with the value 1.
+5. Create a seen array of size N + 1 and mark seen[1] as 1.
+6. Create a par array of size N + 1.
+7. Create a child_num array of size N + 1.
+8. While que is not empty:
+   1. Dequeue a value v from que.
+   2. For each u in adj[v]:
+      1. If seen[u] is 0:
+         1. Mark seen[u] as 1.
+         2. Set par[u] to v.
+         3. Increment child_num[v].
+         4. Enqueue u into que.
+9. Initialize a sequence seq.
+10. For i from 1 to N:
+    1. If child_num[i] is 0:
+       1. Add i to seq.
+11. While seq is not empty:
+    1. Pop a value c from seq.
+    2. Mark seen[c] as 0.
+    3. If seen[par[c]] is 0:
+       1. Output 'First'.
+       2. Exit.
+    4. Mark seen[par[c]] as 0.
+    5. Decrement child_num[par[par[c]]].
+    6. If child_num[par[par[c]]] is 0:
+       1. Add par[par[c]] to seq.
+12. Output 'Second'.

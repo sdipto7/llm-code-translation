@@ -1,0 +1,9 @@
+1. Read an integer n from input
+2. Read a string s from input
+3. If n is odd then 
+    4. Print 'No'
+else 
+    5. If the first half of s is equal to the second half of s then 
+        6. Print 'Yes'
+    else 
+        7. Print 'No'

@@ -1,0 +1,25 @@
+Function signature: `main() -> None`
+
+Variable declarations and data types:
+- `LUCKY: str`
+- `n: int`
+- `s: str`
+- `i: int`
+
+Logic flow in execution order:
+1. Assign the string "abcd" to the variable `LUCKY`.
+2. Read an integer from standard input and assign it to the variable `n`.
+3. Initialize an empty string and assign it to the variable `s`.
+4. For each integer `i` in the range from 0 to `n-1` (inclusive):
+   - Append the character at index `i % 4` of the string `LUCKY` to the string `s`.
+5. Print the string `s`.
+
+Control structures:
+- For loop with the condition `i` ranging from 0 to `n-1`.
+
+Input/output operations and data processing logic:
+- Input: Read an integer `n` from standard input.
+- Output: Print the string `s` after constructing it by repeating characters from `LUCKY`.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules are required.

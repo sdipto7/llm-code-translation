@@ -1,0 +1,29 @@
+Function signature: main()
+
+Variable declarations:
+- n: integer
+- ans: integer, initialized to 1
+- sumL: integer, initialized to 0
+- s: string
+- L: integer
+
+Libraries/modules:
+- re (for regular expressions)
+
+Logic flow:
+1. Read integer input and store in n
+2. Read string input
+3. Split the string into sentences using re.split("[.?!]", input())
+4. For each sentence s in the split result:
+    - Strip leading and trailing whitespace from s and append a period
+    - Calculate length of s and store in L
+    - If L > 1:
+        - If L > n:
+            - Print "Impossible"
+            - Exit the program
+        - If sumL + L + (sumL > 0) > n:
+            - Increment ans by 1
+            - Set sumL to L
+        - Else:
+            - Set sumL to sumL + L + (sumL > 0)
+5. Print the value of ans

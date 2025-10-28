@@ -1,0 +1,43 @@
+```
+Function: main
+Parameters: args (String[])
+Return Type: void
+
+1. Import Libraries:
+   - java.io.*
+   - java.util.*
+
+2. Variable Declarations:
+   - Scanner in (for input)
+   - PrintWriter pw (for output)
+   - int x1, y1, x2, y2 (to store coordinates)
+
+3. Input Operations:
+   - Read integer x1 using in.nextInt()
+   - Read integer y1 using in.nextInt()
+   - Read integer x2 using in.nextInt()
+   - Read integer y2 using in.nextInt()
+
+4. Logic Flow:
+   - If condition: (x1 == x2)
+     - Calculate integer dif as Math.abs(y1 - y2)
+     - Output to pw: (x1 + dif) + " " + y1 + " " + (x1 + dif) + " " + y2
+
+   - Else If condition: (y1 == y2)
+     - Calculate integer dif as Math.abs(x1 - x2)
+     - Output to pw: x1 + " " + (y1 + dif) + " " + x2 + " " + (y2 + dif)
+
+   - Else If condition: (Math.abs(x1 - x2) == Math.abs(y1 - y2))
+     - Output to pw: x1 + " " + y2 + " " + x2 + " " + y1
+
+   - Else
+     - Output to pw: -1
+
+5. Output Operations:
+   - Close PrintWriter using pw.close()
+
+Helper Function: debug
+Parameters: obj (Object...)
+Return Type: void
+   - Output to System.err: Arrays.deepToString(obj)
+```

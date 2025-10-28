@@ -1,0 +1,38 @@
+**Function Signature:**
+- `main() -> void`
+
+**Parameters:**
+- Input: Three space-separated integers from stdin (X, K, D)
+- Variables:
+  - X (integer): Initial position
+  - K (integer): Number of moves
+  - D (integer): Distance per move
+  - r (integer): Quotient of X divided by D
+  - a (integer): Remainder after subtracting r*D from X
+
+**Logic Flow:**
+1. Read X, K, D as integers from standard input
+2. Compute r = X // D (integer division)
+3. Check if absolute_value(r) > K:
+   - If true:
+     - Compute result = absolute_value(X) - K * D
+     - Print result
+     - Terminate execution
+4. Compute a = X - (r * D)
+5. Check parity of (K - r):
+   - If (K - r) is even:
+     - Print absolute_value(a)
+   - Else:
+     - Compute result = absolute_value(D - absolute_value(a))
+     - Print result
+
+**Control Structures:**
+- `if abs(r) > K` → early exit
+- Conditional branch on `(K - r) % 2 == 0`
+
+**Input/Output:**
+- Input: Single line with X, K, D via `input()`
+- Output: Single integer printed based on conditions
+
+**Dependencies:**
+- Uses standard input/output functions (no external libraries)

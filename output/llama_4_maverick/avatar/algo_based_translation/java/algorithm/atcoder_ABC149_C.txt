@@ -1,0 +1,12 @@
+1. Read input from the user and store it in a variable.
+2. Convert the input to an integer.
+3. If the integer is even and not equal to 2, increment it by 1.
+4. Enter a loop that continues indefinitely.
+5. Inside the loop, calculate the square root of the current integer.
+6. Initialize a counter variable to 3.
+7. Iterate from the counter variable up to the square root of the integer, incrementing the counter by 2 in each iteration.
+8. Inside the iteration, check if the current integer is divisible by the counter variable.
+9. If the integer is divisible, break out of the iteration.
+10. If the iteration completes without finding a divisor, break out of the loop.
+11. If a divisor is found, increment the integer by 2.
+12. Once the loop is exited, output the final integer value.

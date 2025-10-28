@@ -1,0 +1,20 @@
+Algorithm:
+- Function: main (parameter: String[] args, return type: void)
+  - Variable declarations: String[] s, int a, int b
+  - Operation: Call readLine(), split the result by space into String array s
+  - Operation: Parse s[0] to integer and assign to a
+  - Operation: Parse s[1] to integer and assign to b
+  - Conditional: If b modulo a equals 0
+    - Operation: Print a + b
+  - Else
+    - Operation: Print b - a
+
+- Function: readLine (parameter: none, return type: String)
+  - Variable declaration: BufferedReader reader
+  - Operation: Initialize reader with new BufferedReader(new InputStreamReader(System.in))
+  - Try block:
+    - Operation: Return the result of reader.readLine()
+  - Catch block (Exception e):
+    - Operation: Return e.getMessage()
+
+Libraries: java.io.BufferedReader, java.io.InputStreamReader

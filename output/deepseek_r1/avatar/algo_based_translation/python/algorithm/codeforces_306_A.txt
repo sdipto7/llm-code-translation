@@ -1,0 +1,52 @@
+**Structured Algorithm Specification:**
+
+**Function/Method Signature:**
+- `procedure main()`
+  - Parameters: None
+  - Return Type: void
+
+**Variable Declarations:**
+- `n: Integer` (Input integer)
+- `m: Integer` (Input integer)
+- `q: Integer` (Quotient of `n / m`)
+- `r: Integer` (Remainder of `n % m`)
+- `a: Array of Integers` (Size `m`, initialized to `q`)
+- `i: Integer` (Loop iterator)
+
+**Logic Flow:**
+1. Read input line as string.
+2. Split input into two space-separated substrings.
+3. Parse substrings into integers `n` and `m`.
+4. Compute `q = n // m` (integer division).
+5. Compute `r = n % m`.
+6. Initialize array `a` with `m` elements, each set to `q`.
+7. For `i` in range `0` to `r - 1` (inclusive):
+   1. Increment `a[i]` by `1`.
+8. For each element in `a`:
+   1. Print element to stdout, appending a space after it.
+
+**Control Flow Structures:**
+- Loop 1:
+  - Type: `for`
+  - Range: `i = 0` to `r - 1`
+  - Increment: `i` by `1` each iteration
+  - Exit Criteria: `i >= r`
+  - Operation: `a[i] += 1`
+- Loop 2:
+  - Type: `for`
+  - Range: `i = 0` to `m - 1`
+  - Increment: `i` by `1` each iteration
+  - Exit Criteria: `i >= m`
+  - Operation: Print `a[i]`
+
+**Input/Output Operations:**
+- Input: Read single line from stdin containing two space-separated integers.
+- Output: Print `m` space-separated integers to stdout (elements of `a`).
+
+**Error Handling:**
+- No explicit error handling.
+- Implicit failure if `m = 0` (division by zero in steps 4/5).
+
+**External Dependencies:**
+- Standard input/output functions for reading/writing data.
+- No external libraries or imports beyond base language features.

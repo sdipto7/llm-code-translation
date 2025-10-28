@@ -1,0 +1,31 @@
+- **Input Operation**:
+  - Read 5 integers from standard input into list `a` (type: `list[int]`).
+- **Variable Declarations**:
+  - `dic`: empty dictionary (type: `dict[int, int]`).
+  - `min_num`: integer.
+  - `a_sum`: integer.
+  - `sum_remaining`: integer.
+  - `result`: integer.
+- **Logic Flow**:
+  1. Populate `a` with 5 integers via `a = [int(input()) for _ in range(5)]`.
+  2. For each index `i` in `0` to `4` (inclusive):
+     - Check last character of `str(a[i])`:
+       - **Conditional**: If last character is `'0'`:
+         - Set `dic[i] = 0`.
+       - **Else**:
+         - Compute `int(str(a[i])[-1]) - 10` and set `dic[i]` to this value.
+  3. Find `min_val = min(dic.values())`.
+  4. Extract `min_num = [k for k, v in dic.items() if v == min_val][0]`.
+  5. Compute `a_sum = sum(a)`.
+  6. Remove entry `min_num` from `dic` via `dic.pop(min_num)`.
+  7. Compute `sum_remaining = sum(dic.values())`.
+  8. Compute `result = a_sum + abs(sum_remaining)`.
+  9. Print `result`.
+- **Control Structures**:
+  - Loop `for i in range(5)` for input processing.
+  - Loop `for i in range(5)` with nested conditional to build `dic`.
+  - List comprehension to find `min_num`.
+- **Input/Output**:
+  - Input: 5 integers via `input()`.
+  - Output: print final computed `result`.
+- **Dependencies**: None.

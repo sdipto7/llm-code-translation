@@ -1,0 +1,71 @@
+1. Import required modules: sys, math, collections (specifically defaultdict and deque).
+2. Define function load(vtype=int) with return type int:
+   - Read input, strip whitespace, and convert to vtype.
+3. Define function load_list(separator=" ", vtype=int) with return type list:
+   - Read input, strip whitespace, split by separator, and convert each element to vtype.
+4. Define function exit() with no return value:
+   - Call sys.exit(0) to terminate the program.
+5. Define function perm_sub(li, used) with return type list of deques:
+   - If length of li equals the size of used, return a list containing an empty deque.
+   - Initialize an empty list k.
+   - Iterate over indices of li:
+     - If index i is in used, skip to the next iteration.
+     - Add i to used.
+     - Recursively call perm_sub(li, used) and store the result in sub_list.
+     - For each sub in sub_list, append li[i] to the left of sub.
+     - Extend k with sub_list.
+     - Remove i from used.
+   - Return k.
+6. Define function perm_li(li) with return type list of deques:
+   - Call perm_sub(li, set()) and return the result.
+7. Define function perm_n(n) with return type list of deques:
+   - Call perm_sub(list(range(n)), set()) and return the result.
+8. Define function join_i(li, sep="") with return type str:
+   - Convert each element in li to a string and join them with sep.
+9. Define function li2n(li) with return type int:
+   - Initialize n to 0 and base to 1.
+   - Iterate over li in reverse order:
+     - Add li[i] * base to n.
+     - Multiply base by 10.
+   - Return n.
+10. Define function sli2ili(li) with return type list of ints:
+    - Convert each string in li to an int and return the resulting list.
+11. Define function prime_list(n) with return type list of ints:
+    - Initialize li with numbers from 2 to n.
+    - Iterate over li:
+      - If li[i] is greater than or equal to the square root of n, break the loop.
+      - If li[i] is -1, continue to the next iteration.
+      - Iterate over the remaining elements in li starting from i+1:
+        - If li[j] is divisible by li[i], set li[j] to -1.
+    - Return a list of elements in li that are not -1.
+12. Define function gcd(a, b) with return type int:
+    - Ensure a is greater than or equal to b.
+    - While b is not zero:
+      - Calculate the remainder r of a divided by b.
+      - If r is zero, return b.
+      - Update a to b and b to r.
+13. Define function lcm(a, b) with return type int:
+    - Return the integer result of (a * b) divided by gcd(a, b).
+14. Define function all_subset(li) with return type list of sets:
+    - Initialize an empty list s.
+    - Iterate over bit values from 0 to 2^(n+1) - 1, where n is the length of li:
+      - Initialize an empty set ss.
+      - Iterate over indices i of li:
+        - If the i-th bit of bit is set, add li[i] to ss.
+      - Append ss to s.
+    - Return s.
+15. Define function factorial(n) with return type int:
+    - If n is 1, return 1.
+    - Otherwise, return n multiplied by factorial(n-1).
+16. Define function mCn(m, n) with return type int:
+    - Define a helper function factorial_ntimes(m, n) with return type int:
+      - Initialize r to 1.
+      - While n is not zero:
+        - Multiply r by m.
+        - Decrement m and n.
+      - Return r.
+    - Return the integer result of factorial_ntimes(m, n) divided by factorial(n).
+17. Read an integer n using load().
+18. Read a list A of integers using load_list().
+19. Check if the length of set(A) equals n.
+20. If they are equal, print 'YES'; otherwise, print 'NO'.

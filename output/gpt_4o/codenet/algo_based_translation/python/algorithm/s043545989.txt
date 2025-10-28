@@ -1,0 +1,18 @@
+1. Import the `collections` module.
+2. Define a function `check_condition(N: int, a: List[int]) -> str`:
+   1. Create a variable `B` of type `collections.Counter` initialized with the list `a`.
+   2. Create a variable `k` of type `List[int]` initialized with the keys of `B`.
+   3. Create a variable `v` of type `List[int]` initialized with the values of `B`.
+   4. If condition: Check if the length of `B` is 3, the bitwise XOR of `k[0]`, `k[1]`, and `k[2]` is 0, and `v[0]`, `v[1]`, and `v[2]` are equal:
+      1. Return "Yes".
+   5. Else if condition: Check if the length of `B` is 2, 0 is in `k`, and either `v[0]` is twice `v[1]` or `v[1]` is twice `v[0]`:
+      1. Return "Yes".
+   6. Else if condition: Check if the length of `B` is 1 and 0 is in `k`:
+      1. Return "Yes".
+   7. Else:
+      1. Return "No".
+3. Define a main function `main() -> None`:
+   1. Read an integer from input and assign it to `N`.
+   2. Read a line of input, split it by spaces, map each element to an integer, convert it to a list, and assign it to `a`.
+   3. Call the function `check_condition` with `N` and `a` and print the result.
+4. Call the `main` function.

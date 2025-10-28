@@ -1,0 +1,10 @@
+- Import the `Scanner` class from the `java.util` package.
+- Declare the `main` function with a `void` return type and no parameters.
+- Instantiate a `Scanner` object named `sc` to read input from the standard input stream.
+- Declare an integer variable `n`.
+- Assign the next integer input from the `Scanner` object to the variable `n`.
+- Use an `if` conditional statement to check if the last digit of `n` is 9 or if the tens digit of `n` is 9:
+  - Calculate `n % 10` to get the last digit of `n`.
+  - Calculate `n / 10` to get the tens digit of `n` and check if the result is 9.
+- If either condition is true, print "Yes" to the standard output.
+- Otherwise, print "No" to the standard output.

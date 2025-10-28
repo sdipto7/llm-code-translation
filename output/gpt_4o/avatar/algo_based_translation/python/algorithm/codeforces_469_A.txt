@@ -1,0 +1,34 @@
+1. Function signature:
+   - None (code executed directly in the global scope)
+
+2. Variable declarations and data types:
+   - `max_level`: int
+   - `x`: list of int
+   - `y`: list of int
+   - `z`: set of int
+
+3. Algorithm execution flow:
+   1. Read an integer from input and assign it to `max_level`.
+   2. Read a line of input, split it by spaces, convert each element to an integer, and store it in the list `x`.
+   3. Read another line of input, split it by spaces, convert each element to an integer, and store it in the list `y`.
+   4. Remove the first element from the list `x`.
+   5. Remove the first element from the list `y`.
+   6. Convert the list `x` to a set.
+   7. Convert the list `y` to a set.
+   8. If 0 is in set `x`, remove 0 from `x`.
+   9. Else if 0 is in set `y`, remove 0 from `y`.
+   10. Create a union of sets `x` and `y`, and assign it to `z`.
+   11. If the length of set `z` is not equal to `max_level`, print "Oh, my keyboard!".
+   12. Else, print "I become the guy."
+
+4. Control structures:
+   - Conditional: `if 0 in x`
+   - Conditional: `elif 0 in y`
+   - Conditional: `if len(z) != max_level`
+
+5. Input/output operations:
+   - Input: Read integers and lists from standard input.
+   - Output: Print a message to standard output.
+
+6. Required libraries, modules, or dependencies:
+   - None (uses only built-in functions and types)

@@ -1,0 +1,21 @@
+```
+Algorithm:
+
+1. Import the 'sys' module from Python's standard library to use 'sys.stdin.readline' for fast input.
+
+2. Define a function 'calculate_maximum_time' with parameters:
+   - 'n' (int): The number of cases to process.
+   - 's' (int): The initial time value.
+   - 'cases' (list of tuples): Each tuple contains two integers 'f' and 't'.
+
+3. Declare an integer variable 'c' and initialize it to 0.
+
+4. For each tuple (f, t) in 'cases':
+   a. Calculate 'x' as 't - (s - f)'.
+   b. If 'x' is greater than 'c', update 'c' to the value of 'x'.
+
+5. Return the value of 's + c'.
+
+Dependencies:
+- sys module for fast input operations (sys.stdin.readline).
+```

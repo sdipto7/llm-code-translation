@@ -1,0 +1,10 @@
+Function Signature: `main() -> None`
+Variable Declarations: `h, a: int`, `ans: int`, `ama: int`
+
+Logic Flow:
+1. Read a line from standard input, strip whitespace, split by spaces, convert the resulting strings to integers, and assign them to `h` and `a` respectively.
+2. Calculate the integer division of `h` by `a` and assign the result to `ans`.
+3. Calculate the remainder of `h` divided by `a` and assign the result to `ama`.
+4. If `ama` is not equal to 0:
+   - Increment `ans` by 1.
+5. Print the value of `ans` to standard output.

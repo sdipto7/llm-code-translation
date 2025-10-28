@@ -1,0 +1,9 @@
+1. Define a function `calculate_sum` with parameters `N` and `M` of type `int` and return type `int`.
+2. Declare variables `N` and `M` of type `int` to store input values.
+3. Read two integer values from input and store them in `N` and `M` using `map(int, input().split())`.
+4. Declare variables `a` and `b` of type `int`.
+5. Calculate `a = N * (N - 1) // 2`.
+6. Calculate `b = M * (M - 1) // 2`.
+7. Calculate the sum of `a` and `b`.
+8. Print the sum of `a` and `b` using `print()`.
+9. The required libraries are the built-in Python libraries, specifically no imports are needed for this code.

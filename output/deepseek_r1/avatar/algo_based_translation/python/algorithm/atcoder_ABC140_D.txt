@@ -1,0 +1,69 @@
+**Structured Algorithm Specification:**
+
+**Functions/Methods:**
+- `parser()`: Generator function, yields non-empty strings from input.
+  - Return: `Generator[str, None, None]`
+- `gw()`: Returns next token from parser.
+  - Return: `str`
+- `gi()`: Returns integer parsed from next token.
+  - Return: `int`
+- Main procedure: Executes program logic.
+
+**Variables:**
+- `input_parser`: `Generator[str, None, None]` (input token generator)
+- `MOD`: `int` (unused constant)
+- `N`: `int` (length of input string)
+- `K`: `int` (max allowed operations)
+- `S`: `str` (input character sequence)
+- `seg_cnt`: `int` (count of adjacent differing characters)
+- `cur_happy`: `int` (current happy count)
+- `ans`: `int` (final result)
+
+**Imports/Dependencies:**
+- `deque` from `collections`
+- `numpy`, `scipy` (unused but declared)
+- Standard input handling
+
+**Algorithm Steps:**
+
+1. **Input Parsing:**
+   - Initialize `input_parser` via `parser()`.
+   - Read `N` using `gi()`.
+   - Read `K` using `gi()`.
+   - Read `S` using `gw()` (ensures length `N`).
+
+2. **Segment Count Calculation:**
+   - Initialize `seg_cnt = 0`.
+   - Loop `i` from `0` to `N-2`:
+     - If `S[i] != S[i+1]`, increment `seg_cnt`.
+
+3. **Current Happy Calculation:**
+   - Compute `cur_happy = (N - 1) - seg_cnt`.
+
+4. **Determine Maximum Happy:**
+   - If `2 * K >= seg_cnt`:
+     - Set `ans = N - 1`.
+   - Else:
+     - Set `ans = cur_happy + 2 * K`.
+
+5. **Output Result:**
+   - Print `ans`.
+
+**Control Flow:**
+- **Loop:** For-loop iterates `N-1` times to count segment changes.
+- **Conditionals:** 
+  - Check character pairs in `S`.
+  - Final decision based on `K` and `seg_cnt` ratio.
+
+**Edge Cases:**
+- Single-character string (`seg_cnt=0`, `cur_happy=N-1`).
+- All characters identical (same as single-case).
+- `K` larger than needed to merge all segments.
+
+**Assumptions:**
+- Input `S` has exactly `N` characters.
+- `N ≥ 1`.
+
+**External Dependencies:**
+- Input handling uses generator-based tokenization.
+- `deque` declared but unused in core logic.

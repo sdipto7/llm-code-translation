@@ -1,0 +1,12 @@
+```plaintext
+Algorithm:
+1. Define function `calculate_difference` with parameters `a: int`, `b: int`, `c: int`, `k: int` and return type `int`.
+2. Initialize four integer variables `a`, `b`, `c`, and `k` by parsing space-separated integers from the input.
+3. Evaluate if `k` modulo 2 is equal to 0:
+   a. If true, return the result of `a - b`.
+   b. If false, return the result of `b - a`.
+4. End of function.
+
+Dependencies: No external libraries or modules are required.
+```
+

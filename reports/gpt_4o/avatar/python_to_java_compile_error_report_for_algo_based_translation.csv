@@ -1,0 +1,42 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,codeforces_296_A.java,Compilation Error,"Error: output/gpt_4o/avatar/algo_based_translation/python/java/codeforces_296_A.java:11: error: incompatible types: String[] cannot be converted to List<String>
+        System.out.println(isPossible(n, m));
+                                         ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error
+"
+python,java,atcoder_AGC027_A.java,Compilation Error,"Error: output/gpt_4o/avatar/algo_based_translation/python/java/atcoder_AGC027_A.java:10: error: ';' expected
+        int[] na() {
+                ^
+1 error
+"
+python,java,codeforces_397_B.java,Compilation Error,"Error: output/gpt_4o/avatar/algo_based_translation/python/java/codeforces_397_B.java:11: error: invalid method declaration; return type required
+    public CodeforcesTask397BSolution() {
+           ^
+1 error
+"
+python,java,atcoder_ABC112_C.java,Compilation Error,"Error: output/gpt_4o/avatar/algo_based_translation/python/java/atcoder_ABC112_C.java:8: error: method solve in class atcoder_ABC112_C cannot be applied to given types;
+        System.out.println(solve(readQuestion()));
+                           ^
+  required: int,List<int[]>
+  found:    int[]
+  reason: actual and formal argument lists differ in length
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC118_C.java,Compilation Error,"Error: output/gpt_4o/avatar/algo_based_translation/python/java/atcoder_ABC118_C.java:16: error: cannot find symbol
+        int gcd = A.stream().reduce(A.get(0), GCDCalculator::gcd);
+                                              ^
+  symbol:   variable GCDCalculator
+  location: class atcoder_ABC118_C
+1 error
+"
+python,java,atcoder_ABC133_E.java,Compilation Error,"Error: output/gpt_4o/avatar/algo_based_translation/python/java/atcoder_ABC133_E.java:30: error: cannot find symbol
+        int colorNum = (f == K) ? K - 1 : K - 2;
+                             ^
+  symbol:   variable K
+  location: class atcoder_ABC133_E
+1 error
+only showing the first 1 errors, of 3 total; use -Xmaxerrs if you would like to see more
+"

@@ -1,0 +1,21 @@
+1. Function solve(n, ls_xyh):
+   1.1. Initialize x0 to None
+   1.2. Iterate through ls_xyh:
+      1.2.1. If the height at index i is greater than 0:
+         1.2.1.1. Assign the values at index i to x0, y0, h0
+         1.2.1.2. Break the loop
+   1.3. Generate a list of candidates (cands) with possible center coordinates (cx, cy) and heights (ch) 
+       where ch = h0 + |cx - x0| + |cy - y0|
+   1.4. Iterate through ls_xyh:
+      1.4.1. Filter cands to include only those where max(ch - |cx - x| - |cy - y|, 0) equals h
+   1.5. Extract the first (and only) candidate (xx, yy, hh) from the filtered cands
+   1.6. Return the string representation of xx, yy, hh joined by spaces
+
+2. Function readQuestion():
+   2.1. Read the first line and extract n
+   2.2. Read n subsequent lines and store the values in ls_xyh
+   2.3. Return n and ls_xyh
+
+3. Function main():
+   3.1. Call readQuestion() to get n and ls_xyh
+   3.2. Call solve(n, ls_xyh) and print the result

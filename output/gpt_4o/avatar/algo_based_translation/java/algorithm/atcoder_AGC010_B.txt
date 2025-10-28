@@ -1,0 +1,62 @@
+```
+Algorithm atcoder_AGC010_B
+  Input: None
+  Uses: Scanner from java.util
+  Variables:
+    scanner: Scanner
+    N: Integer
+    A: Array of Integer
+    sum: Long
+    NS: Long
+    K: Long
+    i: Integer
+    j: Integer
+    d: Long
+
+  Begin
+    scanner <- new Scanner(System.in)
+    N <- scanner.nextInt()
+    A <- new Array of Integer with size N
+    For i from 0 to N-1 do
+      A[i] <- scanner.nextInt()
+    End For
+
+    If possible(N, A) then
+      Output "YES"
+    Else
+      Output "NO"
+    End If
+  End
+
+  Function possible(N: Integer, A: Array of Integer): Boolean
+    sum <- 0
+    For i from 0 to N-1 do
+      sum <- sum + A[i]
+    End For
+
+    NS <- (Long) N * (N + 1) / 2
+
+    If sum % NS != 0 then
+      Return false
+    End If
+
+    K <- sum / NS
+
+    For i from 0 to N-1 do
+      If i == 0 then
+        j <- N - 1
+      Else
+        j <- i - 1
+      End If
+
+      d <- K - (A[i] - A[j])
+
+      If d < 0 or d % N != 0 then
+        Return false
+      End If
+    End For
+
+    Return true
+  End Function
+End Algorithm
+```

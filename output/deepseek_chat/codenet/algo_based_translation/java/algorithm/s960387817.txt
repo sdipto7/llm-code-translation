@@ -1,0 +1,12 @@
+1. Import java.util.HashSet, java.util.Scanner, java.util.Set, java.util.stream.IntStream
+2. Declare public class Main
+3. Declare public static void main(String[] args)
+4. Create Scanner object with System.in input stream
+5. Read integer n from scanner input
+6. Create HashSet<Integer> named set
+7. Create IntStream from 0 to n-1
+8. For each integer i in stream:
+   - Read integer from scanner input
+   - Add integer to set
+9. Print set.size() to output
+10. Close scanner

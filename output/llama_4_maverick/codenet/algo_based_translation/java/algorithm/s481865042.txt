@@ -1,0 +1,15 @@
+1. Import required library: java.util.Scanner
+2. Define a class: Main with a method main(String[] args) 
+   - Declare a variable sc of type Scanner and initialize it with new Scanner(System.in)
+   - Declare a variable s of type String and read input from sc into s using sc.next()
+   - Declare a variable k of type long and read input from sc into k using sc.nextLong()
+   - Declare a variable sb of type StringBuffer and initialize it with new StringBuffer()
+3. Iterate over the string s using a for loop with loop counter i ranging from 0 to s.length() - 1
+   - Check the condition (26 - (s.charAt(i) - 'a')) <= k and s.charAt(i) != 'a'
+   - If the condition is true, subtract 26 - (s.charAt(i) - 'a') from k and append 'a' to sb
+   - If the condition is false, append s.charAt(i) to sb
+4. After the loop, check if k > 0
+   - If k > 0, retrieve the last character of sb into a variable t of type char
+   - Delete the last character from sb
+   - Calculate ('a' + (t - 'a' + k) % 26) and append the result to sb after converting it to char
+5. Print the contents of sb to the console using System.out.println(sb)

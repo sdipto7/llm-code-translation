@@ -1,0 +1,99 @@
+Function signatures:
+- `main(String[] args): void`
+- `solve(): void`
+- `check(int p, int q): int`
+- `max(double a, double b): double`
+- `min(double a, double b): double`
+- `max(long a, long b): long`
+- `min(long a, long b): long`
+- `max(int a, int b): int`
+- `min(int a, int b): int`
+- `abs(long x): long`
+- `ceil(long num, long den): long`
+- `GCD(long a, long b): long`
+- `FastExp(long base, long exp, long mod): long`
+- `ModInv(long num, long mod): long`
+- `pop(long x): int`
+- `next(): String`
+- `nextInt(): int`
+- `nextLong(): long`
+- `nextDouble(): double`
+- `pln(double x): void`
+- `pln(boolean x): void`
+- `pln(int x): void`
+- `pln(long x): void`
+- `pln(String x): void`
+- `pln(char x): void`
+- `pln(StringBuilder x): void`
+- `pln(BigInteger x): void`
+- `p(int x): void`
+- `p(long x): void`
+- `p(String x): void`
+- `p(char x): void`
+- `p(StringBuilder x): void`
+- `p(BigInteger x): void`
+- `p(double x): void`
+- `p(boolean x): void`
+
+Variable declarations and data types:
+- `ans`: `int`
+- `balls`: `int[][]`
+- `N`: `int`
+- `taken`: `boolean[]`
+- `I`: `FastScanner`
+- `O`: `OutPut`
+- `add`: `int`
+- `p`: `int`
+- `q`: `int`
+- `ret`: `int`
+- `added`: `boolean`
+- `start`: `int`
+- `x`: `int`
+- `y`: `int`
+- `i`: `int`
+- `ans`: `long`
+- `base`: `long`
+- `exp`: `long`
+- `mod`: `long`
+- `cnt`: `int`
+- `num`: `long`
+- `den`: `long`
+- `a`: `double`, `long`, `int`
+- `b`: `double`, `long`, `int`
+- `br`: `BufferedReader`
+- `st`: `StringTokenizer`
+- `w`: `PrintWriter`
+
+Execution order and logic flow:
+
+1. Initialize `ans` to 100, `balls` to a 2D array of size `N`, and `taken` to a boolean array of size `N`.
+2. Create instances of `FastScanner` for input (`I`) and `OutPut` for output (`O`).
+3. Read `N` from input.
+4. Set `ans` to `N`.
+5. For each ball, read its x and y coordinates and store them in `balls`.
+6. Sort `balls` by the x-coordinate.
+7. Call `solve()` to determine the minimum number of sets.
+8. Swap the x and y coordinates of each ball.
+9. Sort `balls` again by the new x-coordinate.
+10. Call `solve()` again to determine the minimum number of sets considering swapped coordinates.
+11. Print the final value of `ans`.
+
+`solve()` function:
+1. For each possible pair of balls starting from the first ball, calculate the differences `p` and `q` between their coordinates.
+2. Initialize `taken` array to false.
+3. Call `check(p, q)` to determine the number of balls that can be grouped using the differences `p` and `q`.
+4. Update `ans` with the minimum value between `ans` and the result from `check(p, q)`.
+
+`check(int p, int q)` function:
+1. Initialize `ret` to 0, which will count the number of groups formed.
+2. Use a while loop to continue until no more balls can be added to a group.
+3. Initialize `added` to false.
+4. Iterate through `balls` to find an untaken ball, mark it as taken, increment `ret`, and calculate the next expected coordinates `x` and `y` using `p` and `q`.
+5. If no ball is added, break the loop.
+6. Iterate through the remaining `balls` to find balls matching the expected coordinates `x` and `y`, mark them as taken, and update `x` and `y` for the next expected ball.
+7. Return `ret`.
+
+Required libraries, modules, or dependencies:
+- `java.io.*`
+- `java.math.*`
+- `java.util.*`

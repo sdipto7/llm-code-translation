@@ -1,0 +1,24 @@
+Function signature: main()  
+Variable declarations:  
+n: integer  
+m: integer  
+q: integer  
+r: integer  
+a: list of integers  
+
+Logic flow:  
+1. Read integer inputs n and m from standard input separated by space.  
+2. Calculate q as integer division of n by m.  
+3. Calculate r as remainder of n divided by m.  
+4. Initialize list a with m elements, each set to q.  
+5. Loop for i from 0 to r-1:  
+   a[i] = a[i] + 1  
+6. Loop for i from 0 to m-1:  
+   Print a[i] followed by a space without newline at the end of all prints.  
+
+Input/output operations:  
+- Input: Two integers n and m read from standard input.  
+- Output: m integers printed to standard output, separated by spaces.  
+
+Required libraries, modules, or dependencies:  
+None

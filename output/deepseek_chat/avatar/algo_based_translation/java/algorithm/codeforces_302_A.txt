@@ -1,0 +1,45 @@
+**Function Signature:**
+- main(String[] args) throws IOException
+
+**Variables:**
+- Scanner sc (input scanner)
+- int n (first input integer)
+- int k (second input integer)
+- int[] arr (size n)
+- StringBuffer res (result accumulator)
+- int o = 0 (odd count)
+- int e = 0 (even count)
+- int l (query left bound)
+- int r (query right bound)
+
+**Libraries/Dependencies:**
+- java.io.IOException
+- java.util.Scanner
+
+**Algorithm Flow:**
+
+1. Initialize Scanner with System.in
+2. Read integer n
+3. Read integer k
+4. Create integer array arr of size n
+5. For i from 0 to n-1:
+   - Read integer into arr[i]
+6. Initialize StringBuffer res
+7. Initialize counters o=0, e=0
+8. For i from 0 to n-1:
+   - If arr[i] == 1: increment o
+   - Else: increment e
+9. For i from 0 to k-1:
+   - Read integer l
+   - Read integer r
+   - Calculate segment_length = r - l + 1
+   - If segment_length % 2 == 1:
+        Append "0\n" to res
+   - Else:
+        Calculate half_length = segment_length / 2
+        If half_length <= o AND half_length <= e:
+            Append "1\n" to res
+        Else:
+            Append "0\n" to res
+10. Print res contents
+11. Close scanner

@@ -1,0 +1,54 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `INF`: int constant (100000)
+- `sc`: Scanner object for input
+- `D`: int (number of problems)
+- `G`: long (target score)
+- `p`: int array of size D (number of problems per category)
+- `c`: int array of size D (bonus points per category)
+- `min`: int (minimum problems to solve)
+- `bit`: int (bitmask for problem selection)
+- `score`: int (current accumulated score)
+- `solve_num`: int (number of problems solved)
+
+**Logic Flow:**
+1. Initialize Scanner and read input values D and G
+2. Initialize arrays p and c with size D
+3. Read D pairs of values into p and c arrays
+4. Initialize min to INF
+5. Iterate over all bitmask combinations from 0 to (1 << D) - 1:
+   - Initialize score and solve_num to 0
+   - For each problem category i (0 to D-1):
+     - If bitmask has bit i set:
+       - Add score: 100*(i+1)*p[i] + c[i]
+       - Add p[i] to solve_num
+   - If current score < G:
+     - For each category i from D-1 down to 0:
+       - If bitmask doesn't have bit i set:
+         - For j from 0 to p[i]-2:
+           - Add 100*(i+1) to score
+           - Increment solve_num by 1
+           - If score >= G: break inner loops
+   - If score >= G: update min = minimum(min, solve_num)
+6. Output min value
+7. Close Scanner
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < D; i++)`
+- For loop: `for (int bit = 0; bit < (1 << D); bit++)`
+- For loop: `for (int i = D-1; i >= 0; i--)`
+- For loop: `for (int j = 0; j < p[i]-1; j++)`
+- If condition: `if ((bit & (1 << i)) != 0)`
+- If condition: `if (score < G)`
+- If condition: `if ((bit & (1 << i)) == 0)`
+- If condition: `if (score >= G)`
+- Labeled break: `break loop`
+
+**Input/Output:**
+- Input: D, G, followed by D pairs of p[i] and c[i]
+- Output: Minimum number of problems to solve (min)
+
+**Dependencies:**
+- `java.util.Scanner`

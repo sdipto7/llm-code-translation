@@ -1,0 +1,16 @@
+```
+Function Signature:
+main() -> None
+
+Variable Declarations:
+N: int
+A: List[int]
+ans: int
+
+Algorithm:
+1. Read an integer input from the user and store it in the variable N.
+2. Read a line of input, split the line into components, map each component to an integer, convert the map object to a list, and store the list in the variable A.
+3. Sort the list A in non-decreasing order.
+4. Calculate the difference between the last element and the first element of the sorted list A, and store the result in the variable ans.
+5. Print the value of ans.
+```

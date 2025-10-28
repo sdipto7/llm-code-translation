@@ -1,0 +1,10 @@
+1. READ integer n FROM input
+2. READ array of integers FROM input
+3. CREATE list by taking each integer in the array MOD 2
+4. CALCULATE sum of list
+5. IF sum equals 1 THEN
+   6. FIND index of first occurrence of 1 in list
+   7. PRINT index + 1
+ELSE
+   8. FIND index of first occurrence of 0 in list
+   9. PRINT index + 1

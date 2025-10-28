@@ -1,0 +1,37 @@
+Function: main()
+Parameters: None
+Return Type: None
+
+Variable Declarations:
+- N: Integer
+- M: Integer
+- Q: Integer
+- train: 2D List of Integers (N x N)
+- accum: 2D List of Integers ((N+1) x (N+1))
+- l: Integer
+- r: Integer
+- i: Integer
+- j: Integer
+- temp: List of Integers
+- v: Integer
+- p: Integer
+- q: Integer
+
+Logic Flow:
+1. Read integers N, M, Q from input
+2. Initialize train as a 2D list of size N x N with all elements set to 0
+3. For M times:
+   a. Read integers l, r from input
+   b. Increment train[l-1][r-1] by 1
+4. Initialize accum as a 2D list with first row as a list of N+1 zeros
+5. For i from 0 to N-1:
+   a. Initialize temp as a list with a single element 0
+   b. Initialize v as 0
+   c. For j from 0 to N-1:
+      i. Add train[i][j] to v
+      ii. Append (accum[-1][j+1] + v) to temp
+   d. Append temp to accum
+6. For Q times:
+   a. Read integers p, q from input
+   b. Calculate v as (accum[q][q] - accum[p-1][q] - accum[q][p-1] + accum[p-1][p-1])
+   c. Print v

@@ -1,0 +1,38 @@
+Algorithm:
+- Import sys module
+- Define readline as sys.stdin.readline
+- Assign MOD = 1000000007 (integer)
+- Assign INF = positive infinity (float)
+- Set recursion limit to 100000 via sys.setrecursionlimit()
+- Define main() function with no parameters and void return:
+  1. Read integer N from input via readline()
+  2. Initialize set s with {1, 2, 4, 8, 16, 32, 64} (integers)
+  3. Initialize ans = 0 (integer)
+  4. For loop: i from 1 to N inclusive (integer iterator)
+      a. If i exists in set s:
+          i. Update ans to current i value
+  5. Print ans as output
+- Execute main() when run as script
+
+Input Processing:
+- Single integer input via standard input
+
+Output:
+- Print largest number from predefined set {1,2,4,8,16,32,64} that is ≤ N
+
+Dependencies:
+- Python sys module (for stdin access and recursion limit configuration)
+
+Control Flow:
+- Sequential execution of variable assignments followed by main()
+- For loop with O(N) iterations
+- Set membership check as conditional
+- Final output after full iteration
+
+Data Types:
+- N: integer
+- s: set of integers
+- ans: integer
+- MOD: integer constant
+- INF: float constant
+- i: integer iterator

@@ -1,0 +1,53 @@
+```plaintext
+Function Signatures:
+1. root(x: int) -> int
+2. same(x: int, y: int) -> bool
+3. unite(*z: int) -> None
+
+Variable Declarations and Data Types:
+- n: int
+- a: List[int]
+- par: List[int]
+- rank: List[int]
+- size: List[int]
+- b: List[int]
+- c: int
+- i: int
+- t: int
+- k: int
+- l: int
+- r: int
+
+Logic Flow:
+1. Define `root` function with parameter `x` of type int. Return `x` if `par[x]` equals `x`, otherwise return `root(par[x])`.
+2. Define `same` function with parameters `x` and `y` of type int. Return whether `root(x)` equals `root(y)`.
+3. Define `unite` function with variable number of integer arguments `*z`. Inside this function:
+   - Assign `x, y` to the result of mapping `root` over `z`.
+   - If `x` is not equal to `y`:
+     - If `rank[x]` is less than `rank[y]`, set `par[x]` to `y` and add `size[x]` to `size[y]`.
+     - Else, set `par[y]` to `x` and add `size[y]` to `size[x]`.
+     - If `rank[x]` equals `rank[y]`, increment `rank[x]` by 1.
+4. Read input from standard input, split by whitespace, and map to integers. Assign the first value to `n` and the rest to `a`.
+5. Initialize `par` as a list of integers from 0 to `n-1`.
+6. Initialize `rank` and `size` as lists of `n` ones.
+7. Initialize `b` as a list of `n` zeros.
+8. Iterate over the enumeration of `a` with indices `i` and values `t`. Assign `i` to `b[t-1]`.
+9. Initialize `c` to 0.
+10. Iterate over `b` in reverse order with variable `k`:
+   - Initialize `l` and `r` to 1.
+   - If `k` is greater than 0 and `a[k-1]` is greater than `a[k]`:
+     - Add `size[root(k-1)]` to `l`.
+     - Call `unite` with arguments `k-1` and `k`.
+   - If `k+1` is less than `n` and `a[k+1]` is greater than `a[k]`:
+     - Add `size[root(k+1)]` to `r`.
+     - Call `unite` with arguments `k+1` and `k`.
+   - Add `l * r * a[k]` to `c`.
+11. Print the value of `c`.
+
+Input/Output Operations:
+- Read input from standard input, split by spaces, and map to integers.
+- Output the integer value of `c`.
+
+Dependencies:
+- Standard input/output functions.
+```

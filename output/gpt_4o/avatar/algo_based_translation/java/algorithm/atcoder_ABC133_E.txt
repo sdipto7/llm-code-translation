@@ -1,0 +1,52 @@
+```
+Algorithm:
+
+1. Import necessary libraries:
+   - Import LinkedList from java.util.
+   - Import Scanner from java.util.
+
+2. Define a class `atcoder_ABC133_E`.
+
+3. Define a private inner class `Node` within `atcoder_ABC133_E`:
+   - Declare public long `pattern` initialized to 0.
+   - Declare public int `index`.
+   - Declare public LinkedList<Integer> `children` initialized as a new LinkedList.
+   - Declare public int `parent` initialized to -1.
+   - Define a constructor `Node(int i)`:
+     - Assign `i` to `index`.
+
+   - Define a public method `setParent(int K, int parent, int use, Node[] nodes)`:
+     - Assign `K - use` to `this.pattern`.
+     - Assign `parent` to `this.parent`.
+     - Initialize int `count` to 1.
+     - If `parent` is not -1, increment `count` by 1.
+     - For each integer `n` in `children`:
+       - If `n` equals `this.parent`, continue to the next iteration.
+       - Call `setParent` on `nodes[n]` with parameters `(K, index, count, nodes)`.
+       - Increment `count` by 1.
+
+4. Define a public method `solve()` in `atcoder_ABC133_E`:
+   - Create a Scanner object `in` to read from System.in.
+   - Read an integer `N` using `in.nextInt()`.
+   - Read an integer `K` using `in.nextInt()`.
+   - Create an array `nodes` of type `Node` with length `N`.
+   - For integer `i` from 0 to `N-1`, inclusive:
+     - Initialize `nodes[i]` as a new `Node` with parameter `i`.
+
+   - For integer `i` from 0 to `N-2`, inclusive:
+     - Read an integer `a` using `in.nextInt()` and decrement by 1.
+     - Read an integer `b` using `in.nextInt()` and decrement by 1.
+     - Add `b` to `children` of `nodes[a]`.
+     - Add `a` to `children` of `nodes[b]`.
+
+   - Close the scanner `in`.
+   - Call `setParent` on `nodes[0]` with parameters `(K, -1, 0, nodes)`.
+   - Initialize a long `patterns` to 1.
+   - For integer `i` from 0 to `N-1`, inclusive:
+     - Multiply `patterns` by `nodes[i].pattern` and take modulo 1,000,000,007.
+   - Print `patterns`.
+
+5. Define the `main` method with signature `public static void main(String[] args)`:
+   - Create an instance `main` of `atcoder_ABC133_E`.
+   - Call the `solve()` method on `main`.
+```

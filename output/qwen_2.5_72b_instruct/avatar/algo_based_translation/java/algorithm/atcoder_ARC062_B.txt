@@ -1,0 +1,58 @@
+- Function signatures:
+  - `main(String[] args)`
+  - `solve(int testNumber, InputReader in, PrintWriter out)`
+  - `InputReader(InputStream stream)`
+  - `next()`
+
+- Variable declarations and data types:
+  - `InputStream inputStream`
+  - `OutputStream outputStream`
+  - `InputReader in`
+  - `PrintWriter out`
+  - `TaskD solver`
+  - `String S`
+  - `int score`
+  - `int i`
+  - `char my`
+  - `char his`
+  - `BufferedReader reader`
+  - `StringTokenizer tokenizer`
+  - `String nextToken`
+
+- Logic flow:
+  - Initialize `inputStream` with `System.in`
+  - Initialize `outputStream` with `System.out`
+  - Initialize `in` with `new InputReader(inputStream)`
+  - Initialize `out` with `new PrintWriter(outputStream)`
+  - Initialize `solver` with `new TaskD()`
+  - Call `solver.solve(1, in, out)`
+  - Close `out`
+
+- Inside `solve`:
+  - Read `S` using `in.next()`
+  - Initialize `score` to `0`
+  - Loop over `i` from `0` to `S.length() - 1`
+    - Set `my` to `'g'` if `i % 2 == 0`, else `'p'`
+    - Set `his` to `S.charAt(i)`
+    - If `my` is not equal to `his`
+      - If `my` is `'p'`, increment `score` by `1`, else decrement `score` by `1`
+  - Print `score` using `out.println(score)`
+
+- Inside `InputReader`:
+  - Initialize `reader` with `new BufferedReader(new InputStreamReader(stream), 32768)`
+  - Initialize `tokenizer` to `null`
+
+- Inside `next`:
+  - While `tokenizer` is `null` or `tokenizer.hasMoreTokens()` is `false`
+    - Try to read a line from `reader` and tokenize it
+    - Catch `IOException` and throw `RuntimeException`
+  - Return `tokenizer.nextToken()`
+
+- Required libraries:
+  - `java.io.OutputStream`
+  - `java.io.IOException`
+  - `java.io.InputStream`
+  - `java.io.PrintWriter`
+  - `java.util.StringTokenizer`
+  - `java.io.BufferedReader`
+  - `java.io.InputStreamReader`

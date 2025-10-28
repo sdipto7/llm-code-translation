@@ -1,0 +1,20 @@
+1. Read the number of elements N from the input.
+2. Create a list L to store N integers.
+3. Read N integers from the input and store them in L.
+4. Sort the list L in ascending order.
+5. Initialize a counter count to 0.
+6. Iterate over each element at index i in L.
+7. For each element at index i, iterate over each element at index j in L, where j > i.
+8. For each pair of elements at indices i and j, calculate their sum a + b.
+9. Find the number of elements in L, starting from index j + 1, that are less than the sum a + b using a binary search function.
+10. Add the result of the binary search to the counter count.
+11. After iterating over all pairs of elements, output the value of count.
+12. The binary search function takes a list, a starting index, and a target value as inputs.
+13. Initialize two pointers, low and upp, to the starting index and the last index of the list, respectively.
+14. Calculate the mid index based on low and upp.
+15. If the difference between upp and low is less than 0, return 0.
+16. If the element at the starting index is greater than or equal to the target, return 0.
+17. If the element at index upp is less than the target, return upp - low + 1.
+18. While the difference between upp and low is greater than 1, update low or upp based on the comparison between the element at mid and the target.
+19. Update mid based on the new values of low and upp.
+20. Return low - starting index + 1.

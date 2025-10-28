@@ -1,0 +1,70 @@
+### Algorithm Extraction:
+
+**Class: atcoder_ABC126_E**
+- Variables:
+  - Scanner sc = new Scanner(System.in)
+  - final int MOD = 1000000007
+
+**Method: doIt()**
+- Parameters: none
+- Return type: void
+- Logic:
+  1. Declare int n = sc.nextInt()
+  2. Create UnionFindTree utf with size n
+  3. Declare int m = sc.nextInt()
+  4. For i from 0 to m-1:
+     - Declare int x = sc.nextInt() - 1
+     - Declare int y = sc.nextInt() - 1
+     - Declare int z = sc.nextInt()
+     - Call utf.unite(x, y)
+  5. Declare int cnt = 0
+  6. For i from 0 to n-1:
+     - If utf.par[i] == i then increment cnt by 1
+  7. Print cnt
+
+**Inner Class: UnionFindTree**
+- Variables:
+  - int n
+  - int[] par
+  - int[] rank
+
+**Constructor: UnionFindTree(int n)**
+- Parameters: int n
+- Logic:
+  1. Set this.n = n
+  2. Initialize par as int array of size n
+  3. Initialize rank as int array of size n
+  4. For i from 0 to n-1:
+     - Set par[i] = i
+     - Set rank[i] = 0
+
+**Method: find(int x)**
+- Parameters: int x
+- Return type: int
+- Logic:
+  1. If par[x] == x then return x
+  2. Else set par[x] = find(par[x]) and return par[x]
+
+**Method: unite(int x, int y)**
+- Parameters: int x, int y
+- Return type: void
+- Logic:
+  1. Set x = find(x)
+  2. Set y = find(y)
+  3. If x == y then return
+  4. If rank[x] < rank[y] then set par[x] = y
+  5. Else:
+     - Set par[y] = x
+     - If rank[x] == rank[y] then increment rank[x] by 1
+
+**Method: same(int x, int y)**
+- Parameters: int x, int y
+- Return type: boolean
+- Logic:
+  1. Return find(x) == find(y)
+
+**Main Method: main(String[] args)**
+- Logic: Create new atcoder_ABC126_E instance and call doIt()
+
+**Dependencies:**
+- java.util.Scanner

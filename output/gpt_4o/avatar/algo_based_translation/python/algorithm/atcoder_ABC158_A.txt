@@ -1,0 +1,13 @@
+```
+- Input: Read a string from standard input and store it in a variable `stdin` (string).
+- Variable Declaration:
+  - `s` (string): Assign the value of `stdin` to `s`.
+  - `result` (string): Declare a variable `result`.
+- Logic and Control Flow:
+  - Conditional Check: If the character 'A' is present in `s` and the character 'B' is present in `s`:
+    - Assign "Yes" to `result`.
+  - Else:
+    - Assign "No" to `result`.
+- Output: Print the value of `result`.
+- No external libraries, modules, or dependencies are required.
+```

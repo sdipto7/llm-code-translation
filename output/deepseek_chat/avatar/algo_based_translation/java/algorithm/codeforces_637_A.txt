@@ -1,0 +1,46 @@
+### Function Signatures
+- `public static void main(String[] args)`
+- `static void debug(Object... obj)`
+
+### Variable Declarations and Data Types
+- `Scanner in = new Scanner(System.in)`
+- `PrintWriter pw = new PrintWriter(System.out)`
+- `int n = in.nextInt()`
+- `int[] ara = new int[n]`
+- `Map<Integer, Integer> map = new HashMap<>()`
+- `int v` (temporary variable for input)
+- `int max = 0`
+- `Map<Integer, Integer> mm = new HashMap<>()`
+
+### Logic Flow in Execution Order
+1. Read integer `n` from input.
+2. Initialize integer array `ara` of size `n`.
+3. Initialize HashMap `map` to count frequency of each number.
+4. For each index `i` from `0` to `n-1`:
+   - Read integer `v` from input.
+   - Store `v` in `ara[i]`.
+   - If `v` is not in `map`, add it with count 1.
+   - Else, increment its count in `map`.
+5. Find maximum frequency value `max` from `map.values()`.
+6. Initialize HashMap `mm` to track cumulative frequency during iteration.
+7. For each index `i` from `0` to `n-1`:
+   - If `ara[i]` is not in `mm`, add it with count 1.
+     - If count equals `max`, print `ara[i]` and break.
+   - Else, increment its count in `mm`.
+     - If count equals `max`, print `ara[i]` and break.
+8. Close `PrintWriter`.
+
+### Control Structures
+- `for (int i = 0; i < n; i++)` (two loops)
+- `if (!map.containsKey(v))` / `else`
+- `for (Integer i : map.values())`
+- `if (!mm.containsKey(ara[i]))` / `else`
+- `if (mm.get(ara[i]) == max)` (inside both branches)
+
+### Input/Output Operations
+- Input: `n` and `n` integers via `Scanner`.
+- Output: Print first number reaching frequency `max` via `PrintWriter`.
+
+### Required Libraries/Modules
+- `java.io.*`
+- `java.util.*` (specifically `Scanner`, `PrintWriter`, `HashMap`, `Map`, `Arrays`)

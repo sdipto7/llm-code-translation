@@ -1,0 +1,24 @@
+1. Set recursion limit to a large value
+2. Define a large value for infinity (INF)
+3. Define a function to read input from standard input and remove trailing whitespace
+4. Define the main function
+5. Read two integers N and M from input
+6. Initialize an adjacency list (edge) with N empty lists
+7. For M iterations:
+   7.1. Read three integers X, Y, and Z from input, subtracting 1 from each
+   7.2. Add Y to the adjacency list of X
+   7.3. Add X to the adjacency list of Y
+8. Initialize a boolean array (used) of size N with all elements set to False
+9. Initialize a counter (ans) to 0
+10. For each index i from 0 to N-1:
+    10.1. If used[i] is False:
+        10.1.1. Increment ans by 1
+        10.1.2. Initialize a queue with i
+        10.1.3. While the queue is not empty:
+            10.1.3.1. Dequeue a node
+            10.1.3.2. Mark the node as used (set used[node] to True)
+            10.1.3.3. For each neighbor of the node:
+                10.1.3.3.1. If the neighbor is not used:
+                    10.1.3.3.1.1. Enqueue the neighbor
+11. Output the value of ans
+12. Call the main function if the script is run directly

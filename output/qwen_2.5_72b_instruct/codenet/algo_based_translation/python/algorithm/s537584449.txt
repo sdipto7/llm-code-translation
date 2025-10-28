@@ -1,0 +1,22 @@
+Function Signature: func(a) with parameter a of type int and no return type
+
+Variable Declarations:
+- a of type int
+- digits as a list of int
+- temp of type int
+- result of type int
+
+Logic Flow:
+1. Read an integer input and assign it to a
+2. Define function func with parameter a
+3. Initialize an empty list digits to store individual digits of a
+4. Assign the value of a to temp
+5. While temp is not equal to 0:
+    a. Append the remainder of temp divided by 10 to digits
+    b. Update temp to the integer division of temp by 10
+6. Calculate the sum of all elements in digits and assign it to result
+7. If result is equal to 1:
+    a. Print '10'
+8. Else:
+    a. Print result
+9. Call function func with argument a

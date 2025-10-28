@@ -1,0 +1,30 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `Scanner sc: Scanner`
+- `long k: long`
+- `long a: long`
+- `long b: long`
+- `long x: long`
+- `long ans: long`
+
+Complete logic flow in execution order:
+1. Create a new `Scanner` object to read input.
+2. Read three long integers from standard input: `k`, `a`, `b`.
+3. If `b` is less than or equal to `a + 2`:
+   - Print `1 + k`.
+   - Exit the program.
+4. Calculate `x` as `k - (a - 1)`.
+5. Calculate `ans` as `a + (x / 2) * (b - a) + (x % 2)`.
+6. Print `ans`.
+
+Control structures:
+- If statement with condition `b <= a + 2`.
+
+Input/output operations and data processing logic:
+- Input: Three long integers `k`, `a`, `b` from standard input.
+- Output: A single long integer representing the computed result.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

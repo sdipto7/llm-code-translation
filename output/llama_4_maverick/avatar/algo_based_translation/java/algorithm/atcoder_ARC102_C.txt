@@ -1,0 +1,15 @@
+1. Initialize `nchoosek` table with dimensions 4001x4001.
+2. Set `nchoosek[i][0]` and `nchoosek[i][i]` to 1 for all `i` from 0 to 4000.
+3. Calculate `nchoosek[i][j]` for `i` from 2 to 4000 and `j` from 1 to `i-1` using the formula `(nchoosek[i-1][j] + nchoosek[i-1][j-1]) % mod`.
+4. Read input values `k` and `n`.
+5. Iterate over `i` from 2 to `2*k`.
+6. For each `i`, calculate `pairs` based on whether `i` is greater than `k` or not.
+7. Calculate `active` using `k`, `pairs`, and `i`.
+8. Initialize `times2` to 1 and `total` to 0.
+9. Iterate over `j` from 0 to `pairs`.
+10. Calculate `choice` using `times2`, `nchoosek[pairs][j]`, and `mod`.
+11. Update `times2` by multiplying it by 2 and taking the modulus `mod`.
+12. If `active + j - 1` is non-negative, add `choice * nchoosek[n + active - 1][active + j - 1]` to `total`.
+13. If `i` is even, add `choice * nchoosek[n + active - 2][active + j - 1]` to `total`.
+14. Update `total` by taking the modulus `mod`.
+15. Output `total` for each `i`.

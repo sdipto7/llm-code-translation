@@ -1,0 +1,8 @@
+1. Import the `java.util.Scanner` library.
+2. Define a class named `Main` with a `public` access modifier.
+3. Define a `main` method within the `Main` class with the signature `public static void main(String[] args)`.
+4. Declare a variable `sc` of type `Scanner` and initialize it with a new `Scanner` object that reads from `System.in`.
+5. Declare a variable `n` of type `int` and assign it the value read from `System.in` using `sc.nextInt()`.
+6. Evaluate the conditional expression `n % 10 == 9 || n / 10 == 9`.
+7. If the condition is true, execute `System.out.println("Yes")`.
+8. If the condition is false, execute `System.out.println("No")`.

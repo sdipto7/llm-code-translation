@@ -1,0 +1,16 @@
+- Import libraries: `java.util.PriorityQueue`, `java.util.Queue`, `java.util.Scanner`
+- Function signature: `public static void main(String[] args)`
+  - Call `solve()` and print the result
+- Function signature: `public static int solve()`
+  - Declare and initialize `Scanner sc` for reading input
+  - Read integer `N` from input
+  - Declare integer array `arr` with size `N`
+  - Loop from `i = 0` to `i < N`
+    - Read integer from input and store in `arr[i]`
+  - Declare integer `sum` and initialize to `0`
+  - Declare `Queue<Integer> q` as a new `PriorityQueue<>`
+  - Loop from `i = 0` to `i < arr.length`
+    - Add `arr[i]` to queue `q`
+    - If `arr[i]` is less than or equal to `q.peek()`
+      - Increment `sum` by `1`
+  - Return `sum`

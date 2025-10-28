@@ -1,0 +1,60 @@
+**Algorithm:**
+
+1. **Class Definitions:**
+   - Define a class `Node` with:
+     - Public field `pattern` (long)
+     - Public field `index` (int)
+     - Public linked list `children` storing integers
+     - Public field `parent` (int) initialized to -1
+     - Constructor: `Node(int i)` initializes `index` with `i`
+     - Method `setParent(int K, int parent, int use, Node[] nodes)` with void return type
+
+2. **Main Workflow:**
+   - **Input Reading:**
+     - Read integers `N` (number of nodes) and `K` (available colors) via `Scanner`
+   - **Tree Construction:**
+     - Create array `nodes` of size `N` initialized with `Node` instances
+     - For `N-1` iterations:
+       - Read pairs of integers `a` and `b` (edge connections)
+       - Add each node to the other's `children` list
+   - **Tree Processing:**
+     - Call `setParent(K, -1, 0, nodes)` on root node (index 0)
+     - Compute product of all `pattern` values in `nodes` modulo 1,000,000,007
+   - **Output:**
+     - Print final product value
+
+3. **setParent Method Logic:**
+   - Assign `this.pattern = K - use`
+   - Set `this.parent = parent`
+   - Initialize `count` to 1 if parent exists (i.e., `parent != -1`), else 0
+   - For each child `n` in `children`:
+     - Skip child if it matches current parent
+     - Recursively call `setParent(K, current node's index, count, nodes)` on child
+     - Increment `count` after each child iteration
+
+4. **Data Structures:**
+   - Linked list for storing children of each node
+   - Array-based tree representation using `Node[]`
+   - Scanner for input handling
+
+5. **Control Flow:**
+   - Nested loops:
+     - Loop over `N` nodes for initialization
+     - Loop over `N-1` edges for tree construction
+     - Recursive traversal of tree nodes via `setParent`
+   - Conditional checks:
+     - Parent validation in `setParent` to avoid revisiting parent node
+     - Modulo operation during pattern aggregation
+
+6. **Mathematical Operations:**
+   - All multiplications use modulo 1,000,000,007 to prevent overflow
+   - Pattern calculation for each node: `K - [number of used colors]`
+
+7. **Dependencies:**
+   - Java utilities: `LinkedList` for child node management, `Scanner` for input processing
+
+**Execution Order:**
+1. Initialize all nodes
+2. Build bidirectional tree structure from input edges
+3. Compute coloring patterns starting from root via DFS traversal
+4. Aggregate and output final result using modular arithmetic

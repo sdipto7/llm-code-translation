@@ -1,0 +1,11 @@
+1. Read an integer n from the input.
+2. Initialize an empty string s.
+3. While n is greater than 0, perform the following steps:
+   3.1 Calculate the remainder of n divided by 2 and store it in x.
+   3.2 Update n by performing integer division of n by 2.
+   3.3 Append the value of x to the string s.
+4. Initialize a variable ans to 0.
+5. Iterate over each character in the string s.
+6. For each character, check if it is equal to '1'.
+7. If the character is '1', increment ans by 1.
+8. Output the value of ans.

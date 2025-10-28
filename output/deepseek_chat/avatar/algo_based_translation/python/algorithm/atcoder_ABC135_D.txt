@@ -1,0 +1,47 @@
+**Algorithm:**
+
+1. **Import Dependencies:**
+   - Import `sys`, `math`, `defaultdict` from `collections`
+   - Set recursion limit to 10^7
+
+2. **Define Helper Functions:**
+   - `input()`: Reads line from stdin and removes trailing newline
+   - `I()`: Returns integer from input
+   - `II()`: Returns tuple of integers from split input
+   - `III()`: Returns list of integers from split input
+   - `Line(N)`: Reads N lines of tuples, returns transposed lists
+
+3. **Main Execution:**
+   - Read string `S` from input
+   - Get length `n = len(S)`
+   - If `n == 1`:
+     - If `S == '5'` or `S == '?'`: Print 1
+     - Else: Print 0
+     - Exit program
+
+4. **Initialize DP Table:**
+   - Create 2D list `dp` with dimensions `n × 13` initialized to zeros
+
+5. **Process Each Character:**
+   - For `i` from 0 to `n-1`:
+     - If `i == 0` (first character):
+       - If `S[i] != '?'`:
+         - Set `dp[0][int(S[i])] = 1`
+       - Else:
+         - For `j` from 0 to 9:
+           - Set `dp[0][j] = 1`
+     - Else:
+       - If `S[i] != '?'`:
+         - For `k` from 0 to 12:
+           - Calculate `new_index = (k * 10 + int(S[i])) % 13`
+           - Add `dp[i-1][k]` to `dp[i][new_index]`
+       - Else:
+         - For `j` from 0 to 9:
+           - For `k` from 0 to 12:
+             - Calculate `new_index = (k * 10 + j) % 13`
+             - Add `dp[i-1][k]` to `dp[i][new_index]`
+     - For `k` from 0 to 12:
+       - Apply modulo `mod` to `dp[i][k]`
+
+6. **Output Result:**
+   - Print `dp[n-1][5]` modulo `mod`

@@ -1,0 +1,60 @@
+**Algorithm Extraction:**
+
+**Program Structure:**
+- Class: `atcoder_ABC143_D`
+- Main Function: `public static void main(String[] args)`
+- Helper Function: `public static int find(List<Integer> li, int from, int target)`
+
+**Imported Libraries:**
+- `java.util.*` (Scanner, ArrayList, Collections)
+
+**Main Function Logic:**
+1. **Input Operations:**
+   - Read integer `N` from standard input.
+   - Read `N` integers into list `L<Integer>`.
+2. **Data Processing:**
+   - Sort `L` in ascending order.
+   - Initialize `count = 0`.
+3. **Nested Loop Logic:**
+   - Outer loop: Iterate `i` from `0` to `N-1`.
+     - Inner loop: Iterate `j` from `i+1` to `N-1`.
+       - Assign `a = L.get(i)`, `b = L.get(j)`.
+       - Compute `target = a + b`.
+       - Call `find(L, j+1, target)`, store result in `res`.
+       - Add `res` to `count`.
+4. **Output:**
+   - Print `count`.
+
+**find Function Logic:**
+1. **Parameters:**
+   - `List<Integer> li`: Sorted input list.
+   - `int from`: Starting index for search.
+   - `int target`: Value to compare against.
+2. **Variables:**
+   - `low = from`, `upp = li.size() - 1`, `mid` (dynamically computed).
+3. **Edge Cases:**
+   - If `upp - low < 0`: Return `0`.
+   - If `li.get(from) >= target`: Return `0`.
+   - If `li.get(upp) < target`: Return `upp - low + 1`.
+4. **Binary Search Loop:**
+   - While `upp - low > 1`:
+     - Compute `mid` as `(upp - low + 1) % 2 == 0 ? (low + upp)/2 + 1 : (low + upp)/2`.
+     - If `li.get(mid) >= target`: Set `upp = mid`.
+     - Else: Set `low = mid`.
+   - Return `low - from + 1`.
+
+**Control Structures:**
+- Main:
+  - Nested `for` loops with bounds `i < N` and `j < N`.
+- `find`:
+  - Ternary operator for `mid` calculation.
+  - `if`-`else` for edge case checks.
+  - `while` loop with termination condition `upp - low > 1`.
+
+**Data Types:**
+- All variables (`N`, `i`, `j`, `a`, `b`, `res`, `low`, `upp`, `mid`) are `int`.
+- `L` is `ArrayList<Integer>`.
+
+**Input/Output Details:**
+- Input via `Scanner` reading from `System.in`.
+- Output via `System.out.println(count)`.

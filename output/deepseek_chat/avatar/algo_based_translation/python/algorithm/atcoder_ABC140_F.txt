@@ -1,0 +1,39 @@
+**Functions:**
+- `I() -> int`: Reads an integer from standard input
+- `LI() -> List[int]`: Reads a list of integers from standard input
+- `main() -> str`: Main function that returns "Yes" or "No"
+
+**Variables:**
+- `N: int` - First input integer
+- `S: List[int]` - List of integers from input, sorted in descending order
+- `flag: List[bool]` - Boolean list tracking used elements, same length as S
+- `cur: List[int]` - Current working list of selected elements
+- `j: int` - Index counter for cur list
+- `jM: int` - Length of cur list at start of iteration
+- `k: int` - Index counter for S list
+
+**Algorithm Flow:**
+1. Read integer N from input
+2. Read list S of integers from input and sort in descending order
+3. Initialize flag list with all True values (same length as S)
+4. Initialize cur list with first element of S
+5. Set flag[0] to False (mark first element as used)
+6. For i in range(N):
+   - Set j = 0
+   - Set jM = current length of cur
+   - For k in range(len(S)):
+     - If flag[k] is True AND S[k] < cur[j]:
+       - Append S[k] to cur
+       - Increment j by 1
+       - Set flag[k] to False
+       - If j equals jM: break out of inner loop
+   - If inner loop completes without finding enough elements: return "No"
+   - Sort cur list in descending order
+7. Return "Yes"
+
+**Input/Output:**
+- Input: First line contains integer N, second line contains space-separated integers
+- Output: Prints "Yes" or "No"
+
+**Dependencies:**
+- sys module for standard input reading

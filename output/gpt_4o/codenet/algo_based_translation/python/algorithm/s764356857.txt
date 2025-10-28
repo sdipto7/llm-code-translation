@@ -1,0 +1,26 @@
+- Function Signature:
+  - Function Name: `calculate_possible_value`
+  - Parameters: `A` (int), `B` (int)
+  - Return Type: `int`
+
+- Variable Declarations:
+  - `min` (int): initialized as `B * 10`
+  - `max` (int): initialized as `(B + 1) * 10 - 1`
+  - `ans` (int): initialized as `-1`
+
+- Logic Flow:
+  1. Initialize `min` as the product of `B` and `10`.
+  2. Initialize `max` as the product of `B+1` and `10`, then subtract `1`.
+  3. Initialize `ans` as `-1`.
+  4. Begin a loop with `i` starting from `min` to `max` (inclusive).
+     - Condition: If `int(i * 0.08)` is equal to `A`, then:
+       - Assign `i` to `ans`.
+       - Break the loop.
+  5. After the loop concludes, return the value of `ans`.
+
+- Input/Output Operations:
+  - Input: Read a single line of input and split it into two integers, `A` and `B`.
+  - Output: Print the value of `ans`.
+
+- Required Libraries:
+  - None

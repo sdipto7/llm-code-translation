@@ -1,0 +1,41 @@
+Algorithm:
+
+Function: main
+Parameters: String[] args (command-line arguments)
+Return Type: void
+
+Imports: java.util.Scanner
+
+Variables:
+- Scanner scn: initialized with System.in
+- int n: assigned via scn.nextInt()
+- int[] arr: size n, populated via loop
+- int ans: initialized with arr[0] + 1
+
+Logic Flow:
+1. Read integer n from standard input
+2. Declare integer array arr of size n
+3. For loop (i=0 to arr.length-1):
+   - Read integer via scn.nextInt()
+   - Assign to arr[i]
+4. Initialize ans with arr[0] + 1
+5. For loop (i=1 to arr.length-1):
+   - Add Math.abs(arr[i] - arr[i-1]) + 2 to ans
+6. Print ans via System.out.println()
+
+Control Structures:
+- For loop: i from 0 to arr.length-1 (exclusive upper bound)
+- For loop: i from 1 to arr.length-1 (exclusive upper bound)
+
+Input/Output:
+- Input through Scanner(System.in):
+  - First integer → n
+  - Next n integers → array elements
+- Output final ans value via println
+
+Data Processing:
+- Absolute difference calculation between consecutive array elements
+- Cumulative sum with initial offset (arr[0] + 1) and per-step additions
+
+Dependencies:
+- Requires java.util.Scanner for input handling

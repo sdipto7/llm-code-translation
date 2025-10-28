@@ -1,0 +1,17 @@
+```python
+def main():
+    import sys
+    data = sys.stdin.read().split()
+    a = int(data[0])
+    b = int(data[1])
+    c = int(data[2])
+    x = int(data[3])
+    res = 0
+    for i in range(0, a + 1):
+        for j in range(0, b + 1):
+            for k in range(0, c + 1):
+                total = 500 * i + 100 * j + 50 * k
+                if total == x:
+                    res += 1
+    print(res)
+```

@@ -1,0 +1,66 @@
+**Structured Algorithm Specification**
+
+**Function Signatures:**
+- `na: () → List[int]` (lambda function)
+
+**Parameters:**
+- None (Input handled via standard input)
+
+**Return Types:**
+- `na` returns a list of integers.
+
+**Variables:**
+- `n: int` (number of elements)
+- `x: int` (target value)
+- `a: List[int]` (sorted list of integers)
+- `ans: int` (result counter, initialized to 0)
+
+**Algorithm Steps:**
+
+1. **Input Parsing:**
+   - Assign `na` to read a line of input, split into tokens, convert to integers, and return as list.
+   - Read `n` and `x` by calling `na()`.
+   - Read list `a` by calling `na()`.
+
+2. **Data Processing:**
+   - Sort `a` in ascending order using in-place sort.
+
+3. **Edge Case Check:**
+   - If `a[0] > x`:
+     1. Print `0`.
+     2. Terminate program immediately.
+
+4. **Iterate Through List:**
+   - For each `i` in `a`:
+     1. **Conditional Check:**
+        - If `i > x`:
+           - Set `x` to 0.
+           - Exit loop.
+     2. **Update State:**
+        - Subtract `i` from `x`.
+        - Increment `ans` by 1.
+
+5. **Post-Loop Adjustment:**
+   - If `x != 0` after loop exit:
+     - Decrement `ans` by 1.
+
+6. **Output Result:**
+   - Print `ans`.
+
+**Control Flow Structures:**
+- **Conditional:** `if a[0] > x` → terminates program.
+- **Loop:** `for i in a` → processes elements until break or end of list.
+  - **Inner Conditional:** `if i > x` → breaks loop.
+- **Conditional:** `if x != 0` after loop → adjusts `ans`.
+
+**Input/Output Operations:**
+- Input via `na()` lambda (calls `input().split()` and `map(int, ...)`).
+- Output via `print(0)` and `print(ans)`.
+
+**Edge Case Handling:**
+- Immediate termination if smallest element exceeds `x`.
+- Final adjustment of `ans` when unallocated `x` remains after full iteration.
+
+**Dependencies:**
+- Relies on Python's `input()`, `map()`, `list()`, and `sorted()` functions.
+- No external libraries beyond standard input/output and list operations.

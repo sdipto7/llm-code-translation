@@ -1,0 +1,15 @@
+- **Input Operations**:
+  - Read string `s` from standard input.
+  - Read string `t` from standard input.
+- **Variables**:
+  - `s`: string, holds the first input value.
+  - `t`: string, holds the second input value.
+- **Processing Logic**:
+  - Check if the substring of `t` excluding its last character (`t[:-1]`) is equal to `s`.
+- **Control Structures**:
+  - If condition: `t[:-1] == s`.
+    - If true: Print "Yes".
+    - If false: Print "No".
+- **Output Operations**:
+  - Print "Yes" or "No" based on the condition evaluation.
+- **Dependencies**: None (uses built-in functions only).

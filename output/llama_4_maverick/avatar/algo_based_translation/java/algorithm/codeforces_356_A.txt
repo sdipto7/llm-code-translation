@@ -1,0 +1,11 @@
+1. Initialize a data structure to store integers from 0 to n-1.
+2. Create an array of size n to store the answer.
+3. Read the value of n and the number of queries q.
+4. For each query, read the values of l, r, and win.
+5. Find the smallest element in the data structure that is greater than or equal to l.
+6. While the found element is not null and less than or equal to r, update the answer array with the value win at the index of the found element, remove the found element from the data structure, and find the next smallest element greater than or equal to l.
+7. Update the answer array at index win-1 to 0.
+8. Add win-1 to the data structure.
+9. Repeat steps 4-8 for q queries.
+10. Append the values from the answer array to a string.
+11. Output the resulting string.

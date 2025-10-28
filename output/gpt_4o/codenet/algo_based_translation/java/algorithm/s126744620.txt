@@ -1,0 +1,17 @@
+```
+Function: main()
+- Declare and initialize Scanner object `sc` for input reading
+- Declare integer `n` and assign it the next integer input
+- Declare integer `k` and assign it the next integer input
+- Declare integer array `a` of size `n`
+- Loop through indices `i` from 0 to `n-1`:
+  - Assign the next integer input to `a[i]`
+- Declare Integer array `x` of size 200010 and initialize all elements to 0
+- Loop through indices `i` from 0 to `n-1`:
+  - Increment `x[a[i] - 1]` by 1
+- Sort array `x` in non-decreasing order using custom comparator
+- Declare integer `ans` and initialize it to 0
+- Loop through indices `i` from 0 to 200010 - k - 1:
+  - Add `x[i]` to `ans`
+- Output the value of `ans`
+```

@@ -1,0 +1,17 @@
+```
+Function atcoder_ABC170_A() -> None
+    Import BufferedReader from java.io
+    Import IOException from java.io
+    Import PrintWriter from java.io
+    Create BufferedReader object `br` using InputStreamReader(System.in)
+    Create PrintWriter object `pw` using System.out
+    Declare String array `input_array` and assign it the result of `br.readLine().split(" ")`
+    Declare integer `result` and initialize it to 0
+    For each String `str` in `input_array`
+        Increment `result` by 1
+        If "0".equals(str) is true
+            Break from loop
+    Call `pw.println(result)`
+    Call `br.close()`
+    Call `pw.close()`
+```

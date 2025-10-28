@@ -1,0 +1,17 @@
+1. Import the required library: java.util.Scanner
+2. Define a class: Main
+3. Define a function: main with return type void and parameter args of type String[]
+4. Declare a variable: stdIn of type Scanner and initialize it with new Scanner(System.in)
+5. Declare variables: N and X of type int
+6. Read input from stdIn into N and X using nextInt()
+7. Declare an array: m of type int with size N
+8. Read input from stdIn into m[0] using nextInt()
+9. Subtract m[0] from X
+10. Declare a variable: min of type int and initialize it with m[0]
+11. Loop from i = 1 to N-1 with increment 1
+    a. Read input from stdIn into m[i] using nextInt()
+    b. Subtract m[i] from X
+    c. Check if m[i] is less than min
+        i. If true, update min with m[i]
+12. Calculate the result by adding N and the integer division of X by min
+13. Output the result to the console using System.out.println()

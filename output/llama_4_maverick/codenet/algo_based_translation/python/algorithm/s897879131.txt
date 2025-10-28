@@ -1,0 +1,20 @@
+- Function Signature: `count_color_combinations(R: int, G: int, B: int, N: int) -> int`
+- Variable Declarations:
+  - `R`, `G`, `B`, `N`: integers representing the number of red, green, blue balls and the total number of balls respectively.
+  - `score`: integer to store the count of valid color combinations.
+  - `i`, `j`: integers used as loop counters.
+- Logic Flow:
+  1. Read input values for `R`, `G`, `B`, `N` from the input.
+  2. Initialize `score` to 0.
+  3. Iterate over `i` from 0 to `N // R` (integer division) using a for loop.
+  4. For each `i`, iterate over `j` from 0 to `(N - i * R) // G` using a nested for loop.
+  5. Check if `N - i * R - j * G` is non-negative and divisible by `B` using a conditional statement.
+  6. If the condition is met, increment `score` by 1.
+  7. After the nested loops complete, output the value of `score`.
+- Control Structures:
+  - Two nested for loops: `for i in range(N // R + 1)` and `for j in range((N - i * R) // G + 1)`.
+  - Conditional statement: `if N - i * R - j * G >= 0 and (N - i * R - j * G) % B == 0`.
+- Input/Output Operations:
+  - Input: Read `R`, `G`, `B`, `N` from the input using `map(int, input().split())`.
+  - Output: Print the final value of `score` using `print(score)`.
+- Required Libraries/Modules: None, built-in Python functionality is used.

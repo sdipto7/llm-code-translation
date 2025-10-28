@@ -1,0 +1,21 @@
+```
+- Import the Scanner class from the java.util package.
+- Define the class `Main`.
+- Define the `main` method with the parameter `args` of type `String[]` and return type `void`.
+- Instantiate a Scanner object `sc` to read from standard input.
+- Declare an integer variable `N` and initialize it with the next integer value from the input using `sc.nextInt()`.
+- Declare an integer array `A` of size `N`.
+- Declare an integer variable `min` and initialize it to `Integer.MAX_VALUE`.
+- Declare an integer variable `count` and initialize it to 0.
+- Declare a long variable `sum` and initialize it to 0.
+- Start a for loop with an integer variable `i` initialized to 0, running while `i` is less than `N`, incrementing `i` by 1 each iteration:
+  - Assign the next integer input value to `A[i]` using `sc.nextInt()`.
+  - If `A[i]` is less than 0, increment `count` by 1.
+  - Update `min` to be the minimum of `min` and the absolute value of `A[i]`.
+  - Add the absolute value of `A[i]` to `sum`.
+- Close the Scanner object `sc`.
+- If `count` is even (i.e., `count % 2 == 0`):
+  - Output the value of `sum`.
+- Else:
+  - Output the value of `sum` minus `min` multiplied by 2.
+```

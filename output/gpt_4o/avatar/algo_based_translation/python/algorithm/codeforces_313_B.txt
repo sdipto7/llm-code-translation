@@ -1,0 +1,31 @@
+```
+function process_string_and_queries() -> None:
+    variable soz: str
+    soz = input()
+
+    variable a: List[int]
+    a = [0] * (len(soz) + 1)
+
+    for i in range(1, len(soz)):
+        a[i] = a[i - 1]
+        if soz[i - 1] == soz[i]:
+            a[i] += 1
+
+    variable n: int
+    n = int(input())
+
+    variable arr: List[int]
+    arr = []
+
+    for i in range(n):
+        variable m: str
+        variable l: str
+        m, l = input().split()
+        
+        variable result: int
+        result = a[int(l) - 1] - a[int(m) - 1]
+        arr.append(result)
+
+    for i in arr:
+        print(i)
+```

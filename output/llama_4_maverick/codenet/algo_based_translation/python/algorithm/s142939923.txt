@@ -1,0 +1,9 @@
+1. Define a function `main` with no parameters and no return type.
+2. Declare variables `a` and `b` of type integer.
+3. Read two integer values from standard input, separated by a space, and store them in `a` and `b` respectively.
+4. Declare a list `x` to store results of operations on `a` and `b`.
+5. Calculate the sum of `a` and `b`, store it in the list `x`.
+6. Calculate the difference of `a` and `b`, append it to the list `x`.
+7. Calculate the product of `a` and `b`, append it to the list `x`.
+8. Find the maximum value in the list `x`.
+9. Print the maximum value to standard output.

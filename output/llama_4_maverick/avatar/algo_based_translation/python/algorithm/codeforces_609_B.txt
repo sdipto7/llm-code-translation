@@ -1,0 +1,16 @@
+1. READ n, m from input
+2. READ lst of n integers from input
+3. INITIALIZE l as an empty dictionary
+4. FOR i FROM 0 TO n-1
+   4.1 IF lst[i] NOT IN l THEN
+       4.1.1 SET l[lst[i]] TO 1
+   4.2 ELSE
+       4.2.1 INCREMENT l[lst[i]] BY 1
+5. INITIALIZE res TO 0
+6. FOR i FROM 0 TO n-1
+   6.1 IF l[lst[i]] > 1 THEN
+       6.1.1 INCREMENT res BY (n - i - l[lst[i]])
+       6.1.2 DECREMENT l[lst[i]] BY 1
+   6.2 ELSE
+       6.2.1 INCREMENT res BY (n - i - 1)
+7. OUTPUT res

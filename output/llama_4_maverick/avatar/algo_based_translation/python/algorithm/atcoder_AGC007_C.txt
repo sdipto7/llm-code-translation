@@ -1,0 +1,9 @@
+1. Read input values N, d, x from standard input
+2. Initialize ret to 0
+3. While N is greater than 0
+   1. ret = ret + d + (N - 0.5) * x
+   2. d = d + (d / N) + (5 * x) / (2 * N)
+   3. x = x + 2 * x / N
+   4. N = N - 1
+4. Return ret
+5. Print the returned value of ret

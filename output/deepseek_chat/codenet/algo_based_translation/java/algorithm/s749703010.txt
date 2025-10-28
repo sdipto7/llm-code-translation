@@ -1,0 +1,48 @@
+**Algorithm:**
+
+**Data Structures:**
+- Class Pair with integer fields l, r
+- 3D integer memoization array memo[2][n+1][1<<n]
+- 2D integer array a[2][n]
+- Integer n
+
+**Functions:**
+
+**Function dp(fliped: integer, idx: integer, msk: integer) → integer:**
+1. If msk equals (1<<n)-1: return 0
+2. If memo[fliped][idx][msk] ≠ -1: return memo[fliped][idx][msk]
+3. Set x = bit count of msk
+4. Set ff = 0
+5. Set ans = 1e9
+6. For i from 0 to n-1:
+   a. If bit i not set in msk:
+      i. Set nf = x % 2
+      ii. If idx equals n OR a[fliped][idx] ≤ a[(nf + (ff % 2)) % 2][i]:
+          - Set candidate = ff + dp((nf + (ff % 2)) % 2, i, msk | (1 << i))
+          - Set ans = min(ans, candidate)
+      iii. Increment ff by 1
+   b. Else: decrement x by 1
+7. Set memo[fliped][idx][msk] = ans
+8. Return ans
+
+**Main Function:**
+1. Read integer n
+2. Initialize a[2][n]
+3. Read n integers into a[0]
+4. Read n integers into a[1]
+5. Initialize memo[2][n+1][1<<n] with all values -1
+6. Call dp(0, n, 0) and store result
+7. If result ≥ 1e8: output -1
+   Else: output result
+
+**Input Operations:**
+- Read integers from standard input
+- Read lines from standard input
+
+**Output Operations:**
+- Print integers to standard output
+
+**Required Dependencies:**
+- java.io.*
+- java.util.*
+- javax.swing.text.Style (unused)

@@ -1,0 +1,36 @@
+Function Signatures:
+- main(String[] args): void
+- solve(int testNumber, Scanner in, PrintWriter out): void
+
+Variable Declarations:
+- InputStream inputStream: InputStream
+- OutputStream outputStream: OutputStream
+- Scanner in: Scanner
+- PrintWriter out: PrintWriter
+- BABC solver: BABC
+- String s: String
+- long cnt: long
+- long tmp: long
+- int i: int
+
+Logic Flow:
+1. Initialize inputStream to System.in
+2. Initialize outputStream to System.out
+3. Create a Scanner object in with inputStream
+4. Create a PrintWriter object out with outputStream
+5. Create a BABC object solver
+6. Call solver.solve with 1, in, and out
+7. Close out
+
+Within solve:
+1. Read a string from in and replace all occurrences of "BC" with "D", store in s
+2. Initialize cnt to 0
+3. Initialize tmp to 0
+4. For each character in s from index 0 to s.length() - 1:
+   a. If character is 'A':
+      i. Increment tmp by 1
+   b. Else if character is 'D':
+      i. Add tmp to cnt
+   c. Else:
+      i. Set tmp to 0
+5. Print cnt using out

@@ -1,0 +1,39 @@
+Function Signature:
+- `public static void main(String[] args)`
+
+Variable Declarations and Data Types:
+- `Scanner sc`
+- `String S`
+- `int N`
+- `int[] mod_arr`
+- `int[] mod_cnt`
+- `int radix`
+- `int tmp`
+- `long ans`
+
+Complete Logic Flow in Execution Order:
+
+1. Create a `Scanner` object to read input.
+2. Read a string `S` from the standard input.
+3. Determine the length of the string `N`.
+4. Initialize an array `mod_arr` of size `N` to store remainders.
+5. Initialize an array `mod_cnt` of size 2019 to count occurrences of each remainder.
+6. Set `radix` to 1.
+7. Loop over each character in the string `S` from the last character to the first:
+   - Convert the current character to an integer and multiply by `radix`, then take modulo 2019, storing the result in `tmp`.
+   - If the current index is not 0, add the previous value in `mod_arr` to `tmp` and take modulo 2019.
+   - Store the result in `mod_arr` at the current index.
+   - Increment the count of `tmp` in `mod_cnt`.
+   - Update `radix` by multiplying it by 10 and taking modulo 2019.
+8. Increment the count of remainder 0 in `mod_cnt` by 1.
+9. Initialize `ans` to 0.
+10. Loop over each element in `mod_cnt`:
+    - Calculate the number of pairs for the current remainder using the formula `mod_cnt[i] * (mod_cnt[i] - 1) / 2` and add to `ans`.
+11. Print the value of `ans`.
+
+Input/Output Operations and Data Processing Logic:
+- Input: A single string `S`.
+- Output: A single long value representing the number of pairs of substrings of `S` that are divisible by 2019.
+
+Required Libraries, Modules, or Dependencies:
+- `java.util.*`

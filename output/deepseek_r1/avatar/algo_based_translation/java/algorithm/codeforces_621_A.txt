@@ -1,0 +1,36 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner sc` (type `Scanner`)
+- `int n`
+- `List<Long> list` (initialized as `ArrayList<Long>`)
+- `List<Long> odd` (initialized as `ArrayList<Long>`)
+- `long sum` (initialized to `0`)
+
+**Logic Flow:**
+1. Read integer `n` from input using `sc.nextInt()`.
+2. Read `n` long integers from input, store them in `list`.
+3. Iterate over each element `i` in `list`:
+   - If `i` is even (`i % 2 == 0`), add `i` to `sum`.
+   - Else, add `i` to `odd`.
+4. Sort `odd` in ascending order using `Collections.sort(odd)`.
+5. Iterate over each element `i` in `odd`:
+   - Add `i` to `sum`.
+6. If `odd.size() % 2 != 0`, subtract `odd.get(0)` from `sum`.
+7. Print `sum` via `System.out.println(sum)`.
+
+**Control Structures:**
+- For-loop: `for (int i = 0; i < n; i++)` to read `n` elements.
+- Enhanced for-loop: `for (long i : list)` to process elements.
+- Enhanced for-loop: `for (long i : odd)` to aggregate odd elements.
+- Conditional: `if (i % 2 == 0)` to check even/odd.
+- Conditional: `if (odd.size() % 2 != 0)` to adjust sum for odd count.
+
+**Input/Output Operations:**
+- `Scanner` reads from `System.in`.
+- `sc.nextInt()` and `sc.nextLong()` for input parsing.
+- `System.out.println(sum)` for output.
+
+**Dependencies:**
+- `java.util.*` (includes `Scanner`, `List`, `ArrayList`, `Collections`).

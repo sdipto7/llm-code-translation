@@ -1,0 +1,10 @@
+1. Read two integers n and k from the input.
+2. Read a string a from the input.
+3. If k is greater than n/2, then:
+   3.1. While k is less than n, print "RIGHT" and increment k.
+4. Else, while k is greater than 1, print "LEFT" and decrement k.
+5. If k equals 1, then:
+   5.1. For each character in the string a from left to right, print "PRINT" followed by the character.
+   5.2. If it's not the last character, print "RIGHT".
+6. Else, for each character in the string a from right to left, print "PRINT" followed by the character.
+7. If it's not the first character (when iterating from right to left), print "LEFT".

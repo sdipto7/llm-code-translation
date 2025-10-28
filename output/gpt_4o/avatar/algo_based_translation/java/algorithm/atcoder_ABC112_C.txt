@@ -1,0 +1,33 @@
+1. Import the necessary modules:
+   - `java.util.Scanner`
+   - `java.util.stream.IntStream`
+
+2. Define a class `atcoder_ABC112_C`.
+
+3. Declare a constant integer `MAX` with a value of 100.
+
+4. Define the `main` method with the signature `public static void main(String[] args)`.
+
+5. In the `main` method:
+   - Create an instance of `Scanner` to read from standard input.
+   - Read an integer `n` using `scanner.nextInt()`.
+   - Declare integer arrays `x`, `y`, and `h` of size `n`.
+   - Use `IntStream.range(0, n).forEach(i -> {...})` to iterate over the range [0, n):
+     - Assign `scanner.nextInt()` to `x[i]`.
+     - Assign `scanner.nextInt()` to `y[i]`.
+     - Assign `scanner.nextInt()` to `h[i]`.
+
+6. Iterate over `i` from 0 to `MAX` (inclusive):
+   - Nested iterate over `j` from 0 to `MAX` (inclusive):
+     - Call the `check` method with parameters `(n, x, y, h, i, j)`.
+     - If the returned value `ch` is greater than 0, output `i + " " + j + " " + ch`.
+
+7. Define the `check` method with the signature `private static int check(int n, int[] x, int[] y, int[] h, int cx, int cy)`.
+
+8. In the `check` method:
+   - Initialize an integer `ch` to -1.
+   - Iterate over `i` from 0 to `n` (exclusive):
+     - If `h[i]` is greater than 0, calculate `ch` as `Math.abs(x[i] - cx) + Math.abs(y[i] - cy) + h[i]` and break out of the loop.
+   - Iterate over `i` from 0 to `n` (exclusive):
+     - If `h[i]` does not equal `Math.max(ch - Math.abs(x[i] - cx) - Math.abs(y[i] - cy), 0)`, return -1.
+   - Return `ch`.

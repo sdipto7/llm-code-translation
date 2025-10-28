@@ -1,0 +1,43 @@
+**Algorithm:**
+
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `public static void printIsland(int n, int count)`
+
+**Input Operations:**
+- Read integer `n` from standard input.
+- Read integer `count` from standard input.
+
+**Variables:**
+- `Scanner scan = new Scanner(System.in)`
+- `int a = (n + 1) / 2`
+- `int b = n / 2`
+- `int max = a * a + b * b`
+- `StringBuilder sb` (per row iteration)
+
+**Logic Flow:**
+1. **Main Function:**
+   - Initialize `n` and `count` via `Scanner`.
+   - Call `printIsland(n, count)`.
+
+2. **printIsland Function:**
+   - Compute maximum possible `L` tiles (`max`).
+   - **Conditional Check:**
+     - If `count > max`: Print "NO" and terminate.
+     - Else: Print "YES" and proceed.
+   - **Grid Construction:**
+     - **Outer Loop** (`i` from 0 to `n-1`):
+       - Initialize `StringBuilder` for the current row.
+       - **Inner Loop** (`j` from 0 to `n-1`):
+         - **Conditional Check:**
+           - If `(i + j) % 2 == 0` AND `count > 0`: Append 'L', decrement `count`.
+           - Else: Append 'S'.
+       - Print the constructed row.
+
+**Control Structures:**
+- **If-Else** in `printIsland` for checking `count > max`.
+- **Nested For-Loops** for iterating over grid coordinates.
+- **If-Else** in the inner loop for placing 'L'/'S' based on coordinates and remaining `count`.
+
+**Libraries/Dependencies:**
+- `java.util.Scanner` (for input handling).

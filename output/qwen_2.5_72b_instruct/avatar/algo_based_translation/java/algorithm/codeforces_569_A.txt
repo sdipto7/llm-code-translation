@@ -1,0 +1,21 @@
+function main() {
+    variable T of type int;
+    variable S of type int;
+    variable q of type int;
+    variable previous of type long;
+    variable answer of type int;
+
+    read T from input;
+    read S from input;
+    read q from input;
+
+    assign S to previous;
+    assign 0 to answer;
+
+    while (previous < T) {
+        increment answer by 1;
+        assign (previous * q) to previous;
+    }
+
+    print answer;
+}

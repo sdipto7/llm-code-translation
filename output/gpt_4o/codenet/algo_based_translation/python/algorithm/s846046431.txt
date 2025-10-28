@@ -1,0 +1,33 @@
+```
+Function Signature:
+    - function is_qualifying(N: int, M: int, A: List[int]) -> str
+
+Variable Declarations and Data Types:
+    - N: int
+    - M: int
+    - A: List[int]
+    - S: int
+    - a: int (used in the loop)
+
+Logic Flow:
+1. Calculate the total sum of all elements in A and store it in S.
+2. Sort the list A in descending order.
+3. Iterate over the first M elements of the sorted list A.
+4. For each element a in the slice A[:M]:
+    - Check if (a/S - 1/(4*M)) < 0.
+    - If the condition is true, return 'No'.
+5. If the loop completes without returning 'No', return 'Yes'.
+
+Control Structures:
+- A for loop iterating over the first M elements of A:
+    - Condition inside the loop: if (a/S - 1/(4*M)) < 0
+        - If true, terminate the loop and return 'No'.
+- Else clause of the for loop:
+    - After the loop, if no 'No' has been returned, return 'Yes'.
+
+Input/Output Operations:
+- None in the function signature: assumed to be provided as arguments and returns a string.
+
+Required Libraries:
+- None
+```

@@ -1,0 +1,13 @@
+1. Import the required library: java.util.Scanner
+2. Define a class: Main
+3. Define a function: main with parameter types (String[] args) and return type void
+4. Declare a variable: sc of type Scanner
+5. Initialize sc by creating a new Scanner object with System.in as the parameter
+6. Declare variables: A1, A2, A3 of type int
+7. Read input from sc and store in A1, A2, A3 using the nextInt() method
+8. Calculate the sum of A1, A2, and A3
+9. Check the condition: if the sum is greater than or equal to 22
+10. If the condition is true, execute the following steps:
+    - Output "bust" to the console using System.out.println()
+11. If the condition is false, execute the following steps:
+    - Output "win" to the console using System.out.println()

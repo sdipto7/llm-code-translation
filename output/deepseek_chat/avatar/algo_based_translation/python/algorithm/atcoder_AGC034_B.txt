@@ -1,0 +1,48 @@
+**Function gcd(a: int, b: int) -> int:**
+- Input: integers a and b
+- Assign a = max(a, b), b = min(a, b)
+- While a % b > 0:
+  - Set a = b
+  - Set b = a % b
+- Return b
+
+**Function solve() -> int:**
+- Read input string s
+- Initialize empty string t
+- Initialize i = 0
+- While i < length(s):
+  - If s[i] == 'A':
+    - Append 'A' to t
+    - Increment i by 1
+  - Else if s[i] == 'B':
+    - If i < length(s) - 1:
+      - If s[i+1] == 'C':
+        - Append 'D' to t
+        - Increment i by 2
+      - Else:
+        - Append 'X' to t
+        - Increment i by 1
+    - Else:
+      - Append 'X' to t
+      - Increment i by 1
+  - Else:
+    - Append 'X' to t
+    - Increment i by 1
+- Initialize total = 0
+- Initialize numA = 0
+- For i from 0 to length(t)-1:
+  - If t[i] == 'X':
+    - Set numA = 0
+  - Else:
+    - If t[i] == 'A':
+      - Increment numA by 1
+    - Else (t[i] == 'D'):
+      - Add numA to total
+- Print total
+- Set INF = 10^25
+- Set mod = 10^9 + 7
+- Return 0
+
+**Main execution:**
+- If __name__ == "__main__":
+  - Call solve()

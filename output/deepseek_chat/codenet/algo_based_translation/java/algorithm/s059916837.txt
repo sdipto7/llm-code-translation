@@ -1,0 +1,26 @@
+import java.util.Scanner
+
+main function:
+  Declare Scanner scanner = new Scanner(System.in)
+  Declare String S = scanner.nextLine()
+  Declare String T = scanner.nextLine()
+  Declare int min = Integer.MAX_VALUE
+  
+  For i from 0 to S.length() - T.length() inclusive:
+    Declare String substring = S.substring(i, i + T.length())
+    Declare int result = find(substring, T)
+    Set min = Math.min(min, result)
+  
+  If min != Integer.MAX_VALUE:
+    Print min
+  Else:
+    Print T.length()
+
+find function (parameters: String a, String b):
+  Declare int calc = 0
+  
+  For x from 0 to a.length() - 1 inclusive:
+    If a.charAt(x) != b.charAt(x):
+      Increment calc by 1
+  
+  Return calc

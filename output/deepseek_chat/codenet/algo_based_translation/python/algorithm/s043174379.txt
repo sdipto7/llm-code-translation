@@ -1,0 +1,12 @@
+Algorithm:
+1. Read two integers H and W from standard input
+2. Read two integers h and w from standard input
+3. Calculate: result = H * W - (h * W + w * H - h * w)
+4. Print result
+
+Function signature: main() → None (no explicit function, but entry point execution)
+Variables: H (int), W (int), h (int), w (int), ans (int)
+Input operations: two calls to input().split() and map(int, ...)
+Output operation: print(ans)
+No control structures (no loops or conditionals)
+No external libraries or modules required

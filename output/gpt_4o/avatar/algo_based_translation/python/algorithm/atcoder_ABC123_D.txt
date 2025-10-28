@@ -1,0 +1,38 @@
+```
+Function Signature:
+def compute_top_sums(x: int, y: int, z: int, k: int, a: List[int], b: List[int], c: List[int]) -> List[int]
+
+Variable Declarations:
+- x: int
+- y: int
+- z: int
+- k: int
+- a: List[int]
+- b: List[int]
+- c: List[int]
+- ab: List[int]
+- abc: List[int]
+
+Logic Flow:
+1. Initialize an empty list `ab` to store sums of elements from lists `a` and `b`.
+2. Iterate over each element `i` in range `x` (0 to x-1):
+   - Iterate over each element `j` in range `y` (0 to y-1):
+     - Append the sum `a[i] + b[j]` to the list `ab`.
+3. Sort the list `ab` in descending order.
+4. Initialize an empty list `abc` to store sums of elements from `ab` with elements from `c`.
+5. Iterate over each element `i` in range `min(k, x * y)`:
+   - Iterate over each element `j` in range `z` (0 to z-1):
+     - Append the sum `ab[i] + c[j]` to the list `abc`.
+6. Sort the list `abc` in descending order.
+7. Initialize a result list to store the top `k` sums.
+8. Iterate over each element `i` in range `k`:
+   - Append `abc[i]` to the result list.
+9. Return the result list containing the top `k` sums.
+
+Input/Output Operations:
+- Inputs: Four integers `x`, `y`, `z`, `k` and three lists of integers `a`, `b`, `c`.
+- Outputs: A list of integers containing the top `k` largest sums.
+
+Dependencies:
+- Requires the `List` type from the `typing` module.
+```

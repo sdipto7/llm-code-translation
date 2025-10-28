@@ -1,0 +1,34 @@
+```
+Function: _input() -> Iterator[int]
+    Use input() to read a line of input from the user
+    Split the input string by spaces
+    Convert each split string into an integer
+    Return an iterator over the integers
+
+Call _input()
+    Assign the first two integers from the iterator to variables n (int) and m (int)
+
+Call _input()
+    Convert the iterator to a list and assign it to variable lst (List[int])
+
+Declare variable l as an empty dictionary (Dict[int, int])
+
+For i in range(n):
+    If lst[i] is not a key in dictionary l:
+        Set l[lst[i]] to 1
+    Else:
+        Increment the value of l[lst[i]] by 1
+
+Declare variable res and initialize it to 0 (int)
+
+For i in range(n):
+    If l[lst[i]] > 1:
+        Increment res by n - i - l[lst[i]]
+        Decrement the value of l[lst[i]] by 1
+    Else:
+        Increment res by n - i - 1
+
+Output the value of res using print()
+
+No external libraries, modules, or dependencies are required
+```

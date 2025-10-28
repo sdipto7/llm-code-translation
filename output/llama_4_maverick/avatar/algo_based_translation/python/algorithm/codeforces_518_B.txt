@@ -1,0 +1,33 @@
+1. READ s and t from input
+2. INITIALIZE freqs as an empty dictionary
+3. INITIALIZE freqt as an empty dictionary
+4. INITIALIZE yay to 0
+5. INITIALIZE whoops to 0
+6. FOR EACH letra in s
+   1. IF letra is in freqs THEN
+      1. INCREMENT freqs[letra] by 1
+   2. ELSE
+      1. SET freqs[letra] to 1
+7. FOR EACH letra in t
+   1. IF letra is in freqt THEN
+      1. INCREMENT freqt[letra] by 1
+   2. ELSE
+      1. SET freqt[letra] to 1
+8. FOR EACH letra in keys of freqs
+   1. WHILE freqs[letra] > 0 AND letra is in freqt AND freqt[letra] > 0
+      1. INCREMENT yay by 1
+      2. DECREMENT freqs[letra] by 1
+      3. DECREMENT freqt[letra] by 1
+9. FOR EACH letra in keys of freqs
+   1. WHILE freqs[letra] > 0
+      1. IF letra is lowercase AND letra.upper() is in freqt AND freqt[letra.upper()] > 0 THEN
+         1. INCREMENT whoops by 1
+         2. DECREMENT freqs[letra] by 1
+         3. DECREMENT freqt[letra.upper()] by 1
+      2. ELSE IF letra is uppercase AND letra.lower() is in freqt AND freqt[letra.lower()] > 0 THEN
+         1. INCREMENT whoops by 1
+         2. DECREMENT freqs[letra] by 1
+         3. DECREMENT freqt[letra.lower()] by 1
+      3. ELSE
+         1. BREAK the loop
+10. PRINT yay and whoops

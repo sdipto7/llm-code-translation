@@ -1,0 +1,39 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- firstline: int
+- total: int
+- memory: list[str]
+- x: int (loop counter)
+- A: int
+- G: int
+
+**Logic Flow:**
+1. Read integer input from stdin and assign to 'firstline'
+2. Initialize 'total' to 0
+3. Initialize empty list 'memory'
+4. For x in range from 0 to firstline-1:
+   - Read line from stdin
+   - Split line into two integers A and G
+   - If total + A ≤ 500:
+        - Add A to total
+        - Append "A" to memory
+   - Else:
+        - Subtract G from total
+        - Append "G" to memory
+5. Join all elements in memory into a single string
+6. Print the resulting string
+
+**Control Structures:**
+- For loop: for x in range(firstline)
+- Conditional: if total + A ≤ 500
+
+**Input/Output Operations:**
+- Input: integer from stdin (firstline)
+- Input: multiple lines with two integers each
+- Output: string composed of "A" and "G" characters
+
+**Dependencies:**
+- Standard input/output functions
+- No external libraries required

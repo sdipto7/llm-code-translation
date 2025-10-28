@@ -1,0 +1,45 @@
+Function Signature:
+- `void solve()` (No parameters, No return type)
+
+Variable Declarations:
+- `int INF = Integer.MAX_VALUE`
+- `Scanner sc = new Scanner(System.in)`
+- `int N = sc.nextInt()`
+- `long X = sc.nextLong()`
+- `long[] x = new long[N]`
+- `long[] xsum = new long[N + 1]`
+- `long ans = X * N + 5 * xsum[N]`
+- `long cost`
+- `int j`
+- `int k`
+
+Logic Flow:
+
+1. Initialize `INF` to `Integer.MAX_VALUE`.
+2. Create a `Scanner` object to read input.
+3. Read integer `N` representing the number of elements.
+4. Read long `X` representing a multiplier.
+5. Declare array `x` of size `N` to store input values.
+6. Declare array `xsum` of size `N+1` to store cumulative sums.
+7. Loop through `i` from 0 to `N-1`:
+   - Read next long value into `x[i]`.
+   - Calculate cumulative sum and store in `xsum[i+1]`.
+8. Initialize `ans` to `X * N + 5 * xsum[N]`.
+9. Loop through `i` from 1 to `N-1`:
+   - Calculate initial `cost` as `X * i + 5 * (xsum[N] - xsum[N - i])`.
+   - Set `j` to 5 and `k` to `N - i`.
+   - While `k` is greater than or equal to 0:
+     - If `cost` is greater than `ans`, break the loop.
+     - Update `cost` by adding `j * (xsum[k] - xsum[Math.max(k - i, 0)])`.
+     - Increment `j` by 2.
+     - Decrement `k` by `i`.
+   - Update `ans` to the minimum of `ans` and `cost`.
+10. Print `ans + N * X`.
+
+Input/Output Operations:
+- Read `N` and `X` from standard input.
+- Read `N` long values into array `x`.
+- Print the final calculated value of `ans + N * X` to standard output.
+
+Libraries:
+- `java.util.Scanner`

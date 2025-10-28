@@ -1,0 +1,20 @@
+main():
+    Initialize BufferedReader br as null
+    Read integer n from first input line
+    If n equals 1:
+        Print "Hello World"
+    Else:
+        Read next 2 input lines into array strs
+        Convert strs[0] and strs[1] to integers and print their sum
+
+read(int len):
+    Create empty ArrayList<String> strList
+    If br is null:
+        Initialize br with BufferedReader reading from System.in
+    For i from 0 to len-1:
+        Add next line from br to strList
+    Return strList converted to String array
+
+close():
+    If br is not null:
+        Close br

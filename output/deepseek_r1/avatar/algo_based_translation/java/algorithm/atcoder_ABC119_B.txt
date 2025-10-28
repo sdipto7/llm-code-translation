@@ -1,0 +1,41 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+  - Parameters: `String[] args`
+  - Return: `void`
+- `static double solve(double[] x, String[] u)`
+  - Parameters: `double[] x`, `String[] u`
+  - Return: `double`
+
+**Variables:**
+- `Scanner sc = new Scanner(System.in)` (Scanner object)
+- `int N = sc.nextInt()` (integer)
+- `double[] x = new double[N]` (double array of size N)
+- `String[] u = new String[N]` (String array of size N)
+- Loop index `int i` (integer)
+
+**Logic Flow:**
+1. Read integer `N` from input.
+2. Initialize arrays `x` (double) and `u` (String) with size `N`.
+3. Loop `i` from `0` to `N-1`:
+   - Read `x[i]` (double) and `u[i]` (String) from input.
+4. Call `solve(x, u)` and print the result.
+5. Close `Scanner`.
+
+**solve Function Logic:**
+- Iterate over indices `0` to `x.length-1` via `IntStream.range`.
+- For each index `i`:
+  - If `u[i].equals("JPY")`, multiply `x[i]` by `1`.
+  - Else, multiply `x[i]` by `380000`.
+- Sum all transformed values and return the total.
+
+**Control Structures:**
+- `for (int i = 0; i < N; ++i)` loop in `main`.
+- Conditional `u[i].equals("JPY") ? 1 : 380000` in `solve`.
+
+**Input/Output Operations:**
+- Read `N`, `x[i]`, and `u[i]` via `Scanner`.
+- Output the result of `solve(x, u)` via `System.out.println`.
+
+**Dependencies:**
+- `java.util.Scanner`
+- `java.util.stream.IntStream`

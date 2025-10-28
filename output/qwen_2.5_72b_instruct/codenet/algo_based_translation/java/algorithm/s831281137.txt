@@ -1,0 +1,49 @@
+Function signatures:
+- `main(String[] args)`: void
+- `nlong()`: long
+- `nint()`: int
+- `nstr()`: String
+- `nsToChars()`: char[]
+- `nlongs(int n)`: long[]
+- `nints(int n)`: int[]
+- `nints(int n, int padL, int padR)`: int[]
+- `nlongs(int n, int padL, int padR)`: long[]
+- `nstrs(int n)`: String[]
+- `nsToChars2D(int h, int w)`: char[][]
+- `nsToChars2D(int h, int w, int pad)`: char[][]
+
+Variable declarations and data types:
+- `Scanner sc`: static final
+- `PrintStream so`: static final
+- `int N`: number of items
+- `int W`: maximum weight capacity
+- `int[] v`: array of values of items, size N+1
+- `int[] w`: array of weights of items, size N+1
+- `int[][] sumV`: 2D array to store maximum value for each weight capacity, size (N+1)x(W+1)
+
+Logic flow:
+1. Read integer `N` (number of items) and `W` (maximum weight capacity) from input.
+2. Initialize arrays `v` and `w` to store values and weights of items, respectively.
+3. Loop through each item (from 1 to N):
+   - Read value and weight of item i and store in arrays `v` and `w`.
+4. Initialize 2D array `sumV` to store maximum value for each weight capacity.
+5. Loop through each item (from 1 to N):
+   - Loop through each weight capacity (from 0 to w[i]-1):
+     - Set `sumV[i][i_sum]` to `sumV[i-1][i_sum]`.
+   - Loop through each weight capacity (from w[i] to W):
+     - Set `sumV[i][i_sum]` to maximum of `sumV[i-1][i_sum]` and `sumV[i-1][i_sum-w[i]] + v[i]`.
+6. Print the maximum value that can be obtained with weight capacity W, stored in `sumV[N][W]`.
+
+Control structures:
+- `for (int i = 1; i <= N; i++)`: loop through each item
+- `for (int i_sum = 0; i_sum < w[i]; i_sum++)`: loop through weight capacities less than current item's weight
+- `for (int i_sum = w[i]; i_sum <= W; i_sum++)`: loop through weight capacities from current item's weight to maximum weight capacity
+- `Math.max(sumV[i-1][i_sum], sumV[i-1][i_sum-w[i]] + v[i])`: conditional to choose maximum value
+
+Input/output operations:
+- `sc.nextInt()`: read integer from input
+- `so.println(sumV[N][W])`: print maximum value for weight capacity W
+
+Required libraries:
+- `java.io.PrintStream`
+- `java.util.Scanner`

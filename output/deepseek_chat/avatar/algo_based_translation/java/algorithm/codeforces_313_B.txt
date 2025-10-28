@@ -1,0 +1,32 @@
+```plaintext
+Algorithm:
+Main function:
+  Parameters: String[] args
+  Return: void
+  Declare BufferedReader br with System.in
+  Declare PrintWriter pw with System.out
+  Declare Fast object f
+  Call f.sol(br, pw)
+  Close pw
+
+Fast class:
+  Method sol:
+    Parameters: BufferedReader br, PrintWriter pw
+    Return: void
+    Declare StringTokenizer st initialized with br.readLine()
+    Declare String s initialized with st.nextToken()
+    Declare Integer array cum of size s.length() + 1
+    Initialize cum[0] = 0
+    Initialize cum[s.length()] = 0
+    For loop: i from 1 to s.length() - 1
+      If condition: s.charAt(i) == s.charAt(i-1)
+        Then: cum[i] = cum[i-1] + 1
+      Else: cum[i] = cum[i-1]
+    Declare st initialized with br.readLine()
+    Declare Integer q initialized with Integer.parseInt(st.nextToken())
+    While loop: q-- != 0
+      Declare st initialized with br.readLine()
+      Declare Integer l initialized with Integer.parseInt(st.nextToken())
+      Declare Integer r initialized with Integer.parseInt(st.nextToken()) - 1
+      Output: cum[r] - cum[l-1]
+```

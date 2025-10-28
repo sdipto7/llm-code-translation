@@ -1,0 +1,14 @@
+1. Read n and m from input
+2. Initialize empty lists x and y
+3. For i from 1 to n
+   1. Read day and salary from input
+   2. Push (-day, -salary) onto heap x
+4. While x is not empty
+   1. Pop (d, s) from heap x
+   2. Calculate r = m - length of y
+   3. If r >= -d
+      1. Push -s onto heap y
+   4. Else
+      1. Push -s onto heap y
+      2. Pop from heap y
+5. Print sum of elements in y

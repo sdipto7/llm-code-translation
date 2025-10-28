@@ -1,0 +1,49 @@
+Algorithm Extraction:
+
+Input: Standard input via Scanner
+Output: Print to console
+
+Libraries:
+- java.util.LinkedList
+- java.util.Queue
+- java.util.Scanner
+
+Variables:
+1. n: int (user input)
+2. g: int[][] (size [n+1][n+1])
+3. u: int, k: int, v: int (temporary vertex/count variables)
+4. d: int[] (size [n+1], initialized to -1)
+5. que: Queue<Integer> (LinkedList implementation)
+
+Execution Flow:
+1. Read integer n from input
+2. Initialize adjacency matrix g with dimensions (n+1)×(n+1)
+3. For i from 0 to n-1:
+    a. Read u and k
+    b. For j from 0 to k-1:
+        i. Read v
+        ii. Set g[u][v] = 1
+4. Initialize distance array d with -1 for all elements
+5. Create queue and add vertex 1 to it
+6. Set d[1] = 0
+7. While queue is not empty:
+    a. Dequeue vertex (top)
+    b. For j from 1 to n:
+        i. If g[top][j] == 1 AND d[j] == -1:
+            - Enqueue j
+            - Set d[j] = d[top] + 1
+8. For i from 1 to n:
+    a. Print i and d[i]
+
+Control Structures:
+- For loop (0 ≤ i < n) for graph input
+- Nested for loop (0 ≤ j < k) for edge processing
+- While loop (queue not empty) for BFS traversal
+- For loop (1 ≤ j ≤ n) checking adjacency in BFS
+- Conditional (g[top][j] == 1 && d[j] == -1) for edge discovery
+- Final for loop (1 ≤ i ≤ n) for output
+
+Data Flow:
+- Adjacency matrix built from sequential input
+- BFS modifies distance array starting from vertex 1
+- Final output shows all vertex distances from start vertex

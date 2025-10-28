@@ -1,0 +1,8 @@
+1. INPUT n
+2. INITIALIZE count = 0
+3. FOR i FROM 0 TO n-1
+4.     INPUT list_of_numbers
+5.     CALCULATE sum_of_numbers = SUM(list_of_numbers)
+6.     IF sum_of_numbers > 1 THEN
+7.         INCREMENT count by 1
+8. OUTPUT count

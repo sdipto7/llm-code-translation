@@ -1,0 +1,31 @@
+1. **Libraries/Dependencies**:
+   - Import the `java.util.Scanner` to handle input operations.
+
+2. **Function Signature**:
+   - `public static void main(String[] args)`: Main function that takes an array of strings as arguments and returns void.
+
+3. **Variable Declarations**:
+   - `Scanner sc`: An instance of the Scanner class for reading input.
+   - `String s`: A string variable to store the input line.
+   - `int length`: An integer to store the length of the string `s`.
+   - `char ch`: A character variable initially set to 0 to store the last meaningful character of the string.
+
+4. **Input Operations**:
+   - Use `sc.nextLine()` to read a full line of input from the user and store it in the string `s`.
+
+5. **Logic Flow**:
+   - Calculate the length of the string `s` using `s.length()` and store it in `length`.
+   - Initialize `ch` to 0.
+
+6. **Control Structures**:
+   - A `for` loop that iterates from `length - 1` to `0` (both inclusive), decrementing by 1 each iteration.
+     - **Condition**: Check if `s.charAt(i)` is not equal to a space `' '` and not equal to a question mark `'?'`.
+       - If true, assign `s.charAt(i)` to `ch` and break out of the loop.
+
+7. **Data Processing**:
+   - Convert the character `ch` to lowercase using `Character.toLowerCase(ch)`.
+
+8. **Output Operations**:
+   - Use an `if` statement to check if `ch` is any of the characters 'a', 'e', 'i', 'o', 'u', or 'y'.
+     - If true, print "YES".
+     - Else, print "NO".

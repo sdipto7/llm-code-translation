@@ -1,0 +1,15 @@
+1. Read three integers A, B, and n from the input.
+2. Check if A is equal to 0.
+3. If A is 0, then check if B is 0.
+4. If B is 0, output 1.
+5. If B is not 0, output "No solution".
+6. If A is not 0, check if B is divisible by A.
+7. If B is not divisible by A, output "No solution".
+8. Divide B by A and store the result in B.
+9. Check if B is negative.
+10. If B is negative and n is even, output "No solution".
+11. If B is negative, make B positive.
+12. Iterate over all integers x from 0 to B.
+13. For each x, check if x raised to the power of n equals B.
+14. If a match is found, output x if B was originally positive, or -x if B was originally negative.
+15. If no match is found after iterating over all x, output "No solution".

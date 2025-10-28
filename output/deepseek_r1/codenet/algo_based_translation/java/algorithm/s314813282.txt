@@ -1,0 +1,41 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `static int MaxInt(int x, int[] a)`
+- `static int MinInt(int y, int[] b)`
+- `static void CheckWar(int a, int b)`
+
+**Variables:**
+- `Scanner scan` (input handler)
+- `int m`, `int n`, `int x`, `int y` (input integers)
+- `int[] a` (size m), `int[] b` (size n) (input arrays)
+- `int x_max`, `int y_min` (computed values)
+- `int bignum` in MaxInt, `int smallnum` in MinInt (temporary variables)
+
+**Logic Flow:**
+1. Initialize Scanner for input
+2. Read integers m, n, x, y from standard input
+3. Read m integers into array a via for-loop
+4. Read n integers into array b via for-loop
+5. Compute x_max: largest value between x and all elements in a via MaxInt
+   - Initialize bignum with x
+   - Iterate through array a: compare each element with bignum using Math.max
+6. Compute y_min: smallest value between y and all elements in b via MinInt
+   - Initialize smallnum with y
+   - Iterate through array b: compare each element with smallnum using Math.min
+7. CheckWar comparison:
+   - If x_max >= y_min: print "War"
+   - Else: print "No War"
+
+**Control Structures:**
+- For-loop for reading array a: `for(int i=0; i<a.length; i++)`
+- For-loop for reading array b: `for(int i=0; i<b.length; i++)`
+- For-loop in MaxInt: `for(int i=0; i<a.length; i++)`
+- For-loop in MinInt: `for(int i=0; i<b.length; i++)`
+- Conditional in CheckWar: `if(a >= b) { ... } else { ... }`
+
+**Input/Output:**
+- Input: Four integers (m, n, x, y) followed by m integers for array a and n integers for array b via Scanner
+- Output: "War" or "No War" printed to console based on comparison
+
+**Dependencies:**
+- `java.util.Scanner` for input handling

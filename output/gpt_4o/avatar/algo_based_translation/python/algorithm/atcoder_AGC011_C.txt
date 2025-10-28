@@ -1,0 +1,40 @@
+```plaintext
+Import the queue module.
+
+Read two integers n and m from input.
+
+Declare vis as a list of integers initialized to 0, of length n + 1.
+Initialize ci, cb, and cc to 0 (integers).
+Declare g as a list of lists, with n + 1 empty lists.
+
+Define function dfs(x: int) -> bool:
+    Declare stk as a LifoQueue.
+    Initialize flag to True.
+    Put tuple (x, 1) into stk.
+    While stk is not empty:
+        Get tuple (u, col) from stk.
+        If vis[u] is not 0:
+            Update flag by performing bitwise AND with (vis[u] == col).
+            Continue to the next iteration of the loop.
+        Set vis[u] to col.
+        For each i in g[u]:
+            Put tuple (i, 3 - col) into stk.
+    Return flag.
+
+For i in range(m):
+    Read two integers u and v from input.
+    Append v to g[u].
+    Append u to g[v].
+
+For i in range(1, n + 1):
+    If vis[i] is 0:
+        If length of g[i] is 0:
+            Increment ci by 1.
+        Else:
+            If dfs(i) returns True:
+                Increment cb by 1.
+            Else:
+                Increment cc by 1.
+
+Print result of ci * ci + 2 * ci * (n - ci) + cc * cc + 2 * cb * cc + 2 * cb * cb.
+```

@@ -1,0 +1,13 @@
+1. Declare function `process_input` with no parameters and return type `void`.
+2. Declare integer variable `n`.
+3. Read integer input from user and store it in `n`.
+4. Declare array `l` of strings.
+5. Read string input from user, split it into substrings separated by spaces, and store them in `l`.
+6. Declare integer variables `max`, `min`, and `sum`, and initialize them with `-1e9`, `1e9`, and `0` respectively.
+7. Iterate from `0` to `n-1` using a for loop with loop counter `i`.
+8. Inside the loop, convert the `i-th` element of `l` to an integer and add it to `sum`.
+9. Inside the loop, check if the integer value of the `i-th` element of `l` is greater than `max`. If true, update `max` with this value.
+10. Inside the loop, check if the integer value of the `i-th` element of `l` is less than `min`. If true, update `min` with this value.
+11. After the loop, output the values of `min`, `max`, and `sum` in that order, separated by spaces.
+12. The required input is an integer followed by a string of space-separated integers.
+13. The program uses built-in input/output functions and does not require any external libraries or modules.

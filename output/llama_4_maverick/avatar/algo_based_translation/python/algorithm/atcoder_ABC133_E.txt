@@ -1,0 +1,21 @@
+1. Initialize a graph data structure
+2. Read the number of nodes N and the number of colors K from input
+3. For i from 1 to N-1:
+    4. Read two nodes a and b from input
+    5. Add an edge between a-1 and b-1 in the graph
+    6. Add an edge between b-1 and a-1 in the graph
+7. Set mod to 10^9 + 7
+8. Define a function dfs with parameters fro, to, and f:
+    9. Initialize caseNum to f
+    10. Initialize colorNum to K-1 if f equals K, otherwise K-2
+    11. For each neighbor u of fro:
+        12. If u equals to, skip to the next iteration
+        13. Recursively call dfs with parameters u, fro, and colorNum, and store the result in pat
+        14. If pat equals 0:
+            15. Set caseNum to 0
+            16. Break the loop
+        17. Update caseNum by multiplying it with pat and taking the modulus mod
+        18. Decrement colorNum by 1
+    19. Return caseNum
+20. Call dfs with parameters 0, -1, and K, and store the result in ans
+21. Print ans

@@ -1,0 +1,47 @@
+```
+Function Signature:
+- Function Name: check_war_status
+- Parameters: N (int), M (int), X (int), Y (int), x (List[int]), y (List[int])
+- Return Type: str
+
+Variable Declarations:
+- N: int
+- M: int
+- X: int
+- Y: int
+- x: List[int]
+- y: List[int]
+
+Logic Flow:
+1. Read four integers from input (N, M, X, Y) representing:
+   - N: Number of elements in list x
+   - M: Number of elements in list y
+   - X: Upper limit for the list x
+   - Y: Lower limit for the list y
+
+2. Read N integers into list x from input.
+
+3. Read M integers into list y from input.
+
+4. Calculate the maximum value of list x.
+
+5. Compare this maximum value and X to determine the larger value.
+
+6. Calculate the minimum value of list y.
+
+7. Compare this minimum value and Y to determine the smaller value.
+
+8. If the maximum of x and X is less than the minimum of y and Y, return 'No War'.
+
+9. Otherwise, return 'War'.
+
+Control Structures:
+- Conditional: if max(max(x), X) < min(min(y), Y)
+
+Input/Output Operations:
+- Input: Read integers from input for variables N, M, X, Y, list x, and list y.
+- Output: Print 'No War' or 'War' based on the condition.
+
+Required Libraries/Modules:
+- None
+```

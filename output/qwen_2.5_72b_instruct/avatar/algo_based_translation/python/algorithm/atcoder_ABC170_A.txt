@@ -1,0 +1,27 @@
+Function Signature: main() -> None
+
+Variable Declarations and Data Types:
+a: List[int]
+e: int
+i: int
+
+Logic Flow in Execution Order:
+1. Read a line of input from the standard input.
+2. Split the input string by spaces.
+3. Convert each split string element to an integer and store them in the list `a`.
+4. Iterate over the list `a` with `enumerate`, assigning the index to `e` and the value to `i`.
+5. Check if `i` is equal to 0.
+6. If `i` is equal to 0:
+   a. Print the value of `e + 1`.
+   b. Break out of the loop.
+
+Control Structures:
+- For Loop: Iterates over the list `a` with `enumerate`.
+- Conditional: Checks if `i` is equal to 0.
+
+Input/Output Operations and Data Processing Logic:
+- Input: Reads a line of space-separated integers from the standard input.
+- Output: Prints the 1-based index of the first occurrence of 0 in the list `a`.
+
+Required Libraries, Modules, or Dependencies:
+None

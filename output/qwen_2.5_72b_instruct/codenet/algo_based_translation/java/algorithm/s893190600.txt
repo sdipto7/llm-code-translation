@@ -1,0 +1,795 @@
+### Algorithm
+
+#### Function Signatures and Variable Declarations
+
+- **main(String[] args)**
+  - InputStream `inputStream`
+  - OutputStream `outputStream`
+  - MyInput `in`
+  - PrintWriter `out`
+  - Solver `solver`
+
+- **Solver(MyInput in, PrintWriter out)**
+  - MyInput `in`
+  - PrintWriter `out`
+
+- **solve()**
+  - int `H`, `W`
+  - char[][] `C`
+  - char[] `c`
+
+- **add(Integer key)** in MapCounter
+  - Integer `key`
+
+- **add(Integer key, int cnt)** in MapCounter
+  - Integer `key`
+  - int `cnt`
+
+- **remove(Integer key)** in MapCounter
+  - Integer `key`
+
+- **sub(Integer key)** in MapCounter
+  - Integer `key`
+
+- **sub(Integer key, int cnt)** in MapCounter
+  - Integer `key`
+  - int `cnt`
+
+- **sub(Integer key, int cnt, boolean minus)** in MapCounter
+  - Integer `key`
+  - int `cnt`
+  - boolean `minus`
+
+- **set(Integer key, int cnt)** in MapCounter
+  - Integer `key`
+  - int `cnt`
+
+- **getCountwithNull(Integer key)** in MapCounter
+  - Integer `key`
+  - Return Integer
+
+- **getCount(Integer key)** in MapCounter
+  - Integer `key`
+  - Return Integer
+
+- **getKey()** in MapCounter
+  - Return Set<Integer>
+
+- **getKeyCount()** in MapCounter
+  - Return int
+
+- **getFirstKey()** in MapCounter
+  - Return Integer
+
+- **getLastKey()** in MapCounter
+  - Return Integer
+
+- **clear()** in MapCounter
+
+- **isRightMin(int[] a, boolean f, int index, int key)**
+  - int[] `a`
+  - boolean `f`
+  - int `index`
+  - int `key`
+  - Return boolean
+
+- **binarySearchRightMin(int[] a, boolean f, int key)**
+  - int[] `a`
+  - boolean `f`
+  - int `key`
+  - Return int
+
+- **isLeftMax(int[] a, boolean f, int index, int key)**
+  - int[] `a`
+  - boolean `f`
+  - int `index`
+  - int `key`
+  - Return boolean
+
+- **binarySearchLeftMax(int[] a, boolean f, int key)**
+  - int[] `a`
+  - boolean `f`
+  - int `key`
+  - Return int
+
+- **EulerTour()**
+
+- **dfs(int v, int p, PrintWriter out)** in EulerTour
+  - int `v`
+  - int `p`
+  - PrintWriter `out`
+
+- **init(int p_cnt, int root, Graph g, PrintWriter out)** in EulerTour
+  - int `p_cnt`
+  - int `root`
+  - Graph `g`
+  - PrintWriter `out`
+
+- **getPartTour(int v)** in EulerTour
+  - int `v`
+  - Return List
+
+- **getPartList(int v)** in EulerTour
+  - int `v`
+  - Return List<Integer>
+
+- **Graph()**
+
+- **add(int from, int to)** in Graph
+  - int `from`
+  - int `to`
+
+- **del(int from, int to)** in Graph
+  - int `from`
+  - int `to`
+
+- **get(int key)** in Graph
+  - int `key`
+  - Return List<Integer>
+
+- **contains(int key)** in Graph
+  - int `key`
+  - Return boolean
+
+- **keySet()** in Graph
+  - Return Set<Integer>
+
+- **isConnect(int key_1, int key_2)** in Graph
+  - int `key_1`
+  - int `key_2`
+  - Return boolean
+
+- **distList(int key)** in Graph
+  - int `key`
+  - Return List<PP>
+
+- **distV(int key)** in Graph
+  - int `key`
+  - Return int[]
+
+- **bridgeDfs(int now, int pre)** in Graph
+  - int `now`
+  - int `pre`
+  - Return int
+
+- **bridgeCnt(int start)** in Graph
+  - int `start`
+  - Return int
+
+- **dump(PrintWriter out)** in Graph
+  - PrintWriter `out`
+
+- **GraphWith()**
+
+- **add(int key, PP p)** in GraphWith
+  - int `key`
+  - PP `p`
+
+- **get(int key)** in GraphWith
+  - int `key`
+  - Return List<PP>
+
+- **contains(int key)** in GraphWith
+  - int `key`
+  - Return boolean
+
+- **keySet()** in GraphWith
+  - Return Set<Integer>
+
+- **isConnect(int key_1, int key_2)** in GraphWith
+  - int `key_1`
+  - int `key_2`
+  - Return boolean
+
+- **distance(int key_1, int key_2)** in GraphWith
+  - int `key_1`
+  - int `key_2`
+  - Return int
+
+- **GraphLong()**
+
+- **add(long key, long value)** in GraphLong
+  - long `key`
+  - long `value`
+
+- **get(long key)** in GraphLong
+  - long `key`
+  - Return List<Long>
+
+- **GraphLongWith()**
+
+- **add(long key, PPL p)** in GraphLongWith
+  - long `key`
+  - PPL `p`
+
+- **get(long key)** in GraphLongWith
+  - long `key`
+  - Return List<PPL>
+
+- **prn(String s)**
+  - String `s`
+
+- **prn(int i)**
+  - int `i`
+
+- **prn(long i)**
+  - long `i`
+
+- **prr(String s)**
+  - String `s`
+
+- **ni()**
+  - Return int
+
+- **nl()**
+  - Return long
+
+- **nd()**
+  - Return double
+
+- **ns()**
+  - Return String
+
+- **ndi(int n)**
+  - int `n`
+  - Return int[]
+
+- **ndl(int n)**
+  - int `n`
+  - Return long[]
+
+- **ndd(int n)**
+  - int `n`
+  - Return double[]
+
+- **nds(int n)**
+  - int `n`
+  - Return String[]
+
+- **nddi(int n, int m)**
+  - int `n`
+  - int `m`
+  - Return int[][]
+
+- **nddl(int n, int m)**
+  - int `n`
+  - int `m`
+  - Return long[][]
+
+- **PP(int key, int val)**
+  - int `key`
+  - int `val`
+
+- **PPP(int key, int val1, int val2)**
+  - int `key`
+  - int `val1`
+  - int `val2`
+
+- **PPL(long key, long val)**
+  - long `key`
+  - long `val`
+
+- **PPDL(long key, long[] val)**
+  - long `key`
+  - long[] `val`
+
+- **PPKEY(int key, int val)**
+  - int `key`
+  - int `val`
+
+- **PPLKEY(long key, long val)**
+  - long `key`
+  - long `val`
+
+- **Pair(K key, V value)**
+  - K `key`
+  - V `value`
+
+- **MyInput(InputStream is)**
+  - InputStream `is`
+
+- **read()**
+  - Return int
+
+- **nextInt()**
+  - Return int
+
+- **nextLong()**
+  - Return long
+
+- **nextDouble()**
+  - Return double
+
+- **nextString()**
+  - Return String
+
+- **nextDChar()**
+  - Return char[]
+
+- **nextChar()**
+  - Return char
+
+- **reads(int len, boolean[] accept)**
+  - int `len`
+  - boolean[] `accept`
+  - Return int
+
+#### Logic Flow
+
+1. **main(String[] args)**
+   - Initialize `inputStream` to System.in
+   - Initialize `outputStream` to System.out
+   - Create `MyInput` object `in` with `inputStream`
+   - Create `PrintWriter` object `out` with `outputStream`
+   - Create `Solver` object `solver` with `in` and `out`
+   - Call `solver.solve()`
+   - Close `out`
+
+2. **solve()**
+   - Read `H` and `W` using `ni()`
+   - Initialize `C` as a 2D array of size `(H+2) x (W+2)`
+   - Loop through each row `i` from `0` to `H-1`
+     - Read a string and convert to char array `c`
+     - Loop through each column `j` from `0` to `W-1`
+       - Assign `C[i+1][j+1]` the value of `c[j]`
+   - If `H == 1` and `W == 1`
+     - Print "No" using `prn("No")`
+     - Return
+   - Loop through each row `i` from `1` to `H`
+     - Loop through each column `j` from `1` to `W`
+       - If `C[i][j] == '#'` and no adjacent cells are '#'
+         - Print "No" using `prn("No")`
+         - Return
+   - Print "Yes" using `prn("Yes")`
+
+3. **add(Integer key)** in MapCounter
+   - Call `add(key, 1)`
+
+4. **add(Integer key, int cnt)** in MapCounter
+   - Get value of `key` from `map`
+   - If value is `null`, put `key` with value `cnt`
+   - Otherwise, update value to `value + cnt`
+
+5. **remove(Integer key)** in MapCounter
+   - Call `sub(key, 1, false)`
+
+6. **sub(Integer key)** in MapCounter
+   - Call `sub(key, 1)`
+
+7. **sub(Integer key, int cnt)** in MapCounter
+   - Call `sub(key, cnt, true)`
+
+8. **sub(Integer key, int cnt, boolean minus)** in MapCounter
+   - Get value of `key` from `map`
+   - If value is `null`
+     - If `minus` is true, put `key` with value `-cnt`
+   - Otherwise if `value > cnt` or `minus` is true
+     - Update value to `value - cnt`
+   - Otherwise, remove `key` from `map`
+
+9. **set(Integer key, int cnt)** in MapCounter
+   - Put `key` with value `cnt` in `map`
+
+10. **getCountwithNull(Integer key)** in MapCounter
+    - Get value of `key` from `map`
+    - Return value
+
+11. **getCount(Integer key)** in MapCounter
+    - Get value of `key` from `map`
+    - If value is `null`, return `0`
+    - Otherwise, return value
+
+12. **getKey()** in MapCounter
+    - Return key set of `map`
+
+13. **getKeyCount()** in MapCounter
+    - Return size of key set of `map`
+
+14. **getFirstKey()** in MapCounter
+    - Return first key of `map`
+
+15. **getLastKey()** in MapCounter
+    - Return last key of `map`
+
+16. **clear()** in MapCounter
+    - Clear `map`
+
+17. **isRightMin(int[] a, boolean f, int index, int key)**
+    - If `f` is true and `a[index] >= key`, return true
+    - If `f` is false and `a[index] > key`, return true
+    - Otherwise, return false
+
+18. **binarySearchRightMin(int[] a, boolean f, int key)**
+    - Initialize `ng` to `-1`
+    - Initialize `ok` to length of `a`
+    - While `Math.abs(ok - ng) > 1`
+      - Calculate `mid` as `(ok + ng) / 2`
+      - If `isRightMin(a, f, mid, key)` is true, set `ok` to `mid`
+      - Otherwise, set `ng` to `mid`
+    - Return `ok`
+
+19. **isLeftMax(int[] a, boolean f, int index, int key)**
+    - If `f` is true and `a[index] <= key`, return true
+    - If `f` is false and `a[index] < key`, return true
+    - Otherwise, return false
+
+20. **binarySearchLeftMax(int[] a, boolean f, int key)**
+    - Initialize `ng` to `-1`
+    - Initialize `ok` to length of `a`
+    - While `Math.abs(ok - ng) > 1`
+      - Calculate `mid` as `(ok + ng) / 2`
+      - If `isLeftMax(a, f, mid, key)` is true, set `ng` to `mid`
+      - Otherwise, set `ok` to `mid`
+    - Return `ng`
+
+21. **EulerTour()**
+    - Constructor initializes fields
+
+22. **dfs(int v, int p, PrintWriter out)** in EulerTour
+    - Print debug information
+    - Set `begin[v]` to `k`
+    - Add `v` to `euler_tour`
+    - Increment `k`
+    - If `g` does not contain `v`, return
+    - For each neighbor `i` of `v` in `g`
+      - If `i` is not `p`, recursively call `dfs(i, v, out)`
+      - Add `v` to `euler_tour`
+      - Increment `k`
+    - Set `end[v]` to `k`
+
+23. **init(int p_cnt, int root, Graph g, PrintWriter out)** in EulerTour
+    - Initialize `begin` as array of size `p_cnt + 1`
+    - Initialize `end` as array of size `p_cnt + 1`
+    - Set `this.root` to `root`
+    - Set `this.g` to `g`
+    - Call `dfs(root, -1, out)`
+
+24. **getPartTour(int v)** in EulerTour
+    - Return sublist of `euler_tour` from `begin[v]` to `end[v]`
+
+25. **getPartList(int v)** in EulerTour
+    - Create `TreeSet` `set`
+    - Add all elements of `getPartTour(v)` to `set`
+    - Initialize `ans` as empty `ArrayList`
+    - For each element `p` in `set`
+      - Add `p` to `ans`
+    - Return `ans`
+
+26. **Graph()**
+    - Constructor initializes `data` as `HashMap`
+
+27. **add(int from, int to)** in Graph
+    - Get list of neighbors of `from` from `data`
+    - If list is `null`, create new `ArrayList` and put in `data`
+    - Add `to` to list
+
+28. **del(int from, int to)** in Graph
+    - Get list of neighbors of `from` from `data`
+    - If list is `null`, return
+    - If list contains `to`, remove `to` from list
+
+29. **get(int key)** in Graph
+    - Return list of neighbors of `key` from `data`
+
+30. **contains(int key)** in Graph
+    - Check if `data` contains key
+    - Return result
+
+31. **keySet()** in Graph
+    - Return key set of `data`
+
+32. **isConnect(int key_1, int key_2)** in Graph
+    - Get list of neighbors of `key_1` from `data`
+    - If list is `null`, return false
+    - Check if list contains `key_2`
+    - Return result
+
+33. **distList(int key)** in Graph
+    - Initialize `dist` as empty `ArrayList`
+    - Initialize `mark` as empty `HashSet`
+    - Initialize `stack` as empty `Stack`
+    - Push `PP(key, 0)` to `stack`
+    - While `stack` is not empty
+      - Pop `wk` from `stack`
+      - Set `pp` to `wk.getKey()`
+      - Set `dd` to `wk.getVal()`
+      - Add `pp` to `mark`
+      - Add `PP(pp, dd)` to `dist`
+      - Get list of neighbors of `pp` from `data`
+      - For each neighbor `next` in list
+        - If `next` is in `mark`, continue
+        - Push `PP(next, dd + 1)` to `stack`
+    - Return `dist`
+
+34. **distV(int key)** in Graph
+    - Initialize `dist` as array of size `data.keySet().size() + 1` filled with `-1`
+    - Initialize `mark` as empty `HashSet`
+    - Initialize `stack` as empty `Stack`
+    - Push `PP(key, 0)` to `stack`
+    - While `stack` is not empty
+      - Pop `wk` from `stack`
+      - Set `pp` to `wk.getKey()`
+      - Set `dd` to `wk.getVal()`
+      - Add `pp` to `mark`
+      - Set `dist[pp]` to `dd`
+      - Get list of neighbors of `pp` from `data`
+      - For each neighbor `next` in list
+        - If `next` is in `mark`, continue
+        - Push `PP(next, dd + 1)` to `stack`
+    - Return `dist`
+
+35. **bridgeDfs(int now, int pre)** in Graph
+    - Add `now` to `mark`
+    - Set `mapCnt[now]` to `number`
+    - Set `mapLow[now]` to `number`
+    - Initialize `low`
+    - For each neighbor `next` of `now` in `data`
+      - If `next` is `pre`, continue
+      - If `next` is in `mark`
+        - If `mapLow[now] > mapLow[next]`, update `mapLow[now]` to `mapLow[next]`
+        - Continue
+      - Increment `number`
+      - Set `low` to `bridgeDfs(next, now)`
+      - If `mapLow[now] > low`, update `mapLow[now]` to `low`
+    - Return `mapLow[now]`
+
+36. **bridgeCnt(int start)** in Graph
+    - Clear `mapCnt`, `mapLow`, and `mark`
+    - Set `number` to `0`
+    - Call `bridgeDfs(start, start)`
+    - Initialize `ans` to `0`
+    - For each key in `mapCnt.keySet()`
+      - If `mapCnt[key] == mapLow[key]`, increment `ans`
+    - Return `ans - 1`
+
+37. **dump(PrintWriter out)** in Graph
+    - For each key in `data.keySet()`
+      - Print key followed by its neighbors
+
+38. **GraphWith()**
+    - Constructor initializes `data` as `HashMap`
+
+39. **add(int key, PP p)** in GraphWith
+    - Get list of neighbors of `key` from `data`
+    - If list is `null`, create new `ArrayList` and put in `data`
+    - Add `p` to list
+
+40. **get(int key)** in GraphWith
+    - Return list of neighbors of `key` from `data`
+
+41. **contains(int key)** in GraphWith
+    - Check if `data` contains key
+    - Return result
+
+42. **keySet()** in GraphWith
+    - Return key set of `data`
+
+43. **isConnect(int key_1, int key_2)** in GraphWith
+    - Get list of neighbors of `key_1` from `data`
+    - If list is `null`, return false
+    - Initialize `ans` to `false`
+    - For each `PP` in list
+      - If `PP.getKey() == key_2`, set `ans` to true and break
+    - Return `ans`
+
+44. **distance(int key_1, int key_2)** in GraphWith
+    - Initialize `mark` as empty `HashSet`
+    - Initialize `stack` as empty `Stack`
+    - Push `PP(key_1, 0)` to `stack`
+    - Initialize `wk`
+    - Initialize `key` and `val`
+    - Initialize `list`
+    - While `stack` is not empty
+      - Pop `wk` from `stack`
+      - Set `key` to `wk.getKey()`
+      - Set `val` to `wk.getVal()`
+      - Add `key` to `mark`
+      - If `key` is `key_2`, return `val`
+      - Set `list` to neighbors of `key` from `data`
+      - If `list` is `null`, continue
+      - For each `PP` in `list`
+        - If `PP.getKey()` is in `mark`, continue
+        - Push `PP(PP.getKey(), val + PP.getVal())` to `stack`
+    - Return `Integer.MAX_VALUE`
+
+45. **GraphLong()**
+    - Constructor initializes `G` as `HashMap`
+
+46. **add(long key, long value)** in GraphLong
+    - Get list of neighbors of `key` from `G`
+    - If list is `null`, create new `ArrayList` and put in `G`
+    - Add `value` to list
+
+47. **get(long key)** in GraphLong
+    - Return list of neighbors of `key` from `G`
+
+48. **GraphLongWith()**
+    - Constructor initializes `G` as `HashMap`
+
+49. **add(long key, PPL p)** in GraphLongWith
+    - Get list of neighbors of `key` from `G`
+    - If list is `null`, create new `ArrayList` and put in `G`
+    - Add `p` to list
+
+50. **get(long key)** in GraphLongWith
+    - Return list of neighbors of `key` from `G`
+
+51. **prn(String s)**
+    - Print `s` using `out.println`
+
+52. **prn(int i)**
+    - Print `i` using `out.println`
+
+53. **prn(long i)**
+    - Print `i` using `out.println`
+
+54. **prr(String s)**
+    - Print `s` using `out.print`
+
+55. **ni()**
+    - Return integer read from `in.nextInt`
+
+56. **nl()**
+    - Return long read from `in.nextLong`
+
+57. **nd()**
+    - Return double read from `in.nextDouble`
+
+58. **ns()**
+    - Return string read from `in.nextString`
+
+59. **ndi(int n)**
+    - Initialize `ans` as array of size `n`
+    - Loop through each index `i` from `0` to `n-1`
+      - Set `ans[i]` to `ni()`
+    - Return `ans`
+
+60. **ndl(int n)**
+    - Initialize `ans` as array of size `n`
+    - Loop through each index `i` from `0` to `n-1`
+      - Set `ans[i]` to `nl()`
+    - Return `ans`
+
+61. **ndd(int n)**
+    - Initialize `ans` as array of size `n`
+    - Loop through each index `i` from `0` to `n-1`
+      - Set `ans[i]` to `nd()`
+    - Return `ans`
+
+62. **nds(int n)**
+    - Initialize `ans` as array of size `n`
+    - Loop through each index `i` from `0` to `n-1`
+      - Set `ans[i]` to `ns()`
+    - Return `ans`
+
+63. **nddi(int n, int m)**
+    - Initialize `ans` as 2D array of size `n x m`
+    - Loop through each index `i` from `0` to `n-1`
+      - Loop through each index `j` from `0` to `m-1`
+        - Set `ans[i][j]` to `ni()`
+    - Return `ans`
+
+64. **nddl(int n, int m)**
+    - Initialize `ans` as 2D array of size `n x m`
+    - Loop through each index `i` from `0` to `n-1`
+      - Loop through each index `j` from `0` to `m-1`
+        - Set `ans[i][j]` to `nl()`
+    - Return `ans`
+
+65. **PP(int key, int val)**
+    - Initialize fields `key` and `val`
+
+66. **PPP(int key, int val1, int val2)**
+    - Initialize fields `key`, `val1`, and `val2`
+
+67. **PPL(long key, long val)**
+    - Initialize fields `key` and `val`
+
+68. **PPDL(long key, long[] val)**
+    - Initialize fields `key` and `val`
+
+69. **dump(PrintWriter out)** in PPDL
+    - Print `key` and values of `val` using `out.print`
+
+70. **PPKEY(int key, int val)**
+    - Initialize fields `key` and `val`
+
+71. **equals(Object obj)** in PPKEY
+    - If `obj` is instance of `PPKEY`, compare `key` and `val`
+    - Return result
+
+72. **hashCode()** in PPKEY
+    - Return hash code of `key` and `val`
+
+73. **PPLKEY(long key, long val)**
+    - Initialize fields `key` and `val`
+
+74. **equals(Object obj)** in PPLKEY
+    - If `obj` is instance of `PPKEY`, compare `key` and `val`
+    - Return result
+
+75. **hashCode()** in PPLKEY
+    - Return hash code of `key` and `val`
+
+76. **Pair(K key, V value)**
+    - Initialize key and value using superclass constructor
+
+77. **MyInput(InputStream is)**
+    - Initialize `in` with `BufferedReader` wrapping `InputStreamReader` of `is`
+
+78. **read()**
+    - If `pos >= readLen`
+      - Reset `pos` to `0`
+      - Read from `in` to `buffer`
+      - If read length is less than or equal to `0`, throw `EndOfFileRuntimeException`
+    - Return character at position `pos` in `buffer` and increment `pos`
+
+79. **nextInt()**
+    - Read initial character
+    - Read characters until space character found, storing in `str`
+    - Convert `str` to integer considering sign
+    - Return integer
+
+80. **nextLong()**
+    - Read initial character
+    - Read characters until space character found, storing in `str`
+    - Convert `str` to long considering sign
+    - Return long
+
+81. **nextDouble()**
+    - Read initial character
+    - Read characters until space character found, storing in `str`
+    - Convert `str` to double considering decimal point
+    - Return double
+
+82. **nextString()**
+    - Trim and return string read from `nextDChar`
+
+83. **nextDChar()**
+    - Read characters until space character found, storing in `str`
+    - Append null character at end of `str`
+    - Return `str` as char array
+
+84. **nextChar()**
+    - Read characters until non-space character found
+    - Return character
+
+85. **reads(int len, boolean[] accept)**
+    - Read characters until character in `accept` found, storing in `str`
+    - Return length of `str`
+
+86. **EndOfFileRuntimeException()**
+    - Constructor for exception class
+
+#### Libraries and Modules
+
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStream
+- java.io.InputStreamReader
+- java.io.OutputStream
+- java.io.PrintWriter
+- java.lang.Character.Subset
+- java.math.BigDecimal
+- java.text.DecimalFormat
+- java.time.temporal.ValueRange
+- java.util.AbstractMap
+- java.util.ArrayDeque
+- java.util.ArrayList
+- java.util.Arrays
+- java.util.Collections
+- java.util.Comparator
+- java.util.Deque
+- java.util.HashMap
+- java.util.HashSet
+- java.util.List
+- java.util.Map
+- java.util.Map.Entry
+- java.util.Objects
+- java.util.PriorityQueue
+- java.util.Queue
+- java.util.Set
+- java.util.Stack
+- java.util.TreeMap
+- java.util.TreeSet
+- java.util.concurrent.ForkJoinPool

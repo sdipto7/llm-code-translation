@@ -1,0 +1,41 @@
+Function signature: `main()`
+Variable declarations:
+- `mod` as integer initialized to \(10^9 + 7\)
+- `n`, `k` as integers read from input
+- `coef` as list of integers
+- `i` as integer used in loop
+- `tmp` as integer used in inner loop
+- `j` as integer used in inner loop
+- `nn` as integer representing length of `coef`
+- `dp` as 2D list of integers initialized with zeros
+- `sum(dp[k])` as integer representing final result
+
+Execution order and logic flow:
+1. Read integers `n` and `k` from input
+2. Initialize empty list `coef`
+3. Loop with `i` from 1 to \(\lfloor\sqrt{n}\rfloor\) inclusive:
+   - Append \((n // i) - (n // (i + 1))\) to `coef`
+4. Append 1 to `coef` until length of `coef` equals `n`
+5. Reverse `coef`
+6. Assign length of `coef` to `nn`
+7. Initialize 2D list `dp` with dimensions `(k+1) x nn` filled with zeros
+8. Set `dp[0][0]` to 1
+9. Loop with `i` from 1 to `k` inclusive:
+   - Set `tmp` to 0
+   - Loop with `j` from `nn-1` to 0 inclusive:
+     - Add `dp[i-1][(nn-1)-j]` to `tmp`
+     - Take modulo `mod` of `tmp`
+     - Set `dp[i][j]` to `coef[j] * tmp`
+     - Take modulo `mod` of `dp[i][j]`
+10. Print the sum of elements in `dp[k]` modulo `mod`
+
+Control structures:
+- For loops with specified ranges
+- No conditional statements
+
+Input/output operations:
+- Input: Reads two integers `n` and `k` from standard input
+- Output: Prints single integer, sum of elements in `dp[k]` modulo `mod`, to standard output
+
+Required libraries, modules, or dependencies:
+- No specific imports required

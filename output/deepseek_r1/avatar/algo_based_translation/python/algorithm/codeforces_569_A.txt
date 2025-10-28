@@ -1,0 +1,48 @@
+ALGORITHM SPECIFICATION
+
+FUNCTION:
+- Name: calculate_iterations
+- Parameters:
+  - t: int
+  - s: int
+  - q: int
+- Return type: int
+
+VARIABLES:
+- ans: int (initial value: 0)
+- s: int (parameter, modified during iteration)
+- t: int (parameter, read-only)
+- q: int (parameter, read-only)
+
+INPUT OPERATIONS:
+1. Read three space-separated integers from standard input in order: t, s, q
+
+LOGIC STEPS:
+1. Initialize ans to 0
+2. WHILE s < t:
+   a. s = s * q
+   b. ans = ans + 1
+3. EXIT LOOP WHEN s >= t
+4. RETURN ans
+
+OUTPUT OPERATIONS:
+1. Print returned ans value to standard output
+
+CONTROL FLOW:
+- Loop entry condition: s < t
+- Loop exit condition: s >= t
+- Unconditional loop continuation while entry condition holds
+
+EDGE CASES HANDLED:
+- Initial s >= t returns 0
+- Multiplicative steps that make s exactly equal t are counted
+
+ERROR HANDLING:
+- No explicit input validation
+- Assumes valid positive integer inputs
+- Potential infinite loop if q = 1 and s < t
+
+DEPENDENCIES:
+- Standard input/output functions
+- Integer parsing from input string
+- No external libraries required

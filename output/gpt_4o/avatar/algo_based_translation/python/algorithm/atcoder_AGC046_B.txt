@@ -1,0 +1,17 @@
+```python
+def calculate_matrix_value(A: int, B: int, C: int, D: int) -> int:
+    m = 998244353
+    d = [[0] * (D + 1) for _ in range(C + 1)]
+    d[A][B] = 1
+    
+    for i in range(A, C + 1):
+        for j in range(B, D + 1):
+            d[i][j] += (d[i][j - 1] * i + d[i - 1][j] * j - d[i - 1][j - 1] * (i - 1) * (j - 1)) % m
+
+    return d[C][D]
+
+if __name__ == "__main__":
+    A, B, C, D = map(int, input().split())
+    result = calculate_matrix_value(A, B, C, D)
+    print(result)
+```

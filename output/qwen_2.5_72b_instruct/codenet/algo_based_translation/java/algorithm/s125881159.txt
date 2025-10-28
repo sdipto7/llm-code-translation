@@ -1,0 +1,32 @@
+Function signature:
+- main(String[] $) : void
+
+Variable declarations and data types:
+- Scanner sc : Scanner
+- int n : integer
+- int d : integer
+- int i : integer
+
+Logic flow in execution order:
+1. Create a Scanner object to read input from the standard input stream.
+2. Read an integer value from the input and assign it to variable n.
+3. Initialize variable d to 0.
+4. For i from 0 to n-1 (inclusive):
+   a. Read an integer value from the input.
+   b. Compute the remainder of the integer value divided by 2.
+   c. Add the result to variable d.
+5. Determine if d modulo 2 is equal to 0:
+   a. If true, print "YES" to the standard output stream.
+   b. If false, print "NO" to the standard output stream.
+
+Control structures:
+- For loop: i from 0 to n-1 (inclusive).
+- Conditional (ternary) operator: d % 2 == 0.
+
+Input/output operations and data processing logic:
+- Read integer values from the standard input stream.
+- Perform arithmetic operations (addition, modulo).
+- Write a string ("YES" or "NO") to the standard output stream based on the condition.
+
+Required libraries, modules, or dependencies:
+- java.util.Scanner

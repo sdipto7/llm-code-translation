@@ -1,0 +1,61 @@
+**Function Signatures:**
+- **main()** → `None`  
+  (Implicit entry point with no parameters or return value)
+
+**Variables:**
+- `N: int` (Number of items)  
+- `T: int` (Total available time units)  
+- `L: List[Tuple[int, int]]` (List of items where each tuple represents [time, value])  
+- `dp: List[List[int]]` (2D DP table with dimensions (N+1) x T)  
+- `used: List[int]` (Indices of items selected in the DP solution)  
+- `B: int` (Temporary variable for backtracking the DP result)  
+- `j: int` (Current time index during backtracking)  
+- `ans: int` (Optimal value from DP table)  
+- `c: int` (Maximum value of unused items)  
+
+**Logic Flow:**
+1. **Input Operations:**  
+   - Read `N` and `T` from stdin.  
+   - Read `N` lines, each containing two integers, and store them in `L`.  
+
+2. **DP Table Initialization:**  
+   - Create `dp` as a 2D list of size `(N+1) x T` initialized to 0.  
+
+3. **DP Table Population:**  
+   - For each item `i` from 0 to `N-1`:  
+     - For each time unit `j` from 0 to `T-1`:  
+       - If `j < L[i][0]`, set `dp[i+1][j] = dp[i][j]`.  
+       - Else, set `dp[i+1][j] = max(dp[i][j], dp[i][j - L[i][0]] + L[i][1])`.  
+
+4. **Backtrack to Identify Used Items:**  
+   - Initialize `B = dp[N][T-1]`, `j = T-1`, and `used` as an empty list.  
+   - For `i` from `N-1` down to 0:  
+     - If `B == dp[i][j]`, skip to the next iteration.  
+     - Subtract `L[i][1]` from `B`, append `i` to `used`, and subtract `L[i][0]` from `j`.  
+
+5. **Calculate Maximum Unused Item Value:**  
+   - Set `ans = dp[N][T-1]` and `c = 0`.  
+   - For each item `i` from 0 to `N-1`:  
+     - If `i` is not in `used`, update `c = max(c, L[i][1])`.  
+
+6. **Output Result:**  
+   - Print `ans + c`.  
+
+**Control Structures:**  
+- **For Loops:**  
+  - Iterate over items (`i` in `0...N-1`).  
+  - Iterate over time units (`j` in `0...T-1`).  
+  - Reverse iteration over items during backtracking (`i` from `N-1` to `0`).  
+  - Iterate over items to compute `c`.  
+- **Conditionals:**  
+  - `if j < L[i][0]` during DP table update.  
+  - `if B == dp[i][j]` during backtracking.  
+  - `if i in used` when calculating `c`.  
+
+**Input/Output Operations:**  
+- Read space-separated integers `N` and `T` from stdin.  
+- Read `N` lines of space-separated integers into `L`.  
+- Print the final result `ans + c`.  
+
+**Dependencies:**  
+- No external libraries or modules. Uses standard input/output.

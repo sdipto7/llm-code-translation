@@ -1,0 +1,22 @@
+1. Import necessary modules
+2. Define function solve with parameters N, x, and y
+   1. Generate indices from 0 to N-1
+   2. Compute all permutations of the indices
+   3. Initialize an empty list distances
+   4. For each permutation
+      1. Initialize total_distance to 0
+      2. For i from 0 to N-2
+         1. Extract the i-th and (i+1)-th elements from the permutation
+         2. Calculate the distance between the corresponding points (x, y)
+         3. Add the distance to total_distance
+      3. Append total_distance to distances
+   5. Calculate the average of the distances
+   6. Print the average distance
+3. Define function main
+   1. Define a generator function iterate_tokens to read input tokens
+   2. Initialize tokens using iterate_tokens
+   3. Read N from the tokens
+   4. Initialize lists x and y of size N
+   5. Read coordinates into x and y
+   6. Call solve with N, x, and y
+4. If the script is run as the main module, call main

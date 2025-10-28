@@ -1,0 +1,31 @@
+R: function that reads a line of input, splits it, and converts each element to integer
+n: integer, read from first input
+m: integer, read from first input  
+s: integer, read from first input
+f: integer, read from first input
+
+If s < f:
+    d = 1
+    c = 'R'
+Else:
+    d = -1
+    c = 'L'
+
+res = empty string
+i = 1
+j = s
+t, l, r = read next three integers from input
+k = 1
+
+While j != f:
+    If i > t and k < m:
+        t, l, r = read next three integers from input
+        k = k + 1
+    If i == t and (l <= j <= r or l <= j + d <= r):
+        Append 'X' to res
+    Else:
+        Append c to res
+        j = j + d
+    i = i + 1
+
+Print res

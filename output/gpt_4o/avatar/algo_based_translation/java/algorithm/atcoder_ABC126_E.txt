@@ -1,0 +1,67 @@
+```
+Algorithm:
+1. Import necessary libraries:
+   - Import java.util.Scanner for input operations.
+
+2. Define class `atcoder_ABC126_E`:
+   - Declare a `Scanner` object `sc` to read input from the standard input.
+   - Define constant `MOD` with value 1000000007.
+
+3. Define method `doIt()`:
+   - Input: None
+   - Output: None
+   - Declare integer `n` and assign it the next integer input using `sc.nextInt()`.
+   - Create an instance `utf` of `UnionFindTree` with `n`.
+   - Declare integer `m` and assign it the next integer input using `sc.nextInt()`.
+   - Iterate `i` from 0 to `m-1`:
+     - Declare integer `x` and assign it the next integer input subtracted by 1.
+     - Declare integer `y` and assign it the next integer input subtracted by 1.
+     - Declare integer `z` and assign it the next integer input (though `z` is not used).
+     - Call `utf.unite(x, y)`.
+   - Declare integer `cnt` and initialize it to 0.
+   - Iterate `i` from 0 to `n-1`:
+     - If `utf.par[i]` equals `i`, increment `cnt` by 1.
+   - Print the value of `cnt`.
+
+4. Define class `UnionFindTree`:
+   - Declare integer `n`.
+   - Declare integer array `par`.
+   - Declare integer array `rank`.
+
+5. Define constructor `UnionFindTree(int n)`:
+   - Input: Integer `n`
+   - Output: None
+   - Assign `n` to instance variable `n`.
+   - Initialize `par` as an integer array of size `n`.
+   - Initialize `rank` as an integer array of size `n`.
+   - Iterate `i` from 0 to `n-1`:
+     - Set `par[i]` to `i`.
+     - Set `rank[i]` to 0.
+
+6. Define method `find(int x)`:
+   - Input: Integer `x`
+   - Output: Integer
+   - If `par[x]` equals `x`, return `x`.
+   - Otherwise, recursively call `find(par[x])` and assign the result to `par[x]`, then return `par[x]`.
+
+7. Define method `unite(int x, int y)`:
+   - Input: Integers `x`, `y`
+   - Output: None
+   - Assign `find(x)` to `x`.
+   - Assign `find(y)` to `y`.
+   - If `x` equals `y`, return.
+   - If `rank[x]` is less than `rank[y]`, set `par[x]` to `y`.
+   - Otherwise:
+     - Set `par[y]` to `x`.
+     - If `rank[x]` equals `rank[y]`, increment `rank[x]` by 1.
+
+8. Define method `same(int x, int y)`:
+   - Input: Integers `x`, `y`
+   - Output: Boolean
+   - Return `find(x) == find(y)`.
+
+9. Define static method `main(String[] args)`:
+   - Input: Array of Strings `args`
+   - Output: None
+   - Create new instance of `atcoder_ABC126_E` and call `doIt()` on it.
+```

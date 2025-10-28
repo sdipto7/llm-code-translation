@@ -1,0 +1,32 @@
+1. Import necessary libraries:
+   - `import java.util.Arrays;`
+   - `import java.util.Scanner;`
+
+2. Declare a class `Main`.
+
+3. Declare a static array `dp` of type `long[]`.
+
+4. Declare a static integer `mod` and initialize it with `1000000007`.
+
+5. Define the `main` method:
+   - Input: `args` of type `String[]`
+   - Output: `void`
+   - Create a `Scanner` object `sc` for reading input.
+   - Read an integer `s` from input using `sc.nextInt()`.
+   - Close the scanner.
+   - Initialize `dp` as an array of length `s + 1` with type `long`.
+   - Fill the `dp` array with `-1` using `Arrays.fill(dp, -1)`.
+   - Set `dp[0]` to `1`.
+   - Output the result of calling `dfs(s)` to the console using `System.out.println`.
+
+6. Define a static method `dfs`:
+   - Input: `s` of type `int`
+   - Output: `long`
+   - Check if `dp[s]` is not equal to `-1`.
+     - If true, return `dp[s]`.
+   - Declare a variable `ret` of type `long` and initialize it with `0`.
+   - Iterate over `i` from `s - 3` down to `0` (inclusive):
+     - Add the result of `dfs(i)` to `ret`.
+     - Update `ret` by taking `ret` modulo `mod`.
+   - Assign `ret` to `dp[s]`.
+   - Return `ret`.

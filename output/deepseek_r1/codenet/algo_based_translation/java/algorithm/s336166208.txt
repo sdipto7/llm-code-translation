@@ -1,0 +1,48 @@
+Algorithm:
+
+Declare:
+- 3D integer array 'info' with dimensions [4][3][10]
+- Scanner 'sc' for input
+- Integer 'n' for input count
+- Integers 'built', 'floor', 'room', 'num' for input values
+
+Procedure:
+1. Initialize all elements in 'info' to 0
+   For i from 0 to 3:
+       For j from 0 to 2:
+           For k from 0 to 9:
+               info[i][j][k] = 0
+
+2. Read integer 'n' from input
+   n = sc.nextInt()
+
+3. Process 'n' entries:
+   For i from 0 to n-1:
+       Read built, floor, room, num from input
+       built = sc.nextInt()
+       floor = sc.nextInt()
+       room = sc.nextInt()
+       num = sc.nextInt()
+       info[built-1][floor-1][room-1] += num
+
+4. Output formatted results:
+   For each building i from 0 to 3:
+       For each floor j from 0 to 2:
+           For each room k from 0 to 9:
+               Print " " followed by info[i][j][k]
+           Print newline
+       If i is not 3:
+           Print "####################" followed by newline
+
+Control Structures:
+- 3 nested for-loops for array initialization (0 ≤ i <4, 0 ≤ j <3, 0 ≤ k <10)
+- Single for-loop for processing n input entries (0 ≤ i <n)
+- 3 nested for-loops for output formatting (0 ≤ i <4, 0 ≤ j <3, 0 ≤ k <10)
+- Conditional check (i != 3) for separator line between buildings
+
+IO Operations:
+- System input: Read integer n, then read 4 integers per entry
+- System output: Print formatted 3D array with spaces between values and separator lines between buildings
+
+Dependencies:
+- Requires Java's java.util.Scanner class for input handling

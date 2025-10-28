@@ -1,0 +1,58 @@
+**Function Signature:**
+- No explicit function defined; main script execution
+
+**Variables:**
+- n: integer (first input value)
+- m: integer (second input value)
+- min: integer (minimum result value)
+- max: integer (maximum result value)
+
+**Input Operations:**
+- Read one line from standard input
+- Split input into two strings
+- Convert both strings to integers
+- Assign first integer to n, second integer to m
+
+**Logic Flow:**
+
+1. Check if n < 1
+   - If true, check if m < 1
+     - If true: print n and m, then terminate program
+     - If false: print "Impossible", then terminate program
+
+2. If n >= 1, check if m > n
+   - If true:
+     - Set min = m
+     - Set max = n + m - 1
+     - Print min and max
+
+3. If m <= n:
+   - Set min = n
+   - Set max = n + m - 1
+   - Check if m == 0
+     - If true: set max = n
+   - Print min and max
+
+**Control Structures:**
+- Sequential execution
+- Nested if-else conditions:
+  - if n < 1
+    - if m < 1
+    - else
+  - else
+    - if m > n
+    - else (m <= n)
+      - if m == 0
+
+**Output Operations:**
+- Print either:
+  - n and m values
+  - "Impossible" string
+  - min and max values
+
+**Termination:**
+- Program terminates after printing in certain conditions using quit()
+
+**Dependencies:**
+- Standard input/output operations
+- No external libraries required

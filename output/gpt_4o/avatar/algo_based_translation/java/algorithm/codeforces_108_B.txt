@@ -1,0 +1,37 @@
+```
+Algorithm:
+1. Import the necessary modules:
+   - Arrays from java.util
+   - Scanner from java.util
+
+2. Define the main function with the signature:
+   - public static void main(String[] args)
+
+3. Declare and initialize the Scanner object to read input from the standard input:
+   - Scanner in = new Scanner(System.in)
+
+4. Read an integer from input representing the length of the array:
+   - int n = in.nextInt()
+
+5. Declare an integer array of length n:
+   - int[] a = new int[n]
+
+6. Populate the array with integers from the input using a for loop:
+   - for (int i = 0; i < n; i++)
+     - Read the next integer and store it in the array at index i:
+       - a[i] = in.nextInt()
+
+7. Sort the array in non-decreasing order:
+   - Arrays.sort(a)
+
+8. Check for a specific condition in the sorted array using a for loop:
+   - for (int i = 0; i < a.length - 1; i++)
+     - If the next element is less than twice the current element and they are not equal:
+       - if (a[i + 1] < a[i] * 2 && a[i] != a[i + 1])
+         - Print "YES" and terminate the program:
+           - System.out.println("YES")
+           - return
+
+9. If the loop completes without finding such a pair, print "NO":
+   - System.out.println("NO")
+```

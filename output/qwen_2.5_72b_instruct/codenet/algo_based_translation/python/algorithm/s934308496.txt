@@ -1,0 +1,25 @@
+Function Signature:
+- main() -> None
+
+Variable Declarations and Data Types:
+- n: int
+- x: int
+- m: list[int]
+
+Logic Flow in Execution Order:
+1. Read two integers n and x from input
+2. Initialize list m with n integers read from input
+3. Sort the list m in ascending order
+4. Calculate sum of all elements in m
+5. Compute the result as n plus integer division of (x minus sum of m) by the first element of m
+6. Print the result
+
+Control Structures:
+- for loop: iterates n times to read integers into list m
+
+Input/Output Operations and Data Processing Logic:
+- Input: Two space-separated integers followed by n integers, each on a new line
+- Output: A single integer representing the calculated result
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries or modules required

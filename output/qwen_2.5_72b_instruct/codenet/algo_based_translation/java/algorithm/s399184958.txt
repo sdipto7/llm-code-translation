@@ -1,0 +1,31 @@
+Function Signature: `public static void main(String[] args)`
+
+Variable Declarations:
+- `Scanner sc` of type `Scanner`
+- `int A`
+- `int B`
+- `int C`
+
+Logic Flow:
+1. Create a `Scanner` object `sc` to read input from standard input.
+2. Read the next integer input and assign it to `A`.
+3. Read the next integer input and assign it to `B`.
+4. Read the next integer input and assign it to `C`.
+5. Check if `A` is equal to `B`, `B` is equal to `C`, and `C` is equal to `A`:
+   - If true, print "Yes".
+   - Otherwise, print "No".
+
+Control Structures:
+- Conditional (if-else):
+  - Condition: `A == B && B == C && C == A`
+
+Input/Output Operations:
+- Input: Three integers from standard input.
+- Output: "Yes" if all three integers are equal, otherwise "No".
+
+Data Processing Logic:
+- Compare three integers for equality and produce a boolean result.
+- Use the boolean result to determine the output string.
+
+Libraries/Modules/Dependencies:
+- `java.util.Scanner`

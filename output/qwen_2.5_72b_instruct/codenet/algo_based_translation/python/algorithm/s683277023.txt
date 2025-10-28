@@ -1,0 +1,26 @@
+Function Signature:
+- `main() -> None`
+
+Variable Declarations and Data Types:
+- `n: int`
+- `k: int`
+- `li: list[int]`
+- `tmp: list[int]`
+
+Logic Flow:
+1. Read two integers `n` and `k` from standard input, separated by whitespace.
+2. Read a list of `n` integers from standard input, separated by whitespace, and store them in `li`.
+3. Sort the list `li` in ascending order.
+4. Create a sublist `tmp` containing the first `k` elements of `li`.
+5. Calculate the sum of all elements in `tmp`.
+6. Print the sum to standard output.
+
+Input/Output Operations:
+- Input: Two integers `n` and `k` on the first line, followed by `n` integers on the second line.
+- Output: A single integer representing the sum of the smallest `k` integers from the input list.
+
+Required Libraries, Modules, or Dependencies:
+- No external libraries or modules required.
+
+Control Structures:
+- No explicit loops or conditional statements present in the provided code. Sorting and sublist creation are implicit operations.

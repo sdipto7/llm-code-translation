@@ -1,0 +1,38 @@
+Function signature: main(String[] args) - void
+
+Variable declarations:
+- Scanner sc - for input
+- int a - first operand
+- String op - operator
+- int b - second operand
+
+Logic flow:
+1. Initialize Scanner object sc for reading input.
+2. Enter an infinite loop:
+    a. Read integer a from input.
+    b. Read string op from input.
+    c. Read integer b from input.
+    d. If op is "?", break out of the loop.
+    e. If op is "+", print the sum of a and b.
+    f. If op is "-", print the difference of a and b.
+    g. If op is "*", print the product of a and b.
+    h. If op is "/", print the quotient of a and b.
+
+Control structures:
+- while(true) - infinite loop until break condition is met.
+- if(op.equals("?")) - break condition to exit loop.
+- if(op.equals("+")) - condition to execute addition.
+- if(op.equals("-")) - condition to execute subtraction.
+- if(op.equals("*")) - condition to execute multiplication.
+- if(op.equals("/")) - condition to execute division.
+
+Input/output operations:
+- Input: Reads three inputs in a loop - two integers and a string operator.
+- Output: Prints the result of the arithmetic operation based on the operator.
+
+Data processing logic:
+- The program continuously reads arithmetic expressions from the user until the user inputs "?".
+- Based on the operator, it performs the corresponding arithmetic operation and prints the result.
+
+Required libraries:
+- java.util.Scanner

@@ -1,0 +1,15 @@
+Algorithm:
+
+- Function signature: `def calculate_remainder(N: int, K: int) -> int`
+- Variable declaration: `N` and `K` are both integers.
+- Input operation:
+  - Read a line of input.
+  - Split the input string by spaces.
+  - Convert the split strings to integers `N` and `K`.
+- Control structure:
+  - Conditional statement: `if N % K == 0`
+    - If the condition is true, output `0`.
+    - Otherwise, output `1`.
+- Output operation:
+  - Print the result based on the conditional check.
+- No additional libraries, modules, or dependencies are required.

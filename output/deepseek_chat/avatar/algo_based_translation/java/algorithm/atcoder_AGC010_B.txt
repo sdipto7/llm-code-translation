@@ -1,0 +1,47 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `private static boolean possible(int N, int[] A)`
+
+**Variable Declarations:**
+- `Scanner scanner` (Scanner object)
+- `int N`
+- `int[] A` (size N)
+- `long sum`
+- `long NS`
+- `long K`
+- `int j`
+- `long d`
+
+**Logic Flow:**
+1. Create Scanner object for System.in
+2. Read integer N from input
+3. Initialize integer array A of size N
+4. For i from 0 to N-1: Read A[i] from input
+5. Call possible(N, A)
+6. If possible returns true: Print "YES"
+7. Else: Print "NO"
+
+**possible function logic:**
+1. Initialize sum = 0
+2. For i from 0 to N-1: sum += A[i]
+3. Calculate NS = N × (N + 1) ÷ 2
+4. If sum modulo NS ≠ 0: return false
+5. Set K = sum ÷ NS
+6. For i from 0 to N-1:
+   - If i == 0: j = N-1
+   - Else: j = i-1
+   - Calculate d = K - (A[i] - A[j])
+   - If d < 0 OR d modulo N ≠ 0: return false
+7. Return true
+
+**Control Structures:**
+- For loops: `for (int i = 0; i < N; i++)`
+- If-else conditionals
+- Ternary operator: `i == 0 ? N - 1 : i - 1`
+
+**Input/Output Operations:**
+- Input: Read integers from standard input
+- Output: Print "YES" or "NO" to standard output
+
+**Required Dependencies:**
+- `java.util.Scanner`

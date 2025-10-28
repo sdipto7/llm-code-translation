@@ -1,0 +1,32 @@
+1. Import necessary libraries:
+   - Import `java.util.Scanner` for input handling.
+   - Import `java.util.List` and `java.util.ArrayList` for using list data structures.
+
+2. Define a class `calArea`:
+   - Define a method `Area(int w, int h)`:
+     - Parameters: `w` (int), `h` (int).
+     - Calculate `area` as the product of `w` and `h`.
+     - Return `area` (int).
+
+3. Define the `main` method:
+   - Create a `Scanner` object `sc` for reading input from the user.
+   - Declare a `List<Integer>` named `arr` and initialize it as an `ArrayList`.
+
+4. Populate the list with integers:
+   - Use a `for` loop that iterates 4 times (`i` from 0 to 3):
+     - Read the next input as a string.
+     - Convert the string to an integer using `Integer.parseInt`.
+     - Add the integer to `arr`.
+
+5. Create an instance of `calArea` named `ab`.
+
+6. Calculate areas:
+   - Call `ab.Area` with `arr.get(0)` and `arr.get(1)` as arguments to compute `area1`.
+   - Call `ab.Area` with `arr.get(2)` and `arr.get(3)` as arguments to compute `area2`.
+
+7. Compare the two areas:
+   - If `area1` is greater than `area2`, print `area1`.
+   - Else if `area1` is less than `area2`, print `area2`.
+   - Else if `area1` is equal to `area2`, print `area1`.
+
+8. End of the program.

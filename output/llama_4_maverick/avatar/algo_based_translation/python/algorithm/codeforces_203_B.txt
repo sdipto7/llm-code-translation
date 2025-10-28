@@ -1,0 +1,17 @@
+1. Read n and m from input
+2. Initialize count as a 2D array of size n x n with all elements as 0
+3. Initialize ans as -1
+4. For k from 1 to m:
+   4.1. Read x and y from input
+   4.2. Decrement x and y by 1
+   4.3. Initialize found as False
+   4.4. For i from x-2 to x:
+      4.4.1. For j from y-2 to y:
+         4.4.1.1. If i is within 0 to n-1 and j is within 0 to n-1:
+            4.4.1.1.1. Increment count[i][j] by 1
+            4.4.1.1.2. If count[i][j] equals 9:
+               4.4.1.1.2.1. Set found as True
+   4.5. If found is True:
+      4.5.1. Set ans as k
+      4.5.2. Break the loop
+5. Print ans

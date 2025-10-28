@@ -1,0 +1,20 @@
+- Function Signatures: None (script execution)
+- Variables:
+  - h: int
+  - a: int
+  - ans: int
+  - ama: int
+- Logic Flow:
+  1. Read single input line from stdin
+  2. Split input into two strings, convert to integers h and a
+  3. Calculate initial ans = h // a (integer division)
+  4. Calculate remainder ama = h % a
+  5. Check if ama is not equal to 0:
+     - True: increment ans by 1
+  6. Print ans to stdout
+- Control Structures:
+  - Conditional: if ama != 0
+- Input/Output:
+  - Input: Two space-separated integers via standard input
+  - Output: Single integer printed via standard output
+- Dependencies: None (uses standard Python I/O functions)

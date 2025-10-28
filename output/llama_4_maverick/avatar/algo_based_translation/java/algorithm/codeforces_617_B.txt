@@ -1,0 +1,12 @@
+1. Read the number of elements n from the input.
+2. Initialize an empty list to store indices.
+3. Iterate n times:
+   3.1 Read an integer from the input.
+   3.2 If the integer is 1, add the current index to the list.
+4. If the list is empty, output 0.
+5. Otherwise:
+   5.1 Initialize a variable result to 1.
+   5.2 Iterate through the list starting from the second element:
+      5.2.1 Calculate the difference between the current index and the previous index.
+      5.2.2 Multiply the result by the calculated difference.
+   5.3 Output the final result.

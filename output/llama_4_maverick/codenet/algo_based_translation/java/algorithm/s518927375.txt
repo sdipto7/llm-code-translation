@@ -1,0 +1,11 @@
+1. Import the required library: java.util.Scanner
+2. Define a class: Main
+3. Define a function: main with parameter args of type String[] and return type void
+4. Declare a variable sc of type Scanner and initialize it with a new Scanner object using System.in
+5. Declare variables k, a, b of type long
+6. Read input from sc into k, a, b using the nextLong() method
+7. Check the condition: if b is less than or equal to a + 2
+8. If the condition is true, print 1 + k to the console and exit the program
+9. If the condition is false, declare a variable x of type long and calculate its value as k - (a - 1)
+10. Declare a variable ans of type long and calculate its value as a + (x / 2) * (b - a) + (x % 2)
+11. Print the value of ans to the console

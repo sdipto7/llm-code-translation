@@ -1,0 +1,6 @@
+n: int, m: int, x: int = input().split() converted to integers
+a: list[int] = input().split() converted to integers
+ans: int = 0
+import bisect module
+i: int = bisect.bisect(a, x)
+print(min(len(a[0:i]), len(a[i:len(a)])))

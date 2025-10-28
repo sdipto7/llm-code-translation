@@ -1,0 +1,57 @@
+{
+  "function_signatures": [
+    {
+      "name": "main",
+      "parameters": ["String[] args"],
+      "return_type": "void"
+    }
+  ],
+  "variable_declarations": [
+    {
+      "name": "scn",
+      "type": "Scanner",
+      "initial_value": "new Scanner(System.in)"
+    },
+    {
+      "name": "n",
+      "type": "int",
+      "initial_value": "scn.nextInt()"
+    },
+    {
+      "name": "arr",
+      "type": "int[]",
+      "initial_value": "new int[n]"
+    },
+    {
+      "name": "ans",
+      "type": "int",
+      "initial_value": "arr[0] + 1"
+    }
+  ],
+  "logic_flow": [
+    "Read integer n from standard input",
+    "Create integer array arr of size n",
+    "For i from 0 to n-1: read integer into arr[i]",
+    "Initialize ans to arr[0] + 1",
+    "For i from 1 to n-1: add Math.abs(arr[i] - arr[i-1]) + 2 to ans",
+    "Print ans to standard output"
+  ],
+  "control_structures": [
+    {
+      "type": "for_loop",
+      "condition": "int i = 0; i < arr.length; i++",
+      "body": "arr[i] = scn.nextInt()"
+    },
+    {
+      "type": "for_loop",
+      "condition": "int i = 1; i < arr.length; i++",
+      "body": "ans += Math.abs(arr[i] - arr[i-1]) + 2"
+    }
+  ],
+  "input_output_operations": [
+    "Input: Read integer n",
+    "Input: Read n integers into array arr",
+    "Output: Print integer ans"
+  ],
+  "required_libraries": ["java.io.*", "java.util.*"]
+}

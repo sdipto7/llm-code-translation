@@ -1,0 +1,46 @@
+```java
+import java.util.Scanner;
+
+public class Main {
+    private static long combi(int N, int K) {
+        long a = 1;
+        for (int i = 0; i < K; i++) {
+            a *= (N - i);
+        }
+        for (int j = 0; j < K; j++) {
+            a /= (j + 1);
+        }
+        return a;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        int P = scanner.nextInt();
+        int[] ls = new int[N];
+        for (int i = 0; i < N; i++) {
+            ls[i] = scanner.nextInt() % 2;
+        }
+        int one = 0;
+        int zero = 0;
+        for (int num : ls) {
+            if (num == 1) {
+                one++;
+            } else {
+                zero++;
+            }
+        }
+        long pattern_b = 0;
+        for (int j = 0; j <= zero; j++) {
+            pattern_b += combi(zero, j);
+        }
+        long pattern_a = 0;
+        for (int time = 0; time <= one; time++) {
+            if (time % 2 == P) {
+                pattern_a += combi(one, time);
+            }
+        }
+        System.out.println(pattern_a * pattern_b);
+    }
+}
+```

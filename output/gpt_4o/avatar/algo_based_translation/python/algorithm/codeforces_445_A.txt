@@ -1,0 +1,30 @@
+```plaintext
+Algorithm:
+
+1. Define variables:
+   - n, m: integers
+   - l: list of lists of characters
+
+2. Input operation:
+   - Read a line from standard input, split it by spaces, and convert each part to an integer. Assign the first integer to n and the second to m.
+
+3. Initialize an empty list l.
+
+4. Loop from 0 to n-1 (inclusive) with variable i:
+   a. Input operation:
+      - Read a line from standard input and assign it to variable s.
+   b. Convert string s to a list of characters.
+   c. Loop from 0 to m-1 (inclusive) with variable j:
+      i. Conditional check:
+         - If the character s[j] is equal to '.':
+           A. Conditional check:
+              - If the sum of i and j is odd:
+                - Assign the character 'W' to s[j].
+              - Else:
+                - Assign the character 'B' to s[j].
+   d. Append the modified list s to the list l.
+
+5. Loop over each item c in list l:
+   a. Output operation:
+      - Join the list of characters c into a string and print it to standard output.
+```

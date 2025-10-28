@@ -1,0 +1,21 @@
+```plaintext
+Function Signature:
+    def count_combinations(R: int, G: int, B: int, N: int) -> int
+
+Variable Declarations:
+    score: int
+
+Algorithm:
+    1. Initialize score to 0
+    2. Loop i from 0 to N // R inclusive:
+        a. Calculate the maximum value of j as (N - i * R) // G
+        b. Loop j from 0 to the maximum value calculated in step 2a inclusive:
+            i. Calculate remaining as N - i * R - j * G
+            ii. Check if remaining is non-negative and divisible by B:
+                - If true, increment score by 1
+    3. Return score
+
+Input/Output:
+    - Input: None (function parameters are used instead of input())
+    - Output: Returns an integer representing the number of valid combinations
+```

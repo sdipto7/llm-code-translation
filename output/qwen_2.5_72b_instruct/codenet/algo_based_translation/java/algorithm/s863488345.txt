@@ -1,0 +1,63 @@
+- **Function Signatures**:
+    - `public static void main(String[] args)`
+    - `public static void moveBomber(int a, int b)`
+
+- **Variable Declarations and Data Types**:
+    - `static int mapNum`
+    - `static int h`
+    - `static int w`
+    - `static char[][] battleTown`
+    - `static int bomberActNum`
+    - `static char[] bomberAct`
+    - `static int[] tank`
+    - `static int xOfTank`
+    - `static int yOfTank`
+    - `static int xOfBomber`
+    - `static int yOfBomber`
+    - `static int s`
+    - `static int k`
+    - `static int a`
+    - `static int b`
+    - `static int x`
+    - `static int y`
+
+- **Logic Flow in Execution Order**:
+    - Read `mapNum` from input
+    - For each map (from 0 to `mapNum - 1`):
+        - Read `h` and `w` from input
+        - Initialize `battleTown` as a 2D array of size `h x w`
+        - For each row (from 0 to `h - 1`):
+            - Read a string of characters and convert to a character array `c`
+            - For each character in `c` (from 0 to `w - 1`):
+                - Assign `c[k]` to `battleTown[j][k]`
+                - If `battleTown[j][k]` is one of `'^', 'v', '<', '>'`, set `x` to `j` and `y` to `k`
+        - Read `bomberActNum` and then read a string of actions into `bomberAct`
+        - For each action in `bomberAct` (from 0 to `bomberActNum - 1`):
+            - If action is `'U'`:
+                - Set `battleTown[x][y]` to `'^'`
+                - If `(x - 1)` is within bounds and `battleTown[x - 1][y]` is `'.'`, move tank up
+            - If action is `'D'`:
+                - Set `battleTown[x][y]` to `'v'`
+                - If `(x + 1)` is within bounds and `battleTown[x + 1][y]` is `'.'`, move tank down
+            - If action is `'L'`:
+                - Set `battleTown[x][y]` to `'<'`
+                - If `(y - 1)` is within bounds and `battleTown[x][y - 1]` is `'.'`, move tank left
+            - If action is `'R'`:
+                - Set `battleTown[x][y]` to `'>'`
+                - If `(y + 1)` is within bounds and `battleTown[x][y + 1]` is `'.'`, move tank right
+            - If action is `'S'`:
+                - Set `xOfBomber` to `x` and `yOfBomber` to `y`
+                - Call `moveBomber(xOfBomber, yOfBomber)`
+        - Print the final state of `battleTown` row by row
+        - If not the last map, print a newline
+
+- **Control Structures**:
+    - For loops for iterating maps, rows, columns, and actions
+    - Conditional statements (`if`) to check bounds and character values
+
+- **Input/Output Operations and Data Processing Logic**:
+    - Read integers and strings from standard input using `Scanner`
+    - Print characters of `battleTown` to standard output
+
+- **Required Libraries, Modules, or Dependencies**:
+    - `import java.util.*` for using `Scanner` class

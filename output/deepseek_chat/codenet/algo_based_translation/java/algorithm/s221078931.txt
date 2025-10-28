@@ -1,0 +1,40 @@
+**Algorithm:**
+
+1. **Import Dependencies:**
+   - java.io.BufferedReader
+   - java.io.IOException
+   - java.io.InputStreamReader
+   - java.util.Arrays
+
+2. **Main Class:**
+   - Method: main(String[] args) throws IOException
+     - Declare BufferedReader br = new BufferedReader(new InputStreamReader(System.in))
+     - Declare IntegralRect[] rects of size 40000
+     - For i from 0 to 199:
+       - For j from 0 to 199:
+         - rects[i*200 + j] = new IntegralRect(i+1, j+1)
+     - Sort rects using Arrays.sort()
+     - While true:
+       - Read line from input and split into String[] tmpArray
+       - Parse tmpArray[0] to int h
+       - Parse tmpArray[1] to int w
+       - If h == 0 and w == 0: break loop
+       - Create IntegralRect tmpRect with (h, w)
+       - For i from 0 to rects.length-1:
+         - If rects[i].compareTo(tmpRect) > 0:
+           - Print rects[i].height + " " + rects[i].width
+           - Break inner loop
+
+3. **IntegralRect Class implements Comparable<IntegralRect>:**
+   - Fields: int height, int width
+   - Constructor: IntegralRect(int h, int w)
+     - Set height = h
+     - Set width = w
+   - Method: int diagonal()
+     - If height >= width: return Integer.MAX_VALUE
+     - Else: return height*height + width*width
+   - Method: int compareTo(IntegralRect o)
+     - int d1 = this.diagonal()
+     - int d2 = o.diagonal()
+     - If d1 == d2: return this.height - o.height
+     - Else: return d1 - d2

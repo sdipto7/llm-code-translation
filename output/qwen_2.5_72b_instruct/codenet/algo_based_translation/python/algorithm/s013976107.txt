@@ -1,0 +1,31 @@
+Function Signature: check_expression() -> None
+
+Variable Declarations:
+- A: Integer
+- B: Integer
+- S: List of Characters
+
+Logic Flow:
+1. Read input values
+2. Split input into two integers A and B
+3. Read the next line of input as a string and convert it into a list of characters S
+4. Check if the A-th element of S is a hyphen ('-')
+5. Count the number of hyphens ('-') in the list S
+6. If the A-th element of S is a hyphen ('-') and the total count of hyphens in S is exactly 1, print "Yes"
+7. Otherwise, print "No"
+
+Control Structures:
+- Conditional: if S[A] == '-' and S.count('-') == 1
+
+Input/Output Operations:
+- Input: Two integers A and B, and a string
+- Output: "Yes" or "No"
+
+Data Processing Logic:
+- Splitting input string into integers
+- Converting input string into a list of characters
+- Accessing elements in a list by index
+- Counting occurrences of a specific character in a list
+
+Required Libraries/Modules/Dependencies:
+- None

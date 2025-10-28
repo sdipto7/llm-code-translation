@@ -1,0 +1,30 @@
+```
+Function: main
+    Input: None
+    Output: None
+
+    Declare 3D integer array 'info' with dimensions [4][3][10]
+    
+    For integer i from 0 to 3 (inclusive):
+        For integer j from 0 to 2 (inclusive):
+            For integer k from 0 to 9 (inclusive):
+                Set info[i][j][k] to 0
+    
+    Initialize Scanner object 'sc' for reading input
+    Read integer 'n' from input
+    
+    For integer i from 0 to n-1 (inclusive):
+        Read integer 'built' from input
+        Read integer 'floor' from input
+        Read integer 'room' from input
+        Read integer 'num' from input
+        Increment info[built - 1][floor - 1][room - 1] by 'num'
+    
+    For integer i from 0 to 3 (inclusive):
+        For integer j from 0 to 2 (inclusive):
+            For integer k from 0 to 9 (inclusive):
+                Output " " followed by info[i][j][k] to standard output
+            Output newline to standard output
+        If i is not equal to 3:
+            Output "####################" followed by newline to standard output
+```

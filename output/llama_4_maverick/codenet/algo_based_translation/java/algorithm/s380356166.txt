@@ -1,0 +1,30 @@
+1. Define a class `Main` with a `main` method that:
+   - Initializes `InputStream` and `OutputStream` objects with `System.in` and `System.out` respectively.
+   - Creates a `MyInput` object `in` with the input stream and a `PrintWriter` object `out` with the output stream.
+   - Instantiates a `Solver` object and calls its `solve` method with parameters `1`, `in`, and `out`.
+   - Closes the `PrintWriter` object.
+
+2. Define a static class `Solver` with a `solve` method that:
+   - Takes three parameters: an integer `testNumber`, a `MyInput` object `in`, and a `PrintWriter` object `out`.
+   - Declares and initializes an integer variable `ans` to 0.
+   - Reads two integers `K` and `S` from the input using `in.nextInt()`.
+   - Initializes an integer variable `wk` to 0.
+   - Uses a nested loop structure with loop variables `x` and `y` ranging from 0 to `K` (inclusive).
+   - Inside the inner loop, calculates `wk = S - x - y` and checks if `wk` is within the range 0 to `K` (inclusive).
+   - If the condition is met, increments `ans` by 1.
+   - After the loops, prints the value of `ans` to the output using `out.println(ans)`.
+
+3. Define a static class `MyInput` with the following components:
+   - A constructor that takes an `InputStream` and initializes a `BufferedReader` object `in`.
+   - A `read` method that reads a character from the input stream and returns its integer value.
+   - A `nextInt` method that reads an integer from the input stream.
+     - It reads characters until it encounters a non-space character, then reads subsequent characters until it encounters a space or end of input.
+     - It converts the read characters to an integer, handling negative numbers.
+   - A `nextLong` method similar to `nextInt` but for `long` integers.
+   - A `nextString` method that reads a string from the input by skipping leading spaces and reading until it encounters a space.
+   - A `nextDChar` method that reads characters until it encounters a space and returns them as a character array.
+   - A `nextChar` method that reads and returns the next non-space character.
+   - A `reads` method that reads characters until it encounters a character that matches the condition specified by the `accept` boolean array.
+   - Static initialization blocks and variables for managing the input buffer and character classification.
+
+4. The `MyInput` class also defines a nested static class `EndOfFileRuntimeException` that extends `RuntimeException`.

@@ -1,0 +1,40 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signature**
+- `main() -> void`
+
+**Variables**
+- `a: int`, `at: int` (bus A frequency and trip duration)
+- `b: int`, `bt: int` (bus B frequency and trip duration)
+- `t1: int`, `t2: int` (trip start time hours and minutes)
+- `st: int` (trip start time in minutes since 05:00)
+- `fin: int` (trip end time in minutes since 05:00)
+- `now: int` (current bus B departure time, initialized to 0)
+- `ans: int` (overlap count, initialized to 0)
+
+**Input Operations**
+1. Read `a` and `at` from first input line, split by space.
+2. Read `b` and `bt` from second input line, split by space.
+3. Read `t1` and `t2` from third input line, split by colon.
+
+**Data Processing**
+4. Compute `st = (t1 - 5) * 60 + t2`.
+5. Compute `fin = st + at`.
+
+**Control Flow**
+6. Initialize `now = 0`, `ans = 0`.
+7. **While** `now < fin` **AND** `now < 1140`:
+   - **If** `now + bt > st`:
+     - **Increment** `ans` by 1.
+   - **Update** `now += b`.
+8. **End Loop**
+
+**Output Operation**
+9. Print `ans`.
+
+**Edge Case Handling**
+- Terminates bus iteration at 1140 minutes (19:00) regardless of `fin`.
+- Counts partial overlaps where bus arrival time (`now + bt`) exceeds `st`.
+
+**External Dependencies**
+- None (uses basic input parsing and arithmetic only).

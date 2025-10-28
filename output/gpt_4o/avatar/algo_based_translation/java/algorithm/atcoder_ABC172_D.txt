@@ -1,0 +1,28 @@
+**Algorithm:**
+
+1. Import the required library:
+   - `import java.util.Scanner;`
+
+2. Define the main function:
+   - `public static void main(String[] args)`
+
+3. Declare and initialize variables:
+   - Create a `Scanner` object `sc` to read input.
+   - Declare an integer `n` to store the input value.
+   - Declare a long integer `ans` and initialize it to 0 to store the final result.
+
+4. Input operation:
+   - Read an integer from the input using `sc.nextInt()` and store it in `n`.
+
+5. Logic flow:
+   - Use a `for` loop to iterate over integers `i` from 1 to `n` (inclusive):
+     - For each `i`, perform the following calculations:
+       - Compute `((long) n / (long) i)` and store it in a temporary variable.
+       - Calculate the sum of the arithmetic series:
+         - Multiply `i` by the above temporary variable.
+         - Multiply the result by `(temporary variable + 1)`.
+         - Divide the entire result by 2.
+       - Accumulate the result into `ans`.
+
+6. Output operation:
+   - Print the value of `ans` to the standard output using `System.out.println(ans);`.

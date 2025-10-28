@@ -1,0 +1,31 @@
+function main():
+    Read integer A from standard input
+    Read integer B from standard input
+    Read integer H from standard input
+    Read integer M from standard input
+
+    Convert A to BigDecimal AA
+    Convert B to BigDecimal BB
+    Convert H to BigDecimal HH
+    Convert M to BigDecimal MM
+
+    Calculate minute angle: mkaku = MM × 6
+    Calculate hour angle: hkaku = HH × 30 + (M ÷ 2)
+    Calculate angle difference: kaku = mkaku - hkaku
+    Convert angle difference to radians: dkaku = absolute_value(radians(kaku))
+
+    Calculate squares: AA2 = AA × AA, BB2 = BB × BB
+    Calculate sum of squares: CC = AA2 + BB2
+
+    Calculate cosine term: DD = 2 × AA × BB × cos(dkaku)
+    Calculate squared distance: ans2 = CC - DD
+
+    Convert to double: dans2 = double_value(ans2)
+    Calculate final distance: ans = square_root(dans2)
+
+    Print ans
+
+Required libraries/modules:
+    java.util.Scanner
+    java.math.BigDecimal
+    java.lang.Math

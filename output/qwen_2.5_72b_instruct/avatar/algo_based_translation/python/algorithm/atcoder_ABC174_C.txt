@@ -1,0 +1,28 @@
+Function Signatures:
+- `ii1(): int`
+- `is1(): str`
+- `iia(): List[int]`
+- `isa(): List[str]`
+
+Variable Declarations and Data Types:
+- `k: int`
+- `t: int`
+- `i: int`
+
+Libraries, Modules, or Dependencies:
+- `sys` for `stdin`, `stdout`, `setrecursionlimit`
+- `math` for `gcd`, `ceil`, `sqrt`
+- `collections` for `Counter`
+- `bisect` for `bisect_left`, `bisect_right`
+
+Execution Order and Logic Flow:
+
+1. Set recursion limit to 100000 using `setrecursionlimit(100000)`
+2. Define `mod` as 1000000007
+3. Read integer `k` from standard input using `ii1()`
+4. Initialize `t` to 0
+5. Loop over `i` from 1 to `k` inclusive:
+   - Update `t` to `(t % k) * 10 + 7`
+   - Check if `t % k == 0`:
+     - If true, print `i` and break loop
+6. If loop completes without finding a valid `i`, print `-1`

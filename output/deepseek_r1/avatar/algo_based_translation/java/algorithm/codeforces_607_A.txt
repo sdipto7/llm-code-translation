@@ -1,0 +1,39 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner sc` (initialized with `System.in`)
+- `int max = 0`
+- `int n = sc.nextInt()`
+- `int[] beacon = new int[1000001]`
+- `int[] dp = new int[1000001]`
+- `int a` (temporary variable for input)
+- `int i` (loop index)
+
+**Logic Flow:**
+1. Read `n` from input.
+2. Initialize `beacon` and `dp` arrays (size 1,000,001).
+3. Loop `i` from `0` to `n-1`:
+   - Read `a` and set `beacon[a]` to the next input integer.
+4. If `beacon[0]` is non-zero, set `dp[0] = 1`.
+5. Loop `i` from `1` to `1,000,000`:
+   - If `beacon[i]` is non-zero:
+     - If `beacon[i] < i`: Set `dp[i] = dp[i - beacon[i] - 1] + 1`.
+     - Else: Set `dp[i] = 1`.
+   - Else: Set `dp[i] = dp[i-1]`.
+   - Update `max` to the maximum of `max` and `dp[i]`.
+6. Output `n - max`.
+
+**Control Structures:**
+- `for (int i = 0; i < n; i++)` (input loop)
+- `if (beacon[0] != 0)` (initial condition)
+- `for (int i = 1; i < 1000001; i++)` (main processing loop)
+- Nested `if-else` blocks for `beacon[i]` conditions
+
+**Input/Output:**
+- Input: `n` followed by `n` pairs of integers via `Scanner`.
+- Output: `n - max` printed to standard output.
+
+**Dependencies:**
+- `java.io.*`
+- `java.util.Scanner`

@@ -1,0 +1,31 @@
+Function signature: `check_circle_position_in_rectangle(W: int, H: int, x: int, y: int, r: int) -> None`
+
+Variable declarations:
+- W: int
+- H: int
+- x: int
+- y: int
+- r: int
+
+Logic flow:
+1. Read input values for W, H, x, y, r as integers.
+2. Check if x >= r and (W - r) >= x:
+   a. If true, check if y >= r and (H - r) >= y:
+      i. If true, print 'Yes'
+      ii. If false, print 'No'
+   b. If false, print 'No'
+
+Control structures:
+- If statements with conditions:
+  a. x >= r and (W - r) >= x
+  b. y >= r and (H - r) >= y
+
+Input/output operations:
+- Input: Read five integers W, H, x, y, r from standard input.
+- Output: Print 'Yes' or 'No' based on the conditions.
+
+Data processing logic:
+- Determine if a circle with radius r centered at (x, y) is entirely within a rectangle with width W and height H.
+
+Required libraries, modules, or dependencies:
+- No specific libraries or modules required.

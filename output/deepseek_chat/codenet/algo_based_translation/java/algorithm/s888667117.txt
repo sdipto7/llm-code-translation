@@ -1,0 +1,54 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner in`: initialized with `System.in`
+- `PrintStream out`: initialized with `System.out`
+- `PrintStream err`: initialized with `System.err`
+- `String Si`: input string from `in.next()`
+- `char[] S`: reversed version of `Si`
+- `long[] dp`: size 13, initialized with `dp[0] = 1`
+- `long[] nd`: size 13, temporary array for new DP state
+- `int i`: loop index from 0 to `S.length-1`
+- `int d`: multiplier initialized to 1, updated as `d * 10 % 13` each iteration
+- `char c`: current character `S[i]`
+- `int x`: computed value based on digit and multiplier
+- `int j`: inner loop index from 0 to 12
+- `int xi`: inner loop index from 0 to 9 (for wildcard digits)
+- `int ni`: computed new index `(j + x) % 13`
+
+**Logic Flow:**
+1. Read input string `Si`
+2. Reverse `Si` and convert to char array `S`
+3. Initialize DP array `dp` with `dp[0] = 1`
+4. For each character `c` in `S` (from left to right in original string):
+   - Update multiplier `d = d * 10 % 13`
+   - Initialize new DP array `nd` with zeros
+   - If `c` is a digit:
+     - Compute `x = (c - '0') * d`
+     - For each remainder `j` (0-12):
+       - Set `nd[(j + x) % 13] = dp[j]`
+   - Else (wildcard character):
+     - For each possible digit `xi` (0-9):
+       - Compute `x = xi * d`
+       - For each remainder `j` (0-12):
+         - Compute `ni = (j + x) % 13`
+         - Update `nd[ni] = (nd[ni] + dp[j]) % 1000000007`
+   - Set `dp = nd`
+5. Print `dp[5]`
+
+**Control Structures:**
+- `for (int i = 0, d = 1; i < S.length; i++, d = d * 10 % 13)`
+- `if (Character.isDigit(c))` with else branch
+- Nested `for (int j = 0; j < 13; j++)`
+- Nested `for (int xi = 0; xi < 10; xi++)` with inner `for (int j = 0; j < 13; j++)`
+
+**Input/Output:**
+- Input: Single string via `in.next()`
+- Output: Final result via `out.println(dp[5])`
+- Debug output via `err.println()`
+
+**Dependencies:**
+- `java.io.*`
+- `java.util.*`
+- `java.util.stream.*`

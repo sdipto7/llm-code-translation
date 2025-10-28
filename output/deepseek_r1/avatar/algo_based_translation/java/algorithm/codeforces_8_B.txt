@@ -1,0 +1,60 @@
+```python
+Algorithm:
+
+Function main():
+    Parameters: args: array of strings
+    Return type: void
+
+    Declare:
+        scan: Scanner object
+        i, j, x, y, k: integers initialized to 0
+        dx, dy: integers
+        flag: boolean initialized to True
+        s: string
+        ch: char array of size 100
+        co: 2x101 integer array
+
+    Input:
+        s = scan.next()
+        ch = s converted to character array
+
+    Initialize:
+        co[0][k] = x
+        co[1][k] = y
+        k += 1
+
+    For i from 0 to length(s)-1:
+        switch ch[i]:
+            case 'L':
+                x -= 1
+            case 'R':
+                x += 1
+            case 'U':
+                y += 1
+            case 'D':
+                y -= 1
+        co[0][k] = x
+        co[1][k] = y
+        k += 1
+
+    For i from 0 to k-3:
+        For j from i+3 to k-1:
+            dx = co[0][i] - co[0][j]
+            dy = co[1][i] - co[1][j]
+            if dx < 0:
+                dx *= -1
+            if dy < 0:
+                dy *= -1
+            if (dx <= 1 and dy == 0) or (dy <= 1 and dx == 0):
+                flag = False
+                break
+        if not flag:
+            break
+
+    Output:
+        if flag: print "OK"
+        else: print "BUG"
+
+Required Dependencies:
+    java.util.Scanner
+```

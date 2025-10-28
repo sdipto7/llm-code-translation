@@ -1,0 +1,35 @@
+Function signature: `long split(long n, long k)`
+Variable declarations: `long sum = 0`
+Logic flow:
+- While `n > 0`
+  - Add `n % k` to `sum`
+  - Divide `n` by `k`
+
+Return `sum`
+
+Function signature: `long solve(long n, long s)`
+Variable declarations: `long k`
+Logic flow:
+- For `k = 2` to `k*k <= n || k < 100`
+  - If `split(n, k) == s`
+    - Return `k`
+- While `k <= n`
+  - Let `a = n / k`
+  - Let `b = n % k`
+  - If `(a + b - s) % a == 0`
+    - Let `dk = (a + b - s) / a`
+    - If `dk >= 0 && b - dk*a >= 0`
+      - Return `k + dk`
+  - Let `k = n / a + 1`
+- If `n == s`
+  - Return `n + 1`
+- Return `-1`
+
+Function signature: `void main(String[] args)`
+Variable declarations: `Scanner s = new Scanner(System.in)`, `long nl = s.nextLong()`, `long sl = s.nextLong()`
+Logic flow:
+- Read `nl` as next long from input
+- Read `sl` as next long from input
+- Print result of `solve(nl, sl)`
+
+Required libraries: `java.util.*`

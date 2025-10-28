@@ -1,0 +1,16 @@
+Total Instances: 200
+
+Correct: 128
+Accuracy: 64.00%
+
+Runtime Failed: 69
+Runtime Fail Rate: 34.50%
+
+Compilation Failed: 2
+Compilation Fail Rate: 1.00%
+
+Test Failed: 1
+Test Fail Rate: 0.50%
+
+Infinite Loop: 0
+Infinite Loop Rate: 0.00%

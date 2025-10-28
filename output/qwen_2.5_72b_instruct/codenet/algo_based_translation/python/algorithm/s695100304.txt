@@ -1,0 +1,26 @@
+Function Signature: main() -> None
+
+Variable Declarations:
+- n: int
+- x: List[int]
+
+Logic Flow:
+1. Read an integer from standard input and assign it to n.
+2. Read a line from standard input, split it by spaces, convert each element to an integer, and store the resulting list in x.
+3. Reverse the list x in-place.
+4. Print all elements of x separated by spaces.
+
+Control Structures:
+- No explicit loops or conditionals.
+
+Input/Output Operations:
+- Input: Two lines from standard input. First line is an integer n. Second line contains n space-separated integers.
+- Output: A single line containing the integers from the second input line in reverse order, separated by spaces.
+
+Data Processing Logic:
+- Convert the second input line into a list of integers.
+- Reverse the list.
+- Join the reversed list into a string with space separators and print it.
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries, modules, or dependencies required. Uses built-in functions and data types.

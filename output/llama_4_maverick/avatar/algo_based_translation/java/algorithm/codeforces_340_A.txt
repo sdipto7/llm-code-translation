@@ -1,0 +1,7 @@
+1. Read four integers: x, y, a, and b.
+2. Initialize c to the maximum of x and y.
+3. If c is greater than b, output 0 and stop.
+4. While c is not divisible by the minimum of x and y, increment c by the minimum of x and y or adjust c based on whether x is greater than y or not, and check if the new c exceeds b. If it does, output 0 and stop.
+5. Initialize a counter to 0 and start from a, checking each number up to b to find the first number divisible by c.
+6. If a number i is found such that i is divisible by c, calculate the count of numbers between i and b (inclusive) that are divisible by c using the formula ((b - i) / c) + 1.
+7. Output the calculated count if i is not equal to b + 1; otherwise, output 0.

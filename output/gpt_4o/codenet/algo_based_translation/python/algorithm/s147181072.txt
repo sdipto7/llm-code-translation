@@ -1,0 +1,10 @@
+Algorithm:
+
+1. Define a function `process_input()` with no parameters and return type `None`.
+2. Within the function, declare a variable `user_input` of type `str`.
+3. Perform an input operation to read a line from standard input and assign it to `user_input`.
+4. Call the method `swapcase()` on `user_input`. This method returns a new string where all uppercase letters are converted to lowercase and vice versa.
+5. Print the result of the `swapcase()` method call to standard output.
+6. Terminate the function with an implicit return of `None`.
+
+No additional libraries, modules, or dependencies are required.

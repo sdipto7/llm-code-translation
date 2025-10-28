@@ -1,0 +1,31 @@
+1. Import necessary modules and set recursion limit
+2. Define constants and helper functions:
+   - mod = 10^9 + 7
+   - input() = sys.stdin.readline()[:-1]
+   - I() = int(input())
+   - II() = map(int, input().split())
+   - III() = list(map(int, input().split()))
+   - Line(N, num) = generate a 2D list based on N and num
+   - my_sign(x) = return the sign of x as (x > 0) - (x < 0)
+3. N = I()
+4. a = III()
+5. Initialize max_val = 0, max_sign = 0, max_index = -1
+6. For each i, a0 in enumerate(a):
+   - if abs(a0) > max_val:
+     - max_val = abs(a0)
+     - max_sign = my_sign(a0)
+     - max_index = i
+7. If max_sign == 0:
+   - Print 0
+8. Else if max_sign == 1:
+   - Print 2*N - 1
+   - For i in range(N):
+     - Print max_index + 1, i + 1
+   - For i in range(N - 1):
+     - Print i + 1, i + 2
+9. Else:
+   - Print 2*N - 1
+   - For i in range(N):
+     - Print max_index + 1, i + 1
+   - For i in range(1, N)[::-1]:
+     - Print i + 1, i

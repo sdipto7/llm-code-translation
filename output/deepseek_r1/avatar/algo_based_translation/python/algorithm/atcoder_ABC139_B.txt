@@ -1,0 +1,45 @@
+**Structured Algorithm Specification:**
+
+**Function/Method Signature:**
+- `main() -> void`
+
+**Parameters:**
+- None
+
+**Return Types:**
+- None
+
+**Variables:**
+- `a: int` (Input integer)
+- `b: int` (Input integer)
+- `hole: int` (Initial value: `1`)
+- `i: int` (Initial value: `0`)
+- `check: bool` (Initial value: `True`)
+
+**Input/Output Operations:**
+1. Read two space-separated integers from standard input, parse into `a` and `b`.
+
+**Logic Flow:**
+1. Initialize `hole = 1`, `i = 0`, and `check = True`.
+2. Enter loop while `check` is `True`:
+   1. If `hole >= b`:
+      1. Set `check = False` (exit loop).
+   2. Else:
+      1. Compute `hole = a * (i + 1) - i`.
+      2. Increment `i` by `1`.
+3. Terminate loop when `check` becomes `False`.
+4. Output `i` to standard output.
+
+**Control Flow Structures:**
+- **Loop:** `while check` (exit when `hole >= b`).
+- **Conditional:** `if hole >= b` (determines loop exit).
+
+**Edge Cases:**
+- If `b <= 1`, loop exits immediately with `i = 0`.
+- If `a = 1` and `b > 1`, loop becomes infinite (no handling in original code).
+
+**Error Handling:**
+- None explicitly defined (assumes valid integer inputs and no overflow).
+
+**External Dependencies:**
+- Relies on standard input/output functions for data handling.

@@ -1,0 +1,66 @@
+```
+Algorithm FastReader
+    Declare br as BufferedReader
+    Declare st as StringTokenizer
+
+    Function next() returns String
+        While st is null or st does not have more elements
+            Try
+                Assign br.readLine() to st using StringTokenizer
+            Catch IOException e
+                Call e.printStackTrace()
+        Return st.nextToken()
+
+    Function nextInt() returns int
+        Return Integer.parseInt(next())
+
+    Function nextLong() returns long
+        Return Long.parseLong(next())
+
+    Function nextDouble() returns double
+        Return Double.parseDouble(next())
+
+    Function nextLine() returns String
+        Declare str as String, initialize to ""
+        Try
+            Assign br.readLine() to str
+        Catch IOException e
+            Call e.printStackTrace()
+        Return str
+
+Algorithm solve
+    Declare t as int
+    Assign FastReader.nextInt() to t
+    Declare arr as array of int with size t
+
+    For i from 0 to length of arr - 1
+        Assign FastReader.nextInt() to arr[i]
+
+    Declare prevWinner as int, initialize to 0
+
+    For i from 0 to length of arr - 1
+        If arr[i] equals 1
+            If prevWinner equals 0
+                Assign 2 to prevWinner
+
+        If prevWinner equals 2 or prevWinner equals 0
+            If (arr[i] - 1) modulo 2 equals 0
+                Output 2
+                Assign 2 to prevWinner
+            Else
+                Output 1
+                Assign 1 to prevWinner
+        Else
+            If (arr[i] - 1) modulo 2 equals 0
+                Output 1
+                Assign 1 to prevWinner
+            Else
+                Output 2
+                Assign 2 to prevWinner
+
+Algorithm main
+    Declare t as int, initialize to 1
+    While t is greater than 0
+        Decrement t
+        Call solve()
+```

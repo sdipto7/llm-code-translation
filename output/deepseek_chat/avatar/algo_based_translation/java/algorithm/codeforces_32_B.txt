@@ -1,0 +1,17 @@
+Scanner in = new Scanner(System.in)
+char[] n = in.next().toCharArray()
+boolean s = false
+for i from 0 to n.length - 1:
+    if n[i] == '.':
+        if s is true:
+            print '1'
+            set s = false
+        else:
+            print '0'
+    else:
+        if s is true:
+            print '2'
+            set s = false
+        else:
+            set s = true
+in.close()

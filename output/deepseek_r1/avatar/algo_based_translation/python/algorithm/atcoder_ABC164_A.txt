@@ -1,0 +1,36 @@
+**Structured Algorithm Specification**
+
+**1. Function/Method Signatures**  
+- `main()`: void  
+
+**2. Variable Declarations**  
+- `S`: integer  
+- `W`: integer  
+
+**3. External Dependencies**  
+- `import sys`  
+
+**4. Input/Output Operations**  
+- Read one line from standard input as string  
+- Split input string into two parts  
+- Convert split parts to integers `S` and `W`  
+- Write "unsafe" to standard output if `S <= W`  
+- Write "safe" to standard output if `S > W`  
+
+**5. Control Flow & Logic**  
+5.1. Read input line from stdin  
+5.2. Split input into substrings using whitespace  
+5.3. Convert substrings to integers `S` and `W`  
+5.4. Evaluate condition:  
+```  
+if S <= W:  
+    5.4.1. Print "unsafe"  
+else:  
+    5.4.2. Print "safe"  
+```  
+
+**6. Edge Case Handling**  
+- Implicitly handles all integer input cases via direct conversion (undefined behavior for non-integer inputs as per original code)  
+
+**7. Execution Entry Point**  
+- Execute `main()` when script is run directly

@@ -1,0 +1,30 @@
+```
+1. Import the `sys` module to use `sys.stdin.readline` for input operations.
+
+2. Define a function `main()` with no parameters and no return value:
+   a. Declare variables `K` and `N`:
+      - `K` is an integer representing the circumference of a circle.
+      - `N` is an integer representing the number of points on the circle.
+   b. Read input using `input_nums()` to initialize `K` and `N`.
+   c. Declare a list `A` of integers representing the positions of points on the circle.
+   d. Read input using `input_nums()` to initialize list `A`.
+
+3. Declare an empty list `dist` to hold distances between consecutive points.
+
+4. Use a `for` loop to iterate over indices from 0 to `len(A) - 2`:
+   a. For each index `i`, calculate the distance between consecutive points `A[i+1]` and `A[i]`.
+   b. Append the calculated distance to the list `dist`.
+
+5. Calculate the circular distance from the last point to the first point using the formula `K + A[0] - A[-1]`.
+6. Append this circular distance to the list `dist`.
+
+7. Calculate the maximum value `maxv` in the list `dist`.
+
+8. Calculate the sum of all distances in `dist`.
+
+9. Subtract `maxv` from the sum of distances.
+
+10. Print the result.
+
+11. Call the `main()` function if the script is executed as the main module.
+```

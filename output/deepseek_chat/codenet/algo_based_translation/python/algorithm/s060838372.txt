@@ -1,0 +1,10 @@
+1. Read two integers N and K from standard input
+2. Read a string S from standard input and convert to list of characters
+3. Check if character at index K-1 in list S equals "A":
+   - If true: set element at index K-1 to "a"
+4. Else check if character at index K-1 equals "B":
+   - If true: set element at index K-1 to "b"
+5. Else:
+   - Set element at index K-1 to "c"
+6. Convert list S back to string
+7. Print resulting string

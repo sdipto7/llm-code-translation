@@ -1,0 +1,24 @@
+1. Define a function `calculate_result` with parameters `n` and `x` of type `int` and return type `int`.
+2. Read two integers from input, store them in `n` and `x` respectively.
+3. Declare a list `m` to store integers.
+4. Read `n` integers from input, store them in list `m`.
+5. Sort list `m` in ascending order.
+6. Calculate the sum of all elements in `m`.
+7. Calculate the result using the formula `n + (x - sum(m)) // m[0]`.
+8. Print the result.
+9. Call `calculate_result` with `n` and `x` as arguments and return the result.
+
+Or in a more detailed and structured algorithmic representation:
+
+1. Function `main` with return type `None`:
+   - Read `n` and `x` from input.
+   - Call `calculate_result(n, x)`.
+   - Print the result.
+
+2. Function `calculate_result(n: int, x: int) -> int`:
+   - Declare list `m` of type `list[int]`.
+   - Read `n` integers into `m`.
+   - Sort `m`.
+   - Return `n + (x - sum(m)) // m[0]`.
+
+Required libraries: built-in Python libraries (`input`, `map`, `sort`, `sum`, `print`).

@@ -1,0 +1,26 @@
+1. READ n
+2. INITIALIZE s as an empty list
+3. FOR i FROM 0 TO n-1
+   1. READ k
+   2. APPEND k to s
+4. INITIALIZE flag to 0
+5. INITIALIZE d1 and d2 as empty lists
+6. INITIALIZE rem as an empty set
+7. FOR i FROM 0 TO n-1
+   1. FOR j FROM 0 TO n-1
+      1. IF i == j THEN
+         1. APPEND s[i][j] to d1
+      2. IF i == n-j-1 THEN
+         1. APPEND s[i][j] to d2
+      3. IF i != j AND i != n-j-1 THEN
+         1. ADD s[i][j] to rem
+8. IF length of rem is not equal to 1 THEN
+   1. PRINT 'NO'
+9. ELSE IF d1 is not equal to d2 THEN
+   1. PRINT 'NO'
+10. ELSE IF length of unique elements in d1 is not equal to 1 THEN
+    1. PRINT 'NO'
+11. ELSE IF set of d1 is equal to rem THEN
+    1. PRINT 'NO'
+12. ELSE
+    1. PRINT 'YES'

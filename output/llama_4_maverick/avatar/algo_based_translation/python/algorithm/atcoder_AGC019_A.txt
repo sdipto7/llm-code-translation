@@ -1,0 +1,20 @@
+1. Import necessary modules and define constants.
+2. Define helper functions:
+   - input(): read input from stdin and strip whitespace.
+   - ceil(a, b = 1): calculate the ceiling of a divided by b.
+   - round(x): round x to the nearest integer.
+   - fermat(x, y, MOD): calculate x * y^(-1) mod MOD.
+   - lcm(x, y): calculate the least common multiple of x and y.
+   - lcm_list(nums): calculate the least common multiple of a list of numbers.
+   - INT(): read an integer from input.
+   - MAP(): read a list of integers from input and return a map object.
+   - LIST(): read a list of integers from input.
+3. Set recursion limit to 10^9.
+4. Define constants: INF = infinity, MOD = 10^9 + 7.
+5. Read input: q, h, s, d = MAP(), n = INT().
+6. Calculate best1L = minimum of (q * 4, h * 2, s).
+7. Calculate best2L = minimum of (d, best1L * 2).
+8. If n is even:
+   - Print best2L * (n / 2).
+9. Else:
+   - Print best2L * (n / 2) + best1L.

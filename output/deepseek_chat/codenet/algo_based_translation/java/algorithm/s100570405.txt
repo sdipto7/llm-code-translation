@@ -1,0 +1,83 @@
+**Function Signatures:**
+- main(args: String[]): void
+- run(): void
+- MyInput class methods:
+  - hasNextByte(): boolean
+  - readByte(): int
+  - isPrintableChar(c: int): boolean
+  - skipUnprintable(): void
+  - hasNext(): boolean
+  - next(): String
+  - nextLong(): long
+  - nextInt(): int
+  - nextDouble(): double
+
+**Variable Declarations:**
+- Sd: String
+- T: String
+- count: int
+- c: char
+- ok: boolean
+- first: int
+- end: int
+- i: int (loop counter)
+- j: int (loop counter)
+- MyInput class variables:
+  - in: InputStream
+  - buffer: byte[1024]
+  - ptr: int
+  - buflen: int
+
+**Logic Flow:**
+1. Initialize MyInput instance
+2. Read Sd string from input
+3. Read T string from input
+4. Initialize count = 0, ok = false, first = -1, end = -1
+5. Outer loop: j from 0 to Sd.length()-1
+6. Reset count = 0
+7. Inner loop: i from 0 while i+j < Sd.length()
+8. Get character c = Sd.charAt(i+j)
+9. If c equals '?' OR c equals T.charAt(count)
+10. Increment count
+11. If count equals T.length()
+12. Set first = i+j - T.length() + 1
+13. Set end = i+j
+14. Set ok = true
+15. Break inner loop
+16. Else: reset count = 0
+17. Continue inner loop
+18. Continue outer loop
+19. If ok is true
+20. Loop i from 0 to Sd.length()-1
+21. If i between first and end inclusive
+22. Print T.charAt(i - first)
+23. Else
+24. If Sd.charAt(i) equals '?'
+25. Print "a"
+26. Else
+27. Print Sd.charAt(i)
+28. Print newline
+29. Else
+30. Print "UNRESTORABLE"
+
+**MyInput Class Logic:**
+- hasNextByte(): Check if ptr < buflen, if not read from input stream into buffer
+- readByte(): Call hasNextByte(), return buffer[ptr++] or -1
+- isPrintableChar(): Return true if char code between 33-126
+- skipUnprintable(): Advance ptr past non-printable chars
+- hasNext(): Skip unprintable chars, return hasNextByte()
+- next(): Build string from printable chars until non-printable encountered
+- nextLong(): Parse numeric string to long, handle negative sign
+- nextInt(): Call nextLong(), validate integer range, cast to int
+- nextDouble(): Parse string to double
+
+**Required Libraries:**
+- java.lang.System
+- java.lang.Math
+- java.io.InputStream
+- java.io.IOException
+- java.util.NoSuchElementException
+- java.util.ArrayList
+- java.util.Arrays
+- java.util.LinkedList
+- java.util.Collections

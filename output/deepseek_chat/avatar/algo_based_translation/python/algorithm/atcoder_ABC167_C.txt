@@ -1,0 +1,56 @@
+Algorithm:
+- Import numpy as np
+- Import itertools
+- Read input: n, m, x = integers from split input string
+- Initialize c as 2D numpy array with n rows, each row containing m+1 integers from input
+- Initialize pre as numpy array [0, 1, 2, ..., n-1]
+- Initialize empty list l
+- Initialize empty list rem
+- Initialize ans = 0
+- For i from 1 to n (inclusive):
+    - For each combination j of pre taken i at a time:
+        - Append list(j) to l
+- For i from 1 to m (inclusive):
+    - For each index j and element k in l:
+        - Initialize ca = 0
+        - For each index ii in k:
+            - Add c[ii, i] to ca
+        - If ca < x:
+            - Insert j at beginning of rem
+    - If rem length > 0:
+        - For each j in rem:
+            - Remove element at index j from l
+        - Set rem to empty list
+    - If l length == 0:
+        - Print -1
+        - Break loop
+- Else (if loop completed without break):
+    - For each i in l:
+        - Initialize ca = 0
+        - For each j in i:
+            - Add c[j, 0] to ca
+        - If ans == 0:
+            - Set ans = ca
+        - Else:
+            - Set ans = min(ans, ca)
+    - Print ans
+
+Function signature: main() -> None (implicit)
+Parameters: None (reads from stdin)
+Return type: None (prints output)
+Variables:
+- n: int
+- m: int
+- x: int
+- c: numpy.ndarray (2D array of integers)
+- pre: numpy.ndarray (1D array of integers)
+- l: list of lists of integers
+- rem: list of integers
+- ans: int
+- i: int (loop variable)
+- j: int/list (loop variable)
+- k: list (loop variable)
+- ca: int
+- ii: int (loop variable)
+
+Dependencies: numpy, itertools

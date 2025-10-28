@@ -1,0 +1,20 @@
+Function: main
+Parameters: String[] args
+Return Type: void
+
+Variables:
+- sc (Scanner)
+- i (int)
+
+Libraries:
+- java.util.Scanner
+- java.io
+
+Execution Flow:
+1. Initialize a Scanner object sc to read input from standard input.
+2. Begin a for loop with i initialized to 0, loop while i is less than 5, increment i by 1 after each iteration.
+3. Inside the loop, read the next integer from the scanner.
+4. Check if the read integer is equal to 0.
+5. If true, print the value of i plus 1.
+6. Break out of the loop.
+7. If false, continue to the next iteration of the loop.

@@ -1,0 +1,38 @@
+**Function Signature:**
+- No explicit function defined; code executes at module level
+- Input: Reads two integers from standard input
+- Output: Prints one integer result
+
+**Variables and Data Types:**
+- l: integer (lower bound)
+- r: integer (upper bound)
+- curr: integer (temporary counter/variable)
+- s: integer (digit count)
+- first: integer (power of 10 value)
+- second: integer (half of first)
+- ans: integer (maximum product found)
+- i: integer (loop variable)
+- k: string (character in digit string)
+- rev: string (reversed digit representation)
+
+**Execution Flow:**
+
+1. Read input line and split into two integers: l, r
+2. Initialize curr = r
+3. Initialize s = 0
+4. While curr ≠ 0:
+   - Increment s by 1
+   - Update curr = curr // 10 (integer division)
+5. Calculate first = 10^s
+6. Calculate second = first // 2
+7. Initialize ans = -1
+8. For each i in [l, r, first, second]:
+   - If i ≥ l and i ≤ r:
+     - Set curr = i
+     - Initialize rev as empty string
+     - For each character k in string representation of curr:
+       - Convert k to integer, subtract from 9, convert back to string
+       - Append to rev
+     - Convert rev to integer and multiply by curr
+     - Update ans = max(ans, current product)
+9. Print ans

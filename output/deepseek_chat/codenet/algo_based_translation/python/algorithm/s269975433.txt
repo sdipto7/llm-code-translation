@@ -1,0 +1,26 @@
+from itertools import combinations_with_replacement
+import sys
+
+def LI() -> list[int]:
+    return list(map(int, sys.stdin.readline().rstrip().split()))
+
+N: int
+M: int
+Q: int
+Q_groups: list[list[int]] = []
+max_score: int = 0
+
+N, M, Q = LI()
+
+for i in range(Q):
+    Q_groups.append(LI())
+
+for p in combinations_with_replacement(range(1, M + 1), r=N):
+    temp_score: int = 0
+    for q in Q_groups:
+        if p[q[1] - 1] - p[q[0] - 1] == q[2]:
+            temp_score += q[3]
+    if temp_score > max_score:
+        max_score = temp_score
+
+print(max_score)

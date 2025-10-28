@@ -1,0 +1,9 @@
+1. Define a function `determine_output` with no parameters and return type integer.
+2. Declare a variable `s` of type string.
+3. Read input from the user and store it in `s`.
+4. Check if `s` is equal to 'RRR', if true, return 3.
+5. Check if `s` is equal to 'SSS', if true, return 0.
+6. Check if `s` is equal to 'RRS' or 'SRR', if true, return 2.
+7. If none of the above conditions are met, return 1.
+8. Print the returned value. 
+9. Required library: built-in input() and print() functions.

@@ -1,0 +1,41 @@
+**Algorithm:**
+
+1. **Imports:**
+   - `java.util.Scanner`
+
+2. **Function Signature:**
+   - `public static void main(String[] args)`
+
+3. **Variables:**
+   - `int n`: Input length of the character array
+   - `int i`, `int j`: Loop counters
+   - `int p = 97`: ASCII value for 'a', initialized to 97
+   - `char[] c`: Character array to store the result
+
+4. **Input Handling:**
+   - Read integer `n` from standard input using `Scanner`
+
+5. **Initialize:**
+   - Create `char[] c` with length `n`
+
+6. **First Loop Logic (Fill Array):**
+   - Outer loop: `i` from 0 to 3 (inclusive) [4 iterations]
+     - Inner loop: `j` starts at `i`, increments by 4 until `j < n`
+       - Assign `c[j] = (char)p` (convert current ASCII value to character)
+     - Increment `p` by 1 after inner loop completes
+
+7. **Second Loop (Output):**
+   - Iterate `i` from 0 to `n-1` (inclusive)
+     - Print `c[i]` without newline
+
+8. **Control Structures:**
+   - Outer for-loop: `for (i = 0; i < 4; i++)`
+   - Inner for-loop: `for (j = i; j < n; j += 4)`
+   - Final output loop: `for (i = 0; i < n; i++)`
+
+9. **Data Flow:**
+   - Characters 'a'-'d' (ASCII 97-100) are cyclically assigned to array indices in steps of 4
+   - All positions are filled with this repeating pattern
+
+10. **Termination:**
+    - Program ends after printing all characters in array `c`

@@ -1,0 +1,33 @@
+Function signature: `main(String[] args)` with return type `void`
+
+Variable declarations and data types:
+- `sc` of type `Scanner`
+- `N` of type `int`
+- `count1` of type `int`
+- `count2` of type `int`
+- `i` of type `int` (loop variable)
+- `a` of type `int` (input variable)
+
+Logic flow in execution order:
+1. Initialize `sc` as a new instance of `Scanner` with `System.in`.
+2. Read an integer `N` from `sc`.
+3. Initialize `count1` to 0.
+4. Initialize `count2` to 0.
+5. For `i` from 0 to `N-1`:
+   1. Read an integer `a` from `sc`.
+   2. If `a` modulo 4 equals 0, increment `count1`.
+   3. Else if `a` modulo 2 equals 0 and `(a/2)` modulo 2 equals 1, increment `count2`.
+6. If `count1` is greater than or equal to `N/2`, print "Yes".
+7. Else if `((N/2-count1)*2 + N%2)` equals `count2`, print "Yes".
+8. Else, print "No".
+
+Control structures:
+- For loop with condition `i < N`
+- If-else statement with conditions `a % 4 == 0`, `a % 2 == 0 && (a / 2) % 2 == 1`
+
+Input/output operations and data processing logic:
+- Input: Reads integers `N` and `a` from standard input.
+- Output: Prints "Yes" or "No" based on the conditions specified.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

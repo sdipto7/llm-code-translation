@@ -1,0 +1,17 @@
+Algorithm:
+- Import java.math.BigInteger
+- Import java.util.Scanner
+- Declare class Main with public static void main(String[] args)
+- Declare BigInteger variables a, b, c
+- Create Scanner object cin initialized with System.in
+- While cin.hasNext() returns true:
+  - Read next BigInteger into a
+  - Read next BigInteger into b
+  - Assign c = maximum value between a and b using a.max(b)
+  - If a equals c AND b does not equal c:
+    - Print "GREATER"
+  - Else if b equals c AND a does not equal c:
+    - Print "LESS"
+  - Else:
+    - Print "EQUAL"
+- Close cin scanner

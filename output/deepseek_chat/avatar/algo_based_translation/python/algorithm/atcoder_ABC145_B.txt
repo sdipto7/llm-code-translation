@@ -1,0 +1,11 @@
+Read integer n from input
+Read string s from input
+If n modulo 2 is not equal to 0:
+    Print "No"
+Else:
+    Let first_half = substring of s from index 0 to (n/2)-1
+    Let second_half = substring of s from index n/2 to end
+    If first_half equals second_half:
+        Print "Yes"
+    Else:
+        Print "No"

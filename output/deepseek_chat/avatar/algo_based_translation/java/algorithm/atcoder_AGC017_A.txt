@@ -1,0 +1,50 @@
+**Function Signatures:**
+- `C(int n, int m): BigInteger`
+- `main(String[] args): void`
+
+**Variables:**
+- `Scanner sc`
+- `int n`
+- `int p`
+- `int k0 = 0`
+- `int k1 = 0`
+- `int x`
+- `BigInteger ans = new BigInteger("1")`
+- `BigInteger add = new BigInteger("0")`
+- `BigInteger res = new BigInteger("1")`
+- `int i` (loop counter)
+
+**Libraries:**
+- `java.util.*`
+- `java.math.*`
+
+**Algorithm Flow:**
+
+1. Create Scanner object `sc` for reading input
+2. Read integers `n` and `p` from input
+3. For `i` from 0 to `n-1`:
+   - Read integer `x`
+   - If `x % 2 == 1`: increment `k1`
+   - Else: increment `k0`
+4. Set `ans` to 1
+5. Multiply `ans` by 2, `k0` times
+6. If `p == 0`:
+   - Set `add` to 0
+   - For `i` from 0 to `k1`, stepping by 2:
+     - Call `C(i, k1)` and add result to `add`
+   - Multiply `ans` by `add`
+   - Print `ans`
+7. Else (`p == 1`):
+   - Set `add` to 0
+   - For `i` from 1 to `k1`, stepping by 2:
+     - Call `C(i, k1)` and add result to `add`
+   - Multiply `ans` by `add`
+   - Print `ans`
+
+**Function C(n, m) Algorithm:**
+1. Set `res` to 1
+2. For `i` from `m-n+1` to `m`:
+   - Multiply `res` by `i`
+3. For `i` from 1 to `n`:
+   - Divide `res` by `i`
+4. Return `res`

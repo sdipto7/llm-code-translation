@@ -1,0 +1,10 @@
+1. Import the `java.util` library for using the `Scanner` class.
+2. Define a public class named `Main`.
+3. Define a public static method `main` with a return type of `void` and a parameter of type `String[]` named `args`.
+4. Declare a variable `sc` of type `Scanner` and initialize it with a new `Scanner` object that reads from `System.in`.
+5. Declare a variable `C` of type `String` and assign it the next input from `sc` using the `next()` method.
+6. Print to the console the character resulting from incrementing the ASCII value of the first character of `C` by 1, achieved by:
+   - Accessing the first character of `C` using `charAt(0)`.
+   - Incrementing its ASCII value by 1 using the expression `C.charAt(0) + 1`.
+   - Casting the result back to a `char` using `(char)`.
+7. The program terminates after executing the `main` method.

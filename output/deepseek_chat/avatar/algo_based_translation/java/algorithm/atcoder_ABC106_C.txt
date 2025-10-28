@@ -1,0 +1,37 @@
+**Function Signature:**
+- `main(String[] args)` throws Exception
+
+**Variables:**
+- `Scanner sc` initialized with `System.in`
+- `String str` from `sc.next()`
+- `char[] c` from `str.toCharArray()`
+- `long k` from `sc.nextLong()`
+- `int n` from `str.length()`
+
+**Logic Flow:**
+1. Read input string `str`
+2. Convert `str` to character array `c`
+3. Read integer `k`
+4. Get length `n` of `str`
+5. Loop `i` from `0` to `k-1` (exclusive):
+   - If `c[i]` equals '1':
+     - If `i` equals `k-1`:
+       - Print '1'
+       - Return from function
+   - Else (if `c[i]` is not '1'):
+     - Print `c[i]`
+     - Return from function
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < k; i++)`
+- Nested if-else conditionals:
+  - Outer: `if (c[i] == '1')`
+  - Inner: `if (i == k - 1)`
+  - Else branch for non-'1' characters
+
+**Input/Output:**
+- Input: String and long from standard input
+- Output: Prints '1' or character value to standard output
+
+**Dependencies:**
+- `java.util.Scanner`

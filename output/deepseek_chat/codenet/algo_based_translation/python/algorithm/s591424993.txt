@@ -1,0 +1,21 @@
+Algorithm:
+1. Read integers d and g from input.
+2. Read d lines, each containing two integers, storing them in list pc.
+3. Initialize variable ans to positive infinity.
+4. Iterate over all bit masks from 0 to (1 << d) - 1:
+   a. Initialize count to 0.
+   b. Initialize sum to 0.
+   c. Initialize nokori as a set containing integers from 1 to d.
+   d. For each index i from 0 to d-1:
+      i. If the i-th bit of the current bit mask is set:
+         - Add (pc[i][0] * (i+1) * 100 + pc[i][1]) to sum.
+         - Add pc[i][0] to count.
+         - Remove (i+1) from nokori.
+   e. If sum is less than g:
+      i. Find the maximum value in nokori, call it use.
+      ii. Calculate n = min(pc[use-1][0], ceil((g - sum) / (use * 100))).
+      iii. Add n to count.
+      iv. Add n * use * 100 to sum.
+   f. If sum is greater than or equal to g:
+      i. Set ans to the minimum of ans and count.
+5. Print ans.

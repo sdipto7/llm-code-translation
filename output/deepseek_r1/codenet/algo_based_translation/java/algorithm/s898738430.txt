@@ -1,0 +1,43 @@
+**Algorithm:**
+
+- **Imported Dependencies:**  
+  - `java.util.Scanner` for input handling
+
+- **Function Signature:**  
+  `public static void main(String[] args)`
+
+- **Variables:**  
+  - `Scanner sc = new Scanner(System.in)` (input reader)  
+  - `int n` (input array size)  
+  - `int[] a` (array to store input elements)  
+  - `int ans = 0` (result counter)  
+  - Loop counters: `int i` (initialized in loops)  
+
+- **Execution Flow:**  
+  1. Read integer `n` from input.  
+  2. Initialize integer array `a` of size `n`.  
+  3. Populate `a` with `n` integers from input via a `for` loop:  
+     - Loop `i` from `0` to `n-1` (inclusive)  
+     - Assign `a[i] = sc.nextInt()`  
+  4. Initialize `ans` to `0`.  
+  5. Iterate through middle elements of `a`:  
+     - `for` loop with `i` from `1` to `n-2` (inclusive):  
+       a. Check if `a[i]` is **not** the minimum of `a[i-1]`, `a[i]`, and `a[i+1]`  
+       b. Check if `a[i]` is **not** the maximum of `a[i-1]`, `a[i]`, and `a[i+1]`  
+       c. If both conditions are true, increment `ans` by `1`  
+  6. Print `ans` to standard output.  
+  7. Close `sc` (Scanner).  
+
+- **Control Structures:**  
+  - `for (int i = 0; i < n; i++)` (array population)  
+  - `for (int i = 1; i < n-1; i++)` (main logic loop)  
+  - `if` condition:  
+    ```  
+    a[i] != Math.min(a[i-1], Math.min(a[i], a[i+1]))   
+    &&  
+    a[i] != Math.max(a[i-1], Math.max(a[i], a[i+1]))  
+    ```  
+
+- **I/O Operations:**  
+  - Input: Sequential integer reads via `sc.nextInt()`  
+  - Output: Single print of `ans` via `System.out.println(ans)`

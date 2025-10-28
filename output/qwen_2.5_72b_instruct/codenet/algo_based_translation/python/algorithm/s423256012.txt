@@ -1,0 +1,15 @@
+- Function Signature: `main()` (no parameters, no return type)
+- Variable Declarations: `A` (integer), `B` (integer)
+- Logic Flow:
+  1. Read input as a single line and split into two parts.
+  2. Convert the two parts from strings to integers and assign them to variables `A` and `B`.
+  3. Calculate the sum of `A` and `B`.
+  4. Check if the sum is odd:
+     - If true, print the string 'IMPOSSIBLE'.
+     - If false, calculate the integer division of the sum by 2 and print the result.
+- Control Structures:
+  - Conditional: `if (A+B)%2 == 1` (check if the sum of `A` and `B` is odd)
+- Input/Output Operations:
+  - Input: Read a single line of input, split it into two parts, and convert them to integers.
+  - Output: Print either 'IMPOSSIBLE' or the result of `(A+B)//2`.
+- Libraries/Modules/Dependencies: None required

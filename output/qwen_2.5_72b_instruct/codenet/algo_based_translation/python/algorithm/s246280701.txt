@@ -1,0 +1,37 @@
+Function signature:
+- main()
+
+Variable declarations:
+- n: integer
+- x: list of integers
+- ans: integer
+- i: integer
+- tmp: list of integers
+- j: integer
+
+Logic flow in execution order:
+1. Read integer n from input
+2. Read a line of space-separated integers from input, convert to list of integers x
+3. Initialize ans to 10^10
+4. For i from 0 to 100 (inclusive):
+    a. Initialize tmp as a list of integers, where each element is (i - x[j])^2 for j from 0 to n-1 (inclusive)
+    b. If sum of tmp is less than ans:
+        i. Update ans to sum of tmp
+5. Print ans
+
+Control structures:
+- For loop with condition i from 0 to 100 (inclusive)
+- If statement with condition sum(tmp) < ans
+
+Input/output operations:
+- Read integer n from input
+- Read space-separated integers from input, convert to list x
+- Print integer ans
+
+Data processing logic:
+- Calculate the squared difference between each element in x and i
+- Sum the squared differences
+- Track the minimum sum of squared differences
+
+Required libraries, modules, or dependencies:
+- None

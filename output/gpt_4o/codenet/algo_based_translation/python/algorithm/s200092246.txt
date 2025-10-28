@@ -1,0 +1,24 @@
+```
+- Function Signature:
+  - main() -> None
+
+- Variable Declarations:
+  - N: int
+  - ans: List[int] initialized as an empty list
+  - i: int (used in loops)
+
+- Input/Output Operations:
+  - Read an integer from input and assign it to N
+
+- Logic Flow:
+  1. Initialize an empty list `ans`
+  2. Loop `i` from 1 to N (inclusive):
+     - Calculate the sum of integers from 1 to `i`
+     - If the sum is less than `N`, continue to the next iteration
+     - Else, assign `[i - 1, sum(range(1, i + 1)) - N]` to `ans`
+     - Break out of the loop
+  3. Loop `i` from 0 to `ans[0]` (inclusive):
+     - If `i + 1` is not equal to `ans[1]`, print `i + 1`
+
+- No required libraries, modules, or dependencies
+```

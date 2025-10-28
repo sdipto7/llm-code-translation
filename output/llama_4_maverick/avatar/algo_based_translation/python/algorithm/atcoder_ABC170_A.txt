@@ -1,0 +1,5 @@
+1. Read input and split it into a list of strings
+2. Convert each string in the list to an integer and store in list 'a'
+3. Iterate over 'a' with index 'e' and value 'i'
+4. Check if 'i' equals 0
+5. If true, print 'e + 1' and exit loop

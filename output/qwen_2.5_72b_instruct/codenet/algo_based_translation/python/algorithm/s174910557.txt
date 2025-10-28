@@ -1,0 +1,33 @@
+Function Signature: `calculate_segments(N: int, S: str) -> int`
+
+Variable Declarations:
+- `N: int`
+- `S: str`
+- `ans: int` initialized to 1
+- `tmp: str` initialized to `S[0]`
+
+Logic Flow:
+1. Read integer `N` from input.
+2. Read string `S` from input.
+3. Initialize `ans` to 1.
+4. Initialize `tmp` to the first character of `S`.
+5. Loop through each character `s` in `S`:
+   - If `s` is not equal to `tmp`:
+     - Increment `ans` by 1.
+     - Set `tmp` to `s`.
+6. Print the value of `ans`.
+
+Control Structures:
+- For loop with condition `for s in S`
+- If statement with condition `if s != tmp`
+
+Input/Output Operations:
+- Read integer `N` from input.
+- Read string `S` from input.
+- Print the integer value of `ans`.
+
+Data Processing Logic:
+- Count the number of segments in the string `S` where a segment is defined as a contiguous substring of identical characters.
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries or modules required.

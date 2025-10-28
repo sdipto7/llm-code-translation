@@ -1,0 +1,12 @@
+1. Import the math module.
+2. Read two integer inputs, N and K, from a single line of input, separated by a space.
+3. Declare variable R as an integer and assign it the value N - K.
+4. Declare variable mod as an integer and assign it the value 10^9 + 7.
+5. Define a function fact with parameters n and r, both integers, returning an integer.
+   - The function calculates and returns the binomial coefficient nCr, i.e., n! / (r! * (n-r)!).
+6. Iterate over a loop from 1 to K (inclusive) with variable i.
+7. Inside the loop, check if the condition N - K + 1 < i is true.
+   - If true, assign 0 to variable ans.
+   - If false, calculate ans as the product of fact(R+1, i) and fact(K-1, i-1).
+8. Print the remainder of ans divided by mod after converting ans to an integer.
+9. Repeat steps 7 and 8 for each iteration of the loop.

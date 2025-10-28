@@ -1,0 +1,26 @@
+1. Import required libraries: java.util.Scanner
+2. Define a function `main` with signature: `public static void main(String[] args)`
+3. Declare variables:
+   - `scanner` of type `Scanner`
+   - `s` and `t` of type `char[]`
+   - `check` of type `boolean`
+4. Execute the following steps in order:
+   1. Initialize `scanner` by creating a new `Scanner` object with `System.in` as input
+   2. Read input from `scanner` using `next()` and convert to `char[]` and store in `s` and `t`
+   3. Initialize `check` to `false`
+   4. Iterate over `s` in reverse order with index `i` ranging from `s.length - t.length` to `0` (inclusive) with a decrement of 1
+      1. Initialize `check2` to `true`
+      2. Iterate over `t` with index `j` ranging from `0` to `t.length - 1` (inclusive) with an increment of 1
+         1. Check if `s[i + j]` is not equal to `'?'` and not equal to `t[j]`
+         2. If the condition is true, set `check2` to `false`
+      3. If `check2` is `true`, 
+         1. Set `check` to `true`
+         2. Iterate over `t` with index `j` ranging from `0` to `t.length - 1` (inclusive) with an increment of 1
+            1. Assign `t[j]` to `s[i + j]`
+      4. If `check` is `true`, break the loop
+   5. If `check` is `true`,
+      1. Iterate over `s` with index `i` ranging from `0` to `s.length - 1` (inclusive) with an increment of 1
+         1. If `s[i]` is equal to `'?'`, print `"a"`
+         2. Otherwise, print `s[i]`
+      2. Print a newline character
+   6. If `check` is `false`, print `"UNRESTORABLE"` followed by a newline character (implicitly handled by `println`)

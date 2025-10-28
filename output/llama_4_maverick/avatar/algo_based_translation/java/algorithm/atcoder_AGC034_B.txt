@@ -1,0 +1,9 @@
+1. Read input string from the input stream.
+2. Replace all occurrences of "BC" in the input string with "D".
+3. Initialize a counter variable `cnt` to 0.
+4. Initialize a temporary variable `tmp` to 0.
+5. Iterate through each character in the modified string.
+6. If the character is 'A', increment `tmp` by 1.
+7. If the character is 'D', add the current value of `tmp` to `cnt`.
+8. If the character is neither 'A' nor 'D', reset `tmp` to 0.
+9. Output the final value of `cnt`.

@@ -1,0 +1,15 @@
+1. Import the `java.util.Scanner` module.
+2. Define a function `main` with signature `public static void main(String[] args)`.
+3. Declare a variable `sc` of type `Scanner` and initialize it with `new Scanner(System.in)`.
+4. Declare a variable `count` of type `int` and assign it the result of `Integer.parseInt(sc.next())`.
+5. Declare an array `givingNumbers` of type `int[]` with length `count`.
+6. Start a `for` loop with initialization `int i = 0`, condition `i < count`, and increment `i++`.
+7. Inside the loop, assign `givingNumbers[i]` the result of `Integer.parseInt(sc.next())`.
+8. End the loop.
+9. Start a `for` loop with initialization `int i = count - 1`, condition `0 <= i`, and decrement `i--`.
+10. Inside the loop, print `givingNumbers[i]` using `System.out.print`.
+11. Check the condition `i > 0`.
+12. If true, print a space using `System.out.print(" ")`.
+13. End the loop.
+14. Print a newline using `System.out.println()`.
+15. Call `sc.close()` on the `Scanner` object `sc`.

@@ -1,0 +1,10 @@
+1. Read the number of inputs, n.
+2. Read n numbers and store them in an array.
+3. Sort the array in ascending order.
+4. Initialize a variable, count, with the value of the largest number in the array.
+5. Iterate through the array from the second last element to the first.
+6. For each element, check if it is less than the next element.
+7. If it is less, add it to count.
+8. If it is not less, decrement it until it is less than the next element.
+9. If the decremented element is greater than 0, add it to count.
+10. Output the final value of count.

@@ -1,0 +1,46 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `Scanner input: Scanner`
+- `PrintWriter out: PrintWriter`
+- `int n: int`
+- `int[][] vec: int[][]`
+- `int ans: int`
+- `int ansprice: int`
+- `int i: int`
+- `int fl: int`
+- `int j: int`
+
+Complete logic flow in execution order:
+1. Initialize `Scanner` object for input.
+2. Initialize `PrintWriter` object for output.
+3. Read integer `n` from input.
+4. Initialize a 2D array `vec` of size `n` by 4.
+5. For each `i` from 0 to `n-1`:
+   - Read four integers and store them in `vec[i][0]`, `vec[i][1]`, `vec[i][2]`, `vec[i][3]`.
+6. Initialize `ans` to 500.
+7. Initialize `ansprice` to 20000.
+8. For each `i` from 0 to `n-1`:
+   - Set `fl` to 1.
+   - For each `j` from 0 to `n-1`:
+     - If `vec[i][0] < vec[j][0]` and `vec[i][1] < vec[j][1]` and `vec[i][2] < vec[j][2]`, set `fl` to 0.
+   - If `fl` is 1:
+     - If `vec[i][3] < ansprice`, update `ansprice` to `vec[i][3]` and `ans` to `i + 1`.
+9. Print `ans`.
+10. Close `PrintWriter` object.
+
+Control structures:
+- For loops: `for (int i = 0; i < n; i++)`, `for (int j = 0; j < n; j++)`
+- If statements: `if (vec[i][0] < vec[j][0] && vec[i][1] < vec[j][1] && vec[i][2] < vec[j][2])`, `if (fl == 1)`, `if (vec[i][3] < ansprice)`
+
+Input/output operations and data processing logic:
+- Read integer `n` from input.
+- Read four integers for each of `n` rows and store them in `vec`.
+- Determine the index of the row where no other row has all higher values in the first three columns and the price in the fourth column is the minimum.
+- Print the 1-based index of the determined row.
+
+Required libraries, modules, or dependencies:
+- `java.util.Arrays`
+- `java.util.Scanner`
+- `java.io.PrintWriter`

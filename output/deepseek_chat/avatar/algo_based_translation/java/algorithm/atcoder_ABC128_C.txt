@@ -1,0 +1,56 @@
+**Function Signatures:**
+- `main(String[] args)`
+- `run()` (no parameters, void return)
+
+**Variables:**
+- `Scanner sc` (input scanner)
+- `int N` (number of switches)
+- `int M` (number of bulbs)
+- `ArrayList<Integer> a` (size N, initialized to zeros)
+- `int k` (number of switches connected to current bulb)
+- `int s` (switch index, converted to 0-indexed)
+- `int p` (bitmask of expected bulb states)
+- `int x` (input for bulb expected state)
+- `int ans` (counter for valid switch combinations)
+- `int t` (computed bulb state for current switch combination)
+
+**Logic Flow:**
+1. Create Scanner object for input
+2. Read integers N and M
+3. Initialize ArrayList `a` with N zeros
+4. For each bulb i from 0 to M-1:
+   - Read integer k
+   - For j from 0 to k-1:
+     - Read switch index s
+     - Convert s to 0-indexed (s--)
+     - Update a[s] by OR-ing with (1 << i)
+5. Initialize p to 0
+6. For each bulb i from 0 to M-1:
+   - Read integer x
+   - Set p by OR-ing with (x << i)
+7. Initialize ans to 0
+8. For each switch combination s from 0 to (1 << N)-1:
+   - Initialize t to 0
+   - For each switch i from 0 to N-1:
+     - If the i-th bit of s is set:
+       - XOR t with a[i]
+   - If t equals p:
+     - Increment ans
+9. Print ans
+10. Close scanner
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < N; i++)`
+- For loop: `for (int i = 0; i < M; i++)`
+- For loop: `for (int j = 0; j < k; j++)`
+- For loop: `for (int s = 0; s < (1 << N); s++)`
+- For loop: `for (int i = 0; i < N; i++)`
+- Conditional: `if (((s >> i) & 1) == 1)`
+- Conditional: `if (p == t)`
+
+**Input/Output:**
+- Input: N, M, k values, switch indices, bulb expected states
+- Output: Integer count of valid switch combinations
+
+**Required Libraries:**
+- `java.util.*` (specifically `Scanner` and `ArrayList`)

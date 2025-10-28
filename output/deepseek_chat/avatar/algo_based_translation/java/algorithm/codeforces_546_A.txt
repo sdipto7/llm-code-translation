@@ -1,0 +1,23 @@
+**Function Signature:**
+- main(String[] args): void
+
+**Variables:**
+- Scanner sc: Scanner object for input
+- long pandu: first input value
+- long vundu: second input value
+- long urdu: third input value
+- long c: accumulator initialized to 0
+
+**Logic Flow:**
+1. Create Scanner object for System.in
+2. Read three long integers: pandu, vundu, urdu
+3. Initialize c to 0
+4. For i from 1 to urdu (inclusive):
+   - Add (i * pandu) to c
+5. If c < vundu:
+   - Print "0"
+6. Else:
+   - Print (c - vundu)
+
+**Required Libraries:**
+- java.util.Scanner

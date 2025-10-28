@@ -1,0 +1,24 @@
+Function signature:
+main() -> None
+
+Variables:
+A: integer
+B: integer
+K: integer
+i: integer
+
+Algorithm:
+1. Read three space-separated integers from standard input and assign to A, B, K
+2. Check condition: if (A + K - 1) >= (B - K + 1)
+3. If condition is true:
+   - While A <= B:
+     - Print A
+     - Increment A by 1
+4. Else:
+   - Initialize i to 0
+   - While i <= K - 1:
+     - Print (A + i)
+     - Increment i by 1
+   - While (B - K + 1) <= B:
+     - Print (B - K + 1)
+     - Decrement K by 1

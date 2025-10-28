@@ -1,0 +1,37 @@
+Function signatures:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `sc: Scanner`
+- `n: int`
+- `a: ArrayList<Integer>`
+- `b: ArrayList<Integer>`
+- `left: int`
+- `right: int`
+
+Logic flow:
+1. Initialize `sc` as a new `Scanner` object.
+2. Read integer `n` from `sc`.
+3. Initialize `a` as a new `ArrayList<Integer>`.
+4. Initialize `b` as a new `ArrayList<Integer>`.
+5. Set `left` to `INF` (1000000005).
+6. Set `right` to 0.
+7. For `i` from 0 to `n-1`:
+   1. Read integer from `sc` and add to `a`.
+   2. Read integer from `sc` and add to `b`.
+   3. Update `left` to the minimum of `left` and `a.get(i)`.
+   4. Update `right` to the maximum of `right` and `b.get(i)`.
+8. For `i` from 0 to `n-1`:
+   1. If `left` equals `a.get(i)` and `right` equals `b.get(i)`:
+      1. Print `i+1`.
+      2. Return.
+9. Print `-1`.
+
+Input/output operations and data processing logic:
+- Input: An integer `n` followed by `n` pairs of integers.
+- Output: An index (1-based) of the first pair where the first element is the minimum across all first elements and the second element is the maximum across all second elements, or `-1` if no such pair exists.
+
+Required libraries:
+- `java.util.ArrayList`
+- `java.util.Scanner`
+- `java.lang.Math`

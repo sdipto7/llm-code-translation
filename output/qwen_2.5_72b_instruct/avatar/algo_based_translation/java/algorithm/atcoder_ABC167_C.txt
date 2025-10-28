@@ -1,0 +1,42 @@
+Function signature: `public static void main(String[] args)`
+Variable declarations:
+- `Scanner sc` of type `Scanner`
+- `int n` of type `int`
+- `int m` of type `int`
+- `int x` of type `int`
+- `int min` of type `int` initialized to `Integer.MAX_VALUE`
+- `int[][] a` of type `int[][]` with dimensions `[n][m + 1]`
+- `int i` of type `int`
+- `int j` of type `int`
+- `int[] status` of type `int[]` with dimension `[n]`
+- `int[] res` of type `int[]` with dimension `[m + 1]`
+- `boolean flag` of type `boolean`
+
+Logic flow:
+1. Initialize `sc` with `new Scanner(System.in)`
+2. Read `n`, `m`, `x` from `sc`
+3. Initialize `a` with dimensions `[n][m + 1]`
+4. For `i` from `0` to `n - 1`:
+    - For `j` from `0` to `m`:
+        - Read `a[i][j]` from `sc`
+5. For `i` from `0` to `Math.pow(2, n) - 1`:
+    - Initialize `status` with dimension `[n]`
+    - For `j` from `0` to `n - 1`:
+        - If `(1 & i >> j) == 1`:
+            - Set `status[j]` to `1`
+    - Initialize `res` with dimension `[m + 1]`
+    - For `j` from `0` to `n - 1`:
+        - If `status[j] == 1`:
+            - For `k` from `0` to `m`:
+                - Increment `res[k]` by `a[j][k]`
+    - Set `flag` to `true`
+    - For `j` from `1` to `m`:
+        - If `res[j] < x`:
+            - Set `flag` to `false`
+            - Break
+    - If `flag`:
+        - Set `min` to `Math.min(min, res[0])`
+6. If `min == Integer.MAX_VALUE`:
+    - Print `-1`
+7. Else:
+    - Print `min`

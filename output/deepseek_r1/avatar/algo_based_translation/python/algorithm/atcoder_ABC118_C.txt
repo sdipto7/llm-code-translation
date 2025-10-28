@@ -1,0 +1,36 @@
+**Structured Algorithm Specification:**
+
+**Input/Output Operations:**
+1. Read integer `N` from standard input.
+2. Read next line containing space-separated integers, parse into list `A`.
+3. Write computed GCD integer to standard output.
+
+**Variable Declarations:**
+- `N: Integer` (unused in computation)
+- `A: List[Integer]`
+- `gcd: Integer` (final result)
+- Temporary variable for reduce accumulator
+
+**External Dependencies:**
+- `functools.reduce` function
+- `fractions.gcd` function
+
+**Control Flow:**
+1. Execute `functools.reduce(fractions.gcd, A)`:
+   - Initialize accumulator with `A[0]`
+   - For each element `a` in `A[1:]`:
+     - Set accumulator = `fractions.gcd(accumulator, a)`
+   - Return final accumulator value
+
+**Edge Cases:**
+- Single-element list returns element as GCD
+- Zero-length list causes runtime error (undefined)
+- All-zero list causes `ValueError` in GCD(0,0) (Python-specific behavior)
+
+**Data Flow:**
+- Input → `N` (ignored)
+- Input → `A` → reduce → GCD → output
+
+**Function Chaining:**
+- `map(int, ...)` for input conversion
+- `functools.reduce` applies `fractions.gcd` pairwise across `A`

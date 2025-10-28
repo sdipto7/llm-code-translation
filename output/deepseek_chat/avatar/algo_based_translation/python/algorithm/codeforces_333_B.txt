@@ -1,0 +1,10 @@
+1. Read input from standard input.
+2. Read first line, split into two integers: n and m.
+3. Initialize list b of size 2*n with all elements set to 1.
+4. Set b[0], b[n-1], b[n], and b[2*n-1] to 0.
+5. For i from 0 to m-1:
+   a. Read next line, split into two integers: r and c.
+   b. Set b[r-1] and b[n + c - 1] to 0.
+6. If n is odd AND b[n//2] is 1 AND b[n + n//2] is 1:
+   a. Set b[n//2] to 0.
+7. Calculate sum of all elements in b and print result.

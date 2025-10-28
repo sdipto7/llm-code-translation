@@ -1,0 +1,50 @@
+Function signatures with parameter and return types:
+- `boolean dfs(int currpos, int[] arr, int target)`
+- `void main(String[] args)`
+
+Variable declarations and data types:
+- `int currpos`
+- `int[] arr`
+- `int target`
+- `boolean teleport`
+- `Scanner sc`
+- `int n`
+- `int goal`
+- `int[] arr` (reused)
+- `boolean isFound`
+
+Complete logic flow in execution order:
+1. Function `dfs(int currpos, int[] arr, int target)`:
+   - If `currpos == target`, return `true`.
+   - If `currpos == arr.length + 1`, return `false`.
+   - Call `dfs(currpos + arr[currpos - 1], arr, target)` and store result in `teleport`.
+   - If `teleport`, return `true`.
+   - Return `false`.
+
+2. Function `main(String[] args)`:
+   - Create `Scanner sc`.
+   - Read `n` using `sc.nextInt()`.
+   - Read `goal` using `sc.nextInt()`.
+   - Create array `arr` of size `n - 1`.
+   - For loop from `i = 0` to `i < n - 1`:
+     - Read `arr[i]` using `sc.nextInt()`.
+   - Call `dfs(1, arr, goal)` and store result in `isFound`.
+   - If `isFound`, print "YES".
+   - Else, print "NO".
+   - Close `sc`.
+
+Control structures:
+- Conditional: `if (currpos == target)`
+- Conditional: `if (currpos == arr.length + 1)`
+- Conditional: `if (teleport)`
+- Conditional: `if (isFound)`
+- For loop: `for (int i = 0; i < n - 1; i++)`
+
+Input/output operations and data processing logic:
+- Input: Integer `n` representing the number of positions.
+- Input: Integer `goal` representing the target position.
+- Input: Array `arr` of size `n - 1` containing integers.
+- Output: "YES" if target position can be reached, otherwise "NO".
+
+Required libraries:
+- `java.util.*` for `Scanner` class

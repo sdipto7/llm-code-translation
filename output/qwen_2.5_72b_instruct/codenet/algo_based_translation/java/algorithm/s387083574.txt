@@ -1,0 +1,34 @@
+Function Signatures:
+- `main(String[] args): void`
+
+Variable Declarations and Data Types:
+- `sc: Scanner`
+- `N: int`
+- `map: Map<Integer, Integer>`
+- `i: int`
+
+Logic Flow in Execution Order:
+1. Create a `Scanner` object to read input.
+2. Read an integer `N` from the input.
+3. Initialize a `HashMap` named `map` to store key-value pairs.
+4. For loop from `i = 1` to `N` inclusive:
+   a. Read an integer value from the input.
+   b. Put the pair `(i, read_value)` into the `map`.
+5. Sort the entries of `map` by their values in ascending order.
+6. Convert the sorted keys to strings.
+7. Join the sorted string keys with spaces.
+8. Print the resulting string.
+
+Control Structures:
+- For loop: `for (int i = 1; i < N + 1; i++)`
+
+Input/Output Operations and Data Processing Logic:
+- Input: Read an integer `N` and then `N` integers representing the values for the map entries.
+- Output: Print the keys of the map entries sorted by their corresponding values, separated by spaces.
+
+Libraries, Modules, or Dependencies:
+- `java.util.Scanner`
+- `java.util.Map`
+- `java.util.HashMap`
+- `java.util.Map.Entry`
+- `java.util.stream.Collectors`

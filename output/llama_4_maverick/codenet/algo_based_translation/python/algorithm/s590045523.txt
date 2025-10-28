@@ -1,0 +1,12 @@
+1. Define a function `count_valid_triangles` with parameters `N` of type `int` and `L` of type `list[int]` and return type `int`.
+2. Initialize a variable `ans` of type `int` to 0.
+3. Iterate over a range from 0 to `N-3` using a variable `i` of type `int`.
+4. For each `i`, iterate over a range from `i+1` to `N-2` using a variable `j` of type `int`.
+5. For each `j`, iterate over a range from `j+1` to `N-1` using a variable `k` of type `int`.
+6. Assign the values of `L[i]`, `L[j]`, and `L[k]` to variables `a`, `b`, and `c` of type `int`, respectively.
+7. Check if `a` equals `b` or `b` equals `c` or `c` equals `a`. If true, skip to the next iteration of the innermost loop.
+8. Check if the conditions `a+b>c`, `b+c>a`, and `c+a>b` are all true. If true, increment `ans` by 1.
+9. After the nested loops complete, return the value of `ans`.
+10. Read an integer `N` from input.
+11. Read a list of `N` integers from input and store it in a list `L`.
+12. Call the function `count_valid_triangles` with `N` and `L` as arguments and print the returned value.

@@ -1,0 +1,31 @@
+1. READ t and m from input
+2. INITIALIZE alocuente as an array of size m with all elements as 0
+3. INITIALIZE ind to 1
+4. FOR i FROM 1 TO t
+   1. READ op from input and SPLIT it into an array
+   2. IF op[0] == 'alloc'
+      1. INITIALIZE pos to 0
+      2. FOR j FROM 0 TO m-1
+         1. IF alocuente[j] == 0
+            1. INCREMENT pos by 1
+            2. IF pos == INTEGER(op[1])
+               1. SET alocuente[j - INTEGER(op[1]) + 1 to j] to ind
+               2. PRINT ind
+               3. INCREMENT ind by 1
+               4. BREAK the loop
+         2. ELSE
+            1. SET pos to 0
+      3. IF the loop completes without breaking
+         1. PRINT "NULL"
+   3. IF op[0] == 'erase'
+      1. IF INTEGER(op[1]) NOT IN alocuente OR INTEGER(op[1]) == 0
+         1. PRINT 'ILLEGAL_ERASE_ARGUMENT'
+      2. ELSE
+         1. FOR j FROM 0 TO m-1
+            1. IF alocuente[j] == INTEGER(op[1])
+               1. SET alocuente[j] to 0
+   4. IF op[0] == "defragment"
+      1. COUNT the number of 0s in alocuente and STORE it in cnt
+      2. CREATE a new list with elements from alocuente that are not 0
+      3. APPEND cnt number of 0s to the new list
+      4. SET alocuente to the new list

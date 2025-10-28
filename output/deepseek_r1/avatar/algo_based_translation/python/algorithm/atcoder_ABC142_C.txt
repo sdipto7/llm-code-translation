@@ -1,0 +1,52 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- Not applicable (procedural code with no defined functions)
+
+**Variable Declarations:**
+- `N`: Integer (read from input, unused)
+- `A`: List of tuples (element structure: (int, int)) 
+- `A_`: List of tuples (element structure: (int, int)) 
+- `A__`: List of integers 
+
+**Data Types:**
+- Input values: String → List of integers via conversion
+- Tuple elements: (original 1-based index: int, input value: int)
+- Sorted list elements: Ordered by input value (second tuple element)
+
+**Step-by-Step Logic:**
+1. Read integer `N` from standard input (unused in processing)
+2. Read a line from standard input and split into string tokens
+3. For each token (index `i`, value `x` in split tokens):
+   - Create tuple `(i + 1, int(x))`
+   - Append to list `A`
+4. Sort `A` in ascending order using second tuple element as key
+5. Create `A__` by extracting first element from each tuple in sorted `A_`
+6. Iterate `i` from first to penultimate element in `A__`:
+   - Print `i` with space separator (no newline)
+7. Print last element of `A__` with newline
+
+**Control Flow Structures:**
+- Loop: Fixed iteration over all elements of `A__` except last
+- Conditional: Implicit loop exit when reaching penultimate element
+- Exit criteria: Loop terminates when all elements except last are processed
+
+**Input/Output Operations:**
+- Input: 
+  - First input line → integer `N`
+  - Second input line → space-separated numeric values
+- Output: 
+  - Space-separated 1-based indices ordered by corresponding input value magnitude
+
+**Error Handling Mechanisms:**
+- None explicitly implemented
+- Implicit failures:
+  - `ValueError` if non-integer input values provided
+  - Incorrect element count vs `N` not validated
+  - Empty input lines cause runtime errors
+
+**External Dependencies:**
+- Python Standard Library:
+  - `operator.itemgetter` for sorting key
+  - `input()` for data acquisition
+  - `print()` for output

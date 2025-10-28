@@ -1,0 +1,6 @@
+1. Read integer n from input
+2. Read n integers into list r
+3. Initialize ans to absolute value of r[0]
+4. For i from 1 to n-1
+5.     Update ans by adding absolute difference between r[i] and r[i-1]
+6. Output ans

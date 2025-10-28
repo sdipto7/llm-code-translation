@@ -1,0 +1,38 @@
+Function signature: main() -> None
+
+Variable declarations:
+- n: integer
+- res: integer, initialized to -1111111111
+- s: integer, initialized to 0
+- i: integer, loop index
+- a: integer, input value
+
+Logic flow:
+1. Enter an infinite loop
+2. Read an integer n from input
+3. If n equals 0, break the loop
+4. Initialize res to -1111111111
+5. Initialize s to 0
+6. For i from 0 to n-1:
+   a. Read an integer a from input
+   b. Update s to the maximum of s + a and a
+   c. Update res to the maximum of s and res
+7. Print the value of res
+
+Control structures:
+- While loop with condition True
+- If statement with condition n == 0
+- For loop with range from 0 to n-1
+
+Input/output operations:
+- Read integer n from input
+- Read integer a from input within the loop
+- Print the value of res
+
+Data processing logic:
+- Continuously read integers until 0 is entered
+- For each integer n, read n more integers and calculate the maximum subarray sum using Kadane's algorithm
+- Print the maximum subarray sum for each set of n integers
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules required

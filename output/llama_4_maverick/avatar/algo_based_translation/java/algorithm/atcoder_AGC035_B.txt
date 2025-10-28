@@ -1,0 +1,15 @@
+1. Read the number of nodes and edges from the input.
+2. Initialize an adjacency list to represent the graph.
+3. Populate the adjacency list with edges from the input.
+4. Check if the number of edges is odd. If so, output -1 and terminate.
+5. Initialize arrays to track visited nodes and nodes with odd counts.
+6. Initialize a StringBuilder to store the output.
+7. Perform a depth-first search (DFS) starting from node 0 with parent -1.
+8. Mark the current node as visited (state 1).
+9. Iterate through the neighbors of the current node.
+10. If a neighbor is the parent or has been visited (state 1), skip it.
+11. If a neighbor has been visited (state 2), output an edge between the current node and the neighbor, and toggle the odd count of the current node.
+12. If a neighbor has not been visited, recursively perform DFS on the neighbor with the current node as its parent.
+13. After the recursive DFS call returns, if the neighbor has an odd count, output an edge between the neighbor and the current node, and toggle the odd count of the neighbor. Otherwise, output an edge between the current node and the neighbor, and toggle the odd count of the current node.
+14. Mark the current node as fully visited (state 2).
+15. Output the contents of the StringBuilder.

@@ -1,0 +1,51 @@
+**Algorithm Extraction:**
+
+**Main Class:**
+- Fields:
+  - `sc`: Scanner object for input
+  - `max`: integer (initialized to 0)
+  - `cur`: integer (initialized to 0)
+
+**solve() method:**
+- Read integer `a` from input
+- Read integer `b` from input
+- Calculate: max(0, a - 2*b)
+- Print result
+
+**Constructor:**
+- Initialize scanner with System.in
+- Handle exception by printing error message
+
+**Main method:**
+- Create new Main instance
+- Call solve() method
+
+**Utility Methods:**
+- `ni()`: Read and return integer from scanner
+- `nl()`: Read and return long from scanner
+- `nf()`: Read and return float from scanner
+- `nd()`: Read and return double from scanner
+- `ns()`: Read and return string line from scanner
+- `nst(String s)`: Convert string to StringTokenizer
+- `ia(int[] a)`: Fill integer array with values from scanner
+- `la(long[] a)`: Fill long array with values from scanner
+- `fa(float[] a)`: Fill float array with values from scanner
+- `da(double[] a)`: Fill double array with values from scanner
+- `sa(String[] a, boolean empty)`: If empty=true, set all array elements to empty string; else read strings from scanner
+- `ida(int[][] a, int n, int m)`: Fill n×m integer 2D array from scanner
+- `lda(long[][] a, int n, int m)`: Fill n×m long 2D array from scanner
+- `dda(double[][] a, int n, int m)`: Fill n×m double 2D array from scanner
+- `stoi(String s)`: Convert string to integer
+- `stod(String s)`: Convert string to double
+- `lmin(long[] a)`: Find minimum value in long array
+- `imin(int[] a)`: Find minimum value in integer array
+- `lmax(long[] a)`: Find maximum value in long array
+- `imax(int[] a)`: Find maximum value in integer array
+- `ibs(int[] a, int toFind)`: Binary search for integer in sorted array
+- `lbs(long[] a, long toFind)`: Binary search for long in sorted array
+- `stb(String s)`: Convert binary string to integer
+
+**Dependencies:**
+- java.io.*
+- java.util.*
+- java.math.*

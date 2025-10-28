@@ -1,0 +1,17 @@
+```plaintext
+Algorithm:
+1. Declare a function named `calculate_total_value` with no parameters and a return type of `None`.
+2. Declare an integer variable `n` to store the number of input lines.
+3. Read an integer from input and assign it to `n`.
+4. Declare a float variable `res` and initialize it to 0.0 to accumulate the result.
+5. Start a for loop that iterates `n` times:
+   a. Read a line of input, split it into two parts, and assign the first part to `x` and the second part to `u`.
+   b. If `u` is equal to the string "BTC":
+      i. Convert `x` to a float, multiply it by 380000, and add the result to `res`.
+   c. Else:
+      i. Convert `x` to an integer and add it to `res`.
+6. Print the final value of `res`.
+
+Dependencies:
+- Standard input and output functions from Python's built-in library.
+```

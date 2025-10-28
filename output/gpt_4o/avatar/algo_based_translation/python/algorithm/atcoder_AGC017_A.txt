@@ -1,0 +1,35 @@
+```
+Inputs:
+- Read two integers N and P from input.
+
+Function combi(N: int, K: int) -> float:
+- Initialize a as 1.
+- For each i from 0 to K-1:
+  - Multiply a by (N - i).
+- For each j from 0 to K-1:
+  - Divide a by (j + 1).
+- Return a.
+
+Variables:
+- ans: int, initialized to 0.
+- lis: list of integers, read from input.
+- ls: list of integers, initialized as an empty list.
+- one: int, count of 1s in ls.
+- zero: int, count of 0s in ls.
+- pattern_a: int, initialized to 0.
+- pattern_b: float, initialized to 0.
+- time: int, initialized to 0.
+
+Logic:
+- For each a in lis:
+  - Append a % 2 to ls.
+- Calculate one as count of 1s in ls.
+- Calculate zero as count of 0s in ls.
+- For each j from 0 to zero:
+  - Add combi(zero, j) to pattern_b.
+- While time is less than or equal to one:
+  - If time modulo 2 equals P:
+    - Add combi(one, time) to pattern_a.
+  - Increment time by 1.
+- Print the integer value of pattern_a times pattern_b.
+```

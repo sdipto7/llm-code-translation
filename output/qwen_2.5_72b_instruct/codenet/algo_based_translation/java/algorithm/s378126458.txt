@@ -1,0 +1,34 @@
+Function signatures and parameter types:
+- main(String[] args): void
+
+Variable declarations and data types:
+- N: int
+- Q: int
+- s: String
+- pre: int[]
+
+Complete logic flow in execution order:
+1. Create a Scanner object for input.
+2. Read N (number of characters in the string) and Q (number of queries) as integers.
+3. Read the string s.
+4. Initialize an integer array pre of size N+1 to store prefix sums.
+5. Loop from 1 to N-1 (inclusive):
+   - If s.charAt(i-1) is 'A' and s.charAt(i) is 'C', set pre[i] to 1.
+6. Loop from 1 to N-1 (inclusive):
+   - Add the value of pre[i-1] to pre[i].
+7. While Q is greater than 0:
+   - Read l and r as integers.
+   - Decrement r by 1.
+   - Print the result of pre[r] - pre[l-1].
+
+Control structures:
+- for(int i = 1; i<N; i++)
+- for(int i = 1; i<N; i++)
+- while(Q-- > 0)
+
+Input/output operations and data processing logic:
+- Use Scanner to read input values.
+- Use System.out.println to output the result of each query.
+
+Required libraries, modules, or dependencies:
+- java.util.Scanner

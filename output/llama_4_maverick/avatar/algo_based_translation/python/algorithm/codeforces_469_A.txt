@@ -1,0 +1,12 @@
+1. Read max_level from input and convert it to an integer
+2. Read a list of integers from input, map them to integers, and store in x
+3. Read a list of integers from input, map them to integers, and store in y
+4. Remove the first element from x
+5. Remove the first element from y
+6. Convert x to a set
+7. Convert y to a set
+8. If 0 is in x, remove 0 from x
+9. Else if 0 is in y, remove 0 from y
+10. Create z by taking the union of x and y
+11. If the size of z is not equal to max_level, print "Oh, my keyboard!"
+12. Else, print "I become the guy."

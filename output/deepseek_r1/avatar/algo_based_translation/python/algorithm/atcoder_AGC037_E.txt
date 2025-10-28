@@ -1,0 +1,85 @@
+**Algorithm Specification**
+
+**Function Signatures:**
+1. `get_last_dict(s_str: str) -> str`
+   - Parameters:
+     - `s_str`: String input
+   - Return: Modified string
+2. `check_normal_dict(u: str, pointer1: int, pointer2: int) -> bool`
+   - Parameters:
+     - `u`: Concatenated string
+     - `pointer1`: Starting index for first substring
+     - `pointer2`: Starting index for second substring
+   - Return: Boolean indicating if first substring is lex greater
+
+**Variables:**
+- `N: int` (Input length)
+- `K: int` (Input parameter)
+- `S: str` (Input string)
+- `aaaa: bool` (Flag for early exit condition)
+- `U: str` (Temporary string in `get_last_dict`)
+- `c: str` (Minimum character in string)
+- `minindex: int` (Index of current best substring start)
+- `count: int` (Count of leading characters in final step)
+
+**Main Logic Flow:**
+
+1. **Input Handling:**
+   1. Read `N` and `K` from standard input.
+   2. Read string `S` from standard input.
+
+2. **Early Exit Condition Check:**
+   1. Set `aaaa` to `True` if:
+      - `K >= 15` OR
+      - `2^K >= N`
+   2. If `aaaa` is `True`:
+      - Print the minimum character in `S` repeated `N` times.
+      - Terminate the program.
+
+3. **String Transformation (`get_last_dict`):**
+   1. Create `U` as `S + S[::-1]`.
+   2. Find `c` as the minimum character in `S`.
+   3. Initialize `minindex` to the first occurrence of `c` in `U`.
+   4. Iterate `p` from `minindex + 1` to `N`:
+      1. If `U[p] == c`:
+         - Call `check_normal_dict(U, minindex, p)`:
+           1. Compare characters at `pointer1 + i` and `pointer2 + i` for `i` in 0 to `N-1`
+           2. Return `True` if `U[pointer1+i] > U[pointer2+i]` at first differing position
+           3. Return `False` otherwise
+         - If check returns `True`, update `minindex` to `p`
+   5. Return substring `U[minindex : minindex + N]` as new `S`
+
+4. **Final Output Determination:**
+   1. If `K == 1`:
+      - Print transformed `S`
+   2. Else:
+      1. Calculate `count` as the number of leading characters in `S` equal to `S[0]`
+      2. If `count * 2^(K-1) >= N`:
+         - Print `S[0]` repeated `N` times
+      3. Else:
+         - Prepend `S[0]` repeated `count*(2^(K-1)-1)` times to `S`
+         - Print first `N` characters of the resulting string
+
+**Control Flow Structures:**
+- **Conditionals:** All `if-elif-else` branches for early exit, K=1 check, and count comparison
+- **Loops:**
+  - `while` loop in `get_last_dict` (expressed as incrementing `p` from initial value)
+  - `for` loop in `check_normal_dict` for character-by-character comparison
+  - `for` loop to count leading characters in final step
+
+**Data Processing:**
+- String reversal and concatenation
+- Minimum character detection
+- Lexicographical comparison of cyclic substrings
+- String repetition and truncation operations
+
+**Edge Case Handling:**
+- Large K values triggering early exit
+- Empty string input (implicitly handled by Python's input methods)
+- All characters identical in string
+- Exact equality in substring comparisons
+
+**External Dependencies:**
+- Standard input reading via `input()`
+- String manipulation functions (`split()`, `min()`, `index()`, slicing)
+- Mathematical operations (`**` for exponentiation)

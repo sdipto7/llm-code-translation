@@ -1,0 +1,21 @@
+1. Initialize input stream to read from standard input.
+2. Set N to 368.
+3. Create two arrays, m and f, of size N, initialized with zeros.
+4. Read the number of iterations from the input stream.
+5. For each iteration:
+   1. Read a line from the input stream and extract x, a, and b.
+   2. Convert a and b to integers.
+   3. Increment b by 1.
+   4. If x equals 'M', then:
+      1. Increment m[a] by 2.
+      2. Decrement m[b] by 2.
+   5. Else:
+      1. Increment f[a] by 2.
+      2. Decrement f[b] by 2.
+6. Initialize variables a, b, and c to 0.
+7. For i from 0 to N-1:
+   1. Add m[i] to a.
+   2. Add f[i] to b.
+   3. If the minimum of a and b is greater than c, then:
+      1. Set c to the minimum of a and b.
+8. Output the value of c.

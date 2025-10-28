@@ -1,0 +1,52 @@
+**Function Signatures:**
+- `main(String[] args): void`
+- `solve(): void`
+
+**Variables:**
+- `int INF = Integer.MAX_VALUE`
+- `Scanner sc`
+- `int N`
+- `long X`
+- `long[] x`
+- `long[] xsum` (length N+1)
+- `long ans`
+- `int i`
+- `long cost`
+- `int j`
+- `int k`
+
+**Logic Flow:**
+1. Initialize `sc` as `new Scanner(System.in)`
+2. Read `N = sc.nextInt()`
+3. Read `X = sc.nextLong()`
+4. Initialize `x` array of length N
+5. Initialize `xsum` array of length N+1 with `xsum[0] = 0`
+6. For `i` from 0 to N-1:
+   - Read `x[i] = sc.nextInt()`
+   - Set `xsum[i+1] = xsum[i] + x[i]`
+7. Set `ans = X * N + 5 * xsum[N]`
+8. For `i` from 1 to N-1:
+   - Set `cost = X * i + 5 * (xsum[N] - xsum[N-i])`
+   - Set `j = 5`
+   - Set `k = N - i`
+   - While `k >= 0`:
+     - If `cost > ans`: break inner loop
+     - Add `j * (xsum[k] - xsum[Math.max(k-i, 0)])` to `cost`
+     - Increment `j` by 2
+     - Decrement `k` by `i`
+   - Set `ans = Math.min(ans, cost)`
+9. Print `ans + N * X`
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < N; i++)`
+- For loop: `for (int i = 1; i < N; i++)`
+- While loop: `while (k >= 0)` (implemented as for loop with decrement)
+- Conditional: `if (cost > ans) break`
+
+**Input/Output:**
+- Input: `N`, `X`, array `x` of N integers
+- Output: Print final computed `ans` value
+
+**Dependencies:**
+- `java.util.Scanner`
+- `java.lang.Math`

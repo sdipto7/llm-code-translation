@@ -1,0 +1,24 @@
+```
+Algorithm:
+
+1. Import necessary module:
+   - Import the `sys` module for reading input.
+
+2. Input operation:
+   - Use `sys.stdin.readline()` to read an integer `n`.
+
+3. Variable declaration:
+   - Declare `ans` as an integer and initialize it to `10 ** 18`.
+
+4. Loop through possible divisors:
+   - For integer `i` starting from 1 to `int(n ** (1/2)) + 1` (inclusive):
+     a. Check if `i` is a divisor of `n`:
+        - If `n % i` is not equal to 0, continue to the next iteration.
+     b. Calculate the corresponding divisor `j`:
+        - Set `j` to `n // i`.
+     c. Update minimum sum of divisors minus 2:
+        - Set `ans` to the minimum of `ans` and `i + j - 2`.
+
+5. Output operation:
+   - Print the value of `ans`.
+```

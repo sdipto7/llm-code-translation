@@ -1,0 +1,16 @@
+1. Initialize a counter variable c to 0.
+2. Initialize a variable i to 357.
+3. Read an integer N from the input.
+4. While i is less than or equal to N:
+   4.1. Convert i to a string s.
+   4.2. Check if s contains the characters '3', '5', and '7'. If it does, increment c by 1.
+   4.3. Initialize a flag variable f to False.
+   4.4. Create a new string sb by iterating through the characters of s from right to left:
+      4.4.1. If f is True, append the current character to sb.
+      4.4.2. If f is False and the current character is '3', append '5' to sb and set f to True.
+      4.4.3. If f is False and the current character is '5', append '7' to sb and set f to True.
+      4.4.4. If f is False and the current character is '7', append '3' to sb.
+   4.5. If f is still False after the iteration, append '3' to sb.
+   4.6. Reverse the string sb to get a new string sb2.
+   4.7. Convert sb2 to a long integer and assign it to i.
+5. Output the value of c.

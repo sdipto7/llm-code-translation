@@ -1,0 +1,27 @@
+```
+- function: main() -> void
+  - import Scanner from java.util
+  - import Comparator from java.util
+  - import Arrays from java.util
+  - import List from java.util
+  - import ArrayList from java.util
+  - variable: scan of type Scanner initialized with System.in
+  - variable: N of type int initialized with scan.nextInt()
+  - variable: x of type int array with size N
+  - variable: y of type int array with size N
+  - for loop: i from 0 to N (exclusive)
+    - x[i] = scan.nextInt()
+    - y[i] = scan.nextInt()
+  - for loop: i from 0 to N (exclusive)
+    - variable: thetas of type List<Double> initialized with new ArrayList<>()
+    - for loop: j from 0 to N (exclusive)
+      - if condition: i == j
+        - continue
+      - thetas.add(Math.atan2(y[j] - y[i], x[j] - x[i]))
+    - thetas.sort(Comparator.naturalOrder())
+    - thetas.add(thetas.get(0) + 2 * Math.PI)
+    - variable: ans of type double initialized with 0
+    - for loop: k from 0 to N - 1 (exclusive)
+      - ans = Math.max(ans, thetas.get(k + 1) - thetas.get(k) - Math.PI)
+    - output: System.out.println(ans / (Math.PI * 2))
+```

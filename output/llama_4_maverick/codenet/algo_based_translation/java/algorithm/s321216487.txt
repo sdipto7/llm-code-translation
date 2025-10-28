@@ -1,0 +1,33 @@
+1. Import required libraries: 
+   - java.util.*
+
+2. Define a class: 
+   - public class Main
+
+3. Define the main function: 
+   - public static void main(String[] args) throws Exception
+
+4. Declare variables:
+   - Scanner sc
+   - String S
+   - String begin
+   - String end
+   - String answer
+
+5. Execution order:
+   1. Create a new Scanner object: sc = new Scanner(System.in)
+   2. Read input string: S = sc.next()
+   3. Iterate over S.length() using a nested loop structure:
+      - Outer loop: for(int i = 0; i < S.length(); i++)
+      - Inner loop: for(int j = 0; j < S.length(); j++)
+   4. Inside the inner loop:
+      1. Extract substrings: 
+         - begin = S.substring(0, i)
+         - end = S.substring(j, S.length())
+      2. Concatenate begin and end: answer = begin + end
+      3. Check conditions:
+         - if (answer.equals("keyence")) 
+         - else if (begin.equals("keyence")) 
+         - else if (end.equals("keyence"))
+      4. If any condition is true, print "YES" and exit the program
+   5. If the loop completes without finding a match, print "NO"

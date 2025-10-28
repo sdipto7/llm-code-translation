@@ -1,0 +1,44 @@
+```
+Function Signature:
+    def rememberTheNumber(nums: List[int], i: int, operations: List[str], ans: List[int]) -> None
+
+Variable Declarations:
+    nums: List[int]
+    operations: List[str]
+    ans: List[int]
+    i: int
+    j: int
+    k: int
+    s: int
+    t: int
+
+Logic Flow:
+1. Define function `rememberTheNumber` with parameters `nums`, `i`, `operations`, and `ans`.
+2. Check if `i` is greater than or equal to 3:
+    - If true, return from the function.
+3. Iterate over `j` from 0 to 3 (inclusive):
+    - Iterate over `k` from `j + 1` to 3 (inclusive):
+        - Check if `nums[j]` is not equal to -1 and `nums[k]` is not equal to -1:
+            - Assign `nums[j]` to `s`.
+            - Set `nums[j]` to -1.
+            - Assign `nums[k]` to `t`.
+            - Check if `operations[i]` is equal to '+':
+                - Set `nums[k]` to the sum of `s` and `t`.
+            - Else if `operations[i]` is equal to '*':
+                - Set `nums[k]` to the product of `s` and `t`.
+            - Check if `i` is equal to 2 and `nums[k]` is less than `ans[0]`:
+                - Set `ans[0]` to `nums[k]`.
+            - Recursively call `rememberTheNumber` with `nums`, `i + 1`, `operations`, and `ans`.
+            - Reset `nums[j]` to `s`.
+            - Reset `nums[k]` to `t`.
+
+Input/Output Operations:
+1. Read space-separated integers from input and convert to list `nums`.
+2. Read space-separated strings from input and convert to list `operations`.
+3. Initialize `ans` with a large number `[10000000000000000000000000]`.
+4. Invoke `rememberTheNumber` with `nums`, 0, `operations`, and `ans`.
+5. Print `ans[0]`.
+
+Required Libraries:
+- No external libraries are required.
+```

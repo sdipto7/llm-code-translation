@@ -1,0 +1,19 @@
+Function: main()
+Parameters: None
+Return Type: None
+
+Variable Declarations:
+- n: Integer
+- m: Integer
+- a: List of Integers
+- s: Float
+
+Algorithm:
+1. Input: Read a line of input, split it into two integers, and assign them to n and m
+2. Input: Read a line of input, split it into a list of integers, assign to a, and sort a in descending order
+3. Compute: Calculate the sum of all elements in a, divide by 4*m, and assign the result to s
+4. Conditional:
+   - If a[m-1] is greater than or equal to s, then:
+     - Output: Print "Yes"
+   - Else:
+     - Output: Print "No"

@@ -1,0 +1,17 @@
+1. Read input values D and G
+2. Read D number of input pairs into PC
+3. Initialize ans to 10^9
+4. Iterate over all numbers from 0 to 2^D - 1
+   4.1. For each number i, initialize score to 0 and problem to 0
+   4.2. Iterate over all numbers from 0 to D - 1
+      4.2.1. If the jth bit of i is 1
+         4.2.1.1. Add 100 * (j + 1) * PC[j][0] + PC[j][1] to score
+         4.2.1.2. Add PC[j][0] to problem
+   4.3. If score is greater than G, continue to the next i
+   4.4. Calculate left as G - score
+   4.5. Iterate over all numbers from 0 to D - 1
+      4.5.1. If the jth bit of i is 1, continue to the next j
+      4.5.2. If left is greater than 100 * (j + 1) * PC[j][0] + PC[j][1], continue to the next j
+      4.5.3. Calculate tmp as (left + (100 * (j + 1)) - 1) divided by (100 * (j + 1))
+      4.5.4. Update ans to be the minimum of ans and problem + minimum of tmp and PC[j][0]
+5. Output ans

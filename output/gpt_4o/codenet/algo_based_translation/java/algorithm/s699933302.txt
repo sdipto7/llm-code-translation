@@ -1,0 +1,23 @@
+```
+Algorithm:
+
+1. Import the necessary module `java.util.Scanner` for input operations.
+
+2. Define the main function `main` with signature `public static void main(String[] args)`:
+   - Create a `Scanner` object `sc` to read input from the standard input.
+   - Declare three integer variables `a`, `b`, and `c`.
+   - Read the first input as a string using `sc.next()`, convert it to an integer using `Integer.parseInt`, and assign it to `a`.
+   - Read the second input as a string using `sc.next()`, convert it to an integer using `Integer.parseInt`, and assign it to `b`.
+   - Read the third input as a string using `sc.next()`, convert it to an integer using `Integer.parseInt`, and assign it to `c`.
+   - Declare an integer variable `count` and initialize it to 0.
+
+3. Execute a `for` loop with the following conditions:
+   - Initialize loop variable `i` to `a`.
+   - Continue the loop as long as `i` is less than or equal to `b`.
+   - Increment `i` by 1 in each iteration.
+
+4. Inside the loop, check the following condition:
+   - If `c` modulo `i` equals 0 (`c % i == 0`), increment the `count` by 1.
+
+5. After the loop, print the value of `count` to the standard output.
+```

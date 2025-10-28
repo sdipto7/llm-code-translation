@@ -1,0 +1,61 @@
+**Function Signatures:**
+- solve(n: int, ls_xyh: List[List[int]]) -> str
+- readQuestion() -> Tuple[int, List[List[int]]]
+- main() -> None
+
+**Variables and Data Types:**
+- n: int
+- ls_xyh: List[List[int]]
+- x0: Optional[int]
+- y0: int
+- h0: int
+- i: int
+- x: int
+- y: int
+- h: int
+- cx: int
+- cy: int
+- ch: int
+- xx: int
+- yy: int
+- hh: int
+- ws: List[str]
+- j: int
+
+**Required Libraries:**
+- sys
+
+**Algorithm Flow:**
+
+1. Import sys module
+2. Define solve function:
+   - Initialize x0 as None
+   - For i from 0 to n-1:
+     - If ls_xyh[i][2] > 0:
+       - Set x0 = ls_xyh[i][0]
+       - Set y0 = ls_xyh[i][1]
+       - Set h0 = ls_xyh[i][2]
+       - Break loop
+   - Create cands list comprehension:
+     - For cx from 0 to 100:
+       - For cy from 0 to 100:
+         - ch = h0 + abs(cx - x0) + abs(cy - y0)
+         - Tuple (cx, cy, ch)
+   - For each element [x, y, h] in ls_xyh:
+     - Filter cands list:
+       - Keep tuples (cx, cy, ch) where max(ch - abs(cx - x) - abs(cy - y), 0) equals h
+   - Extract first element from cands as (xx, yy, hh)
+   - Return string concatenation of xx, yy, hh separated by spaces
+
+3. Define readQuestion function:
+   - Read line from stdin, strip, split into ws
+   - n = int(ws[0])
+   - ls_xyh = list comprehension for j from 0 to n-1:
+     - Read line from stdin, strip, split
+     - Convert each element to int
+   - Return tuple (n, ls_xyh)
+
+4. Define main function:
+   - Print result of solve(*readQuestion())
+
+5. Call main()

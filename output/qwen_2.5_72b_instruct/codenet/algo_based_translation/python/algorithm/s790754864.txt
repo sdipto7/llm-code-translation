@@ -1,0 +1,22 @@
+Algorithm:
+- Import math module
+- Declare variables: N, K as integers from input split by space
+- Declare variable R as integer, R = N - K
+- Declare variable mod as integer, mod = 10^9 + 7
+
+Function:
+- Function name: fact
+- Parameters: n (integer), r (integer)
+- Return type: integer
+- Logic:
+  - Return (math.factorial(n) // (math.factorial(n - r) * math.factorial(r)))
+
+For loop:
+- Loop variable: i
+- Range: 1 to K (inclusive)
+- Logic:
+  - If condition: N - K + 1 < i
+    - Set ans to 0
+  - Else
+    - Set ans to (fact(R+1, i) * fact(K-1, i-1))
+  - Print (int(ans) % mod)

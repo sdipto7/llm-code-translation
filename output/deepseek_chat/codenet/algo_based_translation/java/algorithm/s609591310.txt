@@ -1,0 +1,51 @@
+**Function Signature:**
+- main(String[] args): void
+
+**Variables:**
+- ans: int (initialized to 0)
+- sc: Scanner (initialized with System.in)
+- n: int (read from input)
+- list: int[] (size n, populated from input)
+- numlist1: int[100000] (all elements initialized to 0)
+- numlist2: int[100000] (all elements initialized to 0)
+- max11: int (initialized to 0)
+- max12: int (initialized to 0)
+- max21: int (initialized to 0)
+- max22: int (initialized to 0)
+- val1: int (initialized to 0)
+- val2: int (initialized to 0)
+
+**Logic Flow:**
+1. Read integer n from input
+2. Create integer array list of size n
+3. For i from 0 to n-1:
+   - Read integer and store in list[i]
+4. Create two integer arrays numlist1 and numlist2, each of size 100000
+5. For i from 0 to 99999:
+   - Set numlist1[i] = 0
+   - Set numlist2[i] = 0
+6. For i from 0 to n-1, incrementing by 2:
+   - Increment numlist1[list[i]-1] by 1
+   - Increment numlist2[list[i+1]-1] by 1
+7. For i from 0 to 99999:
+   - If numlist1[i] >= max11:
+     - Set max12 = max11
+     - Set max11 = numlist1[i]
+     - Set val1 = i
+   - Else if numlist1[i] >= max12:
+     - Set max12 = numlist1[i]
+   - If numlist2[i] >= max21:
+     - Set max22 = max21
+     - Set max21 = numlist2[i]
+     - Set val2 = i
+   - Else if numlist2[i] >= max22:
+     - Set max22 = numlist2[i]
+8. If val1 != val2:
+   - Set ans = n - max11 - max21
+9. Else:
+   - Set ans = n - max(max12 + max21, max11 + max22)
+10. Print ans
+
+**Required Libraries:**
+- java.util.Scanner
+- java.util.*

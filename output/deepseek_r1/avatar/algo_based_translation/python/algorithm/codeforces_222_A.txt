@@ -1,0 +1,73 @@
+**Algorithm Specification: min_operations**
+
+**Function Signature**
+```plaintext
+Function: main
+Parameters: None
+Return Type: void
+```
+
+**Variables**
+- `n`: Integer (input size)
+- `k`: Integer (operation parameter)
+- `elems`: List of Integers (input elements)
+- `all_same`: Function taking List of Integers returning Boolean
+- `target`: Integer (value to match)
+- `to_delete`: List of Integers (elements to process)
+
+**Input Operations**
+1. Read line 1: Split into `n` and `k` by whitespace (convert to integers)
+2. Read line 2: Split into `elems` list (convert elements to integers)
+
+**Control Flow & Logic**
+
+1. Define helper function `all_same(arr)`:
+   1. Return True if all elements in `arr` equal `arr[0]`
+   2. Return False otherwise
+
+2. Check initial conditions:
+   1. If `all_same(elems)` is True:
+      1. Print 0
+      2. Terminate execution
+
+3. Check invalid case for k=1:
+   1. If `k == 1`:
+      1. Print -1
+      2. Terminate execution
+
+4. Validate trailing elements:
+   1. If `all_same(elems[k-1:])` is False:
+      1. Print -1
+      2. Terminate execution
+
+5. Set `target = elems[-1]`
+
+6. Initialize `to_delete = elems[0:k-1]`
+
+7. Process elements to remove:
+   1. While `to_delete` is not empty AND last element of `to_delete` equals `target`:
+      1. Remove last element from `to_delete`
+
+8. Print length of `to_delete`
+
+**Termination Conditions**
+- Early exit at steps 2.1, 3.1, or 4.1 if conditions met
+- Normal exit after step 8
+
+**Edge Case Handling**
+- Handles uniform element lists immediately
+- Prevents invalid operations when k=1
+- Ensures valid trailing segment before processing
+- Handles empty `to_delete` list after element removal
+
+**Data Flow**
+- Input → Type Conversion → Validity Checks → Target Identification → Element Processing → Result Calculation → Output
+
+**Error Handling**
+- Implicit through input conversion (assumes valid integer inputs)
+- Explicit checks for unsolvable cases via steps 3.1 and 4.1
+
+**Dependencies**
+- Standard input/output functions
+- List operations (slicing, pop)
+- Boolean comparison operators

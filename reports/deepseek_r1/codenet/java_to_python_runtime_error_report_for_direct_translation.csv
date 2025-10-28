@@ -1,0 +1,123 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,s004995062.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s004995062.py"", line 5, in <module>
+    b = input().strip()
+        ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,s799557290.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s799557290.py"", line 1, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 5'
+"
+java,python,s291405468.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s291405468.py"", line 2, in <module>
+    x, y = map(int, input().split())
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s481865042.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s481865042.py"", line 2, in <module>
+    s, k = input().split()
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s584135649.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s584135649.py"", line 4, in <module>
+    n = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0 2 3 4 5'
+"
+java,python,s518927375.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s518927375.py"", line 1, in <module>
+    k = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 2 6'
+"
+java,python,s319823779.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s319823779.py"", line 1, in <module>
+    a, b, c, x = map(int, input().split())
+    ^^^^^^^^^^
+ValueError: not enough values to unpack (expected 4, got 1)
+"
+java,python,s962361667.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s962361667.py"", line 1, in <module>
+    w, n = map(int, input().split())
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s818271374.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s818271374.py"", line 6, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 10 100'
+"
+java,python,s325080396.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s325080396.py"", line 4, in <module>
+    maxv = R[1] - R[0]
+           ~^^^
+IndexError: list index out of range
+"
+java,python,s416486483.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s416486483.py"", line 28, in <module>
+    n, s = map(int, input().split())
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s773621585.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s773621585.py"", line 6, in <module>
+    s.add(input())
+          ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,s393629232.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s393629232.py"", line 7, in <module>
+    ri = arr[i]
+         ~~~^^^
+IndexError: list index out of range
+"
+java,python,s193347311.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s193347311.py"", line 6, in <module>
+    a, b = tokens[2*i], tokens[2*i+1]
+           ~~~~~~^^^^^
+IndexError: list index out of range
+"
+java,python,s523386612.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s523386612.py"", line 5, in <module>
+    x = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 1 2 2'
+"
+java,python,s987117545.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s987117545.py"", line 3, in <module>
+    n = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 2'
+"
+java,python,s500433274.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s500433274.py"", line 5, in <module>
+    a, b = map(int, line.split())
+    ^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s720527488.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s720527488.py"", line 28, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s720527488.py"", line 10, in main
+    prefix_sum[k+1] = prefix_sum[k] + manju[k]
+                                      ~~~~~^^^
+IndexError: list index out of range
+"
+java,python,s973587235.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s973587235.py"", line 5, in <module>
+    h_list = [int(input()) for _ in range(n)]
+              ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 2 1 1 3'
+"
+java,python,s612878490.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/deepseek_r1/codenet/direct_translation/java/python/s612878490.py"", line 5, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 7'
+"

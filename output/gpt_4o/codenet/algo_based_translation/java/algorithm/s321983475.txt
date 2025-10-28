@@ -1,0 +1,27 @@
+```
+Function Signature:
+- main() with no parameters and returns void
+
+Variable Declarations:
+- sc: Scanner
+- w: int
+- a: int
+- b: int
+- answer: int
+
+Logic Flow:
+1. Create a Scanner object `sc` for reading input.
+2. Read an integer from input and store it in variable `w`.
+3. Read an integer from input and store it in variable `a`.
+4. Read an integer from input and store it in variable `b`.
+5. Calculate `Math.max(a, b) - Math.min(a, b) - w` and store the result in variable `answer`.
+6. If `answer` is less than 0, print 0.
+7. Otherwise, print `answer`.
+
+Input/Output Operations:
+- Input: Read three integers from standard input.
+- Output: Print an integer to standard output.
+
+Required Libraries:
+- java.util.Scanner
+```

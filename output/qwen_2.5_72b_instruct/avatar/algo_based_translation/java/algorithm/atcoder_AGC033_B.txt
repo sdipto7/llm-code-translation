@@ -1,0 +1,43 @@
+Function signatures:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `Scanner scanner: Scanner`
+- `int h: int`
+- `int w: int`
+- `int n: int`
+- `int sr: int`
+- `int sc: int`
+- `String s: String`
+- `String t: String`
+- `boolean end: boolean`
+- `int usafe: int`
+- `int dsafe: int`
+- `int lsafe: int`
+- `int rsafe: int`
+- `int i: int`
+
+Logic flow in execution order:
+- Create a `Scanner` object to read input.
+- Read `h`, `w`, `n`, `sr`, `sc`, `s`, and `t` from the input.
+- Initialize `end` to `false`, `usafe` to `1`, and `dsafe` to `h`.
+- Loop from `n-1` to `0`:
+  - If `s.charAt(i)` is 'U', increment `usafe`.
+  - Else if `s.charAt(i)` is 'D', decrement `dsafe`.
+  - If `usafe` is greater than `dsafe`, set `end` to `true` and break the loop.
+  - If `i` is greater than `0`:
+    - If `t.charAt(i-1)` is 'U', set `dsafe` to the minimum of `dsafe + 1` and `h`.
+    - Else if `t.charAt(i-1)` is 'D', set `usafe` to the maximum of `usafe - 1` and `1`.
+- Initialize `lsafe` to `1` and `rsafe` to `w`.
+- Loop from `n-1` to `0`:
+  - If `s.charAt(i)` is 'L', increment `lsafe`.
+  - Else if `s.charAt(i)` is 'R', decrement `rsafe`.
+  - If `lsafe` is greater than `rsafe`, set `end` to `true` and break the loop.
+  - If `i` is greater than `0`:
+    - If `t.charAt(i-1)` is 'L', set `rsafe` to the minimum of `rsafe + 1` and `w`.
+    - Else if `t.charAt(i-1)` is 'R', set `lsafe` to the maximum of `lsafe - 1` and `1`.
+- If `sr` is greater than or equal to `usafe`, `sr` is less than or equal to `dsafe`, `sc` is greater than or equal to `lsafe`, `sc` is less than or equal to `rsafe`, and `end` is `false`, print "YES".
+- Else, print "NO".
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

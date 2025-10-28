@@ -1,0 +1,18 @@
+```
+Function Signature:
+  Function: determine_contest_category
+  Parameters: R: integer
+  Return Type: string
+
+Algorithm:
+1. Declare an integer variable R.
+2. Read an integer from standard input and assign it to R.
+3. If R is less than 1200:
+   a. Return the string "ABC".
+4. Else if R is less than 2800:
+   a. Return the string "ARC".
+5. Else:
+   a. Return the string "AGC".
+6. Output the returned string.
+```
+

@@ -1,0 +1,16 @@
+read string s from input
+read integer n from input
+initialize integer ans to 0
+for i from 0 to n-1:
+    read string x from input
+    initialize integers a and b to 0
+    for each character j in s:
+        if j equals first character of x:
+            increment a by 1
+        else if j equals second character of x:
+            increment b by 1
+        else:
+            add minimum of a and b to ans
+            reset a and b to 0
+    add minimum of a and b to ans
+print ans

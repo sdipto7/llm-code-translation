@@ -1,0 +1,16 @@
+Read integer N from input
+Read next line, split by space to get list V_str
+Convert each element in V_str to integer, store in list V
+Read next line, split by space to get list C_str
+Convert each element in C_str to integer, store in list C
+Initialize list named list with single element 0
+Initialize integer ans to 0
+Initialize integer X to 0
+Initialize integer Y to 0
+For i from 0 to N-1:
+    If V[i] - C[i] > 0:
+        Set X = V[i]
+        Set Y = C[i]
+        Append (X - Y) to list
+Compute sum of all elements in list
+Print the sum

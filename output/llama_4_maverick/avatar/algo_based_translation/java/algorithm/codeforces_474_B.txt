@@ -1,0 +1,16 @@
+1. Read the number of elements `n` from the input.
+2. Create an array `arr` of size `n`.
+3. Read the first element of `arr` from the input and store it in `arr[0]`.
+4. Iterate from `i = 1` to `n-1` and for each `i`, read an integer `x` from the input, and calculate `arr[i] = x + arr[i-1]`.
+5. Read the number of queries `m` from the input.
+6. Create an array `q` of size `m`.
+7. Iterate from `i = 0` to `m-1` and for each `i`, read an integer from the input and store it in `q[i]`.
+8. Iterate from `k = 0` to `m-1` and for each `k`, perform the following steps:
+   1. Initialize `i = 0` and `j = n-1`.
+   2. Initialize `res = 0`.
+   3. While `i <= j`, perform the following steps:
+      1. Calculate `md = i + (j-i)/2`.
+      2. If `arr[md] == q[k]`, return `md`.
+      3. If `arr[md] > q[k]`, update `res = md` and set `j = md - 1`.
+      4. If `arr[md] < q[k]`, set `i = md + 1`.
+   4. Output `res + 1`.

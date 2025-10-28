@@ -1,0 +1,39 @@
+**Function Signature:**
+- main(String[] args) throws NumberFormatException, IOException
+
+**Variables:**
+- BufferedReader reader
+- String[] strs
+- int[] nums
+- int top = 0
+
+**Libraries/Modules:**
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader
+- java.util.Arrays
+
+**Algorithm:**
+1. Initialize BufferedReader to read from standard input
+2. Read input line and split into string array using space delimiter
+3. Initialize integer array nums with same length as string array
+4. Initialize top index counter to 0
+5. For each element in string array:
+   - Check first character of current string:
+     - If '+':
+       - Decrement top by 1
+       - Add nums[top] to nums[top-1]
+       - Store result in nums[top-1]
+     - If '-':
+       - Decrement top by 1
+       - Subtract nums[top] from nums[top-1]
+       - Store result in nums[top-1]
+     - If '*':
+       - Decrement top by 1
+       - Multiply nums[top-1] by nums[top]
+       - Store result in nums[top-1]
+     - Default case:
+       - Parse current string to integer
+       - Store in nums[top]
+       - Increment top by 1
+6. Print nums[0] as final result

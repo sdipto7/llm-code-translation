@@ -1,0 +1,9 @@
+1. Initialize l to 2019
+2. Take input s from user
+3. Create a list m of size l+1 with the first element as 1 and the rest as 0
+4. Initialize a to 0 and r to 0
+5. Iterate over the input string s in reverse order with index i and element e
+   5.1. Update a by adding the product of the integer value of e and 10 raised to the power i modulo l
+   5.2. Update r by adding the value of m at index a modulo l
+   5.3. Increment the value of m at index a modulo l by 1
+6. Output the value of r

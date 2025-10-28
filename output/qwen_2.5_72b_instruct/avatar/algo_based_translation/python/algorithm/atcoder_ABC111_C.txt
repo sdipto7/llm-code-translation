@@ -1,0 +1,77 @@
+Function Signature:
+- main()
+
+Variable Declarations and Data Types:
+- n: int
+- x: list of int
+- a: list of int
+- b: list of int
+- cnta: list of int (size 100003)
+- cntb: list of int (size 100003)
+- vala: int
+- vala1: int
+- maxCnta: int
+- maxCnta1: int
+- valb: int
+- valb1: int
+- maxCntb: int
+- maxCntb1: int
+- res: int
+- resa: int
+- resa1: int
+- resb: int
+- resb1: int
+
+Logic Flow:
+1. Read integer n from input
+2. Read n integers from input, split by space, convert to list of integers x
+3. Initialize empty lists a, b
+4. For i from 0 to n-1:
+    - If i is even, append x[i] to a
+    - Else, append x[i] to b
+5. Initialize cnta with 0s, size 100003
+6. Initialize cntb with 0s, size 100003
+7. Initialize vala, vala1, maxCnta, maxCnta1 to 0
+8. For each element i in a:
+    - Increment cnta[i] by 1
+9. For each element i in a:
+    - If cnta[i] > maxCnta:
+        - Set vala to i
+        - Set maxCnta to cnta[i]
+10. For each element i in a:
+    - If cnta[i] > maxCnta1 and i != vala:
+        - Set maxCnta1 to cnta[i]
+        - Set vala1 to i
+11. Initialize valb, valb1, maxCntb, maxCntb1 to 0
+12. For each element i in b:
+    - Increment cntb[i] by 1
+13. For each element i in b:
+    - If cntb[i] > maxCntb:
+        - Set valb to i
+        - Set maxCntb to cntb[i]
+14. For each element i in b:
+    - If cntb[i] > maxCntb1 and i != valb:
+        - Set maxCntb1 to cntb[i]
+        - Set valb1 to i
+15. If valb != vala:
+    - Initialize res to 0
+    - For each element i in a:
+        - If i != vala:
+            - Increment res by 1
+    - For each element i in b:
+        - If i != valb:
+            - Increment res by 1
+    - Print res
+16. Else:
+    - Initialize resa, resa1, resb, resb1 to 0
+    - For each element i in a:
+        - If i != vala:
+            - Increment resa by 1
+        - If i != vala1:
+            - Increment resa1 by 1
+    - For each element i in b:
+        - If i != valb:
+            - Increment resb by 1
+        - If i != valb1:
+            - Increment resb1 by 1
+    - Print minimum of (resa + resb1, resa1 + resb)

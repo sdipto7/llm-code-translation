@@ -1,0 +1,33 @@
+**Function Signature:**
+- No explicit function defined; main execution block
+
+**Input Operations:**
+- Read first line: split into two integers `a` and `at`
+- Read second line: split into two integers `b` and `bt`
+- Read third line: split by colon into two integers `t1` and `t2`
+
+**Variable Declarations and Data Types:**
+- `a`: integer (bus interval)
+- `at`: integer (bus travel time)
+- `b`: integer (train interval)
+- `bt`: integer (train travel time)
+- `t1`: integer (hour part of departure time)
+- `t2`: integer (minute part of departure time)
+- `st`: integer (converted departure time in minutes from 5:00)
+- `fin`: integer (arrival time in minutes from 5:00)
+- `now`: integer (current time counter, initialized to 0)
+- `ans`: integer (count of overlapping trains, initialized to 0)
+
+**Data Processing Logic:**
+- Calculate `st = t2 + (t1 - 5) * 60`
+- Calculate `fin = st + at`
+
+**Control Structure (While Loop):**
+- Condition: `now < fin AND now < 1140`
+- Loop body:
+  - If `now + bt > st` then increment `ans` by 1
+  - Increment `now` by `b`
+- After loop: print `ans`
+
+**Output Operation:**
+- Print integer `ans`

@@ -1,0 +1,18 @@
+1. Initialize an empty list l.
+2. Set limit to 10000000000.
+3. Define a function gen(number, four, seven) {
+   1. If number > limit then return.
+   2. If number > 0 and four == seven then append number to l.
+   3. Call gen(number * 10 + 4, four + 1, seven).
+   4. Call gen(number * 10 + 7, four, seven + 1).
+}
+4. Define a function main() {
+   1. Call gen(0, 0, 0).
+   2. Sort the list l in ascending order.
+   3. Read an integer n from input.
+   4. Initialize ans to 0.
+   5. Iterate through each value val in the sorted list l.
+      1. If val >= n then set ans to val and break the loop.
+   6. Print ans.
+}
+7. Call the function main().

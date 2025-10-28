@@ -1,0 +1,14 @@
+1. Read input values v1, v2, t, and d.
+2. Initialize a 2D array dp of size (t-1) x 1150 with all elements set to -(1e17).
+3. Set dp[0][v1] to v1.
+4. Iterate from i = 1 to t-2.
+   4.1. Iterate from j = 0 to 1149.
+      4.1.1. Iterate from x = 0 to d.
+         4.1.1.1. If j + x < 1150, update dp[i][j] to be the maximum of its current value and dp[i-1][j+x] + j.
+      4.1.2. Iterate from x = d to 0.
+         4.1.2.1. If j - x >= 0, update dp[i][j] to be the maximum of its current value and dp[i-1][j-x] + j.
+5. Initialize ans to Long.MIN_VALUE.
+6. Iterate from i = t-2 to t-2.
+   6.1. Iterate from j = 0 to 1149.
+      6.1.1. If the absolute difference between j and v2 is less than or equal to d, update ans to be the maximum of its current value and dp[i][j] + v2.
+7. Output the value of ans.

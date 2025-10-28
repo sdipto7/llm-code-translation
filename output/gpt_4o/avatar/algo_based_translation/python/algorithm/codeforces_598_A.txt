@@ -1,0 +1,13 @@
+```plaintext
+1. Read an integer `t` from input, which indicates the number of test cases.
+2. Define a function `solve(n: int) -> int`:
+   a. Declare an integer `s` and compute its initial value as `(1 + n) * n // 2`.
+   b. Declare an integer `t` and initialize it to `1`.
+   c. While `t` is less than or equal to `n`, do the following:
+      i. Subtract `2 * t` from `s`.
+      ii. Multiply `t` by `2`.
+   d. Return the value of `s`.
+3. Iterate `t` times:
+   a. For each iteration, read an integer `n` from input.
+   b. Call the `solve` function with `n` and print the returned result.
+```

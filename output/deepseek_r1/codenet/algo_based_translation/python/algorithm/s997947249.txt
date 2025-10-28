@@ -1,0 +1,17 @@
+- **Function Signatures**: None (executed as a script)
+- **Variables**:
+  - `N`: Integer
+  - `K`: Integer
+- **Logic Flow**:
+  1. Read input line as two space-separated values.
+  2. Convert values to integers `N` and `K`.
+  3. Compute `N % K`.
+  4. If `N % K` equals 0, print `0`.
+  5. Else, print `1`.
+- **Control Structures**:
+  - Conditional: `if (N % K == 0)` → execute `print(0)`.
+  - Else clause → execute `print(1)`.
+- **Input/Output**:
+  - Input: Read from standard input via `input().split()`, parsed as integers.
+  - Output: Print `0` or `1` to standard output.
+- **Dependencies**: None (uses built-in functions only).

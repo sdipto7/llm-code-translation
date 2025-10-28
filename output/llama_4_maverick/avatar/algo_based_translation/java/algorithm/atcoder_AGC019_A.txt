@@ -1,0 +1,6 @@
+1. Read input values Q, H, S, D, N.
+2. Calculate onePrice = minimum of (Q * 4, H * 2, S).
+3. Check if onePrice is less than or equal to D / 2.
+4. If true, calculate total cost = N * onePrice.
+5. If false, calculate total cost = (N / 2) * D + (N % 2) * onePrice.
+6. Output total cost.

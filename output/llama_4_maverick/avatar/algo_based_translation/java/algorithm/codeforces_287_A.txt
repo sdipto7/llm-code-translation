@@ -1,0 +1,10 @@
+1. Read four strings from the input and store them in an array.
+2. Initialize a flag variable 'yes' to 0.
+3. Iterate over the first three strings in the array.
+4. For each string, iterate over the first three characters.
+5. Check if the current character is equal to the next character and if either of the corresponding characters in the next string is equal to the current character.
+6. Or check if the current character in the next string is equal to the next character and if either of the corresponding characters in the current string is equal to the current character in the next string.
+7. If the condition in step 5 or 6 is met, set 'yes' to 1 and output "YES".
+8. If 'yes' is 1, exit the loop.
+9. If the loop completes without finding a match, check if 'yes' is still 0.
+10. If 'yes' is 0, output "NO".

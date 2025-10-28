@@ -1,0 +1,44 @@
+```
+Function Signature:
+solve() -> int
+
+Variable Declarations and Data Types:
+- input: function for reading input
+- N: int
+- K: int
+- A: List[int]
+- sum_A: List[int]
+- count: int
+- modK: Dict[int, List[int]]
+- key: int
+- lenK: int
+- i: int
+- a: int
+
+Logic Flow:
+1. Initialize the input function to read lines from standard input.
+2. Read integers N and K from input.
+3. Read a list of integers from input, compute each element modulo K, subtract 1, and store in list A.
+4. Initialize sum_A as a list of zeros with length N+1.
+5. Initialize count as 0.
+6. Initialize modK as a dictionary with the key 0 mapping to a list containing 0.
+7. Iterate over the range from 0 to N (exclusive):
+   a. Compute sum_A[i+1] as (sum_A[i] + A[i]) modulo K.
+   b. If sum_A[i+1] is not a key in modK, add it with a value of a list containing i+1.
+   c. Otherwise, append i+1 to the list corresponding to sum_A[i+1] in modK.
+8. Iterate over each key in modK:
+   a. Set lenK as the length of the list corresponding to the current key.
+   b. Iterate over the enumerated list of indices a in modK[key]:
+      i. Use bisect_left to find the insertion point in the list for a+K starting from index i up to lenK.
+      ii. Increment count by the difference between the insertion point and i minus 1.
+9. Print the value of count.
+10. Return 0.
+
+Input/Output Operations:
+- Read input from standard input.
+- Output the result to standard output.
+
+Required Libraries:
+- Import the sys module for input operations.
+- Import bisect_left from the bisect module for binary search operations.
+```

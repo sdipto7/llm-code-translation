@@ -1,0 +1,10 @@
+1. Define a function `rearrange_array` with no parameters and return type `None`.
+2. Declare variable `N` of type `int` and read an integer input from the user into `N`.
+3. Declare a list `A` of type `list[int]` and read `N` space-separated integers from the user into `A`.
+4. Declare a list `B` of type `list[int]` and initialize it as a copy of `A`.
+5. Declare a variable `count` of type `int` and initialize it to 1.
+6. Iterate over each element `i` in `A` using a `for` loop.
+7. Inside the loop, assign the value of `count` to the element at index `i-1` in `B`.
+8. Increment `count` by 1 in each iteration.
+9. After the loop, print the elements of `B` separated by spaces.
+10. The function implicitly returns `None` after execution.

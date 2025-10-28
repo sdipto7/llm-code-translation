@@ -1,0 +1,48 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main()` -> `void`
+
+**Variables:**
+- `u`: function (input reader)
+- `n`: integer
+- `k`: integer
+- `M`: list of integers (size `n`)
+- `m`: integer (unused)
+- `j`: integer (loop index 0 ≤ j < n)
+- `p`: integer (index of first 0 in M)
+- `l`: integer (loop index 0 ≤ l < p+1-k)
+
+**Steps:**
+1. Read input line, parse as integers `n` and `k`
+2. Read input line, parse as integer list `M` with length `n`
+3. Initialize `m` to 0 (unused variable)
+4. For `j` from 0 to n-1 (inclusive):
+   1. For `p` from 0 to n-1 (inclusive):
+      1. If `M[p] == 0`:
+          - Print `(p+1)` with space separator (no newline)
+          - Exit `p` loop
+   2. For `l` from 0 to (p+1-k)-1 (inclusive):
+      1. Decrement `M[l]` by 1
+   3. Decrement `M[p]` by 1
+
+**Control Flow Structures:**
+- Outer loop: `for j in range(n)`
+- First inner loop: `for p in range(n)` with early exit via `break` when `M[p] == 0`
+- Second inner loop: `for l in range(p+1-k)` (executes 0 times if `p+1-k ≤ 0`)
+- Conditional: `if M[p] == 0` determines index selection
+
+**Input/Output:**
+- Input: Two lines from stdin
+  - Line 1: Space-separated `n` and `k`
+  - Line 2: Space-separated integers for `M`
+- Output: Space-separated sequence of integers printed iteratively
+
+**Error Handling:**
+- No explicit error handling
+- Assumes valid input format
+- Assumes existence of `M[p] == 0` during each `j` iteration
+
+**External Dependencies:**
+- Standard input functions
+- No external libraries or packages required

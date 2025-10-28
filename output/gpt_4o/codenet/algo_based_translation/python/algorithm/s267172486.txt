@@ -1,0 +1,16 @@
+- Function Signature: calculate_attacks(h: int, a: int) -> int
+- Variable Declarations:
+  - ans: int
+  - ama: int
+- Input/Output Operations:
+  - Read two integers from input, h and a.
+  - Output the result of the calculation as an integer.
+- Complete Logic Flow:
+  1. Read and parse two integers from input, assigning them to variables `h` and `a`.
+  2. Calculate `ans` as the integer division of `h` by `a`.
+  3. Calculate `ama` as the remainder of the division of `h` by `a`.
+  4. If `ama` is not equal to 0, increment `ans` by 1.
+  5. Output the value of `ans`.
+- Control Structures:
+  - Conditional: `if ama != 0`
+- No additional libraries, modules, or dependencies required.

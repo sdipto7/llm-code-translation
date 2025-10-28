@@ -1,0 +1,6 @@
+Read three space-separated strings from standard input
+Store the three strings in variables a, b, and c
+If a equals b AND b equals c:
+    Print "Yes"
+Else:
+    Print "No"

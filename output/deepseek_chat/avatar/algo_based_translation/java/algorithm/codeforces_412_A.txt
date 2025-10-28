@@ -1,0 +1,35 @@
+**Function Signature:**
+- main(String[] args): void
+
+**Variables:**
+- Scanner sc: Scanner object for input
+- int n: integer input
+- int k: integer input  
+- String a: string input
+
+**Libraries/Dependencies:**
+- java.util.Scanner
+
+**Algorithm:**
+1. Create Scanner object to read from standard input
+2. Read integer n
+3. Read integer k
+4. Read string a
+5. If k > n/2:
+   - While k < n:
+     - Print "RIGHT"
+     - Increment k by 1
+6. Else:
+   - While k > 1:
+     - Print "LEFT"
+     - Decrement k by 1
+7. If k == 1:
+   - For i from 0 to a.length()-1:
+     - Print "PRINT " + a.charAt(i)
+     - If i+1 < a.length():
+       - Print "RIGHT"
+8. Else:
+   - For i from a.length()-1 down to 0:
+     - Print "PRINT " + a.charAt(i)
+     - If i-1 >= 0:
+       - Print "LEFT"

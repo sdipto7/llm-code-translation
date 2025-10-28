@@ -1,0 +1,12 @@
+1. Import the required library: java.util.Scanner
+2. Define a class: Main
+3. Define a function: main with parameters (String[] args) and return type void
+4. Declare a variable: scan of type Scanner and initialize it with a new Scanner object using System.in
+5. Declare two integer variables: X and t
+6. Read an integer from the input using scan.nextInt() and store it in X
+7. Read an integer from the input using scan.nextInt() and store it in t
+8. Check the condition: if X is greater than or equal to t
+9. If the condition is true, print the result of X - t to the output
+10. If the condition is false, check another condition: if X is less than t
+11. If this condition is true, print 0 to the output
+12. The program terminates after executing the conditional checks and printing the result.

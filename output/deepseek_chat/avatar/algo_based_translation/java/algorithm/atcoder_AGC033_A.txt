@@ -1,0 +1,43 @@
+**Function Signature:**
+- main(String[] args): void
+
+**Variables:**
+- Scanner sc: Input scanner
+- int H: Grid height
+- int W: Grid width
+- char[][] A: H×W grid
+- Queue<int[]> queue: ArrayDeque storing [y, x, depth]
+- int[][] flag: H×W visited marker
+- int ans: Maximum depth result
+- int[] dx: {1, -1, 0, 0} (x-direction moves)
+- int[] dy: {0, 0, 1, -1} (y-direction moves)
+
+**Algorithm Flow:**
+1. Read H and W from input
+2. Initialize grid A with dimensions H×W
+3. For each row i from 0 to H-1:
+   - Read next input line
+   - For each column j from 0 to W-1:
+     - Set A[i][j] to j-th character of row
+     - If A[i][j] equals '#':
+       - Create array [i, j, 0]
+       - Add array to queue
+4. Initialize flag array with dimensions H×W (all zeros)
+5. Set ans to 0
+6. While queue is not empty:
+   - Remove first element from queue as temp
+   - Extract y = temp[0], x = temp[1], depth = temp[2]
+   - For each direction index i from 0 to 3:
+     - Calculate newY = y + dy[i], newX = x + dx[i]
+     - If newY between 0 and H-1 AND newX between 0 and W-1:
+       - If flag[newY][newX] equals 0 AND A[newY][newX] equals '.':
+         - Set flag[newY][newX] to 1
+         - Create array [newY, newX, depth + 1]
+         - Add array to queue
+         - Set ans to depth + 1
+7. Print ans
+
+**Required Libraries:**
+- java.util.Scanner
+- java.util.Queue
+- java.util.ArrayDeque

@@ -1,0 +1,16 @@
+1. READ input string s
+2. READ integer n
+3. INITIALIZE ans to 0
+4. FOR i FROM 0 TO n-1
+   1. READ input string x
+   2. INITIALIZE a and b to 0
+   3. FOR EACH character j IN s
+      1. IF j EQUALS x[0]
+         1. INCREMENT a BY 1
+      2. ELSE IF j EQUALS x[1]
+         1. INCREMENT b BY 1
+      3. ELSE
+         1. ADD minimum of a and b TO ans
+         2. RESET a and b to 0
+   4. ADD minimum of a and b TO ans
+5. OUTPUT ans

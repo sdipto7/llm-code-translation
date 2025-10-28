@@ -1,0 +1,32 @@
+1. Import the `java.util.Scanner` library to read input from the user.
+
+2. Define the main function:
+   - Signature: `public static void main(String[] args)`
+   - No return type.
+
+3. Declare a `Scanner` object `sc` to read input.
+   - Data type: `Scanner`.
+
+4. Declare integer variables `n`, `i`, `j`, and `p`.
+   - Data types: `int`.
+   - Initialize `p` with the value `97`.
+
+5. Read an integer from input using `sc.nextInt()` and assign it to `n`.
+
+6. Declare a character array `c` of size `n`.
+   - Data type: `char[]`.
+
+7. Initialize a loop to iterate from `i = 0` to `i < 4`.
+   - Increment `i` by 1 after each iteration.
+   
+8. Inside the first loop, initialize a nested loop to iterate from `j = i` to `j < n`.
+   - Increment `j` by 4 after each iteration.
+   
+9. Within the nested loop, assign the character `p` (converted to a character) to `c[j]`.
+
+10. Increment `p` by 1 after completion of the nested loop.
+
+11. Initialize a loop to iterate from `i = 0` to `i < n`.
+   - Increment `i` by 1 after each iteration.
+
+12. Inside the loop, output the character at `c[i]` using `System.out.print(c[i])`.

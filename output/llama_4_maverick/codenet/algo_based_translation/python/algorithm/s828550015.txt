@@ -1,0 +1,11 @@
+1. Read six integer inputs from the user and store them in variables x, y, a, b, and c.
+2. Read three lists of integers from the user.
+3. Sort the first list in descending order and store the top x elements in list p.
+4. Sort the second list in descending order and store the top y elements in list q.
+5. Sort the third list in descending order and store it in list r.
+6. Combine lists p and q into a new list pq, and sort pq in ascending order.
+7. Iterate from 0 to the minimum of (x+y, a, b, c) - 1.
+8. Inside the loop, check if the current element in pq is less than the corresponding element in r.
+9. If the condition is true, replace the current element in pq with the corresponding element from r.
+10. Calculate the sum of all elements in pq.
+11. Output the sum.

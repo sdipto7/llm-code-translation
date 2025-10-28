@@ -1,0 +1,46 @@
+1. Function Signature: `public static void main(String[] args)`
+   - Parameters: `String[] args`
+   - Return Type: `void`
+
+2. Variable Declarations:
+   - `Scanner sc` of type `Scanner`
+   - `int N` of type `int`
+   - `long x` of type `long`
+   - `List<Long> sweet` of type `ArrayList<Long>`
+   - `long a` of type `long`
+   - `int num` of type `int`
+
+3. Input Operations:
+   - Initialize `Scanner sc` to read from standard input.
+   - Read `int N` using `sc.nextInt()`.
+   - Read `long x` using `sc.nextInt()`.
+
+4. Data Processing:
+   - Initialize `sweet` as a new `ArrayList<Long>`.
+   - Loop `i` from `0` to `N-1` (inclusive):
+     - Read `long a` using `sc.nextInt()`.
+     - Add `a` to the `sweet` list.
+
+5. Sorting:
+   - Sort the `sweet` list using `Collections.sort(sweet)`.
+
+6. Logic Flow:
+   - Initialize `num` to `0`.
+   - Loop `i` from `0` to `N-1` (inclusive):
+     - If `x - sweet.get(num) >= 0`:
+       - Subtract `sweet.get(num)` from `x`.
+       - Increment `num` by `1`.
+     - Else:
+       - Break the loop.
+
+7. Conditional Check:
+   - If `num == N` and `x > 0`:
+     - Decrement `num` by `1`.
+
+8. Output Operation:
+   - Print `num` using `System.out.println(num)`.
+
+9. Required Libraries:
+   - `java.util.Scanner`
+   - `java.util.ArrayList`
+   - `java.util.Collections`

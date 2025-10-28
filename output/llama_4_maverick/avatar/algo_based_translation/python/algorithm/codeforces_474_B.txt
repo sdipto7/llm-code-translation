@@ -1,0 +1,11 @@
+1. Initialize an empty list L
+2. Read input (not stored)
+3. Set r to 1
+4. Read input, split into parts
+5. For each part k:
+   5.1. Append r to L, k times
+   5.2. Increment r by 1
+6. Read input (not stored)
+7. Read input, split into parts
+8. For each part j:
+   8.1. Print the (j-1)th element of L

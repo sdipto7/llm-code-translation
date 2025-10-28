@@ -1,0 +1,33 @@
+- Function Signature:
+  - `main()`: No parameters, no return type
+
+- Variable Declarations:
+  - `sc`: `Scanner` for reading input
+  - `n`: `int` for number of test cases
+  - `a`: array of `int` with size 3 to hold three side lengths
+
+- Logic Flow:
+  1. Initialize `Scanner` object `sc` for reading input.
+  2. Read an integer `n` from input, representing the number of test cases.
+  3. Declare an integer array `a` with size 3.
+  4. Loop from `i = 0` to `i < n` (inclusive exclusive):
+     - Read an integer into `a[0]`.
+     - Read an integer into `a[1]`.
+     - Read an integer into `a[2]`.
+     - Sort the array `a` to ensure the largest number is `a[2]`.
+     - Check the condition: if `a[2]^2` is equal to `a[0]^2 + a[1]^2`:
+       - If true, print "YES".
+       - If false, print "NO".
+
+- Control Structures:
+  - `for` loop to iterate `n` test cases.
+  - `if-else` conditional to check the Pythagorean theorem condition.
+
+- Input/Output Operations:
+  - Use `Scanner` to read integers from standard input.
+  - Use `System.out.println()` to output "YES" or "NO".
+
+- Required Libraries:
+  - `java.util.Scanner` for input
+  - `java.util.Arrays` for sorting
+  - `java.lang.Math` for mathematical operations (specifically `Math.pow`)

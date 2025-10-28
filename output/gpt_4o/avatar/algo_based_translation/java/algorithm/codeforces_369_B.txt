@@ -1,0 +1,46 @@
+1. Function Signature:
+   - `public static void main(String[] args)`
+   - `public static int[] getPoints(int n, int k, int l, int r, int sAll, int sk)`
+
+2. Variable Declarations and Data Types:
+   - `Scanner scan` (type: Scanner)
+   - `int n, k, l, r, sAll, sk` (type: int)
+   - `int[] ans` (type: int array)
+   - `int idx` (type: int)
+
+3. Logic Flow:
+
+   - Initialize a `Scanner` object to read input.
+   - Read integers from input: `n`, `k`, `l`, `r`, `sAll`, `sk`.
+   - Call `getPoints(n, k, l, r, sAll, sk)` and store the result in `ans`.
+   - Iterate over each integer `num` in `ans` and print `num` followed by a space.
+
+4. Function `getPoints` Logic Flow:
+
+   - Initialize `ans` as an integer array of size `n` and fill it with `l`.
+   - Adjust `sAll` by subtracting the sum of the first `k` elements and the minimum value for the rest `(n-k) * l`.
+   - Adjust `sk` by subtracting the minimum value for the first `k` elements `k * l`.
+
+   - While `sk` is greater than 0:
+     - Set `idx` to `n - 1`.
+     - While `sk` is greater than 0 and `idx` is greater than or equal to `n - k`:
+       - Increment `ans[idx]`.
+       - Decrement `sk`.
+       - Decrement `idx`.
+
+   - While `sAll` is greater than 0:
+     - Set `idx` to 0.
+     - While `sAll` is greater than 0 and `idx` is less than `n - k`:
+       - Increment `ans[idx]`.
+       - Decrement `sAll`.
+       - Increment `idx`.
+
+   - Return the array `ans`.
+
+5. Input/Output Operations:
+   - Input: Read integers from the standard input using `Scanner`.
+   - Output: Print integers from the array `ans` to the standard output, separated by spaces.
+
+6. Required Libraries/Modules/Dependencies:
+   - `java.util.Arrays`
+   - `java.util.Scanner`

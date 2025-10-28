@@ -1,0 +1,62 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main(x: int, t: int, a: int, b: int, da: int, db: int) -> str`
+  - **Return Type:** String ("YES", "Result Not Found")
+
+**Variables:**
+- `xxs: List[str]` (Input string split into components)
+- `x: int`
+- `t: int`
+- `a: int`
+- `b: int`
+- `da: int`
+- `db: int`
+- `a_time: int` (Computed as `min(a // da, t - 1)`)
+- `b_time: int` (Computed as `min(b // db, t - 1)`)
+- `i: int` (Loop variable for `a_time`)
+- `j: int` (Loop variable for `b_time`)
+
+**Input/Output Operations:**
+1. Read input line as a single string.
+2. Split input string by spaces into `xxs`.
+3. Parse `xxs[0]` to `x`, `xxs[1]` to `t`, `xxs[2]` to `a`, `xxs[3]` to `b`, `xxs[4]` to `da`, `xxs[5]` to `db`.
+
+**Logic Flow:**
+1. **Initial Check:**
+   - If `x == 0`:
+     - Print "YES"
+     - Return "Result Found"
+
+2. **Precompute Values:**
+   - Compute `a_time = min(a // da, t - 1)`
+   - Compute `b_time = min(b // db, t - 1)`
+
+3. **Nested Loop Analysis:**
+   - For `i` in range `[0, a_time]`:
+     - For `j` in range `[0, b_time]`:
+       - **Condition 1:** If `(a - da * i) == x` OR `(b - db * j) == x`:
+         - Print "YES"
+         - Return "Result Found"
+       - **Condition 2:** If `(a - da * i) + (b - db * j) == x`:
+         - Print "YES"
+         - Return "Result Found"
+
+4. **Final Check:**
+   - If no conditions met in loops:
+     - Return "Result Not Found"
+
+**Control Flow Structures:**
+- **Conditional** at Step 1 (Terminates early if `x == 0`)
+- **Nested Loops** in Step 3 (Iterates over all valid `i` and `j` combinations)
+  - **Break** via early return if any valid condition is met
+- **Fallback Return** in Step 4 if all iterations fail
+
+**Edge Case Handling:**
+- Explicit check for `x == 0` before loop execution
+- Clamping of `a_time` and `b_time` to `t - 1` to enforce time constraints
+- Inclusion of cases where only `a` or `b` alone matches `x`
+
+**Dependencies:**
+- Standard input handling (no external libraries required)
+- Integer division and arithmetic operations

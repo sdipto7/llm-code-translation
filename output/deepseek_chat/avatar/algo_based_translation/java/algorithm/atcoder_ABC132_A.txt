@@ -1,0 +1,22 @@
+1. Import java.util.HashMap, java.util.Map.Entry, java.util.Scanner
+2. Define public class atcoder_ABC132_A
+3. Define main method: public static void main(String[] args)
+4. Declare Scanner in = new Scanner(System.in)
+5. Read input string s = in.next()
+6. Convert string to char array: char[] targ = s.toCharArray()
+7. Create HashMap<Character, Integer> map = new HashMap<>()
+8. For loop: i from 0 to targ.length - 1
+   - If map does not contain key targ[i]:
+     - Put (targ[i], 1) in map
+   - Else:
+     - Put (targ[i], map.get(targ[i]) + 1) in map
+9. Declare boolean ok = true
+10. For each Entry<Character, Integer> c in map.entrySet():
+    - If c.getValue() != 2:
+      - Set ok = false
+      - Break loop
+11. If ok is true AND map.size() == 2:
+    - Print "Yes"
+12. Else:
+    - Print "No"
+13. Close scanner: in.close()

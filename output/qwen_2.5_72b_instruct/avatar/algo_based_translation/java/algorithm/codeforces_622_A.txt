@@ -1,0 +1,57 @@
+Function signatures and data types:
+- `public static final int BUFFERSIZE = 512000`
+- `private static Scanner sc = new Scanner(new BufferedReader(new InputStreamReader(System.in), BUFFERSIZE))`
+- `private static PrintWriter out = new PrintWriter(new BufferedOutputStream(System.out, BUFFERSIZE))`
+- `public static void solve()`
+- `public static long getValueAtIndex(long index)`
+- `public static void main(String[] args) throws Exception`
+- `public static class in`
+  - `static BufferedReader reader`
+  - `static StringTokenizer tokenizer`
+  - `static void init(InputStream input)`
+  - `static String next() throws IOException`
+  - `static int nextInt() throws IOException`
+  - `static double nextDouble() throws IOException`
+  - `static long nextLong() throws IOException`
+
+Execution order and logic flow:
+
+`main()`:
+- Calls `in.init(System.in)`
+- Calls `solve()`
+- Calls `out.close()`
+
+`solve()`:
+- Declares `long position = sc.nextLong()`
+- Declares `long nrstSeqStartIndx = 1`
+- While loop: `while (getValueAtIndex(nrstSeqStartIndx * 2) < position)`
+  - Executes `nrstSeqStartIndx *= 2`
+- While loop: `while (getValueAtIndex(nrstSeqStartIndx + 1) <= position)`
+  - Executes `nrstSeqStartIndx++`
+- Declares `long startIndex = getValueAtIndex(nrstSeqStartIndx)`
+- Calls `out.println((position - startIndex) + 1)`
+
+`getValueAtIndex(long index)`:
+- Returns `1 + ((index - 1) * index / 2)`
+
+`in.init(InputStream input)`:
+- Sets `reader = new BufferedReader(new InputStreamReader(input), BUFFERSIZE)`
+- Sets `tokenizer = new StringTokenizer("")`
+
+`in.next()`:
+- While loop: `while (!tokenizer.hasMoreTokens())`
+  - Executes `tokenizer = new StringTokenizer(reader.readLine())`
+- Returns `tokenizer.nextToken()`
+
+`in.nextInt()`:
+- Returns `Integer.parseInt(next())`
+
+`in.nextDouble()`:
+- Returns `Double.parseDouble(next())`
+
+`in.nextLong()`:
+- Returns `Long.parseLong(next())`
+
+Libraries and modules required:
+- `java.io.*`
+- `java.util.*`

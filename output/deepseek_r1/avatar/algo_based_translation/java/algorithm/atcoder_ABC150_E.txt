@@ -1,0 +1,45 @@
+- **Function Signatures**:
+  - `public static void main(String[] args) throws Exception`
+  - `static long power(long x, long n)`
+
+- **Variables**:
+  - `n: int` (input size)
+  - `c: int[]` (input array)
+  - `mod: int = 1000000007`
+  - `sa: String[]` (input parsing)
+  - `br: BufferedReader` (input reader)
+  - `b: long` (power(2, n))
+  - `a: long` (power(2, n - 2))
+  - `ans: long` (result accumulator)
+  - `val: long` (temporary calculation in loops/power)
+
+- **Logic Flow**:
+  1. Read `n` from input.
+  2. Read array `c` of length `n` from input.
+  3. If `n == 1`:
+     - Output `(c[0] * 2) % mod` and terminate.
+  4. Sort `c` in ascending order using `Arrays.parallelSort`.
+  5. Compute `b = power(2, n) % mod`.
+  6. Compute `a = power(2, n - 2) % mod`.
+  7. Initialize `ans = 0`.
+  8. Loop `i` from `2` to `n + 1` (inclusive):
+     - Compute `val = a * i % mod`.
+     - Multiply `val` by `c[n + 1 - i] % mod`.
+     - Add `val` to `ans` with modulo `mod`.
+  9. Multiply `ans` by `b % mod`.
+  10. Output `ans % mod`.
+
+- **Control Structures**:
+  - `if (n == 1)` check with early return.
+  - `for` loop with `i` from `2` to `n + 1`.
+  - Recursive `power` function with base case `n == 0` and conditional check for odd exponents.
+
+- **I/O Operations**:
+  - Read input via `BufferedReader` from `System.in`.
+  - Split input lines into `String[] sa` for parsing.
+  - Convert parsed strings to integers for `n` and `c`.
+
+- **Dependencies**:
+  - `java.io.BufferedReader`
+  - `java.io.InputStreamReader`
+  - `java.util.Arrays`

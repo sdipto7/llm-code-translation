@@ -1,0 +1,8 @@
+1. Import Scanner from java.util
+2. Define main function with String[] args parameter, return type void
+3. Declare Scanner object initialized to System.in
+4. Declare integer h, read from scanner input
+5. Declare integer a, read from scanner input
+6. Check condition: if h modulo a equals 0
+7. If true: print h divided by a
+8. If false: print h divided by a plus 1

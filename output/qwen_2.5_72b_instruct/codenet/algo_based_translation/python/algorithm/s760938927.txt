@@ -1,0 +1,45 @@
+Function Signature: `main() -> None`
+
+Variable Declarations:
+- `h: int`
+- `w: int`
+- `ka: int`
+- `mat: List[List[str]]`
+- `ans: int`
+- `i: int`
+- `b: str`
+- `rs: str`
+- `cs: str`
+- `ct: int`
+- `l: int`
+- `k: int`
+
+Logic Flow:
+1. Read three integers `h`, `w`, and `ka` from input.
+2. Initialize a 2D list `mat` of size `h x w` by reading `h` strings of length `w`.
+3. Initialize `ans` to 0.
+4. Loop from `0` to `2**(h+w) - 1` with variable `i`:
+   1. Convert `i` to binary, remove the '0b' prefix, and pad with zeros to length `h+w`, storing in `b`.
+   2. Extract the first `h` characters of `b` into `rs`.
+   3. Extract the remaining `w` characters of `b` into `cs`.
+   4. Initialize `ct` to 0.
+   5. Loop from `0` to `h-1` with variable `l`:
+      1. Loop from `0` to `w-1` with variable `k`:
+         1. If `mat[l][k]` is '#' and `rs[l]` is '0' and `cs[k]` is '0':
+            1. Increment `ct` by 1.
+   6. If `ct` is equal to `ka`:
+      1. Increment `ans` by 1.
+5. Print `ans`.
+
+Input/Output Operations:
+- Read three integers from standard input.
+- Read `h` strings from standard input.
+- Print the integer `ans` to standard output.
+
+Data Processing Logic:
+- Iterate over all possible combinations of row and column selections.
+- Count the number of '#' characters in the matrix that are not selected in any row or column.
+- Count combinations where the count of such '#' characters equals `ka`.
+
+Required Libraries, Modules, or Dependencies:
+- `List` from `typing` module (implied by `List[List[str]]`)

@@ -1,0 +1,7 @@
+1. Read two integers from input, separated by a space, and store them in x and y.
+2. Calculate the maximum value between the expression (x + y - 3 + ((y - x) modulo 3 greater than 0)) and 0.
+3. Print the calculated maximum value.
+4. Define a function num_inp that reads an integer from input.
+5. Define a function arr_inp that reads a list of integers from input, separated by spaces.
+6. Define a function sp_inp that reads two or more integers from input, separated by spaces, and returns them as a map object.
+7. Define a function str_inp that reads a string from input.

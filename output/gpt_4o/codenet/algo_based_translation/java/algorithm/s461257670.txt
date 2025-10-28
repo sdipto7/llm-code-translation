@@ -1,0 +1,43 @@
+```
+Algorithm:
+
+1. Import the Scanner class from the java.util package.
+
+2. Define a class named Main with a main method.
+   - Input: String array `args`
+   - Output: None
+   - Exceptions: Throws java.lang.Exception
+
+3. Within the main method:
+   a. Create a Scanner object `sc` to read input from the standard input.
+   b. Read an integer `count` from the input using `sc.nextInt()`.
+
+4. Implement a loop that iterates `count` times.
+   a. In each iteration:
+      i. Read three integers `y`, `m`, and `d` from input using `sc.nextInt()`.
+      ii. Call the function `Answer(y, m, d)` and print its result.
+
+5. Define a function `Answer` to compute a result based on year, month, and day.
+   - Input: Integers `y`, `m`, `d`
+   - Output: Integer
+
+6. Inside the `Answer` function:
+   a. Declare an integer variable `result` and initialize it to 1.
+
+   b. Conditional Logic:
+      i. If `y % 3 == 0`, add `20 - d` to `result`.
+      ii. Else if `m % 2 == 0`, add `19 - d` to `result`.
+      iii. Else, add `20 - d` to `result`.
+
+   c. For loop to iterate over months from `m+1` to 10:
+      i. If `y % 3 == 0`, add 20 to `result`.
+      ii. Else:
+         - If `m % 2 == 0`, add 19 to `result`.
+         - Else, add 20 to `result`.
+
+   d. For loop to iterate over years from `y+1` to 999:
+      i. If `y % 3 == 0`, add 200 to `result`.
+      ii. Else, add 195 to `result`.
+
+7. Return the value of `result`.
+```

@@ -1,0 +1,46 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures**  
+- Main procedure (no explicit function, entry point)  
+  - **Parameters**: None  
+  - **Return Type**: Void  
+
+**Variable Declarations**  
+- `ABC`: Tuple of integers (length determined by input split)  
+
+**Step-by-Step Logic Flow**  
+1. Read a line from standard input as a string.  
+2. Split the input string by whitespace into a list of substrings.  
+3. Convert each substring to an integer and store them in a tuple `ABC`.  
+4. Check if the count of the value `5` in `ABC` equals `2`:  
+   - **Condition**: `count(5) == 2`  
+5. If condition 4 is true:  
+   5.1 Calculate the sum of all elements in `ABC`.  
+   5.2 Check if the sum equals `17`:  
+       - **Condition**: `sum(ABC) == 17`  
+   5.3 If condition 5.2 is true:  
+       - Print `"YES"`.  
+   5.4 Else:  
+       - Print `"NO"`.  
+6. Else (condition 4 is false):  
+   - Print `"NO"`.  
+
+**Control Flow Structures**  
+- **Conditional** (step 4):  
+  - **True path**: Proceed to step 5.  
+  - **False path**: Proceed to step 6.  
+- **Nested Conditional** (step 5.2):  
+  - **True path**: Execute step 5.3.  
+  - **False path**: Execute step 5.4.  
+
+**Input/Output Operations**  
+- **Input**: Single line from standard input containing space-separated integers.  
+- **Output**:  
+  - `"YES"` if exactly two `5`s exist in `ABC` and their sum is `17`.  
+  - `"NO"` for all other cases.  
+
+**Edge Case Handling**  
+- No explicit error handling for non-integer inputs or incorrect element counts. Assumes valid input matching the problem constraints.  
+
+**External Dependencies**  
+- Uses `input()`, `split()`, `map(int, ...)`, `tuple()`, `count()`, and `sum()` from Python standard libraries.

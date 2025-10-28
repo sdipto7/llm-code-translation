@@ -1,0 +1,57 @@
+Function Signatures:
+- `value() -> Tuple[int, ...]`
+- `values() -> Tuple[int, ...]`
+- `inlst() -> List[int]`
+- `inlsts() -> List[int]`
+- `inp() -> int`
+- `inps() -> int`
+- `instr() -> str`
+- `stlst() -> List[str]`
+- `help(a: int, b: int, l: List[int]) -> bool`
+- `solve() -> None`
+
+Variable Declarations and Data Types:
+- `tot` (List[Any])
+- `x` (str)
+- `s` (List[int])
+- `i` (int)
+- `a` (int)
+- `b` (int)
+- `l` (List[int])
+- `i` (int)
+- `i` (int)
+- `a` (int)
+- `b` (int)
+
+Logic Flow and Control Structures:
+1. Import required modules: `collections`, `heapq`, `sys`, `math`, `itertools`, `bisect`, `io`, `os`.
+2. Define functions `value`, `values`, `inlst`, `inlsts`, `inp`, `inps`, `instr`, `stlst`.
+3. Define `help(a: int, b: int, l: List[int]) -> bool`:
+   - Initialize `tot` as an empty list.
+   - For `i` in range `b`:
+     - Append slice `l[i * a: i * a + a]` to `tot`.
+   - For each tuple `i` in zipped `tot`:
+     - If sum of `i` equals `b`, return `True`.
+   - Return `False`.
+4. Define `solve() -> None`:
+   - Initialize `tot` as an empty list.
+   - Read input string `x` using `instr()`.
+   - Initialize `s` as an empty list.
+   - For each character `i` in `x`:
+     - If `i` is 'O', append `0` to `s`.
+     - Else, append `1` to `s`.
+   - For `i` in range `1` to `13`:
+     - If `12 % i` equals `0`:
+       - If `help(i, 12 // i, s)` is `True`, append tuple `(12 // i, i)` to `tot`.
+   - Print length of `tot` followed by space.
+   - For each tuple `(a, b)` in sorted `tot`:
+     - Print formatted string `{a}x{b}` followed by space.
+   - Print newline.
+5. If script is run as main:
+   - For `i` in range of input integer read using `inp()`:
+     - Call `solve()`.
+
+Input/Output Operations and Data Processing Logic:
+- Input functions: `input()`, `sys.stdin.readline()`.
+- Output functions: `print()`.
+- Data processing involves reading strings, converting characters to integers, and checking conditions based on list slices and sums.

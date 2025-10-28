@@ -1,0 +1,54 @@
+Here's the JavaScript code translated from the provided Python code, maintaining the algorithm and functionality:
+
+```javascript
+const fs = require('fs');
+const lines = fs.readFileSync(0, 'utf-8').trim().split(/\r?\n/);
+let ptr = 0;
+
+function dfs(g, seen, i) {
+    if (seen.has(i)) {
+        return [0, 0];
+    }
+    seen.add(i);
+    let nodes = 1;
+    let edges = g.get(i).size;
+    for (const j of g.get(i)) {
+        const [x, y] = dfs(g, seen, j);
+        nodes += x;
+        edges += y;
+    }
+    return [nodes, edges];
+}
+
+function solve() {
+    if (ptr >= lines.length) return false;
+    const line0 = lines[ptr++].split(' ').map(Number);
+    const n = line0[0], m = line0[1];
+    const g = new Map();
+    for (let i = 1; i <= n; i++) {
+        g.set(i, new Set());
+    }
+    for (let i = 0; i < m; i++) {
+        const [a, b] = lines[ptr++].split(' ').map(Number);
+        g.get(a).add(b);
+        g.get(b).add(a);
+    }
+    let ans = 0;
+    const seen = new Set();
+    for (let i = 1; i <= n; i++) {
+        if (!seen.has(i)) {
+            const [nodes, edges] = dfs(g, seen, i);
+            if (nodes > 1 && nodes % 2 === 1 && 2 * nodes === edges) {
+                ans++;
+            }
+        }
+    }
+    if ((n - ans) % 2 === 1) {
+        ans++;
+    }
+    console.log(ans);
+    return true;
+}
+
+while (solve()) {}
+```

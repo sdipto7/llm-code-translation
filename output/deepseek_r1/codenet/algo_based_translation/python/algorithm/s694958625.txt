@@ -1,0 +1,17 @@
+Algorithm:
+- Function Signature: main(): void
+- Variable Declarations:
+  - x: integer
+  - a: integer
+  - b: integer
+- Logic Flow:
+  1. Read integer input from standard input and assign to x
+  2. Read integer input from standard input and assign to a
+  3. Read integer input from standard input and assign to b
+  4. Calculate (x - a) % b
+  5. Print the result
+- Control Structures: None (linear execution)
+- Input/Output Operations:
+  - Three separate integer inputs read sequentially
+  - Single output of calculated modulus result
+- Dependencies: None (standard input/output only)

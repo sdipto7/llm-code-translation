@@ -1,0 +1,30 @@
+Function signature: `main()`
+
+Variable declarations:
+- `n` as integer
+- `s` as string
+- `left` as integer initialized to 0
+- `left1` as integer initialized to 0
+- `right1` as integer initialized to 0
+- `i` as string (used in loop iteration)
+
+Input operations:
+- Read integer `n` from standard input
+- Read string `s` from standard input
+
+Logic flow:
+1. Loop through each character `i` in string `s`:
+   - If `i` is equal to ")", increment `left` by 1
+   - Else, break the loop
+2. Loop through each character `i` in string `s` starting from index `left` to `n-1`:
+   - If `i` is equal to "(", increment `right1` by 1
+   - Else if `right1` is greater than 0, decrement `right1` by 1
+   - Else, increment `left1` by 1
+3. Add `left` to `left1`
+4. For each iteration from 0 to `right1-1`, append ")" to string `s`
+5. For each iteration from 0 to `left1-1`, prepend "(" to string `s`
+
+Output operations:
+- Print string `s`
+
+Required libraries, modules, or dependencies: None

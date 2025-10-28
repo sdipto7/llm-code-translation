@@ -1,0 +1,25 @@
+Algorithm:
+
+1. Import the necessary library: `java.util.Scanner`.
+
+2. Define the main function `main` with no parameters and return type `void`.
+
+3. Declare an integer array `Num` of size 11.
+
+4. Create a `Scanner` object `n` to read input from the user.
+
+5. Initialize a loop that iterates from `i = 0` to `i < 10`:
+   - Read an integer from the input using `n.nextInt()`.
+   - Assign the input integer to `Num[i]`.
+
+6. Initialize a loop that iterates from `a = 9` to `a >= 0`, decrementing `a` by 1 on each iteration:
+   - Initialize an inner loop that iterates from `b = 0` to `b < a`:
+     - If `Num[b] < Num[b + 1]`:
+       - Assign `Num[b]` to `Num[10]`.
+       - Assign `Num[b + 1]` to `Num[b]`.
+       - Assign `Num[10]` to `Num[b + 1]`.
+
+7. Output the following elements of `Num` to the console:
+   - `Num[0]`
+   - `Num[1]`
+   - `Num[2]`

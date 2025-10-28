@@ -1,0 +1,33 @@
+**Function Signature:**
+- `public static void main(String[] args) throws IOException`
+
+**Variables:**
+- `BufferedReader br = new BufferedReader(new InputStreamReader(System.in))` (Type: `BufferedReader`)
+- `String line` (Type: `String`)
+- `String[] list` (Type: `String[]`)
+- `int x`, `int a`, `int y` (Type: `int`)
+- `String h = "NO"` (Type: `String`)
+
+**Libraries/Dependencies:**
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+
+**Input/Output Operations:**
+- Read input line via `br.readLine()`
+- Split input into `list` using `split(" ")`
+- Parse `x`, `a`, `y` from `list[0]`, `list[1]`, `list[2]` using `Integer.parseInt`
+- Print output `h` via `System.out.println(h)`
+
+**Logic Flow:**
+1. Read input line and store in `line`
+2. Split `line` into `list` by spaces
+3. Parse `x`, `a`, `y` as integers from `list[0]`, `list[1]`, `list[2]`
+4. Initialize `h` to "NO"
+5. Check if **ANY** of these conditions are true:
+   - `x` equals 5 OR 7
+   - `a` equals 5 OR 7
+   - `y` equals 5 OR 7
+6. If step 5 is true, check if `x + a + y` equals 17
+7. If step 6 is true, set `h` to "YES"
+8. Print `h`

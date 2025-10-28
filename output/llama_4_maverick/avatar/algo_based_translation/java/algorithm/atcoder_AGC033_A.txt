@@ -1,0 +1,14 @@
+1. Read the input values H and W.
+2. Initialize a 2D array A of size H x W to store the input grid.
+3. Initialize a queue to store the cells to be processed.
+4. Iterate over each cell in the grid.
+5. For each cell, if the cell contains '#', add its coordinates and a depth value 0 to the queue.
+6. Initialize a 2D array flag of size H x W to keep track of visited cells.
+7. Initialize a variable ans to store the maximum depth.
+8. Define the possible directions for movement (dx, dy) as (1, -1, 0, 0) and (0, 0, 1, -1) respectively.
+9. Perform a BFS traversal using the queue.
+10. For each cell processed, explore its neighboring cells in the four possible directions.
+11. For each neighboring cell, check if it is within the grid boundaries and is not visited before and contains '.'.
+12. If the neighboring cell satisfies the conditions, mark it as visited, add it to the queue with an incremented depth, and update ans with the new depth.
+13. Continue the BFS traversal until the queue is empty.
+14. Output the value of ans.

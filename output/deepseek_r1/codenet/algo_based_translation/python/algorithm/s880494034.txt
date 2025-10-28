@@ -1,0 +1,29 @@
+**Algorithm:**
+
+**Imported Modules:**
+- `math` (no usage in code)
+
+**Input Operations:**
+1. Read string input `N` (unused)
+2. Read list of integers `XS` by splitting whitespace-separated input values into integers
+
+**Variables:**
+- `N`: string (unused)
+- `XS`: list of integers
+- `m`: integer (initialized to 9999999999)
+- `i`: integer (loop variable)
+- `c`: integer (temporary sum of squares)
+
+**Logic Flow:**
+1. Initialize `m` to 9999999999
+2. Iterate `i` from 1 to 100 (inclusive):
+   1. Calculate `c` as the sum of `(x - i)^2` for all `x` in `XS`
+   2. If `m` > `c`, set `m` = `c`
+3. Print `m`
+
+**Control Structures:**
+- For loop: `for i in range(1, 101)`
+- Conditional: `if m > c`
+
+**Output Operation:**
+- Print final value of `m` as integer

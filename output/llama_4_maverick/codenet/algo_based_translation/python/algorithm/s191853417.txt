@@ -1,0 +1,9 @@
+1. Define a function `calculate_result` with no parameters and return type `int`.
+2. Declare variables `a`, `b`, `c`, `d`, `e` of type `int`.
+3. Read input from the user using a built-in input function, expecting a string of space-separated integers.
+4. Use a `map` function to convert the input string into a sequence of `int` values.
+5. Unpack the sequence of `int` values into variables `a`, `b`, `c`, `d`, `e`.
+6. Calculate the result by subtracting the sum of `a`, `b`, `c`, `d`, `e` from `15`.
+7. Print the calculated result to the output.
+8. The program has no explicit control structures (loops, conditionals).
+9. The required library is the built-in Python library, specifically the `input` and `print` functions, and the `map` function.

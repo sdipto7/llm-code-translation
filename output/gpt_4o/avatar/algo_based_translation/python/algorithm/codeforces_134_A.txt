@@ -1,0 +1,29 @@
+```
+Function signature:
+  - Function: main()
+    - Parameters: None
+    - Return type: None
+
+Variable declarations:
+  - n: int
+  - w: List[int]
+  - x: int
+  - d: List[int]
+
+Algorithm:
+1. Import the sys module.
+2. Define the function main with no parameters and no return type.
+3. Read an integer n from standard input.
+4. Read a list of integers w from standard input.
+5. Calculate the sum of the list w and assign it to the variable x.
+6. Initialize an empty list d to store indices of elements that meet the condition.
+7. Iterate over the range from 0 to n-1 using a for loop with index variable i.
+   - For each i, check the condition:
+     - If (x - w[i]) / (n - 1) is equal to w[i], then execute the following:
+       - Append the index (i + 1) to the list d.
+8. Print the length of the list d.
+9. Print the elements of the list d joined by a space.
+
+Required libraries:
+  - sys module for reading input using sys.stdin.readline.
+```

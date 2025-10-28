@@ -1,0 +1,41 @@
+```
+Function main:
+    Input: None
+    Output: None
+    - Initialize Scanner 'scan' with BufferedInputStream reading from System.in
+    - Read integer 'N' from input
+    - Declare integer array 'arr' of size 'N'
+    - For each index 'i' from 0 to N-1:
+        - Assign 'arr[i]' the next integer from input
+    - Instantiate 'tsk' as new Task object
+    - Print the result of 'tsk.solve(arr)'
+
+Class Task:
+    Function solve:
+        Input: Integer array 'arr'
+        Output: Integer
+        - Declare integer 'n' as length of 'arr'
+        - Declare integer array 'sorted' as copy of 'arr'
+        - Sort 'sorted' array
+        - Declare long 'total' as n multiplied by (n + 1) divided by 2
+        - Declare integers 'l' as 0, 'r' as n - 1
+        - While 'l' is less than 'r':
+            - Declare integer 'mid' as l plus (r - l) divided by 2
+            - Declare integer 'target' as 'sorted[mid]'
+            - Declare integer 'cur' as 0
+            - Declare long 'cnt' as 0
+            - Declare long array 'bit' of size 2 * n + 2
+            - For each index 'x' from n + 1 to length of 'bit':
+                - Increment 'bit[x]' by 1 (using 'x & -x' for steps)
+            - For each index 'i' from 0 to n-1:
+                - Increment 'cur' by 1 if 'arr[i]' is less than or equal to 'target', otherwise decrement 'cur' by 1
+                - For each index 'x' from 'cur + n + 1' to length of 'bit':
+                    - Increment 'bit[x]' by 1 (using 'x & -x' for steps)
+                - For each index 'x' from 'cur + n' to greater than 0:
+                    - Increment 'cnt' by 'bit[x]' (using 'x & -x' for steps)
+            - If 'cnt' is greater than or equal to 'total / 2 + 1':
+                - Assign 'r' to 'mid'
+            - Else:
+                - Assign 'l' to 'mid + 1'
+        - Return 'sorted[l]'
+```

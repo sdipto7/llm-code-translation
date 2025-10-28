@@ -1,0 +1,10 @@
+1. Read the input value for n.
+2. Initialize an array of size 3n.
+3. Read input values into the array.
+4. Sort the array in ascending order.
+5. Initialize a variable to store the result.
+6. Initialize a pointer to the second last element of the array.
+7. Iterate n times.
+8. In each iteration, add the value at the current pointer to the result.
+9. Decrement the pointer by 2 in each iteration.
+10. Output the result.

@@ -1,0 +1,48 @@
+Function signature:
+- process_string(input_string: str) -> str
+
+Variable declarations and data types:
+- s: str (input string)
+- res: list (to store processed characters)
+- punctuation: list (contains punctuation marks as strings)
+
+Logic flow in execution order:
+1. Read input string `s`
+2. Initialize an empty list `res` to store the processed characters
+3. Define a list `punctuation` containing the characters ',', '.', '!', '?'
+4. Iterate over each index `i` of the string `s`:
+    - If `i` is greater than or equal to 1:
+        - If the character at index `i` in `s` is an empty space:
+            - If the last element in `res` is not an empty space, append the character at index `i` in `s` to `res`
+            - Otherwise, continue to the next iteration
+        - Else:
+            - If the character at index `i` in `s` is in the `punctuation` list:
+                - If the last element in `res` is an empty space, remove the last element from `res`
+                - Append the character at index `i` in `s` to `res`
+                - Append an empty space to `res`
+            - Otherwise, append the character at index `i` in `s` to `res`
+    - Else:
+        - If the character at index `i` in `s` is an empty space, continue to the next iteration
+        - If the character at index `i` in `s` is in the `punctuation` list, continue to the next iteration
+        - Otherwise, append the character at index `i` in `s` to `res`
+5. Join all elements in `res` into a single string and print it
+
+Control structures:
+- For loop: `for i in range(len(s))`
+- If-else statements:
+    - `if i >= 1:`
+    - `if s[i] == '':`
+    - `if res[-1] != '':`
+    - `if s[i] in punctuation:`
+    - `if res[-1] == '':`
+    - `if s[i] == '':`
+    - `if s[i] in punctuation:`
+
+Input/output operations and data processing logic:
+- Read input string `s` from user
+- Process each character of `s` according to the rules defined in the logic flow
+- Join the processed characters in `res` to form the final output string
+- Print the final output string
+
+Required libraries, modules, or dependencies:
+- No specific libraries or modules are required

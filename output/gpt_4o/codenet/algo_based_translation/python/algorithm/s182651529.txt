@@ -1,0 +1,28 @@
+1. Function Signature:
+   - `def compare_scores(N: int, K: int, scores: List[int]) -> None`
+
+2. Variable Declarations:
+   - `mae: int = 0`
+   - `usiro: int = K`
+   
+3. Logic Flow:
+   - Read two integers from input, `N` and `K`.
+   - Read a list of integers as scores from input.
+   - Initialize `mae` to 0 and `usiro` to `K`.
+   - Loop from `0` to `N-K` (exclusive):
+     - If `scores[mae] < scores[usiro]`, print `'Yes'`.
+     - Otherwise, print `'No'`.
+     - Increment `mae` by 1.
+     - Increment `usiro` by 1.
+
+4. Control Structures:
+   - `for` loop iterating from `0` to `N-K`:
+     - Conditional `if` statement checking if `scores[mae] < scores[usiro]`.
+
+5. Input/Output Operations:
+   - Input: Read `N` and `K` using `map(int, input().split())`.
+   - Input: Read scores as a list using `list(map(int, input().split()))`.
+   - Output: Print `'Yes'` or `'No'` based on the condition within the loop.
+
+6. Required Libraries:
+   - No external libraries are required.

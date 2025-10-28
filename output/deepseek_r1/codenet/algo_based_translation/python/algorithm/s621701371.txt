@@ -1,0 +1,58 @@
+**Algorithm:**
+
+**Function Signatures:**
+- Main procedure (implicit in script)
+
+**Parameters:**
+- None (input handled via stdin)
+
+**Return Types:**
+- None (output via stdout)
+
+**Variables:**
+- `s: str` (initial input string)
+- `q: int` (number of queries)
+- `qs: List[List[str]]` (list of query commands)
+- `n: bool` (toggle flag for reversal state)
+- `left: str` (characters prepended to front when reversed)
+- `right: str` (characters appended to end when reversed)
+
+**Logic Flow:**
+1. Read `s` from stdin
+2. Read `q` from stdin and convert to integer
+3. Read `q` lines from stdin, split each into tokens, store as `qs`
+4. Initialize `n = False`
+5. Initialize `left = ""`, `right = ""`
+6. Iterate over each `operation` in `qs`:
+   1. If `operation[0] == '1'`:
+      - Toggle `n` using `n = not n`
+   2. Else if `operation[0] == '2'`:
+      - Extract `t, f, c = operation`
+      - Convert `f` to integer
+      - If `n` is True:
+        - Invert `f` (1 ↔ 2)
+      - If `f == 1`:
+        - Prepend `c` to `left` via `left = c + left`
+      - Else if `f == 2`:
+        - Append `c` to `right` via `right += c`
+7. Concatenate `left + s + right` into final string
+8. If `n` is True:
+   - Reverse final string via `s[::-1]`
+9. Print final string
+
+**Control Structures:**
+- For-loop: `for operation in qs`
+- Conditional checks:
+  - `if operation[0] == '1'`
+  - `if operation[0] == '2'`
+  - `if n` (inside command 2 handling)
+  - `if f == 1` / `elif f == 2`
+- Boolean toggle: `n = not n`
+- String reversal: `s[::-1]` (conditional final step)
+
+**Input/Output:**
+- Input via `input()` for `s`, `q`, and `qs`
+- Output via `print()`
+
+**Dependencies:**
+- None (uses standard Python functions)

@@ -1,0 +1,27 @@
+**Function Signature:**  
+No explicit function (executes as script)  
+
+**Variables:**  
+- `A`: Integer  
+- `B`: Integer  
+- `S`: List of strings (characters)  
+
+**Input Operations:**  
+1. Read two integers `A` and `B` from standard input, split by whitespace.  
+2. Read a string `S` from standard input and convert it to a list of characters.  
+
+**Logic Flow:**  
+1. Check if the character at index `A` in `S` is equal to `'-'`.  
+2. Simultaneously check if the total count of `'-'` in `S` is exactly `1`.  
+3. If both conditions are true, print `"Yes"`.  
+4. Otherwise, print `"No"`.  
+
+**Control Structures:**  
+- Single `if` statement with compound condition:  
+  - `if S[A] == '-' and S.count('-') == 1`  
+
+**Output Operations:**  
+- Print `"Yes"` or `"No"` based on the condition result.  
+
+**Dependencies:**  
+- No external libraries/modules required. Uses standard input/output functions.

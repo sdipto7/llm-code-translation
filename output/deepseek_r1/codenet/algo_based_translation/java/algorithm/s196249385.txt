@@ -1,0 +1,59 @@
+**Algorithm:**
+
+1. **Input Reading:**
+   - Read integers `n` (array length) and `k` (required subarray count threshold) from input.
+   - Read array `a` of size `n` from input.
+
+2. **Cumulative Sum Array Construction:**
+   - Declare `cumsum` as a long array of size `n+1`.
+   - For `i` from 0 to `n-1`:
+     - Compute `cumsum[i+1] = cumsum[i] + a[i]`.
+
+3. **Generate All Subarray Sums:**
+   - Declare list `b` to store all contiguous subarray sums (type `Long`).
+   - Initialize `max` to 0 (long).
+   - For `i` from 0 to `n-1`:
+     - For `j` from `i` to `n-1`:
+       - Compute subarray sum `s = cumsum[j+1] - cumsum[i]`.
+       - Add `s` to `b`.
+       - Update `max = MAX(max, s)`.
+
+4. **Bitwise Mask Filtering:**
+   - Initialize `mask` as the highest one-bit of `max` (using `Long.highestOneBit`).
+   - While `mask > 0`:
+     - Create temporary list `tmp` (type `Long`).
+     - For each element `e` in `b`:
+       - If `(e & mask) != 0`, add `e` to `tmp`.
+     - If `tmp.size() >= k`:
+       - Set `b = tmp`.
+     - Right-shift `mask` by 1 bit.
+
+5. **Result Calculation:**
+   - If `b.size() < k`:
+     - Output 0.
+   - Else:
+     - Initialize `ans` to all bits set (long, `-1`).
+     - For each element `e` in `b`:
+       - Compute `ans = ans & e`.
+     - Output `ans`.
+
+**Variables and Data Types:**
+- `n`, `k`: int (input values)
+- `a`: int array (input array)
+- `cumsum`: long array (cumulative sums)
+- `b`: List of Long (subarray sums)
+- `max`, `mask`, `s`, `e`, `ans`: long
+- `i`, `j`: loop indices (int)
+
+**Control Structures:**
+- For loops with explicit index ranges for cumulative sum and subarray generation.
+- While loop for bitmask iteration (terminates when mask becomes 0).
+- Conditional checks for list size comparison (`tmp.size() >= k`).
+- Bitwise AND operation for final result computation.
+
+**Input/Output:**
+- Input via `Scanner` (reads from standard input).
+- Output via `Printer` (writes to standard output).
+
+**Dependencies:**
+- Java utilities: `Scanner`, `PrintWriter`, `ArrayList`, `List` (from `java.util` and `java.io`).

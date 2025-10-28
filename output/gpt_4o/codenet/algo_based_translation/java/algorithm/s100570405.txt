@@ -1,0 +1,121 @@
+```
+Algorithm:
+
+1. Import required libraries: System.out, Math, InputStream, IOException, NoSuchElementException, ArrayList, Arrays, LinkedList, Collections.
+
+2. Define class Main:
+   - Define method main(String[] args): void
+     - Create a new instance of Main and call the run() method.
+
+   - Declare instance variable: MyInput in = new MyInput()
+
+   - Define method run(): void
+     - Declare variables:
+       - String Sd = in.next()
+       - String T = in.next()
+       - int count = 0
+       - char c
+       - boolean ok = false
+       - int first = -1
+       - int end = -1
+     - For loop: int j = 0; j < Sd.length(); j++
+       - Set count = 0
+       - For loop: int i = 0; i + j < Sd.length(); i++
+         - Set c = Sd.charAt(i + j)
+         - If condition: c == '?' || c == T.charAt(count)
+           - Increment count
+           - If condition: count == T.length()
+             - Set first = i + j - T.length() + 1
+             - Set end = i + j
+             - Set ok = true
+             - Break from inner loop
+         - Else: Set count = 0
+     - If condition: ok
+       - For loop: int i = 0; i < Sd.length(); i++
+         - If condition: first <= i && i <= end
+           - Output T.charAt(i - first) using System.out.print
+         - Else:
+           - If condition: Sd.charAt(i) == '?'
+             - Output "a" using System.out.print
+           - Else:
+             - Output Sd.charAt(i) using System.out.print
+       - Output newline using System.out.println
+     - Else:
+       - Output "UNRESTORABLE" using System.out.println
+
+3. Define class MyInput:
+   - Declare instance variables:
+     - private final InputStream in = System.in
+     - private final byte[] buffer = new byte[1024]
+     - private int ptr = 0
+     - private int buflen = 0
+
+   - Define method hasNextByte(): boolean
+     - If condition: ptr < buflen
+       - Return true
+     - Else:
+       - Set ptr = 0
+       - Try block:
+         - Set buflen = in.read(buffer)
+       - Catch IOException and print stack trace
+       - If condition: buflen <= 0
+         - Return false
+     - Return true
+
+   - Define method readByte(): int
+     - If condition: hasNextByte() returns true
+       - Return buffer[ptr++]
+     - Else:
+       - Return -1
+
+   - Define static method isPrintableChar(int c): boolean
+     - Return 33 <= c && c <= 126
+
+   - Define method skipUnprintable(): void
+     - While loop: hasNextByte() && !isPrintableChar(buffer[ptr])
+       - Increment ptr
+
+   - Define method hasNext(): boolean
+     - Call skipUnprintable()
+     - Return hasNextByte()
+
+   - Define method next(): String
+     - If condition: !hasNext()
+       - Throw NoSuchElementException
+     - Declare StringBuilder sb = new StringBuilder()
+     - Declare int b = readByte()
+     - While loop: isPrintableChar(b)
+       - Append b to sb using sb.appendCodePoint(b)
+       - Set b = readByte()
+     - Return sb.toString()
+
+   - Define method nextLong(): long
+     - If condition: !hasNext()
+       - Throw NoSuchElementException
+     - Declare long n = 0
+     - Declare boolean minus = false
+     - Declare int b = readByte()
+     - If condition: b == '-'
+       - Set minus = true
+       - Set b = readByte()
+     - If condition: b < '0' || '9' < b
+       - Throw NumberFormatException
+     - While loop: true
+       - If condition: '0' <= b && b <= '9'
+         - Set n *= 10
+         - Set n += b - '0'
+       - Else if: b == -1 || !isPrintableChar(b)
+         - Return minus ? -n : n
+       - Else:
+         - Throw NumberFormatException
+       - Set b = readByte()
+
+   - Define method nextInt(): int
+     - Declare long nl = nextLong()
+     - If condition: nl < Integer.MIN_VALUE || nl > Integer.MAX_VALUE
+       - Throw NumberFormatException
+     - Return (int) nl
+
+   - Define method nextDouble(): double
+     - Return Double.parseDouble(next())
+```

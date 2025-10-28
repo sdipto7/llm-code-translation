@@ -1,0 +1,28 @@
+```
+Function signature: main(args: Array of String) -> None
+
+1. Import required libraries:
+   - java.io.IOException
+   - java.time.LocalTime
+   - java.util.Scanner
+
+2. Initialize a Scanner object to read input from the standard input stream.
+
+3. Read a string from input, representing the first time, and split it by ":" to get an array of strings `s`.
+
+4. Read another string from input, representing the second time, and split it by ":" to get an array of strings `t`.
+
+5. Parse the strings in array `s` to integers and create a LocalTime object `x` using:
+   - Hour part: Integer.parseInt(s[0])
+   - Minute part: Integer.parseInt(s[1])
+
+6. Parse the strings in array `t` to integers and create a LocalTime object `y` using:
+   - Hour part: Integer.parseInt(t[0])
+   - Minute part: Integer.parseInt(t[1])
+
+7. Subtract the hour component of `y` from `x` using the method `minusHours`.
+
+8. Subtract the minute component of `y` from `x` using the method `minusMinutes`.
+
+9. Print the resulting LocalTime object after subtraction.
+```

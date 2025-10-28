@@ -1,0 +1,19 @@
+```python
+import sys
+
+def main():
+    input_line = sys.stdin.readline()
+    n = int(input_line)
+    ans = 10 ** 18
+    sqrt_n = int(n ** (1 / 2)) + 2
+    
+    for i in range(1, sqrt_n):
+        if n % i != 0:
+            continue
+        j = n // i
+        current_sum = i + j - 2
+        if current_sum < ans:
+            ans = current_sum
+    
+    print(ans)
+```

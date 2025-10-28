@@ -1,0 +1,29 @@
+```
+Function: main()
+- Input: Read integer N from standard input
+- Variables:
+  - N: int
+  - s: array of String with length N
+  - a_num: int, initialized to 0
+  - b_num: int, initialized to 0
+  - flag: boolean, initialized to true
+  - ans: int, initialized to 0
+
+Execution Flow:
+1. Create a Scanner object to read from standard input.
+2. Parse the next input as an integer N.
+3. Initialize a String array `s` of size N.
+4. Initialize `a_num`, `b_num` to 0, `flag` to true, and `ans` to 0.
+5. Loop over i from 0 to N-1:
+   - Read the next String and assign it to s[i].
+   - If the first character of s[i] is 'B', increment `b_num`.
+   - If the last character of s[i] is 'A', increment `a_num`.
+   - If either the first character is 'B' or the last character is 'A':
+     - If not both the first character is 'B' and the last character is 'A', set `flag` to false.
+   - Loop over j from 0 to length of s[i] - 2:
+     - If the substring from index j to j+2 is "AB", increment `ans`.
+6. Add the minimum of `a_num` and `b_num` to `ans`.
+7. If the minimum of `a_num` and `b_num` is not 0 and `flag` is true, decrement `ans` by 1.
+8. Print `ans` to standard output.
+```
+

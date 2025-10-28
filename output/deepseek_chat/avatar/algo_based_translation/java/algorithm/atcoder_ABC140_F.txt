@@ -1,0 +1,40 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `sc`: Scanner (System.in)
+- `N`: int (input)
+- `size`: int = 1 << N
+- `S`: int[size] (input values)
+- `spawned`: boolean[size] (initialized to false)
+- `active`: ArrayList<Integer>
+- `activated`: ArrayList<Integer>
+- `next`: int
+- `slime`: int (loop variable)
+
+**Libraries:**
+- java.util.*
+
+**Logic Flow:**
+1. Read integer N from input
+2. Compute size = 2^N
+3. Initialize array S of length size
+4. Read size integers into S
+5. Sort S in ascending order
+6. Initialize boolean array spawned of length size (all false)
+7. Set spawned[size-1] = true
+8. Initialize active list with S[size-1]
+9. For i from 0 to N-1:
+   - Sort active in descending order
+   - Initialize empty activated list
+   - Set next = size-1
+   - For each slime in active:
+     - While next >= 0 AND (S[next] >= slime OR spawned[next] is true):
+       - Decrement next by 1
+     - If next < 0:
+       - Print "No"
+       - Return
+     - Set spawned[next] = true
+     - Add S[next] to activated list
+   - Add all elements from activated to active
+10. Print "Yes"

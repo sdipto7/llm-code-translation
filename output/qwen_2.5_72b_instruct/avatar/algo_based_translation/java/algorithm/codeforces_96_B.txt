@@ -1,0 +1,31 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner in` as `Scanner`
+- `long number` as `long`
+- `long ans` as `long`
+- `long value` as `long`
+- `int mask` as `int`
+- `String s` as `String`
+- `int zeros` as `int`
+- `char c` as `char`
+
+Complete logic flow in execution order:
+1. Create a `Scanner` object named `in` to read input from `System.in`.
+2. Read a `long` value from `in` and store it in `number`.
+3. Initialize `ans` to `-1`.
+4. Initialize `value` to `0`.
+5. Initialize `mask` to `2`.
+6. Enter a `while` loop that continues as long as `value` is less than `number`.
+7. Convert `mask` to a binary string, remove the first character, and store it in `s`.
+8. Initialize `zeros` to `0`.
+9. Iterate over each character `c` in `s`:
+   - If `c` is `'0'`, increment `zeros`.
+10. If `zeros` is not equal to the length of `s` minus `zeros`, continue to the next iteration of the loop.
+11. Replace all `'0'` characters in `s` with `'4'`.
+12. Replace all `'1'` characters in `s` with `'7'`.
+13. Convert the modified `s` to a `long` and store it in `value`.
+14. After exiting the loop, print `value`.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

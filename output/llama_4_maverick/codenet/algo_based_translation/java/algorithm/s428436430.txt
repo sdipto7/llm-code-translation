@@ -1,0 +1,16 @@
+1. Import required libraries: java.util.*
+2. Define a class `calArea` with a method `Area(int w, int h)` returning `int`
+3. Define a class `Main` with a static method `main(String[] args)`
+4. In `main(String[] args)`:
+   - Declare a `Scanner` object `sc` and initialize it with `System.in`
+   - Declare a `List<Integer>` object `arr` and initialize it as an empty `ArrayList<Integer>`
+   - Loop from `i = 0` to `i < 4`:
+     - Read input using `sc.next()` and parse it to `int` using `Integer.parseInt()`
+     - Add the parsed `int` to `arr`
+   - Create an instance `ab` of class `calArea`
+   - Call `ab.Area(arr.get(0), arr.get(1))` and store the result in `int area1`
+   - Call `ab.Area(arr.get(2), arr.get(3))` and store the result in `int area2`
+   - Compare `area1` and `area2`:
+     - If `area1 > area2`, output `area1`
+     - Else if `area1 < area2`, output `area2`
+     - Else if `area1 == area2`, output `area1`

@@ -1,0 +1,40 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main(): void`
+
+**Variable Declarations:**
+- `mod: int` (initialized to `10^9 + 7`, unused in logic)
+- `N: int`
+- `A: int`
+- `B: int`
+- `ans: int` (initialized to `0`)
+- `rep: int`
+- `res: int`
+
+**Input/Output Operations:**
+- Input: Read three integers `N`, `A`, `B` from standard input via `input().split()`.
+- Output: Print final value of `ans`.
+
+**Control Flow & Logic:**
+
+1. **Read Input:**
+   - Read `N`, `A`, `B` as integers from input: `N, A, B ← MI()`
+
+2. **Calculate Full Cycles:**
+   - Compute repetitions: `rep ← N // (A + B)`
+   - Update answer with full cycles: `ans ← rep * A`
+
+3. **Calculate Remaining Portion:**
+   - Compute remainder: `res ← N - rep * (A + B)`
+   - Add minimum of remainder or `A` to answer: `ans ← ans + min(res, A)`
+
+4. **Output Result:**
+   - Print `ans`
+
+**Control Structures:**
+- No explicit loops or conditionals beyond arithmetic operations and `min()`.
+
+**External Dependencies:**
+- Requires Python `sys` library for input reading.
+- Uses `sys.stdin.readline`, `map()`, and `list()` for input parsing.

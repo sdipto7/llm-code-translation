@@ -1,0 +1,37 @@
+Function signature: `def substract(a, b):`  
+Parameters: `a` (integer), `b` (integer)  
+Return type: integer  
+
+Variable declarations: `total` (integer)  
+
+Logic flow:
+1. If `a > b`:
+   - Initialize `total` to 0
+   - While `a > 0` and `b > 0`:
+     - Add integer division `int(a / b)` to `total`
+     - Update `a` to `a % b`
+     - If `a > 0`:
+       - Add integer division `int(b / a)` to `total`
+       - Update `b` to `b % a`
+   - Return `total`
+2. If `a < b`:
+   - Initialize `total` to 0
+   - While `a > 0` and `b > 0`:
+     - Add integer division `int(b / a)` to `total`
+     - Update `b` to `b % a`
+     - If `b > 0`:
+       - Add integer division `int(a / b)` to `total`
+       - Update `a` to `a % b`
+   - Return `total`
+3. If `a == b`:
+   - Return 1
+
+Input/output operations:
+- Read integer `n` from input
+- For each iteration from 0 to `n-1`:
+  - Read two integers `a` and `b` from input
+  - Call `substract(a, b)` and append result to list `lst`
+- For each element in `lst`:
+  - Print the element
+
+Required libraries, modules, or dependencies: None

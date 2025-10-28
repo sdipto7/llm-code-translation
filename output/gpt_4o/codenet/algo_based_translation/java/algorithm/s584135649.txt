@@ -1,0 +1,22 @@
+Function Signature:
+- main(): void
+
+Variable Declarations:
+- sc: Scanner
+- i: int
+- n: int
+
+Logic Flow:
+1. Initialize a Scanner object `sc` to read input from the standard input stream.
+2. Declare an integer variable `i` and initialize it to 0.
+3. Enter a for-loop with a loop control variable `i` starting from 1 and running while `i` is less than or equal to 5, incrementing `i` by 1 after each iteration.
+   - In each iteration, read an integer from input using `sc.nextInt()` and assign it to the variable `n`.
+   - If the value of `n` is equal to 0, exit the loop immediately.
+4. After exiting the loop, print the value of `i`.
+
+Input/Output Operations:
+- Input: Read integers from standard input.
+- Output: Print the value of `i` to standard output.
+
+Required Libraries:
+- java.util.Scanner

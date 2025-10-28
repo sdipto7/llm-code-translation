@@ -1,0 +1,17 @@
+- **Function Signatures**: N/A (script execution)
+- **Variable Declarations**:
+  - `a`: int
+  - `b`: int
+  - `x`: list[int]
+- **Input Operations**:
+  - Read line from standard input.
+  - Split into two strings, convert to integers `a` and `b`.
+- **Data Processing**:
+  - Initialize `x` with `a + b`.
+  - Append `a - b` to `x`.
+  - Append `a * b` to `x`.
+- **Control Structures**:
+  - Call `max(x)` to find the largest value in `x`.
+- **Output Operations**:
+  - Print the result of `max(x)`.
+- **Dependencies**: None (uses built-in functions only).

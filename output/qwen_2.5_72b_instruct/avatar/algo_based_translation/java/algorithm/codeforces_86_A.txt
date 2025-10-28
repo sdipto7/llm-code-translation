@@ -1,0 +1,51 @@
+Function signatures:
+- `int power(Long a)`
+- `long mult(Long a)`
+- `void main(String[] args)`
+
+Variable declarations and data types:
+- `int res` in `power`
+- `int pow` in `mult`
+- `long max` in `mult`
+- `Scanner in` in `main`
+- `long l` in `main`
+- `long r` in `main`
+- `long res` in `main`
+- `long[] maxxes` in `main`
+- `long temp` in `main`
+
+Logic flow in execution order:
+- `main` starts
+- `in` is initialized to read input
+- `l` and `r` are read from input
+- `res` is initialized to 0
+- `maxxes` is initialized as an array of size 10
+- `temp` is initialized to 0
+- For loop runs 10 times (i from 0 to 9):
+  - `temp` is updated to `temp * 10 + 9`
+  - `maxxes[i]` is updated to `temp / 2 * (temp - temp / 2)`
+- `res` is updated to the maximum of `mult(l)` and `res`
+- `res` is updated to the maximum of `mult(r)` and `res`
+- `temp` is reset to 0
+- For loop runs 10 times (i from 0 to 9):
+  - `temp` is updated to `temp * 10 + 9`
+  - If `l <= temp / 2` and `temp / 2 <= r`:
+    - `res` is updated to the maximum of `maxxes[i]` and `res`
+- `res` is printed
+
+Control structures:
+- `while (a > 0)` in `power`
+- `for (int j = 0; j < pow; ++j)` in `mult`
+- `for (int i = 0; i < 10; ++i)` in `main` (first loop)
+- `if (l <= temp / 2 && temp / 2 <= r)` in `main`
+- `for (int i = 0; i < 10; ++i)` in `main` (second loop)
+
+Input/output operations and data processing logic:
+- `Scanner in = new Scanner(System.in)` initializes input
+- `l = in.nextLong()` reads first long value
+- `r = in.nextLong()` reads second long value
+- `System.out.println(res)` prints the final result
+
+Libraries:
+- `java.util.Scanner`
+- `java.util.Arrays` (not used in logic)

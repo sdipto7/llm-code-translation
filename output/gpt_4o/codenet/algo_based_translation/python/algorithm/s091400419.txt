@@ -1,0 +1,25 @@
+Function Signature:
+- Function: `find_maximum_expression_result(a: int, b: int) -> int`
+
+Algorithm:
+1. Variable Declarations:
+   - `a`: integer
+   - `b`: integer
+   - `lst`: list of integers
+
+2. Input Operations:
+   - Read a single line of input as a string.
+   - Split the input string into two substrings using space as the delimiter.
+   - Convert the substrings into integers and assign them to `a` and `b`.
+
+3. Data Processing Logic:
+   - Calculate the sum of `a` and `b`, and store it in `lst[0]`.
+   - Calculate the difference (`a - b`), and store it in `lst[1]`.
+   - Calculate the product of `a` and `b`, and store it in `lst[2]`.
+
+4. Output Operations:
+   - Compute the maximum value from the list `lst`.
+   - Print the maximum value.
+
+5. Return:
+   - The function returns the maximum value calculated from the list `lst`.

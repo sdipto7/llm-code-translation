@@ -1,0 +1,46 @@
+- Function signature:
+  - `public static void main(String[] args) throws IOException`
+
+- Variables:
+  - `BufferedReader br` initialized via `new BufferedReader(new InputStreamReader(System.in))`
+  - `int n` initialized via `Integer.parseInt(br.readLine())`
+  - `int[] a` array of size `n`
+  - `String[] elements` initialized via splitting second input line
+  - `int swapCount = 0`
+  - Loop counters `i`, `j`
+  - `int mini` for tracking minimum index
+  - Temporary variable `int v` for swapping
+
+- Input processing:
+  1. Read integer `n` from first input line
+  2. Read second line, split into space-separated strings stored in `elements`
+  3. Convert each element to integer and populate array `a`
+
+- Algorithm logic:
+  1. For each `i` from 0 to `a.length-1` (outer loop):
+      a. Set `mini = i`
+      b. For each `j` from `i` to `a.length-1` (inner loop):
+          i. If `a[j] < a[mini]`, set `mini = j`
+      c. If `mini != i`:
+          i. Swap `a[mini]` and `a[i]` using temporary variable `v`
+          ii. Increment `swapCount` by 1
+
+- Output processing:
+  1. Build output string by concatenating array elements with spaces
+  2. Print formatted array string
+  3. Print `swapCount` value
+
+- Control structures:
+  - Sequential execution of input processing, sorting, and output
+  - Nested for-loops for selection sort algorithm
+  - If-condition for element swap decision
+  - Array indexing operations
+
+- Data flow:
+  - Input → String parsing → Integer conversion → Array population
+  → In-place sorting with swap tracking → String formatting → Output
+
+- Required dependencies:
+  - `java.io.BufferedReader`
+  - `java.io.InputStreamReader`
+  - `java.io.IOException`

@@ -1,0 +1,17 @@
+1. Read the number of points N from the input.
+2. Initialize a 2D array pos of size N x 2 to store the coordinates of N points.
+3. For i = 0 to N-1, read the x and y coordinates of the ith point and store them in pos[i][0] and pos[i][1] respectively.
+4. Initialize a variable sum to 0.
+5. For i = 0 to N-1, iterate through each point.
+6. For j = 0 to N-1, iterate through each point again.
+7. If i == j, skip to the next iteration.
+8. Calculate the Euclidean distance between the ith and jth points using the dist function.
+9. Add the calculated distance to sum.
+10. Calculate the average distance by dividing sum by N.
+11. Output the average distance. 
+
+dist(x1, y1, x2, y2):
+1. Calculate the difference in x-coordinates (x1 - x2) and y-coordinates (y1 - y2).
+2. Square the differences and sum them.
+3. Calculate the square root of the sum.
+4. Return the result.

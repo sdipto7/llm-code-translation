@@ -1,0 +1,15 @@
+1. INPUT N
+2. INPUT S
+3. DEFINE FUNCTION calculate(n, s)
+   4. CONVERT s TO LIST arr
+   5. CALCULATE rNum = COUNT("R") IN arr
+   6. CALCULATE gNum = COUNT("G") IN arr
+   7. CALCULATE bNum = COUNT("B") IN arr
+   8. INITIALIZE sum = 0
+   9. FOR step FROM 1 TO CEILING(n/2)
+      10. FOR i FROM 0 TO n - 2*step - 1
+         11. FORM STRING s = arr[i] + arr[i + step] + arr[i + 2*step]
+         12. IF s IS ONE OF "RGB", "RBG", "BGR", "BRG", "GBR", "GRB"
+            13. INCREMENT sum BY 1
+   14. PRINT rNum * gNum * bNum - sum
+15. CALL FUNCTION calculate(N, S)

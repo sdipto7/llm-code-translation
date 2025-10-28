@@ -1,0 +1,29 @@
+Function: main
+Parameters: None
+Return: None
+
+Variables:
+- ABC: list of integers
+- A: integer
+- B: integer
+- C: integer
+
+Logic Flow:
+1. Read input line and split into list of strings
+2. Convert each string in list to integer using map()
+3. Store resulting list in variable ABC
+4. Assign ABC[0] to variable A
+5. Assign ABC[1] to variable B
+6. Assign ABC[2] to variable C
+7. Create list containing:
+   - 10*A + B + C
+   - 10*B + C + A
+   - 10*C + A + B
+8. Find maximum value in the list using max()
+9. Print the maximum value
+
+Input/Output:
+- Input: Single line containing three space-separated integers
+- Output: Single integer (maximum of the three calculated values)
+
+Dependencies: None (uses built-in functions only)

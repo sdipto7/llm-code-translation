@@ -1,0 +1,21 @@
+```algorithm
+Function Main:
+    Parameters: None
+    Return Type: void
+    Variables:
+        Scanner sc: initialized with System.in
+        int n: input from sc.nextInt()
+        long ans: initialized to 0
+    Logic:
+        Read n from standard input using Scanner
+        Initialize ans to 0
+        For i from 1 to n inclusive:
+            Compute k = n / i (integer division)
+            Compute term = i * k * (k + 1) / 2
+            Add term to ans
+        Print ans to standard output
+    Control Structures:
+        Single for-loop: for(int i=1; i <=n; i++)
+    Dependencies:
+        java.util.Scanner for input handling
+```

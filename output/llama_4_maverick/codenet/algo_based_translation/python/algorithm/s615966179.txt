@@ -1,0 +1,9 @@
+1. Define a function `calculate_result` with parameters `n`, `a`, and `b` of type integer and return type integer.
+2. Read three integer inputs from the user and store them in variables `n`, `a`, and `b`.
+3. Calculate the integer division of `n` by the sum of `a` and `b`, multiply the result by `a`, and store it in variable `ans`.
+4. Calculate the remainder of `n` divided by the sum of `a` and `b`, find the minimum between this remainder and `a`, and store it in variable `r`.
+5. Add `r` to `ans`.
+6. Output the value of `ans`.
+7. The required input is three integers, and the output is one integer. 
+8. The built-in functions and operations used are `map`, `int`, `input`, `split`, integer division `//`, modulus `%`, and `min`. 
+9. The execution order is: input operation, calculation of `ans`, calculation of `r`, update of `ans`, and output operation.

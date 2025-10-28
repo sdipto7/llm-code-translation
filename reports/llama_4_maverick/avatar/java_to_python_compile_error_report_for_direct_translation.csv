@@ -1,0 +1,81 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,atcoder_ABC154_A.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/direct_translation/java/python/atcoder_ABC154_A.py"", line 9
+    However, Here is a more pythonic and simple version.
+                       ^^^^
+SyntaxError: invalid syntax
+"
+java,python,atcoder_ABC112_C.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/direct_translation/java/python/atcoder_ABC112_C.py"", line 7
+    if h
+        ^
+SyntaxError: expected ':'
+"
+java,python,atcoder_ABC142_C.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/direct_translation/java/python/atcoder_ABC142_C.py"", line 11
+    However, a more accurate translation of the given Java code would be:
+               ^^^^
+SyntaxError: invalid syntax
+"
+java,python,codeforces_596_B.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/direct_translation/java/python/codeforces_596_B.py"", line 10
+    However, a more pythonic and precise translation would be:
+               ^^^^
+SyntaxError: invalid syntax
+"
+java,python,atcoder_ABC167_D.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/direct_translation/java/python/atcoder_ABC167_D.py"", line 14
+    idx = 
+          ^
+SyntaxError: invalid syntax
+"
+java,python,codeforces_108_B.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/direct_translation/java/python/codeforces_108_B.py"", line 8
+    if a
+        ^
+SyntaxError: expected ':'
+"
+java,python,atcoder_AGC012_A.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/direct_translation/java/python/atcoder_AGC012_A.py"", line 7
+    res = sum(array
+             ^
+SyntaxError: '(' was never closed
+"
+java,python,codeforces_387_B.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/direct_translation/java/python/codeforces_387_B.py"", line 9
+    if req
+          ^
+SyntaxError: expected ':'
+"
+java,python,atcoder_ABC125_C.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/direct_translation/java/python/atcoder_ABC125_C.py"", line 19
+    L = 
+        ^
+SyntaxError: invalid syntax
+"
+java,python,atcoder_ABC124_C.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/direct_translation/java/python/atcoder_ABC124_C.py"", line 28
+    if a
+        ^
+SyntaxError: expected ':'
+"
+java,python,codeforces_334_A.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/direct_translation/java/python/codeforces_334_A.py"", line 7
+    odd = 
+          ^
+SyntaxError: invalid syntax
+"
+java,python,codeforces_67_B.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/direct_translation/java/python/codeforces_67_B.py"", line 9
+    aa = 
+         ^
+SyntaxError: invalid syntax
+"
+java,python,atcoder_ARC102_C.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/direct_translation/java/python/atcoder_ARC102_C.py"", line 3
+    nchoosek = 
+               ^
+SyntaxError: invalid syntax
+"
+java,python,codeforces_450_A.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/direct_translation/java/python/codeforces_450_A.py"", line 8
+    q1.append(int(input().split()
+                 ^
+SyntaxError: '(' was never closed
+"
+java,python,codeforces_282_B.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/direct_translation/java/python/codeforces_282_B.py"", line 4
+    ch = 
+         ^
+SyntaxError: invalid syntax
+"
+java,python,codeforces_629_B.py,Compilation Error,"Error:   File ""output/llama_4_maverick/avatar/direct_translation/java/python/codeforces_629_B.py"", line 3
+    FfriendPerDay = 
+                    ^
+SyntaxError: invalid syntax
+"

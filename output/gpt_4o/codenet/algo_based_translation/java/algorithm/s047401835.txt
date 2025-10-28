@@ -1,0 +1,42 @@
+1. Import required libraries:
+   - `java.util.ArrayList`
+   - `java.util.List`
+   - `java.util.Scanner`
+   - `java.util.stream.Collectors`
+
+2. Define the main function:
+   - Signature: `public static void main(String[] args)`
+
+3. Declare variables:
+   - `Scanner scanner` to read input
+   - `int N` to store the number of integers
+   - `List<Integer> numbers` to store integers
+
+4. Read input:
+   - Initialize `scanner` with `System.in`
+   - Read an integer input `N` using `scanner.nextInt()`
+
+5. Initialize `numbers` as an empty `ArrayList`
+
+6. Loop `N` times:
+   - Signature: `for (int i = 0; i < N; i++)`
+   - Read an integer from input using `scanner.next()`
+   - Convert the string to an integer using `Integer.parseInt()`
+   - Add the integer to `numbers`
+
+7. Declare variable `int count` and initialize it to 0
+
+8. Execute a do-while loop:
+   - Signature: `do { ... } while(numbers.size() == N)`
+
+9. Inside the do-while loop:
+   - Filter `numbers` to keep only even numbers using `stream().filter()`
+   - Divide each even number by 2 using `stream().map()`
+   - Collect the results back into `numbers` using `collect(Collectors.toList())`
+
+10. Increment `count` if the size of `numbers` remains `N`
+
+11. End of the do-while loop: Condition is to continue while `numbers.size() == N`
+
+12. Output the result:
+   - Print `count` using `System.out.println(count)`

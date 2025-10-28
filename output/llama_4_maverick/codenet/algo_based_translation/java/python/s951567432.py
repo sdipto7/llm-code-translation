@@ -1,0 +1,15 @@
+
+import sys
+
+class Main:
+    @staticmethod
+    def main():
+        count = int(sys.stdin.readline().strip())
+        total = 0
+        for ix in range(1, count + 1):
+            total += ix
+        print(total)
+
+if __name__ == "__main__":
+    Main.main()
+

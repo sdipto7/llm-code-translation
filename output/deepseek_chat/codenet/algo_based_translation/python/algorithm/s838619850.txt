@@ -1,0 +1,13 @@
+read string S from input
+read string T from input
+set integer N = length of S
+set integer M = length of T
+set integer ans = M
+for integer i from 0 to N-M inclusive:
+    set string S_2 = substring of S from index i to i+M-1
+    set integer cnt = 0
+    for integer j from 0 to M-1 inclusive:
+        if character at index j of T != character at index j of S_2:
+            increment cnt by 1
+    set ans = minimum of ans and cnt
+print ans

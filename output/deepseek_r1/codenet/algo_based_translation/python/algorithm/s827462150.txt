@@ -1,0 +1,48 @@
+1. **Function Signature**
+   - Input: Integer `n` from standard input
+   - Output: Print `n` integers to standard output
+
+2. **Imports**
+   - `numpy` (as `np`)
+
+3. **Variables**
+   - `n`: Integer (user input)
+   - `A`: NumPy array of float64 with size `n`, initialized to zeros
+   - `x`, `y`, `z`: Integers initialized to 1
+
+4. **Algorithm Logic**
+   1. Read integer `n` from input
+   2. Initialize array `A = np.zeros(n)`
+   3. Set `x = 1`, `y = 1`, `z = 1`
+   4. Outer loop:
+      - While `x² + y² + z² + xy + yz + zx <= n`:
+        5. Middle loop:
+           - While `x² + y² + z² + xy + yz + zx <= n`:
+             6. Inner loop:
+                - While `x² + y² + z² + xy + yz + zx <= n`:
+                  7. Calculate `i = x² + y² + z² + xy + yz + zx`
+                  8. Increment `A[i-1]` by 1
+                  9. `z += 1`
+               10. Reset `z = 1`
+               11. `y += 1`
+           12. Reset `y = 1`, `z = 1`
+           13. `x += 1`
+   14. Iterate through array indices `0` to `n-1`:
+       - Print integer value of `A[i]`
+
+5. **Control Structures**
+   - Three nested while loops with identical termination condition:
+     - `x² + y² + z² + x*y + y*z + z*x <= n`
+   - Sequential variable increments and resets:
+     - `z` increments in inner loop → resets to 1 after inner loop
+     - `y` increments in middle loop → resets to 1 after middle loop
+     - `x` increments in outer loop
+
+6. **Data Flow**
+   - Quadratic form `i` used as array index (adjusted by -1)
+   - Array values modified via `A[i-1] += 1`
+   - Final output converts float array values to integers
+
+7. **I/O Operations**
+   - Single input: `n = int(input())`
+   - `n` outputs via `print(int(A[i]))` for `i` in `0..n-1`

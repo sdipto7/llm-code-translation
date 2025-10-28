@@ -1,0 +1,25 @@
+Algorithm:
+- Import sys module
+- Read two integers N and K from input
+- Read list of N integers from input, store in lst
+- Initialize empty lists lst_p and lst_m
+- For each element in lst (index i from 0 to N-1):
+  - If element equals 0: decrement K by 1
+  - If element > 0: append to lst_p
+  - If element < 0: append to lst_m
+- Initialize variables p = 0, m = 0
+- Initialize x = 0, y = len(lst_m)-1
+- Set lastx = len(lst_p)
+- Set lasty = len(lst_m)
+- Define function check(k: int) -> int:
+  - Initialize ans = 10^9
+  - For j from 0 to k inclusive:
+    - If j > lastx OR (k-j) > lasty: continue (do nothing)
+    - Else:
+      - If j == 0: set p = 0
+      - Else: set p = lst_p[j-1]
+      - If (k-j) == 0: set m = 0
+      - Else: set m = lst_m[lasty - (k-j)]
+      - Update ans = min(ans, 2*p + abs(m), p + 2*abs(m))
+  - Return ans
+- Call check(K) and print result

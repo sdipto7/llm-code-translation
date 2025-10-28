@@ -1,0 +1,36 @@
+- Function signatures with parameter and return types:
+  - `public static void main(String[] args)`: No return type, takes an array of strings as input.
+
+- Variable declarations and data types:
+  - `int[][][] info`: A 3D array of integers.
+  - `int n`: An integer to store the number of entries.
+  - `int built`, `int floor`, `int room`, `int num`: Integers to store building number, floor number, room number, and the number of people respectively.
+  - `java.util.Scanner sc`: An instance of the Scanner class for input.
+
+- Complete logic flow in execution order:
+  1. Initialize a 3D array `info` with dimensions 4x3x10 and set all elements to 0.
+  2. Create a Scanner object `sc` to read input from the standard input.
+  3. Read an integer `n` which represents the number of entries.
+  4. For each entry (from 0 to `n-1`):
+     - Read four integers: `built`, `floor`, `room`, and `num`.
+     - Increment the value at `info[built - 1][floor - 1][room - 1]` by `num`.
+  5. For each building (from 0 to 3):
+     - For each floor (from 0 to 2):
+        - For each room (from 0 to 9):
+           - Print the value at `info[i][j][k]` followed by a space.
+        - Print a newline character.
+     - If the current building is not the last one, print "####################" followed by a newline character.
+
+- Control structures:
+  - Three nested for-loops for initializing the `info` array.
+  - A for-loop for reading and processing `n` entries.
+  - Three nested for-loops for printing the values in `info`.
+  - An if-statement to check if the current building is not the last one.
+
+- Input/output operations and data processing logic:
+  - Input: Reads integers from standard input for the number of entries and details of each entry.
+  - Processing: Increments the count of people in the specified building, floor, and room.
+  - Output: Prints the count of people in each room of each floor of each building, separated by a newline after each floor and "####################" after each building except the last one.
+
+- Required libraries, modules, or dependencies:
+  - `java.util.Scanner` for reading input from standard input.

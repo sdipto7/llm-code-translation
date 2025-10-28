@@ -1,0 +1,9 @@
+Initialize HashMap<String, String> named map
+Initialize Scanner named sc with System.in
+Read integer n from input
+Read and discard next line (str)
+For i from 0 to n-1:
+    Read next line from input
+    Put (line, empty string) into map
+Close scanner
+Print size of map

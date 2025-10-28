@@ -1,0 +1,24 @@
+Function signature: `calculate_remaining(int n, int m) -> int`
+
+Variable declarations and data types:
+- `n`: int
+- `m`: int
+- `i`: int
+
+Complete logic flow in execution order:
+1. Read two integers from input, assign to `n` and `m`
+2. Initialize `i` to 1
+3. While `m` is greater than or equal to `i`:
+   a. Subtract `i` from `m`
+   b. Update `i` to `(i % n) + 1`
+4. Print `m`
+
+Control structures:
+- While loop with condition `m >= i`
+
+Input/output operations and data processing logic:
+- Input: Two integers separated by space, assigned to `n` and `m`
+- Output: The value of `m` after the loop ends
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required

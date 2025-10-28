@@ -1,0 +1,23 @@
+```
+Algorithm:
+1. Import the `deque` class from the `collections` module.
+2. Read two integers `N` and `M` from input, representing the number of nodes and edges, respectively.
+3. Initialize an adjacency list `G` as a dictionary with keys from 1 to N, each key mapping to an empty list.
+4. For `M` times, do the following:
+   a. Read two integers `a` and `b` from input.
+   b. Append `b` to the list at `G[a]`.
+   c. Append `a` to the list at `G[b]`.
+5. Create a list `col` of length `N+1`, initialized with `-1`.
+6. Initialize an integer `cnt` to 0.
+7. For each integer `i` from 1 to N, do the following:
+   a. If `col[i]` is less than 0, proceed with:
+      i. Set `col[i]` to `cnt`.
+      ii. Initialize a `deque` named `que` with `i`.
+      iii. While `que` is not empty, do the following:
+          - Pop the leftmost element `x` from `que`.
+          - For each integer `y` in `G[x]`, do the following:
+            * If `col[y]` is less than 0, set `col[y]` to `cnt` and append `y` to `que`.
+      iv. Increment `cnt` by 1.
+8. Determine the maximum value `cmax` in the list `col`.
+9. Output the value `cmax`.
+```

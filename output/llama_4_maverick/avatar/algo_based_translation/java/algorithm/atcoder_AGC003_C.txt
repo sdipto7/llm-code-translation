@@ -1,0 +1,17 @@
+1. Initialize a HashMap to store numbers and their indices.
+2. Initialize a PriorityQueue to store numbers.
+3. Read the number of elements N.
+4. For i from 0 to N-1:
+   4.1. Read a number.
+   4.2. Add the number to the PriorityQueue.
+   4.3. Store the number and its index in the HashMap.
+5. Initialize a binary counter bin to 0.
+6. Initialize a difference counter diff to 0.
+7. While the PriorityQueue is not empty:
+   7.1. Remove the smallest number from the PriorityQueue.
+   7.2. Retrieve the index of the removed number from the HashMap.
+   7.3. If the parity of bin is different from the parity of the index:
+      7.3.1. Increment diff.
+   7.4. Increment bin modulo 2.
+8. Calculate the answer as diff divided by 2.
+9. Output the answer.

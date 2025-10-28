@@ -1,0 +1,39 @@
+```plaintext
+Function Signature:
+    function can_catch_up(a: int, v: int, b: int, w: int, t: int) -> str
+
+Variable Declarations:
+    a: int
+    v: int
+    b: int
+    w: int
+    t: int
+
+Logic Flow:
+1. Receive inputs for a, v, b, w, and t:
+   - a and v as integers from the first input split by space
+   - b and w as integers from the second input split by space
+   - t as an integer from the third input
+
+2. Check if starting positions a and b are the same:
+   - If a equals b, return 'YES'
+
+3. If not, check if velocity v is less than or equal to velocity w:
+   - If v is less than or equal to w, return 'NO'
+
+4. If velocities are such that v is greater than w:
+   - Calculate the time required to catch up as abs(a - b) / (v - w)
+   - Compare calculated time with t:
+     - If t is less than the calculated time, return 'NO'
+     - Otherwise, return 'YES'
+
+Control Structures:
+- Conditional statements: if-elif-else for checking positions and velocities
+
+Input/Output Operations:
+- Input: Reading integers from the user input
+- Output: Printing 'YES' or 'NO' based on conditions
+
+Required Libraries:
+- No external libraries or modules are required
+```

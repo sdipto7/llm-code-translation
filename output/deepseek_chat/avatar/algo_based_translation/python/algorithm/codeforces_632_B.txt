@@ -1,0 +1,40 @@
+**Function Signatures:**
+- `main() -> int`
+- `Bob_sMaxStrength(pieces: List[Tuple[int, str]]) -> int`
+
+**Variable Declarations:**
+- `pieces: List[Tuple[int, str]]`
+- `pScore: int`
+- `sScore: int`
+- `pMaxScore: int`
+- `sMaxScore: int`
+
+**Algorithm Flow:**
+
+1. Call `input()` and discard result
+2. Read next input line, split by spaces, convert each to int
+3. Read next input line as string
+4. Create tuples pairing each integer with corresponding character
+5. Pass pieces to `Bob_sMaxStrength`
+6. Initialize `pScore`, `sScore`, `pMaxScore`, `sMaxScore` to sum of all values where character is 'B'
+7. Iterate forward through pieces:
+   - If character is 'A': add value to `pScore`, update `pMaxScore` if `pScore` exceeds it
+   - Else: subtract value from `pScore`
+8. Iterate backward through pieces:
+   - If character is 'A': add value to `sScore`, update `sMaxScore` if `sScore` exceeds it
+   - Else: subtract value from `sScore`
+9. Return maximum of `pMaxScore` and `sMaxScore`
+10. Print result of `main()` when script executed directly
+
+**Control Structures:**
+- For loop: `for piece in pieces` (forward traversal)
+- For loop: `for i in range(len(pieces)-1, -1, -1)` (backward traversal)
+- Conditionals: `if piece[1] == 'A'` / `else` (in both loops)
+- Conditional: `if pMaxScore > sMaxScore` (return comparison)
+
+**Input/Output Operations:**
+- Input: Read two lines from stdin
+- Output: Print integer result
+
+**Dependencies:**
+- Built-in functions: `input()`, `map()`, `int()`, `split()`, `zip()`, `tuple()`, `sum()`, `range()`, `len()`, `print()`

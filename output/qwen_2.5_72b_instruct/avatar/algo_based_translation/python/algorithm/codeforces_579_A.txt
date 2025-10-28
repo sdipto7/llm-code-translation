@@ -1,0 +1,25 @@
+Function signature:
+- main() -> None
+
+Variable declarations and data types:
+- n: int
+- x: int
+
+Logic flow in execution order:
+1. Read an integer value from standard input and store it in n.
+2. Initialize x to 1.
+3. While the logarithm base 2 of n is not an integer:
+   a. Increment x by 1.
+   b. Subtract 2 raised to the power of the integer part of the logarithm base 2 of n from n.
+4. Print the value of x.
+
+Control structures:
+- While loop: Condition is math.log2(n) % 1, which checks if the logarithm base 2 of n is not an integer.
+
+Input/output operations and data processing logic:
+- Input: An integer n is read from standard input.
+- Output: The final value of x is printed to standard output.
+- Data processing: The algorithm calculates how many times it needs to subtract the largest possible power of 2 from n until n becomes a power of 2, incrementing x each time.
+
+Required libraries, modules, or dependencies:
+- math module for the log2 function

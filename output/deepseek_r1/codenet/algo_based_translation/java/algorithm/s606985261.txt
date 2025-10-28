@@ -1,0 +1,22 @@
+- Required imports: java.util.Scanner
+- Function signatures: public static void main(String[] args)
+- Variables:
+  - Scanner sc (Scanner type)
+  - String s (input string)
+  - int total (initialized to 0)
+- Input operations: 
+  - Read next token from standard input via sc.next() into s
+- Processing logic:
+  1. Initialize total = 0
+  2. Outer loop: i from 0 to s.length()-1 (inclusive)
+    a. Inner loop: j from i+1 to s.length()-1 (inclusive)
+      i. Compare s.charAt(i) and s.charAt(j)
+      ii. If equal: increment total by 1
+- Control structures:
+  - Nested for-loops:
+    - Outer for (int i = 0; i < s.length(); i++)
+    - Inner for (int j = i + 1; j < s.length(); j++)
+  - Conditional: if (s.charAt(i) == s.charAt(j))
+- Output operations:
+  - Print "Yes" if total == 2, else print "No" via ternary operator
+  - System.out.println with ternary conditional check

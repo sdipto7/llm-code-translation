@@ -1,0 +1,71 @@
+**Structured Algorithm Specification:**
+
+**1. Function/Method Signatures:**
+- `valid(i: int, j: int, n: int, m: int) -> bool`
+- `sumn(i: int, n: int) -> float`
+- `sqfun(a: float, b: float, c: float) -> float`
+- `value() -> tuple[int, ...]`
+- `values() -> tuple[int, ...]`
+- `inlst() -> list[int]`
+- `inlsts() -> list[int]`
+- `inp() -> int`
+- `inps() -> int`
+- `instr() -> str`
+- `stlst() -> list[str]`
+- `f(s: str) -> str`
+- `solve() -> None`
+
+**2. Variable Declarations:**
+- Global variables: None
+- `solve()` locals:
+  - `l: list[str]` (holds 3 processed input strings)
+  - `t: itertools.permutations` object
+  - `l` redefined as `list[str]` (all permutation concatenations)
+  - Loop variables: `i` (int) in input processing loops
+
+**3. Logic Flow:**
+
+**3.1 `solve()` Execution:**
+1. Initialize empty list `l`.
+2. Loop 3 times:
+   1. Read input string via `input()`.
+   2. Process string using `f()`.
+   3. Append processed string to `l`.
+3. Generate all permutations of `l` using `itertools.permutations(l, 3)`.
+4. Clear `l` and populate with concatenated strings of each permutation.
+5. Read integer `n` via `inp()` (number of test cases).
+6. Loop `n` times:
+   1. Read input string via `instr()`.
+   2. Process string using `f()`.
+   3. Check if processed string exists in `l`.
+   4. Print "ACC" if found, else "WA".
+
+**4. Control Flow Structures:**
+- **Conditionals:**
+  - `valid()`: `if i < n and i >= 0 and j >= 0 and j < m`
+  - `solve()` test case check: `if f(instr()) in l`
+- **Loops:**
+  - Fixed 3-iteration loop for initial input processing.
+  - `n`-iteration loop for test case processing.
+
+**5. Input/Output Operations:**
+- Input sources: `input()`, `sys.stdin.readline()`
+- Output: `print('ACC')` or `print('WA')` based on check
+- Data processing:
+  - String cleaning in `f()`: remove '-', ';', '_'; lowercase
+  - Permutation generation and concatenation
+
+**6. Error Handling & Edge Cases:**
+- No explicit error handling (assumes valid inputs)
+- `valid()` handles grid boundary checks
+- `sqfun()` may produce math domain error if discriminant is negative (not handled)
+
+**7. External Dependencies:**
+- **Imports:**
+  - `itertools` for permutations
+  - `math` for `sqrt` in `sqfun`
+  - `sys` for stdin operations
+- **Library Functions:**
+  - `itertools.permutations`
+  - `math.sqrt`
+  - `sys.stdin.readline`

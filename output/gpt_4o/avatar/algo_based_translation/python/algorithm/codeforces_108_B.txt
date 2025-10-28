@@ -1,0 +1,26 @@
+```
+Function signature:
+- function s() -> str
+
+Variable declarations and data types:
+- a: List[int]
+
+Logic flow:
+1. Call input() to ignore the first line of input.
+2. Read a line of input, split it by spaces, convert each element to an integer, and store the result in a list `a`.
+3. Sort the list `a` in non-decreasing order.
+4. Iterate over the list `a` from the second element to the last element with index `i`.
+   - If the current element `a[i]` is not equal to the previous element `a[i - 1]` and `a[i]` is less than twice the previous element `a[i - 1]`, return 'YES'.
+5. After the loop, if no such pair is found, return 'NO'.
+
+Control structures:
+- A for loop iterating over the index range starting from 1 to the length of list `a`.
+- An if conditional checking two conditions: `a[i] != a[i - 1]` and `a[i] < a[i - 1] * 2`.
+
+Input/Output operations:
+- Use input() to read input values.
+- Use print() to output the result of function `s()`.
+
+Libraries, modules, or dependencies:
+- None required.
+```

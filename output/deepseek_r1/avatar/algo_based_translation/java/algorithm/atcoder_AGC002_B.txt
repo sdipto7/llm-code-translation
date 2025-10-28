@@ -1,0 +1,55 @@
+**Algorithm:**
+
+**Input Operations:**
+- Read integer `N` from standard input.
+- Read integer `M` from standard input.
+
+**Data Structures:**
+- Define class `Box`:
+  - Properties:
+    - `num` (integer)
+    - `red` (boolean)
+  - Constructor:
+    - Parameters: `n` (integer), `r` (boolean)
+    - Initializes `num = n`, `red = r`
+  - Method `moveTo`:
+    - Parameter: `other` (Box object)
+    - Return type: void
+
+**Execution Flow:**
+1. Initialize array `B` of length `N` containing `Box` objects:
+   - `B[0] = new Box(1, true)`
+   - For indices `i` from 1 to `N-1`:
+     - `B[i] = new Box(1, false)`
+
+2. Process `M` operations:
+   - For each iteration from 0 to `M-1`:
+     - Read integer `x` from input, subtract 1
+     - Read integer `y` from input, subtract 1
+     - Call `B[x].moveTo(B[y])`
+
+3. Count boxes with `red == true`:
+   - Initialize `counter = 0`
+   - For each `Box b` in array `B`:
+     - If `b.red` is true: increment `counter`
+   - Print `counter`
+
+**Box.moveTo Logic:**
+1. If `this.num == 0`:
+   - Return immediately
+
+2. Else if `this.num == 1`:
+   - Set `this.num = 0`
+   - Increment `other.num` by 1
+   - If `this.red` is true:
+     - Set `other.red = true`
+     - Set `this.red = false`
+
+3. Else (`this.num > 1`):
+   - Decrement `this.num` by 1
+   - Increment `other.num` by 1
+   - If `this.red` is true:
+     - Set `other.red = true`
+
+**Dependencies:**
+- `java.util.Scanner` for input handling

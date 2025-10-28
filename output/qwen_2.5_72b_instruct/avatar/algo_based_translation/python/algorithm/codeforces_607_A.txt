@@ -1,0 +1,32 @@
+Function Signature:
+- `main()`: No parameters, No return type
+
+Variable Declarations:
+- `n`: Integer
+- `l`: List of integers, length 1000010, initialized to 0
+- `dp`: List of integers, length 1000010, initialized to 0
+- `a`, `b`: Integers
+- `mx`: Integer, initialized to 0
+- `i`: Integer
+
+Logic Flow:
+1. Read an integer `n` from input.
+2. Initialize a list `l` of size 1000010 with all elements set to 0.
+3. Initialize a list `dp` of size 1000010 with all elements set to 0.
+4. For `i` from 0 to `n-1`:
+    - Read two integers `a` and `b` from input.
+    - Set `l[a]` to `b`.
+5. If `l[0]` is greater than 0:
+    - Set `dp[0]` to 1.
+6. Initialize `mx` to 0.
+7. For `i` from 1 to 1000009:
+    - If `l[i]` is equal to 0:
+        - Set `dp[i]` to `dp[i-1]`.
+    - Else:
+        - If `l[i]` is greater than or equal to `i`:
+            - Set `dp[i]` to 1.
+        - Else:
+            - Set `dp[i]` to `dp[i - l[i] - 1] + 1`.
+    - If `dp[i]` is greater than `mx`:
+        - Set `mx` to `dp[i]`.
+8. Print the result of `n - mx`.

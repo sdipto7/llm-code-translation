@@ -1,0 +1,35 @@
+Function: main (String[] args) throws IOException
+Variable Declarations:
+- BufferedReader buf
+- String[] inp
+- int n
+- int m
+- String[] ans
+- String str
+- StringBuilder temp
+
+Logic Flow:
+1. Initialize BufferedReader buf to read from standard input.
+2. Read a line of input, split it into an array of strings inp using "" as the delimiter.
+3. Parse the first element of inp as an integer and assign it to n.
+4. Parse the second element of inp as an integer and assign it to m.
+5. Initialize an array of strings ans of size n.
+6. For each index i from 0 to n-1:
+   a. Read a line of input and assign it to str.
+   b. Initialize a StringBuilder temp with an empty string.
+   c. For each index j from 0 to m-1:
+      i. If the character at position j in str is '-', append '-' to temp.
+      ii. Otherwise:
+          1. If (i + j) % 2 equals 1, append 'W' to temp.
+          2. Otherwise, append 'B' to temp.
+   d. Convert temp to a string and assign it to the i-th element of ans.
+7. For each index i from 0 to n-1:
+   a. Print the i-th element of ans followed by a newline character.
+
+Libraries/Modules/Dependencies:
+- java.io.BufferedReader
+- java.io.InputStreamReader
+- java.io.IOException
+- java.lang.String
+- java.lang.StringBuilder
+- java.lang.Integer

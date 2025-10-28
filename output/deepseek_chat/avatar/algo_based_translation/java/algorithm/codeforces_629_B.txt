@@ -1,0 +1,40 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner sc`: Input scanner
+- `int n`: Number of friends
+- `int[367] FfriendPerDay`: Female friend count per day
+- `int[367] MfriendPerDay`: Male friend count per day
+- `int answer`: Maximum valid pairs (initialized to 0)
+- `char c`: Gender ('M' or 'F')
+- `int a`: Start day
+- `int b`: End day
+- `int i`: Loop counter for friends
+- `int j`: Loop counter for days
+
+**Libraries:**
+- `java.util.Scanner`
+
+**Algorithm:**
+1. Initialize Scanner with System.in
+2. Read integer n
+3. Initialize FfriendPerDay array (size 367) with zeros
+4. Initialize MfriendPerDay array (size 367) with zeros
+5. Initialize answer = 0
+6. For i from 0 to n-1:
+   - Read character c
+   - Read integer a
+   - Read integer b
+   - For j from a to b:
+     - If c equals 'M':
+       - Increment MfriendPerDay[j]
+     - Else:
+       - Increment FfriendPerDay[j]
+     - If MfriendPerDay[j] < FfriendPerDay[j]:
+       - If MfriendPerDay[j] > answer:
+         - Set answer = MfriendPerDay[j]
+     - Else:
+       - If FfriendPerDay[j] > answer:
+         - Set answer = FfriendPerDay[j]
+7. Print answer * 2

@@ -1,0 +1,33 @@
+Function signature: main(String[] args) throws IOException
+
+Variables:
+- Scanner sc = System.in
+- BufferedWriter bw = OutputStreamWriter(System.out)
+- int H = sc.nextInt()
+- int W = sc.nextInt()
+- int A = sc.nextInt()
+- int B = sc.nextInt()
+
+Logic flow:
+1. Read integer H from standard input
+2. Read integer W from standard input
+3. Read integer A from standard input
+4. Read integer B from standard input
+5. If W < 2*A OR H < 2*B then:
+   - Print "-1"
+   - Return from function
+6. Else:
+   - For i from 0 to H-1:
+     - For j from 0 to W-1:
+       - If (i < B AND j < A) OR (i >= B AND j >= A) then:
+         - Write "0" to output
+       - Else:
+         - Write "1" to output
+     - Write newline to output
+7. Flush output buffer
+
+Required libraries:
+- java.io.BufferedWriter
+- java.io.IOException
+- java.io.OutputStreamWriter
+- java.util.Scanner

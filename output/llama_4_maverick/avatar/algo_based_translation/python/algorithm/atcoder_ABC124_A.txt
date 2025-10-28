@@ -1,0 +1,7 @@
+1. Read two integer inputs and store them in variables a and b.
+2. Initialize a variable c to 0.
+3. Repeat the following steps 2 times:
+   3.1. Update c by adding the maximum of a and b to it.
+   3.2. If a is greater than or equal to b, decrement a by 1.
+   3.3. Otherwise, decrement b by 1.
+4. Output the value of c.

@@ -1,0 +1,25 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- A: int, B: int, C: int, D: int (input integers)
+- m: int = 998244353 (modulus constant)
+- d: 2D list of integers with dimensions (C+1) x (D+1)
+- i: int (loop counter)
+- j: int (loop counter)
+
+**Input Operations:**
+- Read four space-separated integers from standard input and assign to A, B, C, D
+
+**Initialization:**
+- Initialize 2D array d with zeros
+- Set d[A][B] = 1
+
+**Main Logic:**
+- For i from A to C (inclusive):
+  - For j from B to D (inclusive):
+    - Update d[i][j] using recurrence:
+      d[i][j] = (d[i][j] + (d[i][j-1] * i + d[i-1][j] * j - d[i-1][j-1] * (i-1) * (j-1))) % m
+
+**Output Operation:**
+- Print d[C][D]

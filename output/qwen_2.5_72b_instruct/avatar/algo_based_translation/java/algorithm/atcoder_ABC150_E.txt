@@ -1,0 +1,58 @@
+Function signatures:
+- `main(String[] args) throws Exception`
+- `power(long x, long n) : long`
+
+Variable declarations and data types:
+- `BufferedReader br`
+- `String[] sa`
+- `int n`
+- `int[] c`
+- `int mod = 1000000007`
+- `long b`
+- `long a`
+- `long ans`
+- `long val`
+
+Logic flow:
+1. Read input using `BufferedReader`
+2. Split input into string array `sa`
+3. Parse first element of `sa` as integer `n`
+4. Read next line and split into string array `sa`
+5. Initialize integer array `c` of size `n`
+6. Loop through `sa` and parse each element as integer, storing in `c`
+7. Close `BufferedReader`
+8. If `n` equals 1:
+   - Calculate `c[0] * 2 % mod`
+   - Print result and return
+9. Sort array `c` in parallel
+10. Calculate `b` as `power(2, n)`
+11. Calculate `a` as `power(2, n - 2)`
+12. Initialize `ans` to 0
+13. Loop from `i = 2` to `n + 1`:
+    - Calculate `val` as `(a * i % mod) * c[n + 1 - i] % mod`
+    - Add `val` to `ans`, taking modulo `mod`
+14. Multiply `ans` by `b`, taking modulo `mod`
+15. Print `ans`
+
+Control structures:
+- If statement: `if (n == 1)`
+- For loop: `for (int i = 0; i < n; i++)`
+- For loop: `for (int i = 2; i <= n + 1; i++)`
+- If statement inside `power` function: `if (n == 0)`
+- If statement inside `power` function: `if (n % 2 == 1)`
+
+Input/output operations:
+- Read input from standard input using `BufferedReader`
+- Print output to standard output using `System.out.println`
+
+Data processing logic:
+- Parsing integers from input strings
+- Sorting integer array
+- Power calculation using recursion
+- Modulo arithmetic for large number operations
+- Accumulation of results using loop
+
+Required libraries:
+- `java.io.BufferedReader`
+- `java.io.InputStreamReader`
+- `java.util.Arrays`

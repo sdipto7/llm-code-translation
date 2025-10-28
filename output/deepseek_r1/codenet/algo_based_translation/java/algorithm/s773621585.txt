@@ -1,0 +1,36 @@
+- Required imports: java.util.HashMap, java.util.Scanner
+- Main function: public static void main(String[] args)
+- Declare variables:
+  - HashMap<String, String> map initialized with new HashMap<String, String>()
+  - Scanner sc initialized with new Scanner(System.in)
+  - int n assigned sc.nextInt()
+  - String str assigned sc.nextLine()
+- Input processing:
+  - Read n from standard input
+  - Read and discard remaining newline after integer input
+- Loop structure:
+  - for loop with counter int i=0, condition i < n, increment i++
+    - map.put(sc.nextLine(), "") in each iteration
+- Resource cleanup:
+  - sc.close()
+- Output operation:
+  - Print map.size() to standard output
+
+Function signatures:
+- main: static void, parameter String[] args
+
+Control flow:
+1. Sequential execution from variable declarations to scanner closure
+2. Single for-loop with exact count (n iterations)
+3. No conditional statements
+
+Data flow:
+- HashMap stores unique keys from input lines
+- map.size() reflects number of unique entries
+- String str captures leftover newline but remains unused
+
+I/O operations:
+- System.in for input
+- System.out for output
+- Scanner methods: nextInt(), nextLine()
+- Console output via System.out.println()

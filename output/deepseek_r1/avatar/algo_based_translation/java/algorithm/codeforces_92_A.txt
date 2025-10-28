@@ -1,0 +1,44 @@
+```plaintext
+Function Signature:
+public static void main(String[] args) -> void
+
+Input Operations:
+- Read two integers n and k from standard input using Scanner
+
+Variables:
+- int n (initial value from input)
+- int k (initial value from input)
+- int i = 1
+- int req = 1
+
+Libraries/Dependencies:
+- java.util.Scanner
+
+Logic Flow:
+1. Initialize Scanner object for input
+2. Read integer n from input
+3. Read integer k from input
+4. Initialize i to 1
+5. Initialize req to 1
+6. Enter loop with condition (k - req >= 0):
+   a. Check if (k - req >= 0)
+      i. If true: subtract req from k
+      ii. Else: break (unreachable due to loop condition)
+   b. Increment i by 1
+   c. Calculate new req:
+      i. If (i % n != 0): req = i % n
+      ii. Else: req = n
+   d. Repeat loop check
+7. When loop exits, print remaining k value
+8. Close Scanner (implied by code termination)
+
+Control Structures:
+- While loop: while (k - req >= 0)
+- Nested if-else inside loop
+- Modulo operation for cycle management (1..n pattern)
+- Integer arithmetic operations for modifying k
+
+Data Processing:
+- Iterative subtraction of incrementing values (cyclical via modulo n) from k
+- Termination when requested subtraction exceeds remaining k
+```

@@ -1,0 +1,13 @@
+1. READ n, m
+2. INITIALIZE out as an array of size n with all elements as 0
+3. INITIALIZE comp as an array of size n with elements as i + 2 for i ranging from 0 to n-1
+4. FOR _ ranging from 1 to m
+   4.1 READ l, r, x
+   4.2 SET t as l
+   4.3 WHILE t <= r
+      4.3.1 SET next_val as comp[t - 1]
+      4.3.2 IF out[t - 1] == 0 AND t != x THEN
+         4.3.2.1 SET out[t - 1] as x
+      4.3.3 SET comp[t - 1] as r + 1 if t >= x ELSE x
+      4.3.4 SET t as next_val
+5. PRINT elements of out array

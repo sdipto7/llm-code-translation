@@ -1,0 +1,67 @@
+Algorithm:
+
+Function Signature:
+- main(String[] args) : void
+
+Variables:
+- N : int
+- a : int[N]
+- leftl : int[N]
+- rightl : int[N]
+- que : ArrayDeque<Integer>
+- index : int
+- ans : long
+
+Libraries/Dependencies:
+- java.util.ArrayDeque
+- java.util.Scanner
+
+Logic Flow:
+
+1. Read integer N from standard input
+2. Initialize integer array a with size N
+3. Read N integers into array a from standard input
+4. Initialize leftl and rightl integer arrays with size N
+5. Initialize ArrayDeque que
+
+Processing right boundaries:
+6. Set index = 0
+7. While index < N:
+    a. While que is not empty AND a[que.peek()] > a[index]:
+        i. Remove head element as ind
+        ii. Set rightl[ind] = index - ind - 1
+    b. Add current index to que
+    c. Increment index by 1
+8. While que is not empty:
+    a. Remove head element as ind
+    b. Set rightl[ind] = N - ind - 1
+
+Processing left boundaries:
+9. Set index = N - 1
+10. While index >= 0:
+    a. While que is not empty AND a[que.peek()] > a[index]:
+        i. Remove head element as ind
+        ii. Set leftl[ind] = ind - index - 1
+    b. Add current index to que
+    c. Decrement index by 1
+11. While que is not empty:
+    a. Remove head element as ind
+    b. Set leftl[ind] = ind - index - 1
+
+Calculate result:
+12. Initialize ans = 0
+13. For i from 0 to N-1:
+    a. ans += (long)a[i] * (leftl[i] + 1) * (rightl[i] + 1)
+14. Print ans to standard output
+
+Control Structures:
+- While loops for index processing (lines 7, 8, 10, 11)
+- Nested while loops for stack operations
+- For loop for final summation
+- Conditional stack checks using que.isEmpty()
+- Element comparisons (a[que.peek()] > current element)
+
+Input/Output:
+- Read input via Scanner from System.in
+- Process integer array from standard input
+- Output final sum via System.out.println

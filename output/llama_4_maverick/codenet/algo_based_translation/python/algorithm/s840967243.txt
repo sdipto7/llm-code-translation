@@ -1,0 +1,42 @@
+1. Import the math module.
+2. Define a constant MOD with data type integer and value 10^9 + 7.
+3. Define a function f with return type integer, where f(x) = factorial(x).
+4. Read two integer inputs, n and m, from the user.
+5. Sort n and m in ascending order and assign the results back to n and m, such that n <= m.
+6. Calculate the value of max(2 - m + n, 0).
+7. Calculate the factorial of n and m using the function f.
+8. Compute the product of the results from steps 6, 7, and 7, and then apply the modulo operation with MOD.
+9. Output the result from step 8.
+ 
+Function Signature: 
+- `f(x: integer): integer`
+- Main program: takes two integers as input and outputs an integer.
+
+Variable Declarations and Data Types:
+- MOD: integer
+- n: integer
+- m: integer
+- f: function (takes integer, returns integer)
+
+Logic Flow:
+1. Import required module.
+2. Initialize constant.
+3. Define function f.
+4. Read input (n, m).
+5. Sort (n, m).
+6. Calculate max(2 - m + n, 0).
+7. Calculate f(n) and f(m).
+8. Compute product and apply modulo MOD.
+9. Output result.
+
+Control Structures:
+- Sorting ( implicit comparison and swap )
+- max() function with condition (2 - m + n > 0)
+- Modulo operation (%) with condition ( result = product % MOD )
+
+Input/Output Operations:
+- Read two integers (n, m) from input.
+- Output the final result after computation.
+
+Required Libraries/Modules:
+- math module for factorial function.

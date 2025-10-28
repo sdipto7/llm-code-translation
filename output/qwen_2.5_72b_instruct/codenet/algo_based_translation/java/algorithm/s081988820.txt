@@ -1,0 +1,223 @@
+### Algorithm
+
+#### Required Libraries
+- `java.io.IOException`
+- `java.io.InputStream`
+- `java.util.*`
+- `java.util.stream.IntStream`
+
+#### Classes and Interfaces
+- `Main`
+- `Scanner`
+- `CombCalculator`
+- `MobiusFunction`
+- `SieveMobiusFunction`
+- `PrimeFactorizationMobiusFunction`
+- `FactorialTableCombCalculator`
+- `TableCombCalculator`
+- `Graph`
+- `FlowResolver`
+- `ArrayGraph`
+- `DfsFlowResolver`
+- `BinaryIndexedTree`
+- `BinaryIndexedTree2D`
+- `UnionFind`
+- `SetUnionFind`
+- `ArrayUnionFind`
+- `PrimeNumberUtils`
+- `BitSet`
+- `LongBit`
+
+#### Function Signatures
+- `public static void main(String[] args)`
+- `private void solve()`
+- `private boolean isPrintableChar(int c)`
+- `private boolean isDigit(int c)`
+- `private boolean hasNextByte()`
+- `private boolean hasNext()`
+- `private int readByte()`
+- `public String next()`
+- `public long nextLong()`
+- `public int nextInt()`
+- `public double nextDouble()`
+- `public SieveMobiusFunction(int size)`
+- `@Override public int get(int n)`
+- `@Override public int get(int n)`
+- `public FactorialTableCombCalculator(int size, long mod)`
+- `private long inverse(long n, long mod)`
+- `private long pow(long n, long p, long mod)`
+- `@Override public long comb(int n, int m)`
+- `public TableCombCalculator(int size, long mod)`
+- `@Override public long comb(int n, int m)`
+- `public ArrayGraph(int n)`
+- `@Override public void link(int from, int to, long cost)`
+- `@Override public Optional<Long> getCost(int from, int to)`
+- `@Override public int getVertexNum()`
+- `public DfsFlowResolver(Graph graph)`
+- `public long maxFlow(int from, int to)`
+- `private long flow(int from, int to, long current_flow, boolean[] passed)`
+- `public BinaryIndexedTree(int size)`
+- `public void add(int index, long value)`
+- `public long getSum(int index)`
+- `public BinaryIndexedTree2D(int size1, int size2)`
+- `public void add(int index1, int index2, long value)`
+- `public long getSum(int index1, int index2)`
+- `public SetUnionFind(int size)`
+- `@Override protected void unionTo(int source, int dest)`
+- `@Override public Set<Integer> getSet(int id)`
+- `public ArrayUnionFind(int size)`
+- `@Override public void union(int A, int B)`
+- `protected void unionTo(int source, int dest)`
+- `@Override public boolean judge(int A, int B)`
+- `@Override public Set<Integer> getSet(int id)`
+- `protected int root(int id)`
+- `public PrimeNumberUtils(int limit)`
+- `public List<Integer> getPrimeNumberList()`
+- `public boolean isPrime(int n)`
+- `private boolean isPrime(int n, List<Integer> primes)`
+- `public LongBit(int size)`
+- `@Override public void set(int index, boolean bit)`
+- `@Override public boolean get(int index)`
+- `@Override public void shiftRight(int num)`
+- `@Override public void shiftLeft(int num)`
+- `public long getLong(int segment)`
+- `@Override public void or(BitSet bitset)`
+- `@Override public void and(BitSet bitset)`
+
+#### Variable Declarations and Data Types
+- `int H`
+- `int W`
+- `int[][] c`
+- `int[] min`
+- `int ans`
+- `InputStream in`
+- `byte[] buffer`
+- `int index`
+- `int length`
+- `boolean minus`
+- `long value`
+- `StringBuilder sb`
+- `int num`
+- `int size`
+- `int[] mobiusFunctionValues`
+- `long[] factorialTable`
+- `long[] inverseFactorialTable`
+- `long mod`
+- `Long[][] costArray`
+- `int vertexNum`
+- `Graph graph`
+- `long sum`
+- `long currentFlow`
+- `boolean[] passed`
+- `long[] array`
+- `long[][] array`
+- `Map<Integer, Set<Integer>> map`
+- `int[] parent`
+- `int[] rank`
+- `boolean[] isPrimeArray`
+- `List<Integer> primes`
+- `long[] bitArray`
+- `int segment`
+- `int inIndex`
+- `int shiftSeg`
+- `int shiftInI`
+- `int sourceSeg`
+
+#### Complete Logic Flow in Execution Order
+
+1. `main` initializes `Main` object and calls `solve`.
+2. `solve` initializes `Scanner`, reads `H`, `W`, `c`, `min`.
+3. Initializes `min` array with values from `c[i][1]`.
+4. Iterates 10 times updating `min` array using Floyd-Warshall algorithm.
+5. Reads grid values and accumulates `ans` using `min` array.
+6. Prints `ans`.
+
+#### Control Structures
+
+- **Loops:**
+  - `for (int i = 0; i < 10; i++)`
+  - `for (int j = 0; j < 10; j++)`
+  - `for (int tc = 0; tc < 10; tc++)`
+  - `for (int i = 0; i < 10; i++)`
+  - `for (int j = 0; j < 10; j++)`
+  - `for (int h = 1; h <= H; h++)`
+  - `for (int w = 1; w <= W; w++)`
+  - `for (int i = 2; i < size; i++)`
+  - `for (int k = 1; i * i * k < size; k++)`
+  - `for (int i = 2; i < size; i++)`
+  - `for (int k = 1; i * k < size; k++)`
+  - `for (int i = 2; i < n; i++)`
+  - `for (int i = 1; i <= size; i++)`
+  - `for (int m = 1; m < n; m++)`
+  - `for (int id = 0; id < graph.getVertexNum(); id++)`
+  - `for (int i = index; i < array.length; i += (i & -i))`
+  - `for (int i = index; i > 0; i -= (i & -i))`
+  - `for (int i1 = index1; i1 < array.length; i1 += (i1 & -i1))`
+  - `for (int i2 = index2; i2 < array.length; i2 += (i2 & -i2))`
+  - `for (int i1 = index1; i1 > 0; i1 -= (i1 & -i1))`
+  - `for (int i2 = index2; i2 > 0; i2 -= (i2 & -i2))`
+  - `for (int i = 0; i < size; i++)`
+  - `for (int i = 0; i < size; i++)`
+  - `for (int i = 2; i < limit; i += 2)`
+  - `for (int prime : primes)`
+  - `for (int i = 0; i < bitArray.length; i++)`
+  - `for (int segment = 0; segment < bitArray.length; segment++)`
+  - `for (int sourceSeg = segment + shiftSeg; sourceSeg < bitArray.length; sourceSeg++)`
+  - `for (int segment = 0; segment < bitArray.length; segment++)`
+  - `for (int sourceSeg = segment - shiftSeg; sourceSeg >= 0; sourceSeg--)`
+  - `for (int segment = 0; segment < bitArray.length; segment++)`
+
+- **Conditionals:**
+  - `if (index < length)`
+  - `if (isPrintableChar(c))`
+  - `if (isDigit(c))`
+  - `if (minus)`
+  - `if (b == '-')`
+  - `if (isPrintableChar(b))`
+  - `if (isDigit(b))`
+  - `if (n > size)`
+  - `if (n < 0)`
+  - `if (mobiusFunctionValues[i] == 1)`
+  - `if (mobiusFunctionValues[i] == 1)`
+  - `if (n % i == 0)`
+  - `if (n % i == 0)`
+  - `if (n <= 0)`
+  - `if (n == 1)`
+  - `if (n % i == 0)`
+  - `if (n % i == 0)`
+  - `if (num % 2 == 0)`
+  - `if (p == 0)`
+  - `if (n > size)`
+  - `if (n < 0 || m < 0 || n < m)`
+  - `if (n > size)`
+  - `if (n < 0 || m < 0 || n < m)`
+  - `if (n > size)`
+  - `if (passed[id])`
+  - `if (cost.orElse(0L) > 0)`
+  - `if (returnFlow > 0)`
+  - `if (from == to)`
+  - `if (size > 2)`
+  - `if (i % prime == 0)`
+  - `if (prime > Math.sqrt(n))`
+  - `if (n > 10000000)`
+  - `if (limit > 2)`
+  - `if (n % prime == 0)`
+  - `if (prime > Math.sqrt(n))`
+  - `if (!(bitset instanceof LongBit))`
+  - `if (!(bitset instanceof LongBit))`
+  - `if (sourceSeg < bitArray.length)`
+  - `if (shiftInI > 0 && sourceSeg + 1 < bitArray.length)`
+  - `if (sourceSeg >= 0)`
+  - `if (shiftInI > 0 && sourceSeg > 0)`
+
+#### Input/Output Operations and Data Processing Logic
+
+- Input:
+  - `Scanner sc = new Scanner(System.in)`
+  - `H = sc.nextInt()`
+  - `W = sc.nextInt()`
+  - `c[i][j] = sc.nextInt()`
+  - `A = sc.nextInt()`
+
+- Output:
+  - `System.out.println(ans)`

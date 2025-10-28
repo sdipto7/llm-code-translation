@@ -1,0 +1,9 @@
+- Import the `Scanner` class from the `java.util` package.
+- Define a class `Main`.
+- Define a `main` method with the signature `public static void main(String[] args)`.
+- Declare a `Scanner` object `scanner` and initialize it with `new Scanner(System.in)`.
+- Declare an integer variable `h` and assign it the next integer input from `scanner`.
+- Declare an integer variable `a` and assign it the next integer input from `scanner`.
+- Check if the remainder of `h` divided by `a` is equal to 0:
+  - If true, print the result of integer division `h / a`.
+  - If false, print the result of integer division `h / a` plus 1.

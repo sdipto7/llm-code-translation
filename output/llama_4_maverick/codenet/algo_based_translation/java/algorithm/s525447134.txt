@@ -1,0 +1,11 @@
+1. Import the required library: java.util.Scanner
+2. Define a function main with parameters (String[] args) and return type void
+3. Declare a variable sc of type Scanner and initialize it with a new Scanner object using System.in
+4. Declare a variable s of type String and assign it the value returned by sc.next()
+5. Evaluate the condition s.equals("Sunny")
+   - If true, output "Cloudy" to the console
+   - Else, evaluate the condition s.equals("Cloudy")
+     - If true, output "Rainy" to the console
+     - Else, output "Sunny" to the console
+6. End the function main
+7. The program terminates.

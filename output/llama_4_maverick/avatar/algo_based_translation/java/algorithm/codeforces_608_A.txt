@@ -1,0 +1,10 @@
+1. Initialize input/output streams.
+2. Read two integers, n and s, from the input stream using a Scanner object.
+3. Initialize a variable max to 0.
+4. Loop n times.
+5. Inside the loop, read two integers, f and t, from the input stream using the Scanner object.
+6. Check if the sum of f and t is greater than max.
+7. If true, update max with the sum of f and t.
+8. After the loop ends, compare max with s and find the maximum of the two.
+9. Output the maximum value found in step 8 using a PrintWriter object.
+10. Close the PrintWriter object.

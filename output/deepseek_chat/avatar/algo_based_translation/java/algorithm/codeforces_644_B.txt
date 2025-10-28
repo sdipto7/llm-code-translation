@@ -1,0 +1,37 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner sc`: Scanner object for input
+- `int n`: number of requests
+- `int b`: maximum queue size
+- `long[] ans`: array of length n to store results
+- `LinkedList<Long> q`: linked list queue storing end times
+- `int t`: current request start time
+- `int d`: current request duration
+
+**Libraries/Dependencies:**
+- `java.util.*`
+
+**Algorithm:**
+1. Initialize Scanner `sc` with System.in
+2. Read integer `n` from input
+3. Read integer `b` from input
+4. Initialize `ans` as long array of size `n`
+5. Initialize `q` as empty LinkedList of Long
+6. For `i` from 0 to n-1:
+   - Read integer `t` from input
+   - Read integer `d` from input
+   - While `q` is not empty AND first element of `q` ≤ `t`:
+     - Remove first element from `q`
+   - If size of `q` ≤ `b`:
+     - If `q` is empty:
+       - Set `ans[i]` = `t` + `d`
+     - Else:
+       - Set `ans[i]` = last element of `q` + `d`
+     - Add `ans[i]` to end of `q`
+   - Else:
+     - Set `ans[i]` = -1
+7. For `i` from 0 to n-1:
+   - Print `ans[i]` followed by space
+8. End program

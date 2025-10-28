@@ -1,0 +1,16 @@
+Algorithm:
+1. Read two integers h and w from input, representing grid dimensions.
+2. Initialize empty list l to store grid rows.
+3. For each row from 0 to h-1:
+   a. Read a string input and convert to list of characters
+   b. Append this list to l
+4. Initialize integer variable tmp to 0
+5. For each row i from 0 to h-1:
+   a. For each column j from 0 to w-1:
+      i. If element at l[i][j] equals "#":
+         - If j < tmp:
+            * Print "Impossible"
+            * Exit program
+         - Else:
+            * Set tmp = j
+6. Print "Possible"

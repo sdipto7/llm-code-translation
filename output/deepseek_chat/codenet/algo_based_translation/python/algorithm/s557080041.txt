@@ -1,0 +1,25 @@
+Function name: main
+Parameters: none
+Return type: void
+
+Variables:
+- N: string or integer (initially input as string, then conditionally converted)
+- L: list of integers
+- X: integer
+
+Logic flow:
+1. Read input from standard input and assign to variable N
+2. Check if N equals integer 0:
+   - If true: print 'Yes'
+   - If false:
+     a. Convert N to string
+     b. Convert string N to list L of characters
+     c. Convert each element in L to integer
+     d. Calculate sum of all elements in L, assign to X
+     e. Check if X modulo 9 equals 0:
+        - If true: print 'Yes'
+        - If false: print 'No'
+
+Input: single value from standard input
+Output: prints 'Yes' or 'No' to standard output
+No external dependencies required

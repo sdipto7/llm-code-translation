@@ -1,0 +1,23 @@
+Function signature: `calculate_triangle_area(a: int, b: int) -> int`
+
+Variable declarations and data types:
+- `a: int`
+- `b: int`
+- `c: int` (not used)
+- `result: int`
+
+Logic flow in execution order:
+1. Read input values as strings and split by whitespace.
+2. Map the split string values to integers and unpack them into variables `a`, `b`, and `c`.
+3. Calculate the area of a triangle using the formula `(a * b) / 2` and store the result in `result`.
+4. Print the integer value of `result`.
+
+Control structures:
+- No loops or conditionals present.
+
+Input/output operations and data processing logic:
+- Input: Reads a single line of input containing three space-separated integers.
+- Output: Prints the integer value of the calculated triangle area.
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required.

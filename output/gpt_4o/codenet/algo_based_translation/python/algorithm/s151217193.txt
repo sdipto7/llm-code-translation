@@ -1,0 +1,20 @@
+- Function signature:
+  - `calculate_value(R: int, G: int) -> int`
+
+- Variable declarations:
+  - `R: int`
+  - `G: int`
+  - `result: int`
+
+- Input operations:
+  1. Read an integer input and assign it to `R`.
+  2. Read an integer input and assign it to `G`.
+
+- Data processing logic:
+  1. Calculate `result` as `G * 2 - R`.
+
+- Output operations:
+  1. Print the value of `result`.
+
+- Required libraries, modules, or dependencies:
+  - None

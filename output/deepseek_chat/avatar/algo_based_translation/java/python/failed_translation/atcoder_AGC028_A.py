@@ -1,0 +1,23 @@
+
+import math
+from math import gcd
+
+def main():
+    n = int(input())
+    m = int(input())
+    g = gcd(n, m)
+    s = input().strip()
+    t = input().strip()
+    
+    lcm = n * m // g
+    
+    for k in range(g):
+        if s[k * n // g] != t[k * m // g]:
+            print(-1)
+            return
+    
+    print(lcm)
+
+if __name__ == "__main__":
+    main()
+

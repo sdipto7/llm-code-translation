@@ -1,0 +1,66 @@
+Function: main
+Parameters: String[] args
+Return Type: void
+Variable Declarations:
+- int mod = 1000000007
+- int[] DX = {-1, 0, 1, 0}
+- int[] DY = {0, -1, 0, 1}
+- int n
+- long k
+- long[] a
+- Scanner fs = new Scanner(System.in)
+- long INF = 1000000000000000001L
+- long l = -INF
+- long r = INF
+- long c
+Logic Flow:
+- n = fs.nextInt()
+- k = fs.nextLong()
+- a = new long[n]
+- for i from 0 to n-1:
+  - a[i] = fs.nextLong()
+- Arrays.sort(a)
+- while l + 1 < r:
+  - c = (l + r) / 2
+  - if check(c):
+    - l = c
+  - else:
+    - r = c
+- System.out.println(l)
+
+Function: check
+Parameters: long x
+Return Type: boolean
+Variable Declarations:
+- long tot = 0
+- long now
+- int l = 0
+- int r = n
+- int c
+Logic Flow:
+- for i from 0 to n-1:
+  - now = a[i]
+  - if now >= 0:
+    - while l < r:
+      - c = (l + r) / 2
+      - if now * a[c] < x:
+        - l = c + 1
+      - else:
+        - r = c
+    - tot += l
+  - else:
+    - while l < r:
+      - c = (l + r) / 2
+      - if now * a[c] >= x:
+        - l = c + 1
+      - else:
+        - r = c
+    - tot += (n - l)
+  - if now * now < x:
+    - tot--
+- if tot / 2 < k:
+  - return true
+- else:
+  - return false
+
+Libraries/Modules/Dependencies: java.util.*, java.math.*

@@ -1,0 +1,45 @@
+**Function Signature:**
+- No explicit function defined; code executes at module level
+- Input: None (reads from stdin)
+- Output: Prints to stdout
+
+**Variables:**
+- n: int (number of rows)
+- m: list[list[int]] (2D list of integers)
+- a: list[int] (current maximum element)
+- i: list[int] (iteration variable)
+
+**Data Types:**
+- Input: string converted to integers
+- Collections: lists of integers
+
+**Execution Flow:**
+1. Read integer n from stdin
+2. Read n lines from stdin, each containing space-separated integers
+3. Convert each line to list of integers
+4. Store all lists in 2D list m
+5. Sort m in descending order (reverse=True)
+6. Initialize a with first element of m
+7. Iterate through remaining elements in m (from index 1 to end)
+8. For each element i:
+   - Compare i[1] with a[1]
+   - If i[1] > a[1]:
+     - Print "Happy Alex"
+     - Break loop
+   - Else: set a = i
+9. If loop completes without break:
+   - Print "Poor Alex"
+
+**Control Structures:**
+- for loop: for i in m[1:]
+- if conditional: if i[1] > a[1]
+- break statement
+- for-else construct
+
+**Input/Output:**
+- Input: reads n + n lines from stdin
+- Output: prints either "Happy Alex" or "Poor Alex"
+
+**Dependencies:**
+- Built-in functions: input(), int(), print(), range()
+- List method: sort()

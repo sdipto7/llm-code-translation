@@ -1,0 +1,23 @@
+```plaintext
+Function signature: process_values(N: int, R: int) -> int
+
+Variable declarations:
+- N: int
+- R: int
+
+Logic flow:
+1. Read two integer values from input, N and R.
+2. Check if N is greater than or equal to 10.
+   - If True, output the value of R.
+   - If False, output the value of R plus 100 times the difference between 10 and N.
+
+Control structures:
+- Conditional statement to determine the output based on the value of N.
+
+Input/Output operations:
+- Input: Two integers, N and R, from standard input.
+- Output: An integer value based on the condition check.
+
+Dependencies:
+- No external libraries or modules required.
+```

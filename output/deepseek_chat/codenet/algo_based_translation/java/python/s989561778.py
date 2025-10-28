@@ -1,0 +1,22 @@
+
+import math
+import sys
+
+def main():
+    data = sys.stdin.read().split()
+    index = 0
+    sb = []
+    while index < len(data):
+        a = int(data[index])
+        b = int(data[index + 1])
+        index += 2
+        if a + b == 0:
+            digit = 1
+        else:
+            digit = int(math.log10(a + b)) + 1
+        sb.append(str(digit))
+    print('\n'.join(sb))
+
+if __name__ == "__main__":
+    main()
+

@@ -1,0 +1,7 @@
+1. Initialize a variable to store the input number n.
+2. Initialize a variable ans to 0 to store the final answer.
+3. Iterate from 1 to n (inclusive) using a loop counter i.
+4. In each iteration, calculate the value of (n/i).
+5. Calculate the sum of the arithmetic series using the formula: i * (n/i) * ((n/i) + 1) / 2.
+6. Add the result from step 5 to ans.
+7. After the loop completes, output the value of ans.

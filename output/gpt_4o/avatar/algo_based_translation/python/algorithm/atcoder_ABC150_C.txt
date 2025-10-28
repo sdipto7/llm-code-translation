@@ -1,0 +1,30 @@
+```
+Algorithm: Calculate Permutation Distance
+
+1. Declare a function `calculate_permutation_distance()` with no parameters and return type `None`.
+
+2. Import the module `itertools`.
+
+3. Input the integer `n`.
+   - Variable: `n`, Data Type: `int`
+
+4. Generate all permutations of the list `[1, 2, ..., n]` using `itertools.permutations`.
+   - Variable: `orig`, Data Type: `list of tuples`
+
+5. Input the permutation `p` as a space-separated string, split and convert each element to `int`, and store as a tuple.
+   - Variable: `p`, Data Type: `tuple of int`
+
+6. Input the permutation `q` as a space-separated string, split and convert each element to `int`, and store as a tuple.
+   - Variable: `q`, Data Type: `tuple of int`
+
+7. Find the index of permutation `p` in the list `orig`.
+   - Variable: `pn`, Data Type: `int`
+
+8. Find the index of permutation `q` in the list `orig`.
+   - Variable: `qn`, Data Type: `int`
+
+9. Calculate the absolute difference between `pn` and `qn`.
+   - Expression: `abs(pn - qn)`, Data Type: `int`
+
+10. Print the result of the absolute difference calculation.
+```

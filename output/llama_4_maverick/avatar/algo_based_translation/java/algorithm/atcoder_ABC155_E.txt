@@ -1,0 +1,11 @@
+1. Initialize a variable INF to a large value (1e15).
+2. Read a string input representing a number.
+3. Create an array 'digits' of size equal to the length of the input number plus one.
+4. Populate the 'digits' array with the digits of the input number in reverse order.
+5. Initialize a variable 'bills' to zero.
+6. Iterate through each element in the 'digits' array.
+7. For each 'digits[i]', if it equals 10, increment 'digits[i+1]' by 1 and set 'digits[i]' to 0.
+8. If 'digits[i]' is less than 5, add 'digits[i]' to 'bills'.
+9. If 'digits[i]' equals 5, check if 'digits[i+1]' is greater than or equal to 5. If so, increment 'digits[i+1]' by 1. Add 5 to 'bills'.
+10. If 'digits[i]' is greater than 5, increment 'digits[i+1]' by 1 and add (10 - 'digits[i]') to 'bills'.
+11. Output the value of 'bills'.

@@ -1,0 +1,39 @@
+```
+1. Function Signature:
+   - Function: compare_strings
+   - Parameters: None
+   - Returns: None
+
+2. Variable Declarations:
+   - n: int
+   - s: list of str
+   - t: list of str
+   - cnt: int
+
+3. Logic Flow:
+   a. Read an integer input and assign it to n.
+   b. Read a string input, convert it to a list of characters, and assign it to s.
+   c. Read another string input, convert it to a list of characters, and assign it to t.
+   d. If the lists s and t are equal:
+      i. Print the value of n.
+   e. Else:
+      i. Initialize cnt to 0.
+      ii. Iterate i from 0 to n - 1:
+         - Iterate j from 0 to n - i - 1:
+           1. If s[i + j] is not equal to t[j], break the inner loop.
+           2. If j equals n - i - 1, set cnt to n - i.
+      iii. Calculate and print 2 * n - cnt.
+
+4. Control Structures:
+   - Conditional: if s == t
+   - Loop: for i in range(n)
+   - Nested Loop: for j in range(n - i)
+   - Conditional inside loop: if s[i + j] != t[j]
+   - Conditional inside loop: if j == n - i - 1
+
+5. Input/Output Operations:
+   - Input: Read integer and two strings from standard input.
+   - Output: Print an integer to standard output.
+
+6. No external libraries, modules, or dependencies are required.
+```

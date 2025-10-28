@@ -1,0 +1,17 @@
+1. Import the `java.util` library.
+2. Define a class named `Main` with a static `Scanner` object named `scanner` initialized with `System.in`.
+3. Define a `main` function with no parameters and no return type, taking a `String[]` argument (though it's not used).
+4. Declare two integer variables `h` and `w`.
+5. Read two integer values from the input using `scanner.nextInt()` and store them in `h` and `w`, respectively.
+6. Declare a `String` array `ans` of size `h`.
+7. Iterate from `0` to `h-1` using a `for` loop.
+   - Inside the loop, read a `String` from the input using `scanner.next()`.
+   - Concatenate `#` at the beginning and end of the read `String` and store it in `ans[i]`.
+8. Create a `String` of length `w+2` consisting entirely of `#` characters.
+   - Use `String.valueOf(new char[w + 2])` to create a `String` of length `w+2` with default characters.
+   - Replace the default characters with `#` using the `replace` method.
+9. Print the created `String` of `#` characters.
+10. Iterate over the `ans` array using a foreach loop.
+    - Print each `String` in `ans`.
+11. Print the `String` of `#` characters again.
+12. The program terminates.

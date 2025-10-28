@@ -1,0 +1,15 @@
+```
+Algorithm:
+1. Import the Scanner class from the java.util package.
+2. Define the main function with no parameters and no return type.
+3. Declare a Scanner object `s` to read input from the standard input stream.
+4. Read an integer `n` from input using `s.nextInt()`.
+5. Declare an integer array `dp` of size 200001.
+6. Execute a for loop with integer `i` starting from 0, running while `i` is less than `n`, incrementing `i` by 1 after each iteration:
+   - Read an integer from input using `s.nextInt()`.
+   - Assign the value of `i` to `dp` at the index of the read integer.
+7. Declare a long integer `ans` and initialize it to 0.
+8. Execute a for loop with integer `i` starting from 2, running while `i` is less than or equal to `n`, incrementing `i` by 1 after each iteration:
+   - Add the absolute difference between `dp[i]` and `dp[i-1]` to `ans`.
+9. Output the value of `ans` to the standard output stream.
+```

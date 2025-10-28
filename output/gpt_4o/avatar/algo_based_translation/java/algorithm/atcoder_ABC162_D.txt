@@ -1,0 +1,38 @@
+1. **Function Signature**:
+   - **main**: No parameters, returns void.
+
+2. **Variable Declarations**:
+   - `Scanner sc`: A Scanner object for reading input.
+   - `int n`: An integer to store the number of characters in the string.
+   - `String s`: A string to store the input sequence of characters.
+   - `long rc`: A long integer to count occurrences of 'R'.
+   - `long gc`: A long integer to count occurrences of 'G'.
+   - `long bc`: A long integer to count occurrences of 'B'.
+   - `long result`: A long integer to store the initial result calculated by multiplying `rc`, `gc`, and `bc`.
+
+3. **Logic Flow**:
+   1. Initialize `Scanner sc` to read input.
+   2. Read an integer `n` from input.
+   3. Read a string `s` from input.
+   4. Initialize counters `rc`, `gc`, and `bc` to zero.
+   5. Iterate over each character in the string `s`:
+      - If the character is 'R', increment `rc`.
+      - Else if the character is 'G', increment `gc`.
+      - Else, increment `bc`.
+   6. Calculate `result` as `rc * gc * bc`.
+   7. Iterate `i` from 1 to `n` (inclusive):
+      - Iterate `k` from `i + 1` to `n` (inclusive):
+        - If `(i + k) % 2 == 0`:
+          - Determine `char is` as `s.charAt(i - 1)`.
+          - Determine `char ks` as `s.charAt(k - 1)`.
+          - Determine `char js` as `s.charAt((i + k) / 2 - 1)`.
+          - If `is`, `ks`, and `js` are all different:
+            - Decrement `result` by 1.
+   8. Output the value of `result`.
+
+4. **Input/Output Operations**:
+   - Input is read using the `Scanner` object.
+   - Output is printed to the console using `System.out.println`.
+
+5. **Dependencies**:
+   - Requires the `java.util.Scanner` class for input operations.

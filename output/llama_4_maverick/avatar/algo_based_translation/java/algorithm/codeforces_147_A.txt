@@ -1,0 +1,10 @@
+1. Read a string input from the user.
+2. Initialize a StringBuilder to store the processed output.
+3. Append the first character of the input string to the StringBuilder.
+4. Iterate through the input string starting from the second character.
+5. For each character, check if it is a Latin letter.
+6. If the character is a Latin letter and the previous character is not a Latin letter, append a space to the StringBuilder before appending the current character.
+7. If the character is a Latin letter, append it to the StringBuilder.
+8. If the character is a punctuation mark ( '.', ',', '!', '?' ), append it to the StringBuilder.
+9. After processing all characters, output the contents of the StringBuilder.
+10. Flush and close the output stream.

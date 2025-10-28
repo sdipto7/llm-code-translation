@@ -1,0 +1,64 @@
+```
+Algorithm atcoder_ABC122_D
+    Input: Integer N
+    Output: Long representing the number of valid strings
+
+    Constants:
+        Long MOD = 1000000007L
+        List<String> TOKENS = ["A", "C", "G", "T"]
+
+    Variables:
+        Map<String, Long>[] memo
+
+    Function atcoder_ABC122_D()
+        Initialize Scanner in to read from standard input
+        Read N as the next integer from input
+        Close the Scanner
+        Initialize memo as an array of Map<String, Long> with size N + 1
+        For i from 0 to length of memo - 1
+            Initialize memo[i] as a new HashMap<String, Long>
+        End For
+    End Function
+
+    Function calc() -> Long
+        Return dfs(0, "TTT")
+    End Function
+
+    Function isOK(String last4) -> Boolean
+        If last4 contains "AGC"
+            Return false
+        End If
+        For i from 0 to 2
+            Create a copy of last4 as a character array named vals
+            Swap vals[i] with vals[i+1]
+            Convert vals back to a String s
+            If s contains "AGC"
+                Return false
+            End If
+        End For
+        Return true
+    End Function
+
+    Function dfs(Integer current, String last3) -> Long
+        If memo[current] contains key last3
+            Return memo[current].get(last3) as Long
+        End If
+        If current equals N
+            Return 1
+        End If
+        Initialize Long result to 0
+        For each String c in TOKENS
+            If isOK(last3 + c) is true
+                Update result with (result + dfs(current + 1, last3.substring(1) + c)) modulo MOD
+            End If
+        End For
+        Put result in memo[current] with key last3
+        Return result
+    End Function
+
+    Function main(String[] args)
+        Instantiate atcoder_ABC122_D as ins
+        Print ins.calc() to standard output
+    End Function
+End Algorithm
+```

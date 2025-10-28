@@ -1,0 +1,40 @@
+**Algorithm:**
+
+1. **Function Signature:**
+   - `solve()`: void function with no parameters
+
+2. **Variables:**
+   - `tmp`: String (input string)
+   - `s`: char[] (converted from tmp)
+   - `n`: int (length of s)
+   - `ans`: int (initialized to 0)
+   - `cnt`: int (initialized to 0)
+
+3. **Logic Flow:**
+   - Read input string `tmp`
+   - Convert string to char array `s`
+   - Get length `n` of char array
+   - Initialize `ans` = 0, `cnt` = 0
+   - For each index `i` from 0 to n-1:
+     - If `s[i]` equals 'S':
+       - Increment `cnt` by 1
+     - Else:
+       - If `cnt` equals 0: continue to next iteration
+       - Else: increment `ans` by 1, decrement `cnt` by 1
+   - Calculate result: `n - 2 * ans`
+   - Print result
+
+4. **Control Structures:**
+   - For loop: `for(int i=0;i<n;i++)`
+   - Conditional: `if(s[i]=='S')`
+   - Nested conditional: `if(cnt == 0)continue`
+
+5. **Input/Output Operations:**
+   - Input: Read string using `ns()` function
+   - Output: Print integer result using `out.println()`
+
+6. **Dependencies:**
+   - `java.io.*` for input/output operations
+   - `java.util.*` for utility classes
+   - Custom input methods: `ns()`, `ni()`, `nl()`, etc.
+   - Custom output method: `out` (PrintWriter)

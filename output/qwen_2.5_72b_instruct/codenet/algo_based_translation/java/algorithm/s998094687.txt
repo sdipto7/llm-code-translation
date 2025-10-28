@@ -1,0 +1,31 @@
+Function signature:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `sc: final Scanner`
+- `n: int`
+- `a: int[]` (size 3)
+
+Logic flow:
+1. Create a new `Scanner` object for input.
+2. Read an integer `n` from the input.
+3. Initialize an integer array `a` of size 3.
+4. Loop `i` from 0 to `n-1`:
+   1. Read three integers from the input and store them in `a[0]`, `a[1]`, and `a[2]`.
+   2. Sort the array `a`.
+   3. Check if `a[2]^2` is equal to `a[0]^2 + a[1]^2`:
+      - If true, print "YES".
+      - Otherwise, print "NO".
+
+Control structures:
+- Loop: `for(int i=0; i<n; i++)`
+- Conditional: `if(Math.pow(a[2], 2) == Math.pow(a[0], 2) + Math.pow(a[1], 2))`
+
+Input/output operations:
+- Input: `n`, three integers per loop iteration from `sc`.
+- Output: "YES" or "NO" based on the condition.
+
+Libraries/modules:
+- `java.util.Scanner`
+- `java.util.Arrays`
+- `java.lang.Math` (implicitly used for `Math.pow`)

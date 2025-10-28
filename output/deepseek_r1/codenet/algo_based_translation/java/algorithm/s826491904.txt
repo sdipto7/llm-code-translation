@@ -1,0 +1,54 @@
+**Algorithm Extraction:**
+
+Function Signatures:
+- `public static void main(String[] args)`
+- `void solve()`
+
+Variables:
+- `int N` (input count)
+- `int max`, `int min` (track maximum and minimum values)
+- `int in` (temporary input storage per iteration)
+- `Scanner sc` (input handler)
+
+Logic Flow:
+1. Read integer `N` from input
+2. Read first integer and initialize `max` and `min` with it
+3. Iterate `N-1` times:
+   a. Read next integer `in`
+   b. Update `max` to the greater of `max` and `in`
+   c. Update `min` to the lesser of `min` and `in`
+4. Compute and print `max - min`
+
+Control Structures:
+- `for (int i = 1; i < N; i++)` loop
+- `Math.max`/`Math.min` for value comparisons
+
+Input/Output:
+- Uses `Scanner` to read from standard input
+- Single output of computed difference
+
+Dependencies:
+- `java.util.Scanner`
+
+---
+
+**Python Code:**
+
+```python
+import sys
+
+data = list(map(int, sys.stdin.read().split()))
+N = data[0]
+numbers = data[1:N+1]
+
+max_val = numbers[0]
+min_val = numbers[0]
+
+for num in numbers[1:]:
+    if num > max_val:
+        max_val = num
+    if num < min_val:
+        min_val = num
+
+print(max_val - min_val)
+```

@@ -1,0 +1,34 @@
+Function signature: `main()`  
+Parameters: None  
+Return type: None  
+
+Variable declarations and data types:  
+- `N`: integer  
+- `A`: list of integers  
+- `B`: list of integers initialized with 0s, length N  
+- `tmp_sum`: integer  
+- `i`, `j`: integers  
+
+Logic flow in execution order:  
+- Read integer `N` from input  
+- Read list `A` of integers from input, split by spaces  
+- Initialize list `B` with zeros, length `N`  
+- For `i` from `N-1` to `0` inclusive (decrementing):  
+    - Set `tmp_sum` to 0  
+    - For `j` from `(i+1)*2-1` to `N` exclusive, incrementing by `i+1`:  
+        - Add `B[j]` to `tmp_sum`  
+        - Update `tmp_sum` to `tmp_sum % 2`  
+    - Update `B[i]` to `tmp_sum ^ A[i]`  
+- Print sum of elements in `B`  
+- Create list of indices where `B[i]` is 1, increment each index by 1  
+- Print elements of the created list, separated by spaces  
+
+Input/output operations and data processing logic:  
+- Read integer `N` from standard input  
+- Read space-separated integers from standard input, convert to list `A`  
+- Compute list `B` based on nested loop logic involving bitwise XOR and modulo operations  
+- Output sum of elements in `B` to standard output  
+- Output 1-based indices of elements in `B` that are 1, separated by spaces  
+
+Required libraries, modules, or dependencies:  
+- No specific external libraries or modules required

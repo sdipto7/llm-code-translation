@@ -1,0 +1,13 @@
+1. Read integer `n` from input.
+2. Initialize empty dictionary `arr`.
+3. Loop `i` from 0 to `n-1`:
+   - Read string `s` from input.
+   - If `s` not in `arr`:
+     - Set `arr[s] = 1`
+   - Else:
+     - Increment `arr[s]` by 1
+4. Find maximum value in `arr.values()` and store in `max_count`.
+5. Create list `dic` containing all keys from `arr` where value equals `max_count`.
+6. Sort `dic` alphabetically and store in `out_sort`.
+7. For each element `i` in `out_sort`:
+   - Print `i`

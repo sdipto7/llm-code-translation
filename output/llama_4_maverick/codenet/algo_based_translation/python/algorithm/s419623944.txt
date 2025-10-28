@@ -1,0 +1,14 @@
+1. Define a function `calculate_result` with parameters `N` and `R` of type integer and return type integer.
+2. Read two integer inputs from the user and store them in variables `N` and `R`.
+3. Check if `N` is greater than or equal to 10.
+4. If the condition is true, return `R`.
+5. If the condition is false, calculate `R + 100 * (10 - N)` and return the result.
+6. The input operation involves reading two space-separated integers using a `map` function in combination with `split`.
+7. The required operation is to output the result of the calculation. 
+
+Function signature: `def calculate_result(N: int, R: int) -> int`
+ 
+1. Read `N` and `R` from input.
+2. If `N >= 10` then result = `R`.
+3. Else result = `R + 100 * (10 - N)`.
+4. Output result.

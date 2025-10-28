@@ -1,0 +1,36 @@
+- **Function Signatures**:
+  - `public static void main(String[] args)`
+  - `private void run()`
+
+- **Variables**:
+  - `Scanner sc` (instance variable, `java.util.Scanner` type)
+  - `final long DEVISOR = 1000000007` (constant)
+  - `long n` (input value)
+  - `long k` (input value)
+  - `long ans = 0` (accumulator)
+  - `long i` (loop counter)
+  - `long max`, `long min` (temporary calculation variables)
+
+- **Input Operations**:
+  - Read `n` via `sc.nextLong()`
+  - Read `k` via `sc.nextLong()`
+
+- **Logic Flow**:
+  1. Initialize `ans` to 0
+  2. Start loop: `i` from `k` to `n+1` (inclusive), incrementing by 1
+      - Calculate `max = i * (2 * n - i + 1) / 2`
+      - Calculate `min = i * (i - 1) / 2`
+      - Add `(max - min + 1) % DEVISOR` to `ans`
+  3. After loop: print `ans % DEVISOR`
+
+- **Control Structures**:
+  - For-loop: `for (long i = k; i <= n+1; i++)`
+
+- **Mathematical Operations**:
+  - Modular arithmetic with `DEVISOR` during sum accumulation and final output
+
+- **Libraries/Dependencies**:
+  - `java.util.Scanner` for input handling
+
+- **Output Operation**:
+  - Print `ans % DEVISOR` via `System.out.println`

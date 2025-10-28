@@ -1,0 +1,47 @@
+Function signatures with parameter and return types:
+- `S()` -> str
+- `I()` -> int
+- `LI()` -> List[int]
+- `LS()` -> List[str]
+
+Variable declarations and data types:
+- `a` -> int
+- `b` -> int
+
+Complete logic flow in execution order:
+1. Import required libraries: `bisect`, `collections`, `copy`, `heapq`, `itertools`, `math`, `numpy`, `string`, `sys`
+2. Define function `S()` to read a line of input and strip whitespace -> str
+3. Define function `I()` to read a line of input, strip whitespace, and convert to int -> int
+4. Define function `LI()` to read a line of input, strip whitespace, split by spaces, and convert each element to int -> List[int]
+5. Define function `LS()` to read a line of input, strip whitespace, and split by spaces -> List[str]
+6. Read two integers from input and assign to variables `a` and `b`
+7. If `a` is greater than 0:
+   - Print 'Positive'
+8. Else if `a` is less than or equal to 0 and `b` is greater than or equal to 0:
+   - Print 'Zero'
+9. Else:
+   - If the sum of `a` and `b` modulo 2 is equal to 0:
+     - Print 'Negative'
+   - Else:
+     - Print 'Positive'
+
+Control structures:
+- If-elif-else statement with conditions:
+  - `a > 0`
+  - `a <= 0 and b >= 0`
+  - `(a + b) % 2 == 0`
+
+Input/output operations and data processing logic:
+- Input read using `sys.stdin.readline()`
+- Output printed using `print()`
+
+Required libraries, modules, or dependencies:
+- `bisect`
+- `collections`
+- `copy`
+- `heapq`
+- `itertools`
+- `math`
+- `numpy`
+- `string`
+- `sys`

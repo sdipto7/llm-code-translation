@@ -1,0 +1,13 @@
+1. Read integer n from input
+2. Initialize empty list m
+3. For i from 1 to n:
+   1. Read list of integers from input and append to m
+4. Sort m in descending order
+5. Set a to the first element of m
+6. For each element i in m (starting from the second element):
+   1. If the second element of i is greater than the second element of a:
+      1. Print 'Happy Alex'
+      2. Exit loop
+   2. Set a to i
+7. If loop completes without exiting:
+   1. Print 'Poor Alex'

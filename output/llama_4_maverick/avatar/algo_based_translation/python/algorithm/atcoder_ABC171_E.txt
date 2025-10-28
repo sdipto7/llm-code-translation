@@ -1,0 +1,9 @@
+1. N = Read Integer Input
+2. a = List of Integers from Input Split by Spaces
+3. total = Initialize to 0
+4. For each element in a:
+   total = total XOR element
+5. result = Empty List
+6. For each element in a:
+   Append (element XOR total) to result as String
+7. Print result joined by Spaces

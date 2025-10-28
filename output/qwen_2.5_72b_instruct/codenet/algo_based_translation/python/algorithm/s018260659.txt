@@ -1,0 +1,31 @@
+Function Signature: check_nine_divisibility(N: int) -> None
+
+Variable Declarations:
+- N: int
+- cnt: int
+
+Logic Flow:
+1. Read an integer input and assign it to N
+2. Initialize cnt to 1
+3. While cnt is less than or equal to 9:
+   a. If N modulo cnt is 0 and N divided by cnt is between 1 and 9 inclusive:
+      i. Print 'Yes'
+      ii. Break the loop
+   b. Else:
+      i. Increment cnt by 1
+4. If the loop completes without printing 'Yes':
+   a. Print 'No'
+
+Control Structures:
+- While loop with condition cnt <= 9
+- If-else statement with conditions N % cnt == 0 and 1 <= N / cnt <= 9
+
+Input/Output Operations:
+- Read integer input
+- Print 'Yes' or 'No' based on the conditions
+
+Data Processing Logic:
+- Check if N is divisible by any number from 1 to 9 and if the quotient is also between 1 and 9
+
+Required Libraries/Modules/Dependencies:
+- None

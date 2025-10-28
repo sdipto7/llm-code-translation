@@ -1,0 +1,31 @@
+Algorithm:
+
+1. Function Signature:
+   - `def check_movements(record_of_movements: str) -> str`
+
+2. Variable Declarations:
+   - `x: int = 0`
+   - `y: int = 0`
+   - `d_movement: dict[str, tuple[int, int]] = {'L': (0, -1), 'R': (0, 1), 'U': (1, 0), 'D': (-1, 0)}`
+   - `d: dict[tuple[int, int], str] = {(x, y): ''}`
+   - `bug: bool = False`
+
+3. Logic Flow:
+   - Iterate over each character `move` in the string `record_of_movements`.
+     - Assign `temp: tuple[int, int] = (x, y)`
+     - Update `x` and `y` based on the current `move` using `d_movement`.
+     - If `(x, y)` is not a key in dictionary `d`:
+       - For each `step` in keys of `d_movement`:
+         - If `(x + d_movement[step][0], y + d_movement[step][1])` is not equal to `temp` and `(x + d_movement[step][0], y + d_movement[step][1])` is a key in `d`:
+           - Set `bug = True`
+           - Break the loop.
+     - Else, set `bug = True`.
+     - If `bug` is `True`, break the loop.
+     - Update dictionary `d` with key `(x, y)` and value `''`.
+
+4. Output:
+   - If `bug` is `True`, return `'BUG'`.
+   - Else, return `'OK'`.
+
+5. Required Libraries:
+   - None.

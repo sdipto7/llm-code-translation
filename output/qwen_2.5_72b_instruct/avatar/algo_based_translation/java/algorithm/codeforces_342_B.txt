@@ -1,0 +1,65 @@
+Function Signature:
+- `public static void main(String[] args)`
+
+Variable Declarations and Data Types:
+- `BufferedReader reader`
+- `String[] input`
+- `int m`
+- `int s`
+- `int f`
+- `int maxT`
+- `HashMap<Integer, ArrayList<Integer>> map`
+- `String[] mth`
+- `int k`
+- `StringBuilder actions`
+- `final char M`
+- `int d`
+- `int cur`
+- `int a`
+- `int b`
+- `int t`
+
+Complete Logic Flow in Execution Order:
+1. Initialize `reader` to read from standard input.
+2. Read the first line of input, split by spaces, and store in `input`.
+3. Parse `m`, `s`, and `f` from `input` as integers.
+4. Initialize `maxT` to -1.
+5. Initialize `map` as a new `HashMap<Integer, ArrayList<Integer>>`.
+6. While `m` is greater than 0:
+   - Read the next line of input, split by spaces, and store in `mth`.
+   - Parse `k` from `mth[0]` as an integer.
+   - Put `k` in `map` with a new `ArrayList<Integer>`.
+   - Add parsed integers `mth[1]` and `mth[2]` to the list associated with `k` in `map`.
+   - Update `maxT` to the maximum of `maxT` and `k`.
+   - Decrement `m`.
+7. Initialize `actions` as a new `StringBuilder`.
+8. Determine `M` as 'R' if `s` is less than `f`, otherwise 'L'.
+9. Determine `d` as 1 if `s` is less than `f`, otherwise -1.
+10. Set `cur` to `s`.
+11. Set `a` and `b` to -1.
+12. For `t` from 1 to `maxT` inclusive:
+    - If `map` contains `t`:
+      - Set `a` to the first element of the list associated with `t` in `map`.
+      - Set `b` to the second element of the list associated with `t` in `map`.
+    - If `map` contains `t` and `cur` is between `a` and `b` inclusive, or `cur + d` is between `a` and `b` inclusive:
+      - Append 'X' to `actions`.
+    - Otherwise:
+      - Append `M` to `actions`.
+      - Increment or decrement `cur` by `d`.
+    - If `cur` equals `f`, break the loop.
+13. While `cur` is not equal to `f`:
+    - Append `M` to `actions`.
+    - Increment or decrement `cur` by `d`.
+14. Print `actions`.
+
+Input/Output Operations and Data Processing Logic:
+- Read input values from standard input.
+- Process each line of input to update `map` and determine movement.
+- Construct `actions` based on conditions and output it.
+
+Required Libraries, Modules, or Dependencies:
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.util.ArrayList`
+- `java.util.HashMap`

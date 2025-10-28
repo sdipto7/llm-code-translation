@@ -1,0 +1,14 @@
+1. Read the number of inputs, n.
+2. Create an empty list to store the inputs.
+3. Read n integer values and store them in the list.
+4. Check if the first element in the list is greater than 15.
+5. If true, set the result to 15.
+6. If false, iterate through the list starting from the second element.
+7. For each element, check if the difference between the current element and the previous element is greater than 15.
+8. If a difference greater than 15 is found, store the index of the previous element and set a flag to 1.
+9. Break the iteration.
+10. If the flag is 1, set the result to the value at the stored index plus 15.
+11. If the flag is still 0 after iteration, set the result to the last element in the list plus 15.
+12. Check if the result is greater than 90.
+13. If true, set the result to 90.
+14. Output the result.

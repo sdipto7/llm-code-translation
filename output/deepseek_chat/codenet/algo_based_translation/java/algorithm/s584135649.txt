@@ -1,0 +1,12 @@
+1. Import Scanner from java.util
+2. Declare public class Main
+3. Declare public static void main method with String[] args parameter
+4. Create Scanner object sc with System.in
+5. Declare integer variable i initialized to 0
+6. Start for loop: i from 1 to 5 inclusive, incrementing by 1
+7. Inside loop: read integer input n from scanner
+8. Check if n equals 0
+9. If true: break out of loop
+10. After loop: print value of i
+11. End main method
+12. End class

@@ -1,0 +1,23 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner sc`: Scanner object for input
+- `int t`: number of test cases
+- `int count`: accumulator for valid cases (initialized to 0)
+- `int a`, `int b`, `int c`: input values for each test case
+
+**Libraries/Dependencies:**
+- `java.util.Scanner`
+
+**Algorithm:**
+1. Create Scanner object to read from standard input
+2. Read integer `t` (number of test cases)
+3. Initialize `count` to 0
+4. While `t` > 0:
+   - Decrement `t` by 1
+   - Read three integers `a`, `b`, and `c`
+   - Check if at least two of the three values equal 1:
+     - Condition: (a=1 AND b=1) OR (a=1 AND c=1) OR (b=1 AND c=1) OR (all three=1)
+   - If condition true, increment `count` by 1
+5. Print final value of `count`

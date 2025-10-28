@@ -1,0 +1,28 @@
+Function signature: `main()`
+Variable declarations and data types:
+- `n: int`
+- `l: List[int]`
+
+Logic flow in execution order:
+1. Read integer input and assign to `n`.
+2. Read a line of input, split it by spaces, convert each element to an integer, and assign the resulting list to `l`.
+3. Sort the list `l` in ascending order.
+4. For each element `i` in the sorted list `l`:
+   - If `i + 1` is in `l` and `i + 2` is in `l`:
+     - Print 'YES'.
+     - Break out of the loop.
+5. If the loop completes without finding such an `i`:
+   - Print 'NO'.
+
+Control structures:
+- For loop iterating over each element `i` in `l`.
+- If statement with condition `i + 1 in l and i + 2 in l`.
+- Else block associated with the for loop.
+
+Input/output operations and data processing logic:
+- Input: Two lines from standard input. First line is an integer `n`. Second line is a space-separated string of integers.
+- Output: Single line to standard output, either 'YES' or 'NO'.
+- Data processing: Convert input strings to integers, sort the list, and check consecutive elements for the specified condition.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules are required. Only built-in functions and types are used.

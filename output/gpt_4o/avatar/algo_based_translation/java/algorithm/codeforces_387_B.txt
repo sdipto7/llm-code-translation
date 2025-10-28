@@ -1,0 +1,38 @@
+1. Import necessary libraries:  
+   - `ArrayList` from `java.util` package  
+   - `Scanner` from `java.util` package
+
+2. Define the main function without parameters and return type as void:  
+   `public static void main(String[] args)`
+
+3. Declare and initialize variables:  
+   - `Scanner input` for reading input  
+   - `int n` to store the number of required problems  
+   - `int m` to store the number of prepared problems
+
+4. Read integer input values for `n` and `m` using the `Scanner`.
+
+5. Declare two lists to store problems:  
+   - `ArrayList<Integer> req` for required problems  
+   - `ArrayList<Integer> pre` for prepared problems
+
+6. Use a for-loop to populate `req` list:  
+   - Loop variable `i` from `0` to `n-1`  
+   - Add integer input to `req` list using `req.add(input.nextInt())`
+
+7. Use a for-loop to populate `pre` list:  
+   - Loop variable `i` from `0` to `m-1`  
+   - Add integer input to `pre` list using `pre.add(input.nextInt())`
+
+8. Initialize variables for iterating and result calculation:  
+   - `int i = n - 1` for iterating `req` list from end to start  
+   - `int j = m - 1` for iterating `pre` list from end to start  
+   - `int ans = 0` for counting additional problems needed
+
+9. Use a while-loop with the condition `i >= 0 && j >= 0` to compare problems:  
+   - If `req.get(i) > pre.get(j)`, increment `ans`  
+   - Otherwise, decrement `j` to try the next prepared problem  
+   - Always decrement `i` to move to the next required problem
+
+10. Calculate and print the total additional problems needed:  
+    - Output `ans + i + 1` using `System.out.print`

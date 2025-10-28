@@ -1,0 +1,33 @@
+### Algorithm
+
+1. Define a function `main` with no parameters and no return type.
+   - Declare a variable `s` of type `Scanner` and initialize it with a new `Scanner` object reading from `System.in`.
+   - Declare an integer variable `n` and initialize it by parsing the next input from `s` to an integer.
+
+2. Declare three integer arrays `v`, `c`, and `dp` each of size `n`.
+
+3. Initialize all elements of `dp` to 0 using a `for` loop iterating from `i = 0` to `n-1`.
+
+4. Populate the arrays `v` and `c` by parsing the next `n` inputs from `s` to integers for each array using separate `for` loops iterating from `i = 0` to `n-1`.
+
+5. Set `dp[0]` to 0.
+
+6. Iterate from `i = 1` to `n-1` using a `for` loop.
+   - For each `i`, calculate a temporary variable `tmp` as `dp[i - 1] + (v[i - 1] - c[i - 1])`.
+   - Update `dp[i]` to be the maximum of `tmp` and `dp[i - 1]`.
+
+7. After the loop, calculate `tmp` as `dp[n - 1] + (v[n - 1] - c[n - 1])`.
+   - Update `dp[n - 1]` to be the maximum of `tmp` and `dp[n - 1]`.
+
+8. Output the value of `dp[n - 1]` to the console.
+
+### Required Libraries and Modules
+
+- `java.util.Scanner` 
+
+### Data Types and Variable Declarations
+
+- `s`: `Scanner`
+- `n`: `int`
+- `v`, `c`, `dp`: `int[]`
+- `i`, `tmp`: `int`

@@ -1,0 +1,19 @@
+
+import java.util.Scanner;
+
+public class s060251920 {
+    public static void main(String[] args) {
+        mainMethod();
+    }
+
+    public static void mainMethod() {
+        Scanner scanner = new Scanner(System.in);
+        String[] input = scanner.nextLine().split(" ");
+        int a = Integer.parseInt(input[0]);
+        int b = Integer.parseInt(input[1]);
+        int product = a * b;
+        System.out.println(product);
+        scanner.close();
+    }
+}
+

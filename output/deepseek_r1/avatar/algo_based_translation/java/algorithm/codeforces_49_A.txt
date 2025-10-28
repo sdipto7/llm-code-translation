@@ -1,0 +1,26 @@
+Algorithm:
+- Function: main
+  - Parameters: String[] args
+  - Return: void
+- Dependencies: java.util.Scanner
+- Variables:
+  - Scanner sc = new Scanner(System.in)
+  - String s = sc.nextLine()
+  - int length = s.length()
+  - char ch initialized to 0
+- Execution Flow:
+  1. Iterate from i = length-1 to 0 (inclusive) using for loop with decrement:
+     - If s.charAt(i) != ' ' AND s.charAt(i) != '?'
+       - Assign ch = s.charAt(i)
+       - Break loop
+  2. Convert ch to lowercase using Character.toLowerCase()
+  3. Check if lowercase ch is in {'a','e','i','o','u','y'}
+     - If true: print "YES"
+     - Else: print "NO"
+- Control Structures:
+  - For loop: for(int i = length-1; i >= 0; i--)
+  - If condition inside loop: (s.charAt(i) != ' ' && s.charAt(i) != '?')
+  - Final if-else: checking vowel membership
+- I/O Operations:
+  - Input: Read entire line via Scanner.nextLine()
+  - Output: Print "YES" or "NO" based on vowel check

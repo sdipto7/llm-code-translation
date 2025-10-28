@@ -1,0 +1,24 @@
+- Function signature: `solve(n: int) -> int`
+- Variable declarations and data types:
+  - `s: int`
+  - `t: int`
+- Logic flow in execution order:
+  1. Read an integer `t` from input.
+  2. For each iteration in the range of `t`:
+     1. Read an integer `n` from input.
+     2. Initialize `s` as the sum of the first `n` natural numbers using the formula `(1 + n) * n // 2`.
+     3. Initialize `t` to 1.
+     4. While `t` is less than or equal to `n`:
+        1. Subtract `2 * t` from `s`.
+        2. Multiply `t` by 2.
+     5. Print the value of `s`.
+- Control structures:
+  - While loop: `while t <= n`
+- Input/output operations:
+  - Read integers `t` and `n` from input.
+  - Print the result of `solve(n)` for each `n`.
+- Data processing logic:
+  - Calculate the sum of the first `n` natural numbers.
+  - Subtract `2 * t` for each power of 2 that is less than or equal to `n`.
+- Required libraries, modules, or dependencies:
+  - None

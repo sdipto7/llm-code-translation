@@ -1,0 +1,20 @@
+- Required libraries: `math`, `heapq`
+- Function signatures:
+  - `floor(x: float) -> int` from `math`
+  - `heappush(heap: list, item: int) -> None` from `heapq`
+  - `heappop(heap: list) -> int` from `heapq`
+- Variable declarations and data types:
+  - `n: int`
+  - `m: int`
+  - `a: list[int]` (min-heap of negative integers)
+  - `x: int` (used in lambda function)
+  - `y: int` (used in lambda function)
+- Lambda function:
+  - `dis(x: int, y: int) -> int` where `dis(x, y) = x // 2**y`
+- Logic flow in execution order:
+  - Read `n` and `m` as integers from input
+  - Initialize an empty list `a`
+  - For each integer `i` read from input, push `-i` to heap `a`
+  - For `_` in range `m`:
+    - Pop the largest element from heap `a` (smallest negative value, negate to positive), apply `dis` with `y=1`, and push the result (negated back) to heap `a`
+  - Print the negation of the sum of all elements in heap `a`

@@ -1,0 +1,35 @@
+```
+- Import necessary library: java.util.Scanner
+
+- Define main function with signature: public static void main(String[] args)
+
+- Declare and initialize variables:
+  - Scanner object: scanner
+  - Integer: w, h, n
+  - Integer arrays: x, y, a
+  - Integers: xmax, xmin, ymax, ymin
+
+- Read three integer inputs using scanner and assign them to w, h, and n respectively
+
+- Initialize integer arrays x, y, and a with size n
+
+- Initialize xmax with value of w, xmin with 0
+- Initialize ymax with value of h, ymin with 0
+
+- For loop from i = 0 to i < n:
+  - Read integer inputs using scanner and assign them to x[i], y[i], and a[i]
+  - Switch on value of a[i]:
+    - Case 1:
+      - Update xmin to be the maximum of xmin and x[i]
+    - Case 2:
+      - Update xmax to be the minimum of xmax and x[i]
+    - Case 3:
+      - Update ymin to be the maximum of ymin and y[i]
+    - Case 4:
+      - Update ymax to be the minimum of ymax and y[i]
+
+- Calculate w as the maximum of (xmax - xmin) and 0
+- Calculate h as the maximum of (ymax - ymin) and 0
+
+- Output the product of w and h using System.out.println
+```

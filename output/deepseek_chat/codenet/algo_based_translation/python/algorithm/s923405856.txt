@@ -1,0 +1,27 @@
+Algorithm:
+- Function: main (no parameters, returns void)
+- Variables:
+  - n: integer (input)
+  - res: integer (initialized to -1111111111)
+  - s: integer (initialized to 0)
+  - a: integer (input)
+  - i: integer (loop counter)
+
+Logic Flow:
+1. Start infinite loop
+2. Read integer input into n
+3. If n equals 0: break loop
+4. Initialize res to -1111111111
+5. Initialize s to 0
+6. For i from 0 to n-1:
+   a. Read integer input into a
+   b. Set s to maximum of (s + a) and a
+   c. Set res to maximum of s and res
+7. Print res
+8. Repeat from step 1
+
+Input/Output:
+- Reads integers from standard input
+- Prints integer to standard output
+
+Dependencies: None (uses built-in input/print functions)

@@ -1,0 +1,58 @@
+```plaintext
+Dependencies:
+- java.util.Scanner
+
+Function Signatures:
+- public static void main(String[] args)
+
+Variables:
+- Scanner sc: initialized with System.in
+- String S: input from first scanner line
+- String T: input from second scanner line
+- String[] A: array of lowercase letters "a" to "z"
+- boolean res: initialized to true
+- String s: current character in A during iteration
+- int sIdx: index of s in S
+- String t: character from T at position sIdx
+- int idx: loop index tracking position during substring checks
+
+Logic Flow:
+1. Read inputs S and T using Scanner
+2. Initialize array A with all lowercase English letters
+3. Set boolean flag res = true
+4. Iterate through each character s in array A:
+   a. Find first occurrence index sIdx of s in S using indexOf()
+   b. If s not found (sIdx < 0), skip to next character
+   c. Get corresponding character t from T at position sIdx
+   d. Initialize idx = 0
+   e. While idx < S.length():
+      1. Check if s exists in S starting from idx:
+         - If found:
+           a. Compare positions of next s in S and next t in T from idx
+           b. If positions differ: set res = false and break loop
+           c. If positions match: set idx to found index + 1
+         - Else if t exists in T from idx: set res = false and break loop
+         - Else: exit while loop
+   f. If res == false, exit character loop
+5. After all characters processed:
+   a. Print "Yes" if res == true
+   b. Print "No" if res == false
+
+Control Structures:
+- For-each loop: for (String s : A)
+- While loop: while (idx < S.length())
+- Nested if-else conditions checking indexOf() results
+- Break statements on condition failures
+- Early exit if res becomes false
+
+Input/Output:
+- Input: Two strings from standard input (S and T)
+- Output: "Yes" or "No" printed to console
+- Processing: Character mapping verification between S and T using index tracking
+
+Data Processing:
+- Uses String.indexOf() for position checks
+- Compares character positions between S and T
+- Maintains index state during substring searches
+- Verifies consistent character mapping in both directions
+```

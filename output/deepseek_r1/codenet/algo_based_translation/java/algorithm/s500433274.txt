@@ -1,0 +1,34 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `a: BigInteger`
+- `b: BigInteger`
+- `c: BigInteger`
+- `cin: Scanner` initialized with `System.in`
+
+**Libraries/Dependencies:**
+- `java.math.*` (for `BigInteger`)
+- `java.util.Scanner`
+
+**Input Operations:**
+- Read input via `cin.hasNext()`
+- Assign `a = cin.nextBigInteger()`
+- Assign `b = cin.nextBigInteger()`
+
+**Logic Flow:**
+1. Start loop: `while (cin.hasNext())`
+2. Compute `c = a.max(b)`
+3. Check condition: `if (a.equals(c) && !b.equals(c))`
+   - If true: Print `"GREATER"`
+4. Else check: `else if (b.equals(c) && !a.equals(c))`
+   - If true: Print `"LESS"`
+5. Else case: Print `"EQUAL"`
+6. Close scanner after loop ends: `cin.close()`
+
+**Control Structures:**
+- `while` loop: Continues while input exists
+- Conditional chain: `if` → `else if` → `else`
+
+**Output Operations:**
+- Print `"GREATER"`, `"LESS"`, or `"EQUAL"` based on comparisons

@@ -1,0 +1,62 @@
+```
+- Import sys and math modules
+- Import defaultdict from collections module
+- Set recursion limit to 10 ** 7
+
+- Define function input() -> str:
+  - Return trimmed line from standard input
+
+- Define constant mod = 10 ** 9 + 7
+
+- Define function I() -> int:
+  - Return integer from input()
+
+- Define function II() -> Tuple[int, ...]:
+  - Return tuple of integers from input split by space
+
+- Define function III() -> List[int]:
+  - Return list of integers from input split by space
+
+- Define function Line(N: int, num: int) -> List[List[int]]:
+  - If N <= 0:
+    - Return list of empty lists of length num
+  - Else if num == 1:
+    - Return list of integers from input() repeated N times
+  - Else:
+    - Read all input into list of tuples
+    - Return list of lists by transposing tuples
+
+- Define function my_sign(x: int) -> int:
+  - Return (x > 0) - (x < 0)
+
+- Define main execution block:
+  - Declare N as int from I()
+  - Declare a as list of int from III()
+
+  - Initialize max_val to 0
+  - Initialize max_sign to 0
+  - Initialize max_index to -1
+
+  - For each index i and element a0 in enumerate(a):
+    - If absolute value of a0 is greater than max_val:
+      - Set max_val to absolute value of a0
+      - Set max_sign to my_sign(a0)
+      - Set max_index to i
+
+  - If max_sign equals 0:
+    - Print 0
+
+  - Else if max_sign equals 1:
+    - Print 2 * N - 1
+    - For i from 0 to N - 1:
+      - Print max_index + 1 and i + 1
+    - For i from 0 to N - 2:
+      - Print i + 1 and i + 2
+
+  - Else:
+    - Print 2 * N - 1
+    - For i from 0 to N - 1:
+      - Print max_index + 1 and i + 1
+    - For i from N - 1 to 1, decrementing by 1:
+      - Print i + 1 and i
+```

@@ -1,0 +1,30 @@
+1. Import required libraries: sys
+2. Define input functions:
+   - input(): reads a line from standard input, removes trailing newline, and returns the result as a string
+   - input_nums(): reads a line from standard input, splits it into substrings separated by whitespace, converts each substring to an integer, and returns the results as a list of integers
+3. Define main function: main() with no parameters and no return value
+   1. Read two integers K and N from standard input using input_nums() and store them in variables K and N
+   2. Read N integers from standard input using input_nums() and store them in a list A
+   3. Initialize an empty list dist
+   4. Iterate over the indices of A from 0 to N-2 (inclusive) using a for loop
+      1. Calculate the difference between consecutive elements A[i+1] and A[i] and append it to dist
+   5. Calculate the difference between K+A[0] and A[-1] and append it to dist
+   6. Find the maximum value in dist and store it in maxv
+   7. Calculate the sum of all elements in dist and subtract maxv from it
+   8. Print the result to standard output
+4. Check if the script is being run directly (not being imported) using if __name__ == '__main__': 
+   1. Call the main() function
+
+Required libraries: sys 
+
+Data types:
+- K: integer
+- N: integer
+- A: list of integers
+- dist: list of integers
+- maxv: integer 
+
+Function signatures:
+- input(): -> string
+- input_nums(): -> list of integers
+- main(): -> None

@@ -1,0 +1,7 @@
+1. Read input values A and B from the standard input.
+2. Calculate result = (B - 1) / (A - 1).
+3. Calculate remainder = (B - 1) % (A - 1).
+4. If remainder is not equal to 0, then increment result by 1.
+5. Output the calculated result to the standard output.
+6. Close the input scanner.
+7. Flush the output buffer.

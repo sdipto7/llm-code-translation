@@ -1,0 +1,49 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+  - Parameters: `String[] args`
+  - Return: `void`
+- `private static boolean possible(int N, int[] A)`
+  - Parameters: `int N`, `int[] A`
+  - Return: `boolean`
+
+**Variables:**
+- `Scanner scanner` (declared in `main`)
+- `int N` (input size)
+- `int[] A` (array of integers)
+- `long sum` (sum of elements in `A`)
+- `long NS` (calculated as `N*(N+1)/2`)
+- `long K` (calculated as `sum / NS`)
+- `int i`, `int j` (loop/helper indices in `possible`)
+- `long d` (difference check variable)
+
+**Logic Flow:**
+
+1. **Main Function:**
+   - Read integer `N` from input.
+   - Read `N` integers into array `A`.
+   - Call `possible(N, A)`.
+   - Print "YES" if `possible` returns `true`, else print "NO".
+
+2. **possible Function:**
+   - Compute `sum` by summing all elements of `A`.
+   - Calculate `NS = N*(N+1)/2`.
+   - If `sum % NS != 0`, return `false`.
+   - Compute `K = sum / NS`.
+   - For each `i` from `0` to `N-1`:
+     - Set `j = N-1` if `i == 0`, else `j = i-1`.
+     - Compute `d = K - (A[i] - A[j])`.
+     - If `d < 0` or `d % N != 0`, return `false`.
+   - Return `true` if all checks pass.
+
+**Control Structures:**
+- `if (sum % NS != 0)` in `possible`.
+- `for (int i = 0; i < N; i++)` loops in `main` and `possible`.
+- Ternary operator `j = i == 0 ? N-1 : i-1`.
+- `if (d < 0 || d % N != 0)` in `possible`.
+
+**Input/Output Operations:**
+- Read `N` and array `A` via `Scanner`.
+- Output "YES" or "NO" based on `possible`.
+
+**Dependencies:**
+- `java.util.Scanner` (imported for input handling).

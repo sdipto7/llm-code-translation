@@ -1,0 +1,9 @@
+1. Import the `java.util.Scanner` library.
+2. Define a class `Main`.
+3. Declare a private static final integer constant `BASE` with value 3.
+4. Define the `main` method with return type `void` and parameter type `String[] args`.
+5. Create a new instance of `Scanner` with `System.in` as its source.
+6. Call the `nextInt` method on the `Scanner` instance to read an integer from the input.
+7. Calculate the power of the read integer raised to `BASE` using `Math.pow`.
+8. Cast the result of `Math.pow` to an integer using `(int)`.
+9. Print the result to the console using `System.out.println`.

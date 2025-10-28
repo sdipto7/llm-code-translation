@@ -1,0 +1,38 @@
+```plaintext
+Function Signatures:
+- public static void main(String[] args)
+
+Variable Declarations:
+- Scanner in = new Scanner(System.in)
+- int n
+- int d
+- int[] nums
+- int result = 0
+- int a = 0
+
+Libraries/Dependencies:
+- java.util.Scanner
+
+Input Operations:
+- Read n from standard input via in.nextInt()
+- Read d from standard input via in.nextInt()
+- Read n integers sequentially into nums array via in.nextInt()
+
+Logic Flow:
+1. Initialize result to 0
+2. Initialize a to 0
+3. For i from 1 to n-1 (inclusive):
+   a. Calculate a = nums[i-1] - nums[i]
+   b. If a >= 0:
+      i. Compute increment = (a / d) + 1
+      ii. Add increment to result
+      iii. Update nums[i] by adding (increment * d)
+
+Control Structures:
+- for loop: for (int i = 0; i < n; i++) to populate nums
+- for loop: for (int i = 1; i < n; i++) to process elements
+- if statement: if (a >= 0) to check ordering condition
+
+Output Operation:
+- Print result via System.out.println(result)
+```

@@ -1,0 +1,20 @@
+1. Read the number of elements, n, from the input.
+2. Read n integers from the input and store them in an array, a.
+3. Calculate the factorial of n modulo 1000000007 and store it in p.
+4. Initialize an array, q, of size n with q[0] = 1.
+5. For i from 1 to n-1, calculate q[i] = (q[i-1] + modular inverse of (i+1)) modulo 1000000007.
+6. Initialize a variable, ans, to 0.
+7. For i from 0 to n-1, calculate val = (q[i] + q[n-i-1] - 1) modulo 1000000007.
+8. Multiply val by a[i] and take the result modulo 1000000007.
+9. Multiply the result by p and take it modulo 1000000007.
+10. Add the result to ans and take ans modulo 1000000007.
+11. Output the final value of ans.
+12. To calculate the modular inverse:
+    a. Initialize variables a, b, u, and v, where a is the number, b is the modulus, u = 1, and v = 0.
+    b. While b > 0, perform the following steps:
+        i. Calculate t = a/b.
+        ii. Update a and b such that a = b and b = a - t*b.
+        iii. Update u and v such that u = v and v = u - t*v.
+    c. Take u modulo the modulus.
+    d. If u is negative, add the modulus to u.
+    e. Return u as the modular inverse.

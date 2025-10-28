@@ -1,0 +1,29 @@
+Function signature:  
+main(): void
+
+Variable declarations and data types:  
+S: int  
+W: int
+
+Logic flow in execution order:  
+1. Import the sys module  
+2. Define the main function  
+3. Read input, split it into two parts, convert them to integers, and assign to S and W  
+4. Check if S is less than or equal to W  
+5. If true, print "unsafe"  
+6. If false, print "safe"  
+7. Check if the script is run directly (not imported)  
+8. If true, call the main function  
+
+Control structures:  
+Conditional (if-else):  
+Condition: S <= W  
+If true: print("unsafe")  
+If false: print("safe")
+
+Input/output operations and data processing logic:  
+Input: Read from standard input, split into two strings, convert each to integer  
+Output: Print either "unsafe" or "safe" based on the comparison of S and W
+
+Required libraries, modules, or dependencies:  
+sys module

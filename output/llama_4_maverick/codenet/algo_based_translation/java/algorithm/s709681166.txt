@@ -1,0 +1,13 @@
+1. Import the `java.util.Scanner` library.
+2. Define a class `Main` with a `main` method that takes a `String[]` as input and returns `void`.
+3. Declare a `Scanner` object `sc` and initialize it with `System.in`.
+4. Declare a `String` variable `s` and read a line of input from `sc` into `s`.
+5. Iterate over each character in `s` using a `for` loop, where the loop counter `i` ranges from `0` to `s.length() - 1`.
+6. Inside the loop, declare a `char` variable `c` and assign it the character at index `i` in `s`.
+7. Check if `c` is an uppercase letter using `Character.isUpperCase(c)`.
+   - If true, convert `c` to lowercase by adding `32` to it and print the result.
+8. If `c` is not uppercase, check if it is a lowercase letter using `Character.isLowerCase(c)`.
+   - If true, convert `c` to uppercase by subtracting `32` from it and print the result.
+9. If `c` is neither uppercase nor lowercase, print `c` as is.
+10. After the loop completes, print a newline character using `System.out.println()`.
+11. Close the `Scanner` object `sc` using `sc.close()`.

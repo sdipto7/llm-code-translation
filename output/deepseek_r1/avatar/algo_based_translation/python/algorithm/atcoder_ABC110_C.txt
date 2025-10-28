@@ -1,0 +1,56 @@
+**Structured Algorithm Specification**
+
+**1. Function Signatures**
+- `run(s: string, t: string) -> string`
+  - *Parameters*: Two input strings `s` and `t`
+  - *Return type*: String (`'Yes'` or `'No'`)
+- `main() -> void`
+  - *Parameters*: None
+  - *Return type*: Void
+
+**2. Variable Declarations & Data Types**
+- Within `run`:
+  - `ss: list<int>` (sorted list of character frequencies from `s`)
+  - `tt: list<int>` (sorted list of character frequencies from `t`)
+- Within `main`:
+  - `s: string` (user input)
+  - `t: string` (user input)
+
+**3. Logic Flow**
+
+**Function `run`:**
+1. Compute frequency count of each character in `s` using `collections.Counter`.
+2. Extract the frequency values from the Counter as a list.
+3. Sort the list of frequency values in ascending order → store in `ss`.
+4. Repeat steps 1–3 for `t` → store in `tt`.
+5. Compare `ss` and `tt`:
+   - If equal, return `'Yes'`.
+   - Else, return `'No'`.
+
+**Function `main`:**
+1. Read input string `s` from standard input.
+2. Read input string `t` from standard input.
+3. Call `run(s, t)` and print the result.
+
+**4. Control Flow Structures**
+- **Conditional in `run`:**
+  - `if ss == tt`: Execute return `'Yes'`
+  - `else`: Execute return `'No'`
+
+**5. Input/Output Operations**
+- **Inputs:**
+  - `s` and `t` read via `input()` in `main`.
+- **Output:**
+  - Result of `run` printed to standard output.
+
+**6. Edge Case Handling**
+- Handles empty strings (counts become empty lists; comparison works normally).
+- Handles strings with same frequency distribution but different characters (sorted frequency lists will differ).
+
+**7. External Dependencies & Library Functions**
+- **Imports:** `collections` module (specifically `collections.Counter`).
+- **Library Functions:**
+  - `collections.Counter`: Computes character frequencies.
+  - `sorted()`: Sorts frequency values.
+  - `input()`: Reads user input.
+  - `print()`: Outputs result.

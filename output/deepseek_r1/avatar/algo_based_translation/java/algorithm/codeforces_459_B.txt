@@ -1,0 +1,47 @@
+**Algorithm:**
+
+- **Function Signatures:**
+  - `public static void main(String[] args)`
+  - `static void debug(Object... obj)`
+
+- **Variables:**
+  - `int N` (input size)
+  - `int[] A` (input array)
+  - `int min` (smallest element)
+  - `int max` (largest element)
+  - `long mins` (count of minimum elements)
+  - `long maxs` (count of maximum elements)
+
+- **Libraries/Dependencies:**
+  - `java.io.*`
+  - `java.util.*`
+
+- **Execution Flow:**
+  1. Read integer `N` from standard input.
+  2. Initialize integer array `A` of size `N`.
+  3. Populate `A` by reading `N` integers from input.
+  4. Sort `A` in non-decreasing order.
+  5. Set `min = A[0]` (first element after sorting).
+  6. Set `max = A[N-1]` (last element after sorting).
+  7. Initialize `mins = 0` and `maxs = 0`.
+  8. Iterate through each `value` in array `A`:
+     - Increment `mins` if `value == min`.
+     - Increment `maxs` if `value == max`.
+  9. If `min == max`:
+     - Compute all possible pairs: `N * (N-1) / 2`.
+     - Output `(max - min) [0]` and computed pairs.
+  10. Else:
+      - Compute valid pairs: `mins * maxs`.
+      - Output `(max - min)` and product value.
+  11. Close output writer.
+
+- **Control Structures:**
+  - For-loop: `for (int n=0; n<N; n++)` (array population)
+  - Enhanced for-loop: `for (int value : A)` (counting occurrences)
+  - Conditional: `if (value == min)` and `if (value == max)` (during counting)
+  - If-Else block: `if (min == max)` (final output decision)
+
+- **I/O Operations:**
+  - Input via `Scanner` reading from `System.in`.
+  - Output via `PrintWriter` writing to `System.out`.
+  - Array sorting via `Arrays.sort()`.

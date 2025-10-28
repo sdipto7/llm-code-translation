@@ -1,0 +1,24 @@
+Dependencies:
+- Import `Arrays` from `java.util`.
+- Import `Scanner` from `java.util`.
+
+Function Signature:
+- `main(String[] args)`: No parameters, no return value.
+
+Variable Declarations:
+- `Scanner in`: Instance of `Scanner` for input.
+- `int n`: Integer to store the number of elements.
+- `int[] a`: Array of integers to store the input elements.
+- `int min`: Integer to store the smallest element in the array.
+
+Logic Flow:
+1. Create a `Scanner` object `in` to read input from the standard input.
+2. Read an integer `n` using `in.nextInt()` which specifies the number of elements in the array.
+3. Initialize an integer array `a` with length `n`.
+4. Use a `for` loop with index `i` ranging from `0` to `n-1` to populate the array `a`:
+   - Assign `a[i]` as the next integer input using `in.nextInt()`.
+5. Sort the array `a` using `Arrays.sort(a)`.
+6. Assign the first element of the sorted array `a` to `min`.
+7. Iterate over each `value` in array `a` using an enhanced `for` loop:
+   - If `value % min` is not equal to `0`, print `-1` and terminate the program.
+8. If the loop completes without breaking, print the value of `min`.

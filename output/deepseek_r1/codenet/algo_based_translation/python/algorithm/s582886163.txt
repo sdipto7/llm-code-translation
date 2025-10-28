@@ -1,0 +1,22 @@
+- Function parameters: none
+- Return type: void
+- Variables:
+  - N: integer (input)
+  - capacity_list: list of integers (length 5)
+  - bottle_neck: integer
+- Execution steps:
+  1. Read integer input from standard input, assign to N
+  2. Initialize capacity_list with 5 integer inputs read sequentially
+  3. Sort capacity_list in ascending order
+  4. Assign bottle_neck = capacity_list[0]
+  5. Compute time = 4 + ((N + bottle_neck - 1) divided by bottle_neck using integer division)
+  6. Print time as integer output
+- Control structures:
+  - Implicit loop for list comprehension during capacity_list initialization (5 iterations)
+- Data processing:
+  - Arithmetic operation: (N + bottle_neck - 1) // bottle_neck
+- Input operations:
+  - Read from stdin using input() function
+- Output operations:
+  - Print final computed time to stdout
+- Dependencies: none (standard language features only)

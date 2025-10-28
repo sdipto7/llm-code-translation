@@ -1,0 +1,19 @@
+```python
+def main():
+    import sys
+    input_line1 = sys.stdin.readline().strip().split()
+    input_line2 = sys.stdin.readline().strip()
+    input_line3 = sys.stdin.readline().strip()
+    
+    tokens = input_line2.split()
+    a = int(tokens[0])
+    b = int(tokens[1])
+    u = input_line3
+    
+    if u == input_line1[0]:
+        result = f"{a-1} {b}"
+    else:
+        result = f"{a} {b-1}"
+    
+    print(result)
+```

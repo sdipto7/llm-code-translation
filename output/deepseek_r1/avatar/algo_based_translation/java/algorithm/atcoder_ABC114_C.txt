@@ -1,0 +1,46 @@
+**Algorithm:**
+
+1. **Function Signatures:**
+   - `public static void main(String[] args)`
+   - `public static String gs()` (reads String input)
+   - `public static int gi()` (reads integer input)
+   - `public static long gl()` (reads long input)
+   - `public static double gd()` (reads double input)
+
+2. **Variables:**
+   - `int N`: Input value from user
+   - `long i = 357`: Current number being checked (starts at 357)
+   - `int c = 0`: Counter for valid numbers
+   - `String s`: String representation of `i`
+   - `StringBuilder sb`: Used to construct the next number
+   - `boolean f`: Flag for carry/overflow during digit manipulation
+
+3. **Logic Flow:**
+   - Read `N` using `gi()`
+   - Loop while `i <= N`:
+     1. Convert `i` to string `s`
+     2. If `s` contains "3", "5", **and** "7", increment `c`
+     3. Initialize `sb` and reset `f` to `false`
+     4. Iterate over each character of `s` from right to left:
+        - If `f` is `true`: Append current digit unchanged
+        - Else:
+          - Replace "3" with "5" (set `f` to `true`)
+          - Replace "5" with "7" (set `f` to `true`)
+          - Replace "7" with "3" (keep `f` as `false`)
+     5. If no carry occurred (`f` remains `false`), append "3" to `sb`
+     6. Reverse `sb`, parse to long, and update `i`
+   - Print `c`
+
+4. **Control Structures:**
+   - `while (i <= N)` loop for number sequence generation
+   - `for (int j = 0; j < s.length(); j++)` for digit-wise processing
+   - Nested `if-else` blocks for digit replacement logic
+   - Conditional check `if (!f)` for final carry handling
+
+5. **Input/Output:**
+   - Uses `Scanner` for input operations
+   - Reads via helper functions (`gs`, `gi`, etc.)
+   - Final output via `System.out.println(c)`
+
+6. **Dependencies:**
+   - `java.util.Scanner` for input handling

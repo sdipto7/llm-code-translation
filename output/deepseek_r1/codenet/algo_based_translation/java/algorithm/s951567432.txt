@@ -1,0 +1,22 @@
+- Function signature:  
+  `public static void main(String[] args)`
+
+- Variables:  
+  `int count` (user input), `int total = 0`, `int ix` (loop counter)
+
+- Input operation:  
+  `count = new Scanner(System.in).nextInt()`
+
+- Logic flow:  
+  1. Initialize total to 0  
+  2. For loop: `ix` from 1 to `count` (inclusive), incrementing by 1  
+  3. Accumulate sum: `total += ix` in each iteration  
+
+- Control structures:  
+  `for (int ix = 1; ix <= count; ix++)`
+
+- Output operation:  
+  `System.out.println(total)`
+
+- Dependencies:  
+  `java.util.Scanner` imported from `java.util` package

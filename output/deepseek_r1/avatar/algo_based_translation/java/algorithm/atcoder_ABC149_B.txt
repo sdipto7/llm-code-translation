@@ -1,0 +1,43 @@
+**Function Signatures:**
+- `public static void main(String[] args) throws IOException`
+- `atcoder_ABC149_B(BufferedReader in) throws IOException` (constructor)
+- `void calc()`
+- `void showResult()`
+
+**Variables:**
+- Instance variables: `long A`, `long B`, `long K`, `long x`, `long y`
+- Local variables in constructor: `String[] tokens`
+
+**Data Types:**
+- All numeric variables: `long`
+- Input handling: `BufferedReader`, `InputStreamReader`, `String[]`
+
+**Logic Flow:**
+1. **Input Parsing:**
+   - Read a line from input and split into tokens.
+   - Parse token[0] to `A` (long), token[1] to `B` (long), token[2] to `K` (long).
+
+2. **Calculation (`calc`):**
+   - Initialize `x = A`, `y = B`.
+   - Compute `x = A - K`.
+   - If `x < 0`:
+     - Compute `y = B + x` (equivalent to `B - (K - A)`).
+     - Set `x = 0`.
+     - If `y < 0`, set `y = 0`.
+
+3. **Output (`showResult`):**
+   - Print `x` and `y` separated by a space.
+
+**Control Structures:**
+- **Conditional in `calc`:**
+  - `if (x < 0)`: Execute block to adjust `y` and reset `x`.
+  - Nested `if (y < 0)`: Set `y` to 0 if negative after adjustment.
+
+**Input/Output Operations:**
+- **Input:** Read via `BufferedReader` with UTF-8 encoding.
+- **Output:** Print `x` and `y` to standard output.
+
+**Dependencies:**
+- `java.util.*` (unused but imported)
+- `java.io.*` (for `InputStreamReader`, `BufferedReader`, `IOException`)
+- `java.nio.charset.StandardCharsets` (for UTF-8 encoding)

@@ -1,0 +1,14 @@
+1. Read input from the input stream.
+2. Create an InputReader object to read input and a PrintWriter object to write output.
+3. Create a TaskB object to solve the problem.
+4. Call the solve method of the TaskB object with test number 1, InputReader object, and PrintWriter object.
+5. In the solve method, read a string x from the input.
+6. Initialize an empty stack s to store characters.
+7. Initialize a counter c to 0.
+8. Iterate through each character in the string x.
+9. Push each character onto the stack s.
+10. While the stack s has more than one element, pop the top two elements p and q.
+11. If p and q are '1' and '0' or '0' and '1' respectively, increment the counter c.
+12. If p and q are not '1' and '0' or '0' and '1', push q and p back onto the stack and break the loop.
+13. After iterating through all characters in x, print 2 times the counter c to the output.
+14. Close the PrintWriter object to finalize the output.

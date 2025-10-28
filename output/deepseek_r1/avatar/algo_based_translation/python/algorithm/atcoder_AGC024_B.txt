@@ -1,0 +1,85 @@
+**Structured Algorithm Specification:**
+
+**1. Function Signatures:**
+- `main() -> void`
+  - Parameters: None
+  - Return: Void
+- `editorial(N: int, P: List[int]) -> void`
+  - Parameters: 
+    - `N`: Integer (array size)
+    - `P`: List of integers (permutation sequence)
+  - Return: Void
+- `WA(N: int, P: List[int]) -> void`
+  - Parameters: Same as `editorial`
+  - Return: Void
+
+**2. Variables:**
+- `main()`:
+  - `N: int` (input value)
+  - `P: List[int]` (input list)
+- `editorial()`:
+  - `a: List[int]` (size `N+1`, initialized to 0)
+  - `tmp: int` (temporary counter, initialized to 1)
+  - `max_len: int` (maximum sequence length, initialized to 1)
+  - `ans: int` (computed result)
+- `WA()`:
+  - `tmp: int` (temporary counter, initialized to 0)
+  - `ans: int` (computed result, initialized to 0)
+
+**3. Logic Flow:**
+
+**3.1 `main()`:**
+1. Read integer `N` from standard input.
+2. Read `N` integers into list `P`.
+3. Call `editorial(N, P)`.
+
+**3.2 `editorial(N, P)`:**
+1. If `N == 1`:
+   - Print `0`.
+   - Terminate.
+2. Initialize list `a` of size `N+1` with zeros.
+3. For each index `i` and value `p` in `P`:
+   - Set `a[p] = i`.
+4. Initialize `tmp = 1`, `max_len = 1`.
+5. For `i` in range `1` to `N-1` (inclusive):
+   - If `a[i] < a[i+1]`:
+     - Increment `tmp` by 1.
+     - Set `max_len = max(max_len, tmp)`.
+   - Else:
+     - Reset `tmp = 1`.
+6. Compute `ans = N - max_len`.
+7. Print `ans`.
+
+**3.3 `WA(N, P)`:**
+1. Initialize `tmp = 0`, `ans = 0`.
+2. For each index `i` and value `p` in `P`:
+   - If `i == 0` or `P[i-1] + 1 == p`:
+     - Increment `tmp` by 1.
+   - Else:
+     - Set `ans = max(ans, tmp)`.
+     - Reset `tmp = 1`.
+3. Set `ans = max(ans, tmp)`.
+4. Print `N - ans`.
+
+**4. Control Flow Structures:**
+- `editorial()`:
+  - **Conditional**: Check `N == 1` to handle singleton case.
+  - **Loop**: `for i, p in enumerate(P)` to populate array `a`.
+  - **Loop**: `for i in 1..N-1` to find longest increasing positional sequence.
+  - **Conditional**: `a[i] < a[i+1]` to track consecutive valid elements.
+- `WA()`:
+  - **Loop**: Iterate through `P` with index-value pairs.
+  - **Conditional**: Check consecutive elements via `P[i-1] + 1 == p`.
+
+**5. Input/Output Operations:**
+- `main()` reads `N` via `input()` and constructs `P` via list comprehension.
+- Both `editorial()` and `WA()` output results via `print(ans)`.
+
+**6. Edge Case Handling:**
+- Explicit check for `N == 1` in `editorial()` to return 0 immediately.
+- Correct handling of 1-based indexing in positional array `a`.
+- Reset logic for `tmp` when sequence breaks (ensures subsequence tracking accuracy).
+
+**7. External Dependencies:**
+- Uses Python `input()` for data reading.
+- No external libraries required.

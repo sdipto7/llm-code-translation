@@ -1,0 +1,12 @@
+1. Read an integer N from input.
+2. Read a string c of length N from input.
+3. Declare integer variables num_w and num_r.
+4. Calculate num_w as the count of 'W' characters in string c.
+5. Calculate num_r as N - num_w.
+6. Declare a string comp as the concatenation of 'R' repeated num_r times and 'W' repeated num_w times.
+7. Declare an integer variable ans and initialize it to 0.
+8. Iterate over the range from 0 to num_r - 1.
+9. For each index i in the range, check if the character at index i in string c is not equal to the character at index i in string comp.
+10. If the characters are not equal, increment ans by 1.
+11. Update ans to be the minimum of num_w, num_r, and ans.
+12. Output the value of ans.

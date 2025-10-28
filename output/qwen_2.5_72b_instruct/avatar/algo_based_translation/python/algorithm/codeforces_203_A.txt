@@ -1,0 +1,38 @@
+Function Signature: `main()`
+Return Type: `str`
+
+Variable Declarations and Data Types:
+- `xxs` (list of str)
+- `x` (int)
+- `t` (int)
+- `a` (int)
+- `b` (int)
+- `da` (int)
+- `db` (int)
+- `a_time` (int)
+- `b_time` (int)
+- `i` (int)
+- `j` (int)
+- `ff` (str)
+
+Logic Flow in Execution Order:
+
+1. Read input as a string and split by spaces into list `xxs`.
+2. Convert elements of `xxs` to integers and assign to `x`, `t`, `a`, `b`, `da`, `db`.
+3. Define function `main()`:
+   - If `x` equals 0, print "YES" and return "Result Found".
+   - Calculate `a_time` as the minimum of `a // da` and `t - 1`.
+   - Calculate `b_time` as the minimum of `b // db` and `t - 1`.
+   - For each `i` from 0 to `a_time` inclusive:
+     - For each `j` from 0 to `b_time` inclusive:
+       - If `a - da * i` equals `x` or `b - db * j` equals `x`, print "YES" and return "Result Found".
+       - If `(a - da * i) + (b - db * j)` equals `x`, print "YES" and return "Result Found".
+   - Return "Result Not Found".
+
+Input/Output Operations and Data Processing Logic:
+- Read input from standard input.
+- Process input to determine if `x` can be achieved by manipulating `a` and `b` using `da` and `db` within `t` time units.
+- Print "YES" if possible, otherwise print "NO".
+
+Required Libraries, Modules, or Dependencies:
+- None

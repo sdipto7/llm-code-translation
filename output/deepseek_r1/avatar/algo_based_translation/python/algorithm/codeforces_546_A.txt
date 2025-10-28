@@ -1,0 +1,35 @@
+**Structured Algorithm Specification:**
+
+**Function Signature:**  
+- `main()`  
+  - **Parameters:** None  
+  - **Return Type:** void  
+
+**Variables:**  
+- `k`: Integer (parsed from input)  
+- `n`: Integer (parsed from input)  
+- `w`: Integer (parsed from input)  
+- `total`: Integer (initialized to 0)  
+
+**Input/Output Operations:**  
+1. Read one line from standard input.  
+2. Split input into three string components using whitespace.  
+3. Convert components to integers `k`, `n`, `w`.  
+
+**Control Flow:**  
+1. **Condition:** If `k ≥ 1` **AND** `w ≤ 1000`:  
+   - **Loop:** `for i in [1, w]` (inclusive range):  
+     - **Operation:** `total += i * k`  
+   - **Condition:** If `total > n`:  
+     - **Output:** `total - n`  
+   - **Else:**  
+     - **Output:** `0`  
+2. **Else:** No action (no output).  
+
+**Edge Cases/Error Handling:**  
+- Inputs are assumed to be convertible to integers (no validation for non-integer input).  
+- No output produced if `k < 1` or `w > 1000`.  
+
+**External Dependencies:**  
+- Uses standard input/output functions.  
+- No external libraries or imports required.

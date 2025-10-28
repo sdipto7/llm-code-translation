@@ -1,0 +1,25 @@
+```
+- Function Signature:
+  - No specific function signature; logic is executed in the main block.
+
+- Variable Declarations:
+  - `r`: int
+  - `D`: int
+  - `x`: int
+  - `i`: int (used in loop)
+
+- Input Operation:
+  - Read a single line of input and split it into three integers `r`, `D`, and `x`.
+
+- Control Structures and Logic:
+  - Loop from `i = 2` to `i < 12` (inclusive of 2, exclusive of 12):
+    - Calculate the value using the formula:
+      - `value = (r ** (i - 1)) * (x + D / (1 - r)) - D / (1 - r)`
+    - Convert the result to an integer.
+    - Output the integer result.
+
+- Output Operation:
+  - Print the integer result calculated in each iteration of the loop.
+
+- No external libraries, modules, or dependencies are required.
+```

@@ -1,0 +1,38 @@
+```plaintext
+Function Signature:
+    def find(s: str, ch: str) -> list[int]
+
+Variable Declarations:
+    indices: list[int]
+    maximum: int
+    combs: itertools.combinations
+    x: tuple[int, int]
+
+Logic Flow:
+1. Define function `find` that takes a string `s` and a character `ch` as parameters.
+   - Use list comprehension to return a list of indices where `ch` occurs in `s`.
+
+2. Begin main execution block.
+   - Read an integer `n` from input.
+   - Read a string `s` from input and replace all occurrences of an empty string with an empty string (no change).
+   
+3. Check if character '0' is not in `s`.
+   - If true, print `n - 1`.
+   
+4. If '0' is in `s`, execute the following:
+   - Use `find` function to get a list `indices` of all indices where '0' occurs in `s`.
+   - Check if the length of `indices` is 1.
+     - If true, print `n`.
+   - Otherwise, execute the following:
+     - Initialize `maximum` to 0.
+     - Create combinations `combs` of `indices` taken two at a time using `itertools.combinations`.
+     - For each combination `x` in `combs`, execute the following:
+       - Calculate `index1` as `indices.index(x[0])`.
+       - Calculate `index2` as `indices.index(x[1])`.
+       - Calculate the value of the expression `2 + 2 * (abs(index1 - index2) - 1) - (abs(x[0] - x[1]) - 1)`.
+       - Update `maximum` to the maximum of `maximum` and the calculated value.
+     - Print the sum of `s.count('1')` and `maximum`.
+
+Required Libraries:
+- `itertools` module for `itertools.combinations`.
+```

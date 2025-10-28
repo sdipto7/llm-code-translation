@@ -1,0 +1,34 @@
+Function Signature: `main(String[] args)`
+Parameter Types: `String[] args`
+Return Type: `void`
+
+Variable Declarations and Data Types:
+- `stdIn` of type `Scanner`
+- `N` of type `int`
+- `A` of type `int[]`
+- `count` of type `int`
+- `i` of type `int`
+
+Logic Flow:
+1. Initialize `stdIn` as a `Scanner` object reading from `System.in`.
+2. Read an integer `N` from `stdIn`.
+3. Initialize an array `A` of size `N`.
+4. For each index `i` from `0` to `N-1`, read an integer and store it in `A[i]`.
+5. Initialize `count` to `0`.
+6. For each index `i` from `0` to `N-1`:
+   - If `i` is equal to `N-1`, increment `count` by `1`.
+   - Else if `A[i]` is equal to `A[i+1]`, do nothing.
+   - Else if `A[i]` is less than `A[i+1]`:
+     - While `A[i]` is less than or equal to `A[i+1]`:
+       - Increment `i` by `1`.
+       - If `i` is equal to `N-1`, break the loop.
+     - Increment `count` by `1`.
+   - Else:
+     - While `A[i]` is greater than or equal to `A[i+1]`:
+       - Increment `i` by `1`.
+       - If `i` is equal to `N-1`, break the loop.
+     - Increment `count` by `1`.
+7. Print the value of `count`.
+
+Libraries/Modules/Dependencies:
+- `java.util.Scanner`

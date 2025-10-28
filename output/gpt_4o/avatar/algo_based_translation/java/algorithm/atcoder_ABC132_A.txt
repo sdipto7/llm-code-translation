@@ -1,0 +1,26 @@
+1. Import the necessary libraries: `java.util.HashMap`, `java.util.Map.Entry`, and `java.util.Scanner`.
+
+2. Define the main function: `public static void main(String[] args)`
+
+3. Declare and initialize a `Scanner` object `in` to read input from the standard input stream.
+
+4. Read a string `s` from input using `in.next()`, which is expected to be a string of length 4.
+
+5. Convert the string `s` into a character array `targ` using `s.toCharArray()`.
+
+6. Declare a `HashMap<Character, Integer>` named `map`.
+
+7. Iterate over each character in the `targ` array using a for loop with index `i` ranging from 0 to `targ.length - 1`:
+   - If the character `targ[i]` is not already in `map`, add it with a value of 1.
+   - If the character `targ[i]` is already present in `map`, increment its value by 1.
+
+8. Declare a boolean variable `ok` and initialize it to `true`.
+
+9. Iterate over each entry `c` in the `map` using a for-each loop:
+   - If the value associated with the entry `c` is not equal to 2, set `ok` to `false` and break out of the loop.
+
+10. Check if `ok` is `true` and the size of `map` is 2:
+    - If both conditions are met, print "Yes".
+    - Otherwise, print "No".
+
+11. Close the `Scanner` object `in` using `in.close()`.

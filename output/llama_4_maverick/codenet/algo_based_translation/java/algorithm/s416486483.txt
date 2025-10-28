@@ -1,0 +1,32 @@
+1. Import the required library: java.util.*
+2. Define a private static function `split` with signature: `long split(long n, long k)`
+   - Declare a variable `sum` of type `long` and initialize it to 0
+   - Enter a while loop with condition `n > 0`
+     - Inside the loop:
+       - Add `n % k` to `sum`
+       - Update `n` to `n / k`
+   - Return `sum`
+
+3. Define a private static function `solve` with signature: `long solve(long n, long s)`
+   - Declare a variable `k` of type `long`
+   - Enter a for loop with initialization `k = 2`, condition `k*k <= n || k < 100`, and increment `k++`
+     - Inside the loop:
+       - Check if `split(n, k)` equals `s`
+       - If true, return `k`
+   - Enter a while loop with condition `k <= n`
+     - Inside the loop:
+       - Declare variables `a` and `b` of type `long` and assign `n / k` and `n % k` respectively
+       - Check if `(a + b - s) % a == 0`
+       - If true:
+         - Declare a variable `dk` of type `long` and assign `(a + b - s) / a`
+         - Check if `dk >= 0` and `b - dk*a >= 0`
+         - If true, return `k + dk`
+       - Update `k` to `n / a + 1`
+   - Check if `n == s`
+   - If true, return `n+1`
+   - Return -1
+
+4. Define a public static function `main` with signature: `void main(String[] args)`
+   - Declare a variable `s` of type `Scanner` and initialize it with `new Scanner(System.in)`
+   - Declare variables `nl` and `sl` of type `long` and assign `s.nextLong()` to them respectively
+   - Call the function `solve` with `nl` and `sl` as arguments and print the result using `System.out.println`

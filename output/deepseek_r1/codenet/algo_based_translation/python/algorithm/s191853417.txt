@@ -1,0 +1,32 @@
+Algorithm:
+1. Declare variables a, b, c, d, e as integers
+2. Read one line of input from standard input
+3. Split input string into 5 parts using whitespace separator
+4. Convert each split string part to integer and assign to variables a, b, c, d, e
+5. Calculate sum: total = a + b + c + d + e
+6. Compute result: 15 - total
+7. Output result to standard output as integer
+
+Function signature:
+No functions defined (executed as script)
+
+Variables:
+- a: int
+- b: int
+- c: int
+- d: int
+- e: int
+- total (implicit): int
+- result (implicit): int
+
+Control structures:
+None (strictly sequential execution)
+
+Input operations:
+- Single input line containing 5 space-separated integers
+
+Output operations:
+- Print computed integer value
+
+Dependencies:
+- None beyond standard input/output functions

@@ -1,0 +1,57 @@
+Function signatures with parameter and return types:
+- `input() -> str`
+- `main() -> None`
+
+Variable declarations and data types:
+- `N: int`
+- `M: int`
+- `edge: List[List[int]]`
+- `X: int`
+- `Y: int`
+- `Z: int`
+- `used: List[bool]`
+- `ans: int`
+- `queue: Deque[int]`
+- `node: int`
+- `nextnode: int`
+
+Complete logic flow in execution order:
+1. Import `sys` and `deque` from `collections`.
+2. Set recursion limit to \(10^9\).
+3. Define constant `INF` as \(10^{18}\).
+4. Define `input()` function to read a line from standard input and strip trailing whitespace.
+5. Define `main()` function:
+   - Read two integers `N` and `M` from input.
+   - Initialize `edge` as a list of empty lists of length `N`.
+   - For each of the `M` edges:
+     - Read three integers `X`, `Y`, and `Z` from input, convert them to zero-based indices.
+     - Append `Y` to `edge[X]` and `X` to `edge[Y]`.
+   - Initialize `used` as a list of `False` values of length `N`.
+   - Initialize `ans` to 0.
+   - For each node `i` from 0 to `N-1`:
+     - If `used[i]` is `False`:
+       - Increment `ans` by 1.
+       - Initialize `queue` as a deque containing `i`.
+       - While `queue` is not empty:
+         - Pop leftmost element from `queue` and assign to `node`.
+         - Set `used[node]` to `True`.
+         - For each `nextnode` in `edge[node]`:
+           - If `used[nextnode]` is `False`:
+             - Append `nextnode` to `queue`.
+6. Print `ans`.
+
+All control structures (loops, conditionals) with exact conditions:
+- For loop iterating over `range(M)` with condition `i < M`.
+- For loop iterating over `range(N)` with condition `i < N`.
+- If statement checking `used[i]` is `False`.
+- While loop checking `queue` is not empty.
+- If statement checking `used[nextnode]` is `False`.
+
+Input/output operations and data processing logic:
+- Input: Reads integers `N` and `M`, followed by `M` lines each containing three integers representing edges.
+- Output: Prints a single integer `ans` representing the number of connected components in the graph.
+- Data processing: Constructs adjacency list representation of the graph, performs BFS to count connected components.
+
+Required libraries, modules, or dependencies:
+- `sys` module for reading input.
+- `deque` from `collections` module for efficient queue operations.

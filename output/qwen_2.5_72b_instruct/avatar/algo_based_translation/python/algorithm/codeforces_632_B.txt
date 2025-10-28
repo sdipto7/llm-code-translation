@@ -1,0 +1,41 @@
+Function signatures with parameter and return types:
+- `main() -> int`
+- `Bob_sMaxStrength(pieces: tuple) -> int`
+
+Variable declarations and data types:
+- `pieces: tuple` of `tuple` containing `int` and `str`
+- `pScore: int`
+- `sScore: int`
+- `pMaxScore: int`
+- `sMaxScore: int`
+- `sum(piece[0] for piece in pieces if piece[1] == 'B'): int`
+
+Execution order and logic flow:
+1. `main()` function is called
+2. `input()` is called (input is read but not used)
+3. `pieces` is created by zipping two maps: `map(int, input().split())` and `input()`
+4. `Bob_sMaxStrength(pieces)` is called with `pieces` as argument and its result is returned
+5. Inside `Bob_sMaxStrength(pieces)`:
+   - `pScore`, `sScore`, `pMaxScore`, `sMaxScore` are initialized to the sum of the first elements of `pieces` where the second element is 'B'
+   - First loop iterates over `pieces`:
+     - If `piece[1]` is 'A':
+       - `pScore` is incremented by `piece[0]`
+       - If `pScore` is greater than `pMaxScore`, `pMaxScore` is updated to `pScore`
+     - Else:
+       - `pScore` is decremented by `piece[0]`
+   - Second loop iterates over `pieces` in reverse:
+     - If `pieces[i][1]` is 'A':
+       - `sScore` is incremented by `pieces[i][0]`
+       - If `sScore` is greater than `sMaxScore`, `sMaxScore` is updated to `sScore`
+     - Else:
+       - `sScore` is decremented by `pieces[i][0]`
+   - If `pMaxScore` is greater than `sMaxScore`, `pMaxScore` is returned, else `sMaxScore` is returned
+
+Input/output operations and data processing logic:
+- The first `input()` reads an unused line
+- The second `input()` reads a line, splits it into integers, and zips these integers with characters from the third `input()` line to form `pieces`
+- The function calculates the maximum score Bob can achieve by either moving forward or backward through `pieces`
+- The result is printed
+
+Required libraries, modules, or dependencies:
+- No specific libraries or modules are required

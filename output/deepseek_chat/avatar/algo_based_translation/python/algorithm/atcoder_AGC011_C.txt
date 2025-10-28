@@ -1,0 +1,58 @@
+**Algorithm Extraction:**
+
+**Libraries:**
+- `queue`
+
+**Global Variables:**
+- `n`: integer (number of nodes)
+- `m`: integer (number of edges)
+- `vis`: list of integers of length n+1 (visited/color array)
+- `ci`: integer (count of isolated nodes)
+- `cb`: integer (count of bipartite components)
+- `cc`: integer (count of non-bipartite components)
+- `g`: list of lists of integers of length n+1 (adjacency list)
+
+**Function: dfs(x: integer) -> boolean**
+- Parameters:
+  - `x`: integer (starting node)
+- Local variables:
+  - `stk`: LIFO queue
+  - `flag`: boolean
+- Logic:
+  1. Initialize stack with tuple (x, 1)
+  2. While stack is not empty:
+     - Pop element (u, col) from stack
+     - If u is visited:
+        - Set flag to (flag AND (vis[u] == col))
+        - Continue to next iteration
+     - Else:
+        - Set vis[u] = col
+        - For each neighbor i in g[u]:
+           - Push (i, 3-col) to stack
+  3. Return flag
+
+**Main Execution:**
+1. Read n and m from input
+2. Initialize:
+   - vis = [0]*(n+1)
+   - ci, cb, cc = 0, 0, 0
+   - g = [[] for _ in range(n+1)]
+3. For i from 0 to m-1:
+   - Read u, v from input
+   - Add v to g[u]
+   - Add u to g[v]
+4. For i from 1 to n:
+   - If vis[i] == 0:
+     - If len(g[i]) == 0:
+        - ci += 1
+     - Else:
+        - If dfs(i) returns True:
+           - cb += 1
+        - Else:
+           - cc += 1
+5. Print: ci*ci + 2*ci*(n-ci) + cc*cc + 2*cb*cc + 2*cb*cb
+
+**Input/Output:**
+- Input format: First line contains n, m
+- Subsequent m lines contain edge pairs u, v
+- Output: Single integer result of the formula

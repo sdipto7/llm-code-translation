@@ -1,0 +1,12 @@
+1. Define a function `count_visible_mountains` with return type `int` that takes no parameters.
+2. Declare variable `N` of type `int` and read its value from standard input.
+3. Declare a list `Hs` of type `list[int]` and read its elements from standard input, where the number of elements is `N`.
+4. Initialize variable `ans` of type `int` to 0.
+5. Initialize variable `maxH` of type `int` to 0.
+6. Iterate over each element `H` in the list `Hs`.
+7. For each `H`, check if `maxH` is less than or equal to `H`.
+8. If the condition is true, increment `ans` by 1 and update `maxH` to `H`.
+9. After iterating over all elements, print the value of `ans` to standard output.
+10. The required input operations are reading an integer and a list of integers from standard input.
+11. The required output operation is printing an integer to standard output.
+12. The required library is the standard input/output library available in the programming language.

@@ -1,0 +1,47 @@
+**Function Signature:**
+main(String[] args)
+
+**Parameters:**
+- String[] args: Command line arguments
+
+**Return Type:**
+void
+
+**Variables:**
+- Scanner in: Input scanner
+- int N: Number of items
+- int L: Left cost coefficient
+- int R: Right cost coefficient
+- int QL: Left penalty coefficient
+- int QR: Right penalty coefficient
+- int[] W: Array of weights (size N)
+- int[] sum: Prefix sum array (size N+1)
+- long min: Minimum total cost (initialized to Long.MAX_VALUE)
+- int firstR: Loop counter (0 to N)
+- int lCount: Number of left operations
+- int rCount: Number of right operations
+- long cand: Candidate total cost
+- int llCount: Left penalty count
+- int rrCount: Right penalty count
+
+**Libraries/Dependencies:**
+- java.util.Scanner
+
+**Logic Flow:**
+1. Initialize Scanner with System.in
+2. Read integers N, L, R, QL, QR
+3. Create array W of size N
+4. Create prefix sum array sum of size N+1
+5. For n from 0 to N-1:
+   - Read W[n]
+   - Set sum[n+1] = sum[n] + W[n]
+6. For firstR from 0 to N:
+   - Set lCount = firstR
+   - Set rCount = N - lCount
+   - Calculate cand = sum[lCount] * L + (sum[N] - sum[lCount]) * R
+   - Calculate llCount = max(0, lCount - rCount - 1)
+   - Calculate rrCount = max(0, rCount - lCount - 1)
+   - Add llCount * QL to cand
+   - Add rrCount * QR to cand
+   - Set min = minimum of min and cand
+7. Print min

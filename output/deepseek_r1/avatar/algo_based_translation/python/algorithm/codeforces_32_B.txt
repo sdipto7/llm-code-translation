@@ -1,0 +1,57 @@
+**Structured Algorithm Specification:**
+
+**Function/Method Signatures:**
+- `main()` -> `void` (Entry point procedure)
+
+**Variables:**
+- `s`: `string` (Input string)
+- `result`: `string` (Output string, initialized to empty)
+- `i`: `int` (Index variable, initialized to 0)
+
+**Step-by-Step Logic Flow:**
+1. **Input Operation:**  
+   Read `s` from standard input.
+
+2. **Initialization:**  
+   Set `result` = empty string.  
+   Set `i` = 0.
+
+3. **Loop Execution:**  
+   While `i < len(s)`:  
+   a. **Conditional Branch (Character Check):**  
+      - If `s[i]` == '.':  
+        i. Append '0' to `result`.  
+        ii. Increment `i` by 1.  
+      - Else:  
+        i. Increment `i` by 1.  
+        ii. **Conditional Branch (Next Character Check):**  
+           - If `s[i]` == '.': Append '1' to `result`.  
+           - Else: Append '2' to `result`.  
+        iii. Increment `i` by 1.  
+
+4. **Output Operation:**  
+   Print `result` to standard output.
+
+**Control Flow Structures:**
+- **While Loop:**  
+  - **Condition:** `i < len(s)`  
+  - **Exit Criteria:** `i` exceeds or equals `len(s)`.  
+- **Nested If-Else:**  
+  - **Outer Condition:** Check `s[i]` for '.' vs. other characters.  
+  - **Inner Condition:** Check `s[i+1]` for '.' vs. other characters after incrementing `i`.
+
+**Input/Output Operations:**
+- Input: Read a single line string from stdin.  
+- Output: Write processed `result` string to stdout.
+
+**Error Handling & Edge Cases:**
+- No explicit error handling for:  
+  - Index overflow when `s` ends with a non-'.' character (causing `s[i+1]` to exceed bounds).  
+  - Non-'.' or '-' characters in input.  
+- Edge Cases:  
+  - Empty input produces empty output.  
+  - Single '.' in input produces '0'.  
+
+**External Dependencies:**
+- None. Uses only standard input/output functions.  
+- No libraries or external functions beyond basic string operations and I/O.

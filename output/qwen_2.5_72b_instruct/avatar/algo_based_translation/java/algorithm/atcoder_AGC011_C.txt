@@ -1,0 +1,62 @@
+Function Signatures:
+- `int dfs(int a, int c)`
+- `void run()`
+- `public static void main(String[] args)`
+
+Variable Declarations and Data Types:
+- `ArrayList<Integer>[] graph`
+- `boolean[] visited`
+- `int[] color`
+- `long one`
+- `long bipartite`
+- `long count`
+- `boolean mujun`
+- `Scanner scan`
+- `int n`
+- `int m`
+- `int u`
+- `int v`
+- `int total`
+- `int i`
+- `int kind`
+
+Logic Flow in Execution Order:
+- Initialize `graph` as an array of `ArrayList<Integer>` of size `n`
+- For each index `i` from `0` to `n-1`, initialize `graph[i]` as a new `ArrayList<Integer>`
+- For each edge defined by input integers `u` and `v` (adjusted for 0-based indexing), add `v` to `graph[u]` and `u` to `graph[v]`
+- Initialize `visited` as a boolean array of size `n` with all values set to `false`
+- Initialize `color` as an integer array of size `n` with all values set to `-1`
+- Initialize `one`, `bipartite`, `count` to `0`
+- For each node `i` from `0` to `n-1`:
+  - If `visited[i]` is `true`, continue to next iteration
+  - Increment `count`
+  - Set `mujun` to `false`
+  - Call `dfs(i, 0)` and store result in `kind`
+  - If `kind` equals `1`, increment `one`
+  - Else if `mujun` is `false`, increment `bipartite`
+- Initialize `total` to `one * (2 * n - one)`
+- Add `(count - one) * (count - one)` to `total`
+- Add `bipartite * bipartite` to `total`
+- Print `total`
+
+Control Structures:
+- For loop from `0` to `n-1` for initializing `graph`
+- For loop from `0` to `m-1` for reading edges and updating `graph`
+- For loop from `0` to `n-1` for processing each node
+- If statement to check if node `i` is already visited
+- If statement to check if component size `kind` is `1`
+- Else if statement to check if component is bipartite (`mujun` is `false`)
+
+Input/Output Operations:
+- Read `n` and `m` from input
+- For each of `m` edges, read integers `u` and `v`
+- Print the final value of `total`
+
+Data Processing Logic:
+- Use depth-first search (DFS) to determine connected components and their properties
+- Mark nodes as visited and assign colors to check for bipartiteness
+- Count single-node components, bipartite components, and non-bipartite components
+- Calculate the total based on the counts of different types of components
+
+Required Libraries, Modules, or Dependencies:
+- `java.util.*` for `ArrayList` and `Scanner` classes

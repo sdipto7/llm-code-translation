@@ -1,0 +1,77 @@
+**Structured Algorithm Specification**
+
+**1. Imports**
+- Import `sys` module
+- Import `itertools` module
+
+**2. Function/Method Signatures**
+- `solve(N: int, x: list[int], y: list[int]) -> None`
+  - Parameters:
+    - `N`: Integer representing number of points
+    - `x`: List of integers representing x-coordinates
+    - `y`: List of integers representing y-coordinates
+  - Return: Void (prints result)
+- `main() -> None`
+  - Return: Void
+
+**3. Variables**
+- `indices`: List[int] (size N)
+- `permutations`: Generator[tuple[int]] from `itertools.permutations(indices)`
+- `distances`: List[float] (dynamic size)
+- `permutation`: tuple[int] (current permutation)
+- `total_distance`: float
+- `tokens`: Generator[str] for input processing
+- `i`: int (loop index)
+- `f`, `t`: int (index pair from permutation)
+- `distance`: float (Euclidean distance between two points)
+
+**4. Logic Flow**
+
+**solve() Function**
+1. Initialize `indices` as list [0, 1, ..., N-1]
+2. Generate all permutations of `indices` using `itertools.permutations`
+3. For each `permutation` in permutations:
+   1. Initialize `total_distance` to 0.0
+   2. For `i` from 0 to N-2 inclusive:
+      1. Extract consecutive indices: `f = permutation[i]`, `t = permutation[i+1]`
+      2. Calculate squared x/y differences: `dx = x[t] - x[f]`, `dy = y[t] - y[f]`
+      3. Compute Euclidean distance: `distance = sqrt(dx² + dy²)`
+      4. Add `distance` to `total_distance`
+   3. Append `total_distance` to `distances`
+4. Calculate average: `result = sum(distances) / len(distances)`
+5. Print `result` with default precision
+
+**main() Function**
+1. Define nested generator `iterate_tokens()`:
+   1. For each line in `sys.stdin`:
+      1. Split line into tokens
+      2. Yield each token sequentially
+2. Initialize `tokens` generator
+3. Read `N = int(next(tokens))`
+4. Initialize `x` and `y` as lists of N zeros
+5. For `i` from 0 to N-1:
+   1. Read `x[i] = int(next(tokens))`
+   2. Read `y[i] = int(next(tokens))`
+6. Call `solve(N, x, y)`
+
+**5. Control Flow Structures**
+- `for permutation in permutations:` (iterates N! times)
+- Nested `for i in range(N-1):` (iterates N-1 times per permutation)
+- `for line in sys.stdin` (input reading loop)
+- `for i in range(N)` (coordinate initialization loop)
+
+**6. Input/Output Operations**
+- Input: Reads from standard input
+  - First token: integer N
+  - Next 2N tokens: x/y pairs
+- Output: Prints floating-point average distance via `print(result)`
+
+**7. Edge Case Handling**
+- Implicitly handles N=1: returns 0.0 (no movement possible)
+- Assumes valid integer inputs matching problem constraints
+
+**8. External Dependencies**
+- `sys` module for STDIN access
+- `itertools.permutations` for generating permutations
+- Native `print` for output
+- Implicit floating-point arithmetic for distance calculations

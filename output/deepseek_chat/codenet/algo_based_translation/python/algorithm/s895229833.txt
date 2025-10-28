@@ -1,0 +1,36 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- N: int
+- H: list[int]
+- count_best: int
+- count_tmp: int
+- i: int (loop index)
+
+**Input Operations:**
+- Read integer N from standard input
+- Read space-separated integers and convert to list H
+
+**Initialization:**
+- count_best = 0
+- count_tmp = 0
+
+**Main Logic:**
+- For i from 0 to N-2 (inclusive):
+  - If H[i] >= H[i+1]:
+    - Increment count_tmp by 1
+  - Else:
+    - If count_tmp > count_best:
+      - Set count_best = count_tmp
+    - Reset count_tmp to 0
+
+- After loop completion:
+  - If count_tmp > count_best:
+    - Set count_best = count_tmp
+
+**Output Operation:**
+- Print count_best
+
+**Dependencies:**
+- Standard input/output functions

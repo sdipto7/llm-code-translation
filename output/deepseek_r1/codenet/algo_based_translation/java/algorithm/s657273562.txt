@@ -1,0 +1,62 @@
+**Algorithm:**
+
+**Structures and Classes:**
+- `Pair` class:
+  - Fields: integers `x`, `y`
+  - Methods:
+    - `hashCode()`: returns `x * 1000 + y`
+    - `compareTo(Pair p)`: compares minimum of `x,y` with minimum of `p.x,p.y`, then compares `x` and `y` if minima are equal
+    - `equals(Object obj)`: checks equality of `x` and `y` values
+    - `toString()`: returns `"x y"` string
+    - `clone()`, `add(Pair p)`
+
+**Global Variables:**
+- `PrintWriter pw` for output
+- `Scanner sc` for input
+- `TreeMap<Pair, Integer> map` with reverse order comparator (used in main algorithm)
+- Integer array `arr` sorted in descending order
+
+**Functions:**
+1. `put(TreeMap<Pair, Integer> map, Pair p)`:
+   - Increments count of `p` in map (adds with count=1 if new)
+2. `rem(TreeMap<Pair, Integer> map, Pair p)`:
+   - Decrements count of `p` in map (removes entry if count becomes 0)
+3. `main()`:
+   **Input:**
+   - Read integer `n`
+   - Read `n` integers into array `arr`, sort in descending order
+
+   **Logic Flow:**
+   - If `n < 3`:
+     - Output `arr[0]`
+   - Else:
+     - Initialize `ans = arr[0] + arr[1]`
+     - Create `map` sorted by reverse order of `Pair` comparison
+     - Add `new Pair(arr[0], arr[1])` to `map` with count 1
+     - Create pairs `(arr[2], arr[1])` and `(arr[2], arr[0])`, add both to `map`
+     - For `i` from 3 to `n-1`:
+       1. Get and remove first entry from `map` (highest priority pair `p`)
+       2. Add `min(p.x, p.y)` to `ans`
+       3. Add two new pairs `(p.x, arr[i])` and `(p.y, arr[i])` to `map`
+     - Output `ans`
+
+**Control Structures:**
+- Conditional in `main()`: `if (n >= 3) { ... } else { ... }`
+- Loop: `for(int i=3; i<n; i++)`
+- TreeMap operations using reverse-order comparator for priority selection
+- `Pair.compareTo` logic controlling TreeMap ordering
+
+**Data Processing:**
+- Input array sorted descending
+- TreeMap maintains pairs with counts, prioritizing pairs with larger minimum values
+- Iterative combination of current element with components of highest-priority pair
+
+**Dependencies:**
+- `java.io.*` for I/O
+- `java.util.*` for collections (TreeMap, ArrayList, Scanner, etc.)
+- Custom `Pair` class with comparison logic
+
+**I/O Operations:**
+- Read input via `Scanner` with `nextInt()`
+- Write output via `PrintWriter` with `println()`
+- Flush operations in other methods (not used in main logic path)

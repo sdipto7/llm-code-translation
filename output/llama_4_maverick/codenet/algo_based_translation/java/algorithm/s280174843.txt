@@ -1,0 +1,30 @@
+1. Import required libraries: 
+   - java.io.IOException
+   - java.io.InputStreamReader
+   - java.io.BufferedReader
+
+2. Define a class: Main
+
+3. Declare a static variable: 
+   - buf of type BufferedReader
+
+4. Define a main function with signature: 
+   - public static void main(String[] args) throws IOException
+
+5. Inside main function:
+   - Declare an integer array: abc of size 3
+   - Declare a string variable: str
+   - Declare a string array: inp
+
+6. Initialize buf with a new BufferedReader object using InputStreamReader(System.in)
+
+7. Read a line from the input stream using buf.readLine() and store it in str
+
+8. Split str into substrings using " " as the delimiter with a limit of -1 and store the result in inp
+
+9. Iterate over inp using a for loop with the condition: i < inp.length
+   - Inside the loop, parse the string at index i to an integer and store it in abc[i]
+
+10. Check the condition: abc[0] < abc[1] && abc[1] < abc[2]
+    - If true, print "Yes" to the console
+    - If false, print "No" to the console

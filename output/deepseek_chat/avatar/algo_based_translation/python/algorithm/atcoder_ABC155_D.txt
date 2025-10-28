@@ -1,0 +1,38 @@
+**Algorithm:**
+
+1. **Input:**
+   - Read two integers: N, K
+   - Read list A of N integers
+
+2. **Processing:**
+   - Sort list A in ascending order
+   - Initialize:
+     - ll = -10**18 - 1 (lower bound)
+     - rr = 10**18 + 1 (upper bound)
+
+3. **Binary Search Loop:**
+   - While ll + 1 < rr:
+     - x = (ll + rr) // 2
+     - tot = 0
+     - For each index i from 0 to N-1:
+       - If A[i] < 0:
+         - Initialize l = -1, r = N
+         - While l + 1 < r:
+           - c = (l + r) // 2
+           - If A[i] * A[c] < x: r = c
+           - Else: l = c
+         - tot += N - r
+       - Else (A[i] >= 0):
+         - Initialize l = -1, r = N
+         - While l + 1 < r:
+           - c = (l + r) // 2
+           - If A[i] * A[c] < x: l = c
+           - Else: r = c
+         - tot += r
+       - If A[i] * A[i] < x: tot -= 1
+     - tot = tot // 2
+     - If tot < K: ll = x
+     - Else: rr = x
+
+4. **Output:**
+   - Print ll

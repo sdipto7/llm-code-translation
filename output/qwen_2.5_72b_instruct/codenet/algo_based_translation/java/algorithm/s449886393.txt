@@ -1,0 +1,19 @@
+Function: main
+Parameters: String[] args
+Return Type: void
+
+Variable Declarations:
+- Scanner sc
+- String[] youbi = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"}
+- String s
+- int ans = 0
+
+Execution Flow:
+1. Create a Scanner object to read input from the standard input stream.
+2. Initialize an array of Strings, youbi, with values "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT".
+3. Read the next token from the Scanner and store it in the String variable s.
+4. Initialize an integer variable ans to 0.
+5. Begin a for loop with index i from 0 to the length of youbi array minus 1.
+   - If the String at index i in youbi is equal to the String s, then:
+     - Set ans to 7 minus i.
+6. Print the value of ans to the standard output stream.

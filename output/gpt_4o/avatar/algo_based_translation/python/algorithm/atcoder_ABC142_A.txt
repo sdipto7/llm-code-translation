@@ -1,0 +1,25 @@
+```
+Function next_int() -> int:
+    Input: Read a line of input from the user
+    Return: Convert the input to an integer and return it
+
+Function next_ints() -> List[int]:
+    Input: Read a line of input from the user
+    Process: Split the input line into separate strings
+    Return: Convert each string to an integer and return the list of integers
+
+Variable n: int
+    Assign: Call next_int() to read an integer input
+
+Variable t: int
+    Initialize: Set t to 0
+
+For i from 0 to n-1:
+    If (i + 1) is odd (i + 1 & 1 evaluates to True):
+        Increment t by 1
+
+Output: Print the result of t divided by n as a floating-point number
+
+Required library:
+    Import all functions from the math module
+```

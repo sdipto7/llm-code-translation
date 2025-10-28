@@ -1,0 +1,31 @@
+```
+Function Signature:
+- Function: find_first_zero_index
+- Parameters: None
+- Return Type: int
+
+Variable Declarations:
+- a: list of integers
+- e: integer (index of the current element in the loop)
+- i: integer (value of the current element in the loop)
+
+Logic Flow:
+1. Read a line of input from the user.
+2. Split the input string by spaces to get individual number strings.
+3. Convert each number string to an integer.
+4. Store the list of integers in variable `a`.
+5. Iterate over the list `a` using `enumerate` to get both the index (`e`) and the value (`i`) of each element.
+6. In each iteration, check if the current element `i` is equal to 0.
+7. If `i` is equal to 0, print the index `e` incremented by 1 and exit the loop.
+
+Control Structures:
+- Loop: for loop using `enumerate` to iterate over list `a`.
+- Conditional: if statement to check if the current element `i` is equal to 0.
+
+Input/Output Operations:
+- Input: Read a single line of space-separated numbers from the user.
+- Output: Print the 1-based index of the first occurrence of 0 in the list.
+
+Required Libraries:
+- None
+```

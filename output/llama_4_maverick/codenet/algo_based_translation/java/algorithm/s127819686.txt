@@ -1,0 +1,11 @@
+1. Import the `java.util.Scanner` library.
+2. Define a class `Main` with a `main` method that takes a `String[]` as input and returns `void`.
+3. Within the `main` method:
+   1. Declare a `Scanner` object `sc` and initialize it with `System.in`.
+   2. Declare two integer variables `a` and `b`.
+   3. Read an integer from the input using `sc.nextInt()` and store it in `a`.
+   4. Read an integer from the input using `sc.nextInt()` and store it in `b`.
+   5. Declare an integer variable `hb` and calculate its value as `b / 2` using integer division.
+   6. Calculate the sum of `a` and `hb`.
+   7. Output the result of the sum to the console using `System.out.println()`.
+4. The program terminates after executing the `main` method.

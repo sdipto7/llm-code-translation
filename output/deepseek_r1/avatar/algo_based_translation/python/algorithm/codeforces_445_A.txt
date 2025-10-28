@@ -1,0 +1,52 @@
+Algorithm Specification:
+
+1. **Function/Method Signatures**  
+   - `Main()`  
+     - Parameters: None  
+     - Return: void  
+
+2. **Variable Declarations**  
+   - `n`: Integer (number of rows)  
+   - `m`: Integer (number of columns)  
+   - `l`: List[List[Character]] (2D grid storage)  
+   - `s`: String (temporary row input)  
+   - `i`: Integer (row index)  
+   - `j`: Integer (column index)  
+
+3. **Logic Flow**  
+   1. Read input line and split into two integers `n` and `m`.  
+   2. Initialize empty list `l`.  
+   3. For `i` from 0 to `n-1` (inclusive):  
+      1. Read input string `s`.  
+      2. Convert `s` to a list of characters.  
+      3. For `j` from 0 to `m-1` (inclusive):  
+         1. If `s[j]` equals '.':  
+            1. If `(i + j) % 2` equals 1:  
+               - Set `s[j]` to 'W'  
+            2. Else:  
+               - Set `s[j]` to 'B'  
+      4. Append modified `s` list to `l`.  
+   4. For each row `c` in `l`:  
+      1. Join characters in `c` to form a string.  
+      2. Print the resulting string.  
+
+4. **Control Flow Structures**  
+   - Loop: For `i` in range(n) (outer row loop)  
+     - Exit when `i` reaches `n`  
+   - Nested Loop: For `j` in range(m) (inner column loop)  
+     - Exit when `j` reaches `m`  
+   - Conditional: Check `s[j] == '.'`  
+   - Nested Conditional: Check `(i + j) % 2 == 1`  
+
+5. **Input/Output Operations**  
+   - Input: First line contains `n` and `m` via `input().split()`  
+   - Input: Read `n` subsequent lines via `input()`  
+   - Output: Print each processed row via `print("".join(c))`  
+
+6. **Error Handling & Edge Cases**  
+   - No explicit error handling: Assumes valid integer inputs for `n` and `m`  
+   - Implicit handling of empty grid (n=0 or m=0) via loop boundaries  
+
+7. **Dependencies**  
+   - Uses standard input/output functions  
+   - No external libraries required

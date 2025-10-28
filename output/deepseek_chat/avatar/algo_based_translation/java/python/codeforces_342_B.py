@@ -1,0 +1,44 @@
+
+import sys
+
+def main():
+    data = sys.stdin.read().splitlines()
+    first_line = data[0].split()
+    m = int(first_line[1])
+    s = int(first_line[2])
+    f = int(first_line[3])
+    maxT = -1
+    map_dict = {}
+    index = 1
+    while m > 0:
+        parts = data[index].split()
+        k = int(parts[0])
+        map_dict[k] = [int(parts[1]), int(parts[2])]
+        maxT = max(maxT, k)
+        m -= 1
+        index += 1
+    actions = []
+    M = 'R' if s < f else 'L'
+    d = 1 if s < f else -1
+    cur = s
+    a = -1
+    b = -1
+    for t in range(1, maxT + 1):
+        if t in map_dict:
+            a = map_dict[t][0]
+            b = map_dict[t][1]
+        if t in map_dict and ((a <= cur <= b) or (a <= cur + d <= b)):
+            actions.append('X')
+        else:
+            actions.append(M)
+            cur += d
+        if cur == f:
+            break
+    while cur != f:
+        actions.append(M)
+        cur += d
+    print(''.join(actions))
+
+if __name__ == "__main__":
+    main()
+

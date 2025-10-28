@@ -1,0 +1,61 @@
+Function signatures with parameter and return types:
+- combi(N: int, K: int) -> float
+
+Variable declarations and data types:
+- N: int
+- P: int
+- ans: int
+- lis: List[int]
+- ls: List[int]
+- one: int
+- zero: int
+- pattern_a: int
+- pattern_b: int
+- j: int
+- a: float
+- i: int
+- time: int
+
+Complete logic flow in execution order:
+1. Read two space-separated integers from input and assign to N, P.
+2. Define function combi(N, K):
+   a. Initialize a to 1.
+   b. For i from 0 to K-1, multiply a by (N - i).
+   c. For j from 0 to K-1, divide a by (j + 1).
+   d. Return a.
+3. Initialize ans to 0.
+4. Read a list of integers from input and assign to lis.
+5. Initialize ls as an empty list.
+6. For each element a in lis, append a % 2 to ls.
+7. Count the number of 1s in ls and assign to one.
+8. Count the number of 0s in ls and assign to zero.
+9. Initialize pattern_a to 0.
+10. Initialize pattern_b to 0.
+11. For j from 0 to zero:
+    a. Add combi(zero, j) to pattern_b.
+12. Initialize time to 0.
+13. While time is less than or equal to one:
+    a. If time % 2 equals P, add combi(one, time) to pattern_a.
+    b. Increment time by 1.
+14. Print the integer value of pattern_a * pattern_b.
+
+Control structures:
+- Loops:
+  a. For i from 0 to K-1 in combi function.
+  b. For j from 0 to K-1 in combi function.
+  c. For a in lis.
+  d. For j from 0 to zero.
+  e. While time <= one.
+- Conditionals:
+  a. If time % 2 == P inside the while loop.
+
+Input/output operations and data processing logic:
+- Read two integers from input.
+- Read a list of integers from input.
+- Process the list to count 1s and 0s.
+- Calculate combinations using the combi function.
+- Calculate pattern_a and pattern_b based on the counts and P.
+- Print the final result as an integer.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules are required.

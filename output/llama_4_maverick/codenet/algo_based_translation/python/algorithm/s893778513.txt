@@ -1,0 +1,12 @@
+1. Define a function `check_condition` with no parameters and return type `None`.
+2. Declare variable `n` of type `str` to store input.
+3. Read input from the user and store it in `n`.
+4. Declare variable `l` of type `list[int]` to store a list of integers.
+5. Read input from the user, split it into a list of strings, convert each string to an integer using `map(int, input().split())`, and store the result in `l`.
+6. Declare variable `b` of type `int` to store the maximum value in `l`.
+7. Calculate the maximum value in `l` using `max(l)` and store it in `b`.
+8. Declare variable `s` of type `int` to store the sum of elements in `l`.
+9. Calculate the sum of elements in `l` using `sum(l)` and store it in `s`.
+10. Check the condition `b < s - b`.
+11. If the condition is `True`, print the string `'Yes'`.
+12. If the condition is `False`, print the string `'No'`.

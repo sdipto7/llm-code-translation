@@ -1,0 +1,57 @@
+1. Import required libraries:
+   - java.io.BufferedReader
+   - java.io.IOException
+   - java.io.InputStream
+   - java.io.InputStreamReader
+   - java.io.PrintWriter
+   - java.util.AbstractMap
+   - java.util.StringTokenizer
+
+2. Define class `Main` with method `main(String[] args)`:
+   - Declare `FastScanner sc` and initialize with `System.in`
+   - Declare `PrintWriter out` and initialize with `System.out`
+   - Call `solve(sc, out)`
+   - Call `out.flush()`
+
+3. Define method `solve(FastScanner sc, PrintWriter out)`:
+   - Declare `String s` and assign it the value returned by `sc.next()`
+   - Declare `String[] a` and initialize it with `{"a", "e", "i", "o", "u"}`
+   - Iterate over each `String str` in `a` using a for-each loop
+     - Check if `str.equalsIgnoreCase(s)` is true
+       - If true, print "vowel" to `out` and return from the method
+   - If the loop completes without returning, print "consonant" to `out`
+
+4. Define method `gcd(int a, int b)`:
+   - Check if `a < b` is true
+     - If true, return the result of `gcd(b, a)`
+   - Check if `b == 0` is true
+     - If true, return `a`
+   - Otherwise, return the result of `gcd(b, a % b)`
+
+5. Define method `gcd(long a, long b)`:
+   - Check if `a < b` is true
+     - If true, return the result of `gcd(b, a)`
+   - Check if `b == 0` is true
+     - If true, return `a`
+   - Otherwise, return the result of `gcd(b, a % b)`
+
+6. Define method `lcm(int a, int b)`:
+   - Return the result of `(a * b) / gcd(a, b)`
+
+7. Define class `Pair<K, V>` extending `AbstractMap.SimpleEntry<K, V>`:
+   - Constructor `Pair(final K key, final V value)` calls `super(key, value)`
+   - Method `swap()` returns a new `Pair<V, K>` with `getValue()` and `getKey()` swapped
+
+8. Define class `FastScanner`:
+   - Declare `BufferedReader reader` and `StringTokenizer tokenizer`
+   - Constructor `FastScanner(InputStream in)` initializes `reader` with `new BufferedReader(new InputStreamReader(in))` and `tokenizer` with `null`
+   - Method `next()`:
+     - Check if `tokenizer == null || !tokenizer.hasMoreTokens()` is true
+       - If true, try to read a line from `reader` and create a new `StringTokenizer`
+       - If an `IOException` occurs, throw a `RuntimeException`
+     - Return the next token from `tokenizer`
+
+9. Define additional methods in `FastScanner`:
+   - `nextLine()`: similar to `next()`, but returns the entire line or the remaining tokens
+   - `nextLong()`, `nextInt()`, `nextDouble()`: parse the next token to the respective data type
+   - `nextIntArray(int n)` and `nextLongArray(int n)`: read `n` integers or longs and return them as an array

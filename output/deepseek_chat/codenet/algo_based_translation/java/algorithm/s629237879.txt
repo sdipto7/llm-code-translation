@@ -1,0 +1,16 @@
+1. Import java.io.* and java.util.Arrays
+2. Define main method with signature: public static void main(String[] args) throws IOException
+3. Declare BufferedReader br initialized with InputStreamReader(System.in)
+4. Read first input line into String sc
+5. Parse sc to int n
+6. Declare String array str of size n
+7. For i from 0 to n-1:
+   - Read input line into str[i]
+8. Declare String array mark with values {"S","H","C","D"}
+9. For each String ma in mark:
+   - For i from 1 to 13:
+     - Convert i to String s
+     - Concatenate ma, space, and s to form String st
+     - Check if Arrays.asList(str) contains st
+       - If true: continue to next iteration
+       - If false: print st

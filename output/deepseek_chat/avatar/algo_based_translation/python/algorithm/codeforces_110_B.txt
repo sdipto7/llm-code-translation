@@ -1,0 +1,7 @@
+constant string LUCKY = "abcd"
+integer n = input from user as integer
+string s = empty string
+for integer i from 0 to n-1:
+    index = i modulo 4
+    append character at LUCKY[index] to s
+print s

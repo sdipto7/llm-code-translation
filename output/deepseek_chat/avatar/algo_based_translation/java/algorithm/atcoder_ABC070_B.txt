@@ -1,0 +1,55 @@
+**Function Signatures:**
+- `main(String[] args): void`
+- `InputReader(InputStream stream): constructor`
+- `next(): String`
+- `nextInt(): int`
+- `nextLong(): long`
+
+**Variable Declarations:**
+- `InputStream inputStream = System.in`
+- `OutputStream outputStream = System.out`
+- `InputReader in = new InputReader(inputStream)`
+- `PrintWriter out = new PrintWriter(outputStream)`
+- `int a = in.nextInt()`
+- `int b = in.nextInt()`
+- `int c = in.nextInt()`
+- `int d = in.nextInt()`
+- `List<Integer> l = new ArrayList<>()`
+
+**Logic Flow:**
+1. Initialize input/output streams
+2. Create InputReader and PrintWriter objects
+3. Read four integers: a, b, c, d
+4. Check if c > b: if true, output 0
+5. Else check if a > d: if true, output 0
+6. Else check if a < c: if true, output Math.min(b, d) - c
+7. Else:
+   - Create ArrayList l
+   - Add a, b, c, d to l
+   - Sort l
+   - Output l.get(2) - l.get(1)
+
+**Control Structures:**
+- if (c > b) { output 0 }
+- else if (a > d) { output 0 }
+- else if (a < c) { output Math.min(b, d) - c }
+- else { create list, add values, sort, output difference }
+
+**Input/Output Operations:**
+- Read integers from input stream
+- Write integer results to output stream
+
+**Required Libraries:**
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStream
+- java.io.InputStreamReader
+- java.io.OutputStream
+- java.io.PrintWriter
+- java.util.ArrayList
+- java.util.Arrays
+- java.util.Collections
+- java.util.HashSet
+- java.util.List
+- java.util.Set
+- java.util.StringTokenizer

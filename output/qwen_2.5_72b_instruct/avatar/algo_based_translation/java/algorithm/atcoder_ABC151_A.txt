@@ -1,0 +1,38 @@
+- Function signatures:
+  - `main(String[] args) throws IOException`
+  - `RemRing(long module)`
+  - `long sum(long a, long b)`
+  - `long sub(long a, long b)`
+  - `long prod(long a, long b)`
+  - `long div(long a, long b)`
+  - `long inv(long a)`
+
+- Variable declarations and data types:
+  - `BufferedReader r`
+  - `String s`
+  - `String[] sl`
+  - `long module`
+  - `long a`
+  - `long b`
+  - `long u`
+  - `long v`
+  - `long t`
+  - `long z`
+  - `long b`
+
+- Execution order and logic flow:
+  - `BufferedReader r` initialized with `InputStreamReader(System.in)`
+  - `s` reads a line from `r`
+  - `System.out.printf("%c", s.charAt(0) + 1)` prints the ASCII character following the first character of `s`
+  
+- Control structures:
+  - `while (b > 0)` in `inv` method
+
+- Input/output operations and data processing logic:
+  - Reads a string `s` from standard input
+  - Outputs the ASCII character following the first character of `s`
+
+- Required libraries, modules, or dependencies:
+  - `java.io.BufferedReader`
+  - `java.io.IOException`
+  - `java.io.InputStreamReader`

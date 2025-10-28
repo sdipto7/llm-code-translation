@@ -1,0 +1,46 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`
+
+**Variable Declarations:**
+- `L: list<int>`
+- `r: int`
+- `k: int` (loop variable)
+- `j: int` (loop variable)
+- Input variables: implicitly read via standard input (string types converted to int where required)
+
+**Input/Output Operations:**
+1. Read first line from stdin (discarded)
+2. Read second line from stdin as space-separated integers (k-values)
+3. Read third line from stdin (discarded)
+4. Read fourth line from stdin as space-separated integers (query indices)
+5. Output elements of L for each query index via stdout
+
+**Logic Flow:**
+1. Initialize empty list `L`
+2. Discard first input line
+3. Initialize `r = 1`
+4. For each `k` in second input line split into string tokens:
+   1. Convert token to integer `k`
+   2. Append `r` to `L` exactly `k` times
+   3. Increment `r` by 1
+5. Discard third input line
+6. For each `j` in fourth input line split into string tokens:
+   1. Convert token to integer `j`
+   2. Print `L[j-1]` (1-based to 0-based index conversion)
+
+**Control Flow Structures:**
+- Loop 1: For-each iteration over second input tokens (exit when all tokens processed)
+- Loop 2: For-each iteration over fourth input tokens (exit when all tokens processed)
+
+**Edge Case Handling:**
+- No explicit error handling for:
+  - Non-integer input values
+  - Query indices exceeding list bounds
+  - Negative input values
+  - Empty/missing input lines
+
+**Dependencies:**
+- Standard input/output system functions
+- String splitting and integer conversion utilities

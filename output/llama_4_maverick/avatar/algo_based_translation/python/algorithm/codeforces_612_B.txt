@@ -1,0 +1,9 @@
+1. READ n
+2. READ array a of size n
+3. INITIALIZE array b of size n with all elements as 0
+4. FOR i FROM 0 TO n-1
+   4.1 b[a[i] - 1] = i
+5. INITIALIZE res to 0
+6. FOR i FROM 1 TO n-1
+   6.1 res = res + absolute difference of (b[i] and b[i - 1])
+7. PRINT res

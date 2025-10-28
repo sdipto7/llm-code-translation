@@ -1,0 +1,30 @@
+- Function signature: `public static void main(String[] args)`
+- Variable declarations and data types:
+  - `Scanner sc` of type `Scanner`
+  - `int n` for number of iterations
+  - `int c` for consecutive match counter
+  - `int flg` for flag indicating three consecutive matches
+  - `int x` for first input number in each iteration
+  - `int y` for second input number in each iteration
+- Logic flow:
+  - Create a `Scanner` object for reading input
+  - Read an integer `n` which represents the number of iterations
+  - Initialize `c` to 0
+  - Initialize `flg` to 0
+  - While `n` is greater than 0, decrement `n` by 1 in each iteration:
+    - Read two integers `x` and `y`
+    - If `x` is equal to `y`:
+      - Increment `c` by 1
+      - If `c` is greater than or equal to 3:
+        - Set `flg` to 1
+    - Else:
+      - Set `c` to 0
+  - If `flg` is 0:
+    - Print "No"
+  - Else:
+    - Print "Yes"
+- Input/output operations:
+  - Read integers from standard input using `Scanner`
+  - Print "No" or "Yes" to standard output
+- Required libraries:
+  - `java.util.*` for `Scanner` class

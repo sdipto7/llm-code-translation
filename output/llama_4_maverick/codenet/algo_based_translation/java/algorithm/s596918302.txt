@@ -1,0 +1,37 @@
+1. Import required libraries: java.util.*
+2. Define a class Main with a main method that takes a String array as input and returns void.
+3. Declare a Scanner object `sc` and initialize it with `System.in`.
+4. Read an integer `n` from the input using `sc.nextInt()`.
+5. Declare a 2D integer array `arr` with dimensions `n` x 3.
+6. Iterate over `arr` using nested loops (i: 0 to n-1, j: 0 to 2) and read integers from the input using `sc.nextInt()` to populate `arr`.
+7. Declare an integer variable `ans` and initialize it to 0.
+8. Call the function `dpx(arr, n)` and assign the result to `ans`.
+9. Print `ans` to the output using `System.out.println(ans)`.
+
+### Function `min(int[] arr, int n)` 
+1. If `n` equals 1, return 0.
+2. If `n` equals 2, return the absolute difference between `arr[n-1]` and `arr[n-2]`.
+3. Calculate `op1` as the sum of the absolute difference between `arr[n-1]` and `arr[n-2]` and the result of `min(arr, n-1)`.
+4. Calculate `op2` as the sum of the absolute difference between `arr[n-1]` and `arr[n-3]` and the result of `min(arr, n-2)`.
+5. Return the minimum of `op1` and `op2`.
+
+### Function `dpc(int[][] arr, int i, int n, int row)` 
+1. If `row` equals `n`, return 0.
+2. Declare integers `j` and `k`.
+3. Based on the value of `i`, assign values to `j` and `k`:
+   - If `i` equals 1, `j` = 0 and `k` = 2.
+   - If `i` equals 0, `j` = 1 and `k` = 2.
+   - Otherwise, `j` = 0 and `k` = 1.
+4. Return the sum of `arr[row][i]` and the maximum of the results of `dpc(arr, j, n, row+1)` and `dpc(arr, k, n, row+1)`.
+
+### Function `dpx(int[][] arr, int n)` 
+1. Declare a 2D integer array `dp` with dimensions `n` x 3.
+2. Initialize the first row of `dp` with the corresponding values from the first row of `arr`.
+3. Iterate over the rows of `dp` from 1 to `n-1`.
+4. For each row `i`, iterate over the columns `in` from 0 to 2.
+5. For each column `in`, declare integers `j` and `k` and assign values based on `in`:
+   - If `in` equals 1, `j` = 0 and `k` = 2.
+   - If `in` equals 0, `j` = 1 and `k` = 2.
+   - Otherwise, `j` = 0 and `k` = 1.
+6. Calculate `dp[i][in]` as the sum of `arr[i][in]` and the maximum of `dp[i-1][j]` and `dp[i-1][k]`.
+7. Return the maximum value among `dp[n-1][0]`, `dp[n-1][1]`, and `dp[n-1][2]`.

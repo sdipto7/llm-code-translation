@@ -1,0 +1,38 @@
+Function Signature:
+- `main() -> None`
+
+Variable Declarations and Data Types:
+- `d`: int
+- `g`: int
+- `pc`: List[List[int]]
+- `ans`: float
+- `bit`: int
+- `count`: int
+- `sum`: int
+- `nokori`: Set[int]
+- `i`: int
+- `use`: int
+- `n`: int
+
+Complete Logic Flow and Control Structures:
+
+1. Read integers `d` and `g` from input.
+2. Initialize a list `pc` of length `d` where each element is a list of two integers read from input.
+3. Initialize `ans` to positive infinity.
+4. Loop over `bit` from `0` to `(1 << d) - 1`:
+   1. Initialize `count` to `0`.
+   2. Initialize `sum` to `0`.
+   3. Initialize `nokori` to a set containing integers from `1` to `d`.
+   4. Loop over `i` from `0` to `d - 1`:
+      1. If `bit & (1 << i)` is non-zero:
+         1. Add `pc[i][0] * (i + 1) * 100 + pc[i][1]` to `sum`.
+         2. Add `pc[i][0]` to `count`.
+         3. Remove `i + 1` from `nokori`.
+   5. If `sum` is less than `g`:
+      1. Assign `max(nokori)` to `use`.
+      2. Calculate `min(pc[use-1][0], -(-(g - sum) // (use * 100)))` and assign to `n`.
+      3. Add `n` to `count`.
+      4. Add `n * use * 100` to `sum`.
+   6. If `sum` is greater than or equal to `g`:
+      1. Assign `min(ans, count)` to `ans`.
+5. Print `ans`.

@@ -1,0 +1,12 @@
+Read integers n and m from input
+Initialize set c
+For n times:
+    Read a string s
+    Find index of 'S' in s
+    Find index of 'G' in s
+    Calculate difference (index_S - index_G)
+    Add difference to set c
+If any value in c is negative:
+    Print -1
+Else:
+    Print size of set c

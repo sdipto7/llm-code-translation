@@ -1,0 +1,10 @@
+1. Import java.util.Scanner
+2. Declare main function: public static void main(String[] args)
+3. Create Scanner object sc initialized with System.in
+4. Declare String variable C
+5. Read next token from input and assign to C
+6. Extract first character from C using charAt(0)
+7. Convert character to integer, add 1
+8. Convert result back to char
+9. Print resulting character
+10. End program

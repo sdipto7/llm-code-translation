@@ -1,0 +1,28 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- N: int (input integer)
+- i: int (loop counter, initialized to 1)
+- ans: int (result accumulator, initialized to 0)
+
+**Logic Flow:**
+1. Read integer input N from stdin
+2. Initialize i = 1
+3. Initialize ans = 0
+4. While loop condition: 10^i <= N
+   - Add (10^i - 10^(i-1)) to ans
+   - Increment i by 2
+5. After loop: Add max(0, N - 10^(i-1) + 1) to ans
+6. Print ans
+
+**Control Structures:**
+- While loop: while (10 ** i <= N)
+- Conditional: max(0, N - 10 ** (i - 1) + 1)
+
+**Input/Output:**
+- Input: Single integer from stdin
+- Output: Print integer result to stdout
+
+**Dependencies:**
+- Standard input/output functions (built-in)

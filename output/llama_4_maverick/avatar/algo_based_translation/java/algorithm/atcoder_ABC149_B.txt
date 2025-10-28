@@ -1,0 +1,8 @@
+1. Read input values A, B, and K from the input stream.
+2. Initialize x with the value of A and y with the value of B.
+3. Subtract K from x.
+4. Check if x is less than 0.
+5. If x is less than 0, then add x to y and set x to 0.
+6. Check if y is less than 0.
+7. If y is less than 0, then set y to 0.
+8. Output the values of x and y.

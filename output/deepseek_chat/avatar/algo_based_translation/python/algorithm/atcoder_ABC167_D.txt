@@ -1,0 +1,40 @@
+from collections import defaultdict
+
+Input:
+- Read two integers N and K from input
+- Read a list L of N integers from input
+
+Variables:
+- N: integer (number of elements)
+- K: integer (target index)
+- L: list of integers (input sequence)
+- path: list of integers (visited nodes), initialized with [1]
+- ind: integer (current index counter), initialized to 0
+- count: integer (unused counter), initialized to 0
+- x: integer (current node), initialized to 1
+- t: integer (cycle start index), initialized to -1
+- flag: boolean (cycle detected flag), initialized to False
+- Hash: defaultdict mapping integers to integers (node to index mapping)
+
+Algorithm:
+1. Insert -1 at position 0 of list L
+2. For i in range from 0 to N (inclusive):
+   a. Set ne = L[x]
+   b. If Hash[ne] exists (non-zero):
+        Set flag = True
+        Set t = Hash[ne]
+        Break loop
+   c. Append ne to path
+   d. Increment ind by 1
+   e. Set Hash[ne] = ind
+   f. Set x = ne
+3. If flag is True:
+   a. Extract loop from path starting at index t to end
+   b. If K < length of path:
+        Print path[K]
+   c. Else:
+        Set K = K - length of path
+        Set K = K % length of loop
+        Print loop[K]
+4. Else:
+   Print path[K-1]

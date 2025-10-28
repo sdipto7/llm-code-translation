@@ -1,0 +1,64 @@
+**Function Signatures:**
+- FastReader(): constructor
+- next(): returns String
+- nextInt(): returns int
+- nextLong(): returns long
+- nextDouble(): returns double
+- nextLine(): returns String
+- main(String[] args): void
+- solve(): void
+
+**Variable Declarations:**
+- BufferedReader br
+- StringTokenizer st
+- FastReader scan
+- int t
+- int[] arr
+- int prevWinner
+- int i
+
+**Data Types:**
+- BufferedReader
+- StringTokenizer
+- FastReader
+- int
+- int[]
+- String
+- long
+- double
+
+**Logic Flow:**
+1. Create FastReader instance 'scan'
+2. main: Set t = 1, then while t-- > 0, call solve()
+3. solve: Read integer t from input
+4. Create integer array 'arr' of size t
+5. For i from 0 to arr.length-1: read next integer into arr[i]
+6. Initialize prevWinner = 0
+7. For i from 0 to arr.length-1:
+   - If arr[i] == 1:
+     - If prevWinner == 0: set prevWinner = 2
+   - If prevWinner == 2 OR prevWinner == 0:
+     - If (arr[i] - 1) % 2 == 0:
+       - Print 2, set prevWinner = 2
+     - Else:
+       - Print 1, set prevWinner = 1
+   - Else (prevWinner == 1):
+     - If (arr[i] - 1) % 2 == 0:
+       - Print 1, set prevWinner = 1
+     - Else:
+       - Print 2, set prevWinner = 2
+
+**Control Structures:**
+- while loop: t-- > 0
+- for loop: i from 0 to arr.length-1
+- if-else conditions: arr[i] == 1, prevWinner comparisons, modulo checks
+
+**Input/Output Operations:**
+- BufferedReader reading from System.in
+- StringTokenizer parsing input
+- Reading integers from input
+- Printing integers to System.out
+
+**Required Libraries:**
+- java.util.*
+- java.io.*

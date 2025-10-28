@@ -1,0 +1,31 @@
+## Algorithm
+
+1. Import required libraries:
+   - java.io.BufferedReader
+   - java.io.IOException
+   - java.io.InputStreamReader
+
+2. Define constants:
+   - BIG_NUM = 2000000000 (integer)
+   - MOD = 1000000007 (integer)
+
+3. Define main function:
+   - `public static void main(String[] args)`
+
+4. Inside `main`:
+   1. Initialize `BufferedReader` object `br` with `new BufferedReader(new InputStreamReader(System.in))`
+   2. Declare integer variable `ans`
+
+   3. Enter infinite loop (`while(true)`)
+
+      1. Try to execute the following block:
+         1. Read a line from input using `br.readLine()` and store it in `String` variable `inputed`
+         2. Check if `inputed` has a length of 1 and equals "0"
+            - If true, break the loop
+         3. Initialize `ans` to 0
+         4. Iterate over each character in `inputed` using a `for` loop (`for(int i = 0; i < inputed.length(); i++)`)
+            - In each iteration, add the integer value of the current character (`inputed.charAt(i)-'0'`) to `ans`
+         5. Print the value of `ans` followed by a newline using `System.out.printf("%d\n", ans)`
+
+      2. Catch `IOException` exception:
+         1. Print the exception's stack trace using `e.printStackTrace()`

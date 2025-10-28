@@ -1,0 +1,14 @@
+1. Read integer N from input
+2. Initialize empty list of integers called numbers
+3. For i from 0 to N-1:
+   - Read next integer from input
+   - Add integer to numbers list
+4. Initialize integer count = 0
+5. Do:
+   - Filter numbers list to keep only even numbers (i % 2 == 0)
+   - Map each remaining number to i / 2
+   - Collect results into new numbers list
+   - If size of numbers list equals N:
+        - Increment count by 1
+   - Continue while size of numbers list equals N
+6. Print count

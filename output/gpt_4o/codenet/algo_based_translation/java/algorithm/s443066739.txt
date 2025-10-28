@@ -1,0 +1,57 @@
+Algorithm:
+
+1. Import required libraries:
+   - BufferedReader and InputStreamReader from java.io
+   - PrintWriter from java.io
+   - StringTokenizer from java.util
+   - Random from java.util
+   - Long from java.lang
+
+2. Define class `Main` with a static main method:
+   - `void main(String[] args) throws Exception`
+
+3. Declare and initialize:
+   - `BufferedReader br` as `new BufferedReader(new InputStreamReader(System.in))`
+   - `FastScanner sc` as `new FastScanner(br)`
+   - `PrintWriter out` as `new PrintWriter(System.out)`
+   - `Random rnd` as `new Random()`
+
+4. In the `main` method:
+   - Read an integer `n` using `sc.nextInt()`
+   - Declare a long array `pre` with size `n + 1`
+
+5. Loop from `i = 1` to `i <= n`:
+   - Assign `pre[i]` with value `pre[i-1] + sc.nextLong()`
+
+6. Declare and initialize a long variable `min` with `Long.MAX_VALUE`
+
+7. Loop from `i = 1` to `i < n`:
+   - Calculate `val1` as `pre[i]`
+   - Calculate `val2` as `pre[n] - pre[i]`
+   - Update `min` with the minimum of `min` and `Math.abs(val1 - val2)`
+
+8. Output the value of `min` using `out.println(min)`
+
+9. Close the `out` using `out.close()`
+
+10. Define class `FastScanner`:
+    - Constructor `FastScanner(BufferedReader in)` initializes `this.in = in`
+    - Private `BufferedReader in`
+    - Private `StringTokenizer st`
+
+11. Method `String nextToken() throws Exception`:
+    - While `st` is null or `!st.hasMoreTokens()`:
+      - Assign `st` with new `StringTokenizer(in.readLine())`
+    - Return `st.nextToken()`
+
+12. Method `String next() throws Exception`:
+    - Return result of `nextToken()`
+
+13. Method `int nextInt() throws Exception`:
+    - Return `Integer.parseInt(nextToken())`
+
+14. Method `long nextLong() throws Exception`:
+    - Return `Long.parseLong(nextToken())`
+
+15. Method `double nextDouble() throws Exception`:
+    - Return `Double.parseDouble(nextToken())`

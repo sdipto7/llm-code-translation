@@ -1,0 +1,45 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `sc: Scanner`
+- `S: String`
+- `begin: String`
+- `end: String`
+- `answer: String`
+- `i: int`
+- `j: int`
+
+Complete logic flow in execution order:
+1. Create a `Scanner` object `sc`.
+2. Read a string `S` from standard input.
+3. Initialize strings `begin`, `end`, and `answer`.
+4. Start a loop with `i` from 0 to `S.length() - 1`.
+   1. Start a nested loop with `j` from 0 to `S.length() - 1`.
+      1. Set `begin` to the substring of `S` from index 0 to `i`.
+      2. Set `end` to the substring of `S` from index `j` to the end of `S`.
+      3. Set `answer` to the concatenation of `begin` and `end`.
+      4. Check if `answer` equals "keyence".
+         1. If true, print "YES" and exit the program.
+      5. Check if `begin` equals "keyence".
+         1. If true, print "YES" and exit the program.
+      6. Check if `end` equals "keyence".
+         1. If true, print "YES" and exit the program.
+5. If none of the conditions are met, print "NO".
+
+Control structures:
+- `for(int i=0; i<S.length(); i++)`: Loop over each possible starting index for `begin`.
+- `for(int j=0; j<S.length(); j++)`: Loop over each possible starting index for `end`.
+- `if(answer.equals("keyence"))`: Conditional check if `answer` equals "keyence".
+- `if(begin.equals("keyence"))`: Conditional check if `begin` equals "keyence".
+- `if(end.equals("keyence"))`: Conditional check if `end` equals "keyence".
+
+Input/output operations and data processing logic:
+- Read a string `S` from standard input.
+- Compute substrings `begin` and `end` based on loop indices `i` and `j`.
+- Concatenate `begin` and `end` to form `answer`.
+- Compare `answer`, `begin`, and `end` against "keyence".
+- Print "YES" if any of the comparisons are true; otherwise, print "NO".
+
+Required libraries, modules, or dependencies:
+- `java.util.*` for the `Scanner` class.

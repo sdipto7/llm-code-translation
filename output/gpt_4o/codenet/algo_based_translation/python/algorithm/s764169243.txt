@@ -1,0 +1,53 @@
+```python
+def SegmentTree__init__(self, size: int, default: int) -> None:
+    self.size = 2 ** (size - 1).bit_length()
+    self.default = default
+    self.seg = [default] * (2 * self.size - 1)
+
+def SegmentTree_segfunc(self, x: int, y: int) -> int:
+    return max(x, y)
+
+def SegmentTree_update(self, k: int, x: int) -> None:
+    k += self.size - 1
+    self.seg[k] = x
+    while k:
+        k = (k - 1) // 2
+        self.seg[k] = self.segfunc(self.seg[2 * k + 1], self.seg[2 * k + 2])
+
+def SegmentTree_query(self, p: int, q: int) -> int:
+    if q <= p:
+        return self.default
+    p += self.size - 1
+    q += self.size - 2
+    ret = self.default
+    while q - p > 1:
+        if p & 1 == 0:
+            ret = self.segfunc(ret, self.seg[p])
+        if q & 1 == 1:
+            ret = self.segfunc(ret, self.seg[q])
+            q -= 1
+        p = p // 2
+        q = (q - 1) // 2
+    ret = self.segfunc(self.segfunc(ret, self.seg[p]), self.seg[q])
+    return ret
+
+def main() -> None:
+    import sys
+    input = sys.stdin.buffer.readline
+
+    N: int = int(input())
+    a: List[int] = list(map(int, input().split()))
+    ans: List[int] = [i + 1 for i in range(N)]
+    
+    left_seg = SegmentTree(N, 0)
+    for i, num in enumerate(a):
+        ans[num - 1] *= i + 1 - left_seg.query(0, num)
+        left_seg.update(num - 1, i + 1)
+    
+    right_seg = SegmentTree(N, 0)
+    for i, num in enumerate(a[::-1]):
+        ans[num - 1] *= i + 1 - right_seg.query(0, num)
+        right_seg.update(num - 1, i + 1)
+    
+    print(sum(ans))
+```

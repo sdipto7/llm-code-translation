@@ -1,0 +1,16 @@
+n: int, k: int = input().split() converted to integers
+v: str = input string
+d: list[str] = ["LEFT", "RIGHT"]
+f: bool = (k - 1 < n - k)
+m: int = min(k - 1, n - k)
+a: list[str] = empty list
+
+For i from 0 to m-1:
+    Append d[not f] to a
+
+direction: int = -1 + 2*f
+For each character i in v sliced with step direction:
+    Append "PRINT " + i to a
+    Append d[f] to a
+
+Print all elements of a except last element, separated by newlines

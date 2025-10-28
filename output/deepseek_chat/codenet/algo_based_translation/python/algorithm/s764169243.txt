@@ -1,0 +1,48 @@
+**Algorithm:**
+
+1. **Import:** `sys` module
+2. **Function:** `main()` with no parameters
+   - **Class:** `SegmentTree`
+     - **Constructor:** `__init__(self, size: int, default: int)`
+       - `self.size = 2^(ceil(log2(size)))`
+       - `self.default = default`
+       - `self.seg = array of length (2 * self.size - 1) initialized with default`
+     - **Method:** `segfunc(self, x: int, y: int) -> int`
+       - Return `max(x, y)`
+     - **Method:** `update(self, k: int, x: int) -> None`
+       - `k = k + self.size - 1`
+       - `self.seg[k] = x`
+       - While `k > 0`:
+         - `k = (k - 1) // 2`
+         - `self.seg[k] = segfunc(self.seg[2*k+1], self.seg[2*k+2])`
+     - **Method:** `query(self, p: int, q: int) -> int`
+       - If `q <= p`: return `self.default`
+       - `p = p + self.size - 1`
+       - `q = q + self.size - 2`
+       - `ret = self.default`
+       - While `q - p > 1`:
+         - If `p % 2 == 0`: `ret = segfunc(ret, self.seg[p])`
+         - If `q % 2 == 1`: 
+           - `ret = segfunc(ret, self.seg[q])`
+           - `q = q - 1`
+         - `p = p // 2`
+         - `q = (q - 1) // 2`
+       - `ret = segfunc(segfunc(ret, self.seg[p]), self.seg[q])`
+       - Return `ret`
+     - **Method:** `seg_print(self) -> None`
+       - Print `self.seg`
+   - Read integer `N` from input
+   - Read list `a` of `N` integers from input
+   - Initialize list `ans` with integers `[1, 2, ..., N]`
+   - Create `left_seg = SegmentTree(N, 0)`
+   - For `i` from `0` to `N-1`:
+     - `num = a[i]`
+     - `ans[num-1] *= (i + 1) - left_seg.query(0, num)`
+     - `left_seg.update(num-1, i+1)`
+   - Create `right_seg = SegmentTree(N, 0)`
+   - For `i` from `0` to `N-1`:
+     - `num = a[N-1-i]`
+     - `ans[num-1] *= (i + 1) - right_seg.query(0, num)`
+     - `right_seg.update(num-1, i+1)`
+   - Print `sum(ans)`
+3. **Condition:** If `__name__ == "__main__"`: call `main()`

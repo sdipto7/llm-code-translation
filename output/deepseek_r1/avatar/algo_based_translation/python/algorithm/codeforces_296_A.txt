@@ -1,0 +1,42 @@
+**Structured Algorithm Specification:**
+
+**Function/Method:**
+- **Name:** `main`
+- **Parameters:** None (operates via standard input/output)
+- **Return Type:** void (outputs result to standard output)
+
+**Variables:**
+- `n`: integer (user input)
+- `m`: list of strings (processed user input)
+- `possible`: boolean (initial value: `True`)
+- `i`: string (temporary loop variable for unique elements in `m`)
+- `count`: integer (temporary count of occurrences for element `i`)
+
+**Steps:**
+1. Read integer `n` from standard input.
+2. Read next line from input, split into a list of strings `m` using whitespace as delimiter.
+3. Initialize `possible` to `True`.
+4. Create a set of unique elements from `m`.
+5. Iterate over each element `i` in the unique set:
+   1. Calculate `count` as the number of occurrences of `i` in `m`.
+   2. If `count >= (n / 2) + 1`:
+      1. Set `possible` to `False`.
+      2. Terminate the loop immediately.
+6. If `possible` is `True`, print "YES".
+7. Else, print "NO".
+
+**Control Flow:**
+- **Loop:** `for i in set(m)` (processes all unique elements).
+- **Conditional:** `if count >= (n/2) + 1` (triggers early loop termination and result inversion).
+
+**Input/Output:**
+- **Inputs:** Two lines from standard input (integer `n`, followed by space-separated strings for `m`).
+- **Output:** "YES" or "NO" printed to standard output based on the evaluation.
+
+**Edge Case Handling:**
+- Correctly handles empty input lists (no action taken if set is empty).
+- Implicitly assumes valid input format and correct list size (no explicit error checking).
+
+**Dependencies:**
+- Relies on standard input/output functions.
+- Uses built-in string manipulation and collection operations (split, set, count).

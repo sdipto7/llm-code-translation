@@ -1,0 +1,12 @@
+1. Read input from the user.
+2. Parse the input into two integers, n and m.
+3. Initialize an array of strings, ans, of size n.
+4. Iterate n times.
+5. In each iteration, read a string of length m.
+6. For each character in the string, check if it is '-'.
+7. If it is '-', append '-' to a temporary string.
+8. If it is not '-', check if the sum of the current row index and column index is odd.
+9. If the sum is odd, append 'W' to the temporary string.
+10. If the sum is even, append 'B' to the temporary string.
+11. Store the temporary string in the ans array.
+12. Iterate through the ans array and print each string.

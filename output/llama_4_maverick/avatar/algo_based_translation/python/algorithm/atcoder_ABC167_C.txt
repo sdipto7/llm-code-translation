@@ -1,0 +1,33 @@
+1. Read input values n, m, x
+2. Initialize matrix c with size n x (m+1)
+3. For i from 1 to n
+   1. Read input values and store in row i of matrix c
+4. Initialize array pre with values from 0 to n-1
+5. Initialize empty list l
+6. For i from 1 to n
+   1. For each combination j of size i from pre
+      1. Append combination j to list l
+7. Initialize variable ans to 0
+8. For i from 1 to m
+   1. Initialize empty list rem
+   2. For each index j and value k in list l
+      1. Initialize variable ca to 0
+      2. For each index ii in k
+         1. Add value c[ii, i+1] to ca
+      3. If ca is less than x
+         1. Insert j into list rem at position 0
+   3. If list rem is not empty
+      1. For each index j in rem
+         1. Remove element at index j from list l
+      2. Clear list rem
+   4. If list l is empty
+      1. Output -1
+      2. Break loop
+9. If loop completes normally
+   1. For each value i in list l
+      1. Initialize variable ca to 0
+      2. For each index j in i
+         1. Add value c[j, 0] to ca
+      3. If ans is 0 or ca is less than ans
+         1. Update ans with ca
+   2. Output ans

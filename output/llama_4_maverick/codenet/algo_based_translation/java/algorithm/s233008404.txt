@@ -1,0 +1,64 @@
+1. Define a class `Main` with the following attributes and methods:
+   - Attributes: `colorMtr` (2D array of strings), `h` (integer), `w` (integer), `k` (integer)
+   - Methods: `main`, `solve`, `judge`, `pow`, and a nested class `FastScanner`
+
+2. `main` method:
+   - Create an instance of `Main` class
+   - Call the `solve` method on the instance
+
+3. `solve` method:
+   - Create an instance of `FastScanner` class
+   - Read three integers `h`, `w`, `k` using `nextInt` method of `FastScanner`
+   - Initialize `colorMtr` as a 2D array of size `h`
+   - Read `h` lines of strings, split each into an array of characters, and store in `colorMtr`
+   - Calculate `hPattern` as 2 raised to the power of `h` using the `pow` method
+   - Calculate `wPattern` as 2 raised to the power of `w` using the `pow` method
+   - Initialize `ans` to 0
+   - Iterate over all numbers from 0 to `hPattern - 1` and for each number, iterate over all numbers from 0 to `wPattern - 1`
+   - For each pair of numbers, call the `judge` method
+   - If `judge` returns true, increment `ans`
+   - Print `ans` to the output
+
+4. `judge` method:
+   - Take two integers `hPattern` and `wPattern` as input
+   - Create two integer arrays `hBitArr` and `wBitArr` of size `h` and `w` respectively
+   - Iterate over all numbers from 0 to `h - 1` and for each number `i`, check if the `i-th` bit of `hPattern` is set
+   - If the bit is set, set `hBitArr[i]` to 1, otherwise it remains 0 (default value)
+   - Iterate over all numbers from 0 to `w - 1` and for each number `i`, check if the `i-th` bit of `wPattern` is set
+   - If the bit is set, set `wBitArr[i]` to 1, otherwise it remains 0 (default value)
+   - Initialize `black` to 0
+   - Iterate over all pairs of numbers `(i, j)` where `0 <= i < h` and `0 <= j < w`
+   - For each pair, check if `hBitArr[i]` or `wBitArr[j]` is 1
+   - If either of them is 1, skip to the next iteration
+   - Check if `colorMtr[i][j]` is equal to "#"
+   - If it is, increment `black`
+   - After the loop, check if `black` is equal to `k`
+   - Return true if `black` equals `k`, false otherwise
+
+5. `pow` method:
+   - Take two integers `base` and `n` as input
+   - Initialize `retVal` to 1
+   - While `n` is greater than 0
+     - Check if the least significant bit of `n` is 1
+     - If it is, multiply `retVal` by `base`
+     - Right shift `n` by 1 bit
+     - Square `base`
+   - Return `retVal`
+
+6. `FastScanner` class:
+   - Attributes: `reader` (BufferedReader), `st` (StringTokenizer)
+   - Methods: `next`, `nextLine`, `nextInt`, `nextLong`, `nextIntArr`, `nextLongArr`, `close`
+   - `next` method:
+     - If `st` is null or has no more elements, read a line from `reader` and create a new `StringTokenizer` with the line
+     - Return the next token from `st`
+   - `nextLine` method:
+     - Set `st` to null
+     - Read a line from `reader` and return it
+   - `nextInt` and `nextLong` methods:
+     - Call `next` method and parse the result to an integer or long respectively
+   - `nextIntArr` and `nextLongArr` methods:
+     - Create an array of integers or longs of the given size
+     - Populate the array by calling `nextInt` or `nextLong` method for each element
+     - Return the array
+   - `close` method:
+     - Close the `reader`

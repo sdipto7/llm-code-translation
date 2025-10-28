@@ -1,0 +1,21 @@
+- **Input Handling**:
+  - Read one line from standard input and split into two string variables `a` and `b`
+- **Variables**:
+  - `a: str`
+  - `b: str`
+- **Control Structures**:
+  - If condition: `a < b`
+    - Action: Print `<`
+  - Else if condition: `a > b`
+    - Action: Print `>`
+  - Else clause
+    - Action: Print `=`
+- **Execution Flow**:
+  1. Acquire and parse input
+  2. Perform string comparison
+  3. Execute first branch where condition is true
+  4. Print corresponding symbol
+- **Output Operations**:
+  - Direct console output with no formatting
+- **Dependencies**:
+  - None beyond standard input/output functions

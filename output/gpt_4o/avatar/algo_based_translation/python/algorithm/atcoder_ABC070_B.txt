@@ -1,0 +1,21 @@
+```plaintext
+function process_input_and_calculate_difference() -> None:
+    # Declare a variable A as a list of integers
+    declare A: List[int]
+
+    # Read a line of input, split it by spaces, convert each part to an integer, and store in A
+    A = list(map(int, input().split()))
+
+    # Conditional check: if the second element of A is less than or equal to the third element
+    # or the fourth element of A is less than or equal to the first element
+    if A[1] <= A[2] or A[3] <= A[0]:
+        # Print 0 if the condition is true
+        print(0)
+    else:
+        # Sort the list A in ascending order
+        A.sort()
+        
+        # Calculate the difference between the third and second elements of sorted A
+        # Print the result
+        print(A[2] - A[1])
+```

@@ -1,0 +1,29 @@
+- **Function**: None (executes as script)
+- **Parameters**: None
+- **Return Type**: None (outputs result via print)
+- **Variables**:
+  - `S`: list of strings (characters from input)
+  - `count`: integer (tracks current valid sequence length)
+  - `record`: integer (tracks longest valid sequence length)
+- **Input**: Read string from standard input, convert to list `S`
+- **Logic Flow**:
+  1. Initialize `count = 0` and `record = 0`
+  2. Iterate over each index `i` in `S` using range(len(S)):
+      - If `S[i]` is "A", "C", "G", or "T":
+          - Increment `count` by 1
+      - Else:
+          - If `count > record`, set `record = count`
+          - Reset `count` to 0
+  3. After loop completes:
+      - If `count > record`, set `record = count`
+  4. Print `record`
+- **Control Structures**:
+  - For loop: `for i in range(len(S))`
+  - If-else block inside loop: checks character membership in {"A", "C", "G", "T"}
+  - Conditional update of `record` inside else block
+  - Final conditional check for `count > record`
+- **I/O Operations**:
+  - Read input string via `input()`
+  - Convert input to list `S`
+  - Print final `record` value
+- **Dependencies**: None (standard Python)

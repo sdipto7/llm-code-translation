@@ -1,0 +1,38 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signature:**
+- `calculate_sho(h: int, a: int) -> int`
+
+**Variables:**
+- `h`: `int` (Input value representing a quantity)
+- `a`: `int` (Input value representing divisor)
+- `sho`: `int` (Result of integer division)
+- `am`: `int` (Remainder of division)
+
+**Logic Flow:**
+1. Read a line from standard input.
+2. Split the input string into two substrings using a space delimiter.
+3. Convert the first substring to integer `h` and the second to integer `a`.
+4. Compute `sho` as the integer division of `h` by `a` (`h // a`).
+5. Compute `am` as the remainder of `h` divided by `a` (`h % a`).
+6. If `am` is not equal to 0:
+   - Increment `sho` by 1
+7. Output `sho` to standard output.
+
+**Control Flow Structures:**
+- Conditional:
+  - **Condition**: `am != 0`
+  - **True Branch**: `sho += 1`
+  - **False Branch**: No action
+
+**Input/Output Operations:**
+- **Input**: Single line from stdin containing two space-separated integers
+- **Output**: Print integer `sho` to stdout
+
+**Edge Cases:**
+- Handles cases where `h` is perfectly divisible by `a` (no increment)
+- Handles cases with remainder (increments `sho` to cover partial division unit)
+
+**Dependencies:**
+- Standard input/output functions for data handling
+- No external libraries required

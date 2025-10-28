@@ -1,0 +1,46 @@
+**Algorithm:**
+
+**Input Operations:**
+- Read string `s` from standard input
+- Read string `t` from standard input
+
+**Function Definitions:**
+- Function `check`:
+  - Parameters: `a` (string), `b` (string)
+  - Return type: integer
+  - Initialize integer variable `s` = 0
+  - For each pair `(i, j)` in parallel iteration of characters from `a` and `b`:
+    - If `i` != `j`, increment `s` by 1
+  - Return `s`
+
+**Main Logic:**
+- Initialize integer variable `ans` = 10^6
+- For integer `i` in range 0 to (length of `s` - 1):
+  - Create substring `a` starting at index `i` of `s` to end of `s`
+  - If length of `a` >= length of `t`:
+    - Create substring `window` = first `len(t)` characters of `a`
+    - Compute `diff` = `check(t, window)`
+    - Set `ans` = minimum of `ans` and `diff`
+- Print `ans`
+
+**Variables:**
+- `s`: string (input)
+- `t`: string (input)
+- `a`: string (substring of `s`)
+- `i`: integer loop variable
+- `window`: string (substring of `a`)
+- `diff`: integer (result of `check`)
+- `ans`: integer (minimum difference counter)
+
+**Control Structures:**
+- Loop: `for i in range(len(s))` (0-based index iteration)
+- Conditional: `if len(a) >= len(t)`
+- Function call with parallel iteration: `zip(a,b)` in `check`
+
+**Data Processing:**
+- Substring extraction from `s`
+- Character-wise comparison between substrings of `s` and `t`
+- Minimum value tracking via `ans`
+
+**Output Operation:**
+- Print final value of `ans`

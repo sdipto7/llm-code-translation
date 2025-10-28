@@ -1,0 +1,34 @@
+Function signature:  
+main() -> None  
+
+Variable declarations and data types:  
+u: function  
+n: int  
+k: int  
+M: list of int  
+m: int  
+j: int  
+p: int  
+l: int  
+
+Logic flow in execution order:  
+1. u is assigned the built-in input function  
+2. Read a line of input, split it into two integers, assign them to n and k respectively  
+3. Read another line of input, split it into a list of integers, assign this list to M  
+4. Initialize m to 0  
+5. For each value of j from 0 to n-1:  
+   a. For each value of p from 0 to n-1:  
+      i. If M[p] is 0:  
+         1. Print p+1 followed by a space without newline  
+         2. Break out of the inner loop  
+   b. For each value of l from 0 to p-k (inclusive):  
+      i. Decrement M[l] by 1  
+   c. Decrement M[p] by 1  
+
+Input/output operations and data processing logic:  
+- Input: Two lines of text. The first line contains two integers n and k. The second line contains n integers representing the list M.  
+- Output: A single line containing space-separated integers representing the indices (1-based) where elements in M become zero.  
+- Data processing involves reading input, updating elements of list M based on specific conditions, and printing the result.  
+
+Required libraries, modules, or dependencies:  
+No additional libraries or modules required.

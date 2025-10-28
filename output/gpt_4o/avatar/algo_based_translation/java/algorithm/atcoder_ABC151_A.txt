@@ -1,0 +1,40 @@
+```
+Algorithm atcoder_ABC151_A
+    Input: A single character from standard input
+    Output: The next character in the ASCII sequence
+
+    Declare BufferedReader r as BufferedReader with InputStreamReader(System.in) and buffer size 1
+    Declare String s
+    Read a line from the input into s using r.readLine()
+    Output the character obtained by incrementing the ASCII value of the first character of s by 1 using System.out.printf()
+
+Algorithm RemRing(module: long)
+    Declare instance variable module of type long
+
+    Function sum(a: long, b: long) -> long
+        Return (a + b + module) modulo module
+
+    Function sub(a: long, b: long) -> long
+        Return (a - b + module) modulo module
+
+    Function prod(a: long, b: long) -> long
+        Return (a * b) modulo module
+
+    Function div(a: long, b: long) -> long
+        Return (a * inv(b)) modulo module
+
+    Function inv(a: long) -> long
+        Declare b as module
+        Declare u as 1
+        Declare v as 0
+        While b > 0
+            Declare t as a divided by b
+            Subtract t multiplied by b from a
+            Subtract t multiplied by v from u
+            Swap a and b
+            Swap u and v
+        End While
+        Compute u modulo module
+        If u < 0, add module to u
+        Return u
+```

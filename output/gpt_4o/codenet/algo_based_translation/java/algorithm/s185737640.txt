@@ -1,0 +1,31 @@
+```
+Algorithm:
+
+Function main():
+    Declare sc as Scanner object for System input
+    Declare S as String and assign with user input from sc
+    Close sc
+
+    If the length of S is odd:
+        Assign S to S.substring(0, S.length() - 1)
+    Else:
+        Assign S to S.substring(0, S.length() - 2)
+
+    While the length of S is greater than 0:
+        If isEvenString(S) returns true:
+            Break the loop
+        Assign S to S.substring(0, S.length() - 2)
+
+    Print the length of S
+
+Function isEvenString(s: String) -> Boolean:
+    Declare a as String and assign with s.substring(0, s.length()/2)
+    Declare b as String and assign with s.substring(s.length()/2)
+    If a equals b:
+        Return true
+    Else:
+        Return false
+
+Dependencies:
+- java.util.Scanner for user input
+```

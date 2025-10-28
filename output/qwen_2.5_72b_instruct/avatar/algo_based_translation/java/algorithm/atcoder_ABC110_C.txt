@@ -1,0 +1,46 @@
+Function signature: `public static void main(String[] args)`
+Variable declarations and data types:
+- `Scanner sc` to read input
+- `String S` for the first input string
+- `String T` for the second input string
+- `String[] A` containing all lowercase alphabets
+- `boolean res` initialized to true for result storage
+- `String s` for iterating over alphabet
+- `int sIdx` for index of character `s` in `S`
+- `String t` for character at `sIdx` in `T`
+- `int idx` for iterating through strings
+
+Logic flow:
+1. Initialize `Scanner` to read input
+2. Read `S` and `T` from input
+3. Close `Scanner`
+4. Define array `A` with all lowercase alphabets
+5. Set `res` to true
+6. For each `s` in `A`:
+   - Find `sIdx` of `s` in `S`
+   - If `sIdx` is less than 0, continue to next iteration
+   - Set `t` to character at `sIdx` in `T`
+   - Set `idx` to 0
+   - While `idx` is less than length of `S`:
+     - If `S` contains `s` starting from `idx`:
+       - If index of `s` in `S` from `idx` is not equal to index of `t` in `T` from `idx`:
+         - Set `res` to false
+         - Break loop
+       - Else:
+         - Set `idx` to index of `s` in `S` from `idx` plus 1
+     - Else if `T` contains `t` starting from `idx`:
+       - Set `res` to false
+       - Break loop
+     - Else:
+       - Break loop
+   - If `res` is false:
+     - Break loop
+7. If `res` is true, print "Yes"
+8. Else, print "No"
+
+Input/output operations:
+- Read two strings `S` and `T` from standard input
+- Print "Yes" or "No" to standard output
+
+Libraries:
+- `java.util.Scanner` for input handling

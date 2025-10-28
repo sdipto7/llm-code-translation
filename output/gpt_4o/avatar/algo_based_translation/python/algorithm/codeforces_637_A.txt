@@ -1,0 +1,25 @@
+```plaintext
+- Import necessary modules:
+  - `sys` for input operations
+  - `collections.Counter` for counting occurrences of elements in a list
+
+- Define input operations:
+  - Use `sys.stdin.readline` for reading input lines
+
+- Define variables:
+  - `n`: integer, number of elements in the input list (read from input)
+  - `s`: list of strings, split from the input line
+  - `w`: Counter object, counts occurrences of each element in `s`
+  - `c`: integer, stores the highest index of the most frequent element found so far, initialized to -1
+  - `a`: string, stores the most frequent element with the highest index when ties occur, initialized to an empty string
+
+- Reverse the list `s`
+
+- Iterate over each unique element `i` in the Counter `w`:
+  - Check if the count of `i` is equal to the maximum count in `w`
+  - If the index of `i` in the reversed list `s` is greater than `c`:
+    - Assign `i` to `a`
+    - Update `c` with the index of `i` in the reversed list `s`
+
+- Output the result stored in `a`
+```

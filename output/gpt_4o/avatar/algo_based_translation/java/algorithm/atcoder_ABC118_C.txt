@@ -1,0 +1,50 @@
+1. **Function Signatures:**
+   - `main(String[] args): void`
+   - `func(ArrayList<Integer> A): ArrayList<Integer>`
+
+2. **Variable Declarations:**
+   - `Scanner sc`: Scanner for input
+   - `int n`: Integer for the number of elements
+   - `ArrayList<Integer> a`: List to store integers from input
+   - `int ans`: Integer to store the result
+   - `int min`: Integer to store the minimum non-zero value in the list
+
+3. **Logic Flow:**
+
+   - Initialize `Scanner` for reading input.
+   - Read integer `n` from input which represents the number of elements.
+   - Initialize an empty `ArrayList<Integer>` named `a`.
+   - If `n` is 1, read the next integer and print it, then terminate the program.
+   - Loop `n` times to read integers from input and add them to the list `a`.
+   - Sort the list `a` in ascending order.
+   - If the last element of the list `a` is 0, print 0 and terminate the program.
+   - Initialize `ans` to 0.
+   - Enter an infinite loop:
+     - If the size of list `a` is 1, set `ans` to the first element of `a` and break the loop.
+     - Call `func` with `a` as the parameter and reassign the result to `a`.
+   - Print the value of `ans`.
+
+4. **Function `func(ArrayList<Integer> A)`:**
+
+   - Create a copy `a` of list `A`.
+   - Initialize `min` to 0.
+   - Loop over the list `a` using index `i`:
+     - If the element at index `i` is 0, remove the element and decrement `i`.
+     - Otherwise, if `min` is not 0, set the element at index `i` to `element % min`.
+       - If the element becomes 1, print 1 and terminate the program.
+     - If `min` is 0, set `min` to the element at index `i`.
+   - Sort the list `a` in ascending order.
+   - Return the list `a`.
+
+5. **Input/Output Operations:**
+   - Use `Scanner` to read integer inputs.
+   - Use `System.out.println` to output results.
+
+6. **Data Processing Logic:**
+   - The main logic focuses on reducing the list of numbers using the modulo operation and continuously sorting the list until one element remains, which is the result.
+   - The function `func` processes the list by removing zeros, computing the modulo with the current minimum, and updating the list accordingly.
+
+7. **Dependencies:**
+   - `java.util.Scanner`
+   - `java.util.ArrayList`
+   - `java.util.Collections`

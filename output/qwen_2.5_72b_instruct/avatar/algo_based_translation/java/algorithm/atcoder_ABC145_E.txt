@@ -1,0 +1,30 @@
+Function Signature:
+- main(String[] args): void
+
+Variable Declarations and Data Types:
+- Scanner sc: for input
+- int N: number of items
+- int T: maximum time
+- int[][] AB: array to store pairs of time and value
+- int[][] dp: dynamic programming table to store maximum value achievable for each time
+
+Logic Flow:
+1. Initialize sc as a new Scanner object for reading input.
+2. Read N and T as integers from sc.
+3. Initialize AB as a 2D array of size N x 2.
+4. For i from 0 to N-1:
+   - Read two integers from sc and store them in AB[i][0] (time) and AB[i][1] (value).
+5. Sort AB based on the first element of each pair (time).
+6. Initialize dp as a 2D array of size (N+1) x 6001 with all elements set to 0.
+7. For i from 1 to N:
+   - For timeAfterEat from 0 to 6000:
+     - Set dp[i][timeAfterEat] to the maximum of its current value and dp[i-1][timeAfterEat].
+     - Set time to AB[i-1][0] and value to AB[i-1][1].
+     - If 0 <= timeAfterEat - time and timeAfterEat - time < T:
+       - Set dp[i][timeAfterEat] to the maximum of its current value and dp[i-1][timeAfterEat - time] + value.
+8. Print the maximum value in the last row of dp using Arrays.stream(dp[N]).max().getAsInt().
+
+Libraries:
+- java.util.Arrays
+- java.util.Comparator
+- java.util.Scanner

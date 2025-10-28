@@ -1,0 +1,56 @@
+ALGORITHM SPECIFICATION:
+
+FUNCTIONS:
+1. main() -> void:
+   - Parameters: None
+   - Return: Void
+
+VARIABLES:
+- n: int
+- orig: list<tuple<int>> 
+- p: tuple<int>
+- q: tuple<int>
+- pn: int
+- qn: int
+
+DATA TYPES:
+- int: Integer values
+- str: Input string processing
+- tuple<int>: Fixed sequence of integers (permutations)
+- list<tuple<int>>: Ordered collection of permutation tuples
+- itertools.permutations: Generator for permutations
+
+LOGIC FLOW:
+1. Read input integer n from standard input
+2. Import itertools module
+3. Generate all permutations of (1, 2, ..., n) using itertools.permutations
+4. Convert permutations generator to list<tuple<int>> (orig)
+5. Read first permutation input line, convert to tuple<int> (p)
+6. Read second permutation input line, convert to tuple<int> (q)
+7. Find index of p in orig (pn)
+8. Find index of q in orig (qn)
+9. Calculate absolute difference between pn and qn
+10. Print result
+
+CONTROL FLOW:
+- Sequential execution with no explicit loops/conditionals beyond permutation generation
+
+INPUT/OUTPUT:
+- Input Operations:
+  - Read n via input() with int conversion
+  - Read two lines via input(), split into integer lists, convert to tuples
+- Output Operation:
+  - Print absolute value of pn - qn as integer
+
+ERROR HANDLING:
+- No explicit error handling
+- Implicit assumptions:
+  - Valid integer input for n
+  - Valid permutation inputs matching length n
+  - Input permutations exist in generated permutation list
+
+EXTERNAL DEPENDENCIES:
+- Required module: itertools
+- Library calls:
+  - itertools.permutations(range(1, n+1))
+  - list.index() method for tuple search

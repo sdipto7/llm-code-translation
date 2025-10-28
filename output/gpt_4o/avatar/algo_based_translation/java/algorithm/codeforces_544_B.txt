@@ -1,0 +1,25 @@
+1. Import necessary library:
+   - Import `Scanner` from `java.util` package.
+
+2. Define `main` method:
+   - Signature: `public static void main(String[] args)`
+   - Create a `Scanner` object `scan` for input reading.
+   - Declare `int n` and assign the next integer input.
+   - Declare `int count` and assign the next integer input.
+   - Call `printIsland(n, count)` method.
+
+3. Define `printIsland` method:
+   - Signature: `public static void printIsland(int n, int count)`
+   - Declare `int a` and calculate as `(n + 1) / 2`.
+   - Declare `int b` and calculate as `n / 2`.
+   - Declare `int max` and calculate as `a * a + b * b`.
+   - If `count > max`, print "NO" and return.
+   - Print "YES".
+   - For loop iterating `int i` from `0` to `n-1`:
+     - Instantiate `StringBuilder sb`.
+     - For loop iterating `int j` from `0` to `n-1`:
+       - If `(i + j) % 2 == 0` and `count > 0`:
+         - Append 'L' to `sb`.
+         - Decrement `count`.
+       - Else, append 'S' to `sb`.
+     - Print `sb`.

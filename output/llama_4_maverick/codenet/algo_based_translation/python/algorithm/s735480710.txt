@@ -1,0 +1,12 @@
+1. Import the `deque` data structure from the `collections` module.
+2. Define a function `process_sequence` with no parameters and return type `None`.
+3. Within `process_sequence`, declare an integer variable `n` and assign it the value of the next integer input.
+4. Declare a list `a` of strings and assign it the result of splitting the next input into substrings separated by whitespace, then mapping each substring to a string.
+5. Declare an empty list `b`.
+6. Assign to `b` the concatenation of two lists: 
+   - the elements of `a` at odd indices in reverse order
+   - the elements of `a` at even indices in their original order.
+7. Check if the length of `a` is even.
+8. If the length of `a` is even, print the elements of `b` separated by spaces.
+9. If the length of `a` is odd, print the elements of `b` in reverse order, separated by spaces.
+10. Call `process_sequence`.

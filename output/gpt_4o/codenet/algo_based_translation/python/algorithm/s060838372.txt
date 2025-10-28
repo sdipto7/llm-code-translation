@@ -1,0 +1,15 @@
+```
+Function Signature:
+    def transform_string(N: int, K: int, S: str) -> str
+
+Algorithm:
+1. Parse two integers N and K from input.
+2. Parse a string S from input and convert it to a list of characters.
+3. Determine the character at the (K-1)th index in the list S:
+   a. If the character is "A", replace it with "a".
+   b. Else if the character is "B", replace it with "b".
+   c. Else, replace it with "c".
+4. Join the list S back into a single string.
+5. Return the resulting string.
+6. Print the resulting string.
+```

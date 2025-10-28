@@ -1,0 +1,43 @@
+**Algorithm Extraction:**
+
+**Required Libraries:**
+- `sys`
+
+**Function Signatures:**
+- No explicit functions (procedural code)
+
+**Variables:**
+- `N: int` (input)
+- `M: int` (input)
+- `A: List[int]` (input list)
+- `S: int` (sum of elements in `A`)
+- `a: int` (temporary loop variable)
+
+**Execution Flow:**
+
+1. Read `N` and `M` from standard input via `sys.stdin.readline()`
+2. Read list `A` of `N` integers from standard input via `sys.stdin.readline()`
+3. Sort `A` in descending order
+4. Calculate `S` as the sum of all elements in `A`
+5. Iterate over the first `M` elements of sorted `A`:
+   - For each element `a`:
+     - Check if `a / S < 1 / (4 * M)`
+     - If true:
+       - Print "No"
+       - Terminate loop via `break`
+6. If loop completes without termination (all elements satisfy condition):
+   - Print "Yes"
+
+**Control Structures:**
+- `for a in A[:M]:` loop
+- `if a/S < 1/(4*M):` conditional with early exit
+- Implicit `for...else` construct (`else` triggers when loop isn't broken)
+
+**Input/Output:**
+- Input: Two lines from stdin containing space-separated integers
+- Output: Single line with "Yes" or "No" based on condition checks
+
+**Data Processing:**
+- Descending sort of input list
+- Summation of list elements
+- Threshold comparison for elements in top `M` entries

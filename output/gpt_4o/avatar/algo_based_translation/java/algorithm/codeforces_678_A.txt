@@ -1,0 +1,25 @@
+Function Signature:
+- `main(String[] args)`: void
+
+Variable Declarations:
+- `Scanner scan`: Scanner
+- `int n`
+- `int k`
+- `int z`
+
+Logic Flow:
+1. Initialize a `Scanner` object `scan` to read input.
+2. Read an integer `n` from standard input using `scan.nextInt()`.
+3. Read an integer `k` from standard input using `scan.nextInt()`.
+4. Increment `n` by 1.
+5. Initialize `z` to 0.
+6. Check if `n % k` is not equal to 0:
+   - If true, calculate `z` as `k - n % k`.
+7. Calculate and print the result of `n + z`.
+
+Input/Output:
+- Input: Reads two integers from standard input.
+- Output: Prints one integer to standard output.
+
+Dependencies:
+- `java.util.Scanner`

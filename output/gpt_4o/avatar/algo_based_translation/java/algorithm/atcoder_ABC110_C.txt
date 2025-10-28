@@ -1,0 +1,38 @@
+```
+Algorithm atcoder_ABC110_C
+  Input: None
+  Output: Prints "Yes" or "No"
+
+  Declare a Scanner object `sc` to read input from the standard input
+  Read a line from input and store it as String `S`
+  Read a line from input and store it as String `T`
+  Close the Scanner object `sc`
+
+  Declare a String array `A` containing all lowercase alphabets from "a" to "z"
+  Declare a boolean variable `res` and initialize it to true
+
+  For each `s` in array `A`
+    Find the first occurrence index `sIdx` of `s` in `S`
+    If `sIdx` is less than 0, continue to the next iteration
+
+    Convert the character at position `sIdx` in `T` to a String `t`
+    Initialize an integer `idx` to 0
+
+    While `idx` is less than the length of `S`
+      If `s` is found in `S` starting from index `idx`
+        If the index of `s` in `S` does not match the index of `t` in `T` starting from `idx`
+          Set `res` to false
+          Break the loop
+        Else
+          Update `idx` to the index of `s` in `S` plus 1
+      Else if `t` is found in `T` starting from index `idx`
+        Set `res` to false
+        Break the loop
+      Else
+        Break the loop
+
+    If `res` is false, break the outer loop
+
+  If `res` is true, print "Yes"
+  Else, print "No"
+```

@@ -1,0 +1,30 @@
+- **Function Signatures**: Not applicable (script form)
+- **Variables**:
+  - `S`: string (input string)
+  - `T`: string (target substring)
+  - `N`: integer (length of `S`)
+  - `M`: integer (length of `T`)
+  - `ans`: integer (minimum difference count, initialized to `M`)
+  - `i`: integer (outer loop index, iterates from `0` to `N-M` inclusive)
+  - `S_2`: string (substring of `S` starting at `i` with length `M`)
+  - `cnt`: integer (temporary counter for character mismatches)
+  - `j`: integer (inner loop index, iterates from `0` to `M-1` inclusive)
+- **Logic Flow**:
+  1. Read input strings `S` and `T` from standard input.
+  2. Compute `N` as the length of `S` and `M` as the length of `T`.
+  3. Initialize `ans` with value `M`.
+  4. Iterate `i` from `0` to `N-M` (inclusive):
+      - Extract substring `S_2` from `S` starting at index `i` with length `M`.
+      - Initialize `cnt` to `0`.
+      - Iterate `j` from `0` to `M-1` (inclusive):
+          - If `T[j]` != `S_2[j]`, increment `cnt` by `1`.
+      - Update `ans` to the minimum of its current value and `cnt`.
+  5. Print `ans` to standard output.
+- **Control Structures**:
+  - Outer `for` loop: `for i in range(N-M+1)`
+  - Inner `for` loop: `for j in range(M)`
+  - Conditional: `if T[j] != S_2[j]`
+- **Input/Output**:
+  - Input: Read `S` and `T` via `input()`.
+  - Output: Print final value of `ans`.
+- **Dependencies**: None (uses built-in functions only).

@@ -1,0 +1,44 @@
+```plaintext
+Function Main():
+    Declare sc as Scanner
+    Declare pr as Printer
+    Call solve()
+    Close pr
+    Close sc
+
+Function solve():
+    Declare n as Integer, assign sc.nextInt()
+    Declare k as Integer, assign sc.nextInt()
+    Declare a as Integer array of size n
+    For i from 0 to n-1 do:
+        Assign sc.nextInt() to a[i]
+    Declare cumsum as Long array of size n+1
+    For i from 0 to n-1 do:
+        Assign cumsum[i] + a[i] to cumsum[i+1]
+    Declare b as List of Longs
+    Declare max as Long, assign 0
+    For i from 0 to n-1 do:
+        For j from i to n-1 do:
+            Append (cumsum[j+1] - cumsum[i]) to b
+            Assign Math.max(max, cumsum[j+1] - cumsum[i]) to max
+    Declare mask as Long, assign Long.highestOneBit(max)
+    While mask > 0 do:
+        Declare tmp as List of Longs
+        For each e in b do:
+            If (e & mask) != 0 then:
+                Append e to tmp
+        If size of tmp >= k then:
+            Assign tmp to b
+        Right shift mask by 1
+    If size of b < k then:
+        Call pr.println(0)
+    Else:
+        Declare ans as Long, assign -1L
+        For each e in b do:
+            Assign ans & e to ans
+        Call pr.println(ans)
+
+Class Printer extends PrintWriter:
+    Constructor Printer(out as OutputStream):
+        Call super(out)
+```

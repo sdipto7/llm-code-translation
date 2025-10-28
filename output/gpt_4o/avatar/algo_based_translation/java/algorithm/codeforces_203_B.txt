@@ -1,0 +1,27 @@
+```
+Algorithm codeforces_203_B
+    Input: None
+    Output: Integer
+
+    Import Scanner from java.util
+
+    Function main() -> void
+        Declare in as Scanner to read input from system
+        Declare N as integer, assign in.nextInt() (input from user)
+        Declare M as integer, assign in.nextInt() (input from user)
+        Declare black as 2D integer array with dimensions [N+2][N+2], initialized to 0
+
+        For m from 1 to M, inclusive
+            Declare x as integer, assign in.nextInt() (input from user)
+            Declare y as integer, assign in.nextInt() (input from user)
+            
+            For xx from x-1 to x+1, inclusive
+                For yy from y-1 to y+1, inclusive
+                    Increment black[xx][yy] by 1
+                    If black[xx][yy] equals 9
+                        Output m
+                        Return from function
+
+        Output "-1"
+```
+

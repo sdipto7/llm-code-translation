@@ -1,0 +1,47 @@
+**Function Signature:**
+- main() -> None
+
+**Variables:**
+- n: int
+- input_array: list[tuple[int, int, int, int]]
+- outdated: list[tuple[int, int, int, int]]
+- minimum_cost: int
+- input_number: int
+- i: int
+- j: int
+- S: int
+- R: int
+- H: int
+- C: int
+- current_item: tuple[int, int, int, int]
+- cost: int
+
+**Algorithm:**
+1. Read integer n from input
+2. Initialize empty list input_array
+3. For i from 0 to n-1:
+   - Read and split input line into 4 integers: S, R, H, C
+   - Append tuple (S, R, H, C) to input_array
+4. Initialize empty list outdated
+5. For i from 0 to n-1:
+   - For j from 0 to n-1:
+     - If input_array[i][0] < input_array[j][0] AND input_array[i][1] < input_array[j][1] AND input_array[i][2] < input_array[j][2]:
+       - Append input_array[i] to outdated
+6. Convert outdated to set to remove duplicates
+7. Initialize minimum_cost = 100000
+8. Initialize input_number = 0
+9. For i from 0 to n-1:
+   - Set current_item = input_array[i]
+   - Set cost = current_item[3]
+   - If current_item not in outdated AND cost < minimum_cost:
+     - Set minimum_cost = cost
+     - Set input_number = i + 1
+10. Print input_number
+
+**Input/Output:**
+- Input: First integer n, then n lines each containing 4 integers
+- Output: Single integer representing the index (1-based) of the cheapest non-outdated item
+
+**Dependencies:**
+- Standard input/output operations
+- No external libraries required

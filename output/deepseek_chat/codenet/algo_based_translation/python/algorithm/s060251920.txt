@@ -1,0 +1,10 @@
+def main():
+    Read input string from standard input
+    Split input string by space into list of strings
+    Convert first element to integer, assign to variable a (type: int)
+    Convert second element to integer, assign to variable b (type: int)
+    Multiply a and b (both integers)
+    Print result of multiplication to standard output
+    Return None (implicit return)
+
+Call main() function with no arguments

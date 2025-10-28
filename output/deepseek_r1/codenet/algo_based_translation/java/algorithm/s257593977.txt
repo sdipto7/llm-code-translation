@@ -1,0 +1,11 @@
+- Import java.util.Scanner library
+- Declare public class Main
+  - Declare private static final int constant BASE with value 3
+  - Declare public static void main method parameter String[] args
+    - Create Scanner object initialized with System.in
+    - Read next integer input from Scanner
+    - Convert input value to double
+    - Calculate Math.pow(input_value, BASE) resulting in double
+    - Cast result to int
+    - Print result via System.out.println
+- End class

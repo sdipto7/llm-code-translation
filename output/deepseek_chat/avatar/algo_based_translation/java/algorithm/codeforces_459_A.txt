@@ -1,0 +1,27 @@
+Function signature: main(String[] args)
+Return type: void
+
+Dependencies: java.io.*, java.util.*
+
+Variables:
+- Scanner in (System.in)
+- PrintWriter pw (System.out)
+- int x1, y1, x2, y2
+
+Logic flow:
+1. Read four integers: x1, y1, x2, y2
+2. If x1 equals x2:
+   - Calculate absolute difference between y1 and y2 as dif
+   - Output: (x1 + dif) y1 (x1 + dif) y2
+3. Else if y1 equals y2:
+   - Calculate absolute difference between x1 and x2 as dif
+   - Output: x1 (y1 + dif) x2 (y2 + dif)
+4. Else if absolute difference between x1 and x2 equals absolute difference between y1 and y2:
+   - Output: x1 y2 x2 y1
+5. Else:
+   - Output: -1
+6. Close PrintWriter
+
+Additional function: debug(Object... obj)
+Return type: void
+Logic: Print debug information using Arrays.deepToString

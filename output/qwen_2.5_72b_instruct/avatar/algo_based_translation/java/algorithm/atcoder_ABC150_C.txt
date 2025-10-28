@@ -1,0 +1,58 @@
+- **Function Signatures**:
+  - `List<String> permutation(List<String> list, String target, String ans)`
+  - `void main(String[] args)`
+
+- **Variable Declarations and Data Types**:
+  - `List<String> list`
+  - `String target`
+  - `String ans`
+  - `Scanner scanner`
+  - `Integer n`
+  - `String[][] line`
+  - `String number`
+  - `List<String> listA`
+  - `int sum`
+  - `int j`
+  - `int i`
+
+- **Logic Flow and Control Structures**:
+  - **Function `permutation`**:
+    - If `target.length() <= 1`:
+      - `list.add(ans + target)`
+    - Else:
+      - For `i = 0` to `target.length() - 1`:
+        - `permutation(list, target.substring(0, i) + target.substring(i + 1), ans + target.charAt(i))`
+    - Return `list`
+  
+  - **Function `main`**:
+    - `scanner` initialized to `Scanner(System.in)`
+    - `n` assigned to `Integer.parseInt(scanner.next())`
+    - `line` initialized to `String[2][1]`
+    - For `i = 0` to `1`:
+      - `Arrays.fill(line[i], "")`
+      - For `j = 0` to `n - 1`:
+        - `line[i][0] += scanner.next()`
+    - `number` initialized to ""
+    - For `i = 1` to `n`:
+      - `number += i`
+    - `listA` initialized to `ArrayList<String>()`
+    - `permutation(listA, number, "")`
+    - `sum` initialized to `0`
+    - For `j = 0` to `1`:
+      - For `i = 0` to `listA.size() - 1`:
+        - If `listA.get(i).equals(line[j][0])`:
+          - If `sum == 0`:
+            - `sum += i`
+          - Else:
+            - `sum -= i`
+    - `System.out.println(Math.abs(sum))`
+
+- **Input/Output Operations**:
+  - `scanner.next()` for reading input values
+  - `System.out.println(Math.abs(sum))` for outputting the result
+
+- **Libraries**:
+  - `java.util.ArrayList`
+  - `java.util.Arrays`
+  - `java.util.List`
+  - `java.util.Scanner`

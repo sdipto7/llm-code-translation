@@ -1,0 +1,17 @@
+1. Read two integers l and r from input
+2. Initialize curr to r
+3. Initialize s to 0
+4. While curr is not zero
+   4.1. Increment s by 1
+   4.2. Update curr to be the integer division of curr by 10
+5. Calculate first as 10 raised to the power of s
+6. Calculate second as the integer division of first by 2
+7. Initialize ans to -1
+8. For each value i in the list [l, r, first, second]
+   8.1. If i is within the range [l, r]
+      8.1.1. Set curr to i
+      8.1.2. Initialize rev as an empty string
+      8.1.3. For each character k in the string representation of curr
+         8.1.3.1. Append the string representation of (9 - integer value of k) to rev
+      8.1.4. Update ans to be the maximum of ans and the product of curr and the integer value of rev
+9. Output ans

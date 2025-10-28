@@ -1,0 +1,13 @@
+1. Read input time1 in hours and minutes separated by a colon
+2. Split time1 into hours (h1) and minutes (m1)
+3. Convert h1 and m1 to integers
+4. Calculate total minutes for time1: m1 = m1 + (h1 * 60)
+5. Read input time2 in hours and minutes separated by a colon
+6. Split time2 into hours (h2) and minutes (m2)
+7. Convert h2 and m2 to integers
+8. Calculate total minutes for time2: m2 = m2 + (h2 * 60)
+9. Calculate difference in total minutes: m2 = m1 - m2
+10. Normalize the difference within a day (1440 minutes): m2 = m2 mod 1440
+11. Calculate hours from the normalized difference: hours = m2 / 60 (integer division)
+12. Calculate remaining minutes: minutes = m2 mod 60
+13. Print the result in the format "HH:MM" with leading zeros if necessary

@@ -1,0 +1,62 @@
+**Algorithm:**
+
+1. **Input Reading:**
+   - Read integers `d` (number of problem categories) and `g` (target score) from standard input.
+   - Read `d` pairs of integers into list `pc`, where each pair contains:
+     - `pc[i][0]`: number of problems in category (i+1)
+     - `pc[i][1]`: bonus points for completing all problems in category (i+1)
+
+2. **Initialization:**
+   - Set `ans` to positive infinity (to track minimum problem count).
+
+3. **Bitmask Iteration:**
+   - Iterate through all possible bitmask values `bit` from 0 to (2^d - 1):
+     - Initialize `count` to 0 (total solved problems).
+     - Initialize `sum` to 0 (total score).
+     - Create set `nokori` containing all category numbers (1..d).
+
+4. **Bit Processing:**
+   - For each bit position `i` (0 ≤ i < d):
+     - If bit `i` is set in `bit`:
+       - Add to `sum`: (i+1)*100 * pc[i][0] + pc[i][1] (full category score + bonus).
+       - Add pc[i][0] to `count`.
+       - Remove (i+1) from `nokori`.
+
+5. **Remaining Points Handling:**
+   - If `sum` < `g`:
+     - Select largest remaining category number `use` from `nokori`.
+     - Compute required problems `n` as minimum of:
+       - pc[use-1][0] (available problems in category)
+       - ceiling((g - sum) / (use * 100)) via formula `-(-(g-sum)//(use*100))`.
+     - Add `n` to `count` and `n*use*100` to `sum`.
+
+6. **Update Answer:**
+   - If `sum` ≥ `g` after above steps:
+     - Set `ans` to minimum of current `ans` and `count`.
+
+7. **Final Output:**
+   - Print `ans` after all bitmask iterations complete.
+
+**Variables:**
+- `d: int`, `g: int`
+- `pc: List[List[int]]`
+- `ans: float` (initialized to ∞)
+- `bit: int` (bitmask iterator)
+- `count: int`, `sum: int`
+- `nokori: Set[int]`
+- `i: int` (loop index)
+- `use: int`, `n: int`
+
+**Control Structures:**
+- Bitmask loop: `for bit in range(1 << d)`
+- Nested loop: `for i in range(d)` with bit-check condition `if bit & (1 << i)`
+- Conditional: `if sum < g` with nested logic
+- Set operations: `nokori.discard`, `max(nokori)`
+- Minimum update: `ans = min(ans, count)`
+
+**Input/Output:**
+- Input via `input()` and `map` operations
+- Output final `ans` via `print(ans)`
+
+**Dependencies:**
+- None (uses standard Python functions)

@@ -1,0 +1,29 @@
+- Libraries/Dependencies:
+  - `math` (imported but unused)
+  - `heapq` (methods: `heappush`, `heappop`)
+
+- Variables:
+  - `n`: integer (initial array length)
+  - `m`: integer (number of operations)
+  - `a`: list of integers (min-heap storing negated values)
+  - `dis`: lambda function (params: x: int, y: int; returns x // 2**y as integer)
+
+- Input Operations:
+  1. Read line with `n` and `m` via `input().split()`
+  2. Read next line with `n` integers via `map(int, input().split())`
+
+- Execution Flow:
+  1. Initialize empty heap `a`
+  2. For each integer in input array:
+      - Push `-integer` into heap via `heappush(a, -i)`
+  3. Repeat `m` times:
+      - Pop smallest element (current_neg = `heappop(a)`)
+      - Compute new value via `-dis(-current_neg, 1)`
+      - Push new value via `heappush(a, new_value)`
+  4. Calculate result via `-sum(a)`
+  5. Print result
+
+- Control Structures:
+  - For-loop over `n` elements for initial heap population
+  - For-loop with exactly `m` iterations for operations
+  - Heap push/pop operations maintain min-heap properties with negated values

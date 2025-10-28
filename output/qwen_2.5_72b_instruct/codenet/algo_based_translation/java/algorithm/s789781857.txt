@@ -1,0 +1,23 @@
+Function Signature: `public static void main(String[] args)`
+
+Variable Declarations:
+- `Scanner in` of type `Scanner`
+- `int n` of type `int`
+- `int[] c` of type `int[]`
+- `int[] s` of type `int[]`
+- `int[] f` of type `int[]`
+- `int time` of type `int`
+
+Logic Flow:
+1. Initialize `Scanner` object `in` to read input from standard input.
+2. Read integer `n` from input.
+3. Initialize arrays `c`, `s`, and `f` with size `n - 1`.
+4. Loop from `0` to `n - 2` to fill arrays `c`, `s`, and `f` with integers read from input.
+5. Loop from `0` to `n - 2`:
+   1. Set `time` to `s[i] + c[i]`.
+   2. Loop from `i + 1` to `n - 2`:
+      1. If `time % f[j]` is not `0`, then add `f[j] - (time % f[j])` to `time`.
+      2. If `time` is less than `s[j]`, then set `time` to `s[j]`.
+      3. Add `c[j]` to `time`.
+   3. Print `time`.
+6. Print `0`.

@@ -1,0 +1,25 @@
+```
+Algorithm Main
+    Input: None (except for standard input)
+    Output: None (except for standard output)
+
+1. Import the Scanner class from the java.util package.
+
+2. Define a public class named Main.
+
+3. Within the Main class, define a public static method named main with a String array parameter named args.
+
+4. Inside the main method:
+    a. Create a Scanner object named sc to read from standard input.
+    b. Read a single string input from the user and store it in a variable named s.
+    
+    c. If the string s is equal to "Sunny":
+        i. Print "Cloudy" to standard output.
+    
+    d. Else if the string s is equal to "Cloudy":
+        i. Print "Rainy" to standard output.
+    
+    e. Else:
+        i. Print "Sunny" to standard output.
+```
+

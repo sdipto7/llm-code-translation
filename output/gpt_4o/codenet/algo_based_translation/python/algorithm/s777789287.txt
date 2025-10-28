@@ -1,0 +1,24 @@
+```
+Function Signature:
+    def check_condition(n: int, m: int, a: List[int]) -> str
+
+Variable Declarations:
+    - n: int
+    - m: int
+    - a: List[int]
+    - s: float
+
+Algorithm:
+1. Sort the list `a` in descending order.
+2. Calculate the sum of the list `a`.
+3. Divide the sum by 4 times `m` and store the result in variable `s`.
+4. If the (m-1)th element of the sorted list `a` is greater than or equal to `s`, return 'Yes'.
+5. Otherwise, return 'No'.
+
+Input/Output Operations:
+    - The function accepts three parameters: n, m, and a, where `n` is the number of elements in the list `a`, `m` is a positional index, and `a` is the list of integers.
+    - The function returns a string, either 'Yes' or 'No'.
+
+Required Libraries:
+    - No additional libraries or modules are required.
+```

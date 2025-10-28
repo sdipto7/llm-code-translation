@@ -1,0 +1,8 @@
+read input string from stdin
+convert input string to integer by taking last character and converting to int
+if integer equals 2, 4, 5, 7, or 9:
+    print "hon"
+else if integer equals 0, 1, 6, or 8:
+    print "pon"
+else:
+    print "bon"

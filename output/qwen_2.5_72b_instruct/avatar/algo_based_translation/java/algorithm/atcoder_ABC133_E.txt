@@ -1,0 +1,61 @@
+Algorithm:
+
+- Function signatures with parameter and return types:
+  - `Node(int i)`
+  - `void setParent(int K, int parent, int use, Node[] nodes)`
+  - `void solve()`
+  - `public static void main(String[] args)`
+
+- Variable declarations and data types:
+  - `long pattern`
+  - `int index`
+  - `LinkedList<Integer> children`
+  - `int parent`
+  - `int N`
+  - `int K`
+  - `Node[] nodes`
+  - `int a`
+  - `int b`
+  - `int count`
+  - `long patterns`
+
+- Logic flow in execution order:
+  1. Create `Node` class with constructor `Node(int i)` initializing `index` and `children`.
+  2. Define `setParent` method:
+     - Set `pattern` to `K - use`
+     - Set `parent` to `parent`
+     - Initialize `count` to 1
+     - If `parent` is not -1, increment `count`
+     - For each child in `children`:
+       - If child equals `parent`, continue to next iteration
+       - Call `setParent` on `nodes[child]` with parameters `K`, `index`, `count`, and `nodes`
+       - Increment `count`
+  3. Define `solve` method:
+     - Create `Scanner` object `in`
+     - Read `N` and `K` from input
+     - Initialize `nodes` array of size `N` with `Node` objects
+     - For `i` from 0 to `N-1`:
+       - Read `a` and `b` from input, decrement by 1
+       - Add `b` to `children` of `nodes[a]`
+       - Add `a` to `children` of `nodes[b]`
+     - Close `in`
+     - Call `setParent` on `nodes[0]` with parameters `K`, `-1`, `0`, and `nodes`
+     - Initialize `patterns` to 1
+     - For `i` from 0 to `N-1`:
+       - Multiply `patterns` by `nodes[i].pattern`, take modulo `1_000_000_007`
+     - Print `patterns`
+  4. Define `main` method:
+     - Create `atcoder_ABC133_E` object `main`
+     - Call `solve` on `main`
+
+- Control structures:
+  - `for` loops for iterating over nodes and children
+  - `if` condition to check if child equals parent
+
+- Input/output operations and data processing logic:
+  - Read `N`, `K`, `a`, and `b` from standard input
+  - Print `patterns` to standard output
+
+- Required libraries, modules, or dependencies:
+  - `java.util.LinkedList`
+  - `java.util.Scanner`

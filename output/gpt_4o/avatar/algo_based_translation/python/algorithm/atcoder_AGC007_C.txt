@@ -1,0 +1,17 @@
+```plaintext
+Function main(N: int, d: float, x: float) -> float
+    Declare ret as float, initialized to 0
+    While N is not 0
+        Set ret to ret plus d plus (N - 0.5) multiplied by x
+        Set d to d plus (d divided by N) plus (5 multiplied by x) divided by (2 multiplied by N)
+        Set x to x plus (2 multiplied by x) divided by N
+        Decrement N by 1
+    Return ret
+
+Import sys module
+Assign read to sys.stdin.buffer.read
+Assign readline to sys.stdin.buffer.readline
+Assign readlines to sys.stdin.buffer.readlines
+Read input using read and split into N, d, x as integers and floats
+Call function main with N, d, x and print the result
+```

@@ -1,0 +1,54 @@
+**Function Signatures:**
+- `doIt()`: void, no parameters
+- `main(String[] args)`: void
+
+**Variable Declarations:**
+- `Scanner sc = new Scanner(System.in)`
+- `final int MOD = 1000000007`
+- `final int MAX = Integer.MAX_VALUE`
+- `final long LMAX = Long.MAX_VALUE`
+- `int len = (int)1e6 + 1`
+- `int N = sc.nextInt()`
+- `long K = sc.nextLong()`
+- `int[] A = new int[N]`
+- `Set<Integer> used = new HashSet<>()`
+- `int[] idx = new int[N]`
+- `int[] pos = new int[N]`
+- `int next = 0`
+- `int cur = 0`
+- `long a`
+- `long b`
+- `int ans`
+
+**Logic Flow:**
+1. Read integer N and long K from input
+2. Initialize integer array A of size N
+3. For i from 0 to N-1: read integer, subtract 1, store in A[i]
+4. Initialize empty HashSet 'used'
+5. Initialize integer arrays 'idx' and 'pos' of size N
+6. Set next = 0, cur = 0
+7. While 'used' does not contain 'next':
+   - Add 'next' to 'used'
+   - Set idx[next] = cur
+   - Set pos[cur] = next
+   - Set next = A[next]
+   - Increment cur by 1
+8. Set a = (long)cur - idx[next]
+9. Set b = (long)idx[next]
+10. Set ans = (int)((10000 * a + K - b) % a + b)
+11. If b > K: set ans = (int)K
+12. Output pos[ans] + 1
+
+**Control Structures:**
+- For loop: for (int i = 0; i < N; i++)
+- While loop: while (!used.contains(next))
+- Conditional: if (b > K)
+
+**Input/Output Operations:**
+- Input: Scanner reading integers and long from System.in
+- Output: System.out.println(pos[ans] + 1)
+
+**Required Libraries:**
+- java.util.Scanner
+- java.util.HashSet
+- java.util.Set

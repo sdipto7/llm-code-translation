@@ -1,0 +1,15 @@
+Initialize a 4x3x10 integer array 'info' with zeros.
+
+Read integer 'n' from standard input.
+
+For 'i' from 0 to n-1:
+    Read integers 'built', 'floor', 'room', and 'num' from standard input.
+    Increment info[built-1][floor-1][room-1] by 'num'.
+
+For 'i' from 0 to 3:
+    For 'j' from 0 to 2:
+        For 'k' from 0 to 9:
+            Print a space followed by info[i][j][k]
+        Print a newline
+    If 'i' is not 3:
+        Print "####################" followed by a newline

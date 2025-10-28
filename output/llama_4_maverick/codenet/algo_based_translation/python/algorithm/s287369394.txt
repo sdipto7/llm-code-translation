@@ -1,0 +1,14 @@
+1. Define a function `calculate_total` with parameters `N: int`, `A: list[int]`, `B: list[int]` and return type `int`.
+2. Initialize a variable `ans: int` to 0.
+3. Iterate over the range from 0 to `N-1` using a for loop with variable `i`.
+4. Within the loop, calculate `d: int` as the minimum of `A[i]` and `B[i]`.
+5. Increment `ans` by `d`.
+6. Subtract `d` from both `A[i]` and `B[i]`.
+7. Calculate `d: int` as the minimum of `A[i + 1]` and `B[i]`.
+8. Increment `ans` by `d`.
+9. Subtract `d` from both `A[i + 1]` and `B[i]`.
+10. After the loop, return `ans`.
+11. Read an integer `N: int` from input.
+12. Read a list of `N` integers into `A: list[int]`.
+13. Read a list of `N` integers into `B: list[int]`.
+14. Call the function `calculate_total` with `N`, `A`, `B` and print the result.

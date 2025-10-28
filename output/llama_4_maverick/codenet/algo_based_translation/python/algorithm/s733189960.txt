@@ -1,0 +1,17 @@
+1. Define a function `main()` with no parameters and no return value.
+2. Read an integer `n` from standard input.
+3. Declare an empty dictionary `sdic` to store string frequencies.
+4. Iterate `n` times:
+   4.1. Read a string from standard input and strip whitespace.
+   4.2. Sort the characters in the string.
+   4.3. Join the sorted characters into a single string `s`.
+   4.4. Check if `s` is a key in `sdic`.
+   4.5. If `s` is in `sdic`, increment its associated value by 1.
+   4.6. If `s` is not in `sdic`, add it as a key with a value of 1.
+5. Initialize a variable `ans` to 0.
+6. Iterate over the key-value pairs in `sdic`:
+   6.1. For each pair, calculate `v*(v-1)//2` where `v` is the value.
+   6.2. Add the result to `ans`.
+7. Print the final value of `ans` to standard output.
+8. Check if the script is being run as the main module.
+9. If so, call the `main()` function.

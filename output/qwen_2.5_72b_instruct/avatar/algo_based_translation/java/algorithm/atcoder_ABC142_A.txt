@@ -1,0 +1,33 @@
+Function signature:
+- `main(String[] args)`: void
+
+Variable declarations and data types:
+- `br`: BufferedReader
+- `input`: double
+- `countOdd`: double
+- `result`: BigDecimal
+
+Logic flow in execution order:
+1. Create a BufferedReader object `br` to read input from standard input.
+2. Read a line of input using `br.readLine()` and parse it to a double, store in `input`.
+3. Calculate `countOdd` by rounding `input / 2` to the nearest integer using `Math.round()`.
+4. Create a BigDecimal object `result` with the value of `countOdd / input`.
+5. Set the scale of `result` to 10 with rounding mode `RoundingMode.HALF_UP`.
+6. Print the value of `result`.
+
+Control structures:
+- try-catch block to handle `IOException` and `NumberFormatException`
+    - Catch `IOException` or `NumberFormatException`, print stack trace, and exit the program with `System.exit(0)`.
+- catch block to handle generic `Exception`
+    - Catch any other exceptions, print stack trace, and exit the program with `System.exit(0)`.
+
+Input/output operations and data processing logic:
+- Input: Read a line of text from standard input and convert it to a double.
+- Output: Print the value of `result` as a string with a precision of 10 decimal places.
+
+Required libraries, modules, or dependencies:
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader
+- java.math.BigDecimal
+- java.math.RoundingMode

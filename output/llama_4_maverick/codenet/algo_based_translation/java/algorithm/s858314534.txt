@@ -1,0 +1,38 @@
+1. Import the `java.util.Scanner` library.
+2. Define a class `Main` with a `public static void main(String[] args)` method.
+3. Within `main`, create a `Scanner` object named `scanner` to read from `System.in`.
+4. Declare three integer variables: `A`, `B`, and `T`.
+5. Read three integer inputs from `System.in` using `scanner.nextInt()` and store them in `A`, `B`, and `T`, respectively.
+6. Calculate the result of the expression `(T / A) * B` and store it in an unnamed temporary variable.
+7. Call the `log` method with the result of the expression as an argument.
+8. Define two overloaded `log` methods:
+   - `private static void log(String str)` that prints the input string to `System.out` followed by a newline.
+   - `private static void log(int str)` that prints the input integer to `System.out` followed by a newline.
+9. The `log` method called in step 7 will be `private static void log(int str)` since the argument is an integer.
+10. The program terminates after executing the `log` method. 
+
+Function Signatures:
+- `public static void main(String[] args)`
+- `private static void log(String str)`
+- `private static void log(int str)`
+
+Variable Declarations and Data Types:
+- `Scanner scanner`
+- `int A`
+- `int B`
+- `int T`
+
+Logic Flow:
+1. Create `Scanner` object.
+2. Read `A`, `B`, `T` from input.
+3. Calculate `(T / A) * B`.
+4. Call `log` with the result.
+5. Print the result to output.
+
+Control Structures: None.
+
+Input/Output Operations:
+- Read three integers from `System.in`.
+- Print one integer to `System.out`.
+
+Required Libraries: `java.util.Scanner`.

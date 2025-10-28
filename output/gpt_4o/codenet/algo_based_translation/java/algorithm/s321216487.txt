@@ -1,0 +1,41 @@
+```
+Algorithm CheckKeyenceSubstring
+
+Input: 
+  A string S
+
+Output:
+  Prints "YES" if "keyence" can be formed by removing a contiguous substring from S, otherwise prints "NO".
+
+Variables:
+  sc : Scanner
+  S : String
+  begin : String
+  end : String
+  answer : String
+
+Begin
+  Create a Scanner object sc for input
+  Read a string S from input using sc
+
+  For each integer i from 0 to length of S - 1, inclusive, do
+    For each integer j from 0 to length of S - 1, inclusive, do
+      Set begin to the substring of S from index 0 to i (exclusive)
+      Set end to the substring of S from index j to length of S (exclusive)
+      Set answer to the concatenation of begin and end
+
+      If answer is equal to "keyence", then
+        Print "YES"
+        Return
+
+      Else if begin is equal to "keyence", then
+        Print "YES"
+        Return
+
+      Else if end is equal to "keyence", then
+        Print "YES"
+        Return
+
+  Print "NO"
+End
+```

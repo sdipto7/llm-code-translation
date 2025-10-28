@@ -1,0 +1,46 @@
+**Algorithm:**
+
+**Functions:**
+- `canTake(int xNeeded, int xAvailable, int yNeeded, int yAvailable) -> boolean`
+  - Returns true if `xAvailable >= xNeeded` AND `yAvailable >= yNeeded`
+  - Returns false otherwise
+
+**Variables:**
+- `x: int` (initial value from input)
+- `y: int` (initial value from input)
+- `turn: int` (initialized to 0)
+
+**Input Handling:**
+- Read single line of input containing two integers `x` and `y`
+
+**Main Logic:**
+1. Initialize `turn` to 0
+2. Enter infinite loop:
+   - **If even turn (turn % 2 == 0):**
+     1. Attempt in order:
+        - Check `canTake(2, x, 2, y)`:
+          - If true: subtract 2 from both x and y
+        - Else check `canTake(1, x, 12, y)`:
+          - If true: subtract 1 from x, 12 from y
+        - Else check `canTake(0, x, 22, y)`:
+          - If true: subtract 22 from y
+        - Else: Print "Hanako" and terminate
+   - **If odd turn:**
+     1. Attempt in order:
+        - Check `canTake(0, x, 22, y)`:
+          - If true: subtract 22 from y
+        - Else check `canTake(1, x, 12, y)`:
+          - If true: subtract 1 from x, 12 from y
+        - Else check `canTake(2, x, 2, y)`:
+          - If true: subtract 2 from both x and y
+        - Else: Print "Ciel" and terminate
+   - Increment `turn` by 1 after each iteration
+
+**Termination Conditions:**
+- Player loses when all their move options are exhausted in their turn
+
+**Dependencies:**
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.util.StringTokenizer`

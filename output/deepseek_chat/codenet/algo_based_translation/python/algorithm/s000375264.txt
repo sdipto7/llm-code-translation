@@ -1,0 +1,10 @@
+read input line and split into two strings
+convert first string to integer, assign to X
+convert second string to integer, assign to t
+
+if X is greater than t:
+    set answer to X minus t
+else:
+    set answer to 0
+
+print answer

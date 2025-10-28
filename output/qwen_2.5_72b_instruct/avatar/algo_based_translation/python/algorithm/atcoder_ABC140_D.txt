@@ -1,0 +1,33 @@
+Function signatures:
+- `parser() -> Generator[str, None, None]`
+- `gw() -> str`
+- `gi() -> int`
+
+Variable declarations and data types:
+- `data`: List[str]
+- `number`: str
+- `input_parser`: Generator[str, None, None]
+- `MOD`: int
+- `N`: int
+- `K`: int
+- `S`: str
+- `seg_cnt`: int
+- `cur_happy`: int
+- `i`: int
+- `ans`: int
+
+Logic flow in execution order:
+1. Define `parser` function that continuously reads input, splits it by spaces, and yields each non-empty segment.
+2. Define `gw` function that returns the next value from the global `input_parser` generator.
+3. Define `gi` function that calls `gw` and converts the result to an integer.
+4. Import required modules: `collections.deque`, `numpy`, `scipy`.
+5. Initialize `MOD` to 1000000007.
+6. Initialize `input_parser` by calling `parser`.
+7. Read `N`, `K`, and `S` using `gi` and `gw` functions.
+8. Initialize `seg_cnt` to 0.
+9. Loop from 0 to N-2:
+   - If `S[i]` is not equal to `S[i+1]`, increment `seg_cnt`.
+10. Calculate `cur_happy` as N-1 minus `seg_cnt`.
+11. If 2 times `K` is greater than or equal to `seg_cnt`, set `ans` to N-1.
+12. Otherwise, set `ans` to `cur_happy` plus 2 times `K`.
+13. Print `ans`.

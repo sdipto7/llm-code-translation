@@ -1,0 +1,32 @@
+```
+Algorithm:
+1. Import necessary libraries: `java.util.*`
+2. Define the main function `main(String args[])`:
+   - Declare `Scanner scanner` to read input.
+   - Read an integer `N` using `scanner.nextInt()`.
+   - Declare a list `L` of type `List<Integer>`.
+   - Loop `i` from 0 to `N-1`:
+     - Add `scanner.nextInt()` to list `L`.
+   - Sort list `L` using `Collections.sort(L)`.
+   - Declare an integer `count` and initialize it to 0.
+   - Loop `i` from 0 to `N-1`:
+     - Loop `j` from `i+1` to `N-1`:
+       - Assign `L.get(i)` to `a`.
+       - Assign `L.get(j)` to `b`.
+       - Call function `find(L, j+1, a+b)` and assign the result to `res`.
+       - Increment `count` by `res`.
+   - Print `count`.
+
+3. Define the function `find(List<Integer> li, int from, int target)` that returns an integer:
+   - Declare integer `low` and assign it `from`.
+   - Declare integer `upp` and assign it `li.size() - 1`.
+   - Declare integer `mid` and compute it as `(upp - low + 1) % 2 == 0 ? (low + upp) / 2 + 1 : (low + upp) / 2`.
+   - If `upp - low < 0`, return 0.
+   - Else if `li.get(from) >= target`, return 0.
+   - Else if `li.get(upp) < target`, return `upp - low + 1`.
+   - While `upp - low > 1`:
+     - If `li.get(mid) >= target`, assign `mid` to `upp`.
+     - Else, assign `mid` to `low`.
+     - Recompute `mid` as `(upp - low + 1) % 2 == 0 ? (low + upp) / 2 + 1 : (low + upp) / 2`.
+   - Return `low - from + 1`.
+```

@@ -1,0 +1,34 @@
+1. Read N and K from input
+2. Read array A of size N from input
+3. Sort array A in ascending order
+4. Initialize ll to -10^18 - 1 and rr to 10^18 + 1
+5. While ll + 1 is less than rr:
+   6. Calculate x as the average of ll and rr
+   7. Initialize tot to 0
+   8. For each element A[i] in array A:
+      9. If A[i] is negative:
+         10. Initialize l to -1 and r to N
+         11. While l + 1 is less than r:
+            12. Calculate c as the average of l and r
+            13. If A[i] * A[c] is less than x:
+               14. Update r to c
+            15. Else:
+               16. Update l to c
+         17. Increment tot by N - r
+      18. Else:
+         19. Initialize l to -1 and r to N
+         20. While l + 1 is less than r:
+            21. Calculate c as the average of l and r
+            22. If A[i] * A[c] is less than x:
+               23. Update l to c
+            24. Else:
+               25. Update r to c
+         26. Increment tot by r
+      27. If A[i] * A[i] is less than x:
+         28. Decrement tot by 1
+   29. Update tot to tot divided by 2
+   30. If tot is less than K:
+      31. Update ll to x
+   32. Else:
+      33. Update rr to x
+34. Output ll

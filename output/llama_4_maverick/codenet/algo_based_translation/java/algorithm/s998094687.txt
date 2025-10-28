@@ -1,0 +1,15 @@
+1. Import required libraries: java.util.Scanner, java.util.Arrays, java.lang.Math
+2. Define a class: Main
+3. Define a function: main with return type void and parameter args of type String[]
+4. Declare a variable: sc of type Scanner and initialize it with a new Scanner object using System.in
+5. Declare a variable: n of type int and read its value from sc using nextInt()
+6. Declare an array: a of type int with size 3
+7. Start a loop: for with initialization i = 0, condition i < n, and increment i++
+   1. Read three integers from sc using nextInt() and store them in a[0], a[1], a[2] respectively
+   2. Sort the array a using Arrays.sort()
+   3. Check the condition: Math.pow(a[2], 2) == Math.pow(a[0], 2) + Math.pow(a[1], 2)
+   4. If the condition is true, print "YES" to the console
+   5. If the condition is false, print "NO" to the console
+8. End the loop: for
+9. End the function: main
+10. End the class: Main

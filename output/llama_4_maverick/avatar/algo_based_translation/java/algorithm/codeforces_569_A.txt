@@ -1,0 +1,7 @@
+1. Read input values T, S, and q from the input.
+2. Initialize a variable 'previous' with the value of S.
+3. Initialize a variable 'answer' to 0.
+4. Check if 'previous' is less than T.
+5. If true, increment 'answer' by 1 and multiply 'previous' by q.
+6. Repeat step 4 and 5 until 'previous' is not less than T.
+7. Output the value of 'answer'.

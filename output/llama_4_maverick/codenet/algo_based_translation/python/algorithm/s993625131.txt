@@ -1,0 +1,15 @@
+1. Define a function `find_longest_valid_sequence` that takes a string `sequence` as input and returns an integer.
+2. Initialize a variable `count` of type integer to 0 to keep track of the current sequence length.
+3. Initialize a variable `record` of type integer to 0 to store the maximum sequence length found so far.
+4. Iterate over each character in the input `sequence` using a for loop.
+5. Inside the loop, check if the current character is one of "A", "C", "G", or "T" using a conditional statement with the condition `character == "A" or character == "C" or character == "G" or character == "T"`.
+6. If the character is valid, increment `count` by 1.
+7. If the character is not valid, check if `count` is greater than `record` using a conditional statement with the condition `count > record`.
+8. If `count` is greater than `record`, update `record` with the value of `count`.
+9. Reset `count` to 0.
+10. After the loop, perform a final check to see if `count` is greater than `record` using the same conditional statement as in step 7.
+11. If `count` is greater than `record`, update `record` with the value of `count`.
+12. Return the value of `record` as the result.
+13. Read a string input from the user using an input operation.
+14. Pass the input string to the `find_longest_valid_sequence` function and store the result.
+15. Print the result using an output operation.

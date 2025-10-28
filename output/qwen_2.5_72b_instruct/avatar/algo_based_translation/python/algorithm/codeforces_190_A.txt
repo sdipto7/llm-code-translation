@@ -1,0 +1,44 @@
+Function Signature: `main()`
+Parameter Types: None
+Return Type: None
+
+Variable Declarations and Data Types:
+- `n`: integer
+- `m`: integer
+- `min`: integer
+- `max`: integer
+
+Logic Flow in Execution Order:
+1. Read two integers `n` and `m` from standard input.
+2. If `n` is less than 1:
+   - If `m` is less than 1:
+     - Print `n` and `m`.
+     - Terminate the program.
+   - Otherwise:
+     - Print "Impossible".
+     - Terminate the program.
+3. If `m` is greater than `n`:
+   - Assign `m` to `min`.
+   - Assign `n + m - 1` to `max`.
+   - Print `min` and `max`.
+4. If `m` is less than or equal to `n`:
+   - Assign `n` to `min`.
+   - Assign `n + m - 1` to `max`.
+   - If `m` equals 0:
+     - Assign `n` to `max`.
+   - Print `min` and `max`.
+
+Control Structures:
+- If `n < 1`:
+  - Nested if `m < 1`:
+  - Else:
+- If `m > n`:
+- If `m <= n`:
+  - Nested if `m == 0`:
+
+Input/Output Operations and Data Processing Logic:
+- Input: Read two space-separated integers from standard input.
+- Output: Print two integers separated by a space based on the conditions.
+
+Required Libraries, Modules, or Dependencies:
+- None

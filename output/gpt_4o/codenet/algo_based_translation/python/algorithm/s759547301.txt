@@ -1,0 +1,18 @@
+```
+function determine_weather_transition(S: str) -> str:
+    - declare variable: output of type str
+
+    - if S is equal to 'Sunny':
+        - set output to 'Cloudy'
+
+    - else if S is equal to 'Cloudy':
+        - set output to 'Rainy'
+
+    - else if S is equal to 'Rainy':
+        - set output to 'Sunny'
+
+    - return output
+
+- read input from standard input and store in variable S of type str
+- call determine_weather_transition with argument S and print the result
+```

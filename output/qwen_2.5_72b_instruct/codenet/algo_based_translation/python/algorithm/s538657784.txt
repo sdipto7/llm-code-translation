@@ -1,0 +1,30 @@
+Function Signature:
+- Function Name: find_value
+- Parameter: N (Integer)
+- Return Type: None
+
+Variable Declarations and Data Types:
+- N (Integer): Input number
+- sqN (Integer): Square root of N, converted to integer
+
+Logic Flow in Execution Order:
+1. Import math module
+2. Read integer input N
+3. Calculate square root of N and convert to integer, assign to sqN
+4. For loop: i ranges from 0 to sqN-1
+   4.1 If N modulo (sqN-i) equals 0
+       4.1.1 Calculate expression: int(N/(sqN-i) + sqN-i) - 2
+       4.1.2 Print result of expression
+       4.1.3 Break out of loop
+
+Control Structures:
+- For loop: Iterates from 0 to sqN-1
+- If statement: Checks if N modulo (sqN-i) equals 0
+
+Input/Output Operations and Data Processing Logic:
+- Input: Reads integer N from user
+- Output: Prints result of expression when condition is met
+- Data Processing: Calculates square root, performs modulo operation, arithmetic operations, and conditional check
+
+Required Libraries, Modules, or Dependencies:
+- math module

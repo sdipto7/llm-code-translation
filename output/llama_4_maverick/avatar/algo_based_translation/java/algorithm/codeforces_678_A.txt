@@ -1,0 +1,7 @@
+1. Read two integers, n and k, from the input.
+2. Increment n by 1.
+3. Calculate the remainder of n divided by k.
+4. If the remainder is not zero, calculate z as k minus the remainder.
+5. If the remainder is zero, z is 0.
+6. Calculate the sum of n and z.
+7. Output the sum of n and z.

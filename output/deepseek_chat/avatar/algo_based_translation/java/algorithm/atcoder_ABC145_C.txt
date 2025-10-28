@@ -1,0 +1,18 @@
+main function:
+- Initialize Scanner object with System.in
+- Read integer N from input
+- Declare 2D integer array pos with dimensions N x 2
+- For i from 0 to N-1:
+  - Read two integers and store in pos[i][0] and pos[i][1]
+- Declare double sum initialized to 0
+- For i from 0 to N-1:
+  - For j from 0 to N-1:
+    - If i equals j, skip to next iteration
+    - Add dist(pos[i][0], pos[i][1], pos[j][0], pos[j][1]) to sum
+- Print sum divided by N
+
+dist function (private static double):
+- Parameters: int x1, int y1, int x2, int y2
+- Return: sqrt((x1-x2)^2 + (y1-y2)^2)
+
+Required: java.util.Scanner, java.lang.Math

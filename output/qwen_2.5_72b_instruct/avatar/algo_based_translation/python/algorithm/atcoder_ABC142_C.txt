@@ -1,0 +1,21 @@
+- Function signatures with parameter and return types: Main function (no explicit signature in Python, but implied by the code structure)
+- Variable declarations and data types:
+  - N: int
+  - A: list of tuples (int, int)
+  - A_: list of tuples (int, int)
+  - A__: list of int
+- Complete logic flow in execution order:
+  - Read integer N from input
+  - Read a line of input, split it into strings, convert each to int, and enumerate starting from 1, creating a list of tuples A where each tuple contains (index, value)
+  - Sort list A by the second element of each tuple, creating sorted list A_
+  - Create list A__ containing the first element (index) of each tuple in sorted list A_
+  - Loop through all elements of A__ except the last one and print each element followed by a space
+  - Print the last element of A__
+- Control structures:
+  - Loop: for i in A__ [ : - 1 ] (loops through all elements of A__ except the last one)
+- Input/output operations and data processing logic:
+  - Input: Read integer N and a line of space-separated integers
+  - Processing: Enumerate the integers, sort by value, and extract the original indices
+  - Output: Print the original indices in the order of the sorted values, separated by spaces
+- Required libraries, modules, or dependencies:
+  - operator.itemgetter

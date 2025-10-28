@@ -1,0 +1,21 @@
+Algorithm
+
+- Import math library
+
+- Read two integers n and d from input, representing number of points and dimensions
+- Declare points as a list of lists of integers, initialized by reading n lines of d integers each from input
+
+- Define function dist with parameters x and y, both lists of integers, and return type float
+    - Initialize tmp as float 0.0
+    - For i from 0 to d-1, do
+        - Add square of (x[i] - y[i]) to tmp
+    - Return square root of tmp
+
+- Initialize count as integer 0
+
+- For i from 0 to n-2, do
+    - For j from i+1 to n-1, do
+        - If dist(points[i], points[j]) is an integer, then
+            - Increment count by 1
+
+- Print count

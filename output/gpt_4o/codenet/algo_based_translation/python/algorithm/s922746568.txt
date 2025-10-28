@@ -1,0 +1,36 @@
+```
+Function Signature:
+  def calculate_combinations(n: int, s: str) -> int
+
+Variable Declarations:
+  r_cnt: int
+  g_cnt: int
+  b_cnt: int
+  ans: int
+  i: int
+  d: int
+  j: int
+  k: int
+
+Logic Flow:
+  1. Convert the first input to an integer and assign to `n`.
+  2. Take the second input as a string and assign to `s`.
+  3. Count occurrences of 'R' in `s` and assign to `r_cnt`.
+  4. Count occurrences of 'G' in `s` and assign to `g_cnt`.
+  5. Count occurrences of 'B' in `s` and assign to `b_cnt`.
+  6. Calculate the initial value of `ans` as the product of `r_cnt`, `g_cnt`, and `b_cnt`.
+  7. Outer loop: iterate `i` from 0 to `n-1`.
+    8. Inner loop: iterate `d` from 0 to `n-1`.
+      9. Calculate `j` as `i + d`.
+      10. Calculate `k` as `j + d`.
+      11. If `k` is greater than or equal to `n`, break out of the inner loop.
+      12. If characters at positions `i`, `j`, and `k` in `s` are all different:
+        13. Decrement `ans` by 1.
+  14. Return `ans`.
+
+Input/Output Operations:
+  - The function takes two inputs: an integer `n` and a string `s`.
+  - The function returns an integer representing the number of valid combinations.
+
+No external libraries or modules are required.
+```

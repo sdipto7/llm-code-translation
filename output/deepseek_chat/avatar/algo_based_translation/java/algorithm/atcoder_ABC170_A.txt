@@ -1,0 +1,7 @@
+Read input line from standard input and split into an array of strings.
+Initialize integer variable result to 0.
+For each string in the input array:
+    Increment result by 1.
+    If current string equals "0", break out of loop.
+Print result to standard output.
+Close input and output resources.

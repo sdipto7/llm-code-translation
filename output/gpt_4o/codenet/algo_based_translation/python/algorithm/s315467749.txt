@@ -1,0 +1,32 @@
+```
+Algorithm: Find Target Values in Sorted List
+
+1. Function signature:
+   - Function name: find_target_values
+   - Parameters: n (int), S (list of int), q (int), T (list of int)
+   - Return type: int
+
+2. Variable declarations:
+   - ans: int, initialized to 0
+   - left, right, mid: int, used for binary search
+
+3. Input/Output operations:
+   - Read integer n from input
+   - Read list S of n integers from input
+   - Read integer q from input
+   - Read list T of q integers from input
+   - Output the integer ans
+
+4. Logic flow:
+   a. Initialize ans to 0
+   b. Iterate over each element i in list T
+      i.   If i is equal to the last element of S or the first element of S, increment ans by 1
+      ii.  Otherwise, perform binary search on S:
+           - Initialize left to 0 and right to n-1
+           - While right - left > 1, do the following:
+             1. Calculate mid as the integer division of (left + right) by 2
+             2. If S[mid] is equal to i, increment ans by 1 and break from the loop
+             3. If S[mid] is less than i, set left to mid
+             4. Else set right to mid
+   c. Output the final value of ans
+```

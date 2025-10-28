@@ -1,0 +1,22 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner sc` of type `Scanner`
+- `int x` of type `int`
+
+Logic flow in execution order:
+1. Create a new `Scanner` object `sc` to read input from standard input.
+2. Read the next token from the input using `sc.next()`, convert it to an integer using `Integer.parseInt()`, and store it in variable `x`.
+3. Check if `x` is less than 1200.
+   - If true, print "ABC".
+   - Otherwise, print "ARC".
+
+Control structures:
+- Conditional statement: `if (x < 1200) { ... } else { ... }`
+
+Input/output operations and data processing logic:
+- Input: Read an integer from standard input.
+- Output: Print either "ABC" or "ARC" based on the value of `x`.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

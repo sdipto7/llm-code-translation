@@ -1,0 +1,40 @@
+Algorithm:
+Function: main()
+Parameters: None
+Return Type: None
+
+Variable Declarations:
+v1: Integer
+v2: Integer
+t: Integer
+d: Integer
+a: Integer
+v: Integer
+distance: Integer
+i: Integer
+
+Execution Flow:
+1. Input two space-separated values as strings, split them, and assign the first to v1 and the second to v2.
+2. Input two space-separated values as strings, split them, and assign the first to t and the second to d.
+3. Convert v1, v2, t, and d from strings to integers.
+4. Initialize a to 1.
+5. Initialize v to v1.
+6. Initialize distance to 0.
+7. For i from 0 to t-1:
+    a. If v - v2 is greater than (t - i - 1) * d:
+        i. Multiply a by -1.
+        ii. Assign (t - i - 1) * d + v2 to v.
+    b. Add v to distance.
+    c. Add a * d to v.
+8. Print distance.
+
+Input/Output Operations:
+- Read two lines of input, each containing two space-separated integers.
+- Print a single integer representing the distance.
+
+Data Processing Logic:
+- The algorithm simulates a process where a value v changes over time t, adjusting based on a decrement d and a threshold v2.
+- The direction of change (increment or decrement) is controlled by the variable a, which flips when v exceeds a certain threshold relative to the remaining time and decrement.
+
+Required Libraries/Modules/Dependencies:
+- None

@@ -1,0 +1,27 @@
+```
+Algorithm:
+
+1. Import the `product` function from the `itertools` module.
+
+2. Input:
+   - Read an integer value from input, store it in variable `N`.
+
+3. Initialize:
+   - Declare an integer variable `x` and set it to 1.
+
+4. Create a list `N_list`:
+   - Use a list comprehension to iterate over a range from 0 to `N-1`.
+   - For each integer `x` in this range, compute `x+1` and include it in the list.
+   - Assign the resulting list to `N_list`.
+
+5. Generate Cartesian product `n`:
+   - Use the `product` function from `itertools` to compute the Cartesian product of `N_list` repeated 3 times.
+   - Convert the result to a list and store it in variable `n`.
+
+6. Calculate length `m`:
+   - Determine the length of list `n` using the `len` function.
+   - Assign the length to variable `m`.
+
+7. Output:
+   - Print the value of `m`.
+```

@@ -1,0 +1,34 @@
+1. Import necessary libraries:
+   - `java.io.BufferedReader`
+   - `java.io.InputStreamReader`
+
+2. Define the `main` function:
+   - Signature: `public static void main(String[] args)`
+
+3. Declare variables:
+   - `String[] s` to store input split by spaces.
+   - `int a` to store the first integer from input.
+   - `int b` to store the second integer from input.
+
+4. Read input line:
+   - Call `readLine()` method to read a line from standard input.
+   - Split the input string by spaces and assign to `s`.
+
+5. Convert the first element of `s` to an integer and assign to `a`.
+
+6. Convert the second element of `s` to an integer and assign to `b`.
+
+7. Check condition using an `if` statement:
+   - Condition: `b % a == 0`
+
+8. If the condition is true:
+   - Print the result of `a + b` to standard output.
+
+9. If the condition is false:
+   - Print the result of `b - a` to standard output.
+
+10. Define the `readLine` function:
+    - Signature: `private static String readLine()`
+    - Declare `BufferedReader reader` with `InputStreamReader` from standard input.
+    - Try to read a line and return it.
+    - If an exception occurs, return the exception message as a string.

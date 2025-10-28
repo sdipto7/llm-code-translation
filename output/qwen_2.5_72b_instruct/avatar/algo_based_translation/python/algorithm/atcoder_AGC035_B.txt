@@ -1,0 +1,41 @@
+import numpy as np
+from collections import deque
+import heapq
+
+function main() -> None:
+    N, M = int, int
+    N, M = map(int, input().split())
+    edges = list[set[int]] = [set() for _ in range(N)]
+    degs = list[int] = [0 for _ in range(N)]
+    parity = list[int] = [0 for _ in range(N)]
+    flag = list[bool] = [False for _ in range(N)]
+    for _ in range(M):
+        a, b = int, int
+        a, b = map(int, input().split())
+        edges[a - 1].add(b - 1)
+        edges[b - 1].add(a - 1)
+        degs[a - 1] += 1
+        degs[b - 1] += 1
+    if M % 2 != 0:
+        print(-1)
+        exit()
+    Q = list[tuple[int, int]] = []
+    for i, d in enumerate(degs):
+        Q.append((d, i))
+    heapq.heapify(Q)
+    while len(Q) > 0:
+        _, u = int, int
+        _, u = heapq.heappop(Q)
+        if flag[u]:
+            continue
+        flag[u] = True
+        for i, v in enumerate(edges[u]):
+            edges[v].remove(u)
+            if parity[u] != 0 and i == 0:
+                print(u + 1, v + 1)
+                parity[u] = 1 - parity[u]
+            else:
+                print(v + 1, u + 1)
+                parity[v] = 1 - parity[v]
+            degs[v] -= 1
+            heapq.heappush(Q, (degs[v], v))

@@ -1,0 +1,32 @@
+```plaintext
+1. Function Signature:
+   - Function Name: determine_index
+   - Parameters: None (inputs are taken from standard input)
+   - Return Type: None (output is printed to standard output)
+
+2. Variable Declarations:
+   - n: Integer, represents the number of elements in the list
+   - list: List of integers, stores the parity (0 or 1) of each element from input
+
+3. Execution Logic:
+   a. Read an integer from standard input and store it in variable 'n'.
+   b. Read a line of integers from standard input, split them into individual string elements, and for each element:
+      - Convert the string to an integer.
+      - Compute the integer modulo 2 to determine its parity (0 for even, 1 for odd).
+      - Store the result in a list named 'list'.
+   c. Compute the sum of the elements in 'list'.
+   d. Control Structure - Conditional:
+      - If the sum of 'list' is equal to 1:
+        i. Find the index of the first occurrence of 1 in 'list'.
+        ii. Output the index incremented by 1 (to match 1-based indexing).
+      - Else (the sum of 'list' is not equal to 1, implying all elements are even except one):
+        i. Find the index of the first occurrence of 0 in 'list'.
+        ii. Output the index incremented by 1 (to match 1-based indexing).
+
+4. Input/Output Operations:
+   - Input: Two lines from standard input; first line for number of elements, second line for the list of numbers.
+   - Output: Print a single integer representing the 1-based index of the outlier number.
+
+5. Libraries or Dependencies:
+   - None
+```

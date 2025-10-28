@@ -1,0 +1,88 @@
+```structured_algorithm
+Algorithm Specification:
+
+Functions:
+1. Function: solve
+   - Parameters:
+     - n: integer
+     - ls_xyh: list of tuples (x: integer, y: integer, h: integer)
+   - Return Type: string
+2. Function: readQuestion
+   - Parameters: None
+   - Return Type: tuple (n: integer, ls_xyh: list of tuples)
+3. Function: main
+   - Parameters: None
+   - Return Type: void
+
+Variables:
+1. In solve:
+   - x0: integer
+   - y0: integer
+   - h0: integer
+   - cands: list of tuples (cx: integer, cy: integer, ch: integer)
+   - x: integer
+   - y: integer
+   - h: integer
+   - xx: integer
+   - yy: integer
+   - hh: integer
+2. In readQuestion:
+   - ws: list of strings
+   - n: integer
+   - ls_xyh: list of tuples (x: integer, y: integer, h: integer)
+
+Logic Flow:
+
+solve Function:
+1. Initialize x0, y0, h0 with first element from ls_xyh where h > 0
+   - For i from 0 to n-1:
+     - If ls_xyh[i][2] > 0:
+       - Set x0 = ls_xyh[i][0]
+       - Set y0 = ls_xyh[i][1]
+       - Set h0 = ls_xyh[i][2]
+       - Exit loop
+2. Generate candidate positions:
+   - cands = [(cx, cy, h0 + |cx - x0| + |cy - y0|) for all cx in 0-100, cy in 0-100]
+3. Filter candidates using all points:
+   - For each (x, y, h) in ls_xyh:
+     - cands = filter candidates where max(ch - |cx - x| - |cy - y|, 0) == h
+4. Return first candidate as "xx yy hh" string
+
+readQuestion Function:
+1. Read first line, split into whitespace-separated list (ws)
+2. Parse n from ws[0]
+3. Read next n lines:
+   - For each line:
+     - Split into 3 integers (x, y, h)
+     - Add to ls_xyh
+4. Return (n, ls_xyh)
+
+main Function:
+1. Call readQuestion() to get (n, ls_xyh)
+2. Call solve(n, ls_xyh) and print result
+
+Control Flow Structures:
+1. Loops:
+   - For loop with range 0 to n-1 in solve (step 1.1)
+   - Nested for loops (0-100 for cx and cy) in candidate generation
+   - For each element in ls_xyh (step 3)
+   - For loop reading n lines in readQuestion
+2. Conditionals:
+   - If ls_xyh[i][2] > 0 (solve step 1.1)
+   - Filter condition in list comprehensions (max() == h)
+
+Input/Output Operations:
+1. Input:
+   - readQuestion reads from sys.stdin via readline()
+   - Parses integers from input strings
+2. Output:
+   - main prints result via print()
+
+Error Handling/Edge Cases:
+1. Assumes existence of at least one h > 0 in ls_xyh (solved in step 1)
+2. Relies on input format correctness (n followed by n triplets)
+3. Returns first valid candidate after filtering (assumes non-empty list)
+
+External Dependencies:
+1. Python sys module for stdin access
+```

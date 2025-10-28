@@ -1,0 +1,128 @@
+```plaintext
+Function: main()
+    Variables:
+        InputStream inputStream = System.in
+        OutputStream outputStream = System.out
+        LightScanner in = new LightScanner(inputStream)
+        LightWriter out = new LightWriter(outputStream)
+        DLazyFaith solver = new DLazyFaith()
+    Execution:
+        solver.solve(1, in, out)
+        out.close()
+
+Class: DLazyFaith
+    Function: solve(int testNumber, LightScanner in, LightWriter out)
+        Variables:
+            int a = in.ints()
+            int b = in.ints()
+            int q = in.ints()
+            long[] s = new long[a + 2]
+            long[] t = new long[b + 2]
+        Initialization:
+            s[0] = -10_000_000_000L
+            t[0] = -10_000_000_000L
+        Loop: for (int i = 0; i < a; i++)
+            s[i + 1] = in.longs()
+        Loop: for (int i = 0; i < b; i++)
+            t[i + 1] = in.longs()
+        Execution:
+            s[a + 1] = 20_000_000_000L
+            t[b + 1] = 20_000_000_000L
+        Loop: for (int i = 0; i < q; i++)
+            Variables:
+                long x = in.longs()
+                long sl = x - s[Math.max(0, ArrayUtil.lowerBound(s, x + 1) - 1)]
+                long tl = x - t[Math.max(0, ArrayUtil.lowerBound(t, x + 1) - 1)]
+                long sr = s[ArrayUtil.lowerBound(s, x)] - x
+                long tr = t[ArrayUtil.lowerBound(t, x)] - x
+            Execution:
+                out.ansln(IntMath.min(
+                    Math.max(sl, tl),
+                    Math.max(sr, tr),
+                    2 * sl + tr,
+                    2 * tl + sr,
+                    sl + 2 * tr,
+                    tl + 2 * sr
+                ))
+
+Class: LightScanner
+    Constructor: LightScanner(InputStream in)
+        Variables:
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in))
+            StringTokenizer tokenizer = null
+    Function: string() -> String
+        Conditional: if (tokenizer == null || !tokenizer.hasMoreTokens())
+            Execution:
+                tokenizer = new StringTokenizer(reader.readLine())
+        Return:
+            tokenizer.nextToken()
+    Function: ints() -> int
+        Execution:
+            Return Integer.parseInt(string())
+    Function: longs() -> long
+        Execution:
+            Return Long.parseLong(string())
+
+Class: LightWriter implements AutoCloseable
+    Constructor: LightWriter(Writer out)
+        Variables:
+            Writer out
+            boolean autoflush = false
+            boolean breaked = true
+    Constructor: LightWriter(OutputStream out)
+        Execution:
+            this(new BufferedWriter(new OutputStreamWriter(out, Charset.defaultCharset())))
+    Function: print(char c) -> LightWriter
+        Execution:
+            out.write(c)
+            breaked = false
+        Return: this
+    Function: print(String s) -> LightWriter
+        Execution:
+            out.write(s, 0, s.length())
+            breaked = false
+        Return: this
+    Function: ans(String s) -> LightWriter
+        Conditional: if (!breaked)
+            Execution: print(' ')
+        Return: print(s)
+    Function: ans(long l) -> LightWriter
+        Execution:
+            Return ans(Long.toString(l))
+    Function: ansln(long... n) -> LightWriter
+        Loop: for (long n1 : n)
+            Execution:
+                ans(n1).ln()
+        Return: this
+    Function: ln() -> LightWriter
+        Execution:
+            print(System.lineSeparator())
+            breaked = true
+            Conditional: if (autoflush)
+                out.flush()
+        Return: this
+    Function: close()
+        Execution:
+            out.close()
+
+Class: IntMath
+    Function: min(long... v) -> long
+        Execution:
+            Return Arrays.stream(v).min().orElseThrow(NoSuchElementException::new)
+
+Class: ArrayUtil
+    Function: lowerBound(long[] a, long t) -> int
+        Execution:
+            Return lowerBound(a, t, 0)
+    Function: lowerBound(long[] a, long t, int min) -> int
+        Variables:
+            int max = a.length
+        Loop: while (min < max)
+            Variables:
+                int mid = (min + max) / 2
+            Conditional: if (t <= a[mid])
+                Execution: max = mid
+            Else:
+                Execution: min = mid + 1
+        Return: min
+```

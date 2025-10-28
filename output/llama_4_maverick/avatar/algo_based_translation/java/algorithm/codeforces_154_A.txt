@@ -1,0 +1,14 @@
+1. Read a line of input into a character array.
+2. Determine the length of the character array.
+3. Initialize an empty set (not used in the given code).
+4. Read an integer K.
+5. Initialize a result variable to 0.
+6. Iterate K times.
+7. In each iteration, read a string of length 2.
+8. Initialize two counters, a and b, to 0.
+9. Iterate through the character array.
+10. For each character in the array, check if it matches the first character of the string. If so, increment a.
+11. If it matches the second character of the string, increment b.
+12. If it matches neither, add the minimum of a and b to the result and reset a and b to 0.
+13. After iterating through the character array, add the minimum of a and b to the result.
+14. Output the final result.

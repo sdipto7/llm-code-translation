@@ -1,0 +1,22 @@
+Function Signature:
+- main(String[] args): void
+
+Variable Declarations:
+- sec: int
+- per_num: int
+- max_sec: double
+- ans_num: int
+- i: int
+
+Libraries/Modules:
+- java.util.Scanner
+
+Execution Order:
+1. Create a Scanner object to read input from System.in.
+2. Read an integer value and assign it to sec.
+3. Read an integer value and assign it to per_num.
+4. Read an integer value, convert it to double, add 0.5, and assign it to max_sec.
+5. Initialize ans_num to 0.
+6. For loop starts with i initialized to sec, continues while i is less than max_sec, increments i by sec in each iteration:
+   - Add per_num to ans_num.
+7. Print the value of ans_num.

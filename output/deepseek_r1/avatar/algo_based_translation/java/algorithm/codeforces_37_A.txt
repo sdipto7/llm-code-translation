@@ -1,0 +1,55 @@
+**Algorithm:**
+
+1. **Imports:**
+   - `java.io.BufferedReader`
+   - `java.io.IOException`
+   - `java.io.InputStreamReader`
+   - `java.util.HashMap`
+   - `java.util.Map`
+   - `java.util.StringTokenizer`
+
+2. **Class Structure:**
+   - Public class `codeforces_37_A` containing:
+     - `public static void main(String[] args)`
+     - Nested static class `FastScanner`
+
+3. **Main Method:**
+   - **Variables:**
+     - `FastScanner input = new FastScanner()`
+     - `int n = input.nextInt()`
+     - `HashMap<Integer, Integer> map = new HashMap<>()`
+     - `int max = Integer.MIN_VALUE`
+   - **Logic Flow:**
+     1. Read integer `n`.
+     2. For `i` from `0` to `n-1` (inclusive):
+        - Read integer `val`.
+        - Update `map`: Increment count for `val` (default 0 if absent).
+     3. For each `entry` in `map.entrySet()`:
+        - Get `value` from entry.
+        - Update `max` with `Math.max(max, value)`.
+     4. Print `max` concatenated with `map.size()`.
+
+4. **FastScanner Class:**
+   - **Variables:**
+     - `BufferedReader br = new BufferedReader(new InputStreamReader(System.in))`
+     - `StringTokenizer st = new StringTokenizer("")`
+   - **Methods:**
+     - **String next():**
+       - While `st` has no tokens:
+         - Read line via `br.readLine()`.
+         - Assign to `st` (with try-catch for `IOException`).
+       - Return next token.
+     - **int nextInt()**: Return `Integer.parseInt(next())`
+     - **long nextLong()**: Return `Long.parseLong(next())`
+     - **double nextDouble()**: Return `Double.parseDouble(next())`
+     - **String nextLine()**: Return `br.readLine()` (throws `IOException`)
+
+5. **Control Structures:**
+   - **For-loop:** `for (int i = 0; i < n; i++)` 
+   - **Enhanced for-loop:** `for (Map.Entry<Integer, Integer> entry : map.entrySet())`
+   - **While-loop:** `while (!st.hasMoreTokens())` in `next()` method
+   - **Try-catch:** For handling `IOException` in `next()` method
+
+6. **Input/Output:**
+   - **Input:** All values read via `FastScanner` from `System.in`.
+   - **Output:** System.out.println prints concatenated `max` and `map.size()`.

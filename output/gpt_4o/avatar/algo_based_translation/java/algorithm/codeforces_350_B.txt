@@ -1,0 +1,61 @@
+```
+Algorithm:
+
+1. Import required libraries:
+   - java.util.Scanner
+
+2. Define class `codeforces_350_B`.
+
+3. Declare static scanner instance:
+   - `static Scanner scanner = new Scanner(System.in)`
+
+4. Define `main` method:
+   - Parameters: `String[] args`
+   - Return type: `void`
+
+5. Initialize variables:
+   - `int n`: Read an integer from input using `scanner.nextInt()`.
+   - `int[] a`: Array of integers with size `n + 1`.
+   - `int[] b`: Array of integers with size `n + 1`.
+   - `int[] num`: Array of integers with size `n + 1`.
+
+6. Populate array `a`:
+   - Loop from `i = 1` to `n`:
+     - Assign `a[i]` with input from `scanner.nextInt()`.
+
+7. Populate array `b`:
+   - Loop from `i = 1` to `n`:
+     - Assign `b[i]` with input from `scanner.nextInt()`.
+
+8. Count occurrences in array `b`:
+   - Loop from `i = 1` to `n`:
+     - Increment `num[b[i]]` by 1.
+
+9. Initialize additional variables:
+   - `String ss = ""`: To store the final sequence as a string.
+   - `int ans = 0`: To store the maximum length of the sequence.
+   - `boolean[] st`: Boolean array of size `n + 1` initialized to `false`.
+
+10. Find and process sequences:
+    - Loop from `i = 1` to `n`:
+      - If `a[i] == 1`:
+        - Set `st[i] = true`.
+        - Initialize `StringBuilder sb` for building the sequence.
+        - Assign `int x = b[i]`.
+        - Initialize `StringBuilder sss` and append `i` to it.
+        - Append reversed `sss` to `sb` with a space.
+        - Initialize `int s = 1`: To count the sequence length.
+        - While loop with conditions:
+          - `!st[x] && num[x] == 1 && x != 0 && a[x] != 1`:
+            - Reinitialize `sss`, append `x` to it, and append reversed `sss` to `sb` with a space.
+            - Set `st[x] = true`.
+            - Update `x = b[x]`.
+            - Increment `s` by 1.
+        - If `s > ans`:
+          - Update `ans = s`.
+          - Update `ss = sb.reverse().toString()`.
+
+11. Output results:
+    - Print `ans`.
+    - Print `ss`.
+```

@@ -1,0 +1,22 @@
+Function signatures with parameter and return types:
+- main() -> None
+
+Variable declarations and data types:
+- n: int
+
+Complete logic flow in execution order:
+1. Read an integer input from the user and assign it to variable n
+2. Start a for loop with i ranging from n to 1 (inclusive) in reverse order
+3. Inside the loop, check if n is divisible by i (i.e., n % i == 0)
+4. If the condition is true, update n to the current value of i and print i followed by a space without a newline
+
+Control structures:
+- for loop: for i in range(n, 0, -1)
+- if statement: if n % i == 0
+
+Input/output operations and data processing logic:
+- Input: Read an integer from the user
+- Output: Print the divisors of the input number in descending order, separated by spaces
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules are required

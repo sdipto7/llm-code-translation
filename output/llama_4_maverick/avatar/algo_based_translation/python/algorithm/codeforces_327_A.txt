@@ -1,0 +1,19 @@
+1. READ n FROM INPUT
+2. READ s FROM INPUT
+3. REMOVE EMPTY CHARACTERS FROM s
+4. IF '0' NOT IN s THEN
+5.   PRINT n - 1
+6. ELSE
+7.   FIND INDICES OF '0' IN s AND STORE IN indices
+8.   IF LENGTH OF indices IS 1 THEN
+9.     PRINT n
+10.  ELSE
+11.    INITIALIZE maximum TO 0
+12.    GENERATE ALL COMBINATIONS OF 2 ELEMENTS FROM indices AND STORE IN combs
+13.    FOR EACH COMBINATION x IN combs DO
+14.      CALCULATE index_x0 AS INDEX OF x[0] IN indices
+15.      CALCULATE index_x1 AS INDEX OF x[1] IN indices
+16.      CALCULATE diff_indices AS ABSOLUTE DIFFERENCE BETWEEN index_x0 AND index_x1
+17.      CALCULATE diff_x AS ABSOLUTE DIFFERENCE BETWEEN x[0] AND x[1]
+18.      UPDATE maximum WITH MAXIMUM OF maximum AND (2 + 2 * (diff_indices - 1) - (diff_x - 1))
+19.    PRINT COUNT OF '1' IN s PLUS maximum

@@ -1,0 +1,24 @@
+Algorithm:
+- Import java.util.Scanner
+- Define class atcoder_AGC025_A
+- Define function sum with parameter int a, returns int:
+  - Initialize int ans = 0
+  - While a >= 10:
+    - Add a % 10 to ans
+    - Set a = a / 10
+  - Add a to ans
+  - Return ans
+
+- Define main function with parameter String[] args:
+  - Create Scanner stdIn = new Scanner(System.in)
+  - Read integer N from stdIn
+  - Initialize int n = 0
+  - If N % 2 == 0:
+    - Set n = N / 2
+  - Else:
+    - Set n = (N + 1) / 2
+  - Initialize int ans = sum(1) + sum(N - 1)
+  - For A from 1 to n inclusive:
+    - If sum(A) + sum(N - A) < ans:
+      - Set ans = sum(A) + sum(N - A)
+  - Print ans

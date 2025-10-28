@@ -1,0 +1,39 @@
+Function Signature:
+process_numbers(A: int, B: int, K: int) -> None
+
+Variables:
+A: int (input parameter)
+B: int (input parameter)
+K: int (input parameter)
+i: int = 0
+
+Input Operations:
+Read A, B, K from standard input via split input(). Split into three integers.
+
+Logic Flow:
+1. Check if (A + K - 1) >= (B - K + 1)
+2. If true:
+    a. While A <= B:
+        i. Print A
+        ii. A += 1
+3. Else:
+    a. Initialize i = 0
+    b. While i <= K - 1:
+        i. Print (A + i)
+        ii. i += 1
+    c. While (B - K + 1) <= B:
+        i. Print (B - K + 1)
+        ii. K -= 1
+
+Control Structures:
+- Conditional: Check (A + K - 1 >= B - K + 1)
+- Loop: While A <= B (sequential iteration)
+- Loop: While i <= K - 1 (indexed iteration)
+- Loop: While B - K + 1 <= B (countdown with K decrement)
+
+Data Processing:
+- Integer arithmetic for range calculations
+- Sequential printing based on overlapping check
+
+Dependencies:
+None (standard input/output functions only)

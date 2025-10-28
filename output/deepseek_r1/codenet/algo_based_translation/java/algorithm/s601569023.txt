@@ -1,0 +1,23 @@
+**Function Signature:**
+- `public static void main(String[] args)` (void return type)
+
+**Variables:**
+- `Scanner sc = new Scanner(System.in)` (Scanner type)
+- `int num = sc.nextInt()` (int type)
+
+**Logic Flow:**
+1. Initialize Scanner object for input
+2. Read integer input from standard input and assign to `num`
+3. Execute conditional check:
+   - If `num < 1200`: print "ABC" to standard output
+   - Else: print "ARC" to standard output
+
+**Control Structures:**
+- Single `if-else` statement with condition: `num < 1200`
+
+**Input/Output Operations:**
+- Input: Read one integer via `Scanner.nextInt()`
+- Output: Print "ABC" or "ARC" via `System.out.println()`
+
+**Dependencies:**
+- `java.util.Scanner` library required for input handling

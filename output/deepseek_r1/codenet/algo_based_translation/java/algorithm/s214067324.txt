@@ -1,0 +1,24 @@
+- Function signature:  
+public static void main(String[] args)  
+
+- Variables:  
+Scanner sc (java.util.Scanner)  
+int x  
+
+- Required libraries:  
+java.util.Scanner  
+
+- Execution flow:  
+1. Create Scanner object with System.in input stream  
+2. Read next token from input as String using Scanner.next()  
+3. Parse String token to integer for variable x  
+4. Execute ternary conditional:  
+   - If x < 1200: Set output to "ABC"  
+   - Else: Set output to "ARC"  
+5. Print resulting string to standard output  
+6. Terminate program  
+
+- Control structures:  
+Single conditional:  
+if (x < 1200) -> "ABC"  
+else -> "ARC"

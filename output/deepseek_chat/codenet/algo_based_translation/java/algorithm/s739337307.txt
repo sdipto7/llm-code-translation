@@ -1,0 +1,42 @@
+### Algorithm Extraction:
+
+**Input:**
+- Read integer `n` from input
+- Read integer `m` from input
+
+**Data Structures:**
+- HashMap<Integer, Integer> `map` (key: question number, value: WA count or -1 for AC)
+- Integer `countAc` initialized to 0
+- Integer `countWaAll` initialized to 0
+
+**Processing Loop (m iterations):**
+- For each iteration:
+  - Read integer `question`
+  - Read string `waOrAc`
+  
+  - If `map` doesn't contain `question`:
+    - If `waOrAc` equals "WA":
+      - Put (`question`, 1) in `map`
+    - Else:
+      - Put (`question`, -1) in `map`
+      - Increment `countAc` by 1
+
+  - Else (map contains `question`):
+    - Get current value `countWa` from `map` for `question`
+    - If `countWa` < 0: do nothing
+    - Else:
+      - If `waOrAc` equals "WA":
+        - Replace value in `map` for `question` with `countWa + 1`
+      - Else:
+        - Replace value in `map` for `question` with `-countWa`
+        - Increment `countAc` by 1
+        - Add `countWa` to `countWaAll`
+
+**Output:**
+- Print `countAc` and `countWaAll` separated by space
+
+**Required Dependencies:**
+- java.util.HashMap
+- java.util.Scanner
+- java.math.* (not directly used in logic)
+- Exception handling for input parsing

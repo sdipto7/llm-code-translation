@@ -1,0 +1,54 @@
+**Function Signatures:**
+- `leapyear(n: int) -> str`: Returns "y" if n is leap year, "n" otherwise
+
+**Variable Declarations:**
+- `n: int` - input year
+- `d: str` - day of week identifier (initialized to "f")
+- `ans: str` - leap year status ("ly" or "nly")
+
+**Algorithm Flow:**
+
+1. Read integer input `n`
+2. Initialize `d` to "f"
+3. Check leap year status:
+   - If `n % 400 == 0 OR (n % 4 == 0 AND n % 100 != 0)`: set `ans` to "ly"
+   - Else: set `ans` to "nly"
+
+4. Enter infinite loop:
+   - If current year `n` is leap year:
+     - If `d == "m"`: set `d` to "w", increment `n` by 1
+     - Else if `d == "t"`: set `d` to "th", increment `n` by 1
+     - Else if `d == "w"`: set `d` to "f", increment `n` by 1
+     - Else if `d == "th"`: set `d` to "sa", increment `n` by 1
+     - Else if `d == "f"`: set `d` to "s", increment `n` by 1
+     - Else if `d == "sa"`: set `d` to "m", increment `n` by 1
+     - Else if `d == "s"`: set `d` to "t", increment `n` by 1
+   - Else (not leap year):
+     - If `d == "m"`: set `d` to "t", increment `n` by 1
+     - Else if `d == "t"`: set `d` to "w", increment `n` by 1
+     - Else if `d == "w"`: set `d` to "th", increment `n` by 1
+     - Else if `d == "th"`: set `d` to "f", increment `n` by 1
+     - Else if `d == "f"`: set `d` to "sa", increment `n` by 1
+     - Else if `d == "sa"`: set `d` to "s", increment `n` by 1
+     - Else if `d == "s"`: set `d` to "m", increment `n` by 1
+
+5. Check termination condition:
+   - If `d == "f" AND ans == "ly" AND leapyear(n) == "y"`: break loop
+   - Else if `d == "f" AND ans == "nly" AND leapyear(n) == "n"`: break loop
+
+6. Print final value of `n`
+
+**Input/Output Operations:**
+- Input: `int(input())`
+- Output: `print(n)`
+
+**Control Structures:**
+- Function definition with parameters
+- If-else conditional branching
+- While loop with `True` condition
+- Multiple nested if-elif-else statements
+- Loop break condition
+
+**Dependencies:**
+- Standard input/output functions
+- No external libraries required

@@ -1,0 +1,32 @@
+Function signature: `main(String[] args)`
+Variable declarations:
+- `Scanner in` of type `Scanner`
+- `int n` of type `int`
+- `int[] a` of type `int[]`
+
+Logic flow in execution order:
+- Create a `Scanner` object `in` to read input from `System.in`.
+- Read an integer `n` from input.
+- Initialize an array `a` of size `n`.
+- Loop from `i = 0` to `i < n`:
+  - Read an integer from input and store it in `a[i]`.
+- Sort the array `a`.
+- Loop from `i = 0` to `i < a.length - 1`:
+  - If `a[i + 1] < a[i] * 2` and `a[i] != a[i + 1]`:
+    - Print "YES".
+    - Return from the function.
+- Print "NO".
+
+Control structures:
+- For loop with condition `i < n` used for reading input values into array `a`.
+- For loop with condition `i < a.length - 1` used for checking the condition on adjacent elements in the sorted array.
+- If statement with condition `a[i + 1] < a[i] * 2 && a[i] != a[i + 1]` used to determine if the specific condition is met.
+
+Input/output operations and data processing logic:
+- Input: Read an integer `n`, then read `n` integers into array `a`.
+- Output: Print "YES" if the condition `a[i + 1] < a[i] * 2` and `a[i] != a[i + 1]` is met for any adjacent elements in the sorted array, otherwise print "NO".
+- Data processing: Sort the array `a` and check the condition on adjacent elements.
+
+Required libraries, modules, or dependencies:
+- `java.util.Arrays` for sorting the array.
+- `java.util.Scanner` for reading input from standard input.

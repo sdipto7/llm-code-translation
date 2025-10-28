@@ -1,0 +1,5 @@
+read string input s from standard input
+if length of s equals 2:
+    output s to standard output
+else:
+    output reverse of s to standard output

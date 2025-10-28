@@ -1,0 +1,57 @@
+Function: main
+Parameters: String[] args
+Return Type: void
+
+Variable Declarations:
+- Scanner scanner
+- int n
+- int[] x
+- int[] y
+- int[] h
+- int i, j, ch
+
+Control Structures:
+1. try-with-resources block for Scanner
+2. for loop (i from 0 to MAX inclusive)
+3. for loop (j from 0 to MAX inclusive)
+4. if condition (ch > 0)
+
+Logic Flow:
+1. Initialize Scanner for input
+2. Read integer n from input
+3. Initialize arrays x, y, h of size n
+4. For i from 0 to n-1:
+   a. Read x[i], y[i], h[i] from input
+5. For i from 0 to MAX inclusive:
+   a. For j from 0 to MAX inclusive:
+      i. Call check(n, x, y, h, i, j) and store result in ch
+      ii. If ch > 0, print i, j, ch and exit
+
+Function: check
+Parameters: int n, int[] x, int[] y, int[] h, int cx, int cy
+Return Type: int
+
+Variable Declarations:
+- int ch
+- int i
+
+Control Structures:
+1. for loop (i from 0 to n-1)
+2. if condition (h[i] > 0)
+3. for loop (i from 0 to n-1)
+4. if condition (h[i] != max(ch - abs(x[i] - cx) - abs(y[i] - cy), 0))
+
+Logic Flow:
+1. Initialize ch to -1
+2. For i from 0 to n-1:
+   a. If h[i] > 0:
+      i. Set ch to abs(x[i] - cx) + abs(y[i] - cy) + h[i]
+      ii. Break loop
+3. For i from 0 to n-1:
+   a. If h[i] != max(ch - abs(x[i] - cx) - abs(y[i] - cy), 0):
+      i. Return -1
+4. Return ch
+
+Libraries:
+- java.util.Scanner
+- java.util.stream.IntStream

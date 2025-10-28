@@ -1,0 +1,25 @@
+Function signatures with parameter and return types:
+main(String[] args): void
+
+Variable declarations and data types:
+Scanner in
+String a
+String b
+
+Complete logic flow in execution order:
+1. Create a new Scanner object named 'in' to read input from the standard input stream.
+2. Read the next token from the input and assign it to the variable 'a'.
+3. Read the next token from the input and assign it to the variable 'b'.
+4. Concatenate the string 'b' with the string 'a'.
+5. Print the concatenated result to the standard output stream.
+
+Control structures:
+No loops or conditionals present.
+
+Input/output operations and data processing logic:
+- Input: Reads two tokens from the standard input stream.
+- Data processing logic: Concatenates the second token with the first token.
+- Output: Prints the concatenated string to the standard output stream.
+
+Required libraries, modules, or dependencies:
+java.util.Scanner

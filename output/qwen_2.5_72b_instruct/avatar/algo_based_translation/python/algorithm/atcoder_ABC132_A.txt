@@ -1,0 +1,30 @@
+Function signature: `main() -> None`
+Variable declarations and data types:
+- `S: str`
+- `c: Counter[str]`
+- `Sa: set[str]`
+- `i: str`
+
+Logic flow in execution order:
+1. Read input string `S` from standard input.
+2. Initialize `c` as a `Counter` object from the `collections` module, counting occurrences of each character in `S`.
+3. Convert `S` to a list, then to a set `Sa` to get unique characters.
+4. Check if the length of `Sa` is not equal to 2.
+   - If true, print "No" and exit the program.
+5. Iterate over each character `i` in `Sa`.
+   - Check if the count of `i` in `c` is not equal to 2.
+     - If true, print "No" and exit the program.
+6. Print "Yes".
+
+Control structures:
+- Conditional statement: `if len(Sa) != 2`
+- Loop: `for i in Sa`
+- Nested conditional statement inside the loop: `if c[i] != 2`
+
+Input/output operations and data processing logic:
+- Input: Read string `S` from standard input.
+- Output: Print "No" or "Yes" based on the conditions.
+- Data processing: Count character occurrences using `Counter`, create a set of unique characters, and validate counts.
+
+Required libraries, modules, or dependencies:
+- `collections` module for `Counter` class

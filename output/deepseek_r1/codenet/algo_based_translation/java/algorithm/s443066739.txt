@@ -1,0 +1,56 @@
+**Algorithm:**
+
+**Dependencies:**
+- `java.io.*` (BufferedReader, InputStreamReader, PrintWriter)
+- `java.util.*` (StringTokenizer, Random)
+- `java.math.*`
+- `java.util.concurrent.*`
+
+**Function Signatures:**
+- `Main.main(String[] args) throws Exception` (entry point)
+- `FastScanner.FastScanner(BufferedReader in)` (constructor)
+- `FastScanner.nextToken() throws Exception` → `String`
+- `FastScanner.next() throws Exception` → `String`
+- `FastScanner.nextInt() throws Exception` → `int`
+- `FastScanner.nextLong() throws Exception` → `long`
+- `FastScanner.nextDouble() throws Exception` → `double`
+
+**Variables:**
+- `br` (BufferedReader) initialized with `System.in`
+- `sc` (FastScanner) initialized with `br`
+- `out` (PrintWriter) initialized with `System.out`
+- `rnd` (Random) initialized
+- `n` (int) read via `sc.nextInt()`
+- `pre` (long[]) of size `n+1`
+- `min` (long) initialized to `Long.MAX_VALUE`
+- `i` (int) loop counters
+- `val1`, `val2` (long) for partial sums
+
+**Logic Flow:**
+1. Read integer `n` from input.
+2. Initialize `pre` array with `n+1` elements.
+3. Loop `i` from 1 to `n` (inclusive):
+   - Compute `pre[i]` as `pre[i-1] + sc.nextLong()`.
+4. Initialize `min` to maximum long value.
+5. Loop `i` from 1 to `n-1` (inclusive):
+   - Calculate `val1 = pre[i]`
+   - Calculate `val2 = pre[n] - pre[i]`
+   - Update `min` to minimum of current `min` and `Math.abs(val1 - val2)`
+6. Print `min` via `out.println(min)` and close resources.
+
+**Control Structures:**
+- Two `for` loops:
+  - First loop: `for(int i=1; i<=n; i++)`
+  - Second loop: `for(int i=1; i<n; i++)`
+- `Math.min` and `Math.abs` for value comparisons
+
+**Input/Output:**
+- Input handled via `FastScanner` reading from `BufferedReader`
+- Output via `PrintWriter` to standard output
+- Reads `n` long values sequentially to build prefix sum array
+- Final result printed as a single long value
+
+**Data Processing:**
+- Prefix sum array construction in O(n) time
+- Iterate through all split points (1 to n-1) to compute minimal partition difference
+- Time complexity: O(n) overall

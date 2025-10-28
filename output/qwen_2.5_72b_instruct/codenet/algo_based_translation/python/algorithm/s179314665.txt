@@ -1,0 +1,19 @@
+Function Signature: `process_input() -> None`
+
+Variable Declarations:
+- `A: int`
+- `B: int`
+
+Logic Flow:
+1. Read a line of input and split it by spaces.
+2. Convert each split string into an integer and assign the first to `A` and the second to `B`.
+3. Check if `A` is less than 10 and `B` is less than 10:
+   - If true, multiply `A` and `B`, and print the result.
+   - Otherwise, print `-1`.
+
+Input/Output Operations:
+- Input: A single line of two space-separated integers.
+- Output: A single integer, which is the product of `A` and `B` if both are less than 10, otherwise `-1`.
+
+Required Libraries/Modules/Dependencies:
+- No additional libraries or modules are required.

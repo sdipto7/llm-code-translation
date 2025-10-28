@@ -1,0 +1,28 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner in = new Scanner(System.in);`
+- `char[] n = in.next().toCharArray();`
+- `boolean s = false;`
+
+**Libraries/Dependencies:**
+- `java.util.Scanner`
+
+**Logic Flow:**
+1. Read input string and convert to character array `n`.
+2. Initialize boolean `s` to `false`.
+3. Iterate over each character in `n` using index `i`:
+    - If current character is `.`:
+        - If `s` is `true`:
+            - Print `1`
+            - Set `s` to `false`
+        - Else:
+            - Print `0`
+    - Else (current character is `-`):
+        - If `s` is `true`:
+            - Print `2`
+            - Set `s` to `false`
+        - Else:
+            - Set `s` to `true`
+4. Close `Scanner`.

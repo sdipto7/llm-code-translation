@@ -1,0 +1,12 @@
+1. Read two strings s1 and s2 from the input.
+2. Check if s2 can be formed using characters of s1 by verifying if all characters in s2 are present in s1.
+3. If s2 cannot be formed, output -1 and terminate.
+4. Create frequency maps m1 and m2 for characters in s1 and s2 respectively.
+5. Iterate through each character in s1 and update its frequency in m1.
+6. Iterate through each character in s2 and update its frequency in m2.
+7. Initialize a variable ans to store the count of common characters.
+8. Create a set hs to store unique characters in s2.
+9. Iterate through each character c in s2.
+10. If c is not in hs, add it to hs and calculate the minimum frequency of c in m1 and m2.
+11. Add the minimum frequency to ans.
+12. Output the value of ans.

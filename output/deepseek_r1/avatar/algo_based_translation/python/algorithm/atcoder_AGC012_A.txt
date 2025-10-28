@@ -1,0 +1,54 @@
+**Algorithm Specification**
+
+**Functions/Methods:**
+1. `main() -> void`
+   - **Parameters:** None
+   - **Return:** None
+2. `readInts() -> List[int]`
+   - **Parameters:** None
+   - **Return:** List of integers from input
+
+**Variables:**
+- `n: int` (input value)
+- `A: List[int]` (input list, sorted in ascending order)
+- `ans: int` (accumulated sum, initialized to 0)
+- `i: int` (loop index)
+- `mod: int` (unused constant value 10^9 + 7)
+
+**Imports/Dependencies:**
+- `sys` (for `sys.setrecursionlimit`)
+- `statistics.median` (unused)
+- `fractions.gcd` (unused)
+- `itertools.combinations` (unused)
+- `collections.deque` (unused)
+- `collections.defaultdict` (unused)
+- `bisect` (unused)
+
+**External Calls:**
+- `sys.setrecursionlimit(10000000)`
+- `input()` for reading data
+- `sorted()` for sorting the list
+
+**Control Flow:**
+1. **Main Execution:**
+   - Set recursion limit to 10,000,000.
+   - Read integer `n` from input.
+   - Read list `A` via `readInts()`.
+   - Sort `A` in ascending order.
+   - Initialize `ans` to 0.
+   - **Loop:**
+     - Iterate `i` from `len(A) - 2` down to `len(A) - 2*n - 1` (exclusive) in steps of -2.
+     - For each `i`, add `A[i]` to `ans`.
+   - Print `ans`.
+
+**Edge Cases:**
+- Undefined behavior if `len(A) < 2*n` (may cause invalid indices in non-Python environments).
+- No input validation (assumes valid integers and correct list size).
+
+**Data Flow:**
+- Input: `n` and `A` via standard input.
+- Processing: Sum every other element starting from the second-last element in the sorted list, total of `n` elements.
+- Output: Sum is printed.
+
+**Error Handling:**
+- None explicitly implemented. Relies on correct input format and sufficient list size.

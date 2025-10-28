@@ -1,0 +1,37 @@
+**Function Definitions:**
+- Define function `_input()` with no parameters that returns a map object of integers from splitting the input string.
+
+**Main Execution:**
+- Read integers `n` and `m` from input using `_input()` (note: `m` is unused).
+- Read next input line and convert to list of integers `lst` of length `n`.
+- Initialize empty dictionary `l`.
+- For each index `i` from 0 to n-1:
+  - If `lst[i]` not in `l`, set `l[lst[i]] = 1`.
+  - Else, increment `l[lst[i]]` by 1.
+- Initialize `res = 0`.
+- For each index `i` from 0 to n-1:
+  - If `l[lst[i]] > 1`:
+    - Add `(n - i - l[lst[i]])` to `res`.
+    - Decrement `l[lst[i]]` by 1.
+  - Else:
+    - Add `(n - i - 1)` to `res`.
+- Print `res`.
+
+**Data Types:**
+- `n`: integer
+- `m`: integer (unused)
+- `lst`: list of integers
+- `l`: dictionary mapping integers to integers
+- `res`: integer
+- `i`: integer index
+
+**Input/Output:**
+- Input from stdin (two lines: first with n and m, second with space-separated integers)
+- Output integer result to stdout
+
+**Control Structures:**
+- Two `for` loops iterating over range(n)
+- `if-else` conditionals checking dictionary membership and value comparison
+
+**Dependencies:**
+- Built-in functions: `input`, `map`, `int`, `list`, `range`, `print`

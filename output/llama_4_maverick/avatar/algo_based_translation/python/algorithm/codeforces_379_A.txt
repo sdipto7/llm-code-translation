@@ -1,0 +1,10 @@
+1. READ candeleIntere, b FROM INPUT
+2. INITIALIZE s TO 0
+3. INITIALIZE restoSciolte TO 0
+4. WHILE candeleIntere > 0 OR restoSciolte >= b
+   4.1. candeleIntere = candeleIntere + restoSciolte DIV b
+   4.2. restoSciolte = restoSciolte MOD b
+   4.3. s = s + candeleIntere
+   4.4. restoSciolte = restoSciolte + candeleIntere MOD b
+   4.5. candeleIntere = candeleIntere DIV b
+5. PRINT s

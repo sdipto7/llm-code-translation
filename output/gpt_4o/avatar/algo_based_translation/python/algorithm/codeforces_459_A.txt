@@ -1,0 +1,43 @@
+```plaintext
+Function: process_coordinates(given: str) -> str
+
+Variables:
+- l1: List[int]
+- x1, y1, x2, y2: int
+- denominator, numerator: int
+- quotient: float (optional)
+- d: int
+- x3, y3, x4, y4: int
+
+Logic Flow:
+1. Split the `given` string into a list `l1` of strings using space as separator.
+2. Convert each element of `l1` into an integer.
+3. Assign `x1`, `y1`, `x2`, `y2` from the first four elements of `l1`.
+4. Calculate `denominator` as `x2 - x1`.
+5. Calculate `numerator` as `y2 - y1`.
+6. If `denominator` is not equal to 0, calculate `quotient` as `numerator / denominator`.
+7. If `numerator` is equal to 0:
+   - Calculate `d` as the integer value of the Euclidean distance between (x1, y1) and (x2, y2).
+   - Set `x4` to `x1` and `x3` to `x2`.
+   - Set `y3` to `y2 + d` and `y4` to `y1 + d`.
+   - Return the string formatted as "{x3} {y3} {x4} {y4}".
+8. Else if `denominator` is equal to 0:
+   - Set `y4` to `y2` and `y3` to `y1`.
+   - Calculate `d` as the integer value of the Euclidean distance between (x1, y1) and (x2, y2).
+   - Set `x4` to `x1 + d` and `x3` to `x2 + d`.
+   - Return the string formatted as "{x3} {y3} {x4} {y4}".
+9. Else if `quotient` is equal to 1:
+   - Set `x4` to `x2` and `x3` to `x1`.
+   - Set `y4` to `y1` and `y3` to `y2`.
+   - Return the string formatted as "{x3} {y3} {x4} {y4}".
+10. Else if `quotient` is equal to -1:
+    - Set `x4` to `x1` and `x3` to `x2`.
+    - Set `y4` to `y2` and `y3` to `y1`.
+    - Return the string formatted as "{x3} {y3} {x4} {y4}".
+11. Else:
+    - Return the string '-1'.
+
+Dependencies:
+- import math
+- math.sqrt
+```

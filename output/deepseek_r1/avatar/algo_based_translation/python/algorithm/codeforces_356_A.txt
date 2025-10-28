@@ -1,0 +1,46 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `process_operations(n: int, m: int, queries: list[tuple[int, int, int]]) -> list[int]`
+
+**Variable Declarations:**
+- `n: int` (number of elements)
+- `m: int` (number of operations)
+- `out: list[int]` (length `n`, initialized to `0`)
+- `comp: list[int]` (length `n`, initialized with `comp[i] = i + 2` for `i` in `0..n-1`)
+- `l: int` (current query's left bound)
+- `r: int` (current query's right bound)
+- `x: int` (current query's special index)
+- `t: int` (current index being processed)
+- `next_val: int` (next index from `comp` array)
+
+**Step-by-Step Logic Flow:**
+1. Read `n` and `m` from input.
+2. Read `m` queries as tuples `(l, r, x)`.
+3. Initialize `out` with `n` zeros.
+4. Initialize `comp` such that `comp[i] = i + 2` for all `0 ≤ i < n`.
+5. For each query `(l, r, x)`:
+    - 5.1. Set `t ← l`.
+    - 5.2. While `t ≤ r`:
+        - 5.2.1. Set `next_val ← comp[t - 1]`.
+        - 5.2.2. If `out[t - 1] == 0` and `t ≠ x`, set `out[t - 1] ← x`.
+        - 5.2.3. Update `comp[t - 1]`:
+            - If `t ≥ x`: `comp[t - 1] ← r + 1`
+            - Else: `comp[t - 1] ← x`
+        - 5.2.4. Set `t ← next_val`.
+6. Return `out` as the result.
+
+**Control Flow Structures:**
+- Loop over all `m` queries (Step 5).
+- Nested `while` loop (Step 5.2) with exit condition `t > r`.
+- Conditional checks for `out` updates (Step 5.2.2) and `comp` updates (Step 5.2.3).
+
+**Input/Output Operations:**
+- Input: First line contains `n` and `m`. Subsequent `m` lines contain `l, r, x`.
+- Output: Space-separated integers from `out` array.
+
+**Error Handling:**
+- No explicit handling for invalid inputs (assumes `l ≤ r` and valid integer inputs).
+
+**External Dependencies:**
+- Standard input/output functions only. No external libraries required.

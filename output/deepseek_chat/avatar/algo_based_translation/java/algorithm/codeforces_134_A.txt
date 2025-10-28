@@ -1,0 +1,26 @@
+Function signature: main(String[] args)
+Required library: java.util.Scanner
+
+Variables:
+- Scanner sc = System.in scanner
+- int n = integer input
+- int[] arr = array of size n
+- int sum = 0
+- int c = 0
+- StringBuilder sb = new StringBuilder()
+
+Logic flow:
+1. Read integer n from input
+2. Initialize integer array arr of size n
+3. Initialize sum to 0
+4. For i from 0 to n-1:
+   - Read integer arr[i] from input
+   - Add arr[i] to sum
+5. For i from 0 to n-1:
+   - Calculate (sum - arr[i]) % (n - 1) == 0
+   - Calculate (sum - arr[i]) / (n - 1) == arr[i]
+   - If both conditions are true:
+        - Increment c by 1
+        - Append (i + 1) + " " to sb
+6. Print c
+7. Print sb.toString()

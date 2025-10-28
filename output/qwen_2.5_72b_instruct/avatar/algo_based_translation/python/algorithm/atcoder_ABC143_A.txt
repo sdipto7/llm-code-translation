@@ -1,0 +1,27 @@
+Function Signature: `calculate_result(A: int, B: int) -> int`
+
+Variable Declarations:
+- `A: int`
+- `B: int`
+- `ans: int`
+
+Execution Order:
+1. Read input as a single line of space-separated integers.
+2. Split the input string into two parts and convert each part to an integer, assigning the first integer to `A` and the second to `B`.
+3. Compute `ans` as `A - 2 * B`.
+4. If `ans` is less than 0, set `ans` to 0.
+5. Print the value of `ans`.
+
+Control Structures:
+- If condition: `if ans < 0:`
+
+Input/Output Operations:
+- Input: Read a single line from standard input and split it into two integers.
+- Output: Print the integer value of `ans`.
+
+Data Processing Logic:
+- Subtract twice the value of `B` from `A`.
+- Ensure the result is not negative by setting it to 0 if it is.
+
+Required Libraries, Modules, or Dependencies:
+- No specific libraries or modules are required. The code uses built-in Python functions.

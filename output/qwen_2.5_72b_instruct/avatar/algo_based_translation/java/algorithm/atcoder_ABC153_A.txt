@@ -1,0 +1,22 @@
+Function: main()
+Parameters: String[] args
+Return Type: void
+
+Variable Declarations:
+- BufferedReader in
+- String[] str
+- int h
+- int a
+- int num
+
+Execution Logic:
+1. in = new BufferedReader(new InputStreamReader(System.in))
+2. str = in.readLine().split(" ")
+3. h = Integer.parseInt(str[0])
+4. a = Integer.parseInt(str[1])
+5. num = 0
+6. for (int i = 1; h > 0; i++) {
+   6.1 h = h - a
+   6.2 num++
+   }
+7. System.out.println(num)

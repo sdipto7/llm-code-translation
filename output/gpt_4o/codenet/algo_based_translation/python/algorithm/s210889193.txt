@@ -1,0 +1,14 @@
+- Define function `solver()` with no parameters and no return type
+- Declare integer variable `N`
+- Read integer input and assign it to `N`
+- Declare list of lists `action` to store integer elements
+- Loop variable `i` from 0 to `N-1`:
+  - Read a line of input, split it into separate strings, map them to integers, and append the resulting list to `action`
+- Declare list of lists `dp` with dimensions `N x 3`, initialized with zeros
+- Loop variable `i` from 0 to 2:
+  - Assign `dp[0][i]` with `action[0][i]`
+- Loop variable `i` from 1 to `N-1`:
+  - Assign `dp[i][0]` with the maximum of `dp[i-1][1] + action[i][0]` and `dp[i-1][2] + action[i][0]`
+  - Assign `dp[i][1]` with the maximum of `dp[i-1][0] + action[i][1]` and `dp[i-1][2] + action[i][1]`
+  - Assign `dp[i][2]` with the maximum of `dp[i-1][0] + action[i][2]` and `dp[i-1][1] + action[i][2]`
+- Output the maximum value in the last list of `dp`, `max(dp[N-1])`

@@ -1,0 +1,8 @@
+1. Define a function `calculate_product` with no parameters and return type `int`.
+2. Declare variables `A` and `B` of type `str` to store input values.
+3. Read input from the user and split it into `A` and `B` using space as the delimiter.
+4. Convert `A` to an integer.
+5. Remove the decimal point from `B` and convert it to an integer.
+6. Calculate the product of `A` and `B`, then perform integer division by 100.
+7. Print the result of the calculation.
+8. The required library is the built-in Python library, specifically the `input` and `print` functions, along with built-in data type conversions (`int`, `str.replace`, `str.split`).

@@ -1,0 +1,46 @@
+Function Signatures:
+- `int maxMatching(int v, int p)`
+- `public static void main(String[] args)`
+- `String next()`
+- `int nextInt()`
+- `long nextLong()`
+- `double nextDouble()`
+- `String nextLine()`
+
+Variable Declarations and Data Types:
+- `ArrayList<Integer>[] g`
+- `int a`
+- `int o`
+- `int w`
+- `int r`
+- `int n`
+- `int m`
+- `int i`
+- `int a` (loop variable)
+- `int b` (loop variable)
+- `PrintWriter out`
+- `BufferedReader br`
+- `StringTokenizer st`
+- `String str`
+
+Logic Flow and Control Structures:
+- Initialize `g` as an array of `ArrayList<Integer>` of size `n`.
+- Populate `g` by reading `n-1` pairs of integers representing edges in an undirected graph.
+- Call `maxMatching(0, -1)` to compute the maximum matching in the tree starting from node 0.
+- Divide the result of `maxMatching` by 2 to get the number of edges in the maximum matching.
+- Determine the winner based on whether twice the number of edges in the maximum matching equals `n`.
+- Print "Second" if the condition is true, otherwise print "First".
+- In `maxMatching`:
+  - Initialize `a` and `o` to 0.
+  - For each neighbor `w` of vertex `v`, skip if `w` equals `p`.
+  - Recursively call `maxMatching(w, v)` and update `a` with `r / 2` and `o` with `r % 2`.
+  - Return `2 * a + Math.min(1, o) + 1`.
+
+Input/Output Operations and Data Processing Logic:
+- Read integer `n` representing the number of vertices.
+- Read `n-1` pairs of integers representing edges.
+- Output "Second" if the tree can be perfectly matched; otherwise, output "First".
+
+Libraries:
+- `java.io.*`
+- `java.util.*`

@@ -1,0 +1,41 @@
+```
+Algorithm:
+
+1. Function signature:
+   - Function: calculate_max_profit
+   - Parameters: None
+   - Return type: int
+
+2. Variable declarations:
+   - n: int
+   - F: List[Tuple[int]]
+   - P: List[Tuple[int]]
+   - ans: int
+   - i: int
+   - tmp: int
+   - lst: List[int]
+   - j: int
+   - k: int
+
+3. Execution logic:
+   - Read integer input for n.
+   - Initialize F as a list of n tuples, each containing 10 integers from input.
+   - Initialize P as a list of n tuples, each containing 11 integers from input.
+   - Initialize ans to -10**18.
+
+4. Loop over all subsets of 10 possible time slots (from 1 to 2^10 - 1):
+   - Initialize tmp to 0.
+   - Initialize lst as a list of n zeros.
+
+5. Nested loop over each time slot j from 0 to 9:
+   - If the j-th bit in i is set (store opening for time slot j):
+     - For each store k from 0 to n-1:
+       - Increment lst[k] by F[k][j].
+
+6. Loop over each store k from 0 to n-1:
+   - Add P[k][lst[k]] to tmp.
+
+7. Update ans to be the maximum of ans and tmp.
+
+8. Output the value of ans.
+```

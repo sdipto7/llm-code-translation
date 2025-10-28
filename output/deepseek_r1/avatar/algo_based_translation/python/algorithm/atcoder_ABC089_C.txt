@@ -1,0 +1,50 @@
+**Algorithm Specification: Name Triplet Counter**
+
+**Function Signatures:**
+- `main() -> void`
+
+**Variables:**
+- `N: int` (input: number of names)
+- `S: List[str]` (input: list of names)
+- `march: List[char]` = `['M','A','R','C','H']`
+- `march_lis: List[int]` (size 5, initialized to `[0,0,0,0,0]`)
+- `ans: int` (initialized to 0)
+
+**Imported Dependencies:**
+- `sys` (for input reading)
+- `itertools.combinations` (for triplet generation)
+
+**Logic Flow:**
+
+1. **Input Acquisition:**
+   1. Read integer `N` via standard input.
+   2. Read `N` strings into list `S`.
+
+2. **Count Initial Letter Occurrences:**
+   1. For each `s` in `S`:
+      1. Extract first character `c` (uppercase conversion).
+      2. If `c` exists in `march`:
+         1. Find index `i` of `c` in `march`.
+         2. Increment `march_lis[i]` by 1.
+
+3. **Triplet Product Calculation:**
+   1. Generate all unique combinations of 3 elements from `march_lis`.
+   2. For each combination `(x, y, z)`:
+      1. Compute product `x * y * z`.
+      2. Accumulate result into `ans`.
+
+4. **Output Result:**
+   1. Print `ans`.
+
+**Control Structures:**
+- **Loop:** Iterate over `S` using index-based traversal (exit when all elements processed).
+- **Conditional:** Check if `c in march` before counting.
+- **Combinatorial Loop:** Generate all 3-element combinations from `march_lis`.
+
+**Edge Case Handling:**
+- Automatically handles cases with fewer than 3 non-zero counts (yields product 0 for invalid combinations).
+- Implicitly processes empty input list `S` (yields `ans=0`).
+
+**Data Processing:**
+- Converts first character to uppercase for case-insensitive comparison.
+- Uses combinatorial mathematics to count valid triplets without explicit enumeration.

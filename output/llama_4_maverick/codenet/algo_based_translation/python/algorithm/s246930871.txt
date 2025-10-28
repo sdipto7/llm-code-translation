@@ -1,0 +1,11 @@
+Function Signature: `calculate_result(N: int, A: int, B: int) -> int`
+
+1. Declare variables: `N`, `A`, `B` of type `int`
+2. Input Operation: Read three integers from input and store in `N`, `A`, `B` respectively
+3. Calculate `N // (A + B)` and store result in a variable, say `quotient`
+4. Calculate `N % (A + B)` and store result in a variable, say `remainder`
+5. Calculate `A * quotient` and store result in a variable, say `partial_sum`
+6. Calculate `min(A, remainder)` and store result in a variable, say `additional_sum`
+7. Calculate `partial_sum + additional_sum` and store result in `ans`
+8. Output Operation: Print the value of `ans` to output 
+9. Required libraries/modules: built-in python functions `map()`, `input()`, `split()`, `min()`, and basic arithmetic operators.

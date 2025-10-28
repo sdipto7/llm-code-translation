@@ -1,0 +1,38 @@
+```
+Function Signature:
+- Function: main()
+  - Parameters: None
+  - Return Type: void
+
+Variable Declarations and Data Types:
+- Scanner sc: for reading input from the standard input
+- String S: stores the input string from the user
+- long MOD: constant value 1000000007 for modulo operations
+- long[][] dp: 2D array of size (S.length() + 1) by 13 for dynamic programming table
+
+Execution Logic:
+1. Initialize Scanner to read input from the standard input.
+2. Read a string S from the user.
+3. Initialize a constant MOD with the value 1000000007.
+4. Initialize a 2D array dp of dimensions (S.length() + 1) by 13 with type long.
+5. Set dp[0][0] to 1, representing the base case for dynamic programming.
+
+Primary Loop:
+6. Iterate over each character of the string S using index `i` from 0 to S.length() - 1.
+   - Conditional Check: If the character at position `i` in S is "?".
+     - Nested Loop: Iterate over possible digits `j` from 0 to 9.
+       - Innermost Loop: Iterate over all possible remainders `k` from 0 to 12.
+         - Update dp[i + 1][(k * 10 + j) % 13] by adding dp[i][k].
+         - Apply modulo operation: dp[i + 1][(k * 10 + j) % 13] %= MOD.
+   - Else: The character at position `i` is a specific digit.
+     - Convert the character at position `i` to an integer `x`.
+     - Iterate over all possible remainders `k` from 0 to 12.
+       - Update dp[i + 1][(k * 10 + x) % 13] by adding dp[i][k].
+       - Apply modulo operation: dp[i + 1][(k * 10 + x) % 13] %= MOD.
+
+Output:
+7. Print the value of dp[S.length()][5] to the standard output.
+
+Dependencies:
+- java.util.Scanner for reading input
+```

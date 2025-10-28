@@ -1,0 +1,36 @@
+**Function Signatures:**
+- `main(String[] args)`: Entry point, initializes input/output streams
+- `Solver.solve(int testNumber, MyInput in, PrintWriter out)`: Main solving logic
+- `MyInput.nextInt()`: Reads integer from input
+- `MyInput.nextChar()`: Reads next non-space character
+- `MyInput.reads(int len, boolean[] accept)`: Reads characters until accept condition fails
+
+**Variable Declarations:**
+- `int K`: Upper bound constraint (2 ≤ K ≤ 2500)
+- `int S`: Target sum (0 ≤ S ≤ 3K)
+- `int ans`: Counter for valid triplets
+- `int wk`: Temporary variable for z calculation
+- `int x, y`: Loop counters for x and y coordinates
+
+**Logic Flow:**
+1. Read input values K and S
+2. Initialize ans counter to 0
+3. Outer loop: x from 0 to K (inclusive)
+4. Inner loop: y from 0 to K (inclusive)
+5. Calculate wk = S - x - y
+6. Check if wk ≥ 0 AND wk ≤ K
+7. If true, increment ans counter
+8. Print final ans value
+
+**Control Structures:**
+- Nested for loops: x (0..K), y (0..K)
+- Conditional: if (wk >= 0 && wk <= K)
+
+**Input/Output Operations:**
+- Input: Reads integers K and S from standard input
+- Output: Prints integer result to standard output
+
+**Required Libraries:**
+- java.io.* (BufferedReader, InputStream, OutputStream, PrintWriter)
+- java.util.* (AbstractMap for Pair class)
+- Static imports: java.util.Comparator.*

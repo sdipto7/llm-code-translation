@@ -1,0 +1,38 @@
+1. Define a function `read_input()` with return type `Tuple[int, List[int]]` that:
+   - Reads two integers `N` and `M` from input, separated by a space.
+   - Reads a list of `M` integers into `A`.
+
+2. Define a function `calculate_result(N: int, A: List[int]) -> int` that:
+   - Computes the sum `A_sum` of all elements in `A`.
+   - Returns `N - A_sum` if it is non-negative, otherwise returns `-1`.
+
+3. In the main execution flow:
+   - Call `read_input()` to obtain `N` and `A`.
+   - Call `calculate_result(N, A)` to get the result.
+   - Print the result.
+
+4. Required data types and declarations:
+   - `N`: integer
+   - `M`: integer
+   - `A`: list of integers
+   - `A_sum`: integer
+
+5. Required libraries and modules:
+   - Input/Output operations are handled by built-in functions.
+
+The translated algorithm in a structured format is as follows:
+
+- Function `read_input() -> Tuple[int, List[int]]`:
+  1. Read `N` and `M` from input.
+  2. Read `M` integers into list `A`.
+  3. Return `N` and `A`.
+
+- Function `calculate_result(N: int, A: List[int]) -> int`:
+  1. Compute `A_sum = sum(A)`.
+  2. If `N - A_sum >= 0`, return `N - A_sum`.
+  3. Otherwise, return `-1`.
+
+- Main execution:
+  1. Call `read_input()` to get `N` and `A`.
+  2. Call `calculate_result(N, A)` to get the result.
+  3. Print the result.

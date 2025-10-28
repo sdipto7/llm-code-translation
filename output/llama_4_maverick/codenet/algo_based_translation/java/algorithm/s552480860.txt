@@ -1,0 +1,36 @@
+- Function signature: `public static int calculateTimeDifference(int h1, int m1, int h2, int m2, int k)`
+- Variable declarations:
+  - `int h1`
+  - `int m1`
+  - `int h2`
+  - `int m2`
+  - `int k`
+  - `int t1`
+  - `int t2`
+  - `int result`
+- Logic flow:
+  1. Read input values: `h1`, `m1`, `h2`, `m2`, `k`
+  2. Calculate `t1 = h1 * 60 + m1`
+  3. Calculate `t2 = h2 * 60 + m2`
+  4. Calculate `result = t2 - t1 - k`
+  5. Output `result`
+- Control structures: None
+- Input/output operations:
+  - Read input values: `h1`, `m1`, `h2`, `m2`, `k` using `Scanner`
+  - Output `result` using `System.out.println`
+- Required libraries: `java.util.Scanner` 
+- Module/dependency: `java.util` package for `Scanner` class 
+
+Here is the detailed algorithm in a structured format:
+
+1. `public static void main(String[] args) throws Exception`
+   1. Create a `Scanner` object `sc` to read from `System.in`
+   2. Read `int h1 = sc.nextInt()`
+   3. Read `int m1 = sc.nextInt()`
+   4. Read `int h2 = sc.nextInt()`
+   5. Read `int m2 = sc.nextInt()`
+   6. Read `int k = sc.nextInt()`
+   7. Calculate `int t1 = h1 * 60 + m1`
+   8. Calculate `int t2 = h2 * 60 + m2`
+   9. Calculate `int result = t2 - t1 - k`
+   10. Output `result` using `System.out.println(result)`

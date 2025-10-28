@@ -1,0 +1,29 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,s344468705.java,Runtime Error,"Error: Exception in thread ""main"" java.util.NoSuchElementException
+	at java.base/java.util.Scanner.throwFor(Scanner.java:962)
+	at java.base/java.util.Scanner.next(Scanner.java:1619)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2284)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2238)
+	at s344468705.solve(s344468705.java:20)
+	at s344468705.main(s344468705.java:11)
+"
+python,java,s828550015.java,Runtime Error,"Error: Exception in thread ""main"" java.util.NoSuchElementException
+	at java.base/java.util.Scanner.throwFor(Scanner.java:962)
+	at java.base/java.util.Scanner.next(Scanner.java:1619)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2284)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2238)
+	at s828550015.main(s828550015.java:15)
+"
+python,java,s827462150.java,Runtime Error,"Error: Error: Could not find or load main class s827462150
+Caused by: java.lang.ClassNotFoundException: s827462150
+"
+python,java,s534639230.java,Runtime Error,"Error: Error: Could not find or load main class s534639230
+Caused by: java.lang.ClassNotFoundException: s534639230
+"
+python,java,s087080706.java,Runtime Error,"Error: Exception in thread ""main"" java.util.NoSuchElementException
+	at java.base/java.util.Scanner.throwFor(Scanner.java:962)
+	at java.base/java.util.Scanner.next(Scanner.java:1619)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2284)
+	at java.base/java.util.Scanner.nextInt(Scanner.java:2238)
+	at s087080706.main(s087080706.java:10)
+"

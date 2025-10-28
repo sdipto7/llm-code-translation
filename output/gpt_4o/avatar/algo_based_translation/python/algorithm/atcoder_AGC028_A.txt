@@ -1,0 +1,33 @@
+```
+Algorithm
+
+1. Input: Read two integers N and M.
+2. Input: Read string S.
+3. Input: Read string T.
+4. Convert S into a list of characters `list_S`.
+5. Convert T into a list of characters `list_T`.
+6. Initialize a list `Number_i` containing integers from 0 to N-1.
+7. Initialize an empty list `Number_iMN`.
+8. For each integer `i` in `Number_i`:
+   a. Calculate `i * M / N` and append the result to `Number_iMN`.
+9. Initialize a list `Number_j` containing integers from 0 to M-1.
+10. Calculate the intersection of `Number_iMN` and `Number_j` as `Kaburi_j`.
+11. Initialize an empty list `Kaburi_i`.
+12. For each element `j` in `Kaburi_j`:
+    a. Calculate `int(j * N / M)` and append the result to `Kaburi_i`.
+13. Initialize `counter` as 0.
+14. Initialize `Flag` as 0.
+15. Compute `Kaburi_Size` as the length of `Kaburi_i`.
+16. While `counter` is less than or equal to `Kaburi_Size - 1`:
+    a. If `list_S[int(Kaburi_i[counter])]` is equal to `list_T[int(Kaburi_j[counter])]`, do nothing.
+    b. Otherwise, set `Flag` to 1 and break the loop.
+    c. Increment `counter` by 1.
+17. Define a function `gcd(a: int, b: int) -> int`:
+    a. While `b` is greater than 0:
+       i. Assign `a` to `b` and `b` to `a % b`.
+    b. Return `a`.
+18. If `Flag` is 1:
+    a. Output -1.
+19. Otherwise:
+    a. Output `int(N * M / gcd(N, M))`.
+```

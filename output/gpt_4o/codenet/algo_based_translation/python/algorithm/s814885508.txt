@@ -1,0 +1,35 @@
+```
+Function Signature:
+- main() -> None
+
+Variable Declarations:
+- X: int
+- K: int
+- D: int
+- r: int
+- a: int
+
+Logic Flow:
+1. Read input values, split by spaces, and convert them to integers:
+   - Assign these values to X, K, and D, respectively.
+   
+2. Calculate the integer division of X by D:
+   - Assign the result to variable r.
+
+3. Conditional Check:
+   - If the absolute value of r is greater than K:
+     - Output the value of (absolute value of X) minus (K multiplied by D).
+     - Terminate the program.
+
+4. Calculate the remaining distance:
+   - Subtract (r multiplied by D) from X and assign to variable a.
+
+5. Conditional Check:
+   - If (K minus r) is even:
+     - Output the value of a.
+   - Otherwise:
+     - Output the absolute value of (D minus a).
+
+Required Libraries:
+- No external libraries or modules are required.
+```

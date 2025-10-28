@@ -1,0 +1,25 @@
+Initialize Scanner for input
+Read integer n from input
+Declare integer array v of size n
+Declare integer array c of size n
+Declare integer array dp of size n
+
+For i from 0 to n-1:
+    Set dp[i] = 0
+
+For i from 0 to n-1:
+    Read integer value into v[i]
+
+For i from 0 to n-1:
+    Read integer value into c[i]
+
+Set dp[0] = 0
+
+For i from 1 to n-1:
+    Calculate tmp = dp[i-1] + (v[i-1] - c[i-1])
+    Set dp[i] = max(tmp, dp[i-1])
+
+Calculate tmp = dp[n-1] + (v[n-1] - c[n-1])
+Set dp[n-1] = max(tmp, dp[n-1])
+
+Print dp[n-1]

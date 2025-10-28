@@ -1,0 +1,32 @@
+```
+Function main()
+    Declare variable 'in' of type Scanner initialized to System input
+    Declare variable 'num' as an array of integers with size equal to the next integer input from 'in'
+    
+    For each integer 'i' from 0 to length of 'num' - 1, inclusive
+        Set num[i] to i + 1
+    End For
+    
+    Declare variable 'count' of type integer and set it to the next integer input from 'in'
+    Declare variable 'pt' of type Pattern initialized with regex "(\\d+),(\\d+)"
+    Declare variable 'line' as an array of two integers
+
+    For each integer 'i' from 0 to 'count' - 1, inclusive
+        Declare variable 'next' of type String and set it to the next input from 'in' that matches pattern 'pt'
+        
+        For each integer 'j' from 0 to length of 'line' - 1, inclusive
+            Declare variable 'matcher' of type Matcher initialized with 'pt.matcher(next)'
+            Call 'matcher.matches()'
+            Set line[j] to Integer.parseInt(matcher.group(j + 1)) - 1
+        End For
+        
+        Declare variable 'change' of type integer and set it to num[line[0]]
+        Set num[line[0]] to num[line[1]]
+        Set num[line[1]] to 'change'
+    End For
+    
+    For each integer 'i' from 0 to length of 'num' - 1, inclusive
+        Output num[i] to System output
+    End For
+End Function
+```

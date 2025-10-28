@@ -1,0 +1,53 @@
+**Algorithm:**
+
+**Function: main**
+- Initialize PrintWriter `out` with BufferedOutputStream(System.out)
+- Initialize MyScanner `sc`
+- Call solve method of atcoder_AGC043_B instance
+- Close `out`
+
+**Class: MyScanner**
+- Fields:
+  - BufferedReader `br`
+  - StringTokenizer `st`
+- Constructor:
+  - Initialize `br` with InputStreamReader(System.in)
+- Methods:
+  - next(): 
+    - While `st` is null or has no more tokens:
+      - Try: read line from `br` and tokenize to `st`
+      - Catch IOException: print stack trace
+    - Return next token from `st`
+  - nextInt(): return Integer.parseInt(next())
+  - nextLong(): return Long.parseLong(next())
+  - nextDouble(): return Double.parseDouble(next())
+
+**Function: solve**
+- Read integer `n` from input
+- Read string `s` from input
+- Initialize StringBuilder `sb`
+- For `i` from 1 to n-1:
+  - Append absolute difference between s[i] and s[i-1] to `sb`
+- If n == 2:
+  - Print first character of `sb`
+  - Return
+- Set `s` to string from `sb`
+- If `s` contains '1':
+  - Print result of cal(s, '1')
+- Else:
+  - Print result of cal(s, '2') multiplied by 2
+
+**Function: cal**
+- Parameters: String `s`, char `c`
+- Initialize:
+  - int `n` = length of s
+  - int `m` = n - 1
+  - int `ans` = 0
+- For `i` from 0 to n-1:
+  - If s[i] equals `c` AND bitwise AND of `m` and `i` equals `i`:
+    - XOR `ans` with 1
+- Return `ans`
+
+**Required Libraries:**
+- java.io.*
+- java.util.*

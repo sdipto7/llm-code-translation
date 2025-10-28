@@ -1,0 +1,11 @@
+1. Read three integers from input and store them in `h`, `w`, and `ka` variables.
+2. Read `h` number of strings from input, each representing a row of a matrix `mat` with `w` characters.
+3. Initialize a variable `ans` to 0.
+4. Iterate over a range from 0 to 2^(h+w) - 1.
+5. For each iteration, convert the current number to binary, remove the '0b' prefix, and pad it with leading zeros to a length of `h+w`. Store the result in `b`.
+6. Split `b` into two parts: `rs` of length `h` and `cs` of length `w`.
+7. Initialize a variable `ct` to 0.
+8. Iterate over each element at position `(l, k)` in the matrix `mat`.
+9. If the element is '#' and the corresponding values in `rs` and `cs` are '0', increment `ct` by 1.
+10. If `ct` equals `ka`, increment `ans` by 1.
+11. After iterating over all numbers in the range, output the value of `ans`.

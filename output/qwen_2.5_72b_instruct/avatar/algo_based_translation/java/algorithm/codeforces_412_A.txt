@@ -1,0 +1,44 @@
+Function signature:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `Scanner sc`
+- `int n`
+- `int k`
+- `String a`
+- `int i`
+
+Logic flow in execution order:
+1. Initialize `sc` as a new `Scanner` object reading from `System.in`.
+2. Read integer `n` from input.
+3. Read integer `k` from input.
+4. Read string `a` from input.
+5. Check if `k > n / 2`:
+   - If true, enter while loop where:
+     - While `k < n`, print "RIGHT" and increment `k`.
+6. Else:
+   - Enter while loop where:
+     - While `k > 1`, print "LEFT" and decrement `k`.
+7. Check if `k == 1`:
+   - If true, enter for loop where:
+     - For `i` from 0 to `a.length() - 1`:
+       - Print "PRINT " concatenated with `a.charAt(i)`.
+       - If `i + 1 < a.length()`, print "RIGHT".
+8. Else:
+   - Enter for loop where:
+     - For `i` from `a.length() - 1` to 0:
+       - Print "PRINT " concatenated with `a.charAt(i)`.
+       - If `i - 1 >= 0`, print "LEFT".
+
+Input/output operations and data processing logic:
+- Input operations:
+  - `n = sc.nextInt()`
+  - `k = sc.nextInt()`
+  - `a = sc.next()`
+- Output operations:
+  - `System.out.println("RIGHT")`
+  - `System.out.println("LEFT")`
+  - `System.out.println("PRINT " + a.charAt(i))`
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

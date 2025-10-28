@@ -1,0 +1,19 @@
+```
+Function main() -> None
+    Declare integer variables q, h, s, d
+    Read input line, split by space, convert each to integer, and assign to q, h, s, d
+    Declare integer variable n
+    Read input, convert to integer, and assign to n
+    
+    Declare integer variable min_1
+    Assign min(q*4, h*2, q*2+h, s) to min_1
+    
+    Declare integer variable min_2
+    Assign min(min_1*2, d) to min_2
+    
+    Calculate (n % 2)*min_1 + (n // 2)*min_2 and print the result
+
+No libraries or modules are required
+Input operations read from standard input
+Output operation prints to standard output
+```

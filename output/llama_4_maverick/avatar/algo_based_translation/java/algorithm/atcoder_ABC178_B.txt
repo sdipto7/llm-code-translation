@@ -1,0 +1,10 @@
+1. Initialize a FastReader object to read input from the standard input.
+2. Create an array of size 4 to store long integers.
+3. Read 4 long integers from the input and store them in the array.
+4. Calculate the products of the following pairs of numbers from the array: 
+   - a[0] and a[2]
+   - a[1] and a[3]
+   - a[0] and a[3]
+   - a[1] and a[2]
+5. Compare the calculated products to find the maximum value.
+6. Output the maximum product found in step 5.

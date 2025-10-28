@@ -1,0 +1,41 @@
+Function signature: `def main() -> None`
+
+Variable declarations and data types:
+- `N: int`
+- `T: int`
+- `L: List[List[int]]`
+- `dp: List[List[int]]`
+- `used: List[int]`
+- `B: int`
+- `j: int`
+- `ans: int`
+- `c: int`
+- `i: int`
+
+Complete logic flow in execution order:
+
+1. Read integers `N` and `T` from input.
+2. Initialize a 2D list `L` of size `N` where each element is a list of two integers read from input.
+3. Initialize a 2D list `dp` of size `(N+1) x T` filled with zeros.
+4. For each item `i` from `0` to `N-1`:
+   - For each time `j` from `0` to `T-1`:
+     - If `j` is less than the first element of `L[i]`:
+       - Set `dp[i+1][j]` to `dp[i][j]`.
+     - Otherwise:
+       - Set `dp[i+1][j]` to the maximum of `dp[i][j]` and `dp[i][j-L[i][0]] + L[i][1]`.
+5. Initialize an empty list `used`.
+6. Set `B` to `dp[N][T-1]`.
+7. Set `j` to `T-1`.
+8. For each item `i` from `N-1` to `0`:
+   - If `B` is equal to `dp[i][j]`:
+     - Continue to the next iteration.
+   - Subtract `L[i][1]` from `B`.
+   - Append `i` to `used`.
+   - Subtract `L[i][0]` from `j`.
+9. Set `ans` to `dp[N][T-1]`.
+10. Set `c` to `0`.
+11. For each item `i` from `0` to `N-1`:
+    - If `i` is in `used`:
+      - Continue to the next iteration.
+    - Set `c` to the maximum of `c` and `L[i][1]`.
+12. Print `ans + c`.

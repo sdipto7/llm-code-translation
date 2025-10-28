@@ -1,0 +1,7 @@
+Algorithm:
+1. Read a line of input from standard input
+2. Split the input string by whitespace into a list of strings
+3. Convert each element in the list to integer type
+4. Assign first integer to variable A, second integer to variable B
+5. Multiply A by B
+6. Print the result of multiplication

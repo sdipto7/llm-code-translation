@@ -1,0 +1,28 @@
+Function Signature: `main(String[] args)`
+
+Variable Declarations:
+- `sc` of type `Scanner`
+- `a` of type `int`
+- `b` of type `int`
+- `c` of type `int`
+- `answer` of type `String`
+
+Logic Flow:
+1. Create an instance of `Scanner` and assign it to `sc`
+2. Read an integer from the standard input and assign it to `a`
+3. Read an integer from the standard input and assign it to `b`
+4. Read an integer from the standard input and assign it to `c`
+5. Assign the string "No" to `answer`
+6. If the sum of `a` and `b` is greater than or equal to `c`:
+   - Assign the string "Yes" to `answer`
+7. Print the value of `answer` to the standard output
+
+Control Structures:
+- Conditional (if): `if(a + b >= c)`
+
+Input/Output Operations:
+- Input: Three integers read from the standard input
+- Output: A single string ("Yes" or "No") printed to the standard output
+
+Libraries:
+- `java.util.Scanner`

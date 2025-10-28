@@ -1,0 +1,25 @@
+Function signature: `public static void main(String[] args)`
+Variable declarations and data types:
+- `Scanner sc`
+- `int n`
+- `int[] a`
+- `int r`
+Logic flow in execution order:
+1. Create a new `Scanner` object for reading input from `System.in`.
+2. Read an integer `n` which represents the number of elements.
+3. Initialize an array `a` of size `n` to store integers.
+4. Initialize an integer `r` to 0, which will hold the XOR result of all elements.
+5. For loop iterates `i` from 0 to `n-1`:
+   - Read an integer from the input and assign it to `a[i]`.
+   - Update `r` by XORing it with `a[i]`.
+6. For loop iterates `i` from 0 to `n-1`:
+   - If `i` is not 0, print a space.
+   - Print the result of `r` XOR `a[i]`.
+
+Input/output operations and data processing logic:
+- Read integers from standard input.
+- Compute the XOR of all elements in the array.
+- Print the modified array elements where each element is the result of XOR between the overall XOR `r` and the respective array element.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

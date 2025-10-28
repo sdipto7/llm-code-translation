@@ -1,0 +1,38 @@
+**Algorithm:**
+
+Function Signature:
+- `public static void main(String[] args)`
+
+Variables:
+- `Scanner in = new Scanner(System.in)`
+- `int N` (input value)
+- `int M` (input value)
+- `int[][] black` (dimensions: (N+2) x (N+2))
+- `int x`, `int y` (per iteration)
+- Loop counters: `m`, `xx`, `yy`
+
+Logic Flow:
+1. Read `N` and `M` via `Scanner`
+2. Initialize `black` array with all elements `0`
+3. For `m` from 1 to M (inclusive):
+   - Read `x` and `y`
+   - For `xx` from `x-1` to `x+1` (inclusive):
+     - For `yy` from `y-1` to `y+1` (inclusive):
+       - Increment `black[xx][yy]` by 1
+       - Check if incremented value equals 9:
+         - Print `m` and terminate program
+4. If loop completes without triggering termination:
+   - Print "-1"
+
+Control Structures:
+- `for (int m = 1; m <= M; m++)`
+- Nested `for` loops for `xx` and `yy` ranges
+- `if (++black[xx][yy] == 9)` conditional check
+
+Input/Output:
+- Input via `Scanner` for integers
+- Immediate output upon finding a 9 in any cell
+- Final output "-1" if no 9 found after all iterations
+
+Dependencies:
+- `java.util.Scanner`

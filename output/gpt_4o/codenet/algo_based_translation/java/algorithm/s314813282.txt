@@ -1,0 +1,42 @@
+1. Import required library:
+   - import java.util.Scanner;
+
+2. Function signatures:
+   - main(String[] args) throws Exception
+   - MaxInt(int x, int[] a): returns int
+   - MinInt(int y, int[] b): returns int
+   - CheckWar(int a, int b): returns void
+
+3. Variable declarations and data types:
+   - int m, n, x, y
+   - int[] a, b
+   - int x_max, y_min
+
+4. Logic flow:
+   a. Create a Scanner object `scan` for input operations.
+   b. Read four integers from input and assign them to `m`, `n`, `x`, `y`.
+   c. Declare an integer array `a` of size `m`.
+   d. Use a for loop to iterate from 0 to `m-1`:
+      i. For each iteration, read an integer from input and assign it to `a[i]`.
+   e. Declare an integer array `b` of size `n`.
+   f. Use a for loop to iterate from 0 to `n-1`:
+      i. For each iteration, read an integer from input and assign it to `b[i]`.
+   g. Call `MaxInt(x, a)` and assign the result to `x_max`.
+   h. Call `MinInt(y, b)` and assign the result to `y_min`.
+   i. Call `CheckWar(x_max, y_min)`.
+
+5. MaxInt function logic:
+   a. Initialize `bignum` with the value of `x`.
+   b. Use a for loop to iterate over each element in array `a`:
+      i. For each element `a[i]`, update `bignum` to the maximum of `bignum` and `a[i]`.
+   c. Return `bignum`.
+
+6. MinInt function logic:
+   a. Initialize `smallnum` with the value of `y`.
+   b. Use a for loop to iterate over each element in array `b`:
+      i. For each element `b[i]`, update `smallnum` to the minimum of `smallnum` and `b[i]`.
+   c. Return `smallnum`.
+
+7. CheckWar function logic:
+   a. If `a` is greater than or equal to `b`, print "War".
+   b. Otherwise, print "No War".

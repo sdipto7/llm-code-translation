@@ -1,0 +1,32 @@
+Function signatures with parameter and return types:
+- `main(String[] args) : void`
+
+Variable declarations and data types:
+- `sc : Scanner`
+- `n : int`
+- `m : int`
+
+Complete logic flow in execution order:
+1. Create a new `Scanner` object for reading input from `System.in`.
+2. Read an integer `n` from the scanner.
+3. Read an integer `m` from the scanner.
+4. If `n` is equal to 0:
+   - If `m` is not equal to 0, print "Impossible".
+   - Otherwise, print "0 0".
+   - Return from the main function.
+5. If `m` is less than or equal to `n`:
+   - If `m` is equal to 0, set `m` to 1.
+   - Print `n` followed by a space and the result of `m + n - 1`.
+   - Return from the main function.
+6. Print `m` followed by a space and the result of `m + n - 1`.
+
+Control structures:
+- If-else statements for conditional checks.
+
+Input/output operations and data processing logic:
+- Input: Two integers `n` and `m` from standard input.
+- Output: Depending on the values of `n` and `m`, print either "Impossible", "0 0", or the calculated values based on the conditions.
+
+Required libraries, modules, or dependencies:
+- `java.io.*`
+- `java.util.*`

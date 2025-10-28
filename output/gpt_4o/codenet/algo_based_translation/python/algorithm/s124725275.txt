@@ -1,0 +1,86 @@
+```plaintext
+import sys
+import heapq
+from itertools import product
+from collections import deque
+
+sys.setrecursionlimit(1 << 25)
+
+def exit(*argv, **kwarg):
+    print(*argv, **kwarg)
+    sys.exit()
+
+def mina(*argv, sub=1):
+    return list(map(lambda x: x - sub, argv))
+
+def a_int() -> int:
+    return int(sys.stdin.buffer.readline())
+
+def ints() -> list:
+    return list(map(int, sys.stdin.buffer.readline().split()))
+
+def read_col(H: int) -> tuple:
+    ret = []
+    for _ in range(H):
+        ret.append(list(map(int, sys.stdin.buffer.readline().split())))
+    return tuple(map(list, zip(*ret)))
+
+def read_map_as(H: int, replace={'#': 1, '.': 0}, pad=None) -> list:
+    if pad is None:
+        ret = []
+        for _ in range(H):
+            ret.append([replace[s] for s in sys.stdin.readline()[:-1]])
+    else:
+        ret = [[pad] * (W + 2)]
+        for _ in range(H):
+            ret.append([pad] + [replace[s] for s in sys.stdin.readline()[:-1]] + [pad])
+        ret.append([pad] * (W + 2))
+    return ret
+
+def grid_dijkstra(grid: list, si: int, sj: int) -> list:
+    H = len(grid)
+    W = len(grid[0])
+    D = [[-1] * W for _ in range(H)]
+    que = [(0, si, sj)]
+    while que:
+        c, i, j = heapq.heappop(que)
+        if D[i][j] != -1:
+            continue
+        D[i][j] = c
+        for di, dj in product([-2, -1, 0, 1, 2], repeat=2):
+            ni, nj = i + di, j + dj
+            if not (0 <= ni < H and 0 <= nj < W) or D[ni][nj] != -1 or ni == nj == 0 or grid[ni][nj] == 1:
+                continue
+            if (di == 0 and abs(dj) == 1) or (dj == 0 and abs(di) == 1):
+                nc = c
+            else:
+                nc = c + 1
+            heapq.heappush(que, (nc, ni, nj))
+    return D
+
+MOD = 10**9 + 7
+INF = 2**31
+
+H, W = ints()
+si, sj = mina(*ints())
+ti, tj = mina(*ints())
+
+S = read_map_as(H)
+D = [[-1] * W for _ in range(H)]
+que = deque([(0, si, sj)])
+while que:
+    c, i, j = que.popleft()
+    if D[i][j] != -1:
+        continue
+    D[i][j] = c
+    for di, dj in product([-2, -1, 0, 1, 2], repeat=2):
+        ni, nj = i + di, j + dj
+        if not (0 <= ni < H and 0 <= nj < W) or D[ni][nj] != -1 or ni == nj == 0 or S[ni][nj] == 1:
+            continue
+        if (di == 0 and abs(dj) == 1) or (dj == 0 and abs(di) == 1):
+            que.appendleft((c, ni, nj))
+        else:
+            que.append((c + 1, ni, nj))
+
+print(D[ti][tj])
+```

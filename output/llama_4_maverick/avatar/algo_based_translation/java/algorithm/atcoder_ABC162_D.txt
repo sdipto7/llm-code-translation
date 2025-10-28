@@ -1,0 +1,12 @@
+1. Read the input integer n.
+2. Read the input string s.
+3. Initialize counters rc, gc, bc to 0.
+4. Iterate over each character in string s.
+5. For each character, check if it is 'R', 'G', or 'B', and increment the corresponding counter rc, gc, or bc.
+6. Calculate the product of rc, gc, and bc, and store it in result.
+7. Iterate over all pairs of integers i and k such that 1 ≤ i < k ≤ n.
+8. For each pair (i, k), check if (i + k) is even.
+9. If (i + k) is even, calculate j = (i + k) / 2.
+10. Compare the characters at indices i-1, k-1, and j-1 in string s.
+11. If the characters at indices i-1, k-1, and j-1 are all distinct, decrement result by 1.
+12. Output the final value of result.

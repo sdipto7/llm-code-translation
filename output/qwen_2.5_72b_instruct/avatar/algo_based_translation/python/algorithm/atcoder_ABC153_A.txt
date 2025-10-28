@@ -1,0 +1,28 @@
+Function: calculate_sho(h: int, a: int) -> int
+
+Variable Declarations:
+- h: int
+- a: int
+- sho: int
+- am: int
+
+Logic Flow:
+1. Read input as a single line string
+2. Split the string by space to get two parts
+3. Convert the two parts to integers and assign them to h and a respectively
+4. Calculate the integer division of h by a and assign the result to sho
+5. Calculate the remainder of h divided by a and assign the result to am
+6. If am is not equal to 0:
+   - Increment sho by 1
+7. Print the value of sho
+
+Input/Output Operations:
+- Read input from standard input
+- Print output to standard output
+
+Data Processing Logic:
+- Perform integer division and modulus operations on input values
+- Conditionally adjust the result based on the remainder
+
+Required Libraries, Modules, or Dependencies:
+- No external libraries or modules are required

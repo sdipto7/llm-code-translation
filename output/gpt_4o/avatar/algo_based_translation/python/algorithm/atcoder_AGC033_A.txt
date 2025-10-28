@@ -1,0 +1,27 @@
+1. Import the numpy library as np.
+
+2. Read two integers from input, h and w, representing the height and width of the grid.
+
+3. Initialize a 2D list 'graph' with dimensions h x w:
+   - For each row, read a string of length w from the input.
+   - For each character in the string:
+     - If the character is '#', append 0 to the row list.
+     - Otherwise, append float('inf') to the row list.
+
+4. Convert the 2D list 'graph' into a numpy array.
+
+5. Iterate over each column index x from 0 to w-2:
+   - Update each element in column x+1 to be the minimum of its current value and the value of the element in column x plus 1.
+
+6. Iterate over each column index x from w-1 to 1:
+   - Update each element in column x-1 to be the minimum of its current value and the value of the element in column x plus 1.
+
+7. Iterate over each row index y from 0 to h-2:
+   - Update each element in row y+1 to be the minimum of its current value and the value of the element in row y plus 1.
+
+8. Iterate over each row index y from h-1 to 1:
+   - Update each element in row y-1 to be the minimum of its current value and the value of the element in row y plus 1.
+
+9. Compute the maximum value in the entire 'graph' array using np.max().
+
+10. Convert the maximum value to an integer and print it.

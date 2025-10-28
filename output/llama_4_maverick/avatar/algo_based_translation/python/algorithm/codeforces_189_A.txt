@@ -1,0 +1,22 @@
+1. READ input into array arr
+2. SET length to arr[0]
+3. SET arr to sorted arr[1:4] in ascending order
+4. IF length is divisible by arr[0] THEN
+   4.1. PRINT length divided by arr[0]
+   4.2. EXIT
+5. SET ans to 0
+6. IF arr[0] equals arr[1] THEN
+   6.1. FOR i from 0 to length divided by arr[2] (inclusive)
+      6.1.1. SET check to length minus i times arr[2]
+      6.1.2. IF check is non-negative and check is divisible by arr[0] THEN
+         6.1.2.1. SET k to check divided by arr[0]
+         6.1.2.2. SET ans to maximum of ans and k plus i
+7. ELSE
+   7.1. FOR i from 0 to length divided by arr[2] (inclusive)
+      7.1.1. FOR j from 0 to length divided by arr[1] (inclusive)
+         7.1.1.1. SET check to length minus i times arr[2] minus j times arr[1]
+         7.1.1.2. IF check is non-negative and check is divisible by arr[0] THEN
+            7.1.1.2.1. SET k to check divided by arr[0]
+            7.1.1.2.2. SET ans to maximum of ans and k plus i plus j
+8. PRINT ans
+9. EXIT

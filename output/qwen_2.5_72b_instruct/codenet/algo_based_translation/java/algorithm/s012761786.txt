@@ -1,0 +1,54 @@
+- Function signatures with parameter and return types:
+  - `main(String[] args): void`
+  - `next(): String`
+  - `nextInt(): int`
+  - `nextLong(): long`
+  - `nextDouble(): double`
+  - `splitString(String s): String[]`
+  - `splitChar(String s): char[]`
+  - `charToInt(char aaa): int`
+  - `maxInt(int[] a, int lng): int`
+  - `minInt(int[] a, int lng): int`
+  - `maxLong(long[] a, int lng): long`
+  - `minLong(long[] a, int lng): long`
+
+- Variable declarations and data types:
+  - `Scanner sc: static`
+  - `long n: local`
+  - `long a: local`
+  - `long b: local`
+  - `long sa: local`
+  - `long ans: local`
+  - `long AAA: local`
+  - `long BBB: local`
+  - `String s: parameter (splitString)`
+  - `char aaa: parameter (charToInt)`
+  - `int[] a: parameter (maxInt, minInt)`
+  - `int lng: parameter (maxInt, minInt)`
+  - `long[] a: parameter (maxLong, minLong)`
+
+- Complete logic flow in execution order:
+  - Read `n`, `a`, `b` using `nextLong()`
+  - Calculate `sa` as `Math.abs(a-b)`
+  - Initialize `ans` to `0`
+  - If `sa % 2 == 0` then set `ans` to `sa / 2`
+  - Else:
+    - Calculate `AAA` as `Math.min((n-a), (a-1))`
+    - Calculate `BBB` as `Math.min((n-b), (b-1))`
+    - Set `ans` to `Math.min(AAA, BBB)`
+    - Decrement `sa` by `1`
+    - Increment `ans` by `1`
+    - Increment `ans` by `sa / 2`
+  - Print `ans`
+
+- Control structures:
+  - Conditionals:
+    - If `sa % 2 == 0` then execute block
+    - Else execute block
+
+- Input/output operations and data processing logic:
+  - Input: Read `n`, `a`, `b` using `nextLong()`
+  - Output: Print `ans` using `System.out.println(ans)`
+
+- Required libraries, modules, or dependencies:
+  - `import java.util.*`

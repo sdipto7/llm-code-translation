@@ -1,0 +1,10 @@
+1. Read the number of elements.
+2. Create an array of size equal to the number of elements.
+3. Read elements into the array.
+4. Iterate through the array.
+5. For each element, calculate the maximum difference as the maximum of the difference between the current element and the first element, and the difference between the last element and the current element.
+6. For each element, calculate the minimum difference.
+   6.1 If the current element is the first element, calculate the minimum difference as the difference between the next element and the current element.
+   6.2 If the current element is the last element, calculate the minimum difference as the difference between the current element and the previous element.
+   6.3 If the current element is neither the first nor the last element, calculate the minimum difference as the minimum of the difference between the current element and the previous element, and the difference between the next element and the current element.
+7. Print the minimum difference and the maximum difference for each element.

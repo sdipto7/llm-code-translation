@@ -1,0 +1,53 @@
+1. **Function Signature**:
+   - `public static void main(String[] args)`
+     - Parameters: `String[] args`
+     - Return type: `void`
+
+2. **Variable Declarations**:
+   - `Scanner sc = new Scanner(System.in)`
+   - `int n = sc.nextInt()`
+   - `int levels = sc.nextInt()`
+   - `int sum = 0`, `sum2 = 0`, `sum3 = 0`
+   - `int[] arr = new int[levels]`
+   - `int count = 0`
+   - `int level2 = sc.nextInt()`
+   - `int level3 = levels + level2`
+   - `int[] arr2 = new int[level3]`
+   - `int[] arr3 = new int[n]`
+   - `int j = 0`
+
+3. **Logic Flow**:
+   - Read `n` (total levels required).
+   - Read `levels` (number of levels the first player can pass).
+   - Initialize `arr` to store the first player's levels.
+   - Populate `arr` by reading `levels` integers from input.
+   - Read `level2` (number of levels the second player can pass).
+   - Compute `level3` as the sum of both players' level counts.
+   - Initialize `arr2` (merged list of levels from both players).
+   - Copy all elements from `arr` into `arr2` (first player's levels).
+   - Read `level2` integers from input into the remaining positions of `arr2` (second player's levels).
+   - Initialize `arr3` with values `1` to `n` (target levels to check).
+   - For each level in `arr3`, check if it exists in `arr2`:
+     - If found, increment `count` and break the inner loop.
+   - If `count == n`, print "I become the guy."
+   - Else, print "Oh, my keyboard!"
+
+4. **Control Structures**:
+   - `for (int i = 0; i < levels; i++)` → Populate `arr`.
+   - `for (int i = 0; i < arr.length; i++)` → Copy `arr` to `arr2`.
+   - `for (int i = arr.length; i < level3; i++)` → Populate `arr2` with second player's levels.
+   - `for (int i = 0; i < n; i++)` → Initialize `arr3`.
+   - Nested loops:
+     - Outer: `for (int i = 0; i < n; i++)` → Iterate over `arr3`.
+     - Inner: `for (int x = 0; x < arr2.length; x++)` → Check existence in `arr2`.
+   - `if (arr3[i] == arr2[x])` → Condition for level match.
+   - `if (count == n)` → Final output decision.
+
+5. **Input/Output Operations**:
+   - Read `n`, `levels`, and `level2` via `Scanner`.
+   - Read `levels` integers for the first player's levels.
+   - Read `level2` integers for the second player's levels.
+   - Print "I become the guy." or "Oh, my keyboard!" based on `count`.
+
+6. **Dependencies**:
+   - `import java.util.*` (for `Scanner`).

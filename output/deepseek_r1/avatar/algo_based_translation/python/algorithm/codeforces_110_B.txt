@@ -1,0 +1,45 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signature**  
+- `main() -> void`  
+  - Parameters: None  
+  - Return type: None  
+
+**Variable Declarations**  
+- Constants:  
+  - `LUCKY: String = "abcd"`  
+- Variables:  
+  - `n: Integer` (user input)  
+  - `s: String` (initial value: empty string)  
+  - `i: Integer` (loop counter)  
+
+**Step-by-Step Logic Flow**  
+1. Read `n` from standard input via `input()`, convert to integer.  
+2. Initialize `s` as an empty string.  
+3. Loop:  
+   - Structure: `for i in range(n)`  
+   - Iterations: `n` times (0 ≤ `i` ≤ `n-1`)  
+   - Loop Body:  
+     a. Compute `index = i % 4`.  
+     b. Concatenate `LUCKY[index]` to `s`.  
+4. Output `s` via `print(s)`.  
+
+**Control Flow Structures**  
+- Single `for` loop:  
+  - Entry condition: `i` starts at `0`.  
+  - Exit condition: After `i` reaches `n-1`.  
+  - Increment: `i += 1` after each iteration.  
+
+**Input/Output Operations**  
+- Input:  
+  - Read `n` as integer from `input()`.  
+- Output:  
+  - Print `s` to standard output.  
+
+**Error Handling Mechanisms**  
+- No explicit validation for invalid input (non-integer values or `n < 0`).  
+- If `n ≤ 0`, the loop executes zero times, and `s` remains empty.  
+
+**External Dependencies**  
+- Built-in functions: `input()`, `int()`, `print()`.  
+- No external libraries or imports.

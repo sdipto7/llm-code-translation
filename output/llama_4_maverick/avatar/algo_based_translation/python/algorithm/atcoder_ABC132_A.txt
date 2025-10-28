@@ -1,0 +1,11 @@
+1. S = Read Input
+2. c = Count Frequency of Characters in S
+3. Sa = Unique Characters in S
+4. If Count of Unique Characters in Sa is Not Equal to 2 Then
+5.     Print "No"
+6.     Exit
+7. For Each Character i in Sa Do
+8.     If Frequency of i in c is Not Equal to 2 Then
+9.         Print "No"
+10.        Exit
+11. Print "Yes"

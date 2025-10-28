@@ -1,0 +1,41 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,codeforces_342_B.py,Compilation Error,"Error:   File ""output/deepseek_r1/avatar/direct_translation/java/python/codeforces_342_B.py"", line 1
+    Here is the Python code translated from the provided Java code:
+                ^^^^^^
+SyntaxError: invalid syntax
+"
+java,python,codeforces_518_B.py,Compilation Error,"Error:   File ""output/deepseek_r1/avatar/direct_translation/java/python/codeforces_518_B.py"", line 1
+    Here is the Python code:
+                ^^^^^^
+SyntaxError: invalid syntax
+"
+java,python,atcoder_AGC033_B.py,Compilation Error,"Error:   File ""output/deepseek_r1/avatar/direct_translation/java/python/atcoder_AGC033_B.py"", line 4
+    t = input().strip())
+                       ^
+SyntaxError: unmatched ')'
+"
+java,python,atcoder_AGC043_B.py,Compilation Error,"Error:   File ""output/deepseek_r1/avatar/direct_translation/java/python/atcoder_AGC043_B.py"", line 1
+    Here's the Python code equivalent to the provided Java code:
+        ^
+SyntaxError: unterminated string literal (detected at line 1)
+"
+java,python,atcoder_ABC043_B.py,Compilation Error,"Error:   File ""output/deepseek_r1/avatar/direct_translation/java/python/atcoder_ABC043_B.py"", line 1
+    Here is the Python code:
+                ^^^^^^
+SyntaxError: invalid syntax
+"
+java,python,codeforces_397_B.py,Compilation Error,"Error:   File ""output/deepseek_r1/avatar/direct_translation/java/python/codeforces_397_B.py"", line 1
+    Here is the Python code translated from the provided Java code:
+                ^^^^^^
+SyntaxError: invalid syntax
+"
+java,python,atcoder_ABC145_E.py,Compilation Error,"Error:   File ""output/deepseek_r1/avatar/direct_translation/java/python/atcoder_ABC145_E.py"", line 1
+    Here is the Python code translation:
+                ^^^^^^
+SyntaxError: invalid syntax
+"
+java,python,atcoder_ABC133_E.py,Compilation Error,"Error:   File ""output/deepseek_r1/avatar/direct_translation/java/python/atcoder_ABC133_E.py"", line 30
+    for _ in range
+                  ^
+SyntaxError: expected ':'
+"

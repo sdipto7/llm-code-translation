@@ -1,0 +1,22 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- n: int (input from user)
+- x: int (initialized to 1)
+
+**Libraries:**
+- math
+
+**Logic Flow:**
+1. Read integer input from user and store in n
+2. Initialize x to 1
+3. Enter while loop condition: math.log2(n) modulo 1 != 0
+4. Inside loop:
+   - Increment x by 1
+   - Subtract 2 raised to integer part of log2(n) from n
+5. After loop exits, print value of x
+
+**Control Structures:**
+- While loop: continues while math.log2(n) % 1 != 0 (while n is not a power of two)
+- Loop body: x += 1; n -= 2**(int(math.log2(n)))

@@ -1,0 +1,16 @@
+Algorithm:
+- Import java.util.Arrays
+- Import java.util.Scanner
+- Define public class codeforces_108_B
+- Define public static void main(String[] args)
+  - Declare Scanner in = new Scanner(System.in)
+  - Declare int n = in.nextInt()
+  - Declare int[] a = new int[n]
+  - For i from 0 to n-1:
+    - a[i] = in.nextInt()
+  - Call Arrays.sort(a)
+  - For i from 0 to a.length-2:
+    - If a[i+1] < a[i] * 2 AND a[i] != a[i+1]:
+      - Print "YES"
+      - Return from function
+  - Print "NO"

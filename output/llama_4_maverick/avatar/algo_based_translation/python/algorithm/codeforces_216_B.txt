@@ -1,0 +1,27 @@
+1. Define a function `readInts()` that reads a line of input, splits it into integers, and returns them as a map.
+
+2. Define a function `dfs(g, seen, i)` that:
+   - Checks if `i` is in the `seen` set. If it is, return (0, 0).
+   - Adds `i` to the `seen` set.
+   - Initializes `nodes` to 1 and `edges` to the number of neighbors of `i` in `g`.
+   - For each neighbor `j` of `i` in `g`, recursively calls `dfs(g, seen, j)` and updates `nodes` and `edges` accordingly.
+   - Returns the total `nodes` and `edges`.
+
+3. Define a function `solve()` that:
+   - Attempts to read two integers `n` and `m` using `readInts()`. If it fails due to EOF, return False.
+
+4. Within `solve()`:
+   - Initializes an empty graph `g` and an empty set `seen`.
+   - For `i` from 1 to `n`, adds `i` to `g` with an empty set as its value.
+   - For `m` times, reads two integers `a` and `b`, and adds them to each other's set in `g`.
+
+5. Within `solve()`:
+   - Initializes `ans` to 0.
+   - For `i` from 1 to `n`, if `i` is not in `seen`, calls `dfs(g, seen, i)` to get `nodes` and `edges`. If `nodes` is more than 1, is odd, and equals half of `edges`, increments `ans`.
+
+6. Within `solve()`:
+   - If `n - ans` is odd, increments `ans`.
+   - Prints `ans`.
+   - Returns True.
+
+7. Repeatedly calls `solve()` until it returns False.

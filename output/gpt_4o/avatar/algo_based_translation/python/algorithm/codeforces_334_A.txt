@@ -1,0 +1,11 @@
+Algorithm:
+1. Declare function `process_numbers` with no parameters and no return type.
+2. Declare variable `n` of type `int` and set it to the result of converting the input string to an integer.
+3. Declare variables `i` and `j` of type `int`.
+4. Set `i` to 1.
+5. Set `j` to `n * n`.
+6. Start a while loop with the condition `i < j`.
+    a. Inside the loop, output the values of `i` and `j`.
+    b. Increment `i` by 1.
+    c. Decrement `j` by 1.
+7. End the loop when the condition `i < j` is no longer true.

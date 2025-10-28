@@ -1,0 +1,26 @@
+Function signature: `check_string() -> None`
+
+Variable declarations:
+- `s`: List[str]
+
+Logic flow:
+1. Read a string input from the user
+2. Convert the input string to a list of characters and assign it to `s`
+3. Sort the list `s` in ascending order
+4. Check if the first element of `s` is equal to the second element and not equal to the third element, and if the third element is equal to the fourth element
+5. If the condition in step 4 is true, print "Yes"
+6. If the condition in step 4 is false, print "No"
+
+Control structures:
+- Conditional: `if s[0] == s[1] and s[0] != s[2] and s[2] == s[3]:`
+
+Input/output operations:
+- Input: Read a string from the user using `input()`
+- Output: Print "Yes" or "No" based on the condition
+
+Data processing logic:
+- Convert string to list of characters
+- Sort the list
+
+Required libraries, modules, or dependencies:
+- No specific imports required

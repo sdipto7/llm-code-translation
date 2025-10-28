@@ -1,0 +1,48 @@
+**Algorithm:**
+
+**Function Signatures:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner scan` initialized with `System.in`
+- `int N` (input value)
+- `int[] x` (size `N`)
+- `int[] y` (size `N`)
+- `List<Double> thetas` (initialized per outer loop iteration)
+- `double ans` (per outer loop iteration)
+
+**Input Operations:**
+1. Read `N` via `scan.nextInt()`
+2. Read `N` pairs of integers into `x[]` and `y[]` via `scan.nextInt()` in a loop
+
+**Logic Flow:**
+1. **For** each `i` from `0` to `N-1` (inclusive):
+   - Initialize `thetas` as an empty `ArrayList<Double>`
+   - **For** each `j` from `0` to `N-1` (inclusive):
+     - **If** `i != j`:
+       - Compute `theta = Math.atan2(y[j] - y[i], x[j] - x[i])`
+       - Add `theta` to `thetas`
+   - Sort `thetas` in ascending order using `Comparator.naturalOrder()`
+   - Append `thetas.get(0) + 2 * Math.PI` to `thetas`
+   - Initialize `ans = 0.0`
+   - **For** each `k` from `0` to `N-2` (inclusive):
+     - Update `ans` as `max(ans, thetas.get(k+1) - thetas.get(k) - Math.PI)`
+   - Print `ans / (Math.PI * 2)`
+
+**Control Structures:**
+- Nested loops:
+  - Outer loop: `for (i = 0; i < N; ++i)`
+  - Inner loop 1: `for (j = 0; j < N; ++j)` with conditional `if (i != j)`
+  - Inner loop 2: `for (k = 0; k < N-1; ++k)`
+
+**Dependencies:**
+- `java.util.Scanner`
+- `java.util.Comparator`
+- `java.util.List`
+- `java.util.ArrayList`
+- `Math` functions (`atan2`, `PI`, `max`)
+
+**Data Processing:**
+- Angular calculations using `Math.atan2`
+- Circular angle wrapping via `thetas.get(0) + 2 * Math.PI` addition
+- Maximum angular gap detection after sorting

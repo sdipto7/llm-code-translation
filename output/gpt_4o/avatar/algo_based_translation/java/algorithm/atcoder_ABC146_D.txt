@@ -1,0 +1,43 @@
+1. Import the following libraries:
+   - `java.util.ArrayList`
+   - `java.util.List`
+   - `java.util.Scanner`
+
+2. Define a class `atcoder_ABC146_D` containing:
+   - Integer `n` to represent the number of nodes.
+   - List of ArrayLists `g` to store adjacency lists of graph edges.
+   - Integer array `ans` to store the colors assigned to each edge.
+
+3. Main function:
+   - Initialize a `Scanner` object `sc` for reading input.
+   - Read an integer `n` using `sc.next()`, and parse it to an integer.
+   - Initialize `g` as an `ArrayList` of size `n`.
+   - Loop from `0` to `n-1`:
+     - Add a new `ArrayList<Edge>` to `g`.
+   - Loop from `0` to `n-2`:
+     - Read two integers `a` and `b` using `sc.next()`, parse them, and subtract 1 to convert to zero-indexed.
+     - Add an `Edge` with id `i` and destination `b` to the adjacency list of `a`.
+     - Add an `Edge` with id `i` and destination `a` to the adjacency list of `b`.
+   - Initialize `ans` as an integer array of size `n-1`.
+   - Call `dfs(0, -1, -1)` to start depth-first search.
+   - Initialize integer `max` to `0`.
+   - Loop through each integer `temp` in `ans`:
+     - Update `max` to be the maximum of `max` and `temp`.
+   - Print `max`.
+   - Loop through each integer `c` in `ans`:
+     - Print `c`.
+
+4. Define a static `dfs` function with parameters `int to`, `int color`, `int parents`:
+   - Initialize integer `k` to `1`.
+   - For each `Edge e` in the adjacency list of node `to`:
+     - If `e.to` is equal to `parents`, continue to the next iteration.
+     - If `k` is equal to `color`, increment `k`.
+     - Assign `k` to `ans[e.id]`.
+     - Recursively call `dfs(e.to, k, to)`.
+     - Increment `k` by `1`.
+
+5. Define a class `Edge` with:
+   - Constructor `Edge(int id, int to)` that initializes:
+     - Integer `id` to represent the edge's identifier.
+     - Integer `to` to represent the destination node.
+   - Integer members `id` and `to`.

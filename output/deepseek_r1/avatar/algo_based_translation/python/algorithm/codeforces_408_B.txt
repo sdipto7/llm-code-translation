@@ -1,0 +1,45 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `solution() -> void`
+  - Parameters: None
+  - Return Type: void (outputs result directly via print)
+- `main() -> void`
+  - Parameters: None
+  - Return Type: void
+
+**Variable Declarations:**
+- `bought_count: Counter[str]` (stores character counts from first input line)
+- `made_cout: Counter[str]` (stores character counts from second input line)
+- `res: int` (initialized to 0; accumulates result sum)
+- `t: int` (initialized to 1; controls loop iterations in main)
+- `line: str` (temporary storage for input lines)
+
+**Logic Flow:**
+1. Read first input line into `line`
+2. Initialize `bought_count` with `Counter(line)`
+3. Read second input line into `line`
+4. Initialize `made_cout` with `Counter(line)`
+5. For each `color` in `made_cout`:
+   1. If `color` not present in `bought_count`:
+      1. Print "-1"
+      2. Terminate execution
+   2. Add `min(bought_count[color], made_cout[color])` to `res`
+6. Print `res`
+
+**Control Flow Structures:**
+- For-loop in main: `for _ in range(t)` (executes exactly once)
+- For-loop in solution: iterates through all keys in `made_cout`
+- Conditional check: `if color not in bought_count` (early exit condition)
+
+**Input/Output Operations:**
+- Read two lines via `input()` calls
+- Print output via `print()` (either `-1` or computed `res`)
+
+**Error Handling/Edge Cases:**
+- Immediate return with `-1` if any character in `made_cout` is absent in `bought_count`
+- Handles cases where character frequencies in `made_cout` exceed those in `bought_count` via `min()` operation
+
+**External Dependencies:**
+- `collections.Counter` for frequency counting
+- All other imported modules (heapq, bisect, etc.) are unused in core logic

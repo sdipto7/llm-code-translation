@@ -1,0 +1,52 @@
+```
+Algorithm atcoder_ABC070_B
+    Input: None (reads from standard input)
+    Output: Integer (writes to standard output)
+
+    Initialize inputStream of type InputStream as System.in
+    Initialize outputStream of type OutputStream as System.out
+    Initialize in of type InputReader with inputStream
+    Initialize out of type PrintWriter with outputStream
+
+    Declare integer a and assign in.nextInt()
+    Declare integer b and assign in.nextInt()
+    Declare integer c and assign in.nextInt()
+    Declare integer d and assign in.nextInt()
+
+    If c > b Then
+        Print 0 to standard output
+    Else If a > d Then
+        Print 0 to standard output
+    Else If a < c Then
+        Print (Min(b, d) - c) to standard output
+    Else 
+        Declare list l of type List<Integer> as new ArrayList<Integer>()
+        Add a to list l
+        Add b to list l
+        Add c to list l
+        Add d to list l
+        Sort list l
+        Print (l.get(2) - l.get(1)) to standard output
+
+Class InputReader
+    Declare reader of type BufferedReader
+    Declare tokenizer of type StringTokenizer
+
+    Constructor InputReader with parameter stream of type InputStream
+        Initialize reader with new BufferedReader using InputStreamReader and stream, buffer size 32768
+        Initialize tokenizer as null
+
+    Method next() returns String
+        While tokenizer is null or tokenizer has no more tokens
+            Try
+                Assign tokenizer new StringTokenizer with reader.readLine()
+            Catch IOException e
+                Throw new RuntimeException(e)
+        Return tokenizer.nextToken()
+
+    Method nextInt() returns Integer
+        Return Integer.parseInt(next())
+
+    Method nextLong() returns Long
+        Return Long.parseLong(next())
+```

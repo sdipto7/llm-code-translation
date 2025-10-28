@@ -1,0 +1,46 @@
+```plaintext
+- Import necessary libraries and modules:
+  - sys for system-specific parameters and functions
+  - re for regular expressions (though not used in this code)
+  - collections for data structures like deque, defaultdict, Counter
+  - math for mathematical functions and constants
+  - heapq for heap queue algorithms
+  - bisect for array bisection algorithms
+  - itertools for combinatoric iterators
+  - operator for functional operators
+  - copy for copying operations
+  - functools for higher-order functions
+  - fractions for rational number arithmetic
+  - string for string operations
+
+- Define helper functions:
+  - input() -> str: Read and return a stripped line from standard input
+  - ceil(a: int, b: int = 1) -> int: Return the ceiling of the division of a by b
+  - round(x: float) -> int: Round x to the nearest integer using a custom method
+  - fermat(x: int, y: int, MOD: int) -> int: Calculate x * y^(MOD-2) % MOD using Fermat's Little Theorem
+  - lcm(x: int, y: int) -> int: Return the least common multiple of x and y
+  - lcm_list(nums: List[int]) -> int: Return the LCM of a list of numbers
+  - INT() -> int: Read an integer from input
+  - MAP() -> Tuple[int]: Read space-separated integers from input
+  - LIST() -> List[int]: Read a list of integers from input
+
+- Set system recursion limit to a large number (10^9)
+
+- Initialize constants:
+  - INF as a floating-point representation of infinity
+  - MOD as a constant integer (10^9 + 7)
+
+- Read inputs:
+  - q, h, s, d: Tuple[int] - Read four integers representing prices from input using MAP()
+  - n: int - Read an integer representing the quantity in liters from input using INT()
+
+- Calculate the best price for 1 liter and 2 liters:
+  - best1L: int - Calculate the minimum of the prices for 1 liter in different units (q * 4, h * 2, s)
+  - best2L: int - Calculate the minimum price for 2 liters directly (d) or by combining two 1-liter prices (best1L * 2)
+
+- Output the minimum cost based on the quantity of liters (n):
+  - If n is even (n % 2 == 0):
+    - Print the total cost as best2L multiplied by n divided by 2
+  - Else (n is odd):
+    - Print the total cost as best2L multiplied by n divided by 2 plus best1L for the remaining 1 liter
+```

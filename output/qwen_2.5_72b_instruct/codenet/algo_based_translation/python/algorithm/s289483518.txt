@@ -1,0 +1,38 @@
+Function signature: `main() -> None`
+
+Variable declarations and data types:
+- `n: int`
+- `m: int`
+- `a: List[int]`
+- `ope: List[List[int]]`
+- `j: int`
+
+Logic flow in execution order:
+- Read integers `n` and `m` from input.
+- Read a list of integers `a` of length `n` from input.
+- Sort list `a` in ascending order.
+- Read `m` operations into a list of lists `ope`, where each operation contains two integers.
+- Sort list `ope` in descending order based on the second element of each sublist.
+- Initialize `j` to 0.
+- For each index `i` in the range of `n`:
+    - If `a[i]` is less than `ope[j][1]`:
+        - Set `a[i]` to `ope[j][1]`.
+        - Decrement `ope[j][0]` by 1.
+        - If `ope[j][0]` equals 0:
+            - Increment `j` by 1.
+            - If `j` equals the length of `ope`:
+                - Break the loop.
+    - Else:
+        - Break the loop.
+- Print the sum of list `a`.
+
+Input/output operations and data processing logic:
+- Input reading for `n` and `m`.
+- Input reading for list `a`.
+- Input reading for list `ope`.
+- Sorting operations on `a` and `ope`.
+- Loop through `a` and apply operations based on conditions.
+- Summing the elements of `a` and printing the result.
+
+Required libraries, modules, or dependencies:
+- `List` from `typing` module

@@ -1,0 +1,47 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signature**  
+- `main() -> void`  
+  - **Parameters**: None  
+  - **Return Type**: Void  
+
+**Variables and Data Types**  
+1. `v1: int` (Initial velocity)  
+2. `v2: int` (Target velocity)  
+3. `t: int` (Total time steps)  
+4. `d: int` (Maximum velocity change per step)  
+5. `a: int` (Acceleration direction, initialized to 1)  
+6. `v: int` (Current velocity, initialized to `v1`)  
+7. `distance: int` (Accumulated distance, initialized to 0)  
+8. `i: int` (Loop counter, range `0` to `t-1`)  
+
+**Input/Output Operations**  
+1. Read first input line: split into `v1`, `v2`, convert to integers.  
+2. Read second input line: split into `t`, `d`, convert to integers.  
+3. Output final `distance` after loop completion.  
+
+**Control Flow and Logic**  
+1. **Initialization**  
+   - Set `v1`, `v2`, `t`, `d` from input.  
+   - Initialize `a = 1`, `v = v1`, `distance = 0`.  
+
+2. **Main Loop**  
+   - Iterate `i` from `0` to `t-1` (inclusive) using a `for` loop:  
+     1. **Conditional Check**:  
+        - If `v - v2 > (t - i - 1) * d`:  
+           - Set `a = -1`  
+           - Set `v = (t - i - 1) * d + v2`  
+     2. **Update Distance**:  
+        - Add `v` to `distance`  
+     3. **Update Velocity**:  
+        - Modify `v` by `a * d`  
+
+**Edge Case Handling**  
+- Implicit handling of `t = 0` (loop not executed, output `0`).  
+- Velocity adjustments ensure `v` converges to `v2` exactly after `t` steps.  
+
+**External Dependencies**  
+- No external libraries. Relies on standard input/output operations.  
+
+**Error Handling**  
+- Assumes valid integer inputs. No explicit error checking for non-integer or malformed input.

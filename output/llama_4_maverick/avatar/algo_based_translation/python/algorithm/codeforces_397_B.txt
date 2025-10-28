@@ -1,0 +1,22 @@
+1. Initialize a class CodeforcesTask397BSolution
+2. Define a method __init__ 
+   1. Initialize result as an empty string
+   2. Initialize t as 0
+   3. Initialize queries as an empty list
+3. Define a method read_input
+   1. Read the value of t from input and convert it to an integer
+   2. Loop t times
+      1. Read a line from input, split it into integers, and append it to queries
+4. Define a method process_task
+   1. Initialize an empty list res
+   2. Loop through each query in queries
+      1. Calculate k as the integer division of query[0] by query[1]
+      2. If k * query[2] is greater than or equal to query[0], append "Yes" to res; otherwise, append "No"
+   3. Join the elements of res with newline characters and store it in result
+5. Define a method get_result
+   1. Return the value of result
+6. In the main execution block
+   1. Create an instance of CodeforcesTask397BSolution named Solution
+   2. Call the read_input method on Solution
+   3. Call the process_task method on Solution
+   4. Print the result of calling get_result on Solution

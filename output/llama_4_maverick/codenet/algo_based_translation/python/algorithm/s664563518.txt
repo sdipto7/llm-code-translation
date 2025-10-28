@@ -1,0 +1,54 @@
+1. Import required modules: 
+   - `heapq` for heap operations
+   - `collections` for data structures like deque, defaultdict, Counter
+   - `itertools` for permutations, combinations, accumulate
+   - `sys` for system-specific functions
+   - `bisect` for binary search
+   - `string` for string constants
+   - `math` for mathematical functions
+   - `time` for time-related functions
+
+2. Define input functions:
+   - `I()`: returns an integer from input
+   - `MI()`: returns a map object of integers from input split by whitespace
+   - `LI()`: returns a list of integers from input split by whitespace
+   - `LI_()`: returns a list of integers from input split by whitespace, subtracting 1 from each
+   - `StoI()`: returns a list of integers representing the alphabetical position of characters in input (a=0, b=1, ...)
+   - `ItoS(nn)`: returns a character represented by the alphabetical position `nn` (0=a, 1=b, ...)
+   - `input()`: returns a string from input, stripped of trailing whitespace
+
+3. Define a function `show(*inp, end='\n')`:
+   - takes variable number of arguments `*inp` and an optional `end` parameter (default='\n')
+   - prints `*inp` followed by `end` if `show_flg` is True
+
+4. Define constants:
+   - `YN`: a list of strings ['No', 'Yes']
+   - `MOD`: an integer representing a modulus value (10^9 + 7)
+   - `inf`: a float representing infinity
+   - `IINF`: an integer representing a large value (10^10)
+   - `l_alp`: a string of lowercase ASCII letters
+   - `u_alp`: a string of uppercase ASCII letters
+   - `ts`: the current time
+   - `nums`: a list of strings representing numbers from '1' to '10'
+
+5. Set `sys.setrecursionlimit(10**6)` to increase the recursion limit
+
+6. Define a boolean `show_flg` and set it to False (or True for debugging)
+
+7. Define the `main()` function:
+   - reads an integer `N` from input using `I()`
+   - initializes two lists `s` and `t` of size `N` with zeros
+   - iterates `N` times:
+     - reads a string and an integer from input, stores them in `s[i]` and `t[i]` respectively
+     - converts the second input to an integer using `int()`
+   - reads a string `X` from input
+   - initializes a variable `xi` to 0
+   - iterates `N` times:
+     - checks if `s[i]` equals `X`
+     - if true, sets `xi` to `i` and breaks the loop
+   - initializes a variable `ans` to 0
+   - iterates from `xi + 1` to `N - 1`:
+     - adds `t[i]` to `ans`
+   - prints `ans`
+
+8. Call `main()` when the script is run as the main module (`if __name__ == '__main__':`)

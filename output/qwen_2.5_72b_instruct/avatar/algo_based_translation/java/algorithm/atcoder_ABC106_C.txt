@@ -1,0 +1,26 @@
+Function Signature: 
+- `main(String[] args)`: void
+
+Variable Declarations:
+- `Scanner sc`: Scanner
+- `String str`: String
+- `char[] c`: char array
+- `long k`: long
+- `int n`: int
+- `int i`: int
+
+Logic Flow:
+1. Create a new Scanner object to read input.
+2. Read a string from the input and store it in `str`.
+3. Convert `str` to a character array `c`.
+4. Read a long integer from the input and store it in `k`.
+5. Determine the length of `str` and store it in `n`.
+6. Initialize a for loop with `i` starting at 0, incrementing by 1, and continuing as long as `i` is less than `k`.
+7. Inside the loop, check if the character at index `i` of `c` is '1'.
+   - If true, check if `i` is equal to `k - 1`.
+     - If true, print 1 and return from the main function.
+8. If the character at index `i` of `c` is not '1'.
+   - Print the character at index `i` of `c` and return from the main function.
+
+Libraries:
+- `java.util.Scanner`

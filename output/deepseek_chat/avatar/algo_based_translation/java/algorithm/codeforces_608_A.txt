@@ -1,0 +1,65 @@
+**Algorithm:**
+
+**Main Function:**
+- Parameters: String[] args
+- Return: void
+
+**Variables:**
+- Scanner sc: initialized with System.in
+- PrintWriter o: initialized with System.out
+- int n: read from sc.nextInt()
+- int s: read from sc.nextInt()
+- int max: initialized to 0
+
+**Logic Flow:**
+1. Read integer n from input
+2. Read integer s from input
+3. Initialize max = 0
+4. While n > 0:
+   - Decrement n by 1
+   - Read integer f from input
+   - Read integer t from input
+   - If max < (f + t):
+     - Set max = f + t
+5. Print maximum value between max and s
+6. Close PrintWriter o
+
+**FastScanner Class:**
+- BufferedReader br: initialized with InputStreamReader(System.in)
+- StringTokenizer st: initialized with empty string
+
+**Methods:**
+- next(): String
+  - While st has no more tokens:
+    - Read line from br
+    - Set st to new StringTokenizer of read line
+  - Return next token from st
+
+- nextLine(): String
+  - Read line from br and return
+
+- nextByte(): byte
+  - Parse next token as byte
+
+- nextShort(): short
+  - Parse next token as short
+
+- nextInt(): int
+  - Parse next token as int
+
+- nextLong(): long
+  - Parse next token as long
+
+- nextDouble(): double
+  - Parse next token as double
+
+**Required Imports:**
+- java.util.Scanner
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader
+- java.io.PrintWriter
+- java.nio.charset.MalformedInputException
+- java.util.StringTokenizer
+- java.util.Arrays
+- java.util.HashSet

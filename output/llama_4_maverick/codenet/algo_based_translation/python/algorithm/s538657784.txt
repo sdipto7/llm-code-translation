@@ -1,0 +1,30 @@
+- Function signature: `func(N: int) -> None`
+- Import the `math` module for mathematical operations
+- Declare `N` as an integer input from the user
+- Declare `sqN` as an integer, calculated as the square root of `N`
+- Iterate over a range from 0 to `sqN-1` using a for loop
+- Inside the loop, check the condition `N % (sqN-i) == 0`
+- If the condition is true, calculate the result as `int(N/(sqN-i)+sqN-i)-2` and print it
+- Exit the loop using a break statement after printing the result
+- Input operation: Read an integer `N` from the user
+- Output operation: Print the calculated result to the console
+- Required library: `math` for the `sqrt` function 
+
+Here is the algorithm in a structured format:
+```
+func(N: int) -> None
+  Import math
+  sqN = int(math.sqrt(N))
+  for i in range(sqN)
+    if N % (sqN-i) == 0
+      result = int(N/(sqN-i)+sqN-i)-2
+      Print(result)
+      Break
+  End for
+End func
+
+Main
+  N = Read integer from user
+  func(N)
+End Main
+```

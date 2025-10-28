@@ -1,0 +1,109 @@
+import sys
+import math
+from collections import defaultdict
+from collections import deque
+
+def load(vtype=int):
+    Read input line, strip whitespace, convert to vtype
+    Return: vtype value
+
+def load_list(seplator=" ", vtype=int):
+    Read input line, strip whitespace, split by seplator
+    Convert each element to vtype
+    Return: list of vtype values
+
+def exit():
+    Import sys
+    Call sys.exit(0)
+
+def perm_sub(li, used):
+    If len(li) == len(used):
+        Return [deque()]
+    Initialize empty list k
+    For i from 0 to len(li)-1:
+        If i in used: continue
+        Add i to used set
+        Call perm_sub(li, used) and store result in sub_list
+        For each sub in sub_list:
+            Appendleft li[i] to sub
+        Extend k with sub_list
+        Remove i from used set
+    Return k
+
+def perm_li(li):
+    Call perm_sub(li, empty set)
+    Return result
+
+def perm_n(n):
+    Create list [0, 1, ..., n-1]
+    Call perm_sub(list, empty set)
+    Return result
+
+def join_i(li, sep=""):
+    Convert each element in li to string
+    Join strings with sep
+    Return joined string
+
+def li2n(li):
+    Initialize n = 0, base = 1
+    For i from len(li)-1 down to 0:
+        n += li[i] * base
+        base *= 10
+    Return n
+
+def sli2ili(li):
+    For each element in li: convert to int
+    Return list of integers
+
+def prime_list(n):
+    Create list li = [2, 3, ..., n]
+    For i from 0 to len(li)-1:
+        If li[i] >= sqrt(n): break
+        If li[i] == -1: continue
+        For j from i+1 to len(li)-1:
+            If li[j] % li[i] == 0:
+                Set li[j] = -1
+    Return all elements from li that are not -1
+
+def gcd(a, b):
+    Set a = max(a,b), b = min(a,b)
+    While True:
+        r = a % b
+        If r == 0: return b
+        Set a = b, b = r
+
+def lcm(a, b):
+    Return int(a * b / gcd(a,b))
+
+def all_subset(li):
+    Initialize empty list s
+    n = len(li)
+    For bit from 0 to (1<<(n+1))-1:
+        Initialize empty set ss
+        For i from 0 to n-1:
+            If bit has i-th bit set:
+                Add li[i] to ss
+        Append ss to s
+    Return s
+
+def factorial(n):
+    If n == 1: return 1
+    Return n * factorial(n-1)
+
+def mCn(m, n):
+    Define factorial_ntimes(m, n):
+        Initialize r = 1
+        While n > 0:
+            r *= m
+            m -= 1
+            n -= 1
+        Return r
+    Return int(factorial_ntimes(m, n) / factorial(n))
+
+Main execution:
+n = load()
+A = load_list()
+If n == number of unique elements in A:
+    Print 'YES'
+Else:
+    Print 'NO'

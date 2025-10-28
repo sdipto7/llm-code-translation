@@ -1,0 +1,64 @@
+```
+Algorithm Main
+    Input: None
+    Output: Integer printed to console
+
+    Declare integer n
+    Assign n the next integer input using sc.nextInt()
+    Declare 2D integer array arr with dimensions [n][3]
+    For i from 0 to n-1
+        For j from 0 to 2
+            Assign arr[i][j] the next integer input using sc.nextInt()
+    Declare 2D integer array dp with dimensions [n][3]
+    Assign dp[0][0], dp[0][1], dp[0][2] to arr[0][0], arr[0][1], arr[0][2] respectively
+    For i from 1 to n-1
+        For j from 0 to 2
+            If j equals 0
+                Assign dp[i][j] the maximum of arr[i][0] + dp[i-1][1] and arr[i][0] + dp[i-1][2]
+            If j equals 1
+                Assign dp[i][j] the maximum of arr[i][1] + dp[i-1][0] and arr[i][1] + dp[i-1][2]
+            If j equals 2
+                Assign dp[i][j] the maximum of arr[i][2] + dp[i-1][1] and arr[i][2] + dp[i-1][0]
+    Declare integer max and initialize to -1
+    For i from 0 to 2
+        If dp[n-1][i] is greater than max
+            Assign max the value of dp[n-1][i]
+    Print max to console
+
+Algorithm sc
+    Static Variables:
+        BufferedReader reader initialized with InputStreamReader(System.in)
+        StringTokenizer tokenizer initialized with an empty string
+
+    Function next
+        Input: None
+        Output: String
+        While tokenizer does not have more tokens
+            Assign tokenizer a new StringTokenizer with a line read from reader
+        Return the next token from tokenizer
+
+    Function nextInt
+        Input: None
+        Output: Integer
+        Return the integer parsed from the result of next()
+
+    Function nextDouble
+        Input: None
+        Output: Double
+        Return the double parsed from the result of next()
+
+    Function nextLong
+        Input: None
+        Output: Long
+        Return the long parsed from the result of next()
+
+    Function nextFloat
+        Input: None
+        Output: Float
+        Return the float parsed from the result of next()
+
+Dependencies:
+    java.util.*
+    java.io.*
+    java.lang.*
+```

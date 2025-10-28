@@ -1,0 +1,37 @@
+import math, itertools, fractions, heapq, collections, bisect, sys, queue, copy
+
+sys.setrecursionlimit(10**7)
+
+def LI() -> list:
+    return [int(x) for x in sys.stdin.readline().split()]
+
+def I() -> int:
+    return int(sys.stdin.readline())
+
+def F() -> float:
+    return float(sys.stdin.readline())
+
+def LS() -> list:
+    return sys.stdin.readline().split()
+
+def S() -> str:
+    return input()
+
+def main() -> int:
+    # Read four integer values from input
+    a, b, c, d = LI()
+    
+    # Calculate the product of pairs (a, c), (b, d), (a, d), and (b, c)
+    ac = a * c
+    bd = b * d
+    ad = a * d
+    bc = b * c
+    
+    # Determine the maximum product value among the four calculated products
+    result = max(ac, bd, ad, bc)
+    
+    # Return the maximum product
+    return result
+
+# Output the result of the main function
+print(main())

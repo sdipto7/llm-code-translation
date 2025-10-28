@@ -1,0 +1,72 @@
+**Algorithm**
+
+**Functions:**
+- `public static void main(String[] args)`
+  - Parameters: String array `args`
+  - Returns: void
+- `private static ArrayList<Integer> func(ArrayList<Integer> A)`
+  - Parameters: `ArrayList<Integer> A`
+  - Returns: `ArrayList<Integer>`
+
+**Variables:**
+- `main`:
+  - `Scanner sc` (reads from `System.in`)
+  - `int n` (input)
+  - `ArrayList<Integer> a` (stores input integers)
+  - `int ans` (final result)
+- `func`:
+  - `ArrayList<Integer> a` (copy of input list `A`)
+  - `int min` (tracks minimum non-zero value)
+
+**Dependencies:**
+- `java.util.*` (for `Scanner`, `ArrayList`, `Collections`)
+
+**Logic Flow:**
+
+1. **Main Execution:**
+   - Read `n` from input.
+   - If `n == 1`:
+     - Read single integer and print it.
+     - Terminate program.
+   - Read `n` integers into `a`.
+   - Sort `a` in ascending order.
+   - If last element of sorted `a` is 0:
+     - Print `0` and terminate.
+   - Initialize `ans` to 0.
+   - Loop indefinitely:
+     - If `a.size() == 1`:
+       - Set `ans` to the sole element of `a`.
+       - Break loop.
+     - Update `a` by calling `func(a)`.
+   - Print `ans`.
+
+2. **func Execution:**
+   - Iterate over elements of `a`:
+     - Remove elements equal to 0 (adjusting index after removal).
+     - If `min` is not yet set (`min == 0`):
+       - Set `min` to current element.
+     - Else:
+       - Replace current element with `element % min`.
+       - If result is 1:
+         - Print `1` and terminate program.
+   - Sort modified `a` in ascending order.
+   - Return sorted `a`.
+
+**Control Structures:**
+- **main:**
+  - `if (n == 1)`
+  - `for` loop (`i` from 0 to `n-1`)
+  - `if (a.get(a.size()-1) == 0)`
+  - `while (true)` loop with nested `if (a.size() == 1)`
+- **func:**
+  - `for` loop (`i` from 0 to `a.size()-1` with dynamic adjustment)
+  - Nested `if-else` conditions to handle zero removal and modulus operations
+
+**Input/Output:**
+- Input via `Scanner` for integers.
+- Output via `System.out.println` for results and early termination cases (0 or 1).
+
+**Data Processing:**
+- Sorting lists with `Collections.sort`.
+- Dynamic list modification (element removal and value updates).
+- GCD-like reduction via repeated modulus operations.

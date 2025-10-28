@@ -1,0 +1,40 @@
+1. Function Signature:
+   - Function Name: `main`
+   - Parameters: `String[] args`
+   - Return Type: `void`
+
+2. Variable Declarations:
+   - `Scanner scan` (Type: Scanner) - For reading input
+   - `int len` (Type: int) - Length of the input array
+   - `int[] a` (Type: int[]) - Array to store input integers
+   - `int l` (Type: int) - Start index of the segment to reverse
+   - `int r` (Type: int) - End index of the segment to reverse
+   - `boolean flag` (Type: boolean) - Flag to mark the start of a segment
+   - `boolean isTrue` (Type: boolean) - Flag to determine if the sequence is not sortable by a simple segment reversal
+
+3. Logic Flow:
+   - Initialize a `Scanner` object for reading input from standard input.
+   - Read an integer from input and store it in `len` (length of the array).
+   - Initialize an array `a` of size `len`.
+   - Loop through from `0` to `len-1`:
+     - Read each integer from input and store it in the array `a`.
+   - Initialize `l` and `r` to `0`.
+   - Initialize `flag` and `isTrue` to `false`.
+   - Iterate over the array `a` with loop index `i` ranging from `0` to `len-1`:
+     - If `a[i]` is not equal to `i+1` and `flag` is `false`:
+       - Set `l` to `i + 1`.
+       - Set `flag` to `true`.
+       - Continue to the next iteration.
+     - If `a[i]` is not equal to `i+1` and `flag` is `true`:
+       - Set `r` to `i + 1`.
+       - If `a[r - 1] - a[r - 2] > 0`, set `isTrue` to `true` and break out of the loop.
+   - If `isTrue` is `false`, print `l` and `r`.
+   - If `isTrue` is `true`, print `0 0`.
+
+4. Input/Output Operations:
+   - Input: Read integers from standard input using `Scanner`.
+   - Output: Print two integers separated by a space.
+
+5. Required Libraries:
+   - `java.util.Scanner` for reading input.
+   - `java.lang.Math` (although not used in this code).

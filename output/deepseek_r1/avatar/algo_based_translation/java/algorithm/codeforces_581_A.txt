@@ -1,0 +1,34 @@
+- **Function Signature**:  
+  `public static void main(String[] args)`  
+
+- **Variable Declarations**:  
+  - `Scanner sc = new Scanner(System.in)`  
+  - `int a, b`  
+  - `int count = 0`  
+  - `int ans`  
+
+- **Input Operations**:  
+  - Read `a` via `sc.nextInt()`  
+  - Read `b` via `sc.nextInt()`  
+
+- **Logic Flow**:  
+  1. Initialize `count` to `0`.  
+  2. Enter infinite loop:  
+     - Check if `a > 0 && b > 0`.  
+     - If true:  
+       - Increment `count` by `1`.  
+       - Decrement `a` by `1`.  
+       - Decrement `b` by `1`.  
+     - If false: exit loop.  
+  3. Compute `ans` as `(a / 2) + (b / 2)` (integer division).  
+  4. Print `count` followed by a space and `ans`.  
+
+- **Control Structures**:  
+  - Infinite `while (true)` loop with conditional break.  
+  - `if (a > 0 && b > 0)` to control loop iterations.  
+
+- **Output Operations**:  
+  - Print formatted string: `count + " " + ans`.  
+
+- **Required Libraries**:  
+  - `java.util.Scanner` from `java.util.*`.

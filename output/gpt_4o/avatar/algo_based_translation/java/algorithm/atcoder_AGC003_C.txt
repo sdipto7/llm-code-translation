@@ -1,0 +1,31 @@
+1. Import the `java.util` package.
+
+2. Define a class `atcoder_AGC003_C`.
+
+3. Declare a constant integer `NUM` with a value of `(int)(1e5 + 2)`.
+
+4. Define the `main` method with `String[] args` as a parameter:
+   - Create a `Scanner` object `sc` to read input from the standard input stream.
+   - Read an integer `N` from input using `sc.nextInt()`.
+   - Declare a `HashMap<Integer, Integer>` named `map`.
+   - Declare a `PriorityQueue<Integer>` named `nums`.
+
+5. For `i` ranging from `0` to `N-1` (inclusive):
+   - Read an integer `tmp` using `sc.nextInt()`.
+   - Add `tmp` to the priority queue `nums`.
+   - Map `tmp` to index `i` in `map`.
+
+6. Initialize an integer `bin` to `0`.
+   
+7. Initialize an integer `diff` to `0`.
+
+8. While the priority queue `nums` is not empty:
+   - Poll an integer `num` from the priority queue `nums`.
+   - Get the index `idx` of `num` from `map`.
+   - If `(bin % 2) != (idx % 2)`, increment `diff` by `1`.
+   - Increment `bin` by `1`.
+   - Perform `bin %= 2` to alternate `bin` between `0` and `1`.
+
+9. Calculate the integer `ans` as `diff / 2`.
+
+10. Print the integer `ans` to the standard output.

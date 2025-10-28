@@ -1,0 +1,29 @@
+- Input: Read integer H from standard input
+- Variables:
+  - H: integer (input value)
+  - count: integer (initialized to 0, unused in calculations)
+- Function:
+  - Name: dfs
+  - Parameter: h (integer)
+  - Return type: integer
+  - Logic:
+    1. If h equals 1:
+        - Return 1
+    2. Else:
+        - Compute h divided by 2 using integer division
+        - Recursively call dfs with h//2 as parameter
+        - Multiply recursive result by 2
+        - Add 1 to the product
+        - Return final value
+- Execution flow:
+  1. Read H
+  2. Initialize count to 0
+  3. Call dfs(H)
+  4. Print return value of dfs(H)
+- Control structures:
+  - if statement: h == 1 check in dfs function
+  - Recursive calls with parameter h//2
+- Data processing:
+  - Input converted to integer
+  - Repeated integer division by 2 in recursion
+- Dependencies: None (only uses standard input/output)

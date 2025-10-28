@@ -1,0 +1,26 @@
+- **Input Operations**:
+  - Read two integers `n` (int) and `k` (int) from standard input.
+  - Read a list `li` (List[int]) of `n` integers from standard input.
+
+- **Data Processing**:
+  - Sort `li` in ascending order (in-place).
+  - Create a sublist `tmp` (List[int]) containing the first `k` elements of the sorted `li`.
+
+- **Output Operation**:
+  - Compute the sum of all elements in `tmp` (int) and print it.
+
+- **Variables**:
+  - `n`: int (number of elements in the list).
+  - `k`: int (number of elements to sum).
+  - `li`: List[int] (input list, modified in-place by sorting).
+  - `tmp`: List[int] (sublist of `li` after sorting).
+
+- **Control Structures**:
+  - None (no explicit loops or conditionals beyond input parsing and list operations).
+
+- **Data Flow**:
+  - Input → Sort → Slice → Sum → Output.
+
+- **Dependencies**:
+  - Standard input handling via `input()`.
+  - Built-in functions: `map`, `list.sort`, `sum`, `print`.

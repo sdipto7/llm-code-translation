@@ -1,0 +1,13 @@
+N: integer from input
+A: list of integers from input
+ans: integer = absolute value of last element of A
+A: list = [0] + A + [0]
+diff: list of zeros with length N
+
+For i from 1 to N (inclusive):
+    dif: integer = |A[i] - A[i-1]| + |A[i] - A[i+1]| - |A[i-1] - A[i+1]|
+    ans: integer = ans + |A[i] - A[i-1]|
+    diff[i-1] = dif
+
+For i from 0 to N-1:
+    Print: ans - diff[i]

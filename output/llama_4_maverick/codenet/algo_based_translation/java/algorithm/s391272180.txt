@@ -1,0 +1,23 @@
+1. Import required library: java.util.Scanner
+2. Define class: Main
+3. Define main function: main with parameters (String[] args) and return type void
+   1. Create Scanner object: sc of type Scanner
+   2. Initialize sc with System.in
+   3. Declare StringBuilder objects: s, t
+   4. Read input using sc.next() and store in s and t
+   5. Declare boolean variable: flag and initialize with false
+   6. Loop from i = 0 to s.length() - 1
+      1. Call Rotate function with s as parameter and update s with the returned value
+      2. Compare t.toString() with s.toString()
+      3. If they are equal, set flag to true and break the loop
+   7. Check the value of flag
+      1. If flag is true, print "Yes"
+      2. If flag is false, print "No"
+
+4. Define Rotate function with parameter (StringBuilder str) and return type StringBuilder
+   1. Store the length of str in variable len
+   2. Store the first character of str in variable t
+   3. Loop from i = 0 to len - 2
+      1. Shift characters in str one position to the left
+   4. Set the last character of str to t
+   5. Return str

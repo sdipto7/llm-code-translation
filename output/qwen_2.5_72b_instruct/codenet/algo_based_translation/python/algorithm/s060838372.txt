@@ -1,0 +1,32 @@
+Function Signature: `transform_string(N: int, K: int, S: str) -> str`
+
+Variable Declarations:
+- N: int
+- K: int
+- S: list of str
+- ans: str
+
+Logic Flow:
+1. Read integers N and K from input, separated by whitespace.
+2. Read string S from input.
+3. Convert string S into a list of characters.
+4. If the character at index K-1 in S is "A", replace it with "a".
+5. Else if the character at index K-1 in S is "B", replace it with "b".
+6. Else, replace the character at index K-1 in S with "c".
+7. Join the list S back into a string and assign it to ans.
+8. Print the string ans.
+
+Control Structures:
+- If-elif-else statement to check the value of the character at index K-1 in S and replace it accordingly.
+
+Input/Output Operations:
+- Input: Two integers N and K, followed by a string S.
+- Output: The modified string S with the character at index K-1 transformed to lowercase ('a', 'b', or 'c').
+
+Data Processing Logic:
+- Convert the input string S into a list to enable modification of specific characters.
+- Modify the character at the specified index K-1 based on its current value.
+- Convert the list back to a string for output.
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries or modules are required.

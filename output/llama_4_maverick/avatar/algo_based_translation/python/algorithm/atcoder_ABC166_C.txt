@@ -1,0 +1,17 @@
+1. Read two integers n and m from input
+2. Initialize an array p with values from 1 to n
+3. Read m integers into an array h
+4. Create a dictionary hp by mapping elements of p to corresponding elements of h
+5. Initialize an empty dictionary path with keys from 1 to n
+6. For each key in path, initialize its value as an empty list
+7. For m iterations:
+   1. Read two integers a and b from input
+   2. Append b to the list of path[a]
+   3. Append a to the list of path[b]
+8. Initialize a counter c to 0
+9. For each key-value pair i, v in path:
+   1. Initialize a flag f to 0
+   2. For each neighbor j in v:
+      1. If hp[i] is less than or equal to hp[j], set f to 1 and break the loop
+   3. If f is 0, increment c by 1
+10. Output the value of c

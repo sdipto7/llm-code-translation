@@ -1,0 +1,33 @@
+**Function Signature:**
+- main() -> None
+
+**Variables:**
+- n: int
+- t: list[int]
+- m: int
+- i: int (loop counter)
+- p: int
+- x: int
+- s: int
+- j: int (loop counter)
+
+**Algorithm:**
+1. Read integer n from input
+2. Read list t of n integers from input
+3. Read integer m from input
+4. For i from 0 to m-1:
+   5. Read integers p and x from input
+   6. Initialize s to 0
+   7. For j from 0 to len(t)-1:
+       8. If j equals p-1:
+           9. Add x to s
+       10. Else:
+           11. Add t[j] to s
+   12. Print s
+
+**Input/Output Operations:**
+- Input: n, list t, m, multiple pairs of p and x
+- Output: Print s for each query
+
+**Required Dependencies:**
+- Standard input/output functions

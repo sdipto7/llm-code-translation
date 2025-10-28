@@ -1,0 +1,17 @@
+1. Import required library: java.util.Scanner
+2. Define class: Main
+3. Define function: main with return type void and parameter args of type String[]
+4. Declare variable: Num of type int[]
+5. Initialize Num with a new int array of size 11
+6. Create a new Scanner object: n, initialized with System.in
+7. Loop from i = 0 to i < 10
+   - Read an integer from the input using n.nextInt() and store it in Num[i]
+8. Loop from a = 9 to a >= 0 with a decrementing by 1
+   - Loop from b = 0 to b < a
+     - If Num[b] is less than Num[b+1]
+       - Store Num[b] in Num[10]
+       - Store Num[b+1] in Num[b]
+       - Store Num[10] in Num[b+1]
+9. Print Num[0] to the output
+10. Print Num[1] to the output
+11. Print Num[2] to the output

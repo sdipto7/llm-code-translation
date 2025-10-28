@@ -1,0 +1,6 @@
+read input as a string and split into a list of strings
+join the list of strings into a single string
+convert the joined string to an integer
+check if the integer modulo 4 equals 0
+if true, output 'YES'
+if false, output 'NO'

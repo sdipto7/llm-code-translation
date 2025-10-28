@@ -1,0 +1,55 @@
+1. Import required libraries:
+   - java.awt.geom.Point2D.Double
+   - java.io.BufferedReader
+   - java.io.IOException
+   - java.io.InputStreamReader
+
+2. Define a class `Main` with a `main` method that calls an instance method `run`.
+
+3. Define the `run` method:
+   - Try to execute the following steps, catching `IOException` if it occurs.
+   - Create a `BufferedReader` object `br` to read from `System.in`.
+   - Read a line from `br`, split it into an array `line` of strings.
+   - Create `Point2D` objects `p0` and `p1` using the first four elements of `line`.
+   - Read an integer `q` from `br`.
+   - Create a `StringBuilder` object `buf`.
+   - Loop `q` times:
+     - Read a line from `br`, split it into an array `line` of strings.
+     - Create a `Point2D` object `p2` using the first two elements of `line`.
+     - Call the `jadgeClockwise` method with `p0`, `p1`, and `p2`, append the result to `buf` followed by a newline character.
+   - Print the contents of `buf` to `System.out`.
+   - If an `IOException` occurs during the above steps, print the exception to `System.out`.
+
+4. Define the `jadgeClockwise` method:
+   - Take three `Point2D` objects `p0`, `p1`, and `p2` as parameters.
+   - Create a `Vector` object `v`.
+   - Create `Point2D` objects `a` and `b` by computing the difference between `p1` and `p0`, and between `p2` and `p0`, respectively.
+   - If the cross product of `a` and `b` is greater than `v.EPS`, return "COUNTER_CLOCKWISE".
+   - If the cross product of `a` and `b` is less than `-v.EPS`, return "CLOCKWISE".
+   - If the dot product of `a` and `b` is less than `-v.EPS`, return "ONLINE_BACK".
+   - If the norm of `a` is less than the norm of `b`, return "ONLINE_FRONT".
+   - Otherwise, return "ON_SEGMENT".
+
+5. Define a private inner class `Point2D` extending `java.awt.geom.Point2D.Double`:
+   - Define a constant `EPS` with value `1e-10`.
+   - Provide constructors to initialize `Point2D` objects.
+   - Define methods:
+     - `equals`: compare two numbers with a tolerance of `EPS`.
+     - `sum`: compute the sum of two `Point2D` objects.
+     - `diff`: compute the difference between two `Point2D` objects.
+     - `multiple`: scale a `Point2D` object by a factor.
+     - `norm`: compute the squared magnitude of a `Point2D` object.
+     - `abs`: compute the magnitude of a `Point2D` object.
+     - `toString`: return a string representation of a `Point2D` object.
+
+6. Define a private inner class `Vector` extending `Point2D`:
+   - Provide constructors to initialize `Vector` objects.
+   - Define methods:
+     - `dot`: compute the dot product of two `Point2D` objects.
+     - `cross`: compute the cross product of two `Point2D` objects.
+     - `isOrthogonal`: check if two `Point2D` objects are orthogonal.
+     - `isOrthogonal`: check if two line segments defined by `Point2D` objects are orthogonal.
+     - `isParallel`: check if two `Point2D` objects are parallel.
+     - `isParallel`: check if two line segments defined by `Point2D` objects are parallel.
+     - `project`: compute the projection of a `Point2D` object onto a line segment.
+     - `reflect`: compute the reflection of a `Point2D` object across a line segment.

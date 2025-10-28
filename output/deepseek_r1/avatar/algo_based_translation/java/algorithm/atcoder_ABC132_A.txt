@@ -1,0 +1,40 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables and Data Types:**
+- `Scanner in = new Scanner(System.in)`
+- `String s = in.next()`
+- `char[] targ = s.toCharArray()`
+- `HashMap<Character, Integer> map = new HashMap<>()`
+- `boolean ok = true`
+
+**Logic Flow:**
+1. Read input string `s` via `Scanner`.
+2. Convert `s` to `char[] targ`.
+3. Initialize empty `HashMap<Character, Integer> map`.
+4. Iterate over each character in `targ`:
+   - If character not in `map`, add it with value `1`.
+   - Else, increment its value by `1`.
+5. Set `ok` to `true`.
+6. Iterate over each entry in `map.entrySet()`:
+   - If any entry’s value ≠ `2`, set `ok` to `false` and break loop.
+7. Check if `ok` is `true` and `map.size() == 2`.
+   - If true: print `"Yes"`.
+   - Else: print `"No"`.
+8. Close `Scanner`.
+
+**Control Structures:**
+- `for (int i = 0; i < targ.length; i++)` to process characters.
+- `if (!map.containsKey(...))` to check character existence.
+- `for (Entry<Character, Integer> c : map.entrySet())` to validate counts.
+- `if (c.getValue() != 2)` to test entry values.
+- `if (ok && map.size() == 2)` for final check.
+
+**Input/Output Operations:**
+- Read input via `Scanner`.
+- Output `"Yes"` or `"No"` via `System.out.println`.
+
+**Required Libraries:**
+- `java.util.HashMap`
+- `java.util.Map.Entry`
+- `java.util.Scanner`

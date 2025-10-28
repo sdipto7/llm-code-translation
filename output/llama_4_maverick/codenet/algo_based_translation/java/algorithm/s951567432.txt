@@ -1,0 +1,13 @@
+1. Import the `java.util` module for using the `Scanner` class.
+2. Define a class `Main` with a `main` method that takes an array of `String` arguments and returns `void`.
+3. Within the `main` method:
+   - Declare an integer variable `count` and initialize it by reading an integer from the standard input using `Scanner(System.in).nextInt()`.
+   - Declare an integer variable `total` and initialize it to 0.
+   - Declare an integer variable `ix` for loop iteration.
+   - Use a `for` loop with the following conditions:
+     - Initialize `ix` to 1.
+     - Continue the loop as long as `ix` is less than or equal to `count`.
+     - Increment `ix` by 1 at the end of each iteration.
+   - Within the loop, add the current value of `ix` to `total`.
+4. After the loop, use `System.out.println` to output the final value of `total` to the standard output.
+5. The program terminates after executing the `main` method.

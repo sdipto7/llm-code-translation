@@ -1,0 +1,43 @@
+import random
+Read input line and ignore
+Read next input line, split into list of strings, convert each to integer, store in A
+Filter A: keep first element, then for each consecutive pair (i, j) in A, keep j only if i >= j, assign result back to A
+Set N = length of A
+
+Define function cut(array: list of tuples (int, int), index: int) -> list of tuples (int, int):
+    If index < 1:
+        Return empty list
+    If index <= array[0][0]:
+        Return list containing tuple (index, array[0][1])
+    For _ from len(array)-1 down to 1:
+        If array[_-1][0] < index:
+            Return array[0:_] concatenated with tuple (index, array[_][1])
+
+Define function is_possible(K: int) -> bool:
+    Initialize dp as list containing tuple (A[0], 0)
+    For each a in A[1:]:
+        If a <= last element's first value in dp:
+            Set dp = cut(dp, a)
+        Else:
+            Append tuple (a, 0) to dp
+        Set is_added = False
+        For j from last index of dp down to 0:
+            If second value of dp[j] < K-1:
+                Set dp = cut(dp, dp[j][0]-1) concatenated with tuple (dp[j][0], dp[j][1]+1)
+                If last element's first value in dp < a:
+                    Append tuple (a, 0) to dp
+                Set is_added = True
+                Break inner loop
+        If not is_added:
+            Return False
+    Return True
+
+Define function bis(x: int, y: int) -> int:
+    If y == x+1:
+        Return y
+    Else if is_possible((x+y)//2):
+        Return bis(x, (x+y)//2)
+    Else:
+        Return bis((x+y)//2, y)
+
+Print result of bis(0, N)

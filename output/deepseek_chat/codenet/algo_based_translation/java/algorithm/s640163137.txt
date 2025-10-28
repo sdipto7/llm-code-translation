@@ -1,0 +1,24 @@
+1. Import java.io.BufferedReader, java.io.IOException, java.io.InputStreamReader
+2. Define class Main with public static void main(String[] args) throws IOException
+3. Declare BufferedReader br initialized with new BufferedReader(new InputStreamReader(System.in))
+4. Declare int n initialized with Integer.parseInt(br.readLine())
+5. Declare int[] a with size n
+6. Declare String[] elements initialized with br.readLine().split(" ")
+7. For i from 0 to n-1:
+   - Set a[i] = Integer.parseInt(elements[i])
+8. Declare int swapCount initialized to 0
+9. For i from 0 to a.length-1:
+   - Declare int mini initialized to i
+   - For j from i to a.length-1:
+        - If a[j] < a[mini]:
+            - Set mini = j
+   - If mini != i:
+        - Declare int v initialized to a[mini]
+        - Set a[mini] = a[i]
+        - Set a[i] = v
+        - Increment swapCount by 1
+10. Declare String ans initialized with String.valueOf(a[0])
+11. For i from 1 to a.length-1:
+    - Append " " + a[i] to ans
+12. Print ans
+13. Print swapCount

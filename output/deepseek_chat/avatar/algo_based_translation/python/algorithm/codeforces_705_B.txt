@@ -1,0 +1,15 @@
+Algorithm:
+1. Import sys module
+2. Define input function as sys.stdin.readline
+3. Read integer n from input
+4. Read list w of integers from input by splitting next line
+5. Initialize integer variable c to 2
+6. For each element i in list w:
+   a. If i equals 1:
+      - Print current value of c
+   b. Else if i modulo 2 equals 0:
+      - Set c = 3 - c
+      - Print new value of c
+   c. Else:
+      - Print current value of c
+7. End loop

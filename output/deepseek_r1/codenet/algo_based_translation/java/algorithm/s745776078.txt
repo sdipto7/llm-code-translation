@@ -1,0 +1,44 @@
+**Algorithm:**
+
+1. **Function Signatures:**
+   - `public static void main(String[] args)`
+
+2. **Variables:**
+   - `n: int` (first input dimension)
+   - `m: int` (second input dimension)
+   - `A: int[][]` (2D array of size `n x m`)
+   - `b: int[]` (1D array of size `m`)
+   - `c: int` (temporary sum variable)
+   - `i: int` (loop index)
+   - `j: int` (loop index)
+
+3. **Libraries:**
+   - `java.util.Scanner` (input handling)
+   - `java.io.PrintWriter` (output handling)
+
+4. **Input Operations:**
+   - Read `n` and `m` from standard input via `Scanner`
+   - Read `n x m` integers into `A` using nested loops:  
+     **Outer Loop:** `for (i = 0; i < n; i++)`  
+     **Inner Loop:** `for (j = 0; j < m; j++)`
+   - Read `m` integers into `b` via loop:  
+     **Loop:** `for (i = 0; i < m; i++)`
+
+5. **Processing Logic:**
+   - For each row `i` in `A`:  
+     **Loop:** `for (i = 0; i < n; i++)`  
+     - Initialize `c = 0`  
+     - Compute dot product with `b`:  
+       **Inner Loop:** `for (j = 0; j < m; j++)`  
+         - Multiply `A[i][j] * b[j]`  
+         - Accumulate result in `c` via `c += ...`
+
+6. **Output Operations:**
+   - Print `c` for each row via `PrintWriter.println(c)`  
+   - Flush output buffer with `out.flush()`
+
+7. **Control Structures:**
+   - Sequential input reading
+   - Nested `for` loops for matrix population
+   - Nested `for` loops for dot product calculation
+   - No conditional branches

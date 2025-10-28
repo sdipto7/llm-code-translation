@@ -1,0 +1,16 @@
+- Function signature: None (code is executed in the main block)
+- Required libraries: None
+- Variable declarations:
+  - `n`: int
+  - `h`: int
+  - `m`: int
+  - `s`: int
+- Input operation:
+  - Read an integer from standard input and assign it to `n`
+- Logic flow:
+  1. Calculate `h` as the integer division of `n` by 3600
+  2. Update `n` to the remainder of `n` divided by 3600
+  3. Calculate `m` as the integer division of `n` by 60
+  4. Update `n` to the remainder of `n` divided by 60
+  5. Assign `s` the value of `n` (which is now the remaining seconds)
+- Output operation: Print the string concatenation of `h`, `m`, and `s` separated by colons `:`

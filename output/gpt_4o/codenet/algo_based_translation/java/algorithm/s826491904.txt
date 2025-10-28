@@ -1,0 +1,23 @@
+```
+Algorithm:
+
+1. Import necessary library:
+   - java.util.Scanner for reading input
+
+2. Define the main function:
+   - Function signature: `public static void main(String[] args)`
+   - Instantiate the Main class and call the `solve` method.
+
+3. Define the `solve` method:
+   - Function signature: `void solve()`
+   - Declare and initialize a `Scanner` object `sc` for reading input.
+   - Declare integer variables `N`, `max`, `min`.
+   - Read an integer `N` from input using `sc.nextInt()`.
+   - Initialize `max` and `min` with the first input value using `sc.nextInt()`.
+   - For loop to iterate from 1 to `N-1`:
+     - Read an integer `in` using `sc.nextInt()`.
+     - Update `max` with the maximum of `max` and `in` using `Math.max(max, in)`.
+     - Update `min` with the minimum of `min` and `in` using `Math.min(min, in)`.
+   - Calculate the difference `max - min`.
+   - Print the result using `System.out.println(max - min)`.
+```

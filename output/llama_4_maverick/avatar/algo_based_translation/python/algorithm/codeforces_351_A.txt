@@ -1,0 +1,10 @@
+1. n = Read Integer Input
+2. arr = Read Array of Float Inputs
+3. arr = Sort [ Fractional Part of x for x in arr where Fractional Part of x != 0 ]
+4. o = 2n - Length of arr
+5. arr_sum = Sum of arr
+6. res = 2 * 10^9
+7. For i from 0 to n
+   1. If i + o >= n
+      1. res = Minimum of res and Absolute Difference between i and arr_sum
+8. Print res to 3 Decimal Places

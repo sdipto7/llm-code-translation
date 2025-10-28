@@ -1,0 +1,37 @@
+**Function Signature:**
+main(String[] args) -> void
+
+**Variables:**
+- mod: long constant = 1000000007
+- sc: Scanner object for input
+- n: int from input
+- q: int from input
+- c: char[] from input string
+- range: int[][], size q×2
+- frag: int[], size n+1
+- rui: int[], size n+1
+- left: int
+- right: int
+
+**Logic Flow:**
+1. Initialize Scanner with System.in
+2. Read integer n
+3. Read integer q
+4. Read string and convert to char array c
+5. Initialize 2D array range with dimensions q×2
+6. For i from 0 to q-1:
+   - Read range[i][0]
+   - Read range[i][1]
+7. Initialize frag array of size n+1 with zeros
+8. Initialize rui array of size n+1 with zeros
+9. For i from 2 to n:
+   - If c[i-2] equals 'A' AND c[i-1] equals 'C':
+        frag[i] = 1
+   - rui[i] = rui[i-1] + frag[i]
+10. For i from 0 to q-1:
+    - left = range[i][0]
+    - right = range[i][1]
+    - Print (rui[right] - rui[left])
+
+**Required Libraries:**
+java.util.Scanner

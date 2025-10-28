@@ -1,0 +1,36 @@
+```
+Function signature:
+def calculate_max_value(n: int, k: int, s: str) -> int
+
+Variable declarations and data types:
+- n: int
+- k: int
+- s: str
+- count: List[int] - an array of 26 integers initialized to zero
+- c: str
+- res: int
+
+Algorithm:
+1. Parse the input to obtain two integers `n` and `k`.
+2. Read a string `s` of length `n`.
+3. Initialize an array `count` of size 26 with all elements set to 0.
+4. For each character `c` in string `s`:
+   a. Increment the value at index `ord(c) - ord('A')` of `count` by 1.
+5. Sort the `count` array in descending order.
+6. Initialize `res` to 0.
+7. For each integer `i` from 0 to 25:
+   a. If `count[i]` is greater than or equal to `k`:
+      i. Increment `res` by `k * k`.
+      ii. Output `res`.
+      iii. Terminate the program.
+   b. Decrement `k` by `count[i]`.
+   c. Increment `res` by `count[i] ** 2`.
+8. Output `res`.
+
+Input/Output operations:
+- Input: Two space-separated integers and a string from standard input.
+- Output: An integer to standard output.
+
+Dependencies:
+- Uses built-in functions `map`, `input`, `ord`, and `exit`.
+```

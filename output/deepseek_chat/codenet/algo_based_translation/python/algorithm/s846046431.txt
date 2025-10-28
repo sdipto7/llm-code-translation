@@ -1,0 +1,16 @@
+```python
+import sys
+
+def main():
+    input_line = sys.stdin.readline()
+    N, M = map(int, input_line.split())
+    A = list(map(int, sys.stdin.readline().split()))
+    A.sort(reverse=True)
+    S = sum(A)
+    for i in range(M):
+        a = A[i]
+        if a < S / (4 * M):
+            print('No')
+            return
+    print('Yes')
+```

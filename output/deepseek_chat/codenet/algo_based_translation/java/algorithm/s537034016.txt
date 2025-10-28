@@ -1,0 +1,20 @@
+Initialize mod as 1000000007 (long)
+Declare global dp array (long[])
+
+Main function:
+    Read integer s from standard input
+    Initialize dp array with size s+1
+    Fill dp with -1
+    Set dp[0] = 1
+    Call dfs(s) and print result
+
+dfs function (parameter: integer s, returns: long):
+    If dp[s] != -1:
+        Return dp[s]
+    
+    Initialize ret = 0 (long)
+    For i from s-3 down to 0 (inclusive):
+        ret += dfs(i)
+        ret %= mod
+    Set dp[s] = ret
+    Return ret

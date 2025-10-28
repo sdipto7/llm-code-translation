@@ -1,0 +1,40 @@
+```
+Algorithm Main
+    Input: None
+    Output: None
+
+    Declare integer a
+    Declare integer b
+    Declare boolean array ju of size 100001
+    Declare integer array pe of size 100001
+    Declare integer wa, initialize to 0
+    Declare integer ac, initialize to 0
+
+    Create a Scanner object sc to read input
+
+    Read integer input and assign to a
+    Read integer input and assign to b
+
+    For i from 0 to b-1 do
+        Read integer input and assign to n
+        Read string input and assign to res
+
+        If res is equal to "WA" and ju[n-1] is not true then
+            Increment pe[n-1] by 1
+        End If
+
+        If res is equal to "AC" then
+            Set ju[n-1] to true
+        End If
+    End For
+
+    For i from 0 to a-1 do
+        If ju[i] is true then
+            Increment ac by 1
+            Increment wa by pe[i]
+        End If
+    End For
+
+    Print ac and wa as concatenated string with a space separator
+End Algorithm
+```

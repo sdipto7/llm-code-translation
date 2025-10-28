@@ -1,0 +1,36 @@
+```plaintext
+Function Signature:
+- function count_valid_triangles(N: int, L: List[int]) -> int
+
+Variable Declarations:
+- ans: int, initialized to 0
+
+Logic Flow:
+1. Read an integer input and assign it to N.
+2. Read a list of integers input, map them to integers, and assign to L.
+3. Initialize ans to 0.
+4. Execute a nested loop:
+   - Outer loop variable i ranges from 0 to N-2 (inclusive).
+   - Middle loop variable j ranges from i+1 to N-1 (inclusive).
+   - Inner loop variable k ranges from j+1 to N (exclusive).
+5. In each iteration of the innermost loop:
+   - Assign L[i] to variable a.
+   - Assign L[j] to variable b.
+   - Assign L[k] to variable c.
+   - Check if a, b, or c are equal:
+     - If any two of a, b, and c are equal, continue to next iteration.
+   - Check if a, b, and c can form a triangle:
+     - If a + b > c, b + c > a, and c + a > b, increment ans by 1.
+6. After all iterations, return ans.
+
+Control Structures:
+- Three nested for loops with specific range conditions.
+- Two conditional statements to skip iterations or increment ans.
+
+Input/Output Operations:
+- Input: Integer N and list of integers L via standard input.
+- Output: Integer ans via standard output.
+
+Required Libraries:
+- None
+```

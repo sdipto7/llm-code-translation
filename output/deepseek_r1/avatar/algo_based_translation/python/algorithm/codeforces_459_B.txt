@@ -1,0 +1,56 @@
+ALGORITHM SPECIFICATION
+
+FUNCTION:
+- Name: process_input
+- Parameters: None
+- Return Type: void
+- Input Operations:
+  1. Read integer n from standard input
+  2. Read space-separated list of integers from standard input
+- Output Operations:
+  1. Print two space-separated integers (max_diff, pair_count)
+
+VARIABLES:
+- n: int
+- l1: List[int]
+- a: int
+- b: int
+- ac: int
+- bc: int
+
+DATA TYPES:
+- All variables and list elements use integer type
+
+LOGIC FLOW:
+1. Assign n = int(input())
+2. Assign l1 = list(map(int, input().split()))
+3. Sort l1 in non-decreasing order using .sort()
+4. Assign a = last element of l1 (l1[-1])
+5. Assign b = first element of l1 (l1[0])
+6. IF a == b:
+   6.1 Calculate pair_count = n * (n - 1) // 2
+   6.2 Set max_diff = a - b (implicitly 0)
+7. ELSE:
+   7.1 Count occurrences of a in l1 → ac
+   7.2 Count occurrences of b in l1 → bc
+   7.3 Calculate pair_count = ac * bc
+   7.4 Set max_diff = a - b
+8. Print max_diff and pair_count
+
+CONTROL STRUCTURES:
+- Conditional:
+  - if a == b:
+    - Execute block 6.1-6.2
+  - else:
+    - Execute block 7.1-7.4
+
+EDGE CASE HANDLING:
+- When all elements are equal (a == b):
+  - Uses combinatorial calculation for pair count
+- When list contains only one element (n=1):
+  - Automatically handles through a == b branch
+
+EXTERNAL DEPENDENCIES:
+- Standard input functions (input())
+- List operations (split(), map(), sort(), count())
+- No external libraries required

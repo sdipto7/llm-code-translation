@@ -1,0 +1,16 @@
+1. Define a function `process_gate_conditions(n: int, m: int, gate_conditions: List[Tuple[int, int]]) -> int`
+2. Declare variables:
+   - `max_under_th`: Integer
+   - `min_upper_th`: Integer
+3. Initialize `max_under_th` by calculating the maximum of the first element of each tuple in `gate_conditions`.
+4. Initialize `min_upper_th` by calculating the minimum of the second element of each tuple in `gate_conditions`.
+5. Check the condition `if min_upper_th - max_under_th >= 0`:
+   - If true, return the value of `min_upper_th - max_under_th + 1`.
+   - Otherwise, return 0.
+6. Input operations:
+   - Read two integers from input and assign to `n` and `m`.
+   - Read `m` pairs of integers from input and store in `gate_conditions` as a list of tuples.
+7. Output the result of `process_gate_conditions(n, m, gate_conditions)`.
+
+Required Libraries:
+- None

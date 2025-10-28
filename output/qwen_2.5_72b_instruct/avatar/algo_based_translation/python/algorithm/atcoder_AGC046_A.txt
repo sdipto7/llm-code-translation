@@ -1,0 +1,16 @@
+- Function signature: `gcd(a: int, b: int) -> int` from `math` module
+- Variable declarations:
+  - `x: int`
+- Execution order:
+  1. Import `gcd` function from `math` module
+  2. Read input value, convert to integer, and assign to `x`
+  3. Compute `gcd(360, x)`
+  4. Calculate `360 // gcd(360, x)`
+  5. Print the result of the calculation
+- Control structures: None
+- Input operations: Read a single integer from standard input
+- Output operations: Print the result of the division to standard output
+- Data processing logic: 
+  - Calculate the greatest common divisor of 360 and the input value
+  - Perform integer division of 360 by the computed gcd
+- Required libraries/modules: `math`

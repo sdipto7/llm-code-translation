@@ -1,0 +1,51 @@
+**Algorithm**
+
+**Imports:**
+- `math.factorial` (imported but unused)
+
+**Variables:**
+- `N: int` (input integer)
+- `primes: list[int]` = `[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47]`
+- `divs: list[list[int]]` (size 100, initialized with lists of zeros)
+- `divsum: list[int]` (size equal to `primes` length, initialized with zeros)
+- `ans: int` (initialized to 0)
+
+**Function:**
+- `num(n: int) -> int`: Returns the count of elements in `divsum` ≥ `n-1`.
+
+**Execution Steps:**
+
+1. **Input Handling:**
+   - Read `N` from standard input.
+
+2. **Precompute Prime Exponents (`divs`):**
+   - For each integer `i` from 1 to 100:
+     - Initialize `tmp` as a list of zeros with length equal to `primes`.
+     - For each index `j` in `primes`:
+       - Set `p` = `primes[j]`.
+       - While `i` is divisible by `p`:
+         - Divide `i` by `p`.
+         - Increment `tmp[j]`.
+     - Append `tmp` to `divs`.
+
+3. **Compute Divisor Sums (`divsum`):**
+   - For each integer `i` from 1 to `N`:
+     - For each index `j` in `primes`:
+       - Add `divs[i-1][j]` to `divsum[j]`.
+
+4. **Define `num` Function:**
+   - Count the number of elements in `divsum` that are ≥ `n-1` using a filter.
+
+5. **Calculate Answer (`ans`):**
+   - Add `num(75)` to `ans`.
+   - Add `num(15) * (num(5) - 1)` to `ans`.
+   - Add `num(25) * (num(3) - 1)` to `ans`.
+   - Add `(num(5) * (num(5) - 1) * (num(3) - 2)) // 2` to `ans`.
+
+6. **Output:**
+   - Print `ans` as an integer.
+
+**Control Structures:**
+- Nested loops for iterating over primes and numbers.
+- While loop for prime factorization.
+- Arithmetic operations and list comprehensions for filtering and counting.

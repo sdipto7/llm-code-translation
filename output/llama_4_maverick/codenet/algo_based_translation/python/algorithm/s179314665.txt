@@ -1,0 +1,8 @@
+1. Define a function `main` with no parameters and no return value.
+2. Declare two integer variables `A` and `B`.
+3. Read two integer values from the input, separated by a space, and store them in `A` and `B`.
+4. Check if `A` is less than 10 and `B` is less than 10.
+5. If the condition in step 4 is true, calculate the product of `A` and `B` and print the result.
+6. If the condition in step 4 is false, print -1.
+7. Use the built-in input/output functions and integer parsing capabilities available in the programming language.
+8. The program depends on the standard input/output library.

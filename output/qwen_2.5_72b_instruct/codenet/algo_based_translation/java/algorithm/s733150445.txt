@@ -1,0 +1,33 @@
+- Function signatures with parameter and return types:
+  - main(String[] args): void
+
+- Variable declarations and data types:
+  - BufferedReader in
+  - StringTokenizer st
+  - BigDecimal a
+  - BigDecimal b
+  - BigDecimal mul
+
+- Complete logic flow in execution order:
+  1. Create BufferedReader object to read from standard input.
+  2. Read a line of input and create StringTokenizer object to split the line by spaces.
+  3. Parse the first token as BigDecimal and assign to a.
+  4. Parse the second token as BigDecimal and assign to b.
+  5. Multiply a and b, and store the result in mul.
+  6. Convert mul to string and create a new StringTokenizer object to split by dot.
+  7. Print the first element of the StringTokenizer (integer part of the multiplication result).
+
+- All control structures (loops, conditionals) with exact conditions:
+  - No loops or conditionals present in the code.
+
+- Input/output operations and data processing logic:
+  - Input: Read a line from standard input containing two space-separated numbers.
+  - Processing: Parse numbers as BigDecimal, multiply them, and extract the integer part of the result.
+  - Output: Print the integer part of the multiplication result.
+
+- Required libraries, modules, or dependencies:
+  - java.io.BufferedReader
+  - java.io.IOException
+  - java.io.InputStreamReader
+  - java.math.BigDecimal
+  - java.util.StringTokenizer

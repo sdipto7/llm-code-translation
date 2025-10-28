@@ -1,0 +1,11 @@
+1. Import the `java.util.Scanner` library.
+2. Define a class `Main` with a `main` method that takes an array of `String` arguments and returns `void`.
+3. Declare a `Scanner` object named `stdIn` and initialize it with `System.in`.
+4. Declare a `short` variable `r` and assign it the value read from `stdIn` using `nextShort()`.
+5. Evaluate the condition `r < 1200`. If true, execute the following steps:
+   - Output the string "ABC" to the console using `System.out.println()`.
+   - Terminate the `main` method using `return`.
+6. If the condition in step 5 is false, evaluate the condition `r < 2800`. If true, execute the following steps:
+   - Output the string "ARC" to the console using `System.out.println()`.
+   - Terminate the `main` method using `return`.
+7. If both conditions in steps 5 and 6 are false, output the string "AGC" to the console using `System.out.println()`.

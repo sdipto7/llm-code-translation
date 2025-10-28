@@ -1,0 +1,43 @@
+Function Signature:
+- `main() -> None`
+
+Variable Declarations and Data Types:
+- `n: int`
+- `number: List[int]`
+- `h1: int`
+- `h2: int`
+- `x: int`
+- `i: int`
+
+Logic Flow in Execution Order:
+
+1. Read integer input and assign to `n`
+2. Read string input, convert each character to integer, and store in list `number`
+3. Initialize `h1` to 0
+4. Initialize `h2` to 0
+5. Initialize `x` to 0
+6. For loop with index `i` ranging from 0 to `n-1` inclusive:
+   - If `number[i]` is not equal to 4 and `number[i]` is not equal to 7:
+     - Print "NO"
+     - Increment `x` by 1
+     - Break out of the loop
+   - If `i` is less than `n // 2`:
+     - Add `number[i]` to `h1`
+   - Otherwise:
+     - Add `number[i]` to `h2`
+7. If `x` is equal to 0:
+   - If `h1` is equal to `h2`:
+     - Print "YES"
+   - Otherwise:
+     - Print "NO"
+
+Input/Output Operations and Data Processing Logic:
+- Input operations:
+  - Read integer input for `n`
+  - Read string input, split into characters, convert each to integer, and store in `number`
+- Output operations:
+  - Print "NO" if any element in `number` is neither 4 nor 7
+  - Print "YES" if sum of first half of `number` equals sum of second half of `number`, otherwise print "NO"
+
+Required Libraries, Modules, or Dependencies:
+- `List` from `typing` module (implied by `List[int]` type hint)

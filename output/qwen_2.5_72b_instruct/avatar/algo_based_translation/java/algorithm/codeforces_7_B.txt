@@ -1,0 +1,59 @@
+Function Signature: `public static void main(String[] args)`
+Variable Declarations: 
+- `Scanner s` 
+- `int t`
+- `int m`
+- `int[] memory`
+- `int allocIdx`
+- `int j`
+- `String command`
+- `int n`
+- `int len`
+- `boolean canAlloc`
+- `int i`
+- `int x`
+- `boolean hasErased`
+- `int d`
+
+Logic Flow:
+- Initialize `Scanner` object `s` for input
+- Read integer `t` (number of operations)
+- Read integer `m` (size of memory array)
+- Initialize `memory` array of size `m` with all elements set to 0
+- Initialize `allocIdx` to 0
+- For `j` from 0 to `t-1`:
+  - Read next string `command`
+  - Switch based on `command`:
+    - Case "alloc":
+      - Read integer `n` (length of memory block to allocate)
+      - Initialize `len` to 0
+      - Initialize `canAlloc` to false
+      - For `i` from 0 to `m-1`:
+        - If `memory[i]` is 0, increment `len`
+        - Else, reset `len` to 0
+        - If `len` equals `n`, set `canAlloc` to true, calculate start index `len = i - n + 1`, break loop
+      - If `canAlloc` is true:
+        - Increment `allocIdx`
+        - For `i` from `len` to `len+n-1`:
+          - Set `memory[i]` to `allocIdx`
+        - Print `allocIdx`
+      - Else, print "NULL"
+    - Case "erase":
+      - Read integer `x` (allocation ID to erase)
+      - If `x` is less than or equal to 0, print "ILLEGAL_ERASE_ARGUMENT", break case
+      - Initialize `hasErased` to false
+      - For `i` from 0 to `m-1`:
+        - If `memory[i]` equals `x`, set `memory[i]` to 0, set `hasErased` to true
+      - If `hasErased` is false, print "ILLEGAL_ERASE_ARGUMENT"
+    - Case "defragment":
+      - Initialize `d` to 0
+      - For `i` from 0 to `m-1`:
+        - If `memory[i]` is 0, increment `d`
+        - Else, set `memory[i-d]` to `memory[i]`
+      - For `i` from `m-d` to `m-1`:
+        - Set `memory[i]` to 0
+    - Default case:
+      - Print "h"
+
+Libraries/Modules/Dependencies:
+- `java.util.*`

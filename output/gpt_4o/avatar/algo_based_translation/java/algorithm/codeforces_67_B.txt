@@ -1,0 +1,44 @@
+Function Signatures:
+- `main(String[] args): void`
+- `main(): void`
+
+Variable Declarations:
+- `int n`: number of elements
+- `int k`: threshold value
+- `int[] bb`: array of integers of size `n`
+- `int[] aa`: array of integers of size `n`
+- `int m`: default 0, index for insertion
+- `int a`: loop variable for reverse iteration
+- `int j`: index for checking conditions
+- `int j_`: temporary index for shifting elements
+- `Scanner sc`: for reading inputs
+- `PrintWriter`: for printing outputs
+
+Execution Flow:
+1. Read integer `n` from input.
+2. Read integer `k` from input.
+3. Initialize array `bb` of size `n`.
+4. Loop `i` from `0` to `n-1`:
+   - Read integer and assign to `bb[i]`.
+5. Initialize array `aa` of size `n`.
+6. Initialize `m` to `0`.
+7. Loop `a` from `n-1` to `0`:
+   - Initialize `j` to `0`.
+   - While `bb[a] > 0`:
+     - If `aa[j] >= a + k`, decrement `bb[a]`.
+     - Increment `j`.
+   - Loop `j_` from `m` to `j+1` in reverse:
+     - Assign `aa[j_]` as `aa[j_-1]`.
+   - Assign `aa[j]` as `a`.
+   - Increment `m`.
+8. Loop `i` from `0` to `n-1`:
+   - Print `aa[i] + 1` followed by a space.
+9. Print a new line.
+
+Input/Output Operations:
+- Read from standard input using `Scanner`.
+- Print to standard output using `PrintWriter`.
+
+Dependencies:
+- `java.io.*`
+- `java.util.*`

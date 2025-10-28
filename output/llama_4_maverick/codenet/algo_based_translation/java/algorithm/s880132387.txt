@@ -1,0 +1,45 @@
+1. Import required libraries: 
+   - java.math.BigInteger
+   - java.util.Scanner
+   - java.util.Random
+   - java.lang.System
+
+2. Declare a class Main with:
+   - static Scanner object sc initialized with System.in
+   - static Random object rand
+
+3. Define a method run() with:
+   - a while loop (TCase) that continues until a termination condition is met
+   - inside the loop:
+     - read two integers W and H using sc.nextInt()
+     - if W == 0 and H == 0, return from the method
+     - declare a 2D char array map of size H x W
+     - for each row h in map:
+       - read a string using sc.next() and convert it to a char array, assign it to map[h]
+     - declare a 2D BigInteger array dp of size H x W
+     - for each cell (h, w) in dp:
+       - initialize BigInteger hprev to BigInteger.ZERO
+       - if h >= 1, update hprev to dp[h-1][w]
+       - initialize BigInteger wprev to BigInteger.ZERO
+       - if w >= 1, update wprev to dp[h][w-1]
+       - if the character at map[h][w] is a digit:
+         - find the maximum of hprev and wprev, store it in max
+         - calculate dp[h][w] as max multiplied by BigInteger.TEN plus the digit at map[h][w] converted to BigInteger
+       - else, set dp[h][w] to BigInteger.ZERO
+     - initialize BigInteger max to BigInteger.ZERO
+     - for each cell (h, w) in dp:
+       - if dp[h][w] is greater than max, update max to dp[h][w]
+     - print max using ln(max)
+
+4. Define a main method that:
+   - creates an instance of Main and calls its run() method
+
+5. Define a method nextIntArray(int n) that:
+   - creates an int array res of size n
+   - for each index i in res:
+     - read an integer using sc.nextInt() and store it in res[i]
+   - return res
+
+6. Define static methods pr(Object o), ln(Object o), and ln() that:
+   - print o using System.out.print() or System.out.println() accordingly
+   - ln() prints a newline using System.out.println()

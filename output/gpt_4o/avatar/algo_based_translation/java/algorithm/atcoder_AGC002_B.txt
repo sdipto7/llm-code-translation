@@ -1,0 +1,59 @@
+```
+Function Main()
+    Declare Scanner sc
+    Initialize sc with input stream
+    Declare Integer N
+    Set N = sc.nextInt()
+    Declare Integer M
+    Set M = sc.nextInt()
+    Declare Array of Box B with size N
+    Set B[0] = New Box(1, true)
+    For Integer i from 1 to N-1
+        Set B[i] = New Box(1, false)
+    End For
+    For Integer i from 0 to M-1
+        Declare Integer x
+        Set x = sc.nextInt() - 1
+        Declare Integer y
+        Set y = sc.nextInt() - 1
+        Call B[x].moveTo(B[y])
+    End For
+    Declare Integer counter
+    Set counter = 0
+    For Box b in B
+        If b.red is true Then
+            Increment counter by 1
+        End If
+    End For
+    Print counter
+End Function
+
+Class Box
+    Public Integer num
+    Public Boolean red
+
+    Constructor Box(Integer n, Boolean r)
+        Set num = n
+        Set red = r
+    End Constructor
+
+    Public Procedure moveTo(Box other)
+        If num == 0 Then
+            Return
+        Else If num == 1 Then
+            Set num = 0
+            Increment other.num by 1
+            If red is true Then
+                Set other.red = true
+            End If
+            Set red = false
+        Else
+            Decrement num by 1
+            Increment other.num by 1
+            If red is true Then
+                Set other.red = true
+            End If
+        End If
+    End Procedure
+End Class
+```

@@ -1,0 +1,7 @@
+read two integers a and b from input
+declare list x
+compute a + b and store as first element in x
+compute a - b and append to x
+compute a * b and append to x
+find maximum value in x
+print maximum value

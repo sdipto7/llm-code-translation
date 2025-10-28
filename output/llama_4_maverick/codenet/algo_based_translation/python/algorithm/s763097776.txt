@@ -1,0 +1,12 @@
+1. Define a function `check_sortability` with no parameters and return type `None`.
+2. Declare an integer variable `n` and read its value from standard input using `int(input())`.
+3. Declare a list `p` of integers and read its elements from standard input using a list comprehension `[int(x) for x in input().split()]`.
+4. Declare a list `p_copy` and initialize it as a copy of `p` using `p[:]`.
+5. Sort the list `p` in-place using `p.sort()`.
+6. Declare an integer variable `count` and initialize it to 0.
+7. Iterate over the range of `n` using a `for` loop with loop variable `i`.
+8. Inside the loop, check if `p[i]` is not equal to `p_copy[i]` using the condition `if p[i] != p_copy[i]`.
+9. If the condition is true, increment `count` by 1.
+10. After the loop, check if `count` is equal to 0 or 2 using the condition `if count == 0 or count == 2`.
+11. If the condition is true, print "YES" to standard output using `print("YES")`.
+12. Otherwise, print "NO" to standard output using `print("NO")`.

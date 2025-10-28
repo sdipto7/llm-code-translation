@@ -1,0 +1,5 @@
+Read two integers X and A from standard input
+If X is less than A:
+    Print integer 0
+Else:
+    Print integer 10

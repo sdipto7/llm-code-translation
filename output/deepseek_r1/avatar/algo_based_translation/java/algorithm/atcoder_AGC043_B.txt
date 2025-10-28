@@ -1,0 +1,78 @@
+**Algorithm:**
+
+**Functions:**
+- `private int cal(String s, char c)`
+  - Parameters: 
+    - `s`: String input
+    - `c`: Character to check
+  - Returns: Integer result (0 or 1)
+- `private void solve()`
+  - Parameters: None
+  - Returns: Void
+- `public static void main(String[] args)`
+  - Parameters: String array args
+  - Returns: Void
+
+**Data Structures:**
+- `StringBuilder sb` to construct intermediate string.
+- `MyScanner` class with buffered reader for input handling.
+
+**Variables:**
+- In `cal()`:
+  - `int n = s.length()`
+  - `int m = n - 1`
+  - `int ans = 0`
+- In `solve()`:
+  - `int n` (input length)
+  - `String s` (input string)
+  - `StringBuilder sb` (for difference sequence)
+  - Reassigned `s` after building difference string
+
+**Logic Flow:**
+
+1. **Input Handling:**
+   - Read integer `n` and string `s` via `MyScanner`.
+
+2. **Construct Difference String:**
+   - For each `i` from 1 to `n-1`:
+     - Append `Math.abs(s.charAt(i) - s.charAt(i-1))` to `sb`.
+   - Convert `sb` to string `s`.
+
+3. **Base Case Handling:**
+   - If `n == 2`:
+     - Output first character of `sb` as integer.
+
+4. **Result Calculation:**
+   - If `n > 2`:
+     - If `s` contains '1':
+       - Compute `cal(s, '1')` and output result.
+     - Else:
+       - Compute `cal(s, '2') * 2` and output result.
+
+**cal() Function Logic:**
+1. Initialize `ans = 0`.
+2. For each index `i` from 0 to `n-1` (where `n` is the length of input string to `cal()`):
+   - If `s.charAt(i) == c` AND `(m & i) == i` (bitwise check):
+     - Toggle `ans` via `ans ^= 1`.
+3. Return `ans`.
+
+**Control Structures:**
+- For loops:
+  - `for (int i = 1; i < n; i++)` in `solve()`
+  - `for (int i = 0; i < n; i++)` in `cal()`
+- Conditionals:
+  - `if (n == 2)`
+  - `if (s.contains("1"))`
+  - `if (s.charAt(i) == c && (m & i) == i)`
+
+**Input/Output Operations:**
+- Input via `MyScanner` (wraps `BufferedReader` and `StringTokenizer`).
+- Output via `PrintWriter` with `out.println()`.
+
+**Dependencies:**
+- `java.io.*` for I/O classes.
+- `java.util.*` for `StringTokenizer`.
+
+**Data Types:**
+- Primitive types: `int`, `char`, `long`, `double`.
+- Objects: `String`, `StringBuilder`, `BufferedReader`, `PrintWriter`, `StringTokenizer`.

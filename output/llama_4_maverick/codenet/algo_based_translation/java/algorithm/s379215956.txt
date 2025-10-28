@@ -1,0 +1,14 @@
+1. Import required libraries: java.util.*
+2. Define a class: Main
+3. Define a function: main with parameter args of type String[] and return type void
+4. Declare a variable: sc of type Scanner and initialize it with new Scanner(System.in)
+5. Declare a variable: s of type String and read input from sc into s
+6. Declare variables: s1, s2, s3, s4 of type String
+7. Assign s1 = s.substring(0,1), s2 = s.substring(1,2), s3 = s.substring(2,3), s4 = s.substring(3,4)
+8. Declare a variable: a of type int and initialize it to 0
+9. Check condition: if s1 equals s2, then set a to 1
+10. Check condition: if s2 equals s3, then set a to 1
+11. Check condition: if s3 equals s4, then set a to 1
+12. Check condition: if a equals 1, then print "Bad" to the output, else print "Good" to the output
+13. End the function main
+14. End the class Main

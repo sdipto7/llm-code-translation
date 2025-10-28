@@ -1,0 +1,39 @@
+```
+Function main()
+    Declare InputStream inputStream initialized as System.in
+    Declare OutputStream outputStream initialized as System.out
+    Declare InputReader in initialized with inputStream
+    Declare PrintWriter out initialized with outputStream
+    Declare Solution sol as new instance of Solution
+    Call sol.solve(in, out)
+    Call out.close()
+
+Class Solution
+    Function solve(InputReader in, PrintWriter out)
+        Declare integer n initialized with in.ni()
+        Declare integer k initialized with in.ni()
+        Declare integer array a of size n
+        For integer i from 0 to n-1 (inclusive)
+            Set a[i] to in.ni()
+        Call Arrays.parallelSort(a)
+        Declare integer ans initialized to 0
+        For integer i from 0 to k-1 (inclusive)
+            Add a[i] to ans
+        Call out.println(ans)
+
+Class InputReader
+    Declare BufferedReader reader
+    Declare StringTokenizer tokenizer
+    Constructor InputReader(InputStream stream)
+        Initialize reader with new BufferedReader taking new InputStreamReader with stream and buffer size 32768
+        Initialize tokenizer to null
+    Function n() returns String
+        While tokenizer is null or tokenizer has no more tokens
+            Try
+                Set tokenizer to new StringTokenizer with reader.readLine()
+            Catch IOException e
+                Throw new RuntimeException with e
+        Return tokenizer.nextToken()
+    Function ni() returns integer
+        Return Integer.parseInt(n())
+```

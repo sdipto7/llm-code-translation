@@ -1,0 +1,34 @@
+**Function Signature:**
+- No explicit function defined; main script execution
+
+**Variables and Data Types:**
+- a: integer
+- b: integer  
+- h: integer
+- m: integer
+- C: float
+- cosC: float
+
+**Required Libraries:**
+- math module
+
+**Input Operations:**
+- Read one line from standard input
+- Split input string by whitespace
+- Convert four substrings to integers
+- Assign to variables a, b, h, m
+
+**Execution Flow:**
+1. Import math module
+2. Calculate angle C between clock hands:
+   - C = |(360/60 * m) - (360/12 * h) - (360/12/60 * m)|
+3. If C > 180:
+   - Set C = 360 - C
+4. Convert C from degrees to radians
+5. Calculate cosine of angle C
+6. Calculate distance using law of cosines:
+   - sqrt(a² + b² - 2*a*b*cosC)
+7. Print the calculated distance
+
+**Control Structures:**
+- Conditional: if C > 180 then C = 360 - C

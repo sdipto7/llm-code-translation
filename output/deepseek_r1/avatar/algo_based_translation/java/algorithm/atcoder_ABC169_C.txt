@@ -1,0 +1,45 @@
+- Required Libraries:
+  - java.util.ArrayList
+  - java.util.LinkedList
+  - java.util.Scanner
+
+- Function Signature:
+  - public static void main(String[] args)
+    - Parameters: String array args
+    - Return type: void
+
+- Variables:
+  - Scanner sc = new Scanner(System.in)
+  - long a
+  - String b
+  - char[] bChar
+  - int length
+  - String bStr = ""
+  - int bInt
+  - long result
+
+- Execution Logic:
+  1. Read input a as long via sc.nextLong()
+  2. Read input b as String via sc.next()
+  3. Convert b to char array bChar
+  4. Set length = bChar.length
+  5. Initialize empty String bStr
+  6. For loop: i from 0 to length-1
+     - Conditional: if bChar[i] != '.'
+       - Append character to bStr
+  7. Parse bStr to integer bInt via Integer.parseInt()
+  8. Calculate result = (a * bInt) / 100
+  9. Print result via System.out.println()
+
+- Control Structures:
+  - For loop:
+    - Initialization: int i = 0
+    - Condition: i < length
+    - Increment: i++
+  - If conditional:
+    - Condition: bChar[i] != '.' 
+
+- Input/Output:
+  - Input: Two values from stdin (long, String)
+  - Output: Print result as long integer
+  - Processing: Remove decimal points from String input before conversion to integer

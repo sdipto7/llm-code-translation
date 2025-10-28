@@ -1,0 +1,27 @@
+Function signatures:
+- `main(String[] args)`: void
+- `maxLeft(int n)`: int
+
+Variable declarations and data types:
+- `scan`: Scanner
+- `t`: int
+- `i`: int
+- `n`: int
+
+Logic flow:
+1. Create a `Scanner` object named `scan` to read input from `System.in`.
+2. Read an integer `t` from the input.
+3. For `i` from 0 to `t-1` (inclusive):
+   1. Read an integer `n` from the input.
+   2. Call `maxLeft(n)` and print the returned value.
+
+Control structures:
+- For loop: `for (int i = 0; i < t; i++)`
+- Conditional (ternary) operator in `maxLeft`: `n > 2 ? n - 2 : 0`
+
+Input/output operations and data processing logic:
+- Input: Read `t` and `n` from the standard input.
+- Output: Print the result of `maxLeft(n)` for each `n`.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

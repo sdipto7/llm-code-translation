@@ -1,0 +1,26 @@
+- Function signature:
+  - `public static void main(String[] args)`
+
+- Variables:
+  - `Scanner sc = new Scanner(System.in)`
+  - `int n = sc.nextInt()`
+  - `long[] ryuka = new long[n + 1]`
+
+- Execution order and logic:
+  1. Read integer input using scanner
+  2. Initialize array of longs with size n+1
+  3. Set first array element: `ryuka[0] = 2`
+  4. Set second array element: `ryuka[1] = 1`
+  5. For loop: `i` from 2 to n (inclusive)
+     - Calculate `ryuka[i] = ryuka[i-1] + ryuka[i-2]`
+  6. Print `ryuka[n]` as final output
+
+- Control structures:
+  - `for (int i = 2; i < n + 1; i++)`
+
+- Input/Output operations:
+  - Input: Read integer from standard input
+  - Output: Print final calculated value from array
+
+- Required dependencies:
+  - `java.util.Scanner`

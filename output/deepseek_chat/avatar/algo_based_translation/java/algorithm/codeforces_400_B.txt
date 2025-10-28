@@ -1,0 +1,48 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner sc`: Scanner(System.in)
+- `int n`: sc.nextInt()
+- `int m`: sc.nextInt()
+- `String[] arrs`: new String[n]
+- `int[] length`: new int[n]
+- `int index`: 0
+- `int returnDex`: 0
+- `HashSet<Integer> set`: new HashSet<Integer>()
+
+**Logic Flow:**
+1. Read integer `n` from input
+2. Read integer `m` from input
+3. Initialize string array `arrs` of size `n`
+4. For `i` from 0 to `n-1`:
+   - Read next string into `arrs[i]`
+5. For each string `tmp` in `arrs`:
+   - Find index of 'G' in `tmp` → `dexG`
+   - Find index of 'S' in `tmp` → `dexS`
+   - If `dexG` > `dexS`:
+     - Set `returnDex` to -1
+   - Store `dexS - dexG` in `length[index]`
+   - Increment `index`
+6. For each value `len` in `length`:
+   - Add `len` to `set`
+7. If `returnDex` == -1:
+   - Print `returnDex`
+8. Else:
+   - Print `set.size()`
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < n; i++)`
+- Enhanced for loop: `for (String tmp : arrs)`
+- Enhanced for loop: `for (int len : length)`
+- Conditional: `if (dexG > dexS)`
+- Conditional: `if (returnDex == -1)`
+
+**Input/Output:**
+- Input: integers `n`, `m` and `n` strings
+- Output: integer (-1 or size of set)
+
+**Dependencies:**
+- java.util.Scanner
+- java.util.HashMap
+- java.util.HashSet

@@ -1,0 +1,42 @@
+Function Signature:
+- main() -> None
+
+Variable Declarations and Data Types:
+- h: int
+- w: int
+- l: List[List[str]]
+- tmp: int
+- i: int
+- j: int
+- a: List[str]
+
+Logic Flow:
+1. Read two integers h and w from input, representing height and width.
+2. Initialize an empty list l to store the grid.
+3. For each of the h lines, read a string, convert it to a list of characters, and append it to l.
+4. Initialize tmp to 0.
+5. For each row index i from 0 to h-1:
+   - For each column index j from 0 to w-1:
+     - If the character at l[i][j] is '#':
+       - If j is less than tmp, print "Impossible" and exit the program.
+       - Otherwise, set tmp to j.
+6. If no "Impossible" condition is met, print "Possible".
+
+Control Structures:
+- For loop: Iterates over range(h) with index i.
+- For loop nested inside the first: Iterates over range(w) with index j.
+- If condition: Checks if l[i][j] is '#'.
+- If condition nested inside the previous: Checks if j is less than tmp.
+
+Input/Output Operations:
+- Input: Reads two integers h and w. Reads h lines of strings.
+- Output: Prints "Impossible" or "Possible" based on the conditions.
+
+Data Processing Logic:
+- Constructs a 2D list l from the input strings.
+- Checks each '#' character's column index against the current maximum column index stored in tmp.
+- If any '#' is found in a column index less than the current maximum, it prints "Impossible".
+- If all '#' characters are in non-decreasing column indices, it prints "Possible".
+
+Libraries/Modules/Dependencies:
+- No specific libraries or modules are required. Uses built-in Python functions and types.

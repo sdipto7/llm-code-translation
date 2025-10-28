@@ -1,0 +1,39 @@
+### Algorithm
+
+1. `public static int calculateMinOperations(int[] list)`
+   - Input: An array of integers representing a list of numbers.
+   - Output: The minimum number of operations required.
+
+2. Initialize variables:
+   - `int n`: The size of the input list.
+   - `int[] numlist1` and `int[] numlist2`: Arrays to store frequency counts, both of size 100000, initialized with zeros.
+   - `int max11`, `max12`, `max21`, `max22`: Variables to track maximum frequency counts.
+   - `int val1` and `int val2`: Variables to store the indices of maximum frequency counts.
+
+3. Read input:
+   - Read `n` from input.
+   - Read `n` integers into the `list` array.
+
+4. Process the list:
+   - Iterate through `list` in steps of 2:
+     - For each pair of elements at indices `i` and `i+1`, increment the corresponding counts in `numlist1` and `numlist2` respectively.
+
+5. Find maximum frequency counts:
+   - Iterate through `numlist1` and `numlist2`:
+     - Update `max11`, `max12`, `val1` based on the counts in `numlist1`.
+     - Update `max21`, `max22`, `val2` based on the counts in `numlist2`.
+
+6. Calculate the minimum number of operations:
+   - If `val1` is not equal to `val2`, then the minimum number of operations is `n - max11 - max21`.
+   - Otherwise, the minimum number of operations is `n - max(max12 + max21, max11 + max22)`.
+
+7. Output the result:
+   - Print the calculated minimum number of operations.
+
+### Required Libraries and Modules
+
+- `java.util.Scanner` for input operations. 
+
+### Data Processing Logic
+
+The algorithm processes the input list by counting the frequency of elements at even and odd indices separately, then determines the minimum number of operations based on the maximum frequency counts.

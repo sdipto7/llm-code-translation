@@ -1,0 +1,10 @@
+1. Read input for the number of elements `n` and target position `goal`.
+2. Initialize an array `arr` of size `n-1` to store teleportation distances.
+3. Populate `arr` with `n-1` input values representing teleportation distances.
+4. Perform a Depth-First Search (DFS) starting from position 1.
+5. In the DFS, check if the current position `currpos` equals the `target`.
+6. If `currpos` equals `target`, return true indicating the target is reachable.
+7. If `currpos` exceeds the array bounds (`currpos == arr.length + 1`), return false indicating the target is unreachable.
+8. Recursively call DFS with the next position calculated as `currpos + arr[currpos - 1]`.
+9. If the recursive call returns true, return true; otherwise, return false.
+10. Based on the DFS result, output "YES" if the target is reachable and "NO" otherwise.

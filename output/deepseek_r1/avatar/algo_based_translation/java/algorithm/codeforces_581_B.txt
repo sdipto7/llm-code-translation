@@ -1,0 +1,41 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `static void debug(Object... obj)`
+
+**Variable Declarations:**
+- `static TreeSet<Long> set` (unused in main logic)
+- `Scanner in = new Scanner(System.in)`
+- `PrintWriter pw = new PrintWriter(System.out)`
+- `int n = in.nextInt()`
+- `long[] a = new long[n]`
+- `long[] dp = new long[n+1]`
+- Loop variable `int i` in multiple loops
+
+**Logic Flow:**
+1. Read integer `n` from input.
+2. Initialize array `a` of length `n`, populate with `n` long values from input.
+3. Initialize `dp` array of length `n+1` with `-1`.
+4. Set `dp[n-1] = a[n-1]`.
+5. Iterate `i` from `n-1` down to `0`:
+   - Update `dp[i]` as `Math.max(dp[i+1], a[i])`.
+6. Iterate `i` from `0` to `n-1`:
+   - If `a[i] > dp[i+1]`: print `0` followed by space.
+   - Else: print `(dp[i+1] - a[i] + 1)` followed by space.
+7. Print newline after loop.
+8. Close `PrintWriter`.
+
+**Control Structures:**
+- `for (int i = 0; i < n; i++)` (input reading loop)
+- `for (int i = n-1; i >= 0; i--)` (dp calculation loop)
+- `for (int i = 0; i < n; i++)` (result calculation loop)
+- Conditional: `if (a[i] > dp[i+1])`
+
+**Input/Output:**
+- Input via `Scanner`: reads `n` and `a` array elements.
+- Output via `PrintWriter`: prints space-separated results for each element.
+
+**Dependencies:**
+- `java.util.Scanner`
+- `java.io.PrintWriter`
+- `java.util.TreeSet` (declared but unused in main logic)
+- `java.util.Arrays` (for `fill` and `deepToString` in debug method)

@@ -1,0 +1,42 @@
+```
+1. Define a generator function `parser()`:
+   - Loop indefinitely:
+     - Read a line of input and split it by spaces into a list `data`.
+     - For each `number` in `data`:
+       - If the length of `number` is greater than 0, yield `number`.
+
+2. Initialize `input_parser` as a generator object from `parser()`.
+
+3. Define a function `gw()` with no parameters that returns a string:
+   - Use the global variable `input_parser`.
+   - Retrieve the next value from `input_parser` and return it.
+
+4. Define a function `gi()` with no parameters that returns an integer:
+   - Call `gw()` to get a string `data`.
+   - Convert `data` to an integer and return it.
+
+5. Declare constant `MOD` with type `int` and value `1e9 + 7`.
+
+6. Import `numpy` and `scipy` libraries (unused in logic).
+
+7. Import `deque` from the `collections` module.
+
+8. Call `gi()` to read an integer `N` from input.
+
+9. Call `gi()` to read an integer `K` from input.
+
+10. Call `gw()` to read a string `S` from input.
+
+11. Declare integer `seg_cnt` and initialize it to 0.
+
+12. Iterate `i` over the range from 0 to `N - 1`:
+    - If `S[i]` is not equal to `S[i + 1]`, increment `seg_cnt` by 1.
+
+13. Calculate `cur_happy` as `N - 1 - seg_cnt`.
+
+14. Conditional check:
+    - If `2 * K` is greater than or equal to `seg_cnt`, set `ans` to `N - 1`.
+    - Otherwise, set `ans` to `cur_happy + 2 * K`.
+
+15. Output the value of `ans`.
+```

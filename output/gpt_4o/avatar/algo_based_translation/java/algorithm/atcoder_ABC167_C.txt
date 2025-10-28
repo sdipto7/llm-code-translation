@@ -1,0 +1,24 @@
+1. Import the `Scanner` class from the `java.util` package.
+2. Declare the `main` function with `String[] args` as its parameter and return type `void`.
+3. Initialize a `Scanner` object `sc` for input reading.
+4. Read integer input for `n`, `m`, `x` using `sc.nextInt()`.
+5. Initialize an integer variable `min` to `Integer.MAX_VALUE`.
+6. Declare a 2D integer array `a` with dimensions `[n][m + 1]`.
+7. Loop over `i` from `0` to `n-1`:
+   - Loop over `j` from `0` to `m`:
+     - Read an integer using `sc.nextInt()` and assign it to `a[i][j]`.
+8. Loop over `i` from `0` to `2^n - 1`:
+   - Declare an integer array `status` with size `[n]`.
+   - Loop over `j` from `0` to `n-1`:
+     - If `(1 & (i >> j)) == 1`, set `status[j] = 1`.
+   - Declare an integer array `res` with size `[m + 1]` initialized to zeros.
+   - Loop over `j` from `0` to `n-1`:
+     - If `status[j] == 1`:
+       - Loop over `k` from `0` to `m`:
+         - Add `a[j][k]` to `res[k]`.
+   - Initialize a boolean variable `flag` to `true`.
+   - Loop over `j` from `1` to `m`:
+     - If `res[j] < x`, set `flag = false` and `break` the loop.
+   - If `flag` is `true`, update `min` to the minimum of `min` and `res[0]`.
+9. If `min` equals `Integer.MAX_VALUE`, print `-1`.
+10. Otherwise, print the value of `min`.

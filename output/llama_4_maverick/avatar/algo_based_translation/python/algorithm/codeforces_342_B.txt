@@ -1,0 +1,20 @@
+1. Read four integers: n, m, s, f
+2. If s is less than f then
+   2.1. Set d to 1 and c to 'R'
+   else
+   2.2. Set d to -1 and c to 'L'
+3. Initialize an empty string res
+4. Initialize i to 1 and j to s
+5. Read three integers: t, l, r
+6. Initialize k to 1
+7. While j is not equal to f
+   7.1. If i is greater than t and k is less than m then
+      7.1.1. Read three integers: t, l, r
+      7.1.2. Increment k by 1
+   7.2. If i is equal to t and (j is between l and r or j + d is between l and r) then
+      7.2.1. Append 'X' to res
+      else
+      7.2.2. Append c to res
+      7.2.3. Increment j by d
+   7.3. Increment i by 1
+8. Print res

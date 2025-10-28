@@ -1,0 +1,5 @@
+read integer N from standard input
+if N modulo 2 equals 0:
+    output integer division of N by 2
+else:
+    output integer division of N by 2 plus 1

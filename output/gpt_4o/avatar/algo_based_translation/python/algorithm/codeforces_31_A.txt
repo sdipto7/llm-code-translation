@@ -1,0 +1,38 @@
+```plaintext
+Function Signature:
+  - No explicit function signature as the code executes in a script style
+
+Variable Declarations:
+  - y: int
+  - arr: List[int]
+  - i: int
+  - j: int
+  - k: int
+
+Logic Flow:
+1. Accept an integer input and assign it to variable `y`.
+2. Accept a space-separated input of integers, convert each to an integer, and store them in list `arr`.
+3. Iterate over each element in `arr` using index `i` (range from 0 to length of `arr` - 1).
+   a. Iterate over each element in `arr` using index `j` (range from 0 to length of `arr` - 1).
+      i. If `i` is equal to `j`, skip the current iteration.
+      ii. Iterate over each element in `arr` using index `k` (range from 0 to length of `arr` - 1).
+         - Check if:
+           - `arr[k]` is not equal to `arr[j]`
+           - `arr[k]` is not equal to `arr[i]`
+           - `arr[k]` is equal to the sum of `arr[i]` and `arr[j]`
+         - If all conditions are true, print the values of `k + 1`, `j + 1`, and `i + 1`, then exit the program.
+4. If no valid triplet is found, print `-1`.
+
+Control Structures:
+- Nested for loops iterating over indices of the list `arr`.
+- Conditional statements checking index equality and sum conditions.
+- Continue statement to skip iterations.
+- Exit statement to terminate the program early if a solution is found.
+
+Input/Output Operations:
+- Two input operations to collect `y` and `arr`.
+- Print output of indices when a valid triplet is found or `-1` if none exists.
+
+Dependencies:
+- No external libraries or modules required.
+```

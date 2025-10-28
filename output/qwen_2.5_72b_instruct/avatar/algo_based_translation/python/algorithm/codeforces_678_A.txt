@@ -1,0 +1,18 @@
+Function signature: `main() -> None`
+Variable declarations and data types: `vamshi: int`, `z: int`
+
+Logic flow in execution order:
+1. Read a line of input from the standard input.
+2. Split the input line into two parts.
+3. Convert the first part to an integer and assign it to `vamshi`.
+4. Convert the second part to an integer and assign it to `z`.
+5. Perform integer division of `vamshi` by `z` and add 1 to the result.
+6. Multiply the result from step 5 by `z`.
+7. Print the result from step 6.
+
+Input/output operations and data processing logic:
+- Input: Reads a single line containing two space-separated integers.
+- Output: Prints a single integer which is the result of `(vamshi // z + 1) * z`.
+
+Required libraries, modules, or dependencies:
+- No external libraries, modules, or dependencies required.

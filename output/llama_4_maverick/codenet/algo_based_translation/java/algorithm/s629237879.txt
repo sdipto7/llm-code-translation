@@ -1,0 +1,17 @@
+1. Import required libraries: java.io and java.util.Arrays.
+2. Define a class Main with a public static void main method that throws IOException.
+3. Declare a BufferedReader object br and initialize it with new BufferedReader(new InputStreamReader(System.in)).
+4. Read a line from the input using br.readLine() and store it in a String variable sc.
+5. Parse the String sc to an integer n using Integer.parseInt(sc).
+6. Declare a String array str of size n.
+7. Loop from i = 0 to n-1:
+   - Read a line from the input using br.readLine() and store it in str[i].
+8. Declare a String array mark containing the elements "S", "H", "C", "D".
+9. Loop through each element ma in mark:
+   - Loop from i = 1 to 13:
+     - Convert i to a String s using Integer.toString(i).
+     - Concatenate ma, a space, and s to form a String st.
+     - Check if st is present in the array str using Arrays.asList(str).contains(st).
+     - If st is present, continue to the next iteration.
+     - If st is not present, print st to the output.
+10. End of the main method and the class Main.

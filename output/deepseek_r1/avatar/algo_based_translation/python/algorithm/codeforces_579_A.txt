@@ -1,0 +1,42 @@
+**Structured Algorithm Specification:**
+
+**Functions/Methods:**
+- `main() -> void`
+  - **Parameters:** None
+  - **Return:** Void
+
+**Variables:**
+- `n: int` (Input integer)
+- `x: int` (Initial value: 1)
+- `exponent: int` (Temporary storage for log2 calculation)
+
+**Data Types:**
+- All variables: Integer
+
+**Imports/Dependencies:**
+- `math` library (for `log2` function)
+
+**Logic Flow:**
+1. Read integer `n` from standard input.
+2. Initialize `x = 1`.
+3. **While** `(math.log2(n) % 1) != 0`:
+   1. `x += 1`
+   2. Compute `exponent = int(math.log2(n))`
+   3. Update `n = n - (2 ** exponent)`
+4. **End While** (Exit when `math.log2(n)` is integer)
+5. Print `x`
+
+**Control Flow Structures:**
+- **Loop:** `While` loop with condition `math.log2(n) has fractional part`
+- **Exit Criteria:** `math.log2(n)` becomes exact integer (n is power of two)
+
+**Input/Output:**
+- **Input:** Single integer `n` via standard input
+- **Output:** Integer `x` printed to standard output
+
+**Edge Case Handling:**
+- Implicitly assumes `n > 0` (No handling for `n ≤ 0` in original code)
+- Correctly handles `n = 1` (returns `x = 1`)
+
+**Error Handling:**
+- No explicit error handling (e.g., invalid inputs, non-integer values, or `n ≤ 0` will cause failures)

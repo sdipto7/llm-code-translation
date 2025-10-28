@@ -1,0 +1,44 @@
+Function signatures with parameter and return types:
+- `check(lis: List[int], k: int, mid: int) -> bool`
+
+Variable declarations and data types:
+- `lis: List[int]`
+- `k: int`
+- `mid: int`
+- `i: int`
+- `a: int`
+- `b: int`
+- `ans: int`
+- `n: int`
+
+Complete logic flow in execution order:
+1. Read integers `n` and `k` from input.
+2. Read a list of integers `lis` of size `n` from input.
+3. Initialize `a` to 1.
+4. Initialize `b` to the maximum value in `lis`.
+5. Initialize `ans` to `b`.
+6. While `a` is less than or equal to `b`:
+   - Calculate `mid` as integer division of `(a + b)` by 2.
+   - If `check(lis, k, mid)` is true:
+     - Set `ans` to `mid`.
+     - Set `b` to `mid - 1`.
+   - Else:
+     - Set `a` to `mid + 1`.
+7. Print `ans`.
+
+Control structures:
+- For loop iterates over each element `i` in `lis`.
+- If statement checks if `i % mid == 0`.
+- If statement checks if `check(lis, k, mid)` is true.
+- While loop continues as long as `a <= b`.
+
+Input/output operations and data processing logic:
+- Input: Reads two integers `n` and `k`, followed by a list of `n` integers.
+- Processing: 
+  - Uses binary search to find the smallest `mid` such that `check(lis, k, mid)` is true.
+  - `check` function increments `k` for each element in `lis` divisible by `mid` and decrements `k` by the integer division of each element by `mid`.
+  - Returns true if `k >= 0` after processing all elements.
+- Output: Prints the smallest `mid` found.
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules are required.

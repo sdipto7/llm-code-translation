@@ -1,0 +1,45 @@
+1. Function Signature:
+   - `main`: No parameters, returns `void`.
+
+2. Variable Declarations:
+   - `Scanner in`: For reading input from `System.in`.
+   - `PrintWriter pw`: For writing output to `System.out`.
+   - `int n`: Stores the number of elements to read.
+   - `int[] ara`: Array of integers with size `n`.
+   - `Map<Integer, Integer> map`: HashMap to store frequency of each element.
+   - `int max`: Stores the maximum frequency found.
+   - `Map<Integer, Integer> mm`: HashMap to track frequency while iterating.
+
+3. Logic Flow:
+   - Read integer `n` from input.
+   - Initialize `ara` with size `n`.
+   - Initialize `map` as a new HashMap.
+   - Loop through integers from 0 to `n-1`:
+     - Read integer `v` from input.
+     - Assign `v` to `ara[i]`.
+     - If `map` does not contain key `v`:
+       - Insert `v` into `map` with value `1`.
+     - Else:
+       - Increment the value associated with key `v` in `map` by `1`.
+   - Initialize `max` to `0`.
+   - Iterate over values in `map`:
+     - Update `max` to the maximum of `max` and the current value.
+   - Initialize `mm` as a new HashMap.
+   - Loop through integers from 0 to `n-1`:
+     - If `mm` does not contain key `ara[i]`:
+       - Insert `ara[i]` into `mm` with value `1`.
+       - If the value associated with `ara[i]` in `mm` equals `max`:
+         - Print `ara[i]` using `pw` and exit loop.
+     - Else:
+       - Increment the value associated with key `ara[i]` in `mm` by `1`.
+       - If the value associated with `ara[i]` in `mm` equals `max`:
+         - Print `ara[i]` using `pw` and exit loop.
+   - Close `pw` to ensure output is written.
+
+4. Input/Output:
+   - Input is handled using `Scanner`.
+   - Output is handled using `PrintWriter` and printed to standard output.
+
+5. Required Libraries:
+   - `java.io.*`
+   - `java.util.*`

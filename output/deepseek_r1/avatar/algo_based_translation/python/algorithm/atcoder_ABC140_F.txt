@@ -1,0 +1,68 @@
+**Algorithm Specification: Sequence Validation**
+
+**Function Signatures:**
+- `main() -> str`: 
+  - Input: None (reads from standard input)
+  - Output: String ("Yes" or "No")
+- Helper functions excluded as they are input handling specifics
+
+**Variables:**
+- `N: int`: Number of required iterations/group formations
+- `S: List[int]`: Input list of integers sorted in descending order
+- `flag: List[bool]`: Tracks used elements in S (same length as S)
+- `cur: List[int]`: Tracks current group heads (elements in current groups)
+- Loop indices: `i` (outer loop), `k` (element iteration), `j` (current group index)
+
+**Data Types:**
+- All variables handling integers except flags (boolean)
+- Lists maintain descending order where specified
+
+**External Dependencies:**
+- `sys` module for input reading (Python-specific)
+
+**Logic Flow:**
+
+1. **Input Handling:**
+   - Read integer `N` from stdin
+   - Read and parse list of integers `S` from stdin
+   - Sort `S` in descending order
+
+2. **Initialization:**
+   - Create `flag` list initialized to `True` (all elements unused)
+   - Initialize `cur` with first element of `S`
+   - Mark first element in `flag` as `False`
+
+3. **Outer Loop (N Iterations):**
+   - For `i` from 0 to N-1:
+      a. Initialize `j` = 0, `jM` = current length of `cur`
+      b. **Element Selection Loop:**
+         - Iterate through `S` using index `k`:
+            i. If `flag[k]` is True AND `S[k] < cur[j]`:
+               - Add `S[k]` to `cur`
+               - Set `flag[k]` to False
+               - Increment `j`
+               - If `j == jM`, exit this loop
+         - If loop completes without finding enough elements -> Return "No"
+      c. Sort `cur` in descending order
+
+4. **Termination:**
+   - After completing all N iterations successfully -> Return "Yes"
+
+**Control Flow Details:**
+- Outer loop runs exactly N times (critical for correct group count)
+- Element selection uses short-circuit behavior: breaks when group capacity reached
+- Sorting `cur` after each iteration maintains descending order for next comparison
+- Else clause on element loop triggers early termination if insufficient valid elements
+
+**Edge Case Handling:**
+- Empty input list implicitly handled by element selection failure
+- Duplicate values handled via sorted comparison
+- Shortage of valid elements triggers "No" during element selection phase
+
+**Input/Output:**
+- Input taken via stdin reads for N and S
+- Output is console print of "Yes" or "No" based on validation result
+
+**Error Handling:**
+- No explicit error checking - assumes valid integer inputs per problem constraints
+- Early termination via return handles invalid sequence scenarios

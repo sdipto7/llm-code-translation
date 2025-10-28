@@ -1,0 +1,56 @@
+**Function Signatures:**
+- solve(): void
+- main(String[] args): void
+- run(): void
+- nextInt(): int
+- next(): String
+
+**Variables:**
+- x: int
+- t: int
+- a: int
+- b: int
+- da: int
+- db: int
+- first: int
+- second: int
+- ok: boolean
+- br: BufferedReader
+- st: StringTokenizer
+- out: PrintWriter
+
+**Algorithm:**
+1. Read input values: x, t, a, b, da, db
+2. Initialize boolean ok = false
+3. For i from 0 to t-1:
+   - Calculate first = a - (da * i)
+   - For j from 0 to t-1:
+     - Calculate second = b - (db * j)
+     - Check if any condition is true:
+       - first + second == x
+       - second == x
+       - first == x
+       - x == 0
+     - If any condition is true:
+       - Set ok = true
+       - Break inner loop
+4. If ok is true:
+   - Print "YES"
+5. Else:
+   - Print "NO"
+
+**Input/Output:**
+- Input from standard input stream
+- Output to standard output stream
+- Uses BufferedReader for input reading
+- Uses PrintWriter for output
+
+**Control Structures:**
+- Nested for loops: outer loop (i: 0 to t-1), inner loop (j: 0 to t-1)
+- Conditional checks inside inner loop
+- Break statement in inner loop
+- Final conditional output
+
+**Required Libraries:**
+- java.io.*
+- java.util.*

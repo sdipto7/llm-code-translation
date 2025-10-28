@@ -1,0 +1,13 @@
+Function Signature: `main() -> None`
+
+Variable Declarations:
+- `nums: List[int]`
+
+Logic Flow:
+1. Read a line of input from the standard input.
+2. Split the input line by spaces to create a list of strings.
+3. Map each string in the list to an integer, resulting in a list of integers.
+4. Assign the list of integers to the variable `nums`.
+5. Sort the list `nums` in descending order.
+6. Calculate the result as `nums[0] * 10 + nums[1] + nums[2]`.
+7. Print the calculated result to the standard output.

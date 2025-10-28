@@ -1,0 +1,60 @@
+Function Signature:
+- main() -> None
+
+Variable Declarations and Data Types:
+- pya: int
+- arre: List[str]
+- oString: str
+- lowString: str
+- letter1: str
+- letter2: str
+- valid: List[int]
+- setcito: Set[int]
+- x: str
+- wat: int
+- index: int
+- i: int
+- letter: str
+
+Logic Flow and Control Structures:
+1. Read an integer input and assign it to pya
+2. Initialize an empty list arre
+3. While pya is greater than 0:
+   - Decrement pya by 1
+   - Read a string input, convert it to lowercase, and append it to arre
+4. Read a string input and assign it to oString
+5. Convert oString to lowercase and assign it to lowString
+6. Read a string input, take the first character, convert it to lowercase, and assign it to letter1
+7. Assign 'a' to letter2 if letter1 is not 'a', otherwise assign 'b'
+8. Initialize a list valid of length equal to oString with all elements set to 0
+9. Initialize an empty set setcito
+10. For each string x in arre:
+    - If x is found in lowString:
+        - Initialize wat to 0
+        - While True:
+            - Find the index of x in lowString starting from wat and assign it to index
+            - If index is less than 0, break the loop
+            - For each index i from index to index + length of x:
+                - Add i to setcito
+            - Set wat to index + 1
+11. Convert oString to a list of characters
+12. For each index i in setcito:
+    - If the character at index i in lowString is not equal to letter1, assign letter1 to letter, otherwise assign letter2
+    - If the character at index i in oString is lowercase, replace it with letter, otherwise replace it with the uppercase version of letter
+13. For each character x in oString:
+    - Print x without a newline
+14. Print a newline
+
+Input/Output Operations:
+- Read integer input
+- Read string inputs and process them
+- Print characters of oString with modifications
+
+Data Processing Logic:
+- Collect substrings to be replaced
+- Track positions of substrings in the original string
+- Replace specific characters in the original string based on conditions
+- Output the modified string
+
+Libraries/Modules/Dependencies:
+- None required

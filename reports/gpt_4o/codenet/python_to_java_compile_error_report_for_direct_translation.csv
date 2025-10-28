@@ -1,0 +1,11 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,s977408144.java,Compilation Error,"Error: output/gpt_4o/codenet/direct_translation/python/java/s977408144.java:197: error: incompatible types: List<Integer> cannot be converted to Map<Integer,Integer>
+            return list_;
+                   ^
+1 error
+"
+python,java,s681105182.java,Compilation Error,"Error: output/gpt_4o/codenet/direct_translation/python/java/s681105182.java:22: error: incompatible types: possible lossy conversion from double to long
+            dif = Math.min(Math.abs(n / 2.0 - a), dif);
+                          ^
+1 error
+"

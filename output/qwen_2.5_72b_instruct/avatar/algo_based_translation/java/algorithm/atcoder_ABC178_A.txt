@@ -1,0 +1,22 @@
+Function Signature: `main(String[] args)`  
+Parameters: `String[] args`  
+Return Type: `void`  
+Variables:  
+- `scan` of type `Scanner`  
+- `x` of type `int`  
+- `bool` of type `boolean`  
+- `result` of type `int`  
+- `out` of type `PrintWriter`  
+
+Logic Flow:  
+1. Initialize `scan` as a new `Scanner` object with `System.in` as the input source.  
+2. Read an integer value from the input using `scan.next()` and parse it to an `int`, assigning it to `x`.  
+3. Set `bool` to `true` if `x` equals 1, otherwise set `bool` to `false`.  
+4. If `bool` is `false`, set `result` to 1, otherwise set `result` to 0.  
+5. Initialize `out` as a new `PrintWriter` object with `System.out` as the output destination.  
+6. Print the value of `result` to the standard output using `out.println(result)`.  
+7. Flush the output buffer using `out.flush()`.  
+
+Libraries/Modules/Dependencies:  
+- `java.util.*`  
+- `java.io.*`

@@ -1,0 +1,35 @@
+1. Input Integer N from standard input
+2. Declare List<Integer> ans
+3. For Integer i from 1 to N inclusive:
+   a. Calculate Integer sum_val = sum of integers 1 through i
+   b. If sum_val < N:
+      i. Continue to next iteration
+   c. Else:
+      i. Set ans = [i-1, sum_val - N]
+      ii. Break loop
+4. For Integer j from 0 to ans[0] inclusive:
+   a. Calculate Integer num = j + 1
+   b. If num ≠ ans[1]:
+      i. Print num to standard output
+
+Variables:
+- N: Integer (input)
+- ans: List<Integer> (size 2)
+- i: Integer (loop counter)
+- sum_val: Integer (temporary sum)
+- j: Integer (loop counter)
+- num: Integer (calculated output number)
+
+Control Structures:
+- For loop with range 1 to N (inclusive)
+- If-else condition checking sum_val < N
+- Break statement to exit loop
+- Second for loop with range 0 to ans[0] (inclusive)
+- If condition checking num ≠ ans[1]
+
+Input/Output:
+- Single integer input via stdin
+- Multiple integer outputs via stdout (each on new line)
+
+Dependencies:
+- No external libraries required

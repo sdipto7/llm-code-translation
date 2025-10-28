@@ -1,0 +1,43 @@
+Function signature: cutRibbon() -> None
+
+Variable declarations and data types:
+- arr: List[int]
+- length: int
+- ans: int
+- k: int
+- i: int
+- j: int
+- check: int
+
+Logic flow in execution order:
+1. arr = [int(i) for i in input().split()]
+2. length = arr[0]
+3. arr = sorted(arr[1:4], reverse=False)
+4. if length % arr[0] == 0:
+   - print(int(length / arr[0]))
+   - return
+5. ans = 0
+6. if arr[0] == arr[1]:
+   - k = 0
+   - for i in range(int(length / arr[2]) + 1):
+     - check = length - i * arr[2]
+     - if check >= 0 and check % arr[0] == 0:
+       - k = int(check / arr[0])
+       - ans = max(ans, k + i)
+7. else:
+   - k = 0
+   - for i in range(int(length / arr[2]) + 1):
+     - for j in range(int(length / arr[1]) + 1):
+       - check = length - i * arr[2] - j * arr[1]
+       - if check >= 0 and check % arr[0] == 0:
+         - k = int(check / arr[0])
+         - ans = max(ans, k + i + j)
+8. print(ans)
+9. return
+
+Input/output operations and data processing logic:
+- Input: A single line of space-separated integers from standard input.
+- Output: A single integer printed to standard output.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules required.

@@ -1,0 +1,47 @@
+Function signatures with parameter and return types:
+- `main(String[] args) throws IOException`
+- `FastReader()`
+- `next() -> String`
+- `nextInt() -> int`
+- `nextLong() -> long`
+- `nextDouble() -> double`
+- `nextLine() -> String`
+
+Variable declarations and data types:
+- `sc` -> FastReader
+- `pw` -> PrintWriter
+- `x` -> int
+- `count` -> int
+- `tmp` -> int
+- `br` -> BufferedReader
+- `st` -> StringTokenizer
+- `str` -> String
+
+Complete logic flow in execution order:
+- Create instance of FastReader named `sc`
+- Create instance of PrintWriter named `pw` writing to `System.out`
+- Read integer input into `x` using `sc.nextInt()`
+- Initialize `count` to 0
+- Initialize `tmp` to value of `x`
+- Set `x` to 0
+- Enter while loop with condition `x != 360`
+    - Add `tmp` to `x`
+    - Check if `x > 360`
+        - If true, subtract 360 from `x`
+    - Increment `count` by 1
+- Print `count` to standard output
+
+Control structures:
+- While loop with condition `x != 360`
+- If statement with condition `x > 360`
+
+Input/output operations and data processing logic:
+- Input read from standard input using `sc.nextInt()`
+- Output written to standard output using `System.out.println(count)`
+
+Required libraries, modules, or dependencies:
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.io.PrintWriter`
+- `java.util.*`

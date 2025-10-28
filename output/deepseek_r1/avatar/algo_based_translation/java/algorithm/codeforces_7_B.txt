@@ -1,0 +1,52 @@
+**Function Signature:**  
+public static void main(String[] args)  
+
+**Variables:**  
+- Scanner `s` (input stream)  
+- int `t` (number of commands)  
+- int `m` (memory size)  
+- int[] `memory` (size `m`, initialized to 0)  
+- int `allocIdx` (initialized to 0)  
+
+**Input Operations:**  
+Read `t` and `m` from standard input.  
+
+**Execution Flow (per command loop):**  
+For each of `t` iterations:  
+1. Read command type (String).  
+2. **Case "alloc":**  
+   - Read `n` (int).  
+   - Initialize `len` = 0, `canAlloc` = false.  
+   - Iterate over `memory` from 0 to `m-1`:  
+     - If `memory[i]` == 0: increment `len`.  
+     - Else: reset `len` to 0.  
+     - If `len` == `n`:  
+       - Set `canAlloc` = true.  
+       - Set `len` = `i - n + 1` (start index).  
+       - Break loop.  
+   - If `canAlloc`:  
+     - Increment `allocIdx` by 1.  
+     - Set `memory[len]` to `allocIdx` for `n` consecutive positions.  
+     - Print `allocIdx`.  
+   - Else: Print "NULL".  
+3. **Case "erase":**  
+   - Read `x` (int).  
+   - If `x` <= 0: Print "ILLEGAL_ERASE_ARGUMENT".  
+   - Else:  
+     - Initialize `hasErased` = false.  
+     - Iterate over `memory`:  
+       - If `memory[i]` == `x`: set `memory[i]` to 0 and `hasErased` = true.  
+     - If `hasErased` is false: Print "ILLEGAL_ERASE_ARGUMENT".  
+4. **Case "defragment":**  
+   - Initialize `d` = 0.  
+   - Iterate over `memory` from 0 to `m-1`:  
+     - If `memory[i]` == 0: increment `d`.  
+     - Else: set `memory[i - d]` = `memory[i]`.  
+   - Iterate from `m - d` to `m-1`: set `memory[i]` = 0.  
+5. **Default:** Print "h".  
+
+**Dependencies:**  
+- `java.util.Scanner` for input handling.  
+
+**Termination:**  
+Close Scanner `s` after processing all commands.

@@ -1,0 +1,49 @@
+**Input Processing:**
+- Import java.util.Scanner
+- Read integer n from standard input
+- Declare 2D integer array arr with dimensions n x 3
+- For i from 0 to n-1:
+  - For j from 0 to 2:
+    - Read integer value into arr[i][j]
+
+**Main Execution:**
+- Initialize integer ans to 0
+- Call dpx(arr, n) and assign result to ans
+- Print ans
+
+**Function min(arr: integer[], n: integer) → integer:**
+- If n equals 1: return 0
+- If n equals 2: return absolute difference between arr[1] and arr[0]
+- Else:
+  - Calculate op1 = absolute difference between arr[n-1] and arr[n-2] plus recursive min(arr, n-1)
+  - Calculate op2 = absolute difference between arr[n-1] and arr[n-3] plus recursive min(arr, n-2)
+  - Return minimum of op1 and op2
+
+**Function dpc(arr: integer[][], i: integer, n: integer, row: integer) → integer:**
+- If row equals n: return 0
+- Initialize integers j and k to 0
+- If i equals 1:
+  - Set j = 0, k = 2
+- Else if i equals 0:
+  - Set j = 1, k = 2
+- Else:
+  - Set j = 0, k = 1
+- Return arr[row][i] plus maximum of recursive dpc(arr, j, n, row+1) and dpc(arr, k, n, row+1)
+
+**Function dpx(arr: integer[][], n: integer) → integer:**
+- Declare 2D integer array dp with dimensions n x 3
+- Initialize first row of dp with first row of arr:
+  - dp[0][0] = arr[0][0]
+  - dp[0][1] = arr[0][1]
+  - dp[0][2] = arr[0][2]
+- For i from 1 to n-1:
+  - For in from 0 to 2:
+    - Initialize integers j and k to 0
+    - If in equals 1:
+      - Set j = 0, k = 2
+    - Else if in equals 0:
+      - Set j = 1, k = 2
+    - Else:
+      - Set j = 0, k = 1
+    - Set dp[i][in] = maximum of dp[i-1][j] and dp[i-1][k] plus arr[i][in]
+- Return maximum of dp[n-1][0], dp[n-1][1], and dp[n-1][2]

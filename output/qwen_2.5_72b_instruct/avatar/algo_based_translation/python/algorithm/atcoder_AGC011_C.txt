@@ -1,0 +1,40 @@
+- Required Libraries: queue
+- Variable Declarations: 
+  - n, m: int
+  - vis: list of int (size n+1)
+  - ci, cb, cc: int
+  - g: list of list of int (size n+1)
+- Function Signatures:
+  - dfs(x: int) -> bool
+- Algorithm:
+1. Read n and m as integers from input.
+2. Initialize vis as a list of 0s of size n+1.
+3. Initialize ci, cb, cc to 0.
+4. Initialize g as a list of empty lists of size n+1.
+5. Define function dfs(x):
+   1. Initialize stk as a LifoQueue.
+   2. Initialize flag as True.
+   3. Put (x, 1) into stk.
+   4. While stk is not empty:
+      1. Get (u, col) from stk.
+      2. If vis[u] is not 0:
+         1. Set flag to flag AND (vis[u] == col).
+         2. Continue.
+      3. Set vis[u] to col.
+      4. For each i in g[u]:
+         1. Put (i, 3 - col) into stk.
+   5. Return flag.
+6. For i from 0 to m-1:
+   1. Read u and v as integers from input.
+   2. Append v to g[u].
+   3. Append u to g[v].
+7. For i from 1 to n:
+   1. If vis[i] is 0:
+      1. If length of g[i] is 0:
+         1. Increment ci by 1.
+      2. Else:
+         1. If dfs(i) is True:
+            1. Increment cb by 1.
+         2. Else:
+            1. Increment cc by 1.
+8. Print ci * ci + 2 * ci * (n - ci) + cc * cc + 2 * cb * cc + 2 * cb * cb.

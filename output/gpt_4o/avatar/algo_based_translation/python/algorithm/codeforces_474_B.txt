@@ -1,0 +1,39 @@
+```
+Algorithm:
+
+1. Function Signature:
+   - Function: main
+   - Parameters: None
+   - Return Type: None
+
+2. Variable Declarations:
+   - L: List of integers, initially empty
+   - r: Integer, initialized to 1
+   - k: String, used as loop iterator
+   - j: String, used as loop iterator
+
+3. Input/Output Operations:
+   - Read input from the user (not used in logic)
+   - Read second input from the user, split it by spaces into a list of strings
+
+4. Logic Flow:
+   - Initialize an empty list `L`
+   - Initialize an integer `r` to 1
+   - For each element `k` in the list obtained from the second input:
+     - Convert `k` to integer
+     - Append `r` to the list `L`, repeated `int(k)` times
+     - Increment `r` by 1
+   - Read another input from the user (not used in logic)
+   - Read a final input from the user, split it by spaces into a list of strings
+
+5. Control Structures:
+   - For loop to iterate over each `k` in the second user input split by spaces
+   - For loop to iterate over each `j` in the final user input split by spaces
+
+6. Data Processing Logic:
+   - Convert each `j` to an integer, subtract 1, and use it as an index to access elements in list `L`
+   - Print the value from list `L` at the calculated index
+
+7. Output:
+   - For each `j`, print the value from list `L` at the index `int(j) - 1`
+```

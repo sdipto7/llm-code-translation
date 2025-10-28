@@ -1,0 +1,26 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner sc`: Scanner object for input
+- `int n`: input integer
+- `long ans`: accumulator initialized to 0
+
+**Logic Flow:**
+1. Initialize Scanner with System.in
+2. Read integer `n` from input
+3. Initialize `ans` to 0
+4. For loop from `i = 1` to `n` (inclusive):
+   - Calculate term: `(long)i * ((long)n / (long)i) * (((long)n / (long)i) + 1) / 2`
+   - Add term to `ans`
+5. Print `ans`
+
+**Control Structures:**
+- For loop: `for (int i = 1; i < n + 1; i++)`
+
+**Input/Output:**
+- Input: Single integer `n` from standard input
+- Output: Print `ans` to standard output
+
+**Required Libraries:**
+- `java.util.Scanner`

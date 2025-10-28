@@ -1,0 +1,14 @@
+Initialize an empty list L
+Read and discard first input line
+Initialize integer r to 1
+Read next input line and split into tokens
+For each token k in the split tokens:
+    Convert k to integer
+    Append r to list L repeated integer(k) times
+    Increment r by 1
+Read and discard next input line
+Read next input line and split into tokens
+For each token j in the split tokens:
+    Convert j to integer
+    Subtract 1 from integer(j) to get index
+    Print element from L at calculated index

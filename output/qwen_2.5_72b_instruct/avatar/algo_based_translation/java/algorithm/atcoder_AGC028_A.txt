@@ -1,0 +1,50 @@
+Function signatures:
+- `main(String[] $)`: void
+
+Variable declarations and data types:
+- `int n`
+- `int m`
+- `int gcd`
+- `String s`
+- `String t`
+- `BigInteger.valueOf(n)` as BigInteger
+- `BigInteger.valueOf(m)` as BigInteger
+- `BigInteger.valueOf(n).gcd(BigInteger.valueOf(m))` as BigInteger
+- `IntStream.range(0, gcd)` as IntStream
+- `BigInteger.valueOf(n).multiply(BigInteger.valueOf(m))` as BigInteger
+- `BigInteger.valueOf(gcd)` as BigInteger
+- `BigInteger.valueOf(n).multiply(BigInteger.valueOf(m)).divide(BigInteger.valueOf(gcd))` as BigInteger
+- `k` as int in range loop
+
+Logic flow in execution order:
+1. Initialize `n` with input integer
+2. Initialize `m` with input integer
+3. Calculate greatest common divisor `gcd` of `n` and `m` using BigInteger operations
+4. Initialize `s` with input string
+5. Initialize `t` with input string
+6. Create an IntStream from 0 to `gcd`
+7. Filter the stream where `s.charAt(k * n / gcd) != t.charAt(k * m / gcd)`
+8. Map filtered stream to -1
+9. Find any element in the mapped stream
+10. If no element is found, return `BigInteger.valueOf(n).multiply(BigInteger.valueOf(m)).divide(BigInteger.valueOf(gcd)).longValue()`
+11. Otherwise, return the found value
+
+Control structures:
+- Loop: `IntStream.range(0, gcd)`
+- Conditional: `s.charAt(k * n / gcd) != t.charAt(k * m / gcd)`
+
+Input/output operations:
+- Input: `n`, `m`, `s`, `t`
+- Output: Result of the logic flow
+
+Data processing logic:
+- Calculate gcd using BigInteger
+- Normalize indices of `s` and `t` based on gcd
+- Compare characters at normalized indices
+- Determine if all characters match or find the first mismatch
+- Calculate least common multiple if no mismatch found
+
+Libraries:
+- `java.math.BigInteger`
+- `java.util.*`
+- `java.util.stream.*`

@@ -1,0 +1,21 @@
+Algorithm:
+1. Import Scanner from java.util
+2. Define public class Main
+3. Define main method with String[] args parameter
+4. Declare Scanner scanner initialized with System.in
+5. Read integer n from scanner input
+6. Declare long ans initialized to 1
+7. Declare int mod initialized to 10^9 + 7
+8. For i from 2 to n (inclusive):
+   a. For j from 2 while (i % j != 0 AND j < i) OR j == i:
+      i. If j == i:
+          - Declare int s initialized to 0
+          - For k from 1 to n (inclusive):
+             * Call findS(k, i) and add result to s
+          - Set ans = (ans * (s + 1)) % mod
+9. Print ans
+10. Define private static method findS with parameters int k, int i returning int
+11. Declare int s initialized to 0
+12. For j initialized to k, while j % i == 0, update j = j / i:
+    a. Increment s by 1
+13. Return s

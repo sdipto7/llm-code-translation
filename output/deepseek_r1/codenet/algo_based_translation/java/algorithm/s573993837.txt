@@ -1,0 +1,53 @@
+Here is the algorithm extracted from the provided Java code:
+
+---
+**Input/Output Operations:**
+- Read input values using `InputReader` with methods `nextLong()` for integers.
+- Output results using `PrintWriter` with `println()`.
+
+**Data Types and Variables:**
+- `long n, m`: input values.
+- `long rem`: stores the remainder when `n` is divided by `m` (if `n > m`).
+
+**Logic Flow:**
+1. Read `t` (hardcoded to 1 loop iteration).
+2. For each test case:
+   - Read `n` and `m`.
+   - If `n == 0`:
+     - Output `0` and proceed to next iteration.
+   - If `n == m`:
+     - Output `0` and proceed to next iteration.
+   - If `n > m`:
+     - Compute `rem = n % m`.
+     - Set `ans = min(rem, m - rem)`.
+     - Output `ans`.
+   - Else (`n < m`):
+     - Set `ans = min(n, m - n)`.
+     - Output `ans`.
+
+**Control Structures:**
+- **Conditionals**:
+  - Check `n == 0`, `n == m`, `n > m`, and `n < m`.
+- **Loop**:
+  - Single iteration loop (hardcoded `t=1`).
+
+**Dependencies:**
+- Java standard libraries: `java.io.*`, `java.util.*`, `java.lang.*`.
+- Custom `InputReader` class for efficient input handling.
+
+**Function Signatures:**
+- `void solve(InputReader sc, PrintWriter pw)`: Main logic function.
+- `long nextLong()`: Reads a `long` from input (via `InputReader`).
+- `void println()`: Outputs result (via `PrintWriter`).
+
+**Data Processing:**
+- Compute remainder via `n % m` when `n > m`.
+- Compute the minimum between `rem` and `m - rem` (or between `n` and `m - n` for `n < m`).
+
+**Edge Cases:**
+- Directly return `0` if `n` is `0` or equals `m`.
+- Handles large values via `long` data type.
+
+**Optimizations:**
+- Avoids unnecessary computations for edge cases.
+- Uses modular arithmetic for `n > m` to reduce problem size.

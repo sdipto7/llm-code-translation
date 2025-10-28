@@ -1,0 +1,17 @@
+1. Read two integers n and k from input
+2. Read a list of n integers into elems
+3. Define a function all_same that checks if all elements in a given array are the same
+4. If all elements in elems are the same then
+    4.1. Output 0
+    4.2. Exit
+5. If k equals 1 then
+    5.1. Output -1
+    5.2. Exit
+6. If elements from index k-1 to the end of elems are not the same then
+    6.1. Output -1
+    6.2. Exit
+7. Set target to the last element of elems
+8. Set to_delete to elements from index 0 to k-2 of elems
+9. While to_delete is not empty and the last element of to_delete equals target
+    9.1. Remove the last element from to_delete
+10. Output the size of to_delete

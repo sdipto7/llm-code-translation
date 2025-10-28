@@ -1,0 +1,370 @@
+```plaintext
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
+import java.util.*;
+
+function main():
+    declare MOD1 as long = 1000000007
+    declare MOD2 as long = 998244353
+    declare tenmod as long array
+    declare inv9 as long = modInv(9)
+    initialize out as PrintWriter with System.out
+    initialize sc as InputReader with System.in
+    declare N as int = sc.nextInt()
+    declare Q as int = sc.nextInt()
+    initialize tenmod as long array of size N+1
+    set tenmod[0] = 1
+    for j from 1 to N inclusive:
+        set tenmod[j] = (tenmod[j-1] * 10L) % MOD2
+    initialize dat as S array of size N
+    call Arrays.setAll with dat and lambda function: i -> new S(tenmod[N-i-1], i, i)
+    initialize lazySegTree as LazySegTree of type S, F with arguments (dat, S::op, S.E, S::map, F::composite, F.I)
+    for j from 0 to Q-1 inclusive:
+        declare l as int = sc.nextInt() - 1
+        declare r as int = sc.nextInt() - 1
+        declare D as long = sc.nextLong()
+        call lazySegTree.apply with arguments (l, r+1, new F(D, N))
+        call out.println with lazySegTree.allProd().sum
+    call out.flush()
+
+function modInv(x as long) -> long:
+    return modPow(x, MOD2 - 2)
+
+function modPow(x as long, y as long) -> long:
+    declare z as long = 1
+    while y > 0:
+        if y % 2 == 0:
+            set x = (x * x) % MOD2
+            set y = y / 2
+        else:
+            set z = (z * x) % MOD2
+            decrement y
+    return z
+
+class S:
+    declare static E as S = new S(0, Integer.MAX_VALUE/2, Integer.MIN_VALUE/2)
+    declare sum as long
+    declare l as int
+    declare r as int
+
+    constructor S(sum as long, l as int, r as int):
+        set this.sum = sum
+        set this.l = l
+        set this.r = r
+
+    function static op(s1 as S, s2 as S) -> S:
+        declare sum as long = s1.sum + s2.sum
+        if sum >= MOD2:
+            set sum = sum - MOD2
+        return new S(sum, Math.min(s1.l, s2.l), Math.max(s1.r, s2.r))
+
+    function static map(f as F, s as S) -> S:
+        declare c as long = (tenmod[f.N - s.l] - tenmod[f.N - s.r - 1])
+        if c < 0:
+            set c = c + MOD2
+        return new S(((f.D * c) % MOD2 * inv9) % MOD2, s.l, s.r)
+
+class F:
+    declare static I as F = new F(0, 0)
+    declare D as long
+    declare N as int
+
+    constructor F(D as long, N as int):
+        set this.D = D
+        set this.N = N
+
+    function static composite(f as F, g as F) -> F:
+        return new F(f.D, f.N)
+
+class LazySegTree<S, F>:
+    declare MAX as int
+    declare N as int
+    declare Log as int
+    declare Op as BinaryOperator<S>
+    declare E as S
+    declare Mapping as BiFunction<F, S, S>
+    declare Composition as BinaryOperator<F>
+    declare Id as F
+    declare Dat as S array
+    declare Laz as F array
+
+    constructor LazySegTree(n as int, op as BinaryOperator<S>, e as S, mapping as BiFunction<F, S, S>, composition as BinaryOperator<F>, id as F):
+        set MAX = n
+        initialize k as int = 1
+        while k < n:
+            set k = k << 1
+        set N = k
+        set Log = Integer.numberOfTrailingZeros(N)
+        set Op = op
+        set E = e
+        set Mapping = mapping
+        set Composition = composition
+        set Id = id
+        initialize Dat as S array of size N << 1
+        initialize Laz as F array of size N
+        fill Dat with E
+        fill Laz with Id
+
+    constructor LazySegTree(dat as S array, op as BinaryOperator<S>, e as S, mapping as BiFunction<F, S, S>, composition as BinaryOperator<F>, id as F):
+        call LazySegTree(dat.length, op, e, mapping, composition, id)
+        call build with dat
+
+    function build(dat as S array):
+        declare l as int = dat.length
+        copy dat to Dat starting from index N
+        for i from N-1 to 1 inclusive decrementing:
+            set Dat[i] = Op.apply(Dat[i << 1 | 0], Dat[i << 1 | 1])
+
+    function push(k as int):
+        if Laz[k] == Id:
+            return
+        declare lk as int = k << 1 | 0
+        declare rk as int = k << 1 | 1
+        set Dat[lk] = Mapping.apply(Laz[k], Dat[lk])
+        set Dat[rk] = Mapping.apply(Laz[k], Dat[rk])
+        if lk < N:
+            set Laz[lk] = Composition.apply(Laz[k], Laz[lk])
+        if rk < N:
+            set Laz[rk] = Composition.apply(Laz[k], Laz[rk])
+        set Laz[k] = Id
+
+    function pushTo(k as int):
+        for i from Log to 1 inclusive decrementing:
+            call push with k >> i
+
+    function pushTo(lk as int, rk as int):
+        for i from Log to 1 inclusive decrementing:
+            if ((lk >> i) << i) != lk:
+                call push with lk >> i
+            if ((rk >> i) << i) != rk:
+                call push with rk >> i
+
+    function updateFrom(k as int):
+        set k = k >> 1
+        while k > 0:
+            set Dat[k] = Op.apply(Dat[k << 1 | 0], Dat[k << 1 | 1])
+            set k = k >> 1
+
+    function updateFrom(lk as int, rk as int):
+        for i from 1 to Log inclusive:
+            if ((lk >> i) << i) != lk:
+                declare lki as int = lk >> i
+                set Dat[lki] = Op.apply(Dat[lki << 1 | 0], Dat[lki << 1 | 1])
+            if ((rk >> i) << i) != rk:
+                declare rki as int = (rk - 1) >> i
+                set Dat[rki] = Op.apply(Dat[rki << 1 | 0], Dat[rki << 1 | 1])
+
+    function set(p as int, x as S):
+        call exclusiveRangeCheck with p
+        set p = p + N
+        call pushTo with p
+        set Dat[p] = x
+        call updateFrom with p
+
+    function get(p as int) -> S:
+        call exclusiveRangeCheck with p
+        set p = p + N
+        call pushTo with p
+        return Dat[p]
+
+    function allProd() -> S:
+        return Dat[1]
+
+    function apply(p as int, f as F):
+        call exclusiveRangeCheck with p
+        set p = p + N
+        call pushTo with p
+        set Dat[p] = Mapping.apply(f, Dat[p])
+        call updateFrom with p
+
+    function apply(l as int, r as int, f as F):
+        if l > r:
+            throw new IllegalArgumentException("Invalid range: [%d, %d)", l, r)
+        call inclusiveRangeCheck with l
+        call inclusiveRangeCheck with r
+        if l == r:
+            return
+        set l = l + N
+        set r = r + N
+        call pushTo with l, r
+        for l2 from l, r2 from r while l2 < r2:
+            if (l2 & 1) == 1:
+                set Dat[l2] = Mapping.apply(f, Dat[l2])
+                if l2 < N:
+                    set Laz[l2] = Composition.apply(f, Laz[l2])
+                increment l2
+            if (r2 & 1) == 1:
+                decrement r2
+                set Dat[r2] = Mapping.apply(f, Dat[r2])
+                if r2 < N:
+                    set Laz[r2] = Composition.apply(f, Laz[r2])
+            set l2 = l2 >> 1
+            set r2 = r2 >> 1
+        call updateFrom with l, r
+
+    function maxRight(l as int, g as Predicate<S>) -> int:
+        call inclusiveRangeCheck with l
+        if not g.test(E):
+            throw new IllegalArgumentException("Identity element must satisfy the condition.")
+        if l == MAX:
+            return MAX
+        set l = l + N
+        call pushTo with l
+        declare sum as S = E
+        do:
+            set l = l >> Integer.numberOfTrailingZeros(l)
+            if not g.test(Op.apply(sum, Dat[l])):
+                while l < N:
+                    call push with l
+                    set l = l << 1
+                    if g.test(Op.apply(sum, Dat[l])):
+                        set sum = Op.apply(sum, Dat[l])
+                        increment l
+                return l - N
+            set sum = Op.apply(sum, Dat[l])
+            increment l
+        while (l & -l) != l
+        return MAX
+
+    function minLeft(r as int, g as Predicate<S>) -> int:
+        call inclusiveRangeCheck with r
+        if not g.test(E):
+            throw new IllegalArgumentException("Identity element must satisfy the condition.")
+        if r == 0:
+            return 0
+        set r = r + N
+        call pushTo with r - 1
+        declare sum as S = E
+        do:
+            decrement r
+            while r > 1 and (r & 1) == 1:
+                set r = r >> 1
+            if not g.test(Op.apply(Dat[r], sum)):
+                while r < N:
+                    call push with r
+                    set r = r << 1 | 1
+                    if g.test(Op.apply(Dat[r], sum)):
+                        set sum = Op.apply(Dat[r], sum)
+                        decrement r
+                return r + 1 - N
+            set sum = Op.apply(Dat[r], sum)
+        while (r & -r) != r
+        return 0
+
+    function exclusiveRangeCheck(p as int):
+        if p < 0 or p >= MAX:
+            throw new IndexOutOfBoundsException("Index %d is not in [%d, %d).", p, 0, MAX)
+
+    function inclusiveRangeCheck(p as int):
+        if p < 0 or p > MAX:
+            throw new IndexOutOfBoundsException("Index %d is not in [%d, %d].", p, 0, MAX)
+
+class InputReader:
+    declare in as InputStream
+    declare buffer as byte array of size 1024
+    declare curbuf as int
+    declare lenbuf as int
+
+    constructor InputReader(in as InputStream):
+        set this.in = in
+        set this.curbuf = 0
+        set this.lenbuf = 0
+
+    function hasNextByte() -> boolean:
+        if curbuf >= lenbuf:
+            set curbuf = 0
+            try:
+                set lenbuf = in.read(buffer)
+            catch IOException e:
+                throw new InputMismatchException()
+            if lenbuf <= 0:
+                return false
+        return true
+
+    function readByte() -> int:
+        if hasNextByte():
+            return buffer[curbuf++]
+        else:
+            return -1
+
+    function isSpaceChar(c as int) -> boolean:
+        return not (c >= 33 and c <= 126)
+
+    function skip():
+        while hasNextByte() and isSpaceChar(buffer[curbuf]):
+            increment curbuf
+
+    function hasNext() -> boolean:
+        call skip()
+        return hasNextByte()
+
+    function next() -> String:
+        if not hasNext():
+            throw new NoSuchElementException()
+        declare sb as StringBuilder
+        declare b as int = readByte()
+        while not isSpaceChar(b):
+            call sb.appendCodePoint with b
+            set b = readByte()
+        return sb.toString()
+
+    function nextInt() -> int:
+        if not hasNext():
+            throw new NoSuchElementException()
+        declare c as int = readByte()
+        while isSpaceChar(c):
+            set c = readByte()
+        declare minus as boolean = false
+        if c == '-':
+            set minus = true
+            set c = readByte()
+        declare res as int = 0
+        do:
+            if c < '0' or c > '9':
+                throw new InputMismatchException()
+            set res = res * 10 + c - '0'
+            set c = readByte()
+        while not isSpaceChar(c)
+        return res if not minus else -res
+
+    function nextLong() -> long:
+        if not hasNext():
+            throw new NoSuchElementException()
+        declare c as int = readByte()
+        while isSpaceChar(c):
+            set c = readByte()
+        declare minus as boolean = false
+        if c == '-':
+            set minus = true
+            set c = readByte()
+        declare res as long = 0
+        do:
+            if c < '0' or c > '9':
+                throw new InputMismatchException()
+            set res = res * 10 + c - '0'
+            set c = readByte()
+        while not isSpaceChar(c)
+        return res if not minus else -res
+
+    function nextDouble() -> double:
+        return Double.parseDouble(next())
+
+    function nextIntArray(n as int) -> int[]:
+        declare a as int array of size n
+        for i from 0 to n-1 inclusive:
+            set a[i] = nextInt()
+        return a
+
+    function nextLongArray(n as int) -> long[]:
+        declare a as long array of size n
+        for i from 0 to n-1 inclusive:
+            set a[i] = nextLong()
+        return a
+
+    function nextCharMap(n as int, m as int) -> char[][]:
+        declare map as char array of size n by m
+        for i from 0 to n-1 inclusive:
+            set map[i] = next().toCharArray()
+        return map
+```

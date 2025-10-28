@@ -1,0 +1,40 @@
+Function: main (String[], void)
+Variable Declarations:
+- BufferedReader br
+- StringBuilder sb
+- int n
+- StringTokenizer st
+- Double[] arr
+- int non_int
+- double sum_before
+- double sum
+- double max_sum
+- double min_sum
+- double ans
+- double x
+
+Logic Flow:
+1. Create BufferedReader from System.in
+2. Create StringBuilder
+3. Read n from input and parse as integer
+4. Read next line and create StringTokenizer
+5. Initialize Double array arr of size 2*n
+6. Initialize non_int to 0
+7. Initialize sum_before to 0
+8. Initialize sum to 0
+9. For i from 0 to 2*n-1:
+   a. Read next token from StringTokenizer and parse as double
+   b. Add parsed number to sum_before
+   c. If parsed number is not equal to its floor, increment non_int
+   d. Add floor of parsed number to sum
+   e. Assign parsed number to arr[i]
+10. Calculate max_sum as minimum of n and non_int plus sum
+11. Calculate min_sum as maximum of 0 and non_int minus n plus sum
+12. If min_sum is greater than sum_before:
+    a. Assign min_sum minus sum_before to ans
+13. Else if max_sum is less than sum_before:
+    a. Assign sum_before minus max_sum to ans
+14. Else:
+    a. Calculate x as sum_before minus floor of sum_before
+    b. Assign minimum of 1 minus x and x to ans
+15. Print ans formatted to 3 decimal places

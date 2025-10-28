@@ -1,0 +1,54 @@
+**Algorithm Specification:**
+
+**Function Signature:**  
+`function checkMatrixPattern(): string`
+
+**Variables:**
+- `n: int` (matrix dimension)
+- `s: list[str]` (matrix rows)
+- `d1: list[str]` (main diagonal elements)
+- `d2: list[str]` (anti-diagonal elements)
+- `rem: set[str]` (non-diagonal elements)
+
+**Steps:**
+
+1. **Input Handling:**
+   1. Read integer `n` from standard input.
+   2. Read `n` strings from standard input, each of length `n`. Store in `s`.
+
+2. **Data Collection:**
+   1. Initialize empty lists `d1` and `d2`.
+   2. Initialize empty set `rem`.
+   3. For each `i` from `0` to `n-1` (inclusive):
+      1. For each `j` from `0` to `n-1` (inclusive):
+         1. If `i == j`:
+            1. Append `s[i][j]` to `d1`.
+         2. If `i == n - j - 1`:
+            1. Append `s[i][j]` to `d2`.
+         3. If `i != j` and `i != n - j - 1`:
+            1. Add `s[i][j]` to `rem`.
+
+3. **Validation Checks:**
+   1. If `len(rem) != 1`:
+      1. Return "NO".
+   2. Else if `d1 != d2`:
+      1. Return "NO".
+   3. Else if `len(set(d1)) != 1`:
+      1. Return "NO".
+   4. Else if `set(d1) == rem`:
+      1. Return "NO".
+   5. Else:
+      1. Return "YES".
+
+**Control Flow:**
+- Nested loops for matrix traversal (O(n²) complexity).
+- Sequential conditional checks with strict early termination on failure.
+
+**Edge Cases:**
+- Handles `n=1` (trivial matrix; logic remains valid).
+- Matrices where main and anti-diagonal overlap (odd dimensions).
+- All elements identical (fails due to `set(d1) == rem` check).
+
+**Input/Output:**
+- Input via standard console input (matrix dimensions followed by rows).
+- Outputs "YES" or "NO" based on validation checks.

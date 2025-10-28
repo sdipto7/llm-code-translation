@@ -1,0 +1,40 @@
+1. Read input values N and K
+2. Read input string S
+3. If K >= 15 or 2^K >= N then
+    3.1. Print the string consisting of the smallest character in S repeated N times
+    3.2. Exit
+4. Function get_last_dict(s_str)
+    4.1. U = s_str + reverse(s_str)
+    4.2. c = smallest character in s_str
+    4.3. p = index of first occurrence of c in U
+    4.4. minindex = p
+    4.5. p = p + 1
+    4.6. While p <= N
+        4.6.1. If U[p] == c then
+            4.6.1.1. If check_normal_dict(U, minindex, p) is True then
+                4.6.1.1.1. minindex = p
+        4.6.2. p = p + 1
+    4.7. Return substring of U from minindex to minindex + N
+5. S = get_last_dict(S)
+6. If K == 1 then
+    6.1. Print S
+7. Else
+    7.1. count = 0
+    7.2. For each character c in S
+        7.2.1. If c == first character of S then
+            7.2.1.1. count = count + 1
+        7.2.2. Else
+            7.2.2.1. Break loop
+    7.3. If count * 2^(K-1) >= N then
+        7.3.1. Print the string consisting of the first character of S repeated N times
+    7.4. Else
+        7.4.1. S = first character of S repeated (count * (2^(K-1) - 1)) times + S
+        7.4.2. Print the substring of S from index 0 to N
+
+Function check_normal_dict(u, pointer1, pointer2)
+    1. For i from 0 to N-1
+        1.1. If u[pointer1 + i] > u[pointer2 + i] then
+            1.1.1. Return True
+        1.2. Else if u[pointer1 + i] < u[pointer2 + i] then
+            1.2.1. Return False
+    2. Return False

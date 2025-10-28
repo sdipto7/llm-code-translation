@@ -1,0 +1,52 @@
+**Function Signatures:**
+- `public static void main(String[] args) throws IOException`
+- `static String next() throws IOException`
+- `static int nextInt() throws IOException`
+- `static double nextDouble() throws IOException`
+- `static long nextLong() throws IOException`
+- `static float nextFloat() throws IOException`
+
+**Variable Declarations:**
+- `int n`
+- `int[][] arr`
+- `int[][] dp`
+- `int max`
+- `static BufferedReader reader`
+- `static StringTokenizer tokenizer`
+
+**Data Types:**
+- `int`, `int[][]`, `int[][]`, `int`
+- `BufferedReader`, `StringTokenizer`
+- `String`, `int`, `double`, `long`, `float`
+
+**Logic Flow:**
+1. Initialize input reader with `BufferedReader` and `StringTokenizer`
+2. Read integer `n` from input
+3. Create 2D array `arr` with dimensions `n × 3`
+4. Populate `arr` by reading `n × 3` integers from input
+5. Create 2D array `dp` with dimensions `n × 3`
+6. Initialize first row of `dp` with first row of `arr`
+7. For each subsequent row `i` from 1 to `n-1`:
+   - For each column `j` from 0 to 2:
+     - If `j == 0`: set `dp[i][j] = max(arr[i][0] + dp[i-1][1], arr[i][0] + dp[i-1][2])`
+     - If `j == 1`: set `dp[i][j] = max(arr[i][1] + dp[i-1][0], arr[i][1] + dp[i-1][2])`
+     - If `j == 2`: set `dp[i][j] = max(arr[i][2] + dp[i-1][1], arr[i][2] + dp[i-1][0])`
+8. Find maximum value in last row of `dp`
+9. Print maximum value
+
+**Control Structures:**
+- `for(int i=0;i<n;++i)` nested with `for(int j=0;j<=2;++j)`
+- `for(int i=1;i<n;++i)` nested with `for(int j=0;j<3;++j)`
+- `if (j==0)`, `if (j==1)`, `if (j==2)` conditionals
+- `for(int i=0;i<3;++i)` with `if (dp[n-1][i] > max)` conditional
+- `while (!tokenizer.hasMoreTokens())` loop
+
+**Input/Output Operations:**
+- Read from `System.in` via `BufferedReader`
+- Parse tokens with `StringTokenizer`
+- Print to `System.out` via `System.out.println()`
+
+**Required Libraries:**
+- `java.util.*`
+- `java.io.*`
+- `java.lang.*`

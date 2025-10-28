@@ -1,0 +1,29 @@
+1. **Input Operation**: Read a string from standard input. Convert it to a list of characters.  
+   - Variable: `s` (type: `List[str]`), initialized as `s = list(input().strip())`  
+
+2. **Data Processing**: Sort the list `s` in lexicographical order.  
+   - Operation: `s.sort()`  
+
+3. **Conditional Check**:  
+   - **If** all of the following are true:  
+     - `s[0] == s[1]` (first two characters are equal)  
+     - `s[0] != s[2]` (first character differs from third)  
+     - `s[2] == s[3]` (third and fourth characters are equal)  
+   - **Then**: Print "Yes"  
+   - **Else**: Print "No"  
+
+4. **Output Operation**: Print "Yes" or "No" based on the conditional check.  
+   - Function: `print("Yes")` or `print("No")`  
+
+**Function Signature**:  
+- Implicit procedure with no parameters or return value.  
+
+**Control Flow**:  
+1. Sequential execution of input, sorting, and conditional check.  
+2. Single `if-else` block controlling output.  
+
+**Dependencies**:  
+- Python standard library (no external modules required).  
+
+**Assumptions**:  
+- Input string length is exactly 4 characters (code will fail otherwise).

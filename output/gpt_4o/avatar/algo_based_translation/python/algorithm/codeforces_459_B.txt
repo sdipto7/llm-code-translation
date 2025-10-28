@@ -1,0 +1,35 @@
+```
+Algorithm: ProcessList
+
+Inputs:
+  - An integer n
+  - A list of integers l1 of size n
+
+Outputs:
+  - A tuple containing:
+    - An integer representing the difference between the maximum and minimum values in the list
+    - An integer representing the count of pairs that can be formed based on certain conditions
+
+Variables:
+  - n: integer
+  - l1: list of integers
+  - a: integer
+  - b: integer
+  - ac: integer
+  - bc: integer
+
+Steps:
+1. Read an integer from input and assign it to n.
+2. Read a line of input, split it into strings, convert each to an integer, and assign the resulting list to l1.
+3. Sort the list l1 in non-decreasing order.
+4. Assign the last element of l1 to a.
+5. Assign the first element of l1 to b.
+6. If a is equal to b, then:
+   - Calculate the number of ways to choose 2 items from n items, which is n * (n - 1) // 2.
+   - Output the tuple (a - b, result from step 6.1).
+7. Otherwise:
+   - Count the number of occurrences of a in l1 and assign to ac.
+   - Count the number of occurrences of b in l1 and assign to bc.
+   - Calculate the product of ac and bc.
+   - Output the tuple (a - b, result from step 7.3).
+```

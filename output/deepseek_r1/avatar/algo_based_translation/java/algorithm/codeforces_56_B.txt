@@ -1,0 +1,48 @@
+Function signature:
+- `public static void main(String[] args)`
+
+Variables:
+- `len: int` (input array length)
+- `a: int[]` (input array)
+- `l: int` (left boundary of subarray)
+- `r: int` (right boundary of subarray)
+- `flag: boolean` (marks first discrepancy found)
+- `isTrue: boolean` (marks invalid reversed segment)
+
+Libraries/Dependencies:
+- `java.util.*` (Scanner)
+- `java.io.*`
+- `java.lang.Math`
+
+Input Operations:
+1. Read integer `len` from standard input
+2. Read `len` integers into array `a` from standard input
+
+Logic Flow:
+1. Initialize `l = 0`, `r = 0`, `flag = false`, `isTrue = false`
+2. Iterate through array indices `i` from 0 to `len-1`:
+   a. If `a[i] != i+1` and `flag == false`:
+      1. Set `l = i+1`
+      2. Set `flag = true`
+      3. Skip remaining logic in iteration using `continue`
+   b. Else if `a[i] != i+1` and `flag == true`:
+      1. Set `r = i+1`
+      2. If `r >= 2` and `a[r-1] - a[r-2] > 0`:
+          - Set `isTrue = true`
+          - Break outer loop immediately
+3. After loop completes:
+   - If `isTrue == false` and valid boundaries found:
+     - Output `l` and `r` as space-separated integers
+   - Else:
+     - Output "0 0"
+
+Control Structures:
+- Labeled `for` loop with break
+- Nested `if` conditions:
+  - `if (a[i] != i+1 && !flag)`
+  - `if (a[i] != i+1 && flag)`
+  - `if (a[r-1] - a[r-2] > 0)`
+- Ternary operator for final output decision
+
+Output Operation:
+- Print either "l r" or "0 0" based on validity checks

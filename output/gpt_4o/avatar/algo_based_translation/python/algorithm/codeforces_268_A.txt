@@ -1,0 +1,18 @@
+1. Define a function with signature `def count_matching_pairs(n: int, inputs: List[List[str]]) -> int`
+
+2. Declare variables:
+   - `q: List[List[str]]` initialized as an empty list to store input data.
+   - `count: int` initialized to 0 to count matching pairs.
+
+3. Loop through a range from `0` to `n` (exclusive):
+   - For each iteration, read input and split it by spaces, storing it as a list `a` of strings.
+   - Append `a` to the list `q`.
+
+4. Loop through each element `j` in list `q`:
+   - Loop through each element `k` in list `q`:
+     - If `k` is the same object as `j`, continue to the next iteration of the inner loop.
+     - Otherwise, check if the first element of list `j` is equal to the last element of list `k`:
+       - If true, increment `count` by 1.
+       - Otherwise, continue to the next iteration of the inner loop.
+
+5. Output the value of `count`.

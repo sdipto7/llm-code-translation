@@ -1,0 +1,42 @@
+```
+Algorithm:
+1. Import necessary libraries: InputStream, OutputStream, IOException, PrintWriter, BufferedReader, InputStreamReader, StringTokenizer.
+2. Define `public class atcoder_ABC124_C`.
+3. Define `public static void main(String[] args)`:
+   - Initialize `InputStream inputStream` to `System.in`.
+   - Initialize `OutputStream outputStream` to `System.out`.
+   - Create `InputReader in` using `inputStream`.
+   - Create `PrintWriter out` using `outputStream`.
+   - Instantiate `CColoringColorfully solver`.
+   - Call `solver.solve(1, in, out)`.
+   - Close `out`.
+4. Define `static class CColoringColorfully`:
+   - Define `public void solve(int testNumber, InputReader in, PrintWriter out)`:
+     - Declare `String x` and assign `in.next()`.
+     - Declare `StringBuilder a` and assign `new StringBuilder(x)`.
+     - Declare `StringBuilder b` and assign `new StringBuilder(x)`.
+     - Declare `int a1` and initialize to `0`.
+     - Declare `int a2` and initialize to `0`.
+     - Iterate `int i` from `1` to `x.length() - 1`:
+       - If `a.charAt(i)` equals `a.charAt(i - 1)`:
+         - If `a.charAt(i)` equals `'1'`, set `a.charAt(i)` to `'0'`.
+         - Else, set `a.charAt(i)` to `'1'`.
+         - Increment `a1`.
+     - Iterate `int i` from `x.length() - 1` to `1` (decrementing):
+       - If `b.charAt(i)` equals `b.charAt(i - 1)`:
+         - If `b.charAt(i - 1)` equals `'1'`, set `b.charAt(i - 1)` to `'0'`.
+         - Else, set `b.charAt(i - 1)` to `'1'`.
+         - Increment `a2`.
+     - Print to `out` the minimum of `a1` and `a2`.
+5. Define `static class InputReader`:
+   - Declare `BufferedReader reader`.
+   - Declare `StringTokenizer tokenizer`.
+   - Define `public InputReader(InputStream stream)`:
+     - Initialize `reader` with `new BufferedReader(new InputStreamReader(stream), 32768)`.
+     - Initialize `tokenizer` to `null`.
+   - Define `public String next()`:
+     - While `tokenizer` is `null` or `!tokenizer.hasMoreTokens()`:
+       - Try to assign `tokenizer` with `new StringTokenizer(reader.readLine())`.
+       - Catch `IOException e` and throw `RuntimeException(e)`.
+     - Return `tokenizer.nextToken()`.
+```

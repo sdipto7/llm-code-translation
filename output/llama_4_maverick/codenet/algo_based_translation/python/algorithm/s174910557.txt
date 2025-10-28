@@ -1,0 +1,10 @@
+1. Define a function `count_alternating_characters` with return type `int` and no parameters.
+2. Declare variables: `N` of type `int`, `S` of type `str`, `ans` of type `int`, `tmp` of type `str`, and `s` of type `str`.
+3. Read an integer input from the user and store it in `N`.
+4. Read a string input from the user and store it in `S`.
+5. Initialize `ans` to 1 and `tmp` to the first character of `S`.
+6. Iterate over each character `s` in `S`.
+7. For each `s`, check if `s` is not equal to `tmp`.
+8. If the condition is true, increment `ans` by 1 and update `tmp` to `s`.
+9. After iterating over all characters in `S`, output the value of `ans`.
+10. The program terminates after outputting `ans`.

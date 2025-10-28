@@ -1,0 +1,10 @@
+Algorithm:
+1. Import the `java.util.Scanner` class for reading input from the user.
+2. Define the `main` function with no parameters and a `void` return type.
+3. Inside the `main` function, perform the following steps:
+   - Declare a `Scanner` object `sc` to read input from the standard input stream.
+   - Declare an integer variable `a` and read an integer value from input using `sc.nextInt()`, assigning the value to `a`.
+   - Declare another integer variable `b` and read another integer value from input using `sc.nextInt()`, assigning the value to `b`.
+   - Evaluate the condition `b % a == 0`:
+     - If true, output the sum of `a` and `b` using `System.out.println(a + b)`.
+     - If false, output the difference between `b` and `a` using `System.out.println(b - a)`.

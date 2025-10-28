@@ -1,0 +1,43 @@
+**Function Signature:**
+- No explicit function defined; code executes at module level
+- Inputs: Reads from standard input
+- Outputs: Prints to standard output
+
+**Variables and Data Types:**
+- n: integer (number of elements, though unused)
+- a: list of integers (first input array)
+- b: list of integers (second input array)
+- c: list of integers (third input array)
+- x: integer (sum of elements in a)
+- y: integer (sum of elements in b)
+- z: integer (sum of elements in c)
+
+**Execution Flow:**
+1. Read integer n from input (unused)
+2. Read first line of integers, split into list a
+3. Read second line of integers, split into list b
+4. Read third line of integers, split into list c
+5. Initialize x = 0
+6. For each element i in list a: add i to x
+7. Initialize y = 0
+8. For each element i in list b: add i to y
+9. Initialize z = 0
+10. For each element i in list c: add i to z
+11. Calculate absolute difference between x and y
+12. Print result of step 11
+13. Calculate absolute difference between y and z
+14. Print result of step 13
+
+**Control Structures:**
+- Three independent for loops:
+  - Loop 1: Iterates through all elements of list a
+  - Loop 2: Iterates through all elements of list b
+  - Loop 3: Iterates through all elements of list c
+
+**Input/Output Operations:**
+- Input: Reads 4 lines total (integer n, then three lines of space-separated integers)
+- Output: Prints two lines with absolute differences
+
+**Dependencies:**
+- Built-in functions: input(), int(), map(), list(), split(), abs(), print()
+- No external libraries required

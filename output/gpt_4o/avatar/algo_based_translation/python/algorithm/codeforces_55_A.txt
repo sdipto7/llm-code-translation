@@ -1,0 +1,27 @@
+Algorithm:
+
+1. Function Signature:
+   - No specific function signature since code is executed in the global scope.
+
+2. Variable Declarations:
+   - `n`: Integer; stores the user input converted to an integer.
+
+3. Input Operation:
+   - Prompt user for input and convert it to an integer to initialize `n`.
+
+4. Loop Structure:
+   - While Loop: Execute as long as `n` is divisible by 2 (i.e., `n % 2 == 0`).
+     - Divide `n` by 2 and update `n`.
+
+5. Conditional Structure:
+   - If-Else Conditional:
+     - If `n` is equal to 1:
+       - Print 'YES'.
+     - Else:
+       - Print 'NO'.
+
+6. Output Operations:
+   - Print 'YES' if the final value of `n` is 1.
+   - Print 'NO' if the final value of `n` is not 1.
+
+7. No external libraries or modules required.

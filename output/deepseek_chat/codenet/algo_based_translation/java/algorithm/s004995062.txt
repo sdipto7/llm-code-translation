@@ -1,0 +1,7 @@
+read input string sa
+read input string sb
+declare BigDecimal A initialized with sa
+declare BigDecimal B initialized with sb
+multiply A by B
+set scale of result to 0 with rounding mode ROUND_DOWN
+print result

@@ -1,0 +1,10 @@
+1. Read n and d from input
+2. Read a list of numbers into x
+3. Convert each element in x to an integer
+4. Initialize m to 0
+5. For each element in x except the last one
+   1. If current element is greater than or equal to the next element
+      1. Calculate q as the difference between current element and next element divided by d, rounded down, then add 1
+      2. Add q to m
+      3. Increment the next element by q times d
+6. Output the value of m

@@ -1,0 +1,43 @@
+Function Signatures:
+- No explicit functions; main script execution.
+
+Variable Declarations:
+- `n`: int (input value)
+- `lst`: List[str] (initially empty)
+- `pair`: int (initialized to 0, unused)
+- `st`: str (temporary sorted string)
+- `pre`: str (initialized to empty string)
+- `tmp_cnt`: int (initialized to 0)
+- `cnt`: int (initialized to 0)
+
+Logic Flow:
+1. Read integer `n` from standard input.
+2. Initialize empty list `lst`.
+3. For each of `n` iterations:
+   a. Read a string from input.
+   b. Sort characters of the string and join into `st`.
+   c. Append `st` to `lst`.
+4. Sort `lst` lexicographically.
+5. Append the string `'end'` to `lst`.
+6. Initialize `pre` as empty string, `tmp_cnt` as 0, `cnt` as 0.
+7. Iterate over each element `i` in `lst`:
+   a. If `i` equals `pre`:
+      i. Increment `tmp_cnt` by 1.
+   b. Else:
+      i. Add sum of integers from 0 to `tmp_cnt` (inclusive) to `cnt`.
+      ii. Reset `tmp_cnt` to 0.
+      iii. Update `pre` to `i`.
+8. Print `cnt`.
+
+Control Structures:
+- Loop `for i in range(n)` for reading inputs.
+- Loop `for i in lst` for processing sorted elements.
+- Conditional `if i == pre` inside the processing loop.
+
+Input/Output Operations:
+- Read `n` via `input()`.
+- Read each string via `input()` in a loop.
+- Print final `cnt` value.
+
+Dependencies:
+- None (uses built-in functions and standard input/output).

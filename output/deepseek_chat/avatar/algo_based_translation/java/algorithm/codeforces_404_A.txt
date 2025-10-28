@@ -1,0 +1,54 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `sc`: Scanner (System.in)
+- `n`: int (input size)
+- `arr`: char[][] (n x n grid)
+- `str`: String[] (size n)
+- `a`: char (first character of grid)
+- `b`: char (second character of first row)
+- `res`: boolean (validation result)
+
+**Logic Flow:**
+1. Read integer `n` from input
+2. Initialize `str` array of size `n`
+3. For `i` from 0 to n-1:
+   - Read next string into `str[i]`
+4. Initialize 2D char array `arr` of size n x n
+5. For `i` from 0 to n-1:
+   - For `j` from 0 to n-1:
+     - Set `arr[i][j]` to `str[i].charAt(j)`
+6. Set `a` = `arr[0][0]`
+7. Set `b` = `arr[0][1]`
+8. If `a` equals `b`:
+   - Print "NO"
+9. Else:
+   - Set `res` = true
+   - For `i` from 0 to n-1:
+     - For `j` from 0 to n-1:
+       - If `i` equals `j` OR `i+j` equals `n-1`:
+         - If `arr[i][j]` not equal to `a`:
+           - Set `res` = false
+           - Break inner loop
+       - Else:
+         - If `arr[i][j]` not equal to `b`:
+           - Set `res` = false
+           - Break inner loop
+   - If `res` is true:
+     - Print "YES"
+   - Else:
+     - Print "NO"
+
+**Control Structures:**
+- For loops: `for (int i=0; i<n; i++)`
+- If-else conditions
+- Nested loops
+- Break statements
+
+**Input/Output:**
+- Input: Integer `n` followed by `n` strings
+- Output: "YES" or "NO" based on validation
+
+**Required Libraries:**
+- `java.util.Scanner`

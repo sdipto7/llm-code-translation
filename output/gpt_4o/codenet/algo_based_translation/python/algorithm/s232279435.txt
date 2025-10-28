@@ -1,0 +1,36 @@
+```
+Function signature:
+- Function: main()
+  - Parameters: None
+  - Returns: None
+
+Variable declarations:
+- n: int
+- s: str
+- ans: int
+- i: int
+- x: set
+- y: set
+- z: int
+- w: char
+
+Logic flow:
+1. Read an integer input and store it in variable `n`.
+2. Read a string input and store it in variable `s`.
+3. Initialize `ans` to 0.
+4. For each integer `i` from 0 to `n-1` (inclusive):
+   a. Create a set `x` containing unique characters from the substring `s[:i+1]`.
+   b. Create a set `y` containing unique characters from the substring `s[i+1:]`.
+   c. Initialize `z` to 0.
+   d. For each character `w` in set `x`:
+      i. If `w` is also in set `y`, increment `z` by 1.
+   e. If `z` is greater than `ans`, assign `z` to `ans`.
+5. Print the value of `ans`.
+
+Input/output operations:
+- Input: Read integer `n` and string `s` from standard input.
+- Output: Print integer `ans` to standard output.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules are required.
+```

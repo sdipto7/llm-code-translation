@@ -1,0 +1,45 @@
+**Function Signatures:**
+- `main(String[] args) throws Exception`
+- `Answer(int y, int m, int d) returns int`
+
+**Variables:**
+- `Scanner sc` (input scanner)
+- `int count` (number of test cases)
+- `int i` (loop counter)
+- `int y` (input year)
+- `int m` (input month)
+- `int d` (input day)
+- `int result` (calculated result)
+
+**Logic Flow:**
+1. Create Scanner object for input
+2. Read integer `count` from input
+3. For `i` from 0 to `count-1`:
+   - Read integers `y`, `m`, `d` from input
+   - Call `Answer(y, m, d)` and print result
+
+**Answer Function Logic:**
+1. Initialize `result = 1`
+2. If `y % 3 == 0`:
+   - Add `(20 - d)` to result
+3. Else if `m % 2 == 0`:
+   - Add `(19 - d)` to result
+4. Else:
+   - Add `(20 - d)` to result
+5. For `m` from `m+1` to 10:
+   - If `y % 3 == 0`:
+     - Add 20 to result
+   - Else:
+     - If `m % 2 == 0`:
+       - Add 19 to result
+     - Else:
+       - Add 20 to result
+6. For `y` from `y+1` to 999:
+   - If `y % 3 == 0`:
+     - Add 200 to result
+   - Else:
+     - Add 195 to result
+7. Return result
+
+**Required Libraries:**
+- `java.util.Scanner`

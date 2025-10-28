@@ -1,0 +1,27 @@
+- Function signature: `calculate_modified_sums(n: int, t: List[int], m: int, operations: List[Tuple[int, int]]) -> List[int]`
+- Variable declarations:
+  - `n`: `int`
+  - `t`: `List[int]`
+  - `m`: `int`
+  - `operations`: `List[Tuple[int, int]]`
+  - `s`: `int`
+  - `result`: `List[int]`
+- Logic flow:
+  1. Initialize an empty list `result` to store the sum results.
+  2. Iterate over the range of `m` using a loop with index `i`.
+     - Extract the pair `(p, x)` from `operations[i]`.
+     - Initialize `s` to 0 to calculate the sum for this specific operation.
+     - Iterate over the range of `len(t)` using a loop with index `j`.
+       - If `j` equals `p-1`, add `x` to `s`.
+       - Otherwise, add `t[j]` to `s`.
+     - Append the calculated sum `s` to the `result` list.
+  3. Return the `result` list containing all calculated sums.
+- Control structures:
+  - `for` loop to iterate over each operation.
+  - `if` condition to check if the current index `j` is equal to `p-1`.
+  - `else` block executed if `j` is not equal to `p-1`.
+- Input/output operations:
+  - Input is received as parameters `n`, `t`, `m`, and `operations`.
+  - Output is the list of sums stored in `result`.
+- Required libraries/modules:
+  - `from typing import List, Tuple` for type hinting.

@@ -1,0 +1,11 @@
+1. Import the required library: java.util.*
+2. Define a class: Main
+3. Define a function: main with parameter types (String...) and return type void
+4. Declare a variable: scan of type Scanner
+5. Initialize scan with a new Scanner object using System.in as the input source
+6. Declare a variable: r of type int
+7. Read an integer from the input using scan.nextInt() and store it in r
+8. Declare a variable: res of type int
+9. Calculate the square of r using Math.pow(r, 2) and cast the result to int, store it in res
+10. Print the value of res to the output using System.out.println(res)
+11. The program terminates after executing the main function.

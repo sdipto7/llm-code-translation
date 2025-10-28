@@ -1,0 +1,23 @@
+- Variables:
+  - n : int
+
+- Input Operations:
+  - Read integer from standard input and assign to variable n
+
+- Control Structures:
+  - If condition: n >= 1000
+    - Execute: print 'ABD'
+  - Else:
+    - Execute: print 'ABC'
+
+- Output Operations:
+  - Print 'ABD' or 'ABC' based on condition evaluation
+
+- Logic Flow:
+  1. Receive integer input
+  2. Compare input value against 1000
+  3. Select output based on comparison result
+  4. Execute print operation
+
+- Dependencies:
+  - Standard input/output functions

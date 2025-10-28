@@ -1,0 +1,33 @@
+**Algorithm:**
+
+1. **Imports:**
+   - `java.util.*`
+   - `java.lang.System`
+   - `java.math.*`
+
+2. **Main Function:**
+   - **Signature:** `public static void main(String[] args)`
+   - **Parameters:** `args` (String array)
+   - **Return Type:** `void`
+
+3. **Variables:**
+   - `youbi`: String array initialized to `{"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"}`
+   - `s`: String (input value from user)
+   - `ans`: int (initialized to 0)
+   - `sc`: Scanner object (reads from `System.in`)
+
+4. **Input Operations:**
+   - `s = sc.next()` (read user input string)
+
+5. **Processing Logic:**
+   - Iterate through `youbi` array using a `for` loop:
+     - **Loop Structure:** `for (int i = 0; i < youbi.length; i++)`
+     - **Condition:** Check if `youbi[i].equals(s)`
+       - If true, set `ans = 7 - i`
+
+6. **Output Operation:**
+   - Print `ans` using `System.out.println(ans)`
+
+7. **Control Flow:**
+   - Sequential execution of input, loop, conditional check, and output.
+   - Terminates after printing the result.

@@ -1,0 +1,35 @@
+main():
+    Initialize FastScanner object for input
+    Read integer n from input
+    Initialize HashMap<Integer, Integer> map
+    For i from 0 to n-1:
+        Read integer val from input
+        If val exists in map: increment its count by 1
+        Else: add val to map with count 1
+    Initialize max = minimum integer value
+    For each entry in map:
+        Get count value from entry
+        Update max to maximum of max and count
+    Print max followed by map size without space
+
+FastScanner class:
+    Initialize BufferedReader with InputStreamReader(System.in)
+    Initialize StringTokenizer with empty string
+    
+    next():
+        While StringTokenizer has no more tokens:
+            Try to read line from BufferedReader and create new StringTokenizer
+            Catch IOException and print stack trace
+        Return next token from StringTokenizer
+    
+    nextInt():
+        Return Integer.parseInt(next())
+    
+    nextLong():
+        Return Long.parseLong(next())
+    
+    nextDouble():
+        Return Double.parseDouble(next())
+    
+    nextLine():
+        Return BufferedReader.readLine()

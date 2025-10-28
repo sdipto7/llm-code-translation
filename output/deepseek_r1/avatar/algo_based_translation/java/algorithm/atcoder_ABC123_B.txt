@@ -1,0 +1,57 @@
+Algorithm:
+
+Function Signature:
+public static void main(String[] args) throws Exception
+
+Variables:
+- Scanner sc
+- int[5] a
+- int[5] r
+- TreeMap<Integer, Integer> map
+- int ans = 0
+- int last
+- int idx = 0
+
+Imports:
+import java.util.Scanner
+import java.util.TreeMap
+
+Logic Flow:
+1. Initialize Scanner with System.in
+2. Read 5 integer inputs into array a
+3. For each element i in array a (0 ≤ i < 5):
+   a. r[i] = a[i] % 10
+   b. If r[i] ≠ 0:
+      i. Compute b = 10 - r[i]
+      ii. Insert (b, a[i]) into map
+4. If map is empty:
+   a. Sum all elements in a as ans
+   b. Print ans
+   c. Terminate program
+5. Else:
+   a. Get last entry in map (largest key) -> last = map.get(map.lastKey())
+   b. Find index of 'last' in array a (store in idx)
+6. For each element i in array a (0 ≤ i < 5):
+   a. If i ≠ idx:
+      i. If a[i] % 10 == 0: ans += a[i]
+      ii. Else: ans += a[i] + (10 - r[i])
+7. ans += last
+8. Print ans
+
+Control Structures:
+- For loops (fixed iteration 0-4)
+- If-Else conditional branches:
+  - Check r[i] ≠ 0 (step 3b)
+  - Check map empty (step 4)
+  - Check index mismatch (step 6a)
+  - Check divisibility by 10 (step 6a.i)
+
+Data Processing:
+- Modulo operation for remainder calculation
+- TreeMap sorted storage for tracking maximum waiting time
+- Round-up calculation (10 - r[i]) for non-divisible values
+- Selective accumulation of adjusted values
+
+Input/Output:
+- Input: 5 integers via standard input
+- Output: Single integer result via standard output

@@ -1,0 +1,61 @@
+**Structured Algorithm Specification**
+
+**1. Function Definitions**  
+1.1. Function `check`  
+- **Parameters**:  
+  - `lis`: List[Integer] (input list of integers)  
+  - `k`: Integer (initial adjustment value)  
+  - `mid`: Integer (current divisor value to test)  
+- **Return Type**: Boolean  
+- **Logic**:  
+  1. For each element `i` in `lis`:  
+     1. If `i` is divisible by `mid` (`i % mid == 0`):  
+        - Increment `k` by 1.  
+     2. Subtract `i // mid` (integer division) from `k`.  
+  2. Return `True` if `k >= 0`, else `False`.  
+
+**2. Variable Declarations**  
+- `n`: Integer (first input value, unused)  
+- `k`: Integer (second input value, adjustment limit)  
+- `lis`: List[Integer] (input list of integers)  
+- `a`: Integer (binary search lower bound, initialized to 1)  
+- `b`: Integer (binary search upper bound, initialized to `max(lis)`)  
+- `ans`: Integer (result, initialized to `b`)  
+- `mid`: Integer (current midpoint in binary search)  
+
+**3. Control Flow & Logic**  
+1. **Input Handling**:  
+   1. Read `n` and `k` from standard input (space-separated integers).  
+   2. Read `lis` from standard input (space-separated integers).  
+
+2. **Binary Search Initialization**:  
+   1. Set `a = 1`, `b = max(lis)`, and `ans = b`.  
+
+3. **Binary Search Loop**:  
+   - While `a <= b`:  
+     1. Compute `mid = (a + b) // 2`.  
+     2. Call `check(lis, k, mid)`:  
+        - If result is `True`:  
+          - Update `ans = mid`.  
+          - Set `b = mid - 1` (narrow upper bound).  
+        - Else:  
+          - Set `a = mid + 1` (narrow lower bound).  
+
+4. **Output**:  
+   - Print `ans` as the final result.  
+
+**4. Input/Output Operations**  
+- Inputs:  
+  - Two lines from standard input:  
+    1. Line 1: `n` and `k` as space-separated integers.  
+    2. Line 2: List elements as space-separated integers.  
+- Output: Single integer `ans` printed to standard output.  
+
+**5. Edge Case Handling**  
+- Implicitly handles cases where all elements in `lis` are 1 (smallest possible divisor).  
+- Correctly returns smallest valid divisor even if initial upper bound (`b`) is larger than required.  
+
+**6. Dependencies**  
+- Uses `max()` function to initialize `b`.  
+- Relies on integer division and modulo operations.  
+- No external libraries or imports required.

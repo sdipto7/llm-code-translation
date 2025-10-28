@@ -1,0 +1,29 @@
+**Function binary_search:**
+- Parameters: key (integer)
+- Returns: integer
+- Variables:
+  - bad: integer, initialized to -1
+  - good: integer, initialized to len(ans)
+- Logic:
+  - While good - bad > 1:
+    - mid = (bad + good) // 2
+    - If ans[mid][-1] < key:
+      - good = mid
+    - Else:
+      - bad = mid
+  - Return good
+
+**Main program:**
+- Variables:
+  - N: integer from input
+  - ans: list of lists, initialized empty
+- Logic:
+  - Read integer N from input
+  - For each of N iterations:
+    - Read integer A from input
+    - Call binary_search(A) and store result in idx
+    - If idx equals len(ans):
+      - Append [A] to ans
+    - Else:
+      - Append A to ans[idx]
+  - Print len(ans)

@@ -1,0 +1,24 @@
+Function Signature:
+- A function `multiply_two_numbers` with no parameters and no return type
+
+Variable Declarations:
+- `A`: Integer
+- `B`: Integer
+
+Execution Logic:
+1. Read a single line of input from the user.
+2. Split the input string by whitespace to extract two substrings.
+3. Convert the first substring to an integer and assign it to `A`.
+4. Convert the second substring to an integer and assign it to `B`.
+5. Calculate the product of `A` and `B`.
+6. Print the result of the multiplication.
+
+Control Structures:
+- None
+
+Input/Output:
+- Input: A single line containing two space-separated integers.
+- Output: An integer representing the product of the two input integers.
+
+Dependencies:
+- None

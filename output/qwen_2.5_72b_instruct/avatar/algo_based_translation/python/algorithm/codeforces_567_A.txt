@@ -1,0 +1,36 @@
+- Function signature: `main()` with no parameters and no return type
+- Variable declarations:
+  - `inp` of type `int`
+  - `lista` of type `list` containing `int`
+- Complete logic flow in execution order:
+  1. Read an integer input and assign it to `inp`
+  2. Read a line of input, split it by spaces, convert each element to an integer, and assign the resulting list to `lista`
+  3. Loop through `lista` using index `i` from `0` to `len(lista) - 1`
+    - If `i == 0`:
+      1. Print the difference between `lista[i+1]` and `lista[i]`
+      2. Print the difference between `lista[len(lista)-1]` and `lista[i]`
+      3. Continue to the next iteration
+    - If `i == len(lista) - 1`:
+      1. Print the difference between `lista[len(lista)-1]` and `lista[len(lista)-2]`
+      2. Print the difference between `lista[len(lista)-1]` and `lista[0]`
+      3. Continue to the next iteration
+    - Otherwise:
+      1. If `lista[i] - lista[i-1] > lista[i+1] - lista[i]`:
+        1. Print the difference between `lista[i+1]` and `lista[i]`, followed by a space
+      2. Else:
+        1. Print the difference between `lista[i]` and `lista[i-1]`, followed by a space
+      3. If `lista[len(lista)-1] - lista[i] > lista[i] - lista[0]`:
+        1. Print the difference between `lista[len(lista)-1]` and `lista[i]`
+      4. Else:
+        1. Print the difference between `lista[i]` and `lista[0]`
+- Control structures:
+  - `for` loop with index `i` iterating over `range(len(lista))`
+  - `if` statement with conditions `i == 0`, `i == len(lista) - 1`, and `lista[i] - lista[i-1] > lista[i+1] - lista[i]`
+- Input/output operations:
+  - Read an integer using `input()` and convert it to `int`
+  - Read a line of input, split it by spaces, convert each element to `int`, and assign to `lista`
+  - Print differences between elements of `lista` based on specified conditions
+- Data processing logic:
+  - Calculate differences between consecutive elements of `lista`
+  - Compare these differences to determine which to print
+- Required libraries, modules, or dependencies: None

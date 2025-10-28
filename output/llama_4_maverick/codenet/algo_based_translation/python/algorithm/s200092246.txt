@@ -1,0 +1,11 @@
+1. Read an integer N from input.
+2. Initialize an empty list 'ans'.
+3. Iterate over the range from 1 to N (inclusive) using a variable 'i'.
+   3.1. Check if the sum of numbers from 1 to 'i' is less than N.
+   3.2. If the condition is true, continue to the next iteration.
+   3.3. If the condition is false, 
+        - Assign a list containing 'i - 1' and the difference between the sum of numbers from 1 to 'i' and N to 'ans'.
+        - Exit the loop.
+4. Iterate over the range from 0 to 'ans[0]' (exclusive) using a variable 'i'.
+   4.1. Check if 'i + 1' is not equal to 'ans[1]'.
+   4.2. If the condition is true, print 'i + 1'.

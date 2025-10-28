@@ -1,0 +1,28 @@
+Function signature: `determine_suffix()`
+Parameter and return types: Takes no parameters, returns nothing (void)
+
+Variable declarations and data types:
+- `n`: integer
+
+Complete logic flow in execution order:
+1. Read input from the user as a string
+2. Convert the last character of the input string to an integer and assign it to `n`
+3. Check if `n` is equal to 2, 4, 5, 7, or 9
+   - If true, print "hon"
+4. Otherwise, check if `n` is equal to 0, 1, 6, or 8
+   - If true, print "pon"
+5. If none of the above conditions are met, print "bon"
+
+Control structures:
+- Conditional statements (`if`, `elif`, `else`) with exact conditions:
+  - `if n == 2 or n == 4 or n == 5 or n == 7 or n == 9`
+  - `elif n == 0 or n == 1 or n == 6 or n == 8`
+  - `else`
+
+Input/output operations and data processing logic:
+- Input: Read a string from the user
+- Processing: Extract the last character of the string, convert it to an integer, and determine which suffix to print based on its value
+- Output: Print one of the strings "hon", "pon", or "bon" based on the value of `n`
+
+Required libraries, modules, or dependencies:
+- No external libraries, modules, or dependencies required

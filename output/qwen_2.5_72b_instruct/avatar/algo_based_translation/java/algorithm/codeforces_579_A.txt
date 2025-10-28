@@ -1,0 +1,30 @@
+Function signature: `public static void main(String[] args)`
+Variable declarations:
+- `Scanner str` of type `Scanner`
+- `int n` of type `int`
+- `String s` of type `String`
+- `int ans` of type `int`
+- `int x` of type `int` (local to while loop)
+- `int i` of type `int` (local to for loop)
+
+Logic flow in execution order:
+- Initialize `str` with `new Scanner(System.in)`
+- Read integer `n` from `str`
+- Initialize `s` as an empty string
+- While `n > 0`:
+  - Calculate `x` as `n % 2`
+  - Divide `n` by 2 (integer division)
+  - Append `x` to `s`
+- Initialize `ans` to 0
+- For `i` from 0 to `s.length() - 1`:
+  - If `s.charAt(i)` equals '1':
+    - Increment `ans` by 1
+- Print `ans`
+
+Input/output operations and data processing logic:
+- Input: Read an integer `n` from standard input
+- Output: Print the number of '1's in the binary representation of `n`
+- Data processing: Convert `n` to its binary form, count the occurrences of '1' in the binary string
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

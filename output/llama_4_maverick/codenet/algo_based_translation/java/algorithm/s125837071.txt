@@ -1,0 +1,20 @@
+1. Import the `java.util.Scanner` library.
+2. Define a class named `Main`.
+3. Define a method `main` with return type `void` and parameter `args` of type `String[]`.
+4. Within `main`, declare a `Scanner` object named `scanner` and initialize it with `System.in`.
+5. Declare an integer variable `n` and assign it the next integer input from `scanner`.
+6. Declare a long integer variable `ans` and initialize it to 1.
+7. Declare an integer variable `mod` and calculate its value as `(int) Math.pow(10, 9) + 7`.
+8. Start a `for` loop with an integer variable `i` ranging from 2 to `n` (inclusive).
+9. Within the loop, start another `for` loop with an integer variable `j` ranging from 2 to `i` (inclusive), with the condition that `j` is either equal to `i` or `i` is not divisible by `j` and `j` is less than `i`.
+10. Within the inner loop, check if `j` equals `i`. If true, execute the following steps:
+    a. Declare an integer variable `s` and initialize it to 0.
+    b. Start a `for` loop with an integer variable `k` ranging from 1 to `n` (inclusive).
+    c. Within this loop, call the `findS` method with parameters `k` and `i`, and add the result to `s`.
+    d. After the loop, update `ans` by multiplying it with `(s + 1)` and then taking the modulus `mod`.
+11. After the outer loop completes, print the value of `ans` to the console.
+12. Define a method `findS` with return type `int` and parameters `k` and `i` of type `int`.
+13. Within `findS`, declare an integer variable `s` and initialize it to 0.
+14. Start a `for` loop with an integer variable `j` initialized to `k`, and continue as long as `j` is divisible by `i`, updating `j` by dividing it by `i` in each iteration.
+15. Within the loop, increment `s` by 1 in each iteration.
+16. After the loop, return the value of `s`.

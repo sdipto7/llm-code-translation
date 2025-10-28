@@ -1,0 +1,31 @@
+Function signatures with parameter and return types:
+- `num_inp() -> int`
+- `arr_inp() -> List[int]`
+- `sp_inp() -> Iterator[int]`
+
+Variable declarations and data types:
+- `num_inp` (function)
+- `arr_inp` (function)
+- `sp_inp` (function)
+- `a` (List[int])
+
+Complete logic flow in execution order:
+1. Read a line of input, convert it to an integer, and store the result in an unnamed variable (not used).
+2. Read another line of input, split it by spaces, convert each split component to an integer, sort the resulting integers, and store them in `a`.
+3. Check if there is any element `x` in `a` such that `x % a[0]` is not zero.
+4. If the condition in step 3 is true, print `a[0]`.
+5. If the condition in step 3 is false, print `-1`.
+
+Control structures (loops, conditionals) with exact conditions:
+- Conditional: `if any(x % a[0] for x in a):` (This uses a generator expression to check the condition for each element in `a`.)
+
+Input/output operations and data processing logic:
+- Input operations: Two lines of input are read from standard input.
+- Data processing logic:
+  - The first line of input is converted to an integer but not stored or used further.
+  - The second line of input is split into components, converted to integers, sorted, and stored in `a`.
+  - A check is performed to see if any element in `a` is not divisible by `a[0]`.
+- Output operations: Either `a[0]` or `-1` is printed based on the result of the conditional check.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules are required. The code uses built-in Python functions and types.

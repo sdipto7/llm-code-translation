@@ -1,0 +1,31 @@
+Algorithm:
+
+- Import `math`, `reduce` from `functools`, `deque`, `Counter` from `collections`, `sys`
+- Set system recursion limit to \(10^7\)
+- Define `input()` to read and strip input from standard input
+- Define `get_nums_l()` to read a line of space-separated integers and return as list of integers
+- Define `get_nums_n(n)` to read `n` lines of integers and return as list of integers
+- Define `get_all_int()` to read all integers from input and return as map of integers
+- Define `rangeI(it, l, r)` to iterate over `it` and yield elements where index is between `l` (inclusive) and `r` (exclusive); break if `l >= r`
+- Define `log(*args)` to print debug messages to standard error
+- Constants: `INF = 999999999999999999999999`, `MOD = 10^9 + 7`
+- Read integer `n` from input
+- If `n == 1`, print 0 and exit
+- Define `prime_factorize(n)` to:
+    - Initialize empty list `a`
+    - While `n % 2 == 0`, append 2 to `a` and set `n = n // 2`
+    - Set `f = 3`
+    - While `f * f <= n`:
+        - If `n % f == 0`, append `f` to `a` and set `n = n // f`
+        - Else, increment `f` by 2
+    - If `n != 1`, append `n` to `a`
+    - Return `a`
+- Compute `fac_` as `prime_factorize(n)`
+- Compute `fac` as `Counter(fac_)`
+- Initialize `ans = 0`
+- For each pair `(p, e)` in `fac.items()`:
+    - Set `x = e`
+    - For `i` from 1 to 99999998:
+        - If `x >= i`, set `x = x - i` and increment `ans` by 1
+        - Else, break
+- Print `ans`

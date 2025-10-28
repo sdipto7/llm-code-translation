@@ -1,0 +1,12 @@
+import sys
+
+Function main():
+    Read input line from stdin
+    Split input into two strings and convert to integers: S (int), W (int)
+    If S <= W:
+        Print "unsafe" to stdout
+    Else:
+        Print "safe" to stdout
+
+If __name__ == '__main__':
+    Call main()

@@ -1,0 +1,7 @@
+n: integer from input
+while n modulo 2 equals 0:
+    n = n divided by 2
+if n equals 1:
+    output 'YES'
+else:
+    output 'NO'

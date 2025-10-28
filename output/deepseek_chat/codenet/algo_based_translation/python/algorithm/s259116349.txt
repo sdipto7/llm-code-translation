@@ -1,0 +1,28 @@
+**Algorithm:**
+
+1. Import factorial function from math module as 'f'
+2. Read integer input N from user
+3. Define list 'primes' containing prime numbers: [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47]
+4. Initialize empty list 'divs'
+5. For each integer i from 1 to 100 (inclusive):
+   - Create temporary list 'tmp' of zeros with length equal to primes list
+   - For each index j in range of primes list length:
+        p = primes[j]
+        Set tmp[j] = 0
+        While i is divisible by p:
+            i = i // p
+            tmp[j] += 1
+   - Append tmp to divs list
+6. Initialize list 'divsum' of zeros with length equal to primes list
+7. For each integer i from 1 to N (inclusive):
+   - For each index j in range of primes list length:
+        divsum[j] += divs[i-1][j]
+8. Define function 'num' that takes integer parameter n:
+   - Count elements in divsum list that are >= n-1
+   - Return count as integer
+9. Initialize integer variable 'ans' to 0
+10. Add num(75) to ans
+11. Add num(15) * (num(5) - 1) to ans
+12. Add num(25) * (num(3) - 1) to ans
+13. Add (num(5) * (num(5) - 1) * (num(3) - 2)) // 2 to ans
+14. Print integer value of ans

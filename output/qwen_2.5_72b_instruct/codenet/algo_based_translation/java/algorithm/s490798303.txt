@@ -1,0 +1,42 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner scanner = new Scanner(System.in)`
+- `int n = scanner.nextInt()`
+- `int k = scanner.nextInt()`
+- `Map<Integer, List<Integer>> map = new HashMap<>()`
+- `int d = scanner.nextInt()`
+- `int person = scanner.nextInt()`
+- `int count = 0`
+
+Logic flow in execution order:
+- Create a `Scanner` object to read input
+- Read `n` (number of people)
+- Read `k` (number of groups)
+- Initialize a `HashMap` to store each person and their associated group sizes
+- Loop `k` times to process each group:
+  - Read `d` (number of people in the current group)
+  - Loop `d` times to process each person in the current group:
+    - Read `person` (current person's identifier)
+    - If `person` is not in the map, add them with an empty list
+    - Add `d` to the list of group sizes for `person`
+- Initialize `count` to 0 to track people not in any group
+- Loop from 1 to `n` to check each person:
+  - If the person is not in the map, increment `count`
+- Print `count` (number of people not in any group)
+
+Control structures:
+- `for (int i = 0; i < k; i++)` loop to iterate over each group
+- `for (int j = 0; j < d; j++)` nested loop to iterate over each person in the current group
+- `if (!map.containsKey(person))` conditional to check if a person is already in the map
+- `for (int i = 1; i <= n; i++)` loop to iterate over each person to count those not in any group
+- `if (!map.containsKey(i))` conditional to check if a person is not in any group
+
+Input/output operations and data processing logic:
+- Read integers from standard input using `scanner.nextInt()` for `n`, `k`, `d`, and `person`
+- Store group sizes for each person in a `HashMap`
+- Count people not present in the map
+- Output the count of people not in any group using `System.out.println(count)`
+
+Required libraries, modules, or dependencies:
+- `java.util.*` for `Scanner`, `Map`, `List`, and `ArrayList`

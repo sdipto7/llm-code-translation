@@ -1,0 +1,23 @@
+- Function: main(String[] args) with void return
+- Parameters: None (uses standard input)
+- Variables:
+    - Scanner sc (System.in)
+    - long k, a, b (input values)
+    - long x (calculated value)
+    - long ans (result)
+- Logic Flow:
+    1. Read k, a, b from standard input
+    2. If b <= a + 2:
+        2.1 Print 1 + k
+        2.2 Terminate program
+    3. Else:
+        3.1 Calculate x = k - (a - 1)
+        3.2 Calculate ans = a + (x divided by 2) * (b - a) + (x modulo 2)
+    4. Print ans
+- Control Structures:
+    - If-conditional: if (b <= a + 2)
+- Input/Output:
+    - Input: Three space-separated long integers via Scanner
+    - Output: Single integer result via System.out.println
+- Dependencies:
+    - java.util.Scanner

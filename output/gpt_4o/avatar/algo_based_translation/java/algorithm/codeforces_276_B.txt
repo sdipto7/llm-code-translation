@@ -1,0 +1,41 @@
+```
+Algorithm Codeforces276B
+    Input: None (reads from standard input)
+    Output: String (prints to standard output)
+
+    Function main() returns void
+        Declare InputStreamReader inputStreamReader
+        Initialize inputStreamReader with System.in
+        Declare BufferedReader bufferedReader
+        Initialize bufferedReader with inputStreamReader
+        Declare PrintWriter writer
+        Initialize writer with System.out
+
+        Declare String str
+        Assign str the value of bufferedReader.readLine()
+
+        Declare Map<Character, Integer> map
+        Initialize map as a new HashMap
+
+        Declare int oddCount
+        Initialize oddCount as 0
+
+        For i from 0 to str.length() - 1, inclusive, do
+            Declare char ch
+            Assign ch the value of str.charAt(i)
+            If map contains key ch then
+                Update the value for key ch in map by incrementing it by 1
+            Else
+                Insert key ch with value 1 into map
+
+        For each entry in map.entrySet() do
+            If entry.getValue() modulo 2 is not equal to 0 then
+                Increment oddCount by 1
+
+        If oddCount is less than or equal to 1 or oddCount modulo 2 is not equal to 0 then
+            writer.println("First")
+        Else
+            writer.println("Second")
+
+        writer.flush()
+```

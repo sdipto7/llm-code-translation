@@ -1,0 +1,31 @@
+
+import sys
+
+input = sys.stdin.read
+data = input().split()
+
+t = int(data[0])
+arr = list(map(int, data[1:]))
+
+prevWinner = 0
+index = 0
+for i in range(t):
+    if arr[index] == 1:
+        if prevWinner == 0:
+            prevWinner = 2
+    if prevWinner == 2 or prevWinner == 0:
+        if (arr[index] - 1) % 2 == 0:
+            print(2)
+            prevWinner = 2
+        else:
+            print(1)
+            prevWinner = 1
+    else:
+        if (arr[index] - 1) % 2 == 0:
+            print(1)
+            prevWinner = 1
+        else:
+            print(2)
+            prevWinner = 2
+    index += 1
+

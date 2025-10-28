@@ -1,0 +1,9 @@
+1. Read three lines of input and store them as word1, word2, and word3.
+2. Remove non-alphabetic characters from word1, word2, and word3, and convert them to lowercase.
+3. Generate six permutations of word1, word2, and word3 by concatenating them in different orders, resulting in perm1, perm2, perm3, perm4, perm5, and perm6.
+4. Read the number of test cases.
+5. For each test case, read a line of input and remove non-alphabetic characters, converting it to lowercase.
+6. Check if the processed test case matches any of the six permutations (perm1, perm2, perm3, perm4, perm5, perm6).
+7. If the test case matches any permutation, output "ACC".
+8. If the test case does not match any permutation, output "WA".
+9. Repeat steps 5-8 for the specified number of test cases.

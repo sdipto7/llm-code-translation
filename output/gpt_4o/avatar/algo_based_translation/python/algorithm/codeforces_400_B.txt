@@ -1,0 +1,31 @@
+```
+Algorithm:
+1. Function Signature:
+   - The function does not have a signature in the original code. For algorithm extraction, consider it as:
+     ```python
+     def calculate_minimum_moves() -> int
+     ```
+
+2. Variable Declarations:
+   - `n`: int
+   - `m`: int
+   - `c`: set of int
+   - `s`: str (used within a loop)
+
+3. Input Operations:
+   - Read a line of input, split by space, convert each to an integer, and assign to `n` and `m`.
+
+4. Logic Flow:
+   1. Initialize an empty set `c`.
+   2. Loop over a range from `0` to `n` (exclusive):
+      - For each iteration, read a line of input and assign it to `s`.
+      - Find the index of the character 'S' in `s`.
+      - Find the index of the character 'G' in `s`.
+      - Calculate the difference between the index of 'S' and the index of 'G' and add this difference to the set `c`.
+   3. Check if any element in set `c` is less than `0`:
+      - If true, output `-1`.
+      - Otherwise, output the length of set `c`.
+
+5. Output Operations:
+   - Print the result based on the condition specified above.
+```

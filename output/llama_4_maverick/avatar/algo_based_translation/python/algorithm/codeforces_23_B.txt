@@ -1,0 +1,7 @@
+1. READ n
+2. FOR i FROM 0 TO n-1
+3.     READ a
+4.     IF a LESS THAN 2 THEN
+5.         PRINT 0
+6.     ELSE IF a GREATER THAN OR EQUAL TO 2 THEN
+7.         PRINT a - 2

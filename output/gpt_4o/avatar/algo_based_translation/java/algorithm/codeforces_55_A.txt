@@ -1,0 +1,41 @@
+1. **Function Signature**: `public static void main(String[] args)`
+   - **Parameters**: `String[] args`
+   - **Return Type**: `void`
+
+2. **Variable Declarations**:
+   - `Scanner scan` (to read input)
+   - `int n` (to store the input number)
+   - `int i = 1` (iterator variable, later reset to 0)
+   - `int k = 0` (counter for iterations)
+   - `int p = 1` (unused in the logic)
+   - `boolean flag = true` (to check if condition is met)
+   - `int[] a = new int[1000]` (to track visited positions)
+
+3. **Input Operation**:
+   - Read an integer and store it in `n` using `scan.nextInt()`
+
+4. **Initialization**:
+   - Set `i = 0`
+
+5. **While Loop**: `while (k <= n)`
+   - Increment `i` by `k`: `i += k`
+   - **If Condition**: `if (i >= n)`
+     - **Inner While Loop**: `while (!(i < n))`
+       - Decrease `i` by `n`: `i = i - n`
+   - Increment the value at index `i` in array `a`: `++a[i]`
+   - Increment `k`: `++k`
+
+6. **For Loop**: `for (i = 0; i < n; ++i)`
+   - **If Condition**: `if (a[i] == 0)`
+     - Set `flag` to `false`
+     - Break the loop
+
+7. **Output Operation**:
+   - **If Condition**: `if (flag)`
+     - Print "YES"
+   - **Else**:
+     - Print "NO"
+
+8. **Dependencies**:
+   - `import java.util.*` for `Scanner`
+   - `import java.lang.*` and `import java.io.*` are not necessary in this context but are included in the original code.

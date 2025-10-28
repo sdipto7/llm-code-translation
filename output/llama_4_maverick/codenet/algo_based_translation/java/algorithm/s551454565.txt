@@ -1,0 +1,11 @@
+1. Import the `java.util.Scanner` module.
+2. Define a class `Main` with a `main` method that takes an array of `String` arguments and returns `void`.
+3. Declare a `Scanner` object `sc` and initialize it with `System.in`.
+4. Declare a `String` variable `s` and assign it the result of calling `sc.next()`.
+5. Evaluate the condition `s.equals("Sunny")`.
+   - If true, output `"Cloudy"` to the console.
+   - Else, evaluate the condition `s.equals("Cloudy")`.
+     - If true, output `"Rainy"` to the console.
+     - Else, output `"Sunny"` to the console.
+6. Call `sc.close()` to release system resources.
+7. Terminate the program.

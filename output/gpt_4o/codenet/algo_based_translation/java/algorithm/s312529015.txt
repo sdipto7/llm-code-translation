@@ -1,0 +1,19 @@
+Algorithm:
+
+1. Import the `Scanner` class from the `java.util` package to handle input operations.
+
+2. Define the `main` function with no parameters and a return type of `void`.
+
+3. Inside the `main` function:
+   - Declare a `Scanner` object `sc` to read input from the standard input stream.
+   - Declare an integer variable `A` and read an integer value from input using `sc.nextInt()`.
+   - Declare an integer variable `B` and read another integer value from input using `sc.nextInt()`.
+
+4. Implement a conditional statement to check the following conditions:
+   - If `A` is divisible by 3 (`A % 3 == 0`).
+   - Or if `B` is divisible by 3 (`B % 3 == 0`).
+   - Or if the sum of `A` and `B` is divisible by 3 (`(A + B) % 3 == 0`).
+
+5. If any of the above conditions are true, output the string "Possible" to the console.
+
+6. If none of the conditions are true, output the string "Impossible" to the console.

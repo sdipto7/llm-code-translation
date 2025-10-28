@@ -1,0 +1,27 @@
+1. Function Signature:
+   - Function Name: `calculateRemainingTasks`
+   - Parameters:
+     - `N: int` - Total number of tasks
+     - `M: int` - Number of elements in list A
+     - `A: List[int]` - List of integers representing completed tasks
+   - Return Type: `int`
+
+2. Variable Declarations:
+   - `A_sum: int` - Sum of the list `A`
+
+3. Execution Order:
+   - Read two integers from input, `N` and `M`.
+   - Read a list of integers from input, `A`, with `M` elements.
+   - Calculate `A_sum` as the sum of all integers in `A`.
+
+4. Control Structures:
+   - Conditional: Check if `N - A_sum >= 0`.
+     - If true, return `N - A_sum`.
+     - If false, return `-1`.
+
+5. Input/Output Operations:
+   - Input: Read values for `N`, `M`, and list `A` from standard input.
+   - Output: Print the result of the conditional check.
+
+6. Required Libraries:
+   - No external libraries are required.

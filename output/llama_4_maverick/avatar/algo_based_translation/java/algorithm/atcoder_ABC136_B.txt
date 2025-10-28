@@ -1,0 +1,10 @@
+1. Read input N from the standard input.
+2. Initialize count to 0 and temp to N.
+3. While temp is greater than 0, divide temp by 10 and increment count by 1.
+4. Initialize ans to 0.
+5. For i from 1 to count, perform the following steps:
+   6. If i equals count, check if i is odd. If it is, add (N - 10^(i-1) + 1) to ans.
+   7. If i is not equal to count, perform the following steps:
+      8. If i equals 1, add 9 to ans.
+      9. If i is odd and not equal to 1, add (10^i - 10^(i-1)) to ans.
+10. Output ans.

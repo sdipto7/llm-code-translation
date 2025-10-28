@@ -1,0 +1,31 @@
+Algorithm:
+- Function Signature: main() -> None
+- Variable Declarations:
+  - N: int
+  - A: list of int (length 5)
+- Logic Flow:
+  1. Read integer input from the user and assign it to N
+  2. Initialize an empty list A
+  3. For i from 0 to 4 (inclusive):
+     a. Read integer input from the user
+     b. Append the integer to A
+  4. Find the minimum value in list A
+  5. Divide N by the minimum value found in step 4
+  6. Apply ceiling function to the result of step 5
+  7. Add 4 to the result of step 6
+  8. Print the result of step 7
+- Control Structures:
+  - For loop: Iterates from 0 to 4 inclusive
+- Input/Output Operations:
+  - Read integer input from the user twice: once for N and five times for elements of A
+  - Print a single integer which is the final result
+- Data Processing Logic:
+  - Calculate the minimum value in the list A
+  - Perform division and ceiling operation on the input N using the minimum value
+  - Perform addition of 4 to the result of the ceiling operation
+- Required Libraries:
+  - math (for math.ceil)
+  - implicit usage of built-in functions:
+    - int() for type conversion
+    - input() for reading input from user
+    - min() for finding the minimum value in a list

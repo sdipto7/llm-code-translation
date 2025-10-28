@@ -1,0 +1,30 @@
+Function signature: `main() -> None`
+
+Variable declarations and data types:
+- `L: list[int]`
+- `r: int`
+- `k: str`
+- `j: str`
+
+Logic flow in execution order:
+1. Initialize `L` as an empty list of integers.
+2. Read a line of input (not used).
+3. Initialize `r` to 1.
+4. For each `k` in the split input:
+   - Append `r` repeated `int(k)` times to `L`.
+   - Increment `r` by 1.
+5. Read a line of input (not used).
+6. For each `j` in the split input:
+   - Print the element at index `int(j) - 1` of `L`.
+
+Control structures:
+- For loop iterating over `input().split()` for `k`.
+- For loop iterating over `input().split()` for `j`.
+
+Input/output operations and data processing logic:
+- Read three lines of input, using the second and third lines to construct and query the list `L`.
+- Convert string inputs to integers for processing.
+- Use zero-based indexing to access elements in `L` based on one-based input values.
+
+Required libraries, modules, or dependencies:
+- No additional libraries, modules, or dependencies required.

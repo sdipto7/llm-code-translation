@@ -1,0 +1,25 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations:
+- `BigInteger a`
+- `BigInteger b`
+- `BigInteger c`
+- `Scanner cin`
+
+Logic flow:
+1. Initialize `Scanner cin` to read input from standard input.
+2. Start a `while` loop that continues as long as there is more input (`cin.hasNext()`).
+3. Inside the loop:
+   - Read the next `BigInteger` from input and assign it to `a`.
+   - Read the next `BigInteger` from input and assign it to `b`.
+   - Determine the maximum of `a` and `b` using `a.max(b)` and assign it to `c`.
+   - Check if `a` is equal to `c` and `b` is not equal to `c`:
+     - If true, print "GREATER".
+     - Otherwise, check if `b` is equal to `c` and `a` is not equal to `c`:
+       - If true, print "LESS".
+       - Otherwise, print "EQUAL".
+4. Close the `Scanner` object `cin`.
+
+Libraries/modules/dependencies:
+- `java.math.BigInteger`
+- `java.util.Scanner`

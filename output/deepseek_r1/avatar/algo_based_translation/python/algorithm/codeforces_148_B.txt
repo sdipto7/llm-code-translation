@@ -1,0 +1,43 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main(): void`  
+  (Entry point with no parameters and no return value)
+
+**Variable Declarations:**
+- `princess_speed: int`  
+- `dragon_speed: int`  
+- `t_initial: int`  
+- `f_time: int`  
+- `c_threshold: int`  
+- `result: int`  
+- `position: float`  
+
+**Input/Output Operations:**
+1. Read `princess_speed` from standard input as integer.  
+2. Read `dragon_speed` from standard input as integer.  
+3. Read `t_initial` from standard input as integer.  
+4. Read `f_time` from standard input as integer.  
+5. Read `c_threshold` from standard input as integer.  
+
+**Control Flow & Logic:**  
+1. If `dragon_speed` ≤ `princess_speed`:  
+   1.1. Print `0` to standard output.  
+   1.2. Terminate execution.  
+2. Else:  
+   2.1. Calculate `position = princess_speed * t_initial` (initial distance after time `t_initial`).  
+   2.2. Update `position += (princess_speed * position) / (dragon_speed - princess_speed)` (first dragon catch point).  
+   2.3. Initialize `result = 0`.  
+   2.4. While `position < c_threshold`:  
+      2.4.1. Increment `result` by 1.  
+      2.4.2. Update `position += (princess_speed * position) / dragon_speed`.  
+      2.4.3. Update `position += princess_speed * f_time`.  
+      2.4.4. Update `position += (princess_speed * position) / (dragon_speed - princess_speed)`.  
+   2.5. Print `result` to standard output.  
+
+**Edge Case Handling:**  
+- Immediate termination if the dragon cannot catch the princess (`dragon_speed ≤ princess_speed`).  
+- Loop exits immediately if initial `position` after first catch exceeds `c_threshold`, resulting in `result = 0`.  
+
+**External Dependencies:**  
+- Uses standard input/output functions. No external libraries or imports.

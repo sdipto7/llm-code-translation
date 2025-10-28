@@ -1,0 +1,23 @@
+Function Signatures:
+- main(String[] args): void
+
+Variable Declarations and Data Types:
+- sc: Scanner
+- r: int
+
+Logic Flow in Execution Order:
+1. Create a Scanner object named sc to read input from standard input.
+2. Read an integer value from the user input and store it in the variable r.
+3. Calculate the area of a circle with radius r using the formula 3 * r * r.
+4. Print the calculated area to the standard output.
+
+Control Structures:
+- No loops or conditionals used in the code.
+
+Input/Output Operations and Data Processing Logic:
+1. Input: Read an integer from the user.
+2. Process: Calculate 3 times the square of the input integer.
+3. Output: Print the result of the calculation.
+
+Required Libraries, Modules, or Dependencies:
+- java.util.Scanner

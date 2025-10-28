@@ -1,0 +1,57 @@
+Here is the algorithm extracted from the Java code:
+
+Function: solve()  
+Parameters: None  
+Return Type: void  
+
+Variables:  
+- String tmp (input string)  
+- char[] s = tmp.toCharArray()  
+- int n = s.length  
+- int ans = 0 (count of valid ST pairs)  
+- int cnt = 0 (count of consecutive 'S' characters)  
+
+Logic Flow:  
+1. Read input string tmp  
+2. Convert tmp to character array s  
+3. Initialize n with length of s  
+4. Initialize ans and cnt to 0  
+5. For each index i from 0 to n-1:  
+   a. If s[i] == 'S':  
+      - Increment cnt by 1  
+   b. Else (character is not 'S'):  
+      - If cnt > 0:  
+         i. Increment ans by 1  
+         ii. Decrement cnt by 1  
+6. Calculate result = n - (2 * ans)  
+7. Print result  
+
+Input Operations:  
+- Uses ns() method to read input string from System.in  
+- ns() handles byte buffering and skips whitespace  
+
+Output Operations:  
+- Uses PrintWriter out to print result to System.out  
+
+Control Structures:  
+- For loop iterating through all characters (0 ≤ i < n)  
+- If-else conditional for 'S' vs non-'S' characters  
+- Nested if condition (cnt > 0) for valid pair formation  
+
+Data Structures:  
+- Primitive char array for string manipulation  
+
+Dependencies:  
+- Requires java.io.* for input/output streams  
+- Requires java.util.* for Arrays and Collections utilities  
+
+Critical Path:  
+1. Pair formation logic (count 'S' and match with subsequent non-'S')  
+2. Final calculation accounts for removed pairs (each pair removes 2 characters)  
+
+Edge Cases:  
+- Handles consecutive non-'S' characters when cnt=0  
+- Empty input string returns 0  
+
+Mathematical Operations:  
+- Final result calculation: original length - 2 * matched pairs

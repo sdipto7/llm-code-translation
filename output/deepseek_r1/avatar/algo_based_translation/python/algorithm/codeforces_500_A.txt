@@ -1,0 +1,45 @@
+```structured_algorithm
+Algorithm Specification:
+
+1. Function/Method:
+   - Name: Main procedure (script)
+   - Parameters: None (input from stdin)
+   - Return Type: Void
+
+2. Variables:
+   - n: Integer (from input)
+   - t: Integer (from input)
+   - s: List of integers (size n, from input)
+   - current_cell: Integer (initialized to 0)
+
+3. Input Operations:
+   - Read first line: Split into n and t via whitespace
+   - Read second line: Split into n integers to populate list s
+
+4. Logic Flow:
+   4.1 Initialize current_cell = 0
+   4.2 While current_cell <= t:
+        a. current_cell += s[current_cell - 1] (Python-style index wrapping)
+        b. If current_cell == t:
+            i. Print "YES"
+            ii. Terminate program immediately
+   4.3 After loop exit: Print "NO"
+
+5. Control Flow Structures:
+   - While loop:
+     - Condition: current_cell <= t
+     - Exit when: current_cell > t
+   - If statement:
+     - Condition: current_cell == t after update
+     - Termination: Immediate program exit when true
+
+6. Edge Case Handling:
+   - Implicit handling of negative indices via Python list semantics
+   - No explicit bounds checking for list access
+   - Possible infinite loop if current_cell oscillates between values ≤ t without reaching t
+
+7. External Dependencies:
+   - sys.exit() for early termination
+   - Input handling via standard input methods
+   - List indexing with Python-style negative index wrapping
+```

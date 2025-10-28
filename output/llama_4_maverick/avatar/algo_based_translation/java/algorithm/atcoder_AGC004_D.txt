@@ -1,0 +1,15 @@
+1. Initialize a new thread with a large stack size and start it.
+2. Read two integers, n and k, from the input.
+3. Read n integers from the input, subtract 1 from each, and store them in a list called as.
+4. Create a Calculator object with n, k, and as.
+5. Initialize lists with n empty lists.
+6. Iterate over the range from 0 to n-1, and for each i, get the corresponding value j from as.
+7. If i is greater than 0, add i to the list at index j in lists.
+8. If i is 0 and j is greater than 0, increment answer by 1.
+9. Perform a depth-first search (dfs) starting from 0 with a predecessor of 0.
+10. For each node a, iterate over its children in lists.get(a) and recursively call dfs on each child with a as the predecessor.
+11. Keep track of the maximum height h returned by the recursive calls.
+12. If the predecessor is greater than 0 and h equals k-1, increment answer by 1 and reset h to 0.
+13. Otherwise, increment h by 1.
+14. Return h.
+15. Return the final value of answer.

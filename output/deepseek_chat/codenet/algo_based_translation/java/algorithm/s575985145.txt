@@ -1,0 +1,21 @@
+1. Import Scanner from java.util
+2. Define main method with String[] args parameter
+3. Declare Scanner object 'scan' initialized with System.in
+4. Read integer 'size' from input using scan.nextInt()
+5. Declare 2D integer array 'graph' with dimensions [size][size]
+6. Declare integer variables: id, cols
+7. Declare integer array 'row' initialized to empty array
+8. For i from 0 to size-1 (inclusive):
+   a. Read integer 'id' from input
+   b. Read integer 'cols' from input
+   c. Initialize 'row' as new integer array of length 'size'
+   d. For j from 0 to cols-1 (inclusive):
+      i. Read integer from input and subtract 1 to get index
+      ii. Set row[index] to 1
+   e. Assign row to graph[id-1]
+9. For i from 0 to graph.length-1 (inclusive):
+   a. For j from 0 to graph[i].length-1 (inclusive):
+      i. Print graph[i][j]
+      ii. If j < graph[i].length-1, print space
+   b. Print newline
+10. End main method

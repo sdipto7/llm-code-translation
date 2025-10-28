@@ -1,0 +1,57 @@
+**Algorithm:**
+
+**Function Signature:**
+```java
+public static void main(String[] args)
+```
+
+**Variables:**
+- `Scanner sc`: Input handler
+- `int H`, `int W`: Grid dimensions
+- `char[][] A`: Grid storage [H][W]
+- `Queue<int[]> queue`: Stores coordinates and depths (elements: [y, x, depth])
+- `int[][] flag`: Visited tracker [H][W]
+- `int ans`: Result storage (initialized to 0)
+- `int[] dx = {1, -1, 0, 0}`: Horizontal direction offsets
+- `int[] dy = {0, 0, 1, -1}`: Vertical direction offsets
+
+**Logic Flow:**
+1. Read `H` and `W` from input
+2. Initialize `A` via nested loops:
+   - Read each row as a string
+   - Populate `A` character-by-character
+   - Add [y, x, 0] to queue for every '#' encountered
+3. Initialize `flag` array with zeros
+4. Process queue using BFS:
+   ```plaintext
+   while queue not empty:
+       current = queue.remove()
+       y = current[0], x = current[1], depth = current[2]
+       
+       for each of 4 directions:
+           ny = y + dy[i]
+           nx = x + dx[i]
+           
+           if ny ∈ [0, H-1] and nx ∈ [0, W-1]:
+               if flag[ny][nx] == 0 and A[ny][nx] == '.':
+                   flag[ny][nx] = 1
+                   queue.add([ny, nx, depth+1])
+                   ans = depth + 1
+   ```
+5. Output `ans`
+
+**Control Structures:**
+- Nested `for` loops for grid initialization
+- `while` loop for BFS processing
+- Four-direction processing via `for` loop
+- Boundary checks with compound conditionals
+- Validity checks for unvisited cells and valid characters
+
+**Input/Output:**
+- Input: Grid dimensions followed by grid rows
+- Output: Single integer (maximum depth)
+
+**Dependencies:**
+- `java.util.Scanner`
+- `java.util.Queue`
+- `java.util.ArrayDeque`

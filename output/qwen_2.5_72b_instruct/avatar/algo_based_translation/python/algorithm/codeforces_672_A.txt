@@ -1,0 +1,60 @@
+Function Signature: `main()`
+Parameter Types: None
+Return Types: None
+
+Variable Declarations and Data Types:
+- `li` of type List of Integers
+- `ind` of type Integer
+- `i` of type Integer
+- `temp` of type List of Integers
+- `p` of type Integer
+- `q` of type Integer
+- `count` of type Integer
+- `x` of type Integer
+- `n` of type Integer
+
+Logic Flow:
+1. Initialize `li` as an empty list.
+2. Set `ind` to 0.
+3. Loop from 1 to 370 (inclusive):
+   - Initialize `temp` as an empty list.
+   - Set `p` and `q` to the loop variable `i`.
+   - Set `count` to 0.
+   - While `p` is not equal to 0:
+     - Integer divide `p` by 10.
+     - Increment `count` by 1.
+   - If `count` is equal to 1:
+     - Append `i` to `li`.
+   - If `count` is equal to 2:
+     - Initialize `temp` as an empty list.
+     - While `q` is not equal to 0:
+       - Set `x` to the remainder of `q` divided by 10.
+       - Integer divide `q` by 10.
+       - Append `x` to `temp`.
+     - Concatenate the reversed `temp` to `li`.
+   - If `count` is equal to 3:
+     - Initialize `temp` as an empty list.
+     - While `q` is not equal to 0:
+       - Set `x` to the remainder of `q` divided by 10.
+       - Integer divide `q` by 10.
+       - Append `x` to `temp`.
+     - Concatenate the reversed `temp` to `li`.
+4. Remove the last element from `li`.
+5. Remove the last element from `li`.
+6. Read an integer `n` from standard input.
+7. Print the element at index `n - 1` of `li`.
+
+Input/Output Operations:
+- Input: Read an integer `n` from standard input.
+- Output: Print the element at index `n - 1` of `li`.
+
+Data Processing Logic:
+- Loop through numbers from 1 to 370.
+- For each number, determine its number of digits (`count`).
+- If the number has 1 digit, append it to `li`.
+- If the number has 2 or 3 digits, split it into individual digits, reverse their order, and append them to `li`.
+- After the loop, remove the last two elements from `li`.
+- Retrieve and print the element at the position specified by the input integer `n`.
+
+Required Libraries, Modules, or Dependencies:
+- No external libraries or modules are required.

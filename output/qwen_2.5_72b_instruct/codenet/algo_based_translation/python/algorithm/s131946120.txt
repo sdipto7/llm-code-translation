@@ -1,0 +1,12 @@
+function signature: main() -> None  
+variable declarations:  
+- n: int  
+- unique_inputs: set[str]  
+
+logic flow:  
+- read integer input and assign to n  
+- initialize an empty set named unique_inputs  
+- loop from 0 to n-1  
+    - read string input  
+    - add string to unique_inputs set  
+- print length of unique_inputs set

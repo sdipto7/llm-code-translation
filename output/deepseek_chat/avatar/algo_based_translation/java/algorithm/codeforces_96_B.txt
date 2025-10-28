@@ -1,0 +1,29 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner in`: Scanner object for input
+- `long number`: input value from user
+- `long ans = -1`: unused variable
+- `long value = 0`: current candidate number
+- `int mask = 2`: binary mask counter
+- `String s`: binary string representation
+- `int zeros`: count of '0' characters
+
+**Libraries:**
+- `java.util.Scanner`
+
+**Algorithm:**
+1. Initialize Scanner to read from standard input
+2. Read next long input into variable `number`
+3. Initialize `value` to 0
+4. Initialize `mask` to 2
+5. While `value` is less than `number`:
+   - Convert `mask` to binary string and remove first character
+   - Count occurrences of '0' in the string
+   - If count of zeros is not equal to count of non-zeros (length minus zeros), increment mask and continue loop
+   - Replace all '0' characters with '4'
+   - Replace all '1' characters with '7'
+   - Parse resulting string to long and store in `value`
+   - Increment mask
+6. Print `value`

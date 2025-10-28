@@ -1,0 +1,26 @@
+```python
+def main():
+    import sys
+    input = sys.stdin.read().split()
+    VP = float(input[0])
+    VD = float(input[1])
+    T = float(input[2])
+    F = float(input[3])
+    C = float(input[4])
+    
+    if VD <= VP:
+        print(0)
+        return
+        
+    answer = 0
+    start = T
+    
+    while True:
+        x = start * VP / (VD - VP)
+        if (start + x) * VP >= C:
+            break
+        start += 2 * x + F
+        answer += 1
+        
+    print(answer)
+```

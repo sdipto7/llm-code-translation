@@ -1,0 +1,15 @@
+```
+Algorithm:
+1. Import the math module.
+2. Declare a list `menu` to store sublists, initialized as an empty list.
+3. Execute a loop 5 times to perform the following:
+   a. Read a string input `m`.
+   b. Extract the integer value of the last character in `m` and assign to `e`.
+   c. If `e` is equal to 0, set `e` to 10.
+   d. Append a list containing the integer value of `m` and `e` to `menu`.
+4. Sort `menu` based on the second element of each sublist using a lambda function.
+5. Initialize an integer variable `ans` with the value 0.
+6. Iterate over each element `m` in `menu` starting from the second element:
+   a. Update `ans` by adding the result of calling `math.ceil` on the division of the first element of `m` by 10, multiplied by 10.
+7. Output the sum of `ans` and the first element of the first sublist in `menu`.
+```

@@ -1,0 +1,29 @@
+Function: main
+Parameters: String[] args (array of strings)
+Return Type: void
+
+Variable Declarations:
+Scanner stdIn (Scanner object)
+int N (integer)
+int X (integer)
+int[] m (array of integers with size N)
+int min (integer)
+
+Logic Flow:
+
+1. Create a Scanner object named stdIn to read standard input.
+2. Read an integer value from stdIn and assign it to N.
+3. Read another integer value from stdIn and assign it to X.
+4. Initialize an array m of integers with size N.
+5. Read the first integer value from stdIn and assign it to m[0].
+6. Subtract m[0] from X.
+7. Assign m[0] to min.
+8. For loop starts with i = 1 and continues while i is less than N:
+   8.1 Read an integer value from stdIn and assign it to m[i].
+   8.2 Subtract m[i] from X.
+   8.3 If m[i] is less than min, then assign m[i] to min.
+9. End of for loop.
+10. Print the result of N + X / min.
+
+Libraries:
+java.util.Scanner

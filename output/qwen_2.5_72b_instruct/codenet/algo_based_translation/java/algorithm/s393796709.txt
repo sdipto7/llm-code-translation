@@ -1,0 +1,51 @@
+- Function signatures:
+  - `void solve(BufferedReader in) throws Exception`
+  - `long f(int n)`
+  - `int toInt(String s)`
+  - `int[] toInts(String s)`
+  - `void e(Object o)`
+  - `public static void main(String[] args) throws Exception`
+
+- Variable declarations and data types:
+  - `long MOD = 1000000007`
+  - `int[] xx`
+  - `int min`
+  - `int max`
+  - `long res`
+  - `long f`
+  - `String[] a`
+  - `int[] o`
+  - `BufferedReader in`
+  - `String s`
+  - `int n`
+  - `int i`
+
+- Complete logic flow in execution order:
+  1. Read a line of input and convert it to an array of integers `xx`.
+  2. Determine the minimum and maximum values in `xx` and assign them to `min` and `max` respectively.
+  3. If `min` equals `max`:
+     - Calculate the factorial of `min` modulo `MOD` and store it in `f`.
+     - Calculate `(2*f*f)%MOD` and store the result in `res`.
+  4. Else if `min + 1` equals `max`:
+     - Calculate the factorial of `min` modulo `MOD` and store it in `f`.
+     - Calculate `(f*((f*max)%MOD))%MOD` and store the result in `res`.
+  5. Else:
+     - Set `res` to `0`.
+  6. Print the value of `res`.
+
+- Control structures:
+  - If-else conditions:
+    - `if(min == max)`
+    - `else if(min + 1 == max)`
+    - `else`
+  - For loop:
+    - `for(int i = 2; i<=n; i++)`
+
+- Input/output operations and data processing logic:
+  - Read input using `BufferedReader` and process it in the `solve` method.
+  - Convert strings to integers using `toInt` and `toInts` methods.
+  - Print the final result using `System.out.println`.
+
+- Required libraries, modules, or dependencies:
+  - `java.util.*`
+  - `java.io.*`

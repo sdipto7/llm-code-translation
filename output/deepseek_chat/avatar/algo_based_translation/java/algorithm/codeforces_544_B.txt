@@ -1,0 +1,47 @@
+**Function Signatures:**
+- main(String[] args): void
+- printIsland(int n, int count): void
+
+**Variables:**
+- Scanner scan: Scanner(System.in)
+- int n: scan.nextInt()
+- int count: scan.nextInt()
+- int a: (n + 1) / 2
+- int b: n / 2
+- int max: a * a + b * b
+- StringBuilder sb: new StringBuilder()
+
+**Logic Flow:**
+1. Create Scanner object reading from System.in
+2. Read integer n from input
+3. Read integer count from input
+4. Call printIsland(n, count)
+5. Calculate a = (n + 1) / 2
+6. Calculate b = n / 2
+7. Calculate max = a * a + b * b
+8. If count > max:
+   - Print "NO"
+   - Return from function
+9. Print "YES"
+10. For i from 0 to n-1:
+    - Create new StringBuilder
+    - For j from 0 to n-1:
+        - If (i + j) % 2 == 0 AND count > 0:
+            - Append 'L' to StringBuilder
+            - Decrement count by 1
+        - Else:
+            - Append 'S' to StringBuilder
+    - Print StringBuilder contents
+
+**Control Structures:**
+- if (count > max)
+- for (int i = 0; i < n; i++)
+- for (int j = 0; j < n; j++)
+- if ((i + j) % 2 == 0 && count > 0)
+
+**Input/Output:**
+- Input: Two integers from standard input
+- Output: "NO" if count > max, otherwise "YES" followed by n lines of n characters
+
+**Dependencies:**
+- java.util.Scanner

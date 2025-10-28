@@ -1,0 +1,27 @@
+- Function signatures: None (script-based)
+- Variable declarations and data types:
+  - N: int (input integer)
+  - A: list[int] (input list)
+  - s: int (computed XOR accumulator)
+  - B: list[int] (output list)
+  - L: str (formatted output string)
+- Logic flow:
+  1. Read integer N from standard input
+  2. Read N space-separated integers as list A
+  3. Initialize s with A[0] XOR A[1]
+  4. Iterate through A[2] to A[N-1]:
+      a. Update s with s XOR current element
+  5. Create list B of length N initialized with 0s
+  6. For each index i in B:
+      a. Set B[i] = s XOR A[i]
+  7. Convert all elements in B to strings
+  8. Join string elements with spaces
+  9. Print resulting string
+- Control structures:
+  - For loop: for i in range(2, N)
+  - For loop: for i in range(N)
+- Input/Output operations:
+  - Input: Read N via int(input())
+  - Input: Read A via list(map(int, input().split()))
+  - Output: Print space-separated B elements via print(L)
+- Libraries/dependencies: None (pure Python built-ins)

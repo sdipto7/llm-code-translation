@@ -1,0 +1,34 @@
+```plaintext
+Algorithm:
+
+Function Signature:
+- Function name: calculate_value
+- Parameters: None
+- Return type: None (prints output directly)
+
+Variable Declarations:
+- A, B, C: Integers
+
+Execution Flow:
+1. Input operation:
+   - Read a single line of input from the user.
+   - Split the input string into three parts and convert each part to an integer.
+   - Assign these integers to variables A, B, and C, respectively.
+
+2. Conditional Logic:
+   - Check if B is less than C:
+     - If true, print the integer 0.
+   - Else, check if the product of A and C is less than B:
+     - If true, print the integer value of C.
+   - Else, perform integer division of B by A and print the result.
+  
+Control Structures:
+- If-Else conditional statements with exact conditions as described above.
+
+Input/Output Operations:
+- Input: Single line of space-separated integers from standard input.
+- Output: Single integer printed to standard output based on the conditional logic.
+
+Dependencies:
+- None (No external libraries or modules required)
+```

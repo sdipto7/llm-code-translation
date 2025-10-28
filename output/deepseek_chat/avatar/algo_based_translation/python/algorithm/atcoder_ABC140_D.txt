@@ -1,0 +1,31 @@
+**Function Definitions:**
+- parser() -> Generator[str]: 
+  - While True:
+    - Read input line and split by space into list of strings
+    - For each string in list:
+      - If string length > 0: yield string
+
+- gw() -> str:
+  - Call next() on global input_parser generator
+
+- gi() -> int:
+  - Call gw() to get string
+  - Return int conversion of string
+
+**Main Execution:**
+- Initialize global input_parser = parser()
+- MOD = 1000000007 (int)
+- Import numpy, scipy, collections.deque
+- N = gi() (int)
+- K = gi() (int)
+- S = gw() (str)
+- seg_cnt = 0 (int)
+- For i from 0 to N-2:
+  - If S[i] != S[i+1]:
+    - seg_cnt += 1
+- cur_happy = N - 1 - seg_cnt (int)
+- If 2*K >= seg_cnt:
+  - ans = N - 1
+- Else:
+  - ans = cur_happy + 2*K
+- Print ans

@@ -1,0 +1,46 @@
+```
+dependencies:
+    - numpy
+    - itertools
+
+function: compute_minimum_cost(n: int, m: int, x: int, c: List[List[int]]) -> int
+
+variables:
+    - pre: numpy.ndarray[int] = numpy.arange(n)
+    - l: List[List[int]] = []
+    - rem: List[int] = []
+    - ans: int = 0
+
+logic:
+    for i in pre + 1:
+        for j in itertools.combinations(pre, i):
+            l.append(list(j))
+
+    for i in range(1, m + 1):
+        for j, k in enumerate(l):
+            ca: int = 0
+            for ii in k:
+                ca += c[ii, i]
+            if ca < x:
+                rem.insert(0, j)
+
+        if len(rem) > 0:
+            for j in rem:
+                l.pop(j)
+            rem = []
+
+        if len(l) == 0:
+            return -1
+
+    for i in l:
+        ca: int = 0
+        for j in i:
+            ca += c[j, 0]
+        if ans == 0:
+            ans = ca
+        else:
+            ans = min(ans, ca)
+
+    return ans
+```
+

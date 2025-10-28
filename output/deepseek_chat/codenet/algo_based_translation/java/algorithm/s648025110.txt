@@ -1,0 +1,18 @@
+Algorithm:
+- Import java.util.Scanner
+- Declare main function: public static void main(String args[])
+- Declare Scanner sc = new Scanner(System.in)
+- Declare integer n
+- Read n from input using sc.nextInt()
+- Declare integer array h of size n
+- For i from 0 to n-1:
+  - Read h[i] from input using sc.nextInt()
+- Declare integer ans = 0
+- Declare integer out = 0
+- For i from 0 to length(h)-1:
+  - If out < h[i]:
+    - Set ans = ans + (h[i] - out)
+    - Set out = h[i]
+  - Else:
+    - Set out = h[i]
+- Print ans using System.out.println(ans)

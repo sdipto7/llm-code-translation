@@ -1,0 +1,52 @@
+Algorithm:
+
+Function: main (String[] args) → void
+
+Imports:
+- java.util.Scanner
+
+Variables:
+- mod: long (constant, value 1000000007) 
+- sc: Scanner (System.in)
+- n: int (input)
+- q: int (input)
+- c: char[] (input)
+- range: int[][] (size q×2)
+- frag: int[] (size n+1)
+- rui: int[] (size n+1)
+- left: int
+- right: int
+
+Logic Flow:
+1. Initialize Scanner
+2. Read n and q via nextInt()
+3. Read string via next() and convert to char array c
+4. For each i from 0 to q-1:
+   a. Read range[i][0] via nextInt()
+   b. Read range[i][1] via nextInt()
+5. Initialize frag array with n+1 elements (default 0)
+6. Initialize rui array with n+1 elements (default 0)
+7. For i from 2 to n (inclusive):
+   a. If c[i-2] == 'A' AND c[i-1] == 'C':
+      i. frag[i] += 1
+   b. rui[i] = rui[i-1] + frag[i]
+8. For each query in range:
+   a. left = range[i][0]
+   b. right = range[i][1]
+   c. Compute rui[right] - rui[left]
+   d. Print result via System.out.println()
+
+Control Structures:
+- For-loop: 0 ≤ i < q (query input)
+- For-loop: 2 ≤ i ≤ n (preprocessing)
+- If-condition: c[i-2] and c[i-1] check
+- For-loop: 0 ≤ i < q (query processing)
+
+IO Operations:
+- Read integers via Scanner.nextInt()
+- Read string via Scanner.next()
+- Print results via System.out.println()
+
+Data Processing:
+- Create prefix sum array (rui) tracking cumulative "AC" occurrences
+- Query results calculated via prefix sum subtraction

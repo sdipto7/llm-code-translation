@@ -1,0 +1,46 @@
+**Function Signature:**
+main(String[] args)
+
+**Parameters:**
+- args: String array
+
+**Return Type:**
+void
+
+**Variables:**
+- Scanner sc
+- int n
+- String s
+- long rc = 0
+- long gc = 0
+- long bc = 0
+- long result
+- int i (loop counter)
+- int k (loop counter)
+- char is
+- char ks
+- char js
+
+**Required Libraries:**
+java.util.Scanner
+
+**Algorithm Flow:**
+
+1. Create Scanner object reading from System.in
+2. Read integer n from input
+3. Read string s from input
+4. Initialize counters rc, gc, bc to 0
+5. For each character in string s (index i from 0 to length-1):
+   - If character is 'R': increment rc
+   - Else if character is 'G': increment gc
+   - Else: increment bc
+6. Calculate result = rc * gc * bc
+7. For i from 1 to n (inclusive):
+   - For k from i+1 to n (inclusive):
+     - If (i + k) is even:
+       - Get character at position i-1 from s → is
+       - Get character at position k-1 from s → ks
+       - Get character at position ((i+k)/2)-1 from s → js
+       - If is ≠ ks AND ks ≠ js AND js ≠ is:
+         - Decrement result by 1
+8. Print result

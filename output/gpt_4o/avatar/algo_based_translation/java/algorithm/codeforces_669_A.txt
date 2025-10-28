@@ -1,0 +1,22 @@
+1. Function: `main(String[] subhani)`  
+   - Parameters: `String[] subhani` (array of strings)
+   - Return type: `void`
+   - Variables:
+     - `BufferedReader br` of type `BufferedReader`
+     - `int n` of type `int`
+   - Logic:
+     1. Create a `BufferedReader` object `br` to read input from the standard input stream.
+     2. Read a line of input and parse it into an integer `n`.
+     3. Call the `solve` function with `n` as the argument.
+
+2. Function: `solve(int n)`  
+   - Parameters: `int n`
+   - Return type: `void`
+   - Logic:
+     1. Calculate the result using the formula: `(n / 3) * 2 + (n % 3 == 0 ? 0 : 1)`.
+     2. Print the result to the standard output.
+
+3. Required Libraries:
+   - `java.io.BufferedReader`
+   - `java.io.IOException`
+   - `java.io.InputStreamReader`

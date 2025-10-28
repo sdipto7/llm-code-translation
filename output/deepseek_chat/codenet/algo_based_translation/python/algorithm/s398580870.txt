@@ -1,0 +1,10 @@
+n: int, k: int = input().split() and convert to integers
+if k modulo 2 equals 1:
+    result = (n integer division by k) raised to the power of 3
+    print result
+else:
+    part1 = (n integer division by k) raised to the power of 3
+    temp = n + (k integer division by 2)
+    part2 = (temp integer division by k) raised to the power of 3
+    result = part1 + part2
+    print result

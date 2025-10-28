@@ -1,0 +1,4 @@
+Read three integers from standard input and assign to variables a, b, c
+Calculate (a multiplied by b) divided by 2
+Convert result to integer
+Print integer result

@@ -1,0 +1,10 @@
+N: integer from standard input
+A: list of integers from standard input
+B: list of integers (copy of A)
+count: integer initialized to 1
+
+For each element i in list A:
+    Set B[i-1] = count
+    Increment count by 1
+
+Print all elements of list B separated by spaces

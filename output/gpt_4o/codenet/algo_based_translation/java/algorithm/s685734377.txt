@@ -1,0 +1,47 @@
+```
+Algorithm
+- Function `solve(testNumber: int, in: FastScanner, out: PrintWriter) -> void`
+  - Variable `n: int` <- `in.nextInt()`
+  - Variable `a: char[][]` <- new char[n][n]
+  - Variables `P: long <- 37`, `Q: long <- 47`
+  - Variables `powP: long[] <- new long[n + 1]`, `powQ: long[] <- new long[n + 1]`
+  - Assign `powP[0] <- 1`, `powQ[0] <- 1`
+  - For `i` from 1 to `n` (inclusive)
+    - Assign `powP[i] <- powP[i - 1] * P`
+    - Assign `powQ[i] <- powQ[i - 1] * Q`
+  - For `i` from 0 to `n` (exclusive)
+    - Assign `a[i] <- in.next().toCharArray()`
+  - Variables `hashRow: long[][] <- new long[n][n]`, `hashCol: long[][] <- new long[n][n]`
+  - For `i` from 0 to `n` (exclusive)
+    - For `j` from 0 to `n` (exclusive)
+      - For `k` from 0 to `n` (exclusive)
+        - Assign `hashRow[i][k] <- hashRow[i][k] + a[i][j] * powP[(j - k + n) % n]`
+        - Assign `hashCol[j][k] <- hashCol[j][k] + a[i][j] * powP[(i - k + n) % n]`
+  - Variable `ans: int <- 0`
+  - For `A` from 0 to `n` (exclusive)
+    - For `B` from 0 to `n` (exclusive)
+      - Variable `ok: boolean <- true`
+      - For `i` from 0 to `n` (exclusive)
+        - Assign `ok <- ok AND (hashRow[(i + A) % n][B] == hashCol[(i + B) % n][A])`
+      - If `ok` is true, increment `ans` by 1
+  - Output `ans` using `out.println(ans)`
+
+- Class `FastScanner`
+  - Variable `br: BufferedReader`
+  - Variable `st: StringTokenizer`
+
+  - Constructor `FastScanner(in: InputStream)`
+    - Assign `br <- new BufferedReader(new InputStreamReader(in))`
+
+  - Method `nextInt() -> int`
+    - Return `Integer.parseInt(next())`
+
+  - Method `next() -> String`
+    - While `st` is null or `!st.hasMoreElements()`
+      - Variable `line: String <- null`
+      - Try to assign `line <- br.readLine()`
+      - Catch `IOException` (do nothing)
+      - Assign `st <- new StringTokenizer(line)`
+    - Return `st.nextToken()`
+```
+

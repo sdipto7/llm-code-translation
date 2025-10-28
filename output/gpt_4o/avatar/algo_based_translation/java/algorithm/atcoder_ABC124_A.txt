@@ -1,0 +1,20 @@
+```
+Algorithm atcoder_ABC124_A
+
+1. Declare function main() with no parameters and no return type.
+2. Import the necessary library: java.util.Scanner.
+3. Create a Scanner object 'sc' for reading input from the standard input.
+4. Declare an integer variable 'a'.
+5. Read the next input from the Scanner 'sc', parse it to an integer, and assign it to 'a'.
+6. Declare an integer variable 'b'.
+7. Read the next input from the Scanner 'sc', parse it to an integer, and assign it to 'b'.
+8. Declare an integer variable 'sum' and initialize it to 0.
+9. Loop for 2 iterations (i = 0 to i < 2):
+   a. If 'a' is greater than or equal to 'b':
+      i. Add 'a' to 'sum'.
+      ii. Decrement 'a' by 1.
+   b. Else (when 'b' is greater than 'a'):
+      i. Add 'b' to 'sum'.
+      ii. Decrement 'b' by 1.
+10. Output the value of 'sum' to the standard output.
+```

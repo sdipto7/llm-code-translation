@@ -1,0 +1,24 @@
+```
+Function Signature:
+- calculate_triangle_area(inputs: str) -> int
+
+Algorithm:
+1. Input/Output Operations:
+   - Read a single input string, `inputs`, which contains three space-separated integers.
+
+2. Variable Declarations and Data Types:
+   - Declare `a`, `b`, `c` as integers.
+
+3. Data Processing Logic:
+   - Use `map` to convert the input string into three integers and assign them to `a`, `b`, and `c`.
+
+4. Logic Flow:
+   - Calculate the area of a triangle using the formula: `(a * b) / 2`.
+   - Convert the result to an integer.
+
+5. Output:
+   - Return the calculated area as an integer.
+
+Dependencies:
+- None
+```

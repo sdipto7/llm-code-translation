@@ -1,0 +1,29 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations:
+- `char[] str`
+- `int dotIndex`
+- `String _str`
+
+Logic flow in execution order:
+1. `Scanner` reads a line of input from standard input and converts it to a character array `str`.
+2. Initialize `dotIndex` to 0.
+3. Loop through each character in `str` using index `i`:
+   - If `str[i]` equals '.', set `dotIndex` to `i` and break the loop.
+4. If `str[dotIndex - 1]` equals '9':
+   - Print "GOTO Vasilisa."
+5. Else if `Integer.parseInt(str[dotIndex + 1] + "")` is greater than 4:
+   - Initialize `_str` to an empty string.
+   - Loop through each character in `str` up to `dotIndex` using index `i`:
+     - Append `str[i]` to `_str`.
+   - Convert `_str` to a `BigInteger`, add 1 to it, convert back to string, and print.
+6. Else:
+   - Loop through each character in `str` up to `dotIndex` using index `i`:
+     - Print `str[i]`.
+   - Print a newline.
+
+Libraries/modules/dependencies:
+- `java.util.Scanner`
+- `java.util.ArrayList` (not used)
+- `java.util.Arrays` (not used)
+- `java.math.BigInteger`

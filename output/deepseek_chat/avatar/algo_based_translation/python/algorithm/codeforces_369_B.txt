@@ -1,0 +1,21 @@
+**Function: get_nums**
+- Parameters: num (integer), t (integer)
+- Return: list of integers
+- Logic:
+  - Initialize empty list for result
+  - Calculate base_value = floor division of t by num
+  - Calculate remainder = t modulo num
+  - For i from 0 to num-1:
+    - If i < remainder:
+      - Append base_value + 1 to result list
+    - Else:
+      - Append base_value to result list
+  - Return result list
+
+**Main Program:**
+- Read input line and split into 6 integers: n, k, l, r, sa, sk
+- Call get_nums(k, sk) and store result
+- Call get_nums(n-k, sa-sk) and store result
+- Concatenate the two result lists
+- Convert all elements to strings and join with spaces
+- Print the resulting string

@@ -1,0 +1,54 @@
+```plaintext
+Algorithm:
+1. Import required modules:
+   - `sys` for handling standard input.
+   - `deque` from `collections` for efficient queue operations.
+
+2. Define input reading:
+   - Use `sys.stdin.buffer.readline` for fast input reading.
+
+3. Initialize variables:
+   - `N`: integer, the number of nodes (read from input).
+   - `adj`: list of lists (adjacency list), length `N + 1`, to store graph connections.
+   - `que`: deque, initialize with the starting node `1`.
+   - `seen`: list of integers, length `N + 1`, initialized to `0`, used to track visited nodes.
+   - `par`: list of integers, length `N + 1`, initialized to `0`, used to store parent nodes.
+   - `child_num`: list of integers, length `N + 1`, initialized to `0`, used to store number of children for each node.
+
+4. Read edges and populate adjacency list:
+   - Loop `N-1` times:
+     - Read two integers `a` and `b` (nodes) from input.
+     - Append `b` to `adj[a]` and `a` to `adj[b]` to create a bidirectional edge.
+
+5. Initialize BFS:
+   - Set `seen[1]` to `1` to mark node `1` as visited.
+
+6. Perform BFS to establish parent-child relationships:
+   - While `que` is not empty:
+     - Dequeue `v` from `que`.
+     - For each `u` in `adj[v]`:
+       - If `seen[u]` is `0`:
+         - Mark `u` as visited (`seen[u] = 1`).
+         - Set `par[u]` to `v`.
+         - Increment `child_num[v]`.
+         - Enqueue `u` to `que`.
+
+7. Initialize sequence of leaf nodes:
+   - Create an empty `seq` deque.
+   - For `i` from `1` to `N`:
+     - If `child_num[i]` is `0`:
+       - Append `i` to `seq`.
+
+8. Determine the game result using sequence of leaf nodes:
+   - While `seq` is not empty:
+     - Pop `c` from `seq`.
+     - Set `seen[c]` to `0`.
+     - If `seen[par[c]]` is `0`:
+       - Output "First" and terminate program.
+     - Set `seen[par[c]]` to `0`.
+     - Decrement `child_num[par[par[c]]]`.
+     - If `child_num[par[par[c]]]` is `0`:
+       - Append `par[par[c]]` to `seq`.
+
+9. Output "Second" if the loop completes without terminating early.
+```

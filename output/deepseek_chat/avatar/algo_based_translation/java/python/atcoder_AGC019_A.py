@@ -1,0 +1,20 @@
+
+import sys
+
+def main():
+    Q = int(sys.stdin.readline())
+    H = int(sys.stdin.readline())
+    S = int(sys.stdin.readline())
+    D = int(sys.stdin.readline())
+    N = int(sys.stdin.readline())
+    
+    one_price = min(min(Q * 4, H * 2), S)
+    
+    if float(one_price) <= float(D) / 2:
+        print(N * one_price)
+    else:
+        print((N // 2) * D + (N % 2) * one_price)
+
+if __name__ == "__main__":
+    main()
+

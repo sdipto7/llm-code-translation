@@ -1,0 +1,15 @@
+1. Read the number of elements `n`.
+2. Initialize three arrays `a`, `b`, and `num` of size `n + 1`.
+3. Read `n` elements into array `a` starting from index 1.
+4. Read `n` elements into array `b` starting from index 1.
+5. For each element `i` from 1 to `n`, increment `num[b[i]]` by 1.
+6. Initialize an empty string `ss` and a variable `ans` to 0.
+7. Initialize a boolean array `st` of size `n + 1` with all elements set to false.
+8. For each element `i` from 1 to `n`, check if `a[i]` equals 1.
+9. If `a[i]` equals 1, set `st[i]` to true and initialize a string `sb` with the value of `i`.
+10. Set `x` to `b[i]` and continue the following steps until `st[x]` is true or `num[x]` is not 1 or `x` equals 0 or `a[x]` equals 1.
+11. In each iteration, append `x` to `sb`, set `st[x]` to true, and update `x` to `b[x]`.
+12. Keep track of the number of iterations `s`.
+13. If `s` is greater than `ans`, update `ans` to `s` and set `ss` to the reversed string `sb`.
+14. Output the value of `ans`.
+15. Output the string `ss`.

@@ -1,0 +1,48 @@
+```
+Algorithm
+
+Function Signature:
+- split(n: long, k: long) -> long
+- solve(n: long, s: long) -> long
+
+Variable Declarations:
+- sum: long
+- k: long
+- a: long
+- b: long
+- dk: long
+- nl: long
+- sl: long
+- s: Scanner
+
+Logic Flow:
+1. Define split function taking n and k as parameters:
+   - Initialize sum to 0
+   - While n is greater than 0:
+     - Add n % k to sum
+     - Divide n by k
+   - Return sum
+
+2. Define solve function taking n and s as parameters:
+   - Initialize k to 2
+   - Iterate while (k * k <= n) or (k < 100):
+     - If split(n, k) equals s, return k
+   - Iterate while k is less than or equal to n:
+     - Set a to n divided by k
+     - Set b to n modulo k
+     - If (a + b - s) modulo a equals 0:
+       - Set dk to (a + b - s) divided by a
+       - If dk is greater than or equal to 0 and b - dk * a is greater than or equal to 0:
+         - Return k + dk
+     - Set k to n divided by a plus 1
+   - If n equals s, return n + 1
+   - Return -1
+
+3. Main Execution:
+   - Create Scanner object s for input
+   - Read long values nl and sl from input
+   - Call solve with nl and sl, print the result
+
+Dependencies:
+- java.util.Scanner
+```

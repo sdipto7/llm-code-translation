@@ -1,0 +1,43 @@
+Algorithm:
+Function signature: main() -> None
+
+Variable declarations:
+- n: int
+- t: List[int]
+- a: List[int]
+- ans: List[int]
+- cnt: List[int]
+
+Logic flow:
+1. Read an integer n from input
+2. Read a list t of n+1 integers from input, where the first element is 0
+3. Read a list a of n+1 integers from input, where the first element is 0
+4. Initialize ans as an empty list
+5. Initialize cnt as a list of n+1 zeros
+6. For each element i in list a:
+   - Increment cnt[i] by 1
+7. For each integer i from 1 to n:
+   - If t[i] is equal to 1:
+     - Initialize crt as a list containing i
+     - Set x to a[i]
+     - While cnt[x] is equal to 1:
+       - Append x to crt
+       - Set x to a[x]
+     - If the length of crt is greater than the length of ans:
+       - Set ans to a copy of crt
+8. Reverse the list ans
+9. Print the length of ans
+10. Print the elements of ans as a space-separated string
+
+Input/output operations:
+- Read integers from standard input
+- Print integers to standard output
+
+Data processing logic:
+- Count occurrences of each element in list a
+- For elements in t where the value is 1, trace the path in list a
+- Track the longest path found
+- Reverse the longest path before output
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required

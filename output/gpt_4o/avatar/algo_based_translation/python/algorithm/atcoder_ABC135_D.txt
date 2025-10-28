@@ -1,0 +1,39 @@
+```plaintext
+- Import modules: sys, math, collections.defaultdict
+- Set recursion limit to 10**7
+- Define input function: returns a string from stdin with the trailing newline removed
+- Define constants: mod = 10**9 + 7
+- Define function I() -> int: returns an integer from input
+- Define function II() -> Tuple[int]: returns a tuple of integers from input split by spaces
+- Define function III() -> List[int]: returns a list of integers from input split by spaces
+- Define function Line(N: int) -> Tuple[List[int], List[int]]: reads N lines of input, returns tuple of lists with transposed data
+
+- Read string S from input
+- Declare integer n as the length of S
+
+- If n is 1:
+  - If S is '5' or S is '?', print 1
+  - Else, print 0, then exit
+
+- Declare dp as a list of lists: dp = [[0] * 13 for _ in range(n)]
+
+- For i in range(n):
+  - If i is 0:
+    - If S[i] is not '?':
+      - Increment dp[i][int(S[i])] by 1
+    - Else:
+      - For j in range(10):
+        - Increment dp[i][j] by 1
+  - Else:
+    - If S[i] is not '?':
+      - For k in range(13):
+        - Increment dp[i][(k * 10 + int(S[i])) % 13] by dp[i - 1][k]
+    - Else:
+      - For j in range(10):
+        - For k in range(13):
+          - Increment dp[i][(k * 10 + j) % 13] by dp[i - 1][k]
+    - For k in range(13):
+      - Set dp[i][k] to dp[i][k] % mod
+
+- Print dp[n - 1][5]
+```

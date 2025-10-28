@@ -1,0 +1,28 @@
+1. Function signature:
+   - Function: find_largest_square(n: int) -> int
+
+2. Variable declarations:
+   - n: integer (input)
+   - i: integer (loop counter)
+
+3. Logic flow:
+   a. Iterate i from 1 to 99999 (inclusive) via range(1, 10**5)
+   b. For each iteration:
+      1. Calculate i * i
+      2. Check if i * i > n
+      3. If condition met:
+          a. Calculate (i - 1) * (i - 1)
+          b. Return calculated value
+   c. Loop terminates naturally if no squares exceed n (function implicitly returns None)
+
+4. Control structures:
+   - For loop: for i in range(1, 100000)
+   - Conditional: if i * i > n
+
+5. Input/Output:
+   - Input: Read integer from standard input via n = int(input())
+   - Output: Print result via print() when condition met
+
+6. Dependencies:
+   - No external libraries required
+   - Uses standard input/output functions

@@ -1,0 +1,60 @@
+function signatures:
+- `main(String[] args): void`
+- `gs(): String`
+- `gi(): int`
+- `gl(): long`
+- `gd(): double`
+
+variable declarations and data types:
+- `scanner: Scanner`
+- `N: int`
+- `i: long`
+- `c: int`
+- `s: String`
+- `sb: StringBuilder`
+- `f: boolean`
+- `j: int`
+- `a: char`
+- `sb2: StringBuffer`
+
+logic flow in execution order:
+- Initialize `scanner` as a `Scanner` object reading from standard input.
+- Read integer `N` using `gi()`.
+- Initialize `i` to `357` and `c` to `0`.
+- While `i` is less than or equal to `N`:
+  - Convert `i` to string `s`.
+  - If `s` contains characters '3', '5', and '7':
+    - Increment `c` by `1`.
+  - Initialize `sb` as a `StringBuilder` object.
+  - Initialize `f` to `false`.
+  - For each index `j` from `0` to `s.length() - 1`:
+    - Get character `a` from `s` at position `s.length() - 1 - j`.
+    - If `f` is true:
+      - Append `a` to `sb`.
+    - Else:
+      - If `a` is '3':
+        - Append '5' to `sb`.
+        - Set `f` to `true`.
+      - Else if `a` is '5':
+        - Append '7' to `sb`.
+        - Set `f` to `true`.
+      - Else:
+        - Append '3' to `sb`.
+  - If `f` is false:
+    - Append '3' to `sb`.
+  - Convert `sb` to string, reverse it, and parse it to long `i`.
+- Print `c`.
+
+control structures:
+- While loop with condition `i <= N`.
+- If statement with condition `s.contains("3") && s.contains("5") && s.contains("7")`.
+- For loop iterating over indices of `s`.
+- If-else-if-else statement to determine which character to append to `sb`.
+- If statement with condition `!f`.
+
+input/output operations and data processing logic:
+- Read integer `N` from standard input.
+- Print count `c` to standard output.
+
+required libraries, modules, or dependencies:
+- `java.util.Scanner`

@@ -1,0 +1,38 @@
+Function Signatures:
+- `main() -> None`: No parameters, returns nothing.
+
+Variable Declarations:
+- `N: int`: Input integer.
+- `A: list[int]`: List of N integers from input.
+- `B: list[int]`: Initialized as list of N zeros.
+- `i: int`: Loop variable iterating from N-1 downto 0.
+- `j: int`: Loop variable in inner loop starting at (i+1)*2-1 with step i+1.
+- `tmp_sum: int`: Accumulator for sum of B[j] values modulo 2.
+
+Logic Flow:
+1. Read integer N from standard input.
+2. Read list A of N integers from standard input.
+3. Initialize B as list of N zeros.
+4. For i in range N-1 downto 0 (inclusive):
+   1. Set tmp_sum = 0.
+   2. For j in range starting at (i+1)*2 - 1, ending at N-1, incrementing by (i+1):
+      1. Add B[j] to tmp_sum.
+      2. Set tmp_sum = tmp_sum % 2.
+   3. Set B[i] = tmp_sum XOR A[i].
+5. Calculate sum of elements in B.
+6. Collect indices (1-based) of elements in B with value 1.
+7. Print sum and indices.
+
+Control Structures:
+- Outer loop: `for i in range(N-1, -1, -1)`
+- Inner loop: `for j in range((i+1)*2 -1, N, i+1)`
+- Modulo operation: `tmp_sum % 2` after each addition
+- XOR operation: `B[i] = tmp_sum ^ A[i]`
+
+Input/Output Operations:
+- Read via `input()` for N and A.
+- Print sum via `print(sum(B))`.
+- Print indices via `print(*[i+1 for i, b in enumerate(B) if b == 1])`.
+
+Dependencies:
+- None beyond standard input/output operations.

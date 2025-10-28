@@ -1,0 +1,22 @@
+Function G ( a : Integer, b : Integer ) : Integer
+    While a % b != 0
+        a, b = b, a % b
+    Return b
+
+Function L ( a : Integer, b : Integer ) : Integer
+    Return a * b // G ( a, b )
+
+Variable l : List of String
+Variable x : Integer
+Variable y : Integer
+Variable a : Integer
+Variable b : Integer
+Variable lcm : Integer
+
+l = Input().split(' ')
+x = Convert l[0] to Integer
+y = Convert l[1] to Integer
+a = Convert l[2] to Integer
+b = Convert l[3] to Integer
+lcm = L(x, y)
+Output b // lcm - (a - 1) // lcm

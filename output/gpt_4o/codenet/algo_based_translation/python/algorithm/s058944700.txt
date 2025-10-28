@@ -1,0 +1,25 @@
+```plaintext
+Function Signature:
+    def calculate_minimum_distance(n: int, k: int) -> int
+
+Variable Declarations:
+    tmp: int
+    ans: int
+
+Logic Flow:
+1. Read two integers from input, n and k.
+2. Check if n is greater than k:
+   a. Calculate tmp as the remainder of n divided by k (tmp = n % k).
+   b. If tmp is greater than or equal to (k - tmp), set ans to (k - tmp).
+   c. Otherwise, set ans to tmp.
+3. Else, check if n is less than k:
+   a. If n is greater than or equal to (k - n), set ans to (k - n).
+   b. Otherwise, set ans to n.
+4. Else, set ans to 0 (this handles the case where n equals k).
+5. Print the value of ans.
+
+Dependencies:
+- numpy module is imported but not used.
+- Input is read from standard input.
+- Output is printed to standard output.
+```

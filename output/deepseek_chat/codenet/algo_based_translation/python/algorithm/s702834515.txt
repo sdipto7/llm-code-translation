@@ -1,0 +1,12 @@
+1. Function signature: main() -> None
+2. Variable declarations:
+   - n: int (from input)
+   - r: int = 0
+   - ii: int (loop counter)
+3. Input operation: n = int(input())
+4. Initialize r = 0
+5. For loop: for ii in range(n):
+6. Condition: if (ii+1)%3 != 0 and (ii+1)%5 != 0:
+7. Operation: r += (ii+1)
+8. Output operation: print(r)
+9. No external libraries or dependencies required

@@ -1,0 +1,37 @@
+**Function Signatures:**
+- main(String[] args): void
+- getPoints(int n, int k, int l, int r, int sAll, int sk): int[]
+
+**Variables:**
+- Scanner scan
+- int n, k, l, r, sAll, sk
+- int[] ans
+- int idx
+
+**Libraries:**
+- java.util.Arrays
+- java.util.Scanner
+
+**Algorithm:**
+1. Create Scanner object to read from System.in
+2. Read integers n, k, l, r, sAll, sk from input
+3. Call getPoints(n, k, l, r, sAll, sk) and store result in ans array
+4. Print each element of ans array followed by space
+5. In getPoints:
+   - Create int array ans of size n
+   - Fill ans with value l using Arrays.fill
+   - Subtract (sk + (n - k) * l) from sAll
+   - Subtract (k * l) from sk
+   - While sk > 0:
+     * Set idx = n - 1
+     * While sk > 0 AND idx >= n - k:
+       - Increment ans[idx] by 1
+       - Decrement idx by 1
+       - Decrement sk by 1
+   - While sAll > 0:
+     * Set idx = 0
+     * While sAll > 0 AND idx < n - k:
+       - Increment ans[idx] by 1
+       - Increment idx by 1
+       - Decrement sAll by 1
+   - Return ans array

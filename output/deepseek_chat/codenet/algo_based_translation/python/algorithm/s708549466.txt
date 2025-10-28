@@ -1,0 +1,19 @@
+N: integer
+x: integer
+a: list of integers
+cnt: integer = 0
+
+Read first line: split input by space, convert to integers, assign first to N, second to x
+Read second line: split input by space, convert to integers, assign to list a
+
+For i from 1 to N-1 (inclusive):
+    tmp = a[i-1] + a[i]
+    If tmp > x:
+        If (tmp - x) > a[i]:
+            a[i-1] = tmp - a[i] - x
+            a[i] = 0
+        Else:
+            a[i] = a[i] - (tmp - x)
+        cnt = cnt + (tmp - x)
+
+Print cnt

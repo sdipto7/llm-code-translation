@@ -1,0 +1,25 @@
+1. Set recursion limit to 100000.
+2. Define a function `dfs(i: int) -> bool` that performs a depth-first search from vertex `i`.
+   1. For each neighboring vertex `v` of `i` with edge weight `w`:
+      1. If `w` is even:
+         1. If `color[v]` is -1, set `color[v]` to `color[i]`.
+         2. If `color[v]` is not -1 and not equal to `color[i]`, return False.
+      2. If `w` is odd:
+         1. If `color[v]` is -1, set `color[v]` to the opposite of `color[i]` (0 if `color[i]` is 1, 1 if `color[i]` is 0).
+         2. If `color[v]` is not -1 and equal to `color[i]`, return False.
+      3. Recursively call `dfs(v)`.
+   2. Return True.
+
+3. In the main execution:
+   1. Read an integer `n` from input.
+   2. Initialize an empty dictionary `V` to store graph edges, where each key is a vertex and its corresponding value is a list of pairs `[v, w]`, representing an edge to vertex `v` with weight `w`.
+   3. Initialize an empty dictionary `color` to store the color of each vertex, initialized to -1.
+   4. For `i` ranging from 1 to `n-1`:
+      1. Read three integers `u`, `v`, and `w` from input, representing an edge between vertices `u` and `v` with weight `w`.
+      2. Add the edge to `V` in both directions (i.e., `u` to `v` and `v` to `u`).
+   5. For `i` ranging from 1 to `n`, initialize `color[i]` to -1.
+   6. Enter a loop that continues until all vertices are colored or a contradiction is found:
+      1. Find the first uncolored vertex `i` (i.e., `color[i]` is -1) and set `color[i]` to 0.
+      2. If no uncolored vertex is found, print the colors of all vertices and exit the loop.
+      3. Call `dfs(i)`.
+      4. If `dfs(i)` returns False, print 'No' and exit the loop.

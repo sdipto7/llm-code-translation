@@ -1,0 +1,14 @@
+1. Read the number of test cases `n`.
+2. For `i` from 0 to `n-1`, perform the following steps:
+   1. Read two integers `a` and `b`.
+   2. Calculate `sub(a, b)`.
+   3. Output the result of `sub(a, b)`.
+3. The function `sub(a, b)` performs the following steps:
+   1. Initialize `min` to the minimum of `a` and `b`.
+   2. Initialize `max` to the maximum of `a` and `b`.
+   3. Initialize `result` to 0.
+   4. While `min` is greater than 0, perform the following steps:
+      1. Add `max` divided by `min` to `result`.
+      2. Update `max` to be `max` modulo `min`.
+      3. Update `min` and `max` to be the minimum and maximum of the current `min` and `max` respectively.
+   5. Return `result`.

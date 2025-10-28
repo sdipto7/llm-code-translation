@@ -1,0 +1,28 @@
+- **Function Signature**:
+  - `public static void main(String[] args) throws Exception`
+
+- **Variables**:
+  - `int n` (input integer)
+  - `int m` (initialized to `n`)
+  - `int i` (loop counter from `n-1` to `1`)
+
+- **Libraries/Dependencies**:
+  - `java.util.*` (for `Scanner`)
+
+- **Logic Flow**:
+  1. Read integer `n` from standard input using `Scanner`.
+  2. Print `n` followed by a space and a newline.
+  3. Set `m` to `n`.
+  4. Iterate `i` from `n-1` down to `1`:
+     - If `m` is divisible by `i` (`m % i == 0`):
+       - Print `i` followed by a space and a newline.
+       - Update `m` to `i`.
+     - Decrement `i` by 1.
+
+- **Control Structures**:
+  - `for (int i = n-1; i > 0; i--)`
+  - `if (m % i == 0)`
+
+- **Input/Output**:
+  - Input: Read integer via `Scanner.nextInt()`.
+  - Output: Print values with trailing space and newline via `System.out.println`.

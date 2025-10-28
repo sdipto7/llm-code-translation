@@ -1,0 +1,30 @@
+**Algorithm:**
+
+1. **Import Dependencies:**
+   - Import stdin, stdout, setrecursionlimit from sys
+   - Import gcd, ceil, sqrt from math
+   - Import Counter from collections
+   - Import bisect_left, bisect_right from bisect
+
+2. **Define Input Helper Functions:**
+   - Function ii1: returns int, reads line from stdin, strips whitespace
+   - Function is1: returns str, reads line from stdin, strips whitespace
+   - Function iia: returns list[int], reads line, splits by space, maps to int
+   - Function isa: returns list[str], reads line, splits by space
+
+3. **Set Recursion Limit:**
+   - Call setrecursionlimit(100000)
+
+4. **Initialize Constants:**
+   - mod = 1000000007 (int)
+
+5. **Main Execution:**
+   - Read integer k using ii1()
+   - Initialize integer t = 0
+   - Loop i from 1 to k (inclusive):
+        - Update t: t = (t % k) * 10 + 7
+        - If t % k == 0:
+            - Print i
+            - Break loop
+   - Else (if loop completes without break):
+        - Print -1

@@ -1,0 +1,185 @@
+UnionFind(int n)
+- Initialize Parent array of size n with all elements set to -1
+
+int root(int A)
+- If Parent[A] < 0, return A
+- Otherwise, recursively call root(Parent[A]) and set Parent[A] to the result
+
+int size(int A)
+- Return the negative value of Parent[root(A)]
+
+boolean connect(int A, int B)
+- Set A to root(A) and B to root(B)
+- If A equals B, return false
+- If size(A) is less than size(B), swap A and B
+- Add size(B) to size(A) (represented as Parent[A] += Parent[B])
+- Set Parent[B] to A
+- Return true
+
+FastScanner()
+- Initialize input stream, buffer, and pointers
+
+boolean hasNextByte()
+- If ptr is less than buflen, return true
+- Reset ptr to 0 and read next bytes into buffer
+- If buflen is less than or equal to 0, return false
+
+int readByte()
+- If hasNextByte is true, return next byte from buffer and increment ptr
+- Otherwise, return -1
+
+boolean isPrintableChar(int c)
+- Return true if c is between 33 and 126, inclusive
+
+boolean hasNext()
+- Skip non-printable characters
+- Return true if there are more bytes to read
+
+String next()
+- Throw NoSuchElementException if no next element
+- Initialize StringBuilder
+- Read and append printable characters to StringBuilder
+- Return StringBuilder as String
+
+long nextLong()
+- Throw NoSuchElementException if no next element
+- Initialize n to 0 and minus to false
+- Read first byte
+- If byte is '-', set minus to true and read next byte
+- If byte is not a digit, throw NumberFormatException
+- While byte is a digit, multiply n by 10, add byte value, and read next byte
+- If byte is non-printable or end of stream, return n as integer
+- If byte is not a digit, throw NumberFormatException
+
+int nextInt()
+- Read next long value
+- If value is outside integer range, throw NumberFormatException
+- Return value as integer
+
+double nextDouble()
+- Return parsed double of next string
+
+char nextchar()
+- Read and return next character from input stream
+- Throw RuntimeException if an exception occurs
+
+modlcm(long a, long b)
+- Return a * b * modint(gcd(a, b), mod)
+
+gcd(long a, long b)
+- If b is greater than 0, recursively call gcd(b, a % b)
+- Otherwise, return a
+
+lcm(long a, long b)
+- Return a * b / gcd(a, b)
+
+max(int a, int b)
+- Return a if a is greater than b, otherwise return b
+
+min(int a, int b)
+- Return a if a is less than b, otherwise return b
+
+lmax(long a, long b)
+- Return Math.max(a, b)
+
+lmin(long a, long b)
+- Return Math.min(a, b)
+
+factorial(int i)
+- If i is 1, return 1
+- Otherwise, return i * factorial(i - 1)
+
+main(String[] args)
+- Initialize FastScanner and Scanner
+- Read next string
+- Check if character at index 2 equals character at index 3 and character at index 4 equals character at index 5
+- Print "Yes" if condition is true, otherwise print "No"
+
+lower_bound(int a[], int key)
+- Initialize right to array length and left to 0
+- While right - left is greater than 1, calculate mid
+- If a[mid] is less than key, set left to mid
+- Otherwise, set right to mid
+- Return left
+
+upper_bound(int a[], int key)
+- Initialize right to array length and left to 0
+- While right - left is greater than 1, calculate mid
+- If a[mid] is less than or equal to key, set left to mid
+- Otherwise, set right to mid
+- Return left
+
+isPrime(long n)
+- If n is 2, return true
+- If n is less than 2 or n is even, return false
+- Calculate square root of n
+- For each odd number i from 3 to square root of n, if n is divisible by i, return false
+- Return true
+
+upper_division(int a, int b)
+- If a is divisible by b, return a divided by b
+- Otherwise, return a divided by b plus 1
+
+lupper_division(long a, long b)
+- If a is divisible by b, return a divided by b
+- Otherwise, return a divided by b plus 1
+
+setArray(int a)
+- Initialize array b of size a
+- Read a integers and store in b
+- Return b
+
+lsetArray(int a)
+- Initialize array b of size a
+- Read a long integers and store in b
+- Return b
+
+reverse(String str)
+- Initialize character arrays ch and chch
+- For each character in the first half of str, swap characters from start and end
+- Return reversed string
+
+printArray(int[] que)
+- Print all elements of que, separated by spaces
+
+doublesort(int[][]a)
+- Sort array a by first element of each sub-array
+- Return sorted array
+
+ldoublesort(long[][]a)
+- Sort array a by first element of each sub-array
+- Return sorted array
+
+modpow(long x, long n, long mo)
+- Initialize sum to 1
+- While n is greater than 0
+- If n is odd, multiply sum by x and take modulo mo
+- Multiply x by x and take modulo mo
+- Divide n by 2
+- Return sum
+
+revch(char ch[])
+- Initialize ret array of same size as ch
+- Fill ret with elements of ch in reverse order
+- Return ret
+
+revint(int ch[])
+- Initialize ret array of same size as ch
+- Fill ret with elements of ch in reverse order
+- Return ret
+
+warshall_floyd(int v[][], int n)
+- For each k from 0 to n-1
+- For each i from 0 to n-1
+- For each j from 0 to n-1
+- Update v[i][j] to minimum of v[i][j] and v[i][k] + v[k][j]
+
+modint(long a, long m)
+- Initialize b to m, u to 1, and v to 0
+- While b is not 0
+- Calculate t as a divided by b
+- Update a and b using extended Euclidean algorithm
+- Update u and v using extended Euclidean algorithm
+- Take modulo m of u
+- If u is negative, add m to u
+- Return u

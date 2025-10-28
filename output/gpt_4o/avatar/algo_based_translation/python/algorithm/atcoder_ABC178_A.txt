@@ -1,0 +1,31 @@
+```
+Dependencies:
+- import os
+- from sys import stdin, stdout
+
+Function signature:
+- `solve(tc: int) -> None`
+
+Variable declarations:
+- `a: int`
+
+Logic flow:
+1. Read a single line of input using `stdin.readline()`.
+2. Strip any leading/trailing whitespace from the input and convert it to an integer, assign it to `a`.
+3. Evaluate the conditional: if `a` is equal to 0, print the integer 1.
+4. Otherwise, print the integer 0.
+
+Control structures:
+- Conditional: `if a == 0`, execute `print(1)`, else execute `print(0)`.
+
+Input/output operations:
+- Input: Read from standard input using `stdin.readline()`.
+- Output: Write to standard output using `print()`.
+
+Execution flow:
+1. Initialize `tcs` to 1, which represents the total number of test cases.
+2. Initialize `tc` to 1, which represents the current test case index.
+3. Start a while loop with the condition `tc <= tcs`:
+   - Call the `solve(tc)` function.
+   - Increment `tc` by 1.
+```

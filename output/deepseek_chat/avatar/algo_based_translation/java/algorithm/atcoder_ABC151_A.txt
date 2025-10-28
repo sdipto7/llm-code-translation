@@ -1,0 +1,55 @@
+**Main Function (atcoder_ABC151_A.main):**
+- Parameters: String[] args
+- Throws: IOException
+- Declare BufferedReader r initialized with InputStreamReader(System.in) and buffer size 1
+- Declare String s
+- Declare String array sl
+- Read line from input into s
+- Print character with format "%c", calculated as (s.charAt(0) + 1)
+
+**Class RemRing:**
+- Field: long module
+
+**Constructor RemRing:**
+- Parameter: long module
+- Assign this.module = module
+
+**Method sum:**
+- Parameters: long a, long b
+- Return type: long
+- Calculate: (a + b + module) % module
+- Return result
+
+**Method sub:**
+- Parameters: long a, long b
+- Return type: long
+- Calculate: (a - b + module) % module
+- Return result
+
+**Method prod:**
+- Parameters: long a, long b
+- Return type: long
+- Calculate: (a * b) % module
+- Return result
+
+**Method div:**
+- Parameters: long a, long b
+- Return type: long
+- Calculate: (a * inv(b)) % module
+- Return result
+
+**Method inv:**
+- Parameter: long a
+- Return type: long
+- Declare long b = this.module
+- Declare long u = 1
+- Declare long v = 0
+- While loop condition: b > 0
+  - Calculate long t = a / b
+  - Calculate a = a - t * b
+  - Calculate u = u - t * v
+  - Swap a and b: long z = a; a = b; b = z
+  - Swap u and v: z = u; u = v; v = z
+- After loop: u = u % this.module
+- If u < 0: u = u + this.module
+- Return u

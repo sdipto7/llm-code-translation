@@ -1,0 +1,27 @@
+Function: main()  
+Parameters: None  
+Return Type: None  
+
+Variable Declarations:  
+A: Integer  
+B: Integer  
+C: Integer  
+D: Integer  
+m: Integer = 998244353  
+d: 2D List of Integers, size (C+1) x (D+1), initialized to 0  
+
+Logic Flow:  
+1. Read four integers A, B, C, D from standard input, separated by spaces.
+2. Initialize a 2D list d with dimensions (C+1) x (D+1) where each element is set to 0.
+3. Set d[A][B] to 1.
+4. For each integer i from A to C (inclusive):
+   a. For each integer j from B to D (inclusive):
+      i. Update d[i][j] by adding the value of (d[i][j-1] * i + d[i-1][j] * j - d[i-1][j-1] * (i-1) * (j-1)) modulo m to it.
+5. Print the value of d[C][D] to standard output.
+
+Input/Output Operations:  
+- Read four integers from standard input.
+- Print one integer (d[C][D]) to standard output.
+
+Libraries/Modules/Dependencies:  
+- None required beyond standard Python capabilities.

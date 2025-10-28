@@ -1,0 +1,35 @@
+function main() : void
+    variable n : int
+    variable ch : array of char with size n
+    variable s1 : int, initialized to 0
+    variable s2 : int, initialized to 0
+    variable i : int
+    variable j : int, initialized to 0
+    variable flag : int, initialized to 0
+    variable dif : int
+    read n from input
+    for i from 0 to n-1 do
+        variable x : int
+        variable y : int
+        read x from input
+        read y from input
+        variable temp1 : int, value is s1 + x
+        variable temp2 : int, value is s2 + y
+        if absolute(temp1 - s2) <= 500 then
+            s1 is updated to s1 + x
+            ch[j] is set to 'A'
+            j is incremented
+            continue to next iteration
+        if absolute(temp2 - s1) <= 500 then
+            s2 is updated to s2 + y
+            ch[j] is set to 'G'
+            j is incremented
+            continue to next iteration
+        flag is set to 1
+        break loop
+    if flag is equal to 1 then
+        print -1
+    else
+        variable ans : string, value is empty string
+        ans is updated to string representation of ch array
+        print ans

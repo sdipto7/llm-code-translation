@@ -1,0 +1,60 @@
+Function signatures with parameter and return types:
+- `main(String[] args)`: void
+
+Variable declarations and data types:
+- `mod`: int
+- `nchoosek`: long[][]
+- `sc`: Scanner
+- `k`: int
+- `n`: int
+- `i`: int
+- `pairs`: int
+- `active`: int
+- `times2`: long
+- `total`: long
+- `j`: int
+- `choice`: long
+
+Logic flow in execution order:
+1. Initialize `mod` to 998244353
+2. Initialize `nchoosek` as a 4001x4001 long array
+3. Set `nchoosek[i][0]` and `nchoosek[i][i]` to 1 for all i from 0 to 4000
+4. For i from 2 to 4000:
+    - For j from 1 to i-1:
+        - Calculate `nchoosek[i][j]` as `(nchoosek[i-1][j] + nchoosek[i-1][j-1]) % mod`
+5. Create a Scanner object `sc`
+6. Read `k` as an integer from the input
+7. Read `n` as an integer from the input
+8. For i from 2 to 2*k:
+    - If i > k, set `pairs` to `k - i / 2`, otherwise set `pairs` to `(i - 1) / 2`
+    - Set `active` to `k - 2 * pairs`
+    - If i is even, decrement `active` by 1
+    - Initialize `times2` to 1
+    - Initialize `total` to 0
+    - For j from 0 to pairs:
+        - Calculate `choice` as `times2 * nchoosek[pairs][j] % mod`
+        - Update `times2` to `times2 * 2 % mod`
+        - If `active + j - 1` is less than 0, continue to next iteration
+        - Add `choice * nchoosek[n + active - 1][active + j - 1]` to `total`
+        - If i is even, add `choice * nchoosek[n + active - 2][active + j - 1]` to `total`
+        - Update `total` to `total % mod`
+9. Print `total`
+
+Control structures:
+- For loops: 
+    - From 0 to 4000 for initializing `nchoosek`
+    - From 2 to 4000 for filling `nchoosek`
+    - From 1 to i-1 for filling `nchoosek`
+    - From 2 to 2*k for main calculations
+    - From 0 to pairs for inner calculations
+- If-else statements:
+    - To determine `pairs` based on the value of `i`
+    - To adjust `active` if `i` is even
+    - To skip iterations where `active + j - 1` is less than 0
+
+Input/output operations and data processing logic:
+- Input: Read integers `k` and `n` from standard input
+- Output: Print the final value of `total` to standard output
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

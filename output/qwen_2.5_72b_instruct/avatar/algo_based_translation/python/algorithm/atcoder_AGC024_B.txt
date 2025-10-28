@@ -1,0 +1,57 @@
+### Algorithm
+
+- **Function Signatures**
+  - `main()`
+  - `editorial(N: int, P: List[int])`
+  - `WA(N: int, P: List[int])`
+
+- **Variable Declarations and Data Types**
+  - `N: int`
+  - `P: List[int]`
+  - `a: List[int]` (size `N + 1`)
+  - `tmp: int`
+  - `max_len: int`
+  - `ans: int`
+  - `i: int`
+  - `p: int`
+
+- **Logic Flow**
+
+1. **main()**
+   - Read an integer `N` from input.
+   - Read `N` integers into list `P`.
+   - Call `editorial(N, P)`.
+
+2. **editorial(N: int, P: List[int])**
+   - If `N` is 1, print `0` and return.
+   - Initialize list `a` of size `N + 1` with all elements as `0`.
+   - For each index `i` and value `p` in `P`, set `a[p]` to `i`.
+   - Initialize `tmp` to `1`.
+   - Initialize `max_len` to `1`.
+   - For `i` from `1` to `N - 1`:
+     - If `a[i]` is less than `a[i + 1]`:
+       - Increment `tmp` by `1`.
+       - Update `max_len` to be the maximum of `max_len` and `tmp`.
+     - Else:
+       - Reset `tmp` to `1`.
+   - Calculate `ans` as `N - max_len`.
+   - Print `ans`.
+
+3. **WA(N: int, P: List[int])**
+   - Initialize `tmp` to `0`.
+   - Initialize `ans` to `0`.
+   - For each index `i` and value `p` in `P`:
+     - If `i` is `0` or `P[i - 1] + 1` is equal to `p`:
+       - Increment `tmp` by `1`.
+     - Else:
+       - Update `ans` to be the maximum of `ans` and `tmp`.
+       - Reset `tmp` to `1`.
+   - Print `N - ans`.
+
+- **Input/Output Operations**
+  - Read integer `N` from input.
+  - Read `N` integers into list `P`.
+  - Print the result `ans` from `editorial` or `WA` function.
+
+- **Required Libraries, Modules, or Dependencies**
+  - No external libraries or modules required. Uses built-in Python functionality.

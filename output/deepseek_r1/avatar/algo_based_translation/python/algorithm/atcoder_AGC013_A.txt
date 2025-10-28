@@ -1,0 +1,63 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`
+
+**Variables:**
+- `N: Integer` (Initial input value, later updated to compressed list length)
+- `A: List[Integer]` (Original list, then compressed version)
+- `ans: Integer` (Initialized to 0)
+- `i: Integer` (Loop index, initialized to 1)
+
+**External Dependencies:**
+- `sys` module for input handling
+- `itertools.groupby` for list compression
+
+**Algorithm Steps:**
+
+1. **Input Operations:**
+   - Read integer `N` from standard input
+   - Read list `A` with `N` integers from standard input
+
+2. **Data Preprocessing:**
+   - Compress `A` by merging consecutive duplicates:
+     - Iterate through `A` using run-length grouping
+     - Preserve first element of each group
+     - Update `A` to contain only compressed elements
+   - Set `N` to length of compressed `A`
+
+3. **Edge Case Handling:**
+   - If `N < 3`, immediately output 1 and terminate
+
+4. **Main Logic:**
+   - Initialize `ans = 0`
+   - Initialize loop counter `i = 1`
+   - While loop (condition: `i < N - 1`):
+     1. Check if `A[i]` is peak (A[i-1] < A[i] > A[i+1]) OR valley (A[i-1] > A[i] < A[i+1])
+     2. If true:
+        - Increment `ans` by 1
+        - Increment `i` by 1 (skip next element)
+     3. Always increment `i` by 1 after condition check
+     4. Exit loop when `i >= N - 1`
+
+5. **Output:**
+   - Print `ans + 1` to standard output
+
+**Control Flow Structures:**
+- While loop with entry condition `i < N - 1`
+- Conditional branches for peak/valley detection using compound logical checks
+- Early termination for edge cases
+
+**Data Processing:**
+- List compression via run-length encoding elimination
+- Triple-element window comparison for feature detection
+- Accumulated count adjustment based on local extremum presence
+
+**Edge Case Handling:**
+- Direct return for lists shorter than 3 elements after compression
+- Automatic base case coverage through final `ans + 1` calculation
+
+**Error Handling:**
+- Implicit assumption of valid integer inputs
+- Relies on input format matching specified structure
+- No explicit error checking for non-integer values

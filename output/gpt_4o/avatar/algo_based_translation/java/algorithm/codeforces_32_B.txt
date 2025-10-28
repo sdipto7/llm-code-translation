@@ -1,0 +1,29 @@
+```
+- Function Signature:
+  - `main(args: String[]): void`
+  
+- Variable Declarations:
+  - `in: Scanner`
+  - `n: char[]`
+  - `s: boolean`
+
+- Logic Flow:
+  1. Initialize `in` as a new instance of `Scanner` to read from standard input.
+  2. Read a string from input using `in.next()` and convert it to a character array `n`.
+  3. Initialize a boolean variable `s` to `false`.
+  4. Begin a for loop iterating over each character in `n` using index `i` from `0` to `n.length - 1`.
+     - If `n[i]` is `'.'`:
+       - If `s` is `true`, output `1` and set `s` to `false`.
+       - Otherwise, output `0`.
+     - Otherwise (if `n[i]` is `'-'`):
+       - If `s` is `true`, output `2` and set `s` to `false`.
+       - Otherwise, set `s` to `true`.
+  5. Close the `in` scanner instance.
+  
+- Input/Output Operations:
+  - Input is read using `Scanner` to capture a single string.
+  - Output is printed using `System.out.print()`.
+  
+- Dependencies:
+  - `java.util.Scanner`
+```

@@ -1,0 +1,13 @@
+1. Read two integers n and m from input
+2. Read a list of n integers into list l
+3. Initialize an empty list l2
+4. For each element i in list l
+   4.1 If i is divisible by m
+      4.1.1 Append i divided by m to l2
+   4.2 Else
+      4.2.1 Append i divided by m plus 1 to l2
+5. Find the maximum value mx in list l2
+6. For each index i in the range from 0 to n-1
+   6.1 If the element at index i in l2 equals mx
+      6.1.1 Store i as ind
+7. Print ind plus 1

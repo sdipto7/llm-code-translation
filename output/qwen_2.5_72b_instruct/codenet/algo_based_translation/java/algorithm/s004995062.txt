@@ -1,0 +1,31 @@
+Function Signatures:
+- main(String[] args): void
+
+Variable Declarations and Data Types:
+- Scanner sc: Scanner
+- String sa: String
+- String sb: String
+- BigDecimal A: BigDecimal
+- BigDecimal B: BigDecimal
+
+Logic Flow in Execution Order:
+1. Create a new instance of Scanner to read input from standard input.
+2. Read the next token from the input and assign it to sa.
+3. Read the next token from the input and assign it to sb.
+4. Convert sa to a BigDecimal and assign it to A.
+5. Convert sb to a BigDecimal and assign it to B.
+6. Multiply A by B.
+7. Set the scale of the result to 0 using BigDecimal.ROUND_DOWN rounding mode.
+8. Print the result to standard output.
+
+Control Structures:
+- No loops or conditionals present in the code.
+
+Input/Output Operations and Data Processing Logic:
+- Input: Reads two strings from standard input.
+- Data Processing: Converts the strings to BigDecimal, multiplies them, and sets the scale of the result.
+- Output: Prints the final result to standard output.
+
+Required Libraries, Modules, or Dependencies:
+- java.util.*
+- java.math.*

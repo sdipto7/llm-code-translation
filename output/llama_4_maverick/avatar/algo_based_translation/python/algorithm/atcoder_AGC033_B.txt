@@ -1,0 +1,30 @@
+1. Initialize variables H, W, N, s_r, s_c, S, T
+2. Read input values for H, W, N
+3. Read input values for s_r, s_c
+4. Read input strings S and T
+5. Initialize Judge to False
+6. Initialize S_L, S_R, S_U, S_D to 0
+7. Initialize T_L, T_R, T_U, T_D to 0
+8. Iterate from x = 0 to N-1
+   1. If S[x] equals 'L' then
+      1. Increment S_L by 1
+      2. If S_L - T_R - s_c equals 0 then set Judge to True
+   2. If S[x] equals 'R' then
+      1. Increment S_R by 1
+      2. If s_c + (S_R - T_L) equals W + 1 then set Judge to True
+   3. If S[x] equals 'U' then
+      1. Increment S_U by 1
+      2. If S_U - T_D - s_r equals 0 then set Judge to True
+   4. If S[x] equals 'D' then
+      1. Increment S_D by 1
+      2. If s_r + (S_D - T_U) equals H + 1 then set Judge to True
+   5. If T[x] equals 'L' then
+      1. If S_R - T_L + s_c is not equal to 1 then increment T_L by 1
+   6. If T[x] equals 'R' then
+      1. If s_c + (T_R - S_L) is not equal to W then increment T_R by 1
+   7. If T[x] equals 'U' then
+      1. If S_D - T_U + s_r is not equal to 1 then increment T_U by 1
+   8. If T[x] equals 'D' then
+      1. If s_r + (T_D - S_U) is not equal to H then increment T_D by 1
+9. If Judge is True then output 'NO'
+10. Else output 'YES'

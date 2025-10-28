@@ -1,0 +1,37 @@
+**Function Signature:**
+- solve(): void
+
+**Variables:**
+- N: int
+- D: list[int]
+- mod: int = 998244353
+- cnt: Counter[int, int]
+- res: int = 1
+
+**Libraries:**
+- collections.Counter
+
+**Logic Flow:**
+1. Read integer N from input
+2. Read list D of N integers from input
+3. Check if first element of D is not 0
+   - If true: print 0 and return
+4. Count frequency of elements in D using Counter
+5. Check if count of 0 is greater than 1
+   - If true: print 0 and return
+6. Initialize result variable res to 1
+7. For i from 1 to max(D) inclusive:
+   - If count of (i-1) equals 1: continue to next iteration
+   - Else: multiply res by (count[i-1] raised to power count[i]) modulo mod
+   - Update res modulo mod
+8. Print res
+
+**Control Structures:**
+- if D[0] != 0:
+- if cnt[0] > 1:
+- for i in range(1, max(D)+1):
+- if cnt[i-1] == 1: continue
+
+**Input/Output:**
+- Input: N, list D
+- Output: Print result to console

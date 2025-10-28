@@ -1,0 +1,6 @@
+Read integer N from input
+Read next line of input, split into list of strings, convert each to integer, store as list a
+Sort list a in ascending order
+Create list s by taking every other element from index N to end of list a (step size 2)
+Compute sum of all elements in list s
+Print the sum

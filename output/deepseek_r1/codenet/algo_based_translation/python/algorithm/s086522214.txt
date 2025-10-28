@@ -1,0 +1,25 @@
+```python
+# Function: main execution
+# Input: String S from standard input (format: YYYY/MM/DD)
+# Output: Prints "Heisei" if date ≤ 430, else "TBD"
+1. Read input string S from stdin
+2. Split S using '/' as delimiter, store result in list T
+3. Concatenate T[1] (month) and T[2] (day) into string D
+4. Convert D to integer date
+5. If date ≤ 430:
+    5.1 Print "Heisei"
+   Else:
+    5.2 Print "TBD"
+
+# Required Data Types
+- S: str
+- T: List[str]
+- D: str
+- date: int
+
+# Control Flow
+- Conditional: Compare date value once after conversion
+
+# Dependencies
+- Standard libraries only (no external modules required)
+```

@@ -1,0 +1,24 @@
+1. Initialize N and K from input
+2. Initialize list L from input and insert -1 at index 0
+3. Initialize path with 1, ind to 0, count to 0, x to 1, t to -1, and flag to False
+4. Initialize Hash as a default dictionary with default value 0
+5. For i from 1 to N + 1
+   1. Set ne to L[x]
+   2. If Hash[ne] is not 0
+      1. Set flag to True
+      2. Set t to Hash[ne]
+      3. Break loop
+   3. Append ne to path
+   4. Increment ind by 1
+   5. Set Hash[ne] to ind
+   6. Set x to ne
+6. If flag is True
+   1. Set loop to path from index t to end
+   2. If K is less than length of path
+      1. Print path[K]
+   3. Else
+      1. Subtract length of path from K
+      2. Set K to K modulo length of loop
+      3. Print loop[K]
+7. Else
+   1. Print path[K - 1]

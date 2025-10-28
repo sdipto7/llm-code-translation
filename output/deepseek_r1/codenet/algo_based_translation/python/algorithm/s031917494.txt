@@ -1,0 +1,9 @@
+- Input Operation: Read a string from standard input using `input()` function, store as `input_str` (type: string)
+- Variable Declaration: Convert `input_str` to integer using `int()`, store as `day` (type: integer)
+- Arithmetic Operation: Calculate `diff = day - 25` (type: integer)
+- Absolute Value: Compute `count = abs(diff)` (type: integer)
+- String Multiplication: Create `eve_part = ' Eve' * count` (type: string)
+- String Concatenation: Combine `output_str = 'Christmas' + eve_part` (type: string)
+- Output Operation: Print `output_str` using `print()`
+- Execution Flow: Sequential execution with no conditional branches or loops
+- Dependencies: Built-in Python functions (`input`, `int`, `abs`, `print`)

@@ -1,0 +1,48 @@
+# Extracted Algorithm Details
+
+**Function Signatures:**
+- `Main(FastScanner in, PrintWriter out, int test)`
+  - Parameters:
+    - `in`: FastScanner for input
+    - `out`: PrintWriter for output
+    - `test`: int (unused)
+  - Return: void
+- `public static void main(String[] args)`
+  - Parameters: String array `args`
+  - Return: void
+
+**Variables:**
+- `int N`: Number of elements
+- `int[] A`: Array of integers (size N)
+- `long res`: Accumulated result
+- `PriorityQueue<int[]> q`: Stores integer pairs ordered by descending min of pair elements
+
+**Logic Flow:**
+1. Read `N` from input
+2. Read `N` integers into array `A`
+3. Sort `A` in ascending order
+4. Initialize `res` to 0
+5. Initialize priority queue `q` with comparator:
+   - Compare the minimum of two elements in the pair
+   - Order in descending (reversed) priority
+6. Add initial pair `[A[N-1], A[N-1]]` to `q`
+7. Iterate `i` from `N-2` down to `0`:
+   - `a = A[i]`
+   - Remove top element `place` from `q`
+   - Add `min(place[0], place[1])` to `res`
+   - Add new pair `[place[0], a]` to `q`
+   - Add new pair `[a, place[1]]` to `q`
+8. Output `res`
+
+**Control Structures:**
+- `for (int i = 0; i < N; i++)` loop for reading array
+- `for (int i = N - 2; i >= 0; i--)` loop for processing elements
+- Priority queue ordering based on custom comparator
+
+**Input/Output:**
+- Input via `FastScanner` methods (`nextInt()`)
+- Output result via `PrintWriter.println(res)`
+
+**Dependencies:**
+- `java.util.*` (PriorityQueue, Arrays, Comparator)
+- `java.io.*` (InputStream, PrintWriter, IOException)

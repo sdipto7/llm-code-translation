@@ -1,0 +1,59 @@
+### Algorithm
+
+#### Function Signatures and Variable Declarations
+
+1. `static long ceildiv(long x, long y)`: returns `(x+y-1)/y`
+2. `static int mod(long x, int m)`: returns `(int)((x%m+m)%m)`
+3. `static long gcd(long x, long y)`: returns GCD of `x` and `y` using recursion
+4. `static int Int(boolean x)`: returns `1` if `x` is `true`, `0` otherwise
+5. `static void put(TreeMap<Pair, Integer> map, Pair p)`: increments count of `p` in `map`
+6. `static void rem(TreeMap<Pair, Integer> map, Pair p)`: decrements count of `p` in `map` and removes if count becomes `0`
+7. `static void main(String[] args)`: main execution function
+8. `static void fill(int[] arr, int x)`: updates `arr` based on binary representation of `x`
+9. `static long pow(long a, long pow)`: calculates `a` raised to the power `pow`
+10. `static int getpow(int x)`: interactively determines the power of `x` (not used in main logic)
+11. `static void linearsieve(int x)`: generates prime numbers up to `x` using linear sieve algorithm
+12. `static void printArr(int[] arr)`, `static void printArr(long[] arr)`, `static void printArr(Integer[] arr)`, `static void printArr(char[] arr)`, `static void printArr(ArrayList<Integer> list)`: various functions to print array or list elements
+
+#### Main Execution Logic
+
+1. Initialize `Scanner sc` and `PrintWriter pw`
+2. Read integer `n` from input
+3. Read `n` integers into `Integer[] arr` and sort in descending order
+4. If `n >= 3`:
+   1. Initialize `TreeMap<Pair, Integer> map` with reverse order comparator
+   2. Initialize `ans` with sum of first two elements of `arr`
+   3. Put `Pair(arr[0], arr[1])` into `map` with count `1`
+   4. Put `Pair(arr[2], arr[1])` and `Pair(arr[2], arr[0])` into `map`
+   5. Iterate from `i = 3` to `n-1`:
+      1. Get the first key `p` from `map` and remove it
+      2. Add minimum of `p.x` and `p.y` to `ans`
+      3. Put `Pair(p.x, arr[i])` and `Pair(p.y, arr[i])` into `map`
+   6. Print `ans` to output
+5. Else if `n < 3`:
+   1. Print the single element (or maximum of the two elements) in `arr` to output
+
+#### Data Types and Libraries
+
+1. `java.io.*` for input/output operations
+2. `java.util.*` for data structures (e.g., `ArrayList`, `TreeMap`, `Scanner`)
+3. `BufferedReader` and `InputStreamReader` for efficient input reading
+4. `StringTokenizer` for tokenizing input strings
+5. `PrintWriter` for efficient output writing
+
+#### Control Structures
+
+1. Conditional statements (`if-else`)
+2. Loops (`for`, `while`)
+3. Recursive function call in `gcd` function
+
+#### Input/Output Operations
+
+1. Reading input using `Scanner` class
+2. Writing output using `PrintWriter` class
+
+#### Data Processing Logic
+
+1. Sorting `arr` in descending order
+2. Maintaining a `TreeMap` to store pairs of elements and their counts
+3. Iteratively updating `ans` based on the minimum of pair elements and adding new pairs to `map`

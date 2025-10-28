@@ -1,0 +1,59 @@
+Function: main
+Parameter types: String[]
+Return type: void
+
+Variable declarations and data types:
+- Scanner in = new Scanner(...);
+- PrintStream out = System.out;
+- PrintStream err = System.err;
+- String Si;
+- char[] S;
+- long[] dp = new long[13];
+- int i, d;
+- long[] nd;
+- char c;
+- int x;
+- int j;
+- int xi;
+- int ni;
+
+Logic flow in execution order:
+1. Si = in.next();
+2. S = new StringBuilder(Si).reverse().toString().toCharArray();
+3. dp[0] = 1;
+4. for (i = 0, d = 1; i < S.length; i++, d = d * 10 % 13) {
+   4.1. nd = new long[13];
+   4.2. err.println("d: " + d + ", i: " + i + ", S[i]: " + S[i]);
+   4.3. c = S[i];
+   4.4. if (Character.isDigit(c)) {
+        4.4.1. x = (c - '0') * d;
+        4.4.2. for (j = 0; j < 13; j++) {
+             4.4.2.1. nd[(j + x) % 13] = dp[j];
+             }
+        }
+   4.5. else {
+        4.5.1. for (xi = 0; xi < 10; xi++) {
+             4.5.1.1. x = xi * d;
+             4.5.1.2. for (j = 0; j < 13; j++) {
+                  4.5.1.2.1. ni = (j + x) % 13;
+                  4.5.1.2.2. nd[ni] = (nd[ni] + dp[j]) % 1000000007;
+                  }
+             }
+        }
+   4.6. err.println(Arrays.toString(nd));
+   4.7. dp = nd;
+   }
+5. out.println(dp[5]);
+
+Libraries:
+- java.io.*;
+- java.util.*;
+- java.util.stream.*;
+
+Input operations:
+- Si = in.next();
+
+Output operations:
+- err.println("d: " + d + ", i: " + i + ", S[i]: " + S[i]);
+- err.println(Arrays.toString(nd));
+- out.println(dp[5]);

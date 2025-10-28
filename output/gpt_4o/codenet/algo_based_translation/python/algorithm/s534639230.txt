@@ -1,0 +1,27 @@
+```
+Function signature:
+- solve() -> None
+
+Variable declarations:
+- N: int
+- D: List[int]
+- mod: int = 998244353
+- cnt: Counter
+- res: int
+
+Algorithm:
+1. Read an integer N from input.
+2. Read a list of integers D from input, converting each element using `map` and `list`.
+3. Check if the first element of D (D[0]) is not equal to 0:
+   - If true, print 0 and return from the function.
+4. Initialize a Counter object `cnt` to count occurrences of each element in D.
+5. Check if the count of 0 in `cnt` is greater than 1:
+   - If true, print 0 and return from the function.
+6. Initialize `res` to 1.
+7. Iterate over `i` from 1 to the maximum value in D (inclusive):
+   - Check if `cnt[i-1]` is equal to 1:
+     - If true, continue to the next iteration.
+   - Update `res` by multiplying it with `(cnt[i-1]**cnt[i]) % mod`.
+   - Update `res` to `res % mod`.
+8. After loop completion, print the value of `res`.
+```

@@ -1,0 +1,44 @@
+```python
+# Function Signatures:
+# solve(sc: FastScanner, out: PrintWriter) -> None
+# Main function: Reads input, calls solve, flushes output
+
+# Variables:
+# s: str (input string)
+# a: List[str] = ["a", "e", "i", "o", "u"]
+# str: str (element in a during iteration)
+
+# Logic Flow:
+1. Read input string s using FastScanner.next()
+2. Initialize vowel list ["a", "e", "i", "o", "u"]
+3. Iterate through each vowel in list:
+   a. Compare current vowel with s case-insensitively
+   b. If match found:
+      i. Print "vowel"
+      ii. Exit function immediately
+4. If no matches after full iteration:
+   a. Print "consonant"
+
+# Control Structures:
+- For-each loop over vowel list
+- If condition with string equality check (case-insensitive)
+- Early return on first match
+
+# Input/Output:
+- Input read via FastScanner.next() from stdin
+- Output written via PrintWriter.println() to stdout
+
+# Dependencies:
+- Requires FastScanner class for input parsing
+- Uses java.io.* classes for I/O (translated to Python's input handling)
+- Utilizes PrintWriter for output (translated to Python print)
+
+# Python Code Implementation:
+def solve():
+    s = input().strip().lower()
+    vowels = {'a', 'e', 'i', 'o', 'u'}
+    print('vowel' if s in vowels else 'consonant')
+
+if __name__ == "__main__":
+    solve()
+```

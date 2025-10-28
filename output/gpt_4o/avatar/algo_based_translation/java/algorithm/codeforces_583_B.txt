@@ -1,0 +1,39 @@
+```
+Algorithm:
+1. Import necessary libraries:
+   - java.util.Scanner
+
+2. Define the main method: public static void main(String[] args)
+
+3. Initialize a Scanner object for input: Scanner in = new Scanner(System.in)
+
+4. While there is more input available:
+   a. Read an integer n from input: int n = in.nextInt()
+   b. Declare and initialize an integer array a of size n: int[] a = new int[n]
+   c. Declare and initialize an integer array b of size n with all elements set to 0: int[] b = new int[n]
+   d. Declare and initialize an integer s to -1: int s = -1
+
+5. For each integer index i from 0 to n-1:
+   a. Read an integer from input and store it in a[i]: a[i] = in.nextInt()
+   b. Initialize b[i] to 0: b[i] = 0
+
+6. Declare and initialize an integer tem to 1: int tem = 1
+7. Declare and initialize an integer q to 0: int q = 0
+
+8. While q is not equal to n:
+   a. Increment s by 1: s++
+   b. If tem is equal to 1:
+      i. For each integer index i from 0 to n-1:
+         - If a[i] is less than or equal to q and b[i] is 0:
+           * Set b[i] to 1
+           * Increment q by 1: q++
+      ii. Set tem to 0: tem = 0
+   c. Else:
+      i. For each integer index i from n-1 to 0:
+         - If a[i] is less than or equal to q and b[i] is 0:
+           * Set b[i] to 1
+           * Increment q by 1: q++
+      ii. Set tem to 1: tem = 1
+
+9. Print the value of s: System.out.println(s)
+```

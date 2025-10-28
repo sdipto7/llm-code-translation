@@ -1,0 +1,21 @@
+princess: float = float(input())
+dragon: float = float(input())
+t: float = float(input())
+f: float = float(input())
+c: float = float(input())
+
+if dragon <= princess:
+    print(0)
+    exit(0)
+
+result: int = 0
+position: float = t * princess
+position += princess * position / (dragon - princess)
+
+while position < c:
+    result += 1
+    position += princess * position / dragon
+    position += princess * f
+    position += princess * position / (dragon - princess)
+
+print(result)

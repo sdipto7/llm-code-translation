@@ -1,0 +1,29 @@
+- Libraries and Modules: os, sys, io, math
+
+- Function Signatures:
+  - I() -> List[int]
+  - IS() -> str
+  - IN() -> int
+  - IF() -> float
+
+- Variable Declarations and Data Types:
+  - n: int
+  - id: int
+  - l: int
+  - r: int
+  - li: int
+  - ri: int
+
+- Complete Logic Flow:
+  1. Import necessary libraries and modules.
+  2. Define lambda functions I, IS, IN, IF for input parsing.
+  3. Read integer n using IN() function.
+  4. Initialize id to 0.
+  5. Read the first pair of integers l and r using map and input functions.
+  6. For loop from 1 to n-1:
+     1. Read the next pair of integers li and ri using map and input functions.
+     2. If li is less than or equal to l and r is less than or equal to ri, set id to the current loop index i.
+     3. Else if li is less than l or r is less than ri, set id to n.
+     4. Update l to be the minimum of l and li.
+     5. Update r to be the maximum of r and ri.
+  7. Print -1 if id is equal to n, otherwise print id + 1.

@@ -1,0 +1,52 @@
+Function signatures:
+- main(String[] args) throws IOException
+- fun(int[] arr, int q, int n, int m) returns int
+
+Variable declarations and data types:
+- int n
+- int[] arr = new int[n]
+- int x
+- int m
+- int[] q = new int[m]
+- Scanner sc = new Scanner(System.in)
+- int res
+- int i
+- int j = n
+- int md
+- int k
+
+Logic flow:
+
+1. Initialize Scanner for input.
+2. Read integer n.
+3. Declare and initialize array arr of size n.
+4. Read first element of arr.
+5. Loop from i = 1 to n-1:
+   - Read integer x.
+   - Set arr[i] to x + arr[i-1].
+6. Read integer m.
+7. Declare and initialize array q of size m.
+8. Loop from i = 0 to m-1:
+   - Read integer and set q[i].
+9. Loop from k = 0 to m-1:
+   - Call fun with arr, q[k], n, m.
+   - Print result + 1.
+
+Function fun:
+1. Initialize res to 0.
+2. Initialize i to 0.
+3. Initialize j to n.
+4. While i <= j:
+   - Calculate md as i + (j - i) / 2.
+   - If arr[md] equals q:
+     - Return md.
+   - Else if arr[md] greater than q:
+     - Set res to md.
+     - Set j to md - 1.
+   - Else:
+     - Set i to md + 1.
+5. Return res.
+
+Libraries:
+- java.util.*
+- java.io.*

@@ -1,0 +1,10 @@
+Read n and m as integers from input
+Read next line and count occurrences of '-' character, store as sa
+Set sa to minimum of (n - sa) and sa
+Initialize empty list ss
+For m times:
+    Read two integers a and b from input
+    Subtract a from b
+    Calculate condition: (b mod 2 != 0) AND (b <= sa * 2)
+    If condition is true, append "1\n" to ss, else append "0\n"
+Join all elements in ss and print the resulting string

@@ -1,0 +1,31 @@
+- **Function Signature**:  
+  `main() -> None`  
+  (No parameters, returns nothing, processes input and prints output)
+
+- **Variables**:  
+  - `N: int` (Total number of items)  
+  - `K: int` (Number of subsequent input groups)  
+  - `S: Set[int]` (Set to track unique items)  
+  - `d: int` (Temporary variable to read unused group size)  
+  - `A: List[int]` (Temporary list of items in each group)  
+
+- **Input/Output Operations**:  
+  1. Read `N` and `K` from the first line of standard input.  
+  2. For each of the next `K` input groups:  
+     a. Read `d` (unused) from a line.  
+     b. Read the next line containing `A` (list of integers).  
+  3. Print `N - len(S)` to standard output.  
+
+- **Logic Flow**:  
+  1. Initialize `S` as an empty set.  
+  2. Loop `K` times:  
+     a. Read and discard `d`.  
+     b. Read `A` and add all its elements to `S` via set union.  
+  3. Calculate the difference between `N` and the size of `S`, then print it.  
+
+- **Control Structures**:  
+  - A `for` loop iterating `K` times.  
+  - Set union operation `S = S | set(A)`.  
+
+- **Dependencies**:  
+  - None (uses standard input/output and built-in data structures).

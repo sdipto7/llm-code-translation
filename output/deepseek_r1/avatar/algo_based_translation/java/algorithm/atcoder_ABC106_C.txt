@@ -1,0 +1,38 @@
+Here is the algorithm extracted from the provided Java code:
+
+---
+
+**Function Signature**  
+`public static void main(String[] args) throws Exception`  
+
+**Variables**  
+- `Scanner sc = new Scanner(System.in)`  
+- `String str = sc.next()`  
+- `char[] c = str.toCharArray()`  
+- `long k = sc.nextLong()`  
+- `int n = str.length()` (declared but unused)  
+
+**Logic Flow**  
+1. Read input string `str` and integer `k`.  
+2. Convert `str` to a character array `c`.  
+3. Iterate `i` from `0` to `k-1` (inclusive):  
+   a. If `c[i]` is `'1'`:  
+      - Check if `i == k-1`.  
+        - If true: Print `'1'` and terminate.  
+   b. Else (if `c[i]` is not `'1'`):  
+      - Print `c[i]` and terminate.  
+
+**Control Structures**  
+- `for` loop: `for (int i = 0; i < k; i++)`  
+- Nested `if` conditions:  
+  - Check `c[i] == '1'`  
+  - Check `i == k-1`  
+
+**Input/Output Operations**  
+- Read via `Scanner`: `str` and `k`.  
+- Output via `System.out.println()` for results.  
+
+**Dependencies**  
+- `java.util.*` (for `Scanner`).  
+
+---

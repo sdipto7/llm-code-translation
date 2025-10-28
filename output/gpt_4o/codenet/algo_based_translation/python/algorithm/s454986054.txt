@@ -1,0 +1,10 @@
+- Function signature: main() -> None
+- Variable declaration: n: int
+- Execution order:
+  1. Read an integer input from the user and store it in the variable `n`.
+  2. Calculate the cube of `n` using the expression `n**3`.
+  3. Output the result of the calculation.
+- Control structures: None
+- Input operation: Use input() function to read a string from standard input and convert it to an integer.
+- Output operation: Use print() function to output the cube of the integer.
+- No external libraries, modules, or dependencies are required.

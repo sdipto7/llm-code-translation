@@ -1,0 +1,21 @@
+Function signature: `main()`
+Variable declarations:
+- `N` as integer
+- `i` as integer, initialized to 1
+- `ans` as integer, initialized to 0
+
+Logic flow:
+1. Read an integer input and assign it to `N`
+2. Initialize `i` to 1
+3. Initialize `ans` to 0
+4. While `10 ** i` is less than or equal to `N`:
+   a. Increment `ans` by `(10 ** i) - (10 ** (i - 1))`
+   b. Increment `i` by 2
+5. Increment `ans` by the maximum of 0 and `N - 10 ** (i - 1) + 1`
+6. Print the value of `ans`
+
+Input/output operations:
+- Read an integer from standard input
+- Print an integer to standard output
+
+No additional libraries, modules, or dependencies required.

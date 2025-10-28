@@ -1,0 +1,40 @@
+```
+Algorithm: Chessboard Pattern Generator
+
+Dependencies:
+- java.io.BufferedReader
+- java.io.InputStreamReader
+- java.io.IOException
+
+Function Signature:
+- main(String[] args) : void
+
+Variable Declarations:
+- BufferedReader buf : BufferedReader
+- String[] inp : String array
+- int n : integer
+- int m : integer
+- String[] ans : String array
+- int i : integer
+- String str : String
+- StringBuilder temp : StringBuilder
+- int j : integer
+
+Execution Flow:
+1. Initialize BufferedReader 'buf' with InputStreamReader using System.in.
+2. Read a line from 'buf' and split it into a String array 'inp'.
+3. Parse 'inp[0]' to integer and assign to 'n'.
+4. Parse 'inp[1]' to integer and assign to 'm'.
+5. Initialize String array 'ans' with size 'n'.
+6. Loop over 'i' from 0 to n-1:
+   a. Read a line from 'buf' into 'str'.
+   b. Initialize StringBuilder 'temp' with an empty string.
+   c. Loop over 'j' from 0 to m-1:
+      i.   If character at 'str.charAt(j)' is '-', append '-' to 'temp'.
+      ii.  Else:
+           - If (i + j) % 2 == 1, append 'W' to 'temp'.
+           - Else, append 'B' to 'temp'.
+   d. Assign 'temp.toString()' to 'ans[i]'.
+7. Loop over 'i' from 0 to n-1:
+   a. Print 'ans[i]' to the console.
+```

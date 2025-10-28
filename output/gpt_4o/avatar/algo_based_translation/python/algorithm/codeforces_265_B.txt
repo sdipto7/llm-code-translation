@@ -1,0 +1,23 @@
+```
+function calculate_steps(n: int, numbers: List[int]) -> int:
+    declare l as List[int] and initialize as empty list
+    declare ans as int and initialize with n - 1
+    declare last as int and initialize with 0
+
+    for each i in numbers:
+        append i to l
+
+    for each i in l:
+        update ans by adding abs(last - i) + 1
+        set last to i
+
+    return ans
+
+declare n as int and set to integer input from user
+declare numbers as List[int] and initialize as empty list
+
+for i from 0 to n-1 inclusively:
+    append integer input from user to numbers
+
+output result of calculate_steps function with n and numbers as arguments
+```

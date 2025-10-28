@@ -1,0 +1,16 @@
+1. Define a function `read_input()` with return type `str`:
+   - Read a line of input from the user.
+   - Return the input as a string.
+
+2. Define a function `process_input(N: str)` with return type `str`:
+   - Declare a variable `result` of type `str`.
+   - Concatenate the string "ABC" with the input string `N` and store it in `result`.
+   - Return `result`.
+
+3. Define a function `main()` with no return type:
+   - Declare a variable `N` of type `str`.
+   - Call `read_input()` and store the result in `N`.
+   - Call `process_input(N)` and store the result in a variable `output` of type `str`.
+   - Print `output` to the console.
+
+4. Call `main()`.

@@ -1,0 +1,31 @@
+Algorithm:
+1. Function: Main execution (no explicit function, script-based)
+   - Parameters: None
+   - Return: None
+2. Variables:
+   - n: int (input value)
+   - s: str (input string)
+   - ans: int (initialized to 0)
+   - i: int (loop index, range 0 to n-1)
+   - x: set (characters in s[0:i+1])
+   - y: set (characters in s[i+1:n])
+   - z: int (count of common characters)
+   - w: str (current character in x)
+3. Input Operations:
+   - Read integer n from standard input
+   - Read string s from standard input
+4. Logic Flow:
+   a. For each i in 0 ≤ i < n:
+      i. Create x = set(s[0:i+1])
+      ii. Create y = set(s[i+1:n])
+      iii. Initialize z = 0
+      iv. For each w in x:
+           - If w exists in y: increment z by 1
+      v. If z > ans: set ans = z
+   b. Print ans
+5. Control Structures:
+   - For loop: iterate i from 0 to n-1 inclusive
+   - Nested for loop: iterate w through all elements of x
+   - Conditional: if w in y (boolean check)
+   - Conditional: if z > ans (integer comparison)
+6. Dependencies: None (uses Python built-in functions)

@@ -1,0 +1,9 @@
+1. Read an integer N from input.
+2. Initialize an empty list A.
+3. For i from 1 to 5:
+   1. Read an integer from input.
+   2. Append the integer to list A.
+4. Find the minimum value in list A.
+5. Divide N by the minimum value found and round up to the nearest integer.
+6. Add 4 to the result of step 5.
+7. Output the final result.

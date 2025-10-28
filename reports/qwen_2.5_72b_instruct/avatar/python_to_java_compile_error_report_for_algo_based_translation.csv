@@ -1,0 +1,144 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,atcoder_AGC007_C.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/atcoder_AGC007_C.java:16: error: incompatible types: possible lossy conversion from double to int
+            d = d + (d / (double) N) + (5 * x) / (2.0 * N);
+                                     ^
+1 error
+"
+python,java,atcoder_ABC112_C.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/atcoder_ABC112_C.java:8: error: method solve in class atcoder_ABC112_C cannot be applied to given types;
+        System.out.println(solve(readQuestion()));
+                           ^
+  required: int,List<List<Integer>>
+  found:    Tuple<Integer,List<List<Integer>>>
+  reason: actual and formal argument lists differ in length
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_55_B.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/codeforces_55_B.java:43: error: integer number too large
+        ans.add(10000000000000000000000000);
+                ^
+1 error
+"
+python,java,atcoder_ABC107_D.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/atcoder_ABC107_D.java:49: error: incompatible types: cannot infer type arguments for TreeSet<>
+        Set<Integer> set = new TreeSet<>(Arrays.asList(a));
+                                      ^
+    reason: inference variable E has incompatible bounds
+      equality constraints: Integer
+      lower bounds: T,int[]
+  where E,T are type-variables:
+    E extends Object declared in class TreeSet
+    T extends Object declared in method <T>asList(T...)
+1 error
+"
+python,java,atcoder_ABC119_B.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/atcoder_ABC119_B.java:13: error: unreported exception ScriptException; must be caught or declared to be thrown
+            double value = Double.parseDouble(new javax.script.ScriptEngineManager().getEngineByName(""JavaScript"").eval(input).toString());
+                                                                                                                       ^
+1 error
+"
+python,java,atcoder_ABC135_D.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/atcoder_ABC135_D.java:25: error: char cannot be dereferenced
+                if (!S.charAt(i).equals('?')) {
+                                ^
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_644_B.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/codeforces_644_B.java:42: error: incompatible types: int cannot be converted to int[]
+                    result = runResult[1];
+                                      ^
+1 error
+only showing the first 1 errors, of 3 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_404_A.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/codeforces_404_A.java:35: error: cannot find symbol
+        } else if (new HashSet<>(List.of(d1)).size() != 1) {
+                                 ^
+  symbol:   variable List
+  location: class codeforces_404_A
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC169_C.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/atcoder_ABC169_C.java:23: error: incompatible types: incompatible parameter types in lambda expression
+        Function<Void, String> input = () -> stdin.nextLine().strip();
+                                       ^
+1 error
+"
+python,java,atcoder_ARC102_C.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/atcoder_ARC102_C.java:62: error: cannot find symbol
+        assert n <= K + 1;
+                    ^
+  symbol:   variable K
+  location: class atcoder_ARC102_C
+1 error
+only showing the first 1 errors, of 7 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC178_A.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/atcoder_ABC178_A.java:16: error: cannot find symbol
+        int a = stdin.nextInt();
+                ^
+  symbol:   variable stdin
+  location: class atcoder_ABC178_A
+1 error
+"
+python,java,atcoder_AGC010_B.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/atcoder_AGC010_B.java:49: error: name clash: sum(List<Integer>) and sum(List<Double>) have the same erasure
+    private static int sum(List<Integer> list) {
+                       ^
+1 error
+"
+python,java,atcoder_ABC155_E.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/atcoder_ABC155_E.java:17: error: no suitable constructor found for Scanner(Iterator<String>)
+                Scanner scanner = new Scanner(ic);
+                                  ^
+    constructor Scanner.Scanner(Readable) is not applicable
+      (argument mismatch; Iterator<String> cannot be converted to Readable)
+    constructor Scanner.Scanner(InputStream) is not applicable
+      (argument mismatch; Iterator<String> cannot be converted to InputStream)
+    constructor Scanner.Scanner(File) is not applicable
+      (argument mismatch; Iterator<String> cannot be converted to File)
+    constructor Scanner.Scanner(Path) is not applicable
+      (argument mismatch; Iterator<String> cannot be converted to Path)
+    constructor Scanner.Scanner(String) is not applicable
+      (argument mismatch; Iterator<String> cannot be converted to String)
+    constructor Scanner.Scanner(ReadableByteChannel) is not applicable
+      (argument mismatch; Iterator<String> cannot be converted to ReadableByteChannel)
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error
+only showing the first 1 errors, of 3 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_AGC006_B.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/atcoder_AGC006_B.java:48: error: method sub in class atcoder_AGC006_B cannot be applied to given types;
+        return sub(x).get(0);
+               ^
+  required: List<Integer>,int
+  found:    List<Integer>
+  reason: actual and formal argument lists differ in length
+1 error
+"
+python,java,atcoder_ABC118_C.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/atcoder_ABC118_C.java:17: error: cannot find symbol
+                   .reduce(GCDCalculator::gcd)
+                           ^
+  symbol:   variable GCDCalculator
+  location: class atcoder_ABC118_C
+1 error
+"
+python,java,atcoder_ABC107_C.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/atcoder_ABC107_C.java:42: error: cannot find symbol
+                    p = 0;
+                    ^
+  symbol:   variable p
+  location: class atcoder_ABC107_C
+1 error
+only showing the first 1 errors, of 8 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_67_B.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/codeforces_67_B.java:20: error: cannot find symbol
+            for (int l = 0; l <= p - k && l < n; l++) {
+                                 ^
+  symbol:   variable p
+  location: class codeforces_67_B
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC128_C.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/atcoder_ABC128_C.java:22: error: incompatible types: Object[] cannot be converted to int[]
+                                  .toArray());
+                                          ^
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+1 error
+"
+python,java,atcoder_ABC151_A.java,Compilation Error,"Error: output/qwen_2.5_72b_instruct/avatar/algo_based_translation/python/java/atcoder_ABC151_A.java:37: error: incompatible types: String cannot be converted to String[]
+        if (result instanceof String[]) {
+            ^
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"

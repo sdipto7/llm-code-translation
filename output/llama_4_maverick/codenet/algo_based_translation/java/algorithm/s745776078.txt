@@ -1,0 +1,19 @@
+1. Import required libraries: java.util and java.io.
+2. Define a class Main with a public access modifier.
+3. Define a main function with a public static access modifier, returning void, and taking a String array as a parameter.
+4. Declare a Scanner object 'in' and initialize it with System.in.
+5. Declare a PrintWriter object 'out' and initialize it with System.out.
+6. Read two integers 'n' and 'm' from the input using 'in.nextInt()'.
+7. Declare a 2D array 'A' of size 'n' x 'm' with integer data type.
+8. Declare a 1D array 'b' of size 'm' with integer data type.
+9. Iterate over 'n' rows using a for loop (i = 0 to n-1).
+   9.1. Iterate over 'm' columns using a nested for loop (j = 0 to m-1).
+      9.1.1. Read an integer from the input using 'in.nextInt()' and store it in A[i][j].
+10. Iterate over 'm' elements using a for loop (i = 0 to m-1).
+    10.1. Read an integer from the input using 'in.nextInt()' and store it in b[i].
+11. Iterate over 'n' rows using a for loop (i = 0 to n-1).
+    11.1. Initialize a variable 'c' to 0.
+    11.2. Iterate over 'm' columns using a nested for loop (j = 0 to m-1).
+        11.2.1. Calculate c += A[i][j] * b[j].
+    11.3. Write 'c' to the output using 'out.println(c)'.
+12. Flush the output buffer using 'out.flush()'.

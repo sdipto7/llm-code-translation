@@ -1,0 +1,8 @@
+1. Initialize A, B, C, D by reading input and splitting it into integers.
+2. Set modulus m to 998244353.
+3. Create a 2D array d with dimensions (C + 1) x (D + 1) and initialize all elements to 0.
+4. Set d[A][B] to 1.
+5. Iterate over the range from A to C (inclusive) using variable i.
+   5.1. For each i, iterate over the range from B to D (inclusive) using variable j.
+      5.1.1. Update d[i][j] using the formula: d[i][j] += (d[i][j - 1] * i + d[i - 1][j] * j - d[i - 1][j - 1] * (i - 1) * (j - 1)) % m.
+6. Output the value of d[C][D].

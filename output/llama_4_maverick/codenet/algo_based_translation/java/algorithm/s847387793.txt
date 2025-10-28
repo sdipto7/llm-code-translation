@@ -1,0 +1,53 @@
+1. Define a class `Solver` with a constructor that takes `FastScanner` and `PrintWriter` as parameters.
+   - `Solver(FastScanner sc, PrintWriter writer)`
+   - Declare instance variables: `sc`, `writer`, `n`, `m`, `q`, `max`, `a`, `b`, `c`, `d`.
+
+2. Define a method `run()` with no parameters and return type `void`.
+   - Read `n`, `m`, `q` from input using `sc.nextInt()`.
+   - Initialize arrays `a`, `b`, `c`, `d` of size `q`.
+   - Read values for `a`, `b`, `c`, `d` from input using `sc.nextInt()`.
+   - Call `dfs(new int[] {1})`.
+   - Write `max` to output using `writer.println(max)`.
+
+3. Define a method `dfs(int[] array)` with parameter `array` of type `int[]` and return type `void`.
+   - Check if `array.length > n`.
+     - If true, calculate `score` by iterating over `q` and checking if `array[b[i]] - array[a[i]] == c[i]`. If true, add `d[i]` to `score`.
+     - Update `max` with `Math.max(max, score)`.
+     - Return.
+   - Create a new array `newArray` by appending an item to `array`.
+   - Initialize `newArray[newArray.length - 1]` with `array[array.length - 1]`.
+   - While `newArray[newArray.length - 1] <= m`, 
+     - Call `dfs(newArray)`.
+     - Increment `newArray[newArray.length - 1]` by 1.
+
+4. Define a class `FastScanner` with a constructor that takes no parameters.
+   - Declare instance variables: `in`, `buffer`, `ptr`, `buflen`.
+
+5. Define a method `hasNextByte()` with no parameters and return type `boolean`.
+   - Check if `ptr < buflen`. If true, return `true`.
+   - Set `ptr` to 0 and read from `in` into `buffer`. Store the result in `buflen`.
+   - If `buflen <= 0`, return `false`. Otherwise, return `true`.
+
+6. Define a method `readByte()` with no parameters and return type `int`.
+   - Call `hasNextByte()`. If true, return `buffer[ptr++]`. Otherwise, return -1.
+
+7. Define a method `isPrintableChar(int c)` with parameter `c` of type `int` and return type `boolean`.
+   - Return `true` if `33 <= c && c <= 126`. Otherwise, return `false`.
+
+8. Define a method `hasNext()` with no parameters and return type `boolean`.
+   - While `hasNextByte()` and `!isPrintableChar(buffer[ptr])`, increment `ptr`.
+   - Return `hasNextByte()`.
+
+9. Define a method `next()` with no parameters and return type `String`.
+   - Check if `hasNext()`. If false, throw `NoSuchElementException`.
+   - Create a `StringBuilder` and read bytes from input until a non-printable character is encountered.
+   - Return the `String` representation of the `StringBuilder`.
+
+10. Define methods `nextLong()`, `nextInt()`, `nextDouble()`, `nextIntArray(int n)`, `nextLongArray(int n)` with their respective return types.
+    - Implement logic to read and parse input data.
+
+11. In the `main` method:
+    - Create a `FastScanner` object `sc`.
+    - Create a `PrintWriter` object `w` with `System.out`.
+    - Create a `Solver` object with `sc` and `w`, and call its `run()` method.
+    - Flush `w`.

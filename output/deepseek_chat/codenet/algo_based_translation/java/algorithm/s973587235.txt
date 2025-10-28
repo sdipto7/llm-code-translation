@@ -1,0 +1,28 @@
+**Function Signature:**
+main(String[] args)
+
+**Variables:**
+- Scanner sc (input stream)
+- int n (first input integer)
+- int minN (second input integer minus 1)
+- int i (loop counter)
+- int h (temporary storage for each subsequent input)
+
+**Libraries:**
+java.util.Scanner
+
+**Algorithm:**
+1. Initialize Scanner with System.in
+2. Read integer n from input
+3. Read integer, subtract 1, and store in minN
+4. For i from 0 to n-2 (inclusive):
+   - Read integer h
+   - If minN equals h:
+        Set minN = h
+   - Else if minN equals h-1:
+        Set minN = h-1
+   - Else if minN is less than h-1:
+        Set minN = h-1
+   - Else if minN is greater than h:
+        Print "No" and terminate program
+5. After loop completes, print "Yes"

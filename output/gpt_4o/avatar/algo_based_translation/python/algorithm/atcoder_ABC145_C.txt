@@ -1,0 +1,36 @@
+```plaintext
+Function solve(N: int, x: List[int], y: List[int]) -> None
+    Declare indices as a list of integers containing values from 0 to N-1
+    Declare permutations as all possible orderings of indices using itertools.permutations
+    Declare distances as an empty list of floats
+    For each permutation in permutations
+        Declare total_distance as a float initialized to 0
+        For i in range from 0 to N-2
+            Assign f and t as the i-th and (i+1)-th elements of permutation respectively
+            Calculate distance as the Euclidean distance between points (x[f], y[f]) and (x[t], y[t])
+            Add distance to total_distance
+        Append total_distance to distances
+    Calculate result as the sum of distances divided by the length of distances
+    Print result
+    Return from function
+
+Function main() -> None
+    Define iterate_tokens as a generator function
+        For each line from sys.stdin
+            For each word in the split line
+                Yield word
+    Assign tokens as the iterator from iterate_tokens
+    Read N as an integer from the next token
+    Declare x as a list of N integers initialized to 0
+    Declare y as a list of N integers initialized to 0
+    For i in range from 0 to N-1
+        Read the next token and assign it to x[i] as an integer
+        Read the next token and assign it to y[i] as an integer
+    Call solve with arguments N, x, y
+    Return from function
+
+Import sys module
+Import itertools module
+If __name__ equals "__main__"
+    Call main
+```

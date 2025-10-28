@@ -1,0 +1,25 @@
+```
+- Import `defaultdict` from `collections` module.
+- Import `sys` module.
+- Set recursion limit to `10 ** 7` using `sys.setrecursionlimit`.
+- Declare `graph` as a `defaultdict` with `list` as the default factory.
+- Read integers `N` and `K` from input.
+- For `i` in the range from `0` to `N-2`:
+  - Read integers `a` and `b` from input.
+  - Append `b-1` to `graph[a-1]` and `a-1` to `graph[b-1]`.
+- Set `mod` as `10 ** 9 + 7`.
+- Define function `dfs(fro: int, to: int, f: int) -> int`:
+  - Initialize `caseNum` with `f`.
+  - Set `colorNum` to `K - 1` if `f` equals `K`, otherwise set to `K - 2`.
+  - For each `u` in `graph[fro]`:
+    - If `u` equals `to`, continue to the next iteration.
+    - Set `pat` to `dfs(u, fro, colorNum)`.
+    - If `pat` equals `0`:
+      - Set `caseNum` to `0`.
+      - Break the loop.
+    - Update `caseNum` as `(caseNum * pat) % mod`.
+    - Decrement `colorNum` by `1`.
+  - Return `caseNum`.
+- Call `dfs(0, -1, K)` and store result in `ans`.
+- Print `ans`.
+```

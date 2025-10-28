@@ -1,0 +1,16 @@
+1. Define a function `main` with no parameters and no return type.
+2. Declare a variable `x` of type integer.
+3. Read an integer input from the user and store it in `x`.
+4. Calculate the integer division of `x` by 100 and store the result in a temporary variable.
+5. Create a string by concatenating "3" repeated a number of times equal to the result of the integer division of `x` by 100.
+6. Create the output string by concatenating "ai1333" with the string created in step 5.
+7. Print the output string to the console.
+
+Function Signature: `main() -> None`
+- `x`: integer
+
+1. `x = ReadIntegerInput()`
+2. `temp = x // 100`
+3. `repeated_string = "3" repeated `temp` times`
+4. `output_string = "ai1333" + repeated_string`
+5. `Print(output_string)`

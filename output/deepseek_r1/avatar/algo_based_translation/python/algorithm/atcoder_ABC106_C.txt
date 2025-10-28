@@ -1,0 +1,39 @@
+**Structured Algorithm Specification:**
+
+**Function/Method Signatures:**
+- `main() -> str`: Main function that reads input and determines the result. No parameters.
+
+**Variables:**
+- `s: str`: Input string.
+- `k: int`: Input integer.
+- `l: int`: Counter for leading '1's, initialized to 0.
+- `c: str`: Temporary variable holding each character during iteration.
+
+**Input Operations:**
+1. Read `s` via standard input.
+2. Read `k` via standard input.
+
+**Logic Flow:**
+1. Initialize `l = 0`.
+2. Iterate over each character `c` in `s`:
+    - **Condition**: If `c != '1'`, exit loop.
+    - **Action**: Increment `l` by 1.
+3. **Post-loop Check**:
+    - **If** `l >= k`: Return "1".
+    - **Else**: Return `s[l]` (character at index `l` in `s`).
+
+**Control Flow Structures:**
+- *Loop*: For each character in `s` until a non-'1' is encountered.
+- *Conditional*: Check if the count of leading '1's meets/exceeds `k`.
+
+**Edge Cases:**
+- All characters in `s` are '1's: Returns "1" if `k <= l`, else potential out-of-bounds access (assumes `k <= len(s)` per problem constraints).
+- `s` is empty: Not explicitly handled (assumes non-empty input per problem constraints).
+
+**External Dependencies:**
+- `sys` module for input reading (via `sys.stdin.readline` and `sys.setrecursionlimit`).
+- No other libraries directly used in core logic beyond input handling.
+
+**Error Handling:**
+- Implicitly assumes valid input types and `k` within permissible bounds (no explicit validation).
+- Relies on problem constraints to prevent index errors when accessing `s[l]`.

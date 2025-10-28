@@ -1,0 +1,47 @@
+**Algorithm:**
+
+1. **Function Signatures:**
+   - `public static void main(String args[])`: Entry point of the program.
+
+2. **Variables:**
+   - `n: int` (number of problems)
+   - `m: int` (number of submissions)
+   - `penal: int[]` (size `n+1`, initialized to 0)
+   - `solved: boolean[]` (size `n+1`, initialized to false)
+   - `num: int` (current submission problem number)
+   - `str: String` (submission result)
+   - `correct_ans: int` (total solved problems, initialized to 0)
+   - `num_penal: int` (total penalties for solved problems, initialized to 0)
+
+3. **Input Handling:**
+   - Initialize `FastReader` to read input.
+   - Read `n` and `m` using `nextInt()`.
+
+4. **Processing Submissions:**
+   - For each submission (loop `m` times):
+     - Read `num` and `str`.
+     - If `str` starts with 'A' (Accepted):
+       - Set `solved[num] = true`.
+     - Else:
+       - If `solved[num]` is false, increment `penal[num]` by 1.
+
+5. **Calculate Results:**
+   - For each problem from 1 to `n` (loop `i=1` to `n`):
+     - If `solved[i]` is true:
+       - Increment `correct_ans` by 1.
+       - Add `penal[i]` to `num_penal`.
+
+6. **Output:**
+   - Print `correct_ans` and `num_penal` separated by a space.
+
+7. **Data Structures & Dependencies:**
+   - Arrays for tracking penalties and solved statuses.
+   - `FastReader` class for optimized input parsing (uses `BufferedReader` and `StringTokenizer`).
+
+8. **Control Structures:**
+   - Loops: `for (i=0; i<m; i++)`, `for (i=1; i<=n; i++)`.
+   - Conditionals: `if (str.charAt(0) == 'A')`, `if (solved[num] == false)`.
+
+9. **Libraries:**
+   - `java.io.*` for input/output.
+   - `java.util.*` (specifically `StringTokenizer` and `Arrays`).

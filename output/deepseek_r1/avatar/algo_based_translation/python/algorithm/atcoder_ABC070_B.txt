@@ -1,0 +1,43 @@
+**Algorithm Specification**
+
+**Function/Method Signature:**
+- `main() -> void`
+
+**Variables:**
+- `A: List<int>` (Size: 4 elements)
+
+**Input Operations:**
+1. Read input line as space-separated string.
+2. Split string into 4 substrings.
+3. Convert substrings to integers, store in list `A`.
+
+**Control Flow:**
+1. If `(A[1] <= A[2])` OR `(A[3] <= A[0])`:
+   - Execute output operation: Print "0"
+   - Terminate execution
+2. Else:
+   - Sort `A` in ascending order
+   - Calculate `A[2] - A[1]`
+   - Execute output operation: Print calculated value
+   - Terminate execution
+
+**Edge Case Handling:**
+- Explicit check for non-overlapping intervals via initial conditional
+- Handles both interval order scenarios (`A[0]-A[1]` vs `A[2]-A[3]` ordering)
+
+**Data Processing:**
+- Integer conversion of input
+- List sorting for midpoint calculation
+- Arithmetic subtraction of sorted list elements
+
+**External Dependencies:**
+- Standard input/output functions
+- Built-in list sorting operation
+- String-to-integer conversion utilities
+
+**Error Handling:**
+- None explicitly defined (assumes valid integer input format)
+- Implicit handling via input parsing logic
+
+**Output Operations:**
+- Single terminal output: Either "0" or positive integer representing overlap duration

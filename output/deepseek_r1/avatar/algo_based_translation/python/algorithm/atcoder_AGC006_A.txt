@@ -1,0 +1,48 @@
+**Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`
+
+**Variables:**
+- `n: int` (Input length)
+- `s: List[char]` (First input string as a character list)
+- `t: List[char]` (Second input string as a character list)
+- `cnt: int` (Overlap counter, initialized to 0)
+- `i: int` (Outer loop index)
+- `j: int` (Inner loop index)
+
+**Logic Flow:**
+1. Read `n` from standard input as an integer.
+2. Read `s` and `t` from standard input and convert them to lists of characters.
+3. **Conditional Check:**
+   - If `s` equals `t`:
+      - Print `n` and terminate.
+4. **Else Block:**
+   - Initialize `cnt` to 0.
+   - **Outer Loop:** Iterate `i` from 0 to `n-1` (inclusive):
+      - **Inner Loop:** Iterate `j` from 0 to `n-i-1` (inclusive):
+         1. Compare `s[i+j]` with `t[j]`.
+         2. **Conditional Break:** If `s[i+j]` != `t[j]`, exit the inner loop.
+         3. **Overlap Check:** If `j` equals `n-i-1` (last iteration of inner loop):
+             - Set `cnt = n - i`.
+   - Print result `2 * n - cnt`.
+
+**Control Flow Structures:**
+- **Conditional (Line 3):** Executes if `s` and `t` are identical.
+- **Nested Loops (Lines 4.b.i-ii):**
+  - Outer loop runs for `i` in `[0, n-1]`.
+  - Inner loop runs for `j` in `[0, n-i-1]`.
+  - Inner loop breaks early on character mismatch.
+  - Overlap assignment occurs if inner loop completes without breaks.
+
+**Input/Output Operations:**
+- Read `n`, `s`, and `t` via `input()`.
+- Print `n` if `s == t`, else compute and print `2 * n - cnt`.
+
+**Edge Case Handling:**
+- Directly handles equality of `s` and `t` with early termination.
+- Implicitly handles zero overlap via `cnt` initialization to 0.
+
+**External Dependencies:**
+- Uses `input()` for reading data.
+- Converts strings to lists for character-wise comparison.

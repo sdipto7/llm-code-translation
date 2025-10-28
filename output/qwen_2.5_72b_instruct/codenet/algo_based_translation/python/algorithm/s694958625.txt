@@ -1,0 +1,25 @@
+Function signature: `calculate_modulus(x: int, a: int, b: int) -> int`
+
+Variable declarations:
+- `x: int`
+- `a: int`
+- `b: int`
+- `result: int`
+
+Logic flow:
+1. Read integer input from the user and assign it to variable `x`
+2. Read integer input from the user and assign it to variable `a`
+3. Read integer input from the user and assign it to variable `b`
+4. Calculate `(x - a) % b` and assign the result to variable `result`
+5. Print the value of `result`
+
+Input/output operations:
+- Read three integers from standard input
+- Print one integer to standard output
+
+Data processing logic:
+- Subtract `a` from `x`
+- Compute the modulus of the result with `b`
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required

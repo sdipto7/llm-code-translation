@@ -1,0 +1,32 @@
+- **Function Signature**:  
+  `public static void main(String[] args)`  
+  **Return Type**: `void`  
+
+- **Variables**:  
+  - `n`, `a`, `b` (int)  
+  - `list1`, `list2` (ArrayList\<Integer\>)  
+  - `sc` (Scanner)  
+
+- **Logic Flow**:  
+  1. Initialize `Scanner` to read input.  
+  2. Read `n`, `a`, `b` from input.  
+  3. Create `list1` and populate with `a` integers read from input.  
+  4. Create `list2` and populate with `b` integers read from input.  
+  5. Iterate `i` from `0` to `n-1`:  
+     a. If `list1` contains `i + 1`, print `1` followed by a space.  
+     b. Else, print `2` followed by a space.  
+
+- **Control Structures**:  
+  - `for (int i = 0; i < a; i++)` to populate `list1`.  
+  - `for (int i = 0; i < b; i++)` to populate `list2`.  
+  - `for (int i = 0; i < n; i++)` to process each of the first `n` integers.  
+  - `if (list1.contains(i + 1))` to determine output value.  
+
+- **Input/Output**:  
+  - Input via `Scanner` for integers.  
+  - Output values `1` or `2` for each of the `n` positions.  
+
+- **Dependencies**:  
+  - `java.math.BigInteger`  
+  - `java.nio.charset.IllegalCharsetNameException`  
+  - `java.util.*` (includes `Scanner`, `ArrayList`)

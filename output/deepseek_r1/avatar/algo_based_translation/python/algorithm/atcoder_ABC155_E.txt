@@ -1,0 +1,70 @@
+**Structured Algorithm Specification:**  
+
+**1. Program Structure**  
+- **Entry Point**: `main()` function (returns integer)  
+- **Input Handling**:  
+  - Input received via `input()` (string)  
+  - Preprocessing: Prepend '0' to input string  
+- **Output**: Minimum value of `pmin` and `mmin` (integer)  
+
+---
+
+**2. Data Types**  
+- **Variables**:  
+  - `s`: String (input number with leading zero)  
+  - `pmin`, `mmin`: Integer (dynamic programming states)  
+  - `v`: Integer (current digit value during iteration)  
+  - `npmin`, `nmmin`: Integer (temporary state values)  
+
+---
+
+**3. Function Specifications**  
+
+**Function**: `main()`  
+- **Return Type**: Integer  
+- **Parameters**: None  
+- **Local Variables**:  
+  - `s`: String  
+  - `pmin`, `mmin`: Integer (initialized to 1000, 0 respectively)  
+- **Steps**:  
+  1. Read input string `s` from standard input.  
+  2. Prepend '0' to `s` to handle leading carry.  
+  3. Reverse `s` and iterate over each character (processing digits right-to-left):  
+      a. Convert current character `c` to integer `v`.  
+      b. Calculate temporary values:  
+         - `npmin = min(pmin + 10 - (v + 1), mmin + 10 - v)`  
+         - `nmmin = min(pmin + (v + 1), mmin + v)`  
+      c. Update `pmin = npmin`, `mmin = nmmin`.  
+  4. Return `min(pmin, mmin)` as final result.  
+
+---
+
+**4. Control Flow**  
+- **Loop**:  
+  - **Type**: Iteration over reversed input string  
+  - **Exit Condition**: Process all characters in reversed string  
+- **Conditional Logic**:  
+  - `min()` operations for optimal state transitions (carry/no-carry scenarios)  
+
+---
+
+**5. Input/Output Operations**  
+- **Input**:  
+  - Read via `input()` (assumed to be a numeric string)  
+- **Output**:  
+  - Print result of `min(pmin, mmin)` (if executed as script)  
+
+---
+
+**6. Edge Case Handling**  
+- Leading zero added to input ensures correct handling of carry propagation.  
+- Assumes input contains only numeric characters (no validation).  
+
+---
+
+**7. External Dependencies**  
+- **Libraries**:  
+  - `sys` (platform detection, file input redirection)  
+  - `clipboard` (iOS clipboard input, conditional import)  
+- **Platform-Specific Logic**:  
+  - Input method selection based on `sys.platform == 'ios'`

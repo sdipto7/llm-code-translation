@@ -1,0 +1,32 @@
+Function signatures with parameter and return types:
+- main(String[] args): void
+
+Variable declarations and data types:
+- Scanner sc: Scanner
+- int count: int
+- int[] givingNumbers: int array
+
+Complete logic flow in execution order:
+1. Create a Scanner object named sc for reading input.
+2. Read an integer value from input and store it in variable count.
+3. Declare an integer array givingNumbers of size count.
+4. For loop from i = 0 to count - 1:
+   - Read an integer value from input and store it in givingNumbers[i].
+5. For loop from i = count - 1 to 0:
+   - Print the value of givingNumbers[i].
+   - If i > 0, print a space character.
+6. Print a newline character.
+7. Close the Scanner object sc.
+
+Control structures with exact conditions:
+- For loop: i < count
+- For loop: 0 <= i
+- If statement: i > 0
+
+Input/output operations and data processing logic:
+- Input: An integer count followed by count number of integers.
+- Process: Store the integers in an array and then reverse the order of the integers in the array.
+- Output: Print the reversed integers separated by spaces.
+
+Required libraries, modules, or dependencies:
+- java.util.Scanner

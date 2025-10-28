@@ -1,0 +1,11 @@
+Read integers n and t from input
+Read list s of n integers from input
+Initialize current_cell to 0
+While current_cell <= t:
+    Add s[current_cell - 1] to current_cell
+    If current_cell equals t:
+        Print "YES"
+        Exit program
+    Else:
+        Continue loop
+After loop completes, print "NO"

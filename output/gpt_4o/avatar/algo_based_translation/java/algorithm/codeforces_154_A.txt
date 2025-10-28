@@ -1,0 +1,18 @@
+Algorithm:
+1. Import required libraries: `java.util.*`, `java.io.*`, `java.math.*`.
+2. Define the `main` function with a `String` array parameter `hi` and declare it to throw `Exception`.
+3. Initialize a `BufferedReader` object `infile` to read from the standard input stream.
+4. Read a line from the input, convert it to a character array, and store it in `char[] arr`.
+5. Declare and initialize an integer `N` to the length of `arr`.
+6. Declare a `HashSet<String>` named `set`.
+7. Read the next line from input, parse it to an integer, and store it in `int K`.
+8. Initialize an integer `res` to `0`.
+9. Begin a for-loop iterating over `int k` from `0` to `K-1`.
+   - Read the next line from input and store it in `String input`.
+   - Initialize two integers `a` and `b` to `0`.
+   - Begin a nested for-loop iterating over `int i` from `0` to `N-1`.
+     - If `arr[i]` is equal to `input.charAt(0)`, increment `a` by `1`.
+     - Else if `arr[i]` is equal to `input.charAt(1)`, increment `b` by `1`.
+     - Else, add the minimum of `a` and `b` to `res`, then set `a` and `b` to `0`.
+   - After the nested loop, add the minimum of `a` and `b` to `res`.
+10. Print the value of `res`.

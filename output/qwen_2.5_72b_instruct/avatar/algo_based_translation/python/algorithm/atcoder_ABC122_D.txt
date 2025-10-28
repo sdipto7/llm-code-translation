@@ -1,0 +1,44 @@
+Function signatures with parameter and return types:
+- `ok(last4: str) -> bool`
+- `dfs(cur: int, last3: str) -> int`
+
+Variable declarations and data types:
+- `last4: str`
+- `i: int`
+- `t: list[str]`
+- `cur: int`
+- `last3: str`
+- `memo: list[dict[str, int]]`
+- `n: int`
+- `mod: int`
+- `ret: int`
+- `c: str`
+
+Complete logic flow in execution order:
+1. Function `ok`:
+   - Loop from `i = 0` to `i = 3`:
+     - Convert `last4` to list `t`.
+     - If `i >= 1`, swap elements `t[i]` and `t[i-1]`.
+     - Join `t` to string and check if it contains 'AGC'.
+     - If 'AGC' is found, return `False`.
+   - Return `True`.
+
+2. Function `dfs`:
+   - Check if `last3` is in `memo[cur]`.
+     - If true, return `memo[cur][last3]`.
+   - If `cur == n`, return `1`.
+   - Initialize `ret` to `0`.
+   - Loop through each character `c` in "ACGT":
+     - If `ok(last3 + c)` is `True`:
+       - Update `ret` by adding `dfs(cur + 1, last3[1:] + c)` modulo `mod`.
+   - Store `ret` in `memo[cur][last3]`.
+   - Return `ret`.
+
+Input/output operations and data processing logic:
+- Read integer `n` from input.
+- Set `mod` to `10 ** 9 + 7`.
+- Initialize `memo` as a list of dictionaries of size `n + 1`.
+- Print result of `dfs(0, 'TTT')`.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules required.

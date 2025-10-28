@@ -1,0 +1,60 @@
+**Function Signatures:**
+- solve(N: int, x: List[int], y: List[int]) -> None
+- main() -> None
+- iterate_tokens() -> Generator[str, None, None]
+
+**Variables and Data Types:**
+- N: int
+- x: List[int]
+- y: List[int]
+- indices: List[int]
+- permutations: itertools.permutations object
+- distances: List[float]
+- permutation: Tuple[int, ...]
+- total_distance: float
+- i: int
+- f: int
+- t: int
+- distance: float
+- result: float
+- tokens: Generator[str, None, None]
+- line: str
+- word: str
+
+**Required Libraries:**
+- sys
+- itertools
+
+**Algorithm Flow:**
+
+1. Import sys and itertools modules
+2. Define solve function with parameters N, x, y
+3. Create list indices containing integers from 0 to N-1
+4. Generate all permutations of indices using itertools.permutations
+5. Initialize empty list distances
+6. For each permutation in permutations:
+   - Initialize total_distance = 0
+   - For i from 0 to N-2:
+     - Extract consecutive elements f and t from permutation[i:i+2]
+     - Calculate Euclidean distance between points (x[f], y[f]) and (x[t], y[t])
+     - Add distance to total_distance
+   - Append total_distance to distances
+7. Calculate result as average of all distances
+8. Print result
+9. Return from solve function
+
+10. Define main function
+11. Define nested iterate_tokens function:
+    - For each line in sys.stdin:
+      - For each word in line.split():
+        - Yield word
+12. Initialize tokens generator
+13. Read N as integer from tokens
+14. Initialize x and y as lists of N zeros
+15. For i from 0 to N-1:
+    - Read x[i] from tokens
+    - Read y[i] from tokens
+16. Call solve(N, x, y)
+
+17. If __name__ == "__main__":
+    - Call main()

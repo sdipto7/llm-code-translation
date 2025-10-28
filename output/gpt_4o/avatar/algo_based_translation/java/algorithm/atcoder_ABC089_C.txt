@@ -1,0 +1,43 @@
+```
+Function: public static void main(String[] args)
+    Input: String[] args
+    Variables:
+        - InputStream inputStream = System.in
+        - OutputStream outputStream = System.out
+        - Scanner in = new Scanner(inputStream)
+        - PrintWriter out = new PrintWriter(outputStream)
+        - TaskC solver = new TaskC()
+    Execution:
+        - Call solver.solve(1, in, out)
+        - Close out stream
+
+Class: TaskC
+
+Function: public void solve(int testNumber, Scanner in, PrintWriter out)
+    Input: int testNumber, Scanner in, PrintWriter out
+    Variables:
+        - int n
+        - long[] cnt = new long[5]
+    Execution:
+        - Initialize cnt array with zeros using Arrays.fill(cnt, 0)
+        - Read integer n from input using in.nextInt()
+        - For loop: iterate i from 0 to n-1
+            - Read String str from input using in.next()
+            - If str.charAt(0) == 'M', increment cnt[0]
+            - Else if str.charAt(0) == 'A', increment cnt[1]
+            - Else if str.charAt(0) == 'R', increment cnt[2]
+            - Else if str.charAt(0) == 'C', increment cnt[3]
+            - Else if str.charAt(0) == 'H', increment cnt[4]
+        - Calculate res as a sum of all possible combinations of cnt elements taken three at a time
+            - res = cnt[0] * cnt[1] * cnt[2] 
+                    + cnt[0] * cnt[1] * cnt[3] 
+                    + cnt[0] * cnt[1] * cnt[4] 
+                    + cnt[0] * cnt[2] * cnt[3] 
+                    + cnt[0] * cnt[2] * cnt[4] 
+                    + cnt[0] * cnt[3] * cnt[4] 
+                    + cnt[1] * cnt[2] * cnt[3] 
+                    + cnt[1] * cnt[2] * cnt[4] 
+                    + cnt[1] * cnt[3] * cnt[4] 
+                    + cnt[2] * cnt[3] * cnt[4]
+        - Output the result res using out.println(res)
+```

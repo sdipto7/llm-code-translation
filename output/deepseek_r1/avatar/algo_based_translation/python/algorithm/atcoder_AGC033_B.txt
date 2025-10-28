@@ -1,0 +1,78 @@
+**Structured Algorithm Specification:**
+
+**Function Signature:**
+- `main() -> None`
+  - **Inputs:** (via standard input)
+    - `H: int` (grid height)
+    - `W: int` (grid width)
+    - `N: int` (number of moves)
+    - `s_r: int` (initial row)
+    - `s_c: int` (initial column)
+    - `S: str` (player's move sequence)
+    - `T: str` (opponent's move sequence)
+  - **Output:** Prints "YES" or "NO" to standard output
+
+**Variables:**
+- `H, W, N: int` (grid dimensions and move count)
+- `s_r, s_c: int` (initial position)
+- `S, T: str` (move sequences of length N)
+- `Judge: bool` (flag for out-of-bound status, initialized to `False`)
+- `S_L, S_R, S_U, S_D: int` (player's move counters, initialized to 0)
+- `T_L, T_R, T_U, T_D: int` (opponent's move counters, initialized to 0)
+
+**Algorithm Steps:**
+
+1. **Read Inputs:**
+   - Read and parse `H`, `W`, `N` from the first input line.
+   - Read and parse `s_r`, `s_c` from the second input line.
+   - Read `S` and `T` from subsequent input lines.
+
+2. **Initialize Variables:**
+   - Set all player and opponent direction counters (`S_L`, `S_R`, `S_U`, `S_D`, `T_L`, `T_R`, `T_U`, `T_D`) to 0.
+   - Set `Judge` to `False`.
+
+3. **Process Moves Iteratively:**
+   - For each move index `x` in `0` to `N-1` (inclusive):
+     1. **Process Player's Move `S[x]`:**
+        - **Case 'L':**
+          - Increment `S_L`.
+          - If `S_L - T_R == s_c`, set `Judge` to `True`.
+        - **Case 'R':**
+          - Increment `S_R`.
+          - If `s_c + (S_R - T_L) == W + 1`, set `Judge` to `True`.
+        - **Case 'U':**
+          - Increment `S_U`.
+          - If `S_U - T_D == s_r`, set `Judge` to `True`.
+        - **Case 'D':**
+          - Increment `S_D`.
+          - If `s_r + (S_D - T_U) == H + 1`, set `Judge` to `True`.
+     2. **Process Opponent's Move `T[x]`:**
+        - **Case 'L':**
+          - If `(S_R - T_L) + s_c != 1`, increment `T_L`.
+        - **Case 'R':**
+          - If `s_c + (T_R - S_L) != W`, increment `T_R`.
+        - **Case 'U':**
+          - If `(S_D - T_U) + s_r != 1`, increment `T_U`.
+        - **Case 'D':**
+          - If `s_r + (T_D - S_U) != H`, increment `T_D`.
+     3. **Early Termination Check:**
+        - If `Judge` is `True`, exit loop immediately.
+
+4. **Determine Final Result:**
+   - If `Judge` is `True`, print "NO".
+   - Else, print "YES".
+
+**Control Flow:**
+- Sequential processing of input data.
+- Loop through each move index with conditional branching for direction handling.
+- Immediate loop termination if out-of-bound condition (`Judge`) is triggered.
+- Final decision based on `Judge` state after loop completion.
+
+**Edge Cases and Error Handling:**
+- Handles initial positions at grid edges (e.g., column 1 with 'L' move).
+- Correctly tracks net movement effects considering both player and opponent actions.
+- Implicitly handles all input constraints as per problem requirements (assumes valid input format). 
+
+**External Dependencies:**
+- Relies on standard input for data ingestion.
+- No external libraries or functions beyond basic input parsing and arithmetic operations.

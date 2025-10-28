@@ -1,0 +1,22 @@
+Function signature: `calculate_expression(n: int) -> int`
+
+Variable declarations:
+- `n: int`
+- `result: int`
+
+Logic flow:
+1. Read an integer input from the user and assign it to `n`
+2. Compute the expression `(n * 2 + 1) // 3` and assign the result to `result`
+3. Print the value of `result`
+
+Input/output operations:
+- Read an integer from standard input
+- Print an integer to standard output
+
+Data processing logic:
+- Multiply `n` by 2
+- Add 1 to the result of the multiplication
+- Perform integer division of the sum by 3
+
+Libraries/modules/dependencies:
+- None required

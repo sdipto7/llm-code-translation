@@ -1,0 +1,24 @@
+Function Signature: main() -> None
+
+Variable Declarations:
+N: str
+
+Logic Flow:
+1. Call input() to read a string from the standard input.
+2. Assign the returned string to variable N.
+3. Concatenate the string "ABC" with the value of N.
+4. Print the concatenated string to the standard output.
+
+Control Structures:
+No loops or conditionals present.
+
+Input/Output Operations:
+- Input: Read a single line of text from the standard input.
+- Output: Print a single line of text to the standard output.
+
+Data Processing Logic:
+- Convert the input to a string (implicit in Python).
+- Concatenate two strings.
+
+Libraries/Modules/Dependencies:
+No additional libraries, modules, or dependencies required.

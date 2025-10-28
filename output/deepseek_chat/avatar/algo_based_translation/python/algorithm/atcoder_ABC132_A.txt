@@ -1,0 +1,12 @@
+Read input string S
+Import Counter from collections
+Create counter c from S
+Create set Sa from unique characters in S
+If length of Sa is not equal to 2:
+    Print "No"
+    Exit program
+For each character i in Sa:
+    If count of i in c is not equal to 2:
+        Print "No"
+        Exit program
+Print "Yes"

@@ -1,0 +1,9 @@
+1. Import the `java.util.Scanner` library.
+2. Define a class `Main` with a `main` method that takes an array of `String` arguments and returns `void`.
+3. Within the `main` method:
+   1. Declare a variable `sc` of type `Scanner` and initialize it with a new `Scanner` object that reads from `System.in`.
+   2. Declare a variable `x` of type `int` and assign it the result of parsing the next input from `sc` as an integer using `Integer.parseInt(sc.next())`.
+   3. Use a conditional expression to evaluate whether `x` is less than 1200.
+   4. If `x` is less than 1200, return the string "ABC"; otherwise, return "ARC".
+   5. Print the result of the conditional expression to the console using `System.out.println`.
+4. The program terminates after executing the `main` method.

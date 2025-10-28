@@ -1,0 +1,48 @@
+**Function Signature:**
+main(String[] args)
+
+**Variables:**
+- Scanner sc (Scanner object)
+- int n
+- int levels
+- int sum (unused)
+- int sum2 (unused)
+- int sum3 (unused)
+- int[] arr (size: levels)
+- int count = 0
+- int level2
+- int level3 = levels + level2
+- int[] arr2 (size: level3)
+- int[] arr3 (size: n)
+- int j = 0
+
+**Logic Flow:**
+1. Create Scanner object for System.in
+2. Read integer n from input
+3. Read integer levels from input
+4. Initialize empty integer array arr of size levels
+5. For i from 0 to levels-1:
+   - Read integer and store in arr[i]
+6. Read integer level2 from input
+7. Calculate level3 = levels + level2
+8. Initialize empty integer array arr2 of size level3
+9. For i from 0 to arr.length-1:
+   - Copy arr[i] to arr2[i]
+10. For i from arr.length to level3-1:
+    - Read integer and store in arr2[i]
+11. Initialize empty integer array arr3 of size n
+12. For i from 0 to n-1:
+    - Increment j by 1
+    - Set arr3[i] = j
+13. For i from 0 to n-1:
+    - For x from 0 to arr2.length-1:
+        - If arr3[i] equals arr2[x]:
+            - Increment count by 1
+            - Break inner loop
+14. If count equals n:
+    - Print "I become the guy."
+15. Else:
+    - Print "Oh, my keyboard!"
+
+**Required Libraries:**
+java.util.Scanner

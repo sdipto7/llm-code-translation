@@ -1,0 +1,46 @@
+1. Import necessary libraries:
+   - `LinkedList` and `Queue` from `java.util`
+   - `Scanner` from `java.util`
+
+2. Main function signature:
+   - `main(String[] args)`: void
+
+3. Variable declarations:
+   - `sc`: Scanner
+   - `n`: int
+   - `g`: int[][]
+   - `d`: int[]
+   - `que`: Queue<Integer>
+
+4. Input operations:
+   - Read an integer `n` from standard input using `sc.nextInt()`
+
+5. Initialize adjacency matrix `g`:
+   - Create a 2D array `g` of size `(n+1) x (n+1)`, initialized with zeros
+
+6. Populate adjacency matrix:
+   - Loop from `i = 0` to `i < n`
+     - Read integer `u` using `sc.nextInt()`
+     - Read integer `k` using `sc.nextInt()`
+     - Loop from `j = 0` to `j < k`
+       - Read integer `v` using `sc.nextInt()`
+       - Set `g[u][v] = 1`
+
+7. Initialize distance array `d`:
+   - Create an array `d` of size `n+1`, initialized with `-1`
+
+8. Breadth-First Search (BFS) setup:
+   - Add `1` to the queue `que`
+   - Set `d[1] = 0`
+
+9. BFS algorithm:
+   - While `que` is not empty:
+     - Poll element `top` from `que`
+     - Loop `j` from `1` to `n`
+       - If `g[top][j] == 1` and `d[j] == -1`:
+         - Add `j` to `que`
+         - Set `d[j] = d[top] + 1`
+
+10. Output distance results:
+    - Loop `i` from `1` to `n`
+      - Print `i` and `d[i]`

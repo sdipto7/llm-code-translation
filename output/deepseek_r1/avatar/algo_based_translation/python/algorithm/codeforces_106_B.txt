@@ -1,0 +1,56 @@
+- **Function/Method Signatures**:
+  - Not applicable (script-based approach)
+
+- **Variable Declarations**:
+  - `n: int` (input value)
+  - `input_array: list[tuple[int, int, int, int]]`
+  - `outdated: set[tuple[int, int, int, int]]`
+  - `minimum_cost: int` (initialized to 100000)
+  - `input_number: int` (initialized to 0)
+
+- **Algorithm Steps**:
+  1. Read integer `n` from standard input.
+  2. Initialize `input_array` as an empty list.
+  3. For `i` in range `0` to `n-1` (inclusive):
+      - Read a line of input containing four space-separated integers `S`, `R`, `H`, `C`.
+      - Append `(S, R, H, C)` to `input_array`.
+  4. Initialize `outdated` as an empty list.
+  5. For each index `i` in `0` to `n-1` (inclusive):
+      - For each index `j` in `0` to `n-1` (inclusive):
+          - If `input_array[i][0] < input_array[j][0]` AND `input_array[i][1] < input_array[j][1]` AND `input_array[i][2] < input_array[j][2]`:
+              - Append `input_array[i]` to `outdated`.
+  6. Convert `outdated` to a set to remove duplicates.
+  7. Set `minimum_cost` to 100000 and `input_number` to 0.
+  8. For each index `i` in `0` to `n-1` (inclusive):
+      - Set `current_item` to `input_array[i]`.
+      - Set `cost` to `current_item[3]`.
+      - If `current_item` is not in `outdated` AND `cost < minimum_cost`:
+          - Set `minimum_cost` to `cost`.
+          - Set `input_number` to `i + 1`.
+  9. Print `input_number`.
+
+- **Control Flow**:
+  - Sequential execution with three loops:
+    1. Input loop (step 3)
+    2. Nested loop for outdated detection (steps 5.1-5.2)
+    3. Minimum cost search loop (step 8)
+  - Conditional checks:
+    - Triple condition for outdated classification (`S_i < S_j`, `R_i < R_j`, `H_i < H_j`)
+    - Non-outdated check and cost comparison in final selection
+
+- **Input/Output**:
+  - **Input**:
+    - First line: integer `n`
+    - Next `n` lines: four integers per line (`S R H C`)
+  - **Output**:
+    - Single integer `input_number` (1-based index of the selected entry)
+
+- **Edge Case Handling**:
+  - Handles cases where all entries are outdated (outputs `0`)
+  - Selects first occurrence when multiple entries have the same minimal cost
+
+- **Error Handling**:
+  - No explicit error handling; assumes valid input format and sufficient data lines
+
+- **External Dependencies**:
+  - No external libraries or dependencies. Uses standard input/output operations.

@@ -1,0 +1,37 @@
+- **Libraries and Modules:**
+  - java.util.List
+  - java.util.ArrayList
+  - java.io.InputStreamReader
+  - java.io.BufferedReader
+  - java.io.IOException
+  - java.nio.charset.StandardCharsets
+
+- **Class: Main**
+
+- **Instance Variables:**
+  - List<Long> constraints
+  - long N
+  - long result
+
+- **Constructor: Main() throws IOException**
+  - InputStreamReader reader = new InputStreamReader(System.in, StandardCharsets.UTF_8)
+  - BufferedReader in = new BufferedReader(reader)
+  - N = Long.parseLong(in.readLine())
+  - for (int i = 0; i < 5; ++i)
+    - constraints.add(Long.parseLong(in.readLine()))
+  - in.close()
+  - calc()
+
+- **Method: void calc()**
+  - long min = Long.MAX_VALUE
+  - for (Long c : constraints)
+    - min = Math.min(min, c)
+  - long time = N / min
+  - if (N % min != 0)
+    - ++time
+  - time += 4
+  - result = time
+
+- **Main Method: public static void main(String[] args) throws IOException**
+  - Main ins = new Main()
+  - System.out.println(ins.result)

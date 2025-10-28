@@ -1,0 +1,16 @@
+1. Define a function `read_input` with return types `(int, int)` and a list of `str`.
+   - Read two integers `N` and `L` from input, where `N` and `L` are of type `int`.
+   - Read `N` lines of input, each of type `str`, and store them in a list `S`.
+
+2. Define a function `sort_strings` with parameter type `list[str]` and return type `str`.
+   - Sort the list `S` in lexicographical order.
+   - Concatenate the sorted strings in `S` into a single string.
+
+3. Define a `main` function with no parameters and no return type.
+   - Call `read_input` to obtain `N`, `L`, and `S`.
+   - Call `sort_strings` with `S` as the argument.
+   - Print the result of `sort_strings(S)`.
+
+4. Execute the `main` function.
+
+Required libraries: built-in Python libraries (`input`, `map`, `split`, `rstrip`, `join`, `sorted`)

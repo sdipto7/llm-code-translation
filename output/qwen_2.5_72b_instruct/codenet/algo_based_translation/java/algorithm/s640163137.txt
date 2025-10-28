@@ -1,0 +1,49 @@
+Function Signature:
+- main(String[] args) throws IOException
+
+Variable Declarations and Data Types:
+- BufferedReader br
+- int n
+- int[] a
+- String[] elements
+- int swapCount
+- int mini
+- int v
+- String ans
+
+Complete Logic Flow in Execution Order:
+1. Create BufferedReader object for reading input.
+2. Read integer n from input.
+3. Initialize array a of size n.
+4. Read a line of input, split by spaces, and store in elements.
+5. Loop from 0 to n-1:
+   - Assign i to mini.
+   - Loop from i to n-1:
+     - If a[j] < a[mini], assign j to mini.
+   - If mini != i:
+     - Swap a[mini] and a[i].
+     - Increment swapCount by 1.
+6. Initialize ans with string representation of a[0].
+7. Loop from 1 to n-1:
+   - Concatenate " " + a[i] to ans.
+8. Print ans.
+9. Print swapCount.
+
+Control Structures:
+- For loop from 0 to n-1
+- For loop from i to n-1
+- If condition: a[j] < a[mini]
+- If condition: mini != i
+
+Input/Output Operations and Data Processing Logic:
+- Read integer n.
+- Read string of space-separated integers and convert to int array a.
+- Sort array a using selection sort algorithm and count swaps.
+- Convert sorted array to space-separated string ans.
+- Print sorted array ans.
+- Print number of swaps swapCount.
+
+Required Libraries, Modules, or Dependencies:
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader

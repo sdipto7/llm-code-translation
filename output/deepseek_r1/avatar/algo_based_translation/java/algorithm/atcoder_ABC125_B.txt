@@ -1,0 +1,48 @@
+- **Function Signatures**:
+  - `public static void main(String[] args)`
+  - `static Map<Integer, Integer> str2List(String str)`
+
+- **Variable Declarations**:
+  - `Scanner sc = new Scanner(System.in)`
+  - `Integer n`
+  - `String vStr`, `String cStr`
+  - `Map<Integer, Integer> vList`, `Map<Integer, Integer> cList`
+  - `Integer max = 0`
+  - `String[] vArrStr` (in `str2List`)
+  - `Map<Integer, Integer> ret = new HashMap<>()` (in `str2List`)
+  - `Integer key = 0` (in `str2List`)
+
+- **Logic Flow**:
+  1. Read integer `n` from input via `sc.nextLine()`
+  2. Read `vStr` and `cStr` strings from input via `sc.nextLine()`
+  3. Convert `vStr` to `vList` using `str2List`
+  4. Convert `cStr` to `cList` using `str2List`
+  5. Initialize `max` to 0
+  6. Loop `i` from 0 to `n-1` (inclusive):
+     - Calculate `profit = vList.get(i) - cList.get(i)`
+     - If `profit > 0`, add `profit` to `max`
+  7. Print `max` via `System.out.println`
+
+- **str2List Logic**:
+  1. Split `str` into `vArrStr` using space delimiter
+  2. Initialize empty HashMap `ret`
+  3. For each `val` in `vArrStr`:
+     - Insert entry `(key, Integer.valueOf(val))` into `ret`
+     - Increment `key` by 1
+  4. Return `ret`
+
+- **Control Structures**:
+  - For-loop: `for (Integer i = 0; i < n; i++)`
+  - Conditional: `if (profit > 0)`
+  - For-each loop in `str2List`: `for (String val : vArrStr)`
+
+- **Input/Output Operations**:
+  - Input via `Scanner` reading `n`, `vStr`, `cStr`
+  - Output via `System.out.println(max)`
+  - String splitting with `split(" ")`
+  - Integer parsing via `Integer.valueOf()`
+
+- **Dependencies**:
+  - `java.util.Scanner`
+  - `java.util.Map`
+  - `java.util.HashMap`

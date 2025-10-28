@@ -1,0 +1,69 @@
+**Algorithm Specification: Happy Symbols Problem**
+
+**Function Signatures:**
+- `main() -> void` (Entry point, no parameters or return value)
+
+**Data Types:**
+- `n: Integer` (Number of symbols)
+- `m: Integer` (Number of conditions)
+- `li: List[List[Integer]]` (List of condition sets)
+- `p: Tuple[Integer]` (Parity requirements)
+- `q: Set[Integer]` (All symbols involved in conditions)
+- `r: Set[Integer]` (Full symbol set {1..n})
+- `v: Set[Integer]` (Symbols not in any condition)
+- `ans: Integer` (Result counter)
+- `s: Tuple[Integer]` (Current subset candidate)
+
+**Logic Flow:**
+
+1. **Input Acquisition:**
+   1. Read integers `n` and `m` from standard input
+   2. Read `m` lines of space-separated integers:
+      - For each line, store elements after first as list in `li`
+   3. Read `m` parity values into tuple `p`
+
+2. **Set Operations:**
+   4. Create `q` by flattening all elements from `li`
+   5. Generate full symbol set `r = {1, 2, ..., n}`
+   6. Calculate `v = r \ q` (symbols not in any condition)
+
+3. **Solution Calculation:**
+   7. Initialize `ans = 0`
+   8. Iterate subset sizes `i` from 0 to |q| inclusive:
+      1. Generate all i-length combinations of `q` via `itertools.combinations`
+      2. For each combination `s`:
+         1. Convert `s` to set
+         2. Validate against all conditions:
+            - For each (condition_set `u`, parity `w`) in zip(li, p):
+              - If |s ∩ u| mod 2 ≠ w → break validation
+            - **If all conditions satisfied:**
+              - Add 2^(|v|) to `ans`
+
+4. **Output Result:**
+   9. Print final `ans` value
+
+**Control Flow Structures:**
+- Triple nested loops:
+  - Range loop: `for i in 0...|q|`
+  - Combinatorial loop: `for s in combinations(q, i)`
+  - Validation loop: `for (u, w) in zip(li, p)`
+- Early exit: `break` on first failed condition
+- Implicit loop continuation (Python `for...else`):
+  - `else` block executes only if validation loop completes without breaks
+
+**Input/Output:**
+- Input format constraints:
+  - First line: Two space-separated integers
+  - Next `m` lines: Condition sets (first number indicates count, not used)
+  - Final line: `m` parity bits
+- Output: Single integer via `print(ans)`
+
+**Dependencies:**
+- Requires `itertools.combinations` for subset generation
+- Relies on Python set operations (`union`, `difference`, intersection)
+- Input handling via `map(int, input().split())` pattern
+
+**Edge Case Handling:**
+- Empty `q` (when no symbols in conditions) handled by 0-length combination
+- Empty `v` (all symbols in conditions) → 2^0=1 multiplier
+- Zero-length conditions in `li` (unlikely due to [1:] slice) treated as empty sets

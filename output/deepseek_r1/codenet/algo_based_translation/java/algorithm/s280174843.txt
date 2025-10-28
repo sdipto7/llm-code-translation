@@ -1,0 +1,21 @@
+- Function signature: public static void main(String[] args) throws IOException
+- Variables:
+  - BufferedReader buf (class-level)
+  - int[3] abc
+  - String str
+  - String[] inp
+- Required libraries: java.io.IOException, java.io.InputStreamReader, java.io.BufferedReader
+- Execution flow:
+  1. Initialize buf with BufferedReader wrapping InputStreamReader(System.in)
+  2. Read full input line using buf.readLine() → str
+  3. Split str into String array inp using space (" ") as delimiter with split(" ", -1)
+  4. For loop: iterate i from 0 to inp.length-1
+     a. Convert inp[i] to integer → abc[i]
+  5. Conditional check: if (abc[0] < abc[1] AND abc[1] < abc[2])
+     a. If true: Output "Yes" with newline
+     b. Else: Output "No" with newline
+- Control structures:
+  - For loop: initializer int i=0, condition i < inp.length, increment i++
+  - If-else condition: checks relational operators between array elements
+- Input processing: Reads single line of space-separated integers
+- Output operation: System.out.println with "Yes" or "No" based on condition evaluation

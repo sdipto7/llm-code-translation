@@ -1,0 +1,29 @@
+```
+Function signature:
+  No function is defined; the code is executed in a procedural style.
+
+Variable declarations and data types:
+  a: integer
+  b: integer
+  c: integer
+
+Logic flow:
+1. Read a line of input from the user.
+2. Split the input string into two parts.
+3. Convert the two parts into integers and assign them to variables 'a' and 'b'.
+4. Initialize 'c' to 0.
+
+Control structures:
+5. Loop: Execute the following block of code 2 times.
+   a. Add the maximum of 'a' and 'b' to 'c'.
+   b. Conditional: If 'a' is greater than or equal to 'b':
+      i. Subtract 1 from 'a'.
+   c. Else (if 'b' is greater than 'a'):
+      i. Subtract 1 from 'b'.
+
+Output operations:
+6. Print the value of 'c'.
+
+Required libraries, modules, or dependencies:
+  None
+```

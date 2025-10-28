@@ -1,0 +1,45 @@
+**Function Signatures:**
+- `main(String[] args)`: void
+- `check_leap(int y)`: boolean
+
+**Variables:**
+- `Scanner in`: Scanner object for input
+- `int y`: input year
+- `boolean leap`: stores leap year check result for input year
+- `int sum`: accumulates day counts
+- `int mod`: unused variable
+- `int i`: loop counter starting from y+1
+
+**Libraries:**
+- java.util.Scanner
+- java.sql.Timestamp (unused)
+
+**Logic Flow:**
+1. Read integer input `y`
+2. Check if `y` is leap year using `check_leap(y)` and store in `leap`
+3. Initialize `sum` to 0
+4. Start infinite loop with `i` starting from `y+1`
+5. For each `i`:
+   - If `i` is leap year: add 366 to `sum`
+   - Else: add 365 to `sum`
+6. Check if `sum % 7 == 0`
+   - If true:
+     - If both `i` and `y` are leap years OR both are not leap years:
+       - Print `i` and exit program
+     - Else: continue loop
+   - Else: continue loop
+
+**check_leap Function:**
+- Return true if `y % 400 == 0` OR (`y % 4 == 0` AND `y % 100 != 0`)
+- Else return false
+
+**Control Structures:**
+- Infinite for loop: `for (int i = y + 1; ; i++)`
+- Nested if-else conditions:
+  - `if (check_leap(i))` for day count
+  - `if (sum % 7 == 0)` for week alignment check
+  - `if ((check_leap(i) && leap) || (!check_leap(i) && !leap))` for leap year match
+
+**Input/Output:**
+- Input: Single integer from standard input
+- Output: Print integer result when found

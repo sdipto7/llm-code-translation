@@ -1,0 +1,41 @@
+Function signatures with parameter and return types:
+- `public static void main(String[] args)`
+- `public static int sub(int a, int b)`
+
+Variable declarations and data types:
+- `Scanner scan`
+- `int n`
+- `int a`
+- `int b`
+- `int min`
+- `int max`
+- `int result`
+- `int curr_min`
+- `int curr_max`
+
+Complete logic flow in execution order:
+1. Create a `Scanner` object named `scan` to read input from `System.in`.
+2. Read an integer `n` from the input.
+3. For each index `i` from `0` to `n-1`, repeat steps 4 to 6.
+4. Read two integers `a` and `b` from the input.
+5. Call the function `sub(a, b)` and print the returned result.
+
+Logic flow inside `sub(int a, int b)`:
+1. Assign the minimum of `a` and `b` to `min`.
+2. Assign the maximum of `a` and `b` to `max`.
+3. Initialize `result` to `0`.
+4. While `min` is greater than `0`, repeat steps 5 to 8.
+5. Add the integer division of `max` by `min` to `result`.
+6. Update `max` to the remainder of `max` divided by `min`.
+7. Assign the minimum of `min` and `max` to `curr_min`.
+8. Assign the maximum of `min` and `max` to `curr_max`.
+9. Update `min` to `curr_min`.
+10. Update `max` to `curr_max`.
+11. Return `result`.
+
+Input/output operations and data processing logic:
+- Input: An integer `n` followed by `n` pairs of integers.
+- Output: For each pair of integers, print the result of the `sub` function.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

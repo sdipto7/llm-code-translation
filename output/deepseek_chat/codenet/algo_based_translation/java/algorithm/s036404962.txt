@@ -1,0 +1,11 @@
+function main():
+    Declare integer X
+    Declare integer t
+    Read integer input into X
+    Read integer input into t
+    If X >= t:
+        Print (X - t)
+    Else if X < t:
+        Print 0
+
+Required: Scanner class from java.util package

@@ -1,0 +1,13 @@
+Function signature: `public static void main(String[] args)`
+Variable declarations and data types: `Scanner in = new Scanner(System.in); int N = in.nextInt(); int M = in.nextInt(); int[][] black = new int[N + 2][N + 2]; int m = 1; int x = 0; int y = 0; int xx = 0; int yy = 0;`
+Logic flow:
+1. Create a Scanner object to read input.
+2. Read integers N and M from input.
+3. Initialize a 2D array `black` of size (N+2) x (N+2) with all elements set to 0.
+4. Loop from 1 to M (inclusive) with variable `m`.
+   1. Read integers `x` and `y` from input.
+   2. Loop from `x - 1` to `x + 1` (inclusive) with variable `xx`.
+      1. Loop from `y - 1` to `y + 1` (inclusive) with variable `yy`.
+         1. Increment `black[xx][yy]` by 1.
+         2. If `black[xx][yy]` equals 9, print `m` and exit the program.
+5. Print `-1` if no cell reaches a value of 9.

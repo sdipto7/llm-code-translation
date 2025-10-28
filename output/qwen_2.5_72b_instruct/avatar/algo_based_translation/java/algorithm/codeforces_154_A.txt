@@ -1,0 +1,36 @@
+Function signature: main(String[] hi)
+Parameters: String[] hi
+Return type: void
+
+Variable declarations and data types:
+BufferedReader infile: for reading input from standard input
+char[] arr: to store characters of the first input line
+int N: to store the length of arr
+HashSet<String> set: for storing unique strings (unused)
+int K: to store the number of queries
+int res: to store the final result
+String input: to store each query string
+int a: to count occurrences of the first character in the query
+int b: to count occurrences of the second character in the query
+int i: loop index for iterating over arr
+int k: loop index for iterating over the number of queries
+
+Execution order and logic flow:
+
+1. Initialize infile with a BufferedReader reading from standard input
+2. Read the first line and convert it to a char array arr
+3. Set N to the length of arr
+4. Initialize set as a new HashSet (unused in the logic)
+5. Read the next line and parse it as an integer K
+6. Initialize res to 0
+7. For each query (k from 0 to K-1):
+   a. Read the next line and store it in input
+   b. Initialize a and b to 0
+   c. For each character in arr (i from 0 to N-1):
+      i. If the character matches the first character of input, increment a
+      ii. Else if the character matches the second character of input, increment b
+      iii. Else:
+          1. Add the minimum value between a and b to res
+          2. Reset a and b to 0
+   d. After the inner loop, add the minimum value between a and b to res
+8. Print the value of res to standard output

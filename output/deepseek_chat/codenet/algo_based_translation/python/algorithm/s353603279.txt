@@ -1,0 +1,10 @@
+read integer input X from standard input
+X: int = input value
+
+h: int = X divided by 500 using integer division
+a: int = remainder of X divided by 500, then divided by 5 using integer division
+y: int = h multiplied by 1000 plus a multiplied by 5
+
+print y to standard output
+
+No external libraries or dependencies required

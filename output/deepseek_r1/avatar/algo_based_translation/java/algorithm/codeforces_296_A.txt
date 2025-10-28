@@ -1,0 +1,53 @@
+```
+function main():
+    input:
+        - n: integer from standard input
+        - n subsequent integers as elements
+    variables:
+        - frequency: array[1001] of integers initialized to 0
+        - countMax: integer initialized to -1
+        - element: integer for temporary storage
+
+    process:
+        for i from 0 to n-1:
+            read element from input
+            increment frequency[element] by 1
+
+        for i from 1 to 1000:
+            if frequency[i] > countMax:
+                set countMax = frequency[i]
+
+        if n is even:
+            if countMax <= n/2:
+                print "YES"
+            else:
+                print "NO"
+        else:
+            if countMax <= (n//2) + 1:
+                print "YES"
+            else:
+                print "NO"
+
+required components:
+    - Input handling equivalent to Java's BufferedReader and StringTokenizer
+    - Integer parsing
+    - Console output capability
+
+data flow:
+    1. Read input values and count frequencies
+    2. Determine maximum frequency
+    3. Validate frequency distribution against n's parity
+    4. Output YES/NO based on majority condition
+
+control structures:
+    - For loop with fixed iterations (n times and 1000 times)
+    - Conditional branches with:
+        - Comparison operators (>, <=, ==)
+        - Arithmetic operations (division, modulo)
+        - Nested if-else statements
+
+boundary conditions:
+    - First array index used: 1 (elements are positive integers)
+    - Handles n=0 through frequency array initialization
+    - Odd/even division handled via integer arithmetic
+```

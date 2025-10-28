@@ -1,0 +1,27 @@
+Function Signature: `process_numbers(N: int, R: int) -> None`
+
+Variable Declarations:
+- `N: int`
+- `R: int`
+
+Logic Flow:
+1. Read input and split into two integers, assign to `N` and `R`
+2. If `N` is greater than or equal to 10:
+   - Print `R`
+3. Else:
+   - Calculate `R + 100 * (10 - N)`
+   - Print the result
+
+Control Structures:
+- If-Else Condition: `if N >= 10`
+
+Input/Output Operations:
+- Input: Read a line of input, split into two integers
+- Output: Print an integer
+
+Data Processing Logic:
+- Compare `N` with 10
+- Depending on the comparison, either print `R` or calculate and print `R + 100 * (10 - N)`
+
+Required Libraries/Modules/Dependencies:
+- None

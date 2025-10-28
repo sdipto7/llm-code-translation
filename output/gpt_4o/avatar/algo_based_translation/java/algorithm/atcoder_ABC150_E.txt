@@ -1,0 +1,55 @@
+1. Import necessary classes:
+   - `BufferedReader` from `java.io`.
+   - `InputStreamReader` from `java.io`.
+   - `Arrays` from `java.util`.
+
+2. Define the main function:
+   - Function signature: `public static void main(String[] args) throws Exception`
+
+3. Initialize a `BufferedReader` to read from standard input:
+   - `BufferedReader br = new BufferedReader(new InputStreamReader(System.in));`
+
+4. Read the first line of input, split by spaces, and parse the first value as an integer `n`:
+   - `String[] sa = br.readLine().split(" ");`
+   - `int n = Integer.parseInt(sa[0]);`
+
+5. Read the second line of input, split by spaces, and store in an integer array `c` of size `n`:
+   - `sa = br.readLine().split(" ");`
+   - `int[] c = new int[n];`
+   - Loop over `i` from 0 to `n-1`:
+     - `c[i] = Integer.parseInt(sa[i]);`
+
+6. Close the `BufferedReader`:
+   - `br.close();`
+
+7. Declare and initialize constant `mod` with the value `1000000007`.
+
+8. If `n` equals 1, print `c[0] * 2 % mod` and return from the function.
+
+9. Sort the array `c` in non-decreasing order using `Arrays.parallelSort(c)`.
+
+10. Calculate `b` as `2^n % mod` by calling the `power` function:
+    - `long b = power(2, n);`
+
+11. Calculate `a` as `2^(n-2) % mod` by calling the `power` function:
+    - `long a = power(2, n-2);`
+
+12. Initialize `long ans` to 0.
+
+13. Loop over `i` from 2 to `n+1`:
+    - Calculate `val` as `(a * i) % mod`.
+    - Multiply `val` by `c[n + 1 - i]` and take modulo `mod`.
+    - Add `val` to `ans` and take modulo `mod`.
+
+14. Multiply `ans` by `b` and take modulo `mod`.
+
+15. Print the value of `ans`.
+
+16. Define the `power` function:
+    - Function signature: `static long power(long x, long n)`
+    - If `n` equals 0, return 1.
+    - Declare `int mod` as `1000000007`.
+    - Calculate `val` as `power(x, n / 2)`.
+    - Square `val` and take modulo `mod`.
+    - If `n` is odd, multiply `val` by `x` and take modulo `mod`.
+    - Return `val`.

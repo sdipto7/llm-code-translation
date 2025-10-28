@@ -1,0 +1,28 @@
+Algorithm:
+
+Function Signatures:
+- main() -> void
+
+Variables:
+- a: string
+- b: string
+- c: string
+
+Logic Flow:
+1. Read input line from standard input
+2. Remove leading/trailing whitespace from input line
+3. Split processed input into three string variables (a, b, c)
+4. Check if a equals b AND b equals c:
+   - 4.1 If true: print "Yes" to standard output
+   - 4.2 If false: print "No" to standard output
+
+Control Structures:
+- Single conditional statement:
+  if (a == b) && (b == c)
+
+Input/Output Operations:
+- Input: One-line string input from stdin containing three space-separated values
+- Output: "Yes" or "No" printed to stdout based on equality check
+
+Dependencies:
+- None (uses standard input/output functions)

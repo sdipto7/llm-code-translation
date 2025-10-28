@@ -1,0 +1,44 @@
+```
+Function main():
+    Input N: Integer
+    Input P: List of integers, length N
+    Call editorial(N, P)
+
+Function editorial(N: Integer, P: List of Integers):
+    If N equals 1:
+        Output 0
+        Return
+
+    Declare a: List of integers, size N+1, initialized to 0
+    For each index i and element p in P:
+        Assign a[p] = i
+
+    Declare tmp: Integer, initialized to 1
+    Declare max_len: Integer, initialized to 1
+
+    For i in range from 1 to N-1:
+        If a[i] < a[i + 1]:
+            Increment tmp by 1
+            Assign max_len = max(max_len, tmp)
+        Else:
+            Assign tmp = 1
+
+    Declare ans: Integer, initialized to N - max_len
+    Output ans
+
+Function WA(N: Integer, P: List of Integers):
+    Declare tmp: Integer, initialized to 0
+    Declare ans: Integer, initialized to 0
+
+    For each index i and element p in P:
+        If i equals 0 or P[i - 1] + 1 equals p:
+            Increment tmp by 1
+        Else:
+            Assign ans = max(ans, tmp)
+            Assign tmp = 1
+
+    Output N - ans
+
+If the script is run as the main program:
+    Call main()
+```

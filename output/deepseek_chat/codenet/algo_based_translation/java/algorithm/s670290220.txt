@@ -1,0 +1,11 @@
+1. Import java.util.Scanner
+2. Declare class Main with public static void main(String[] args)
+3. Create Scanner object sc initialized with System.in
+4. Read integer N from input using sc.nextInt()
+5. Read string from input, convert to char array c using sc.next().toCharArray()
+6. For loop from i=0 to i < c.length with i incrementing by 1:
+   - Calculate: (c[i] - 'A' + N) % 26
+   - Add 'A' to result and cast to char
+   - Store result back in c[i]
+7. Print char array c using System.out.println(c)
+8. Close Scanner sc

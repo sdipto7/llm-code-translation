@@ -1,0 +1,68 @@
+Function signatures with parameter and return types:
+- `run()`: void
+- `nextIntArray(int n)`: int[]
+- `pr(Object o)`: void
+- `ln(Object o)`: void
+- `ln()`: void
+
+Variable declarations and data types:
+- `sc`: Scanner
+- `rand`: Random
+- `W`: int
+- `H`: int
+- `map`: char[][]
+- `dp`: BigInteger[][]
+- `hprev`: BigInteger
+- `wprev`: BigInteger
+- `max`: BigInteger
+- `res`: int[]
+- `o`: Object
+
+Logic flow in execution order:
+1. Initialize `sc` as a new Scanner object reading from standard input.
+2. Initialize `rand` as a new Random object.
+3. Enter an infinite loop labeled `TCase`.
+4. Read two integers `W` and `H` from the scanner.
+5. If `W == 0` and `H == 0`, return from the `run` method, exiting the loop.
+6. Initialize a 2D character array `map` with dimensions `H` by `W`.
+7. For each row `h` from 0 to `H-1`, read a string from the scanner, convert it to a character array, and assign it to `map[h]`.
+8. Initialize a 2D BigInteger array `dp` with dimensions `H` by `W`.
+9. For each element `dp[h][w]` in the `dp` array:
+   - Initialize `hprev` to `BigInteger.ZERO`.
+   - If `h >= 1`, set `hprev` to `dp[h-1][w]`.
+   - Initialize `wprev` to `BigInteger.ZERO`.
+   - If `w >= 1`, set `wprev` to `dp[h][w-1]`.
+   - If the character at `map[h][w]` is a digit:
+     - Determine the maximum of `hprev` and `wprev` and store it in `max`.
+     - Set `dp[h][w]` to `max` multiplied by `BigInteger.TEN` plus the BigInteger representation of the digit at `map[h][w]`.
+   - Otherwise, set `dp[h][w]` to `BigInteger.ZERO`.
+10. Initialize `max` to `BigInteger.ZERO`.
+11. For each element `dp[h][w]` in the `dp` array:
+    - If `dp[h][w]` is greater than `max`, update `max` to `dp[h][w]`.
+12. Print the value of `max` followed by a newline.
+13. Define `nextIntArray(int n)`:
+    - Initialize an integer array `res` of length `n`.
+    - For each index `i` from 0 to `n-1`, read an integer from the scanner and assign it to `res[i]`.
+    - Return `res`.
+14. Define `pr(Object o)`:
+    - Print the object `o` to standard output without a newline.
+15. Define `ln(Object o)`:
+    - Print the object `o` to standard output followed by a newline.
+16. Define `ln()`:
+    - Print a newline to standard output.
+
+Control structures:
+- Infinite loop labeled `TCase` with conditions to break the loop when `W == 0` and `H == 0`.
+- Nested for loops to iterate over the `map` and `dp` arrays.
+- If-else statements to handle the logic for updating `dp[h][w]` based on whether `map[h][w]` is a digit.
+- If statement to update `max` based on the value of `dp[h][w]`.
+
+Input/output operations and data processing logic:
+- Input: Reads integers `W` and `H`, and strings representing the grid from standard input.
+- Output: Prints the maximum number formed by digits in the grid as a BigInteger, followed by a newline.
+- Data processing: Uses dynamic programming to calculate the maximum number that can be formed by traversing the grid from top-left to bottom-right, only moving right or down, and concatenating digits encountered.
+
+Required libraries, modules, or dependencies:
+- `java.math.BigInteger`
+- `java.util.*`
+- `static java.lang.System.*`

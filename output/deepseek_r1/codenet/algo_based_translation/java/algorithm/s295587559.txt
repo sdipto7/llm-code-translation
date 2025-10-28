@@ -1,0 +1,41 @@
+- Dependencies: java.util.Scanner, java.util.regex.Pattern, java.util.regex.Matcher
+
+- main method signature: public static void main(String[] args)
+
+- Variables:
+  - Scanner in = new Scanner(System.in)
+  - int[] num initialized with size from in.nextInt()
+  - int count = in.nextInt()
+  - Pattern pt = Pattern.compile("(\\d+),(\\d+)")
+  - int[2] line for storing swap indices
+  - String next for input parsing
+  - Matcher matcher for regex operations
+  - Temporary int change for value swapping
+
+- Execution flow:
+1. Read integer input for array size
+2. Initialize num array with consecutive integers starting at 1
+3. Read integer input for number of swap operations
+4. Process swap commands count times:
+   a. Read next input token matching pattern pt
+   b. Extract two integers using regex groups
+   c. Convert to zero-based indices by subtracting 1
+   d. Swap elements in num array at extracted indices
+5. Print final array elements line by line
+
+- Control structures:
+  - For loop: initialize array (0 to num.length-1)
+  - For loop: process swap commands (0 to count-1)
+  - For loop: process regex groups (0 to line.length-1)
+  - While loop: implicit in in.next(pt) input processing
+
+- Input/Output operations:
+  - System.in for all input via Scanner
+  - nextInt() for numeric input
+  - next() with pattern for structured input
+  - System.out.println for array output
+
+- Data processing:
+  - Regex pattern matches "x,y" format
+  - Group extraction and integer conversion
+  - Array element swapping using temporary variable

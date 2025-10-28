@@ -1,0 +1,36 @@
+```
+Import the sys module.
+
+Read two integers from input and assign them to N and K.
+
+Read N integers from input and store them in a list named lst.
+
+Initialize two empty lists: lst_p and lst_m.
+
+For each integer in lst:
+    - If the integer is zero, decrement K by 1.
+    - If the integer is positive, append it to lst_p.
+    - If the integer is negative, append it to lst_m.
+
+Initialize variables p and m to 0.
+
+Initialize variables x and y to 0 and len(lst_m) - 1, respectively.
+
+Set lastx to the length of lst_p.
+
+Set lasty to the length of lst_m.
+
+Define a function check(k) that returns an integer:
+    Initialize variable ans to 10^9.
+
+    For each integer j from 0 to k (inclusive):
+        - If j is greater than lastx or k - j is greater than lasty, continue to the next iteration.
+        - Otherwise:
+            - If j is zero, set p to 0. Otherwise, set p to lst_p[j - 1].
+            - If k - j is zero, set m to 0. Otherwise, set m to lst_m[lasty - (k - j)].
+            - Update ans to the minimum of ans, 2 * p + |m|, and p + 2 * |m|.
+
+    Return ans.
+
+Print the result of calling check(K).
+```

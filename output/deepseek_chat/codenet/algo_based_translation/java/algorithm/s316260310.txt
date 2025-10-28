@@ -1,0 +1,86 @@
+**Algorithm Extraction:**
+
+**Main Class:**
+- Function: `run()`: void
+  - Try: Call `new Solver().solve()`, then `System.exit(0)`
+  - Catch (Exception | Error e): Print stack trace, then `System.exit(1)`
+- Function: `main(String[] args)`: void
+  - Call `new Main().run()`
+
+**Solver Class:**
+- Variables:
+  - `hp`: Helper (initialized with MOD=1e9+7, MAXN=1000006)
+  - `MAXN`: int = 1000006
+  - `MOD`: long = 1000000007
+  - `timer`: Timer
+  - `task`: TimerTask (overrides run to flush and exit)
+  - `TESTCASES`: boolean = false
+
+- Function: `solve()`: void throws Exception
+  - `tc`: int = (TESTCASES ? hp.nextInt() : 1)
+  - For `tce` from 1 to tc: call `solve(tce)`
+  - Cancel timer, flush hp
+
+- Function: `solve(int tc)`: void throws Exception
+  - Read N (int), K (long), and array A of size N (int[])
+  - Initialize:
+    - `straight`: ArrayList<Integer>
+    - `cycle`: ArrayList<Integer>
+    - `vis`: boolean[N] (all false)
+    - `curr`: int = 0
+  - While not vis[curr]:
+    - Set vis[curr] = true
+    - Update curr = A[curr] - 1
+  - `st`: int = 0
+  - While st != curr:
+    - Add st to straight
+    - Update st = A[st] - 1
+  - Add curr to cycle
+  - Update curr = A[curr] - 1
+  - While curr != cycle[0]:
+    - Add curr to cycle
+    - Update curr = A[curr] - 1
+  - If K < straight.size():
+    - Print straight.get((int)K) + 1
+  - Else:
+    - K = K - straight.size()
+    - Print cycle.get((int)(K % cycle.size())) + 1
+
+**Helper Class:**
+- Variables: MOD (long), MAXN (int), rnd (Random), sieve (int[]), primes (ArrayList<Integer>), factorial (long[])
+- Functions:
+  - setSieve(): void (initializes primes and sieve array)
+  - setFactorial(): void (initializes factorial array)
+  - getFactorial(n: int): long
+  - ncr(n: int, r: int): long
+  - getLongArray(size: int): long[]
+  - getIntArray(size: int): int[]
+  - getStringArray(size: int): String[]
+  - joinElements(...): String (multiple overloads)
+  - gcd(a: long, b: long): long
+  - gcd(a: int, b: int): int
+  - max(...): long/int (multiple overloads)
+  - min(...): long/int (multiple overloads)
+  - sum(...): long (multiple overloads)
+  - shuffle(ar: int[]): void
+  - shuffle(ar: long[]): void
+  - reverse(ar: int[]): void
+  - reverse(ar: long[]): void
+  - pow(base: long, exp: long, MOD: long): long
+  - initIO(is: InputStream, os: OutputStream): void
+  - initIO(inputFile: String, outputFile: String): void
+  - scan(): int (private)
+  - next(): String
+  - nextInt(): int
+  - nextLong(): long
+  - print(a: Object): void
+  - printsp(a: Object): void
+  - println(): void
+  - println(a: Object): void
+  - flush(): void
+
+**Required Libraries:**
+- java.math.*
+- java.io.*
+- java.util.*
+- java.awt.*

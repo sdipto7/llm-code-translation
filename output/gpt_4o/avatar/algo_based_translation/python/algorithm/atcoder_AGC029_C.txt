@@ -1,0 +1,40 @@
+```plaintext
+1. Import the `random` library.
+
+2. Read input from the user (this input is ignored).
+
+3. Read an integer list `A` from user input:
+   - Split the input string by spaces, convert each split segment to an integer, and store them in `A`.
+
+4. Transform `A`:
+   - Initialize `A` with its first element.
+   - Append elements from the original list if the previous element is greater than or equal to the current element.
+
+5. Define integer `N` as the length of `A`.
+
+6. Define function `cut(array: List[Tuple[int, int]], index: int) -> List[Tuple[int, int]]`:
+   - If `index` is less than 1, return an empty list.
+   - If `index` is less than or equal to the first element of the first tuple in `array`, return a list containing a single tuple with `index` and the second element of the first tuple in `array`.
+   - Iterate over `array` from the last element to the first:
+     - If the first element of the tuple at position `_ - 1` is less than `index`, return a list containing tuples from the start to position `_`, plus a tuple with `index` and the second element of the tuple at position `_`.
+
+7. Define function `is_possible(K: int) -> bool`:
+   - Initialize `dp` as a list containing a tuple with the first element of `A` and 0.
+   - Iterate over elements `a` in `A` starting from the second element:
+     - If `a` is less than or equal to the first element of the last tuple in `dp`, update `dp` using `cut(dp, a)`.
+     - Otherwise, append a tuple with `a` and 0 to `dp`.
+     - Initialize `is_added` as `False`.
+     - Iterate over `dp` in reverse:
+       - If the second element of the tuple at position `j` is less than `K - 1`, update `dp` using `cut(dp, dp[j][0] - 1)` and append a tuple with the first element of the tuple at position `j` and the second element incremented by 1.
+       - If the first element of the last tuple in `dp` is less than `a`, append a tuple with `a` and 0 to `dp`.
+       - Set `is_added` to `True` and break the loop.
+     - If `is_added` is `False`, return `False`.
+   - Return `True`.
+
+8. Define function `bis(x: int, y: int) -> int`:
+   - If `y` is equal to `x + 1`, return `y`.
+   - If `is_possible((x + y) // 2)` is `True`, recursively call `bis` with `x` and `(x + y) // 2`.
+   - Otherwise, recursively call `bis` with `(x + y) // 2` and `y`.
+
+9. Print the result of `bis(0, N)`.
+```

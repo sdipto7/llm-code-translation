@@ -1,0 +1,48 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+- `dfs(int crt, int parent): void`
+
+Variable declarations and data types:
+- `numNode: int`
+- `numEdge: int`
+- `connect: ArrayList<Integer>[]`
+- `visited: int[]`
+- `odd: boolean[]`
+- `print: StringBuilder`
+- `sc: Scanner`
+- `a: int`
+- `b: int`
+- `crtConnect: ArrayList<Integer>`
+- `child: int`
+
+Logic flow in execution order:
+1. Create `Scanner` object `sc`.
+2. Read `numNode` and `numEdge` from input.
+3. Initialize `connect` array of `ArrayList<Integer>` with size `numNode`.
+4. For each node from 0 to `numNode - 1`, initialize an empty `ArrayList<Integer>`.
+5. For each edge from 0 to `numEdge - 1`, read integers `a` and `b` from input, decrement by 1, add `b` to `connect[a]`, and add `a` to `connect[b]`.
+6. If `numEdge` is odd, print `-1` and return.
+7. Initialize `visited` array of integers with size `numNode`.
+8. Initialize `odd` array of booleans with size `numNode`.
+9. Initialize `StringBuilder` object `print`.
+10. Call `dfs(0, -1)`.
+
+Control structures:
+- For loop to initialize `connect` arrays.
+- For loop to read edges and populate `connect` arrays.
+- If statement to check if `numEdge` is odd.
+- DFS function `dfs(int crt, int parent)`:
+  - Set `visited[crt]` to 1.
+  - For each `child` in `connect[crt]`:
+    - If `child` is equal to `parent` or `visited[child]` is 1, continue.
+    - Else if `visited[child]` is 2, append `(crt + 1) + " " + (child + 1) + "\n"` to `print`, toggle `odd[crt]`.
+    - Else, call `dfs(child, crt)`, if `odd[child]` is true, append `(child + 1) + " " + (crt + 1) + "\n"` to `print`, toggle `odd[child]`; else, append `(crt + 1) + " " + (child + 1) + "\n"` to `print`, toggle `odd[crt]`.
+  - Set `visited[crt]` to 2.
+
+Input/output operations and data processing logic:
+- Read integers from input using `Scanner`.
+- Use `StringBuilder` to construct output string.
+- Print final output string using `System.out.println`.
+
+Required libraries, modules, or dependencies:
+- `java.util.*`

@@ -1,0 +1,48 @@
+**Functions:**
+- `public static void main(String[] args)`
+  - Parameters: `String[] args`
+  - Return: `void`
+- `private static String[] read(int len)`
+  - Parameters: `int len`
+  - Return: `String[]`
+- `private static void close()`
+  - Parameters: None
+  - Return: `void`
+
+**Variables:**
+- `private static BufferedReader br = null` (Class-level)
+- `int n` (in `main`)
+- `String[] strs` (in `else` block)
+- `List<String> strList` (in `read` method)
+
+**Libraries/Dependencies:**
+- `java.io.*`
+- `java.util.*`
+- `java.util.stream.*`
+
+**Main Logic Flow:**
+1. Initialize `n` by parsing the first line of input (via `read(1)[0]`).
+2. If `n == 1`:
+   - Print "Hello World".
+3. Else:
+   - Read two input lines into `strs` via `read(2)`.
+   - Parse `strs[0]` and `strs[1]` as integers, compute their sum, and print the result.
+4. (Unused) `close()` method attempts to close `br` but is never called.
+
+**`read` Method Logic:**
+1. Initialize `strList` as an empty `ArrayList<String>`.
+2. If `br` is `null`:
+   - Initialize `br` with `BufferedReader` from `System.in`.
+3. Loop `len` times:
+   - Read a line via `br.readLine()` and add to `strList`.
+4. Return `strList` converted to `String[]`.
+
+**Control Structures:**
+- `if (n == 1)` in `main`.
+- `for (int i = 0; i < len; i++)` in `read`.
+- `try-catch` blocks in `read` and `close` (ignoring exceptions).
+
+**Input/Output:**
+- Input via `BufferedReader` reading from `System.in`.
+- Output via `System.out.println`.
+- Input lines parsed to integers when needed.

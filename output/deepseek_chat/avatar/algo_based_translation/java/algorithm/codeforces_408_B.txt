@@ -1,0 +1,41 @@
+**Algorithm:**
+
+**Main Function:**
+- Read two strings `s1` and `s2` from standard input
+- Call `isValid(s1, s2)`
+- If `isValid` returns false:
+  - Print `-1`
+- Else:
+  - Create HashMap `m1` (Character → Integer)
+  - Create HashMap `m2` (Character → Integer)
+  - For each character `c` in `s1`:
+    - If `m1` contains `c`: increment its count by 1
+    - Else: add `c` to `m1` with count 1
+  - For each character `c` in `s2`:
+    - If `m2` contains `c`: increment its count by 1
+    - Else: add `c` to `m2` with count 1
+  - Initialize `ans` to 0
+  - Create HashSet `hs` (Character)
+  - For each character `c` in `s2`:
+    - If `hs` does not contain `c`:
+      - Add `c` to `hs`
+      - Get count `x1` from `m1` for `c`
+      - Get count `x2` from `m2` for `c`
+      - Set `x1` to minimum of `x1` and `x2`
+      - Add `x1` to `ans`
+  - Print `ans`
+
+**isValid Function:**
+- Parameters: String `s1`, String `s2`
+- Return type: boolean
+- Create HashMap `map` (Character → Boolean)
+- For each character `c` in `s1`:
+  - Add `c` to `map` with value true
+- For each character `c` in `s2`:
+  - If `map` does not contain `c`: return false
+- Return true
+
+**Required Libraries:**
+- java.io.*
+- java.lang.*
+- java.util.* (specifically Scanner, HashMap, HashSet)

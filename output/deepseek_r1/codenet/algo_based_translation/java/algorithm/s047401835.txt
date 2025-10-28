@@ -1,0 +1,52 @@
+Algorithm Extraction:
+- Function: public static void main(String[] args)
+- Parameters: String array args
+- Return type: void
+
+Variables:
+1. Scanner scanner = new Scanner(System.in) [Scanner]
+2. int N = scanner.nextInt() [primitive int]
+3. List<Integer> numbers = new ArrayList<>() [ArrayList of Integers]
+4. int count = 0 [primitive int]
+
+Input Processing:
+1. Read N integers via scanner:
+   for (int i=0; i<N; i++) {
+       numbers.add(Integer.parseInt(scanner.next()))
+   }
+
+Control Flow:
+1. Do-While Loop:
+   do {
+       Process list:
+       numbers = numbers.stream()
+           .filter(i -> i%2 == 0)
+           .map(i -> i/2)
+           .collect(Collectors.toList())
+       
+       Conditional:
+       if (numbers.size() == N) {
+           count++
+       }
+   } while (numbers.size() == N)
+
+Output:
+System.out.println(count)
+
+Dependencies:
+- java.util.ArrayList
+- java.util.List
+- java.util.Scanner
+- java.util.stream.Collectors
+
+Data Flow:
+1. Convert all even elements to half their value, remove odd elements
+2. Repeat until at least one element becomes odd (causing list size < N)
+3. Count completed full iterations where all elements remained even
+
+Termination Condition:
+Loop exits when filtered list size < original N
+
+Data Transformations:
+- Each iteration: list elements i → i/2 (only for even i)
+- elements with i%2 ≠ 0 are removed before halving

@@ -1,0 +1,20 @@
+Algorithm:
+1. Declare a function `process_operations(s: str, qs: List[List[str]]) -> str`.
+2. Initialize variables: 
+   - `n` as a boolean set to `False`.
+   - `left` as an empty string.
+   - `right` as an empty string.
+3. Loop through each `operation` in `qs`.
+   - If `operation[0]` is `'1'`, toggle the boolean `n`.
+   - If `operation[0]` is `'2'`:
+     - Unpack `operation` into `t`, `f`, and `c`.
+     - Convert `f` to an integer.
+     - If `n` is `True`, toggle `f` between `1` and `2`.
+     - If `f` is `1`, prepend `c` to `left`.
+     - If `f` is `2`, append `c` to `right`.
+4. Concatenate `left`, `s`, and `right` into `s`.
+5. If `n` is `True`, reverse `s`.
+6. Return `s`.
+
+Required Libraries/Modules:
+- `List` from `typing` module for type annotations.

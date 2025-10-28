@@ -1,0 +1,32 @@
+**Function Definitions:**
+- `lcm(x: int, y: int) -> int`: Returns LCM of x and y using formula (x * y) // gcd(x, y)
+- `lcm_list(numbers: list[int]) -> int`: Returns LCM of all numbers in list using reduce with lcm function
+
+**Variables:**
+- N: int (first input value)
+- M: int (second input value)
+- A: list[int] (input list of integers)
+- count_div_2: int | None (count of division by 2 operations)
+- cnt: int (temporary counter for division operations)
+- a: int (temporary variable for processing list elements)
+- my_lcm: int (LCM of processed list elements)
+- tmp: int (M divided by my_lcm)
+
+**Execution Flow:**
+1. Import functools.reduce and math modules
+2. Read N and M from input
+3. Read list A of N integers from input
+4. Convert each element in A: a // 2
+5. Initialize count_div_2 as None
+6. For each element a in A:
+   - Initialize cnt = 0
+   - While a % 2 == 0:
+     - a = a // 2
+     - cnt = cnt + 1
+   - If count_div_2 is None: set count_div_2 = cnt
+   - Else if cnt != count_div_2: print 0 and exit program
+7. Calculate my_lcm = lcm_list(A)
+8. If my_lcm > M: print 0 and exit program
+9. Calculate tmp = M // my_lcm
+10. Calculate ans = (tmp + 1) // 2
+11. Print ans

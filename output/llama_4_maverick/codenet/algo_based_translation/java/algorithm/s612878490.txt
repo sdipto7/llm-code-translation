@@ -1,0 +1,21 @@
+1. Read input line containing two integers N and M.
+2. Extract N and M from the input line using string parsing.
+   - N = parse integer from substring before the first space.
+   - M = parse integer from substring after the first space.
+
+3. Declare an integer array `shortage` of size M.
+
+4. For i = 0 to M-1:
+   - Read input line containing two integers.
+   - Extract A from the input line using string parsing.
+     - A = parse integer from substring before the first space.
+   - Calculate `shortage[i]` = max(0, N - A).
+
+5. Sort the `shortage` array in ascending order.
+
+6. Initialize `ans` = 0.
+
+7. For i = 0 to M-2:
+   - `ans` += `shortage[i]`.
+
+8. Output `ans`.

@@ -1,0 +1,77 @@
+**Function Signatures:**
+- `main(String[] args)`
+- `set()`
+- `solve()`
+- `isPossible(int k) -> boolean`
+
+**Variable Declarations:**
+- `n: int`
+- `a: int[]`
+- `s: TreeMap<Integer, Integer>`
+- `ng: int`
+- `ok: int`
+- `k: int`
+- `current: int`
+- `ai: int`
+- `p: int`
+- `sp: int`
+
+**Data Types:**
+- `int`
+- `int[]`
+- `TreeMap<Integer, Integer>`
+- `String[]`
+- `BufferedReader`
+- `InputStreamReader`
+
+**Required Libraries:**
+- `java.io.BufferedReader`
+- `java.io.InputStreamReader`
+- `java.io.IOException`
+- `java.util.Arrays`
+- `java.util.TreeMap`
+
+**Algorithm Flow:**
+
+1. **main()**
+   - Create instance of atcoder_AGC029_C
+   - Call solve()
+
+2. **set()**
+   - Initialize BufferedReader with System.in
+   - Read integer n from input
+   - Read next line, split by space, convert to int array a
+   - Initialize empty TreeMap s
+   - Handle IOException
+
+3. **solve()**
+   - Call set()
+   - Initialize ng = 0, ok = n
+   - While (ok - ng > 1)
+     - k = (ng + ok) / 2
+     - If isPossible(k)
+       - ok = k
+     - Else
+       - ng = k
+   - Print ok
+
+4. **isPossible(int k)**
+   - Clear TreeMap s
+   - Initialize current = 0
+   - For each ai in a
+     - If ai <= current
+       - If k == 1 return false
+       - While s is not empty and last key >= ai
+         - Remove last entry from s
+       - p = ai - 1
+       - While true
+         - If p < 0 return false
+         - sp = s.getOrDefault(p, 0) + 1
+         - s.put(p, sp)
+         - If sp == k
+           - Remove p from s
+           - p = p - 1
+         - Else
+           - Break
+     - current = ai
+   - Return true

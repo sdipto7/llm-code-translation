@@ -1,0 +1,65 @@
+**Structured Algorithm Specification**
+
+**1. Function Signatures**
+- `main() -> int`
+  - Parameters: None
+  - Return Type: Integer
+- `Bob_sMaxStrength(pieces: List[Tuple[int, str]]) -> int`
+  - Parameters: List of tuples containing integer and string elements
+  - Return Type: Integer
+
+**2. Variable Declarations**
+- `main()`
+  - `pieces: List[Tuple[int, str]]` (Derived from input processing)
+- `Bob_sMaxStrength()`
+  - `pScore: int` (Initialized to sum of B-type piece values)
+  - `sScore: int` (Initialized identically to pScore)
+  - `pMaxScore: int` (Initialized identically to pScore)
+  - `sMaxScore: int` (Initialized identically to pScore)
+
+**3. Input/Output Operations**
+- `main()`
+  - Read first input line (discarded)
+  - Read second input line: Space-separated integers
+  - Read third input line: Space-separated single-character strings
+  - Convert inputs to list of (int, str) tuples
+- `Bob_sMaxStrength()`
+  - Returns maximum score via `return max(pMaxScore, sMaxScore)`
+
+**4. Control Flow & Logic**
+
+**main()**
+1. Discard first input line
+2. Read second line as space-separated integers
+3. Read third line as space-separated characters
+4. Create list `pieces` by zipping integer list and character list
+5. Call and return `Bob_sMaxStrength(pieces)`
+
+**Bob_sMaxStrength(pieces)**
+1. Initialize all scores:
+   - Sum values from pieces where character is 'B'
+   - Assign sum to pScore, sScore, pMaxScore, sMaxScore
+2. **Forward Processing:**
+   - For each piece in input order:
+     1. If piece character is 'A':
+        - Add piece value to pScore
+        - If pScore > pMaxScore: Update pMaxScore
+     2. Else:
+        - Subtract piece value from pScore
+3. **Reverse Processing:**
+   - For each piece in reverse order:
+     1. If piece character is 'A':
+        - Add piece value to sScore
+        - If sScore > sMaxScore: Update sMaxScore
+     2. Else:
+        - Subtract piece value from sScore
+4. Return maximum of pMaxScore and sMaxScore
+
+**5. Edge Case Handling**
+- Handles empty input lists (implicit via loop termination)
+- Processes zero-length B-type pieces correctly via initial sum calculation
+- Correctly handles all-A or all-B input combinations
+
+**6. Dependencies**
+- Requires standard input/output operations
+- No external libraries used beyond basic list/tuple manipulation

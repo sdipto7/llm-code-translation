@@ -1,0 +1,72 @@
+Algorithm:
+1. **Function Signature**: `main() throws IOException`
+   - No parameters
+   - No return type
+
+2. **Variable Declarations**:
+   - `InputReader ir` of type `InputReader`
+   - `int m`
+   - `int n`
+   - `int[] manju`
+   - `int[] boxlen`
+   - `int[] boxcost`
+   - `int[][] dp`
+
+3. **Execution Flow**:
+   - Initialize `ir` with `new InputReader(System.in)`
+   - Read integers `m` and `n` using `ir.nextInt()`
+   - Initialize `manju` array with `ir.toIntArray(m)`
+   - Initialize `boxlen` and `boxcost` arrays with size `n`
+   - For loop from `i = 0` to `n-1`:
+     - Assign `boxlen[i]` with `ir.nextInt()`
+     - Assign `boxcost[i]` with `ir.nextInt()`
+   - Call `sort(manju)` to sort the `manju` array
+   - Initialize `dp` as a 2D array with dimensions `[m+1][n+1]`
+   - For loop from `i = m-1` to `0` (inclusive, decrementing):
+     - For loop from `j = n-1` to `0` (inclusive, decrementing):
+       - `int len = i + boxlen[j] >= m ? m : i + boxlen[j]`
+       - Initialize `int cnt = 0`
+       - For loop from `k = i` to `len-1` (inclusive):
+         - Increment `cnt` by `manju[m-1-k]`
+       - Update `dp[i][j]` to the maximum of `dp[i][j]` and `dp[len][j+1] + cnt - boxcost[j]`
+       - Update `dp[i][j]` to the maximum of `dp[i][j]` and `dp[i][j+1]`
+   - Print `dp[0][0]` using `out.println()`
+   - Flush the output using `out.flush()`
+
+4. **Function Signature**: `sort(int[] a)`
+   - Parameter: `int[] a`
+   - No return type
+
+5. **Sort Logic**:
+   - For loop from `i = a.length-1` to `1` (inclusive, decrementing):
+     - `int t = (int)Math.random() * i`
+     - Swap `a[i]` with `a[t]`
+   - Sort the array `a` using `Arrays.sort(a)`
+
+6. **Class**: `InputReader`
+   - **Constructor**: `InputReader(InputStream in)`
+     - Parameter: `InputStream in`
+     - Initialize `byte[] buffer = new byte[1024]`
+     - Initialize `int curbuf`
+     - Initialize `int lenbuf`
+   - **Method**: `int readByte()`
+     - Return `-1` if `lenbuf <= 0`
+     - Read from `buffer` if `curbuf >= lenbuf`
+     - Return `buffer[curbuf++]`
+   - **Method**: `boolean isSpaceChar(int c)`
+     - Return `!(c >= 33 && c <= 126)`
+   - **Method**: `int skip()`
+     - Skip space characters and return next non-space byte
+   - **Method**: `String next()`
+     - Use `skip()` to find start of next token
+     - Read input until next space character and return as `String`
+   - **Method**: `int nextInt()`
+     - Use `readByte()` to read next integer
+     - Handle negative numbers
+     - Return parsed integer
+   - **Method**: `long nextLong()`
+     - Use `readByte()` to read next long integer
+     - Handle negative numbers
+     - Return parsed long integer
+   - **Method**: `int[] toIntArray(int n)`
+     - Read `n` integers using `nextInt()` and return as `int[]`

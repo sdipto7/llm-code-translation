@@ -1,0 +1,40 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner sc` initialized with `System.in`
+- `PrintWriter out` initialized with `System.out`
+- `int n` assigned via `sc.nextInt()`
+- `int[] arr` of size `n`, filled via `sc.nextInt()` in a loop
+- `int cnt` initialized to `0`
+- `boolean flag` initialized to `true`
+
+**Logic Flow:**
+1. Read integer `n` from input
+2. Initialize `arr` with `n` integers read from input
+3. Enter infinite loop:
+   - Iterate over all elements in `arr` using index `i` from `0` to `n-1`:
+     - If `arr[i] % 2 != 0`:
+       - Set `flag` to `false`
+       - Break the loop
+     - Else:
+       - Assign `arr[i] = arr[i] / 2`
+   - After processing elements:
+     - If `flag` is `true`: increment `cnt`
+     - Else: break the infinite loop
+4. Print `cnt` using `out.println(cnt)`
+5. Flush output via `out.flush()`
+
+**Control Structures:**
+- `while (true)` loop enclosing element processing
+- `for (int i = 0; i < n; i++)` loop for array traversal
+- `if (arr[i] % 2 != 0)` to check odd elements (inner conditional)
+- `if (flag == true)` to determine continuation or termination (outer conditional)
+
+**Input/Output Operations:**
+- Read input via `Scanner` methods (`nextInt()`)
+- Write output via `PrintWriter` methods (`println()`, `flush()`)
+
+**Dependencies:**
+- `java.io.PrintWriter`
+- `java.util.Scanner`

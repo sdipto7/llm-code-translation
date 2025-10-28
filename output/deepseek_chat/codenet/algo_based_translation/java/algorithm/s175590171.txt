@@ -1,0 +1,93 @@
+Algorithm:
+
+1. Function: main
+   - Parameters: String[] args
+   - Return: void
+   - Variables:
+        FastScanner fs (object)
+        int n
+        int[] a (size n)
+        long sum = 0
+        int count = 0
+   - Logic flow:
+        Initialize FastScanner object fs
+        Read integer n from input
+        Create integer array a of size n
+        For i from 0 to n-1:
+            Read integer value into a[i]
+        Sort array a in ascending order
+        For i from 0 to n-2:
+            Add a[i] to sum
+            If a[i+1] <= 2 * sum:
+                Increment count by 1
+            Else:
+                Set count to 0
+        Print count + 1
+
+2. Class: FastScanner
+   - Variables:
+        InputStream in = System.in
+        byte[] buffer (size 1024)
+        int ptr = 0
+        int buflen = 0
+   - Methods:
+        hasNextByte():
+            If ptr < buflen: return true
+            Else:
+                Set ptr to 0
+                Try to read input into buffer, set buflen to bytes read
+                If buflen <= 0: return false
+                Else: return true
+        
+        readByte():
+            If hasNextByte(): return buffer[ptr++] 
+            Else: return -1
+        
+        isPrintableChar(int c):
+            Return true if 33 <= c <= 126, else false
+        
+        hasNext():
+            While hasNextByte() and buffer[ptr] is not printable:
+                Increment ptr
+            Return hasNextByte()
+        
+        next():
+            If not hasNext(): throw NoSuchElementException
+            Initialize StringBuilder sb
+            Read byte b
+            While b is printable:
+                Append b to sb
+                Read next byte b
+            Return sb.toString()
+        
+        nextLong():
+            If not hasNext(): throw NoSuchElementException
+            long n = 0
+            boolean minus = false
+            Read byte b
+            If b == '-':
+                Set minus to true
+                Read next byte b
+            If b not between '0' and '9': throw NumberFormatException
+            While true:
+                If '0' <= b <= '9':
+                    n = n * 10 + (b - '0')
+                Else if b == -1 or b not printable:
+                    Return minus ? -n : n
+                Else:
+                    throw NumberFormatException
+                Read next byte b
+        
+        nextInt():
+            long nl = nextLong()
+            If nl < Integer.MIN_VALUE or nl > Integer.MAX_VALUE: throw NumberFormatException
+            Return (int)nl
+        
+        nextDouble():
+            Return Double.parseDouble(next())
+
+3. Required dependencies:
+   - java.util.Arrays
+   - java.util.NoSuchElementException
+   - java.io.InputStream
+   - java.io.IOException

@@ -1,0 +1,59 @@
+Function Signature: `int cal(String s, char c)`
+Parameter Types: `String`, `char`
+Return Type: `int`
+Variable Declarations: `int n`, `int m`, `int ans`
+Logic Flow:
+- Initialize `n` to length of `s`
+- Initialize `m` to `n - 1`
+- Initialize `ans` to `0`
+- For loop from `i = 0` to `i < n`
+    - If `s.charAt(i) == c` and `(m & i) == i`
+        - XOR `ans` with `1`
+Return `ans`
+
+Function Signature: `void solve()`
+No Parameters
+Return Type: `void`
+Variable Declarations: `int n`, `String s`, `StringBuilder sb`
+Logic Flow:
+- Read integer `n` using `sc.nextInt()`
+- Read string `s` using `sc.next()`
+- Initialize `sb` as new `StringBuilder`
+- For loop from `i = 1` to `i < n`
+    - Append absolute difference between `s.charAt(i)` and `s.charAt(i - 1)` to `sb`
+- If `n == 2`
+    - Print character at index `0` of `sb` using `out.println()`
+    - Return
+- Convert `sb` to string `s`
+- If `s.contains("1")`
+    - Print result of `cal(s, '1')` using `out.println()`
+- Else
+    - Print result of `cal(s, '2') * 2` using `out.println()`
+
+Function Signature: `main(String[] args)`
+Parameter Types: `String[]`
+Return Type: `void`
+Variable Declarations: `PrintWriter out`, `MyScanner sc`
+Logic Flow:
+- Initialize `out` to new `PrintWriter` wrapping `BufferedOutputStream` around `System.out`
+- Initialize `sc` to new `MyScanner`
+- Create new instance of `atcoder_AGC043_B` and call `solve()` method
+- Close `out`
+
+Class `MyScanner`
+Fields: `BufferedReader br`, `StringTokenizer st`
+Constructor: No parameters
+Methods:
+- `String next()`
+    - While `st` is null or `st` has no more elements
+        - Try
+            - Assign new `StringTokenizer` made from reading line from `br` to `st`
+        - Catch `IOException`
+            - Print stack trace of exception
+    - Return next token from `st`
+- `int nextInt()`
+    - Return parsed integer from `next()`
+- `long nextLong()`
+    - Return parsed long from `next()`
+- `double nextDouble()`
+    - Return parsed double from `next()`

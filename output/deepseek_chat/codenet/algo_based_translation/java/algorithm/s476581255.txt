@@ -1,0 +1,24 @@
+1. Import java.util.Scanner
+2. Define class Main
+3. Define main method with String[] args parameter
+4. Create Scanner object sc reading from System.in
+5. Read integer n from input
+6. Declare integer array a of size n
+7. For i from 0 to n-1:
+   - Read integer from input and store in a[i]
+8. Call bubbleSort(a, n) and store result in count
+9. For i from 0 to n-1:
+   - If i < n-1: print a[i] followed by space
+   - Else: print a[i] followed by newline
+10. Print count followed by newline
+11. Define bubbleSort method taking integer array a and integer n, returning integer
+12. Declare boolean flag = true
+13. Declare integer count = 0
+14. While flag == true:
+    - Set flag = false
+    - For j from n-1 down to 1:
+        - If a[j] < a[j-1]:
+            - Swap a[j] and a[j-1] using temporary variable free
+            - Increment count by 1
+            - Set flag = true
+15. Return count

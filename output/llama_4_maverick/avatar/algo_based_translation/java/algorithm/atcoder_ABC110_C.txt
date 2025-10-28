@@ -1,0 +1,19 @@
+1. Read two strings S and T from the input.
+2. Initialize a boolean variable res to true.
+3. Define an array A containing all lowercase English letters.
+4. Iterate over each character s in array A.
+5. Find the index of the first occurrence of s in S.
+6. If s is not found in S, skip to the next iteration.
+7. Get the character t at the same index in T as s is in S.
+8. Initialize a variable idx to 0.
+9. Enter a loop that continues until idx is out of bounds of S.
+10. Inside the loop, check if s is found in S starting from idx.
+11. If s is found, compare its index in S with the index of t in T starting from idx.
+12. If the indices do not match, set res to false and exit the loop.
+13. If the indices match, update idx to the index of s in S plus one.
+14. If s is not found in S but t is found in T starting from idx, set res to false and exit the loop.
+15. If neither s nor t is found in S and T respectively starting from idx, exit the loop.
+16. If res becomes false, exit the outer loop iterating over A.
+17. After iterating over all characters in A or res becomes false, check the value of res.
+18. If res is true, output "Yes".
+19. If res is false, output "No".

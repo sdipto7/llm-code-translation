@@ -1,0 +1,60 @@
+Algorithm:
+
+- Function signature: `main(String[] args)`, void return type
+  - Variable declarations: `FastReader sc`, `PrintWriter out`, `int n`, `int[] a` (size 33)
+  - Logic flow:
+    - Initialize `FastReader` for input and `PrintWriter` for output
+    - Read integer `n` from input
+    - Initialize array `a` of size 33 with all elements set to 0
+    - Loop from `i = 0` to `i < n` (inclusive)
+      - Read an integer from input
+      - Call `rec` function with the read integer and increment the corresponding index in array `a`
+    - Initialize `double answer` to 0
+    - Loop from `i = 0` to `i < a.length` (inclusive)
+      - Calculate `double summ` as `(1 + a[i] - 1) / 2.0 * (a[i] - 1)`
+      - Add `summ` to `answer`
+    - Print the casted `long` value of `answer`
+    - Close `PrintWriter`
+
+- Function signature: `rec(long x)`, return type `int`
+  - Variable declarations: `int answer` initialized to 0
+  - Logic flow:
+    - Loop from `k = 31` to `k >= 0` (inclusive)
+      - If bit `k` in `x` is set (i.e., `(x & (1 << k)) != 0`)
+        - Increment `answer`
+    - Return `answer`
+
+- Class `FastReader`
+  - Variable declarations: `BufferedReader br`, `StringTokenizer st`
+  - Constructor: No parameters
+    - Initialize `BufferedReader` with `InputStreamReader` for standard input
+  - Function signature: `next()`, return type `String`
+    - Logic flow:
+      - While `st` is null or `st` has no more elements
+        - Read a line from `BufferedReader`
+        - Tokenize the read line and assign to `st`
+      - Return next token from `st`
+  - Function signature: `nextInt()`, return type `int`
+    - Logic flow:
+      - Call `next()` and parse it to `int`
+      - Return parsed integer
+  - Function signature: `nextLong()`, return type `long`
+    - Logic flow:
+      - Call `next()` and parse it to `long`
+      - Return parsed long
+  - Function signature: `nextDouble()`, return type `double`
+    - Logic flow:
+      - Call `next()` and parse it to `double`
+      - Return parsed double
+  - Function signature: `nextLine()`, return type `String`
+    - Variable declarations: `String str` initialized to empty string
+    - Logic flow:
+      - Read a line from `BufferedReader` and assign to `str`
+      - Return `str`
+
+- Required libraries/modules/dependencies:
+  - `java.io.BufferedReader`
+  - `java.io.IOException`
+  - `java.io.InputStreamReader`
+  - `java.io.PrintWriter`
+  - `java.util.StringTokenizer`

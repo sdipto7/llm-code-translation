@@ -1,0 +1,53 @@
+**Function Signatures:**
+- `main(String[] args)`
+- `solve(int[] arr) returns int`
+
+**Variables:**
+- `Scanner scan`
+- `int N`
+- `int[] arr`
+- `Task tsk`
+- `int n`
+- `int[] sorted`
+- `long total`
+- `int l`
+- `int r`
+- `int mid`
+- `int target`
+- `int cur`
+- `long cnt`
+- `long[] bit`
+
+**Libraries/Dependencies:**
+- `java.io.BufferedInputStream`
+- `java.util.Arrays`
+- `java.util.HashMap`
+- `java.util.Scanner`
+- `java.util.TreeMap`
+
+**Algorithm:**
+1. Create Scanner with BufferedInputStream from System.in
+2. Read integer N from input
+3. Create integer array arr of size N
+4. For i from 0 to N-1: read next integer into arr[i]
+5. Create Task instance tsk
+6. Call tsk.solve(arr) and print result
+7. In solve method: get length n of arr
+8. Create sorted as copy of arr
+9. Sort sorted array
+10. Calculate total = n*(n+1)/2
+11. Initialize l=0, r=n-1
+12. While l < r:
+    - mid = l + (r-l)/2
+    - target = sorted[mid]
+    - cur = 0
+    - cnt = 0
+    - Create bit array of size 2*n+2
+    - For x from n+1 to end of bit array, incrementing by x & -x: increment bit[x]
+    - For i from 0 to n-1:
+        - If arr[i] <= target: cur += 1, else cur += -1
+        - For x from cur+n+1 to end of bit array, incrementing by x & -x: increment bit[x]
+        - For x from cur+n down to 1, decrementing by x & -x: add bit[x] to cnt
+    - If cnt >= total/2 + 1: r = mid
+    - Else: l = mid + 1
+13. Return sorted[l]

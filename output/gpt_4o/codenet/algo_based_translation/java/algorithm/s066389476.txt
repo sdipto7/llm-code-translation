@@ -1,0 +1,15 @@
+- Function Signature: `main(String[] args) -> void`
+  - Variable Declaration: `Scanner sc`
+  - Logic Flow:
+    - Open a `Scanner` for input.
+    - Call `solve(sc)`.
+
+- Function Signature: `solve(Scanner sc) -> void`
+  - Variable Declaration: `char[] a`
+  - Logic Flow:
+    - Read a string from input using `sc.next()` and convert it to a character array `a`.
+    - Conditional Check:
+      - If `a[0] == a[1]` or `a[1] == a[2]` or `a[2] == a[0]`, print "No".
+      - Else, print "Yes".
+
+- Required Libraries: `java.util.Scanner`

@@ -1,0 +1,9 @@
+n: int, m: int = read two integers from input
+gate_cond: List[List[int]] = read m lines, each containing two integers
+max_under_th: int = maximum value from first elements of all sublists in gate_cond
+min_upper_th: int = minimum value from second elements of all sublists in gate_cond
+if min_upper_th >= max_under_th:
+    result: int = (min_upper_th - max_under_th) + 1
+else:
+    result: int = 0
+print result

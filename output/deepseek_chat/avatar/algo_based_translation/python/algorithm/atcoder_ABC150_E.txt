@@ -1,0 +1,12 @@
+mod: integer = 1000000007
+n: integer = input integer from stdin
+c: list of integers = input list of integers from stdin
+Sort c in descending order
+b: integer = (2^(2*n - 2)) mod mod
+a: integer = (2 * b) mod mod
+ans: integer = 0
+
+For i from 0 to n-1 (inclusive):
+    ans = (ans + (c[i] * (a + (i * b)))) mod mod
+
+Print ans

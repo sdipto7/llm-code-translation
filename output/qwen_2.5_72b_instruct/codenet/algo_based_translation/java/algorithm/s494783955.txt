@@ -1,0 +1,22 @@
+Function signatures:
+- main(String[] args): void
+
+Variable declarations and data types:
+- sc: Scanner
+- C: String
+
+Logic flow in execution order:
+1. Create a new Scanner object to read input from the standard input stream and assign it to sc.
+2. Read the next token from the input as a String and assign it to C.
+3. Convert the first character of C to its ASCII value, add 1 to it, convert the result back to a character, and print it to the standard output.
+
+Control structures:
+- No explicit loops or conditionals.
+
+Input/output operations and data processing logic:
+- Input: Reads a single string token from the user.
+- Processing: Converts the first character of the string to its next ASCII character.
+- Output: Prints the resulting character to the console.
+
+Required libraries, modules, or dependencies:
+- java.util.Scanner

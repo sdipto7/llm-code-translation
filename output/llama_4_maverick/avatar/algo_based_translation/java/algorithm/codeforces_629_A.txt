@@ -1,0 +1,21 @@
+1. Read the number of inputs
+2. Initialize a counter and a fine variable to 0
+3. Create an empty list to store input strings
+4. Iterate the number of inputs times:
+   4.1. Read a string input
+   4.2. Store the input string in the list
+5. Iterate over each column index of the input strings:
+   5.1. Iterate over each string in the list:
+      5.1.1. Check if the character at the current column index is 'C'
+      5.1.2. If 'C', increment the counter
+   5.2. Calculate the combinations of 'C' in the current column using the counter
+   5.3. Add the combinations to the fine variable
+   5.4. Reset the counter to 0
+6. Iterate over each row index of the input strings:
+   6.1. Iterate over each character in the string at the current row index:
+      6.1.1. Check if the character is 'C'
+      6.1.2. If 'C', increment the counter
+   6.2. Calculate the combinations of 'C' in the current row using the counter
+   6.3. Add the combinations to the fine variable
+   6.4. Reset the counter to 0
+7. Output the fine variable

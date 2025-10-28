@@ -1,0 +1,16 @@
+1. Initialize a new instance of the program.
+2. Read the number of strings `n` from the input.
+3. Read `n` strings and store them in a 2D array `ss`.
+4. Read a target string and store it in a character array `cc`.
+5. Read a character `c` from the input.
+6. Determine the alternate character `a` based on the value of `c`.
+7. Convert `c` and `a` to their uppercase equivalents `c_` and `a_`.
+8. Create a boolean array `lucky` of the same length as `cc`.
+9. Iterate over each position `j` in `cc`.
+10. For each `j`, iterate over each string in `ss`.
+11. For each string, check if it matches the substring of `cc` starting at `j` with the same length as the string.
+12. If a match is found, mark the corresponding positions in `lucky` as true.
+13. Iterate over each position `j` in `cc` again.
+14. If `lucky[j]` is true, replace the character at `cc[j]` with `a` or `a_` based on its original case and value relative to `c`.
+15. If `lucky[j]` is true and `cc[j]` is not `c` (ignoring case), replace `cc[j]` with `c` or `c_` based on its original case.
+16. Output the modified `cc`.

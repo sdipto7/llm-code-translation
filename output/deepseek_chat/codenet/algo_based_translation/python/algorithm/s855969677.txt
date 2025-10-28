@@ -1,0 +1,19 @@
+Function name: main
+Parameters: none
+Return type: void
+
+Variables:
+- s: string
+
+Logic:
+1. Read input string from standard input and store in variable s
+2. If s equals "RRR":
+   - Print integer 3
+3. Else if s equals "SSS":
+   - Print integer 0
+4. Else if s equals "RRS" OR s equals "SRR":
+   - Print integer 2
+5. Else:
+   - Print integer 1
+
+No external libraries or modules required

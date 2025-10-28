@@ -1,0 +1,12 @@
+- Import required libraries: java.util, java.lang.System, java.math
+- Define a class: Main
+- Define a function: main with parameter args of type String[] and return type void
+- Declare a variable: sc of type Scanner and initialize it with new Scanner(System.in)
+- Declare an array: youbi of type String[] and initialize it with {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"}
+- Declare a variable: s of type String and read input from sc into s
+- Declare a variable: ans of type int and initialize it with 0
+- Iterate over youbi using a for loop with loop counter i, starting from 0, continuing while i is less than youbi.length, incrementing i by 1 in each iteration
+  - Inside the loop, check if youbi[i] is equal to s using the equals method
+  - If the condition is true, assign 7 - i to ans
+- Print the value of ans to the output using out.println
+- The program terminates after executing the main function.

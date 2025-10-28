@@ -1,0 +1,32 @@
+- Function signature:  
+  `public static void main(String[] args) -> void`  
+
+- Variables:  
+  - `Scanner sc = new Scanner(System.in)`
+  - `int n` (first input)
+  - `int m` (second input)
+  - `int[] po` (size n)  
+  - Loop variable: `int i = 0`  
+
+- Execution steps:  
+  1. Read `n` via `sc.nextInt()`  
+  2. Read `m` via `sc.nextInt()`  
+  3. Initialize array `po` with length `n`  
+  4. Loop: `for i from 0 to n-1`  
+     a. Read `po[i]` via `sc.nextInt()`  
+     b. Subtract `po[i]` from `m`  
+  5. Sort array `po` in ascending order with `Arrays.sort(po)`  
+  6. Compute result as `n + (m / po[0])`  
+  7. Print result via `System.out.println`  
+
+- Control structures:  
+  - Single `for` loop: `i < n` as continuation condition  
+  - No explicit conditionals  
+
+- Input/Output:  
+  - Inputs: n, m, followed by n integers for array `po`  
+  - Output: Single integer via `System.out.println`  
+
+- Dependencies:  
+  - `java.util.Scanner` for input  
+  - `java.util.Arrays` for sorting

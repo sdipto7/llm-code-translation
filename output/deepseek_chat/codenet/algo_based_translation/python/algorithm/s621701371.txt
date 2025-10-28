@@ -1,0 +1,22 @@
+1. Read a string `s` from standard input.
+2. Read an integer `q` from standard input.
+3. Read `q` lines from standard input, each split into a list of strings, stored in `qs`.
+4. Initialize boolean `n` to False.
+5. Initialize strings `left` and `right` to empty strings.
+6. For each operation in `qs`:
+   a. If the first element is '1':
+      - Toggle `n` (if True becomes False, if False becomes True).
+   b. If the first element is '2':
+      - Assign the three elements to `t`, `f`, and `c`.
+      - Convert `f` to integer.
+      - If `n` is True:
+          - If `f` is not 1, set `f` to 1; else set `f` to 2.
+      - If `f` equals 1:
+          - Prepend `c` to `left`.
+      - Else if `f` equals 2:
+          - Append `c` to `right`.
+7. Concatenate `left`, `s`, and `right` into a new string `s`.
+8. If `n` is True:
+      - Print the reversed `s`.
+   Else:
+      - Print `s`.

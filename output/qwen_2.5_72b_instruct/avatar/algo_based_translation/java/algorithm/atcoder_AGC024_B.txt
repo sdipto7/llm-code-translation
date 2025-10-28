@@ -1,0 +1,34 @@
+- Function signature: `main(String[] args)`
+- Variable declarations:
+  - `Scanner scan` of type `Scanner`
+  - `int N` of type `int`
+  - `int[] P` of type `int[]`
+  - `Map<Integer, Integer> map` of type `Map<Integer, Integer>`
+  - `List<Integer> nglist` of type `List<Integer>`
+  - `int ans` of type `int`
+- Logic flow:
+  - Create `Scanner` object `scan` to read input
+  - Read integer `N`
+  - Initialize array `P` of size `N`
+  - For loop from `i = 0` to `N - 1`:
+    - Read next integer, subtract 1, and store in `P[i]`
+  - Initialize `map` as `HashMap`
+  - For loop from `i = 0` to `N - 1`:
+    - Put entry `P[i] -> i` in `map`
+  - Initialize `nglist` as `ArrayList`
+  - For loop from `i = 0` to `N - 2`:
+    - If `map.get(i) > map.get(i + 1)`:
+      - Add `i` to `nglist`
+  - If `nglist.isEmpty()`:
+    - Print `0`
+    - Return
+  - Set `ans` to minimum of `N - nglist.get(0) - 1` and `nglist.get(nglist.size() - 1) + 1`
+  - For loop from `i = 0` to `nglist.size() - 2`:
+    - Update `ans` to minimum of `nglist.get(i) + 1 + N - nglist.get(i + 1) - 1` and `ans`
+  - Print `ans`
+- Required libraries/modules/dependencies:
+  - `java.util.ArrayList`
+  - `java.util.HashMap`
+  - `java.util.List`
+  - `java.util.Map`
+  - `java.util.Scanner`

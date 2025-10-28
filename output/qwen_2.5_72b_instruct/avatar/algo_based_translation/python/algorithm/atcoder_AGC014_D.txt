@@ -1,0 +1,37 @@
+Algorithm:
+- Import sys and deque from collections
+- Read integer N from standard input
+- Initialize adj as a list of empty lists of size N+1
+- For N-1 times:
+    - Read two integers a and b from standard input
+    - Append b to adj[a]
+    - Append a to adj[b]
+- Initialize que as a deque
+- Append 1 to que
+- Initialize seen as a list of integers of size N+1 filled with 0
+- Set seen[1] to 1
+- Initialize par as a list of integers of size N+1 filled with 0
+- Initialize child_num as a list of integers of size N+1 filled with 0
+- While que is not empty:
+    - Pop left element from que and assign to v
+    - For each u in adj[v]:
+        - If seen[u] is 0:
+            - Set seen[u] to 1
+            - Set par[u] to v
+            - Increment child_num[v] by 1
+            - Append u to que
+- Initialize seq as a deque
+- For i from 1 to N:
+    - If child_num[i] is 0:
+        - Append i to seq
+- While seq is not empty:
+    - Pop right element from seq and assign to c
+    - Set seen[c] to 0
+    - If seen[par[c]] is 0:
+        - Print 'First'
+        - Exit program
+    - Set seen[par[c]] to 0
+    - Decrement child_num[par[par[c]]] by 1
+    - If child_num[par[par[c]]] is 0:
+        - Append par[par[c]] to seq
+- Print 'Second'

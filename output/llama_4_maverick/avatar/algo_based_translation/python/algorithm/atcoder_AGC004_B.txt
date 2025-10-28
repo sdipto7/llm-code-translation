@@ -1,0 +1,13 @@
+1. Read two integer inputs, n and x.
+2. Read n integer inputs into a list a.
+3. Initialize a 2D list b with dimensions n x n, filled with None.
+4. For each index i from 0 to n-1:
+   4.1. Initialize m with the value of a at index i.
+   4.2. For each index j from 0 to n-1:
+      4.2.1. Calculate k as i - j, and if k is negative, add n to k.
+      4.2.2. Update m to be the minimum of m and the value of a at index k.
+      4.2.3. Store m in b at position [j][i].
+5. Initialize m with a large value (10^15).
+6. For each index i and corresponding sublist j in b:
+   6.1. Update m to be the minimum of m and the sum of all elements in j plus x times i.
+7. Output the final value of m.

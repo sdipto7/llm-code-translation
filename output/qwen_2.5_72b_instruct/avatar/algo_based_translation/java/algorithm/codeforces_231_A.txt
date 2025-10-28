@@ -1,0 +1,25 @@
+Function Signature: public static void main(String[] args)
+
+Variable Declarations:
+- Scanner sc
+- int t
+- int count initialized to 0
+- int a
+- int b
+- int c
+
+Logic Flow:
+1. Initialize Scanner object sc to read input from System.in
+2. Read integer t from sc
+3. Set count to 0
+4. While t is greater than 0:
+   - Decrement t by 1
+   - Read integer a from sc
+   - Read integer b from sc
+   - Read integer c from sc
+   - If (a == 1 && b == 1) || (a == 1 && c == 1) || (b == 1 && c == 1) || (a == 1 && b == 1 && c == 1):
+     - Increment count by 1
+5. Print count
+
+Libraries/Modules/Dependencies:
+- java.util.Scanner

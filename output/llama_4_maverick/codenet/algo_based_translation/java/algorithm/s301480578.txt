@@ -1,0 +1,16 @@
+### Algorithm
+
+1. Define a function `main` with no parameters and no return type.
+2. Declare a variable `sc` of type `Scanner` and initialize it with a new `Scanner` object reading from `System.in`.
+3. Declare an integer variable `n` and read its value from `sc` using `nextInt()`.
+4. Declare an integer array `h` of size `n`.
+5. Iterate from `i = 0` to `n-1` using a `for` loop.
+   - Inside the loop, read the `i-th` element of `h` from `sc` using `nextInt()`.
+6. Declare an integer variable `max` and initialize it to `0`.
+7. Iterate from `l = 0` to `n-2` using a `for` loop.
+   - Declare an integer variable `count` and initialize it to `0`.
+   - Enter a `while` loop that continues as long as `l < n-1` and `h[l] >= h[l+1]`.
+     - Inside the `while` loop, increment `l` by `1` and increment `count` by `1`.
+   - Update `max` to be the maximum of `max` and `count`.
+8. Print the value of `max` to `System.out`.
+9. The required library is `java.util.Scanner`.

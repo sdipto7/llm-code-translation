@@ -1,0 +1,59 @@
+**Structured Algorithm Specification:**
+
+**Function/Method:**
+- **Name:** `main`
+- **Parameters:** None
+- **Return Type:** None (writes result to stdout)
+
+**Variables:**
+- `n`: Integer (input array size)
+- `lst`: List of integers (input elements)
+- `od`: Integer (count of odd elements)
+- `sum`: Integer (computed total)
+- `ok`: Boolean (state flag for alternate odd inclusion)
+
+**Steps:**
+
+1. **Input Operations:**
+   - Read integer `n` from standard input.
+   - Read next line, split into tokens, and parse as integer list `lst` with length `n`.
+
+2. **Data Processing:**
+   - Sort `lst` in descending order.
+   - Initialize `od` to 0.
+
+3. **Odd Count Calculation:**
+   - For each element `i` in `lst`:
+     - If `i % 2 != 0`, increment `od` by 1.
+
+4. **Sum Initialization:**
+   - Set `sum` to 0.
+   - Set `ok` to `False`.
+
+5. **Sum Computation Loop:**
+   - For each element `current` in `lst`:
+     - **If Even:**
+       - Add `current` to `sum`.
+     - **Else (Odd):**
+       - If `ok` is `True` **OR** `od > 1`:
+         - Add `current` to `sum`.
+         - Decrement `od` by 1.
+         - Toggle `ok` (`ok = not ok`).
+
+6. **Output:**
+   - Print `sum` to standard output.
+
+**Control Flow Structures:**
+- **Loop 1:** Iterate over `lst` to count odd elements (fixed iteration: n elements).
+- **Loop 2:** Iterate over `lst` to compute sum (fixed iteration: n elements).
+- **Conditional 1:** Branch for even/odd element handling.
+- **Conditional 2:** Sub-branch for odd inclusion criteria (`ok` state or remaining odd pairs).
+
+**Edge Case Handling:**
+- Full odd list with even count: include all elements.
+- Full odd list with odd count: exclude smallest odd element.
+- Single odd element with even elements: exclude lone odd.
+- Empty list: returns 0 (implicitly via n=0 initialization).
+
+**External Dependencies:**
+- None. Uses core language functions for sorting and I/O.

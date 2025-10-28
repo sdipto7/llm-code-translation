@@ -1,0 +1,6 @@
+1. Read input from user and store it
+2. Convert the input into a list of integers
+3. Sort the list in ascending order
+4. Check if any number in the sorted list is not divisible by the smallest number
+5. If any number is not divisible, output -1
+6. If all numbers are divisible, output the smallest number

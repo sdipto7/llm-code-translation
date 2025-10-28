@@ -1,0 +1,34 @@
+Function Signature:
+```python
+def calculate_valid_numbers(n: int, m: int, gate_cond: list[list[int]]) -> int
+```
+
+Variables:
+- `n: int` (number of integers)
+- `m: int` (number of gate conditions)
+- `gate_cond: list[list[int]]` (each sublist has two integers [L_i, R_i])
+- `max_under_th: int`
+- `min_upper_th: int`
+
+Algorithm Logic:
+1. Read input values for `n` and `m` using `input().split()`
+2. Create `gate_cond` by reading `m` lines, converting each line to list of two integers
+3. Extract all first elements from sublists in `gate_cond` and compute maximum → store in `max_under_th`
+4. Extract all second elements from sublists in `gate_cond` and compute minimum → store in `min_upper_th`
+5. If condition `min_upper_th >= max_under_th` is true:
+   - Compute `min_upper_th - max_under_th + 1` and return
+6. Else:
+   - Return 0
+
+Control Structures:
+- List comprehension for creating `gate_cond`
+- Built-in `max()` on list of first elements
+- Built-in `min()` on list of second elements
+- If-else block checking `min_upper_th >= max_under_th`
+
+Input/Output:
+- Input through standard input (two integers followed by `m` pairs)
+- Output prints final computed integer
+
+Dependencies:
+- None (uses standard Python functions)

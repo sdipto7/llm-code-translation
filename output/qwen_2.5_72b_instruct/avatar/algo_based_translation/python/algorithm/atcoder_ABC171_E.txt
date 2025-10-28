@@ -1,0 +1,25 @@
+Function signature: main() -> None
+
+Variable declarations and data types:
+- N: int
+- a: List[int]
+- total: int
+
+Logic flow in execution order:
+1. Read an integer N from standard input
+2. Read a line from standard input, split it by spaces, convert each element to an integer, and store the result in list a
+3. Compute the cumulative XOR of all elements in list a starting with an initial value of 0; store the result in total
+4. For each element ai in list a, compute the XOR of ai and total, convert the result to a string, and collect all these strings into a list
+5. Join the list of strings into a single string with spaces between each element
+6. Print the resulting string to standard output
+
+Control structures:
+- No explicit loops or conditionals are present in the provided code
+
+Input/output operations and data processing logic:
+- Input: Reads two lines from standard input; the first line is a single integer N, and the second line contains N integers separated by spaces
+- Output: Prints a single line containing N space-separated integers, where each integer is the result of XORing the corresponding integer from the input list with the cumulative XOR of all integers in the input list
+
+Required libraries, modules, or dependencies:
+- functools.reduce
+- operator.xor

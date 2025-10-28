@@ -1,0 +1,46 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner sc = new Scanner(System.in)` (Scanner)
+- `int n` (input integer)
+- `int m` (input integer)
+- `Queue<Integer> q1 = new LinkedList<>()` (queue for integer values)
+- `Queue<Integer> q2 = new LinkedList<>()` (queue for integer indices)
+- `int i` (loop counter, 1 ≤ i ≤ n)
+- `int ans = 0` (result storage)
+- `int x` (temporary storage for q1 value)
+- `int val` (computed value for residual in q1)
+- `int val2` (temporary storage for q2 index)
+
+**Logic Flow:**
+1. Read `n` and `m` from standard input.
+2. Initialize `q1` and `q2`.
+3. Iterate from `1` to `n`:
+   - Read an integer and add it to `q1`.
+   - Add the current iteration index (1-based) to `q2`.
+4. Process elements while `q1` is not empty:
+   - If the front element of `q1` ≤ `m`:
+     - Remove the front element from `q1` and `q2`.
+     - Update `ans` with the removed index from `q2`.
+   - Else if the front element of `q1` > `m`:
+     - Remove the front element from `q1` and store it in `x`.
+     - Compute `val = x - m`.
+     - Add `val` to the end of `q1`.
+     - Remove the front index from `q2` and add it to the end of `q2`.
+5. After processing all elements, print `ans`.
+
+**Control Structures:**
+- `for (int i = 1; i <= n; i++)`
+- `while (!q1.isEmpty())`
+- `if (q1.peek() <= m)`
+- `else if (q1.peek() > m)`
+
+**Input/Output:**
+- Input: Two integers `n` and `m`, followed by `n` integers via `Scanner`.
+- Output: Print `ans` as the last index remaining after processing.
+
+**Dependencies:**
+- `java.util.Scanner`
+- `java.util.Queue`
+- `java.util.LinkedList`

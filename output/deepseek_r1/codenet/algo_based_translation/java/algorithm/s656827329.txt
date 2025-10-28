@@ -1,0 +1,40 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+  - Parameters: `String[] args`
+  - Return type: `void`
+
+**Variables:**
+- `Scanner sc = new Scanner(System.in)` (Scanner)
+- `int n` (input array size)
+- `int[] a` (integer array of size `n`)
+- `int count = 1` (segment counter)
+- `int now = 0` (current trend: 1=up, -1=down)
+- `int bef = 0` (previous trend)
+
+**Input/Output:**
+- Read `n` via `sc.nextInt()`
+- Read `n` integers into array `a` via loop
+- Print `count` via `System.out.println(count)`
+
+**Logic Flow:**
+1. Read `n`
+2. Initialize array `a` with `n` elements from input
+3. Initialize `count`, `now`, `bef`
+4. Loop `i` from 1 to `n-1`:
+   - If `a[i-1] < a[i]` → set `now=1`
+   - Else if `a[i-1] > a[i]` → set `now=-1`
+   - Else → skip to next iteration
+   - If `bef == 0` → set `bef=now`
+   - If `bef != now`:
+     - Increment `count`
+     - Reset `bef=0`
+5. Output final `count`
+
+**Control Structures:**
+- `for(int i=0;i<n;i++)` (array input)
+- `for(int i=1;i<n;i++)` (main processing loop)
+- Nested `if-else if-else` blocks for trend detection
+- Conditional checks for `bef` updates and segment counting
+
+**Dependencies:**
+- `java.util.Scanner` for input handling

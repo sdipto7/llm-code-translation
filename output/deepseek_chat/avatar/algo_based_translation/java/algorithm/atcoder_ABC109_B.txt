@@ -1,0 +1,50 @@
+**Function Signature:**
+- main(String[] args): void
+
+**Variables:**
+- Scanner sc: Scanner object for input
+- int N: integer input from user
+- HashMap<Integer, String> map: stores integer keys with string values
+- boolean ans: initialized to true
+- HashMap<Integer, String> past: tracks processed strings
+- String next: stores last character of current string
+
+**Logic Flow:**
+1. Read integer N from input
+2. Initialize empty HashMap called map
+3. For i from 0 to N-1:
+   - Read next string input
+   - Put (i, string) pair into map
+4. Initialize ans = true
+5. Initialize empty HashMap called past
+6. Initialize empty string called next
+7. For i from 0 to N-1:
+   - If past contains value equal to map.get(i):
+     - Set ans = false
+     - Break loop
+   - Put (i, map.get(i)) into past
+   - If i != 0:
+     - If next != first character of map.get(i):
+       - Set ans = false
+       - Break loop
+   - Set next = last character of map.get(i)
+8. If ans is true:
+   - Print "Yes"
+9. Else:
+   - Print "No"
+
+**Control Structures:**
+- For loop: for (int i = 0; i < N; i++)
+- If condition: if (past.containsValue(map.get(i)))
+- If condition: if (i != 0)
+- If condition: if (!next.equals(map.get(i).substring(0, 1)))
+- If condition: if (ans)
+
+**Input/Output Operations:**
+- Scanner.nextInt() for reading N
+- Scanner.next() for reading strings
+- System.out.println() for outputting "Yes" or "No"
+
+**Dependencies:**
+- java.util.HashMap
+- java.util.Scanner

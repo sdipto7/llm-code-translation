@@ -1,0 +1,45 @@
+Function signatures with parameter and return types:
+- `I(): int`
+- `LI(): List[int]`
+- `main(): str`
+
+Variable declarations and data types:
+- `N: int`
+- `S: List[int]`
+- `flag: List[bool]`
+- `cur: List[int]`
+- `j: int`
+- `jM: int`
+- `k: int`
+
+Complete logic flow in execution order:
+1. Read integer `N` from standard input.
+2. Read a list of integers `S` from standard input, sort it in descending order.
+3. Initialize a list `flag` of length equal to `S` with all elements set to `True`.
+4. Initialize a list `cur` and append the first element of `S` to `cur`, set `flag[0]` to `False`.
+5. For each index `i` from `0` to `N-1`:
+   - Initialize `j` to `0` and `jM` to the length of `cur`.
+   - For each index `k` from `0` to length of `S`-1:
+     - If `flag[k]` is `True` and `S[k]` is less than `cur[j]`:
+       - Append `S[k]` to `cur`, increment `j` by `1`, set `flag[k]` to `False`.
+       - If `j` is equal to `jM`, break out of the inner loop.
+   - If the inner loop completes without breaking, return "No".
+   - Sort `cur` in descending order.
+6. Return "Yes".
+
+Control structures:
+- Loops:
+  - `for i in range(N)`
+  - `for k in range(len(S))`
+- Conditionals:
+  - `if flag[k] and S[k] < cur[j]`
+  - `if j == jM`
+  - `else: return ("No")`
+
+Input/output operations and data processing logic:
+- Input: Reads an integer `N` and a list of integers `S` from standard input.
+- Processing: Sorts `S` in descending order, iterates through elements to build `cur` while maintaining conditions, sorts `cur` in each iteration.
+- Output: Prints "Yes" if conditions are met throughout, otherwise prints "No".
+
+Required libraries, modules, or dependencies:
+- `sys` module for reading from standard input.

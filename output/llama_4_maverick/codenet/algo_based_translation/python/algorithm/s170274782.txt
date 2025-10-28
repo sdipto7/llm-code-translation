@@ -1,0 +1,14 @@
+1. Read an integer N from input.
+2. Declare a list A to store two lists of integers.
+3. For 2 iterations:
+   3.1. Read a list of integers from input, split by spaces, and map to integers.
+   3.2. Append the list to A.
+4. Initialize an empty list ans to store results.
+5. For i ranging from 0 to N-1:
+   5.1. Assign the first list in A to baselis.
+   5.2. Assign the second list in A to groundlis.
+   5.3. Initialize count to 0.
+   5.4. Calculate count as the sum of the first i+1 elements in baselis and the sum of elements from index i to N in groundlis.
+   5.5. Append count to ans.
+6. Find the maximum value in ans.
+7. Output the maximum value.

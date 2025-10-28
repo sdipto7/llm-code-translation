@@ -1,0 +1,32 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner in`: Scanner object for input
+- `int n`: integer from input
+- `int d`: integer from input
+- `int[] nums`: integer array of size n
+- `int result`: integer initialized to 0
+- `int a`: integer for temporary calculation
+
+**Input Operations:**
+- Read integer `n` from standard input
+- Read integer `d` from standard input
+- Read `n` integers into array `nums`
+
+**Logic Flow:**
+1. Initialize `result` to 0
+2. For each index `i` from 1 to n-1:
+   - Calculate `a = nums[i-1] - nums[i]`
+   - If `a >= 0`:
+     - Calculate `increment = a/d + 1`
+     - Add `increment` to `result`
+     - Update `nums[i] += increment * d`
+3. Print `result`
+
+**Control Structures:**
+- For loop: `for (int i = 1; i < n; i++)`
+- Conditional: `if (a >= 0)`
+
+**Dependencies:**
+- `java.util.Scanner`

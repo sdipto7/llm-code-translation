@@ -1,0 +1,11 @@
+1. Import required libraries: java.util and java.io.
+2. Define a class Main with a public access modifier.
+3. Define a static method main with a return type of void and a parameter of type String[] args.
+4. Declare a variable sc of type Scanner and initialize it with a new Scanner object that reads from System.in.
+5. Start a for loop with:
+   - Initialization: Declare a variable i of type int and initialize it to 0.
+   - Condition: i is less than 5.
+   - Increment: Increment i by 1 after each iteration.
+6. Inside the loop, check if the next integer input from sc is equal to 0.
+7. If the condition is true, print the value of i + 1 to the console and exit the loop using a break statement.
+8. The program terminates after the loop is exited.

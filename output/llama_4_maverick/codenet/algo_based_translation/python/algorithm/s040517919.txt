@@ -1,0 +1,8 @@
+1. Define a function `determine_winner` with no parameters and return type `None`.
+2. Declare variables `A` and `B` of type `int`.
+3. Read input from the user and split it into two integers, assigning the values to `A` and `B`.
+4. Check if `A` is equal to `B`. If true, print "Draw" and exit the function.
+5. Check if `A` is equal to 1. If true, print "Alice" and exit the function.
+6. Check if `B` is equal to 1. If true, print "Bob" and exit the function.
+7. Check if `A` is greater than `B`. If true, print "Alice". Otherwise, print "Bob".
+8. The function uses the built-in `input`, `map`, `int`, and `print` functions from the Python standard library, specifically requiring no external libraries or modules beyond the default Python environment.

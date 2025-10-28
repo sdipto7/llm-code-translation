@@ -1,0 +1,45 @@
+**Algorithm:**
+
+1. **Imports**:
+   - Use `bisect.bisect_right` from the `bisect` module.
+
+2. **Input Handling**:
+   - Read all inputs using `sys.stdin.readline` for efficiency.
+
+3. **solve() Function**:
+   - **Read Input**: Integer `n` representing number of elements.
+   - **Initialize DP Array**:
+     - `dp` = [-INF] (starting with sentinel value)
+   - **Process Each Element**:
+     - For each of `n` elements:
+       1. Read integer `num` and negate its value.
+       2. If `num` ≥ last element in `dp`:
+          - Append `num` to `dp`
+       3. Else:
+          - Find insertion index `idx` using `bisect_right(dp, num)`
+          - Replace `dp[idx]` with `num`
+   - **Output Result**:
+     - Print `len(dp) - 1` (excluding initial sentinel)
+
+4. **Execution Flow**:
+   - Call `solve()` as the main entry point.
+
+5. **Data Types**:
+   - `n`: Integer
+   - `dp`: List of integers maintaining non-decreasing order for negated inputs
+   - `num`: Integer (negated input value)
+
+6. **Control Structures**:
+   - Loop `n` times for input processing
+   - Conditional check `num ≥ dp[-1]`
+   - Binary search insertion with `bisect_right`
+
+7. **Dependencies**:
+   - `bisect.bisect_right` for efficient binary search
+   - `sys.stdin.readline` for fast input reading
+
+**Variables**:
+- `n`: Integer (number of elements)
+- `dp`: List[int] (dynamic programming array)
+- `num`: Integer (current processed value after negation)
+- `idx`: Integer (insertion position from bisect)

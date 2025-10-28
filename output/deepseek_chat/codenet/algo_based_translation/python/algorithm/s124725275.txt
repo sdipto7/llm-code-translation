@@ -1,0 +1,42 @@
+Function: main
+Input: None (reads from stdin)
+Output: Prints integer to stdout
+
+Steps:
+1. Set recursion limit to 2^25
+2. Define helper functions:
+   - exit: prints arguments and exits program
+   - mina: subtracts sub from all arguments
+   - a_int: reads integer from stdin
+   - ints: reads list of integers from stdin
+   - read_col: reads H rows of data and returns columns as separate lists
+   - read_map_as: reads H lines, replaces characters with specified values, optionally pads
+   - grid_dijkstra: Dijkstra's algorithm on grid with cost function (not used in main)
+
+3. Define constants:
+   - MOD = 10^9+7
+   - INF = 2^31
+
+4. Import itertools.product, itertools.permutations, itertools.combinations, collections.deque
+
+5. Read H, W from input
+6. Read si, sj from input and subtract 1 from each
+7. Read ti, tj from input and subtract 1 from each
+8. Read grid S using read_map_as(H) with default replacement {'#':1, '.':0}
+
+9. Initialize 2D array D[H][W] with all elements = -1 (represents unvisited/INF)
+10. Initialize deque with starting point (0, si, sj)
+
+11. While deque is not empty:
+    a. Pop left element (c, i, j)
+    b. If D[i][j] ≠ -1, continue to next iteration
+    c. Set D[i][j] = c
+    d. For each (di, dj) in [-2,-1,0,1,2] × [-2,-1,0,1,2]:
+        i. Calculate ni = i + di, nj = j + dj
+        ii. If (ni,nj) out of bounds [0,H) × [0,W) OR D[ni][nj] ≠ -1 OR (ni,nj) = (0,0) OR S[ni][nj] = 1, skip
+        iii. If movement is adjacent (di=0 and |dj|=1) OR (dj=0 and |di|=1):
+            - Add (c, ni, nj) to front of deque
+        iv. Else (warp movement):
+            - Add (c+1, ni, nj) to back of deque
+
+12. Print D[ti][tj]

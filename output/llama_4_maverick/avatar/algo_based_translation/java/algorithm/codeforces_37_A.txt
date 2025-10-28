@@ -1,0 +1,13 @@
+1. Initialize a FastScanner object to read input from the standard input.
+2. Read an integer 'n' using the FastScanner object.
+3. Create a HashMap to store the frequency of each integer value.
+4. Iterate 'n' times:
+   4.1 Read an integer 'val' using the FastScanner object.
+   4.2 Check if 'val' exists in the HashMap.
+   4.3 If 'val' exists, increment its frequency by 1.
+   4.4 If 'val' does not exist, add it to the HashMap with a frequency of 1.
+5. Initialize a variable 'max' to store the maximum frequency.
+6. Iterate through the entries in the HashMap:
+   6.1 For each entry, compare its value (frequency) with 'max'.
+   6.2 Update 'max' if the frequency is greater than the current 'max'.
+7. Print 'max' followed by the size of the HashMap.

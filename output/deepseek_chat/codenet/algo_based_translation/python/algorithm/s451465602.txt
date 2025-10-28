@@ -1,0 +1,21 @@
+Function signature: main() -> None
+Input operation: n = integer input from standard input
+Variable declarations:
+- n: integer
+- h: integer
+- m: integer
+- s: integer
+
+Logic flow:
+1. Read integer n from input
+2. Calculate h = floor(n / 3600)
+3. Update n = n mod 3600
+4. Calculate m = floor(n / 60)
+5. Update n = n mod 60
+6. Calculate s = n
+7. Convert h, m, s to strings
+8. Concatenate strings with ":" separators
+9. Print resulting string
+
+No control structures (no loops or conditionals)
+No external libraries or dependencies required

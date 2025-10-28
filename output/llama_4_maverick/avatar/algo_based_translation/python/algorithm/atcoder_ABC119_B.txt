@@ -1,0 +1,10 @@
+1. Read integer N from input
+2. Initialize empty list x
+3. Loop N times
+   1. Read string input
+   2. Replace 'JPY' with '* 1.0' in input string
+   3. Replace 'BTC' with '* 380000.0' in modified string
+   4. Evaluate modified string as a numerical expression
+   5. Append result to list x
+4. Calculate sum of all elements in list x
+5. Print the sum

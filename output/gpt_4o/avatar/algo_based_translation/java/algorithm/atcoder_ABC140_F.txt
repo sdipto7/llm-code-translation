@@ -1,0 +1,29 @@
+```
+Function: main() -> void
+  - Declare a Scanner object 'sc' for input
+  - Read an integer 'N' from input
+  - Calculate 'size' as 2 raised to the power 'N'
+  - Declare an integer array 'S' with length 'size'
+  - Declare a boolean array 'spawned' with length 'size'
+  - Set 'spawned[size - 1]' to true
+  - For 'i' from 0 to 'size - 1' (inclusive):
+    - Read an integer from input and assign it to 'S[i]'
+  - Sort the array 'S' in ascending order
+  - Declare a List 'active' of Integer type
+  - Add 'S[size - 1]' to 'active'
+  - Set 'spawned[size - 1]' to true
+  - For 'i' from 0 to 'N - 1' (inclusive):
+    - Sort 'active' in descending order
+    - Declare a List 'activated' of Integer type
+    - Set 'next' to 'size - 1'
+    - For each 'slime' in 'active':
+      - While 'next' is greater than or equal to 0 and ('S[next]' is greater than or equal to 'slime' or 'spawned[next]' is true):
+        - Decrement 'next' by 1
+      - If 'next' is less than 0:
+        - Print "No"
+        - Return from the function
+      - Set 'spawned[next]' to true
+      - Add 'S[next]' to 'activated'
+    - Add all elements of 'activated' to 'active'
+  - Print "Yes"
+```

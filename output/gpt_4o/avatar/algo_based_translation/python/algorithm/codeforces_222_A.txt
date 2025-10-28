@@ -1,0 +1,31 @@
+```
+Algorithm main():
+    Input: None
+    Output: None
+
+    Step 1: Read input values:
+        a. Read a line of input, split by spaces, and convert to a list of integers [n, k].
+        b. Read a second line of input, split by spaces, and convert to a list of integers elems.
+
+    Step 2: Define a lambda function all_same(arr) -> bool:
+        a. Returns True if all elements in the array arr are the same, otherwise False.
+
+    Step 3: Check if all elements in elems are the same using all_same function:
+        a. If True, output 0 and return from the function.
+
+    Step 4: Check if k is equal to 1:
+        a. If True, output -1 and return from the function.
+
+    Step 5: Check if not all elements from index k-1 to end in elems are the same:
+        a. If True, output -1 and return from the function.
+
+    Step 6: Assign target as the last element of elems.
+    
+    Step 7: Assign to_delete as the slice of elems from start to index k-1.
+
+    Step 8: While to_delete is not empty and the last element of to_delete equals target:
+        a. Remove the last element from to_delete.
+
+    Step 9: Output the length of to_delete.
+```
+

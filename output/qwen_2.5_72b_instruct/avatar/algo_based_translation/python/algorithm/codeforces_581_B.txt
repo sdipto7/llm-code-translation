@@ -1,0 +1,19 @@
+Function Signature: `calculate_differences(n: int, arr: List[int]) -> List[int]`
+Variable Declarations: `n: int`, `arr: List[int]`, `ans: List[int]`, `mx: int`, `i: int`
+Logic Flow:
+1. Read integer `n` from input.
+2. Read space-separated integers from input, convert to list of integers, and slice to first `n` elements.
+3. Initialize list `ans` of length `n` with all elements set to 0.
+4. Set `mx` to the last element of `arr`.
+5. Loop from `n-2` to `0` (inclusive) with step `-1`:
+   a. Set `ans[i]` to the maximum of `0` and `mx - arr[i] + 1`.
+   b. If `arr[i]` is greater than `mx`, set `mx` to `arr[i]`.
+6. Print elements of `ans` separated by spaces.
+
+Input/Output Operations:
+- Read integer `n` from standard input.
+- Read space-separated integers from standard input.
+- Print space-separated integers to standard output.
+
+Required Libraries:
+- `List` from `typing` module

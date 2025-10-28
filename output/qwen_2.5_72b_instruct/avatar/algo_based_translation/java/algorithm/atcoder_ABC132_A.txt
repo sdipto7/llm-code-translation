@@ -1,0 +1,43 @@
+Function Signature:
+- `main(String[] args): void`
+
+Variable Declarations and Data Types:
+- `in: Scanner`
+- `s: String`
+- `targ: char[]`
+- `map: HashMap<Character, Integer>`
+- `ok: boolean`
+- `i: int`
+- `c: Entry<Character, Integer>`
+
+Logic Flow in Execution Order:
+1. Initialize `in` as a new `Scanner` object for reading input.
+2. Read a string `s` from standard input.
+3. Convert string `s` to a character array `targ`.
+4. Initialize an empty `HashMap` `map` to store character counts.
+5. Loop through each character in `targ`:
+    - If the character is not in `map`, add it with a count of 1.
+    - If the character is already in `map`, increment its count by 1.
+6. Initialize `ok` as `true`.
+7. Loop through each entry `c` in `map`:
+    - If the value of `c` is not equal to 2, set `ok` to `false` and break the loop.
+8. If `ok` is `true` and the size of `map` is 2, print "Yes".
+9. Otherwise, print "No".
+10. Close the `Scanner` object `in`.
+
+Control Structures:
+- Loop from `i = 0` to `i < targ.length` (exclusive).
+- Loop through each entry in `map`.
+- Conditional check `if (!map.containsKey(targ[i]))`.
+- Conditional check `if (map.containsKey(targ[i]))`.
+- Conditional check `if (c.getValue() != 2)`.
+- Conditional check `if (ok && map.size() == 2)`.
+
+Input/Output Operations and Data Processing Logic:
+- Read a string `s` from standard input.
+- Print "Yes" or "No" to standard output based on conditions.
+
+Libraries, Modules, or Dependencies:
+- `java.util.HashMap`
+- `java.util.Map.Entry`
+- `java.util.Scanner`

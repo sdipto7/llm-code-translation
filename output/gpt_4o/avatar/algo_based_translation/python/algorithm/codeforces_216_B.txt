@@ -1,0 +1,48 @@
+```
+Function readInts() -> List[int]:
+    Call input() to get a string of space-separated integers
+    Split the string into list of strings
+    Convert each string to an integer
+    Return the list of integers
+
+Function dfs(g: Dict[int, Set[int]], seen: Set[int], i: int) -> Tuple[int, int]:
+    If i is in seen:
+        Return (0, 0)
+    Add i to seen
+    Initialize nodes as 1
+    Initialize edges as the length of g[i]
+    For each j in g[i]:
+        Call dfs(g, seen, j) and unpack result into x, y
+        Increment nodes by x
+        Increment edges by y
+    Return (nodes, edges)
+
+Function solve() -> bool:
+    Initialize line0 as an empty list
+    Attempt:
+        Assign the result of readInts() to line0
+    Except EOFError:
+        Return False
+    Unpack line0 into n, m
+    Initialize g as an empty dictionary
+    Initialize seen as an empty set
+    For i in range from 1 to n inclusive:
+        Assign an empty set to g[i]
+    For each _ in range of m:
+        Call readInts() and unpack result into a, b
+        Add b to g[a]
+        Add a to g[b]
+    Initialize ans as 0
+    For i in range from 1 to n inclusive:
+        If i is not in seen:
+            Call dfs(g, seen, i) and unpack result into nodes, edges
+            If nodes is greater than 1 and nodes is odd and 2 * nodes equals edges:
+                Increment ans by 1
+    If (n - ans) is odd:
+        Increment ans by 1
+    Print ans
+    Return True
+
+While solve() returns True, repeat:
+    Call solve()
+```

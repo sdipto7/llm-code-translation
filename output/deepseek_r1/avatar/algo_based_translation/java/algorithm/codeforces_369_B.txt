@@ -1,0 +1,49 @@
+Algorithm:
+
+Function Signatures:
+- main(String[] args): void
+- getPoints(int n, int k, int l, int r, int sAll, int sk): int[]
+
+Variables:
+- Scanner scan: Scanner object for input
+- int n, k, l, r, sAll, sk: input parameters
+- int[] ans: result array
+- int idx: loop counter in getPoints
+
+Logic Flow:
+
+Main:
+1. Read n, k, l, r, sAll, sk from standard input
+2. Call getPoints with parameters
+3. Print space-separated elements of ans array
+
+getPoints:
+1. Initialize ans array with n elements all set to l
+2. Calculate new sAll = sAll - sk - (n - k) * l
+3. Calculate new sk = sk - k * l
+4. While sk > 0:
+   4.1 Initialize idx = n - 1
+   4.2 While sk > 0 and idx >= n - k:
+        4.2.1 Increment ans[idx]
+        4.2.2 Decrement sk
+        4.2.3 Decrement idx
+5. While sAll > 0:
+   5.1 Initialize idx = 0
+   5.2 While sAll > 0 and idx < n - k:
+        5.2.1 Increment ans[idx]
+        5.2.2 Decrement sAll
+        5.2.3 Increment idx
+6. Return ans array
+
+Control Structures:
+- Sequential execution
+- While loops with nested while loops for distribution
+- Array index manipulation in reverse and forward directions
+
+Input/Output:
+- Scanner reads integers from System.in
+- Result array printed with space-separated values
+
+Dependencies:
+- java.util.Arrays for array initialization
+- java.util.Scanner for input handling

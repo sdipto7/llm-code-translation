@@ -1,0 +1,25 @@
+1. Import sys and math modules
+2. Declare global variable 'debug' and initialize to False
+3. Define function log(text: str) -> None:
+   - If debug is True: print text
+4. Define function parse_input(lines_as_string: Optional[str] = None) -> Tuple[str]:
+   - Declare global debug
+   - Initialize empty list 'lines'
+   - If lines_as_string is None:
+     - Set debug = False
+     - Append input() to lines
+   - Else:
+     - Set debug = True
+     - Split lines_as_string by "\n", take elements from index 1 to end-1, assign to lines
+   - Split first element of lines by space, take first element, assign to c
+   - Return tuple (c,)
+5. Define function solve(c: str) -> str:
+   - Initialize string a = "abcdefghijklmnopqrstuvwxyz"
+   - Find index of c in a, assign to i
+   - Return character at index i+1 from a
+6. Define function main() -> None:
+   - Call parse_input(), unpack result to solve(), assign output to result
+   - If result is list:
+     - For each element r in result: print r without separator
+   - Else: print result without separator
+7. If __name__ == '__main__': call main()

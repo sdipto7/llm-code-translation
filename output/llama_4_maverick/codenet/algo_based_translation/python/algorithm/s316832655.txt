@@ -1,0 +1,10 @@
+1. Define a function `calculate_area` with no parameters and return type `int`.
+2. Declare variables `a`, `b`, and `c` of type `int`.
+3. Read input from the user and split it into three parts.
+4. Convert the input parts to `int` using `map` function and assign to `a`, `b`, and `c`.
+5. Calculate the area using the formula `(a * b) / 2` and store it in a variable of type `float`.
+6. Convert the calculated area to `int`.
+7. Print the calculated area to the output.
+8. The program has no control structures (loops, conditionals). 
+
+Required libraries/modules: built-in Python functions `map`, `input`, `split`, and `print`.

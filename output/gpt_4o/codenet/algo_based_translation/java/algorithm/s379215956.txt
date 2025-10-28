@@ -1,0 +1,26 @@
+```
+Algorithm CheckAdjacentEqualCharacters
+  Input: String s
+  Output: String "Bad" or "Good"
+
+  Declare: int a = 0
+
+  Step 1: Read input string s from standard input
+
+  Step 2: Extract substrings
+    Let s1 be the substring of s from index 0 to 1
+    Let s2 be the substring of s from index 1 to 2
+    Let s3 be the substring of s from index 2 to 3
+    Let s4 be the substring of s from index 3 to 4
+
+  Step 3: Compare adjacent substrings
+    If s1 equals s2, set a = 1
+    If s2 equals s3, set a = 1
+    If s3 equals s4, set a = 1
+
+  Step 4: Determine result based on value of a
+    If a equals 1, output "Bad"
+    Else, output "Good"
+
+End Algorithm
+```

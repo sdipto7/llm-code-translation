@@ -1,0 +1,44 @@
+Solver.run():
+  Declare n, m, q as integers
+  Declare max as integer initialized to 0
+  Declare arrays a, b, c, d as integer arrays
+  Read n, m, q from input
+  Initialize arrays a, b, c, d with size q
+  For i from 0 to q-1:
+    Read a[i], b[i], c[i], d[i] from input
+  Call dfs with initial array [1]
+  Print max
+
+dfs(int[] array):
+  If array.length > n:
+    Initialize score = 0
+    For i from 0 to q-1:
+      If array[b[i]] - array[a[i]] equals c[i]:
+        Add d[i] to score
+    Set max = maximum of max and score
+    Return
+  Create newArray with size array.length + 1
+  Copy array to newArray
+  Set last element of newArray to last element of array
+  While last element of newArray <= m:
+    Call dfs(newArray)
+    Increment last element of newArray by 1
+
+FastScanner methods:
+  hasNextByte(): Check if buffer has more bytes
+  readByte(): Read next byte from buffer
+  isPrintableChar(int c): Check if character is printable
+  hasNext(): Check if input has next token
+  next(): Read next string token
+  nextLong(): Read next long integer
+  nextInt(): Read next integer
+  nextDouble(): Read next double
+  nextIntArray(int n): Read array of n integers
+  nextLongArray(int n): Read array of n long integers
+
+main(String[] args):
+  Create FastScanner instance
+  Create PrintWriter instance
+  Create Solver instance with scanner and writer
+  Call solver.run()
+  Flush writer

@@ -1,0 +1,40 @@
+Function signatures and parameter and return types:
+- `main(String[] args)`
+- `run()`
+- `tr(Object... objects)`
+
+Variable declarations and data types:
+- `MOD` as `long` initialized to `1000000007L`
+- `sc` as `Scanner`
+- `cs` as `char[]`
+- `dp` as `long[][]`
+- `base` as `int`
+- `i`, `pre`, `next` as `int`
+- `objects` as `Object...`
+
+Logic flow in execution order:
+1. `main` calls `new atcoder_ABC135_D().run()`
+2. `run` initializes `sc` with `new Scanner(System.in)`
+3. `run` reads input string and converts it to `char[]` stored in `cs`
+4. `run` initializes `dp` as a 2D array of `long` with dimensions `[cs.length][13]`
+5. `run` initializes `base` as `1`
+6. `run` enters a `for` loop iterating over each character in `cs` from last to first
+   - If the current character `cs[cs.length - 1 - i]` is `?`
+     - Inner `for` loop iterates over `pre` from `0` to `12`
+       - Another inner `for` loop iterates over `next` from `0` to `9`
+         - Updates `dp[i][(base * next + pre) % 13]` by adding `(i > 0 ? dp[i - 1][pre] : (pre == 0 ? 1 : 0))`
+         - Modulates `dp[i][(base * next + pre) % 13]` by `MOD`
+   - Else
+     - Converts current character to integer `next`
+     - Inner `for` loop iterates over `pre` from `0` to `12`
+       - Updates `dp[i][(base * next + pre) % 13]` by adding `(i > 0 ? dp[i - 1][pre] : (pre == 0 ? 1 : 0))`
+       - Modulates `dp[i][(base * next + pre) % 13]` by `MOD`
+   - Updates `base` by multiplying it with `10` and modulating by `13`
+7. `run` prints `dp[dp.length - 1][5]`
+8. `tr` prints deep string representation of `objects`
+
+Required libraries, modules, or dependencies:
+- `java.io.PrintWriter`
+- `java.util.ArrayList`
+- `java.util.Arrays`
+- `java.util.Scanner`

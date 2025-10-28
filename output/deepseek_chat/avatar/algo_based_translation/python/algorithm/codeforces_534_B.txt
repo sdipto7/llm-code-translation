@@ -1,0 +1,36 @@
+Function: main
+Parameters: None
+Return: None
+
+Input Operations:
+- Read first input line, split into two strings: v1_str, v2_str
+- Read second input line, split into two strings: t_str, d_str
+
+Variable Declarations:
+- v1: integer (converted from v1_str)
+- v2: integer (converted from v2_str)
+- t: integer (converted from t_str)
+- d: integer (converted from d_str)
+- a: integer, initialized to 1
+- v: integer, initialized to v1
+- distance: integer, initialized to 0
+
+Logic Flow:
+1. Convert v1_str to integer v1
+2. Convert v2_str to integer v2
+3. Convert t_str to integer t
+4. Convert d_str to integer d
+5. Initialize a = 1
+6. Initialize v = v1
+7. Initialize distance = 0
+
+Loop Structure:
+- For i from 0 to t-1 (inclusive):
+  - If (v - v2) > ((t - i - 1) * d):
+    - Set a = -1
+    - Set v = ((t - i - 1) * d) + v2
+  - Add v to distance
+  - Add (a * d) to v
+
+Output Operation:
+- Print distance

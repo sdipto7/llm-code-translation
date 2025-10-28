@@ -1,0 +1,27 @@
+- Function signature: `public static void main(String[] args)`
+- Variable declarations:
+  - `int[] R` of size `MAX` (200000)
+  - `Scanner in`
+  - `int n`
+  - `int maxv` initialized to `R[1] - R[0]`
+  - `int minv` initialized to `R[0]`
+- Logic flow:
+  1. Create an integer array `R` with a fixed size of `MAX`.
+  2. Initialize a `Scanner` object for input.
+  3. Read an integer `n` from the input which represents the number of elements.
+  4. For `i` from `0` to `n-1`, read an integer from the input and store it in `R[i]`.
+  5. Set `maxv` to the difference between the second and first elements of `R`.
+  6. Set `minv` to the first element of `R`.
+  7. For `i` from `1` to `n-1`:
+     1. Update `maxv` to be the maximum of `maxv` and the difference between `R[i]` and `minv`.
+     2. Update `minv` to be the minimum of `minv` and `R[i]`.
+  8. Print the value of `maxv`.
+- Control structures:
+  - For loop: `for(int i = 0; i < n; i++)`
+  - For loop: `for(int i = 1; i < n; i++)`
+  - Conditional (implied in `Math.max` and `Math.min`): `maxv = Math.max(maxv, R[i] - minv)` and `minv = Math.min(minv, R[i])`
+- Input/output operations:
+  - Input: Read an integer `n` and `n` integers into the array `R` using `Scanner`.
+  - Output: Print the integer value of `maxv`.
+- Required libraries:
+  - `java.util.Scanner`

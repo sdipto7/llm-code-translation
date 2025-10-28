@@ -1,0 +1,22 @@
+1. Read input line as two space-separated integers using input(). Split into A (int) and B (int)
+2. Declare empty list lst (List[int])
+3. Calculate A + B (int) and append to lst
+4. Calculate A - B (int) and append to lst
+5. Calculate A * B (int) and append to lst
+6. Compute maximum value in lst using max() function (int)
+7. Print maximum value via print() with no formatting
+
+Parameters: None (script execution)
+Return: None (direct output)
+Variables:
+- A: int
+- B: int
+- lst: List[int]
+
+Execution Order:
+1. Input parsing
+2. List population with three computed values
+3. Maximum calculation
+4. Output result
+
+No external dependencies beyond standard input/output functions. No explicit loops or conditionals. Sequential execution with list operations.

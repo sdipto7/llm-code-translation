@@ -1,0 +1,78 @@
+**Algorithm**
+
+**Main Class:**
+- Implements `Runnable` interface
+- `run()` method:
+  - Creates `Solver` instance
+  - Calls `solve()` method
+  - Handles exceptions and exits
+- `main()` method:
+  - Calls `run()` directly (thread creation commented out)
+
+**Solver Class:**
+- **Fields:**
+  - `hp: Helper` (utility object for IO and operations)
+  - `MAXN = 1000006` (constant)
+  - `MOD = 1e9+7` (constant)
+  - `timer: Timer` (for delayed termination)
+  - `task: TimerTask` (flushes output before exit)
+  - `TESTCASES = false` (flag for multiple test cases)
+
+- **Constructor:**
+  - Initializes `hp` with MOD and MAXN
+  - Sets up IO using `System.in` and `System.out`
+  - Configures timer task to flush output after 4700ms (commented)
+
+- **solve() method:**
+  - Reads number of test cases `tc` (1 if `TESTCASES` is false)
+  - Iterates `tc` times, calling `solve(tce)`
+  - Cancels timer and flushes output after all test cases
+
+- **solve(int tc) method:**
+  - **Inputs:** `N` (array size), `K` (step count), `A` (array of integers)
+  - **Data Structures:**
+    - `vis: boolean[N]` (visited flags)
+    - `straight: ArrayList<Integer>` (nodes before cycle)
+    - `cycle: ArrayList<Integer>` (nodes in cycle)
+  - **Logic Flow:**
+    1. Traverse array starting from index 0 until a visited node is encountered:
+       - Mark nodes as visited
+       - Track path in `curr`
+    2. Identify start of cycle (`st`) by tracing from 0 until `curr`
+    3. Populate `straight` list with nodes before cycle entry
+    4. Build `cycle` list starting from `curr`
+    5. Decision based on K:
+       - If K < straight.size(): Output (K+1)-th element of `straight`
+       - Else: Compute (K - straight.size()) modulo cycle.size(), output corresponding element from `cycle`
+
+**Helper Class:**
+- **Key Functionality:**
+  - Fast input scanning via byte buffer
+  - Output buffering with `BufferedWriter`
+  - Utility methods for arrays, math operations (gcd, pow), combinatorial math (ncr)
+  - Sieve and factorial precomputations (not directly used in main logic)
+  
+- **Critical Methods for Solver:**
+  - `nextInt()`, `nextLong()`: Read numerical inputs
+  - `getIntArray(int size)`: Reads integer array
+  - `println()`: Outputs result with newline
+  - `flush()`: Ensures all output is written
+
+**Control Structures:**
+- While loops:
+  - To detect cycle (`while (!vis[curr])`)
+  - To build `straight` and `cycle` lists
+- Conditional branches:
+  - Check if K is within `straight` length
+  - Modulo operation for cycle access
+
+**Data Flow:**
+- Input processed via `Helper` methods
+- Visited array prevents infinite loops during cycle detection
+- Two-phase partitioning of path into straight and cycle segments
+- Final output depends on K's relation to path structure
+
+**Dependencies:**
+- `java.util` for ArrayList, Timer, Random
+- `java.io` for input/output streams
+- `java.math` for BigInteger (not directly used in logic)

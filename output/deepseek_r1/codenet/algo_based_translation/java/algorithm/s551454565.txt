@@ -1,0 +1,31 @@
+**Algorithm:**
+
+- **Imported Modules:** `java.util.Scanner`
+- **Function Signature:** `public static void main(String[] args)`  
+- **Variables:**  
+  - `Scanner sc = new Scanner(System.in)`  
+  - `String s = sc.next()`  
+- **Logic Flow:**  
+  1. Read input string `s`  
+  2. If `s` equals "Sunny":  
+     - Print "Cloudy"  
+  3. Else if `s` equals "Cloudy":  
+     - Print "Rainy"  
+  4. Else:  
+     - Print "Sunny"  
+- **Control Structures:**  
+  - Sequential if-else chain with exact string equality checks  
+  - Termination after first matching condition  
+- **I/O Operations:**  
+  - Read from standard input via `Scanner`  
+  - Write to standard output via `System.out.println`  
+
+```python
+s = input().strip()
+if s == "Sunny":
+    print("Cloudy")
+elif s == "Cloudy":
+    print("Rainy")
+else:
+    print("Sunny")
+```

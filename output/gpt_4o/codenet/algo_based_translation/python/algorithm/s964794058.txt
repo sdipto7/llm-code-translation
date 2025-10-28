@@ -1,0 +1,39 @@
+```
+Function signature:
+    calculate_color_range(memTime: int, memLate: List[int]) -> Tuple[int, int]
+
+Variable declarations:
+    memLate: List[int]
+    colorList: List[int]
+    memColor: int
+    highLate: int
+    maxColor: int
+    minColor: int
+    member: int
+    color: int
+
+Logic flow:
+1. Initialize `colorList` as an empty list.
+2. Initialize `memColor` to 0.
+3. Initialize `highLate` to 0.
+4. For each `color` in the range from 0 to `memTime - 1`:
+    a. Assign `member` as `memLate[color]`.
+    b. If `member // 400` is greater than or equal to 8:
+        i. Increment `highLate` by 1.
+    c. Else, if `member // 400` is not already in `colorList`:
+        i. Append `member // 400` to `colorList`.
+5. Calculate `maxColor` as the length of `colorList` plus `highLate`.
+6. Calculate `minColor` as the length of `colorList`.
+7. If `minColor` is 0, set `minColor` to 1.
+8. Return the tuple `(minColor, maxColor)`.
+
+Input/Output operations:
+- Input: 
+  - An integer `memTime` from standard input.
+  - A list of integers `memLate` from standard input, split by spaces and converted to integers.
+- Output:
+  - A string representation of `minColor` and `maxColor`, separated by a space.
+
+Required libraries, modules, or dependencies:
+- None
+```

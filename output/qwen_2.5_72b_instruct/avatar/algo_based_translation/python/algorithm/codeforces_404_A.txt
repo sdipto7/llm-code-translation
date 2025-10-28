@@ -1,0 +1,45 @@
+**Function Signature:**
+- `main() -> None`
+
+**Variable Declarations and Data Types:**
+- `n: int`
+- `s: list[str]`
+- `flag: int`
+- `d1: list[str]`
+- `d2: list[str]`
+- `rem: set[str]`
+- `i: int`
+- `j: int`
+- `k: str`
+
+**Logic Flow:**
+1. Read an integer `n` from standard input.
+2. Initialize an empty list `s` to store strings.
+3. For `i` from `0` to `n-1`:
+   - Read a string `k` from standard input.
+   - Append `k` to the list `s`.
+4. Initialize `flag` to `0`.
+5. Initialize empty lists `d1` and `d2` to store diagonal elements.
+6. Initialize an empty set `rem` to store remaining elements.
+7. For `i` from `0` to `n-1`:
+   - For `j` from `0` to `n-1`:
+     - If `i == j`, append the character `s[i][j]` to `d1`.
+     - If `i == n - j - 1`, append the character `s[i][j]` to `d2`.
+     - If `i != j` and `i != n - j - 1`, add the character `s[i][j]` to the set `rem`.
+8. If the length of `rem` is not equal to `1`:
+   - Print 'NO'.
+9. Else if `d1` is not equal to `d2`:
+   - Print 'NO'.
+10. Else if the length of the set of `d1` is not equal to `1`:
+    - Print 'NO'.
+11. Else if the set of `d1` is equal to `rem`:
+    - Print 'NO'.
+12. Else:
+    - Print 'YES'.
+
+**Input/Output Operations and Data Processing Logic:**
+- Input: An integer `n` followed by `n` strings, each of length `n`.
+- Output: A single string, either 'YES' or 'NO', based on the conditions specified in the logic flow.
+
+**Required Libraries, Modules, or Dependencies:**
+- None

@@ -1,0 +1,40 @@
+- Function signatures with parameter and return types:
+  - `public static void main(String[] args)`
+
+- Variable declarations and data types:
+  - `Scanner s`
+  - `int n`
+  - `int[] v`
+  - `int[] c`
+  - `int[] dp`
+  - `int tmp`
+  - `int i`
+
+- Complete logic flow in execution order:
+  - Initialize `s` as new `Scanner(System.in)`
+  - Read integer `n` from `s`
+  - Initialize array `v` of size `n`
+  - Initialize array `c` of size `n`
+  - Initialize array `dp` of size `n`
+  - For loop (`i = 0` to `i < n`): Set `dp[i] = 0`
+  - For loop (`i = 0` to `i < n`): Read integer from `s` and assign to `v[i]`
+  - For loop (`i = 0` to `i < n`): Read integer from `s` and assign to `c[i]`
+  - Set `dp[0] = 0`
+  - For loop (`i = 1` to `i < n`):
+    - Calculate `tmp = dp[i - 1] + (v[i - 1] - c[i - 1])`
+    - Conditional (`tmp > dp[i - 1]`): Set `dp[i] = tmp` else set `dp[i] = dp[i - 1]`
+  - Calculate `tmp = dp[n - 1] + (v[n - 1] - c[n - 1])`
+  - Conditional (`tmp > dp[n - 1]`): Set `dp[n - 1] = tmp` else set `dp[n - 1] = dp[n - 1]`
+  - Print `dp[n - 1]`
+
+- Control structures:
+  - For loops: `for (int i = 0; i < n; i++)`, `for (int i = 1; i < n; i++)`
+  - Conditional statements: `if (tmp > dp[i - 1])`, `if (tmp > dp[n - 1])`
+
+- Input/output operations and data processing logic:
+  - Read integer `n` using `s.next()`
+  - Read integers for arrays `v` and `c` using `s.next()`
+  - Print final result `dp[n - 1]`
+
+- Required libraries, modules, or dependencies:
+  - `java.util.Scanner`

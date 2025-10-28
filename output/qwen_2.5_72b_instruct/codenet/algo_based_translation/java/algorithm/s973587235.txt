@@ -1,0 +1,23 @@
+Function signature: `main(String[] args)`
+
+Variable declarations:
+- `Scanner sc` of type `Scanner`
+- `int n` of type `int`
+- `int minN` of type `int`
+- `int i` of type `int`
+- `int h` of type `int`
+
+Input/output operations:
+- Read integer `n` from standard input
+- Read integer `minN` from standard input and subtract 1 from it
+- For loop iterates `n-1` times
+  - Read integer `h` from standard input
+  - Conditional structure:
+    - If `minN == h`, `minN` remains `h`
+    - Else if `minN == h-1`, `minN` becomes `h-1`
+    - Else if `minN < h-1`, `minN` becomes `h-1`
+    - Else if `minN > h`, print "No" and exit program
+- After loop, print "Yes"
+
+Required library:
+- `import java.util.*`

@@ -1,0 +1,56 @@
+**Function Signatures:**
+- `public static void main(String[] args) throws Exception`
+- `static long power(long x, long n)`
+
+**Variables and Data Types:**
+- `BufferedReader br`
+- `String[] sa`
+- `int n`
+- `int[] c`
+- `int mod = 1000000007`
+- `long b`
+- `long a`
+- `long ans = 0`
+- `long val` (multiple instances)
+- `long x` (parameter)
+- `long n` (parameter)
+
+**Logic Flow:**
+
+1. Create BufferedReader for standard input
+2. Read first line, split by space, parse first token as integer `n`
+3. Read second line, split by space, parse tokens into integer array `c` of length `n`
+4. Close BufferedReader
+5. If `n == 1`:
+   - Calculate `(c[0] * 2) % mod`
+   - Print result and return
+6. Sort array `c` in parallel
+7. Calculate `b = power(2, n)`
+8. Calculate `a = power(2, n - 2)`
+9. Initialize `ans = 0`
+10. For `i` from 2 to `n + 1` (inclusive):
+    - Calculate `val = (a * i) % mod`
+    - Multiply `val` by `c[n + 1 - i]`
+    - Apply `val %= mod`
+    - Add `val` to `ans`
+    - Apply `ans %= mod`
+11. Multiply `ans` by `b`
+12. Apply `ans %= mod`
+13. Print `ans`
+
+**Power Function Logic:**
+- If `n == 0`: return 1
+- Calculate `val = power(x, n / 2)`
+- Set `val = (val * val) % mod`
+- If `n % 2 == 1`: set `val = (val * x) % mod`
+- Return `val`
+
+**Input/Output Operations:**
+- Read from standard input using BufferedReader
+- Parse integer inputs
+- Print final result to standard output
+
+**Required Libraries:**
+- `java.io.BufferedReader`
+- `java.io.InputStreamReader`
+- `java.util.Arrays`

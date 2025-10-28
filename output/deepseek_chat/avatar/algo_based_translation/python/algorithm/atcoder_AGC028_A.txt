@@ -1,0 +1,30 @@
+read N, M as integers from input
+read S as string from input
+read T as string from input
+convert S to list of characters list_S
+convert T to list of characters list_T
+create Number_i as list of integers from 0 to N-1
+create empty list Number_iMN
+for each i in Number_i:
+    append i * M / N to Number_iMN
+create Number_j as list of integers from 0 to M-1
+create Kaburi_j as set intersection of Number_iMN and Number_j
+create empty list Kaburi_i
+for each j in Kaburi_j:
+    append int(j * N / M) to Kaburi_i
+set counter = 0
+set Flag = 0
+set Kaburi_Size = length of Kaburi_i
+while counter <= Kaburi_Size - 1:
+    if list_S[Kaburi_i[counter]] != list_T[Kaburi_j[counter]]:
+        set Flag = 1
+        break loop
+    increment counter by 1
+define function gcd(a, b):
+    while b > 0:
+        set a, b = b, a % b
+    return a
+if Flag == 1:
+    print -1
+else:
+    print N * M / gcd(N, M) as integer

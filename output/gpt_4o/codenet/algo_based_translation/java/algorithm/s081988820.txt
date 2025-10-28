@@ -1,0 +1,66 @@
+1. Import necessary Java libraries:
+   - `java.io.IOException`
+   - `java.io.InputStream`
+   - `java.util.*`
+
+2. Define the `Main` class:
+   - Define the `main` method.
+     - Create an instance of `Main`.
+     - Call the `solve` method on the `Main` instance.
+
+3. Define the `solve` method:
+   - Initialize a `Scanner` object to read inputs.
+   - Declare two integers `H` and `W` and read their values using `sc.nextInt()`.
+   - Declare a 2D integer array `c` of size 10x10.
+   - Use nested loops to iterate over `i` and `j` from 0 to 9, and populate `c[i][j]` with inputs.
+   - Declare an integer array `min` of size 10.
+   - Initialize `min[i] = c[i][1]` for each `i` from 0 to 9.
+   - Implement the Floyd-Warshall-like algorithm:
+     - Iterate `tc` from 0 to 9.
+       - Iterate `i` from 0 to 9.
+         - Iterate `j` from 0 to 9.
+           - Update `min[i] = Math.min(min[i], c[i][j] + min[j])`.
+   - Declare an integer `ans` and initialize it to 0.
+   - Iterate `h` from 1 to `H`.
+     - Iterate `w` from 1 to `W`.
+       - Read an integer `A` using `sc.nextInt()`.
+       - If `A >= 0`, update `ans += min[A]`.
+   - Print the value of `ans`.
+
+4. Define the `Scanner` class:
+   - Declare variables `in`, `buffer`, `index`, and `length`.
+   - Define `Scanner` constructor with an `InputStream` parameter.
+   - Define helper methods:
+     - `isPrintableChar(int c)`: returns true if `c` is a printable character.
+     - `isDigit(int c)`: returns true if `c` is a digit.
+     - `hasNextByte()`: manages the input stream and returns true if more bytes are available.
+     - `hasNext()`: skips non-printable characters and checks if more input is available.
+     - `readByte()`: reads and returns the next byte.
+     - `next()`: reads and returns the next word as a `String`.
+     - `nextLong()`: reads and returns the next number as a `long`.
+     - `nextInt()`: returns the next number as an `int` by calling `nextLong()`.
+     - `nextDouble()`: parses and returns the next number as a `double`.
+
+5. Define interfaces and classes for mathematical and algorithmic utilities:
+   - `CombCalculator`: interface with `comb(int n, int m)` method.
+   - `MobiusFunction`: interface with `get(int n)` method.
+   - `SieveMobiusFunction`: implements `MobiusFunction`.
+     - Precomputes the Möbius function for numbers up to `size`.
+   - `PrimeFactorizationMobiusFunction`: implements `MobiusFunction`.
+     - Computes the Möbius function using prime factorization.
+   - `FactorialTableCombCalculator`: implements `CombCalculator`.
+     - Uses precomputed factorials and modular arithmetic.
+   - `TableCombCalculator`: implements `CombCalculator`.
+     - Uses a precomputed combination table.
+   - `Graph`: interface with methods for linking nodes and retrieving costs.
+   - `FlowResolver`: interface with `maxFlow(int from, int to)` method.
+   - `ArrayGraph`: implements `Graph` using a cost matrix.
+   - `DfsFlowResolver`: implements `FlowResolver` using DFS.
+   - `BinaryIndexedTree`: manages 1D BIT operations.
+   - `BinaryIndexedTree2D`: manages 2D BIT operations.
+   - `UnionFind`: interface for union-find operations.
+   - `SetUnionFind`: extends `ArrayUnionFind` with set retrieval.
+   - `ArrayUnionFind`: implements `UnionFind` using arrays.
+   - `PrimeNumberUtils`: manages prime number utilities.
+   - `BitSet`: interface with bit manipulation methods.
+   - `LongBit`: implements `BitSet` using a long array.

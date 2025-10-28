@@ -1,0 +1,34 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+
+**Variable Declarations:**
+- `BufferedReader br = new BufferedReader(new InputStreamReader(System.in))`
+- `int ans`
+- `String inputed`
+- `int i`
+
+**Logic Flow:**
+1. Initialize `br` to read from standard input.
+2. Enter infinite loop.
+3. Read a line from input into `inputed`.
+4. If `inputed` has length 1 and equals "0", break loop.
+5. Set `ans` to 0.
+6. For each character index `i` from 0 to length of `inputed` minus 1:
+   - Convert character at position `i` to digit by subtracting '0'.
+   - Add digit value to `ans`.
+7. Print `ans`.
+8. Repeat loop.
+
+**Control Structures:**
+- `while(true)` loop with break condition: `inputed.length() == 1 && inputed.equals("0")`
+- `for(int i = 0; i < inputed.length(); i++)` loop
+- `try-catch` block for IOException handling
+
+**Input/Output Operations:**
+- Input: Read lines from standard input via BufferedReader.
+- Output: Print integer `ans` followed by newline.
+
+**Libraries/Dependencies:**
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`

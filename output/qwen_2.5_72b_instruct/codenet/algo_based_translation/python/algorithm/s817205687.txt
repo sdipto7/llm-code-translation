@@ -1,0 +1,26 @@
+- Function `lcm(x: int, y: int) -> int`:
+  - Returns the least common multiple of `x` and `y` using the formula `(x * y) // math.gcd(x, y)`
+
+- Function `lcm_list(numbers: List[int]) -> int`:
+  - Returns the least common multiple of a list of integers `numbers` using `reduce(lcm, numbers, 1)`
+
+- Main algorithm:
+  - `N: int, M: int` are read from input
+  - `A: List[int]` is read from input and each element is divided by 2
+  - `count_div_2: Optional[int]` is initialized to `None`
+  - For each element `a` in `A`:
+    - `cnt: int` is initialized to 0
+    - While `a` is divisible by 2:
+      - `a` is divided by 2
+      - `cnt` is incremented
+    - If `count_div_2` is `None`, set `count_div_2` to `cnt`
+    - If `cnt` is not equal to `count_div_2`, print 0 and exit
+  - `my_lcm: int` is calculated as the least common multiple of elements in `A`
+  - If `my_lcm` is greater than `M`, print 0 and exit
+  - `tmp: int` is calculated as `M // my_lcm`
+  - `ans: int` is calculated as `(tmp + 1) // 2`
+  - Print `ans`
+
+- Required libraries:
+  - `functools` for `reduce`
+  - `math` for `gcd`

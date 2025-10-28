@@ -1,0 +1,11 @@
+1. Import Scanner from java.util
+2. Define public class codeforces_23_B
+3. Define main method with String[] args parameter
+4. Create Scanner object with System.in
+5. Read integer t from input
+6. For loop from i=0 to i<t with i++ increment
+   - Read integer n from input
+   - Call maxLeft(n) and print result
+7. Define static method maxLeft with int parameter n returning int
+   - If n > 2 then return n - 2
+   - Else return 0

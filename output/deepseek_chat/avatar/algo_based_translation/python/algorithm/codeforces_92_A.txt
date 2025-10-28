@@ -1,0 +1,6 @@
+n: int, m: int = input().split() converted to integers
+i: int = 1
+while m >= i:
+    m = m - i
+    i = (i % n) + 1
+print(m)

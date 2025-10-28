@@ -1,0 +1,13 @@
+- Function signature: `public static void main(String args[])`
+- Variable declarations and data types:
+  - `Scanner sc` of type `Scanner`
+  - `int intA` of type `int`
+  - `double dbAncer` of type `double`
+  - `int intAncer` of type `int`
+- Required library: `import java.util.Scanner`
+- Logic flow in execution order:
+  1. Create a `Scanner` object `sc` to read from `System.in`
+  2. Read an integer from the input and store it in `intA`
+  3. Calculate the cube of `intA` using `Math.pow(intA, 3)` and store the result in `dbAncer`
+  4. Cast `dbAncer` to an `int` and store the result in `intAncer`
+  5. Print the value of `intAncer`

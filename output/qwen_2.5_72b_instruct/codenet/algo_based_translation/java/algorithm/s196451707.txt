@@ -1,0 +1,36 @@
+- Import `java.util.LinkedList`
+- Import `java.util.Queue`
+- Import `java.util.Scanner`
+
+- Function signature: `main(String[] args)`
+
+- Variable declarations:
+  - `Scanner sc` initialized as `new Scanner(System.in)`
+  - `int n` assigned `sc.nextInt()`
+  - `int[][] g` declared as `new int[n+1][n+1]`
+  - `int u` assigned `sc.nextInt()` in loop
+  - `int k` assigned `sc.nextInt()` in loop
+  - `int v` assigned `sc.nextInt()` in nested loop
+  - `int[] d` declared as `new int[n+1]`
+  - `Queue<Integer> que` initialized as `new LinkedList<Integer>()`
+  - `int top` assigned `que.poll()` in loop
+
+- Logic flow:
+  1. Read integer `n` from input
+  2. Initialize adjacency matrix `g` of size `(n+1) x (n+1)`
+  3. For each node `i` from `0` to `n-1`:
+     - Read node `u` and number of edges `k`
+     - For each edge `j` from `0` to `k-1`:
+        - Read adjacent node `v`
+        - Set `g[u][v]` to `1`
+  4. Initialize distance array `d` of size `n+1` with all elements set to `-1`
+  5. Enqueue node `1` into `que`
+  6. Set `d[1]` to `0`
+  7. While `que` is not empty:
+     - Dequeue `top` from `que`
+     - For each node `j` from `1` to `n`:
+        - If `g[top][j]` equals `1` and `d[j]` equals `-1`:
+           - Enqueue `j` into `que`
+           - Set `d[j]` to `d[top] + 1`
+  8. For each node `i` from `1` to `n`:
+     - Print `i` followed by `d[i]`

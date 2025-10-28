@@ -1,0 +1,25 @@
+1. Import the `java.util.*` package.
+
+2. Define a `main` method with a `String[] args` parameter that returns `void`.
+
+3. Declare a `Scanner` object `sc` and initialize it to read from standard input.
+
+4. Read an integer `n` from input using `sc.nextInt()` to determine the number of elements in the sequence.
+
+5. Declare a `PriorityQueue<Integer>` named `queue` and initialize it as an empty priority queue.
+
+6. Execute a `for` loop that iterates `n` times:
+   - For each iteration, read an integer from input using `sc.nextInt()`.
+   - Add the integer to the `queue`.
+
+7. Declare an integer `sum` and initialize it to `0`.
+
+8. Execute a `for` loop that iterates `n-1` times:
+   - In each iteration, remove and retrieve the smallest element from `queue` using `queue.poll()`.
+   - Add the retrieved element to `sum`.
+
+9. Retrieve and remove the smallest element from `queue` using `queue.poll()`.
+
+10. If the retrieved element is less than `sum`, print "Yes" to standard output.
+
+11. Otherwise, print "No" to standard output.

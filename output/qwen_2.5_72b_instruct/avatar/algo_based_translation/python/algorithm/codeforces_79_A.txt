@@ -1,0 +1,29 @@
+Function signature: `main() -> None`
+
+Variable declarations and data types:
+- `x: int`
+- `y: int`
+- `a: int`
+
+Complete logic flow in execution order:
+1. Read input values for `x` and `y` as integers separated by space.
+2. Initialize `a` to 0.
+3. Enter while loop with condition: `(x >= 0 and y >= 22) or (x >= 1 and y >= 12) or (x >= 2 and y >= 2)`
+4. If `a` is truthy:
+   - If `y >= 22`, then subtract 22 from `y`.
+   - Else if `x >= 1 and y >= 12`, then subtract 1 from `x` and 12 from `y`.
+   - Else, subtract 2 from `x` and 2 from `y`.
+5. Else:
+   - If `x >= 2 and y >= 2`, then subtract 2 from `x` and 2 from `y`.
+   - Else if `x >= 1 and y >= 12`, then subtract 1 from `x` and 12 from `y`.
+   - Else, subtract 22 from `y`.
+6. Toggle value of `a` between 0 and 1.
+7. Repeat steps 3-6 until while loop condition fails.
+8. Print 'Ciel' if `a` is 0, otherwise print 'Hanako'.
+
+Input/output operations and data processing logic:
+- Input: Two integers `x` and `y`.
+- Output: A string ('Ciel' or 'Hanako') based on the final value of `a`.
+
+Required libraries, modules, or dependencies:
+- None

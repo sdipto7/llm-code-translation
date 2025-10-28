@@ -1,0 +1,55 @@
+- Function: `gcd(a, b)`
+  - Parameters: `a` (integer), `b` (integer)
+  - Returns: integer
+  - Logic:
+    - Assign the maximum of `a` and `b` to `a`, the minimum to `b`
+    - While `a % b` is greater than 0:
+      - Assign `b` to `a`, `a % b` to `b`
+    - Return `b`
+
+- Function: `solve()`
+  - Parameters: None
+  - Returns: integer (always 0)
+  - Logic:
+    - Read input string `s`
+    - Initialize empty string `t`
+    - Initialize integer `i` to 0
+    - While `i` is less than the length of `s`:
+      - If `s[i]` is "A":
+        - Append "A" to `t`
+        - Increment `i` by 1
+      - Else if `s[i]` is "B":
+        - If `i` is less than the length of `s` minus 1:
+          - If `s[i+1]` is "C":
+            - Append "D" to `t`
+            - Increment `i` by 2
+          - Else:
+            - Append "X" to `t`
+            - Increment `i` by 1
+        - Else:
+          - Append "X" to `t`
+          - Increment `i` by 1
+      - Else:
+        - Append "X" to `t`
+        - Increment `i` by 1
+    - Initialize integer `total` to 0
+    - Initialize integer `numA` to 0
+    - For each index `i` in the range of the length of `t`:
+      - If `t[i]` is "X":
+        - Set `numA` to 0
+      - Else:
+        - If `t[i]` is "A":
+          - Increment `numA` by 1
+        - Else:
+          - Add `numA` to `total`
+    - Print `total`
+    - Define `INF` as 10^25
+    - Define `mod` as 7 + 10^9
+    - Return 0
+
+- Required libraries:
+  - `sys`
+  - `math`
+  - `collections`
+  - `heapq`
+  - `itertools`

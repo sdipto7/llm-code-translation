@@ -1,0 +1,29 @@
+Function: `solution()`
+- No parameters
+- No return type
+- Variable declarations:
+  - `line` (string)
+  - `bought_count` (Counter)
+  - `made_cout` (Counter)
+  - `res` (integer, initialized to 0)
+- Logic flow:
+  1. Read input into `line`
+  2. Count occurrences of each character in `line` and store in `bought_count`
+  3. Read input into `line`
+  4. Count occurrences of each character in `line` and store in `made_cout`
+  5. For each `color` in `made_cout`:
+     - If `color` is not in `bought_count`, print `-1` and return
+     - Add the minimum of `bought_count[color]` and `made_cout[color]` to `res`
+  6. Print `res`
+
+Function: `main()`
+- No parameters
+- No return type
+- Variable declarations:
+  - `t` (integer, initialized to 1)
+- Logic flow:
+  1. For `_` in range `t`:
+     - Call `solution()`
+
+Required libraries:
+- `collections.Counter`

@@ -1,0 +1,54 @@
+Function Signatures:
+- `main(String[] args): void`
+- `Answer(int y, int m, int d): int`
+
+Variable Declarations and Data Types:
+- `sc: Scanner`
+- `count: int`
+- `i: int`
+- `y: int`
+- `m: int`
+- `d: int`
+- `result: int`
+
+Logic Flow in Execution Order:
+1. Initialize `sc` as a new `Scanner` object for reading input.
+2. Read integer `count` from input.
+3. Loop from `i = 0` to `i < count`:
+   a. Read integers `y`, `m`, `d` from input.
+   b. Call `Answer(y, m, d)` and print the result.
+
+Function `Answer(int y, int m, int d)`:
+1. Initialize `result` to 1.
+2. If `y % 3 == 0`:
+   a. Add `20 - d` to `result`.
+3. Else if `m % 2 == 0`:
+   a. Add `19 - d` to `result`.
+4. Else:
+   a. Add `20 - d` to `result`.
+5. Increment `m` by 1.
+6. Loop from `m` to `10`:
+   a. If `y % 3 == 0`:
+      i. Add 20 to `result`.
+   b. Else:
+      i. If `m % 2 == 0`:
+         1. Add 19 to `result`.
+      ii. Else:
+         1. Add 20 to `result`.
+7. Increment `y` by 1.
+8. Loop from `y` to 999:
+   a. If `y % 3 == 0`:
+      i. Add 200 to `result`.
+   b. Else:
+      i. Add 195 to `result`.
+9. Return `result`.
+
+Input/Output Operations:
+- Read integers from standard input using `Scanner`.
+- Print the result of `Answer(y, m, d)` for each input set.
+
+Data Processing Logic:
+- The `Answer` function calculates a result based on the year `y`, month `m`, and day `d` using specific rules involving modulo operations and conditional logic.
+
+Required Libraries:
+- `java.util.Scanner`

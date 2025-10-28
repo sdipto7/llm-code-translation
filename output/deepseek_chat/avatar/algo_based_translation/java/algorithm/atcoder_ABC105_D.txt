@@ -1,0 +1,52 @@
+**Function Signatures:**
+- `main(String[] args): void`
+- `TaskD.solve(int testNumber, InputReader in, PrintWriter out): void`
+- `InputReader(InputStream inputStream): constructor`
+- `InputReader.nextString(): String`
+- `InputReader.nextInt(): int`
+- `InputReader.nextIntArray(int n): int[]`
+
+**Variable Declarations:**
+- `InputStream inputStream = System.in`
+- `OutputStream outputStream = System.out`
+- `InputReader in = new InputReader(inputStream)`
+- `PrintWriter out = new PrintWriter(outputStream)`
+- `TaskD solver = new TaskD()`
+- `int n = in.nextInt()`
+- `int m = in.nextInt()`
+- `int[] a = in.nextIntArray(n)`
+- `HashMap<Integer, Integer> dp = new HashMap<>()`
+- `long ans = 0`
+- `int base = 0`
+- `BufferedReader br`
+- `StringTokenizer st`
+
+**Logic Flow:**
+1. Initialize input/output streams
+2. Create InputReader and PrintWriter objects
+3. Create TaskD solver instance
+4. Call solver.solve(1, in, out)
+5. Read integers n and m
+6. Read integer array a of length n
+7. Initialize HashMap dp, long ans=0, int base=0
+8. For i from 0 to n-1:
+   - Update base: base = (base - a[i] % m + m) % m
+   - Update dp: merge (base + a[i]) % m with value 1 (increment count)
+   - Add dp.getOrDefault(base, 0) to ans
+9. Print ans
+10. Close PrintWriter
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < n; i++)`
+- While loop: `while (!st.hasMoreTokens())`
+- Try-catch block for IOException handling
+
+**Input/Output Operations:**
+- Read from System.in via BufferedReader
+- Write to System.out via PrintWriter
+- Token-based input parsing using StringTokenizer
+- Integer parsing from string input
+
+**Required Libraries:**
+- java.io.*
+- java.util.*

@@ -1,0 +1,43 @@
+**Function Signature:**
+- No explicit function defined; code runs as a script
+- Input: string from stdin (converted to list of characters)
+- Output: integer printed to stdout
+
+**Variables:**
+- `s`: list of characters (from input string)
+- `num_g`: integer (initialized to 0)
+- `num_p`: integer (initialized to 0)
+- `score`: integer (initialized to 0)
+- `x`: character (loop variable)
+
+**Logic Flow:**
+1. Read input string and convert to list of characters
+2. Initialize counters: num_g = 0, num_p = 0, score = 0
+3. For each character x in list s:
+   - If x equals 'g':
+     - If (num_g - num_p) > 0:
+       - Increment score by 1
+       - Increment num_p by 1
+     - Else:
+       - Keep score unchanged
+       - Increment num_g by 1
+   - Else if x equals 'p':
+     - If (num_g - num_p) > 0:
+       - Keep score unchanged
+       - Increment num_p by 1
+     - Else:
+       - Decrement score by 1
+       - Increment num_g by 1
+4. Print final score value
+
+**Control Structures:**
+- For loop: iterates through each character in input list
+- Nested if-elif conditional: checks character value ('g' or 'p')
+- Inner if-else conditionals: check (num_g - num_p) > 0 condition
+
+**Input/Output:**
+- Input: single string from stdin
+- Output: integer score printed to stdout
+
+**Dependencies:**
+- None (uses built-in input() and print() functions)

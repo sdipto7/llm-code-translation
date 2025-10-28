@@ -1,0 +1,22 @@
+Function Signature: `main()`
+Parameter Types: None
+Return Types: None
+
+Variable Declarations:
+- `num`: Integer
+- `k`: Integer
+- `arr`: List of Integers
+- `different`: Set of Integers
+- `temp`: Integer
+
+Logic Flow:
+1. Input two integers `num` and `k` from the user.
+2. Input a list of integers `arr` from the user.
+3. Initialize an empty set `different`.
+4. Initialize `temp` to 0.
+5. Sort the list `arr`.
+6. For each integer `x` in `arr`:
+   - If `x` modulo `k` is not equal to 0 or `x` divided by `k` is not in `different`:
+     - Add `x` to `different`.
+   - Update `temp` to the maximum of the length of `different` and `temp`.
+7. Print `temp`.

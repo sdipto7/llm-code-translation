@@ -1,0 +1,4 @@
+read three integers from standard input, assign to a, b, c
+check if the sum of a and b is greater than or equal to c
+if true, print "Yes"
+if false, print "No"

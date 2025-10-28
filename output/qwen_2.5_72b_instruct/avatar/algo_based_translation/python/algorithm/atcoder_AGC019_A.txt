@@ -1,0 +1,55 @@
+**Function Signatures:**
+- `input() -> str`
+- `ceil(a: int, b: int = 1) -> int`
+- `round(x: float) -> int`
+- `fermat(x: int, y: int, MOD: int) -> int`
+- `lcm(x: int, y: int) -> int`
+- `lcm_list(nums: list[int]) -> int`
+- `INT() -> int`
+- `MAP() -> map[int]`
+- `LIST() -> list[int]`
+
+**Variable Declarations:**
+- `q: int`
+- `h: int`
+- `s: int`
+- `d: int`
+- `n: int`
+- `best1L: int`
+- `best2L: int`
+
+**Libraries and Modules:**
+- `sys`
+- `re`
+- `collections`
+- `math`
+- `heapq`
+- `bisect`
+- `itertools`
+- `operator`
+- `copy`
+- `functools`
+- `fractions`
+- `string`
+
+**Logic Flow:**
+1. Read four integers `q`, `h`, `s`, `d` from input.
+2. Read an integer `n` from input.
+3. Calculate `best1L` as the minimum of `q * 4`, `h * 2`, `s`.
+4. Calculate `best2L` as the minimum of `d`, `best1L * 2`.
+5. If `n` is even:
+   - Output `best2L * (n // 2)`.
+6. Else:
+   - Output `best2L * (n // 2) + best1L`.
+
+**Control Structures:**
+- Conditional statement: `if n % 2 == 0` with no `else if` or `else` branches following it directly.
+
+**Input/Output Operations:**
+- Input: Read multiple integers from standard input.
+- Output: Print the calculated minimum cost to the standard output.
+
+**Data Processing Logic:**
+- Compute the cost of buying 1L of water in different ways and choose the cheapest.
+- Compute the cost of buying 2L of water in different ways and choose the cheapest.
+- Determine the total cost based on whether the number of liters `n` is even or odd.

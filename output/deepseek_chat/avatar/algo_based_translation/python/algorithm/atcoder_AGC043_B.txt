@@ -1,0 +1,49 @@
+**Function Signatures:**
+- twos_in_factorial(n: int) -> int
+- parity_of_nCr(n: int, i: int) -> bool
+- main() -> None
+
+**Variables:**
+- n: int (input integer)
+- nums: List[int] (input list of integers)
+- no_one: bool (flag for processing)
+- is_odd: bool (result flag)
+- i: int (loop index)
+- num: int (current element in nums)
+
+**Algorithm Flow:**
+
+1. Define function twos_in_factorial(n):
+   - Return n minus count of '1' bits in binary representation of n
+
+2. Define function parity_of_nCr(n, i):
+   - Calculate f(n) - f(n-i) - f(i)
+   - Return True if result > 0, else False
+
+3. Main execution:
+   - Read integer n from input
+   - Read list of integers from input, subtract 1 from each element
+   - Initialize no_one = False
+   - If 1 is not present in nums:
+        Divide each element in nums by 2 (integer division)
+        Set no_one = True
+   - Initialize is_odd = False
+   - For each index i and value num in nums:
+        If parity_of_nCr(n-1, i) returns False AND num is odd:
+            Toggle is_odd (XOR with 1)
+   - If is_odd is False: print 0
+   - Else: print 1 if no_one is False, print 2 if no_one is True
+
+**Control Structures:**
+- If condition: 1 not in nums
+- For loop: enumerate(nums)
+- If condition: not parity_of_nCr(n-1, i) and num % 2 == 1
+- If condition: not is_odd
+
+**Input/Output:**
+- Input: integer n, space-separated integers
+- Output: integer (0, 1, or 2)
+
+**Dependencies:**
+- Built-in functions: bin(), count(), int(), input(), map(), list()
+- No external libraries required

@@ -1,0 +1,13 @@
+1. Import the `sys` module.
+2. Define `readline` as `sys.stdin.readline`.
+3. Initialize constants: `MOD` = 10^9 + 7, `INF` = positive infinity, and set the recursion limit to 10^5 using `sys.setrecursionlimit`.
+4. Define a function `main()` with no parameters and no return value.
+5. Inside `main()`, read an integer `N` from standard input using `int(readline())`.
+6. Initialize a set `s` containing the elements {1, 2, 4, 8, 16, 32, 64}.
+7. Initialize a variable `ans` to 0.
+8. Iterate over the range from 1 to `N` (inclusive) using a for loop.
+9. Inside the loop, check if the current number `i` is in the set `s` using an if statement.
+10. If `i` is in `s`, update `ans` to `i`.
+11. After the loop completes, print the value of `ans` to standard output using `print(ans)`.
+12. Check if the script is being run as the main module using `if __name__ == '__main__':`.
+13. If true, call the `main()` function.

@@ -1,0 +1,29 @@
+### Algorithm
+
+1. Import required libraries: 
+   - java.util.*
+
+2. Define a class: Main
+
+3. Define a static method: 
+   - `public static void main(String[] args)`
+
+4. Declare local variables:
+   - `Scanner sc`
+   - `int a`, `int b`, `int c`, `int x`
+   - `int res`
+   - loop counters `i`, `j`, `k`
+   - `int total`
+
+5. Execution flow:
+   1. Create a new `Scanner` object `sc` to read from `System.in`.
+   2. Read four integers from input using `sc.nextInt()` and store them in `a`, `b`, `c`, and `x`.
+   3. Initialize `res` to 0.
+   4. Start a nested loop structure:
+      - Outer loop: iterate `i` from 0 to `a` (inclusive).
+      - Middle loop: iterate `j` from 0 to `b` (inclusive).
+      - Inner loop: iterate `k` from 0 to `c` (inclusive).
+   5. Inside the inner loop:
+      - Calculate `total = 500*i + 100*j + 50*k`.
+      - Check if `total` equals `x`. If true, increment `res`.
+   6. After the nested loops complete, print the value of `res` to the output using `System.out.println(res)`.

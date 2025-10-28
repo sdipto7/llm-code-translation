@@ -1,0 +1,25 @@
+```
+Function Signature:
+    def find_max_sum(n: int, a: List[List[int]]) -> int
+
+Variable Declarations:
+    a: List[List[int]]
+    res_0: numpy.ndarray
+    res_1: numpy.ndarray
+    ans: int
+    check: int
+
+Algorithm:
+1. Initialize an empty list `a` to hold two lists of integers.
+2. For `i` ranging from 0 to 1 (inclusive), perform the following:
+   a. Read a line of input, split it by spaces, convert each part to an integer, and append the resulting list to `a`.
+3. Reverse the second list in `a` (i.e., `a[1]`).
+4. Import the `numpy` module.
+5. Calculate the cumulative sum of the first list in `a` using `numpy.cumsum` and store it in `res_0`.
+6. Calculate the cumulative sum of the reversed second list in `a` using `numpy.cumsum` and store it in `res_1`.
+7. Initialize `ans` to 0.
+8. For `i` ranging from 0 to `n-1` (inclusive), perform the following:
+   a. Calculate `check` as the sum of `res_0[i]` and `res_1[n-1-i]`.
+   b. Update `ans` to be the maximum of its current value and `check`.
+9. Output the value of `ans`.
+```

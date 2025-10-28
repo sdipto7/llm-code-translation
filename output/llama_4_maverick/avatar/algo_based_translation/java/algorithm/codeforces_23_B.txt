@@ -1,0 +1,5 @@
+1. Read the number of test cases.
+2. For each test case, read an integer n.
+3. If n is greater than 2, calculate the result as n - 2; otherwise, set the result to 0.
+4. Output the result for the current test case.
+5. Repeat steps 2-4 until all test cases are processed.

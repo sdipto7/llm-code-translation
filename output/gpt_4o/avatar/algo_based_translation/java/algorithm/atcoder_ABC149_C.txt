@@ -1,0 +1,31 @@
+```
+Algorithm: FindNextPrime
+
+Function Signature:
+- Input: None
+- Output: None
+
+Variable Declarations:
+- stdIn: Scanner (for reading input)
+- x: Integer (to store the input number)
+- sqrtNum: Double (to store the square root of x)
+- i: Integer (loop counter for checking divisibility)
+
+Logic Flow:
+1. Initialize stdIn to read input from the standard input.
+2. Read the next token from stdIn, parse it as an integer, and assign it to x.
+3. If x is not equal to 2 and x is even, increment x by 1.
+4. Start an infinite loop.
+   a. Compute the square root of x and assign it to sqrtNum.
+   b. Initialize i to 3.
+   c. Start a loop where i increments by 2 each iteration.
+      i. Check if i is less than or equal to sqrtNum.
+      ii. If x is divisible by i, break the loop.
+   d. If i is greater than sqrtNum, break the infinite loop.
+   e. Increment x by 2.
+5. Output the value of x.
+
+Dependencies:
+- java.util.Scanner
+- java.lang.Math
+```

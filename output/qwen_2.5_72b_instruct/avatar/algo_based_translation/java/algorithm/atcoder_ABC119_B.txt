@@ -1,0 +1,37 @@
+- Function signatures:
+  - `main(String[] args)`: void
+  - `solve(double[] x, String[] u)`: double
+
+- Variable declarations and data types:
+  - `sc`: Scanner
+  - `N`: int
+  - `x`: double[]
+  - `u`: String[]
+  - `i`: int (loop variable)
+
+- Logic flow:
+  1. Create a `Scanner` object to read input.
+  2. Read an integer `N` from input.
+  3. Initialize arrays `x` and `u` of size `N`.
+  4. Loop from `0` to `N-1`:
+     - Read a double value and store it in `x[i]`.
+     - Read a string value and store it in `u[i]`.
+  5. Call `solve(x, u)` and print the result.
+  6. Close the `Scanner` object.
+
+- Control structures:
+  - Loop: `for (int i = 0; i < N; ++i)` iterates from `0` to `N-1`.
+  - Conditional: `(u[i].equals("JPY") ? 1 : 380000)` checks if `u[i]` is "JPY" and returns `1` if true, otherwise `380000`.
+
+- Input/output operations:
+  - Input: Reads `N`, `x[i]`, and `u[i]` from standard input.
+  - Output: Prints the result of `solve(x, u)` to standard output.
+
+- Data processing logic:
+  - Convert each value in `x` based on the corresponding unit in `u` and sum the results.
+  - If the unit is "JPY", the value is multiplied by `1`.
+  - If the unit is not "JPY", the value is multiplied by `380000`.
+
+- Libraries/modules/dependencies:
+  - `java.util.Scanner`
+  - `java.util.stream.IntStream`

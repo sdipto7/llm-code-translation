@@ -1,0 +1,6 @@
+1. Read two integers n and m from input
+2. Calculate q = integer division of n by m
+3. Calculate r = remainder of n divided by m
+4. Initialize a list 'a' of size m with all elements set to q
+5. For i from 0 to r-1, increment a[i] by 1
+6. For i from 0 to m-1, print a[i] followed by a space

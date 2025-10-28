@@ -1,0 +1,7 @@
+1. Read integer N from input
+2. Read N space-separated integers into array A
+3. Initialize result to 0
+4. For b from 0 to 59
+   4.1 Calculate bs as the sum of (A shifted right by b bits and bitwise AND with 1)
+   4.2 Update result to (result + bs * (N - bs) * (2 raised to the power of b)) modulo 1000000007
+5. Output result

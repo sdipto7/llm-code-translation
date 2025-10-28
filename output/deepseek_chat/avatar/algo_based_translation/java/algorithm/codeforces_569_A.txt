@@ -1,0 +1,32 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner in`: Scanner object for input
+- `int T`: integer input
+- `int S`: integer input
+- `int q`: integer input
+- `long previous`: long initialized to S
+- `int answer`: integer initialized to 0
+
+**Logic Flow:**
+1. Create Scanner object to read from standard input
+2. Read integer T from input
+3. Read integer S from input
+4. Read integer q from input
+5. Initialize long variable 'previous' with value S
+6. Initialize integer variable 'answer' with value 0
+7. While 'previous' is less than T:
+   - Increment 'answer' by 1
+   - Multiply 'previous' by q
+8. Print 'answer'
+
+**Control Structures:**
+- While loop: condition `previous < T`
+
+**Input/Output Operations:**
+- Input: Three integers read sequentially (T, S, q)
+- Output: Single integer printed (answer)
+
+**Required Dependencies:**
+- java.util.Scanner

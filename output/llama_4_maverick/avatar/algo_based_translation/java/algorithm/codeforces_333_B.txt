@@ -1,0 +1,15 @@
+1. Initialize input reader and output writer.
+2. Read two integers, n and m, representing the size of a grid and the number of operations.
+3. Create two sets, bannedRows and bannedCols, to store the indices of rows and columns that are restricted.
+4. Iterate m times, reading two integers, r and c, in each iteration.
+5. Check if r is within the range (1, n) and add it to bannedRows if true.
+6. Check if c is within the range (1, n) and add it to bannedCols if true.
+7. Calculate an initial answer as (n - 2) * 2.
+8. Subtract the size of bannedRows from the answer.
+9. Subtract the size of bannedCols from the answer.
+10. Check if n is odd.
+11. If n is odd, calculate the middle index, mid.
+12. Check if mid is not present in both bannedRows and bannedCols.
+13. If mid is not banned, decrement the answer by 1.
+14. Output the final answer.
+15. Close the output writer.

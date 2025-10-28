@@ -1,0 +1,42 @@
+**Algorithm:**
+
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `static void debug(Object... obj)` (not invoked in main logic)
+
+**Variables:**
+- `Scanner in`: Reads input from `System.in`
+- `PrintWriter pw`: Writes output to `System.out`
+- `int n`: Number of input elements
+- `ArrayList<Integer> list`: Stores input integers
+- `int c`: Counter variable initialized to 1
+
+**Logic Flow:**
+1. **Input Reading:**
+   - Read integer `n` from input
+   - Initialize `ArrayList<Integer> list`
+   - Loop `i` from `0` to `n-1`:
+     - Read integer from input and add to `list`
+
+2. **Data Processing:**
+   - Sort `list` in ascending order using `Collections.sort()`
+   - Initialize `c = 1`
+   - Loop `i` from `0` to `n-1`:
+     - If `list.get(i) >= c`:
+       - Increment `c` by 1
+
+3. **Output:**
+   - Print `c` using `pw.println(c)`
+   - Close `PrintWriter`
+
+**Control Structures:**
+- `for (int i = 0; i < n; i++)` (twice: for input reading and processing)
+- `if (list.get(i) >= c)` inside processing loop
+
+**Input/Output Operations:**
+- Input: Read via `Scanner` from `System.in`
+- Output: Write via `PrintWriter` to `System.out`
+
+**Libraries/Dependencies:**
+- `java.io.*` (for `PrintWriter`)
+- `java.util.*` (for `Scanner`, `ArrayList`, `Collections`)

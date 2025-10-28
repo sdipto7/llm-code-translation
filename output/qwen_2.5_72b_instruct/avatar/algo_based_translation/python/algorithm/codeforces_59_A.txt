@@ -1,0 +1,23 @@
+Function signature: main() -> None
+
+Variable declarations:
+- txt: str
+- cu: int
+- cl: int
+- z: str
+- out: str
+
+Logic flow:
+1. Read input from the user and assign it to txt
+2. Initialize cu to 0
+3. Initialize cl to 0
+4. For each character z in txt:
+   a. If z is a lowercase letter:
+      i. Increment cl by 1
+   b. Else:
+      i. Increment cu by 1
+5. If cu is greater than cl:
+   a. Convert txt to uppercase and assign it to out
+6. Else:
+   a. Convert txt to lowercase and assign it to out
+7. Print out

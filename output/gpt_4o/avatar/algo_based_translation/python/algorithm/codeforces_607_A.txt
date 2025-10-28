@@ -1,0 +1,26 @@
+```
+Input:
+    n: integer - number of input pairs
+
+Variable Declarations:
+    l: list of integers, size 1000010, initialized to 0
+    dp: list of integers, size 1000010, initialized to 0
+    mx: integer, initialized to 0
+    a, b: integers - temporary variables for pair values
+
+Logic Flow:
+1. Read integer input `n`.
+2. For each index `i` from 0 to `n-1`:
+   a. Read two integers `a` and `b` from input.
+   b. Set `l[a]` to `b`.
+3. If `l[0]` > 0, set `dp[0]` to 1.
+4. For each index `i` from 1 to 1000009:
+   a. If `l[i]` is 0, set `dp[i]` to `dp[i-1]`.
+   b. Else:
+      i. If `l[i]` >= `i`, set `dp[i]` to 1.
+      ii. Else, set `dp[i]` to `dp[i - l[i] - 1] + 1`.
+   c. If `dp[i]` > `mx`, set `mx` to `dp[i]`.
+5. Print `n - mx`.
+
+No external libraries, modules, or dependencies required.
+```

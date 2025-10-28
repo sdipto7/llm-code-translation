@@ -1,0 +1,12 @@
+1. Read the input value n.
+2. Initialize an integer array v of size 100010 with all elements as 0.
+3. Read n integer values and store them in the array v.
+4. Initialize three Integer arrays vo, ve, and vt of size 100010 with all elements as 0.
+5. For each element in v, increment the corresponding index in vt. 
+   If the index is even, increment the corresponding index in ve; otherwise, increment the corresponding index in vo.
+6. Sort vo, ve, and vt in descending order.
+7. If the sum of the maximum values in vo and ve equals the maximum value in vt, 
+   then calculate the minimum between (n - value at index 0 in vo - value at index 1 in ve) and (n - value at index 1 in vo - value at index 0 in ve).
+8. Otherwise, calculate n - value at index 0 in vo - value at index 0 in ve.
+9. Output the calculated value.
+10. End.

@@ -1,0 +1,17 @@
+mod: integer = 1000000007
+Read n, k from input as integers
+coef: list of integers = empty list
+For i from 1 to floor(sqrt(n)) inclusive:
+    Append (n // i) - (n // (i + 1)) to coef
+Append 1 repeated (n - sum(coef)) times to coef
+Reverse coef
+nn: integer = length of coef
+dp: 2D list of integers with dimensions (k+1) x nn, initialized to zeros
+Set dp[0][0] = 1
+For i from 1 to k inclusive:
+    tmp: integer = 0
+    For j from nn-1 down to 0 inclusive:
+        tmp = (tmp + dp[i-1][nn-1-j]) % mod
+        dp[i][j] = (coef[j] * tmp) % mod
+result: integer = sum(dp[k]) % mod
+Print result

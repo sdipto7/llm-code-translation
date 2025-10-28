@@ -1,0 +1,10 @@
+1. Read input values N and M from the input.
+2. Initialize a priority queue q to store Job objects.
+3. For N iterations, read input values a and b, create a Job object with a and b, and add it to q.
+4. Initialize a counter cnt to 0.
+5. Initialize a priority queue jobQ to store integers in reverse order.
+6. Iterate from 1 to M.
+7. For each iteration i, while q is not empty, check the Job object at the top of q.
+8. If the Job object's a is less than or equal to i, remove the Job object from q, and add its b to jobQ.
+9. If jobQ is not empty, remove the top element from jobQ and add it to cnt.
+10. Output the value of cnt.

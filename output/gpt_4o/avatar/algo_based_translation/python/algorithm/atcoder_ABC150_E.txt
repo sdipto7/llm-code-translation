@@ -1,0 +1,24 @@
+```
+- Import the built-in function `pow` for exponentiation with modulus.
+- Declare an integer constant `mod` and assign the value `10 ** 9 + 7`.
+- Read an integer `n` from input.
+
+Algorithm `compute_special_sum` with parameters:
+- `n: int`: the number of integers to process.
+- `c: List[int]`: the list of integers.
+
+Returns:
+- `int`: the computed result as per the algorithm.
+
+1. Sort the list `c` in descending order.
+2. Compute `b` as `2` raised to the power `2 * n - 2`, modulo `mod`.
+3. Compute `a` as `2 * b % mod`.
+4. Initialize an integer `ans` to `0`.
+5. For each index `i` from `0` to `n - 1`:
+   - Update `ans` by adding the product of `c[i]` and `(a + i * b)`, then take modulo `mod`.
+6. Return `ans`.
+
+- Read a list of integers `c` from input.
+- Call `compute_special_sum` with `n` and `c`.
+- Print the result.
+```

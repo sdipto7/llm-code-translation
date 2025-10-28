@@ -1,0 +1,23 @@
+**Function Signature:**
+main(String[] args)
+
+**Variables:**
+- Scanner sc (input scanner)
+- int q (number of queries)
+- int n (input integer for each query)
+- long s (result sum)
+- int x (exponent calculation)
+
+**Libraries:**
+java.util.Scanner
+
+**Logic Flow:**
+1. Create Scanner object for System.in
+2. Read integer q (number of queries)
+3. While q > 0 (decrement q after check):
+   - Read integer n
+   - Initialize s = 0
+   - Calculate x = floor(log2(n)) + 1
+   - Compute s = -2^x + 2 + (n*(n+1))/2 - 2^x
+   - Print s
+4. End while loop

@@ -1,0 +1,11 @@
+1. Import required libraries: java.util.*
+2. Define a class: Main
+3. Define a static method: main with parameters (String[] args) and return type void
+   1. Create a Scanner object: sc with data type Scanner, initialized with System.in
+   2. Read a string input from the user: s with data type String using sc.next()
+   3. Extract the last character of the string: s.substring(s.length()-1,s.length()) and parse it to an integer: n with data type int using Integer.parseInt()
+   4. Evaluate the value of n using conditional statements:
+      1. If n equals 3, output "bon" using System.out.println()
+      2. Else if n equals 0 or 1 or 6 or 8, output "pon" using System.out.println()
+      3. Else, output "hon" using System.out.println()
+   5. Close the Scanner object: sc using sc.close()

@@ -1,0 +1,31 @@
+- Function signature:
+  - `public static void main(String[] args)` (void return)
+
+- Variables:
+  - `Scanner sc = new Scanner(System.in)`
+  - `int i = 0`
+  - `int n` (loop-scoped)
+
+- Libraries:
+  - `java.util.Scanner`
+
+- Logic flow:
+  1. Create Scanner object for System.in
+  2. Initialize integer i with 0
+  3. Start FOR loop:
+     - Initialization: `i = 1`
+     - Condition: `i <= 5`
+     - Increment: `i++`
+     - Loop body:
+        a. Read integer input into n
+        b. IF `n == 0` THEN terminate loop immediately
+  4. After loop termination, print current value of i to standard output
+
+- Control structures:
+  - FOR loop with exact condition `i <= 5`
+  - IF conditional check `n == 0` with BREAK statement
+
+- I/O operations:
+  - Read 5 potential integers from standard input
+  - Early exit if any input equals 0
+  - Output final counter value (i) representing either first zero occurrence index or 6

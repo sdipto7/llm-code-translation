@@ -1,0 +1,31 @@
+**Function Signature:**
+- main(): void
+
+**Variables:**
+- n: int
+- L: int
+- R: int
+- QL: int
+- QR: int
+- W: list[int]
+- sum_el: list[int]
+- i: int
+- energy: int
+- answer: int
+
+**Algorithm:**
+1. Read input line containing five integers: n, L, R, QL, QR
+2. Read input line containing n integers into list W
+3. Initialize sum_el as list with single element 0
+4. For i from 1 to n (inclusive):
+   - Append (W[i-1] + sum_el[i-1]) to sum_el
+5. Initialize answer = QR * (n - 1) + sum_el[n] * R
+6. For i from 1 to n (inclusive):
+   - Calculate energy = L * sum_el[i] + R * (sum_el[n] - sum_el[i])
+   - If i > (n - i):
+        energy = energy + (i - (n - i) - 1) * QL
+   - Else if (n - i) > i:
+        energy = energy + ((n - i) - i - 1) * QR
+   - If energy < answer:
+        answer = energy
+7. Print answer

@@ -1,0 +1,26 @@
+```
+Function: check_circle_position(W: int, H: int, x: int, y: int, r: int) -> str
+    Variables:
+        W: int
+        H: int
+        x: int
+        y: int
+        r: int
+
+    Logic Flow:
+        If x >= r and (W - r) >= x:
+            If y >= r and (H - r) >= y:
+                Return 'Yes'
+            Else:
+                Return 'No'
+        Else:
+            Return 'No'
+
+Input/Output Operations:
+    - Read five space-separated integers from standard input: W, H, x, y, r
+    - Call check_circle_position with these integers
+    - Print the result returned by check_circle_position
+
+Required Libraries:
+    - None
+```

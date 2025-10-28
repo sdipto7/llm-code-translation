@@ -1,0 +1,12 @@
+1. Import the numpy library as np.
+2. Read two integer inputs from the user and store them in variables n and k.
+3. Compare the values of n and k.
+   - If n is greater than k, calculate the remainder of n divided by k and store it in tmp.
+     - If tmp is greater than or equal to k - tmp, set ans to k - tmp.
+     - Otherwise, set ans to tmp.
+   - If n is less than k, 
+     - If n is greater than or equal to k - n, set ans to k - n.
+     - Otherwise, set ans to n.
+   - If n is equal to k, set ans to 0.
+4. Output the value of ans.
+5. The required library is numpy, but it is not used in the code. The actual required functionality is the input() function and the map() function which are built-in Python functions.

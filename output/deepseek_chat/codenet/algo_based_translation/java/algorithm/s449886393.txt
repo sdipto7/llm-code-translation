@@ -1,0 +1,12 @@
+Algorithm:
+- Import java.util.Scanner
+- Import java.math.*
+- Declare public class Main
+- Declare public static void main method with String[] args parameter
+- Create Scanner object sc reading from System.in
+- Declare String array youbi containing {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"}
+- Read next string input from scanner into variable s
+- Declare integer variable ans initialized to 0
+- For loop: initialize i=0, condition i < youbi.length, increment i++
+  - If youbi[i] equals s then set ans = 7 - i
+- Print ans to standard output

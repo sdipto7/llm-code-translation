@@ -1,0 +1,39 @@
+- Function signatures:
+  - `gcd(a: int, b: int) -> int`
+  - `lcm(a: int, b: int) -> int`
+
+- Variable declarations and data types:
+  - `n: int`
+  - `m: int`
+  - `s: str`
+  - `t: str`
+  - `aa: int`
+  - `bb: int`
+  - `cc: int`
+  - `i: int`
+
+- Logic flow in execution order:
+  1. Read two integers `n` and `m` from standard input.
+  2. Read two strings `s` and `t` from standard input.
+  3. Calculate `aa` as the greatest common divisor (GCD) of `n` and `m`.
+  4. Calculate `bb` as the least common multiple (LCM) of `n` and `m`.
+  5. Calculate `cc` as the integer division of `aa` by `bb`.
+  6. Loop over the range of `aa` with variable `i`:
+     - Check if the character at index `n//aa*i` in string `s` is not equal to the character at index `m//aa*i` in string `t`.
+     - If they are not equal, print `-1` and exit the program.
+  7. If the loop completes without finding a mismatch, print `bb`.
+
+- Control structures:
+  - Conditional: `if a < b: return gcd(b, a)`
+  - Conditional: `if b == 0: return a`
+  - Loop: `for i in range(aa):`
+  - Conditional inside loop: `if s[n//aa*i] != t[m//aa*i]:`
+
+- Input/output operations and data processing logic:
+  - Input: Read two integers `n` and `m` using `il()` function.
+  - Input: Read two strings `s` and `t` using `input()` function.
+  - Output: Print `-1` if a mismatch is found between characters of `s` and `t`.
+  - Output: Print `bb` if no mismatches are found.
+
+- Required libraries, modules, or dependencies:
+  - `sys` module for `stdin`

@@ -1,0 +1,25 @@
+Function Signature:
+- `public static void main(String[] args)` with no return type
+
+Variable Declarations and Data Types:
+- `Scanner sc` of type `Scanner`
+- `int n` of type `int`
+
+Logic Flow in Execution Order:
+1. Initialize `Scanner sc` to read input from standard input.
+2. Read an integer `n` from the input using `sc.nextInt()`.
+3. Check if the last digit of `n` is 9 or if the tens digit of `n` is 9:
+   - If `n % 10 == 9` or `n / 10 == 9` is true, proceed to step 4.
+   - Otherwise, proceed to step 5.
+4. Print "Yes" to the standard output.
+5. Print "No" to the standard output.
+
+Control Structures:
+- Conditional (if-else) with condition `n % 10 == 9 || n / 10 == 9`
+
+Input/Output Operations and Data Processing Logic:
+- Input: Read an integer `n` from the standard input.
+- Output: Print "Yes" if the last digit or the tens digit of `n` is 9; otherwise, print "No".
+
+Required Libraries, Modules, or Dependencies:
+- `java.util.Scanner`

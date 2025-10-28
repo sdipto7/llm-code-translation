@@ -1,0 +1,23 @@
+- Function: main, parameters: String[] args, return type: void
+- Variables:
+  - Scanner `sc` initialized with System.in
+  - int `n` initialized via sc.nextInt()
+  - int arrays `l` and `r` of size `n`
+  - int `sum` initialized to 0
+- Logic Flow:
+  1. Read integer `n` from input
+  2. Initialize arrays `l` and `r` with length `n`
+  3. Loop: i from 0 to n-1 (inclusive)
+     - Read `l[i]` via sc.nextInt()
+     - Read `r[i]` via sc.nextInt()
+  4. Loop: i from 0 to n-1 (inclusive)
+     - Calculate `r[i] - l[i] + 1`
+     - Add result to `sum`
+  5. Print `sum` to output
+- Control Structures:
+  - Two sequential for-loops with condition: i < n
+- Input/Output:
+  - Input via Scanner: first `n`, then pairs of integers for `l` and `r` arrays
+  - Output via System.out.println final sum
+- Dependencies:
+  - Requires java.util.Scanner for input handling

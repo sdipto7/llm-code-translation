@@ -1,0 +1,45 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `sc`: Scanner (input stream)
+- `x`: int[3] (array of three integers)
+- `max`: int (maximum value among x[0], x[1], x[2])
+- `k`: int (integer input)
+- `a`: List<Long>[3] (array of three lists of Long)
+- `ans`: List<Long> (list of Long)
+- `tmp`: long (temporary sum)
+- `n`: int (size of ans list)
+
+**Libraries/Dependencies:**
+- java.util.Scanner
+- java.util.List
+- java.util.ArrayList
+- java.util.Collections
+
+**Algorithm:**
+1. Initialize Scanner with System.in
+2. Declare integer array x of size 3
+3. Initialize max to 0
+4. For i from 0 to 2:
+   - Read integer into x[i]
+   - Update max to maximum of current max and x[i]
+5. Read integer k
+6. Create array a of 3 List<Long> elements
+7. For i from 0 to 2:
+   - Initialize a[i] as new ArrayList<Long>
+   - For j from 0 to x[i]-1:
+     - Read long value and add to a[i]
+   - Sort a[i] in ascending order
+8. Close Scanner
+9. Create empty ArrayList<Long> ans
+10. For i from 0 to x[0]-1:
+    - For j from 0 to x[1]-1:
+      - For m from 0 to x[2]-1:
+        - If (i+1)*(j+1)*(m+1) <= k:
+          - Calculate tmp = a[0].get(x[0]-i-1) + a[1].get(x[1]-j-1) + a[2].get(x[2]-m-1)
+          - Add tmp to ans
+11. Sort ans in ascending order
+12. Set n = ans.size()
+13. For i from 0 to k-1:
+    - Print ans.get(n-i-1)

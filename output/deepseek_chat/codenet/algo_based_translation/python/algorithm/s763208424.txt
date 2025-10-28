@@ -1,0 +1,24 @@
+from math import floor
+from heapq import heappush, heappop
+
+n, m = int, int
+a = list[int]
+dis = function(x: int, y: int) -> int
+
+Read n, m from input as integers
+Read list of integers from input
+Initialize min-heap 'a' (using negative values for max-heap simulation)
+
+For each value in input list:
+    Push negative value onto heap 'a'
+
+Define function dis(x, y):
+    Return x divided by 2^y using integer division
+
+For m iterations:
+    Pop smallest element from heap 'a' (which is largest original value)
+    Apply dis function with y=1 to the absolute value
+    Push negative result back onto heap 'a'
+
+Calculate sum of all absolute values in heap 'a'
+Print negative of this sum

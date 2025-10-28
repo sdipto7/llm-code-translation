@@ -1,0 +1,63 @@
+**Function Signature:**
+- `public static void main(String[] args) throws IOException`
+
+**Variables:**
+- `BufferedReader reader` (input reader)
+- `String[] input` (split input line)
+- `int m` (number of surveillance periods)
+- `int s` (start position)
+- `int f` (target position)
+- `int maxT` (max surveillance time)
+- `HashMap<Integer, ArrayList<Integer>> map` (time → [a, b] surveillance interval)
+- `StringBuilder actions` (output sequence)
+- `char M` (movement direction: 'R' or 'L')
+- `int d` (step direction: +1 or -1)
+- `int cur` (current position)
+- `int a`, `int b` (surveillance interval for current time)
+
+**Execution Flow:**
+1. Read input line, parse `m`, `s`, `f`
+2. Initialize `maxT = -1`
+3. Create empty `HashMap` for surveillance data
+4. While `m > 0`:
+   - Read surveillance entry line
+   - Parse `k` (time), `a`, `b` (interval bounds)
+   - Store `k → [a,b]` in `map`
+   - Update `maxT` to maximum of `maxT` and `k`
+   - Decrement `m`
+5. Initialize `actions` string builder
+6. Set `M` to 'R' if `s < f`, else 'L'; set `d` to +1 or -1 accordingly
+7. Initialize `cur = s`
+8. Iterate `t` from 1 to `maxT` (inclusive):
+   - If `map` contains `t`:
+     - Retrieve `a = map.get(t).get(0)`, `b = map.get(t).get(1)`
+   - If surveillance is active at `t` **AND** (`cur` is in [a,b] **OR** `cur + d` is in [a,b]):
+     - Append 'X' to `actions`
+   - Else:
+     - Append `M` to `actions`
+     - Update `cur += d`
+   - If `cur == f`, break loop
+9. While `cur != f`:
+   - Append `M` to `actions`
+   - Update `cur += d`
+10. Print `actions` as string
+
+**Control Structures:**
+- `while (m > 0)` loop to read surveillance data
+- `for (int t = 1; t <= maxT; t++)` loop for time steps
+- Nested `if (map.containsKey(t))` to retrieve surveillance intervals
+- Conditional check `(cur >= a && cur <= b) || (cur + d >= a && cur + d <= b)` for surveillance overlap
+- `if (cur == f) break` to terminate early on success
+- `while (cur != f)` loop post-maxT to complete remaining steps
+
+**Input/Output:**
+- Input via `BufferedReader` reading from `System.in`
+- Surveillance data read line by line
+- Output via `System.out.println(actions)`
+
+**Dependencies:**
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.util.ArrayList`
+- `java.util.HashMap`

@@ -1,0 +1,13 @@
+```
+Function main() -> str:
+    Declare variable K as int
+    Read integer from input and assign to K
+    Declare variable S as str
+    Read string from input and assign to S
+    If length of S is less than or equal to K:
+        Return S
+    Return substring of S from start to K concatenated with '...'
+
+If name is equal to '__main__':
+    Print result of calling main()
+```

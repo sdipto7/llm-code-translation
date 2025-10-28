@@ -1,0 +1,25 @@
+- Function: atc_079a(input_value: str) -> str
+- Variables:
+  - n: int = 3
+  - i: int (loop index)
+  - j: int (loop index)
+- Logic Flow:
+  1. Iterate i from 0 to (length of input_value - n) inclusive
+  2. For each i:
+     1. Iterate j from 1 to (n - 1) inclusive
+     2. Compare input_value[i] with input_value[i + j]
+     3. If any mismatch occurs: break inner loop
+     4. If all j comparisons match (j reaches n-1): return "Yes"
+  3. If no matches found after all iterations: return "No"
+- Input/Output:
+  - Read string from standard input
+  - Pass input to atc_079a
+  - Print returned result ("Yes"/"No")
+- Dependencies: None
+- Control Structures:
+  - Outer for loop: range(0, len(input_value) + 1 - n)
+  - Inner for loop: range(1, n)
+  - If condition: input_value[i] != input_value[i + j]
+  - Break statement on mismatch
+  - Early return on successful match
+  - Final return after full iteration

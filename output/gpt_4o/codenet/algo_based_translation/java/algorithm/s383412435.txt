@@ -1,0 +1,28 @@
+- Import the `Scanner` class from the `java.util` package
+- Import the `Arrays` class from the `java.util` package
+
+- Define a `main` function with no parameters and a void return type
+  - Declare a `Scanner` object `sc` for reading input
+  - Declare an integer `N` and assign it the next integer input from `sc`
+  - Declare a long array `a` of size `N`
+  - Declare an integer `tmp`
+  - Declare an integer `ans` and initialize it to 0
+  - Loop variable `z` from 0 to `N-1` (inclusive)
+    - Assign the next integer input from `sc` to `a[z]`
+  - Sort array `a` using `Arrays.sort`
+  - If `N` equals 1 and `a[0]` is greater than 1
+    - Set `ans` to 1
+  - Else
+    - Loop variable `j` from 0 to `N-1` (inclusive)
+      - If `j` is 0 or `a[j]` is not equal to `a[j-1]`
+        - Set `tmp` to 1
+        - Loop variable `i` from `j+1` to `N-1` (inclusive)
+          - If `a[j]` is equal to `a[i]`
+            - Increment `tmp` by 1
+          - Else
+            - Break the loop
+        - If `tmp` is greater than `a[j]`
+          - Increment `ans` by `tmp - a[j]`
+        - Else if `tmp` is less than `a[j]`
+          - Increment `ans` by `tmp`
+  - Print `ans` to standard output

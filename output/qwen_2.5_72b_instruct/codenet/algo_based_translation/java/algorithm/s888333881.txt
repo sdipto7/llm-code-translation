@@ -1,0 +1,196 @@
+- Function signatures with parameter and return types:
+  - `Graph0n(int sz)`
+  - `void add(int vn, int val)`
+  - `void add2(int vn, int val)`
+  - `int get(int vn, int index)`
+  - `ArrayList<Integer> get(int vn)`
+  - `int sizeOf(int vn)`
+  - `void clear()`
+  - `Node0n()`
+  - `void add(int val)`
+  - `int get(int ad)`
+  - `ArrayList<Integer> getAll()`
+  - `int size()`
+  - `void clear()`
+  - `Edge(int vn, long w)`
+  - `Edge(int cm, int vn, long w)`
+  - `Edge2(int vn, long w1, long w2)`
+  - `int compare(Edge a, Edge b)` in `Comparator_Edge`
+  - `int compare(Edge a, Edge b)` in `V2Comp`
+  - `int compare(Edge a, Edge b)` in `antiV2`
+  - `Vector(int sx, int sy)`
+  - `public static void main(String[] args) throws Exception`
+  - `void assertion(boolean b)`
+  - `int abs(int a)`
+  - `long abs(long a)`
+  - `double abs(double a)`
+  - `int min(int a, int b)`
+  - `long min(long a, long b)`
+  - `double min(double a, double b)`
+  - `int max(int a, int b)`
+  - `long max(long a, long b)`
+  - `double max(double a, double b)`
+  - `int minN(int... ins)`
+  - `int maxN(int... ins)`
+  - `long minN(long... ins)`
+  - `long maxN(long... ins)`
+  - `int minExAd(int[] dt, int ad)`
+  - `long minExAd(long[] dt, int ad)`
+  - `int minExVal(int[] dt, int ex_val)`
+  - `long minExVal(long[] dt, long ex_val)`
+  - `int maxExAd(int[] dt, int ad)`
+  - `long maxExAd(long[] dt, int ad)`
+  - `int maxExVal(int[] dt, int ex_val)`
+  - `long maxExVal(long[] dt, long ex_val)`
+  - `int sumA(int[] dt)`
+  - `long sumA(long[] dt)`
+  - `int sumA(List<Integer> dt)`
+  - `boolean same3(long a, long b, long c)`
+  - `boolean dif3(long a, long b, long c)`
+  - `boolean triangle_inequality(int a, int b, int c)`
+  - `double hypod(double a, double b)`
+  - `long factorial(int n)`
+  - `long facP(int n, long p)`
+  - `long lcm(long m, long n)`
+  - `long gcd(long m, long n)`
+  - `boolean is_prime(long a)`
+  - `long modinv(long a, long p)`
+  - `int pow(int n, int k)`
+  - `long pow(long n, int k)`
+  - `int pow2(int in)`
+  - `long pow2(long in)`
+  - `double pow2(double in)`
+  - `int getDigit2(long num)`
+  - `int getDigit10(long num)`
+  - `boolean isINF(int in)`
+  - `boolean isINFL(long in)`
+  - `long pow10E97(long ob, long soeji, long p)`
+  - `long flag(long pos)`
+  - `boolean isFlaged(int bit, int pos)`
+  - `boolean isFlaged(long bit, int pos)`
+  - `int deflag(int bit, int pos)`
+  - `int countFlaged(int bit)`
+  - `int countFlaged(long bit)`
+  - `void showflag(int bit)`
+  - `int biSearch(int[] dt, int target)`
+  - `int biSearchMax(long[] dt, long target)`
+  - `int biSearchMaxAL(ArrayList<Integer> dt, long target)`
+  - `void fill_parent(int[] ob)`
+  - `int get_root_uf(int[] parent, int index)`
+  - `boolean is_same_uf(int[] parent, int x, int y)`
+  - `void unite_uf(int[] parent, int receiver, int attacker)`
+  - `void show2(boolean[][] dt, int lit_x, int lit_y)`
+  - `void show2(int[][] dt, String cmnt)`
+  - `void show2(long[][] dt, String cmnt)`
+  - `void disp_que(ArrayDeque<Long> dt)`
+  - `void disp_list(List dt)`
+  - `void prtlnas(int[] as)`
+  - `void prtlnas(long[] as)`
+  - `void prtspas(int[] as)`
+  - `void prtspas(long[] as)`
+  - `void prtspas(List as)`
+  - `void fill(boolean[] ob, boolean res)`
+  - `void fill(int[] ob, int res)`
+  - `void fill(long[] ob, long res)`
+  - `void fill(char[] ob, char res)`
+  - `void fill(double[] ob, double res)`
+  - `void fill(boolean[][] ob,boolean res)`
+  - `void fill(int[][] ob, int res)`
+  - `void fill(long[][] ob, long res)`
+  - `void fill(char[][] ob, char res)`
+  - `void fill(double[][] ob, double res)`
+  - `void fill(int[][][] ob,int res)`
+  - `void fill(long[][][] ob,long res)`
+  - `FastScanner()`
+  - `boolean hasNextByte()`
+  - `int readByte()`
+  - `static boolean isPrintableChar(int c)`
+  - `public boolean hasNext()`
+  - `public String next()`
+  - `public long nexL()`
+  - `public int nexI()`
+  - `public double nexD()`
+  - `public void ni(long[] array2)`
+  - `public void ni(int[] array2)`
+  - `public void ni(int[] as, int[] bs)`
+  - `public void ni(long[] as, long[] bs)`
+  - `public void ni(int[] as, int[] bs, int[] cs)`
+  - `public void nisan(int[][] as)`
+
+- Variable declarations and data types:
+  - `ArrayList<Node0n> dt` in `Graph0n`
+  - `ArrayList<Integer> next_vs` in `Node0n`
+  - `int from` in `Edge`
+  - `int v2` in `Edge`
+  - `long weight` in `Edge`
+  - `int v2` in `Edge2`
+  - `long cost1` in `Edge2`
+  - `long cost2` in `Edge2`
+  - `int x` in `Vector`
+  - `int y` in `Vector`
+  - `FastScanner sc` in `main`
+  - `PrintWriter out` in `main`
+  - `int n` in `main`
+  - `String s` in `main`
+  - `boolean[] flaged` in `main`
+  - `long pop1st` in `main`
+  - `long surp1` in `main`
+  - `long surp9` in `main`
+  - `int p` in `main`
+  - `long dw` in `main`
+  - `long dif` in `main`
+  - `int ans` in `main`
+  - `int INF`
+  - `long INFL`
+  - `long e97`
+  - `int[] Xdir4`
+  - `int[] Ydir4`
+  - `int[] Xdir8`
+  - `int[] Ydir8`
+
+- Complete logic flow in execution order:
+  1. Initialize `Graph0n` and other necessary classes.
+  2. Read input `n` and `s`.
+  3. Initialize `flaged` array and set all to `false`.
+  4. Count the number of '1's in `s` and store in `pop1st`.
+  5. Calculate `surp1` using bitwise operations and modulo `pop1st + 1`.
+  6. If `pop1st > 1`, calculate `surp9` similar to `surp1` but modulo `pop1st - 1`.
+  7. For each position `p` in `s`:
+     - If `s[p]` is '1':
+       - If `pop1st == 1`, print `0` and continue.
+       - Calculate `dw` using `surp9`.
+       - Calculate `dif` using `pow10E97`.
+       - Update `dw` and take modulo `pop1st - 1`.
+       - Initialize `ans` to `1`.
+       - While `dw != 0`, update `dw` and `ans` by counting flagged positions and taking modulo.
+       - Print `ans`.
+     - If `s[p]` is not '1':
+       - Calculate `dw` using `surp1`.
+       - Calculate `dif` using `pow10E97`.
+       - Update `dw` and take modulo `pop1st + 1`.
+       - Initialize `ans` to `1`.
+       - While `dw != 0`, update `dw` and `ans` by counting flagged positions and taking modulo.
+       - Print `ans`.
+  8. Flush `out`.
+
+- Control structures (loops, conditionals) with exact conditions:
+  - For loop from `0` to `n-1` for counting '1's in `s`.
+  - For loop from `0` to `n-1` for calculating `surp1`.
+  - If condition `pop1st > 1` to calculate `surp9`.
+  - For loop from `0` to `n-1` for processing each position `p` in `s`.
+  - If condition `s[p] == '1'` to process flagged positions.
+  - If condition `pop1st == 1` to print `0` for single '1'.
+  - While loop `dw != 0` to update `dw` and `ans` for flagged positions.
+  - If condition `s[p] != '1'` to process non-flagged positions.
+  - While loop `dw != 0` to update `dw` and `ans` for non-flagged positions.
+
+- Input/output operations and data processing logic:
+  - Read input using `FastScanner`.
+  - Write output using `PrintWriter`.
+  - Process input to count '1's and calculate `surp1` and `surp9`.
+  - For each position in `s`, calculate the result based on whether it is flagged or not and print the result.
+
+- Required libraries, modules, or dependencies:
+  - `java.util.*`
+  - `java.io.*`
+  - `java.math.*`

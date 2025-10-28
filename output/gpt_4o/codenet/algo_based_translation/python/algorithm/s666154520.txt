@@ -1,0 +1,18 @@
+```plaintext
+Algorithm: Find the largest perfect square less than or equal to a given number
+
+1. Input:
+   - Read an integer `n` from standard input.
+
+2. Initialize:
+   - Declare an integer variable `i` and set it to 1.
+
+3. Loop:
+   - Repeat while `i` is less than 100,000:
+     a. Calculate `i * i`.
+     b. If `i * i` is greater than `n`:
+        i. Calculate `(i - 1) * (i - 1)`.
+        ii. Print the result of `(i - 1) * (i - 1)`.
+        iii. Terminate the program.
+     c. Increment `i` by 1.
+```

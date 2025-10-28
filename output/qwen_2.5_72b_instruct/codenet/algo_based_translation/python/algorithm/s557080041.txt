@@ -1,0 +1,28 @@
+Function signature: `check_sum_of_digits_divisible_by_9() -> None`
+
+Variable declarations and data types:
+- `N: str`
+- `L: List[int]`
+- `X: int`
+
+Logic flow in execution order:
+1. Read input value and assign to `N` as string.
+2. Check if `N` is equal to '0'.
+   - If true, print 'Yes' and exit.
+   - If false, convert `N` to list of characters.
+3. Convert each character in `L` to integer.
+4. Calculate sum of elements in `L` and assign to `X`.
+5. Check if `X` modulo 9 equals 0.
+   - If true, print 'Yes'.
+   - If false, print 'No'.
+
+Control structures:
+- Conditional: `if N == '0':`
+- Conditional: `if X % 9 == 0:`
+
+Input/output operations and data processing logic:
+- Input: Read a string value from standard input and assign to `N`.
+- Output: Print 'Yes' or 'No' based on conditions.
+
+Required libraries, modules, or dependencies:
+- No additional libraries required. Uses built-in Python functions and types.

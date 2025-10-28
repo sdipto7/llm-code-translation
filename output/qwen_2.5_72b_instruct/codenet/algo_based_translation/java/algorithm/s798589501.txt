@@ -1,0 +1,37 @@
+- Function signature: `main(String[] args) -> void`
+- Variable declarations: 
+  - `Scanner s -> Scanner`
+  - `E -> int`
+  - `Y -> int`
+- Logic flow:
+  - Create `Scanner` object `s` for input
+  - Read integer `E` from input
+  - Read integer `Y` from input
+  - If `E` is 0:
+    - If `Y` is less than or equal to 1911:
+      - Print "M"
+      - Print `Y - 1867`
+    - Else if `Y` is less than or equal to 1925:
+      - Print "T"
+      - Print `Y - 1911`
+    - Else if `Y` is less than or equal to 1988:
+      - Print "S"
+      - Print `Y - 1925`
+    - Else:
+      - Print "H"
+      - Print `Y - 1988`
+  - Else if `E` is 1:
+    - Print `1867 + Y`
+  - Else if `E` is 2:
+    - Print `1911 + Y`
+  - Else if `E` is 3:
+    - Print `1925 + Y`
+  - Else:
+    - Print `1988 + Y`
+- Control structures:
+  - If-Else-ElseIf chains based on value of `E` and nested if-ElseIf chain for `E == 0`
+- Input/output operations:
+  - Reading integers `E` and `Y` from standard input
+  - Printing strings and calculated values to standard output
+- Required libraries:
+  - `java.util.Scanner`

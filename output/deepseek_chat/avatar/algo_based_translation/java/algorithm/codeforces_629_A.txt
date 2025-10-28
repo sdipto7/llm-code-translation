@@ -1,0 +1,43 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `sc`: Scanner (for input)
+- `num`: int (from first input)
+- `counter`: int (initialized to 0)
+- `fine`: int (initialized to 0)
+- `arr`: ArrayList<String> (to store input strings)
+
+**Logic Flow:**
+1. Read integer `num` from input
+2. Initialize empty ArrayList `arr`
+3. Loop `i` from 0 to `num-1`:
+   - Read next string `s` from input
+   - Add `s` to `arr`
+4. Loop `i` from 0 to `num-1`:
+   - Loop `k` from 0 to `num-1`:
+     - If character at position `i` of string `arr.get(k)` equals 'C':
+       - Increment `counter`
+   - Calculate `(counter * (counter - 1)) / 2` and add to `fine`
+   - Reset `counter` to 0
+5. Loop `i` from 0 to `num-1`:
+   - Loop `k` from 0 to `num-1`:
+     - If character at position `k` of string `arr.get(i)` equals 'C':
+       - Increment `counter`
+   - Calculate `(counter * (counter - 1)) / 2` and add to `fine`
+   - Reset `counter` to 0
+6. Print `fine`
+
+**Control Structures:**
+- For loops: `for (int i = 0; i < num; i++)`
+- For loops: `for (int k = 0; k < num; k++)`
+- Conditionals: `if (arr.get(k).charAt(i) == 'C')`
+- Conditionals: `if (arr.get(i).charAt(k) == 'C')`
+
+**Input/Output:**
+- Input: First integer `num`, then `num` strings
+- Output: Single integer `fine`
+
+**Dependencies:**
+- `java.util.Scanner`
+- `java.util.ArrayList`

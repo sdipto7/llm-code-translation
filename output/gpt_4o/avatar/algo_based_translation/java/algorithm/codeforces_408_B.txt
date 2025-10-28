@@ -1,0 +1,41 @@
+**Function Signatures:**
+- `main(String[] args): void`
+- `isValid(String s1, String s2): boolean`
+
+**Required Libraries:**
+- `java.io.*`
+- `java.lang.*`
+- `java.util.*`
+
+**Algorithm:**
+
+1. **main Function:**
+   - Declare `Scanner s` to read from standard input.
+   - Read two strings `s1` and `s2` from input.
+   - If `isValid(s1, s2)` returns `false`, output `-1` and exit.
+   - Declare `HashMap<Character, Integer> m1` and `m2`.
+   - For each character `c` in `s1`:
+     - If `m1` contains `c`, increment the count by 1.
+     - Else, initialize the count of `c` to 1.
+   - For each character `c` in `s2`:
+     - If `m2` contains `c`, increment the count by 1.
+     - Else, initialize the count of `c` to 1.
+   - Initialize `int ans = 0`.
+   - Declare `HashSet<Character> hs`.
+   - For each character `c` in `s2`:
+     - If `c` is not in `hs`:
+       - Add `c` to `hs`.
+       - Retrieve `x1` as the count of `c` from `m1`.
+       - Retrieve `x2` as the count of `c` from `m2`.
+       - Update `x1` to be the minimum of `x1` and `x2`.
+       - Increment `ans` by `x1`.
+   - Output the value of `ans`.
+
+2. **isValid Function:**
+   - Initialize `int n1` as the length of `s1`.
+   - Initialize `int n2` as the length of `s2`.
+   - Declare `HashMap<Character, Boolean> map`.
+   - For each character `c` in `s1`, set `map[c]` to `true`.
+   - For each character `c` in `s2`:
+     - If `c` is not in `map`, return `false`.
+   - Return `true`.

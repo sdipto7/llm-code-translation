@@ -1,0 +1,35 @@
+```plaintext
+Function: solve() -> None
+
+Variable Declarations:
+- S_d: List[str]
+- T: List[str]
+- end: int
+- first: int
+- t_i: int
+- s_i: int
+- ans: List[str]
+
+Logic Flow:
+1. Read input string and convert to list of characters, assign to S_d
+2. Read input string and convert to list of characters, assign to T
+3. Calculate end as the last index of S_d
+4. Calculate first as the starting index for matching, which is end minus the length of T plus 1
+5. Start a while loop with condition: first >= 0
+   a. Initialize t_i to 0
+   b. Start a for loop with s_i ranging from first to end (inclusive)
+      i. Check if T[t_i] is not equal to S_d[s_i] and S_d[s_i] is not a '?'
+         - If true, break out of the for loop
+      ii. Increment t_i by 1
+   c. If the for loop completes without breaking, break out of the while loop
+   d. Decrement first by 1
+   e. Decrement end by 1
+6. If the while loop completes without breaking, print 'UNRESTORABLE' and exit
+7. Copy S_d to ans
+8. Initialize t_i to 0
+9. Start a for loop with i ranging from first to end (inclusive)
+   a. Assign T[t_i] to ans[i]
+   b. Increment t_i by 1
+10. Convert ans list to a string, replacing '?' with 'a'
+11. Print the resulting string
+```

@@ -1,0 +1,22 @@
+- Function: `gen(number: int, four: int, seven: int) -> None`
+  - Variable: `l: list` (global list to store numbers)
+  - Variable: `limit: int` (constant limit set to 10000000000)
+  - If `number > limit` then return
+  - If `number > 0` and `four == seven` then append `number` to `l`
+  - Call `gen(number * 10 + 4, four + 1, seven)`
+  - Call `gen(number * 10 + 7, four, seven + 1)`
+
+- Function: `main() -> None`
+  - Variable: `l: list` (global list initialized as empty)
+  - Variable: `limit: int` (constant limit set to 10000000000)
+  - Call `gen(0, 0, 0)`
+  - Sort list `l`
+  - Variable: `n: int` (input number)
+  - Variable: `ans: int` (variable to store the result, initialized to 0)
+  - For each `val` in `l`:
+    - If `val >= n` then set `ans` to `val` and break
+  - Print `ans`
+
+- Input: Read an integer `n` from the standard input
+- Output: Print the smallest number in `l` that is greater than or equal to `n`
+- No libraries or modules required

@@ -1,0 +1,16 @@
+1. Read an integer n from the input.
+2. Calculate the square of n.
+3. Initialize two empty lists, odd and even.
+4. Iterate from 1 to the square of n.
+5. For each number in the iteration, check if it is even or odd.
+6. If the number is even, add it to the even list.
+7. If the number is odd, add it to the odd list.
+8. Calculate the loop count by dividing the square of n by n.
+9. Calculate the div count by dividing the loop count by 2.
+10. Iterate from 1 to the loop count.
+11. For each iteration in step 10, iterate div times.
+12. For each iteration in step 11, check if the current loop count is odd or even.
+13. If the loop count is odd, remove the first element from the odd list and the last element from the even list, and print them.
+14. If the loop count is even, remove the first element from the even list and the last element from the odd list, and print them.
+15. Print a newline after each iteration in step 10.
+16. Close the output stream.

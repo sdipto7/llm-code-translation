@@ -1,0 +1,21 @@
+1. Define a function `valid(i, j, n, m)` that checks if a given pair of coordinates `(i, j)` is within the bounds of a grid of size `n x m`.
+2. Define a function `sumn(i, n)` that calculates the sum of an arithmetic series from `i` to `n`.
+3. Define a function `sqfun(a, b, c)` that calculates a root of a quadratic equation `ax^2 + bx + c = 0` using the quadratic formula.
+4. Define input functions:
+   - `value()` to read a tuple of integers from input.
+   - `values()` to read a tuple of integers from standard input.
+   - `inlst()` to read a list of integers from input.
+   - `inlsts()` to read a list of integers from standard input.
+   - `inp()` to read an integer from input.
+   - `inps()` to read an integer from standard input.
+   - `instr()` to read a string from input.
+   - `stlst()` to read a list of strings from input.
+5. Define a function `f(s)` that processes a string `s` by removing certain characters (`'-', ';', '_'`) and converting the rest to lowercase.
+6. Define the main `solve()` function:
+   - Read three strings, process them using `f(s)`, and store the results in a list `l`.
+   - Generate all permutations of the elements in `l` and store the joined permutations in a new list `l`.
+   - Read an integer `n` using `inp()`.
+   - For `n` iterations:
+     - Read a string using `instr()`, process it using `f(s)`, and check if it exists in the list `l`.
+     - If it exists, print `'ACC'`; otherwise, print `'WA'`.
+7. Call the `solve()` function if the script is run as the main program.

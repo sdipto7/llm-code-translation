@@ -1,0 +1,8 @@
+1. Read input from the user.
+2. Convert the input into an integer and store it in a variable.
+3. Check if the integer is equal to 1.
+4. If the integer is 1, set a boolean variable to true; otherwise, set it to false.
+5. Negate the boolean variable.
+6. If the negated boolean variable is true, set the result to 1; otherwise, set it to 0.
+7. Output the result.
+8. Flush the output buffer to ensure the result is displayed.

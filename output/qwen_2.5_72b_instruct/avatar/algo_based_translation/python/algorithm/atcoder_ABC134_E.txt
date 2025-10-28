@@ -1,0 +1,27 @@
+Function: binary_search(key: int) -> int
+Variables: bad: int, good: int, mid: int
+Data Structures: ans: list of list of int
+
+1. Initialize bad to -1, good to length of ans
+2. While good - bad is greater than 1:
+    a. Calculate mid as integer division of (bad + good) by 2
+    b. If last element of ans[mid] is less than key:
+        i. Set good to mid
+    c. Else:
+        i. Set bad to mid
+3. Return good
+
+Main Program:
+Variables: N: int, A: int, idx: int
+Data Structures: ans: list of list of int
+
+1. Read integer N from input
+2. Initialize ans as an empty list
+3. For _ in range N:
+    a. Read integer A from input
+    b. Call binary_search with A, store result in idx
+    c. If idx equals length of ans:
+        i. Append list containing A to ans
+    d. Else:
+        i. Append A to ans[idx]
+4. Print length of ans

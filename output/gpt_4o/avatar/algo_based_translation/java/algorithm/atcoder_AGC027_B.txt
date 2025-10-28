@@ -1,0 +1,45 @@
+```plaintext
+Algorithm atcoder_AGC027_B
+    Import java.util.Scanner
+
+    Function solve() returns void
+        Declare integer N
+        Declare long X
+        Declare long array x of size N
+        Declare long array xsum of size N + 1
+        Initialize xsum[0] to 0
+
+        Create Scanner object sc to read System input
+        Set N to sc.nextInt()
+        Set X to sc.nextLong()
+
+        For integer i from 0 to N - 1, inclusive
+            Set x[i] to sc.nextInt()
+            Set xsum[i + 1] to xsum[i] + x[i]
+
+        Declare long ans
+        Set ans to X * N + 5 * xsum[N]
+
+        For integer i from 1 to N - 1, inclusive
+            Declare long cost
+            Set cost to X * i + 5 * (xsum[N] - xsum[N - i])
+
+            Declare integer j and set to 5
+            Declare integer k and set to N - i
+
+            While k >= 0
+                If cost > ans
+                    Break the loop
+
+                Set cost to cost + j * (xsum[k] - xsum[Max(k - i, 0)])
+                Increment j by 2
+                Decrement k by i
+
+            Set ans to Min(ans, cost)
+
+        Print ans + N * X
+
+    Function main(args: Array of String) returns void
+        Create new instance of atcoder_AGC027_B
+        Call solve() on the instance
+```

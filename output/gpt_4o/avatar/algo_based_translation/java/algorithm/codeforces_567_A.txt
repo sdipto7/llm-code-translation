@@ -1,0 +1,32 @@
+```
+Dependencies:
+- java.util.Scanner
+- javax.swing.JOptionPane
+
+Function Signature:
+- main(String[] args): void
+
+Variable Declarations:
+- Scanner s: To read input from the user
+- int a: To store the number of elements in the array
+- int[] ar: An array of integers with length 'a'
+- int max: To store the maximum difference for each element
+- int min: To store the minimum difference for each element
+
+Logic Flow:
+1. Initialize Scanner 's' to read input.
+2. Read an integer 'a' from input using 's.nextInt()'.
+3. Initialize an integer array 'ar' of size 'a'.
+4. Initialize integers 'max' and 'min' to 0.
+5. For loop from i = 0 to i < ar.length:
+   - Read an integer from input and store it in ar[i].
+6. For loop from i = 0 to i < ar.length:
+   - Calculate 'max' as the maximum of (ar[i] - ar[0]) and (ar[ar.length - 1] - ar[i]).
+   - If i equals 0:
+     - Set 'min' to (ar[i + 1] - ar[i]).
+   - Else if i equals ar.length - 1:
+     - Set 'min' to (ar[i] - ar[i - 1]).
+   - Else:
+     - Set 'min' to the minimum of (ar[i] - ar[i - 1]) and (ar[i + 1] - ar[i]).
+   - Print 'min' and 'max' separated by a space.
+```

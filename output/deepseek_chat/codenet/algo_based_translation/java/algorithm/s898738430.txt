@@ -1,0 +1,14 @@
+Algorithm:
+- Import java.util.Scanner
+- Declare main function with parameter String[] args and return type void
+- Declare Scanner object sc initialized with System.in
+- Declare integer n and assign value from sc.nextInt()
+- Declare integer array a of size n
+- For integer i from 0 to n-1 (inclusive):
+  - Assign a[i] = sc.nextInt()
+- Declare integer ans initialized to 0
+- For integer i from 1 to n-2 (inclusive):
+  - If a[i] is not equal to minimum of a[i-1], a[i], a[i+1] AND a[i] is not equal to maximum of a[i-1], a[i], a[i+1]:
+    - Increment ans by 1
+- Print ans
+- Close sc

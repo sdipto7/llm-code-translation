@@ -1,0 +1,31 @@
+Algorithm:
+
+1. Import necessary library:
+   - Import `java.util.Scanner`.
+
+2. Define the main function:
+   - Function signature: `public static void main(String[] args)`
+
+3. Initialize the scanner for input:
+   - Declare `Scanner sc` and initialize with `new Scanner(System.in)`.
+
+4. Declare integer variables:
+   - `int a, b, count, ans`.
+
+5. Read inputs:
+   - Assign `a` with `sc.nextInt()`.
+   - Assign `b` with `sc.nextInt()`.
+
+6. Initialize `count` to 0.
+
+7. Begin a loop with condition `true` (infinite loop):
+   - If both `a > 0` and `b > 0`:
+     - Increment `count` by 1.
+     - Decrement `a` by 1.
+     - Decrement `b` by 1.
+   - Else, break the loop.
+
+8. Calculate `ans` as the integer division of `a` by 2 plus the integer division of `b` by 2.
+
+9. Output the result:
+   - Print `count` followed by a space and then `ans`.

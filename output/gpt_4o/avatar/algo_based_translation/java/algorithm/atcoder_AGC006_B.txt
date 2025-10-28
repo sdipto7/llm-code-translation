@@ -1,0 +1,20 @@
+1. Import `java.util.Scanner` and `java.util.stream.IntStream` libraries.
+2. Define class `atcoder_AGC006_B`.
+3. Define `main` method with parameter: `String[] args`.
+   1. Create a `Scanner` object named `scanner` for reading input.
+   2. Declare integer `n` and assign it the next integer input from `scanner`.
+   3. Declare integer `x` and assign it the next integer input from `scanner`.
+   4. Call method `print` with arguments `x` and `n`.
+4. Define method `print` with parameters: `int x`, `int n`.
+   1. Declare integer `max` and calculate its value as `n * 2 - 1`.
+   2. If `x == 1` or `x == max`, do the following:
+      1. Output "No" using `System.out.println`.
+      2. Return from the method.
+   3. Output "Yes" using `System.out.println`.
+   4. Declare a `String` variable `sep` and assign it the line separator string using `System.lineSeparator()`.
+   5. Declare a `String` variable `ans` and assign it the result of the following:
+      1. Create an `IntStream` from `x + n - 1` to `x + n + max - 1` (exclusive).
+      2. Map each element `e` to `(e % max + 1) + sep`.
+      3. Collect the resulting stream into a `StringBuilder` using the `collect` method with an accumulator and combiner.
+      4. Convert the `StringBuilder` to a `String`.
+   6. Output `ans` using `System.out.println`.

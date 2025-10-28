@@ -1,0 +1,16 @@
+1. Read the number of elements N from the input.
+2. Read N integers into an array arr.
+3. Create a copy of arr and sort it in ascending order, storing the result in sorted.
+4. Calculate the total number of subarrays using the formula n * (n + 1) / 2, where n is the length of arr.
+5. Initialize two pointers, l and r, to 0 and n - 1, respectively.
+6. Perform a binary search between l and r.
+7. In each iteration of the binary search, calculate the midpoint mid and the corresponding target value from the sorted array.
+8. Initialize a Binary Indexed Tree (BIT) bit of size 2n + 2 with all elements set to 0.
+9. Update the BIT by incrementing the value at index n + 1 by 1.
+10. Iterate through the array arr, maintaining a counter cur that increments when the current element is less than or equal to the target and decrements otherwise.
+11. For each element in arr, update the BIT by incrementing the value at index cur + n + 1 by 1.
+12. For each element in arr, query the BIT to calculate the cumulative sum cnt of values with indices less than or equal to cur + n.
+13. Compare the calculated cnt with the threshold total / 2 + 1.
+14. If cnt is greater than or equal to the threshold, update r to mid; otherwise, update l to mid + 1.
+15. Repeat steps 6-14 until l is no longer less than r.
+16. Return the value in the sorted array at index l.

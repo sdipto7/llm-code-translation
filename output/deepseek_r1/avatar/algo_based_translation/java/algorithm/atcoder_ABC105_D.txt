@@ -1,0 +1,53 @@
+**Algorithm:**
+
+**Functions:**
+- `solve(int testNumber, InputReader in, PrintWriter out)`
+  - **Parameters:**
+    - `testNumber: int` (unused test case number)
+    - `in: InputReader` (input source handler)
+    - `out: PrintWriter` (output handler)
+  - **Return:** void
+
+**Variables:**
+- `n: int` (number of elements)
+- `m: int` (modulo divisor)
+- `a: int[]` (array of integers with length n)
+- `dp: HashMap<Integer, Integer>` (stores cumulative remainder frequency)
+- `ans: long` (result accumulator)
+- `base: int` (track cumulative offset)
+
+**Logic Flow:**
+1. Read `n` and `m` from input
+2. Read array `a` with `n` elements
+3. Initialize empty hashmap `dp`
+4. Initialize `ans = 0`, `base = 0`
+5. Loop for `i` from `0` to `n-1`:
+   1. Update `base`:
+      ```
+      base = (base - a[i] % m + m) % m
+      ```
+   2. Calculate remainder key:
+      ```
+      key = (base + a[i]) % m
+      ```
+   3. Insert/update `dp`:
+      - Increment count of `key` in `dp` by 1 (via `merge` method)
+   4. Accumulate result:
+      ```
+      ans += dp.getOrDefault(base, 0)
+      ```
+6. Output `ans` via PrintWriter
+
+**Control Structures:**
+- Single loop: `for (int i = 0; i < n; i++)`
+
+**I/O Operations:**
+- Input handling via custom `InputReader`:
+  - Reads space-separated integers and arrays
+- Output via `PrintWriter.println()`
+
+**Dependencies:**
+- Java Standard Library:
+  - `java.io.*` (streams, readers, writers)
+  - `java.util.*` (HashMap, StringTokenizer)
+- Custom `InputReader` class for buffered input parsing

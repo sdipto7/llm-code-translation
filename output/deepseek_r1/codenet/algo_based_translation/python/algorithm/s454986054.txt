@@ -1,0 +1,22 @@
+**Algorithm:**
+
+1. **Function Signatures**:  
+   Not applicable (code is procedural, no functions defined).  
+
+2. **Variable Declarations**:  
+   - `n: int` (input integer).  
+
+3. **Logic Flow**:  
+   - Read integer input from standard input.  
+   - Compute cube of `n` using `n ** 3`.  
+   - Print result.  
+
+4. **Control Structures**:  
+   None (no loops/conditionals).  
+
+5. **Input/Output Operations**:  
+   - Input: `n = int(input())`.  
+   - Output: `print(n ** 3)`.  
+
+6. **Dependencies**:  
+   None (uses built-in functions only).

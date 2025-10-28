@@ -1,0 +1,66 @@
+**Algorithm Specification**
+
+**Function Signatures:**
+- `rememberTheNumber(nums: list<int>, i: int, operations: list<str>, ans: list<int>) -> void`
+  - Modifies `ans` in-place to track minimum result
+
+**Variables:**
+- `j: int` (loop index 0 ≤ j <4)
+- `k: int` (loop index j < k <4)
+- `s: int` (temporary storage for nums[j])
+- `t: int` (temporary storage for nums[k])
+
+**Logic Flow:**
+1. **Base Case:**
+   1. If `i` ≥ 3 → return
+2. **Main Logic:**
+   1. For `j` in 0 to 3 inclusive:
+      1. For `k` in (j+1) to 3 inclusive:
+         1. If `nums[j]` ≠ -1 AND `nums[k]` ≠ -1:
+            1. Store `s = nums[j]`
+            2. Set `nums[j] = -1`
+            3. Store `t = nums[k]`
+            4. **Operation Application:**
+               - If `operations[i]` == '+':  
+                 Set `nums[k] = s + t`
+               - Else if `operations[i]` == '*':  
+                 Set `nums[k] = s * t`
+            5. **Result Update:**
+               - If `i` == 2:  
+                 Set `ans[0] = min(ans[0], nums[k])`
+            6. **Recursion:**
+               - Call `rememberTheNumber(nums, i+1, operations, ans)`
+            7. **State Restoration:**
+               - Restore `nums[j] = s`
+               - Restore `nums[k] = t`
+
+**Input/Output:**
+- **Input:**
+  1. First line: 4 space-separated integers → `nums`
+  2. Second line: 3 space-separated operations ('+' or '*') → `operations`
+- **Output:**
+  - Print `ans[0]` (minimum achievable value)
+
+**Control Structures:**
+- **Recursion:**
+  - Exit when `i` ≥3 (4 operations not allowed)
+- **Loops:**
+  - `j` iterates all possible first operand indices (0-3)
+  - `k` iterates indices >j for second operand
+- **Conditionals:**
+  - Check for unused numbers (`nums[j/k]` ≠-1)
+  - Operation type selection (`operations[i]` check)
+  - Minimum update check (`i==2`)
+
+**Edge Case Handling:**
+- Implicit handling of number reuse via `nums[j/k]` =-1 check
+- Initial `ans` set to 10^28 to ensure minimum detection
+
+**Data Types:**
+- `nums`: list of integers (initially 4 elements)
+- `operations`: list of strings (3 elements)
+- `ans`: singleton list for mutable integer storage
+
+**External Dependencies:**
+- Standard input functions (`input().split()`)
+- No external libraries beyond base language features

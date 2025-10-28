@@ -1,0 +1,45 @@
+```plaintext
+1. Import required libraries and modules:
+   - collections
+   - scipy.misc
+   - sys
+   - numpy as np
+   - math
+   - itemgetter from operator
+   - itertools
+   - copy
+
+2. Define `prime_decomposition(n: int) -> List[int]`:
+   - Initialize `i` as 2 and `table` as an empty list.
+   - While `i * i <= n`:
+     - While `n % i == 0`:
+       - Divide `n` by `i`.
+       - Append `i` to `table`.
+     - Increment `i` by 1.
+   - If `n > 1`, append `n` to `table`.
+   - Return `table`.
+
+3. Define `digit(i: int) -> List[int]`:
+   - If `i > 0`:
+     - Return `digit(i // 10)` concatenated with `[i % 10]`.
+   - Else:
+     - Return an empty list.
+
+4. Define `getNearestValueIndex(list: List[int], num: int) -> int`:
+   - Convert `list` to a numpy array.
+   - Calculate the absolute difference between each element in `list` and `num`.
+   - Find the index of the smallest difference.
+   - Return the index.
+
+5. Read input from the user:
+   - Assign `S` to the input string.
+
+6. Split `S` by '/' and assign to `T`.
+
+7. Convert `T[1]` and `T[2]` to integers and concatenate them to form `date`.
+
+8. If `date <= 430`:
+   - Print 'Heisei'.
+9. Else:
+   - Print 'TBD'.
+```

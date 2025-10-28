@@ -1,0 +1,24 @@
+function signature: `calculate(n: int, s: str)`
+
+variable declarations:
+- `arr: list` (list of characters)
+- `rNum: int` (count of 'R' in the string)
+- `gNum: int` (count of 'G' in the string)
+- `bNum: int` (count of 'B' in the string)
+- `sum: int` (counter for specific RGB combinations)
+
+required libraries:
+- `math` module
+
+logic flow:
+- read integer `n` from input
+- read string `s` from input
+- convert string `s` to list of characters `arr`
+- count occurrences of 'R', 'G', 'B' in `arr`, store in `rNum`, `gNum`, `bNum`
+- initialize `sum` to 0
+- loop over `step` from 1 to `ceil(n / 2)`
+    - loop over `i` from 0 to `n - 2 * step`
+        - create substring `s` of length 3 from `arr` at positions `i`, `i + step`, `i + step * 2`
+        - if `s` is one of "RGB", "RBG", "BGR", "BRG", "GBR", "GRB"
+            - increment `sum` by 1
+- print result of `rNum * gNum * bNum - sum`

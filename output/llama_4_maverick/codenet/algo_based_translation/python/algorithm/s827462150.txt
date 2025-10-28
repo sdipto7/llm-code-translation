@@ -1,0 +1,23 @@
+1. Import the numpy library.
+2. Define a function `main()` with no parameters and no return value.
+3. Declare an integer variable `n` and read its value from the input.
+4. Declare a numpy array `A` of size `n` with data type float, initialized with zeros.
+5. Declare three integer variables `x`, `y`, `z` and initialize them to 1.
+6. Start a while loop that continues as long as `x**2 + y**2 + z**2 + x*y + y*z + z*x` is less than or equal to `n`.
+7. Inside the loop, increment `z` by 1 and calculate `i = x**2 + y**2 + z**2 + x*y + y*z + z*x`. 
+8. If `i` is less than or equal to `n`, increment the value at index `i-1` in array `A` by 1.
+9. Repeat steps 6-8 until `x**2 + y**2 + z**2 + x*y + y*z + z*x` is greater than `n`.
+10. When the innermost loop ends, reset `z` to 1 and increment `y` by 1.
+11. Repeat steps 7-10 until `x**2 + y**2 + z**2 + x*y + y*z + z*x` is greater than `n`.
+12. When the middle loop ends, reset `y` and `z` to 1 and increment `x` by 1.
+13. Repeat steps 6-12 until `x**2 + y**2 + z**2 + x*y + y*z + z*x` is greater than `n`.
+14. Start a for loop that iterates over the range from 0 to `n-1`.
+15. Inside the loop, print the integer value at the current index `i` in array `A`.
+16. Call the `main()` function to start execution.
+
+Required libraries: numpy 
+
+Function signature: 
+```python
+def main() -> None:
+```

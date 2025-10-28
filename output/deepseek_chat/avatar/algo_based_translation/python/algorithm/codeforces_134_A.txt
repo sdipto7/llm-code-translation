@@ -1,0 +1,12 @@
+1. Import sys module
+2. Define input function as sys.stdin.readline
+3. Read integer n from input
+4. Read next line, split into list of strings, convert to integers, store as list w
+5. Calculate x = sum of all elements in w
+6. Initialize empty list d
+7. For i from 0 to n-1:
+   - Calculate (x - w[i]) / (n - 1)
+   - If result equals w[i]:
+        Append (i + 1) to list d
+8. Print length of list d
+9. Convert elements of d to strings, join with spaces, and print result

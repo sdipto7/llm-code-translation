@@ -1,0 +1,31 @@
+Function Signature:
+- main(String[] args): void
+
+Variable Declarations:
+- n: int
+- b: int
+- ans: long[]
+- q: LinkedList<Long>
+- i: int (loop variable)
+- t: int
+- d: int
+
+Logic Flow:
+- Initialize Scanner for input
+- Read n and b from input
+- Initialize ans array of size n with type long
+- Initialize LinkedList q for Long type
+- For i from 0 to n-1:
+    - Read t and d from input
+    - While q is not empty and the first element of q is less than or equal to t:
+        - Remove the first element from q
+    - If the size of q is less than or equal to b:
+        - If q is empty:
+            - Set ans[i] to t + d
+        - Else:
+            - Set ans[i] to the last element of q + d
+        - Add ans[i] to q
+    - Else:
+        - Set ans[i] to -1
+- For i from 0 to n-1:
+    - Print ans[i] followed by a space

@@ -1,0 +1,35 @@
+```
+Dependencies:
+- sys module
+
+Function:
+- main() -> None
+
+Variables:
+- input: function (reads input from standard input)
+- N: int (constant value 368)
+- m: list of int (size N, initialized to 0)
+- f: list of int (size N, initialized to 0)
+- a, b, c: int (initialized to 0)
+
+Algorithm:
+1. Initialize input function to read lines from standard input.
+2. Set constant N to 368.
+3. Create a list `m` of size N, filled with zeros.
+4. Create a list `f` of size N, filled with zeros.
+5. Read an integer from input representing the number of subsequent lines to process.
+6. For each line in the input:
+   a. Read a string, and two integers `a` and `b` from input.
+   b. If the string equals 'M':
+      i. Increment `m[a]` by 2.
+      ii. Decrement `m[b + 1]` by 2.
+   c. Otherwise (the string equals 'F'):
+      i. Increment `f[a]` by 2.
+      ii. Decrement `f[b + 1]` by 2.
+7. Initialize integers `a`, `b`, and `c` to 0.
+8. Iterate over each index `i` from 0 to N-1:
+   a. Increment `a` by `m[i]`.
+   b. Increment `b` by `f[i]`.
+   c. If the minimum of `a` and `b` is greater than `c`, set `c` to this minimum value.
+9. Output the value of `c`.
+```

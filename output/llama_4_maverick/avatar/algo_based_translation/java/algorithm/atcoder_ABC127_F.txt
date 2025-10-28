@@ -1,0 +1,15 @@
+1. Initialize output stream and print writer.
+2. Read input from buffered reader.
+3. Parse the number of test cases.
+4. Initialize two priority queues (max and min heaps) and variables to track sums and minimum value.
+5. Iterate through each test case.
+6. If the input command is '2', calculate the answer using the current state of the priority queues and sums.
+7. Print the minimum value and the calculated answer.
+8. If the input command is not '2', parse the input values (in and sumb).
+9. Add the sumb to the total sumb.
+10. Insert the value 'in' into the appropriate priority queue based on its comparison with the current minimum value.
+11. Update the sums accordingly.
+12. Rebalance the priority queues to maintain a size difference of at most 1.
+13. Update the minimum value.
+14. Repeat steps 5-13 until all test cases are processed.
+15. Close the output stream.

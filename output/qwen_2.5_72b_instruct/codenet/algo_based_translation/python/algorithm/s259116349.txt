@@ -1,0 +1,41 @@
+Algorithm:
+
+- Import the `factorial` function from the `math` module and alias it as `f`.
+
+- Declare integer variable `N` and initialize it with the integer value obtained from user input.
+
+- Declare list `primes` containing integers [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47].
+
+- Declare empty list `divs`.
+
+- Loop over the range from 1 to 100 (inclusive):
+  - Declare list `tmp` with length equal to the length of `primes`, initialized with zeros.
+  - Loop over the indices of `primes`:
+    - Assign the prime at the current index to variable `p`.
+    - Set the current element of `tmp` to 0.
+    - While `i` divided by `p` equals `i` integer divided by `p`:
+      - Update `i` to `i` integer divided by `p`.
+      - Increment the current element of `tmp` by 1.
+  - Append `tmp` to `divs`.
+
+- Declare list `divsum` with length equal to the length of `primes`, initialized with zeros.
+
+- Loop over the range from 1 to `N` (inclusive):
+  - Loop over the indices of `primes`:
+    - Add the element at the current index of `divs` corresponding to `i-1` to the element at the same index of `divsum`.
+
+- Define function `num(n)` which takes an integer `n` as parameter and returns an integer:
+  - Filter elements in `divsum` that are greater than or equal to `n-1`.
+  - Return the length of the filtered list.
+
+- Declare integer variable `ans` and initialize it to 0.
+
+- Add the result of calling `num(75)` to `ans`.
+
+- Add the product of `num(15)` and (`num(5)-1`) to `ans`.
+
+- Add the product of `num(25)` and (`num(3)-1`) to `ans`.
+
+- Add the result of `num(5) * (num(5)-1) * (num(3)-2) // 2` to `ans`.
+
+- Print the integer value of `ans`.

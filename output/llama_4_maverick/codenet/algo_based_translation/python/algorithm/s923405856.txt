@@ -1,0 +1,18 @@
+Function Signature: `max_subarray_sum() -> None`
+- Parameters: None
+- Return Type: None
+
+1. Enter an infinite loop (`while True`).
+2. Read an integer `n` from input and convert it to an integer type.
+3. Check if `n` equals 0. If true, exit the loop (`break`).
+4. Initialize a variable `res` of type integer to -1111111111.
+5. Initialize a variable `s` of type integer to 0.
+6. Iterate `n` times using a for loop (`for i in range(n)`).
+   - Within the loop, read an integer `a` from input and convert it to an integer type.
+   - Update `s` to be the maximum of (`s + a`) and `a` (`s = max(s + a, a)`).
+   - Update `res` to be the maximum of `s` and `res` (`res = max(s, res)`).
+7. After the loop, print the value of `res` to output.
+8. Repeat steps 2-7 indefinitely until `n` equals 0.
+
+Required Libraries/Modules: 
+- Built-in input/output functions (no explicit import necessary in Python)

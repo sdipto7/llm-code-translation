@@ -1,0 +1,11 @@
+1. Read an integer `n` from input.
+2. Read `n` integers from input, store them in a list `t` of integers.
+3. Read an integer `m` from input.
+4. For `m` iterations:
+   4.1. Read two integers `p` and `x` from input.
+   4.2. Initialize a variable `s` to 0.
+   4.3. Iterate over the list `t`:
+      4.3.1. For each index `j`, check if `j` equals `p-1`.
+      4.3.2. If `j` equals `p-1`, add `x` to `s`.
+      4.3.3. Otherwise, add the value of `t` at index `j` to `s`.
+   4.4. Print the value of `s`.

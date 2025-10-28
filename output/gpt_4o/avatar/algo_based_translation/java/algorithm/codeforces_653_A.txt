@@ -1,0 +1,41 @@
+1. Import necessary libraries:
+   - `java.io.PrintWriter`
+   - `java.util.*`
+   - `java.util.stream.Collectors`
+
+2. Define the main function:
+   - Parameters: `String[] args`
+   - Return type: `void`
+
+3. Initialize:
+   - `Scanner in` for reading input
+   - `PrintWriter out` for writing output
+
+4. Read input data:
+   - Declare integer `n` and assign it the next integer from `in`.
+
+5. Declare a list `a` of type `List<Integer>` to store integers.
+
+6. Loop to populate the list `a`:
+   - Loop variable `i` from `0` to `n-1` (inclusive)
+     - Read an integer `value` from `in`.
+     - Add `value` to the list `a`.
+
+7. Process the list `a`:
+   - Remove duplicates using `distinct()`.
+   - Sort the list using `sorted()`.
+   - Collect the results back into the list `a`.
+
+8. Declare a boolean variable `found` and initialize it to `false`.
+
+9. Check for a sequence of three consecutive integers:
+   - Loop variable `i` from `0` to `size of a - 1` (inclusive)
+     - Check if `i + 1` is less than the size of `a` and `i + 2` is less than the size of `a`.
+       - Check if `a.get(i) + 1` equals `a.get(i + 1)` and `a.get(i + 1) + 1` equals `a.get(i + 2)`.
+         - If both conditions are true, set `found` to `true`.
+
+10. Output the result:
+    - Print "YES" if `found` is `true`, otherwise print "NO".
+
+11. Close input and output resources:
+    - Ensure the use of `try-with-resources` for automatic resource management.

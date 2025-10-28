@@ -1,0 +1,50 @@
+- Libraries and Modules:
+  - collections.defaultdict
+  - sys
+
+- Variable Declarations and Data Types:
+  - graph: defaultdict of list (int)
+  - N: int
+  - K: int
+  - mod: int
+  - ans: int
+  - fro: int
+  - to: int
+  - f: int
+  - caseNum: int
+  - colorNum: int
+  - u: int
+  - pat: int
+  - a: int
+  - b: int
+
+- Input Operations:
+  - Read two integers N and K from standard input
+  - For N-1 times, read two integers a and b from standard input
+
+- Function Signatures with Parameter and Return Types:
+  - dfs(fro: int, to: int, f: int) -> int
+
+- Complete Logic Flow in Execution Order:
+1. Set the recursion limit to 10^7
+2. Initialize graph as a defaultdict of list
+3. Read N and K
+4. For N-1 times:
+   - Read a and b
+   - Append b-1 to graph[a-1]
+   - Append a-1 to graph[b-1]
+5. Set mod to 10^9 + 7
+6. Define function dfs with parameters fro, to, and f:
+   - Initialize caseNum with f
+   - Initialize colorNum with K-1 if f equals K, otherwise K-2
+   - For each u in graph[fro]:
+     - If u equals to, continue
+     - Recursively call dfs with parameters u, fro, and colorNum, store result in pat
+     - If pat equals 0:
+       - Set caseNum to 0
+       - Break
+     - Update caseNum as (caseNum * pat) % mod
+     - Decrement colorNum by 1
+   - Return caseNum
+7. Call dfs with parameters 0, -1, and K, store result in ans
+8. Print ans

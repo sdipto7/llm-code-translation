@@ -1,0 +1,22 @@
+1. Import the required library: java.util.Scanner
+2. Define a class: Main with a method main(String[] args) returning void
+3. Declare variables:
+   - sc: Scanner object
+   - n, m: integers
+   - a: integer array of size m + 1
+   - cnt: integer array of size n + 1
+   - MOD: final integer constant = 1000000007
+   - num: integer = 1
+4. Read input:
+   - Read two integers n and m using sc.nextInt()
+   - Read m integers into array a starting from index 1 using sc.nextInt()
+5. Initialize cnt array:
+   - cnt[0] = 1
+   - if m > 0 and a[1] == 1, then cnt[1] = 0 and num = min(num + 1, m)
+   - else cnt[1] = 1
+   - if m == 0, then cnt[1] = 1
+6. Iterate from i = 2 to n (inclusive):
+   - cnt[i] = (cnt[i - 2] + cnt[i - 1]) % MOD
+   - if m > 0 and i == a[num], then cnt[i] = 0 and num = min(num + 1, m)
+7. Output cnt[n] using System.out.println()
+8. Close the Scanner object sc using sc.close()

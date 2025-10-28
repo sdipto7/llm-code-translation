@@ -1,0 +1,35 @@
+- Function signatures: None (script-based)
+- Variables:
+  - h: int, w: int, ka: int (dimensions and target count)
+  - mat: List[List[str]] (grid representation)
+  - ans: int (result counter)
+  - i: int (bitmask iterator)
+  - b: str (binary string representation)
+  - rs: str (row selection bits)
+  - cs: str (column selection bits)
+  - ct: int (current count)
+  - l: int (row index)
+  - k: int (column index)
+- Logic Flow:
+  1. Read h, w, ka from standard input
+  2. Read h lines into mat grid
+  3. Initialize ans=0
+  4. Iterate i from 0 to 2^(h+w)-1:
+     a. Convert i to zero-padded binary string of length h+w
+     b. Split into rs (first h bits) and cs (remaining w bits)
+     c. Reset ct=0
+     d. For each row l (0≤l<h):
+         i. For each column k (0≤k<w):
+             - If mat[l][k] == '#' and rs[l] == '0' and cs[k] == '0':
+                 increment ct
+     e. If ct == ka: increment ans
+  5. Print ans
+- Control Structures:
+  - Range-based for loop: 2^(h+w) iterations
+  - Nested row/column loops with dual indices
+  - Conditional checks for grid cell evaluation
+  - Bitmask-based selection logic
+- Input/Output:
+  - Input: Reads 1 line with 3 integers, then h lines of characters
+  - Output: Single integer result
+- Dependencies: None (standard input/output only)

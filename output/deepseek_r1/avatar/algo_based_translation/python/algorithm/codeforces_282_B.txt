@@ -1,0 +1,53 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures**  
+- `main()`: No parameters, returns void.  
+- **Input Operations**:  
+  - `input()` for reading from standard input.  
+- **Output Operation**:  
+  - `print("".join(memory))` writes result to standard output.  
+
+**Variable Declarations and Data Types**  
+- `firstline`: `int` (read from input).  
+- `total`: `int` initialized to `0`.  
+- `memory`: `List[str]` initialized to empty list.  
+- Loop variables:  
+  - `x` in loop iteration (unused).  
+  - `A`, `G`: `int` values per iteration.  
+
+**Step-by-Step Logic Flow**  
+1. Read `firstline` from input as integer.  
+2. Initialize `total` to `0`.  
+3. Initialize `memory` as empty list.  
+4. Loop `firstline` times:  
+   1. Read a line, split into two integers `A` and `G`.  
+   2. If `total + A <= 500`:  
+      - Add `A` to `total`.  
+      - Append `"A"` to `memory`.  
+   3. Else:  
+      - Subtract `G` from `total`.  
+      - Append `"G"` to `memory`.  
+5. After loop, concatenate `memory` into a single string and print.  
+
+**Control Flow Structures**  
+- **For Loop**:  
+  - Iterates `firstline` times via `range(firstline)`.  
+  - Exit condition: After completing `firstline` iterations.  
+- **Conditional (Branch)**:  
+  - `if total + A <= 500` decides which branch to execute.  
+  - Else clause executes when condition is false.  
+
+**Input/Output Operations**  
+- **Input**:  
+  - `firstline = int(input())` reads first value.  
+  - `A, G = map(int, input().split())` reads subsequent pairs.  
+- **Output**:  
+  - `print("".join(memory))` outputs concatenated string.  
+
+**Error Handling and Edge Cases**  
+- No explicit error handling for invalid input (assumes correct integer inputs).  
+- Handles edge case `firstline = 0` (no iterations, outputs empty string).  
+- Allows `total` to become negative after subtraction.  
+
+**External Dependencies**  
+- No external libraries or imports (uses built-in functions: `input`, `print`, `map`, `split`).

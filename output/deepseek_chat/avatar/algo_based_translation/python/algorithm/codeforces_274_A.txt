@@ -1,0 +1,28 @@
+**Function Signature:**
+- main() -> None
+
+**Variables:**
+- num: int
+- k: int
+- arr: List[int]
+- different: Set[int]
+- temp: int
+- x: int
+
+**Input Operations:**
+1. Read first line input, split into two integers: num and k
+2. Read second line input, split into list of integers: arr
+
+**Data Processing:**
+1. Initialize empty set: different
+2. Initialize temp = 0
+3. Sort arr in ascending order
+
+**Loop Structure:**
+- For each element x in arr:
+  - Condition: if (x % k != 0) OR (x // k not in different)
+    - Add x to different set
+  - Update temp = max(len(different), temp)
+
+**Output Operation:**
+- Print final value of temp

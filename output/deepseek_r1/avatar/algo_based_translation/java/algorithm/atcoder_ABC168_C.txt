@@ -1,0 +1,43 @@
+- **Function Signature**:  
+  `public static void main(String[] args)`  
+  **Return Type**: `void`  
+
+- **Variables**:  
+  - Input: `A: int`, `B: int`, `H: int`, `M: int`  
+  - BigDecimal: `AA: BigDecimal`, `BB: BigDecimal`, `HH: BigDecimal`, `MM: BigDecimal`, `ans2: BigDecimal`, `kaku: BigDecimal`, `mkaku: BigDecimal`, `hkaku: BigDecimal`, `AA2: BigDecimal`, `BB2: BigDecimal`, `CC: BigDecimal`, `DD: BigDecimal`  
+  - Double: `dkaku: double`, `dans2: double`, `ans: double`  
+
+- **Logic Flow**:  
+  1. Read `A`, `B`, `H`, `M` from standard input.  
+  2. Convert `A`, `B`, `H`, `M` to `BigDecimal` equivalents (`AA`, `BB`, `HH`, `MM`).  
+  3. Compute minute angle:  
+     `mkaku = MM * 6` (degrees).  
+  4. Compute hour angle:  
+     `hkaku = (HH * 30) + (M / 2)` (degrees).  
+  5. Calculate angular difference:  
+     `kaku = mkaku - hkaku`.  
+  6. Convert angular difference to absolute radians:  
+     `dkaku = Math.abs(Math.toRadians(kaku.doubleValue()))`.  
+  7. Compute squares of `AA` and `BB`:  
+     `AA2 = AA^2`, `BB2 = BB^2`.  
+  8. Compute sum of squares:  
+     `CC = AA2 + BB2`.  
+  9. Calculate cosine term:  
+     `DD = 2 * AA * BB * Math.cos(dkaku)`.  
+  10. Compute final squared distance:  
+      `ans2 = CC - DD`.  
+  11. Convert `ans2` to double:  
+      `dans2 = ans2.doubleValue()`.  
+  12. Calculate final distance:  
+      `ans = Math.sqrt(dans2)`.  
+  13. Print `ans`.  
+
+- **Control Structures**: None (linear execution).  
+
+- **Input/Output**:  
+  - **Input**: Read integers `A`, `B`, `H`, `M` via `Scanner`.  
+  - **Output**: Print `ans` (distance between clock hands) as `double`.  
+
+- **Dependencies**:  
+  - `java.util.Scanner` for input.  
+  - `java.math.BigDecimal` for precision arithmetic.

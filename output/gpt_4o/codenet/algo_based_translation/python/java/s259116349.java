@@ -1,0 +1,55 @@
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class s259116349 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        scanner.close();
+
+        int[] primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47};
+        List<int[]> divs = new ArrayList<>();
+
+        for (int i = 1; i <= 100; i++) {
+            int[] tmp = new int[primes.length];
+            int num = i;
+            for (int j = 0; j < primes.length; j++) {
+                int p = primes[j];
+                tmp[j] = 0;
+                while (num / p == (double) num / p) {
+                    num /= p;
+                    tmp[j]++;
+                }
+            }
+            divs.add(tmp);
+        }
+
+        int[] divsum = new int[primes.length];
+        for (int i = 1; i <= N; i++) {
+            for (int j = 0; j < primes.length; j++) {
+                divsum[j] += divs.get(i - 1)[j];
+            }
+        }
+
+        int ans = 0;
+        ans += num(75, divsum);
+        ans += num(15, divsum) * (num(5, divsum) - 1);
+        ans += num(25, divsum) * (num(3, divsum) - 1);
+        ans += num(5, divsum) * (num(5, divsum) - 1) * (num(3, divsum) - 2) / 2;
+
+        System.out.println(ans);
+    }
+
+    private static int num(int n, int[] divsum) {
+        int count = 0;
+        for (int x : divsum) {
+            if (x >= n - 1) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+

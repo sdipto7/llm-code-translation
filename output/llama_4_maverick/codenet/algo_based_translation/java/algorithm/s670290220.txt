@@ -1,0 +1,10 @@
+1. Import the required library: java.util.*
+2. Define a class: Main
+3. Define a function: main with parameter args of type String[] and return type void
+4. Declare a variable: sc of type Scanner and initialize it with new Scanner(System.in)
+5. Declare a variable: N of type int and read its value from sc using nextInt()
+6. Declare a variable: c of type char[] and read its value from sc using next().toCharArray()
+7. Iterate over the array c using a for loop with loop counter i, starting from 0, continuing while i < c.length, and incrementing i by 1 in each iteration
+8. Inside the loop, update the value of c[i] using the expression (char)((c[i]-'A'+N) % 26 + 'A')
+9. After the loop, print the array c to the console using System.out.println(c)
+10. The program terminates after executing the main function.

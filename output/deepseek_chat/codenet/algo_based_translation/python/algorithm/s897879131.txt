@@ -1,0 +1,17 @@
+Algorithm:
+- Function: main (no parameters, no return value)
+- Variables:
+  - R, G, B, N: integers from input
+  - score: integer initialized to 0
+  - i, j: loop counters (integers)
+
+- Input: Read four integers R, G, B, N from standard input
+- Initialize score = 0
+- Outer loop: i from 0 to floor(N/R) inclusive
+  - Inner loop: j from 0 to floor((N - i*R)/G) inclusive
+    - Calculate remaining = N - i*R - j*G
+    - If remaining >= 0 AND remaining % B == 0
+      - Increment score by 1
+- Output: Print score value
+
+- No external libraries required beyond standard input/output

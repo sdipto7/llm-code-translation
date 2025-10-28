@@ -1,0 +1,37 @@
+**Algorithm:**
+
+**Function Signatures:**
+- `void solve(InputReader in, PrintWriter out)`
+
+**Parameters:**
+- `InputReader in`: Reads input values.
+- `PrintWriter out`: Writes output.
+
+**Variables:**
+- `int n`: First input integer (array size).
+- `int k`: Second input integer (number of elements to sum).
+- `int[] a`: Array of integers with size `n`.
+- `int ans`: Sum accumulator initialized to 0.
+
+**Logic Flow:**
+1. Read `n` and `k` using `in.ni()`.
+2. Initialize `a` as an integer array of size `n`.
+3. Loop for `i` from 0 to `n-1` (inclusive):
+   - Read `a[i]` using `in.ni()`.
+4. Sort `a` in ascending order with `Arrays.parallelSort(a)`.
+5. Loop for `i` from 0 to `k-1` (inclusive):
+   - Add `a[i]` to `ans`.
+6. Print `ans` using `out.println(ans)`.
+
+**Control Structures:**
+- Two `for` loops:
+  1. Iterate `n` times to populate the array.
+  2. Iterate `k` times to compute the sum of the first `k` elements.
+
+**Input/Output Operations:**
+- All input values read via `InputReader.ni()`.
+- Output written via `PrintWriter.println()`.
+
+**Dependencies:**
+- `java.util.Arrays` (for `parallelSort`).
+- Java I/O classes (`BufferedReader`, `InputStreamReader`, `PrintWriter`, etc.).

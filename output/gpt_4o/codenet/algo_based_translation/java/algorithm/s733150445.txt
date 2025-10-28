@@ -1,0 +1,9 @@
+- Import `BufferedReader`, `IOException`, `InputStreamReader`, `BigDecimal`, and `StringTokenizer` from Java libraries.
+- Define the `main` function with `String[] args` as a parameter and throws `IOException`.
+- Declare `BufferedReader in` and initialize it with `new BufferedReader(new InputStreamReader(System.in))`.
+- Declare `StringTokenizer st` and initialize it with `new StringTokenizer(in.readLine())`.
+- Declare `BigDecimal a` and initialize it with `new BigDecimal(st.nextToken())`.
+- Declare `BigDecimal b` and initialize it with `new BigDecimal(st.nextToken())`.
+- Declare `BigDecimal mul` and initialize it with `a.multiply(b)`.
+- Reinitialize `st` with `new StringTokenizer(mul.toString(), ".")`.
+- Output the first token of `st` using `System.out.println(st.nextElement())`.

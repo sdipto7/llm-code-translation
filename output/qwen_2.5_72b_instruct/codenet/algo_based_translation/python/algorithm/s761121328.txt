@@ -1,0 +1,20 @@
+Function signature: `main()`
+Variable declarations:
+- `N` as integer
+- `A` as list of integers
+- `s` as integer
+- `B` as list of integers
+- `L` as list of strings
+
+Logic flow:
+1. Read integer `N` from input
+2. Read `N` space-separated integers and store in list `A`
+3. Initialize `s` with the XOR of the first two elements of `A` (`A[0] ^ A[1]`)
+4. For `i` from 2 to `N-1` (inclusive):
+   - Update `s` with `s` XOR `A[i]`
+5. Initialize list `B` of size `N` with all elements set to 0
+6. For `i` from 0 to `N-1` (inclusive):
+   - Set `B[i]` to `s` XOR `A[i]`
+7. Convert each element of `B` to string and store in list `L`
+8. Join elements of `L` with space separator to form a single string
+9. Print the resulting string

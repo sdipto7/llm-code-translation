@@ -1,0 +1,6 @@
+1. INPUT n
+2. x = 1
+3. WHILE log2(n) is not an integer
+   1. x = x + 1
+   2. n = n - 2 ^ floor(log2(n))
+4. OUTPUT x

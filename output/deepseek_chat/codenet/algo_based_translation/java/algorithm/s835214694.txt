@@ -1,0 +1,7 @@
+read integer a from standard input
+read integer b from standard input
+if b modulo a equals 0 then
+    print (a + b)
+else
+    print (b - a)
+end if

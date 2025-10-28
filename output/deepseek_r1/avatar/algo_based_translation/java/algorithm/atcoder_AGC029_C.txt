@@ -1,0 +1,56 @@
+```plaintext
+Dependencies:
+- java.io.BufferedReader
+- java.io.InputStreamReader
+- java.io.IOException
+- java.util.Arrays
+- java.util.TreeMap
+
+Class: atcoder_AGC029_C
+
+Variables:
+- private int n
+- private int[] a
+- private TreeMap<Integer, Integer> s
+
+main(String[] args):
+- Create instance of atcoder_AGC029_C
+- Call solve()
+
+set() throws IOException:
+- Initialize n by reading integer from standard input
+- Initialize a by reading and parsing space-separated integers
+- Initialize s as empty TreeMap
+
+solve():
+- Call set()
+- Initialize ng = 0, ok = n
+- While ok - ng > 1:
+  - k = (ng + ok) / 2
+  - If isPossible(k):
+    - Set ok = k
+  - Else:
+    - Set ng = k
+- Print ok
+
+isPossible(int k):
+- Clear s
+- Initialize current = 0
+- For each ai in a:
+  - If ai <= current:
+    - If k == 1: return false
+    - While s is not empty and s.lastKey() >= ai:
+      - Remove last entry from s
+    - Set p = ai - 1
+    - Loop indefinitely:
+      - If p < 0: return false
+      - Get sp = s.getOrDefault(p, 0) + 1
+      - Put sp in s at key p
+      - If sp == k:
+        - Remove p from s
+        - Decrement p
+      - Else:
+        - Break loop
+  - Set current = ai
+- Return true
+```

@@ -1,0 +1,16 @@
+1. Read input string from user and store it in `strn`.
+2. Convert `strn` to integer `n`.
+3. Define list `shichigolist` containing strings "3", "5", "7".
+4. Initialize a 2D list `shichigo` with `len(strn)` sublists, each initially empty.
+5. For `i` ranging from 0 to `len(strn) - 1`:
+   - If `i` equals 0, append each element of `shichigolist` to `shichigo[i]`.
+   - Otherwise, for each element `j` in `shichigo[i-1]` and each element `k` in `shichigolist`, append the concatenation of `j` and `k` to `shichigo[i]`.
+6. For `i` ranging from 0 to `len(strn) - 1`:
+   - For each element `j` in `shichigo[i]`:
+     - If `i` equals `len(strn) - 1`:
+       - If `int(j)` is greater than `n`, remove `j` from `shichigo[i]`.
+       - If the count of "3", "5", or "7" in `j` is 0, remove `j` from `shichigo[i]`.
+     - Otherwise:
+       - If the count of "3", "5", or "7" in `j` is 0, remove `j` from `shichigo[i]`.
+7. Calculate the sum of the lengths of all sublists in `shichigo`.
+8. Output the calculated sum.

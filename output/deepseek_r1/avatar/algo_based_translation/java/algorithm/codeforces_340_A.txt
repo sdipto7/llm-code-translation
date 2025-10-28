@@ -1,0 +1,60 @@
+**Function Signature:**
+```plaintext
+main(args: String[]) -> void
+```
+
+**Variables:**
+- x: long
+- y: long
+- a: long
+- b: long
+- j: long (initialized to 2)
+- i: long
+- x1: long (unused)
+- y1: long (unused)
+- c: long
+- ans: boolean (initialized to true)
+- count: long
+
+**Input/Output:**
+- Read x, y, a, b from stdin via Scanner
+- Print results to stdout
+
+**Libraries:**
+- java.util.Scanner
+
+**Logic Flow:**
+1. Read x, y, a, b
+2. Set c = maximum of x and y
+3. If c > b:
+   - Print "0"
+   - Set ans = false
+4. While c is not divisible by min(x, y) AND ans is true:
+   - If x > y:
+     - Set c = x * j
+   - Else:
+     - Set c = y * j
+   - Increment j by 1
+   - If c > b:
+     - Print "0"
+     - Set ans = false
+     - Break loop
+5. If ans is true:
+   - Find smallest i in [a, b] where i is divisible by c
+   - If i <= b:
+     - Calculate ((b - i) / c) + 1 and print result
+   - Else:
+     - Print "0"
+
+**Control Structures:**
+- Initial `if (c > b)`
+- `while (c % Math.min(x,y) != 0 && ans)`
+- Nested `if (x > y)` inside while loop
+- `if (c > b)` inside while loop with break
+- Final `for (i = a; i <= b; i++)` with early exit
+- `if (i != b + 1)` for result calculation
+
+**Data Processing:**
+- LCM approximation via incremental multiplication
+- Range scanning for first valid multiple
+- Arithmetic progression count formula `((b-i)/c)+1`

@@ -1,0 +1,385 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,s409580149.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s409580149.py"", line 93, in <module>
+    main_instance.main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s409580149.py"", line 58, in main
+    self.solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s409580149.py"", line 27, in solve
+    self.n = self.ni()
+             ^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s409580149.py"", line 63, in ni
+    b = self.readByte()
+        ^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s409580149.py"", line 84, in readByte
+    self.lenbuf = self.is_input.readinto(self.inbuf)
+                  ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: '_io.TextIOWrapper' object has no attribute 'readinto'. Did you mean: 'readline'?
+"
+java,python,s682242794.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s682242794.py"", line 17, in <module>
+    obj.solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s682242794.py"", line 10, in solve
+    self.high = int(input())
+                ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '30 19'
+"
+java,python,s835214694.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s835214694.py"", line 12, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s835214694.py"", line 3, in main
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 12'
+"
+java,python,s399184958.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s399184958.py"", line 13, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s399184958.py"", line 3, in main
+    A = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 2 2'
+"
+java,python,s831281137.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s831281137.py"", line 74, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s831281137.py"", line 8, in main
+    N = nint(sc)
+        ^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s831281137.py"", line 31, in nint
+    return int(sc.readline().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 5'
+"
+java,python,s162740530.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s162740530.py"", line 39, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s162740530.py"", line 6, in main
+    n = int(input().strip())
+        ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '6 1'
+"
+java,python,s518927375.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s518927375.py"", line 10, in <module>
+    k = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 2 6'
+"
+java,python,s943650310.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s943650310.py"", line 12, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s943650310.py"", line 3, in main
+    X = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '100 17'
+"
+java,python,s500433274.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s500433274.py"", line 22, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s500433274.py"", line 11, in main
+    b = Decimal(numbers[1])
+                ~~~~~~~^^^
+IndexError: list index out of range
+"
+java,python,s657273562.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s657273562.py"", line 115, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s657273562.py"", line 94, in main
+    arr = sorted(map(int, data[1:n+1]), reverse=True)
+                 ^^^
+UnboundLocalError: cannot access local variable 'map' where it is not associated with a value
+"
+java,python,s910008321.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s910008321.py"", line 11, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s910008321.py"", line 3, in main
+    h = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '10 4'
+"
+java,python,s022525398.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s022525398.py"", line 8, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s022525398.py"", line 4, in main
+    b = input().strip()
+        ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,s063482767.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s063482767.py"", line 26, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s063482767.py"", line 11, in main
+    num = int(sc.readline().strip())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 8 5 1'
+"
+java,python,s321983475.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s321983475.py"", line 17, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s321983475.py"", line 5, in main
+    w = int(sys.stdin.readline().strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 2 6'
+"
+java,python,s514557145.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s514557145.py"", line 339, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s514557145.py"", line 322, in main
+    N = sc.nextInt()
+        ^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s514557145.py"", line 270, in nextInt
+    if not self.hasNext():
+           ^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s514557145.py"", line 256, in hasNext
+    self.skip()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s514557145.py"", line 252, in skip
+    while self.hasNextByte() and self.isSpaceChar(self.buffer[self.curbuf]):
+          ^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s514557145.py"", line 235, in hasNextByte
+    self.lenbuf = self.in_stream.readinto(self.buffer)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: '_io.TextIOWrapper' object has no attribute 'readinto'. Did you mean: 'readline'?
+"
+java,python,s416486483.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s416486483.py"", line 29, in <module>
+    nl, sl = map(int, sys.stdin.readline().split())
+    ^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+"
+java,python,s888333881.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s888333881.py"", line 744, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s888333881.py"", line 107, in main
+    n = sc.nexI()
+        ^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s888333881.py"", line 715, in nexI
+    nl = self.nexL()
+         ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s888333881.py"", line 694, in nexL
+    if not self.hasNext():
+           ^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s888333881.py"", line 679, in hasNext
+    while self.hasNextByte() and not FastScanner.isPrintableChar(self.buffer[self.ptr]):
+          ^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s888333881.py"", line 659, in hasNextByte
+    self.buflen = self.in_stream.readinto(self.buffer)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: '_io.TextIOWrapper' object has no attribute 'readinto'. Did you mean: 'readline'?
+"
+java,python,s316260310.py,Runtime Error,"Error: '_io.TextIOWrapper' object has no attribute 'readinto'
+"
+java,python,s918182055.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s918182055.py"", line 153, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s918182055.py"", line 130, in main
+    N = sc.next_int()
+        ^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s918182055.py"", line 62, in next_int
+    n = self.next_long()
+        ^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s918182055.py"", line 44, in next_long
+    c = self.read_byte()
+        ^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s918182055.py"", line 21, in read_byte
+    self.read_length = self.in_stream.readinto(self.buffer)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: '_io.TextIOWrapper' object has no attribute 'readinto'. Did you mean: 'readline'?
+"
+java,python,s897176066.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s897176066.py"", line 18, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s897176066.py"", line 6, in main
+    A = [int(input().strip()) for _ in range(N)]
+         ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 6 1 4 5'
+"
+java,python,s880132387.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s880132387.py"", line 47, in <module>
+    Main().run()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s880132387.py"", line 12, in run
+    W, H = map(int, line.split())
+           ^^^
+UnboundLocalError: cannot access local variable 'map' where it is not associated with a value
+"
+java,python,s968213233.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s968213233.py"", line 84, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s968213233.py"", line 64, in main
+    N = in_stream.nextInt()
+        ^^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s968213233.py"", line 31, in nextInt
+    return int(self.next())
+               ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s968213233.py"", line 40, in next
+    c = self.read()
+        ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s968213233.py"", line 17, in read
+    self.numChars = self.stream.readinto(self.buf)
+                    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: '_io.TextIOWrapper' object has no attribute 'readinto'. Did you mean: 'readline'?
+"
+java,python,s858314534.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s858314534.py"", line 15, in <module>
+    Main.main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s858314534.py"", line 5, in main
+    A = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 5 7'
+"
+java,python,s927992720.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s927992720.py"", line 22, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s927992720.py"", line 6, in main
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 + 2'
+"
+java,python,s387083574.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s387083574.py"", line 16, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s387083574.py"", line 9, in main
+    map_data[i] = int(sys.stdin.readline().strip())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2 3 1'
+"
+java,python,s566905615.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s566905615.py"", line 12, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s566905615.py"", line 3, in main
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '50 100 120'
+"
+java,python,s798589501.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s798589501.py"", line 32, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s798589501.py"", line 6, in main
+    E = int(s.readline().strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0 2015'
+"
+java,python,s081988820.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s081988820.py"", line 95, in <module>
+    main.solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s081988820.py"", line 9, in solve
+    H = sc.nextInt()
+        ^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s081988820.py"", line 88, in nextInt
+    return int(self.nextLong())
+               ^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s081988820.py"", line 71, in nextLong
+    if not self.hasNext():
+           ^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s081988820.py"", line 52, in hasNext
+    while self.hasNextByte() and not self.isPrintableChar(chr(self.buffer[self.index])):
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object cannot be interpreted as an integer
+"
+java,python,s127819686.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s127819686.py"", line 12, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s127819686.py"", line 3, in main
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '81 58'
+"
+java,python,s684030429.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s684030429.py"", line 19, in <module>
+    Main().solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s684030429.py"", line 11, in solve
+    a = self.ni()
+        ^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s684030429.py"", line 16, in ni
+    return int(self.sc.readline().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '12 4'
+"
+java,python,s004995062.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s004995062.py"", line 17, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s004995062.py"", line 6, in main
+    sb = input().strip()
+         ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,s937747608.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s937747608.py"", line 16, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s937747608.py"", line 5, in main
+    a = int(sys.stdin.readline().strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 5 2 7'
+"
+java,python,s890213274.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s890213274.py"", line 20, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s890213274.py"", line 6, in main
+    A1 = int(sys.stdin.readline().strip())
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '5 7 9'
+"
+java,python,s967858671.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s967858671.py"", line 21, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s967858671.py"", line 7, in main
+    Num[i] = int(n[i])
+                 ~^^^
+IndexError: list index out of range
+"
+java,python,s965025950.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s965025950.py"", line 9, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s965025950.py"", line 3, in main
+    x = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 2 3'
+"
+java,python,s596709252.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s596709252.py"", line 10, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s596709252.py"", line 3, in main
+    x = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 2 3'
+"
+java,python,s012761786.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s012761786.py"", line 87, in <module>
+    Main.main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s012761786.py"", line 9, in main
+    n = Main.nextLong()
+        ^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s012761786.py"", line 40, in nextLong
+    return int(Main.next())
+           ^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '5 2 4'
+"
+java,python,s918596375.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s918596375.py"", line 59, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s918596375.py"", line 56, in main
+    solve(sc, out)
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s918596375.py"", line 34, in solve
+    s = sc.next()
+        ^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s918596375.py"", line 13, in next
+    return next(self.tokenizer)
+           ^^^^^^^^^^^^^^^^^^^^
+StopIteration
+"
+java,python,s998094687.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s998094687.py"", line 15, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s998094687.py"", line 7, in main
+    a = [int(input()), int(input()), int(input())]
+         ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 3 5'
+"
+java,python,s196249385.py,Runtime Error,"Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s196249385.py"", line 49, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s196249385.py"", line 46, in main
+    solve(sc, pr)
+  File ""/home/sxa510/research/code/llm-code-translation/output/gpt_4o/codenet/algo_based_translation/java/python/s196249385.py"", line 12, in solve
+    n = int(sc.readline().strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '4 2'
+"

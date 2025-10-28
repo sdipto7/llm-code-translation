@@ -1,0 +1,147 @@
+```plaintext
+Function: solve() -> None
+    Declare variables: N (int), A (int array), ans (long), sum (long)
+    Set N to the result of in.nextInt()
+    Set A to the result of in.nextIntArray(N)
+    Set ans to 0
+    Set sum to A[N-1]
+    For i from N-2 to 0 (inclusive, stepping by -1)
+        Set ans to (ans + (sum * A[i]) % MOD) % MOD
+        Set sum to (sum + A[i]) % MOD
+    Execute out.println(ans)
+
+Function: main() -> None
+    Instantiate Main and call method m()
+
+Function: m() -> None
+    Set in to a new FastScanner with System.in
+    Set out to a new PrintWriter with System.out
+    Call solve()
+    Call out.flush()
+    Call in.close()
+    Call out.close()
+
+Class: FastScanner
+    Constructor FastScanner() -> None
+        Call overloaded constructor with System.in
+
+    Constructor FastScanner(InputStream stream) -> None
+        Set input to a new BufferedReader with InputStreamReader(stream)
+
+    Function: close() -> None
+        Try to close input
+        Catch IOException and print stack trace
+
+    Function: nextInt() -> int
+        Set nl to the result of nextLong()
+        If nl is out of int range, throw NumberFormatException
+        Return nl as int
+
+    Function: nextLong() -> long
+        Initialize variables: sign (int), b (int), ret (long)
+        Set sign to 1
+        Set b to result of input.read()
+        While b is not a valid digit, '-', or '+'
+            Set b to result of input.read()
+        If b is '-'
+            Set sign to -1
+            Set b to result of input.read()
+        Else if b is '+'
+            Set b to result of input.read()
+        Set ret to b - '0'
+        While true
+            Set b to result of input.read()
+            If b is not a digit, return ret * sign
+            Set ret to ret * 10 + (b - '0')
+
+    Function: nextDouble() -> double
+        Initialize variables: sign (double), b (int), ret (double), div (double)
+        Set sign to 1
+        Set b to result of input.read()
+        While b is not a valid digit, '-', or '+'
+            Set b to result of input.read()
+        If b is '-'
+            Set sign to -1
+            Set b to result of input.read()
+        Else if b is '+'
+            Set b to result of input.read()
+        Set ret to b - '0'
+        While true
+            Set b to result of input.read()
+            If b is not a digit, break
+            Set ret to ret * 10 + (b - '0')
+        If b is not '.', return sign * ret
+        Set div to 1
+        Set b to result of input.read()
+        While b is a digit
+            Set ret to ret * 10 + (b - '0')
+            Set div to div * 10
+            Set b to result of input.read()
+        Return sign * ret / div
+
+    Function: nextChar() -> char
+        Set b to result of input.read()
+        While b is whitespace
+            Set b to result of input.read()
+        Return b as char
+
+    Function: nextStr() -> String
+        Initialize sb as new StringBuilder
+        Set b to result of input.read()
+        While b is whitespace
+            Set b to result of input.read()
+        While b is not EOF and not whitespace
+            Append b as char to sb
+            Set b to result of input.read()
+        Return sb as string
+
+    Function: nextLine() -> String
+        Initialize sb as new StringBuilder
+        Set b to result of input.read()
+        While b is not EOF and not newline
+            Append b as char to sb
+            Set b to result of input.read()
+        Return sb as string
+
+    Function: nextIntArray(n: int) -> int array
+        Initialize res as int array of size n
+        For i from 0 to n-1
+            Set res[i] to result of nextInt()
+        Return res
+
+    Function: nextIntArrayDec(n: int) -> int array
+        Initialize res as int array of size n
+        For i from 0 to n-1
+            Set res[i] to result of nextInt() - 1
+        Return res
+
+    Function: nextIntArray1Index(n: int) -> int array
+        Initialize res as int array of size n + 1
+        For i from 0 to n-1
+            Set res[i+1] to result of nextInt()
+        Return res
+
+    Function: nextLongArray(n: int) -> long array
+        Initialize res as long array of size n
+        For i from 0 to n-1
+            Set res[i] to result of nextLong()
+        Return res
+
+    Function: nextLongArrayDec(n: int) -> long array
+        Initialize res as long array of size n
+        For i from 0 to n-1
+            Set res[i] to result of nextLong() - 1
+        Return res
+
+    Function: nextLongArray1Index(n: int) -> long array
+        Initialize res as long array of size n + 1
+        For i from 0 to n-1
+            Set res[i+1] to result of nextLong()
+        Return res
+
+    Function: nextDoubleArray(n: int) -> double array
+        Initialize res as double array of size n
+        For i from 0 to n-1
+            Set res[i] to result of nextDouble()
+        Return res
+```

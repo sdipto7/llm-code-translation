@@ -1,0 +1,33 @@
+- **Function/Method Signatures**:
+  - `function main(N: integer, d: integer, x: integer) -> float`
+
+- **Variable Declarations**:
+  - `ret: float` (initialized to 0.0)
+  - `d: float` (implicit conversion from input integer)
+  - `x: float` (implicit conversion from input integer)
+  - `N: integer` (input parameter)
+
+- **Step-by-Step Logic Flow**:
+  1. Read `N`, `d`, `x` from standard input as integers.
+  2. Initialize `ret` to 0.0.
+  3. **While** `N > 0`:
+     1. Add `d + (N - 0.5) * x` to `ret`.
+     2. Compute new `d` as `d + (d / N) + (5 * x) / (2 * N)`.
+     3. Compute new `x` as `x + (2 * x) / N`.
+     4. Decrement `N` by 1.
+  4. Return `ret` via standard output.
+
+- **Control Flow Structures**:
+  - **Loop**: `while N > 0` (terminates when `N` becomes 0)
+
+- **Input/Output Operations**:
+  - **Input**: Three space-separated integers read from `sys.stdin.buffer.read()`.
+  - **Output**: Print result of `main(N, d, x)` as float via `print()`.
+
+- **Edge Case Handling**:
+  - Implicitly handles `N=0` input by skipping loop and returning 0.0.
+  - No explicit error handling for invalid inputs; assumes valid integer inputs.
+
+- **External Dependencies**:
+  - Uses `sys.stdin.buffer.read` for input reading.
+  - No external libraries beyond standard input handling.

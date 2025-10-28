@@ -1,0 +1,24 @@
+```
+Dependencies:
+- Import `accumulate` from the `itertools` module
+
+Function Signature:
+- Function: `calculate_min_energy(N: int, X: int, A: List[int]) -> int`
+
+Algorithm:
+1. Initialize:
+   - S: List[int] = Create a list using `accumulate` on A to store cumulative sums
+   - ans: float = Initialize with positive infinity (`float("inf")`)
+
+2. Iterate over the cumulative sums with enumeration:
+   - For each `k` (starting from 1) and corresponding cumulative sum `s` in `S`:
+     - Calculate E as follows:
+       - E: int = `k * X + 2 * sum(S[j] for j in range(N - 2 * k - 1, -1, -k))`
+       - This involves summing specific elements of `S` based on the calculated range that decrements by `-k`
+
+3. Update the minimum energy:
+   - `ans = min(ans, E)`
+
+4. Final Calculation:
+   - Return `ans + N * X + 5 * S[-1]`
+```

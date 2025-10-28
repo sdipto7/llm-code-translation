@@ -1,0 +1,15 @@
+```plaintext
+Algorithm:
+1. Declare variable `firstline` of type `int` and set it to the integer value of user input.
+2. Declare variable `total` of type `int` and initialize it to 0.
+3. Declare a list `memory` to store `str` values, starting as an empty list.
+4. For each `x` in the range from 0 to `firstline` (exclusive):
+   a. Read a line of input, split it by spaces, and map the values to integers, assigning them to variables `A` and `G`.
+   b. If `total + A` is less than or equal to 500:
+      i. Increment `total` by `A`.
+      ii. Append the string "A" to the `memory` list.
+   c. Else:
+      i. Decrement `total` by `G`.
+      ii. Append the string "G" to the `memory` list.
+5. Concatenate all strings in the `memory` list into a single string and print the result.
+```

@@ -1,0 +1,51 @@
+**Algorithm Extraction:**
+
+**Function Signatures:**
+- `Solver.solve(int testNumber, MyInput in, PrintWriter out)`: Main solve method
+  - Parameters: 
+    - testNumber: int (unused)
+    - in: MyInput (custom input handler)
+    - out: PrintWriter (output handler)
+  - Return: void
+
+**Variables:**
+- `int ans = 0`: Result counter
+- `int K`: Input upper bound (2 ≤ K ≤ 2500)
+- `int S`: Target sum (0 ≤ S ≤ 3K)
+- `int wk`: Temporary variable for Z calculation
+
+**Logic Flow:**
+1. Read inputs:
+   - `K = in.nextInt()`
+   - `S = in.nextInt()`
+2. Initialize `ans` to 0
+3. Outer loop: x-values
+   - `for (x from 0 to K inclusive)`
+4. Inner loop: y-values
+   - `for (y from 0 to K inclusive)`
+5. Calculate potential z-value:
+   - `wk = S - x - y`
+6. Validate z:
+   - If `wk >= 0 && wk <= K`, increment `ans`
+7. Output final count:
+   - `out.println(ans)`
+
+**Control Structures:**
+- Two nested for-loops with range [0, K]
+- Conditional check: `if (wk >= 0 && wk <= K)`
+
+**Data Processing:**
+- Input handling via custom `MyInput` class with `nextInt()` method
+- Integer arithmetic for sum validation
+- Direct output via PrintWriter
+
+**Dependencies:**
+- Java IO classes (InputStream, OutputStream, BufferedReader, etc.)
+- Custom `MyInput` class for input parsing
+
+**Full Execution Sequence:**
+1. Read K and S
+2. Iterate all (x, y) pairs in [0, K] × [0, K]
+3. For each pair, compute z = S - x - y
+4. Count valid z-values in [0, K]
+5. Return total count

@@ -1,0 +1,33 @@
+Initialize Scanner object for input
+Declare String variable 'mark'
+Declare integer variables: c, b, x (initialized to 0)
+Declare integer array 'a' of size 100000
+
+Begin infinite loop:
+    Read integer input into 'c'
+    Read string input into 'mark'
+    Read integer input into 'b'
+    
+    If 'mark' equals "?":
+        Set a[x] = 2000001
+        Break out of loop
+    Else if 'mark' equals "+":
+        Set a[x] = c + b
+    Else if 'mark' equals "-":
+        Set a[x] = c - b
+    Else if 'mark' equals "*":
+        Set a[x] = c * b
+    Else if 'mark' equals "/":
+        Set a[x] = c / b
+    
+    Increment x by 1
+
+Set x = 0
+
+Begin infinite loop:
+    If a[x] equals 2000001:
+        Break out of loop
+    Print a[x]
+    Increment x by 1
+
+Close Scanner

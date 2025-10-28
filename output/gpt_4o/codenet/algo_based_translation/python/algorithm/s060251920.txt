@@ -1,0 +1,24 @@
+Function Signature:
+- `main()` with no parameters and no return type
+
+Variable Declarations:
+- `a` is an integer
+- `b` is an integer
+
+Execution Order:
+1. Read a single line of input from the user.
+2. Use `map()` to apply the `int` conversion function to each item in the input split by spaces, resulting in two integers.
+3. Assign the first integer to variable `a`.
+4. Assign the second integer to variable `b`.
+5. Calculate the product of `a` and `b`.
+6. Print the result of the multiplication.
+
+Control Structures:
+- No loops or conditionals
+
+Input/Output Operations:
+- Input: Read a line of user input
+- Output: Print the integer result of the multiplication
+
+Required Libraries:
+- None

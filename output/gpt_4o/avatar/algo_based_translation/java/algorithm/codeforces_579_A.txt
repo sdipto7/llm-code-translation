@@ -1,0 +1,33 @@
+```
+Algorithm:
+1. Import the necessary library for input handling:
+   - Import `java.util.Scanner` to read input from the console.
+
+2. Define the main function:
+   - Signature: `public static void main(String[] args)`
+   - No parameters, no return type.
+
+3. Initialize input handling:
+   - Declare a `Scanner` object `str` to read from the standard input.
+
+4. Read an integer input:
+   - Declare an integer `n`.
+   - Assign `n` the value obtained from `str.nextInt()`.
+
+5. Initialize an empty string `s` to store the binary representation.
+
+6. Convert the integer `n` to binary:
+   - While `n > 0`:
+     - Compute `x` as `n % 2` (remainder when `n` is divided by 2).
+     - Update `n` by dividing it by 2 using integer division (`n /= 2`).
+     - Concatenate `x` (converted to a string) to `s`.
+
+7. Count the number of '1's in the binary string `s`:
+   - Declare an integer `ans` and initialize it to 0.
+   - For each character `i` in `s` (loop from `0` to `s.length() - 1`):
+     - If `s.charAt(i)` is equal to '1':
+       - Increment `ans` by 1.
+
+8. Output the result:
+   - Print the value of `ans` using `System.out.println(ans)`.
+```

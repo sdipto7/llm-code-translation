@@ -1,0 +1,35 @@
+ALGORITHM SPECIFICATION:
+
+FUNCTIONS:
+1. main() -> void
+   - Parameters: None
+   - Return: Void
+
+VARIABLES:
+1. x: int
+2. result: int
+
+DATA TYPES:
+- All variables and operations use integer type
+
+LOGIC FLOW:
+1. Read integer input from standard input into variable x
+2. Compute gcd(360, x) using math library function
+3. Compute integer division: 360 // gcd_result → result
+4. Print result to standard output
+
+CONTROL FLOW:
+- Linear execution with no conditional branches or loops
+
+INPUT/OUTPUT:
+- Input: Single integer via stdin
+- Output: Single integer via stdout
+- Processing: Mathematical operations on input value
+
+ERROR HANDLING:
+- No explicit error handling (assumes valid integer input)
+- Implicit handling via gcd function's natural behavior with non-positive x values
+
+EXTERNAL DEPENDENCIES:
+- Requires math library's gcd function
+- Input/output system libraries

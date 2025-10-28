@@ -1,0 +1,85 @@
+```
+Function signature:
+    def min_changes(n: int, x: List[int]) -> int
+
+Variable declarations:
+    a: List[int]
+    b: List[int]
+    cnta: List[int]
+    cntb: List[int]
+    vala: int
+    vala1: int
+    maxCnta: int
+    maxCnta1: int
+    valb: int
+    valb1: int
+    maxCntb: int
+    maxCntb1: int
+    res: int
+    resa: int
+    resb: int
+    resa1: int
+    resb1: int
+
+Logic flow:
+    Initialize lists a and b as empty lists
+    For each index i from 0 to n-1:
+        If i is even, append x[i] to list a
+        Else, append x[i] to list b
+
+    Initialize cnta and cntb as lists of zeros with a length of 100003
+    Initialize vala, vala1, valb, valb1, maxCnta, maxCnta1, maxCntb, maxCntb1 to 0
+
+    For each value in list a:
+        Increment cnta at index of the value by 1
+
+    For each value in list a:
+        If cnta at index of the value is greater than maxCnta:
+            Set vala to the value
+            Set maxCnta to cnta at index of the value
+
+    For each value in list a:
+        If cnta at index of the value is greater than maxCnta1 and value is not equal to vala:
+            Set vala1 to the value
+            Set maxCnta1 to cnta at index of the value
+
+    For each value in list b:
+        Increment cntb at index of the value by 1
+
+    For each value in list b:
+        If cntb at index of the value is greater than maxCntb:
+            Set valb to the value
+            Set maxCntb to cntb at index of the value
+
+    For each value in list b:
+        If cntb at index of the value is greater than maxCntb1 and value is not equal to valb:
+            Set valb1 to the value
+            Set maxCntb1 to cntb at index of the value
+
+    If valb is not equal to vala:
+        Initialize res to 0
+        For each value in list a:
+            If value is not equal to vala, increment res by 1
+        For each value in list b:
+            If value is not equal to valb, increment res by 1
+        Return res
+    Else:
+        Initialize resa, resb, resa1, resb1 to 0
+        For each value in list a:
+            If value is not equal to vala, increment resa by 1
+            If value is not equal to vala1, increment resa1 by 1
+        For each value in list b:
+            If value is not equal to valb, increment resb by 1
+            If value is not equal to valb1, increment resb1 by 1
+        Return minimum of (resa + resb1) and (resa1 + resb)
+
+Input:
+    n from user input, cast to an integer
+    x from user input, split by spaces and cast to a list of integers
+
+Output:
+    Print the result of min_changes(n, x)
+
+Required libraries:
+    List from typing module
+```

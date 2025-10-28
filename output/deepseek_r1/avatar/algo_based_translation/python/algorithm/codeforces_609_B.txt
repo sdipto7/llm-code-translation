@@ -1,0 +1,85 @@
+**Structured Algorithm Specification**
+
+**1. Function Signatures**
+- `_input() -> Iterator[int]`: Parameterless function returning iterator of integers from stdin
+
+**2. Variable Declarations**
+- `n: int` - Number of elements in list
+- `m: int` - Unused parameter (from input)
+- `lst: List[int]` - Input integer list
+- `l: Dict[int, int]` - Frequency counter dictionary
+- `res: int` - Result accumulator
+- `i: int` - Loop iteration index
+
+**3. Data Types**
+- Integer for all numerical values
+- Dictionary with integer keys (list values) and integer values (counts)
+- List of integers for input elements
+
+**4. Input/Output Operations**
+- Read from standard input via `input()`
+- Parse space-separated integers using `split()` and `map(int, ...)`
+- Print final result via `print(res)`
+
+**5. Algorithm Steps**
+
+1. Initialize input processing:
+   - Call `_input()` to read first line as iterator
+   - Unpack first two values into `n` and `m`
+   - Read second input line as `lst` via `list(_input())`
+
+2. Initialize frequency dictionary:
+   - Create empty dictionary `l = {}`
+
+3. Populate frequency counts:
+   ```python
+   for i in 0 to n-1:
+       current = lst[i]
+       if current not in l:
+           l[current] = 1
+       else:
+           l[current] += 1
+   ```
+
+4. Initialize result:
+   - Set `res = 0`
+
+5. Calculate pairwise counts:
+   ```python
+   for i in 0 to n-1:
+       current = lst[i]
+       if l[current] > 1:
+           res += (n - i - l[current])
+           l[current] -= 1
+       else:
+           res += (n - i - 1)
+   ```
+
+6. Output final result:
+   - Print `res`
+
+**6. Control Flow Structures**
+- Sequential execution of input processing, frequency counting, and result calculation
+- Two `for` loops:
+  - First: `n` iterations (0 ≤ i < n) for frequency counting
+  - Second: `n` iterations (0 ≤ i < n) for result calculation
+- Conditional branches:
+  - `if lst[i] not in l` during frequency initialization
+  - `if l[current] > 1` during result calculation phase
+
+**7. Edge Case Handling**
+- Proper handling of first occurrence in frequency counting
+- Automatic handling of last element (n-i-1 becomes 0 when i = n-1)
+- Implicit handling of empty input via Python's native error handling
+
+**8. Dependencies**
+- Standard library functions:
+  - `input()`
+  - `split()`
+  - `map()`
+  - `list()`
+  - `print()`
+
+**9. Exit Criteria**
+- Process terminates after printing final result
+- All loops terminate at upper bound (i < n)

@@ -1,0 +1,13 @@
+1. Import the required library: java.util.Scanner
+2. Define a class: Main
+3. Define a function: main with return type void and parameter: String[] args
+4. Declare a variable: scan of type Scanner and initialize it with a new Scanner object using System.in
+5. Declare a variable: n of type int and read an integer input from the user using scan.nextInt()
+6. Declare a variable: count of type int and initialize it to 0
+7. Start a for loop with:
+   - Initialization: Declare a variable i of type int and initialize it to 1
+   - Condition: i <= n
+   - Increment: i++
+8. Inside the loop, increment count by i using the operation: count += i
+9. After the loop, print the value of count to the console using System.out.println(count)
+10. End the main function and the Main class.

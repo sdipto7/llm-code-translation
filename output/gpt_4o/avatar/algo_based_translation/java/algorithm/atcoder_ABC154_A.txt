@@ -1,0 +1,30 @@
+1. Import necessary libraries:
+   - `BufferedReader` from `java.io`
+   - `InputStreamReader` from `java.io`
+   - `IOException` from `java.io`
+   - `StringTokenizer` from `java.util`
+
+2. Declare the main function signature:
+   - `public static void main(String[] args) throws IOException`
+
+3. Initialize input handling:
+   - Create a `BufferedReader` instance named `in` that reads from `System.in`.
+
+4. Read and process the first line of input:
+   - Use `in.readLine()` to read a line of input and split it by spaces into a `String[]` named `str`.
+
+5. Read and process the second line of input:
+   - Use `StringTokenizer` to tokenize the input line read by `in.readLine()`.
+   - Parse two integers from the tokens:
+     - `int a = Integer.parseInt(st.nextToken())`
+     - `int b = Integer.parseInt(st.nextToken())`
+
+6. Read the third line of input:
+   - Store the line in a `String` variable `u` using `in.readLine()`.
+
+7. Conditional operation based on input comparison:
+   - Compare `u` with `str[0]` using `u.equals(str[0])`.
+   - If the condition is true, calculate and output `(a - 1) + " " + b` using `System.out.println`.
+   - If the condition is false, calculate and output `a + " " + (b - 1)` using `System.out.println`.
+
+8. End of main function.

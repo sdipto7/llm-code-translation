@@ -1,0 +1,29 @@
+- Function signature:
+  - Function name: calculate_pairs
+  - Parameters: N: int, M: int
+  - Return type: int
+
+- Variables:
+  - N: int (input value)
+  - M: int (input value)
+  - a: int (calculated value from N)
+  - b: int (calculated value from M)
+
+- Logic flow:
+  1. Read input line from standard input
+  2. Split input into two string tokens
+  3. Convert first token to integer (N)
+  4. Convert second token to integer (M)
+  5. Calculate a = (N * (N - 1)) // 2
+  6. Calculate b = (M * (M - 1)) // 2
+  7. Compute sum of a and b
+  8. Print result as integer output
+
+- Operations:
+  - Input: Single line with two space-separated integers
+  - Processing: Apply combinatorial selection formula (n choose 2)
+  - Output: Single integer result of a + b
+
+- Control structures: None (linear execution flow)
+
+- Dependencies: None (standard input/output operations only)

@@ -1,0 +1,36 @@
+function signature: main() -> None
+
+variable declarations:
+n: int
+k: int
+x: int
+
+logic flow:
+1. read input and split into two integers, assign to n and k
+2. initialize x to 0
+3. if k is less than or equal to the maximum of n^2 // 2 and n^2 - (n^2 // 2):
+   3.1 print 'YES'
+   3.2 for i from 0 to n-1:
+       3.2.1 for j from 0 to n-1:
+           3.2.1.1 if i modulo 2 is equal to j modulo 2 and x is less than k:
+               3.2.1.1.1 print 'L' without newline
+               3.2.1.1.2 increment x by 1
+           3.2.1.2 else:
+               3.2.1.2.1 print 'S' without newline
+       3.2.2 print newline
+4. else:
+   4.1 print 'NO'
+
+input/output operations:
+- read input from standard input
+- print to standard output
+
+data processing logic:
+- calculate n^2 // 2
+- calculate n^2 - (n^2 // 2)
+- compare k with the maximum of the two calculated values
+- use nested loops to iterate over a grid of size n x n
+- use conditional logic to determine whether to print 'L' or 'S' based on the parity of indices and the value of x
+
+required libraries, modules, or dependencies:
+- no additional libraries required

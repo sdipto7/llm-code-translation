@@ -1,0 +1,55 @@
+```
+Function main()
+    Declare inputStream as InputStream initialized to System.in
+    Declare outputStream as OutputStream initialized to System.out
+    Declare in as InputReader initialized with inputStream
+    Declare out as PrintWriter initialized with outputStream
+    Declare sol as Solution instance
+    Call sol.solve(in, out)
+    Call out.close()
+
+Class Solution
+    Function solve(in as InputReader, out as PrintWriter)
+        Declare n as int, assign in.nextInt()
+        Declare k as int, assign in.nextInt()
+        Declare logsLength as int array, assign in.readArray(n)
+        Declare min as int, initialized to 1
+        Declare max as int, initialized to 1e9 + 1000
+        While min is less than max
+            Declare mid as int, assign (min + max) / 2
+            If Call nei(mid, logsLength, k)
+                Assign mid to max
+            Else
+                Assign mid + 1 to min
+        Call out.println(min)
+
+    Function nei(mid as int, logsLength as int array, k as int) returns boolean
+        For each log in logsLength
+            Decrease k by (log + mid - 1) / mid - 1
+        Return whether k is greater than or equal to 0
+
+Class InputReader
+    Declare reader as BufferedReader
+    Declare tokenizer as StringTokenizer
+
+    Constructor InputReader(stream as InputStream)
+        Initialize reader with new BufferedReader and new InputStreamReader with stream, 32768
+        Initialize tokenizer to null
+
+    Function next() returns String
+        While tokenizer is null or tokenizer does not have more tokens
+            Try
+                Assign new StringTokenizer with reader.readLine() to tokenizer
+            Catch IOException e
+                Throw new RuntimeException(e)
+        Return tokenizer.nextToken()
+
+    Function nextInt() returns int
+        Return Integer.parseInt(next())
+
+    Function readArray(n as int) returns int array
+        Declare a as int array of size n
+        For i from 0 to n-1
+            Assign nextInt() to a[i]
+        Return a
+```

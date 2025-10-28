@@ -1,0 +1,36 @@
+```
+Algorithm Codeforces222A
+    Input:
+        - Integers n, k (read from standard input)
+        - Array of integers (read from standard input)
+
+    Variables:
+        - Integer n: number of elements
+        - Integer k: position threshold
+        - Integer l: initialized to 0, used to track the last read number
+        - Integer c: initialized to 1, used to count consecutive occurrences of the same number
+        - Integer a: current element read from the input
+
+    Begin
+        Read n, k from input
+        Initialize l to 0
+        Initialize c to 1
+
+        For i from 0 to n-1 do
+            Read integer a from input
+            If a equals l Then
+                Increment c by 1
+            Else
+                Set c to 1
+            End If
+            Set l to a
+        End For
+
+        If c + k > n Then
+            Output n - c to standard output
+        Else
+            Output -1 to standard output
+        End If
+    End
+End Algorithm
+```

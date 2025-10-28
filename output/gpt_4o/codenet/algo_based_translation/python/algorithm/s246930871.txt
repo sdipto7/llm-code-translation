@@ -1,0 +1,32 @@
+```plaintext
+Function Signature:
+- Function Name: calculate_min_value
+- Parameters: 
+  - N: integer
+  - A: integer
+  - B: integer
+- Return Type: integer
+
+Variable Declarations:
+- ans: integer
+
+Logic Flow:
+1. Read three integers N, A, and B from input.
+2. Compute the integer division of N by the sum of A and B, i.e., N // (A + B).
+3. Multiply the result of the division by A to calculate the first part of the answer.
+4. Compute the modulus of N by the sum of A and B, i.e., N % (A + B).
+5. Determine the minimum value between A and the result from step 4.
+6. Add the value from step 5 to the result from step 3 to get the final answer.
+7. Return the value of the answer.
+
+Control Structures:
+- Conditional:
+  - Use the min function to choose the smaller value between A and N % (A + B).
+
+Input/Output Operations:
+- Input: Read three integers from standard input.
+- Output: Print the result.
+
+Required Libraries:
+- None
+```

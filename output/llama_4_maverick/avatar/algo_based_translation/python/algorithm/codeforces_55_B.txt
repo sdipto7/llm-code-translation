@@ -1,0 +1,24 @@
+Procedure rememberTheNumber(nums, i, operations, ans)
+  If i >= 3 Then
+    Return
+  For j = 0 to 3
+    For k = j + 1 to 3
+      If nums[j] != -1 and nums[k] != -1 Then
+        s = nums[j]
+        nums[j] = -1
+        t = nums[k]
+        If operations[i] == '+' Then
+          nums[k] = s + t
+        Else If operations[i] == '*' Then
+          nums[k] = s * t
+        If i == 2 and nums[k] < ans[0] Then
+          ans[0] = nums[k]
+        rememberTheNumber(nums, i + 1, operations, ans)
+        nums[j] = s
+        nums[k] = t
+
+nums = Input().Split().MapToInt()
+operations = Input().Split().MapToStr()
+ans = [LargeNumber]
+rememberTheNumber(nums, 0, operations, ans)
+Output(ans[0])

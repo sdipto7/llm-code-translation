@@ -1,0 +1,45 @@
+**Algorithm:**
+
+1. **Imports and Class Setup:**
+   - Import `java.io.*` and `java.util.*`.
+   - Define class `codeforces_67_B` extending `PrintWriter`.
+
+2. **Function Signatures:**
+   - Constructor: `codeforces_67_B()`.
+   - `public static void main(String[] args)`.
+   - `void main()` (instance method).
+
+3. **Variables:**
+   - `Scanner sc = new Scanner(System.in)`.
+   - `int n = sc.nextInt()`.
+   - `int k = sc.nextInt()`.
+   - `int[] bb = new int[n]` (input array).
+   - `int[] aa = new int[n]` (output array).
+   - `int m = 0` (tracker for filled elements in `aa`).
+
+4. **Input Handling:**
+   - Read `n` and `k` via `Scanner`.
+   - Populate `bb` by reading `n` integers.
+
+5. **Core Logic:**
+   - Iterate `a` from `n-1` to `0` (descending order):
+     - Initialize `j = 0`.
+     - **While** `bb[a] > 0`:
+       - **If** `aa[j] >= (a + k)`, decrement `bb[a]`.
+       - Increment `j`.
+     - **For** `j_` from `m` (pre-increment) downward to `j+1`:
+       - Shift `aa[j_ - 1]` to `aa[j_]`.
+     - Insert `a` at `aa[j]`.
+     - Increment `m`.
+
+6. **Output:**
+   - Print `aa[i] + 1` for all indices `i`, space-separated.
+
+7. **Control Structures:**
+   - For-loop (descending `a`).
+   - While-loop (condition `bb[a] > 0`).
+   - Nested for-loop (element shifting).
+
+8. **Dependencies:**
+   - Requires `java.io.*` for I/O.
+   - Requires `java.util.Scanner` for input parsing.

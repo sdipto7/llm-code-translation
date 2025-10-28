@@ -1,0 +1,39 @@
+Function Signature:
+- main(String[] args): void
+
+Variable Declarations:
+- Scanner in: Scanner
+- int N: int
+- int L: int
+- int R: int
+- int QL: int
+- int QR: int
+- int[] W: int[]
+- int[] sum: int[]
+- int firstR: int
+- int lCount: int
+- int rCount: int
+- long min: long
+- long cand: long
+- int llCount: int
+- int rrCount: int
+
+Execution Order and Logic Flow:
+1. Initialize Scanner object for input
+2. Read N, L, R, QL, QR from input
+3. Initialize array W of size N
+4. Initialize array sum of size N+1
+5. For n from 0 to N-1:
+   - Read W[n] from input
+   - Set sum[n+1] to sum[n] + W[n]
+6. Set min to Long.MAX_VALUE
+7. For firstR from 0 to N:
+   - Set lCount to firstR
+   - Set rCount to N - lCount
+   - Set cand to sum[lCount] * L + (sum[N] - sum[lCount]) * R
+   - Set llCount to max(0, lCount - rCount - 1)
+   - Set rrCount to max(0, rCount - lCount - 1)
+   - Add llCount * QL to cand
+   - Add rrCount * QR to cand
+   - Set min to min of cand and min
+8. Print min

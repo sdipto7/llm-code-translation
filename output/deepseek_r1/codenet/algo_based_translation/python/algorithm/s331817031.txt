@@ -1,0 +1,48 @@
+1. Function: main
+   - Parameters: none
+   - Return type: void
+
+2. Variables:
+   - h: integer (input grid height)
+   - w: integer (input grid width)
+   - l: list[list[str]] (grid storage)
+   - tmp: integer (track rightmost allowed column)
+   - a: list[str] (temporary row storage)
+   - i: integer (row index)
+   - j: integer (column index)
+
+3. Execution Flow:
+   - Read h and w from standard input via split()
+   - Initialize empty list l
+   - Loop h times:
+       - Read string input
+       - Convert to character list
+       - Append to l
+   - Set tmp = 0
+   - For i from 0 to h-1:
+       - For j from 0 to w-1:
+           - If l[i][j] == '#':
+               - If j < tmp:
+                   - Print "Impossible"
+                   - Terminate program
+               - Else:
+                   - Set tmp = j
+   - Print "Possible"
+
+4. Control Structures:
+   - Nested for-loops:
+       - Outer: for i in range(h)
+       - Inner: for j in range(w)
+   - Conditional checks:
+       - if l[i][j] == "#"
+       - if j < tmp
+
+5. I/O Operations:
+   - Input: h and w via input().split()
+   - Input: h lines of strings converted to character lists
+   - Output: "Impossible" if invalid pattern detected
+   - Output: "Possible" if all checks pass
+
+6. Dependencies:
+   - Standard input/output functions
+   - No external libraries required

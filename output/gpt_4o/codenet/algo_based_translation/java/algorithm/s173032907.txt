@@ -1,0 +1,46 @@
+Algorithm:
+
+Function: main()
+- Parameters: String[] args
+- Return Type: void
+- Logic:
+  - Create a new Thread with Main instance and start the thread.
+
+Function: run()
+- Parameters: None
+- Return Type: void
+- Variables:
+  - n: int
+  - a: int[]
+  - cost1: long
+  - cost2: long
+  - current1: int
+  - current2: int
+  - dp1: long[]
+  - dp2: long[]
+- Logic:
+  1. Read integer n from input.
+  2. Initialize array a of size n.
+  3. Loop for i from 0 to n-1:
+     - Read integer from input and store in a[i].
+  4. Initialize cost1 and cost2 to 0.
+  5. Initialize current1 and current2 to 0.
+  6. Initialize dp1 and dp2 arrays of size n.
+  7. Loop for i from 0 to n-1 and j from n-1 to 0:
+     - Update cost1 by adding the absolute difference between a[i] and current1.
+     - Update current1 to a[i].
+     - Store cost1 in dp1[i].
+     - Update cost2 by adding the absolute difference between a[j] and current2.
+     - Update current2 to a[j].
+     - Store cost2 in dp2[j].
+  8. Loop for i from 0 to n-1:
+     - If i is 0:
+       - Print dp2[i + 1] + absolute value of a[1].
+     - Else if i is n - 1:
+       - Print dp1[i - 1] + absolute value of a[i - 1].
+     - Else:
+       - Print dp1[i - 1] + dp2[i + 1] + absolute value of a[i - 1] - a[i + 1].
+
+Input/Output:
+- Input: Uses Scanner to read integers from input.
+- Output: Uses System.out.println to print results.

@@ -1,0 +1,37 @@
+```
+Algorithm "Determine Possible Outcomes"
+
+1. Import necessary libraries:
+   - java.io.*
+   - java.util.*
+
+2. Function Signature:
+   - Function name: `main`
+   - Parameters: `args` (Array of Strings)
+   - Return type: `void`
+
+3. Variable Declarations:
+   - Declare `sc` as a new instance of `Scanner` that reads from `System.in`.
+   - Declare `n` as an integer, and initialize it with the next integer input from `sc`.
+   - Declare `m` as an integer, and initialize it with the next integer input from `sc`.
+
+4. Control Flow:
+   - Conditional Check: If `n` equals 0
+     - Nested Conditional Check: If `m` does not equal 0
+       - Output "Impossible" to the console.
+     - Else
+       - Output "0 0" to the console.
+     - End of Nested Conditional
+     - Return from the function.
+
+   - Conditional Check: If `m` is less than or equal to `n`
+     - Nested Conditional Check: If `m` equals 0
+       - Assign 1 to `m`.
+     - End of Nested Conditional
+     - Output `n` and `m + n - 1` separated by a space to the console.
+     - Return from the function.
+
+   - Output `m` and `m + n - 1` separated by a space to the console.
+
+5. End of Function
+```

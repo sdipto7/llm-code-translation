@@ -1,0 +1,20 @@
+Function signature: main() -> None
+Variable declarations:
+n: int
+arr: List[float]
+arr: List[float] (after list comprehension)
+o: int
+arr_sum: float
+res: int
+
+Logic flow:
+1. Read integer n from input
+2. Read space-separated floating-point numbers from input, convert to list of floats
+3. For each element x in arr, compute x - int(x) and filter out elements where x - int(x) == 0, sort the resulting list
+4. Compute o as 2 * n - length of arr
+5. Compute arr_sum as sum of elements in arr
+6. Initialize res as 2e9 (integer value)
+7. For i from 0 to n (inclusive):
+    a. If i + o is greater than or equal to n:
+        i. Update res as minimum of res and absolute difference between i and arr_sum
+8. Print res formatted to three decimal places

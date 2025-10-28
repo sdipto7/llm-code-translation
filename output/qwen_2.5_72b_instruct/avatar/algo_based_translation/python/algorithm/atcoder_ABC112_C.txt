@@ -1,0 +1,39 @@
+Function signatures with parameter and return types:
+- `solve(n: int, ls_xyh: List[List[int]]) -> str`
+- `readQuestion() -> Tuple[int, List[List[int]]]`
+- `main() -> None`
+
+Variable declarations and data types:
+- `x0: Optional[int]`
+- `y0: int`
+- `h0: int`
+- `cands: List[Tuple[int, int, int]]`
+- `xx: int`
+- `yy: int`
+- `hh: int`
+- `ws: List[str]`
+- `n: int`
+- `ls_xyh: List[List[int]]`
+
+Complete logic flow in execution order:
+1. Initialize `x0` to `None`.
+2. Iterate over each element in `ls_xyh` using index `i`:
+   - If `ls_xyh[i][2] > 0`, set `[x0, y0, h0]` to `ls_xyh[i]` and break the loop.
+3. Create list `cands` containing tuples `(cx, cy, h0 + abs(cx - x0) + abs(cy - y0))` for each `(cx, cy)` in the range `(0, 100)`.
+4. For each `[x, y, h]` in `ls_xyh`:
+   - Filter `cands` to include only tuples `(cx, cy, ch)` where `max(ch - abs(cx - x) - abs(cy - y), 0) == h`.
+5. Assign `(xx, yy, hh)` to the first element of `cands`.
+6. Return string `' '.join([str(xx), str(yy), str(hh)])`.
+
+Control structures:
+- `for i in range(n)`: Loop iterating from `0` to `n-1`.
+- `if ls_xyh[i][2] > 0`: Conditional checking if height is greater than `0`.
+- `cands = [...]`: List comprehension filtering candidates based on height conditions.
+
+Input/output operations and data processing logic:
+- Read input from standard input using `sys.stdin.readline()`.
+- Split input strings into lists of integers.
+- Process input to solve the problem and output result as a space-separated string.
+
+Required libraries, modules, or dependencies:
+- `sys` module for reading input from standard input.

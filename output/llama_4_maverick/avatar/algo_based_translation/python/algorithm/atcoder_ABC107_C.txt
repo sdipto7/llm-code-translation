@@ -1,0 +1,30 @@
+1. Read N and K from input
+2. Read list of N integers into lst
+3. Initialize lst_p and lst_m as empty lists
+4. For i from 0 to N-1:
+   4.1 If lst[i] equals 0:
+      4.1.1 Decrement K by 1
+   4.2 If lst[i] is greater than 0:
+      4.2.1 Append lst[i] to lst_p
+   4.3 If lst[i] is less than 0:
+      4.3.1 Append lst[i] to lst_m
+5. Sort lst_p in ascending order
+6. Sort lst_m in ascending order
+7. lastx = length of lst_p
+8. lasty = length of lst_m
+9. Define function check(k):
+   9.1 Initialize ans to 10^9
+   9.2 For j from 0 to k:
+      9.2.1 If j is greater than lastx or k-j is greater than lasty:
+         9.2.1.1 Continue to next iteration
+      9.2.2 If j equals 0:
+         9.2.2.1 p = 0
+      9.2.3 Else:
+         9.2.3.1 p = lst_p[j-1]
+      9.2.4 If k-j equals 0:
+         9.2.4.1 m = 0
+      9.2.5 Else:
+         9.2.5.1 m = lst_m[lasty - (k-j)]
+      9.2.6 ans = minimum of ans, (2*p + absolute value of m), and (p + 2*absolute value of m)
+   9.3 Return ans
+10. Print result of check(K)

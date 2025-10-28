@@ -1,0 +1,24 @@
+```
+1. Begin the algorithm execution.
+
+2. Declare an integer variable `N`.
+
+3. Read an integer input from the user and assign it to `N`.
+
+4. Declare two string variables `S` and `T`.
+
+5. Read a line of input, split it by spaces, and assign the first part to `S` and the second part to `T`.
+
+6. Declare a list `char_lists` to store characters, data type: List[str].
+
+7. Initialize a loop to iterate over each character index `i` in the string `S` using `enumerate(S)`:
+   a. Retrieve the character `char` at index `i` from string `S`.
+   b. Append `char` to the list `char_lists`.
+   c. Append the character at index `i` from string `T` to the list `char_lists`.
+
+8. Convert the list `char_lists` to a string by joining its elements.
+
+9. Print the resulting string.
+
+10. End the algorithm execution.
+```

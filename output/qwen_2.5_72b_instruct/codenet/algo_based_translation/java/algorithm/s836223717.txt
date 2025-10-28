@@ -1,0 +1,28 @@
+Function signatures with parameter and return types:
+- main(String[] args): void
+
+Variable declarations and data types:
+- sc: Scanner
+- n: int
+- ryuka: long[]
+- i: int
+
+Complete logic flow in execution order:
+1. Create a Scanner object to read input from standard input.
+2. Read an integer n from the input.
+3. Declare and initialize a long array named ryuka with size n + 1.
+4. Set the first element of ryuka (ryuka[0]) to 2.
+5. Set the second element of ryuka (ryuka[1]) to 1.
+6. For i from 2 to n (inclusive):
+   - Set ryuka[i] to the sum of ryuka[i - 1] and ryuka[i - 2].
+7. Print the value of ryuka[n].
+
+Control structures:
+- For loop with condition i < n + 1, increment i by 1 in each iteration.
+
+Input/output operations and data processing logic:
+- Read an integer from standard input.
+- Print a long value to standard output.
+
+Required libraries, modules, or dependencies:
+- java.util.Scanner

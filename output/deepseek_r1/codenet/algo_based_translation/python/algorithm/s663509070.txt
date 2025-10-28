@@ -1,0 +1,50 @@
+Function Signatures:
+- (Code is executed in global scope; no explicit functions)
+
+Variable Declarations and Data Types:
+- N: integer
+- D: integer
+- mat: list of lists of integers
+- c: integer (initialized to 0)
+- i, j: integer (loop indices)
+- dist: float
+- x, y: integer (elements during coordinate subtraction)
+
+Logic Flow in Execution Order:
+1. Read input line containing N and D as integers
+2. Initialize empty list mat
+3. For d in 0 to N-1:
+   a. Read input line containing D integers
+   b. Convert to list of integers
+   c. Append to mat
+4. Import math module
+5. Initialize counter c = 0
+6. For i from 0 to len(mat)-2:
+   a. For j from i+1 to len(mat)-1:
+      i. Initialize sum_of_squares = 0
+      ii. For each coordinate pair (x from mat[i], y from mat[j]):
+           sum_of_squares += (x - y) ** 2
+      iii. dist = math.sqrt(sum_of_squares)
+      iv. Check if dist == int(dist)
+      v. If true: increment c by 1
+7. Print c
+
+Control Structures:
+- Range-based for loop: for d in range(N)
+- Nested index-based loops:
+  - Outer: for i in range(len(mat)-1)
+  - Inner: for j in range(i+1, len(mat))
+- Conditional: if int(dist) == dist
+
+Input/Output Operations:
+- Input: Reads from standard input using input().split()
+- Output: Prints final value of c using print(c)
+
+Data Processing:
+- Converts string inputs to integers
+- Computes squared differences between coordinate pairs
+- Accumulates sum for Euclidean distance calculation
+- Checks integral nature of floating-point distance
+
+Required Dependencies:
+- Python math module for sqrt function

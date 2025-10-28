@@ -1,0 +1,24 @@
+Function Signature:
+- swapcase(): No parameters, returns str
+
+Variable Declarations and Data Types:
+- input_str: str
+
+Logic Flow:
+1. Call input() to read a string from the standard input.
+2. Assign the result to input_str.
+3. Call swapcase() on input_str.
+4. Print the result of swapcase().
+
+Control Structures:
+- No loops or conditionals
+
+Input/Output Operations:
+- Read a string from standard input.
+- Write a string to standard output.
+
+Data Processing Logic:
+- Convert all uppercase letters in the input string to lowercase and vice versa.
+
+Libraries, Modules, or Dependencies:
+- No external libraries or modules required.

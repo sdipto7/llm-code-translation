@@ -1,0 +1,18 @@
+**Function Signature:**
+main() -> None
+
+**Variables:**
+n: int
+m: int
+input_line: str
+a: list[int]
+s: float
+
+**Algorithm:**
+1. Read first input line and split into two integers n and m
+2. Read second input line and split into list of integers a
+3. Sort list a in descending order
+4. Calculate s = sum(a) / (4 * m)
+5. Check if element at index m-1 in list a >= s
+6. If true: print "Yes"
+7. Else: print "No"

@@ -1,0 +1,60 @@
+```plaintext
+1. Define class BIT:
+   - Method __init__(self, N: int):
+     - Initialize:
+       - self.size: int = N
+       - self.tree: List[int] = [0] * (N + 1)
+       - self.depth: int = n.bit_length()
+
+   - Method _bitsum(self, i: int) -> int:
+     - Initialize:
+       - ret: int = 0
+     - While i != 0:
+       - ret += self.tree[i]
+       - i ^= i & -i
+     - Return ret
+
+   - Method bitsum(self, l: int, r: Optional[int] = None) -> int:
+     - If r is None:
+       - Return self._bitsum(l)
+     - Else:
+       - Return self._bitsum(r) - self._bitsum(l)
+
+   - Method bitadd(self, i: int, x: int) -> None:
+     - i += 1
+     - While i <= self.size:
+       - self.tree[i] += x
+       - i += i & -i
+
+2. Read integer input n.
+3. Compute m = n * (n + 1) // 4.
+4. Read list of integers a.
+5. Initialize dictionary d.
+6. Compute _a = sorted(set(a + [0])).
+7. For each index i and value x in enumerate(_a):
+   - Set d[x] = i.
+8. Transform list a = [d[x] for x in a].
+
+9. Define function check(X: int) -> bool:
+   - Compute b = [0] + [(y >= X) * 2 - 1 for y in a].
+   - For i in range(n):
+     - b[i + 1] += b[i]
+   - Compute c = min(b).
+   - Transform b = [x - c for x in b].
+   - Initialize BIT instance bit with size max(b) + 2.
+   - Initialize ans: int = 0.
+   - For each x in b:
+     - ans += bit.bitsum(x + 1)
+     - bit.bitadd(x, 1)
+   - Return ans >= m
+
+10. Initialize list t with two elements: [len(_a), 0].
+11. While t[0] - t[1] > 1:
+    - Compute mid = (t[0] + t[1]) // 2.
+    - If check(mid):
+      - Set t[1] = mid
+    - Else:
+      - Set t[0] = mid
+
+12. Output _a[t[1]].
+```

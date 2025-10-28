@@ -1,0 +1,17 @@
+n: integer from input
+s: string from input
+ans: integer initialized to 0
+
+for i from 0 to n-1:
+    x: set of characters from s[0] to s[i]
+    y: set of characters from s[i+1] to s[n-1]
+    z: integer initialized to 0
+    
+    for each character w in x:
+        if w exists in y:
+            increment z by 1
+    
+    if z > ans:
+        set ans to z
+
+print ans

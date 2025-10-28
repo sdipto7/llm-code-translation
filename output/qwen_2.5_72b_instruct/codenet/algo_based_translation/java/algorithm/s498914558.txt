@@ -1,0 +1,29 @@
+Function signatures:
+- main(String[] args) : void
+
+Variable declarations and data types:
+- int n
+- int m
+- int[] po
+- Scanner sc
+
+Logic flow in execution order:
+1. Create a Scanner object to read input.
+2. Read an integer n from input.
+3. Read an integer m from input.
+4. Initialize an integer array po of size n.
+5. Loop from 0 to n-1:
+   a. Read an integer from input and store it in po[i].
+   b. Subtract the value of po[i] from m.
+6. Sort the array po.
+7. Print the result of n + m / po[0].
+
+Control structures:
+- for loop: from 0 to n-1 (inclusive)
+
+Input/output operations and data processing logic:
+- Input: three integers (n, m, and n integers for array po).
+- Output: a single integer (result of n + m / po[0]).
+
+Required libraries, modules, or dependencies:
+- java.util.*

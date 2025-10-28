@@ -1,0 +1,11 @@
+1. Initialize minimum value to maximum possible long integer value.
+2. Read four long integer numbers and store them in a list.
+3. Read three operation strings and store them in an array.
+4. Define a recursive utility function that takes a list of numbers, an array of operations, and an index as parameters.
+5. In the utility function, check if the index is equal to 3.
+6. If the index is 3, update the minimum value with the minimum of the current minimum and the first element of the list.
+7. If the index is not 3, iterate over all pairs of numbers in the list.
+8. For each pair, create a new list containing the numbers not in the pair and the result of applying the operation at the current index to the pair.
+9. Recursively call the utility function with the new list, the same operations array, and the index incremented by 1.
+10. Call the utility function with the initial list of numbers, the operations array, and an index of 0.
+11. Output the final minimum value.

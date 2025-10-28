@@ -1,0 +1,30 @@
+Algorithm:
+- Import java.io.* and java.util.*
+- Define public class codeforces_334_A
+- Define main method with String[] args parameter, return type void
+- Declare Scanner in initialized with System.in
+- Declare PrintWriter pw initialized with System.out
+- Declare int n initialized with in.nextInt()
+- Declare int square initialized with n * n
+- Declare ArrayList<Integer> odd initialized as new ArrayList<>()
+- Declare ArrayList<Integer> even initialized as new ArrayList<>()
+- For i from 1 to square (inclusive):
+  - If i % 2 == 0:
+    - Add i to even list
+  - Else:
+    - Add i to odd list
+- Declare int loop initialized with square / n
+- Declare int div initialized with loop / 2
+- Call debug method with div parameter
+- For i from 1 to loop (inclusive):
+  - For j from 0 to div-1 (inclusive):
+    - If i % 2 == 1:
+      - Print odd.remove(0) followed by space
+      - Print even.remove(even.size()-1) followed by space
+    - Else:
+      - Print even.remove(0) followed by space
+      - Print odd.remove(odd.size()-1) followed by space
+  - Print newline using pw.println()
+- Call pw.close()
+- Define static method debug with Object... obj parameter, return type void
+  - Print Arrays.deepToString(obj) to System.err

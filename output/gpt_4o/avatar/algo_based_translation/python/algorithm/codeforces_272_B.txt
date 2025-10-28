@@ -1,0 +1,31 @@
+```
+Function main() -> int:
+    Call input() to read and discard the first line of input
+    Call map(int, input().split()) to read and convert the second line into a sequence of integers
+    Return the result of calling nPairsWithCommonFX() with the sequence
+
+Function nPairsWithCommonFX(sequence: List[int]) -> int:
+    Declare storage as an empty dictionary with keys of type int and values of type list of int
+    Declare FXs as an empty list of int
+    For each value in sequence:
+        Set y to the result of calling f(value)
+        If y is not a key in storage:
+            Add y to storage with value as a single-item list
+            Append y to FXs
+        Else:
+            Append value to the list associated with key y in storage
+    Calculate totalPairs as the sum of len(storage[y]) * len(storage[y]) for each y in FXs
+    Calculate singlePairs as the sum of len(storage[y]) for each y in FXs
+    Return (totalPairs - singlePairs) // 2
+
+Function f(n: int) -> int:
+    Declare y as 1
+    While n is not equal to 1:
+        If n is odd (n % 2 != 0):
+            Increment y by 1
+        Perform integer division of n by 2
+    Return y
+
+If __name__ equals '__main__':
+    Call main() and print its result
+```

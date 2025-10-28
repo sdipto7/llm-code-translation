@@ -1,0 +1,55 @@
+- **Function Signatures:**
+  - `LI() -> List[int]`
+  - `LI_() -> List[int]`
+  - `LF() -> List[float]`
+  - `LS() -> List[str]`
+  - `I() -> int`
+  - `F() -> float`
+  - `S() -> str`
+  - `pf(s: str) -> None`
+  - `main() -> int`
+
+- **Variable Declarations and Data Types:**
+  - `sys.setrecursionlimit(10 ** 7)`: Sets recursion limit
+  - `inf: int = 10 ** 20`
+  - `eps: float = 1.0 / 10 ** 10`
+  - `mod: int = 10 ** 9 + 7`
+  - `dd: List[Tuple[int, int]] = [(-1, 0), (0, 1), (1, 0), (0, -1)]`
+  - `ddn: List[Tuple[int, int]] = [(-1, 0), (-1, 1), (0, 1), (1, 1), (1, 0), (1, -1), (0, -1), (-1, -1)]`
+  - `s: str`
+  - `k: int`
+  - `l: int = 0`
+  - `c: str`
+
+- **Logic Flow and Control Structures:**
+  1. Read string `s` from input.
+  2. Read integer `k` from input.
+  3. Initialize `l` to 0.
+  4. Loop through each character `c` in string `s`:
+     - If `c` is not equal to '1':
+       - Break the loop.
+     - Otherwise, increment `l` by 1.
+  5. If `l` is greater than or equal to `k`:
+     - Return 1.
+  6. Otherwise, return the character at index `l` in string `s`.
+
+- **Input/Output Operations and Data Processing Logic:**
+  - Read input values using functions `S()` and `I()`.
+  - Process the string to find the first non-'1' character after a sequence of '1's of length at least `k`.
+  - Output the result using `print()`.
+
+- **Libraries and Modules:**
+  - `math`
+  - `string`
+  - `itertools`
+  - `fractions`
+  - `heapq`
+  - `collections`
+  - `re`
+  - `array`
+  - `bisect`
+  - `sys`
+  - `random`
+  - `time`
+  - `copy`
+  - `functools`

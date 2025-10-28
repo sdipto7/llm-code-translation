@@ -1,0 +1,29 @@
+1. Read two integers, t and m, from the input.
+2. Initialize an array, memory, of size m with all elements set to 0.
+3. Initialize a variable, allocIdx, to 0.
+4. For t iterations:
+   4.1. Read a string from the input.
+   4.2. If the string is "alloc":
+      4.2.1. Read an integer, n, from the input.
+      4.2.2. Initialize a variable, len, to 0 and a flag, canAlloc, to false.
+      4.2.3. Iterate through the memory array:
+         4.2.3.1. If the current element is 0, increment len.
+         4.2.3.2. If the current element is not 0, reset len to 0.
+         4.2.3.3. If len equals n, set canAlloc to true and store the starting index of the free block.
+      4.2.4. If canAlloc is true:
+         4.2.4.1. Increment allocIdx.
+         4.2.4.2. Mark the allocated block in the memory array with allocIdx.
+         4.2.4.3. Output allocIdx.
+      4.2.5. If canAlloc is false, output "NULL".
+   4.3. If the string is "erase":
+      4.3.1. Read an integer, x, from the input.
+      4.3.2. If x is less than or equal to 0, output "ILLEGAL_ERASE_ARGUMENT".
+      4.3.3. Otherwise, iterate through the memory array and erase the block with the id x.
+      4.3.4. If no block with id x is found, output "ILLEGAL_ERASE_ARGUMENT".
+   4.4. If the string is "defragment":
+      4.4.1. Initialize a variable, d, to 0.
+      4.4.2. Iterate through the memory array:
+         4.4.2.1. If the current element is 0, increment d.
+         4.4.2.2. If the current element is not 0, shift it to the left by d positions.
+      4.4.3. Set the last d elements of the memory array to 0.
+   4.5. If the string is none of the above, output "h".

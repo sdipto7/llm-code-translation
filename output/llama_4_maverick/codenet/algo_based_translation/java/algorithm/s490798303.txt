@@ -1,0 +1,63 @@
+### Algorithm
+
+1. Define a function `main` with no parameters and no return type (`void`).
+   - Declare a `Scanner` object named `scanner`.
+   - Read two integers `n` and `k` from the input using `scanner`.
+
+2. Declare a `Map` named `map` with `Integer` as key type and `List` of `Integer` as value type.
+   - Initialize `map` with a `HashMap`.
+
+3. Iterate from `0` to `k-1` using a `for` loop.
+   - Read an integer `d` from the input using `scanner`.
+   - Iterate from `0` to `d-1` using a nested `for` loop.
+     - Read an integer `person` from the input using `scanner`.
+     - Check if `map` does not contain the key `person`.
+       - If true, put `person` into `map` with an empty `ArrayList` as its value.
+     - Add `d` to the list of `person` in `map`.
+
+4. Declare an integer variable `count` and initialize it to `0`.
+   - Iterate from `1` to `n` (inclusive) using a `for` loop.
+     - Check if `map` does not contain the key `i`.
+       - If true, increment `count` by `1`.
+
+5. Print the value of `count` to the output.
+
+### Required Libraries and Modules
+
+- `java.util.Scanner`
+- `java.util.Map`
+- `java.util.HashMap`
+- `java.util.List`
+- `java.util.ArrayList` 
+
+The required code is in Java. The exact details are as follows:
+
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int k = scanner.nextInt();
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        for (int i = 0; i < k; i++) {
+            int d = scanner.nextInt();
+            for (int j = 0; j < d; j++) {
+                int person = scanner.nextInt();
+                if (!map.containsKey(person)) {
+                    map.put(person, new ArrayList<>());
+                }
+                map.get(person).add(d);
+            }
+        }
+        int count = 0;
+        for (int i = 1; i <= n; i++) {
+            if (!map.containsKey(i)) {
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
+```

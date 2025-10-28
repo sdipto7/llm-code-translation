@@ -1,0 +1,45 @@
+1. Function `canTake`:
+   - Parameters: `xNeeded` (int), `xAvailable` (int), `yNeeded` (int), `yAvailable` (int)
+   - Return Type: boolean
+   - Logic:
+     - If `xNeeded` is greater than `xAvailable`, return false.
+     - If `yNeeded` is greater than `yAvailable`, return false.
+     - Otherwise, return true.
+
+2. Main Function:
+   - Input:
+     - Read a line from standard input using `BufferedReader`.
+     - Tokenize the input line using `StringTokenizer`.
+     - Parse first token as integer `x`.
+     - Parse second token as integer `y`.
+   - Variable Declarations:
+     - `x`: int
+     - `y`: int
+     - `turn`: int, initialized to 0
+   - Logic:
+     - Begin an infinite loop.
+     - Conditional: If `turn` is even:
+       - If `canTake(2, x, 2, y)` returns true:
+         - Decrement `x` by 2.
+         - Decrement `y` by 2.
+       - Else if `canTake(1, x, 12, y)` returns true:
+         - Decrement `x` by 1.
+         - Decrement `y` by 12.
+       - Else if `canTake(0, x, 22, y)` returns true:
+         - Decrement `y` by 22.
+       - Else:
+         - Output "Hanako" to standard output.
+         - Terminate program.
+     - Else (if `turn` is odd):
+       - If `canTake(0, x, 22, y)` returns true:
+         - Decrement `y` by 22.
+       - Else if `canTake(1, x, 12, y)` returns true:
+         - Decrement `x` by 1.
+         - Decrement `y` by 12.
+       - Else if `canTake(2, x, 2, y)` returns true:
+         - Decrement `x` by 2.
+         - Decrement `y` by 2.
+       - Else:
+         - Output "Ciel" to standard output.
+         - Terminate program.
+     - Increment `turn` by 1.

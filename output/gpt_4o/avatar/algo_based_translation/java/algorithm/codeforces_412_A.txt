@@ -1,0 +1,42 @@
+```
+Algorithm Codeforces_412_A
+  Input: None
+  Output: Printed sequence of moves and characters
+
+  Function main()
+    Declare sc as Scanner initialized with System.in
+    Declare n, k as integers
+    Set n and k to next integer inputs from sc
+    Declare a as String
+    Set a to next String input from sc
+
+    If k > n / 2 Then
+      While k < n Do
+        Output "RIGHT"
+        Increment k by 1
+      End While
+    Else
+      While k > 1 Do
+        Output "LEFT"
+        Decrement k by 1
+      End While
+    End If
+
+    If k == 1 Then
+      For i from 0 to length of a - 1 Do
+        Output "PRINT " concatenated with a[i]
+        If (i + 1) < length of a Then
+          Output "RIGHT"
+        End If
+      End For
+    Else
+      For i from length of a - 1 to 0 Do
+        Output "PRINT " concatenated with a[i]
+        If (i - 1) >= 0 Then
+          Output "LEFT"
+        End If
+      End For
+    End If
+  End Function
+End Algorithm
+```

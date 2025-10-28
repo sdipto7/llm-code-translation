@@ -1,0 +1,10 @@
+1. Read the number of elements n from input.
+2. Read n integers from input and store their counts in a counter w.
+3. Initialize a counter c to 0.
+4. For each unique integer i in w:
+   4.1. If i equals 0:
+      4.1.1. Increment c by w[i] * (w[i] - 1).
+   4.2. Else:
+      4.2.1. If -i exists in w:
+         4.2.1.1. Increment c by w[i] * w[-i].
+5. Print c divided by 2.

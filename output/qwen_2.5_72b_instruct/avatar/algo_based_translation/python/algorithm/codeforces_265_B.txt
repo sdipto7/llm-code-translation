@@ -1,0 +1,36 @@
+Function Signature: `main()`
+Parameter Types: None
+Return Type: None
+
+Variable Declarations and Data Types:
+- `n`: Integer
+- `l`: List of Integers
+- `ans`: Integer
+- `last`: Integer
+- `i`: Integer (loop variable)
+
+Logic Flow in Execution Order:
+1. Read an integer `n` from input.
+2. Initialize an empty list `l`.
+3. For `i` from 0 to `n-1`:
+   1. Read an integer from input.
+   2. Append the integer to list `l`.
+4. Set `ans` to `n - 1`.
+5. Set `last` to 0.
+6. For each element `i` in list `l`:
+   1. Add `abs(last - i) + 1` to `ans`.
+   2. Set `last` to `i`.
+7. Print `ans`.
+
+Control Structures:
+- For loop: `for i in range(n)`
+  - Condition: Iterates `n` times.
+- For loop: `for i in l`
+  - Condition: Iterates over each element in list `l`.
+
+Input/Output Operations and Data Processing Logic:
+- Input: Reads `n` and then `n` integers from standard input.
+- Output: Prints the final value of `ans`.
+
+Required Libraries, Modules, or Dependencies:
+- No external libraries or modules required.

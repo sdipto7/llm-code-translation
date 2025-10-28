@@ -1,0 +1,23 @@
+- Function: main() -> None
+- Variables:
+  - n: int
+  - p: List[int]
+  - p_copy: List[int]
+  - count: int
+- Input Operations:
+  - Read integer from input and assign to n
+  - Read line of input, split by spaces, convert each to integer, and assign list to p
+  - Assign a copy of p to p_copy
+- Data Processing and Logic:
+  - Sort list p in ascending order
+  - Initialize count to 0
+- Loop and Control Structures:
+  - For variable i from 0 to n-1:
+    - If p[i] is not equal to p_copy[i]:
+      - Increment count by 1
+- Conditional Output:
+  - If count is equal to 0 or count is equal to 2:
+    - Output "YES"
+  - Else:
+    - Output "NO"
+- No external libraries, modules, or dependencies are required

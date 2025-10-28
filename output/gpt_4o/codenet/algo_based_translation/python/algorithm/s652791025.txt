@@ -1,0 +1,26 @@
+- Function Signature:
+  - `determine_suffix(s: str) -> None`
+
+- Variable Declarations:
+  - `n: int`
+
+- Logic Flow:
+  1. Receive input `s` as a string.
+  2. Convert `s` to an integer `n` by extracting the last character of `s` and converting it to an integer.
+  3. Conditional Branching:
+     - If `n` is equal to 2, 4, 5, 7, or 9, output "hon".
+     - Else if `n` is equal to 0, 1, 6, or 8, output "pon".
+     - Otherwise, output "bon".
+
+- Control Structures:
+  - Conditional Statements:
+    - `if n == 2 or n == 4 or n == 5 or n == 7 or n == 9`
+    - `elif n == 0 or n == 1 or n == 6 or n == 8`
+    - `else`
+
+- Input/Output Operations:
+  - Input: Read a string from standard input representing a number.
+  - Output: Print a string to standard output based on the value of `n`.
+
+- Required Libraries, Modules, or Dependencies:
+  - None

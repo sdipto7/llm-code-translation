@@ -1,0 +1,47 @@
+```
+Function solve() : void
+    Declare position as long
+    Read position from input as long
+    Declare nrstSeqStartIndx as long, initialize to 1
+    While getValueAtIndex(nrstSeqStartIndx * 2) < position
+        Set nrstSeqStartIndx to nrstSeqStartIndx * 2
+    End While
+    While getValueAtIndex(nrstSeqStartIndx + 1) <= position
+        Increment nrstSeqStartIndx by 1
+    End While
+    Declare startIndex as long
+    Set startIndex to getValueAtIndex(nrstSeqStartIndx)
+    Output (position - startIndex) + 1 to output
+
+Function getValueAtIndex(index : long) : long
+    Return 1 + ((index - 1) * index / 2)
+
+Function main(args : String[]) : void
+    Call in.init(System.in)
+    Call solve()
+    Call out.close()
+
+Class in
+    Static Variable reader as BufferedReader
+    Static Variable tokenizer as StringTokenizer
+    Static Function init(input : InputStream) : void
+        Set reader to new BufferedReader(new InputStreamReader(input), BUFFERSIZE)
+        Set tokenizer to new StringTokenizer("")
+    Static Function next() : String
+        While tokenizer.hasMoreTokens() is false
+            Set tokenizer to new StringTokenizer(reader.readLine())
+        End While
+        Return tokenizer.nextToken()
+    Static Function nextInt() : int
+        Return Integer.parseInt(next())
+    Static Function nextDouble() : double
+        Return Double.parseDouble(next())
+    Static Function nextLong() : long
+        Return Long.parseLong(next())
+
+Import java.io.*
+Import java.util.*
+Declare BUFFERSIZE as int, initialize to 512000
+Declare sc as Scanner, initialize with (new BufferedReader(new InputStreamReader(System.in), BUFFERSIZE))
+Declare out as PrintWriter, initialize with (new BufferedOutputStream(System.out, BUFFERSIZE))
+```

@@ -1,0 +1,29 @@
+```
+Function: twos_in_factorial(n: int) -> int
+    Convert n to binary string
+    Count number of '1's in binary string
+    Subtract the count from n
+    Return the result
+
+Function: parity_of_nCr(n: int, i: int) -> bool
+    Call twos_in_factorial with n, store result in f_n
+    Call twos_in_factorial with n - i, store result in f_n_i
+    Call twos_in_factorial with i, store result in f_i
+    Calculate result as f_n - f_n_i - f_i > 0
+    Return result
+
+Main Execution:
+    Read integer input, assign to n
+    Read input, split by spaces, convert each to integer and subtract 1, store as list in nums
+    Declare boolean variable no_one, initialize to False
+    Check if 1 is not in nums
+        If True, divide each element in nums by 2 using integer division
+        Set no_one to True
+    Declare boolean variable is_odd, initialize to False
+    Enumerate over nums with index i and value num
+        Check if parity_of_nCr(n - 1, i) is False and num is odd
+            If True, toggle is_odd using XOR with 1
+    Check if is_odd is False
+        If True, print 0
+        Else, print 1 left-shifted by no_one
+```

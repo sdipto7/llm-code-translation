@@ -1,0 +1,59 @@
+**Algorithm:**
+
+**Functions:**
+- `main(String[] args)`
+  - Parameters: `String[] args`
+  - Return type: `void`
+- `modDiv(long a, long b, long mod)`
+  - Parameters: `long a`, `long b`, `long mod`
+  - Return type: `long`
+- `modInv(long x, long mod)`
+  - Parameters: `long x`, `long mod`
+  - Return type: `long`
+- `modPow(long b, long e, long mod)`
+  - Parameters: `long b`, `long e`, `long mod`
+  - Return type: `long`
+
+**Variables:**
+- `Scanner sc`: Initialized with `System.in`
+- `int N`: Read via `sc.nextInt()`
+- `int[] A`: Size `N`, populated via loop with `sc.nextInt()`
+- `BigInteger lcm`: Initialized to `BigInteger.ONE`
+- `long mod`: Assigned `1000000007`
+- `long modLcm`: Computed as `lcm.remainder(BigInteger.valueOf(mod)).longValue()`
+- `long ans`: Initialized to `0`, accumulates sum via loop
+
+**Logic Flow:**
+1. Read input: 
+   - `N = sc.nextInt()`
+   - Fill `A` with `N` integers via loop (0 ≤ i < N)
+   - Close scanner with `sc.close()`
+
+2. Compute LCM of all elements in `A`:
+   - For each `ai` in `A`:
+     - Convert `ai` to `BigInteger a`
+     - Update `lcm` as `(lcm / gcd(lcm, a)) * a` using `BigInteger` operations
+
+3. Compute `modLcm`:
+   - `modLcm = lcm mod 1e9+7` (converted to `long`)
+
+4. Calculate answer:
+   - For each `ai` in `A`:
+     - Accumulate `ans = (ans + (modLcm * inverse(ai) mod mod)) mod mod` via `modDiv`
+
+**Control Structures:**
+- **Loop** `for (int i = 0; i < N; i++)` to read `A`
+- **Enhanced for-loop** `for (int ai : A)` to compute LCM
+- **Enhanced for-loop** `for (int ai : A)` to accumulate `ans`
+- **Loop** in `modPow`: `for (long y = e; y != 0; y >>= 1)` with condition `(y & 1) == 1` for exponentiation
+
+**Operations:**
+- **Input:** `Scanner` reads integers from standard input
+- **Output:** `System.out.println(ans)`
+- **Modular arithmetic:** Division via multiplicative inverse, exponentiation by squaring
+- **BigInteger operations:** `gcd`, `divide`, `multiply`, `remainder`
+
+**Dependencies:**
+- `java.math.BigInteger`
+- `java.util.Scanner`
+- `java.util.function.*` (included but not explicitly used in logic)

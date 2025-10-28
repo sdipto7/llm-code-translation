@@ -1,0 +1,39 @@
+**Algorithm Specification**
+
+**Functions/Methods:**
+1. main()
+   - Parameters: None
+   - Return Type: void
+
+**Variables:**
+1. `n`: String (Input string from user)
+2. `a`: List[String] (Predefined list: ["10", "100", "1000", "10000", "100000"])
+3. `new`: Integer (Sum of digits in `n`)
+
+**Logic Flow:**
+1. Read `n` from standard input as a string.
+2. Declare `a` with values ["10", "100", "1000", "10000", "100000"].
+3. Declare `new` as the sum of integer conversions of all characters in `n`.
+4. Check if `n` exists in list `a`:
+   - **Condition**: `n in a`
+   - **True**: Print integer 10.
+   - **False**: Print the value of `new`.
+
+**Control Flow Structures:**
+1. If-Else:
+   - **Condition**: String `n` exists in list `a`.
+   - **True Block**: Output 10.
+   - **False Block**: Output sum of digits in `n`.
+
+**Input/Output Operations:**
+1. Read `n` via standard input (string type expected).
+2. Print integer 10 or `new` based on the conditional check.
+
+**Edge Case Handling:**
+- Explicit check for exact matches of `n` with predefined strings in `a`.
+
+**Error Handling:**
+- None explicitly defined (assumes valid numeric string input).
+
+**External Dependencies:**
+- Standard input/output libraries for reading and printing.

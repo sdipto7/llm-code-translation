@@ -1,0 +1,53 @@
+Algorithm:
+
+Function signatures with parameter and return types:
+- `main(String args[]): void`
+- `min(int[] arr, int n): int`
+- `dpc(int[][] arr, int i, int n, int row): int`
+- `dpx(int[][] arr, int n): int`
+
+Variable declarations and data types:
+- `Scanner sc: Scanner`
+- `int n: int`
+- `int[][] arr: int[][]`
+- `int ans: int`
+- `int op1: int`
+- `int op2: int`
+- `int res: int`
+- `int j: int`
+- `int k: int`
+- `int[][] dp: int[][]`
+
+Complete logic flow in execution order:
+1. Create `Scanner` object `sc` to read input.
+2. Read integer `n` from input.
+3. Initialize 2D array `arr` with dimensions `n x 3`.
+4. Loop over range `[0, n)`:
+   - Loop over range `[0, 3)`:
+     - Read integer and assign to `arr[i][j]`.
+5. Initialize `ans` to 0.
+6. Assign result of `dpx(arr, n)` to `ans`.
+7. Print `ans`.
+
+Control structures:
+- `for(int i =0 ; i<n; i++)`: Loop over range `[0, n)`.
+- `for(int j =0; j<3; j++)`: Loop over range `[0, 3)`.
+- `if(n==1)`: Condition to check if `n` equals 1.
+- `if(n==2)`: Condition to check if `n` equals 2.
+- `if(i==1)`: Condition to check if `i` equals 1.
+- `else if(i==0)`: Condition to check if `i` equals 0.
+- `else`: Default condition.
+- `for(int i=1; i<n; i++)`: Loop over range `[1, n)`.
+- `for(int in=0; in<3;in++)`: Loop over range `[0, 3)`.
+- `if(in==1)`: Condition to check if `in` equals 1.
+- `else if(in==0)`: Condition to check if `in` equals 0.
+- `else`: Default condition.
+
+Input/output operations and data processing logic:
+- Read integer `n` from standard input.
+- Read integers for `arr` from standard input.
+- Calculate `ans` using `dpx` function.
+- Print `ans` to standard output.
+
+Required libraries, modules, or dependencies:
+- `java.util.*`

@@ -1,0 +1,32 @@
+```plaintext
+Algorithm atcoder_ABC164_D:
+    Input: String S
+    Output: Long ans
+
+    Declare a Scanner object sc
+    Read input string S using sc.next()
+    Declare Integer N and set it to the length of S
+    Declare Integer array mod_arr of size N
+    Declare Integer array mod_cnt of size 2019, initialized to zero
+    Declare Integer radix and set it to 1
+
+    For Integer i from 0 to N - 1, do:
+        Declare Integer tmp
+        Set tmp to (S.charAt(N - 1 - i) - '0') * radix % 2019
+        If i is not equal to 0, then:
+            Set tmp to (tmp + mod_arr[i - 1]) % 2019
+        End If
+        Set mod_arr[i] to tmp
+        Increment mod_cnt[tmp] by 1
+        Set radix to radix * 10 % 2019
+    End For
+
+    Declare Long ans and set it to 0
+    Increment mod_cnt[0] by 1
+
+    For Integer i from 0 to 2018, do:
+        Increment ans by mod_cnt[i] * (mod_cnt[i] - 1) / 2
+    End For
+
+    Output ans
+```

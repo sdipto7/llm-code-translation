@@ -1,0 +1,27 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `Scanner sc`: object of Scanner class
+- `int x`: integer variable
+- `int y`: integer variable
+- `int z`: integer variable
+
+Complete logic flow in execution order:
+1. Create a Scanner object for reading input from standard input stream.
+2. Read an integer value from input and store it in variable `x`.
+3. Read another integer value from input and store it in variable `y`.
+4. Read yet another integer value from input and store it in variable `z`.
+5. Close the Scanner object to free up resources.
+6. Print the values of `z`, `x`, and `y` in that order, separated by spaces.
+
+Control structures:
+- No loops or conditionals present.
+
+Input/output operations and data processing logic:
+- Input: Three integer values read from the standard input stream using the Scanner object.
+- Processing: Store the input values in respective integer variables.
+- Output: Print the values of `z`, `x`, and `y` in the specified order.
+
+Required libraries, modules, or dependencies:
+- `java.util.*`: For using the Scanner class.

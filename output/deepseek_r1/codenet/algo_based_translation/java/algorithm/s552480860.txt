@@ -1,0 +1,28 @@
+- Function signature:  
+  `public static void main(String[] args)`  
+  Parameters: String array args  
+  Return type: void  
+
+- Variable declarations:  
+  int h1, int m1, int h2, int m2, int k, int t1, int t2  
+  Scanner sc = new Scanner(System.in)  
+
+- Execution order:  
+  1. Read h1 via sc.nextInt()  
+  2. Read m1 via sc.nextInt()  
+  3. Read h2 via sc.nextInt()  
+  4. Read m2 via sc.nextInt()  
+  5. Read k via sc.nextInt()  
+  6. Calculate t1 = h1 * 60 + m1  
+  7. Calculate t2 = h2 * 60 + m2  
+  8. Compute difference as (t2 - t1 - k)  
+  9. Print result using System.out.println()  
+
+- Control structures: None (linear execution without loops or conditionals)  
+
+- Input/Output:  
+  Input: Five space-separated integers from standard input  
+  Output: Single integer result printed to standard output  
+
+- Required dependencies:  
+  `java.util.Scanner` for input handling

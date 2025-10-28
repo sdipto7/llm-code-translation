@@ -1,0 +1,22 @@
+```plaintext
+Function Signature:
+    function decode_string(s: str) -> str
+
+Variable Declarations:
+    result: str
+    i: int
+
+Algorithm:
+1. Initialize result as an empty string.
+2. Initialize i to 0.
+3. Start a while loop that continues as long as i is less than the length of s.
+    a. Check if the character at position i in s is a dot ('.').
+        i. If true, append '0' to result.
+    b. Otherwise (if the character is not '.'):
+        i. Increment i by 1.
+        ii. Check if the character at the new position i in s is a dot ('.').
+            - If true, append '1' to result.
+            - Otherwise, append '2' to result.
+    c. Increment i by 1.
+4. After the loop ends, return the result string.
+```

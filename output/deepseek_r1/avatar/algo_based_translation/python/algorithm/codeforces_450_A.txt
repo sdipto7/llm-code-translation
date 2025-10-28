@@ -1,0 +1,45 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signature**  
+- **Function:** `main()`  
+- **Return Type:** `void`  
+
+**Variables**  
+- `n`: `int` (First input integer)  
+- `m`: `int` (Second input integer)  
+- `l`: `List[int]` (List of integers read from input)  
+- `l2`: `List[int]` (Processed list of ceiling values after division by `m`)  
+- `mx`: `int` (Maximum value in `l2`)  
+- `ind`: `int` (Index of last occurrence of `mx` in `l2`)  
+
+**Input/Output Operations**  
+1. Read `n` and `m` from standard input.  
+2. Read `n` space-separated integers into `l` from standard input.  
+3. Print `ind + 1` as the final result.  
+
+**Step-by-Step Logic Flow**  
+1. Parse `n` and `m` from input.  
+2. Parse `n` integers into `l`.  
+3. Initialize `l2` as an empty list.  
+4. For each `i` in `l`:  
+   4.1. If `i % m == 0`, append `i // m` to `l2`.  
+   4.2. Else, append `(i // m) + 1` to `l2`.  
+5. Compute `mx` as the maximum value in `l2`.  
+6. Iterate over `i` from `0` to `n-1`:  
+   6.1. If `l2[i] == mx`, set `ind = i`.  
+7. Output `ind + 1`.  
+
+**Control Flow Structures**  
+- **Loop** (Step 4): Iterates over all elements in `l` to populate `l2`.  
+  - **Condition** (Step 4.1): Check divisibility by `m` for rounding logic.  
+- **Loop** (Step 6): Iterates through `l2` indices to find the last occurrence of `mx`.  
+
+**Edge Case Handling**  
+- All elements in `l` produce identical values in `l2`: Last index is selected.  
+- Multiple elements in `l2` equal to `mx`: Final iteration overwrites `ind` to retain the last index.  
+
+**Error Handling**  
+- No explicit error handling for invalid input formats or incorrect list lengths.  
+
+**Dependencies**  
+- Relies on standard input/output functions. No external libraries or imports.

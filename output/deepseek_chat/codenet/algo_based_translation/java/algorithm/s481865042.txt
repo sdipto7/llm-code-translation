@@ -1,0 +1,19 @@
+1. Import Scanner from java.util
+2. Define public class Main with public static void main method taking String[] args parameter
+3. Declare Scanner sc initialized with System.in
+4. Declare String s initialized with sc.next()
+5. Declare long k initialized with sc.nextLong()
+6. Declare StringBuffer sb initialized with new StringBuffer()
+7. For loop: int i = 0; i < s.length(); i++
+   - Calculate: 26 - (s.charAt(i) - 'a')
+   - If calculated value <= k AND s.charAt(i) != 'a'
+     - Subtract calculated value from k
+     - Append 'a' to sb
+   - Else
+     - Append s.charAt(i) to sb
+8. If k > 0
+   - Declare char t initialized with sb.charAt(s.length()-1)
+   - Delete last character from sb
+   - Calculate: ('a' + (t - 'a' + k) % 26)
+   - Append resulting character to sb
+9. Print sb.toString() to console

@@ -1,0 +1,4 @@
+Initialize Scanner object to read from standard input
+Read integer input into variable r of type int
+Calculate result as 3 multiplied by r multiplied by r
+Print result to standard output

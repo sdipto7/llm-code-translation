@@ -1,0 +1,26 @@
+- Function signatures:  
+  Not applicable (script execution)  
+
+- Variable declarations:  
+  n: integer  
+  a: integer  
+  b: integer  
+
+- Logic flow:  
+  1. Read one line from standard input  
+  2. Split input into three string parts  
+  3. Convert each part to integer and assign to n, a, b  
+  4. Compute product of n and a  
+  5. Compare product value with b  
+  6. Select smaller value between product and b  
+  7. Print selected value  
+
+- Control structures:  
+  Conditional selection via min() function  
+
+- Input/Output operations:  
+  Input: Single line with three space-separated integers  
+  Output: Single integer result  
+
+- Dependencies:  
+  None (uses Python built-in functions)

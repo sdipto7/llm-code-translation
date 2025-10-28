@@ -1,0 +1,29 @@
+Function signature: `main() -> None`
+Variable declarations:
+- `N` of type `int`
+- `M` of type `int`
+- `A` of type `map` (which will be converted to `int` values)
+- `A_sum` of type `int`
+
+Logic flow:
+1. Read two integers `N` and `M` from input, separated by space.
+2. Read a sequence of integers `A` from input, separated by space.
+3. Calculate the sum of elements in `A`, store result in `A_sum`.
+4. If `N - A_sum` is greater than or equal to 0, print `N - A_sum`.
+5. Otherwise, print `-1`.
+
+Control structures:
+- Conditional statement to check if `N - A_sum` is greater than or equal to 0.
+
+Input/output operations:
+- Input: Two lines, first line contains two integers `N` and `M`, second line contains a sequence of integers `A`.
+- Output: A single integer, either `N - A_sum` if non-negative, or `-1`.
+
+Data processing logic:
+- Convert input strings to integers.
+- Use `map` to create an iterable of integers from the input string.
+- Sum the integers in `A` using `sum()`.
+- Compare the result of `N - A_sum` with 0 and print accordingly.
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required.

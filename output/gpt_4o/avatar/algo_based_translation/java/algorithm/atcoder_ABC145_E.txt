@@ -1,0 +1,35 @@
+```
+Import Libraries:
+- Import `java.util.Arrays`
+- Import `java.util.Comparator`
+- Import `java.util.Scanner`
+
+Function Signature:
+- `main(String[] args): void`
+
+Variable Declarations:
+- `sc: Scanner`
+- `N: int`
+- `T: int`
+- `AB: int[][]` (2D array of size `N x 2`)
+- `dp: int[][]` (2D array of size `(N + 1) x 6001`)
+
+Execution Order:
+1. Initialize `sc` as a new `Scanner` for input reading.
+2. Read `N` from input using `sc.nextInt()`.
+3. Read `T` from input using `sc.nextInt()`.
+4. Initialize `AB` as a 2D array of integers with dimensions `N x 2`.
+5. Loop from `i = 0` to `N - 1` (inclusive):
+   - Assign `AB[i][0]` by reading an integer using `sc.nextInt()` (time needed).
+   - Assign `AB[i][1]` by reading an integer using `sc.nextInt()` (value of dish).
+6. Sort `AB` by the first element of each sub-array using `Arrays.sort` with a comparator.
+7. Initialize `dp` as a 2D array of integers with dimensions `(N + 1) x 6001`.
+8. Loop from `i = 1` to `N` (inclusive):
+   - Loop from `timeAfterEat = 0` to `6000` (inclusive):
+     - Assign `dp[i][timeAfterEat]` as the maximum of `dp[i][timeAfterEat]` and `dp[i-1][timeAfterEat]`.
+     - Assign `time` with `AB[i-1][0]`.
+     - Assign `value` with `AB[i-1][1]`.
+     - If `0 <= timeAfterEat - time < T`:
+       - Assign `dp[i][timeAfterEat]` as the maximum of `dp[i][timeAfterEat]` and `dp[i-1][timeAfterEat-time] + value`.
+9. Print the maximum value in `dp[N]` using `Arrays.stream(dp[N]).max().getAsInt()`.
+```

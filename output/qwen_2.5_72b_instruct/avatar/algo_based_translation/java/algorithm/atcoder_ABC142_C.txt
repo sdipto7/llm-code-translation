@@ -1,0 +1,32 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `scanner: Scanner`
+- `N: int`
+- `idorder: Map<Integer, Integer>`
+- `i: int`
+- `A: int`
+
+Complete logic flow in execution order:
+- Create a `Scanner` object to read input.
+- Read an integer `N` from the input.
+- Initialize a `HashMap` called `idorder` to store mappings from integers to their order.
+- Loop from 1 to `N` (inclusive):
+  - Read an integer `A` from the input.
+  - Insert the mapping of `A` to the current loop index `i` in the `idorder` map.
+- Loop from 1 to `N` (inclusive):
+  - Retrieve the value from `idorder` map for the key equal to the current loop index `i`.
+  - Print the retrieved value followed by a space.
+
+Control structures:
+- For loop from 1 to `N` (inclusive) for reading and storing input values.
+- For loop from 1 to `N` (inclusive) for printing the order of integers.
+
+Input/output operations and data processing logic:
+- Read an integer `N` to determine the number of elements.
+- Read `N` integers and map each integer to its order of appearance.
+- Print the order of integers from 1 to `N` based on the stored mappings.
+
+Required libraries, modules, or dependencies:
+- `java.util.*` for using `Scanner`, `Map`, and `HashMap`.

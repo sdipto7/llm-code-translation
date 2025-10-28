@@ -1,0 +1,13 @@
+```plaintext
+1. Import the `math` module.
+2. Define input variables:
+   - `N` as a string from user input.
+   - `XS` as a list of integers obtained by splitting the next line of input and converting each split string to an integer.
+3. Initialize a variable `m` with an integer value of 9999999999.
+4. Start a loop with `i` ranging from 1 to 100 (inclusive):
+   a. Calculate `c` as the sum of squared differences between each element `x` in `XS` and `i`:
+      - For each `x` in `XS`, compute `(x - i) ** 2`.
+      - Sum up all these squared differences to get `c`.
+   b. If `m` is greater than `c`, update `m` to be equal to `c`.
+5. Print the value of `m`.
+```

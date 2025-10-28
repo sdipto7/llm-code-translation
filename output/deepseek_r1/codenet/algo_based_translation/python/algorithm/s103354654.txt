@@ -1,0 +1,33 @@
+Function Signature:  
+read_input() → (integer, integer, integer, integer, integer)  
+check_circle_position(W: integer, H: integer, x: integer, y: integer, r: integer) → string  
+
+Variables:  
+W: integer (rectangle width)  
+H: integer (rectangle height)  
+x: integer (circle center x-coordinate)  
+y: integer (circle center y-coordinate)  
+r: integer (circle radius)  
+
+Algorithm:  
+1. Receive input via input(). Split into 5 string tokens.  
+2. Convert tokens to integers W, H, x, y, r.  
+3. If (x ≥ r) ∧ (x ≤ (W - r)):  
+   a. If (y ≥ r) ∧ (y ≤ (H - r)):  
+      i. Return "Yes"  
+   b. Else:  
+      i. Return "No"  
+4. Else:  
+   a. Return "No"  
+
+Control Structures:  
+- Sequential input parsing  
+- Nested if-else conditions:  
+  Outer condition: x-range check (r ≤ x ≤ W-r)  
+  Inner condition: y-range check (r ≤ y ≤ H-r)  
+
+Input/Output:  
+- Input: Single line with 5 space-separated integers  
+- Output: "Yes" if circle fits completely in rectangle, else "No"  
+
+Dependencies: None

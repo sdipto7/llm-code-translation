@@ -1,0 +1,25 @@
+1. Import required libraries: java.util and java.io.
+2. Define a class Main with a public static method main that takes a String array as input and throws IOException.
+3. Declare variables: 
+   - BufferedReader br to read input from System.in.
+   - PrintWriter pw to write output to System.out.
+   - StringTokenizer s to tokenize input strings.
+   - Integer n to store the number of input elements.
+   - HashMap<Integer, Integer> hm to store frequency of input elements.
+   - Integer ans to store the final answer.
+   - Integer val to store the current input element being processed.
+   - Integer num to store the frequency of the current input element.
+4. Execute the following steps in order:
+   1. Initialize br with a BufferedReader reading from System.in.
+   2. Initialize pw with a PrintWriter writing to System.out.
+   3. Read the first line of input using br.readLine() and tokenize it using StringTokenizer.
+   4. Parse the first token as an integer and store it in n.
+   5. Read the second line of input, tokenize it, and iterate over the tokens.
+   6. For each token, parse it as an integer, and update its frequency in hm.
+   7. Initialize ans to 0.
+   8. Iterate over the keySet of hm.
+   9. For each key val, retrieve its frequency num from hm.
+   10. If num is greater than val, increment ans by num - val.
+   11. Else if num is less than val, increment ans by num.
+   12. Write ans to pw using pw.println(ans).
+   13. Close pw using pw.close().

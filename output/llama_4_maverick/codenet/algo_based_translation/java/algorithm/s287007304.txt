@@ -1,0 +1,20 @@
+1. Define a function `readLine()` that returns a `String` and has no parameters.
+   - Inside `readLine()`, create a `BufferedReader` object named `reader` using `new BufferedReader(new InputStreamReader(System.in))`.
+   - Use a try-catch block to handle exceptions.
+     - Inside the try block, return the result of `reader.readLine()`.
+     - Inside the catch block, return the exception message obtained by `e.getMessage()`.
+
+2. Define a function `main()` that returns `void` and takes a `String[]` parameter named `args`.
+   - Inside `main()`, call `readLine()` and store the result in a `String` variable named `line`.
+   - Split `line` into a `String[]` named `s` using `" "` as the delimiter.
+
+3. Parse the first element of `s` (`s[0]`) to an `int` named `a` using `Integer.parseInt()`.
+   - Parse the second element of `s` (`s[1]`) to an `int` named `b` using `Integer.parseInt()`.
+
+4. Check the condition `b % a == 0`.
+   - If the condition is true, print the sum of `a` and `b` (`a + b`) to the console.
+   - If the condition is false, print the difference between `b` and `a` (`b - a`) to the console.
+
+5. The program requires the following libraries:
+   - `java.io.BufferedReader`
+   - `java.io.InputStreamReader`

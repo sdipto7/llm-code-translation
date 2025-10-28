@@ -1,0 +1,49 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner in` (Scanner object)
+- `int n` (input size)
+- `int[] a` (array of size `n`)
+- `int[] b` (array of size `n` initialized to 0)
+- `int s = -1` (step counter)
+- `int tem = 1` (direction toggle: 1=forward, 0=backward)
+- `int q = 0` (processed elements counter)
+
+**Input/Output Operations:**
+- Read input via `Scanner` from `System.in`
+- Read `n` via `in.nextInt()`
+- Read `n` integers into array `a` via `in.nextInt()` in a loop
+- Print `s` via `System.out.println(s)`
+
+**Logic Flow:**
+1. While input exists (`in.hasNext()`):
+   - Read `n`
+   - Initialize `a` and `b` arrays of size `n`
+   - Initialize `s = -1`, `q = 0`, `tem = 1`
+   - Populate `a` with input values, initialize `b` to 0
+   - While `q < n`:
+     - Increment `s` by 1
+     - If `tem == 1` (forward pass):
+       - Iterate `i` from 0 to `n-1`:
+         - If `a[i] <= q` and `b[i] == 0`:
+           - Set `b[i] = 1`
+           - Increment `q` by 1
+       - Set `tem = 0`
+     - Else (backward pass):
+       - Iterate `i` from `n-1` to 0:
+         - If `a[i] <= q` and `b[i] == 0`:
+           - Set `b[i] = 1`
+           - Increment `q` by 1
+       - Set `tem = 1`
+   - Print `s`
+
+**Control Structures:**
+- Outer `while (in.hasNext())`
+- Inner `while (q != n)`
+- `if (tem == 1)` and `else` for direction selection
+- `for` loops for forward (`i = 0` to `n-1`) and backward (`i = n-1` to 0) passes
+- Conditional `if (a[i] <= q && b[i] == 0)` for element processing
+
+**Dependencies:**
+- `java.util.Scanner` (required for input handling)

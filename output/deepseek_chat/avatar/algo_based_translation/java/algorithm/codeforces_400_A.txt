@@ -1,0 +1,63 @@
+**Function Signatures:**
+- isSolution(int columnsCount, String x): boolean
+- main(String[] args): void
+
+**Variables:**
+- boolean[] allXs
+- BufferedReader br
+- PrintWriter pw
+- int t
+- int i
+- int possibleSolutions
+- StringBuilder solutions
+- String s
+
+**Logic Flow:**
+1. Import required Java I/O and utility classes
+2. Define class codeforces_400_A
+3. Define method isSolution:
+   - Create boolean array allXs of size columnsCount
+   - Fill allXs with true values
+   - For i from 0 to 11:
+     - If character at position i in x is not 'X'
+       - Set allXs[i % columnsCount] to false
+   - For i from 0 to columnsCount-1:
+     - If allXs[i] is true, return true
+   - Return false
+
+4. Define main method:
+   - Initialize BufferedReader with System.in
+   - Initialize PrintWriter with System.out
+   - Read integer t from input
+   - For i from 0 to t-1:
+     - Set possibleSolutions to 0
+     - Create new StringBuilder solutions
+     - Read string s from input
+     - If isSolution(12, s) returns true:
+       - Append " 1x12" to solutions
+       - Increment possibleSolutions
+     - If isSolution(6, s) returns true:
+       - Append " 2x6" to solutions
+       - Increment possibleSolutions
+     - If isSolution(4, s) returns true:
+       - Append " 3x4" to solutions
+       - Increment possibleSolutions
+     - If isSolution(3, s) returns true:
+       - Append " 4x3" to solutions
+       - Increment possibleSolutions
+     - If isSolution(2, s) returns true:
+       - Append " 6x2" to solutions
+       - Increment possibleSolutions
+     - If isSolution(1, s) returns true:
+       - Append " 12x1" to solutions
+       - Increment possibleSolutions
+     - Print possibleSolutions followed by solutions string
+   - Flush PrintWriter
+   - Close PrintWriter
+
+**Required Libraries:**
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader
+- java.io.PrintWriter
+- java.util.Arrays

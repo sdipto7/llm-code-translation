@@ -1,0 +1,57 @@
+**Functions:**
+- `def dfs(i: int) -> bool:`
+  - Parameters: `i` (int) - current vertex index
+  - Returns: bool indicating bipartite validity
+  - Logic:
+    1. Iterate through all edges (v, w) from vertex `i` in adjacency list V
+    2. If weight `w` is even:
+        a. If connected vertex `v` uncolored (-1): set color[v] = color[i]
+        b. If color[v] == color[i]: continue
+        c. If color[v] ≠ color[i]: return False
+    3. If weight `w` is odd:
+        a. If connected vertex `v` uncolored: set color[v] = 1 - color[i]
+        b. If color[v] == color[i]: return False
+        c. If color[v] ≠ color[i]: continue
+    4. Recursively call dfs(v)
+    5. Return True after processing all edges
+
+**Variables:**
+- `n: int` - number of vertices (input)
+- `V: dict[int, list[list[int]]]` - adjacency list mapping vertices to [neighbor, weight] pairs
+- `color: dict[int, int]` - vertex color states (-1=uncolored, 0/1=colors)
+
+**Main Logic Flow:**
+1. Read integer `n` from input
+2. Initialize empty adjacency list `V` and color dictionary
+3. Process n-1 input lines:
+    - For each edge (u, v, w):
+        - Add bidirectional entries [v,w] to V[u] and [u,w] to V[v]
+4. Initialize all color values to -1
+5. While True:
+    a. Find first uncolored vertex (i)
+    b. If none found: print all colors and exit
+    c. Set color[i] = 0
+    d. If dfs(i) returns False: print "No" and exit
+
+**Control Structures:**
+- Nested loops:
+    1. while True (main coloring loop)
+    2. for j in 1..n (find uncolored vertex)
+    3. for (v,w) in V.get(i, []) (edge traversal)
+- Recursive depth-first search
+- Conditional checks for:
+    - Weight parity (w%2 == 0)
+    - Color state comparisons
+    - Termination conditions
+
+**Input/Output:**
+- Input:
+    - First line: n
+    - Next n-1 lines: u v w (space-separated integers)
+- Output:
+    - If bipartition valid: n lines with colors 0/1
+    - If invalid: "No"
+
+**Dependencies:**
+- sys module for recursion limit adjustment:
+    - sys.setrecursionlimit(100000)

@@ -1,0 +1,43 @@
+```plaintext
+Function signature:
+- Input: None
+- Output: None
+
+Variable Declarations:
+- n: int
+- t: List of int with size n+1
+- a: List of int with size n+1
+- ans: List of int
+- cnt: List of int with size n+1
+- crt: List of int
+- x: int
+
+Execution Order:
+1. Read an integer input and assign it to `n`.
+2. Read a line of input, split it into integers, prepend 0, and assign to list `t`.
+3. Read another line of input, split it into integers, prepend 0, and assign to list `a`.
+4. Initialize `ans` as an empty list.
+5. Initialize `cnt` as a list of zeros with size n+1.
+6. For each element `i` in list `a`:
+   - Increment `cnt[i]` by 1.
+7. For each integer `i` from 1 to n (inclusive):
+   - If `t[i]` equals 1:
+     - Initialize `crt` as a list containing `i`.
+     - Set `x` to `a[i]`.
+     - While `cnt[x]` equals 1 perform the following:
+       - Append `x` to `crt`.
+       - Update `x` to `a[x]`.
+     - If the length of `crt` is greater than the length of `ans`:
+       - Copy `crt` to `ans`.
+8. Reverse the list `ans`.
+9. Print the length of `ans`.
+10. Print the elements of `ans` as a space-separated string.
+
+Input/Output Operations:
+- Input: Two lines of space-separated integers
+- Output: Two lines, first with the length of ans, second with elements of ans
+
+Dependencies:
+- Requires `input` for reading data from standard input.
+- Requires `print` and `map` for output and data transformation.
+```

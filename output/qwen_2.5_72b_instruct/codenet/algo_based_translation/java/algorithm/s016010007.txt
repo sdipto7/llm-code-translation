@@ -1,0 +1,61 @@
+Function Signatures:
+- `main(String[] args): void`
+- `run(): void`
+- `jadgeClockwise(Point2D p0, Point2D p1, Point2D p2): String`
+- `equals(double a, double b): boolean`
+- `sum(Point2D b): Point2D`
+- `diff(Point2D b): Point2D`
+- `multiple(double k): Point2D`
+- `norm(): double`
+- `abs(Point2D a): double`
+- `dot(Point2D a, Point2D b): double`
+- `cross(Point2D a, Point2D b): double`
+- `isOrthogonal(Point2D a, Point2D b): boolean`
+- `isOrthogonal(Point2D a1, Point2D a2, Point2D b1, Point2D b2): boolean`
+- `isParallel(Point2D a, Point2D b): boolean`
+- `isParallel(Point2D a1, Point2D a2, Point2D b1, Point2D b2): boolean`
+- `project(Point2D sp1, Point2D sp2, Point2D p): Point2D`
+- `reflect(Point2D sp1, Point2D sp2, Point2D p): Point2D`
+
+Variable Declarations and Data Types:
+- `Point2D p0, p1, p2`
+- `String[] line`
+- `int q`
+- `StringBuilder buf`
+- `Vector v`
+- `Point2D a`
+- `Point2D b`
+
+Logic Flow and Control Structures:
+1. Create `BufferedReader` to read input.
+2. Read first line, split into `line`.
+3. Initialize `p0`, `p1` using parsed integers from `line`.
+4. Read integer `q` from next line.
+5. Initialize `StringBuilder buf`.
+6. Loop `i` from 0 to `q-1`:
+   - Read next line, split into `line`.
+   - Initialize `p2` using parsed integers from `line`.
+   - Append result of `jadgeClockwise(p0, p1, p2)` to `buf` followed by newline.
+7. Print contents of `buf`.
+8. Catch `IOException` and print exception.
+
+Data Processing Logic:
+- `jadgeClockwise`:
+  - Initialize `Vector v`.
+  - Calculate `a` as difference between `p1` and `p0`.
+  - Calculate `b` as difference between `p2` and `p0`.
+  - If cross product of `a` and `b` is greater than `EPS`, return "COUNTER_CLOCKWISE".
+  - If cross product of `a` and `b` is less than `-EPS`, return "CLOCKWISE".
+  - If dot product of `a` and `b` is less than `-EPS`, return "ONLINE_BACK".
+  - If norm of `a` is less than norm of `b`, return "ONLINE_FRONT".
+  - Otherwise return "ON_SEGMENT".
+
+Input/Output Operations:
+- Input: Reads from standard input, expects lines of space-separated integers.
+- Output: Prints to standard output, outputs strings indicating orientation and position relative to points.
+
+Required Libraries/Modules/Dependencies:
+- `java.awt.geom.Point2D.Double`
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`

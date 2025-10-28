@@ -1,0 +1,11 @@
+1. Read two integers from the input.
+2. Initialize a counter to 0.
+3. If both integers are equal to 1, output the counter.
+4. Otherwise, enter a loop that continues as long as both integers are greater than or equal to 1.
+5. Inside the loop, check which integer is greater than or equal to the other.
+6. If the first integer is greater than or equal to the second, increment the second integer and decrement the first integer by 2.
+7. If the second integer is greater than the first, increment the first integer and decrement the second integer by 2.
+8. Increment the counter.
+9. Check if either integer has become less than or equal to 0 after the update.
+10. If either integer is less than or equal to 0, exit the loop and output the counter.
+11. Close the output stream.

@@ -1,0 +1,59 @@
+1. Import required libraries: 
+   - java.io
+   - java.util
+
+2. Define a class `Main` with the following properties and methods:
+   - Properties: 
+     - `INF`: a static long constant with value `Long.MAX_VALUE / 2`
+     - `MOD`: a static int constant with value `1_000_000_007`
+     - `SIZE`: a static int constant with value `1_000_000`
+     - `fac`, `inv`, `finv`: long arrays of size `SIZE`
+     - `sc`: an instance of `FastScanner`
+   - Methods:
+     - `main(String[] args)`: calls `new Main().solve()`
+     - `solve()`: the main problem-solving function
+     - `gcd(long a, long b)`: returns the greatest common divisor of `a` and `b`
+     - `lcm(long a, long b)`: returns the least common multiple of `a` and `b`
+     - `inv(long a)`: returns the modular inverse of `a` modulo `MOD`
+     - `pow(long a, long r)`: returns `a` raised to the power `r` modulo `MOD`
+     - `modFact(long n)`: returns `n` factorial modulo `MOD`
+     - `fact(long n)`: returns `n` factorial
+     - `initCOMB()`: initializes the `fac`, `inv`, and `finv` arrays for combinatorial calculations
+     - `modComb(int n, int r)`: returns `n` choose `r` modulo `MOD`
+     - `comb(long n, long r)`: returns `n` choose `r`
+     - `isPrime(long a)`: checks if `a` is a prime number
+     - `nextPermutation(String s)`: returns the next lexicographical permutation of `s`
+     - `nextPermutation(long[] a)`: generates the next lexicographical permutation of the array `a` in-place
+     - `find(long dest, long[] a, int s, int e)`: finds the index of the largest element less than or equal to `dest` in the subarray `a[s..e]`
+     - `elimination(int[][] a, int[] b)`: performs Gaussian elimination on the matrix `a` with the vector `b`
+
+3. Define a class `Pair` that implements `Comparable<Pair>` with the following properties and methods:
+   - Properties: 
+     - `a` and `b`: long fields
+   - Methods:
+     - `Pair(long i, long j)`: constructor that initializes `a` and `b`
+     - `compareTo(Pair p)`: compares two `Pair` objects based on their `b` values
+
+4. Define a class `FastScanner` with the following properties and methods:
+   - Properties: 
+     - `in`: an `InputStream` object
+     - `buffer`: a byte array of size `1024`
+     - `ptr` and `buflen`: int fields
+   - Methods:
+     - `hasNextByte()`: checks if there are more bytes to read from the input stream
+     - `readByte()`: reads the next byte from the input stream
+     - `isPrintableChar(int c)`: checks if a character is printable
+     - `hasNext()`: checks if there is more input to read
+     - `next()`: reads the next string from the input
+     - `nextLong()`: reads the next long integer from the input
+     - `nextInt()`: reads the next int integer from the input
+     - `nextDouble()`: reads the next double from the input
+
+The `solve()` function:
+1. Reads two integers `n` and `m` from the input using `sc.nextInt()`.
+2. Creates a `Map<Integer, Integer>` called `map` to store the given constraints.
+3. Reads `m` pairs of integers `s` and `c` from the input, and stores them in `map`. If a conflict is detected (i.e., the same `s` has different `c` values), prints `-1` and exits.
+4. Iterates over the numbers from `0` to `999`, converts each number to a string `s`, and checks if `s` satisfies the constraints in `map`. If `s` has the correct length `n` and satisfies all constraints, prints `s` and exits.
+5. If no valid number is found, prints `-1`. 
+
+The algorithm used in `solve()` is a brute-force search over possible numbers of length `n`, checking each number against the given constraints.

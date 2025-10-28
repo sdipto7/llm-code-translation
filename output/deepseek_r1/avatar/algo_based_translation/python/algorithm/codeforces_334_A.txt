@@ -1,0 +1,43 @@
+ALGORITHM SPECIFICATION:
+
+FUNCTIONS/METHODS:
+- Main procedure (no explicit function)
+
+VARIABLES:
+- n: integer (input value)
+- i: integer (initialized to 1)
+- j: integer (initialized to n²)
+
+LOGIC FLOW:
+1. Read integer input from standard input, assign to n
+2. Initialize variables:
+   i ← 1
+   j ← n × n
+3. Loop structure:
+   WHILE i < j
+   a. Output values:
+      PRINT i, j (space-separated)
+   b. Update variables:
+      i ← i + 1
+      j ← j - 1
+   Exit loop when i ≥ j
+
+CONTROL STRUCTURES:
+- Single while loop with condition (i < j)
+- Loop terminates when condition evaluates to false
+
+INPUT/OUTPUT:
+- Single integer input operation
+- Multiple output operations printing pairs of integers during loop iterations
+
+ERROR HANDLING:
+- No explicit error handling mechanisms
+- Assumes valid integer input
+
+EDGE CASES:
+- Handles n = 1 correctly (no output since i = j)
+- Handles even and odd n² values through symmetric increment/decrement
+
+DEPENDENCIES:
+- No external libraries or imports required
+- Uses standard input/output functions

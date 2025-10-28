@@ -1,0 +1,119 @@
+Algorithm:
+- Function: solve()
+  Parameters: None
+  Return: void
+  Steps:
+    1. Declare integer variable N, assign value from in.nextInt()
+    2. Declare integer array A of size N, assign values from in.nextIntArray(N)
+    3. Declare long variables ans = 0, sum = A[N-1]
+    4. For loop: i from N-2 down to 0 (inclusive), decrementing by 1
+        a. ans = (ans + ((sum * A[i]) % MOD)) % MOD
+        b. sum = (sum + A[i]) % MOD
+    5. Output ans using out.println(ans)
+
+- Function: main(String[] args)
+  Parameters: String array args
+  Return: void
+  Steps:
+    1. Create new Main instance
+    2. Call m() method on the instance
+
+- Function: m()
+  Parameters: None
+  Return: void
+  Steps:
+    1. Initialize in as FastScanner with System.in
+    2. Initialize out as PrintWriter with System.out
+    3. Call solve()
+    4. Call out.flush()
+    5. Call in.close()
+    6. Call out.close()
+
+- Class: FastScanner
+  Constructor: FastScanner(InputStream stream)
+    Initialize input as BufferedReader with InputStreamReader(stream)
+
+  Method: close()
+    Try to close input, catch IOException
+
+  Method: nextInt() → int
+    1. Call nextLong() → long nl
+    2. If nl outside int range, throw NumberFormatException
+    3. Return (int)nl
+
+  Method: nextLong() → long
+    1. Initialize sign = 1
+    2. Read byte b until digit or '-' or '+'
+    3. If b == '-': set sign = -1, read next b
+    4. If b == '+': read next b
+    5. Initialize ret = b - '0'
+    6. While reading digits: ret = ret * 10 + (b - '0')
+    7. Return ret * sign
+
+  Method: nextDouble() → double
+    1. Initialize sign = 1.0
+    2. Read byte b until digit or '-' or '+'
+    3. If b == '-': set sign = -1.0, read next b
+    4. If b == '+': read next b
+    5. Initialize ret = b - '0'
+    6. While reading digits: ret = ret * 10 + (b - '0')
+    7. If b == '.': 
+        a. Initialize div = 1
+        b. Read bytes while digits: ret = ret * 10 + (b - '0'), div *= 10
+    8. Return sign * ret / div
+
+  Method: nextChar() → char
+    1. Read bytes until non-whitespace
+    2. Return (char)b
+
+  Method: nextStr() → String
+    1. Initialize StringBuilder
+    2. Read bytes until non-whitespace
+    3. While non-whitespace: append character
+    4. Return string
+
+  Method: nextLine() → String
+    1. Initialize StringBuilder
+    2. Read bytes until newline or EOF
+    3. Return string
+
+  Method: nextIntArray(int n) → int[]
+    1. Initialize int[n]
+    2. For i=0 to n-1: array[i] = nextInt()
+    3. Return array
+
+  Method: nextIntArrayDec(int n) → int[]
+    1. Initialize int[n]
+    2. For i=0 to n-1: array[i] = nextInt() - 1
+    3. Return array
+
+  Method: nextIntArray1Index(int n) → int[]
+    1. Initialize int[n+1]
+    2. For i=0 to n-1: array[i+1] = nextInt()
+    3. Return array
+
+  Method: nextLongArray(int n) → long[]
+    1. Initialize long[n]
+    2. For i=0 to n-1: array[i] = nextLong()
+    3. Return array
+
+  Method: nextLongArrayDec(int n) → long[]
+    1. Initialize long[n]
+    2. For i=0 to n-1: array[i] = nextLong() - 1
+    3. Return array
+
+  Method: nextLongArray1Index(int n) → long[]
+    1. Initialize long[n+1]
+    2. For i=0 to n-1: array[i+1] = nextLong()
+    3. Return array
+
+  Method: nextDoubleArray(int n) → double[]
+    1. Initialize double[n]
+    2. For i=0 to n-1: array[i] = nextDouble()
+    3. Return array
+
+Required dependencies:
+- java.io.*
+- java.util.*
+- java.math.BigDecimal
+- MOD constant: 1000000007

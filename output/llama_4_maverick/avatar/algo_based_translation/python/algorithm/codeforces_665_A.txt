@@ -1,0 +1,10 @@
+1. Read input values for a, at, b, bt, t1, and t2
+2. Map input values to integers: a and at from first line, b and bt from second line, t1 and t2 from third line split by ':'
+3. Calculate st = t2 + (t1 - 5) * 60
+4. Calculate fin = st + at
+5. Initialize now = 0 and ans = 0
+6. While now is less than fin and now is less than 1140:
+    6.1. Check if now + bt is greater than st
+    6.2. If true, increment ans by 1
+    6.3. Increment now by b
+7. Print ans

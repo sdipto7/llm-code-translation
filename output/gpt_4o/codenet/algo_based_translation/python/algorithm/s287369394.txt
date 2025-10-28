@@ -1,0 +1,22 @@
+```
+Algorithm:
+
+1. Input an integer N from the user.
+2. Declare a list A of integers and populate it by taking input from the user, splitting the input string by spaces, and converting each element to an integer.
+3. Declare a list B of integers and populate it by taking input from the user, splitting the input string by spaces, and converting each element to an integer.
+4. Declare an integer variable `ans` and initialize it to 0.
+5. Loop from i = 0 to i < N:
+   a. Calculate the minimum of A[i] and B[i], store it in variable `d`.
+   b. Increment `ans` by `d`.
+   c. Subtract `d` from A[i].
+   d. Subtract `d` from B[i].
+   e. Calculate the minimum of A[i + 1] and B[i], store it in variable `d`.
+   f. Increment `ans` by `d`.
+   g. Subtract `d` from A[i + 1].
+   h. Subtract `d` from B[i].
+6. Output the value of `ans`.
+
+Dependencies:
+- Standard input/output functions
+- Basic arithmetic operations
+```

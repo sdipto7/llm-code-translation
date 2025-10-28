@@ -1,0 +1,12 @@
+1. Read an integer input from the user and store it in a variable `a` of type integer.
+2. Define a function `func` that takes one parameter `a` of type integer and returns no value (void).
+3. Inside `func`, declare an empty list `digits` to store the digits of `a`.
+4. Declare a temporary variable `temp` of type integer and initialize it with the value of `a`.
+5. Enter a while loop that continues as long as `temp` is not equal to 0.
+6. Inside the loop, append the remainder of `temp` divided by 10 to the `digits` list.
+7. Update `temp` by performing integer division of `temp` by 10.
+8. Once the loop exits, calculate the sum of all elements in the `digits` list and store it in a variable `result` of type integer.
+9. Check if `result` is equal to 1.
+10. If `result` is 1, print the string '10'.
+11. If `result` is not 1, print the value of `result`.
+12. Call the function `func` with the variable `a` as the argument.

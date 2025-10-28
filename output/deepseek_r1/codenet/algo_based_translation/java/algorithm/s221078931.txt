@@ -1,0 +1,44 @@
+- **Function Signatures**:
+  - `public static void main(String[] args) throws IOException`
+  - `IntegralRect(int h, int w)`
+  - `public int diagonal()`
+  - `public int compareTo(IntegralRect o)`
+
+- **Variable Declarations**:
+  - `BufferedReader br = new BufferedReader(new InputStreamReader(System.in))`
+  - `IntegralRect rects[] = new IntegralRect[40000]` (holds all h=1-200, w=1-200 combinations)
+  - `String[] tmpArray` (input line split into strings)
+  - `int h, w` (input values)
+  - `IntegralRect tmpRect` (input rectangle for comparison)
+  - `int diag` (unused computed diagonal)
+
+- **Logic Flow**:
+  1. Generate all possible IntegralRect instances with height and width from 1 to 200 (200×200 total).
+  2. Sort the rects array using IntegralRect's compareTo method.
+  3. Read input pairs (h, w) until (0,0):
+     a. For each pair, create tmpRect.
+     b. Iterate through sorted rects array:
+        - Find first entry where compareTo(tmpRect) > 0.
+        - Output that entry's height and width.
+        - Break loop after first match.
+
+- **Control Structures**:
+  - Nested for loops (i=0-199, j=0-199) to populate rects array.
+  - while(true) loop for input processing (break on h=0 and w=0).
+  - for loop iterating rects array to find first larger rectangle.
+
+- **Conditions**:
+  - if(h == 0 && w == 0) → break input loop.
+  - In compareTo: d1 == d2 → compare heights, else compare diagonals.
+  - In diagonal(): return MAX_VALUE if height >= width.
+
+- **Input/Output**:
+  - Input via BufferedReader reading lines from stdin.
+  - Split lines into h and w using whitespace.
+  - Output matching rectangle's height and width via System.out.println.
+
+- **Dependencies**:
+  - `java.io.BufferedReader`
+  - `java.io.InputStreamReader`
+  - `java.io.IOException`
+  - `java.util.Arrays` (for sorting)

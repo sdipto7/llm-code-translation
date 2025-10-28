@@ -1,0 +1,50 @@
+**Function Signature:**
+main(String[] args) -> void
+
+**Variables:**
+- Scanner scan (Scanner)
+- int i, j, x=0, y=0, k=0, dx, dy
+- boolean flag = true
+- String s
+- char[] ch (size 100)
+- int[][] co (2x101 array)
+- char input characters from string
+
+**Logic Flow:**
+1. Initialize Scanner for input
+2. Read input string s
+3. Convert s to char array ch
+4. Store initial coordinates (0,0) at co[0][0], co[1][0]
+5. Increment k to 1
+6. For each character in input string:
+   - 'L': decrement x
+   - 'R': increment x
+   - 'U': increment y
+   - 'D': decrement y
+   - Store current (x,y) at co[0][k], co[1][k]
+   - Increment k
+7. For i from 0 to k-4:
+   - For j from i+3 to k-1:
+     - Calculate dx = co[0][i] - co[0][j]
+     - Calculate dy = co[1][i] - co[1][j]
+     - Take absolute values of dx and dy
+     - If (dx ≤ 1 AND dy == 0) OR (dy ≤ 1 AND dx == 0):
+        - Set flag = false
+        - Break inner loop
+   - If flag is false, break outer loop
+8. If flag is true: print "OK"
+9. Else: print "BUG"
+
+**Control Structures:**
+- for loop: i from 0 to s.length()-1
+- switch-case: for movement directions
+- nested for loops: i from 0 to k-4, j from i+3 to k-1
+- if condition: (dx ≤ 1 ∧ dy == 0) ∨ (dy ≤ 1 ∧ dx == 0)
+- break statements in nested loops
+
+**Input/Output:**
+- Input: single string from stdin
+- Output: "OK" or "BUG" to stdout
+
+**Dependencies:**
+- java.util.Scanner

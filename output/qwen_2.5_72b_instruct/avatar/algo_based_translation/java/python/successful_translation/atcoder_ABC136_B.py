@@ -1,0 +1,32 @@
+
+import math
+
+def main():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    
+    N = int(data[0])
+    count = 0
+    temp = N
+    ans = 0
+    
+    while temp > 0:
+        temp //= 10
+        count += 1
+    
+    for i in range(1, count + 1):
+        if i == count:
+            if i % 2 == 1:
+                ans += (N - math.pow(10, i - 1) + 1)
+        else:
+            if i == 1:
+                ans += 9
+            elif i % 2 == 1:
+                ans += (math.pow(10, i) - math.pow(10, i - 1))
+    
+    print(int(ans))
+
+if __name__ == "__main__":
+    main()
+

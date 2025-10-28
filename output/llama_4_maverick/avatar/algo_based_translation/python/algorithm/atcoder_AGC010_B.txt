@@ -1,0 +1,13 @@
+1. Read integer n from input
+2. Read n integers from input into array a
+3. If sum of elements in a is not divisible by (n * (n + 1)) / 2
+   3.1. Print "NO"
+4. Else
+   4.1. Calculate k = sum of elements in a divided by (n * (n + 1)) / 2
+   4.2. Append first element of a to the end of a
+   4.3. Check if sum of ((k - current element + previous element) modulo n) for all consecutive pairs in a is not zero
+   4.4. Or check if count of ((k - current element + previous element) divided by n is non-negative) for all consecutive pairs in a is not equal to n
+   4.5. If either condition in 4.3 or 4.4 is true
+      4.5.1. Print "NO"
+   4.6. Else
+      4.6.1. Print "YES"

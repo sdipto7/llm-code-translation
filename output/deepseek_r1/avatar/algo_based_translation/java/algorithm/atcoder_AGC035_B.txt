@@ -1,0 +1,77 @@
+```python
+Algorithm:
+
+Function Signatures:
+- main(args: String[]) : void
+- dfs(crt: int, parent: int) : void
+
+Variables:
+- numNode: int (input)
+- numEdge: int (input)
+- connect: ArrayList<Integer>[] (size numNode)
+- visited: int[] (size numNode)
+- odd: bool[] (size numNode)
+- print: StringBuilder
+- sc: Scanner (System.in)
+
+Dependencies:
+- java.util.ArrayList
+- java.util.Scanner
+- java.util.StringBuilder
+
+Execution Flow (main):
+1. Read numNode and numEdge from input using Scanner
+2. If numEdge is odd:
+   - Print -1 and exit
+3. Initialize connect as array of ArrayList<Integer> with numNode elements
+4. For each i from 0 to numNode-1:
+   - connect[i] = new ArrayList<>()
+5. Read numEdge edges:
+   - For each edge:
+     - Read a, b (convert to 0-based index)
+     - Add b to connect[a]
+     - Add a to connect[b]
+6. Initialize visited array with 0s
+7. Initialize odd array with false
+8. Initialize print as new StringBuilder
+9. Call dfs(0, -1)
+10. Print contents of print
+
+Execution Flow (dfs):
+1. Set visited[crt] = 1
+2. Iterate through each child in connect[crt]:
+   a. If child == parent or visited[child] == 1:
+      - Skip to next child
+   b. Else if visited[child] == 2:
+      - Append (crt+1) + " " + (child+1) + "\n" to print
+      - Toggle odd[crt] (odd[crt] = !odd[crt])
+   c. Else:
+      - Recursively call dfs(child, crt)
+      - If odd[child] is True:
+          * Append (child+1) + " " + (crt+1) + "\n" to print
+          * Toggle odd[child]
+      - Else:
+          * Append (crt+1) + " " + (child+1) + "\n" to print
+          * Toggle odd[crt]
+3. Set visited[crt] = 2
+
+Control Structures:
+- if (numEdge % 2 != 0) in main
+- for loops for initializing connect and reading edges
+- for-each loop in dfs
+- Nested if-else blocks in dfs child iteration
+- Conditional checks for visited states (1, 2)
+- Recursive dfs calls
+
+Input/Output:
+- Read from standard input via Scanner
+- Output -1 immediately if edge count is odd
+- Build output string via StringBuilder during dfs traversal
+- Print final constructed string from StringBuilder
+
+Data Processing:
+- Graph represented as adjacency list (connect)
+- Track node visit states (0: unvisited, 1: visiting, 2: visited)
+- Track parity of edges per node using boolean array (odd)
+- Build edge direction outputs based on parity adjustments during traversal
+```

@@ -1,0 +1,34 @@
+Algorithm:
+- Function: main
+  - Parameters: String[] $ (command-line arguments)
+  - Return type: void
+- Variables:
+  - Scanner s: initialized with System.in
+  - int n: read from input using s.nextInt()
+  - int[] a: size n, populated using Arrays.setAll() with input values
+  - ArrayList<String> r: empty list to store operations
+  - int m: initialized to 0
+- Logic flow:
+  1. Read integer n from input
+  2. Create integer array a of size n
+  3. Read n integers from input and populate array a
+  4. Initialize empty string list r
+  5. Initialize m = 0
+  6. For i from 1 to n-1:
+     - If absolute value of a[m] is less than absolute value of a[i]:
+       - Set m = i
+  7. For i from 0 to n-1:
+     - If (a[m] >= 0 XOR a[i] >= 0) is true:
+       - Add string "(m+1) (i+1)" to list r
+  8. If a[m] >= 0:
+     - For i from 1 to n-1:
+       - Add string "i (i+1)" to list r
+  9. Else:
+     - For i from n down to 2:
+       - Add string "i (i-1)" to list r
+  10. Print size of list r
+  11. Print each string in list r on separate lines
+- Required dependencies:
+  - java.util.Scanner
+  - java.util.Arrays
+  - java.util.ArrayList

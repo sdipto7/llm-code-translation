@@ -1,0 +1,92 @@
+Here is the step-by-step algorithmic specification for the provided Python code:
+
+**Algorithm Specification**
+
+1. **Data Structures**:
+    - **Node**: Class representing a tree node with properties:
+        - `val`: Integer (initialized to None, set during edge processing)
+        - `color`: Boolean (initialized to None, set during traversal)
+        - `a`: List of adjacent nodes (each element is a list containing a Node reference and integer weight)
+
+2. **Input Handling**:
+    - Read integer `n` from standard input (number of nodes)
+    - Initialize `nodes` as a list of `n` Node instances
+    - Read `n-1` edges, each containing:
+        - `u`, `v` (1-based node indices)
+        - `w` (edge weight)
+    - For each edge:
+        - Update `val` of nodes at indices `u-1` and `v-1` to `u` and `v` respectively
+        - Add bidirectional adjacency entries with weights
+
+3. **Initialization**:
+    - Set `root` to the first node (index 0)
+    - Set `root.color` to True
+    - Initialize `nodeSet` as an empty set to track visited nodes
+
+4. **Core Algorithm (traverse function)**:
+    - **Parameters**:
+        - `node`: Current Node being processed
+        - `distance`: Cumulative distance from root (integer)
+    - **Steps**:
+        1. If node is in `nodeSet`, return immediately
+        2. Add node to `nodeSet`
+        3. For each adjacent node-weight pair:
+            a. Calculate new distance: `new_dist = distance + weight`
+            b. Set adjacent node's color based on parity:
+               - If `new_dist` is even: Same as root's color
+               - If `new_dist` is odd: Opposite of root's color
+            c. Recursively call `traverse` with adjacent node and `new_dist`
+
+5. **Execution Flow**:
+    - Initiate traversal with `root` and initial distance 0
+    - After traversal completes, output colors for all nodes (1 for True, 0 for False)
+
+6. **Control Structures**:
+    - **Main loop**: Iterates `n-1` times for edge input
+    - **Recursive DFS**: Processes nodes with depth-first approach
+    - **Conditional coloring**: Uses parity check (% 2) on cumulative distances
+
+7. **Edge Case Handling**:
+    - Implicitly handles single-node trees (n=1)
+    - Recursion depth increased to handle large trees (Python-specific)
+    - No explicit error checking (assumes valid input format)
+
+**Function Signatures**
+
+1. **Node Class**:
+```python
+class Node:
+    def __init__(self)
+```
+
+2. **Traversal Function**:
+```python
+def traverse(node: Node, distance: int) -> None
+```
+
+**Variable Definitions**
+
+| Variable    | Type                | Scope      | Purpose                          |
+|-------------|---------------------|------------|----------------------------------|
+| n           | int                 | Global     | Number of nodes                  |
+| nodes       | List[Node]          | Global     | All tree nodes                   |
+| root        | Node                | Global     | Root node (index 0)              |
+| nodeSet     | Set[Node]           | traverse() | Track visited nodes              |
+| u, v, w     | int                 | Edge loop  | Edge parameters during input     |
+| new_dist    | int                 | traverse() | Cumulative distance calculation  |
+
+**Control Flow**
+
+1. **Program Flow**:
+    - Read input → Build tree → Initialize root → DFS traversal → Output colors
+2. **Traversal Flow**:
+    - Base case: Node already visited → return
+    - Recursive case: Process node → update neighbors' colors → recurse
+
+**Input/Output**
+- Input: Tree structure via edge list format
+- Output: Binary color sequence (0/1 per node) to stdout
+
+**Dependencies**
+- Python's `sys` module for recursion depth adjustment
+- No external libraries required beyond standard I/O

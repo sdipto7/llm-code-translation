@@ -1,0 +1,24 @@
+Function Signature:
+- Function: `calculate_remaining_area(H: int, W: int, h: int, w: int) -> int`
+
+Variable Declarations and Data Types:
+- `H` and `W`: integers representing the dimensions of a larger rectangle.
+- `h` and `w`: integers representing the dimensions of a smaller rectangle that overlaps with the larger rectangle.
+- `ans`: integer representing the remaining area of the larger rectangle after accounting for the overlapping area.
+
+Logic Flow:
+1. Read two integers from input, representing the dimensions `H` (height) and `W` (width) of the larger rectangle.
+2. Read two more integers from input, representing the dimensions `h` (height) and `w` (width) of the smaller rectangle.
+3. Calculate the area of the larger rectangle as `H * W`.
+4. Calculate the area of the overlapping region: `h * W + w * H - h * w`.
+5. Subtract the area of the overlapping region from the area of the larger rectangle to get the remaining area.
+6. Assign the result to the variable `ans`.
+7. Output the value of `ans`.
+
+Input/Output Operations:
+- Input: Read four integers from standard input.
+- Output: Print the calculated remaining area as an integer.
+
+No control structures like loops or conditionals are used in this algorithm.
+
+No external libraries, modules, or dependencies are required.

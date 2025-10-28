@@ -1,0 +1,33 @@
+1. Function Signature:
+   - `main` function with no parameters and no return type
+
+2. Variable Declarations:
+   - `Scanner in` is of type `Scanner` (used for input)
+   - `PrintWriter out` is of type `PrintWriter` (used for output)
+   - `int n` is an integer (represents the number of rows in matrix A)
+   - `int m` is an integer (represents the number of columns in matrix A and length of vector b)
+   - `int[][] A` is a 2D integer array with dimensions `n x m` (matrix A)
+   - `int[] b` is a 1D integer array with length `m` (vector b)
+
+3. Input Operations:
+   - Read integers `n` and `m` from standard input
+   - Initialize 2D array `A` with dimensions `n x m`
+   - Initialize 1D array `b` with length `m`
+   - Fill matrix `A` with integers from input:
+     - For each `i` from 0 to `n-1`:
+       - For each `j` from 0 to `m-1`:
+         - Read integer and assign to `A[i][j]`
+   - Fill vector `b` with integers from input:
+     - For each `i` from 0 to `m-1`:
+       - Read integer and assign to `b[i]`
+
+4. Processing Logic:
+   - For each `i` from 0 to `n-1`:
+     - Initialize integer `c` to 0 (used to store the dot product result)
+     - For each `j` from 0 to `m-1`:
+       - Compute product `A[i][j] * b[j]` and add to `c`
+     - Output `c` using `PrintWriter out`
+
+5. Output Operations:
+   - Print each computed integer result `c` to standard output
+   - Use `out.flush()` to ensure all output is written

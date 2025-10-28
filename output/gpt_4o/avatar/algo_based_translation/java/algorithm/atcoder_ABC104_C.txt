@@ -1,0 +1,59 @@
+```
+Algorithm
+
+Function Signature:
+- Function: main()
+  - Parameters: None
+  - Return Type: void
+
+Variable Declarations:
+- Variable: INF, Type: int, Value: 100000
+- Variable: D, Type: int
+- Variable: G, Type: long
+- Array: p, Type: int[]
+- Array: c, Type: int[]
+- Variable: min, Type: int, Initial Value: INF
+- Variable: bit, Type: int
+- Variable: score, Type: int
+- Variable: solve_num, Type: int
+- Variable: i, Type: int
+- Variable: j, Type: int
+
+Dependencies:
+- Import java.util.Scanner
+
+Input Operations:
+- Initialize Scanner object for input
+- Read integer D from input
+- Read long G from input
+- Initialize arrays p and c with size D
+- Loop from i = 0 to D - 1
+  - Read integer p[i] from input
+  - Read integer c[i] from input
+
+Logic Flow:
+1. Initialize min to INF
+2. Loop over bit from 0 to (1 << D) - 1
+   - Initialize score to 0
+   - Initialize solve_num to 0
+   - Loop over i from 0 to D - 1
+     - If (bit & (1 << i)) is not equal to 0
+       - Increment score by 100 * (i + 1) * p[i] + c[i]
+       - Increment solve_num by p[i]
+   - If score is less than G
+     - Loop over i from D - 1 to 0
+       - If (bit & (1 << i)) is equal to 0
+         - Loop over j from 0 to p[i] - 2
+           - Increment score by 100 * (i + 1)
+           - Increment solve_num by 1
+           - If score is greater than or equal to G
+             - Break out of loop with label 'loop'
+   - If score is greater than or equal to G
+     - Set min to the minimum of min and solve_num
+
+Output Operation:
+- Print the value of min
+
+Finalize Operations:
+- Close the Scanner object
+```

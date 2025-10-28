@@ -1,0 +1,22 @@
+- Function signature: `def count_segments(N: int, S: str) -> int`
+- Variable declarations and data types:
+  - `N`: integer
+  - `S`: string
+  - `x`: integer
+  - `i`: integer (loop counter)
+- Logic flow:
+  1. Read an integer `N` from input.
+  2. Read a string `S` from input.
+  3. Initialize `x` to 1.
+  4. Iterate over the range from 0 to `N-2` (inclusive) using `i`.
+  5. For each `i`, check if `S[i]` is not equal to `S[i+1]`.
+  6. If the condition is true, increment `x` by 1.
+  7. After the loop, output the value of `x`.
+- Control structures:
+  - Loop: `for i in range(N-1)`, iterating from 0 to `N-2`
+  - Conditional: `if S[i] != S[i+1]`
+- Input/output operations:
+  - Read `N` from input using `int(input())`.
+  - Read `S` from input using `input()`.
+  - Output `x` using `print(x)`.
+- Required libraries/modules: None (built-in Python functionality)

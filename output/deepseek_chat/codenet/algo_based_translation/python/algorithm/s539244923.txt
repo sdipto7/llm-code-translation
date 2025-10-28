@@ -1,0 +1,9 @@
+```python
+def main():
+    n, k = map(int, input().split())
+    if k % n == 0:
+        result = n + k
+    else:
+        result = k - n
+    print(result)
+```

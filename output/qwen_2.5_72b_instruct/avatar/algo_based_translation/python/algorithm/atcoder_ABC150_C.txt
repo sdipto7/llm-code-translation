@@ -1,0 +1,31 @@
+- Function signatures with parameter and return types:
+  - main(): None
+
+- Variable declarations and data types:
+  - n: int
+  - orig: List[Tuple[int]]
+  - p: Tuple[int]
+  - q: Tuple[int]
+  - pn: int
+  - qn: int
+
+- Complete logic flow in execution order:
+  1. Read integer input from stdin and assign to n
+  2. Import itertools module
+  3. Generate all permutations of the list [1, 2, ..., n] using itertools.permutations and convert to list of tuples, assign to orig
+  4. Read a line of input from stdin, split by spaces, convert each element to int, and assign to p as a tuple
+  5. Read a line of input from stdin, split by spaces, convert each element to int, and assign to q as a tuple
+  6. Find the index of permutation p in orig and assign to pn
+  7. Find the index of permutation q in orig and assign to qn
+  8. Calculate the absolute difference between pn and qn, print the result
+
+- Control structures (loops, conditionals) with exact conditions:
+  - No explicit loops or conditionals
+
+- Input/output operations and data processing logic:
+  - Input operations: Two lines of space-separated integers read from stdin
+  - Data processing logic: Generate permutations, find indices of specific permutations, calculate absolute difference
+  - Output operations: Print the absolute difference between the indices of permutations p and q
+
+- Required libraries, modules, or dependencies:
+  - itertools

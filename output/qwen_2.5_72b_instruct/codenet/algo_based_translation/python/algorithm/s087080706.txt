@@ -1,0 +1,32 @@
+Function Signature: `find_min_partition_size(n: int, m: int, x: int, a: List[int]) -> int`
+
+Variable Declarations:
+- `n: int`
+- `m: int`
+- `x: int`
+- `a: List[int]`
+- `ans: int`
+- `i: int`
+
+Data Types:
+- `int` for `n`, `m`, `x`, `ans`, `i`
+- `List[int]` for `a`
+
+Logic Flow:
+1. Read integers `n`, `m`, and `x` from input and convert them to integers.
+2. Read a list of integers `a` from input and convert each element to an integer.
+3. Initialize `ans` to 0.
+4. Import the `bisect` module.
+5. Use `bisect.bisect(a, x)` to find the insertion point `i` for `x` in the sorted list `a`.
+6. Calculate the minimum of the lengths of the sublists `a[:i]` and `a[i:]`.
+7. Print the result.
+
+Control Structures:
+- No explicit loops or conditionals.
+
+Input/Output Operations:
+- Input: Read two lines from standard input. The first line contains three space-separated integers `n`, `m`, and `x`. The second line contains `n` space-separated integers.
+- Output: Print a single integer, which is the minimum size of the two partitions of the list `a` around the element `x`.
+
+Required Libraries/Modules:
+- `bisect` module from Python's standard library.

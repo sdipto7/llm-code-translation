@@ -1,0 +1,40 @@
+Algorithm:
+- Function: solve(int testNumber, InputReader in, PrintWriter out)
+  - Parameters: 
+    - testNumber: int
+    - in: InputReader (provides input reading via next())
+    - out: PrintWriter (provides output via println())
+  - Return type: void
+
+- Variables:
+  - S: String (input string)
+  - score: int (initialized to 0)
+  - i: int (loop index)
+  - my: char (alternates between 'g' and 'p' based on index parity)
+  - his: char (current character from input string)
+
+- Logic Flow:
+  1. Read input string S using in.next()
+  2. Initialize score to 0
+  3. For loop: i from 0 to S.length()-1
+     a. Set my = (i % 2 == 0) ? 'g' : 'p'
+     b. Set his = S.charAt(i)
+     c. If my != his:
+        i. If my == 'p', increment score by 1
+        ii. Else, decrement score by 1
+  4. Output final score via out.println(score)
+
+- Control Structures:
+  - For loop: for (i=0; i < S.length(); i++)
+  - Conditional 1: if (my != his)
+  - Ternary operator 1: my assignment based on i parity
+  - Ternary operator 2: score adjustment decision
+
+- Input/Output Operations:
+  - Input: Read entire string S through InputReader
+  - Output: Print integer score via PrintWriter
+
+- Dependencies:
+  - Java IO classes: InputStream, OutputStream, PrintWriter, BufferedReader, InputStreamReader
+  - StringTokenizer for input parsing (handled internally in InputReader)
+  - No external libraries beyond standard Java SE

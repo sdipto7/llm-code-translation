@@ -1,0 +1,9 @@
+1. Read the number of elements N and a value K from the input.
+2. Read N integers into an array A, adjusting each value by subtracting 1.
+3. Initialize an empty set to track used indices and two arrays, idx and pos, of size N.
+4. Initialize variables next to 0 and cur to 0.
+5. While next is not in the used set, add next to the set, store cur in idx at index next, store next in pos at index cur, update next to the value at index next in A, and increment cur.
+6. Calculate the length of the cycle 'a' as cur minus the value stored in idx at index next.
+7. Calculate 'b' as the value stored in idx at index next.
+8. If 'b' is greater than K, set ans to K; otherwise, calculate ans using the formula ((10000 * a + K - b) mod a) + b.
+9. Print the value at index ans in pos plus 1.

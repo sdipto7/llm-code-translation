@@ -1,0 +1,12 @@
+Initialize Scanner object for standard input
+Begin infinite loop:
+    Read integer input into variable 'a'
+    Read string input into variable 'op'
+    Read integer input into variable 'b'
+    If 'op' equals "?" then break loop
+    Else if 'op' equals "+" then print result of a + b
+    Else if 'op' equals "-" then print result of a - b
+    Else if 'op' equals "*" then print result of a * b
+    Else if 'op' equals "/" then print result of integer division a / b
+End loop
+Close Scanner

@@ -1,0 +1,7 @@
+- Import the `Scanner` class from the `java.util` package.
+- Define the `Main` class.
+- Define the `main` function with no parameters and a void return type.
+  - Declare a variable `in` of type `Scanner` and initialize it with `new Scanner(System.in)`.
+  - Declare a variable `a` of type `String` and set its value to `in.next()`.
+  - Declare a variable `b` of type `String` and set its value to `in.next()`.
+  - Output the result of concatenating `b` and `a` using `System.out.println()`.

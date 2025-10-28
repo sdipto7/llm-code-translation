@@ -1,0 +1,18 @@
+1. INPUT x, t, a, b, da, db from user input split by spaces
+2. CONVERT x, t, a, b, da, db to integers
+3. IF x equals 0 THEN
+   4. PRINT "YES"
+   5. EXIT with "Result Found"
+6. CALCULATE a_time as minimum of (a divided by da) and (t - 1)
+7. CALCULATE b_time as minimum of (b divided by db) and (t - 1)
+8. FOR i from 0 to a_time
+   9. FOR j from 0 to b_time
+      10. IF (a - da * i) equals x OR (b - db * j) equals x THEN
+         11. PRINT "YES"
+         12. EXIT with "Result Found"
+      13. IF (a - da * i) + (b - db * j) equals x THEN
+         14. PRINT "YES"
+         15. EXIT with "Result Found"
+16. EXIT with "Result Not Found"
+17. IF result is "Result Not Found" THEN
+   18. PRINT "NO"

@@ -1,0 +1,63 @@
+1. **Function Signature: main**  
+   - Parameters: `String[] args`
+   - Return Type: `void`
+
+2. **Variable Declarations:**
+   - `Scanner scanner`
+   - `int N`
+   - `long i`
+   - `int c`
+   - `String s`
+   - `StringBuilder sb`
+   - `boolean f`
+   - `char a`
+   - `StringBuffer sb2`
+
+3. **Logic Flow:**
+   - Initialize `scanner` as a new instance of `Scanner` with `System.in`.
+   - Read an integer `N` using the function `gi()`.
+   - Initialize `i` to 357 and `c` to 0.
+   - Begin a `while` loop: `while (i <= N)`
+     - Convert `i` to a string and assign to `s`.
+     - Check if `s` contains "3", "5", and "7".
+       - If true, increment `c`.
+     - Initialize `sb` as a new instance of `StringBuilder`.
+     - Set `f` to `false`.
+     - Begin a `for` loop: `for (int j = 0; j < s.length(); j++)`
+       - Assign `a` the character at position `s.length() - 1 - j` in `s`.
+       - If `f` is true, append `a` to `sb`.
+       - Else:
+         - If `a` is '3', append '5' to `sb` and set `f` to `true`.
+         - Else if `a` is '5', append '7' to `sb` and set `f` to `true`.
+         - Else, append '3' to `sb`.
+     - If `f` is false, append '3' to `sb`.
+     - Initialize `sb2` as a new instance of `StringBuffer` with `sb`.
+     - Reverse `sb2`, convert to a string, parse as a long, and assign to `i`.
+   - Output the value of `c` using `System.out.println`.
+
+4. **Function Signature: gs**
+   - Parameters: none
+   - Return Type: `String`
+   - Logic: Return the next token from `scanner`.
+
+5. **Function Signature: gi**
+   - Parameters: none
+   - Return Type: `int`
+   - Logic: Return the next integer from `scanner` by parsing the result of `gs()`.
+
+6. **Function Signature: gl**
+   - Parameters: none
+   - Return Type: `long`
+   - Logic: Return the next long from `scanner` by parsing the result of `gs()`.
+
+7. **Function Signature: gd**
+   - Parameters: none
+   - Return Type: `double`
+   - Logic: Return the next double from `scanner` by parsing the result of `gs()`.
+
+8. **Input/Output Operations:**
+   - Input occurs via `scanner` using `gi()` method to read an integer `N`.
+   - Output occurs via `System.out.println` to print the integer `c`.
+
+9. **Dependencies:**
+   - `java.util.Scanner` for input operations.

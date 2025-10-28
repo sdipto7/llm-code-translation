@@ -1,0 +1,10 @@
+1. Define a function `solve` with no parameters and return type `None`.
+2. Declare variables `n`, `m`, `x` of type `int`.
+3. Read input line, split it into three parts, convert each part to `int`, and assign to `n`, `m`, `x` respectively.
+4. Declare a list `a` of type `list[int]`.
+5. Read input line, split it into parts, convert each part to `int`, and store in `a`.
+6. Declare variable `ans` of type `int` and initialize to `0`.
+7. Import `bisect` function from `bisect` module.
+8. Declare variable `i` of type `int`.
+9. Assign to `i` the result of `bisect(a, x)`.
+10. Print the minimum of the lengths of two slices of `a`: `a[:i]` and `a[i:]`.

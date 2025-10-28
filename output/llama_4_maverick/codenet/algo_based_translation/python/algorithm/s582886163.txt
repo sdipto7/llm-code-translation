@@ -1,0 +1,24 @@
+1. Define a function `calculate_minimum_steps` with parameter `N` of type integer and return type integer.
+2. Declare a variable `capacity_list` of type list of integers.
+3. Read an integer input from the user and store it in `N`.
+4. Read 5 integer inputs from the user and store them in `capacity_list`.
+5. Sort `capacity_list` in ascending order.
+6. Declare a variable `bottle_neck` of type integer and assign it the value of the first element of `capacity_list`.
+7. Calculate the expression `(N + bottle_neck - 1) / bottle_neck`, round down to the nearest integer using integer division or equivalent, and store the result in a variable.
+8. Calculate `4 +` the result from step 7.
+9. Print the result from step 8.
+10. Return the result from step 8 from the function `calculate_minimum_steps`. 
+
+Alternatively, in a more structured representation:
+- Function: `calculate_minimum_steps(N: int) -> int`
+- Variables: `N: int`, `capacity_list: list[int]`, `bottle_neck: int`
+- Execution Flow:
+  1. Read `N`.
+  2. Initialize `capacity_list`.
+  3. Read 5 values into `capacity_list`.
+  4. Sort `capacity_list`.
+  5. `bottle_neck = capacity_list[0]`.
+  6. Calculate `steps = (N + bottle_neck - 1) // bottle_neck`.
+  7. `result = 4 + steps`.
+  8. Print `result`.
+  9. Return `result`.

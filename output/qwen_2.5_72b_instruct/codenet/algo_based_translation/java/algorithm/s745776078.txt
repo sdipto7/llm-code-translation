@@ -1,0 +1,47 @@
+Function Signatures:
+- `main(String[] args)`: void
+
+Variable Declarations and Data Types:
+- `in`: Scanner
+- `out`: PrintWriter
+- `n`: int
+- `m`: int
+- `A`: int[][]
+- `b`: int[]
+- `i`: int
+- `j`: int
+- `c`: int
+
+Logic Flow:
+1. Initialize `in` as a Scanner object for input.
+2. Initialize `out` as a PrintWriter object for output.
+3. Read `n` as an integer.
+4. Read `m` as an integer.
+5. Declare a 2D array `A` of size `n` x `m`.
+6. Declare a 1D array `b` of size `m`.
+7. For `i` from 0 to `n-1`:
+   1. For `j` from 0 to `m-1`:
+      1. Read an integer and assign it to `A[i][j]`.
+8. For `i` from 0 to `m-1`:
+   1. Read an integer and assign it to `b[i]`.
+9. For `i` from 0 to `n-1`:
+   1. Initialize `c` to 0.
+   2. For `j` from 0 to `m-1`:
+      1. Multiply `A[i][j]` by `b[j]`.
+      2. Add the result to `c`.
+   3. Print `c` followed by a newline.
+10. Flush `out` to ensure all output is written.
+
+Input/Output Operations:
+- Read integers from standard input.
+- Print integers to standard output.
+
+Data Processing Logic:
+- Reads a matrix `A` of size `n` x `m`.
+- Reads a vector `b` of size `m`.
+- Computes the dot product of each row of `A` with `b`.
+- Outputs the result of each dot product.
+
+Libraries:
+- `java.util.*` for `Scanner` and `PrintWriter`
+- `java.io.*` for I/O operations

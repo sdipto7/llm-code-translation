@@ -1,0 +1,43 @@
+- **Function Signature**:  
+  `process_members() -> None`  
+  *(Note: Reads input from stdin, processes data, writes to stdout)*  
+
+- **Variables**:  
+  - `memTime: int` (number of members)  
+  - `memLate: List[int]` (list of member lateness values)  
+  - `colorList: List[int]` (stores unique color groups for lateness < 3200)  
+  - `highLate: int` (count of members with lateness ≥ 3200)  
+  - `member: int` (temporary variable for current member's lateness)  
+  - `maxColor: int` (maximum possible distinct colors)  
+  - `minColor: int` (minimum possible distinct colors)  
+
+- **Logic Flow**:  
+  1. Read `memTime` from stdin as integer.  
+  2. Read `memLate` from stdin as space-separated string, convert to list of integers.  
+  3. Initialize `colorList` as empty list and `highLate` to 0.  
+  4. Iterate over each member index in `range(memTime)`:  
+     a. Get `member = memLate[index]`  
+     b. If `member // 400 ≥ 8`:  
+        - Increment `highLate` by 1  
+     c. Else:  
+        - If `(member // 400) not in colorList`:  
+           - Append `member // 400` to `colorList`  
+  5. Calculate `maxColor = len(colorList) + highLate`  
+  6. Calculate `minColor = len(colorList)`  
+  7. If `minColor == 0` (all members in highLate group):  
+     - Set `minColor = 1`  
+  8. Print `minColor` and `maxColor` as space-separated string.  
+
+- **Control Structures**:  
+  - `for color in range(memTime):` loop over all members  
+  - `if member // 400 >= 8:` for high-late classification  
+  - `elif ((member // 400) in colorList) == False:` for unique color tracking  
+
+- **Input/Output**:  
+  - Inputs: Two lines from stdin  
+    - First line: integer `memTime`  
+    - Second line: space-separated integers for `memLate`  
+  - Output: Single line with `minColor` and `maxColor` as space-separated values  
+
+- **Dependencies**:  
+  - No external libraries/modules required (uses built-in Python functions).

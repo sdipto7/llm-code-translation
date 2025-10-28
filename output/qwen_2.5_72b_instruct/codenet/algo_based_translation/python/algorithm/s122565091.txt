@@ -1,0 +1,34 @@
+Function Signature: `main()`
+
+Variable Declarations:
+- `a: int`
+- `v: int`
+- `b: int`
+- `w: int`
+- `t: int`
+
+Logic Flow:
+1. Read input values for `a` and `v` as integers.
+2. Read input values for `b` and `w` as integers.
+3. Read input value for `t` as an integer.
+4. If `a` is equal to `b`:
+   - Print 'YES'
+5. Else if `v` is less than or equal to `w`:
+   - Print 'NO'
+6. Else:
+   - If `t` is less than the absolute difference between `a` and `b` divided by the difference between `v` and `w`:
+     - Print 'NO'
+   - Else:
+     - Print 'YES'
+
+Input/Output Operations:
+- Input: Three lines of integers.
+- Output: A single string either 'YES' or 'NO'.
+
+Data Processing Logic:
+- Compare `a` and `b` for equality.
+- Compare `v` and `w` to determine relative speeds.
+- Calculate the time required for the faster entity to catch up to the slower one and compare it to `t`.
+
+Required Libraries/Modules/Dependencies:
+- None

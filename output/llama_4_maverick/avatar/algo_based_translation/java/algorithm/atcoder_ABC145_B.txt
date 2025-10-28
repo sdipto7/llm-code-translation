@@ -1,0 +1,7 @@
+1. Read an integer n from the input.
+2. Read a string str of length n from the input.
+3. Initialize an empty string a.
+4. Iterate from 0 to n/2 - 1 and append each character at the current index of str to a.
+5. Check if str is equal to the concatenation of a with itself.
+6. If they are equal, output "Yes".
+7. Otherwise, output "No".

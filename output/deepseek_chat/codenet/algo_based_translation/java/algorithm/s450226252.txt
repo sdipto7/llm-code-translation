@@ -1,0 +1,14 @@
+Algorithm:
+- Import: Scanner from java.util
+- Function: main(String[] args)
+  - Declare Scanner stdIn = new Scanner(System.in)
+  - Declare short r = stdIn.nextShort()
+  - If r < 1200:
+    - Print "ABC"
+    - Return from function
+  - Else if r < 2800:
+    - Print "ARC"
+    - Return from function
+  - Else:
+    - Print "AGC"
+  - End function

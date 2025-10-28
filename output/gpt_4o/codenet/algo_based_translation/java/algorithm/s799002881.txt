@@ -1,0 +1,33 @@
+```plaintext
+Function Signature: main() -> None
+
+1. Import Libraries:
+   - import java.io.BufferedReader
+   - import java.io.IOException
+   - import java.io.InputStreamReader
+   - import java.nio.charset.StandardCharsets
+
+2. Variable Declarations:
+   - reader: InputStreamReader (initialized with System.in and StandardCharsets.UTF_8)
+   - in: BufferedReader (initialized with reader)
+   - str: String[] (used for storing split input lines)
+   - n: int (number of points to process)
+   - d: double (radius of the circle, parsed from input)
+   - cnt: int (counter for points inside or on the circle, initialized to 0)
+
+3. Input Operations:
+   - Read a line from standard input using BufferedReader and split it by spaces to populate the str array.
+   - Parse the first element of str as an integer and assign it to n.
+   - Parse the second element of str as an integer, convert it to double, and assign it to d.
+
+4. Loop Through Points:
+   - For i from 0 to n-1 (inclusive):
+     a. Read a line from standard input using BufferedReader and split it by spaces to populate the str array.
+     b. Parse the first element of str as an integer, convert it to double, and assign it to x.
+     c. Parse the second element of str as an integer, convert it to double, and assign it to y.
+     d. Calculate the distance from the origin to the point (x, y) using the formula: Math.sqrt(x*x + y*y).
+     e. If the calculated distance is less than or equal to d, increment cnt by 1.
+
+5. Output Operation:
+   - Print the value of cnt to standard output.
+```

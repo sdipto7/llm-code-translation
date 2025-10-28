@@ -1,0 +1,39 @@
+**Function Signature:**
+public static void main(String[] args) throws Exception
+
+**Variables:**
+- Scanner sc (Scanner)
+- String S (initialized via sc.next())
+- String begin
+- String end
+- String answer
+- int i (loop counter from 0 to S.length()-1)
+- int j (loop counter from 0 to S.length()-1)
+
+**Libraries/Dependencies:**
+java.util.Scanner
+
+**Algorithm:**
+1. Read input string S using Scanner
+2. Iterate i from 0 to S.length() (exclusive)
+   - Iterate j from 0 to S.length() (exclusive)
+      - Set begin = substring of S from index 0 to i (exclusive)
+      - Set end = substring of S from index j to end of string
+      - Set answer = concatenation of begin and end
+      - Check if answer equals "keyence"
+          - If true: print "YES" and terminate program
+      - Else check if begin equals "keyence"
+          - If true: print "YES" and terminate program
+      - Else check if end equals "keyence"
+          - If true: print "YES" and terminate program
+3. After all iterations, if no matches found: print "NO"
+
+**Control Structures:**
+- Outer for-loop: i < S.length()
+- Inner for-loop: j < S.length()
+- Three consecutive if-else conditions checking string equality with "keyence"
+- Early termination via return statement when match found
+
+**I/O Operations:**
+- Input: Single string via System.in
+- Output: "YES" or "NO" via System.out.println

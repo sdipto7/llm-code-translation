@@ -1,0 +1,27 @@
+1. Import the `Scanner` class from the `java.util` package to handle input operations.
+
+2. Define the main function: `public static void main(String[] args)`
+
+3. Within the main function:
+   - Declare a `Scanner` object `in` to read input from the standard input stream.
+   - Declare a `String` variable `word` and assign it the value of the next token read from the input using `in.next()`.
+   - Declare an `int` variable `uppercase` and initialize it to `0` to count uppercase letters.
+   - Declare an `int` variable `lowercase` and initialize it to `0` to count lowercase letters.
+
+4. Use a `for` loop to iterate over each character of the `word` string:
+   - Initialize loop variable `i` to `0`.
+   - Continue the loop while `i` is less than the length of `word`.
+   - Increment `i` by `1` after each iteration.
+   - Within the loop:
+     - Declare a `char` variable `ch` and assign it the character at index `i` of `word`.
+     - Use an `if` statement to check if `ch` is an uppercase letter using `Character.isUpperCase(ch)`.
+       - If true, increment `uppercase` by `1`.
+     - Use an `else` statement to handle the case where `ch` is not uppercase.
+       - Increment `lowercase` by `1`.
+
+5. Use an `if-else` conditional structure to determine the output string:
+   - If `uppercase` is greater than `lowercase`, use `System.out.println` to print `word.toUpperCase()`.
+   - Else if `lowercase` is greater than `uppercase`, use `System.out.println` to print `word.toLowerCase()`.
+   - Else (i.e., when `uppercase` is equal to `lowercase`), use `System.out.println` to print `word.toLowerCase()`.
+
+6. The program terminates after printing the appropriate version of the `word`.

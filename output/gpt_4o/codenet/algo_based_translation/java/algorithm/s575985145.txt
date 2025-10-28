@@ -1,0 +1,29 @@
+1. Import the `Scanner` class from the `java.util` package.
+
+2. Define the `main` function with no parameters, return type `void`.
+
+3. Declare a `Scanner` object named `scan` and initialize it to read from standard input.
+
+4. Declare an integer variable `size` and assign it the next integer input from `scan`.
+
+5. Declare a 2D integer array `graph` with dimensions `[size][size]`.
+
+6. Initialize integer variables `id` and `cols` to 0.
+
+7. Declare an integer array `row` initialized to an empty array.
+
+8. Start a loop running from `i = 0` to `i < size`:
+   - Assign the next integer input from `scan` to `id`.
+   - Assign the next integer input from `scan` to `cols`.
+   - Initialize `row` as a new integer array with length `size`.
+   - Start a nested loop running `cols` times:
+     - Assign `1` to the index `scan.nextInt() - 1` of the `row` array.
+   - Assign `row` to the `id - 1` index of the `graph` array.
+
+9. Start a loop running from `i = 0` to `i < graph.length`:
+   - Start a nested loop running from `j = 0` to `j < graph[i].length`:
+     - Print `graph[i][j]` to standard output.
+     - If `j < graph[i].length - 1`, print a space character.
+   - Print a newline character.
+
+10. End of `main` function.

@@ -1,0 +1,50 @@
+**Input:**
+- Read two integers N and K from input
+- Read a string S from input
+
+**Variables:**
+- aaaa: boolean, initially False
+
+**Condition 1:**
+- If K >= 15: set aaaa = True
+- Else if 2^K >= N: set aaaa = True
+
+**If aaaa is True:**
+- Print the minimum character in S repeated N times
+- Exit program
+
+**Function get_last_dict(s_str: string) -> string:**
+- U = s_str concatenated with reverse of s_str
+- c = minimum character in s_str
+- p = first index of c in U
+- minindex = p
+- p = p + 1
+- While p <= N:
+  - If U[p] == c:
+    - If check_normal_dict(U, minindex, p) returns True:
+      - minindex = p
+  - p = p + 1
+- Return substring of U from minindex to minindex+N-1
+
+**Function check_normal_dict(u: string, pointer1: int, pointer2: int) -> boolean:**
+- For i from 0 to N-1:
+  - If u[pointer1 + i] > u[pointer2 + i]: return True
+  - Else if u[pointer1 + i] < u[pointer2 + i]: return False
+- Return False
+
+**Main Execution:**
+- S = get_last_dict(S)
+
+**If K == 1:**
+- Print S
+
+**Else:**
+- count = 0
+- For each character c in S:
+  - If c == S[0]: count += 1
+  - Else: break loop
+- If count * (2^(K-1)) >= N:
+  - Print S[0] repeated N times
+- Else:
+  - S = S[0] repeated (count * (2^(K-1) - 1)) times + original S
+  - Print first N characters of resulting S

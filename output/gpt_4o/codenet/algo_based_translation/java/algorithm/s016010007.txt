@@ -1,0 +1,65 @@
+Algorithm:
+
+1. Import necessary libraries:
+   - `java.awt.geom.Point2D.Double`
+   - `java.io.BufferedReader`
+   - `java.io.IOException`
+   - `java.io.InputStreamReader`
+   - `java.lang.Integer.parseInt`
+
+2. Define `Main` class with `main` method:
+   - `public static void main(String[] args): void`
+
+3. Within `Main`, define `run` method:
+   - `public void run(): void`
+
+4. Within `run` method:
+   - Declare `BufferedReader br` and initialize with `new BufferedReader(new InputStreamReader(System.in))`
+   - Declare `Point2D p0, p1, p2`
+   - Read a line from `br` and split into `String[] line`
+   - Initialize `p0` with `new Point2D(parseInt(line[0]), parseInt(line[1]))`
+   - Initialize `p1` with `new Point2D(parseInt(line[2]), parseInt(line[3]))`
+   - Read `int q` from `br`
+   - Initialize `StringBuilder buf`
+
+5. Loop `for` `int i = 0` to `i < q`:
+   - Read a line from `br` and split into `String[] line`
+   - Initialize `p2` with `new Point2D(parseInt(line[0]), parseInt(line[1]))`
+   - Append result of `jadgeClockwise(p0, p1, p2)` to `buf` followed by newline
+
+6. Output `buf` using `System.out.print(buf)`
+
+7. Define `jadgeClockwise` method:
+   - `public String jadgeClockwise(Point2D p0, Point2D p1, Point2D p2): String`
+   - Declare `Vector v`
+   - Declare `Point2D a` and initialize with `p1.diff(p0)`
+   - Declare `Point2D b` and initialize with `p2.diff(p0)`
+   - If `v.cross(a, b) > v.EPS`, return `"COUNTER_CLOCKWISE"`
+   - If `v.cross(a, b) < -v.EPS`, return `"CLOCKWISE"`
+   - If `v.dot(a, b) < -v.EPS`, return `"ONLINE_BACK"`
+   - If `a.norm() < b.norm()`, return `"ONLINE_FRONT"`
+   - Return `"ON_SEGMENT"`
+
+8. Define `Point2D` class extending `Double`:
+   - `private static final long serialVersionUID = 1L`
+   - `double EPS = 1e-10`
+   - Implement constructor `public Point2D()`, `public Point2D(double x, double y)`
+   - Implement `boolean equals(double a, double b)`
+   - Implement `Point2D sum(Point2D b)`
+   - Implement `Point2D diff(Point2D b)`
+   - Implement `Point2D multiple(double k)`
+   - Implement `double norm()`
+   - Implement `double abs(Point2D a)`
+   - Override `String toString()`
+
+9. Define `Vector` class extending `Point2D`:
+   - `private static final long serialVersionUID = 1L`
+   - Implement constructor `public Vector()`, `public Vector(double x, double y)`, `public Vector(Point2D p)`
+   - Implement `double dot(Point2D a, Point2D b)`
+   - Implement `double cross(Point2D a, Point2D b)`
+   - Implement `boolean isOrthogonal(Point2D a, Point2D b)`
+   - Implement `boolean isOrthogonal(Point2D a1, Point2D a2, Point2D b1, Point2D b2)`
+   - Implement `boolean isParallel(Point2D a, Point2D b)`
+   - Implement `boolean isParallel(Point2D a1, Point2D a2, Point2D b1, Point2D b2)`
+   - Implement `Point2D project(Point2D sp1, Point2D sp2, Point2D p)`
+   - Implement `Point2D reflect(Point2D sp1, Point2D sp2, Point2D p)`

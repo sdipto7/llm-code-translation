@@ -1,0 +1,14 @@
+1. Read two integers n and b from the input.
+2. Initialize an array ans of size n to store the results.
+3. Initialize an empty queue q.
+4. Iterate from i = 0 to n-1:
+   4.1. Read two integers t and d from the input.
+   4.2. Remove elements from the front of q until it is empty or the front element is greater than t.
+   4.3. If the size of q is less than or equal to b:
+      4.3.1. Calculate the result as the maximum of t and the last element of q (if q is not empty) plus d.
+      4.3.2. Store the result in ans[i].
+      4.3.3. Add the result to the end of q.
+   4.4. Else:
+      4.4.1. Store -1 in ans[i].
+5. Iterate from i = 0 to n-1:
+   5.1. Print the value of ans[i] followed by a space.

@@ -1,0 +1,32 @@
+Function signatures:
+- `main(String[] args)`: static, public, void
+- `solve()`: private, void
+
+Variable declarations and data types:
+- `N`: int
+- `max`: int
+- `min`: int
+- `in`: int
+- `sc`: Scanner
+
+Logic flow in execution order:
+1. Create a new instance of the Main class and call `solve()` method.
+2. Initialize `N` by reading next integer from `sc`.
+3. Initialize `max` and `min` by reading next integer from `sc`.
+4. Loop from `i = 1` to `N-1`:
+   a. Read next integer into `in`.
+   b. Update `max` to be the maximum of `max` and `in`.
+   c. Update `min` to be the minimum of `min` and `in`.
+5. Print the result of `max - min`.
+
+Control structures:
+- Loop: `for (int i = 1; i < N; i++)`
+  - Condition: `i < N`
+  - Body: Read integer, update `max`, update `min`
+
+Input/output operations:
+- Input: Read integers using `sc.nextInt()`
+- Output: Print the difference between `max` and `min` using `System.out.println()`
+
+Libraries:
+- `java.util.*` for Scanner class

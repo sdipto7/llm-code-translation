@@ -1,0 +1,28 @@
+1. Import required libraries: java.util.*
+2. Define a class: Main
+3. Define a method: main with parameter args of type String[] and return type void
+4. Declare a variable sc of type Scanner and initialize it with new Scanner(System.in)
+5. Declare a variable n of type int and read an integer from sc
+6. Declare an array a of type int[] with size n
+7. Iterate from i = 0 to n-1 using a for loop
+   - Read an integer from sc and store it in a[i]
+8. Declare a variable ans of type int and initialize it to 0
+9. Iterate from i = 1 to n-2 using a for loop
+   - Check the condition: a[i] != min(a[i-1], a[i], a[i+1]) and a[i] != max(a[i-1], a[i], a[i+1])
+     - If true, increment ans by 1
+10. Print the value of ans to the console using System.out.println
+11. Close the Scanner object sc using sc.close() 
+
+Alternatively, a more formal representation:
+- Function: main(String[] args) : void
+  1. sc = new Scanner(System.in)
+  2. n = sc.nextInt()
+  3. a = new int[n]
+  4. for i from 0 to n-1:
+     - a[i] = sc.nextInt()
+  5. ans = 0
+  6. for i from 1 to n-2:
+     - if a[i] != min(a[i-1], a[i], a[i+1]) and a[i] != max(a[i-1], a[i], a[i+1]):
+       - ans = ans + 1
+  7. System.out.println(ans)
+  8. sc.close()

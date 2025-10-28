@@ -1,0 +1,20 @@
+Function signature: `keta(s)` with parameter `s` of type string, returns an integer
+Variable declarations: 
+- `n` of type integer
+Logic flow:
+1. Check if length of `s` is less than 2
+   - If true, convert `s` to integer and return
+2. Calculate sum of digits in `s` by mapping each character to integer, summing them, and storing in `n`
+3. Call `keta` recursively with `str(n)` and return result
+
+Function signature: `main()` with no parameters, returns nothing
+Variable declarations:
+- `N` of type string
+Logic flow:
+1. Read input and assign to `N`
+2. Check if `keta(N)` modulo 9 equals 0
+   - If true, print "Yes"
+   - Else, print "No"
+
+Required libraries, modules, or dependencies:
+- `math` module imported but not used

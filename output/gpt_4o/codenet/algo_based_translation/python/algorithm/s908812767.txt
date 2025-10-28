@@ -1,0 +1,55 @@
+```plaintext
+Function dfs(i: int) -> bool:
+    For each (v, w) in V.get(i, []):
+        If (w % 2) == 0:
+            If color[v] == -1:
+                Set color[v] to color[i]
+            Elif color[v] == color[i]:
+                Continue
+            Elif color[v] != color[i]:
+                Return False
+        Else:
+            If color[v] == -1:
+                Set color[v] to 0 if color[i] else 1
+            Elif color[v] == color[i]:
+                Return False
+            Elif color[v] != color[i]:
+                Continue
+        Call dfs(v)
+    Return True
+
+Declare n as int
+Read an integer from input into n
+Declare V as dictionary with integer keys and list of lists values
+Declare color as dictionary with integer keys and integer values
+For i from 1 to n-1:
+    Read integers u, v, w from input
+    If V does not have key u:
+        Add key u with value [[v, w]] to V
+    Else:
+        Append [v, w] to V[u]
+    If V does not have key v:
+        Add key v with value [[u, w]] to V
+    Else:
+        Append [u, w] to V[v]
+
+For i from 1 to n:
+    Set color[i] to -1
+
+While True:
+    Set i to 0
+    For j from 1 to n:
+        If color[j] == -1:
+            Set i to j
+            Set color[i] to 0
+            Break
+    If i == 0:
+        For j from 1 to n:
+            Print color[j]
+        Break
+    Else:
+        If not dfs(i):
+            Print 'No'
+            Break
+```
+

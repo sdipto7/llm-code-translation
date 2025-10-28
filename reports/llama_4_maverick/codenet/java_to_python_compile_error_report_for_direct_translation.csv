@@ -1,0 +1,36 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,s927992720.py,Compilation Error,"Error:   File ""output/llama_4_maverick/codenet/direct_translation/java/python/s927992720.py"", line 30
+    However, a more idiomatic and precise translation is as follows:
+               ^^^^
+SyntaxError: invalid syntax
+"
+java,python,s863488345.py,Compilation Error,"Error:   File ""output/llama_4_maverick/codenet/direct_translation/java/python/s863488345.py"", line 9
+    elif battle_town[i][b] == '
+                              ^
+SyntaxError: unterminated string literal (detected at line 9)
+"
+java,python,s537034016.py,Compilation Error,"Error:   File ""output/llama_4_maverick/codenet/direct_translation/java/python/s537034016.py"", line 14
+    return dp[s] := ret
+                 ^^
+SyntaxError: invalid syntax
+"
+java,python,s233008404.py,Compilation Error,"Error:   File ""output/llama_4_maverick/codenet/direct_translation/java/python/s233008404.py"", line 22
+    if color_mtr[i][j] == '
+                          ^
+SyntaxError: unterminated string literal (detected at line 22)
+"
+java,python,s656827329.py,Compilation Error,"Error:   File ""output/llama_4_maverick/codenet/direct_translation/java/python/s656827329.py"", line 43
+    However, the more pythonic and precise translation is 
+                 ^^^^
+SyntaxError: invalid syntax
+"
+java,python,s336166208.py,Compilation Error,"Error:   File ""output/llama_4_maverick/codenet/direct_translation/java/python/s336166208.py"", line 13
+    print(""
+          ^
+SyntaxError: unterminated string literal (detected at line 13)
+"
+java,python,s967858671.py,Compilation Error,"Error:   File ""output/llama_4_maverick/codenet/direct_translation/java/python/s967858671.py"", line 3
+    for i = 0
+          ^
+SyntaxError: invalid syntax
+"

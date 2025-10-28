@@ -1,0 +1,50 @@
+Algorithm:
+
+1. Declare integer variable n and read value from standard input
+2. Declare list of integers t with elements read from standard input
+3. Declare integer variable m and read value from standard input
+4. For m iterations:
+    a. Declare integers p and x read from standard input
+    b. Declare integer s initialized to 0
+    c. For each index j in range 0 to length of t - 1:
+        i. If j equals (p - 1):
+            - Add x to s
+        ii. Else:
+            - Add t[j] to s
+    d. Print s to standard output
+
+Input Operations:
+- Read n via input() converted to int
+- Read t via split input converted to integers
+- Read m via input() converted to int
+- For each query, read p and x via split input converted to integers
+
+Output Operations:
+- Print computed s for each query
+
+Variables:
+- n: int (initial input, unused in calculations)
+- t: list[int] (array of integers)
+- m: int (number of queries)
+- p: int (1-based position to replace)
+- x: int (replacement value)
+- s: int (sum accumulator)
+- j: int (loop index)
+
+Control Structures:
+- Loop: for i in 0...m-1 (query iteration)
+- Nested loop: for j in 0...len(t)-1 (element iteration)
+- Conditional: if j == p-1 (element replacement check)
+
+Data Types:
+- All numeric variables: integer
+- List t: integer elements
+
+Logic Flow:
+1. Sequential input reading
+2. Outer loop processes each query
+3. Inner loop calculates modified sum
+4. Conditional substitution of element during summation
+5. Immediate output of each query result
+
+Dependencies: None (standard input/output functions only)

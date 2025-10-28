@@ -1,0 +1,42 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- Scanner `in` initialized with `System.in`
+- int `n` (input)
+- int array `c` of size `n-1`
+- int array `s` of size `n-1`
+- int array `f` of size `n-1`
+- int `i` (loop index from 0 to `n-2`)
+- int `time` (initialized per outer loop iteration)
+- int `j` (loop index from `i+1` to `n-2`)
+
+**Input Operations:**
+- Read `n` using `in.nextInt()`
+- For each `i` from 0 to `n-2`:
+  - Read `c[i]`, `s[i]`, `f[i]` using `in.nextInt()`
+
+**Logic Flow:**
+1. For each `i` from 0 to `n-2`:
+   a. Initialize `time` to `s[i] + c[i]`
+   b. For each `j` from `i+1` to `n-2`:
+      1. If `time % f[j] != 0`:
+         - Add `f[j] - (time % f[j])` to `time`
+      2. If `time < s[j]`:
+         - Set `time` to `s[j]`
+      3. Add `c[j]` to `time`
+   c. Print `time`
+2. After outer loop completes, print `0`
+
+**Control Structures:**
+- Outer loop: `for (i = 0; i < n-1; i++)`
+- Inner loop: `for (j = i+1; j < n-1; j++)`
+- Conditional: `if (time % f[j] != 0)`
+- Conditional: `if (time < s[j])`
+
+**Output Operations:**
+- Print calculated `time` for each `i` in outer loop
+- Print `0` after processing all stations
+
+**Dependencies:**
+- `java.util.Scanner` library for input handling

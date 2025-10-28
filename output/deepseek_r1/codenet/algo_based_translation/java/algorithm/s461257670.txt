@@ -1,0 +1,58 @@
+Algorithm Extraction:
+
+Function Signatures:
+- main(String[] args): void (reads input, processes test cases)
+- Answer(int y, int m, int d): int (calculates days from date to end of 999)
+
+Variables:
+- Scanner sc (input handling)
+- int count (number of test cases)
+- int y, m, d (input date components)
+- int result (accumulates day count)
+
+Logic Flow:
+
+1. Main Program:
+   a. Initialize Scanner
+   b. Read integer count
+   c. For each test case (count iterations):
+      i. Read y, m, d
+      ii. Call Answer(y, m, d) and print result
+
+2. Answer Function:
+   a. Initialize result = 1
+   b. Handle current day:
+      i. If y mod 3 == 0:
+         - result += (20 - d)
+      ii. Else if m mod 2 == 0:
+         - result += (19 - d)
+      iii. Else:
+         - result += (20 - d)
+   c. Process remaining months in current year:
+      i. For m+1 to 10 inclusive:
+         - If y mod 3 == 0:
+             result += 20
+         - Else:
+             If current_month mod 2 == 0:
+                 result += 19
+             Else:
+                 result += 20
+   d. Process full subsequent years (y+1 to 999):
+      i. For each year:
+         - If year mod 3 == 0:
+             result += 200
+         - Else:
+             result += 195
+   e. Return result
+
+Control Structures:
+- For loops (fixed iterations)
+- If-else chains (ternary conditions for date calculations)
+- Sequential execution
+
+Input/Output:
+- Input via Scanner (System.in)
+- Output via System.println
+
+Dependencies:
+- java.util.Scanner (required for input handling)

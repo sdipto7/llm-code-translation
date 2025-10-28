@@ -1,0 +1,52 @@
+Algorithm:
+
+1. **Function Signature:**
+   - `main(String[] args)`: void
+
+2. **Variable Declarations:**
+   - `Scanner scan`: Scanner
+   - `int N`: integer
+   - `long x`: long
+   - `List<Long> srimeList`: List of Long
+   - `List<Long[]> costList`: List of array of Long
+   - `List<Long> result`: List of Long
+
+3. **Dependencies:**
+   - Import `java.util.ArrayList`
+   - Import `java.util.List`
+   - Import `java.util.Scanner`
+
+4. **Input Operations:**
+   - Initialize `Scanner scan` to read from standard input.
+   - Read integer `N` using `scan.nextInt()`.
+   - Read long `x` using `scan.nextLong()`.
+
+5. **Data Processing Logic:**
+   - Initialize `srimeList` as an ArrayList of size `N`.
+   - Loop over range from 0 to `N-1` (inclusive):
+     - For each iteration, add `scan.nextLong()` to `srimeList`.
+
+6. **Initialize Cost List:**
+   - Initialize `costList` as an ArrayList of Long arrays of size `N`.
+   - Loop over range from 0 to `N-1` (inclusive):
+     - Add a new Long array of size `N` to `costList`.
+
+7. **Populate Cost List:**
+   - Loop over range from 0 to `N-1` (inclusive) with index `i`:
+     - Set `costList[i][0]` to `srimeList[i]`.
+     - Inner loop over range from 1 to `N-1` (inclusive) with index `castNum`:
+       - Set `costList[i][castNum]` to the minimum of `costList[i][castNum - 1]` and `srimeList[(i - castNum + N) % N]`.
+
+8. **Calculate Result List:**
+   - Initialize `result` as an ArrayList of size `N`.
+   - Loop over range from 0 to `N-1` (inclusive) with index `i`:
+     - Calculate `i * x + sum(costArray[i] for each costArray in costList)`.
+     - Add the result to `result`.
+
+9. **Output Operation:**
+   - Print the minimum value from `result`.
+
+10. **Control Structures:**
+    - For loops for iterating over ranges and lists.
+    - Use of `Math.min()` for comparison.
+    - Use of stream operations (`stream()`, `mapToLong()`, `sum()`, `min()`, `getAsLong()`) for list processing and aggregation.

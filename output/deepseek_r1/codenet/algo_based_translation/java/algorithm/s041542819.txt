@@ -1,0 +1,76 @@
+Here is the algorithm extracted from the provided Java code:
+
+---
+
+**Data Structures and Variables:**
+- `int a`: number of shrines
+- `int b`: number of temples
+- `int q`: number of queries
+- `long[] s`: array of shrine coordinates (sorted) with sentinel values `-1e10` at index 0 and `2e10` at index `a+1`
+- `long[] t`: array of temple coordinates (sorted) with sentinel values `-1e10` at index 0 and `2e10` at index `b+1`
+
+**Functions:**
+1. `solve(int testNumber, LightScanner in, LightWriter out)`:
+   - **Input:** Reads `a`, `b`, `q`, shrine coordinates, temple coordinates, and queries.
+   - **Processing**:
+     1. Initialize `s` and `t` with sentinel values.
+     2. For each query `x`:
+        - Find nearest left/right shrines and temples using binary search.
+        - Calculate distances to these points.
+        - Compute 6 candidate minimal distances.
+        - Output the smallest candidate.
+   - **Output:** For each query, print the minimal distance.
+
+2. `lowerBound(long[] a, long t) -> int`:
+   - Binary search to find the first index in `a` where `a[index] >= t`.
+
+3. `min(long... v) -> long`:
+   - Returns the minimum value from the input array `v`.
+
+**Algorithm Steps:**
+
+1. **Initialization:**
+   - Read `a`, `b`, and `q`.
+   - Create array `s` of size `a+2`, initialized with `s[0] = -1e10`, `s[a+1] = 2e10`.
+   - Populate `s[1..a]` with shrine coordinates from input.
+   - Sort `s`.
+   - Repeat the same steps for `t` (temples).
+
+2. **Query Processing:**
+   For each query `x`:
+   a. **Find nearest shrines:**
+      - `idx_s = lowerBound(s, x + 1)` (smallest index where shrine >= `x+1`).
+      - Left shrine index: `left_s = max(0, idx_s - 1)`.
+      - Right shrine index: `right_s = idx_s`.
+      - Left distance: `sl = x - s[left_s]`.
+      - Right distance: `sr = s[right_s] - x`.
+   
+   b. **Find nearest temples:**
+      - `idx_t = lowerBound(t, x + 1)`.
+      - Left temple index: `left_t = max(0, idx_t - 1)`.
+      - Right temple index: `right_t = idx_t`.
+      - Left distance: `tl = x - t[left_t]`.
+      - Right distance: `tr = t[right_t] - x`.
+   
+   c. **Compute candidate distances:**
+      1. `max(sl, tl)` (both left)
+      2. `max(sr, tr)` (both right)
+      3. `2*sl + tr` (shrine left → temple right)
+      4. `2*tl + sr` (temple left → shrine right)
+      5. `sl + 2*tr` (shrine left → temple right via back)
+      6. `tl + 2*sr` (temple left → shrine right via back)
+   
+   d. **Result:** Minimum of the six candidates.
+
+**Control Flow:**
+- Binary search in `lowerBound` with `while (min < max)` loop.
+- For each query, conditional checks via `Math.max` to handle sentinel indices.
+- Minimum calculation over six precomputed values.
+
+**Dependencies:**
+- Requires binary search (`lowerBound`) and array utility functions.
+- Input/output handled via `LightScanner` and `LightWriter` (reads/writes longs and integers).
+
+--- 
+
+This algorithm efficiently processes each query in logarithmic time relative to the number of shrines/temples, leveraging binary search and precomputed sentinel values to handle edge cases.

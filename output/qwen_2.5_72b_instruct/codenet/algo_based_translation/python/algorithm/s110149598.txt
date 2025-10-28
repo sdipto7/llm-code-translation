@@ -1,0 +1,25 @@
+Function signature: compare_and_print(a: str, b: str) -> None
+
+Variable declarations and data types:
+a: str
+b: str
+
+Logic flow in execution order:
+1. Read input as a single string and split it into two parts, assigning the first part to variable 'a' and the second part to variable 'b'.
+2. Compare string 'a' with string 'b':
+   - If 'a' is lexicographically less than 'b', print "<".
+   - Else if 'a' is lexicographically greater than 'b', print ">".
+   - Otherwise, print "=".
+
+Control structures:
+- Conditional statements:
+  - if a < b:
+  - elif a > b:
+  - else:
+
+Input/output operations and data processing logic:
+- Input: Reads a single line of input, splits it into two strings based on whitespace, and assigns them to 'a' and 'b'.
+- Output: Prints one of the following strings based on comparison: "<", ">", or "=".
+
+Required libraries, modules, or dependencies:
+- No additional libraries, modules, or dependencies are required.

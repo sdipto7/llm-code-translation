@@ -1,0 +1,31 @@
+1. Function Signature:
+   - Function name: process_numbers
+   - Parameters: none
+   - Return type: none
+
+2. Variable Declarations:
+   - `n`: integer, stores the number of iterations for the loop.
+   - `i`: integer, loop control variable.
+   - `a`: integer, stores each input number to be processed.
+
+3. Execution Logic:
+   - Read an integer from input and assign it to `n`.
+   - For each integer from 0 to `n-1` (inclusive):
+     - Read an integer from input and assign it to `a`.
+     - If `a` is less than 2:
+       - Output 0.
+     - If `a` is greater than or equal to 2:
+       - Output the result of `a - 2`.
+
+4. Control Structures:
+   - A loop that iterates `n` times using a range from 0 to `n-1`.
+   - A conditional `if` statement to check if `a` is less than 2.
+   - Another conditional `if` statement to check if `a` is greater than or equal to 2.
+
+5. Input/Output Operations:
+   - Input operation to read an integer for `n`.
+   - Input operation to read an integer for `a` inside the loop.
+   - Output operation to print results based on the conditions evaluated.
+
+6. Libraries/Dependencies:
+   - None required.

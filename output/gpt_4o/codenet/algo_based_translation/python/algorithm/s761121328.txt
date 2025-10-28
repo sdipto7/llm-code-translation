@@ -1,0 +1,32 @@
+```
+function main() -> None:
+    # Read integer input
+    N: int = int(input())
+    
+    # Read list of integers
+    A: List[int] = list(map(int, input().split()))
+    
+    # Calculate XOR of the first two elements
+    s: int = A[0] ^ A[1]
+    
+    # Loop through the list starting from the third element
+    for i in range(2, N):
+        # Update XOR result with the current element
+        s = s ^ A[i]
+
+    # Initialize list B with zeros
+    B: List[int] = [0] * N
+    
+    # Fill list B with XOR of s and each element in A
+    for i in range(N):
+        B[i] = s ^ A[i]
+    
+    # Convert each integer in B to a string
+    L: List[str] = [str(a) for a in B]
+    
+    # Join the list of strings with space separator
+    L: str = " ".join(L)
+    
+    # Print the result
+    print(L)
+```

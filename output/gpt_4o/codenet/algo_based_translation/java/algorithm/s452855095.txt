@@ -1,0 +1,30 @@
+1. Import necessary libraries: `java.util.Scanner` and `java.io.PrintWriter`.
+
+2. Define the main function: `public static void main(String[] args)`.
+
+3. Initialize a `Scanner` object `sc` for input reading and a `PrintWriter` object `out` for output writing.
+
+4. Read an integer `n` from input using `sc.nextInt()`.
+
+5. Declare an integer array `arr` of size `n`.
+
+6. Loop from `i = 0` to `i < n`, incrementing `i`:
+   - Assign the next integer from input to `arr[i]` using `sc.nextInt()`.
+
+7. Initialize an integer `cnt` to 0.
+
+8. Initialize a boolean `flag` to `true`.
+
+9. Enter an infinite loop (`while(true)`):
+
+   10. Loop from `i = 0` to `i < n`, incrementing `i`:
+       - If `arr[i] % 2 != 0`, set `flag` to `false` and break out of the loop.
+       - Otherwise, set `arr[i]` to `arr[i] / 2`.
+
+   11. If `flag` is `true`, increment `cnt` by 1.
+   
+   12. If `flag` is `false`, break out of the infinite loop.
+
+13. Output `cnt` using `out.println(cnt)`.
+
+14. Flush the output using `out.flush()`.

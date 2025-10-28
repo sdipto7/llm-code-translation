@@ -1,0 +1,23 @@
+- Function signature: main() -> None
+- Variable declarations and data types: 
+  - a: int
+  - b: int
+  - c: int
+  - d: int
+  - e: int
+- Logic flow in execution order:
+  - Read input from standard input
+  - Split the input string by whitespace
+  - Convert each split string to an integer
+  - Assign the first integer to variable a
+  - Assign the second integer to variable b
+  - Assign the third integer to variable c
+  - Assign the fourth integer to variable d
+  - Assign the fifth integer to variable e
+  - Calculate the expression 15 - a - b - c - d - e
+  - Print the result of the calculation to standard output
+- Control structures: None
+- Input/output operations and data processing logic:
+  - Input: Read a single line of text containing five space-separated integers
+  - Output: Print a single integer which is the result of subtracting the sum of the five input integers from 15
+- Required libraries, modules, or dependencies: None

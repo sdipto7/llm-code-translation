@@ -1,0 +1,27 @@
+**Function Signature:**
+- `calculate_sum(n: int) -> int`
+
+**Variables:**
+- `n: int` (input parameter)
+- `r: int` (initialized to 0)
+- `ii: int` (loop variable)
+
+**Logic Flow:**
+1. Read integer input `n` via `n = int(input())`
+2. Initialize `r` to 0
+3. Iterate `ii` from 0 to `n-1` inclusive via `for ii in range(n):`
+   - Compute current number as `current = ii + 1`
+   - Check condition `(current % 3 != 0) and (current % 5 != 0)`
+     - If true: add `current` to `r`
+4. After loop completes, print `r`
+
+**Control Structures:**
+- `for` loop with exact bounds `range(n)`
+- Conditional check `(current % 3 != 0) and (current % 5 != 0)`
+
+**Input/Output:**
+- Input via `input()` converted to integer
+- Output via `print(r)`
+
+**Dependencies:**
+- None (uses built-in functions only)

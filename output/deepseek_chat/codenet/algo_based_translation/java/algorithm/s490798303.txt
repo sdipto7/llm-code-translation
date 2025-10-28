@@ -1,0 +1,18 @@
+1. Import java.util.Scanner and java.util.HashMap
+2. Define main function with parameter String[] args
+3. Declare Scanner object initialized with System.in
+4. Read integer n from input
+5. Read integer k from input
+6. Declare Map<Integer, List<Integer>> named map, initialized as HashMap
+7. For i from 0 to k-1 (inclusive):
+   a. Read integer d from input
+   b. For j from 0 to d-1 (inclusive):
+      i. Read integer person from input
+      ii. If map does not contain key person:
+          - Put new ArrayList<Integer> at key person in map
+      iii. Get list at key person from map and add d to it
+8. Declare integer count initialized to 0
+9. For i from 1 to n (inclusive):
+   a. If map does not contain key i:
+      - Increment count by 1
+10. Print count

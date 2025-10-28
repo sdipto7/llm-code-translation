@@ -1,0 +1,11 @@
+Algorithm:
+1. Import the `java.util.Scanner` library for input operations.
+2. Define the `main` function with `void` return type and `String[] args` parameter.
+3. Create a `Scanner` object named `sc` to read input from the standard input.
+4. Read a string input using the `next()` method of the `Scanner` object and store it in a variable `s` of type `String`.
+5. Extract the last character of the string `s` using `substring(s.length()-1, s.length())` and convert it to an integer using `Integer.parseInt()`. Store this integer in a variable `n` of type `int`.
+6. Use a series of conditional statements to determine the output:
+   - If `n` equals `3`, print "bon" to the standard output.
+   - Else if `n` equals `0`, `1`, `6`, or `8`, print "pon" to the standard output.
+   - Otherwise, print "hon" to the standard output.
+7. Close the `Scanner` object using `sc.close()` to release resources.

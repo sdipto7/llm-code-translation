@@ -1,0 +1,13 @@
+1. Import java.util.Scanner and java.util.HashMap
+2. Define main function with parameter String[] args, return type void
+3. Declare Scanner sc initialized with System.in
+4. Declare int n assigned sc.nextInt()
+5. Declare HashMap<Integer, Integer> map initialized as new HashMap
+6. For loop: i from 0 to n-1
+   - Declare int a assigned sc.nextInt()
+   - If map contains key a: update map value at key a to current value + 1
+   - Else: put key a with value 1 in map
+7. Declare int ans initialized to 0
+8. For each key in map.keySet():
+   - If map.get(key) % 2 == 1: increment ans by 1
+9. Print ans

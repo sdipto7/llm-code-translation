@@ -1,0 +1,39 @@
+Function signatures with parameter and return types:
+- `static boolean read()`: Returns a boolean value.
+- `static int solve()`: Returns an integer value.
+- `public static void main(String[] args)`: No return value.
+
+Variable declarations and data types:
+- `static Scanner sc = new Scanner(System.in);`: Scanner object for reading input.
+- `static int d;`: Integer variable to store input value.
+- `int ans;`: Integer variable to store the final result.
+- `int n;`: Integer variable (unused in the provided code).
+- `int x;`: Integer variable to store the current multiple of `d`.
+- `int y;`: Integer variable to store the square of `x`.
+
+Complete logic flow in execution order:
+1. The `main` method starts executing.
+2. The `while` loop checks if there is another integer to read using the `read` method.
+3. The `read` method checks if there is a next integer available in the input.
+   - If no integer is available, it returns `false`, and the `while` loop terminates.
+   - If an integer is available, it reads the integer into `d` and returns `true`.
+4. If `read` returns `true`, the `solve` method is called.
+5. Inside `solve`, `ans` is initialized to 0.
+6. A `for` loop iterates with `int i = 1` and continues as long as `i * d < 600`.
+   - In each iteration, `x` is calculated as `i * d`.
+   - `y` is calculated as `x * x`.
+   - `ans` is incremented by `y * d`.
+7. After the loop completes, `solve` returns the value of `ans`.
+8. The returned value from `solve` is printed to the standard output.
+9. The `while` loop repeats until there are no more integers to read.
+
+Control structures:
+- `while` loop: Continues as long as `read()` returns `true`.
+- `for` loop: Iterates from `i = 1` to `i * d < 600`.
+
+Input/output operations and data processing logic:
+- Input: Reads integers from standard input using `Scanner`.
+- Output: Prints the result of `solve` to standard output using `System.out.println`.
+
+Required libraries, modules, or dependencies:
+- `java.util.*`: For using the `Scanner` class.

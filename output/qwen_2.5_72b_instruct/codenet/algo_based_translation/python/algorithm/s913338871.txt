@@ -1,0 +1,26 @@
+Function signature: `main()` with no parameters and no return type
+
+Variable declarations:
+- `N` of type integer
+- `a` of type list of integers
+- `s` of type list of integers
+
+Algorithm logic:
+- Read an integer `N` from the input
+- Read a line of space-separated integers, convert each to an integer, and store in list `a`
+- Sort list `a` in ascending order
+- Create list `s` by taking every second element from list `a` starting from index `N`
+- Calculate the sum of all elements in list `s`
+- Print the sum
+
+Input/output operations:
+- Read input values for `N` and `a` from standard input
+- Print the sum of selected elements to standard output
+
+Data processing logic:
+- Sorting of list `a`
+- Slicing of list `a` to create `s`
+- Summation of elements in `s`
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required

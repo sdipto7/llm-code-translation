@@ -1,0 +1,13 @@
+1. Read two integer inputs, `d` and `g`, from the standard input.
+2. Read `d` lines of input, where each line contains two integers, and store them in a list of lists `pc`.
+3. Initialize a variable `ans` to positive infinity.
+4. Iterate over all integers from 0 to 2^d - 1 (inclusive) using a variable `bit`.
+5. For each `bit`, initialize three variables: `count` to 0, `sum` to 0, and `nokori` to a set containing integers from 1 to `d` (inclusive).
+6. Iterate over the range from 0 to `d - 1` (inclusive) using a variable `i`.
+7. For each `i`, check if the `i`-th bit of `bit` is set.
+8. If the `i`-th bit is set, update `sum` by adding the product of `pc[i][0]`, `i + 1`, and 100, plus `pc[i][1]`. Increment `count` by `pc[i][0]`. Remove `i + 1` from the set `nokori`.
+9. After the inner loop, check if `sum` is less than `g`.
+10. If `sum` is less than `g`, find the maximum element `use` in the set `nokori`. Calculate `n` as the minimum of `pc[use - 1][0]` and the ceiling of `(g - sum)` divided by `use * 100`. Increment `count` by `n` and update `sum` by adding `n * use * 100`.
+11. Check if `sum` is greater than or equal to `g`.
+12. If `sum` is greater than or equal to `g`, update `ans` to be the minimum of `ans` and `count`.
+13. After iterating over all possible values of `bit`, output the value of `ans` to the standard output.

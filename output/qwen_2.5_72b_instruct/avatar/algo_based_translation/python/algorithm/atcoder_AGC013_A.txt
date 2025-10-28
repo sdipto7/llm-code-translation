@@ -1,0 +1,82 @@
+Function signatures with parameter and return types:
+- `input() -> str`
+- `INT() -> int`
+- `MAP() -> map`
+- `LIST() -> list`
+- `ZIP(n: int) -> zip`
+
+Variable declarations and data types:
+- `sys` (module)
+- `re` (module)
+- `deque` (class from collections)
+- `defaultdict` (class from collections)
+- `Counter` (class from collections)
+- `ceil` (function from math)
+- `sqrt` (function from math)
+- `hypot` (function from math)
+- `factorial` (function from math)
+- `pi` (constant from math)
+- `sin` (function from math)
+- `cos` (function from math)
+- `radians` (function from math)
+- `groupby` (function from itertools)
+- `accumulate` (function from itertools)
+- `permutations` (function from itertools)
+- `combinations` (function from itertools)
+- `product` (function from itertools)
+- `itemgetter` (function from operator)
+- `mul` (function from operator)
+- `deepcopy` (function from copy)
+- `ascii_lowercase` (string from string)
+- `ascii_uppercase` (string from string)
+- `digits` (string from string)
+- `bisect` (function from bisect)
+- `bisect_left` (function from bisect)
+- `gcd` (function from fractions)
+- `heappush` (function from heapq)
+- `heappop` (function from heapq)
+- `reduce` (function from functools)
+- `N: int`
+- `A: list`
+- `i: int`
+- `ans: int`
+
+Complete logic flow in execution order:
+1. Import required modules and functions.
+2. Set recursion limit to 10^9.
+3. Define constants `INF` and `mod`.
+4. Read integer `N` using `INT()`.
+5. Read list `A` using `LIST()`.
+6. Compress list `A` by removing consecutive duplicates using `groupby`.
+7. Update `N` to length of compressed `A`.
+8. Initialize `i` to 1 and `ans` to 0.
+9. While `i < N - 1`:
+   - Check if `A[i]` is a local maximum or minimum:
+     - If `A[i-1] < A[i] > A[i+1]` or `A[i-1] > A[i] < A[i+1]`:
+       - Increment `ans` by 1.
+       - Increment `i` by 1.
+   - Increment `i` by 1.
+10. Print `ans + 1`.
+
+Control structures:
+- `while i < N - 1`: Loop until the second last element.
+- `if A[i-1] < A[i] > A[i+1] or A[i-1] > A[i] < A[i+1]`: Conditional to check if `A[i]` is a peak or valley.
+
+Input/output operations and data processing logic:
+- Input: Integer `N`, followed by `N` integers for list `A`.
+- Process: Compress list `A` to remove consecutive duplicates, count peaks and valleys.
+- Output: Number of peaks and valleys plus one.
+
+Required libraries, modules, or dependencies:
+- `sys`
+- `re`
+- `collections`
+- `math`
+- `itertools`
+- `operator`
+- `copy`
+- `string`
+- `bisect`
+- `fractions`
+- `heapq`
+- `functools`

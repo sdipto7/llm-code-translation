@@ -1,0 +1,44 @@
+**Function Signatures:**
+- `main(String[] args) throws IOException`
+- `atcoder_ABC149_B(BufferedReader in) throws IOException`
+- `void calc()`
+- `void showResult()`
+
+**Variable Declarations:**
+- `long A`
+- `long B`
+- `long K`
+- `long x`
+- `long y`
+
+**Logic Flow:**
+1. Read input line from standard input
+2. Split input into tokens by space
+3. Parse first token as long → A
+4. Parse second token as long → B
+5. Parse third token as long → K
+6. Set x = A
+7. Set y = B
+8. Set x = A - K
+9. If x < 0:
+   - Set y = B + x
+   - Set x = 0
+   - If y < 0:
+     - Set y = 0
+10. Print x and y separated by space
+
+**Control Structures:**
+- If (x < 0) then:
+  - y = B + x
+  - x = 0
+  - If (y < 0) then:
+    - y = 0
+
+**Input/Output Operations:**
+- Input: Read one line from standard input
+- Output: Print two long values separated by space
+
+**Required Libraries:**
+- java.util.*
+- java.io.*
+- java.nio.charset.StandardCharsets

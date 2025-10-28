@@ -1,0 +1,53 @@
+**Algorithm:**
+
+**Functions:**
+- `public static void main(String[] args)`
+- `public static long getGCD(long a, long b)` → returns long
+
+**Variables:**
+- `n: int` (input)
+- `m: int` (input)
+- `a: int[]` (size `n`, initialized via input/2)
+- `gcd: long`
+- `lcd: long` (initialized to 1)
+
+**Execution Flow:**
+1. Read integers `n` and `m` from input.
+2. Initialize array `a` with `n` elements:
+   - For `i` from 0 to `n-1`:
+     - Read integer from input, divide by 2, assign to `a[i]`.
+3. Compute LCM of all elements in `a`:
+   - For `i` from 0 to `n-1`:
+     - Compute `gcd = getGCD(lcd, a[i])`.
+     - Update `lcd = (lcd * a[i]) / gcd`.
+     - If `lcd > m`:
+       - Print `0` and terminate.
+4. Validate parity conditions:
+   - For `i` from 0 to `n-1`:
+     - If `(lcd / a[i]) % 2 == 0`:
+       - Print `0` and terminate.
+5. Compute result:
+   - Calculate `(m // lcd + 1) // 2`.
+   - Print result.
+
+**Control Structures:**
+- For loop: `for (int i=0; i < n; i++)` (twice)
+- Conditional in LCM loop: `if (lcd > m)`
+- Conditional in validation loop: `if ((lcd / a[i]) % 2 == 0)`
+
+**Input/Output:**
+- Input via `Scanner` (reads from `System.in`):
+  - `n = sc.nextInt()`
+  - `m = sc.nextInt()`
+  - `a[i] = sc.nextInt() / 2`
+- Output via `System.out.println()`:
+  - Early termination outputs `0`
+  - Final output `(m // lcd + 1) // 2`
+
+**Dependencies:**
+- `java.util.*` (for `Scanner`)
+
+**Helper Function Logic:**
+- `getGCD(long a, long b)`:
+  - If `b == 0`, return `a`.
+  - Else, return `getGCD(b, a % b)`.

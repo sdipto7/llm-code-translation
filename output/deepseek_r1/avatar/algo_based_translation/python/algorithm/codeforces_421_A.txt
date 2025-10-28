@@ -1,0 +1,55 @@
+ALGORITHM SPECIFICATION:
+
+FUNCTIONS/METHODS:
+- Main execution flow (no explicit functions)
+- Input processing: read from stdin
+
+VARIABLES:
+- n: int (number of elements to process)
+- a: int (unused input parameter)
+- b: int (unused input parameter)
+- lista: List[int] (first list of integers)
+- listb: List[int] (second list of integers - read but unused)
+- k: int (loop iteration variable, 0 ≤ k < n)
+
+LOGIC FLOW:
+1. Read first input line:
+   a. Split by spaces into 3 elements
+   b. Convert to integers n, a, b
+2. Read second input line:
+   a. Split by spaces into integers
+   b. Store in lista
+3. Read third input line:
+   a. Split by spaces into integers
+   b. Store in listb
+4. For k in range 0 to n-1 (inclusive):
+   a. Calculate current_number = k + 1
+   b. If current_number exists in lista:
+      1. Print "1 " (no newline)
+   c. Else:
+      1. Print "2 " (no newline)
+5. Implicit loop exit after n iterations
+
+CONTROL STRUCTURES:
+- Single for-loop with fixed iteration count (n times)
+- Conditional check (membership in lista) for each iteration
+
+INPUT/OUTPUT:
+- Input from standard input (3 lines):
+  1. Three space-separated integers
+  2. Space-separated integer list
+  3. Space-separated integer list
+- Output to standard output:
+  - Sequence of "1 " or "2 " for n elements
+  - Trailing space, no newline after final element
+
+ERROR HANDLING:
+- None explicit
+- Assumes valid integer inputs
+- Assumes correct number of elements in input lists
+- No validation of list sizes a/b vs actual elements
+
+DEPENDENCIES:
+- Standard input/output functions
+- List operations (membership checking)
+- No external libraries beyond basic language features

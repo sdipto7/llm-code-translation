@@ -1,0 +1,41 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,codeforces_397_B.java,Compilation Error,"Error: output/llama_4_maverick/avatar/algo_based_translation/python/java/codeforces_397_B.java:11: error: invalid method declaration; return type required
+    public CodeforcesTask397BSolution() {
+           ^
+1 error
+"
+python,java,atcoder_ABC133_E.java,Compilation Error,"Error: output/llama_4_maverick/avatar/algo_based_translation/python/java/atcoder_ABC133_E.java:28: error: cannot find symbol
+        int colorNum = f == K ? K - 1 : K - 2;
+                            ^
+  symbol:   variable K
+  location: class atcoder_ABC133_E
+1 error
+only showing the first 1 errors, of 3 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_222_A.java,Compilation Error,"Error: output/llama_4_maverick/avatar/algo_based_translation/python/java/codeforces_222_A.java:23: error: cannot find symbol
+        if (!allSame(Arrays.copyOfRange(elems, k - 1, n))) {
+                     ^
+  symbol:   variable Arrays
+  location: class codeforces_222_A
+1 error
+only showing the first 1 errors, of 3 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_AGC028_A.java,Compilation Error,"Error: output/llama_4_maverick/avatar/algo_based_translation/python/java/atcoder_AGC028_A.java:26: error: cannot find symbol
+        set1.retainAll(Number_j.stream().map(x -> (double) x).collect(Collectors.toList()));
+                                                                      ^
+  symbol:   variable Collectors
+  location: class atcoder_AGC028_A
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC107_D.java,Compilation Error,"Error: output/llama_4_maverick/avatar/algo_based_translation/python/java/atcoder_ABC107_D.java:64: error: ';' expected
+        boolean check(int X) {
+                     ^
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC135_D.java,Compilation Error,"Error: output/llama_4_maverick/avatar/algo_based_translation/python/java/atcoder_ABC135_D.java:23: error: bad operand type char for unary operator '!'
+                if (!S.charAt(i) == '?') {
+                    ^
+1 error
+"

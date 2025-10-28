@@ -1,0 +1,16 @@
+1. Read the number of inputs n from the user.
+2. If n equals 1, read the next integer and output it, then terminate.
+3. Initialize an empty list to store integers.
+4. Read n integers from the user and store them in the list.
+5. Sort the list in ascending order.
+6. If the largest number in the list is 0, output 0 and terminate.
+7. Initialize a variable ans to 0.
+8. Enter a loop that continues until the list contains only one element.
+9. Within the loop, process the list using the following steps:
+   1. Remove all elements that are 0 from the list.
+   2. Find the smallest non-zero element min in the list.
+   3. For each remaining element in the list, replace it with its remainder when divided by min.
+   4. If any element becomes 1, output 1 and terminate.
+   5. Sort the list in ascending order.
+10. Once the list contains only one element, assign this element to ans.
+11. Output the value of ans.

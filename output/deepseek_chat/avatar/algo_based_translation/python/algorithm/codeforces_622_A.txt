@@ -1,0 +1,15 @@
+Algorithm:
+- Input: integer n from standard input
+- Initialize integer l = 1
+- Initialize integer r = n
+- While l < r:
+  - Calculate integer mid = l + (r - l) // 2
+  - Calculate float idxcnt = mid * (mid + 1) / 2
+  - If idxcnt < n:
+    - Set l = mid + 1
+  - Else:
+    - Set r = mid
+- Set l = l - 1
+- Calculate float idxcnt = l * (l + 1) / 2
+- Calculate integer result = n - idxcnt
+- Output result as integer

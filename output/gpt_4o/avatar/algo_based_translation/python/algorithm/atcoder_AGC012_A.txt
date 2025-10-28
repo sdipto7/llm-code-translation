@@ -1,0 +1,28 @@
+```
+Import the following modules: 
+- median from statistics
+- gcd from fractions (note: gcd is deprecated in Python 3 and moved to math.gcd)
+- combinations from itertools
+- deque from collections
+- defaultdict from collections
+- bisect
+- sys
+
+Set the recursion limit using sys.setrecursionlimit to 10000000.
+
+Define a constant `mod` with the value 10**9 + 7.
+
+Define a function `readInts()` with no parameters:
+- Read a line of input using input(), split it into a list of strings, convert each string to an integer using map, and return the list of integers.
+
+Define a function `main()` with no parameters:
+- Declare an integer variable `n` and assign it the integer value from input().
+- Declare a list `A` and assign it the result of calling `readInts()`.
+- Sort the list `A`.
+- Declare an integer variable `ans` and initialize it to 0.
+- Iterate over the list `A` in reverse order, starting from the second-to-last element and decrementing by 2, until reaching the element at index `len(A) - 2 * n - 1`:
+  - Add the current element of `A` to `ans`.
+- Print the value of `ans`.
+
+Call the `main()` function if this module is executed as the main program.
+```

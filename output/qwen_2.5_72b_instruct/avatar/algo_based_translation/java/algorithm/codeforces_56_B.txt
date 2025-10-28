@@ -1,0 +1,40 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner scan` for input
+- `int len` for length of array
+- `int[] a` for array of integers
+- `int l` for left index
+- `int r` for right index
+- `boolean flag` to track first mismatch
+- `boolean isTrue` to check increasing sequence
+
+Complete logic flow in execution order:
+1. Create `Scanner` object to read input
+2. Read integer `len`
+3. Initialize array `a` with size `len`
+4. Loop through array to fill elements:
+   - For `i` from `0` to `len-1`, read next integer into `a[i]`
+5. Initialize `l` to `0`, `r` to `0`, `flag` to `false`, `isTrue` to `false`
+6. Start labeled loop `loop`:
+   - For `i` from `0` to `len-1`:
+     - If `a[i] != i+1` and `!flag`:
+       - Set `l` to `i+1`
+       - Set `flag` to `true`
+       - Continue to next iteration
+     - If `a[i] != i+1` and `flag`:
+       - Set `r` to `i+1`
+       - If `a[r-1] - a[r-2] > 0`:
+         - Set `isTrue` to `true`
+         - Break out of loop `loop`
+7. Print `( ! isTrue ) ? l + " " + r : "0" + " " + "0"`
+
+Input/output operations and data processing logic:
+- Read integer `len` from input
+- Read `len` integers into array `a`
+- Determine the indices `l` and `r` where the sequence diverges from expected increasing order
+- Check if the sequence between `l` and `r` is strictly increasing
+- Print `l` and `r` if sequence is not strictly increasing, otherwise print `0 0`
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner` for input handling

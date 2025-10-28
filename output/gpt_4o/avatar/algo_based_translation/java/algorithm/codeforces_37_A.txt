@@ -1,0 +1,55 @@
+1. Import required modules:
+   - `java.io.BufferedReader`
+   - `java.io.IOException`
+   - `java.io.InputStreamReader`
+   - `java.util.HashMap`
+   - `java.util.Map`
+   - `java.util.StringTokenizer`
+
+2. Function signature: `main(String[] args)` with no return type.
+
+3. Declare and initialize:
+   - `FastScanner input` as a new instance of `FastScanner`.
+
+4. Read input:
+   - `int n = input.nextInt()`: Read the number of elements.
+
+5. Declare:
+   - `HashMap<Integer, Integer> map` to store frequency of integers.
+
+6. Loop `for` from `i = 0` to `n - 1`:
+   - Read integer: `int val = input.nextInt()`.
+   - Update frequency map: `map.put(val, map.getOrDefault(val, 0) + 1)`.
+
+7. Declare and initialize:
+   - `int max = Integer.MIN_VALUE` to track the maximum frequency.
+
+8. Iterate over map entries:
+   - For each `entry` in `map.entrySet()`:
+     - Retrieve frequency: `Integer value = entry.getValue()`.
+     - Update maximum frequency: `max = Math.max(max, value)`.
+
+9. Output results:
+   - Print maximum frequency and number of unique elements: `System.out.println(max + " " + map.size())`.
+
+10. Class definition for `FastScanner`:
+    - Declare `BufferedReader br` initialized with `InputStreamReader(System.in)`.
+    - Declare `StringTokenizer st` initialized with an empty string.
+
+11. Method `next()`: Return `String`
+    - While `st` has no more tokens:
+      - Try reading next line: `st = new StringTokenizer(br.readLine())`.
+      - Catch `IOException`: `e.printStackTrace()`.
+    - Return next token: `st.nextToken()`.
+
+12. Method `nextInt()`: Return `int`
+    - Return `Integer.parseInt(next())`.
+
+13. Method `nextLong()`: Return `long`
+    - Return `Long.parseLong(next())`.
+
+14. Method `nextDouble()`: Return `double`
+    - Return `Double.parseDouble(next())`.
+
+15. Method `nextLine()`: Return `String`
+    - Return `br.readLine()`, potentially throwing `IOException`.

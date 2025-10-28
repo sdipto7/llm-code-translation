@@ -1,0 +1,60 @@
+Algorithm:
+
+Variables:
+- integer n (number of nodes)
+- List<ArrayList<Edge>> g (graph adjacency list)
+- integer array ans (edge color assignments)
+- Edge class: integer id, integer to
+
+Function Signatures:
+- main(String[] args)
+    Parameters: String array args
+    Returns: void
+- dfs(int to, int color, int parents)
+    Parameters: integer to, integer color, integer parents
+    Returns: void
+- Edge(int id, int to)
+    Parameters: integer id, integer to
+
+Execution Flow:
+1. Read integer n from standard input
+2. Initialize g with n empty ArrayList<Edge> entries
+3. Process (n-1) edge inputs:
+    a. Read integers a and b (convert to 0-based indices)
+    b. Add Edge(i, b) to g[a]
+    c. Add Edge(i, a) to g[b]
+4. Initialize ans array with length (n-1)
+5. Call dfs(0, -1, -1)
+6. Compute maximum value in ans array
+7. Print maximum value followed by ans elements line-by-line
+
+DFS Logic:
+1. Initialize k = 1
+2. For each Edge e in g.get(to):
+    a. If e.to == parents: continue
+    b. If k == color: increment k
+    c. Set ans[e.id] = k
+    d. Call dfs(e.to, k, to)
+    e. Increment k
+
+Control Structures:
+- for loop: iterate from 0 to n-1 (adjacency list initialization)
+- for loop: iterate from 0 to n-2 (edge processing)
+- foreach loop in dfs: iterate through Edge objects
+- if condition: skip parent node check
+- if condition: color collision avoidance
+- for loop: compute maximum color value
+- for loop: output color values
+
+Input/Output:
+- Input: 
+    - First line: n
+    - Next (n-1) lines: pairs of integers representing edges
+- Output:
+    - First line: maximum color count
+    - Subsequent (n-1) lines: color values in edge input order
+
+Dependencies:
+- java.util.ArrayList
+- java.util.List
+- java.util.Scanner

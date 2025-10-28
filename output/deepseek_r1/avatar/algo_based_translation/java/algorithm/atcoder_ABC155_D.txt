@@ -1,0 +1,70 @@
+```algorithm
+Algorithm:
+
+Main Function:
+1. Input:
+   - Read integer n
+   - Read long integer k
+   - Read array a of n long integers
+2. Sort array a in ascending order
+3. Initialize:
+   - long INF = 1e18 + 1
+   - long l = -INF
+   - long r = INF
+4. Binary search loop:
+   While l + 1 < r:
+      a. Calculate mid c = (l + r) / 2
+      b. Call check(c):
+         i. If returns true: set l = c
+         ii. Else: set r = c
+5. Output l as result
+
+Function check(long x) returns boolean:
+1. Initialize:
+   - long tot = 0
+2. For each element now in array a (index i from 0 to n-1):
+   a. If now >= 0:
+      i. Binary search in a:
+         - Initialize left = 0, right = n
+         - While left < right:
+              Calculate mid c = (left + right) / 2
+              If now * a[c] < x → left = c + 1
+              Else → right = c
+         - Add left to tot
+   b. Else (now < 0):
+      i. Binary search in a:
+         - Initialize left = 0, right = n
+         - While left < right:
+              Calculate mid c = (left + right) / 2
+              If now * a[c] >= x → left = c + 1
+              Else → right = c
+         - Add (n - left) to tot
+   c. If now * now < x → decrement tot by 1
+3. Calculate total valid pairs:
+   - Divide tot by 2 (since pairs are counted twice)
+4. Return (tot / 2 < k)
+
+Variables:
+- Global:
+   - int n: number of elements
+   - long k: target rank
+   - long[] a: sorted input array
+- check function:
+   - long x: candidate product value
+   - long tot: total pairs count
+   - int left, right: binary search pointers
+   - long now: current element in array
+
+Data Flow:
+- Input processing → array sorting → binary search on product values → check function evaluates count of smaller products → determine K-th smallest product
+
+Control Structures:
+- Main loop: while l + 1 < r (binary search)
+- Nested loops in check: for each element, while loops for binary searches
+- Conditional handling for positive/negative elements in check
+
+Dependencies:
+- Requires java.util.Arrays for sorting
+- Uses java.math.BigInteger (though not directly used in core logic)
+- Input handled via Scanner class
+```

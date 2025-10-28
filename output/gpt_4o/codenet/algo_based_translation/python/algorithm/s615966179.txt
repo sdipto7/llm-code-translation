@@ -1,0 +1,19 @@
+- Function signature: `def calculate_maximum_days(n: int, a: int, b: int) -> int`
+- Variable declarations:
+  - `n: int` - Total number of days.
+  - `a: int` - Number of days to perform a certain task.
+  - `b: int` - Number of days not performing the task after `a` days.
+  - `ans: int` - Resulting maximum number of days the task can be performed.
+  - `r: int` - Remaining days when `n` is not perfectly divisible by `(a + b)`.
+- Input operations:
+  - Read a single line of input containing three integers separated by spaces.
+  - Parse the input and assign each value to `n`, `a`, and `b` respectively.
+- Logic flow:
+  1. Compute the number of complete cycles of `(a + b)` days that fit into `n` using integer division: `n // (a + b)`.
+  2. Multiply the result by `a` to determine the maximum number of days the task can be performed in these full cycles: `ans = (n // (a + b)) * a`.
+  3. Calculate the remaining days after considering full cycles: `n % (a + b)`.
+  4. Determine the additional days the task can be performed in the remaining days: `r = min(n % (a + b), a)`.
+  5. Add these additional days to the result: `ans += r`.
+- Output operation:
+  - Print the value of `ans`.
+- Return the value of `ans`.

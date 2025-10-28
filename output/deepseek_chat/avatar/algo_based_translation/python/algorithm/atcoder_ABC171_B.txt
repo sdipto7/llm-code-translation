@@ -1,0 +1,4 @@
+n, k = read integers from input by splitting and converting
+numbers = read next line, split into list, convert each to integer, sort the list
+sum = calculate sum of first k elements from sorted numbers list
+print sum

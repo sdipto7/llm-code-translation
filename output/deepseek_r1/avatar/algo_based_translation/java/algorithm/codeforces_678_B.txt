@@ -1,0 +1,42 @@
+**Algorithm:**
+
+**Functions:**
+1. `main(String[] args) -> void`
+   - Parameters: `String[] args` (command-line arguments)
+   - Variables:
+     - `Scanner in` (input handler)
+     - `int y` (input year)
+     - `boolean leap` (leap year status of `y`)
+     - `int sum` (cumulative days counter, initialized to 0)
+     - `int mod` (unused)
+   - Logic:
+     1. Read integer `y` from standard input.
+     2. Compute `leap = check_leap(y)`.
+     3. Initialize infinite loop starting with `i = y + 1`:
+         - For each year `i`:
+           - If `check_leap(i)` is true: add 366 to `sum`.
+           - Else: add 365 to `sum`.
+           - Compute `sum % 7`.
+           - If `sum % 7 == 0`:
+             - Check if `(check_leap(i) && leap) || (!check_leap(i) && !leap)`.
+             - If true: print `i` and terminate.
+             - Else: continue the loop.
+
+2. `check_leap(int y) -> boolean`
+   - Parameters: `int y` (year to check)
+   - Logic:
+     - Return `true` if `y` is divisible by 400 OR (`y` is divisible by 4 and not divisible by 100).
+
+**Control Structures:**
+- `for (int i = y + 1; ; i++)` (infinite loop terminated by `return` in body)
+- `if (check_leap(i))` to add days (366 vs. 365)
+- `if (sum % 7 == 0)` to check alignment with week cycles
+- Nested `if ((check_leap(i) && leap) || (!check_leap(i) && !leap))` to validate leap-year consistency
+
+**Input/Output:**
+- Input: Read `y` via `Scanner.nextInt()`.
+- Output: Print first valid year `i` matching conditions.
+
+**Dependencies:**
+- `java.util.Scanner` for input handling.
+- `java.sql.Timestamp` (imported but unused).

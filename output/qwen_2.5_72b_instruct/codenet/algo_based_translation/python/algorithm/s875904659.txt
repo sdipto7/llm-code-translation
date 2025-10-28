@@ -1,0 +1,45 @@
+Function signature: `bubbleSort(cards: List[str]) -> None`
+Variable declarations: 
+- `n: int` (length of cards)
+- `i: int` (outer loop index)
+- `j: int` (inner loop index)
+
+Logic flow:
+1. Assign length of `cards` to `n`.
+2. For `i` from 0 to `n-1`:
+   - For `j` from `n-1` to `i+1` decrementing by 1:
+     - If integer value of second character of `cards[j]` is less than integer value of second character of `cards[j-1]`:
+       - Swap `cards[j]` and `cards[j-1]`.
+3. Print space-separated string of `cards`.
+
+Function signature: `selectionSort(cards: List[str]) -> None`
+Variable declarations:
+- `n: int` (length of cards)
+- `i: int` (outer loop index)
+- `mini: int` (index of minimum element)
+- `j: int` (inner loop index)
+
+Logic flow:
+1. Assign length of `cards` to `n`.
+2. For `i` from 0 to `n-1`:
+   - Assign `i` to `mini`.
+   - For `j` from `i` to `n-1`:
+     - If integer value of second character of `cards[j]` is less than integer value of second character of `cards[mini]`:
+       - Assign `j` to `mini`.
+   - If `mini` is not equal to `i`:
+     - Swap `cards[i]` and `cards[mini]`.
+3. Print space-separated string of `cards`.
+
+Input/output operations:
+- Read integer `n` from standard input.
+- Read string of card representations from standard input and split into list `cards`.
+- Create copy of `cards` named `cards2`.
+- Call `bubbleSort` on `cards`.
+- Print "Stable".
+- Call `selectionSort` on `cards2`.
+- If space-separated string of `cards2` is equal to space-separated string of `cards`:
+  - Print "Stable".
+- Else:
+  - Print "Not stable".
+
+No external libraries or modules required.

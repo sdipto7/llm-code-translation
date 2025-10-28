@@ -1,0 +1,26 @@
+Algorithm:
+- Import: java.util.LinkedList, java.util.Queue, java.util.Scanner
+- Main function: public static void main(String[] args)
+- Declare Scanner sc = new Scanner(System.in)
+- Read integer n = sc.nextInt()
+- Declare 2D integer array g with dimensions [n+1][n+1]
+- For i from 0 to n-1:
+  - Read integer u = sc.nextInt()
+  - Read integer k = sc.nextInt()
+  - For j from 0 to k-1:
+    - Read integer v = sc.nextInt()
+    - Set g[u][v] = 1
+- Declare integer array d with size n+1
+- For i from 0 to n:
+  - Set d[i] = -1
+- Declare Queue<Integer> que = new LinkedList<Integer>()
+- que.add(1)
+- Set d[1] = 0
+- While que is not empty:
+  - int top = que.poll()
+  - For j from 1 to n:
+    - If g[top][j] == 1 AND d[j] == -1:
+      - que.add(j)
+      - Set d[j] = d[top] + 1
+- For i from 1 to n:
+  - Print i + " " + d[i]

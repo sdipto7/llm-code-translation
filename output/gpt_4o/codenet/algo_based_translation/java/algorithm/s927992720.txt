@@ -1,0 +1,61 @@
+1. Import necessary library:
+   - Import `java.util.Scanner` for reading input from the user.
+
+2. Define main class:
+   - Class name: `Main`
+
+3. Define `main` function:
+   - Signature: `public static void main(String[] args)`
+   - Parameters: `String[] args`
+   - Return type: `void`
+
+4. Declare and initialize a `Scanner` object:
+   - Variable name: `sc`
+   - Data type: `Scanner`
+   - Initialization: `new Scanner(System.in)`
+
+5. Start an infinite loop:
+   - Type: `while`
+   - Condition: `true` (infinite loop)
+
+6. Inside the loop:
+   - Read an integer from input and store it in variable `a`
+     - Variable name: `a`
+     - Data type: `int`
+     - Assignment: `sc.nextInt()`
+
+   - Read an operator from input and store it in variable `op`
+     - Variable name: `op`
+     - Data type: `String`
+     - Assignment: `sc.next()`
+
+   - Read another integer from input and store it in variable `b`
+     - Variable name: `b`
+     - Data type: `int`
+     - Assignment: `sc.nextInt()`
+
+   - Check if the operator `op` is equal to `"?"`
+     - Conditional: `if(op.equals("?"))`
+     - If true, break the loop
+
+   - Check if the operator `op` is equal to `"+"`
+     - Conditional: `if(op.equals("+"))`
+     - If true, calculate `a + b` and print the result
+
+   - Check if the operator `op` is equal to `"-"`
+     - Conditional: `if(op.equals("-"))`
+     - If true, calculate `a - b` and print the result
+
+   - Check if the operator `op` is equal to `"*"`
+     - Conditional: `if(op.equals("*"))`
+     - If true, calculate `a * b` and print the result
+
+   - Check if the operator `op` is equal to `"/"`
+     - Conditional: `if(op.equals("/"))`
+     - If true, calculate `a / b` and print the result
+
+7. End of loop
+
+8. End of main function
+
+9. End of class

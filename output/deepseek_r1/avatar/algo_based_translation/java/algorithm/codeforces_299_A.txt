@@ -1,0 +1,43 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+  - Parameters: String array `args`
+  - Return type: `void`
+
+**Variables:**
+- `Scanner in = new Scanner(System.in)` (Scanner)
+- `int n = in.nextInt()` (int)
+- `int[] a = new int[n]` (int array)
+- `int min = a[0]` (int)
+- Loop variable `int i = 0` (int)
+- Iteration variable `int value` (int)
+
+**Dependencies:**
+- `java.util.Arrays`
+- `java.util.Scanner`
+
+**Logic Flow:**
+1. Read integer `n` from input.
+2. Declare integer array `a` of size `n`.
+3. For `i` from `0` to `n-1`:
+   - Read integer from input and assign to `a[i]`.
+4. Sort array `a` in ascending order.
+5. Assign `min` as the first element of sorted `a`.
+6. For each `value` in array `a`:
+   - If `value % min != 0`:
+     - Print `-1`.
+     - Terminate program.
+7. If all values pass the check:
+   - Print `min`.
+
+**Control Structures:**
+- `for (int i = 0; i < n; i++)`
+- `for (int value : a)`
+- `if (value % min != 0)`
+
+**Input/Output Operations:**
+- Input: `n` and elements of `a` via `Scanner`.
+- Output: `-1` or `min` via `System.out.println`.
+
+**Data Processing:**
+- Array initialization and sorting via `Arrays.sort(a)`.
+- Divisibility check using modulus operator `%`.

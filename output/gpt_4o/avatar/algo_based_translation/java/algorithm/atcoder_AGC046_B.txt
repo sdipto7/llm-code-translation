@@ -1,0 +1,30 @@
+```
+Algorithm:
+1. Import necessary libraries: java.io.PrintWriter, java.util.HashMap, java.util.Map, java.util.Scanner.
+2. Define class `atcoder_AGC046_B`.
+3. Declare a constant `MOD` with value 998244353L.
+4. Declare a 2D array `dp` of type long with dimensions [3001][3001].
+5. Define method `solve` with parameters `(Scanner sc, PrintWriter pw)`:
+   - Read integers `A`, `B`, `C`, and `D` from input using `sc.nextInt()`.
+   - Initialize `dp[A][B]` to 1.
+   - Iterate over `c` from `A` to `C`:
+     - Iterate over `d` from `B` to `D`:
+       - If `c` equals `A` and `d` equals `B`, continue to the next iteration.
+       - Initialize `ans` to 0.
+       - If `c` is greater than `A`:
+         - Set `part` to `dp[c-1][d]`.
+         - Update `ans` by adding `(part * d)`.
+       - If `d` is greater than `B`:
+         - Set `part` to `dp[c][d-1]`.
+         - Update `ans` by adding `(part * c)`.
+       - If `c` is greater than `A` and `d` is greater than `B`:
+         - Subtract from `ans` the value `(dp[c-1][d-1] * (c-1) * (d-1))`.
+       - Update `dp[c][d]` with `((ans % MOD) + MOD) % MOD`.
+   - Output `dp[C][D]` using `pw.println()`.
+6. Define `main` method with `String[] args`:
+   - Create `Scanner` object `sc` for reading from System.in.
+   - Create `PrintWriter` object `pw` for writing to System.out.
+   - Call `solve` method on a new instance of `atcoder_AGC046_B` with `sc` and `pw`.
+   - Flush and close `pw`.
+   - Close `sc`.
+```

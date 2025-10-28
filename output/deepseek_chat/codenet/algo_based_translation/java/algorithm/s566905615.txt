@@ -1,0 +1,17 @@
+Algorithm:
+- Import: java.util.Scanner
+- Function: main(String[] args)
+- Variables:
+  - Scanner sc = new Scanner(System.in)
+  - int a = sc.nextInt()
+  - int b = sc.nextInt()
+  - int c = sc.nextInt()
+  - String answer = "No"
+- Logic flow:
+  1. Read integer input a
+  2. Read integer input b
+  3. Read integer input c
+  4. Initialize answer to "No"
+  5. Check condition: if (a + b >= c)
+     - If true: set answer = "Yes"
+  6. Print answer to standard output

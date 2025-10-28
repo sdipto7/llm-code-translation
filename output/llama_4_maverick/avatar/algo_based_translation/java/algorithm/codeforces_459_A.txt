@@ -1,0 +1,10 @@
+1. Read four integers: x1, y1, x2, y2.
+2. If x1 equals x2, then:
+   1. Calculate the absolute difference between y1 and y2.
+   2. Print (x1 + difference), y1, (x1 + difference), y2.
+3. Else if y1 equals y2, then:
+   1. Calculate the absolute difference between x1 and x2.
+   2. Print x1, (y1 + difference), x2, (y2 + difference).
+4. Else if the absolute difference between x1 and x2 equals the absolute difference between y1 and y2, then:
+   1. Print x1, y2, x2, y1.
+5. Else, print -1.

@@ -1,0 +1,25 @@
+1. READ input string s
+2. INITIALIZE empty list res
+3. INITIALIZE list punctuation WITH [',', '.', '!', '?']
+4. FOR i FROM 0 TO LENGTH(s) - 1
+   4.1 IF i >= 1 THEN
+      4.1.1 IF s[i] == '' THEN
+         4.1.1.1 IF LAST ELEMENT OF res != '' THEN
+            4.1.1.1.1 APPEND '' TO res
+         4.1.1.2 ELSE
+            CONTINUE TO NEXT ITERATION
+      4.1.2 ELSE IF s[i] IN punctuation THEN
+         4.1.2.1 IF LAST ELEMENT OF res == '' THEN
+            4.1.2.1.1 REMOVE LAST ELEMENT FROM res
+         4.1.2.2 APPEND s[i] TO res
+         4.1.2.3 APPEND '' TO res
+      4.1.3 ELSE
+         4.1.3.1 APPEND s[i] TO res
+   4.2 ELSE
+      4.2.1 IF s[i] == '' THEN
+         4.2.1.1 CONTINUE TO NEXT ITERATION
+      4.2.2 ELSE IF s[i] IN punctuation THEN
+         4.2.2.1 CONTINUE TO NEXT ITERATION
+      4.2.3 ELSE
+         4.2.3.1 APPEND s[i] TO res
+5. PRINT CONCATENATION OF ALL ELEMENTS IN res

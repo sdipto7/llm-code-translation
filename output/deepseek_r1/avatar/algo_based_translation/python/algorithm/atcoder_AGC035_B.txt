@@ -1,0 +1,56 @@
+**Structured Algorithm Specification:**
+
+**Function/Method Signatures:**
+- No explicit functions/methods (procedural code)
+
+**Variables:**
+- `N: int` (number of vertices)
+- `M: int` (number of edges)
+- `edges: list[set[int]]` (size N, adjacency list)
+- `degs: list[int]` (size N, vertex degrees)
+- `parity: list[int]` (size N, initialized to 0)
+- `flag: list[bool]` (size N, initialized to False)
+- `Q: list[tuple[int, int]]` (priority queue storing (degree, node))
+
+**Input Operations:**
+1. Read `N` and `M` from standard input as integers.
+2. Read `M` lines, each containing two integers `a`, `b` (1-based indices). Convert to 0-based indices and populate `edges`, updating `degs` for both vertices.
+
+**Output Operations:**
+- Print edge directions as "u v" during edge processing or "-1" for invalid input.
+
+**Control Flow & Logic:**
+1. **Edge Case Check:**
+   - If `M` is odd:
+     - Print "-1"
+     - Terminate program
+
+2. **Priority Queue Initialization:**
+   - Initialize `Q` with tuples `(degs[i], i)` for all nodes (0 ≤ i < N)
+   - Convert `Q` to a min-heap using `heapq.heapify`
+
+3. **Main Processing Loop** (while `Q` not empty):
+   - Extract node `u` with smallest degree from `Q` using `heapq.heappop`
+   - If `flag[u]` is True: skip to next iteration
+   - Set `flag[u] = True`
+   - For each index `i`, neighbor `v` in `edges[u]` (maintaining iteration order):
+     - Remove `u` from `edges[v]`
+     **Edge Direction Logic:**
+     - If `parity[u] != 0` and `i == 0`:
+       - Print `(u+1, v+1)`
+       - Toggle `parity[u]` (set to `1 - parity[u]`)
+     - Else:
+       - Print `(v+1, u+1)`
+       - Toggle `parity[v]` (set to `1 - parity[v]`)
+     - Decrement `degs[v]`
+     - Push `(degs[v], v)` into `Q` via `heapq.heappush`
+
+**Error Handling & Edge Cases:**
+- Immediate termination when odd edge count detected
+- Priority queue skips processed nodes via `flag` checks
+- Explicit handling of 1-based to 0-based index conversion
+
+**External Dependencies:**
+- `numpy` (imported but unused)
+- `deque` from `collections` (imported but unused)
+- `heapq` for priority queue operations

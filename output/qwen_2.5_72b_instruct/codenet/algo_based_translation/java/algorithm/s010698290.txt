@@ -1,0 +1,60 @@
+Function Signatures:
+- `main(String args[])`
+
+Variable Declarations and Data Types:
+- `int i, j`
+- `int m, n, t, max, k, x, y, min, correct_ans, num, num_penal`
+- `long a, b, sum`
+- `String str`
+- `int penal[] = new int[n+1]`
+- `boolean solved[] = new boolean[n+1]`
+- `BufferedReader br`
+- `StringTokenizer st`
+
+Complete Logic Flow in Execution Order:
+1. Create `FastReader` object `s` for reading input.
+2. Create `BufferedWriter` object `w` for writing output.
+3. Read integers `n` and `m`.
+4. Initialize array `penal` of size `n+1` with zeros.
+5. Initialize array `solved` of size `n+1` with `false`.
+6. Loop `i` from `0` to `m-1`:
+   - Read integer `num`.
+   - Read string `str`.
+   - If `str.charAt(0) == 'A'`, set `solved[num] = true`.
+   - Else if `solved[num] == false`, increment `penal[num]`.
+7. Initialize `correct_ans` to `0`.
+8. Initialize `num_penal` to `0`.
+9. Loop `i` from `1` to `n`:
+   - If `solved[i] == true`, increment `correct_ans` and add `penal[i]` to `num_penal`.
+10. Write `correct_ans` and `num_penal` separated by a space to the output.
+11. Close `BufferedWriter` object `w`.
+
+Control Structures:
+- Loops:
+  - `for(i=0; i<m; i++)`
+  - `for(i=1; i<=n; i++)`
+- Conditionals:
+  - `if(str.charAt(0) == 'A')`
+  - `else if(solved[num] == false)`
+  - `if(solved[i] == true)`
+
+Input/Output Operations and Data Processing Logic:
+- Read integers `n` and `m` from standard input.
+- For each of `m` problem attempts, read `num` and `str`.
+- Update `solved` and `penal` arrays based on the input.
+- Calculate correct answers and total penalties.
+- Output the number of correct answers and total penalties.
+
+Required Libraries, Modules, or Dependencies:
+- `java.io.BufferedReader`
+- `java.io.BufferedWriter`
+- `java.io.FileOutputStream`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.io.OutputStream`
+- `java.io.OutputStreamWriter`
+- `java.io.PrintWriter`
+- `java.util.*`
+- `java.lang.Math`
+- `java.awt.Point`
+- `java.awt.geom.*`

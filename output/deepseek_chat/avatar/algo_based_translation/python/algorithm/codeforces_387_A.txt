@@ -1,0 +1,33 @@
+**Function Signature:**
+- No explicit function defined; main script execution
+
+**Variables and Data Types:**
+- h1: integer
+- m1: integer
+- h2: integer
+- m2: integer
+
+**Input Operations:**
+- Read first input string and split by colon
+- Convert split parts to integers and assign to h1 and m1
+- Read second input string and split by colon
+- Convert split parts to integers and assign to h2 and m2
+
+**Data Processing Logic:**
+- Convert h1 to minutes: m1 = m1 + (h1 * 60)
+- Convert h2 to minutes: m2 = m2 + (h2 * 60)
+- Calculate time difference: m2 = m1 - m2
+- Normalize to 24-hour cycle: m2 = m2 % 1440
+- Convert minutes back to hours and minutes format
+
+**Output Operation:**
+- Format result as HH:MM with leading zeros
+- Print formatted result
+
+**Control Structures:**
+- No explicit conditionals or loops
+- Sequential execution of arithmetic operations and modulus operation
+
+**Required Dependencies:**
+- Standard input/output functions (built-in)
+- No external libraries or modules required

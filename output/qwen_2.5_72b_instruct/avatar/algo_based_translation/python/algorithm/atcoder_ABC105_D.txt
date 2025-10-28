@@ -1,0 +1,22 @@
+Function: main()
+Parameters: None
+Return Type: None
+
+Variable Declarations:
+N: int
+M: int
+A: numpy.ndarray[int64]
+cum_remainders: numpy.ndarray[int64]
+remainder_counts: Counter[int]
+combinations: int
+
+Logic Flow:
+1. Import sys, collections.Counter, numpy
+2. Read a line from standard input, split it into two integers, and assign them to N and M
+3. Read another line from standard input, split it into integers, convert them to int64 numpy array, and assign to A
+4. Create a new numpy array cum_remainders by first horizontally stacking 0 and A, then taking modulo M of each element, and finally taking the cumulative sum modulo M
+5. Count the occurrences of each element in cum_remainders and store in remainder_counts
+6. Initialize combinations to 0
+7. For each count in remainder_counts values:
+   - Add count * (count - 1) // 2 to combinations
+8. Print the value of combinations

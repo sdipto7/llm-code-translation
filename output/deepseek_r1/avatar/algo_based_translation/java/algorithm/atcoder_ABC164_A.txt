@@ -1,0 +1,39 @@
+```plaintext
+Function:
+    main(args: String[]) → void
+Imports:
+    java.util.Scanner
+    java.util.ArrayList
+Variables:
+    scan: Scanner (System.in)
+    scList: ArrayList<String>
+    i: int
+    numlist: String[]
+    Sheep: int
+    Wolve: int
+Logic Flow:
+    1. Initialize Scanner with System.in
+    2. Create empty ArrayList scList
+    3. Start infinite loop with incrementing i:
+        a. Try to read line via scan.nextLine()
+        b. Add line to scList
+        c. On exception, break loop
+    4. Split first element of scList by space → numlist
+    5. Parse numlist[0] as integer → Sheep
+    6. Parse numlist[1] as integer → Wolve
+    7. If Wolve ≥ Sheep:
+        a. Print "unsafe"
+    8. Else:
+        a. Print "safe"
+Control Structures:
+    - for loop: for (i=0; i≥0; i++)
+    - try-catch block around scList.add()
+    - if-else: Wolve >= Sheep comparison
+Input/Output:
+    - Reads multiple lines until input exception occurs
+    - Processes first input line containing two space-separated integers
+    - Outputs "safe" or "unsafe" based on comparison
+Data Processing:
+    - Splits input string into numerical components
+    - Converts string values to integers for comparison
+```

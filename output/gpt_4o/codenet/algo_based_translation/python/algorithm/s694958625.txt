@@ -1,0 +1,26 @@
+```
+Function Signature:
+    function calculate_modulo(x: int, a: int, b: int) -> int
+
+Variable Declarations:
+    x: int
+    a: int
+    b: int
+    result: int
+
+Execution Order:
+    1. Input three integers from the user: x, a, and b.
+    2. Calculate the result as (x - a) % b.
+    3. Output the result.
+
+Input/Output Operations:
+    - Read integer input from the user for variables x, a, and b.
+    - Print the result of the calculation.
+
+Data Processing Logic:
+    - Subtract a from x.
+    - Compute the modulo of the result with b.
+
+Required Libraries:
+    - None
+```

@@ -1,0 +1,32 @@
+- Required Libraries:
+  - java.util.Scanner
+
+- Function Signature:
+  - public static void main(String[] args)
+
+- Variables:
+  - Scanner sc (Scanner object)
+  - int x (first input)
+  - int y (second input)
+  - int z (third input)
+
+- Logic Flow:
+  1. Create Scanner object for System.in
+  2. Read integer from standard input into x
+  3. Read integer from standard input into y
+  4. Read integer from standard input into z
+  5. Output formatted string with values (z, x, y) separated by spaces
+  6. Close Scanner object
+
+- Control Structures:
+  - None (no loops or conditional statements)
+
+- Input Operations:
+  - 3 consecutive nextInt() calls
+
+- Output Operations:
+  - Single System.out.println with space-separated values in z, x, y order
+
+- Data Processing:
+  - Direct assignment of input values
+  - Reordering of output sequence

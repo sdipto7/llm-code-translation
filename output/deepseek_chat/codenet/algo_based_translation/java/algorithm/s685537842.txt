@@ -1,0 +1,28 @@
+**Function Signature:**
+main(String[] args) -> void
+
+**Required Libraries:**
+java.util.Scanner
+
+**Variables:**
+- Scanner sc
+- int a
+- int b
+- int t
+- double time = 0.0
+- int count = 0
+
+**Algorithm:**
+1. Create Scanner object reading from System.in
+2. Read integer input into variable a
+3. Read integer input into variable b
+4. Read integer input into variable t
+5. Initialize time = 0.0
+6. Initialize count = 0
+7. While time < t + 0.5:
+   - Add b to count
+   - Add a to time
+   - If time > t + 0.5:
+     - Subtract b from count
+     - Break out of loop
+8. Print count

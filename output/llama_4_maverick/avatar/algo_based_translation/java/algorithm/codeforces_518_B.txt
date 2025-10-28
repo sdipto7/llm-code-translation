@@ -1,0 +1,9 @@
+1. Read two strings from the input.
+2. Create a frequency map of characters in the second string.
+3. Iterate through each character in the first string.
+4. For each character, check if it exists in the frequency map.
+5. If it exists, decrement its count in the map, mark the character as processed, and increment the count of exact matches.
+6. Iterate through the processed first string again.
+7. For each processed character (marked earlier), check if its case-reversed character exists in the frequency map.
+8. If it exists, decrement its count in the map and increment the count of case-reversed matches.
+9. Output the counts of exact matches and case-reversed matches.

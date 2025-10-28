@@ -1,0 +1,32 @@
+Function signature: main(String[] args)
+
+Variable declarations and data types:  
+Scanner sc  
+int a  
+int b  
+int c  
+int count  
+
+Logic flow in execution order:  
+1. Create a Scanner object to read input from standard input
+2. Read the first integer input and store it in variable a  
+3. Read the second integer input and store it in variable b  
+4. Read the third integer input and store it in variable c  
+5. Initialize count to 0  
+6. For each integer i from a to b inclusive:
+    - If c modulo i equals 0:
+        - Increment count by 1  
+7. Print the value of count
+
+Control structures:  
+For loop with condition i <= b  
+If statement with condition c % i == 0
+
+Input operations:  
+Read three integers from standard input
+
+Output operations:  
+Print the value of count to standard output
+
+Libraries/modules/dependencies:  
+java.util.Scanner

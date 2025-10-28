@@ -1,0 +1,45 @@
+Function Signatures:
+- `solve(): int`
+
+Variable Declarations and Data Types:
+- `N: int`
+- `K: int`
+- `A: List[int]`
+- `sum_A: List[int]`
+- `count: int`
+- `modK: Dict[int, List[int]]`
+
+Logic Flow in Execution Order:
+1. Read input values `N` and `K`.
+2. Read list `A` of integers, convert each element to `(int(a) % K) - 1`, store in list `A`.
+3. Initialize list `sum_A` of length `N + 1` with zeros.
+4. Initialize variable `count` to zero.
+5. Initialize dictionary `modK` with key `0` and value `[0]`.
+6. For each index `i` from `0` to `N-1`:
+   - Calculate `sum_A[i + 1]` as `(sum_A[i] + A[i]) % K`.
+   - If `sum_A[i + 1]` is not in `modK`, add it with value `[i + 1]`.
+   - Otherwise, append `i + 1` to `modK[sum_A[i + 1]]`.
+7. For each key in `modK`:
+   - Get length of `modK[key]` and store it in `lenK`.
+   - For each index `i` and value `a` in `modK[key]`:
+     - Increment `count` by `bisect_left(modK[key], a + K, i, lenK) - i - 1`.
+8. Print `count`.
+9. Return `0`.
+
+Control Structures:
+- For loop: `for i in range(N)`
+- For loop: `for key in modK`
+- For loop with enumeration: `for i, a in enumerate(modK[key])`
+- If-else statement: `if sum_A[i + 1] not in modK`
+
+Input/Output Operations and Data Processing Logic:
+- Read integers `N` and `K` from standard input.
+- Read list `A` of integers from standard input, process each element to `(int(a) % K) - 1`.
+- Compute prefix sums modulo `K` and store in `sum_A`.
+- Use a dictionary to track indices of each prefix sum modulo `K`.
+- Use binary search (`bisect_left`) to count valid subarrays.
+- Print the final count of valid subarrays.
+
+Required Libraries, Modules, or Dependencies:
+- `sys` module for reading input from standard input.
+- `bisect` module for efficient binary search operations.

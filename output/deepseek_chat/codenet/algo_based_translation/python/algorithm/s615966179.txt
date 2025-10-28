@@ -1,0 +1,5 @@
+n: int, a: int, b: int = input().split() and convert to integers
+ans: int = (n // (a + b)) * a
+r: int = min(n % (a + b), a)
+ans += r
+print(ans)

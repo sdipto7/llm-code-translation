@@ -1,0 +1,33 @@
+```
+Algorithm find_smallest_prime_greater_than_or_equal_to_X:
+
+1. Input:
+   - Read an integer X from standard input
+
+2. Variable Declarations:
+   - prime: List[bool] initialized to [True] * 100010
+   - i: int
+   - j: int
+
+3. Initialization:
+   - Set prime[0] = False
+   - Set prime[1] = False
+
+4. Mark non-prime even numbers:
+   - For i from 4 to 100009 with step 2, do:
+     - Set prime[i] = False
+
+5. Sieve of Eratosthenes for odd numbers:
+   - Initialize i = 3
+   - While i * i <= 100008, do:
+     - If prime[i] is True, then:
+       - For j from i+i to 100007 with step i, do:
+         - Set prime[j] = False
+     - Increment i by 2
+
+6. Find smallest prime number greater than or equal to X:
+   - For i from X to 100007, do:
+     - If prime[i] is True, then:
+       - Print i
+       - Break
+```

@@ -1,0 +1,34 @@
+Function Signature:
+- `main()`: No parameters, returns void
+
+Variable Declarations:
+- `Scanner scan`: used for reading input from the standard input
+- `String mark`: stores the operation symbol
+- `int c`: stores the first integer operand
+- `int b`: stores the second integer operand
+- `int[] a`: an array of integers with a size of 100,000 to store results of operations
+- `int x`: used as an index for the array `a`, initialized to 0
+
+Logic Flow:
+1. Initialize a `Scanner` object to read input.
+2. Start a `do-while` loop that continues indefinitely:
+   - Read an integer from input and assign it to `c`.
+   - Read a string from input and assign it to `mark`.
+   - Read another integer from input and assign it to `b`.
+   - Check the value of `mark` using a series of `if-else if` statements:
+     - If `mark` equals `"?"`, set `a[x]` to `2000001` and break the loop.
+     - If `mark` equals `"+"`, compute `c + b` and store the result in `a[x]`.
+     - If `mark` equals `"-"`, compute `c - b` and store the result in `a[x]`.
+     - If `mark` equals `"*"`, compute `c * b` and store the result in `a[x]`.
+     - If `mark` equals `"/"`, compute integer division `c / b` and store the result in `a[x]`.
+   - Increment `x` by 1.
+3. Reset `x` to 0.
+4. Start another `do-while` loop that continues indefinitely:
+   - If `a[x]` equals `2000001`, break the loop.
+   - Print the value of `a[x]`.
+   - Increment `x` by 1.
+5. Close the `Scanner` object.
+
+Required Libraries:
+- `java.io.IOException`
+- `java.util.Scanner`

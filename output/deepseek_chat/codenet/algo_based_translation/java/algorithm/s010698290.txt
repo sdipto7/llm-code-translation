@@ -1,0 +1,30 @@
+**Algorithm:**
+
+1. **Input:** Two integers `n` and `m` from standard input
+2. **Data Structures:**
+   - Integer array `penal` of size `n+1` (indexed 1..n)
+   - Boolean array `solved` of size `n+1` (indexed 1..n)
+3. **Initialization:**
+   - Set all elements of `solved` to `false`
+4. **Processing Loop (m times):**
+   - Read integer `num` and string `str`
+   - If `str` starts with 'A':
+     - Set `solved[num] = true`
+   - Else if `solved[num]` is `false`:
+     - Increment `penal[num]` by 1
+5. **Result Calculation:**
+   - Initialize `correct_ans = 0`, `num_penal = 0`
+   - For each index `i` from 1 to `n`:
+     - If `solved[i]` is `true`:
+       - Increment `correct_ans` by 1
+       - Add `penal[i]` to `num_penal`
+6. **Output:** Print `correct_ans` and `num_penal` separated by space
+
+**Required Dependencies:**
+- java.io.BufferedReader
+- java.io.BufferedWriter
+- java.io.InputStreamReader
+- java.io.OutputStreamWriter
+- java.io.IOException
+- java.util.StringTokenizer
+- java.util.Arrays

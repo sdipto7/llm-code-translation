@@ -1,0 +1,48 @@
+- Function Signatures:
+  - `public static void main(String[] args)`
+
+- Variable Declarations and Data Types:
+  - `Scanner input`
+  - `int n`
+  - `int m`
+  - `ArrayList<Integer> req`
+  - `ArrayList<Integer> pre`
+  - `int i`
+  - `int j`
+  - `int ans`
+
+- Complete Logic Flow in Execution Order:
+  - Create a `Scanner` object to read input.
+  - Read integers `n` and `m`.
+  - Initialize `req` and `pre` as empty `ArrayList<Integer>`.
+  - For loop from `0` to `n-1`:
+    - Read next integer and add to `req`.
+  - For loop from `0` to `m-1`:
+    - Read next integer and add to `pre`.
+  - Set `i` to `n-1` and `j` to `m-1`.
+  - Set `ans` to `0`.
+  - While loop while `i >= 0` and `j >= 0`:
+    - If `req.get(i) > pre.get(j)`:
+      - Increment `ans`.
+    - Else:
+      - Decrement `j`.
+    - Decrement `i`.
+  - Print `ans + i + 1`.
+
+- Control Structures:
+  - For loop with condition `i < n`
+  - For loop with condition `i < m`
+  - While loop with condition `i >= 0 && j >= 0`
+  - If-Else statement with condition `req.get(i) > pre.get(j)`
+
+- Input/Output Operations and Data Processing Logic:
+  - Read integers `n` and `m` from input.
+  - Read `n` integers and store them in `req`.
+  - Read `m` integers and store them in `pre`.
+  - Compare elements of `req` and `pre` in reverse order.
+  - Count how many times an element in `req` is greater than the corresponding element in `pre`.
+  - Print the result of `ans + i + 1`.
+
+- Required Libraries, Modules, or Dependencies:
+  - `java.util.ArrayList`
+  - `java.util.Scanner`

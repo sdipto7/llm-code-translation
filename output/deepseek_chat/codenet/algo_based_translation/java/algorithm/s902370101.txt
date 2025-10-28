@@ -1,0 +1,28 @@
+**Function Signature:**
+main(String[] args) -> void
+
+**Required Libraries:**
+java.util.Scanner
+
+**Variables:**
+- Scanner sc
+- int n
+- int[] array
+- int max = 0
+- int min = 10000
+- int i
+
+**Algorithm:**
+1. Create Scanner object reading from System.in
+2. Read integer n from input
+3. Create integer array of size n
+4. Initialize max to 0
+5. Initialize min to 10000
+6. For i from 0 to array.length - 1:
+   a. Read integer from input and store in array[i]
+   b. If max < array[i]:
+      - Set max = array[i]
+   c. If min > array[i]:
+      - Set min = array[i]
+7. Print (max - min)
+8. Close Scanner

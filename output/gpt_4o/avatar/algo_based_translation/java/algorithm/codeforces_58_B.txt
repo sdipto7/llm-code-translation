@@ -1,0 +1,24 @@
+```
+Algorithm FindDivisorsSequence
+  Input: An integer n
+  Output: A sequence of integers starting from n where each subsequent integer is a divisor of the previous one
+
+  Variables:
+    n: Integer
+    m: Integer
+    i: Integer
+
+  Begin
+    Read integer n from standard input
+    Print n followed by a space to standard output
+    Set m to n
+
+    For i from n - 1 down to 1 do
+      If m modulo i equals 0 then
+        Print i followed by a space to standard output
+        Set m to i
+      End If
+    End For
+  End
+```
+

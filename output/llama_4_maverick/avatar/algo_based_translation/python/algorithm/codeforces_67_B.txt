@@ -1,0 +1,12 @@
+1. Read input into variable u
+2. Parse u into two integers n and k
+3. Read n integers into array M
+4. Initialize variable m to 0
+5. Loop from j = 0 to n-1
+   5.1 Loop from p = 0 to n-1
+      5.1.1 If M[p] equals 0
+         5.1.1.1 Print p+1
+         5.1.1.2 Break loop p
+   5.2 Loop from l = 0 to p-k
+      5.2.1 Decrement M[l] by 1
+   5.3 Decrement M[p] by 1

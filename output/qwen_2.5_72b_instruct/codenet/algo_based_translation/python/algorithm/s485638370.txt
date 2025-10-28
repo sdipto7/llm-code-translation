@@ -1,0 +1,24 @@
+Function Signature: check_nine_in_input() -> str
+
+Variable Declarations:
+a: str
+
+Logic Flow:
+1. a = input()  # input operation to get a string from the user
+2. if '9' in a:  # conditional check if the character '9' is present in the string a
+   - print("Yes")  # output operation to print "Yes" if the condition is true
+3. else:  # alternative path if the condition is false
+   - print("No")  # output operation to print "No" if the condition is false
+
+Control Structures:
+- Conditional: if '9' in a:
+
+Input/Output Operations:
+- Input: a = input()  # takes a string input from the user
+- Output: print("Yes") or print("No")  # prints "Yes" or "No" based on the presence of '9' in the input string
+
+Data Processing Logic:
+- Checks for the presence of the character '9' in the input string and provides a corresponding output.
+
+Required Libraries, Modules, or Dependencies:
+- No external libraries or modules required. Uses built-in functions and data types.

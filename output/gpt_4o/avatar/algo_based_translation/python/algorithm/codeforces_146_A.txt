@@ -1,0 +1,28 @@
+```
+Function Signature:
+  Function Name: check_lucky_number
+  Parameters: None
+  Return Type: None
+
+Algorithm:
+1. Declare `n` as an integer. Assign it the value obtained from converting input to an integer.
+2. Declare `number` as a list of integers. Assign it the result of mapping input string digits to integers.
+3. Declare `h1` as an integer and initialize it to 0.
+4. Declare `h2` as an integer and initialize it to 0.
+5. Declare `x` as an integer and initialize it to 0.
+6. Iterate over the range from 0 to `n` using variable `i`:
+   a. If `number[i]` is not equal to 4 and `number[i]` is not equal to 7:
+      i. Print "NO".
+      ii. Increment `x` by 1.
+      iii. Break the loop.
+   b. If `i` is less than `n // 2`:
+      i. Increment `h1` by `number[i]`.
+   c. Else:
+      i. Increment `h2` by `number[i]`.
+7. If `x` is equal to 0:
+   a. If `h1` is equal to `h2`:
+      i. Print "YES".
+   b. Else:
+      i. Print "NO".
+```
+

@@ -1,0 +1,32 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Parameters:**
+- `String[] args` (command-line arguments)
+
+**Variables:**
+- `Scanner sc` (for input handling)
+- `long pandu` (input value)
+- `long vundu` (input value)
+- `long urdu` (input value)
+- `long c = 0` (accumulator)
+
+**Input Operations:**
+- Read `pandu` via `sc.nextLong()`
+- Read `vundu` via `sc.nextLong()`
+- Read `urdu` via `sc.nextLong()`
+
+**Logic Flow:**
+1. Initialize `c` to 0
+2. Loop from `i = 1` to `urdu` (inclusive) with step 1:
+   - Add `i * pandu` to `c`
+3. Check if `c < vundu`:
+   - If true: Output "0"
+   - If false: Output `c - vundu`
+
+**Control Structures:**
+- `for (int i = 1; i <= urdu; i++)`
+- `if (c < vundu) ... else ...`
+
+**Dependencies:**
+- `java.util.Scanner` (required for input handling)

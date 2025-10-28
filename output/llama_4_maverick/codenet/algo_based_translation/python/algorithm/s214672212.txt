@@ -1,0 +1,10 @@
+1. Define a function `process_input` with no parameters and return type `int`.
+2. Declare a variable `nums` of type `list[int]`.
+3. Read input from the user as a string, split it by space, and map the resulting substrings to integers, storing them in `nums`.
+4. Sort `nums` in descending order using the `sort` method with `reverse=True`.
+5. Declare a variable `result` of type `int`.
+6. Calculate `result` as `nums[0] * 10 + nums[1] + nums[2]`.
+7. Return `result`.
+8. Define a `main` function with no parameters and return type `None`.
+9. Call `print` with the result of `process_input()` as its argument.
+10. Call `main()` if the script is run as the main module.

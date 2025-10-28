@@ -1,0 +1,51 @@
+**Function Signatures:**
+- `void solve(Scanner sc, PrintWriter pw)`
+  - Parameters: `Scanner sc`, `PrintWriter pw`
+  - Returns: None
+- `public static void main(String[] args)`
+  - Parameters: `String[] args`
+  - Returns: None
+
+**Variable Declarations:**
+- `long MOD = 998244353L`
+- `long[][] dp = new long[3001][3001]`
+- Local variables in `solve`:
+  - `int A`, `int B`, `int C`, `int D`
+  - `int c`, `int d`
+  - `long ans`, `long part`
+
+**Logic Flow:**
+1. Read input values `A`, `B`, `C`, `D` via `Scanner`.
+2. Initialize `dp[A][B]` to 1.
+3. Iterate `c` from `A` to `C` (inclusive):
+   - For each `c`, iterate `d` from `B` to `D` (inclusive):
+     1. Skip iteration if `c == A` and `d == B`.
+     2. Initialize `ans` to 0.
+     3. If `c > A`:
+        - Retrieve `dp[c-1][d]` and multiply by `d`. Assign to `ans`.
+     4. If `d > B`:
+        - Retrieve `dp[c][d-1]` and multiply by `c`. Add to `ans`.
+     5. If `c > A` and `d > B`:
+        - Subtract `dp[c-1][d-1] * (c-1) * (d-1)` from `ans`.
+     6. Set `dp[c][d]` to `(ans % MOD + MOD) % MOD` (ensure non-negative modulo).
+4. After all iterations, output `dp[C][D]` via `PrintWriter`.
+
+**Control Structures:**
+- Nested `for` loops:
+  - Outer loop: `for (int c = A; c <= C; c++)`
+  - Inner loop: `for (int d = B; d <= D; d++)`
+- Conditional checks:
+  - `if (c == A && d == B) { continue; }`
+  - `if (c > A)`
+  - `if (d > B)`
+  - `if (c > A && d > B)`
+
+**Input/Output Operations:**
+- Input:
+  - Read `A`, `B`, `C`, `D` using `Scanner.nextInt()`.
+- Output:
+  - Print `dp[C][D]` via `PrintWriter.println()`.
+
+**Dependencies:**
+- `java.io.PrintWriter`
+- `java.util.Scanner`

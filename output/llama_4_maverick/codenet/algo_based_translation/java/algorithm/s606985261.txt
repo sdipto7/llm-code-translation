@@ -1,0 +1,20 @@
+1. Import the required library: java.util.Scanner
+2. Define a class: Main
+3. Define a function: main with return type void and parameter args of type String[]
+4. Declare a variable: sc of type Scanner and initialize it with a new Scanner object using System.in
+5. Declare a variable: s of type String and assign it the value returned by sc.next()
+6. Declare a variable: total of type int and initialize it to 0
+7. Start a for loop with:
+   - initialization: i = 0
+   - condition: i < s.length()
+   - increment: i++
+8. Inside the loop, start another for loop with:
+   - initialization: j = i + 1
+   - condition: j < s.length()
+   - increment: j++
+9. Inside the inner loop, check the condition: if s.charAt(i) == s.charAt(j)
+10. If the condition is true, increment total by 1
+11. After the inner loop completes, continue with the next iteration of the outer loop
+12. Once the outer loop completes, check the condition: total == 2
+13. If the condition is true, output "Yes" to the console; otherwise, output "No"
+14. Use System.out.println to perform the output operation

@@ -1,0 +1,10 @@
+1. Define a function `main` with no parameters and no return type, throwing `java.lang.Exception`.
+2. Declare a `Scanner` object named `in` and initialize it with `System.in`.
+3. Declare two integer variables `a` and `b`.
+4. Read an integer from `in` and store it in `a`.
+5. Read an integer from `in` and store it in `b`.
+6. Evaluate the conditional expression `a % 2 == 0 || b % 2 == 0`.
+7. If the condition is true, execute the statement to print "No" to `System.out`.
+8. If the condition is false, execute the statement to print "Yes" to `System.out`.
+9. Import the required libraries: `java.util`, `java.lang`, and `java.io`. 
+10. The class containing the `main` function should be named `Main` and be `public`.

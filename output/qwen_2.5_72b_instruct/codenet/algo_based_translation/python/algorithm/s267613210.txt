@@ -1,0 +1,29 @@
+Function Signature: `main()`
+Variable Declarations:
+- `K`: integer
+- `N`: integer
+- `A`: list of integers
+- `dist`: list of integers
+- `maxv`: integer
+
+Logic Flow:
+1. Import `sys` module
+2. Define `input` lambda function to read a line from standard input and strip newline characters
+3. Define `input_nums` lambda function to read a line from standard input, split by spaces, convert each split element to an integer, and return a list of these integers
+4. In `main` function:
+   - Read and unpack first line of input into `K` and `N`
+   - Read second line of input into list `A`
+   - Initialize empty list `dist`
+   - Loop through indices of `A` from 0 to length of `A` minus 2:
+     - Append difference between `A[i+1]` and `A[i]` to `dist`
+   - Append sum of `K`, `A[0]`, and negative `A[-1]` to `dist`
+   - Find maximum value in `dist` and assign to `maxv`
+   - Print result of sum of all elements in `dist` minus `maxv`
+
+Input/Output Operations:
+- Read two integers from standard input, representing `K` and `N`
+- Read list of integers from standard input, representing positions `A`
+- Print single integer, representing the calculated result
+
+Required Libraries/Modules:
+- `sys` module

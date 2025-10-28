@@ -1,0 +1,8 @@
+1. Define a function with no parameters that reads input from the user and returns it as a string.
+2. Declare a variable `s` of type string and assign it the value of the input string repeated twice.
+3. Read another input from the user and store it as a string.
+4. Check if the second input string is a substring of `s`.
+5. Use the result of the substring check as an index to select a string from the list `['No', 'Yes']`.
+6. Print the selected string to the output.
+7. The input operation is performed using a function `I` that takes no arguments and returns a string.
+8. The program relies on the implicit conversion of the boolean result of the substring check to an integer (0 or 1) for indexing the list.

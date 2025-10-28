@@ -1,0 +1,35 @@
+```algorithm
+Function Signature:
+public static void main(String[] args) throws IOException
+
+Libraries/Dependencies:
+- java.io.IOException
+- java.time.LocalTime
+- java.util.*
+
+Variables:
+- Scanner sc: initialized with System.in
+- String[] s: stores first input split by ":"
+- String[] t: stores second input split by ":"
+- LocalTime x: constructed from parsed hours and minutes of s
+- LocalTime y: constructed from parsed hours and minutes of t
+
+Execution Steps:
+1. Read input line, split into s using ":" delimiter
+2. Read input line, split into t using ":" delimiter
+3. Parse s[0] as integer (hours) and s[1] as integer (minutes)
+4. Create x using parsed hours and minutes from s
+5. Parse t[0] as integer (hours) and t[1] as integer (minutes)
+6. Create y using parsed hours and minutes from t
+7. Subtract y's hours from x using x.minusHours(y.getHour())
+8. Subtract y's minutes from result using .minusMinutes(y.getMinute())
+9. Print final LocalTime result via System.out.println
+
+Control Structures:
+- Sequential execution only. No loops or conditionals present.
+
+Input/Output:
+- Input: Two time strings in HH:mm format via standard input
+- Processing: Parse times, calculate time difference via subtraction
+- Output: Resulting LocalTime in default ISO-8601 format (HH:mm:ss.SSS)
+```

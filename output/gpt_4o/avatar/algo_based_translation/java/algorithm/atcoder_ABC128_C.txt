@@ -1,0 +1,55 @@
+```
+Algorithm atcoder_ABC128_C
+    Input: None
+    Output: Integer
+
+    Dependencies:
+        Import Scanner from java.util
+
+    Variables:
+        Integer N
+        Integer M
+        ArrayList<Integer> a
+        Integer k
+        Integer s
+        Integer p
+        Integer ans
+        Integer t
+
+    Begin
+        Create Scanner object sc for System input
+        N := sc.nextInt()
+        M := sc.nextInt()
+        Initialize a as a new ArrayList<Integer> of size N filled with zeros
+
+        For i from 0 to M - 1 do
+            k := sc.nextInt()
+            For j from 0 to k - 1 do
+                s := sc.nextInt() - 1
+                a[s] := a[s] OR (1 << i)
+            End For
+        End For
+
+        p := 0
+        For i from 0 to M - 1 do
+            Integer x := sc.nextInt()
+            p := p OR (x << i)
+        End For
+
+        ans := 0
+        For s from 0 to (1 << N) - 1 do
+            t := 0
+            For i from 0 to N - 1 do
+                If ((s >> i) AND 1) == 1 then
+                    t := t XOR a[i]
+                End If
+            End For
+            If p == t then
+                ans := ans + 1
+            End If
+        End For
+
+        Print ans
+        Close sc
+    End
+```

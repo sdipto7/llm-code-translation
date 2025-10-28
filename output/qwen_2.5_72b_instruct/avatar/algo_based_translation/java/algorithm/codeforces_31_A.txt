@@ -1,0 +1,29 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations:
+- `Scanner sc` (type: `Scanner`)
+- `int n` (type: `int`)
+- `int f` (type: `int`, initialized to 0)
+- `int[] a` (type: `int[]`, size `n`)
+- `int k` (type: `int`, initialized to 0)
+- `int j` (type: `int`, initialized to 0)
+- `int i` (type: `int`, initialized to 0)
+- `int t` (type: `int`)
+
+Input operations:
+- `n = sc.nextInt()`
+- For loop: `a[i] = sc.nextInt()` where `i` ranges from 0 to `n-1`
+
+Logic flow:
+1. Initialize `f` to 0.
+2. Create array `a` of size `n`.
+3. Input `n` integers into array `a`.
+4. Outer loop: Iterate `k` from 0 to `n-1`
+   - Set `t` to `a[k]`
+   - Middle loop: Iterate `i` from 0 to `n-1`
+     - Inner loop: Iterate `j` from 0 to `n-2`
+       - If `i` is not equal to `j` and `t` equals `a[i] + a[j]` then set `f` to 1 and break inner loop.
+     - If `f` is 1 then break middle loop.
+   - If `f` is 1 then break outer loop.
+5. If `f` is 1 then print `k+1`, `j+1`, `i+1` separated by spaces.
+6. Else print `-1`.

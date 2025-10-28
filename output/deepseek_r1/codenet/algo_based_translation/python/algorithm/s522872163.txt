@@ -1,0 +1,32 @@
+- Function signature:  
+  - Function name: main  
+  - Parameters: None  
+  - Return type: void  
+
+- Variable declarations:  
+  - X: integer  
+  - A: integer  
+
+- Logic flow:  
+  1. Read one line from standard input  
+  2. Split input into two string tokens  
+  3. Convert first token to integer and assign to X  
+  4. Convert second token to integer and assign to A  
+  5. Compare X and A using less-than operator  
+  6. If X < A:  
+     - Print integer 0 to standard output  
+  7. Else:  
+     - Print integer 10 to standard output  
+
+- Control structures:  
+  - Single conditional block:  
+    - if condition (X < A)  
+    - else clause  
+
+- Input/Output operations:  
+  - Input: Read from stdin via input()  
+  - Output: Print to stdout via print()  
+  - Data processing: String splitting and integer conversion  
+
+- Dependencies:  
+  - Built-in Python functions (no external libraries required)

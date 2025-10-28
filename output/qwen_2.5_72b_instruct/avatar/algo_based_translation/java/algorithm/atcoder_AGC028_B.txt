@@ -1,0 +1,58 @@
+Function signatures with parameter and return types:
+- `main(String[] args) throws Exception`
+- `modinv(long a, int m): long`
+
+Variable declarations and data types:
+- `BufferedReader br`
+- `int n`
+- `String[] sa`
+- `int[] a`
+- `int mod`
+- `long p`
+- `long[] q`
+- `long ans`
+- `long val`
+- `long b`
+- `long u`
+- `long v`
+- `long tmp`
+- `long t`
+
+Complete logic flow in execution order:
+- Create `BufferedReader` object for input
+- Read integer `n` from input
+- Read string array `sa` from input
+- Convert `sa` to integer array `a`
+- Close `BufferedReader`
+- Set `mod` to 1000000007
+- Initialize `p` to 1
+- For `i` from 2 to `n` (inclusive):
+  - Update `p` as `p * i % mod`
+- Initialize `q` as array of size `n`
+- Set `q[0]` to 1
+- For `i` from 1 to `n-1` (inclusive):
+  - Update `q[i]` as `(q[i-1] + modinv(i+1, mod)) % mod`
+- Initialize `ans` to 0
+- For `i` from 0 to `n-1` (inclusive):
+  - Calculate `val` as `q[i] + q[n-i-1] - 1`
+  - Multiply `val` by `a[i]`
+  - Update `val` as `val % mod`
+  - Multiply `val` by `p`
+  - Update `val` as `val % mod`
+  - Add `val` to `ans`
+  - Update `ans` as `ans % mod`
+- Print `ans`
+
+Control structures:
+- For loop from 2 to `n` (inclusive) to calculate `p`
+- For loop from 1 to `n-1` (inclusive) to calculate `q`
+- For loop from 0 to `n-1` (inclusive) to calculate `ans`
+
+Input/output operations and data processing logic:
+- Read single integer `n` from input
+- Read space-separated integers into array `a`
+- Print final result `ans`
+
+Required libraries, modules, or dependencies:
+- `java.io.BufferedReader`
+- `java.io.InputStreamReader`

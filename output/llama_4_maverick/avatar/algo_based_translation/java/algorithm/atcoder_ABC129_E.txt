@@ -1,0 +1,13 @@
+1. Initialize a variable M to 1000000007.
+2. Read a string s from the input.
+3. Determine the length n of the string s.
+4. Create a 2D array dp of size (n + 1) x 2.
+5. Set dp[0][0] to 1.
+6. Iterate from i = 0 to n-1:
+   1. If s[i] is '0', set dp[i + 1][0] to dp[i][0] and dp[i + 1][1] to dp[i][1].
+   2. If s[i] is not '0', set dp[i + 1][1] to (dp[i][0] + dp[i][1]) mod M.
+7. For each i from 0 to n-1:
+   1. If s[i] is '0', update dp[i + 1][1] by adding (dp[i][1] * 2) mod M to it, then take the modulus M of the result.
+   2. If s[i] is not '0', update dp[i + 1][0] by adding (dp[i][0] * 2) mod M to it and update dp[i + 1][1] by adding (dp[i][1] * 2) mod M to it, then take the modulus M of both results.
+8. Compute the sum of dp[n][0] and dp[n][1], then take the modulus M of the sum.
+9. Output the result from step 8.

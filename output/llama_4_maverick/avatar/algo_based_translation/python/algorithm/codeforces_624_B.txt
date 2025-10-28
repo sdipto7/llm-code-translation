@@ -1,0 +1,9 @@
+1. Read the number of elements n from the input.
+2. Read n integers from the input and store them in a list a.
+3. Initialize a variable pre to positive infinity.
+4. Initialize a variable ans to 0.
+5. Sort the list a in descending order.
+6. Iterate over the sorted list a using a loop counter j from 0 to n-1.
+7. In each iteration, update ans by adding the maximum of 0 and the minimum of pre-1 and the current element a[j].
+8. Update pre to be the maximum of 0 and the minimum of pre-1 and the current element a[j].
+9. After the loop completes, output the value of ans.

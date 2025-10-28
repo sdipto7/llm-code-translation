@@ -1,0 +1,15 @@
+1. READ n
+2. READ list a
+3. READ list b
+4. READ list c
+5. INITIALIZE x = 0
+6. INITIALIZE y = 0
+7. INITIALIZE z = 0
+8. FOR EACH i IN a
+9.     x = x + i
+10. FOR EACH i IN b
+11.     y = y + i
+12. FOR EACH i IN c
+13.     z = z + i
+14. PRINT absolute difference between x and y
+15. PRINT absolute difference between y and z

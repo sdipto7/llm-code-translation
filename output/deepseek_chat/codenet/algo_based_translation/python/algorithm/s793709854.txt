@@ -1,0 +1,33 @@
+```python
+def main():
+    Read first line: split into two integers N and T
+    Initialize list L: for N lines, read each line and split into two integers, store as inner lists
+
+    Initialize dp: 2D list of zeros with dimensions (N+1) x T
+
+    For i from 0 to N-1:
+        For j from 0 to T-1:
+            If j < L[i][0]:
+                dp[i+1][j] = dp[i][j]
+            Else:
+                dp[i+1][j] = max(dp[i][j], dp[i][j - L[i][0]] + L[i][1])
+
+    Initialize used: empty list
+    Set B = dp[N][T-1]
+    Set j = T-1
+    For i from N-1 down to 0:
+        If B == dp[i][j]:
+            Continue to next iteration
+        Else:
+            B = B - L[i][1]
+            Append i to used
+            j = j - L[i][0]
+
+    Set ans = dp[N][T-1]
+    Set c = 0
+    For i from 0 to N-1:
+        If i not in used:
+            c = max(c, L[i][1])
+
+    Print ans + c
+```

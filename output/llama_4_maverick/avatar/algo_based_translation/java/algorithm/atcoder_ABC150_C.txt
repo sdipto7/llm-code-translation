@@ -1,0 +1,11 @@
+1. Read an integer n from the input.
+2. Read two sequences of n integers each from the input and store them as strings.
+3. Generate a string of numbers from 1 to n.
+4. Generate all permutations of the numbers from 1 to n.
+5. Store the generated permutations in a list.
+6. Iterate over the two input sequences.
+7. For each sequence, iterate over the list of permutations.
+8. Check if the current permutation matches the sequence.
+9. If a match is found, add or subtract the index of the permutation from a running sum based on whether it's the first or second sequence.
+10. Calculate the absolute value of the final sum.
+11. Output the absolute value of the sum.

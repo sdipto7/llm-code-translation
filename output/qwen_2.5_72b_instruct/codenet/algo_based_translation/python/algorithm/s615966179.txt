@@ -1,0 +1,31 @@
+Function Signature: calculate_max_apples(n: int, a: int, b: int) -> int
+
+Variable Declarations:
+n: int
+a: int
+b: int
+ans: int
+r: int
+
+Logic Flow:
+1. Read input values for n, a, b as integers
+2. Calculate the number of full cycles of a+b that fit into n: n//(a+b)
+3. Multiply the number of full cycles by a to get the contribution to ans from full cycles
+4. Calculate the remainder of n divided by (a+b): n%(a+b)
+5. Determine the minimum between the remainder and a: min(n%(a+b), a)
+6. Add the result from step 5 to ans
+7. Return ans
+
+Control Structures:
+- No loops are present
+- Conditional structure: min function used to choose the smaller of two values
+
+Input/Output Operations:
+- Input: Read three integers from standard input
+- Output: Print the calculated integer value of ans
+
+Data Processing Logic:
+- The algorithm calculates the maximum number of apples that can be picked given n total items, picking a apples and skipping b items in each cycle, until all items are considered.
+
+Libraries/Modules/Dependencies:
+- No external libraries or modules are required

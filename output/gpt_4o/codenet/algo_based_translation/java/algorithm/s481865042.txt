@@ -1,0 +1,36 @@
+```
+Function signature: main() -> None
+
+Variable Declarations:
+- sc: Scanner (used for input)
+- s: String (stores the input string)
+- k: long (stores the long integer input)
+- sb: StringBuffer (used to build the output string)
+- i: int (loop counter)
+- t: char (temporary character for manipulation)
+
+Execution Flow:
+1. Initialize a Scanner object `sc` to read input from the standard input.
+2. Read a string `s` using `sc.next()`.
+3. Read a long integer `k` using `sc.nextLong()`.
+4. Initialize an empty StringBuffer `sb`.
+5. Iterate over each character in the string `s` using a for loop with loop variable `i` ranging from 0 to `s.length() - 1`.
+   1. Calculate `(26 - (s.charAt(i) - 'a'))` and check if it is less than or equal to `k` and the character is not 'a'.
+   2. If the condition is true:
+      1. Subtract `(26 - (s.charAt(i) - 'a'))` from `k`.
+      2. Append 'a' to `sb`.
+   3. Else:
+      1. Append `s.charAt(i)` to `sb`.
+6. If `k` is greater than 0 after the loop:
+   1. Get the last character `t` from `sb`.
+   2. Remove the last character from `sb`.
+   3. Append to `sb` the character calculated as `('a' + (t - 'a' + k) % 26)`.
+7. Print the final string stored in `sb`.
+
+Input/Output:
+- Reads a string `s` and a long integer `k` from the user.
+- Outputs the modified string stored in `sb`.
+
+Required Libraries:
+- java.util.Scanner for reading input from the user.
+```

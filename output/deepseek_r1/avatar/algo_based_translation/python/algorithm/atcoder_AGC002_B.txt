@@ -1,0 +1,58 @@
+**Structured Algorithm Specification**
+
+**Function Signatures:**
+- `main() -> void`
+  - Input: None
+  - Output: Integer result printed to stdout
+
+**Variables:**
+- `N: Integer` (Number of balls)
+- `M: Integer` (Number of operations)
+- `balls: Array of Tuple<Integer, Integer>` (Size N, initialized with [1,0] except index 0 initialized to [0,1])
+- `ans: Integer` (Result counter)
+- `x: Integer`, `y: Integer` (Temporary operation parameters)
+- `w_x: Integer`, `r_x: Integer` (Temporary values for source ball state)
+- `w_y: Integer`, `r_y: Integer` (Temporary values for destination ball state)
+
+**Control Flow:**
+
+1. **Initialization:**
+   1. Read `N` and `M` from input.
+   2. Create `balls` array with `N` elements, initializing all elements to `[1, 0]`.
+   3. Set `balls[0]` to `[0, 1]`.
+
+2. **Process Operations:**
+   - Repeat `M` times:
+     1. Read integers `x` and `y`.
+     2. Decrement `x` and `y` by 1 to convert to 0-based indices.
+     3. Retrieve `w_x = balls[x][0]`, `r_x = balls[x][1]`.
+     4. Retrieve `w_y = balls[y][0]`, `r_y = balls[y][1]`.
+     5. **Conditional Update:**
+        - **Case 1:** If `w_x ≥ 1` AND `r_x ≥ 1`
+          1. Decrement `balls[x][0]` by 1.
+          2. Increment `balls[y][1]` by 1.
+        - **Case 2:** Else if `w_x == 0`
+          1. Decrement `balls[x][1]` by 1.
+          2. Increment `balls[y][1]` by 1.
+        - **Default Case:** 
+          1. Decrement `balls[x][0]` by 1.
+          2. Increment `balls[y][0]` by 1.
+
+3. **Result Calculation:**
+   1. Initialize `ans = 0`.
+   2. Iterate over each element in `balls`:
+      - If `element[1] > 0`, increment `ans` by 1.
+   3. Print `ans`.
+
+**Data Flow:**
+- Input data read via standard input stream.
+- Ball states stored in array-of-tuples structure.
+- All arithmetic operations use integer values.
+
+**Edge Case Handling:**
+- Correctly handles index conversion (1-based to 0-based).
+- Implicitly prevents negative counts via problem constraints (assumes valid operations that don't subtract below zero).
+
+**Dependencies:**
+- Requires integer input parsing from standard input.
+- No external libraries needed beyond basic list operations and arithmetic.

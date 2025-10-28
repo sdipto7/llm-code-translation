@@ -1,0 +1,32 @@
+- Function Signature:
+  - Function Name: `check_sum`
+  - Parameters: None
+  - Return Type: `str`
+
+- Variable Declarations:
+  - `a`: `int`
+  - `b`: `int`
+  - `c`: `int`
+
+- Logic Flow:
+  1. Read a line of input from the user.
+  2. Split the input by spaces and convert each to an integer.
+  3. Assign the first integer to variable `a`.
+  4. Assign the second integer to variable `b`.
+  5. Assign the third integer to variable `c`.
+  6. Evaluate the condition: if `a + b` is greater than or equal to `c`.
+     - If the condition is true, return the string `"Yes"`.
+     - Otherwise, return the string `"No"`.
+
+- Control Structures:
+  - Conditional:
+    - Condition: `a + b >= c`
+    - True Block: Return `"Yes"`
+    - False Block: Return `"No"`
+
+- Input/Output Operations:
+  - Input: Read a single line from standard input.
+  - Output: Return a string `"Yes"` or `"No"` based on the evaluation of the condition.
+
+- Required Libraries, Modules, or Dependencies:
+  - None

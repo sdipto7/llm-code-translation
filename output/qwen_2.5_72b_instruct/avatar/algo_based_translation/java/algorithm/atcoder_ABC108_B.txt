@@ -1,0 +1,37 @@
+Function revpos:
+- Signature: public static int[] revpos(int[] p, int[] q)
+- Parameters: int[] p, int[] q
+- Return type: int[]
+- Variable declarations: int[] vec = {0, 0}, int tmp = 0, int[] newpos = {0, 0}
+- Logic:
+  - For i from 0 to 1:
+    - vec[i] = p[i] - q[i]
+  - tmp = vec[0]
+  - vec[0] = vec[1]
+  - vec[1] = -tmp
+  - For i from 0 to 1:
+    - newpos[i] = q[i] + vec[i]
+  - Return newpos
+
+Function main:
+- Signature: public static void main(String[] args)
+- Parameters: String[] args
+- Variable declarations: Scanner scan = new Scanner(System.in), int[] input = {0, 0, 0, 0}, int[][] position = {{0, 0}, {0, 0}, {0, 0}, {0, 0}}, int[] output = {0, 0, 0, 0}
+- Logic:
+  - For i from 0 to 3:
+    - input[i] = scan.nextInt()
+  - scan.close()
+  - position[0][0] = input[0]
+  - position[0][1] = input[1]
+  - position[1][0] = input[2]
+  - position[1][1] = input[3]
+  - position[2] = revpos(position[0], position[1])
+  - position[3] = revpos(position[1], position[2])
+  - If position[0] equals revpos(position[2], position[3]):
+    - Print "OK"
+  - output[0] = position[2][0]
+  - output[1] = position[2][1]
+  - output[2] = position[3][0]
+  - output[3] = position[3][1]
+  - For each element i in output:
+    - Print i

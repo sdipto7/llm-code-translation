@@ -1,0 +1,33 @@
+- **Libraries/Dependencies**: sys
+
+- **Function Signatures**:
+  - `main() -> None`
+
+- **Variables**:
+  - `K: int`
+  - `N: int`
+  - `A: list[int]`
+  - `dist: list[int]`
+  - `maxv: int`
+  - `input: function` (lambda reading from stdin)
+  - `input_nums: function` (lambda parsing integers from stdin)
+
+- **Input Operations**:
+  1. Read `K` and `N` via `input_nums()`
+  2. Read `A` via `input_nums()` (contains N integers)
+
+- **Logic Flow**:
+  1. Initialize empty list `dist`
+  2. Loop for `i` in range `0` to `len(A) - 2` (inclusive):
+     - Append `A[i+1] - A[i]` to `dist`
+  3. Append `(K + A[0] - A[-1])` to `dist`
+  4. Compute `maxv = max(dist)`
+  5. Compute total as `sum(dist) - maxv`
+  6. Print total
+
+- **Control Structures**:
+  - For loop: `for i in range(len(A)-1)`
+  - Max value calculation: `maxv = max(dist)`
+
+- **Output Operations**:
+  - Print result of `sum(dist) - maxv`

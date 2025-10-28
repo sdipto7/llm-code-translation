@@ -1,0 +1,26 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+- `solve(Scanner sc): void`
+
+Variable declarations and data types:
+- `sc: Scanner`
+- `a: char[]`
+
+Complete logic flow in execution order:
+1. Create a `Scanner` object named `sc` for reading input from standard input.
+2. Call the `solve` method passing `sc` as an argument.
+3. Inside `solve`, read a string from the scanner and convert it to a character array `a`.
+4. Check if any two characters in the first three positions of `a` are equal.
+   - If `a[0]` equals `a[1]`, or `a[1]` equals `a[2]`, or `a[2]` equals `a[0]`, print "No".
+   - Otherwise, print "Yes".
+
+Control structures:
+- Conditional checks:
+  - `if (a[0] == a[1] || a[1] == a[2] || a[2] == a[0])`
+
+Input/output operations and data processing logic:
+- Input: Read a string from the user.
+- Output: Print "No" if any two out of the first three characters are the same; otherwise, print "Yes".
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

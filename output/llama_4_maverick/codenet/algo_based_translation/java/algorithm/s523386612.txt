@@ -1,0 +1,12 @@
+1. Import required libraries: java.util, java.lang
+2. Define a class: Main
+3. Define a function: main with parameter args of type String[] and return type void
+4. Declare a variable: sc of type Scanner and initialize it with new Scanner(System.in)
+5. Declare a variable: t of type int and read its value from sc using nextInt()
+6. Declare an array: count of type int[] with size t+1 and initialize it with default values
+7. Loop from i=2 to t (inclusive) with increment 1
+   - Read an integer from sc using nextInt() and increment the corresponding index in count array
+8. Loop from i=1 to t (inclusive) with increment 1
+   - Print the value at index i in count array using println()
+9. End of function main
+10. End of class Main

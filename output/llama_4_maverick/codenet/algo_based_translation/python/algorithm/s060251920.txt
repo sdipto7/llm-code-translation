@@ -1,0 +1,8 @@
+1. Define a function `main` with no parameters and no return value.
+2. Declare variables `a` and `b` of type integer.
+3. Read input from the standard input stream.
+4. Split the input into two parts using space as the delimiter.
+5. Convert the two parts to integers and assign them to `a` and `b`.
+6. Calculate the product of `a` and `b`.
+7. Print the product to the standard output stream.
+8. Call the `main` function.

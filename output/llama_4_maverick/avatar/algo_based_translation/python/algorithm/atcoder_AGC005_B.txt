@@ -1,0 +1,38 @@
+1. Initialize a lambda function root(x) to find the root of x
+   1.1. If par[x] equals x, return x
+   1.2. Otherwise, return root(par[x])
+
+2. Initialize a lambda function same(x, y) to check if x and y have the same root
+   2.1. Return whether root(x) equals root(y)
+
+3. Define a function unite(x, y) to union the sets containing x and y
+   3.1. Find the roots of x and y, denoted as x_root and y_root
+   3.2. If x_root is not equal to y_root
+      3.2.1. If rank[x_root] is less than rank[y_root]
+         3.2.1.1. Set par[x_root] to y_root
+         3.2.1.2. Add size[x_root] to size[y_root]
+      3.2.2. Otherwise
+         3.2.2.1. Set par[y_root] to x_root
+         3.2.2.2. Add size[y_root] to size[x_root]
+         3.2.2.3. If rank[x_root] equals rank[y_root], increment rank[x_root] by 1
+
+4. Read input n and array a
+5. Initialize par with values from 0 to n-1
+6. Initialize rank with 1's of size n
+7. Initialize size with 1's of size n
+8. Initialize array b with 0's of size n
+9. For each element t at index i in array a
+   9.1. Set b[t-1] to i
+
+10. Initialize variable c to 0
+11. Iterate through array b in reverse order
+    11.1. Initialize l and r to 1
+    11.2. If current index k is greater than 0 and a[k-1] is greater than a[k]
+       11.2.1. Increment l by size[root(k-1)]
+       11.2.2. Unite k-1 and k
+    11.3. If k+1 is less than n and a[k+1] is greater than a[k]
+       11.3.1. Increment r by size[root(k+1)]
+       11.3.2. Unite k+1 and k
+    11.4. Add l * r * a[k] to c
+
+12. Print c

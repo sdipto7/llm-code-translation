@@ -1,0 +1,17 @@
+1. Import java.util.Scanner
+2. Declare static Scanner variable named scanner initialized with System.in
+3. Define main method taking String[] parameter
+4. Declare integer h, read from scanner.nextInt()
+5. Declare integer w, read from scanner.nextInt()
+6. Declare String array ans with size h
+7. For integer i from 0 to h-1:
+   - Read next string from scanner
+   - Set ans[i] to "#" + scanned string + "#"
+8. Create char array of size w+2 filled with null characters
+9. Convert char array to String and replace all null characters with '#'
+10. Print resulting string
+11. For each String s in ans array:
+    - Print s
+12. Create char array of size w+2 filled with null characters
+13. Convert char array to String and replace all null characters with '#'
+14. Print resulting string

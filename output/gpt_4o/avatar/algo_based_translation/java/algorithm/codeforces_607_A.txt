@@ -1,0 +1,41 @@
+Algorithm:
+
+1. Import the necessary libraries:
+   - `java.io.*`
+   - `java.util.*`
+
+2. Define the main function:
+   - `public static void main(String[] args)`
+
+3. Declare variables:
+   - `Scanner sc` for input reading.
+   - `int max` initialized to 0.
+   - `int n` to store the number of beacons.
+   - `int[] beacon` as an array of size 1,000,001 initialized to store beacon strengths.
+   - `int[] dp` as an array of size 1,000,001 for dynamic programming.
+
+4. Read input:
+   - Use `sc.nextInt()` to read `n`, the number of beacons.
+
+5. Loop to initialize beacon strengths:
+   - `for (int i = 0; i < n; i++)`
+     - Read position `a` using `sc.nextInt()`.
+     - Assign `beacon[a]` as the next integer input using `sc.nextInt()`.
+
+6. Initialize the first element of the dp array:
+   - If `beacon[0]` is not 0, set `dp[0]` to 1.
+
+7. Loop through each position in the dp array:
+   - `for (int i = 1; i < 1000001; i++)`
+     - If `beacon[i]` is not 0 and `beacon[i]` is less than `i`:
+       - Set `dp[i]` to `dp[i - beacon[i] - 1] + 1`.
+     - Else if `beacon[i]` is not 0:
+       - Set `dp[i]` to 1.
+     - Else:
+       - Set `dp[i]` to `dp[i - 1]`.
+     - Update `max` to be the maximum of `max` and `dp[i]`.
+
+8. Output the result:
+   - Print `n - max` using `System.out.print()`.
+
+End of Algorithm.

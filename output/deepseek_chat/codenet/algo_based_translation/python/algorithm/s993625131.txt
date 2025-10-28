@@ -1,0 +1,36 @@
+**Function Signature:**
+- No explicit function defined; main script execution
+
+**Variables:**
+- `S`: list of characters (from input string conversion)
+- `count`: integer (initialized to 0)
+- `record`: integer (initialized to 0)
+
+**Input Operation:**
+- Read input string and convert to list of characters
+
+**Logic Flow:**
+1. Initialize `count = 0`
+2. Initialize `record = 0`
+3. For each index `i` from 0 to length(S)-1:
+   - If S[i] equals "A" OR "C" OR "G" OR "T":
+     - Increment `count` by 1
+   - Else:
+     - If `count` > `record`:
+       - Set `record` = `count`
+     - Reset `count` = 0
+4. After loop completion:
+   - If `count` > `record`:
+     - Set `record` = `count`
+5. Print `record`
+
+**Control Structures:**
+- For loop: iterates through all indices of list S
+- Conditional checks: character membership in {"A", "C", "G", "T"}
+- Conditional update: comparing current count with record
+
+**Output Operation:**
+- Print integer value of `record`
+
+**Dependencies:**
+- None (uses built-in input() and list operations)

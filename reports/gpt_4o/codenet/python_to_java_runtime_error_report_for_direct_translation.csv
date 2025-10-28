@@ -1,0 +1,5 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,s592421258.java,Runtime Error,"Error: Exception in thread ""main"" java.util.NoSuchElementException: No line found
+	at java.base/java.util.Scanner.nextLine(Scanner.java:1677)
+	at s592421258.main(s592421258.java:7)
+"

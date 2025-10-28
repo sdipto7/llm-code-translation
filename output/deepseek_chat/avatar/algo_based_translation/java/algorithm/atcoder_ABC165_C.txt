@@ -1,0 +1,35 @@
+Algorithm:
+- Import java.util.ArrayList
+- Import java.util.Scanner
+- Declare static integer arrays a, b, c, d
+- Declare static integers n, m, q
+- Declare static long ans initialized to -100
+- Define main function with String[] args parameter:
+  - Create Scanner object reading from System.in
+  - Read n, m, q from input
+  - Initialize arrays a, b, c, d with size q
+  - For i from 0 to q-1:
+    - Read a[i] as input minus 1
+    - Read b[i] as input minus 1
+    - Read c[i] from input
+    - Read d[i] from input
+  - Call dfs with new empty ArrayList<Integer>
+  - Print ans
+- Define dfs function with ArrayList<Integer> list parameter:
+  - If list size equals n:
+    - Initialize score to 0
+    - For i from 0 to q-1:
+      - If list.get(b[i]) - list.get(a[i]) equals c[i]:
+        - Add d[i] to score
+    - Set ans to maximum of ans and score
+    - Return
+  - If list is not empty:
+    - For num from last element of list to m:
+      - Add num to list
+      - Call dfs(list)
+      - Remove last element from list
+  - Else:
+    - For num from 1 to m:
+      - Add num to list
+      - Call dfs(list)
+      - Remove last element from list

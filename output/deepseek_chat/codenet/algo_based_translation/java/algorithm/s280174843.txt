@@ -1,0 +1,19 @@
+Algorithm:
+- Import java.io.IOException
+- Import java.io.InputStreamReader
+- Import java.io.BufferedReader
+- Declare class Main
+- Declare private static BufferedReader buf
+- Declare public static void main(String[] args) throws IOException
+  - Declare int[] abc with size 3
+  - Declare String str
+  - Declare String[] inp
+  - Initialize buf as new BufferedReader(new InputStreamReader(System.in))
+  - Read line from buf and assign to str
+  - Split str by space with limit -1 and assign to inp
+  - For i from 0 to inp.length - 1
+    - Parse inp[i] to integer and assign to abc[i]
+  - If abc[0] < abc[1] AND abc[1] < abc[2]
+    - Print "Yes"
+  - Else
+    - Print "No"

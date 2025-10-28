@@ -1,0 +1,32 @@
+```plaintext
+- Define a function to calculate minimum energy consumption with parameters:
+  - n: int
+  - L: int
+  - R: int
+  - QL: int
+  - QR: int
+  - W: List[int]
+  - Return type: int
+
+- Declare a list sum_el: List[int] initialized with [0]
+
+- Iterate over i from 1 to n (inclusive):
+  - Append W[i-1] + sum_el[i-1] to sum_el
+
+- Initialize a variable answer: int as QR * (n - 1) + sum_el[n] * R
+
+- Iterate over i from 1 to n (inclusive):
+  - Calculate energy using the formula:
+    - L * sum_el[i] + R * (sum_el[n] - sum_el[i])
+  
+  - If i is greater than (n - i):
+    - Increase energy by (i - (n - i) - 1) * QL
+
+  - Else if (n - i) is greater than i:
+    - Increase energy by ((n - i) - i - 1) * QR
+
+  - If energy is less than answer:
+    - Update answer with energy
+
+- Return answer
+```

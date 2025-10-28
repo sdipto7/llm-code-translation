@@ -1,0 +1,16 @@
+```plaintext
+1. Define a function `calculate_sum_of_absolute_differences` with parameters `n: int` and `r: List[int]` that returns an `int`.
+
+2. Declare a variable `ans` of type `int` and initialize it with the absolute value of the first element in the list `r`, calculated as `abs(r[0])`.
+
+3. Iterate over the range from 1 to `n-1` using a loop with variable `i`:
+   a. For each iteration, update `ans` by adding the absolute difference between the current element `r[i]` and the previous element `r[i-1]`, calculated as `abs(r[i] - r[i-1])`.
+
+4. Return the value of `ans`.
+
+5. Read an integer input from the user and assign it to variable `n`.
+
+6. Read a line of input from the user, split it into a list of strings, map each string to an integer, and assign the resulting list to variable `r`.
+
+7. Call the function `calculate_sum_of_absolute_differences` with `n` and `r`, and print the returned result.
+```

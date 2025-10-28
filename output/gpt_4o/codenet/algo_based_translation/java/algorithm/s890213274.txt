@@ -1,0 +1,30 @@
+```
+Algorithm:
+1. Import required library:
+   - java.util.Scanner for input operations
+
+2. Define the main function:
+   - Signature: public static void main(String[] args)
+   - No parameters, no return type
+
+3. Inside the main function:
+   - Declare a Scanner object 'sc' to read input from the standard input stream.
+     - Data type: Scanner
+
+   - Declare integer variables A1, A2, A3.
+     - Data types: int
+
+   - Read three integer inputs using the Scanner object 'sc':
+     - Assign the first input to A1
+     - Assign the second input to A2
+     - Assign the third input to A3
+
+4. Calculate the sum of A1, A2, and A3.
+
+5. Implement a conditional check:
+   - If the sum of A1, A2, and A3 is greater than or equal to 22:
+     - Output "bust" to the standard output stream.
+   - Else:
+     - Output "win" to the standard output stream.
+```
+

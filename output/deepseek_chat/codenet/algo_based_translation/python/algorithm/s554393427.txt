@@ -1,0 +1,13 @@
+1. Read integer N from standard input
+2. Initialize empty list mo
+3. Loop N times:
+   - Read a string and split into x (string) and u (string)
+   - Convert x to float
+   - Append [x, u] to mo
+4. Initialize okz as float 0.0
+5. For each element i in mo:
+   - If i[1] equals "JPY":
+        Add i[0] to okz
+   - Else:
+        Add i[0] * 380000.0 to okz
+6. Print okz

@@ -1,0 +1,25 @@
+1. Read input values N and K.
+2. Read input string S.
+3. Convert S to character arrays c1 and c3.
+4. Initialize flag to false and count to 0.
+5. Iterate through c1 from index 0 to N-1:
+   - If flag is true and c1[i] is 'R', set flag to false and increment count.
+   - If count equals K, break the loop.
+   - If c1[i] is 'L', set flag to true and set c1[i] to 'R'.
+6. Reset flag to false and count to 0.
+7. Iterate through c3 from index 0 to N-1:
+   - If flag is true and c3[i] is 'L', set flag to false and increment count.
+   - If count equals K, break the loop.
+   - If c3[i] is 'R', set flag to true and set c3[i] to 'L'.
+8. Convert c1 to string S1 and c3 to string S3.
+9. Initialize count to 1 and sum1 to 0.
+10. Iterate through S1 from index 1 to N-1:
+    - If S1[i] equals the previous character, increment count.
+    - If S1[i] is different from the previous character, update sum1 by adding count-1, update the previous character, and reset count to 1.
+    - If i is N-1, update sum1 by adding count-1.
+11. Initialize count to 1 and sum3 to 0.
+12. Iterate through S3 from index 1 to N-1:
+    - If S3[i] equals the previous character, increment count.
+    - If S3[i] is different from the previous character, update sum3 by adding count-1, update the previous character, and reset count to 1.
+    - If i is N-1, update sum3 by adding count-1.
+13. Output the maximum of sum1 and sum3.

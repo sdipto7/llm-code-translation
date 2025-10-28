@@ -1,0 +1,24 @@
+```
+Function Signature:
+- main() -> void
+
+Variable Declarations:
+- sc: Scanner
+- a: int
+- b: int
+- c: int
+- answer: String
+
+Logic Flow:
+1. Create a Scanner object 'sc' for reading input.
+2. Read an integer from input and assign it to variable 'a'.
+3. Read an integer from input and assign it to variable 'b'.
+4. Read an integer from input and assign it to variable 'c'.
+5. Initialize a String variable 'answer' with the value "No".
+6. Evaluate the condition 'a + b >= c':
+   - If true, set 'answer' to "Yes".
+7. Print the value of 'answer'.
+
+Required Libraries:
+- java.util.Scanner
+```

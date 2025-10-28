@@ -1,0 +1,16 @@
+1. Read input N from standard input
+2. Initialize MOD = 10^9 + 7 and M = 10^6
+3. Read array A of size N from standard input
+4. Initialize Nsq = 10^3
+5. Create 2D array fact of size Nsq x Nsq with initial values as a sequence from 0 to M-1
+6. Set fact[0, 0] = 1
+7. For n from 1 to Nsq-1:
+   7.1. For each row in fact, multiply the nth column by the (n-1)th column and take modulo MOD
+   7.2. Multiply the nth row by fact[n-1, -1] and take modulo MOD
+8. Flatten the 2D array fact into a 1D array
+9. Create array j of size N with values from 0 to N-1
+10. Create array inv of size N with cumulative sum of modular multiplicative inverses of numbers from 1 to N
+11. Calculate temp = inv[j] + inv[N-1-j] - 1 and take modulo MOD
+12. Calculate ans = sum of (A * temp) modulo MOD
+13. Multiply ans by fact[N] and take modulo MOD
+14. Output ans

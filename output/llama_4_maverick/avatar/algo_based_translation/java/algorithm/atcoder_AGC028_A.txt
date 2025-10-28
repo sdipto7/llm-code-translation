@@ -1,0 +1,8 @@
+1. Read two integers n and m from the input.
+2. Calculate the greatest common divisor (gcd) of n and m.
+3. Read two strings s and t from the input.
+4. Iterate over the range from 0 to gcd-1.
+5. For each k in the range, check if the character at index (k * n / gcd) in s is not equal to the character at index (k * m / gcd) in t.
+6. If any such k is found where the characters are not equal, return -1.
+7. If no such k is found, calculate the least common multiple (lcm) of n and m using the formula lcm = (n * m) / gcd.
+8. Return the calculated lcm.

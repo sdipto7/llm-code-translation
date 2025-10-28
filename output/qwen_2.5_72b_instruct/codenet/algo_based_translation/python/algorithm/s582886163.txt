@@ -1,0 +1,29 @@
+Function signature: `main()`
+Parameters: None
+Return type: None
+
+Variable declarations:
+- `N` as Integer
+- `capacity_list` as List of Integers
+- `bottle_neck` as Integer
+
+Logic flow:
+1. Read integer input from standard input and assign to `N`
+2. Initialize `capacity_list` as an empty list
+3. Loop 5 times:
+   - Read integer input from standard input
+   - Append the read integer to `capacity_list`
+4. Sort `capacity_list` in ascending order
+5. Assign the first element of `capacity_list` to `bottle_neck`
+6. Calculate the expression `4 + int((N + bottle_neck - 1) / bottle_neck)`
+7. Print the result of the expression to standard output
+
+Input/output operations:
+- Read integer values from standard input
+- Print an integer value to standard output
+
+Data processing logic:
+- Calculate the minimum number of operations needed based on the given formula using the smallest capacity from `capacity_list`
+
+Required libraries, modules, or dependencies:
+- None

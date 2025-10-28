@@ -1,0 +1,59 @@
+**Algorithm Specification**
+
+**Function/Method Signatures**  
+- Not applicable (procedural code with global scope operations)
+
+**Variable Declarations**  
+- `n`: Integer (input matrix dimension)  
+- `cake`: List of Strings (size n×n)  
+- `happiness`: Integer (initial 0)  
+- `chocCount`: Integer (temporary, initial 0)  
+- `nfat`: Integer (temporary product, initial 1)  
+
+**Input/Output Operations**  
+1. Read integer `n` from standard input.  
+2. Read `n` strings from standard input, storing in `cake`.  
+3. Print final `happiness` as integer.  
+
+**Step-by-Step Logic Flow**  
+1. **Row Processing**  
+   1. For each `i` in `0` to `n-1` (inclusive):  
+      1. Read line `line` from input.  
+      2. Append `line` to `cake`.  
+      3. Set `chocCount` = 0.  
+      4. For each character `j` in `line`:  
+         - If `j` == 'C', increment `chocCount`.  
+      5. If `chocCount` > 1:  
+         - Set `nfat` = 1  
+         - For `k` in range(`chocCount`, `chocCount-2`, -1):  
+           - `nfat` *= `k`  
+         - `happiness` += `nfat` // 2  
+      6. Reset `chocCount` = 0, `nfat` = 1.  
+
+2. **Column Processing**  
+   1. For each `j` in `0` to `n-1` (inclusive):  
+      1. Set `chocCount` = 0.  
+      2. For each `i` in `0` to `n-1` (inclusive):  
+         - If `cake[i][j]` == 'C', increment `chocCount`.  
+      3. If `chocCount` > 1:  
+         - Set `nfat` = 1  
+         - For `k` in range(`chocCount`, `chocCount-2`, -1):  
+           - `nfat` *= `k`  
+         - `happiness` += `nfat` // 2  
+      4. Reset `chocCount` = 0, `nfat` = 1.  
+
+**Control Flow Structures**  
+- **Loops**:  
+  - Range-based `for` loops for row/column traversal (0-indexed).  
+  - Nested loops for character iteration in rows and column elements.  
+  - Descending loops for computing `nfat` with exit when iterator reaches `chocCount-2`.  
+- **Conditionals**:  
+  - `if chocCount > 1` to trigger combination calculation.  
+  - Character equality check `j == 'C'` or `cake[i][j] == 'C'`.  
+
+**Edge Case Handling**  
+- Automatically skips combination calculation when `chocCount` ≤ 1.  
+- Integer division ensures no floating-point values in `happiness`.  
+
+**External Dependencies**  
+- Standard input/output functions (no external libraries).

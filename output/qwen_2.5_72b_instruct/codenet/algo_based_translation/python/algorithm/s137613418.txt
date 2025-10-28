@@ -1,0 +1,70 @@
+Algorithm:
+
+Function Signatures:
+- `load(vtype=int) -> vtype`
+- `load_list(seplator=" ", vtype=int) -> List[vtype]`
+- `exit() -> None`
+- `perm_sub(li: List[Any], used: Set[int]) -> List[Deque[Any]]`
+- `perm_li(li: List[Any]) -> List[Deque[Any]]`
+- `perm_n(n: int) -> List[Deque[int]]`
+- `join_i(li: List[Any], sep="") -> str`
+- `li2n(li: List[int]) -> int`
+- `sli2ili(li: List[str]) -> List[int]`
+- `prime_list(n: int) -> List[int]`
+- `gcd(a: int, b: int) -> int`
+- `lcm(a: int, b: int) -> int`
+- `all_subset(li: List[Any]) -> List[Set[Any]]`
+- `factorial(n: int) -> int`
+- `mCn(m: int, n: int) -> int`
+
+Variable Declarations and Data Types:
+- `vtype`: Type variable (default int)
+- `seplator`: str (default " ")
+- `li`: List[Any]
+- `used`: Set[int]
+- `k`: List[Deque[Any]]
+- `sub_list`: List[Deque[Any]]
+- `sub`: Deque[Any]
+- `i`: int
+- `j`: int
+- `n`: int
+- `base`: int
+- `ss`: Set[Any]
+- `bit`: int
+- `a`: int
+- `b`: int
+- `r`: int
+- `m`: int
+- `n`: int
+
+Logic Flow in Execution Order:
+1. Load integer `n` using `load()`.
+2. Load list `A` of integers using `load_list()`.
+3. Check if length of `A` is equal to length of `set(A)`:
+   - If true, print 'YES'.
+   - Else, print 'NO'.
+
+Control Structures:
+- For loop over `range(len(li))` in `perm_sub`.
+- If condition `if i in used` inside `perm_sub`.
+- If condition `if li[i] >= int(math.sqrt(n))` inside `prime_list`.
+- If condition `if li[i] == -1` inside `prime_list`.
+- For loop over `range(i+1, len(li))` inside `prime_list`.
+- If condition `if li[j] % li[i] == 0` inside `prime_list`.
+- While loop `while True` inside `gcd`.
+- For loop over `range(0, (1<<(n+1)))` inside `all_subset`.
+- If condition `if (bit & (1 << i))` inside `all_subset`.
+- While loop `while n` inside `factorial_ntimes`.
+
+Input/Output Operations and Data Processing Logic:
+- Read integer `n` from standard input.
+- Read list `A` of integers from standard input.
+- Convert list `A` to a set to check for uniqueness.
+- Print 'YES' if all elements in `A` are unique.
+- Print 'NO' if there are duplicate elements in `A`.
+
+Required Libraries, Modules, or Dependencies:
+- `sys`
+- `math`
+- `collections.defaultdict`
+- `collections.deque`

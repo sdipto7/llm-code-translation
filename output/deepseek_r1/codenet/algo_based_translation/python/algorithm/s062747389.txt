@@ -1,0 +1,26 @@
+- **Function Signature**:  
+  `def calculate_result(a: int, b: int) -> int`
+
+- **Variables**:  
+  `a: int` (first input integer)  
+  `b: int` (second input integer)
+
+- **Logic Flow**:  
+  1. Read two space-separated integers from standard input.  
+  2. Assign the integers to variables `a` and `b`.  
+  3. Check if `a` equals `b`.  
+     - If `a == b`, compute `a + b`.  
+     - Else, compute `2 * max(a, b) - 1`.  
+  4. Return the computed result.  
+
+- **Control Structures**:  
+  - Conditional:  
+    `if a == b: compute sum`  
+    `else: compute 2*max(a,b) - 1`
+
+- **Input/Output Operations**:  
+  - Input: `input()` to read a string, split into two integers.  
+  - Output: Result of the conditional computation is printed.
+
+- **Dependencies**:  
+  None (uses built-in functions only).

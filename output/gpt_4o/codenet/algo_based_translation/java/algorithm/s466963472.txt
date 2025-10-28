@@ -1,0 +1,31 @@
+```
+Algorithm Main
+
+1. Import necessary modules:
+   - Import java.util.Scanner for input handling.
+
+2. Declare global variables:
+   - Scanner sc: Initialize a Scanner object for reading input.
+   - int d: Declare an integer to store the input value.
+
+3. Function read() -> boolean:
+   a. Check if there is an integer available in the input:
+      - If not, return false.
+   b. Read the integer from input and assign it to d.
+   c. Return true.
+
+4. Function solve() -> int:
+   a. Declare integer variables:
+      - int ans: Initialize to 0, it will store the accumulated result.
+   b. For loop with integer i starting from 1; condition (i * d < 600); increment i:
+      - int x: Calculate i * d.
+      - int y: Calculate x * x.
+      - Add y * d to ans.
+   c. Return ans.
+
+5. Function main():
+   a. While the function read() returns true:
+      - Print the result of calling solve().
+
+End Algorithm
+```

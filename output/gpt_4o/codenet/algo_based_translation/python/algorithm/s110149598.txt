@@ -1,0 +1,25 @@
+Function Signature:
+- Function Name: compare_strings
+- Parameters: None
+- Return Type: None
+
+Variable Declarations:
+- a (str): First input string
+- b (str): Second input string
+
+Logic Flow:
+1. Read a single line of input from the user.
+2. Split the input into two string variables, `a` and `b`.
+
+Control Structures:
+- Conditional Statements:
+  - If `a` is lexicographically less than `b`, print "<".
+  - Else if `a` is lexicographically greater than `b`, print ">".
+  - Else, print "=".
+
+Input/Output Operations:
+- Input: Read a single line from standard input and split it into two strings.
+- Output: Print one of the characters "<", ">", or "=" to standard output based on the comparison of `a` and `b`.
+
+Required Libraries:
+- No external libraries, modules, or dependencies are required.

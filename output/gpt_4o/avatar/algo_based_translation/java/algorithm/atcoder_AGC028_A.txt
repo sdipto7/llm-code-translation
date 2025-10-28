@@ -1,0 +1,41 @@
+```
+Algorithm atcoder_AGC028_A
+    Input: None (reads from standard input)
+    Output: Integer (prints to standard output)
+
+    Import:
+        BigInteger from java.math
+        Scanner from java.util
+        IntStream from java.util.stream
+
+    Variables:
+        scanner: Scanner - initialized to read from System.in
+        n: Integer
+        m: Integer
+        gcd: Integer
+        s: String
+        t: String
+
+    Begin
+        Read integer n from scanner
+        Read integer m from scanner
+        Compute gcd as the greatest common divisor of n and m using BigInteger
+
+        Read string s from scanner
+        Read string t from scanner
+
+        Define range as IntStream range from 0 to gcd (exclusive)
+        For each k in range
+            Calculate index_s as k * n / gcd
+            Calculate index_t as k * m / gcd
+            Check if character at index_s in s is not equal to character at index_t in t
+                If true, map to -1
+        Find any occurrence of -1 in the mapped stream, or provide a default value
+            Default value is calculated as:
+                Multiply n and m using BigInteger
+                Divide the result by gcd using BigInteger
+                Convert the result to a long value
+
+        Print the result (either found value or default value)
+    End
+```

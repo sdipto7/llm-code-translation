@@ -1,0 +1,31 @@
+Function Signature: `main(String[] args) throws IOException`
+Variable Declarations: 
+- `InputStreamReader reader` of type `InputStreamReader`
+- `BufferedReader in` of type `BufferedReader`
+- `String[] str` of type `String[]`
+- `int n` of type `int`
+- `double d` of type `double`
+- `int cnt` of type `int`
+- `double x` of type `double`
+- `double y` of type `double`
+
+Logic Flow:
+1. Initialize `reader` as `InputStreamReader(System.in, StandardCharsets.UTF_8)`
+2. Initialize `in` as `BufferedReader(reader)`
+3. Read a line from `in`, split it by spaces, and assign to `str`
+4. Parse `str[0]` to `int` and assign to `n`
+5. Parse `str[1]` to `double` and assign to `d`
+6. Initialize `cnt` to `0`
+7. For `i` from `0` to `n-1`:
+   1. Read a line from `in`, split it by spaces, and assign to `str`
+   2. Parse `str[0]` to `double` and assign to `x`
+   3. Parse `str[1]` to `double` and assign to `y`
+   4. If `Math.sqrt(x*x+y*y) <= d`:
+      1. Increment `cnt` by `1`
+8. Print `cnt`
+
+Libraries/Modules/Dependencies:
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.nio.charset.StandardCharsets`

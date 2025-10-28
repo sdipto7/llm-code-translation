@@ -1,0 +1,44 @@
+1. Import required libraries: java.util.*
+2. Define a class: Main
+3. Define a main function: main(String[] args) throws Exception
+   - Declare variables: 
+     - scan: Scanner
+     - m: int
+     - n: int
+     - x: int
+     - y: int
+     - a: int[]
+     - b: int[]
+4. Execution order:
+   1. Initialize scan with System.in
+   2. Read input: m = scan.nextInt()
+   3. Read input: n = scan.nextInt()
+   4. Read input: x = scan.nextInt()
+   5. Read input: y = scan.nextInt()
+   6. Initialize array a with size m
+   7. Loop: for i = 0 to a.length-1
+     - Read input: a[i] = scan.nextInt()
+   8. Initialize array b with size n
+   9. Loop: for i = 0 to b.length-1
+     - Read input: b[i] = scan.nextInt()
+   10. Call function: x_max = MaxInt(x, a)
+   11. Call function: y_min = MinInt(y, b)
+   12. Call function: CheckWar(x_max, y_min)
+
+5. Define function: MaxInt(int x, int[] a) returns int
+   - Declare variable: bignum = x
+   - Loop: for i = 0 to a.length-1
+     - Update bignum: bignum = Math.max(bignum, a[i])
+   - Return bignum
+
+6. Define function: MinInt(int y, int[] b) returns int
+   - Declare variable: smallnum = y
+   - Loop: for i = 0 to b.length-1
+     - Update smallnum: smallnum = Math.min(smallnum, b[i])
+   - Return smallnum
+
+7. Define function: CheckWar(int a, int b)
+   - Conditional: if a >= b
+     - Output: "War"
+   - Else
+     - Output: "No War"

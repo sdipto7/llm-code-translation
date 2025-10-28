@@ -1,0 +1,9 @@
+- Import the `Scanner` class from the `java.util` package.
+- Define a class named `Main`.
+- Declare a constant integer `BASE` and assign it the value `3`.
+- Implement the `main` method with the signature `public static void main(String[] args)`.
+  - Create a `Scanner` object to read input from the standard input stream.
+  - Use the `nextInt()` method of the `Scanner` object to read an integer input from the user.
+  - Call the `Math.pow` method with the user input as the base and the constant `BASE` as the exponent.
+  - Cast the result of `Math.pow` to an integer.
+  - Print the resulting integer value to the standard output.

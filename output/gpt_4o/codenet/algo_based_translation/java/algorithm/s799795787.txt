@@ -1,0 +1,29 @@
+```
+- Import the `java.util.*` library for input handling and sorting operations.
+
+- Define `main` function with `String[] args` as parameter and `void` as return type.
+
+- Declare `Scanner sc` to read input from the standard input stream.
+
+- Read an integer `n` using `sc.nextInt()` and store it in variable `n`.
+
+- Declare a `String` array `array` with length `n`.
+
+- Declare integer variables `cnt` and `cnt2`, both initialized to `0`.
+
+- For loop from `i = 0` to `i < n` (inclusive):
+  - Read a `String` using `sc.next()` and store it in `array[i]`.
+
+- Sort the `array` using `Arrays.sort(array)`.
+
+- Assign the first element of `array` to `String` variable `a` and increment `cnt` by 1.
+
+- For loop from `i = 0` to `i < n` (inclusive):
+  - If `a` is equal to `array[i]`:
+    - Do nothing.
+  - Else:
+    - Increment `cnt` by 1.
+  - Assign `array[i]` to `a`.
+
+- Output the value of `cnt` using `System.out.println(cnt)`.
+```

@@ -1,0 +1,89 @@
+Algorithm:
+===== Function Signatures =====
+- class atcoder_ABC178_B
+    - static class FastReader
+        + FastReader() - constructor
+        + String next()
+        + int nextInt()
+        + long nextLong()
+        + double nextDouble()
+        + String nextLine()
+    - static int modPower(int x, int y, int mod)
+    - static class pair<T1, T2>
+        + pair(T1 first, T2 second) - constructor
+    - public static void main(String[] args)
+
+===== Variable Declarations =====
+1. main method:
+    - FastReader in = new FastReader()
+    - long[4] a
+2. next() method:
+    - String str (return value)
+3. modPower:
+    - int res = 1
+
+===== Logic Flow =====
+MAIN EXECUTION:
+1. Initialize FastReader 'in'
+2. Declare long array 'a' with 4 elements
+3. For loop (i=0 to 3 inclusive):
+    a. Read nextLong() into a[i]
+4. Calculate maximum of:
+    a[0]*a[2]
+    MAX between above and a[1]*a[3]
+    MAX between above and a[0]*a[3]
+    MAX between above and a[1]*a[2]
+5. Print final maximum value
+
+FastReader METHODS:
+next():
+1. While st is null or has no more elements:
+    a. Read line from BufferedReader
+    b. Tokenize input
+2. Return next token
+
+nextInt():
+1. Parse next() to integer
+
+nextLong():
+1. Parse next() to long
+
+nextDouble():
+1. Parse next() to double
+
+nextLine():
+1. Read entire line from BufferedReader
+2. Return line string
+
+modPower():
+1. x = x % mod
+2. If x == 0, return 0
+3. While y > 0:
+    a. If y is odd (y%2 == 1):
+        i. res = (res * x) % mod
+    b. y = y >> 1
+    c. x = (x * x) % mod
+4. Return res
+
+pair CLASS:
+- Generic class holding two values (first, second)
+
+===== Control Structures =====
+- While loop in next() (st null/no tokens)
+- Try-catch blocks for IOExceptions
+- For loop in main (0-3 iterations)
+- Nested Math.max comparisons
+- While loop in modPower (y > 0)
+- Bitwise check (y%2 == 1)
+- Bitshift operation (y = y >> 1)
+
+===== Input/Output Operations =====
+Input:
+- Read 4 long integers via FastReader
+Output:
+- Print maximum product calculation
+
+===== Dependencies =====
+- java.util.* (for StringTokenizer)
+- java.lang.* (basic functions)
+- java.io.* (BufferedReader, IOException)

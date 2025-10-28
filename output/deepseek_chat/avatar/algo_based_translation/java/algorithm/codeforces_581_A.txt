@@ -1,0 +1,21 @@
+Function signature: main(String[] args)
+Required library: java.util.Scanner
+
+Variables:
+- Scanner sc (input scanner)
+- int a (first input value)
+- int b (second input value)
+- int count (counter initialized to 0)
+- int ans (result of calculation)
+
+Execution flow:
+1. Create Scanner object reading from System.in
+2. Read integer input into variable a
+3. Read integer input into variable b
+4. Initialize count to 0
+5. Enter while loop with condition true
+6. Check if a > 0 AND b > 0
+7. If condition true: increment count by 1, decrement a by 1, decrement b by 1
+8. If condition false: break out of loop
+9. Calculate ans = (a divided by 2) + (b divided by 2) using integer division
+10. Print count followed by space followed by ans

@@ -1,0 +1,47 @@
+Function signatures and parameter and return types:
+- `main(String[] args) : void`
+
+Variable declarations and data types:
+- `M : int`
+- `s : char[]`
+- `n : int`
+- `dp : int[][]`
+- `sc : Scanner`
+
+Logic flow in execution order:
+
+1. Initialize `M` to 1000000007.
+2. Create a `Scanner` object `sc` to read input.
+3. Read a line of input as a `String` and convert it to a `char[]` named `s`.
+4. Determine the length of `s` and store it in `n`.
+5. Initialize a 2D array `dp` of size `(n + 1) x 2` to store dynamic programming values.
+6. Set `dp[0][0]` to 1.
+7. For each index `i` from 0 to `n-1`:
+   - If `s[i]` is '0':
+     - Set `dp[i + 1][0]` to `dp[i][0]`.
+     - Set `dp[i + 1][1]` to `dp[i][1]`.
+   - Otherwise (if `s[i]` is not '0'):
+     - Set `dp[i + 1][1]` to `(dp[i][0] + dp[i][1]) % M`.
+   - If `s[i]` is '0':
+     - Add `(dp[i][1] * 2) % M` to `dp[i + 1][1]`.
+     - Set `dp[i + 1][1]` to `dp[i + 1][1] % M`.
+   - Otherwise (if `s[i]` is not '0'):
+     - Add `(dp[i][0] * 2) % M` to `dp[i + 1][0]`.
+     - Add `(dp[i][1] * 2) % M` to `dp[i + 1][1]`.
+     - Set `dp[i + 1][0]` to `dp[i + 1][0] % M`.
+     - Set `dp[i + 1][1]` to `dp[i + 1][1] % M`.
+8. Print `(dp[n][0] + dp[n][1]) % M`.
+
+Control structures:
+- For loop: `for (int i = 0; i < n; i++)`
+- If-else statement: `if (s[i] == '0')`
+
+Input/output operations:
+- Read input using `sc.nextLine()` and convert it to `char[]`.
+- Print the final result using `System.out.println()`.
+
+Data processing logic:
+- Uses dynamic programming to count sequences ending with '0' and '1' under modulo `M`.
+
+Required libraries/modules/dependencies:
+- `java.util.Scanner`

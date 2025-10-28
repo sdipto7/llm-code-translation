@@ -1,0 +1,7 @@
+1. Read input string from standard input
+2. Call swapcase() method on the input string
+   - For each character in the string:
+     - If character is uppercase: convert to lowercase
+     - If character is lowercase: convert to uppercase
+     - If character is neither: leave unchanged
+3. Print the resulting string to standard output

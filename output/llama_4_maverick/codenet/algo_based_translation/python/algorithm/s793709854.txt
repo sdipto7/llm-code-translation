@@ -1,0 +1,29 @@
+1. Define a function `solve_knapsack_problem` with no parameters and return type `int`.
+2. Declare variables:
+   - `N` of type `int`
+   - `T` of type `int`
+   - `L` of type `list[list[int]]`
+   - `dp` of type `list[list[int]]`
+   - `used` of type `list[int]`
+   - `B` of type `int`
+   - `j` of type `int`
+   - `ans` of type `int`
+   - `c` of type `int`
+3. Read input:
+   - Read two integers `N` and `T` from input using `map(int, input().split())`.
+   - Read `N` lists of two integers each into `L` using a list comprehension.
+4. Initialize `dp` with dimensions `(N+1) x T` and fill with zeros.
+5. Iterate over `i` from `0` to `N-1`:
+   - Iterate over `j` from `0` to `T-1`:
+     - If `j < L[i][0]`, then `dp[i+1][j] = dp[i][j]`.
+     - Else, `dp[i+1][j] = max(dp[i][j], dp[i][j-L[i][0]] + L[i][1])`.
+6. Initialize `used` as an empty list.
+7. Set `B = dp[N][T-1]` and `j = T-1`.
+8. Iterate over `i` from `N-1` to `0` in reverse order:
+   - If `B == dp[i][j]`, continue to the next iteration.
+   - Else, subtract `L[i][1]` from `B`, append `i` to `used`, and subtract `L[i][0]` from `j`.
+9. Set `ans = dp[N][T-1]` and `c = 0`.
+10. Iterate over `i` from `0` to `N-1`:
+    - If `i` is in `used`, continue to the next iteration.
+    - Update `c` to be the maximum of `c` and `L[i][1]`.
+11. Return `ans + c`.

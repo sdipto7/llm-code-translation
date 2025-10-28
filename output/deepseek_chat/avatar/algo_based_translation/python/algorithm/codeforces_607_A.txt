@@ -1,0 +1,32 @@
+**Function Signature:**
+- `main()`: No parameters, returns nothing
+
+**Variables:**
+- `n`: integer (input count)
+- `l`: list of integers (size 1000010, initialized to 0)
+- `dp`: list of integers (size 1000010, initialized to 0)
+- `a`, `b`: integers (temporary input values)
+- `i`: integer (loop counter)
+- `mx`: integer (maximum value tracker)
+
+**Algorithm:**
+1. Read integer `n` from input
+2. Initialize list `l` with 1000010 zeros
+3. Initialize list `dp` with 1000010 zeros
+4. For `i` from 0 to `n-1`:
+   - Read two integers `a` and `b` from input
+   - Set `l[a] = b`
+5. If `l[0] > 0`:
+   - Set `dp[0] = 1`
+6. Initialize `mx = 0`
+7. For `i` from 1 to 1000009:
+   - If `l[i] == 0`:
+     - Set `dp[i] = dp[i-1]`
+   - Else:
+     - If `l[i] >= i`:
+       - Set `dp[i] = 1`
+     - Else:
+       - Set `dp[i] = dp[i - l[i] - 1] + 1`
+   - If `dp[i] > mx`:
+     - Set `mx = dp[i]`
+8. Print `n - mx`

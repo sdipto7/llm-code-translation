@@ -1,0 +1,28 @@
+Algorithm:
+
+1. Import the Scanner class from the java.util package.
+
+2. Define the main function with the signature:
+   - `public static void main(String[] args)`
+
+3. Within the main function:
+   - Declare a Scanner object `sc` to read input from the standard input stream.
+
+4. Declare four variables of type `long`:
+   - `pandu`
+   - `vundu`
+   - `urdu`
+   - `c` initialized to 0
+
+5. Read three long integer inputs using `sc.nextLong()` and assign them to:
+   - `pandu`
+   - `vundu`
+   - `urdu`
+
+6. Use a for loop to iterate from `i = 1` to `i <= urdu` inclusive:
+   - Calculate the product of `i` and `pandu`
+   - Add the result to the variable `c`
+
+7. After exiting the loop, use an if-else conditional structure:
+   - If `c < vundu`, output "0" using `System.out.print`
+   - Else, output the result of `c - vundu` using `System.out.print`

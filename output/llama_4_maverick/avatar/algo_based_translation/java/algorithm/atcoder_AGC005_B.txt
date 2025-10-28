@@ -1,0 +1,28 @@
+1. Read the number of elements N from the input.
+2. Read N integers into an array a.
+3. Initialize two arrays leftl and rightl of size N with default values.
+4. Initialize an empty deque que.
+5. Set index to 0.
+6. While index is less than N:
+   6.1. While que is not empty and the element at the top of que is greater than the element at index in array a:
+      6.1.1. Remove the top element from que and store it in ind.
+      6.1.2. Calculate rightl[ind] as index - ind - 1.
+   6.2. Push index onto que.
+   6.3. Increment index.
+7. While que is not empty:
+   7.1. Remove the top element from que and store it in ind.
+   7.2. Calculate rightl[ind] as N - ind - 1.
+8. Set index to N - 1.
+9. While index is greater than or equal to 0:
+   9.1. While que is not empty and the element at the top of que is greater than the element at index in array a:
+      9.1.1. Remove the top element from que and store it in ind.
+      9.1.2. Calculate leftl[ind] as ind - index - 1.
+   9.2. Push index onto que.
+   9.3. Decrement index.
+10. While que is not empty:
+    10.1. Remove the top element from que and store it in ind.
+    10.2. Calculate leftl[ind] as ind - (index + 1) - 1, but since index is -1 after the loop, it is effectively ind - index - 1.
+11. Initialize a variable ans to 0.
+12. For each i from 0 to N-1:
+    12.1. Calculate ans += a[i] * (leftl[i] + 1) * (rightl[i] + 1).
+13. Output the value of ans.

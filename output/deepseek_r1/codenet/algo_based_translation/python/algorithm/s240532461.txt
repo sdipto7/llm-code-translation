@@ -1,0 +1,16 @@
+- **Input**: Read integers N (int) and L (int) from standard input.
+- **Variables**:
+  - aji (List[int]) initialized as empty list.
+- **Loop**:
+  - For each i in range 1 to N (inclusive):
+    - Append (L + i - 1) to aji.
+- **Conditionals**:
+  - If minimum value in aji is >= 0:
+    - Remove the first occurrence of the minimum value in aji.
+  - Else if maximum value in aji is <= 0:
+    - Remove the first occurrence of the maximum value in aji.
+  - Else:
+    - Remove the first occurrence of the element with smallest absolute value in aji.
+- **Output**: Compute sum of all elements in aji and print result as integer.
+- **Data Flow**:
+  - All operations use built-in list methods and arithmetic; no external dependencies required.

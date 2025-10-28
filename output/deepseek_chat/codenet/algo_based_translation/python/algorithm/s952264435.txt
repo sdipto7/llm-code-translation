@@ -1,0 +1,7 @@
+1. Read two integers N and M from input, split by space.
+2. Read M integers from input, split by space, and store in list A.
+3. Calculate sum of all elements in A, store in A_sum.
+4. If N - A_sum >= 0:
+   - Print N - A_sum
+5. Else:
+   - Print "-1"

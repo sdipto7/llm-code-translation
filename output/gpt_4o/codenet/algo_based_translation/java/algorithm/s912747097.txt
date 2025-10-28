@@ -1,0 +1,20 @@
+1. Import necessary library:
+   - Import `java.util.Scanner` for reading input from the console.
+
+2. Define the main function:
+   - `public static void main(String[] args)`: Entry point of the program.
+
+3. Variable declaration and initialization:
+   - Create an instance of `Scanner` named `sc` to read input from the console.
+   - Declare an integer variable `r`.
+
+4. Input operation:
+   - Read an integer from console input using `sc.nextInt()` and assign it to `r`.
+
+5. Data processing logic:
+   - Calculate the area of a circle-like shape using the formula `3 * r * r`.
+
+6. Output operation:
+   - Print the result of the calculation to the console using `System.out.println()`.
+
+7. Program terminates.

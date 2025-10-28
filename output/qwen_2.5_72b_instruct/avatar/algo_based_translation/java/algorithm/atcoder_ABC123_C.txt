@@ -1,0 +1,35 @@
+- Function signatures with parameter and return types:
+  - `main(String[] args): void`
+  - `p(String ans): void`
+  - `p(int ans): void`
+  - `p(): void`
+  - `p(long ans): void`
+  - `p(double ans): void`
+
+- Variable declarations and data types:
+  - `sc: Scanner`
+  - `N: long`
+  - `min: long`
+  - `i: int`
+
+- Complete logic flow in execution order:
+  1. Initialize `sc` as a new `Scanner` object to read from standard input.
+  2. Read a long value from input and assign it to `N`.
+  3. Initialize `min` to 0.
+  4. Loop from `i = 0` to `i < 5`:
+     - If `i == 0`, read a long value from input and assign it to `min`.
+     - Otherwise, read a long value from input and update `min` to the smaller value between `min` and the input value.
+  5. Calculate the ceiling of the division of `N` by `min`, cast it to `long`, add 4 to it, and print the result using `p(long ans)`.
+
+- Control structures:
+  - For loop with condition `i < 5`.
+
+- Input/output operations and data processing logic:
+  - Read long values from standard input.
+  - Print long values to standard output.
+
+- Required libraries, modules, or dependencies:
+  - `java.util.Scanner`
+  - `java.util.Random`
+  - `java.util.ArrayDeque`
+  - `java.util.Queue`

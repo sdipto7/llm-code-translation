@@ -1,0 +1,41 @@
+Function: main
+- Parameters: String[] args
+- Return Type: void
+- Variable Declarations: 
+  - Scanner scan
+  - int n
+  - int count
+- Logic Flow:
+  - Initialize scan as new Scanner(System.in)
+  - Assign n to next integer input from scan
+  - Assign count to next integer input from scan
+  - Call printIsland with n and count
+
+Function: printIsland
+- Parameters: int n, int count
+- Return Type: void
+- Variable Declarations:
+  - int a
+  - int b
+  - int max
+  - StringBuilder sb
+- Logic Flow:
+  - Assign a to (n + 1) / 2
+  - Assign b to n / 2
+  - Assign max to a * a + b * b
+  - If count > max:
+    - Print "NO"
+    - Return
+  - Print "YES"
+  - For i from 0 to n-1:
+    - Initialize sb as new StringBuilder
+    - For j from 0 to n-1:
+      - If (i + j) % 2 == 0 and count > 0:
+        - Append 'L' to sb
+        - Decrement count by 1
+      - Else:
+        - Append 'S' to sb
+    - Print sb.toString()
+
+Libraries:
+- java.util.Scanner

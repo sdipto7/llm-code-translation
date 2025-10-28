@@ -1,0 +1,35 @@
+Function signature: `process_numbers()`
+
+Variable declarations:
+- `n` of type `int`
+- `l` of type `list` of `str`
+- `max` of type `float` initialized to `-1e9`
+- `min` of type `float` initialized to `1e9`
+- `sum` of type `int` initialized to `0`
+
+Execution order and logic flow:
+1. Read an integer `n` from input.
+2. Read a line of input, split by spaces, and store in list `l`.
+3. Initialize `max` to `-1e9`, `min` to `1e9`, and `sum` to `0`.
+4. Loop over the range from `0` to `n` (exclusive):
+   - Convert `l[i]` to `int` and add to `sum`.
+   - If `int(l[i])` is greater than `max`, update `max` to `int(l[i])`.
+   - If `int(l[i])` is less than `min`, update `min` to `int(l[i])`.
+5. Print `min`, `max`, and `sum`.
+
+Control structures:
+- For loop iterating from `0` to `n-1`.
+- If statements to update `max` and `min`.
+
+Input/output operations:
+- Read an integer `n` from input.
+- Read a space-separated string, split into a list of strings `l`.
+- Print the values of `min`, `max`, and `sum`.
+
+Data processing logic:
+- Convert each element of `l` to an integer for comparison and summation.
+- Track the maximum and minimum values encountered.
+- Accumulate the sum of all integer values.
+
+Required libraries, modules, or dependencies:
+- None needed beyond standard Python libraries.

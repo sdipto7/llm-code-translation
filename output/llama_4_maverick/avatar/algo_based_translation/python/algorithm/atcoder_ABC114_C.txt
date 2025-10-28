@@ -1,0 +1,9 @@
+1. READ N FROM INPUT
+2. DEFINE FUNCTION aaa(n)
+    1. IF INTEGER(n) > N THEN
+        1. RETURN 0
+    2. INITIALIZE ans TO 0 IF SET(STRING(INTEGER(n))) IS NOT EQUAL TO {'7', '5', '3'} ELSE 1
+    3. FOR EACH i IN {'7', '5', '3'}
+        1. ans = ans + aaa(n CONCATENATED WITH i)
+    4. RETURN ans
+3. PRINT aaa('0')

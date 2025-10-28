@@ -1,0 +1,59 @@
+```python
+Function Signatures:
+- main(String[] args): void
+- isValid(String s1, String s2): boolean
+
+Variables:
+- s: Scanner (System.in)
+- s1: String
+- s2: String
+- m1: HashMap<Character, Integer>
+- m2: HashMap<Character, Integer>
+- ans: int
+- hs: HashSet<Character>
+- c: Character (loop variable)
+- x1: int
+- x2: int
+- n1: int (s1 length)
+- n2: int (s2 length)
+- map: HashMap<Character, Boolean>
+
+Logic Flow:
+1. Read s1 and s2 from input using Scanner
+2. Call isValid(s1, s2):
+   a. Create map and populate with all characters from s1 as keys with value true
+   b. Check every character in s2: if any not present in map, return false
+   c. Return true if all characters in s2 are present in s1
+3. If isValid returns false:
+   a. Print -1
+4. Else:
+   a. Initialize m1 and count occurrences of each character in s1
+   b. Initialize m2 and count occurrences of each character in s2
+   c. Initialize ans to 0
+   d. Initialize hs
+   e. Iterate through each character c in s2:
+      i. If c not in hs:
+         - Add c to hs
+         - Get x1 from m1.get(c)
+         - Get x2 from m2.get(c)
+         - x1 = min(x1, x2)
+         - ans += x1
+   f. Print ans
+
+Control Structures:
+- if (isValid(s1, s2) == false) in main
+- for loops for character processing in s1 and s2
+- if (!map.containsKey(c)) in isValid
+- if (!hs.contains(c)) in main processing
+- Math.min(x1, x2)
+
+Input/Output:
+- Read two strings from standard input
+- Print -1 if invalid configuration
+- Print computed ans if valid
+
+Libraries/Dependencies:
+- java.io.*
+- java.lang.*
+- java.util.*
+```

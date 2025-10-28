@@ -1,0 +1,38 @@
+**Function Signature:**
+- No explicit function defined; code runs at module level
+- Input: Reads two integers from standard input
+- Output: Prints either 'Ciel' or 'Hanako'
+
+**Variables and Data Types:**
+- x: integer (first input value)
+- y: integer (second input value)
+- a: integer (0 or 1, representing turn state)
+
+**Logic Flow:**
+1. Read two integers from input, assign to x and y
+2. Initialize a = 0
+3. Enter while loop with condition: (x ≥ 0 AND y ≥ 22) OR (x ≥ 1 AND y ≥ 12) OR (x ≥ 2 AND y ≥ 2)
+4. Inside loop:
+   - If a is truthy (non-zero):
+     - If y ≥ 22: subtract 22 from y
+     - Else if x ≥ 1 AND y ≥ 12: subtract 1 from x and 12 from y
+     - Else: subtract 2 from x and 2 from y
+   - Else (a is falsy/zero):
+     - If x ≥ 2 AND y ≥ 2: subtract 2 from x and 2 from y
+     - Else if x ≥ 1 AND y ≥ 12: subtract 1 from x and 12 from y
+     - Else: subtract 22 from y
+5. Toggle a: a = 1 - a
+6. After loop exits, print ['Ciel', 'Hanako'][1 - a]
+
+**Control Structures:**
+- While loop with compound OR condition
+- Nested if-else statements with multiple conditions
+- Conditional execution based on boolean state variable a
+
+**Input/Output Operations:**
+- Input: Reads space-separated integers from stdin
+- Output: Prints string result to stdout
+
+**Dependencies:**
+- Standard input/output operations
+- No external libraries required

@@ -1,0 +1,14 @@
+1. Read input for `a` and `tA` from the first line.
+2. Read input for `b` and `tB` from the second line.
+3. Read the timing in "HH:MM" format from the third line.
+4. Convert the timing to minutes since the start of the day.
+5. Calculate the simulated departure time in minutes.
+6. Calculate the simulated arrival time by adding `tA` to the simulated departure time.
+7. Initialize a counter to 0.
+8. Iterate over possible bus departure times starting from 300 minutes, incrementing by `b` minutes, until 1440 minutes.
+9. For each bus departure time, calculate the bus arrival time by adding `tB`.
+10. Check if the bus departure time is greater than or equal to the simulated arrival time or if the simulated departure time is greater than or equal to the bus arrival time.
+11. If the condition in step 10 is true, skip to the next iteration.
+12. If the condition in step 10 is false, increment the counter.
+13. Output the counter value.
+14. Flush and close the output stream.

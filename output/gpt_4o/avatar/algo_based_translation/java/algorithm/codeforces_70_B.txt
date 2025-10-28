@@ -1,0 +1,46 @@
+Algorithm:
+
+1. Function Signature:
+   - Function: `main`
+   - Parameters: `args` (String array)
+   - Return Type: `void`
+
+2. Variable Declarations:
+   - `BufferedReader br`: BufferedReader
+   - `int n`: Integer
+   - `String input`: String
+   - `int max`: Integer, initialized to -1
+   - `int[] msgLength`: Integer array, size is half of `input` length
+   - `int count`: Integer, initialized to 0
+   - `int idx`: Integer, initialized to 0
+
+3. Logic Flow:
+   - Read an integer `n` from standard input using `BufferedReader`.
+   - Read a string `input` from standard input.
+   - Iterate over each character `c` in `input`:
+     - If `c` is one of '.', '?', or '!':
+       - Store `++count` in `msgLength[idx]`.
+       - Increment `idx`.
+       - Update `max` if `count` is greater than `max`.
+       - Increment `i` to skip the space after punctuation.
+       - Reset `count` to 0.
+     - Else:
+       - Increment `count`.
+
+4. Conditional:
+   - If `max` is greater than `n`:
+     - Output "Impossible".
+   - Else:
+     - Initialize `int ans` to 0.
+     - Iterate over `msgLength` using index `i` from 0 to `idx`:
+       - Initialize `int l` to `msgLength[i]`.
+       - While `i < idx - 1` and `l + msgLength[i + 1] + 1 <= n`:
+         - Increment `l` by `msgLength[i + 1] + 1`.
+         - Increment `i`.
+       - Increment `ans`.
+     - Output the value of `ans`.
+
+5. Required Libraries:
+   - `java.io.BufferedReader`
+   - `java.io.IOException`
+   - `java.io.InputStreamReader`

@@ -1,0 +1,27 @@
+Function Signature:
+- Function: calculate_min_max_sum
+- Parameters: n (int), l (list of str)
+- Returns: tuple (int, int, int)
+
+Variable Declarations:
+- max: float initialized to -1e9
+- min: float initialized to 1e9
+- sum: int initialized to 0
+
+Logic Flow:
+1. Initialize `max` to -1e9.
+2. Initialize `min` to 1e9.
+3. Initialize `sum` to 0.
+4. Iterate over each index `i` from 0 to `n-1`:
+   - Convert `l[i]` to an integer.
+   - Add the integer value of `l[i]` to `sum`.
+   - If `max` is less than the integer value of `l[i]`, update `max` to the integer value of `l[i]`.
+   - If `min` is greater than the integer value of `l[i]`, update `min` to the integer value of `l[i]`.
+5. Return the tuple `(min, max, sum)`.
+
+Input/Output Operations:
+- Inputs: An integer `n` and a list of strings `l` representing numbers.
+- Outputs: A tuple `(min, max, sum)` representing the minimum value, maximum value, and the sum of the list.
+
+Required Libraries:
+- No external libraries required.

@@ -1,0 +1,91 @@
+**Algorithm:**
+
+1. **Declare global variables:**
+   - `counter`: integer array
+   - `graph`: list of lists of integers
+
+2. **Main function:**
+   - Initialize FastScanner for input
+   - Read integers `n` and `q`
+   - Initialize `graph` with `n` empty linked lists
+   - Initialize `counter` array of size `n` with zeros
+   - For `i` from 0 to `n-2`:
+     - Read two integers `a` and `b`
+     - Subtract 1 from both `a` and `b`
+     - Add `b` to `graph[a]`
+     - Add `a` to `graph[b]`
+   - For `i` from 0 to `q-1`:
+     - Read integer `p`
+     - Read integer `v`
+     - Add `v` to `counter[p-1]`
+   - Call `dfs(0, -1, 0)`
+   - Initialize StringJoiner with space delimiter
+   - For `i` from 0 to `n-1`:
+     - Add `counter[i]` converted to string to StringJoiner
+   - Print StringJoiner result
+
+3. **DFS function (v: integer, par: integer, val: long):**
+   - For each integer `i` in `graph[v]`:
+     - If `i` != `par`:
+       - Call `dfs(i, v, val + counter[v])`
+   - Add `val` to `counter[v]`
+
+4. **FastScanner class:**
+   - **Fields:**
+     - `in`: InputStream (System.in)
+     - `buffer`: byte array of size 1024
+     - `ptr`: integer
+     - `buflen`: integer
+   
+   - **hasNextByte(): boolean**
+     - If `ptr` < `buflen`: return true
+     - Else:
+       - Set `ptr` to 0
+       - Try to read into `buffer`, set `buflen` to bytes read
+       - If `buflen` <= 0: return false
+       - Else: return true
+   
+   - **readByte(): integer**
+     - If hasNextByte(): return `buffer[ptr++]`
+     - Else: return -1
+   
+   - **isPrintableChar(c: integer): boolean**
+     - Return true if 33 <= c <= 126
+   
+   - **hasNext(): boolean**
+     - While hasNextByte() and current byte not printable: increment `ptr`
+     - Return hasNextByte()
+   
+   - **next(): string**
+     - If not hasNext(): throw NoSuchElementException
+     - Initialize StringBuilder
+     - Read byte `b`
+     - While `b` is printable:
+       - Append `b` to StringBuilder
+       - Read next byte `b`
+     - Return StringBuilder as string
+   
+   - **nextLong(): long**
+     - If not hasNext(): throw NoSuchElementException
+     - Initialize `n` = 0, `minus` = false
+     - Read byte `b`
+     - If `b` == '-':
+       - Set `minus` = true
+       - Read next byte `b`
+     - If `b` not digit: throw NumberFormatException
+     - While true:
+       - If `b` is digit:
+         - Multiply `n` by 10
+         - Add digit value to `n`
+       - Else if `b` == -1 or not printable:
+         - Return `-n` if `minus`, else `n`
+       - Else: throw NumberFormatException
+       - Read next byte `b`
+   
+   - **nextInt(): integer**
+     - Call nextLong() and cast to int
+     - If out of integer range: throw NumberFormatException
+     - Return integer value
+   
+   - **nextDouble(): double**
+     - Call next() and parse as double

@@ -1,0 +1,36 @@
+**Function Signature:**
+main(String[] args)
+
+**Required Libraries:**
+java.util.Arrays
+java.util.*
+java.io.PrintWriter
+java.util.Scanner
+
+**Variable Declarations:**
+- Scanner input: System.in
+- PrintWriter out: System.out
+- int n: input.nextInt()
+- int[][] vec: size [n][4]
+- int ans: 500
+- int ansprice: 20000
+- int fl: 1 (inside loop)
+
+**Execution Order:**
+1. Initialize Scanner with System.in
+2. Initialize PrintWriter with System.out
+3. Read integer n from input
+4. Create 2D array vec with dimensions n x 4
+5. For i from 0 to n-1:
+   - Read four integers into vec[i][0], vec[i][1], vec[i][2], vec[i][3]
+6. For i from 0 to n-1:
+   - Set fl = 1
+   - For j from 0 to n-1:
+     - If vec[i][0] < vec[j][0] AND vec[i][1] < vec[j][1] AND vec[i][2] < vec[j][2]:
+       - Set fl = 0
+   - If fl == 1:
+     - If vec[i][3] < ansprice:
+       - Set ansprice = vec[i][3]
+       - Set ans = i + 1
+7. Print ans
+8. Close PrintWriter

@@ -1,0 +1,64 @@
+**Algorithm:**
+
+**Function Signatures:**
+- `isSolution(int columnsCount, String x) : boolean`
+- `main(String[] args) : void`
+
+**Variables:**
+1. `isSolution`:
+   - `boolean[] allXs` (size=columnsCount)
+2. `main`:
+   - `BufferedReader br`
+   - `PrintWriter pw`
+   - `int t`
+   - `int possibleSolutions`
+   - `StringBuilder solutions`
+   - `String s`
+
+**Logic Flow:**
+
+**isSolution:**
+1. Initialize `allXs` array with `true` values.
+2. For each `i` in 0 ≤ i < 12:
+   - If `x.charAt(i)` != 'X', set `allXs[i % columnsCount] = false`
+3. For each `i` in 0 ≤ i < `columnsCount`:
+   - If `allXs[i]` is true, return `true`
+4. Return `false` if no true values remain in `allXs`
+
+**main:**
+1. Initialize `br` with `BufferedReader` wrapping `System.in`
+2. Initialize `pw` with `PrintWriter` wrapping `System.out`
+3. Read integer `t` from input
+4. For each test case (loop `t` times):
+   - Reset `possibleSolutions` to 0
+   - Initialize empty `solutions` StringBuilder
+   - Read string `s` from input
+   - Check valid grid configurations in this order:
+     - Call `isSolution(12, s)`: if true, append " 1x12", increment `possibleSolutions`
+     - Call `isSolution(6, s)`: if true, append " 2x6", increment `possibleSolutions`
+     - Call `isSolution(4, s)`: if true, append " 3x4", increment `possibleSolutions`
+     - Call `isSolution(3, s)`: if true, append " 4x3", increment `possibleSolutions`
+     - Call `isSolution(2, s)`: if true, append " 6x2", increment `possibleSolutions`
+     - Call `isSolution(1, s)`: if true, append " 12x1", increment `possibleSolutions`
+   - Output `possibleSolutions` (with post-increment operator) followed by `solutions` contents
+5. Flush and close `pw`
+
+**Control Structures:**
+- **Loops:**
+  - `for (i 0→11)` in `isSolution`
+  - `for (i 0→columnsCount-1)` in `isSolution`
+  - `for (t test cases)` in `main`
+- **Conditionals:**
+  - `if (x.charAt(i) != 'X')` in `isSolution`
+  - Six sequential `if (isSolution(...))` checks in `main`
+
+**Input/Output:**
+- Input via `BufferedReader` reading lines (one integer, then `t` lines of 12-character strings)
+- Output via `PrintWriter` using `print` and `println` for each test case result
+
+**Dependencies:**
+- `java.io.BufferedReader`
+- `java.io.IOException`
+- `java.io.InputStreamReader`
+- `java.io.PrintWriter`
+- `java.util.Arrays`

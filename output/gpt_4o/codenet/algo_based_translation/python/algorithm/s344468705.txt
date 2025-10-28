@@ -1,0 +1,25 @@
+```plaintext
+Function Signature:
+    solve() -> None
+
+Variable Declarations:
+    n: int
+    dp: List[int]
+    num: int
+    idx: int
+
+Execution Flow:
+1. Read an integer `n` from input, representing the number of elements.
+2. Initialize a list `dp` with one element `-INF`.
+3. For each element in the range from 0 to n-1:
+   a. Read an integer `num` from input.
+   b. Negate the integer `num`.
+   c. If `num` is greater than or equal to the last element in `dp`, append `num` to `dp`.
+   d. Otherwise, find the position `idx` using `bisect_right` where `num` can be inserted to maintain the order, and set `dp[idx]` to `num`.
+4. Output the length of `dp` minus 1.
+
+Required Libraries:
+- sys
+- bisect module with functions bisect_left and bisect_right
+```
+

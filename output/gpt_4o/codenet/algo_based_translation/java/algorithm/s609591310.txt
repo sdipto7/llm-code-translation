@@ -1,0 +1,48 @@
+```
+Algorithm
+
+1. Import the java.util.Scanner library.
+
+2. Define the main function with no parameters and void return type.
+
+3. Declare and initialize an integer variable `ans` to 0.
+
+4. Create a Scanner object `sc` for input.
+
+5. Read an integer `n` using `sc.nextInt()`.
+
+6. Declare an integer array `list` of size `n`.
+
+7. For `i` from 0 to `n-1`, read integers and store them in `list[i]`.
+
+8. Declare two integer arrays `numlist1` and `numlist2`, each of size 100000.
+
+9. Initialize all elements of `numlist1` and `numlist2` to 0 using a loop from 0 to 99999.
+
+10. For `i` from 0 to `n-1` with step 2, do the following:
+    - Increment `numlist1[list[i] - 1]` by 1.
+    - Increment `numlist2[list[i + 1] - 1]` by 1.
+
+11. Declare and initialize integer variables `max11`, `max12`, `max21`, `max22`, `val1`, `val2` to 0.
+
+12. For `i` from 0 to 99999, do the following:
+    - If `numlist1[i]` is greater than or equal to `max11`:
+        - Assign `max11` to `max12`.
+        - Assign `numlist1[i]` to `max11`.
+        - Assign `i` to `val1`.
+    - Else if `numlist1[i]` is greater than or equal to `max12`:
+        - Assign `numlist1[i]` to `max12`.
+    - If `numlist2[i]` is greater than or equal to `max21`:
+        - Assign `max21` to `max22`.
+        - Assign `numlist2[i]` to `max21`.
+        - Assign `i` to `val2`.
+    - Else if `numlist2[i]` is greater than or equal to `max22`:
+        - Assign `numlist2[i]` to `max22`.
+
+13. If `val1` is not equal to `val2`:
+    - Assign `n - max11 - max21` to `ans`.
+14. Else:
+    - Assign `n - max(Math.max(max12 + max21, max11 + max22))` to `ans`.
+
+15. Print `ans`.
+```

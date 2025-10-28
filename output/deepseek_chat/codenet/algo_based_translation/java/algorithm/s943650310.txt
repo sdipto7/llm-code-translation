@@ -1,0 +1,6 @@
+read integer X from standard input
+read integer t from standard input
+if X minus t is greater than or equal to zero:
+    print X minus t
+else:
+    print zero

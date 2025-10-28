@@ -1,0 +1,20 @@
+1. Define a function `calculate_sum_of_smallest_k_numbers` that takes no parameters and returns an integer.
+2. Declare variables `n` and `k` of type integer.
+3. Read two integer values from the input and store them in `n` and `k` by splitting the input string.
+4. Declare a list `li` to store integers.
+5. Read `n` integer values from the input, store them in `li`, and map them to integers.
+6. Sort the list `li` in ascending order.
+7. Declare a list `tmp` and assign it the first `k` elements of the sorted list `li`.
+8. Calculate the sum of the elements in `tmp`.
+9. Print the sum of the elements in `tmp`.
+10. The program terminates. 
+
+Alternatively in a more structured pseudocode:
+
+1. Function `main` returns integer
+2. `n`, `k` = read two integers from input
+3. `li` = read `n` integers into a list
+4. Sort `li` in-place
+5. `tmp` = slice `li` from index 0 to `k`
+6. `sum_tmp` = sum of elements in `tmp`
+7. Print `sum_tmp`

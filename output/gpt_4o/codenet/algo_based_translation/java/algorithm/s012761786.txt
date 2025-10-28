@@ -1,0 +1,77 @@
+```plaintext
+- Import the java.util.Scanner class
+- Declare a class `Main`
+- Declare a static Scanner instance `sc`
+
+- Define a static method `main` with parameter `(String[] args)`
+
+  - Declare `long` variables `n`, `a`, `b`, `sa`, `ans`
+  - Assign the result of `nextLong()` to `n`
+  - Assign the result of `nextLong()` to `a`
+  - Assign the result of `nextLong()` to `b`
+
+  - Compute the absolute difference between `a` and `b` and assign to `sa`
+
+  - Initialize `ans` to 0
+
+  - If `sa % 2 == 0` (check if `sa` is even)
+    - Assign `sa / 2` to `ans`
+
+  - Else (if `sa` is odd)
+    - Declare `long` variables `AAA`, `BBB`
+    - Assign the minimum of `(n-a)` and `(a-1)` to `AAA`
+    - Assign the minimum of `(n-b)` and `(b-1)` to `BBB`
+    - Assign the minimum of `AAA` and `BBB` to `ans`
+
+    - Decrement `sa` by 1
+    - Increment `ans` by 1
+
+    - Assign `sa / 2` to `ans`
+
+  - Print the value of `ans`
+
+- Define a static method `next` returning `String`
+  - Return `sc.next()`
+
+- Define a static method `nextInt` returning `int`
+  - Return `Integer.parseInt(sc.next())`
+
+- Define a static method `nextLong` returning `long`
+  - Return `Long.parseLong(sc.next())`
+
+- Define a static method `nextDouble` returning `double`
+  - Return `Double.parseDouble(sc.next())`
+
+- Define a static method `splitString` with parameter `(String s)` returning `String[]`
+  - Return `s.split("")`
+
+- Define a static method `splitChar` with parameter `(String s)` returning `char[]`
+  - Return `s.toCharArray()`
+
+- Define a static method `charToInt` with parameter `(char aaa)` returning `int`
+  - Return `aaa - 48`
+
+- Define a static method `maxInt` with parameters `(int[] a, int lng)` returning `int`
+  - Declare `int` variable `max` and assign `a[0]`
+  - Iterate `i` from 1 to `lng - 1`
+    - Assign the maximum of `max` and `a[i]` to `max`
+  - Return `max`
+
+- Define a static method `minInt` with parameters `(int[] a, int lng)` returning `int`
+  - Declare `int` variable `min` and assign `a[0]`
+  - Iterate `i` from 1 to `lng - 1`
+    - Assign the minimum of `min` and `a[i]` to `min`
+  - Return `min`
+
+- Define a static method `maxLong` with parameters `(long[] a, int lng)` returning `long`
+  - Declare `long` variable `max` and assign `a[0]`
+  - Iterate `i` from 1 to `lng - 1`
+    - Assign the maximum of `max` and `a[i]` to `max`
+  - Return `max`
+
+- Define a static method `minLong` with parameters `(long[] a, int lng)` returning `long`
+  - Declare `long` variable `min` and assign `a[0]`
+  - Iterate `i` from 1 to `lng - 1`
+    - Assign the minimum of `min` and `a[i]` to `min`
+  - Return `min`
+```

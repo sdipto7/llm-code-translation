@@ -1,0 +1,19 @@
+1. Read input values: n, m, s, f.
+2. Initialize maxT to -1.
+3. Create an empty HashMap to store time-stamped intervals.
+4. Iterate m times:
+   4.1. Read time-stamped interval: t, a, b.
+   4.2. Store the interval (a, b) in the HashMap at key t.
+   4.3. Update maxT to be the maximum of maxT and t.
+5. Initialize a StringBuilder to store the sequence of actions.
+6. Determine the direction of movement (M) based on whether s is less than f.
+7. Initialize the current position (cur) to s and the direction of movement (d) based on whether s is less than f.
+8. Iterate from t = 1 to maxT:
+   8.1. Check if there is an interval stored in the HashMap at time t.
+   8.2. If an interval exists and the current position or the next position is within the interval, append 'X' to the actions StringBuilder.
+   8.3. Otherwise, append the direction of movement (M) to the actions StringBuilder and update the current position.
+   8.4. If the current position equals f, break the loop.
+9. While the current position is not equal to f:
+   9.1. Append the direction of movement (M) to the actions StringBuilder.
+   9.2. Update the current position.
+10. Output the sequence of actions stored in the StringBuilder.

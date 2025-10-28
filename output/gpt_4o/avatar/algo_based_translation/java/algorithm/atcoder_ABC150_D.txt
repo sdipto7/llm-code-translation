@@ -1,0 +1,29 @@
+```
+Function main() -> void
+    Import java.util.Scanner
+    Declare sc as Scanner and initialize with System.in
+    Declare n as int and initialize with next integer input
+    Declare m as int and initialize with next integer input
+    Declare a as array of int with size n
+    For i from 0 to n - 1 do
+        Set a[i] to next integer input divided by 2
+    Declare gcd as long
+    Declare lcd as long and initialize with 1
+    For i from 0 to n - 1 do
+        Set gcd to call getGCD with parameters lcd and a[i]
+        Set lcd to lcd multiplied by a[i] divided by gcd
+        If lcd greater than m then
+            Print 0
+            Return
+    For i from 0 to n - 1 do
+        If (lcd divided by a[i]) modulo 2 equals 0 then
+            Print 0
+            Return
+    Print (m divided by lcd plus 1) divided by 2
+
+Function getGCD(a: long, b: long) -> long
+    If b equals 0 then
+        Return a
+    Else
+        Return call getGCD with parameters b and a modulo b
+```

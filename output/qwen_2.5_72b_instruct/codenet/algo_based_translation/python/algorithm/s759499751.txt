@@ -1,0 +1,43 @@
+Function Signature: `main() -> None`
+
+Variable Declarations and Data Types:
+- `n: int`
+- `k: int`
+- `a: List[str]`
+- `c: List[int]`
+- `i: int`
+- `w: int`
+- `l: int`
+- `r: int`
+
+Logic Flow in Execution Order:
+1. Read two integers `n` and `k` from input.
+2. Read a string and convert it into a list of characters `a` of length `n`.
+3. Initialize a list `c` of length `n` with all elements set to 0.
+4. Loop through the list `a` starting from index 1 to `n-1`:
+    - If the current character `a[i]` is "C" and the previous character `a[i-1]` is "A":
+        - Set `c[i]` to `c[i-1] + 1`.
+    - Otherwise:
+        - Set `c[i]` to `c[i-1]`.
+5. Loop `k` times:
+    - Read two integers `l` and `r` from input.
+    - Print the result of `c[r-1] - c[l-1]`.
+
+Control Structures:
+- For loop: from `1` to `n-1` for processing the list `a`.
+- For loop: from `0` to `k-1` for handling `k` queries.
+- If-else statement: to check if the current character is "C" and the previous character is "A".
+
+Input/Output Operations:
+- Read `n` and `k` from standard input.
+- Read the string and convert it to a list of characters.
+- Read `l` and `r` for each of the `k` queries.
+- Print the result of `c[r-1] - c[l-1]` for each query.
+
+Data Processing Logic:
+- Count the number of "AC" pairs in the list `a` up to each index and store the cumulative count in the list `c`.
+- For each query, calculate the number of "AC" pairs in the substring `a[l-1:r]` by subtracting the cumulative count at index `l-2` from the cumulative count at index `r-1`.
+
+Libraries/Modules/Dependencies:
+- `sys` (implicitly used for input)
+- `typing` (for type hints, not explicitly used in the code)

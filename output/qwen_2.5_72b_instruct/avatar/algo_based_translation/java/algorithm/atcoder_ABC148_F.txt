@@ -1,0 +1,50 @@
+**Function Signatures:**
+- `public static void main(String[] args) throws Exception`
+- `static void dfs(int u, int[] d, List<Integer>[] edges)`
+
+**Variable Declarations and Data Types:**
+- `int N`
+- `int u`
+- `int v`
+- `List<Integer>[] edges`
+- `int[] d`
+- `int[] e`
+- `int q`
+- `int a`
+- `int b`
+- `int nu`
+
+**Complete Logic Flow in Execution Order:**
+- Import `java.util.ArrayList`, `java.util.List`, `java.util.Scanner`
+- Initialize `Scanner` object `sc`
+- Read integer `N`
+- Read integers `u` and `v`, decrementing each by 1
+- Initialize array `edges` of type `List<Integer>` with size `N`
+- For each index `i` from 0 to `N-1`, initialize `edges[i]` as new `ArrayList<Integer>`
+- For each index `i` from 0 to `N-2`, read integers `a` and `b`, decrementing each by 1; add `b` to `edges[a]` and `a` to `edges[b]`
+- Initialize array `d` of type `int` with size `N`; set all elements to `Integer.MAX_VALUE`
+- Set `d[u]` to 0
+- Call `dfs(u, d, edges)`
+- Initialize array `e` of type `int` with size `N`; set all elements to `Integer.MAX_VALUE`
+- Set `e[v]` to 0
+- Call `dfs(v, e, edges)`
+- Initialize `q` to -1
+- For each index `i` from 0 to `N-1`, if `d[i] < e[i]` and `e[i] > q`, set `q` to `e[i]`
+- If `q <= 0`, print 0; otherwise, print `q - 1`
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < N; i++)`
+- For loop: `for (int i = 0; i < N - 1; i++)`
+- For loop: `for (Integer nu : edges[u])`
+- If condition: `if (d[nu] == Integer.MAX_VALUE)`
+- If condition: `if (d[i] < e[i])`
+- Nested if condition: `if (e[i] > q)`
+
+**Input/Output Operations and Data Processing Logic:**
+- Read integers from standard input using `sc.nextInt()`
+- Print output to standard output using `System.out.println()`
+
+**Required Libraries, Modules, or Dependencies:**
+- `java.util.ArrayList`
+- `java.util.List`
+- `java.util.Scanner`

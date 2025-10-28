@@ -1,0 +1,31 @@
+Algorithm:
+- Function: main (no parameters, no return value)
+- Input: read string 's' from standard input
+- Variables:
+  - s: string
+  - i: integer (loop counter)
+  - c: character
+  - j: integer (loop counter)
+  - s1: string
+
+Execution:
+1. Read input string s
+2. If length of s < 26:
+   a. For i from 0 to 25 (inclusive):
+      i. c = character at position 'a' + i
+      ii. If c not in s:
+          - Print s + c
+          - Exit program
+3. Else (length of s >= 26):
+   a. For i from 25 down to 1 (inclusive):
+      i. If s[i-1] < s[i]:
+          - s1 = substring of s from index 0 to i-2 (inclusive)
+          - For j from 0 to 25 (inclusive):
+             * c = character at position 'a' + j
+             * If c > s[i-1] AND c not in s1:
+                - Print s1 + c
+                - Exit program
+   b. Print -1
+4. End program
+
+No external libraries or modules required.

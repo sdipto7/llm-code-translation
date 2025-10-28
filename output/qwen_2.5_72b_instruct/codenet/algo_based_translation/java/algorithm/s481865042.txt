@@ -1,0 +1,26 @@
+Function signatures:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `sc: Scanner`
+- `s: String`
+- `k: long`
+- `sb: StringBuffer`
+- `i: int`
+- `t: char`
+
+Logic flow in execution order:
+1. Initialize `sc` as a `Scanner` object to read input.
+2. Read a `String` `s` from standard input.
+3. Read a `long` `k` from standard input.
+4. Initialize an empty `StringBuffer` `sb`.
+5. Loop through each character of `s` using index `i` from 0 to `s.length() - 1`:
+   a. Check if `(26 - (s.charAt(i) - 'a')) <= k` and `s.charAt(i) != 'a'`:
+      - If true, subtract `(26 - (s.charAt(i) - 'a'))` from `k` and append `'a'` to `sb`.
+      - If false, append `s.charAt(i)` to `sb`.
+6. After loop, check if `k > 0`:
+   - If true, set `t` as the last character of `sb`, delete the last character of `sb`, and append `(char)('a' + (t - 'a' + k) % 26)` to `sb`.
+7. Print the content of `sb` to standard output.
+
+Required libraries:
+- `java.util.Scanner`

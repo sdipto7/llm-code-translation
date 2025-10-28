@@ -1,0 +1,23 @@
+```
+Algorithm atcoder_ABC142_C
+
+Dependencies:
+- Import Scanner from java.util
+- Import HashMap from java.util
+- Import Map from java.util
+
+Function main(args: Array of String) -> void
+    Declare scanner as Scanner and initialize with System.in
+    Declare N as integer
+    Set N to the next integer from scanner input
+    Declare idorder as Map with Integer keys and Integer values and initialize as a new HashMap
+
+    For i from 1 to N, inclusive
+        Declare A as integer
+        Set A to the next integer from scanner input
+        Call idorder.put(A, i)
+
+    For i from 1 to N, inclusive
+        Call System.out.print with idorder.get(i)
+        Call System.out.print with the string " "
+```

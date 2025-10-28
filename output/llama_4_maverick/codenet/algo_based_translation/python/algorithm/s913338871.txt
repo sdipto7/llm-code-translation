@@ -1,0 +1,17 @@
+1. Define a function `calculate_sum` with no parameters and return type `int`.
+2. Declare variable `N` of type `int` and read input from the user into `N`.
+3. Declare a list `a` of type `list[int]` and read `N` space-separated integers from the user into `a`.
+4. Sort the list `a` in ascending order.
+5. Declare a list `s` of type `list[int]` and initialize it with elements from `a` starting from index `N` and stepping by 2.
+6. Calculate the sum of elements in `s`.
+7. Output the sum to the user.
+8. The function implicitly returns the sum as its output, but since it's not explicitly defined to return a value, the return type is considered `None` in Python. However, to follow the instructions precisely and given the context, we focus on the execution logic. 
+
+In a more structured algorithmic form:
+- Function: `main() -> None`
+  1. `N: int = read_integer()`
+  2. `a: list[int] = read_integers(N)`
+  3. `sort(a)`
+  4. `s: list[int] = slice_list(a, N, 2)`
+  5. `sum_s: int = sum(s)`
+  6. `output(sum_s)`

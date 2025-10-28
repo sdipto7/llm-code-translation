@@ -1,0 +1,27 @@
+```python
+# Function: main (parameters: none, returns: void)
+# Imports: Scanner and ArrayList from java.util (Python equivalents: standard input handling, list)
+# Variables:
+# - num: int (from input)
+# - counter: int (initial 0)
+# - fine: int (initial 0)
+# - arr: list of strings (initial empty)
+# Logic Flow:
+1. Read integer num from standard input
+2. Initialize counter = 0, fine = 0
+3. Initialize empty list arr
+4. Loop i from 0 to num-1:
+   a. Read string s from input
+   b. Add s to arr
+5. Loop i from 0 to num-1 (column iteration):
+   a. Loop k from 0 to num-1 (row iteration for column i):
+      i. If arr[k][i] == 'C': increment counter
+   b. Add (counter * (counter - 1)) // 2 to fine
+   c. Reset counter to 0
+6. Loop i from 0 to num-1 (row iteration):
+   a. Loop k from 0 to num-1 (column iteration for row i):
+      i. If arr[i][k] == 'C': increment counter
+   b. Add (counter * (counter - 1)) // 2 to fine
+   c. Reset counter to 0
+7. Print fine
+```

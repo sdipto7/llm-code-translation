@@ -1,0 +1,28 @@
+# Function Signatures
+- public static void main(String[] args)
+
+# Variable Declarations
+- Scanner sc: System.in scanner
+- int a: first input integer
+- int b: second input integer
+
+# Logic Flow
+1. Create Scanner object for System.in
+2. Read integer a from input
+3. Read integer b from input
+4. Check if b is divisible by a (b % a == 0)
+5. If true: calculate and output a + b
+6. If false: calculate and output b - a
+
+# Control Structures
+- if (b % a == 0)
+    - Execute System.out.println(a + b)
+- else
+    - Execute System.out.println(b - a)
+
+# Input/Output Operations
+- Input: Two space-separated integers via Scanner.nextInt()
+- Output: Print result with System.out.println()
+
+# Required Libraries
+- java.util.Scanner

@@ -1,0 +1,31 @@
+```plaintext
+- Import the numpy library as np.
+
+- Define a function signature: calculate_bitwise_sum(N: int, A: List[int]) -> int
+
+- Declare variables:
+  - N as an integer, representing the number of elements in list A.
+  - A as a numpy array of int64, representing the input list of integers.
+  - result as an integer, initialized to 0, to store the final calculated result.
+
+- Input operations:
+  - Read an integer from input and assign it to N.
+  - Read a line of integers from input, split the line, map each to an integer, and convert them to a numpy array of int64, assigning it to A.
+
+- Loop structure:
+  - For b in the range from 0 to 59 (inclusive):
+    - Calculate bs as an integer, which is the sum of the expression ((A >> b) & 1).
+      - This expression right-shifts each element of A by b positions and performs a bitwise AND with 1.
+      - The result is a boolean array where each element is 1 if the corresponding bit in A was set, and 0 otherwise.
+      - Sum this boolean array to get the count of numbers in A where the b-th bit is set.
+    - Update result with the expression (result + bs * (N - bs) * (1 << b)) % 1000000007.
+      - Multiply bs by (N - bs) to get the number of pairs with differing b-th bits.
+      - Multiply this by (1 << b) to account for the contribution of the b-th bit.
+      - Add to the result and take modulo 1000000007 to prevent overflow.
+
+- Output operations:
+  - Print the value of result.
+
+- Dependencies:
+  - Requires the numpy library for array operations.
+```

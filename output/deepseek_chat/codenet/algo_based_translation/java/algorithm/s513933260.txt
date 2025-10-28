@@ -1,0 +1,8 @@
+Algorithm:
+- Import java.util.Scanner
+- Define class Main
+- Define main method with parameter String[] args
+- Declare Scanner stdIn initialized with System.in
+- Read next long input from stdIn into variable n of type long
+- Compute expression: n * (n + 1) / 2 - n
+- Print result of computation to standard output

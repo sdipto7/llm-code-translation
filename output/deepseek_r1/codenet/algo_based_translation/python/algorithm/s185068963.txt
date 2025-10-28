@@ -1,0 +1,26 @@
+Function signatures with parameter and return types:  
+- No explicit functions (script execution)  
+
+Variable declarations and data types:  
+- `a: int`  
+- `b: int`  
+- `c: int`  
+
+Complete logic flow in execution order:  
+1. Read input line as string  
+2. Split input into three string tokens  
+3. Convert tokens to integers `a`, `b`, `c`  
+4. Compute `a + b`  
+5. Compare result with `c`:  
+   - If `a + b >= c`: print "Yes"  
+   - Else: print "No"  
+
+All control structures with exact conditions:  
+- Conditional: `if a + b >= c`  
+
+Input/output operations and data processing logic:  
+- Input: Single line with three space-separated integers  
+- Output: "Yes" or "No" based on comparison result  
+
+Required libraries, modules, or dependencies:  
+- None (uses built-in functions)

@@ -1,0 +1,28 @@
+1. Import java.math.BigInteger and java.util.Scanner
+2. Define main function with String[] args parameter
+3. Create Scanner object reading from System.in
+4. Read integer N from input
+5. Declare integer array A of size N
+6. For i from 0 to N-1: read integer into A[i]
+7. Close scanner
+8. Initialize BigInteger lcm = BigInteger.ONE
+9. For each element ai in array A:
+   - Convert ai to BigInteger a
+   - Update lcm = lcm.divide(lcm.gcd(a)).multiply(a)
+10. Define long mod = 1000000007
+11. Calculate modLcm = lcm.remainder(BigInteger.valueOf(mod)).longValue()
+12. Initialize long ans = 0
+13. For each element ai in array A:
+    - ans = (ans + modDiv(modLcm, ai, mod)) % mod
+14. Print ans
+15. Define modDiv function with parameters (long a, long b, long mod) returning long
+    - Return (a % mod) * modInv(b, mod) % mod
+16. Define modInv function with parameters (long x, long mod) returning long
+    - Return modPow(x, mod - 2, mod)
+17. Define modPow function with parameters (long b, long e, long mod) returning long
+    - Initialize long ans = 1
+    - Initialize long x = b % mod
+    - For y = e; while y != 0; y = y >> 1:
+        - If (y & 1) == 1: ans = (ans * x) % mod
+        - x = (x * x) % mod
+    - Return ans

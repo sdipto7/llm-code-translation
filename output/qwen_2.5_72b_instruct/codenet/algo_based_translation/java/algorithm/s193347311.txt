@@ -1,0 +1,31 @@
+Function Signature: main(String[] args): void
+
+Variable Declarations:
+- Scanner scan: for input
+- int intLoop: number of iterations
+- String strTaro: input string for Taro
+- String strHana: input string for Hana
+- int intTaro: score for Taro
+- int intHana: score for Hana
+- int intJudge: comparison result of strTaro and strHana
+
+Algorithm:
+1. Initialize Scanner scan
+2. Read intLoop from input
+3. Initialize strTaro, strHana, intTaro, intHana to "", "", 0, 0 respectively
+4. For i from 0 to intLoop - 1:
+   a. Read strTaro from input
+   b. Read strHana from input
+   c. Set intJudge to result of strTaro.compareTo(strHana)
+   d. If intJudge < 0:
+      i. Add 3 to intHana
+   e. Else If intJudge == 0:
+      i. Add 1 to intTaro
+      ii. Add 1 to intHana
+   f. Else If intJudge > 0:
+      i. Add 3 to intTaro
+5. Print intTaro followed by a space and intHana
+6. Close scan
+
+Required Libraries:
+- java.util.Scanner

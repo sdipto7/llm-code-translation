@@ -1,0 +1,12 @@
+1. Import the `math` module.
+2. Define a function `keta(s: str) -> int`:
+   - Check if the length of string `s` is less than 2:
+     - Convert `s` to an integer and return it.
+   - Otherwise, compute the sum of the integer values of each character in `s`.
+   - Recursively call `keta` with the string representation of the computed sum and return the result.
+3. Define the `main()` function:
+   - Read input from the user and store it in variable `N` as a string.
+   - Call the `keta` function with `N`, check if the result is divisible by 9:
+     - If true, output "Yes".
+     - Otherwise, output "No".
+4. If the script is executed as the main program, call the `main()` function.

@@ -1,0 +1,8 @@
+1. Initialize a scanner to read input from the standard input stream.
+2. Initialize a writer to write output to the standard output stream.
+3. Read three input values: an integer r, an integer d, and a long integer x.
+4. Iterate 10 times.
+5. In each iteration, update the value of x using the formula: x = r * x - d.
+6. Write the updated value of x to the output stream.
+7. Close the writer to ensure all output is flushed.
+8. End the process.

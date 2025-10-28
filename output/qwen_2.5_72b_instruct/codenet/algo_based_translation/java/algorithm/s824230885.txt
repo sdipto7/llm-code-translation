@@ -1,0 +1,81 @@
+- Function Signature: `public static void main(String[] args)`
+  - Variable Declarations: 
+    - `CONVSTR` as `HashMap<Integer, String>`
+    - `ii` as `InputIterator`
+    - `out` as `PrintWriter`
+  - Logic Flow:
+    - Initialize `CONVSTR` with key-value pairs `(8, " ")`, `(9, "\n")`, `(0, "")`
+    - Call `solve()`
+    - Call `flush()`
+
+- Function Signature: `static void solve()`
+  - Variable Declarations:
+    - `N` as `int`
+    - `list` as `ArrayList<Integer>`
+    - `max` as `int` initialized to `0`
+    - `output` as `int` initialized to `0`
+  - Logic Flow:
+    - Assign `nextInt()` to `N`
+    - Assign `nextIntArray()` to `list`
+    - Loop from `i = 0` to `i < N`
+      - If `max` is less than or equal to `list.get(i)`
+        - Assign `list.get(i)` to `max`
+        - Increment `output` by `1`
+    - Call `myout(output)`
+
+- Function Signature: `static ArrayList<String> nextStrArray()`
+  - Return Type: `ArrayList<String>`
+  - Logic Flow:
+    - Assign `next()` to `str`
+    - Call `myconv(str, 8)` and return result
+
+- Function Signature: `static ArrayList<String> nextCharArray()`
+  - Return Type: `ArrayList<String>`
+  - Logic Flow:
+    - Assign `next()` to `str`
+    - Call `myconv(str, 0)` and return result
+
+- Function Signature: `static ArrayList<Integer> nextIntArray()`
+  - Return Type: `ArrayList<Integer>`
+  - Variable Declarations:
+    - `input` as `ArrayList<String>` assigned `nextStrArray()`
+    - `ret` as `ArrayList<Integer>` initialized with size of `input`
+  - Logic Flow:
+    - Loop from `i = 0` to `i < input.size()`
+      - Parse `Integer.parseInt(input.get(i))` and add to `ret`
+    - Return `ret`
+
+- Function Signature: `static ArrayList<Long> nextLongArray()`
+  - Return Type: `ArrayList<Long>`
+  - Variable Declarations:
+    - `input` as `ArrayList<String>` assigned `nextStrArray()`
+    - `ret` as `ArrayList<Long>` initialized with size of `input`
+  - Logic Flow:
+    - Loop from `i = 0` to `i < input.size()`
+      - Parse `Long.parseLong(input.get(i))` and add to `ret`
+    - Return `ret`
+
+- Function Signature: `static String myconv(Object list, int no)`
+  - Return Type: `String`
+  - Variable Declarations:
+    - `joinString` as `String` assigned `CONVSTR.get(no)`
+  - Logic Flow:
+    - If `list` is instance of `String[]`
+      - Join elements using `joinString` and return result
+    - Else if `list` is instance of `ArrayList`
+      - Join elements using `joinString` and return result
+    - Else
+      - Throw `ClassCastException` with message "Don't join"
+
+- Function Signature: `static ArrayList<String> myconv(String str, int no)`
+  - Return Type: `ArrayList<String>`
+  - Variable Declarations:
+    - `splitString` as `String` assigned `CONVSTR.get(no)`
+  - Logic Flow:
+    - Split `str` using `splitString`
+    - Convert array to `ArrayList<String>` and return result
+
+- Required Libraries/Modules/Dependencies:
+  - `java.util.*`
+  - `java.io.*`
+  - `java.math.*`

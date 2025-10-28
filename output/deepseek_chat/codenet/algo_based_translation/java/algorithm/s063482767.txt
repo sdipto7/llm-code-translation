@@ -1,0 +1,16 @@
+1. Import java.util.Scanner and java.util.PriorityQueue
+2. Define main function with String[] args parameter, no return value
+3. Declare Scanner sc initialized with System.in
+4. Read integer n from input using sc.nextInt()
+5. Declare PriorityQueue<Integer> queue initialized as new PriorityQueue<>()
+6. For loop: i from 0 to n-1
+   - Read integer from input using sc.nextInt()
+   - Add integer to queue using queue.add()
+7. Declare integer sum initialized to 0
+8. For loop: i from 0 to n-2
+   - Poll element from queue using queue.poll()
+   - Add polled value to sum
+9. Poll final element from queue and store as lastElement
+10. Compare lastElement < sum
+    - If true: print "Yes"
+    - If false: print "No"

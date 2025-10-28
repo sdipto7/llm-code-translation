@@ -1,0 +1,14 @@
+```
+Function main() -> None:
+    Declare integer N
+    Read integer input into N
+    Declare integer i, initialized to 1
+    Declare integer ans, initialized to 0
+    
+    While 10 raised to the power of i is less than or equal to N:
+        Add (10 raised to the power of i) minus (10 raised to the power of (i - 1)) to ans
+        Increment i by 2
+    
+    Add the maximum of 0 and (N minus 10 raised to the power of (i - 1) plus 1) to ans
+    Output ans
+```

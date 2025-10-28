@@ -1,0 +1,65 @@
+**Algorithm Specification:**
+
+**Function/Method Signature:**
+- `compute_result() -> int`
+  - Parameters: None (reads from standard input)
+  - Returns: Integer result
+
+**Variables:**
+- `mod: int` (constant `10^9 + 7`)
+- `n: int` (input value)
+- `k: int` (input value)
+- `coef: List[int]` (dynamic array of coefficients)
+- `nn: int` (length of `coef` after processing)
+- `dp: List[List[int]]` (2D array of dimensions `(k+1) x nn`)
+- `tmp: int` (temporary accumulator during DP transition)
+
+**Logic Flow:**
+
+1. **Input Handling:**
+   - Read `n` and `k` from standard input as integers.
+
+2. **Coefficient Calculation:**
+   - Initialize empty list `coef`.
+   - For `i` in range `1` to `floor(sqrt(n)) + 1` (inclusive):
+     1. Append `(n // i) - (n // (i + 1))` to `coef`
+   - Calculate residual count: `residual = n - sum(coef)`
+   - Append `residual` elements of value `1` to `coef`
+   - Reverse `coef` in-place
+
+3. **DP Array Initialization:**
+   - Set `nn = len(coef)`
+   - Initialize `dp` as a 2D array of zeros with dimensions `(k+1) x nn`
+   - Set `dp[0][0] = 1`
+
+4. **DP Transition:**
+   - For each `i` in `1..k` (inclusive):
+     1. Initialize `tmp = 0`
+     2. For `j` in reverse order from `nn-1` to `0`:
+        1. Update `tmp += dp[i-1][(nn-1)-j]`
+        2. Apply `tmp %= mod`
+        3. Set `dp[i][j] = (coef[j] * tmp) % mod`
+
+5. **Result Calculation:**
+   - Compute `result = sum(dp[k]) % mod`
+   - Return `result`
+
+**Control Flow Structures:**
+- Sequential execution with:
+  - 1 `for` loop for coefficient calculation (iterates up to √n)
+  - 1 `for` loop for residual 1's (implicit via list extension)
+  - 2 nested `for` loops for DP transitions (outer: `k` iterations, inner: `nn` reverse iterations)
+  - 3 modulo operations maintaining values < `mod`
+
+**Input/Output Operations:**
+- Input: Single line with space-separated `n` and `k`
+- Output: Single integer `sum(dp[k]) % mod`
+
+**Edge Case Handling:**
+- Implicit handling of `n=0` through empty `coef` initialization
+- Implicit handling of `k=0` via DP base case (`dp[0][0] = 1`)
+- Correct summation for empty `coef` when `n=0`
+
+**External Dependencies:**
+- Uses `math.sqrt` via `n**0.5` for coefficient initialization
+- Requires integer input parsing from standard input

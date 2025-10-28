@@ -1,0 +1,11 @@
+1. Import required libraries: java.util.*
+2. Define a class: Main
+3. Define a function: main with parameter args of type String[] and return type void
+4. Declare a variable: sc of type Scanner and initialize it with new Scanner(System.in)
+5. Declare variables: a, b, c of type int
+6. Read input from the user using sc.nextInt() and store it in a, b, c respectively
+7. Declare a variable: answer of type String and initialize it with "No"
+8. Check the condition: if (a + b >= c)
+9. If the condition is true, update answer to "Yes"
+10. Print the value of answer to the console using System.out.println()
+11. End the execution of the main function.

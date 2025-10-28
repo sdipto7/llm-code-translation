@@ -1,0 +1,55 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signature**  
+`void executeCommands()`  
+*Input Parameters:* None (Reads from standard input)  
+*Return Type:* void  
+
+**Variable Declarations**  
+- `n: int`  
+- `k: int`  
+- `v: string`  
+- `d: list[string]` with initial value `["LEFT", "RIGHT"]`  
+- `f: bool`  
+- `m: int`  
+- `a: list[string]` (initially empty)  
+- `i: int` (loop iterator)  
+- `char: string` (element in processed `v` sequence)  
+
+**Logic Flow**  
+1. Read `n` and `k` from standard input as integers  
+2. Read `v` from standard input as a string  
+3. Compute `f = (k - 1 < n - k)`  
+4. Compute `m = min(k - 1, n - k)`  
+5. If `m > 0`:  
+   5.1. For `i` from 0 to `m - 1` (inclusive):  
+      5.1.1. Append `d[not f]` to `a`  
+6. Process `v` characters in reverse order if `f` is False (i.e., iterate `v[::-1]`), else in original order  
+7. For each `char` in processed sequence from Step 6:  
+   7.1. Append `"PRINT " + char` to `a`  
+   7.2. Append `d[f]` to `a`  
+8. Remove last element from `a`  
+9. Print all elements of `a` separated by newline characters  
+
+**Control Flow Structures**  
+- Conditional (Step 5): Executes loop only if `m > 0`  
+- For loop (Step 5.1): Fixed iteration count of `m` times  
+- For loop (Step 7): Iterates over all characters in processed `v` sequence  
+- Implicit string reversal (Step 6): `v[::-1]` when `f` is False (`-1 + 2*0 = -1`), `v[::1]` when `f` is True (`-1 + 2*1 = 1`)  
+
+**Input/Output Operations**  
+- Input:  
+  - Single line with space-separated `n` and `k`  
+  - Single line with string `v`  
+- Output:  
+  - Sequence of commands in `a` (excluding last element) printed with newline separators  
+
+**Edge Case Handling**  
+- Implicit handling of `m = 0` (no movement commands added)  
+- Automatic direction selection via `min(k-1, n-k)`  
+- Final movement command removal ensures no trailing movement after last print  
+
+**Dependencies**  
+- Standard input/output operations  
+- String reversal via slice notation (`[::-1]`)  
+- List manipulation (appending, slicing)

@@ -1,0 +1,23 @@
+1. Read n and b from input
+2. Initialize an empty queue 'remaining'
+3. Initialize 'running' to False and 'finish_time' to 0
+4. Initialize an empty dictionary 'result'
+5. For i from 0 to n-1:
+   1. Read time and duration from input
+   2. Create a new Task object with time, duration, and index i
+   3. Initialize result[i] to 0
+   4. If task.time > finish_time and 'remaining' is empty:
+      1. Set 'running' to True
+      2. Update finish_time to task.time + task.duration
+      3. Update result[i] to finish_time
+   5. Else:
+      1. If task.time >= finish_time and 'remaining' is not empty:
+         1. Run the task at the front of 'remaining' and update finish_time and result
+      2. If 'remaining' is not full (size < b):
+         1. Add the task to 'remaining'
+      3. Else:
+         1. Set result[i] to -1
+6. While 'remaining' is not empty:
+   1. Run the task at the front of 'remaining' and update finish_time and result
+7. For each key in result:
+   1. Print the value associated with the key in result

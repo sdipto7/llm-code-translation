@@ -1,0 +1,134 @@
+## Step 1: Extract the required libraries and modules
+The code requires the `heapq` module.
+
+## Step 2: Define the function signature
+The code does not have a function signature; it is a script. However, we can encapsulate it in a function for clarity. The function will not take any parameters and will not return any value.
+
+## Step 3: Declare variables and their data types
+- `const`: integer
+- `left`: list (min-heap, storing negated values to simulate a max-heap)
+- `right`: list (min-heap)
+- `q`: integer (number of queries)
+- `cnt`: integer (count of elements)
+- `left_sum`: integer (sum of elements in `left`)
+- `right_sum`: integer (sum of elements in `right`)
+- `t`: list (query type and values)
+- `a` and `b`: integers (values from query)
+- `c`: integer (temporary value)
+- `tmp`: integer (temporary value)
+
+## Step 4: Outline the logic flow and control structures
+1. Initialize `const`, `left`, `right`, `cnt`, `left_sum`, and `right_sum`.
+2. Read `q`, the number of queries.
+3. Loop `q` times:
+   - Read a query `t`.
+   - If `t[0] == 1`:
+     - Update `const` with `b`.
+     - If `cnt` is even:
+       - If `right` is empty, push `a` onto `left` (after negating `a`) and update `left_sum`.
+       - Otherwise, pop from `right`, compare `a` with the popped value `c`, and push `a` and `c` onto appropriate heaps (`left` and `right`) after necessary comparisons and updates to `left_sum` and `right_sum`.
+     - If `cnt` is odd:
+       - Pop from `left`, compare `a` with the negated popped value `-c`, and push `a` and `-c` or `c` onto appropriate heaps (`left` and `right`) after necessary comparisons and updates to `left_sum` and `right_sum`.
+     - Increment `cnt`.
+   - If `t[0] != 1`:
+     - Calculate `tmp` as the negation of the top element of `left`.
+     - Print `tmp` and the calculated median-related value.
+
+## Step 5: Write the algorithm in a structured format
+
+1. Import `heapq` module.
+2. Define a function with no parameters and no return value.
+3. Inside the function:
+   - Initialize `const = 0`, `left = []`, `right = []`, `cnt = 0`, `left_sum = 0`, `right_sum = 0`.
+   - Read `q` from input.
+   - For `_` in range(`q`):
+     - Read `t` from input.
+     - If `t[0] == 1`:
+       - Set `a = t[1]`, `b = t[2]`.
+       - Update `const += b`.
+       - If `cnt % 2 == 0`:
+         - If `right` is empty:
+           - Push `-a` onto `left`.
+           - Update `left_sum += a`.
+           - Increment `cnt`.
+         - Else:
+           - Pop `c` from `right`.
+           - Update `right_sum -= c`.
+           - If `a <= c`:
+             - Push `-a` onto `left`, `c` onto `right`.
+             - Update `left_sum += a`, `right_sum += c`.
+           - Else:
+             - Push `-c` onto `left`, `a` onto `right`.
+             - Update `left_sum += c`, `right_sum += a`.
+       - Else:
+         - Pop `c` from `left`.
+         - Update `left_sum += c`.
+         - If `a <= -c`:
+           - Push `-a` onto `left`, `-c` onto `right`.
+           - Update `left_sum += a`, `right_sum -= c`.
+         - Else:
+           - Push `c` onto `left`, `a` onto `right`.
+           - Update `left_sum -= c`, `right_sum += a`.
+       - Increment `cnt`.
+     - Else:
+       - Set `tmp = -left[0]`.
+       - Print `tmp` and `const - left_sum + right_sum + tmp * (cnt % 2)`.
+4. Call the function.
+
+The final answer is: 
+```python
+import heapq
+
+def main():
+    const = 0
+    left = []
+    right = []
+    cnt = 0
+    left_sum = 0
+    right_sum = 0
+    q = int(input())
+    for _ in range(q):
+        t = list(map(int, input().split()))
+        if t[0] == 1:
+            a, b = t[1], t[2]
+            const += b
+            if cnt % 2 == 0:
+                if not right:
+                    heapq.heappush(left, -a)
+                    left_sum += a
+                    cnt += 1
+                else:
+                    c = heapq.heappop(right)
+                    right_sum -= c
+                    if a <= c:
+                        heapq.heappush(left, -a)
+                        heapq.heappush(right, c)
+                        left_sum += a
+                        right_sum += c
+                    else:
+                        heapq.heappush(left, -c)
+                        heapq.heappush(right, a)
+                        left_sum += c
+                        right_sum += a
+                    cnt += 1
+            else:
+                c = heapq.heappop(left)
+                left_sum += c
+                if a <= -c:
+                    heapq.heappush(left, -a)
+                    heapq.heappush(right, -c)
+                    left_sum += a
+                    right_sum -= c
+                else:
+                    heapq.heappush(left, c)
+                    heapq.heappush(right, a)
+                    left_sum -= c
+                    right_sum += a
+                cnt += 1
+        else:
+            tmp = -left[0]
+            print(tmp, const - left_sum + right_sum + tmp * (cnt % 2))
+
+if __name__ == "__main__":
+    main()
+```

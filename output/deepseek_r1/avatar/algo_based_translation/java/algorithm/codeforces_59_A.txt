@@ -1,0 +1,31 @@
+**Function Signature:**  
+`public static void main(String[] args)`  
+
+**Variables:**  
+- `Scanner in` (Scanner object for input)  
+- `String word` (input string)  
+- `int uppercase` (count of uppercase letters, initialized to 0)  
+- `int lowercase` (count of lowercase letters, initialized to 0)  
+
+**Logic Flow:**  
+1. Read input string using `in.next()` and assign to `word`.  
+2. Loop `i` from `0` to `word.length() - 1`:  
+   - Extract character `ch` at index `i` of `word`.  
+   - If `Character.isUpperCase(ch)` is true: increment `uppercase`.  
+   - Else: increment `lowercase`.  
+3. After loop, compare `uppercase` and `lowercase`:  
+   - If `uppercase > lowercase`: output `word.toUpperCase()`.  
+   - Else if `lowercase > uppercase`: output `word.toLowerCase()`.  
+   - Else (equal counts): output `word.toLowerCase()`.  
+
+**Control Structures:**  
+- `for` loop with condition `i < word.length()`.  
+- `if`-`else` inside loop to increment counters.  
+- `if`-`else if`-`else` after loop to determine output format.  
+
+**Input/Output:**  
+- Input via `Scanner` from `System.in`.  
+- Output via `System.out.println`.  
+
+**Dependencies:**  
+- `java.util.Scanner` (imported).

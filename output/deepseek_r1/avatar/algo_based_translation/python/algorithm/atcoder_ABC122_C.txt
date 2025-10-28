@@ -1,0 +1,49 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `count(total: int, i: int) -> int`
+  - Parameters:
+    - `total`: Current cumulative count of 'AC' pairs
+    - `i`: Current position in string (1-based index for pair check)
+  - Return: Updated cumulative count after checking `s[i-1]` and `s[i]`
+
+**Variables:**
+- `n: int` (Length of input string)
+- `q: int` (Number of queries)
+- `s: str` (Input string of length `n`)
+- `problems: List[Tuple[int, int]]` (List of query ranges `(l, r)`)
+- `cumsum: List[int]` (Cumulative count of 'AC' pairs up to each index)
+
+**Step-by-Step Logic Flow:**
+1. Read integers `n` and `q` from input.
+2. Read string `s` (exact length `n` characters).
+3. Read `q` query pairs `(l, r)` into `problems` list.
+4. Construct initial iterable for cumulative processing:
+   - Create list: `[0] + [1, 2, ..., n-1]`
+5. Compute cumulative counts:
+   - Apply `itertools.accumulate` using `count` function to the iterable, producing `cumsum`.
+6. Process each query `(l, r)`:
+   1. Calculate result as `cumsum[r-1] - cumsum[l-1]`
+   2. Output the result
+
+**Control Flow Structures:**
+- **Accumulate Loop** (Implicit via `itertools.accumulate`):
+  - Processes elements `[0, 1, 2, ..., n-1]`
+  - For each `i` ≥ 1 in iterable: check `s[i-1]` and `s[i]`, update cumulative total
+- **Query Processing Loop** (Explicit `for` loop):
+  - Iterates over all `(l, r)` in `problems`
+  - Exit when all queries processed
+
+**Input/Output Operations:**
+- Read from standard input:
+  - First line: `n` and `q`
+  - Second line: `s`
+  - Subsequent `q` lines: `l` and `r` pairs
+- Write to standard output: One integer per query result
+
+**Error Handling:**
+- No explicit error handling (assumes valid input per constraints)
+- Implicitly handles empty ranges via subtraction logic (`l == r` yields 0)
+
+**External Dependencies:**
+- `itertools.accumulate`: Used to compute cumulative sums with custom aggregation logic

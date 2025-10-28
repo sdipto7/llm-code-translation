@@ -1,0 +1,33 @@
+function main():
+    parameters: none
+    returns: void
+    variables:
+        - strs: array of strings
+        - nums: array of integers
+        - top: integer initialized to 0
+    logic flow:
+        1. Read input line from standard input and split into strs using space delimiter
+        2. Initialize nums as integer array with length equal to strs.length
+        3. For each token in strs:
+            a. If token's first character is '+':
+                i. top = top - 1
+                ii. nums[top - 1] = nums[top - 1] + nums[top]
+            b. Else if token's first character is '-':
+                i. top = top - 1
+                ii. nums[top - 1] = nums[top - 1] - nums[top]
+            c. Else if token's first character is '*':
+                i. top = top - 1
+                ii. nums[top - 1] = nums[top - 1] * nums[top]
+            d. Else:
+                i. nums[top] = parse token as integer
+                ii. top = top + 1
+        4. Print nums[0]
+    input/output operations:
+        - Read entire line from standard input
+        - Split input into tokens by spaces
+        - Convert numeric tokens to integers
+        - Print final result from nums[0]
+    dependencies:
+        - Standard input/output libraries
+        - String processing for splitting input
+        - Integer parsing functionality

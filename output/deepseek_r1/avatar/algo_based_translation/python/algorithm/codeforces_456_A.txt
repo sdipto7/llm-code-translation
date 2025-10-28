@@ -1,0 +1,42 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main()`: Void. No parameters. Execution entry point.
+
+**Variable Declarations:**
+- `n`: Integer. Stores number of input pairs.
+- `m`: List of integer lists (List<List<Integer>>). Stores input pairs.
+- `a`: List<Integer> (2 elements). Tracks current maximum pair during iteration.
+- `i`: List<Integer> (2 elements). Iteration variable for elements in `m`.
+
+**Logic Flow:**
+1. Read integer `n` from standard input.
+2. Read `n` lines from standard input. Split each line into two integers and store as sublists in `m`.
+3. Sort `m` in descending order based on first element of sublists (lexicographical order if first elements are equal).
+4. Assign first sublist of `m` to `a`.
+5. Iterate over each sublist `i` in `m` starting from second element:
+   1. Compare `i[1]` (second element of current sublist) with `a[1]` (second element of tracked maximum).
+   2. If `i[1] > a[1]`:
+      1. Print "Happy Alex" to standard output.
+      2. Terminate loop via `break`.
+   3. Update `a` to current sublist `i`.
+6. If loop completes without termination (all pairs checked):
+   1. Print "Poor Alex" to standard output.
+
+**Control Flow Structures:**
+- For loop: `for i in m[1:]` with implicit index iteration
+- Conditional: `if i[1] > a[1]` with `break` exit
+- Loop Else clause: Executes when loop completes without `break`
+
+**Input/Output Operations:**
+- Input: Reads from standard input with two sequential read operations
+- Output: Prints either "Happy Alex" or "Poor Alex" to standard output
+
+**Error Handling:**
+- No explicit error handling for invalid inputs or empty lists
+- Assumes valid integer inputs and non-empty `m` after reading
+- Undefined behavior when `n=0` (fails at `a = m[0]`)
+
+**External Dependencies:**
+- Standard input/output facilities
+- Built-in list sorting functionality (stable sort with reverse order)

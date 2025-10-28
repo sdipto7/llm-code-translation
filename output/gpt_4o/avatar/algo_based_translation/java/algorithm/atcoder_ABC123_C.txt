@@ -1,0 +1,28 @@
+Algorithm:
+
+1. Import necessary libraries:
+   - ArrayDeque
+   - Queue
+   - Random
+   - Scanner
+
+2. Declare a class `atcoder_ABC123_C`.
+
+3. Initialize a private static Scanner `sc` to read input from the system.
+
+4. Define the `main` function with a `String[] args` parameter.
+   - Declare a variable `N` of type `long` and assign it the next long input from the scanner.
+   - Declare a variable `min` of type `long` and initialize it to 0.
+
+5. For loop from `i = 0` to `i < 5`:
+   - If `i == 0`, assign `min` the next long input from the scanner.
+   - Otherwise, update `min` to be the minimum of the current `min` and the next long input from the scanner.
+
+6. Calculate `(long) Math.ceil((double) N / min) + 4` and pass the result to the function `p`.
+
+7. Define overloaded static function `p` with various parameter types:
+   - `p(String ans)`: Prints the `String` argument `ans`.
+   - `p(int ans)`: Prints the `int` argument `ans`.
+   - `p()`: Prints a new line.
+   - `p(long ans)`: Prints the `long` argument `ans`.
+   - `p(double ans)`: Prints the `double` argument `ans`.

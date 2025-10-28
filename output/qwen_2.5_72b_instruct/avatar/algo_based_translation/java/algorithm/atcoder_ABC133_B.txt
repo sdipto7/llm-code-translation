@@ -1,0 +1,37 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations:
+- `Scanner sc` of type `Scanner`
+- `int N`
+- `int D`
+- `int[][] vectors` of size `[N][D]`
+- `int answer` initialized to `0`
+- `int dist` initialized to `0`
+- `int x`
+- `double sq`
+- `int i` loop variable
+- `int j` loop variable
+- `int d` loop variable
+
+Logic flow:
+1. Create a `Scanner` object `sc` for reading input.
+2. Read an integer `N` representing the number of vectors.
+3. Read an integer `D` representing the dimension of each vector.
+4. Declare a 2D array `vectors` of size `N x D` to store the vectors.
+5. For `i` from `0` to `N-1`:
+   - For `j` from `0` to `D-1`:
+     - Read an integer and store it in `vectors[i][j]`.
+6. Initialize `answer` to `0` to count the number of integer distances.
+7. For `i` from `0` to `N-2`:
+   - For `j` from `i+1` to `N-1`:
+     - Initialize `dist` to `0` to accumulate the squared distance.
+     - For `d` from `0` to `D-1`:
+       - Calculate the difference `x` between the `d`-th component of `vectors[i]` and `vectors[j]`.
+       - Add `x * x` to `dist`.
+     - Calculate the square root of `dist` and store it in `sq`.
+     - If the absolute difference between `sq` and its floor value is less than `0.001`, increment `answer`.
+8. Print the value of `answer`.
+
+Libraries:
+- `java.lang.Math`
+- `java.util.Scanner`

@@ -1,0 +1,40 @@
+Function Signature: `public static void main(String[] args)`
+
+Variable Declarations:
+- `Scanner sc` of type `Scanner`
+- `int w` for width
+- `int n` for number of operations
+- `int[] values` array of integers
+- `int x` for swapping
+- `String str` for input string
+- `String[] ab` for split input string
+- `int a` for first index after conversion
+- `int b` for second index after conversion
+
+Logic Flow:
+1. Initialize `Scanner` to read input.
+2. Read integer `w` from input.
+3. Read integer `n` from input.
+4. Declare array `values` of size `w`.
+5. Loop from `0` to `w-1`:
+   - Set `values[i]` to `i + 1`.
+6. Loop from `0` to `n-1`:
+   - Read string `str` from input.
+   - Split `str` by comma into array `ab`.
+   - Convert `ab[0]` to integer `a` and subtract `1`.
+   - Convert `ab[1]` to integer `b` and subtract `1`.
+   - Swap `values[a]` and `values[b]` using `x` as temporary storage.
+7. Loop from `0` to `w-1`:
+   - Print `values[i]`.
+
+Control Structures:
+- For loop with condition `i < w` for initializing array.
+- For loop with condition `i < n` for processing operations.
+- For loop with condition `i < w` for printing final array values.
+
+Input/Output Operations:
+- Input: Two integers `w` and `n`, followed by `n` strings each containing two comma-separated integers.
+- Output: `w` integers, each on a new line, representing the final state of the array.
+
+Libraries/Modules/Dependencies:
+- `java.util.Scanner` for reading input.

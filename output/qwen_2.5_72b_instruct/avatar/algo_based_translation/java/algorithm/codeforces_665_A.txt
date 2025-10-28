@@ -1,0 +1,54 @@
+Function signature:
+- main(String[] args) throws IOException
+
+Variable declarations and data types:
+- BufferedReader br
+- PrintWriter pw
+- StringTokenizer st
+- int a
+- int tA
+- int b
+- int tB
+- String timing
+- int hrs
+- int mins
+- int simDeparture
+- int simArrival
+- int counter
+- int i
+- int busDeparture
+- int busArrival
+
+Logic flow and control structures:
+1. Initialize BufferedReader for reading input and PrintWriter for output.
+2. Read the first line and tokenize it. Parse the first token as int a and the second as int tA.
+3. Read the second line and tokenize it. Parse the first token as int b and the second as int tB.
+4. Read the third line as String timing.
+5. Parse the first two characters of timing as int hrs and the last two characters as int mins.
+6. Calculate simDeparture as hrs * 60 + mins.
+7. Calculate simArrival as simDeparture + tA.
+8. Initialize counter to 0.
+9. For i from 300 to 1439 inclusive, incrementing by b:
+   - Set busDeparture to i.
+   - Set busArrival to i + tB.
+   - If busDeparture is greater than or equal to simArrival or simDeparture is greater than or equal to busArrival, continue to next iteration.
+   - Increment counter by 1.
+10. Print the value of counter.
+11. Flush and close PrintWriter.
+
+Input/output operations:
+- Read three lines of input from standard input.
+- Output a single integer to standard output.
+
+Data processing logic:
+- Convert time from HH:MM format to minutes since midnight.
+- Calculate the departure and arrival times of the simulation.
+- Check for overlapping time intervals between the simulation and bus schedules.
+- Count the number of bus schedules that overlap with the simulation time.
+
+Libraries/modules/dependencies:
+- java.io.BufferedReader
+- java.io.IOException
+- java.io.InputStreamReader
+- java.io.PrintWriter
+- java.util.StringTokenizer

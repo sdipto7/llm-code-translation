@@ -1,0 +1,59 @@
+# Algorithm for Java Code
+
+**Function Signature**  
+public static void main(String[] args)
+
+**Variables**  
+- Scanner scan (java.util.Scanner)  
+- int size  
+- int[][] graph (2D array of integers)  
+- int id, cols  
+- int[] row  
+
+**Data Types**  
+- All variables declared as int or int[]/int[][]  
+- Scanner object for input handling  
+
+**Libraries/Dependencies**  
+java.util.Scanner  
+
+**Logic Flow**  
+1. Initialize Scanner object  
+2. Read integer `size` from input  
+3. Initialize `graph` as size x size 2D int array  
+4. Loop: For i from 0 to size-1  
+   a. Read integer `id` from input  
+   b. Read integer `cols` from input  
+   c. Initialize `row` as new int array of length `size` (all zeros)  
+   d. Loop: For j from 0 to cols-1  
+      i. Read integer from input  
+      ii. Subtract 1 to get index  
+      iii. Set row[index] = 1  
+   e. Assign `row` to graph[id-1]  
+5. Loop: For each row i in graph  
+   a. Loop: For each element j in row  
+      i. Print element  
+      ii. If j < last index: print space  
+   b. Print newline  
+
+**Input/Output**  
+- Input format:  
+  First line: size  
+  Subsequent lines per vertex:  
+  id cols followed by cols vertex numbers  
+- Output:  
+  size lines with space-separated 0/1 values  
+
+**Control Structures**  
+- For loop:  
+  - for (int i = 0; i < size; i++)  
+  - for (int j = 0; j < cols; j++)  
+  - for (int i = 0; i < graph.length; i++)  
+  - for (int j = 0; j < graph[i].length; j++)  
+- Conditional:  
+  - if (j < graph[i].length - 1)  
+
+**Data Processing**  
+- Constructs adjacency matrix from sparse input format  
+- Converts 1-based vertex numbers to 0-based array indices  
+- Default initialization to 0 with selective 1 assignments

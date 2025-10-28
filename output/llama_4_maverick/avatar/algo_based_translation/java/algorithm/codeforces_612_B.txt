@@ -1,0 +1,10 @@
+1. Read the number of elements n from the input.
+2. Initialize an array dp of size 200001 with default values.
+3. Iterate from 0 to n-1 and for each iteration:
+   3.1. Read an integer x from the input.
+   3.2. Store the current iteration index i in dp[x].
+4. Initialize a variable ans to 0.
+5. Iterate from 2 to n and for each iteration:
+   5.1. Calculate the absolute difference between dp[i] and dp[i-1].
+   5.2. Add the calculated difference to ans.
+6. Output the value of ans.

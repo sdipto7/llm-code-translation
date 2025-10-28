@@ -1,0 +1,22 @@
+1. Import required libraries: java.util.LinkedList, java.util.Queue, java.util.Scanner.
+2. Define a function `main` with return type `void` and parameter `String[] args`.
+3. Declare a `Scanner` object `sc` and initialize it with `System.in`.
+4. Read an integer `n` from the input using `sc.nextInt()`.
+5. Declare a 2D array `g` of size `(n+1) x (n+1)` with data type `int`.
+6. Iterate from `0` to `n-1` using a `for` loop.
+   1. Read two integers `u` and `k` from the input using `sc.nextInt()`.
+   2. Iterate from `0` to `k-1` using a nested `for` loop.
+      1. Read an integer `v` from the input using `sc.nextInt()`.
+      2. Set `g[u][v]` to `1`.
+7. Declare an array `d` of size `n+1` with data type `int`.
+8. Initialize all elements of `d` to `-1` using a `for` loop iterating from `0` to `n`.
+9. Declare a `Queue` object `que` and initialize it with a new `LinkedList`.
+10. Add `1` to `que` using `que.add(1)`.
+11. Set `d[1]` to `0`.
+12. Enter a `while` loop that continues until `que` is empty.
+    1. Remove the front element from `que` using `que.poll()` and store it in `top`.
+    2. Iterate from `1` to `n` using a `for` loop.
+       1. Check if `g[top][j]` is `1` and `d[j]` is `-1`.
+       2. If the condition is true, add `j` to `que` using `que.add(j)` and set `d[j]` to `d[top] + 1`.
+13. Iterate from `1` to `n` using a `for` loop.
+    1. Print `i` and `d[i]` to the output, separated by a space, using `System.out.println`.

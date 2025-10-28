@@ -1,0 +1,51 @@
+**Function Signatures:**
+- solve(H: int, W: int, A: int, B: int) -> None
+- main() -> None
+- iterate_tokens() -> Generator[str, None, None]
+
+**Variables and Data Types:**
+- H: int
+- W: int
+- A: int
+- B: int
+- answer: List[List[str]]
+- tokens: Generator[str, None, None]
+- line: str
+- word: str
+- i: int
+- j: int
+
+**Required Libraries:**
+- sys
+
+**Algorithm Flow:**
+
+1. Import sys module
+2. Define solve function with parameters H, W, A, B (all integers)
+3. Initialize answer as 2D list of size H×W filled with "0" strings
+4. For i from 0 to H-1:
+   5. For j from 0 to W-1:
+      6. If i < B:
+          7. If j < A: set answer[i][j] = "0"
+          8. Else: set answer[i][j] = "1"
+      9. Else:
+          10. If j < A: set answer[i][j] = "1"
+          11. Else: set answer[i][j] = "0"
+12. For i from 0 to H-1:
+    13. Print joined string of answer[i] row
+14. Return from solve function
+
+15. Define main function
+16. Define nested iterate_tokens function:
+    17. For each line in sys.stdin:
+        18. For each word in line.split():
+            19. Yield word
+20. Initialize tokens generator by calling iterate_tokens()
+21. H = int(next(tokens))
+22. W = int(next(tokens))
+23. A = int(next(tokens))
+24. B = int(next(tokens))
+25. Call solve(H, W, A, B)
+
+26. If __name__ == '__main__':
+    27. Call main()

@@ -1,0 +1,39 @@
+```python
+import sys
+
+def S() -> str:
+    line = sys.stdin.readline()
+    stripped_line = line.rstrip()
+    return stripped_line
+
+def I() -> int:
+    line = sys.stdin.readline()
+    stripped_line = line.rstrip()
+    integer_value = int(stripped_line)
+    return integer_value
+
+def LI() -> list[int]:
+    line = sys.stdin.readline()
+    stripped_line = line.rstrip()
+    split_line = stripped_line.split()
+    integer_list = list(map(int, split_line))
+    return integer_list
+
+def LS() -> list[str]:
+    line = sys.stdin.readline()
+    stripped_line = line.rstrip()
+    split_line = stripped_line.split()
+    return split_line
+
+a, b = LI()
+if a > 0:
+    print('Positive')
+elif a <= 0 and b >= 0:
+    print('Zero')
+else:
+    sum_ab = a + b
+    if sum_ab % 2 == 0:
+        print('Negative')
+    else:
+        print('Positive')
+```

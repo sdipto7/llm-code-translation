@@ -1,0 +1,21 @@
+Function signature: `calculate_value(R: int, G: int) -> int`
+
+Variable declarations and data types:
+- R: int
+- G: int
+
+Logic flow in execution order:
+1. Read an integer value for R from standard input.
+2. Read an integer value for G from standard input.
+3. Calculate the result by multiplying G by 2 and subtracting R.
+4. Print the calculated result to standard output.
+
+Control structures:
+- No loops or conditionals present.
+
+Input/output operations and data processing logic:
+- Input: Two integer values, R and G.
+- Output: A single integer value which is the result of (G * 2 - R).
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules required.

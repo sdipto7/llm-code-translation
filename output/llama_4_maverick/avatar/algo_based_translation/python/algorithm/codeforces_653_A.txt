@@ -1,0 +1,10 @@
+1. READ integer n FROM input
+2. READ list of n integers INTO list l
+3. SORT list l IN ascending order
+4. FOR EACH element i IN list l
+   4.1. CHECK IF (i + 1) IS IN list l AND (i + 2) IS IN list l
+   4.2. IF condition is TRUE THEN
+      4.2.1. PRINT 'YES'
+      4.2.2. EXIT loop
+5. IF loop completes WITHOUT finding a match THEN
+   5.1. PRINT 'NO'

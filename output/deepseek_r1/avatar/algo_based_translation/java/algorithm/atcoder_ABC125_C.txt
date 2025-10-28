@@ -1,0 +1,47 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `public static int gcd(int a, int b)`
+
+**Variables:**
+- `Scanner sc` (input scanner)
+- `int N` (input array size)
+- `int[] A` (input array)
+- `int[] M` (unused array)
+- `int[] L` (left cumulative GCD array)
+- `int[] R` (right cumulative GCD array)
+- `int answer` (final result)
+
+**Input/Output Operations:**
+- Read `N` via `Scanner.nextInt()`
+- Read `N` integers into `A` via loop
+- Print `answer` via `System.out.println`
+
+**Logic Flow:**
+1. Initialize `N` from input
+2. Initialize `A` with `N` integers from input
+3. Initialize `L` and `R` arrays of size `N`
+4. Compute left cumulative GCD:
+   - `L[0] = A[0]`
+   - For `i` from 1 to `N-1`:
+     - `L[i] = gcd(L[i-1], A[i])`
+5. Compute right cumulative GCD:
+   - `R[N-1] = A[N-1]`
+   - For `i` from `N-2` down to 0:
+     - `R[i] = gcd(R[i+1], A[i])`
+6. Initialize `answer` as `max(L[N-2], R[1])`
+7. For `i` from 1 to `N-2`:
+   - Compute `gcd(L[i-1], R[i+1])`
+   - Update `answer` with maximum of current value and computed GCD
+8. Print `answer`
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < N; i++)` (input read)
+- For loop: `for (int i = 1; i < N; i++)` (left GCD)
+- For loop: `for (int i = N-2; i >= 0; i--)` (right GCD)
+- For loop: `for (int i = 1; i < N-1; i++)` (answer calculation)
+- Conditional: `if (b > a)` (swap in gcd)
+- Conditional: `if (b == 0)` (return in gcd)
+- Do-while loop: `do { ... } while (r != 0)` (gcd calculation)
+
+**Dependencies:**
+- `java.util.Scanner`

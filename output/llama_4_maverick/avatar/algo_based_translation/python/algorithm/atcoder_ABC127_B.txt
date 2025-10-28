@@ -1,0 +1,5 @@
+1. Read input values for r, D, and x
+2. Convert input values to integers
+3. For i ranging from 2 to 11
+4. Calculate temp = (r ^ (i-1)) * (x + D / (1 - r)) - D / (1 - r)
+5. Print the integer value of temp

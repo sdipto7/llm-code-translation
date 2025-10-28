@@ -1,0 +1,31 @@
+Function signature: `main() -> None`
+
+Variable declarations:
+- `a: int`
+- `b: int`
+
+Logic flow:
+1. Read a line of input from the user.
+2. Split the input line into two parts.
+3. Convert each part into an integer and assign them to `a` and `b` respectively.
+4. Check if `a` is divisible by 3.
+   - If true, print 'Possible' and exit.
+5. Check if `b` is divisible by 3.
+   - If true, print 'Possible' and exit.
+6. Check if the sum of `a` and `b` is divisible by 3.
+   - If true, print 'Possible' and exit.
+7. If none of the above conditions are met, print 'Impossible'.
+
+Control structures:
+- Conditional (if) with conditions `a % 3 == 0`, `b % 3 == 0`, and `(a + b) % 3 == 0`.
+
+Input/output operations:
+- Input: Read a line of input from the user.
+- Output: Print 'Possible' or 'Impossible' based on the conditions.
+
+Data processing logic:
+- Convert input strings to integers.
+- Perform modulus operations to check divisibility by 3.
+
+Required libraries, modules, or dependencies:
+- None

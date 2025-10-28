@@ -1,0 +1,13 @@
+```python
+import math
+
+def main():
+    n = int(input().strip())
+    sqrt_val = math.sqrt(n)
+    near_num = math.floor(sqrt_val)
+    ans = int(math.pow(near_num, 2))
+    print(ans)
+
+if __name__ == "__main__":
+    main()
+```

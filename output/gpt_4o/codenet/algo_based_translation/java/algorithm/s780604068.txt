@@ -1,0 +1,23 @@
+1. Function Signature:
+   - `public static void main(String[] args)`: Main function, no return type, takes an array of strings as parameter.
+
+2. Variable Declarations:
+   - `Scanner sc`: A Scanner object for reading input.
+   - `int N`: An integer to store the number of pairs.
+   - `int[] map`: An integer array of size `N * 2` to store input numbers.
+   - `int max`: An integer to accumulate the result.
+
+3. Logic Flow:
+   - Create a `Scanner` instance `sc` for input reading.
+   - Read an integer `N` using `sc.nextInt()` which represents half the length of the list.
+   - Initialize an integer array `map` with size `N * 2`.
+   - Use a `for` loop with index `i` ranging from `0` to `N * 2 - 1`:
+     - Assign `map[i]` the value from `sc.nextInt()`.
+   - Sort the array `map` using `Arrays.sort(map)`.
+   - Initialize `max` to `0`.
+   - Use a `for` loop with index `i` starting from `0`, iterate by step of `2` until `i < N * 2`:
+     - Add `Math.min(map[i], map[i + 1])` to `max`.
+   - Print the value of `max` to the console.
+
+4. Required Libraries:
+   - `import java.util.*`: To use `Scanner` and `Arrays` classes.

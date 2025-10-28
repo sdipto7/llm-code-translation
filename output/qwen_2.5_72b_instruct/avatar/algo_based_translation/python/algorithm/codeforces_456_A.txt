@@ -1,0 +1,29 @@
+Function signature: main() -> None
+
+Variable declarations and data types:
+- n: int
+- m: List[List[int]]
+- a: List[int]
+- i: List[int]
+
+Logic flow in execution order:
+1. Read integer value from input and assign to n.
+2. Initialize matrix m by reading n lines of input, each line containing space-separated integers, converting them to integers and storing them as rows in m.
+3. Sort matrix m in descending order based on the first element of each row.
+4. Assign the first row of m to a.
+5. For each subsequent row i in m starting from the second row:
+   a. If the second element of i is greater than the second element of a, print 'Happy Alex' and terminate the loop.
+   b. Otherwise, assign i to a.
+6. If the loop completes without printing 'Happy Alex', print 'Poor Alex'.
+
+Control structures:
+- For loop: Iterates over each row i in m starting from the second row.
+- If conditional: Checks if the second element of i is greater than the second element of a.
+
+Input/output operations and data processing logic:
+- Input operations: Reads integer value for n and n lines of space-separated integers to populate matrix m.
+- Output operations: Prints 'Happy Alex' if a row with a second element greater than the current maximum is found; otherwise, prints 'Poor Alex'.
+- Data processing logic: Sorts matrix m in descending order and iteratively compares the second elements of consecutive rows.
+
+Required libraries, modules, or dependencies:
+- No external libraries, modules, or dependencies are required.

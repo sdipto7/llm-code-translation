@@ -1,0 +1,114 @@
+### Algorithm
+
+1. `public void solve(int testNumber, InputReader in, PrintWriter out)`
+   - Input: `testNumber` (int), `in` (InputReader), `out` (PrintWriter)
+   - Output: None
+
+2. `int n = in.nextInt()`
+   - Input: None
+   - Output: `n` (int)
+
+3. `int[] countArr = new int[n + 1]`
+   - Input: `n` (int)
+   - Output: `countArr` (int array)
+
+4. Nested loops:
+   - `for (int x = 1; x <= 100; x++)`
+     - `for (int y = 1; y <= 100; y++)`
+       - `for (int z = 1; z <= 100; z++)`
+         - `int value = x * x + y * y + z * z + x * y + x * z + y * z`
+         - `if (value > n)`
+           - `break`
+
+5. `countArr[value]++`
+
+6. Loop:
+   - `for (int i = 1; i <= n; i++)`
+     - `out.println(countArr[i])`
+
+### InputReader Class
+
+1. `public InputReader(InputStream stream)`
+   - Input: `stream` (InputStream)
+   - Output: None
+
+2. `reader = new BufferedReader(new InputStreamReader(stream), 32768)`
+   - Input: `stream` (InputStream)
+   - Output: `reader` (BufferedReader)
+
+3. `tokenizer = null`
+   - Input: None
+   - Output: `tokenizer` (StringTokenizer)
+
+4. `public String next()`
+   - Input: None
+   - Output: `tokenizer.nextToken()` (String)
+
+5. Loop:
+   - `while (tokenizer == null || !tokenizer.hasMoreTokens())`
+     - Try:
+       - `tokenizer = new StringTokenizer(reader.readLine())`
+     - Catch `IOException e`:
+       - Throw `RuntimeException(e)`
+
+6. `public int nextInt()`
+   - Input: None
+   - Output: `Integer.parseInt(next())` (int)
+
+7. `public long nextLong()`
+   - Input: None
+   - Output: `Long.parseLong(next())` (long)
+
+8. `public double nextDouble()`
+   - Input: None
+   - Output: `Double.parseDouble(next())` (double)
+
+### Main Execution
+
+1. `private static void solve()`
+   - Input: None
+   - Output: None
+
+2. `InputStream inputStream = System.in`
+   - Input: None
+   - Output: `inputStream` (InputStream)
+
+3. `OutputStream outputStream = System.out`
+   - Input: None
+   - Output: `outputStream` (OutputStream)
+
+4. `InputReader in = new InputReader(inputStream)`
+   - Input: `inputStream` (InputStream)
+   - Output: `in` (InputReader)
+
+5. `PrintWriter out = new PrintWriter(outputStream)`
+   - Input: `outputStream` (OutputStream)
+   - Output: `out` (PrintWriter)
+
+6. `Task task = new Task()`
+   - Input: None
+   - Output: `task` (Task)
+
+7. `task.solve(1, in, out)`
+   - Input: `1` (int), `in` (InputReader), `out` (PrintWriter)
+   - Output: None
+
+8. `out.close()`
+   - Input: None
+   - Output: None
+
+### Thread Execution
+
+1. `public static void main(String[] args)`
+   - Input: `args` (String array)
+   - Output: None
+
+2. `new Thread(null, () -> solve(), "1", 1 << 26).start()`
+   - Input: None
+   - Output: None
+
+### Required Libraries and Modules
+
+- `java.io.*`
+- `java.util.Arrays`
+- `java.util.StringTokenizer`

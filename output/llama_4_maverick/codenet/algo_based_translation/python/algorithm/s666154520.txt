@@ -1,0 +1,10 @@
+1. Define a function `find_largest_square` with no parameters and return type `None`.
+2. Declare a variable `n` of type `integer` to store the input value.
+3. Read an integer input from the user and store it in `n`.
+4. Declare a variable `i` of type `integer` to serve as a loop counter, initialized to `1`.
+5. Enter a loop that continues as long as `i` is less than `10 ** 5`.
+6. Inside the loop, check if the square of `i` is greater than `n`.
+7. If the condition in step 6 is true, print the square of `(i-1)` and exit the program.
+8. If the condition in step 6 is false, increment `i` by `1` and repeat the loop.
+9. The program terminates after executing step 7. 
+The required library for this algorithm is the standard input/output library in the target programming language.

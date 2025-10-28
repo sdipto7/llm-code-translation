@@ -1,0 +1,22 @@
+Algorithm:
+
+1. Define the main function with no parameters and no return type.
+2. Import the required libraries: `java.util.*` and `java.lang.*`.
+3. Declare a `Scanner` object `sc` to read input from the standard input stream.
+4. Declare an integer `n` and initialize it by reading the next integer using `sc.nextInt()`.
+5. Declare an integer `f` and initialize it to `0`.
+6. Declare an integer array `a` of size `n`.
+7. Loop through `i` from `0` to `n-1`:
+   - Assign `a[i]` the next integer from the input using `sc.nextInt()`.
+8. Declare integers `k`, `j`, and `i`, and initialize them to `0`.
+9. Loop through `k` from `0` to `n-1`:
+   - Assign integer `t` the value `a[k]`.
+   - Loop through `i` from `0` to `n-1`:
+     - Loop through `j` from `0` to `n-2`:
+       - If `i` is not equal to `j` and `t` is equal to `a[i] + a[j]`:
+         - Set `f` to `1`.
+         - Break the innermost loop.
+     - If `f` is `1`, break the middle loop.
+   - If `f` is `1`, break the outermost loop.
+10. If `f` is equal to `1`, print the result as `k + 1`, `j + 1`, and `i + 1` separated by spaces.
+11. If `f` is not equal to `1`, print `"-1"`.

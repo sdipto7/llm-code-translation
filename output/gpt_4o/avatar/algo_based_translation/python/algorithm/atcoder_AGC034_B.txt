@@ -1,0 +1,49 @@
+```plaintext
+1. Import necessary modules: sys, math, collections, heapq, itertools.
+
+2. Define function gcd(a: int, b: int) -> int:
+   a. Assign a, b to max(a, b), min(a, b).
+   b. While a % b > 0, set a, b to b, a % b.
+   c. Return b.
+
+3. Define function solve() -> int:
+   a. Read input string s from standard input.
+   b. Initialize empty string t.
+   c. Initialize integer i = 0.
+   d. While i is less than length of s:
+      i. If s[i] equals "A":
+         1. Append "A" to t.
+         2. Increment i by 1.
+      ii. Else if s[i] equals "B":
+         1. If i is less than length of s - 1:
+            a. If s[i + 1] equals "C":
+               i. Append "D" to t.
+               ii. Increment i by 2.
+            b. Else:
+               i. Append "X" to t.
+               ii. Increment i by 1.
+         2. Else:
+            a. Append "X" to t.
+            b. Increment i by 1.
+      iii. Else:
+         1. Append "X" to t.
+         2. Increment i by 1.
+   e. Initialize integer total = 0.
+   f. Initialize integer numA = 0.
+   g. For i in range of length of t:
+      i. If t[i] equals "X":
+         1. Set numA to 0.
+      ii. Else:
+         1. If t[i] equals "A":
+            a. Increment numA by 1.
+         2. Else:
+            a. Increment total by numA.
+   h. Output total to standard output.
+   i. Define constants:
+      i. INF = 10 ** 25.
+      ii. mod = 7 + 10 ** 9.
+   j. Return 0.
+
+4. If __name__ equals "__main__":
+   a. Call solve() function.
+```

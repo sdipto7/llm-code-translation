@@ -1,0 +1,23 @@
+```python
+def main():
+    N: int = int(input())
+    A: list[int] = list(map(int, input().split()))
+    B: list[int] = [0] * N
+
+    i: int = N - 1
+    while i >= 0:
+        tmp_sum: int = 0
+        j: int = (i + 1) * 2 - 1
+        while j < N:
+            tmp_sum += B[j]
+            tmp_sum %= 2
+            j += i + 1
+        B[i] = tmp_sum ^ A[i]
+        i -= 1
+
+    total_sum: int = sum(B)
+    indices: list[int] = [i + 1 for i, b in enumerate(B) if b == 1]
+    
+    print(total_sum)
+    print(*indices)
+```

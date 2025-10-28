@@ -1,0 +1,10 @@
+```
+Algorithm:
+1. Declare a constant string variable `LUCKY` with the value "abcd".
+2. Read an integer input from the user and store it in the integer variable `n`.
+3. Initialize an empty string variable `s`.
+4. Execute a loop that iterates from 0 to `n-1`:
+   a. For each iteration index `i`, append the character `LUCKY[i % 4]` to the string `s`.
+      - The operation `i % 4` calculates the remainder of `i` divided by 4, ensuring cyclic access to characters in `LUCKY`.
+5. Output the resulting string `s`.
+```

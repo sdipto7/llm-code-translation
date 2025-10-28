@@ -1,0 +1,18 @@
+1. Import java.util.Scanner
+2. Define main function: public static void main(String[] args)
+3. Declare Scanner sc = new Scanner(System.in)
+4. Read input string s = sc.next()
+5. Extract substrings:
+   - s1 = s.substring(0,1)
+   - s2 = s.substring(1,2)
+   - s3 = s.substring(2,3)
+   - s4 = s.substring(3,4)
+6. Declare integer a = 0
+7. Check conditions:
+   - If s1.equals(s2) then set a = 1
+   - If s2.equals(s3) then set a = 1
+   - If s3.equals(s4) then set a = 1
+8. Check final condition:
+   - If a == 1 then print "Bad"
+   - Else print "Good"
+9. End program

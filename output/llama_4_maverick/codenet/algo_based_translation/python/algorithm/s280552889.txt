@@ -1,0 +1,7 @@
+1. Define a function `calculate_output` with one parameter `N` of type integer and return type integer.
+2. Read an integer input from the user and store it in variable `N` of type integer.
+3. Check if `N` is even by evaluating the condition `N % 2 == 0`.
+4. If the condition is true, calculate the output as `N // 2`.
+5. If the condition is false, calculate the output as `N // 2 + 1`.
+6. Print the calculated output.
+7. The program terminates after printing the output.

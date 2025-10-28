@@ -1,0 +1,58 @@
+**Algorithm:**
+
+**Data Structures:**
+- 2D integer array `a` of size 2 x n
+- 3D integer memoization array `memo` of size 2 x (n+1) x (1<<n)
+- Integer variables `n`, `fliped`, `idx`, `msk` for DP state
+
+**Function Signatures:**
+1. `int dp(int fliped, int idx, int msk)`
+   - Parameters: current flip state (0/1), previous element index (or n if none), bitmask of selected elements
+   - Returns: minimum flips required for current state
+2. `main(String[] args)`
+   - Handles IO and initialization
+
+**Initialization:**
+1. Read integer `n` from input
+2. Populate arrays `a[0][0..n-1]` and `a[1][0..n-1]` from input
+3. Initialize `memo` with -1 values
+
+**DP Function Logic:**
+1. **Base Case:**
+   - If all elements selected (`msk == (1<<n)-1`), return 0
+   - Return cached value if memoized
+
+2. **State Calculation:**
+   - Count selected elements `x = Integer.bitCount(msk)`
+   - Initialize flip counter `ff = 0`
+   - Initialize answer with large value (`1e9`)
+
+3. **Element Selection Loop:**
+   - For each element `i` (0 ≤ i < n):
+     - Skip if already selected (`(msk & (1<<i)) != 0`)
+     - Calculate next flip state `nf = x % 2`
+     - If first selection (idx == n) OR current element satisfies ordering constraint:
+       `a[fliped][idx] <= a[(nf + (ff%2))%2][i]`
+       - Recursively calculate new state:
+         `dp((nf + (ff%2))%2, i, msk | (1<<i))`
+       - Update minimum answer with `ff` flips plus recursive result
+     - Increment `ff` for each skipped unselected element
+
+4. **Memoization:**
+   - Store computed result in `memo[fliped][idx][msk]`
+
+**Main Execution Flow:**
+1. Compute initial DP call with `dp(0, n, 0)`
+2. Output `-1` if result ≥ 1e8 (no valid sequence), else output result
+
+**Constraints:**
+- Elements must be selected in non-decreasing order according to alternating flip rules
+- Flip operations accumulate when switching between array sources
+
+**Input Processing:**
+- Reads two lines of `n` integers each for array values
+- Uses custom Scanner class for input parsing
+
+**Dependencies:**
+- Java IO classes: BufferedReader, InputStreamReader, PrintWriter
+- Java utilities: StringTokenizer, Arrays

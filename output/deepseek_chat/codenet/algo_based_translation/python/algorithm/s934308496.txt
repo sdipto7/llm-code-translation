@@ -1,0 +1,12 @@
+n: int, x: int = input().split() -> map(int) -> assign to n, x
+m: list[int] = []
+for i in range(n):
+    value: int = input() -> int
+    append value to m
+sort m in ascending order
+total: int = sum(m)
+remaining: int = x - total
+min_value: int = m[0]
+additional_items: int = remaining // min_value
+result: int = n + additional_items
+print(result)

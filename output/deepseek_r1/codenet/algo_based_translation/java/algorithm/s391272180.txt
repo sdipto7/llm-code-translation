@@ -1,0 +1,50 @@
+- Functions:
+  - `public static void main(String[] args)`
+    - Parameters: String array args
+    - Return: void
+  - `public static StringBuilder Rotate(StringBuilder str)`
+    - Parameters: StringBuilder str
+    - Return: modified StringBuilder
+
+- Variables:
+  - Scanner sc = new Scanner(System.in)
+  - StringBuilder s (initialized from sc.next())
+  - StringBuilder t (initialized from sc.next())
+  - boolean flag = false
+  - int i (loop index in main, from 0 to s.length()-1)
+  - In Rotate:
+    - int len = str.length()
+    - char t = str.charAt(0)
+    - int i (loop index from 0 to len-2)
+
+- Execution Flow:
+  1. Read input string s using Scanner, convert to StringBuilder
+  2. Read input string t using Scanner, convert to StringBuilder
+  3. Initialize flag to false
+  4. For i from 0 to s.length()-1 (inclusive):
+      a. Assign s = new StringBuilder(Rotate(s))
+      b. Call Rotate(s) which performs:
+          i. Store first character of str in t
+          ii. For each index 0 ≤ i < len-1:
+              - Replace str[i] with str[i+1]
+          iii. Set str[len-1] to t
+          iv. Return modified str
+      c. Convert rotated s and t to strings, check equality
+      d. If equal:
+          - Set flag = true
+          - Break loop
+  5. After loop:
+      - Print "Yes" if flag is true, else "No"
+
+- Control Structures:
+  - Main loop: for (i=0; i < s.length(); i++)
+  - Rotation loop: for (i=0; i < str.length()-1; i++)
+  - Conditional in main: if (t.toString().equals(s.toString()))
+  - Final output decision: if (flag == true)
+
+- Input/Output:
+  - Input: Two strings via Scanner from standard input
+  - Output: "Yes" if t matches any rotation of s, else "No"
+
+- Dependencies:
+  - java.util.Scanner (imported)

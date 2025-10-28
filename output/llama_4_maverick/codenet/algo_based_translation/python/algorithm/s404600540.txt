@@ -1,0 +1,9 @@
+1. Define a function `main()` with no parameters and no return type.
+2. Read four integer values from input and store them in variables `q`, `h`, `s`, `d` of type integer.
+3. Read one integer value from input and store it in variable `n` of type integer.
+4. Calculate `min_1` as the minimum of the following expressions: `q*4`, `h*2`, `q*2+h`, `s`, all of type integer.
+5. Calculate `min_2` as the minimum of the following expressions: `min_1*2`, `d`, both of type integer.
+6. Calculate the result as `(n % 2)*min_1 + (n // 2)*min_2` of type integer.
+7. Output the result to the console.
+8. Check if the current module is the main module.
+9. If true, call the `main()` function.

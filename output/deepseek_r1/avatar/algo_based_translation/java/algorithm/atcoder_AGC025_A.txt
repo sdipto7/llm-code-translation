@@ -1,0 +1,55 @@
+```python
+# Required library
+import java.util.Scanner
+
+# Function signatures
+public static int sum(int a)
+public static void main(String[] args)
+
+# Variables and data types
+int ans = 0 (in sum function)
+Scanner stdIn = new Scanner(System.in)
+int N = stdIn.nextInt()
+int n
+int ans = sum(1) + sum(N - 1)
+int A (loop variable)
+
+# Logic flow
+1. Read integer N from standard input
+2. Initialize n:
+   if N % 2 == 0:
+       n = N / 2
+   else:
+       n = (N + 1) / 2
+3. Initialize ans with sum(1) + sum(N - 1)
+4. For loop: A from 1 to n (inclusive)
+   a. Calculate sum(A) + sum(N - A)
+   b. If result < current ans:
+       update ans to new value
+5. Print ans
+
+# Control structures
+- While loop in sum:
+  while a >= 10:
+      ans += a % 10
+      a /= 10
+- If-else in main:
+  if N % 2 == 0
+- For loop in main:
+  for (A = 1; A <= n; A++)
+- Conditional in loop:
+  if sum(A) + sum(N - A) < ans
+
+# Input/Output operations
+- Input: N via Scanner.nextInt()
+- Output: ans via System.out.println()
+
+# Function logic
+sum(int a):
+    Initialize ans=0
+    While a >= 10:
+        Add a%10 to ans
+        Update a to a/10
+    Add remaining a to ans
+    Return ans
+```

@@ -1,0 +1,46 @@
+**Algorithm**
+
+Function: `main`
+- Parameters: None
+- Return Type: void
+- Variables:
+  - N: long (input)
+  - A: long (input)
+  - B: long (input)
+  - k: long (initialized to 0)
+
+**Logic Flow:**
+1. Read N, A, B from standard input as long integers.
+2. Validate input constraints:
+   - If `1 ≤ N ≤ 1e18`
+   - AND `A ≥ 0`
+   - AND `B ≥ 0`
+   - AND `0 < A + B ≤ 1e18`
+   - Proceed to step 3. Else, terminate.
+3. If `A + B ≤ N`:
+   - Compute `k = N / (A + B)` (integer division)
+   - Compute `rem = N - k * (A + B)`
+   - If `rem > A`:
+     - Print `A * k + A`
+   - Else:
+     - Print `A * k + rem`
+4. Else if `A + B > N`:
+   - If `A ≤ N`:
+     - Print `A`
+   - Else:
+     - Print `N`
+5. Terminate.
+
+**Input/Output Operations:**
+- Read via `Scanner.nextLong()`
+- Output via `System.out.println()`
+
+**Control Structures:**
+- Nested if-else blocks:
+  - Outer: Input validation check
+  - Inner: Branch between `A + B ≤ N` and `A + B > N`
+  - Sub-branches for remainder handling and edge cases
+
+**Dependencies:**
+- Java Standard Library: `java.util.Scanner`, `java.lang.Math` (implicitly for `pow`, though unused in core logic)
+- Input constraints enforced via explicit conditional checks.

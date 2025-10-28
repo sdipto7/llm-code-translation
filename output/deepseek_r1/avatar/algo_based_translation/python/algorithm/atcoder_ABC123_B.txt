@@ -1,0 +1,43 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures**  
+- `main() -> void`: Entry point procedure for the program.
+
+**Variable Declarations**  
+- `menu: List[Tuple[int, int]]`: List storing pairs (original integer value, modified last digit).  
+- `m: str`: Temporary variable for input string.  
+- `e: int`: Last digit of input value (adjusted to 10 if 0).  
+- `ans: int`: Accumulator for final result.  
+
+**Step-by-Step Logic Flow**  
+1. Import `math` module.  
+2. Initialize `menu` as an empty list.  
+3. Loop 5 times:  
+   1. Read input string `m`.  
+   2. Extract last character of `m` and convert to integer `e`.  
+   3. If `e == 0`, set `e = 10`.  
+   4. Append tuple `(int(m), e)` to `menu`.  
+4. Sort `menu` in ascending order using second element of each tuple as the key.  
+5. Initialize `ans = 0`.  
+6. Iterate over all elements in `menu[1:]`:  
+   1. For each element, compute `math.ceil(element[0] / 10) * 10`.  
+   2. Add result to `ans`.  
+7. Add `menu[0][0]` (first element's original value) to `ans`.  
+8. Print `ans`.  
+
+**Control Flow Structures**  
+- Loop (5 iterations): Input processing. Exit after 5 iterations.  
+- Conditional: `if e == 0` for adjusting last digit.  
+- Sorted iteration: Order based on modified last digit.  
+- Loop over `menu[1:]`: Accumulate rounded values.  
+
+**Input/Output Operations**  
+- Input: Five lines of string input representing integers.  
+- Output: Single integer result printed.  
+
+**Error Handling & Edge Cases**  
+- Implicit handling of empty input or non-integer input (assumed valid per problem constraints).  
+- Edge case: Last digit `0` treated as `10` for sorting.  
+
+**External Dependencies**  
+- `math.ceil()`: Used to round up division results to nearest multiple of 10.

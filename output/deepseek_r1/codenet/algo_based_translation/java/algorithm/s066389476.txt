@@ -1,0 +1,42 @@
+Algorithm Extraction:
+
+1. Imports
+   - Import java.util.Scanner
+
+2. Function Signatures
+   - public static void main(String[] args)
+   - public static void solve(Scanner sc)
+
+3. Variables
+   - Scanner sc (parameter in solve method)
+   - char[] a (initialized from sc.next().toCharArray())
+
+4. Input Handling
+   - Read input string via sc.next() and convert to char array
+
+5. Logic Flow
+   - Check if any two consecutive characters in positions 0-1, 1-2, or 0-2 are equal
+   - Conditions:
+     a[0] == a[1] (first and second character)
+     a[1] == a[2] (second and third character)
+     a[2] == a[0] (third and first character)
+
+6. Control Structure
+   - Single if-else conditional:
+     if (any of the three equality conditions are true) 
+         print "No"
+     else 
+         print "Yes"
+
+7. Output Operations
+   - System.out.println("No") when duplicates found
+   - System.out.println("Yes") when all characters distinct
+
+8. Assumptions
+   - Input string has exactly 3 characters
+   - Input is read before processing
+   - Scanner is closed automatically via try-with-resources
+
+9. Dependencies
+   - Requires java.util.Scanner for input handling
+   - No external libraries beyond standard Java SE

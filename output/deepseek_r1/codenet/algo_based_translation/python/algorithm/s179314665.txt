@@ -1,0 +1,18 @@
+- Input: Read line from standard input as string
+- Process input:
+  - Split input string into list of substrings by whitespace
+  - Convert first substring to integer (A: int)
+  - Convert second substring to integer (B: int)
+- Conditional check:
+  - If (A < 10) AND (B < 10):
+    - Compute product: A * B
+    - Output: Print product as integer
+  - Else:
+    - Output: Print -1
+- Variables:
+  - A: integer type
+  - B: integer type
+- Control structures:
+  - Single if-else block with compound condition (A < 10 and B < 10)
+- External dependencies: None
+- Return types: Outputs via print statements (no function return value)

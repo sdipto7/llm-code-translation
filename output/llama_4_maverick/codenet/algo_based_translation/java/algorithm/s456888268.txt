@@ -1,0 +1,14 @@
+1. Read a string input from the user.
+2. Convert the input string into a character array `s`.
+3. Initialize variables: 
+   - `n` to store the length of the character array `s`.
+   - `ans` to store the count of pairs of 'S' and 'T' in the string, initialized to 0.
+   - `cnt` to keep track of the count of 'S' encountered so far, initialized to 0.
+4. Iterate through each character in the character array `s` using a for loop with index `i` ranging from 0 to `n-1`.
+5. Inside the loop:
+   - If the current character `s[i]` is 'S', increment `cnt` by 1.
+   - If `s[i]` is 'T':
+     - If `cnt` is 0, skip to the next iteration.
+     - If `cnt` is not 0, increment `ans` by 1 and decrement `cnt` by 1.
+6. After the loop, calculate the result as `n - 2 * ans`.
+7. Output the calculated result.

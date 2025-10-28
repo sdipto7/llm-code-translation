@@ -1,0 +1,66 @@
+```
+Function: main(args: String[]): void
+    Declare: s as FastReader
+    Declare: w as BufferedWriter
+    Declare: i, j, m, n, t, max, k, x, y, min, correct_ans, num, num_penal as int
+    Declare: a, b, sum as long
+    Declare: str as String
+
+    Set n = s.nextInt()
+    Set m = s.nextInt()
+
+    Declare: penal as int array of size n+1
+    Declare: solved as boolean array of size n+1
+    Fill solved array with false
+
+    For i from 0 to m-1
+        Set num = s.nextInt()
+        Set str = s.next()
+        If str.charAt(0) == 'A'
+            Set solved[num] = true
+        Else
+            If solved[num] == false
+                Increment penal[num] by 1
+
+    Set correct_ans = 0
+    Set num_penal = 0
+    For i from 1 to n
+        If solved[i] == true
+            Increment correct_ans by 1
+            Increment num_penal by penal[i]
+
+    Write correct_ans and num_penal to w
+    Close w
+
+Class: FastReader
+    Declare: br as BufferedReader
+    Declare: st as StringTokenizer
+
+    Constructor: FastReader()
+        Initialize br with InputStreamReader(System.in)
+
+    Method: next(): String
+        While st is null or !st.hasMoreElements()
+            Try
+                Initialize st with StringTokenizer(br.readLine())
+            Catch IOException e
+                Call e.printStackTrace()
+        Return st.nextToken()
+
+    Method: nextInt(): int
+        Return Integer.parseInt(next())
+
+    Method: nextLong(): long
+        Return Long.parseLong(next())
+
+    Method: nextDouble(): Double
+        Return Double.parseDouble(next())
+
+    Method: nextLine(): String
+        Declare: str as String
+        Try
+            Set str = br.readLine()
+        Catch IOException e
+            Call e.printStackTrace()
+        Return str
+```

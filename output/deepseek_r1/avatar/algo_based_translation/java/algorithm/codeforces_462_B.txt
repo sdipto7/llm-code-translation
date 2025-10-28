@@ -1,0 +1,44 @@
+**Function Signatures:**
+- `public static void main(String[] args) throws Exception`
+- `class c462b implements Comparable` with method `public int compareTo(Object o)`
+
+**Variables:**
+- `n: int` (input value)
+- `k: int` (input value)
+- `cards: c462b[26]` (array of objects tracking character counts)
+- `ans: long` (result accumulator)
+- `s: String` (input string)
+- `st: StringTokenizer` (input parser)
+- `f: BufferedReader` (input reader)
+- `out: PrintWriter` (output writer)
+- `i, t: int` (loop counters)
+- `change: long` (temporary calculation)
+
+**Control Structures:**
+1. `for (int i = 0; i < 26; i++)` (initialize `cards` array)
+2. `for (int t = 0; t < n; t++)` (count character frequencies)
+3. `for (int i = 0; i < k; i++)` (main processing loop, modified by `i += change - 1`)
+4. `Arrays.sort(cards)` (inside main loop, sorts `cards` by `left` ascending)
+5. `Math.min(cards[25].left, k - i)` (determines `change` value)
+
+**Logic Flow:**
+1. Read `n` and `k` from input.
+2. Initialize 26 `c462b` objects in `cards` array.
+3. Read string `s`, count occurrences of each character into `cards[charIndex].left`.
+4. Initialize `ans` to 0.
+5. For each iteration until `i < k`:
+   - Sort `cards` array by `left` in ascending order.
+   - Calculate `change` as the minimum of `cards[25].left` and remaining required cards (`k - i`).
+   - Add `change * change` to `ans`.
+   - Subtract `change` from `cards[25].left`.
+   - Increment `i` by `change - 1`.
+6. Print `ans` and close output.
+
+**Input/Output Operations:**
+- Read input via `BufferedReader` from `System.in`.
+- Parse inputs using `StringTokenizer`.
+- Write output via `PrintWriter` to `System.out`.
+
+**Dependencies:**
+- `java.io.*` (for I/O classes)
+- `java.util.*` (for `Arrays.sort` and `StringTokenizer`)

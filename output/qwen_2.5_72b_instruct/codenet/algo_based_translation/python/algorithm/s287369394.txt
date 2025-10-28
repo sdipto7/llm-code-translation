@@ -1,0 +1,35 @@
+Function signature: main() -> None
+
+Variable declarations and data types:
+N: int
+A: list[int]
+B: list[int]
+ans: int
+i: int
+d: int
+
+Logic flow in execution order:
+- Read integer N from input
+- Read list A of integers from input
+- Read list B of integers from input
+- Initialize ans to 0
+- For i from 0 to N-1:
+    - Set d to minimum of A[i] and B[i]
+    - Add d to ans
+    - Subtract d from A[i]
+    - Subtract d from B[i]
+    - Set d to minimum of A[i + 1] and B[i]
+    - Add d to ans
+    - Subtract d from A[i + 1]
+    - Subtract d from B[i]
+- Print value of ans
+
+Control structures:
+- For loop: for i in range(N)
+
+Input/output operations and data processing logic:
+- Input: Read integer N, then read two lines of space-separated integers for lists A and B
+- Output: Print single integer representing the value of ans
+
+Required libraries, modules, or dependencies:
+- No additional libraries, modules, or dependencies required

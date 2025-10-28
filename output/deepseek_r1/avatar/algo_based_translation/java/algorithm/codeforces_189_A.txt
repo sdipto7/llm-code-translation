@@ -1,0 +1,38 @@
+Algorithm:
+
+Function Signature:
+- main: (String[] args) => void
+
+Variables:
+- scanner: Scanner (System.in)
+- n: int (input)
+- maxn: int = 4010
+- a: int (input)
+- b: int (input)
+- c: int (input)
+- arr: int[3] = {a, b, c}
+- dp: int[maxn]
+
+Logic Flow:
+1. Read n, a, b, c from input
+2. Initialize dp array with length 4010
+3. For i from 0 to n-1:
+   - Set dp[i] = Integer.MIN_VALUE
+4. Set dp[0] = 0
+5. For each element in arr (i from 0 to 2):
+   - For j from arr[i] to dp.length - 1:
+     - dp[j] = max(dp[j], dp[j - arr[i]] + 1)
+6. Print dp[n]
+
+Control Structures:
+- For loop: initializing dp (0 ≤ i < n)
+- For loop: iterating through ribbon lengths (0 ≤ i < 3)
+- Nested for loop: dynamic programming update (j starts at arr[i], increments until j < dp.length)
+- Math.max operation for value comparison
+
+Input/Output:
+- Input: Read integers n, a, b, c via Scanner
+- Output: Print dp[n] to standard output
+
+Dependencies:
+- java.util.Scanner

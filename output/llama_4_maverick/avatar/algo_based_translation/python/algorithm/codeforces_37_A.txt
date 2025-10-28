@@ -1,0 +1,17 @@
+1. READ n
+2. READ list of n integers into l
+3. SORT l in ascending order
+4. INITIALIZE high to 1
+5. INITIALIZE tower to n
+6. INITIALIZE maximum to 1
+7. FOR i FROM 1 TO n-1
+8.     IF l[i] == l[i-1]
+9.         DECREMENT tower by 1
+10.        INCREMENT high by 1
+11.    ELSE
+12.        IF high > maximum
+13.            SET maximum to high
+14.        SET high to 1
+15. IF high > maximum
+16.     SET maximum to high
+17. PRINT maximum and tower

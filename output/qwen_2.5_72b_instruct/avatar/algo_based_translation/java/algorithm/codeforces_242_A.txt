@@ -1,0 +1,34 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations:
+- `Scanner in`
+- `int x`
+- `int y`
+- `int a`
+- `int b`
+- `int count`
+
+Logic flow:
+1. Create a `Scanner` object to read input.
+2. Read integers `x`, `y`, `a`, `b` from standard input.
+3. Initialize `count` to 0.
+4. For each integer `i` from `a` to `x` (inclusive):
+    1. For each integer `j` from `b` to `y` (inclusive):
+        1. If `i <= j`, continue to the next iteration of the inner loop.
+        2. Increment `count` by 1.
+5. Print the value of `count`.
+6. For each integer `i` from `a` to `x` (inclusive):
+    1. For each integer `j` from `b` to `y` (inclusive):
+        1. If `i <= j`, continue to the next iteration of the inner loop.
+        2. Print the values of `i` and `j` separated by a space.
+7. Close the `Scanner` object.
+
+Input operations:
+- Read four integers from the standard input.
+
+Output operations:
+- Print the count of valid pairs.
+- Print each valid pair of integers separated by a space.
+
+Libraries/Modules/Dependencies:
+- `java.util.Scanner`

@@ -1,0 +1,9 @@
+1. Import the `java.util.Scanner` module.
+2. Define a class `Main` with a `public static void main(String[] args)` method.
+3. Within `main`, declare a `Scanner` object `sc` and initialize it with `System.in`.
+4. Declare a `long` variable `n` and assign it the value of the first line of input from `sc`, parsed as a `long`.
+5. Declare a `double` variable `sqrt` and assign it the square root of `n`.
+6. Declare a `double` variable `nearNum` and assign it the floor of `sqrt`.
+7. Declare a `long` variable `ans` and assign it the value of `nearNum` squared, cast to `long`.
+8. Output `ans` to the console.
+9. Close the `Scanner` object `sc`.

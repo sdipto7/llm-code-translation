@@ -1,0 +1,47 @@
+**Algorithm:**
+
+- **Dependencies**: `java.util.Scanner`
+
+- **Main Function**:
+  - **Parameters**: `String[] args`
+  - **Return Type**: `void`
+
+- **Variables**:
+  - `N` (type: `int`): Number of observation towers
+  - `M` (type: `long`): Number of roads
+  - `H` (type: `long[N]`): Heights of towers
+  - `ans` (type: `boolean[N]`): Flags indicating if a tower is "good"
+  - `ans2` (type: `int`): Final count of good towers
+
+- **Execution Steps**:
+  1. Read `N` and `M` from input
+  2. Initialize `H` array:
+     - Read `N` long values into `H`
+     - Set all elements in `ans` to `true`
+  3. Process `M` road pairs:
+     - For each pair:
+       - Read `temp1` and `temp2` (1-based indices)
+       - Convert to 0-based: `temp1-1`, `temp2-1`
+       - Compare `H[temp1-1]` and `H[temp2-1]`:
+         - If `H[temp1-1] < H[temp2-1]`: Set `ans[temp1-1] = false`
+         - Else if `H[temp1-1] > H[temp2-1]`: Set `ans[temp2-1] = false`
+         - Else: Set both `ans[temp1-1]` and `ans[temp2-1]` to `false`
+  4. Calculate result:
+     - Initialize `ans2` to 0
+     - For each element in `ans`:
+       - If `true`, increment `ans2`
+  5. Output `ans2`
+
+- **Control Structures**:
+  - 3 sequential `for` loops:
+    1. Initialization loop (N iterations)
+    2. Road processing loop (M iterations)
+    3. Result counting loop (N iterations)
+  - Nested `if-else` block inside road processing loop
+
+- **Input/Output**:
+  - Inputs read via `Scanner`:
+    - `N`, `M`
+    - `H` array values
+    - `M` pairs of integers
+  - Output: Single integer `ans2` via `System.out.println`

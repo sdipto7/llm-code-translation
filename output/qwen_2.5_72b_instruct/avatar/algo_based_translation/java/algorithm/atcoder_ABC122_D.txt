@@ -1,0 +1,68 @@
+- **Function Signatures:**
+  - `atcoder_ABC122_D()`
+  - `long calc()`
+  - `boolean isOK(String last4)`
+  - `long dfs(int current, String last3)`
+  - `public static void main(String[] args)`
+
+- **Variable Declarations and Data Types:**
+  - `int N`
+  - `long MOD = 1000000007L`
+  - `String[] TOKENS = {"A", "C", "G", "T"}`
+  - `Map<String, Long>[] memo`
+  - `Scanner in`
+  - `int i`
+  - `char[] vals`
+  - `String s`
+  - `long result`
+  - `String c`
+  - `atcoder_ABC122_D ins`
+
+- **Logic Flow in Execution Order:**
+  1. Constructor `atcoder_ABC122_D()`:
+     - Create `Scanner` object `in`.
+     - Read integer `N` from standard input.
+     - Close `Scanner`.
+     - Initialize `memo` array of size `N + 1` with `HashMap` objects.
+  2. Method `calc()`:
+     - Call `dfs(0, "TTT")`.
+  3. Method `isOK(String last4)`:
+     - Check if `last4` contains "AGC". If yes, return `false`.
+     - Loop through indices 0 to 2:
+       - Convert `last4` to character array `vals`.
+       - Swap characters at indices `i` and `i + 1`.
+       - Convert modified `vals` back to string `s`.
+       - Check if `s` contains "AGC". If yes, return `false`.
+     - Return `true`.
+  4. Method `dfs(int current, String last3)`:
+     - Check if `memo[current]` contains key `last3`. If yes, return value associated with `last3`.
+     - Check if `current` equals `N`. If yes, return 1.
+     - Initialize `result` to 0.
+     - Loop through each string `c` in `TOKENS`:
+       - Check if `isOK(last3 + c)` is `true`. If yes:
+         - Update `result` with `(result + dfs(current + 1, last3.substring(1, last3.length()) + c)) % MOD`.
+     - Store `result` in `memo[current]` with key `last3`.
+     - Return `result`.
+  5. Method `main(String[] args)`:
+     - Create instance `ins` of `atcoder_ABC122_D`.
+     - Print result of `ins.calc()`.
+
+- **Control Structures:**
+  - Loops:
+    - `for (int i = 0; i < this.memo.length; ++i)`
+    - `for (int i = 0; i < 3; ++i)`
+    - `for (String c : TOKENS)`
+  - Conditionals:
+    - `if (last4.contains("AGC"))`
+    - `if (this.memo[current].containsKey(last3))`
+    - `if (current == N)`
+    - `if (isOK(last3 + c))`
+
+- **Input/Output Operations and Data Processing Logic:**
+  - Input: Read integer `N` from standard input.
+  - Output: Print result of `calc()` method to standard output.
+  - Data Processing: Use dynamic programming with memoization to count valid sequences avoiding "AGC".
+
+- **Required Libraries, Modules, or Dependencies:**
+  - `java.util.*`
+  - `java.io.*`

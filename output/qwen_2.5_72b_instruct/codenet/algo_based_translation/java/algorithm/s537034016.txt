@@ -1,0 +1,27 @@
+Algorithm:
+
+- Import `java.util.Arrays` for array manipulation
+- Import `java.util.Scanner` for reading input
+
+Define class `Main`:
+
+- Declare static array `dp` of type `long`
+- Declare static variable `mod` of type `int` with value `1000000007`
+
+Define `main` method with parameter `args` of type `String[]`:
+- Create `Scanner` object `sc` for reading input
+- Read integer `s` using `sc.nextInt()`
+- Close `sc`
+- Initialize `dp` array with size `s + 1`
+- Fill `dp` array with `-1`
+- Set `dp[0]` to `1`
+- Print result of `dfs(s)`
+
+Define `dfs` method with parameter `s` of type `int` and return type `long`:
+- If `dp[s]` is not equal to `-1`, return `dp[s]`
+- Initialize `ret` variable of type `long` to `0`
+- For loop with variable `i` of type `int` starting from `s - 3` to `0` (inclusive), decrementing by `1`:
+  - Add result of `dfs(i)` to `ret`
+  - Take modulo `mod` of `ret`
+- Set `dp[s]` to `ret`
+- Return `dp[s]`

@@ -1,0 +1,34 @@
+```
+Function main():
+    Declare in as Scanner object for standard input
+    Declare pw as PrintWriter object for standard output
+    Declare n as integer, assign in.nextInt() to n
+    Declare square as integer, assign n * n to square
+    Declare odd as ArrayList of Integer
+    Declare even as ArrayList of Integer
+
+    For i from 1 to square, inclusive:
+        If i modulo 2 equals 0:
+            Call even.add(i)
+        Else:
+            Call odd.add(i)
+
+    Declare loop as integer, assign square / n to loop
+    Declare div as integer, assign loop / 2 to div
+    Call debug(div)
+
+    For i from 1 to loop, inclusive:
+        For j from 0 to div, exclusive:
+            If i modulo 2 equals 1:
+                Call pw.print() with arguments:
+                    odd.remove(0) + " " + even.remove(even.size() - 1) + " "
+            Else:
+                Call pw.print() with arguments:
+                    even.remove(0) + " " + odd.remove(odd.size() - 1) + " "
+        Call pw.println()
+
+    Call pw.close()
+
+Function debug(obj as varargs of Object):
+    Call System.err.println() with argument: Arrays.deepToString(obj)
+```

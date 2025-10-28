@@ -1,0 +1,44 @@
+Function solver():
+    Parameters: None
+    Return type: None
+
+Variables:
+    N: integer
+    action: list of lists of integers
+    dp: 2D list of integers
+    i: integer (loop counter)
+    Input processing:
+        Read N via input() as integer
+        Read N lines, split each into 3 integers, store in action list
+
+Logic Flow:
+1. Read integer N from standard input
+2. Initialize action list with N elements:
+    For i from 0 to N-1:
+        Read 3 space-separated integers from input, convert to list of integers
+        Append to action list
+3. Initialize dp table:
+    Create 2D list with N rows and 3 columns, initialized to 0
+4. Initialize first row of dp:
+    For each index 0-2 in dp[0]:
+        Set dp[0][i] = action[0][i]
+5. Fill remaining dp entries:
+    For i from 1 to N-1:
+        Calculate dp[i][0] = max(dp[i-1][1] + action[i][0], dp[i-1][2] + action[i][0])
+        Calculate dp[i][1] = max(dp[i-1][0] + action[i][1], dp[i-1][2] + action[i][1])
+        Calculate dp[i][2] = max(dp[i-1][0] + action[i][2], dp[i-1][1] + action[i][2])
+6. Output result:
+    Print maximum value from dp[N-1] list
+
+Control Structures:
+- For loop: range(N) for reading input
+- For loop: range(3) for initializing dp[0]
+- For loop: range(1, N) for main DP calculation
+- Three consecutive assignment statements with max() operations per iteration
+
+Input/Output:
+- Input: Reads N via input()
+- Input: Reads N subsequent lines via input(), splits into integer lists
+- Output: Prints single integer via print()
+
+Dependencies: None (uses standard input/output functions)

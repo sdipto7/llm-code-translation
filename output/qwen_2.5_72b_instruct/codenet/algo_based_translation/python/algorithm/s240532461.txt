@@ -1,0 +1,26 @@
+Function signature: main() -> None
+
+Variables:
+- N: int
+- L: int
+- aji: List[int]
+
+Logic flow:
+1. Read two integers N and L from input.
+2. Initialize an empty list aji.
+3. Loop from i = 1 to N (inclusive):
+    a. Append L + i - 1 to aji.
+4. If the minimum value in aji is greater than or equal to 0:
+    a. Remove the minimum value from aji.
+5. Else if the maximum value in aji is less than or equal to 0:
+    a. Remove the maximum value from aji.
+6. Else:
+    a. Remove the value with the smallest absolute value from aji.
+7. Print the sum of the elements in aji.
+
+Input/output operations:
+- Read two space-separated integers from input.
+- Print a single integer representing the sum of the modified list aji.
+
+Libraries/modules/dependencies:
+- No specific libraries or modules required. Uses built-in functions and data types.

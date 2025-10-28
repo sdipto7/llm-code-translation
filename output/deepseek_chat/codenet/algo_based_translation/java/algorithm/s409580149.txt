@@ -1,0 +1,58 @@
+**Algorithm:**
+
+1. **Input:**
+   - Read integer `n`
+   - Read integer array `a` of length `n` where each element is 1, 2, or 3
+
+2. **Initialization:**
+   - Create 3D DP array `dp` of dimensions (n+1)×(n+1)×(n+1) initialized to -1
+   - Set `dp[0][0][0] = 0`
+   - Count occurrences of 1, 2, 3 in array `a` and store in `cnt[0]`, `cnt[1]`, `cnt[2]`
+
+3. **Recursive Function `rec(i, j, k)` returns double:**
+   - If `dp[i][j][k] != -1`: return stored value
+   - Calculate:
+     - `p = (i+j+k)/n`
+     - `pi = i/n`
+     - `pj = j/n`
+     - `pk = k/n`
+   - Initialize `ret = 1/p`
+   - If `i > 0`: add `(pi/p) * rec(i-1, j, k)` to `ret`
+   - If `j > 0`: add `(pj/p) * rec(i+1, j-1, k)` to `ret`
+   - If `k > 0`: add `(pk/p) * rec(i, j+1, k-1)` to `ret`
+   - Store `dp[i][j][k] = ret` and return
+
+4. **Main Execution:**
+   - Call `rec(cnt[0], cnt[1], cnt[2])`
+   - Print the returned value
+
+5. **Supporting Functions:**
+   - Array reversal for int[], long[], double[], char[]
+   - Binary search variants (lower/upper bounds) for different data types
+   - Array concatenation operations
+   - Min/max functions for multiple data types
+   - Sorting and reverse sorting functions
+   - Array filling functions
+   - Modular arithmetic operations (addition, subtraction, multiplication, division, exponentiation)
+   - Input reading functions for different data types
+
+6. **Data Structures:**
+   - 3D double array for DP
+   - Integer arrays for counting and input
+   - Various utility arrays for binary search and sorting
+
+7. **Control Flow:**
+   - Recursive DP with memoization
+   - Conditional branching based on counts (i, j, k)
+   - Iterative array processing
+   - Binary search algorithms with while loops
+
+8. **Mathematical Operations:**
+   - Probability calculations (ratios of counts to total n)
+   - Expected value computation through recursive summation
+   - Modular arithmetic for large numbers
+
+9. **Input/Output:**
+   - Reads from standard input
+   - Prints to standard output
+   - Handles different data types (int, long, double, char, String)

@@ -1,0 +1,33 @@
+```plaintext
+Function Signature:
+- Function: calculate_next_multiple
+- Parameters: input_string: str
+- Return Type: int
+
+Variables:
+- vamshi: int
+- z: int
+- result: int
+
+Logic Flow:
+1. Parse input:
+   a. Read `input_string`.
+   b. Split `input_string` by space to get two values.
+   c. Convert the first value to an integer and assign it to `vamshi`.
+   d. Convert the second value to an integer and assign it to `z`.
+
+2. Calculate the next multiple:
+   a. Divide `vamshi` by `z` using integer division.
+   b. Add 1 to the result of the integer division.
+   c. Multiply the result by `z` to get the next multiple.
+   d. Assign the result to `result`.
+
+3. Return the result.
+
+Input/Output:
+- Input: A string with two space-separated integers.
+- Output: An integer representing the next multiple of `z` after `vamshi`.
+
+Dependencies:
+- No external libraries or modules are required.
+```

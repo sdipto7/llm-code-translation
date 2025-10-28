@@ -1,0 +1,36 @@
+## Algorithm
+
+1. Read four integer inputs: N, A, B, C.
+2. Read N integer inputs into a list l.
+3. Define a function dfs with the following signature:
+   - Parameters: cur (integer), a (integer), b (integer), c (integer)
+   - Return type: integer
+4. Within dfs:
+   1. Check if cur equals N.
+      - If true, return the sum of absolute differences between A, B, C and a, b, c minus 30 if a, b, and c are all greater than 0. Otherwise, return 10^9.
+   2. Recursively call dfs with cur + 1 and the current values of a, b, c, and store the result in no_add.
+   3. Recursively call dfs with cur + 1, a + l[cur], b, c, add 10, and store the result in add_a.
+   4. Recursively call dfs with cur + 1, a, b + l[cur], c, add 10, and store the result in add_b.
+   5. Recursively call dfs with cur + 1, a, b, c + l[cur], add 10, and store the result in add_c.
+   6. Return the minimum of no_add, add_a, add_b, and add_c.
+5. Call dfs with initial values 0, 0, 0, 0, and print the result.
+
+## Data Types and Declarations
+
+- N: integer
+- A: integer
+- B: integer
+- C: integer
+- l: list of integers
+- cur: integer
+- a: integer
+- b: integer
+- c: integer
+- no_add: integer
+- add_a: integer
+- add_b: integer
+- add_c: integer
+
+## Libraries and Dependencies
+
+- No explicit libraries or modules are imported. The code relies on built-in Python functionality.

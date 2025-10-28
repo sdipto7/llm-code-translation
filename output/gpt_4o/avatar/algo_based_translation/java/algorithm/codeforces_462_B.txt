@@ -1,0 +1,35 @@
+```plaintext
+Function main() returns void
+    Declare BufferedReader f initialized to new BufferedReader with InputStreamReader(System.in)
+    Declare PrintWriter out initialized to new PrintWriter with BufferedWriter(OutputStreamWriter(System.out))
+    Declare StringTokenizer st initialized to new StringTokenizer with f.readLine()
+    Declare integer n initialized to Integer.parseInt(st.nextToken())
+    Declare integer k initialized to Integer.parseInt(st.nextToken())
+    Declare array of c462b objects cards with size 26
+    For integer i from 0 to 25 inclusive
+        Initialize cards[i] with new c462b object
+    End For
+    Declare String s initialized to f.readLine()
+    For integer t from 0 to n - 1 inclusive
+        Increment cards[s.charAt(t) - 'A'].left
+    End For
+    Declare long ans initialized to 0
+    For integer i from 0 to k - 1 inclusive
+        Call Arrays.sort(cards)
+        Declare long change initialized to Math.min(cards[25].left, k - i)
+        Increment ans by change * change
+        Decrement cards[25].left by change
+        Increment i by change - 1
+    End For
+    Call out.println(ans)
+    Call out.close()
+End Function
+
+Class c462b implements Comparable
+    Declare integer left initialized to 0
+    
+    Function compareTo(Object o) returns int
+        Return left - ((c462b)o).left
+    End Function
+End Class
+```

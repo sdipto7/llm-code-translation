@@ -1,0 +1,74 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,s147181072.java,Compilation Error,"Error: output/deepseek_chat/codenet/direct_translation/python/java/s147181072.java:6: error: cannot find symbol
+        System.out.println(scanner.nextLine().swapCase());
+                                             ^
+  symbol:   method swapCase()
+  location: class String
+1 error
+"
+python,java,s210889193.java,Compilation Error,"Error: output/deepseek_chat/codenet/direct_translation/python/java/s210889193.java:1: error: class, interface, enum, or record expected
+To translate the provided Python code into Java, we need to follow Java's syntax and structure. Below is the corresponding Java code:
+^
+1 error
+only showing the first 1 errors, of 7 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s546174362.java,Compilation Error,"Error: output/deepseek_chat/codenet/direct_translation/python/java/s546174362.java:1: error: '.' expected
+import pytest
+             ^
+1 error
+only showing the first 1 errors, of 4 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s642705424.java,Compilation Error,"Error: output/deepseek_chat/codenet/direct_translation/python/java/s642705424.java:1: error: illegal character: '#'
+## Frequent Mistakes in Java Translation
+^
+1 error
+only showing the first 1 errors, of 29 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s199418121.java,Compilation Error,"Error: output/deepseek_chat/codenet/direct_translation/python/java/s199418121.java:1: error: class, interface, enum, or record expected
+](../../../../../../../../../../../../..///..//../.../..../...../....../......./......../........./..........)..........)...........)...........)...........)...........)...........)...........)...........)...........)...........)...........)
+^
+1 error
+only showing the first 1 errors, of 14 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s316832655.java,Compilation Error,"Error: output/deepseek_chat/codenet/direct_translation/python/java/s316832655.java:1: error: illegal character: '#'
+## 1. Understanding the Python Code
+^
+1 error
+only showing the first 1 errors, of 238 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s961772658.java,Compilation Error,"Error: output/deepseek_chat/codenet/direct_translation/python/java/s961772658.java:4: error: cannot find symbol
+        String s = input();
+                   ^
+  symbol:   method input()
+  location: class s961772658
+1 error
+"
+python,java,s031917494.java,Compilation Error,"Error: output/deepseek_chat/codenet/direct_translation/python/java/s031917494.java:1: error: class, interface, enum, or record expected
+ Triangular, please provide more details or clarify your request so I can assist you accurately.
+ ^
+1 error
+"
+python,java,s733189960.java,Compilation Error,"Error: output/deepseek_chat/codenet/direct_translation/python/java/s733189960.java:1: error: illegal character: '\u3002'
+惜しいですね。PythonのコードをJavaに変換する際にいくつかの重要な変更が必要です。以下に、正確に対応するJavaコードを示します。
+      ^
+1 error
+only showing the first 1 errors, of 11 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s662673721.java,Compilation Error,"Error: output/deepseek_chat/codenet/direct_translation/python/java/s662673721.java:1: error: illegal character: '#'
+虜#include <iostream>
+ ^
+1 error
+only showing the first 1 errors, of 17 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s182651529.java,Compilation Error,"Error: output/deepseek_chat/codenet/direct_translation/python/java/s182651529.java:1: error: illegal character: '#'
+## 理解Python代码
+^
+1 error
+only showing the first 1 errors, of 226 total; use -Xmaxerrs if you would like to see more
+"
+python,java,s846046431.java,Compilation Error,"Error: output/deepseek_chat/codenet/direct_translation/python/java/s846046431.java:1: error: illegal character: '#'
+## 题目描述
+^
+1 error
+only showing the first 1 errors, of 111 total; use -Xmaxerrs if you would like to see more
+"

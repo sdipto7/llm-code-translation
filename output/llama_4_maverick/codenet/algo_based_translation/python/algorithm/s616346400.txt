@@ -1,0 +1,9 @@
+1. Define a function `atc_079a` with a parameter `input_value` of type `str` and return type `str`.
+2. Declare a variable `n` and initialize it with the value `3`.
+3. Iterate over a range from `0` to `len(input_value) - n + 1` using a variable `i`.
+4. For each `i`, iterate over a range from `1` to `n-1` using a variable `j`.
+5. Inside the inner loop, check if `input_value[i]` is not equal to `input_value[i + j]`. If true, break the inner loop.
+6. If `j` equals `n - 1` inside the inner loop, return the string "Yes".
+7. If the outer loop completes without returning "Yes", return the string "No".
+8. Read a string input from the user and store it in the variable `input_value`.
+9. Call the function `atc_079a` with `input_value` and print the returned result.

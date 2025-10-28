@@ -1,0 +1,37 @@
+**Function Signature:**  
+public static void main(String[] args)  
+
+**Variables:**  
+- Scanner str: initialized with System.in  
+- int n: assigned via str.nextInt()  
+- String s: initialized as empty string  
+- int ans: initialized to 0  
+
+**Libraries/Dependencies:**  
+- java.util.*  
+
+**Logic Flow:**  
+1. Read integer `n` from standard input.  
+2. Initialize empty string `s`.  
+3. While loop:  
+   - **Condition:** `n > 0`  
+   - Compute `x = n % 2`.  
+   - Update `n = n / 2`.  
+   - Append `x` as a string to `s`.  
+4. For loop:  
+   - **Range:** `i` from 0 to `s.length() - 1` (inclusive)  
+   - **Conditional:** If `s.charAt(i) == '1'`, increment `ans` by 1.  
+5. Print `ans` to standard output.  
+
+**Control Structures:**  
+- While loop with `n > 0` termination condition  
+- For loop iterating over characters of `s`  
+- Conditional check for `'1'` within the for loop  
+
+**Input/Output Operations:**  
+- Input: `n` read via Scanner  
+- Output: `ans` printed via System.out.println()  
+
+**Data Processing:**  
+- Conversion of `n` to binary string (stored in reverse order)  
+- Count occurrences of `'1'` in the binary string

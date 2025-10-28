@@ -1,0 +1,72 @@
+**Structured Algorithm Specification**
+
+**Function Signatures:**
+- `main() -> int`
+- `nPairsWithCommonFX(sequence: list[int]) -> int`
+- `f(n: int) -> int`
+
+**Variables:**
+- `main()`:
+  - Implicit input lines (strings)
+  - `sequence`: List[int] from parsed second input line
+- `nPairsWithCommonFX(sequence: list[int])`:
+  - `storage`: Dict[int, List[int]] (maps f(x) results to input values)
+  - `FXs`: List[int] (unique f(x) values encountered)
+  - `value`: int (current element from `sequence`)
+  - `y`: int (result of `f(value)`)
+  - `sum1`: int (sum of squared group sizes)
+  - `sum2`: int (sum of group sizes)
+- `f(n: int)`:
+  - `y`: int (initialized to 1)
+  - `n`: int (modified during loop)
+
+**Logic Flow:**
+
+**1. `main()`:**
+1.1. Read and discard first input line.  
+1.2. Read second input line, split into space-separated strings, convert to list of integers (`sequence`).  
+1.3. Call `nPairsWithCommonFX(sequence)` and return result.  
+
+**2. `nPairsWithCommonFX(sequence)`:**
+2.1. Initialize `storage` as empty dictionary.  
+2.2. Initialize `FXs` as empty list.  
+2.3. For each `value` in `sequence`:  
+&nbsp;&nbsp;2.3.1. Compute `y = f(value)`.  
+&nbsp;&nbsp;2.3.2. If `y` not in `storage`:  
+&nbsp;&nbsp;&nbsp;&nbsp;2.3.2.1. Set `storage[y]` to list containing `value`.  
+&nbsp;&nbsp;&nbsp;&nbsp;2.3.2.2. Append `y` to `FXs`.  
+&nbsp;&nbsp;2.3.3. Else:  
+&nbsp;&nbsp;&nbsp;&nbsp;2.3.3.1. Append `value` to `storage[y]`.  
+2.4. Compute `sum1 = Σ(len(storage[y])² for y in FXs)`.  
+2.5. Compute `sum2 = Σ(len(storage[y]) for y in FXs)`.  
+2.6. Return `(sum1 - sum2) // 2`.  
+
+**3. `f(n)`:**
+3.1. Initialize `y = 1`.  
+3.2. While `n ≠ 1`:  
+&nbsp;&nbsp;3.2.1. If `n % 2 == 1`:  
+&nbsp;&nbsp;&nbsp;&nbsp;3.2.1.1. Increment `y` by 1.  
+&nbsp;&nbsp;3.2.2. Set `n = n // 2`.  
+3.3. Return `y`.  
+
+**Control Flow Structures:**
+- `main()`: Sequential execution with two input operations.
+- `nPairsWithCommonFX()`: 
+  - For-loop over `sequence` (exit when all elements processed).
+  - Conditional branches in step 2.3.2/2.3.3 based on presence of `y` in `storage`.
+- `f()`: 
+  - While-loop (exit when `n == 1`).
+  - Conditional increment based on `n % 2 == 1`.
+
+**Input/Output Operations:**
+- `main()` reads two lines from standard input (first discarded).
+- Final result printed via `print(main())`.
+
+**Edge Case Handling:**
+- Empty `sequence`: Returns 0 (summation terms are zero).
+- All elements map to same f(x): Computes C(len, 2) pairs.
+- Single-element groups contribute 0 to total (len*(len-1)/2 = 0 when len=1).
+
+**External Dependencies:**
+- Uses Python built-ins: `map`, `int`, `input`, `split`.
+- No external libraries or modules.

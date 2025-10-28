@@ -1,0 +1,9 @@
+read integer n from input
+import itertools module
+generate all permutations of numbers from 1 to n inclusive, store as list in orig
+read first sequence of integers from input, convert to tuple p
+read second sequence of integers from input, convert to tuple q
+find index of p in orig list, store as pn
+find index of q in orig list, store as qn
+calculate absolute difference between pn and qn
+print the result

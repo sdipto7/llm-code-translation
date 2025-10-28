@@ -1,0 +1,310 @@
+source_lang,target_lang,filename,error_type,error_details
+java,python,codeforces_30_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_30_A.py"", line 35, in <module>
+    codeforces_30_A().main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_30_A.py"", line 6, in main
+    self.solve(sys.stdin)
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_30_A.py"", line 9, in solve
+    A = int(sc.readline())
+        ^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '-1 -1 5\n'
+"
+java,python,atcoder_AGC034_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_AGC034_B.py"", line 25, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_AGC034_B.py"", line 22, in main
+    solver.solve(1, in_, out)
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_AGC034_B.py"", line 6, in solve
+    s = in_.next().replace('BC', 'D')
+        ^^^^^^^^
+AttributeError: 'list_iterator' object has no attribute 'next'
+"
+java,python,atcoder_ABC146_D.py,Runtime Error,"Test Index: 11 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC146_D.py"", line 25, in <module>
+    dfs(0, -1, -1)
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC146_D.py"", line 22, in dfs
+    dfs(nei, k, to)
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC146_D.py"", line 22, in dfs
+    dfs(nei, k, to)
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC146_D.py"", line 22, in dfs
+    dfs(nei, k, to)
+  [Previous line repeated 996 more times]
+RecursionError: maximum recursion depth exceeded
+"
+java,python,atcoder_ABC150_D.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC150_D.py"", line 7, in <module>
+    a = list(map(lambda x: int(x) // 2, input().split()))
+                                        ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,atcoder_ABC178_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC178_B.py"", line 52, in <module>
+    a[i] = in_.nextLong()
+           ^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC178_B.py"", line 24, in nextLong
+    return int(self.next())
+           ^^^^^^^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+"
+java,python,codeforces_387_A.py,Runtime Error,"Test Index: 4 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_387_A.py"", line 9, in <module>
+    result = datetime.combine(datetime.min, x) - timedelta(hours=y.hour, minutes=y.minute)
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OverflowError: date value out of range
+"
+java,python,atcoder_ABC123_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC123_B.py"", line 3, in <module>
+    from sortedcontainers import SortedDict
+ModuleNotFoundError: No module named 'sortedcontainers'
+"
+java,python,atcoder_ABC122_C.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC122_C.py"", line 3, in <module>
+    n = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '100000 100000'
+"
+java,python,atcoder_AGC014_D.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_AGC014_D.py"", line 34, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_AGC014_D.py"", line 30, in main
+    m = maxMatching(0, -1) // 2
+        ^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_AGC014_D.py"", line 8, in maxMatching
+    for w in g[v]:
+             ^
+NameError: name 'g' is not defined
+"
+java,python,atcoder_AGC002_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_AGC002_A.py"", line 2, in <module>
+    a = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1 10'
+"
+java,python,atcoder_ABC168_C.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC168_C.py"", line 4, in <module>
+    A = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 4 10 40'
+"
+java,python,atcoder_ABC132_F.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC132_F.py"", line 3, in <module>
+    n = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1000000000 100'
+"
+java,python,atcoder_ABC134_E.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC134_E.py"", line 2, in <module>
+    from sortedcontainers import SortedDict
+ModuleNotFoundError: No module named 'sortedcontainers'
+"
+java,python,atcoder_AGC028_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_AGC028_A.py"", line 2, in <module>
+    n = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2136 59719'
+"
+java,python,atcoder_AGC017_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_AGC017_A.py"", line 12, in <module>
+    n = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '16 1'
+"
+java,python,codeforces_171_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_171_A.py"", line 42, in <module>
+    n = sc.nextInt()
+        ^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_171_A.py"", line 17, in nextInt
+    return int(self.next())
+               ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_171_A.py"", line 9, in next
+    while self.st == [] or len(self.st) == 0:
+          ^^^^^^^
+AttributeError: 'FastReader' object has no attribute 'st'
+"
+java,python,atcoder_ABC125_C.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC125_C.py"", line 25, in <module>
+    atcoder_ABC125_C.main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC125_C.py"", line 13, in main
+    L[0] = A[0]
+           ~^^^
+IndexError: list index out of range
+"
+java,python,atcoder_ABC169_C.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC169_C.py"", line 3, in <module>
+    a = int(sys.stdin.readline().strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0 9.98'
+"
+java,python,atcoder_ABC133_E.py,Runtime Error,"Test Index: 21 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC133_E.py"", line 46, in <module>
+    main.solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC133_E.py"", line 38, in solve
+    nodes[0].setParent(K, -1, 0, nodes)
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC133_E.py"", line 20, in setParent
+    nodes[n].setParent(K, self.index, count, nodes)
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC133_E.py"", line 20, in setParent
+    nodes[n].setParent(K, self.index, count, nodes)
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC133_E.py"", line 20, in setParent
+    nodes[n].setParent(K, self.index, count, nodes)
+  [Previous line repeated 995 more times]
+RecursionError: maximum recursion depth exceeded
+"
+java,python,atcoder_ABC147_D.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC147_D.py"", line 4, in <module>
+    startTime = sys.currentTimeMillis()
+                ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'sys' has no attribute 'currentTimeMillis'
+"
+java,python,atcoder_AGC019_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_AGC019_A.py"", line 4, in <module>
+    Q = int(sys.stdin.readline())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '100000000 100000000 100000000 100000000\n'
+"
+java,python,atcoder_ABC139_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC139_B.py"", line 5, in <module>
+    B = int(input().split()[1])
+            ^^^^^^^
+EOFError: EOF when reading a line
+"
+java,python,codeforces_351_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_351_A.py"", line 15, in <module>
+    if num != math.floor(num):
+              ^^^^
+NameError: name 'math' is not defined. Did you forget to import 'math'?
+"
+java,python,codeforces_25_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_25_A.py"", line 5, in <module>
+    array[i] = int(input())
+               ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '88 96 66 51 14 88 2 92 18 72 18 88 20 30 4 82 90 100 24 46'
+"
+java,python,atcoder_ABC118_C.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC118_C.py"", line 10, in <module>
+    a.append(int(input()))
+             ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '5 13 8 1000000000'
+"
+java,python,atcoder_ABC143_D.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC143_D.py"", line 13, in <module>
+    res = find(L, j + 1, a + b)
+          ^^^^
+NameError: name 'find' is not defined
+"
+java,python,atcoder_ABC107_D.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC107_D.py"", line 60, in <module>
+    atcoder_ABC107_D.main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC107_D.py"", line 16, in main
+    print(task.solve(arr))
+          ^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC107_D.py"", line 30, in solve
+    bit = array.array('i', [0] * (2 * n + 2))
+          ^^^^^
+NameError: name 'array' is not defined. Did you forget to import 'array'?
+"
+java,python,atcoder_AGC011_C.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_AGC011_C.py"", line 58, in <module>
+    main_instance.run()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_AGC011_C.py"", line 46, in run
+    kind = self.dfs(i, 0)
+           ^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_AGC011_C.py"", line 23, in dfs
+    total += self.dfs(b, 1 - c)
+             ^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_AGC011_C.py"", line 23, in dfs
+    total += self.dfs(b, 1 - c)
+             ^^^^^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_AGC011_C.py"", line 23, in dfs
+    total += self.dfs(b, 1 - c)
+             ^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 995 more times]
+RecursionError: maximum recursion depth exceeded
+"
+java,python,codeforces_596_B.py,Runtime Error,"Test Index: 1 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_596_B.py"", line 3, in <module>
+    arr = [int(input()) for _ in range(n)]
+           ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1000000000 0 1000000000 0 1000000000 0 1000000000 0 1000000000 0 1000000000'
+"
+java,python,codeforces_67_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_67_B.py"", line 30, in <module>
+    o.main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_67_B.py"", line 11, in main
+    n = int(self.sc.readline().strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '10 1'
+"
+java,python,codeforces_203_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_203_A.py"", line 45, in <module>
+    codeforces_203_A().run()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_203_A.py"", line 30, in run
+    self.solve()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_203_A.py"", line 6, in solve
+    x = self.nextInt()
+        ^^^^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_203_A.py"", line 34, in nextInt
+    return int(self.next())
+               ^^^^^^^^^^^
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_203_A.py"", line 37, in next
+    while self.st == [] or len(self.st) == 0:
+          ^^^^^^^
+AttributeError: 'codeforces_203_A' object has no attribute 'st'
+"
+java,python,codeforces_474_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_474_B.py"", line 44, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_474_B.py"", line 22, in main
+    q[i] = int(data[index])
+               ~~~~^^^^^^^
+IndexError: list index out of range
+"
+java,python,codeforces_379_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_379_A.py"", line 4, in <module>
+    a = int(sys.stdin.readline())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3 2\n'
+"
+java,python,atcoder_AGC007_C.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_AGC007_C.py"", line 5, in <module>
+    N = float(input())
+        ^^^^^^^^^^^^^^
+ValueError: could not convert string to float: '2 1 0'
+"
+java,python,atcoder_ABC169_D.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/atcoder_ABC169_D.py"", line 11, in <module>
+    for j in range(1, count - j + 1):
+                              ^
+NameError: name 'j' is not defined
+"
+java,python,codeforces_86_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_86_A.py"", line 37, in <module>
+    main()
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_86_A.py"", line 19, in main
+    l = int(input())
+        ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '66 95'
+"
+java,python,codeforces_456_A.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_456_A.py"", line 15, in <module>
+    if temp < a[i]:
+              ~^^^
+IndexError: list index out of range
+"
+java,python,codeforces_342_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_342_B.py"", line 13, in <module>
+    map[k] = [int(input[index + 1]), int(input[index + 2])]
+              ^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1...'
+"
+java,python,codeforces_265_B.py,Runtime Error,"Test Index: 0 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_265_B.py"", line 8, in <module>
+    ans += abs(arr[i] - arr[i - 1]) + 2
+               ~~~^^^
+IndexError: list index out of range
+"
+java,python,codeforces_673_A.py,Runtime Error,"Test Index: 1 Error: Traceback (most recent call last):
+  File ""/home/sxa510/research/code/llm-code-translation/output/qwen_2.5_72b_instruct/avatar/direct_translation/java/python/codeforces_673_A.py"", line 3, in <module>
+    a = [int(input()) for _ in range(n)]
+         ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '15 20 30 40 50 60 73 83'
+"

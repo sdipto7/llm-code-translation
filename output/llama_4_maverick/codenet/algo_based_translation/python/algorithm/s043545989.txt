@@ -1,0 +1,13 @@
+1. Import the `collections` module.
+2. Define a function `check_validity` with no parameters and return type `None`.
+3. Read an integer `N` from the input.
+4. Read `N` integers from the input, store them in a list `a` of type `list[int]`.
+5. Create a `Counter` object `B` from the list `a`.
+6. Extract the keys and values of `B` into lists `k` and `v` of types `list[int]` and `list[int]` respectively.
+7. Check if the length of `B` is 3, the bitwise XOR of the elements in `k` is 0, and all elements in `v` are equal.
+8. If the condition in step 7 is met, output "Yes".
+9. Otherwise, check if the length of `B` is 2, 0 is in `k`, and the ratio of the elements in `v` is 2:1.
+10. If the condition in step 9 is met, output "Yes".
+11. Otherwise, check if the length of `B` is 1 and 0 is in `k`.
+12. If the condition in step 11 is met, output "Yes".
+13. If none of the above conditions are met, output "No".

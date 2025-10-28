@@ -1,0 +1,15 @@
+import os
+from sys import stdin, stdout
+
+function solve(integer tc):
+    integer a = convert_to_integer(read_line(stdin).strip())
+    if a equals 0:
+        print(1)
+    else:
+        print(0)
+
+integer tcs = 1
+integer tc = 1
+while tc <= tcs:
+    solve(tc)
+    tc = tc + 1

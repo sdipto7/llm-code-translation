@@ -1,0 +1,124 @@
+- Libraries and Modules: `java.math.*`, `java.io.*`, `java.util.*`, `java.awt.*`
+
+- Main Class: `Main` implements `Runnable`
+  - Method: `run()`
+    - Try block:
+      - Create `Solver` object and call `solve()`
+      - System exits with code 0
+    - Catch block for `Exception` or `Error`:
+      - Print stack trace
+      - System exits with code 1
+  - Method: `main(String[] args)`
+    - Create `Main` object and call `run()`
+
+- Class: `Solver`
+  - Fields:
+    - `Helper hp`
+    - `int MAXN = 1000_006`
+    - `long MOD = (long) 1e9 + 7`
+    - `Timer timer`
+    - `TimerTask task`
+    - `boolean TESTCASES = false`
+  - Constructor: `Solver()`
+    - Initialize `Helper` object with `MOD` and `MAXN`
+    - Initialize input and output for `Helper`
+    - Create and schedule `TimerTask` to flush `Helper` and exit with code 0 after 4700ms
+  - Method: `solve() throws Exception`
+    - Read number of test cases if `TESTCASES` is true, otherwise set to 1
+    - Loop through each test case and call `solve(int tc)`
+    - Cancel timer and flush `Helper`
+  - Method: `solve(int tc) throws Exception`
+    - Read integer `N` and long `K`
+    - Read integer array `A` of size `N`
+    - Initialize `ArrayList<Integer>` for `straight` and `cycle`
+    - Initialize boolean array `vis` of size `N` to track visited elements
+    - Find the cycle in array `A` starting from index 0
+    - Populate `straight` with elements before the cycle starts
+    - Populate `cycle` with elements in the cycle
+    - If `K` is less than the size of `straight`, print the element at index `K` in `straight` plus 1
+    - Otherwise, adjust `K` by subtracting the size of `straight` and print the element at index `K % cycle.size()` in `cycle` plus 1
+
+- Class: `Helper`
+  - Fields:
+    - `long MOD`
+    - `int MAXN`
+    - `Random rnd`
+    - Static fields:
+      - `int[] sieve`
+      - `ArrayList<Integer> primes`
+      - `long[] factorial`
+  - Constructor: `Helper(long mod, int maxn)`
+    - Initialize `MOD` and `MAXN`
+    - Initialize `Random` object
+  - Method: `setSieve()`
+    - Initialize `primes` and `sieve`
+    - Populate `sieve` and `primes` with prime numbers up to `MAXN`
+  - Method: `setFactorial()`
+    - Initialize `factorial` array
+    - Populate `factorial` with factorials modulo `MOD`
+  - Method: `getFactorial(int n)`
+    - Return factorial of `n`
+  - Method: `ncr(int n, int r)`
+    - Return number of combinations of `n` items taken `r` at a time
+  - Method: `getLongArray(int size) throws Exception`
+    - Read and return long array of size `size`
+  - Method: `getIntArray(int size) throws Exception`
+    - Read and return integer array of size `size`
+  - Method: `getStringArray(int size) throws Exception`
+    - Read and return string array of size `size`
+  - Method: `joinElements(long... ar)`
+    - Join elements of long array into a single string
+  - Method: `joinElements(int... ar)`
+    - Join elements of integer array into a single string
+  - Method: `joinElements(String... ar)`
+    - Join elements of string array into a single string
+  - Method: `joinElements(Object... ar)`
+    - Join elements of object array into a single string
+  - Method: `gcd(long a, long b)`
+    - Return greatest common divisor of `a` and `b`
+  - Method: `gcd(int a, int b)`
+    - Return greatest common divisor of `a` and `b`
+  - Method: `max(long... ar)`
+    - Return maximum value from long array
+  - Method: `max(int... ar)`
+    - Return maximum value from integer array
+  - Method: `min(long... ar)`
+    - Return minimum value from long array
+  - Method: `min(int... ar)`
+    - Return minimum value from integer array
+  - Method: `sum(long... ar)`
+    - Return sum of long array
+  - Method: `sum(int... ar)`
+    - Return sum of integer array
+  - Method: `shuffle(int[] ar)`
+    - Shuffle integer array
+  - Method: `shuffle(long[] ar)`
+    - Shuffle long array
+  - Method: `reverse(int[] ar)`
+    - Reverse integer array
+  - Method: `reverse(long[] ar)`
+    - Reverse long array
+  - Method: `pow(long base, long exp, long MOD)`
+    - Return `base` raised to the power of `exp` modulo `MOD`
+  - Method: `initIO(InputStream is, OutputStream os)`
+    - Initialize input and output streams
+  - Method: `initIO(String inputFile, String outputFile)`
+    - Initialize input and output files
+  - Method: `scan() throws Exception`
+    - Read next byte from input
+  - Method: `next() throws Exception`
+    - Read next string from input
+  - Method: `nextInt() throws Exception`
+    - Read next integer from input
+  - Method: `nextLong() throws Exception`
+    - Read next long from input
+  - Method: `print(Object a) throws Exception`
+    - Print object `a` to output
+  - Method: `printsp(Object a) throws Exception`
+    - Print object `a` followed by a space to output
+  - Method: `println() throws Exception`
+    - Print newline to output
+  - Method: `println(Object a) throws Exception`
+    - Print object `a` followed by a newline to output
+  - Method: `flush() throws Exception`
+    - Flush output writer

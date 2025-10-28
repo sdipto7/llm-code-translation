@@ -1,0 +1,38 @@
+Function Signature: `main(String[] args)`
+
+Variable Declarations:
+- `Scanner sc` of type `Scanner`
+- `int N` for number of elements
+- `int K` for number of elements to consider
+- `int[] S` array of integers to store input elements
+- `int temp` for temporary calculations
+- `int ans` to store the answer, initialized to `1000000000`
+
+Logic Flow:
+1. Create a `Scanner` object to read input.
+2. Read `N` (number of elements) and `K` (number of elements to consider).
+3. Initialize array `S` with size `N`.
+4. Loop `i` from `0` to `N-1` to read each element of `S` from input.
+5. If `K == 1`:
+   - Loop `i` from `0` to `N-1`:
+     - Assign `S[i]` to `temp`.
+     - Calculate `Math.min(Math.abs(temp), ans)` and assign to `ans`.
+   - Print `ans`.
+6. Else if `N - K != 0`:
+   - Loop `i` from `0` to `N-K`:
+     - Assign `S[i]` to `min`.
+     - Assign `S[i + K - 1]` to `max`.
+     - If `min < 0` and `max > 0`:
+       - Calculate `Math.min(2 * (-min) + max, (-min) + 2 * max)` and assign to `temp`.
+     - Else:
+       - Calculate `Math.max(Math.abs(min), Math.abs(max))` and assign to `temp`.
+     - Calculate `Math.min(ans, temp)` and assign to `ans`.
+   - Print `ans`.
+7. Else:
+   - Assign `S[0]` to `min`.
+   - Assign `S[N - 1]` to `max`.
+   - If `min < 0` and `max > 0`:
+     - Print `Math.min(2 * (-min) + max, (-min) + 2 * max)`.
+   - Else:
+     - Print `Math.max(Math.abs(min), Math.abs(max))`.
+8. Close the `Scanner` object.

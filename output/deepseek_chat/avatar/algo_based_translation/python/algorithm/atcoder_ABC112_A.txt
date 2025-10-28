@@ -1,0 +1,7 @@
+1. Read integer input from standard input and store as variable `age` (type: int)
+2. Check if `age` equals 1:
+   - If true: print string 'Hello World'
+   - If false:
+     a. Read two integer inputs from standard input (each on separate lines) and store as variables `a` and `b` (both type: int)
+     b. Calculate sum of `a` and `b`
+     c. Print the result

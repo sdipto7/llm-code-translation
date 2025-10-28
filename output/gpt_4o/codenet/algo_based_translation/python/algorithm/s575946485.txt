@@ -1,0 +1,29 @@
+1. Function signature:
+   - Function: process_numbers
+   - Parameters: None
+   - Return type: int
+
+2. Variable declarations and data types:
+   - a: List[int]
+   - dic: Dict[int, int]
+   - min_num: int
+   - a_sum: int
+
+3. Logic flow:
+   - Initialize list `a` by taking 5 integer inputs from the user.
+   - Initialize an empty dictionary `dic`.
+
+4. Loop through numbers in `a` (for i in range(5)):
+   - Convert the current number `a[i]` to a string and check the last character.
+   - If the last character is "0", update `dic` with the current index `i` as key and 0 as value.
+   - Otherwise, update `dic` with the current index `i` and the value of the last digit of `a[i]` converted to an integer minus 10.
+
+5. Find the index `min_num` in `dic` with the minimum value using a list comprehension and `min()` function.
+
+6. Calculate the sum of all elements in `a` and store it in `a_sum`.
+
+7. Remove the entry in `dic` with key `min_num`.
+
+8. Calculate the absolute sum of the values in `dic` and add it to `a_sum`.
+
+9. Output the final calculated sum.

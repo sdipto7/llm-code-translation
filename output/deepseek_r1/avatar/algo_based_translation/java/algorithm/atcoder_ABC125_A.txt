@@ -1,0 +1,32 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner sc` (Scanner object)
+- `int sec`
+- `int per_num`
+- `double max_sec`
+- `int ans_num = 0`
+- `int i` (loop counter)
+
+**Input Operations:**
+- Read `sec` via `sc.nextInt()`
+- Read `per_num` via `sc.nextInt()`
+- Read integer via `sc.nextInt()`, cast to double, add 0.5 → `max_sec`
+
+**Logic Flow:**
+1. Initialize `sc` with `System.in`
+2. Read `sec`, `per_num`, and compute `max_sec`
+3. Initialize `ans_num` to 0
+4. Start loop:
+   - Initialize `i` to `sec`
+   - Continue while `i < max_sec`
+   - Increment `i` by `sec` each iteration
+   - Add `per_num` to `ans_num` in each iteration
+5. Print `ans_num`
+
+**Control Structures:**
+- `for (int i = sec; i < max_sec; i += sec)`
+
+**Libraries/Dependencies:**
+- `java.util.Scanner`

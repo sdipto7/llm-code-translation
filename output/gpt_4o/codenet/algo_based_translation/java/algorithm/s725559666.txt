@@ -1,0 +1,30 @@
+Algorithm:
+
+1. Import necessary library:
+   - Import `java.util.Scanner` for input operations.
+
+2. Define the main function:
+   - Signature: `public static void main(String[] args)`
+   - Parameters: `String[] args`
+   - Return type: `void`
+
+3. Declare a `Scanner` object named `scan` to read input from the standard input.
+
+4. Declare three integer variables:
+   - `int a`
+   - `int b`
+   - `int c`
+
+5. Read three integers from the input:
+   - Assign the first integer to variable `a` using `scan.nextInt()`.
+   - Assign the second integer to variable `b` using `scan.nextInt()`.
+   - Assign the third integer to variable `c` using `scan.nextInt()`.
+
+6. Close the `Scanner` object using `scan.close()` to release the system resources associated with it.
+
+7. Implement a conditional structure using an `if` statement:
+   - Condition: `if(a < b && b < c && a < c)`
+     - If true, print "Yes" to the standard output.
+
+8. Implement the `else` structure:
+   - If the condition is false, print "No" to the standard output.

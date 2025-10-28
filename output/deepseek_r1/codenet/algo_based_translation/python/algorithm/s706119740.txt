@@ -1,0 +1,16 @@
+- **Function Signatures**: Not applicable (script execution)
+- **Variable Declarations**:
+  - `candy`: List of integers
+- **Input Operations**:
+  - Read line from standard input
+  - Split input into substrings by whitespace
+  - Convert each substring to integer
+  - Sort integers in ascending order and store in `candy`
+- **Logic Flow**:
+  1. Process input as described and populate `candy`
+  2. Compare `candy[0] + candy[1]` with `candy[2]`
+- **Control Structures**:
+  - Conditional: Check if `candy[0] + candy[1] == candy[2]`
+- **Output Operations**:
+  - Print "Yes" if condition is true, "No" otherwise
+- **Dependencies**: None (uses Python built-in functions)

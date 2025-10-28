@@ -1,0 +1,18 @@
+- Import required libraries: `java.util.*`
+  
+- Define main function: `public static void main(String[] args)`
+  - Declare and initialize a `Scanner` object `sc` to read from standard input.
+  - Read an integer `N` using `sc.nextInt()` which represents the number of elements in the array.
+  - Declare an array `A` of type `long` with size `N`.
+
+  - Loop from `i = 0` to `i < N`
+    - Assign `sc.nextLong()` to `A[i]`.
+
+  - Sort the array `A` using `Arrays.sort(A)`.
+
+  - Loop from `j = 1` to `j < N`
+    - If condition `A[j] == A[j-1]` is true
+      - Print "NO" to the standard output.
+      - Exit the program using `System.exit(0)`.
+
+  - Print "YES" to the standard output.

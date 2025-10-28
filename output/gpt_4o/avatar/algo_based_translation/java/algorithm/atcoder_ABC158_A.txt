@@ -1,0 +1,16 @@
+1. Import necessary libraries: `java.io.OutputStream`, `java.io.IOException`, `java.io.InputStream`, `java.io.PrintWriter`, `java.util.Scanner`.
+2. Define the main function: `public static void main(String[] args)`.
+   - Declare variable `inputStream` of type `InputStream` and initialize with `System.in`.
+   - Declare variable `outputStream` of type `OutputStream` and initialize with `System.out`.
+   - Create a `Scanner` object `in` using `inputStream`.
+   - Create a `PrintWriter` object `out` using `outputStream`.
+   - Instantiate `AStationAndBus` class as `solver`.
+   - Call `solver.solve(1, in, out)`.
+   - Close `PrintWriter` object `out`.
+3. Define class `AStationAndBus`.
+4. Define method `solve(int testNumber, Scanner in, PrintWriter out)`.
+   - Declare variable `s` of type `String` and assign it the next input token from `in`.
+   - If statement: `if (s.contains("A") && s.contains("B"))`.
+     - If condition is true, call `out.println("Yes")`.
+   - Else statement for the if condition.
+     - Call `out.println("No")`.

@@ -1,0 +1,47 @@
+- Function signatures with parameter and return types:
+  - `main(String[] args) throws IOException`
+
+- Variable declarations and data types:
+  - `BufferedReader br`
+  - `String sc`
+  - `int n`
+  - `String[] str`
+  - `String[] mark`
+  - `String ma`
+  - `int i`
+  - `String s`
+  - `String st`
+
+- Complete logic flow in execution order:
+  1. Create a `BufferedReader` object to read input from standard input.
+  2. Read a line of input and parse it to an integer `n`.
+  3. Create a `String` array `str` of size `n`.
+  4. For each index `i` from 0 to `n-1`, read a line of input and store it in `str[i]`.
+  5. Define a `String` array `mark` with elements `{"S", "H", "C", "D"}`.
+  6. For each `String ma` in `mark`, do the following:
+     1. For each integer `i` from 1 to 13, do the following:
+        1. Convert `i` to a `String` `s`.
+        2. Concatenate `ma` and `s` with a space in between to form `st`.
+        3. Check if `st` is in the list of `str`.
+           1. If `st` is found in `str`, continue to the next iteration.
+           2. If `st` is not found in `str`, print `st`.
+
+- Control structures:
+  - For loop: `for (int i = 0; i < n; i++)`
+  - For each loop: `for (String ma : mark)`
+  - For loop: `for (int i = 1; i <= 13; i++)`
+  - If-else statement: `if (Arrays.asList(str).contains(st))`
+
+- Input/output operations and data processing logic:
+  - Read input using `BufferedReader`.
+  - Parse input to an integer.
+  - Store input lines in an array.
+  - Concatenate strings to form card representations.
+  - Check for the presence of card representations in the input array.
+  - Print missing card representations.
+
+- Required libraries, modules, or dependencies:
+  - `java.io.BufferedReader`
+  - `java.io.InputStreamReader`
+  - `java.io.IOException`
+  - `java.util.Arrays`

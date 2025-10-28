@@ -1,0 +1,12 @@
+Algorithm:
+- Import: Scanner from java.util
+- Function: main
+  - Parameters: String[] args
+  - Return type: void
+- Declare Scanner object: sc = new Scanner(System.in)
+- Declare int variable: num
+- Read integer input: num = sc.nextInt()
+- Conditional: if num < 1200
+  - Then branch: print "ABC"
+  - Else branch: print "ARC"
+- End function

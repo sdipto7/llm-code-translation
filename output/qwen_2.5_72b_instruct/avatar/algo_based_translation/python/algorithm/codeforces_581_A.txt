@@ -1,0 +1,30 @@
+Function signature: main() -> None
+
+Variable declarations:
+a: int
+b: int
+
+Logic flow:
+1. Read a line of input from the standard input
+2. Split the input line into two parts based on whitespace
+3. Convert each part of the split input into an integer
+4. Assign the first integer to variable a
+5. Assign the second integer to variable b
+6. Compute the minimum of a and b
+7. Compute the maximum of a and b
+8. Compute the absolute difference between a and b by subtracting the minimum from the maximum
+9. Integer divide the absolute difference by 2
+10. Print the minimum of a and b followed by the result of the integer division, separated by a space
+
+Input/output operations:
+- Read a single line of input containing two integers separated by whitespace
+- Output two integers: the smaller of the two input integers followed by half the absolute difference between the two integers
+
+Data processing logic:
+- Determine the smaller of the two input integers
+- Calculate the absolute difference between the two integers
+- Find half of the absolute difference
+- Output the results in the specified format
+
+Libraries, modules, or dependencies:
+- No specific imports required, uses built-in functions and types

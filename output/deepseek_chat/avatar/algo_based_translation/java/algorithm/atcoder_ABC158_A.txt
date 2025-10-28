@@ -1,0 +1,45 @@
+{
+  "algorithm": {
+    "name": "atcoder_ABC158_A",
+    "main_method": {
+      "signature": "public static void main(String[] args)",
+      "input_operations": [
+        "InputStream inputStream = System.in",
+        "Scanner in = new Scanner(inputStream)"
+      ],
+      "output_operations": [
+        "OutputStream outputStream = System.out",
+        "PrintWriter out = new PrintWriter(outputStream)"
+      ],
+      "execution_flow": [
+        "Create AStationAndBus solver instance",
+        "Call solver.solve(1, in, out)",
+        "Close PrintWriter out"
+      ]
+    },
+    "nested_class": {
+      "name": "AStationAndBus",
+      "method": {
+        "signature": "public void solve(int testNumber, Scanner in, PrintWriter out)",
+        "variable_declarations": [
+          "String s = in.next()"
+        ],
+        "control_structures": [
+          {
+            "type": "conditional",
+            "condition": "s.contains(\"A\") && s.contains(\"B\")",
+            "true_branch": "out.println(\"Yes\")",
+            "false_branch": "out.println(\"No\")"
+          }
+        ]
+      }
+    },
+    "dependencies": [
+      "java.io.OutputStream",
+      "java.io.IOException",
+      "java.io.InputStream",
+      "java.io.PrintWriter",
+      "java.util.Scanner"
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+Function signatures:
+- `__init__(self, N):` where `N` is an integer
+- `_bitsum(self, i):` where `i` is an integer, returns an integer
+- `bitsum(self, l, r=None):` where `l` and `r` are integers, `r` is optional, returns an integer
+- `bitadd(self, i, x):` where `i` and `x` are integers, no return value
+- `check(X):` where `X` is an integer, returns a boolean
+
+Variable declarations and data types:
+- `self.size` as integer
+- `self.tree` as list of integers
+- `self.depth` as integer
+- `ret` as integer
+- `n` as integer
+- `m` as integer
+- `a` as list of integers
+- `d` as dictionary with integer keys and integer values
+- `_a` as list of integers
+- `i` as integer
+- `x` as integer
+- `b` as list of integers
+- `c` as integer
+- `bit` as instance of `BIT`
+- `ans` as integer
+- `X` as integer
+- `t` as list of integers
+
+Logic flow:
+1. Initialize `BIT` class with size `N`
+2. Define `_bitsum` to calculate the prefix sum up to index `i` using Fenwick Tree (Binary Indexed Tree)
+3. Define `bitsum` to calculate the sum in range `[l, r]` or up to `l` if `r` is not provided
+4. Define `bitadd` to add value `x` to index `i` in Fenwick Tree
+5. Read integer `n` from input
+6. Calculate `m` as `n * (n + 1) // 4`
+7. Read list `a` of integers from input
+8. Create dictionary `d` mapping unique values in `a` and `0` to their respective indices
+9. Transform `a` to use the indices from `d`
+10. Define `check(X)` to determine if there are at least `m` subarrays in `a` with sum at least `X`
+    - Initialize `b` with `0` and transformed values of `a` where each value is `2` if greater than or equal to `X`, `-1` otherwise
+    - Calculate prefix sums for `b`
+    - Adjust `b` by subtracting the minimum value
+    - Initialize `BIT` with size `max(b) + 2`
+    - Initialize `ans` to `0`
+    - For each value `x` in `b`, add to `ans` the number of elements in `BIT` less than `x + 1`, then add `1` to index `x` in `BIT`
+    - Return `True` if `ans` is at least `m`, `False` otherwise
+11. Initialize `t` with `len(_a)` and `0`
+12. While `t[0] - t[1] > 1`, calculate `mid` as `(t[0] + t[1]) // 2`
+    - If `check(mid)` is `True`, set `t[0]` to `mid`
+    - Otherwise, set `t[1]` to `mid`
+13. Print `_a[t[1]]`
+
+Input/output operations:
+- Read integer `n` from input
+- Read list `a` of integers from input
+- Print the value from `_a` corresponding to the final index `t[1]`
+
+Data processing logic:
+- Use Fenwick Tree for efficient prefix sum and range sum queries
+- Use binary search on the values in `a` to find the maximum `X` such that there are at least `m` subarrays with sum at least `X`
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required

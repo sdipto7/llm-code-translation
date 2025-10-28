@@ -1,0 +1,47 @@
+**Function Signature:**
+- No explicit function defined; main script execution
+
+**Variables:**
+- `inp: int` - first input integer
+- `lista: List[int]` - list of integers from second input
+
+**Input Operations:**
+1. Read integer `inp` from stdin
+2. Read space-separated integers into `lista`
+
+**Algorithm Flow:**
+1. For each index `i` in range(0, len(lista)):
+   - If `i == 0` (first element):
+     - Print: `(lista[1] - lista[0]) (lista[-1] - lista[0])`
+     - Continue to next iteration
+   - Else if `i == len(lista)-1` (last element):
+     - Print: `(lista[-1] - lista[-2]) (lista[-1] - lista[0])`
+     - Continue to next iteration
+   - Else (middle elements):
+     - If `(lista[i] - lista[i-1]) > (lista[i+1] - lista[i])`:
+       - Print `(lista[i+1] - lista[i])` with space separator
+     - Else:
+       - Print `(lista[i] - lista[i-1])` with space separator
+     - If `(lista[-1] - lista[i]) > (lista[i] - lista[0])`:
+       - Print `(lista[-1] - lista[i])` with newline
+     - Else:
+       - Print `(lista[i] - lista[0])` with newline
+
+**Control Structures:**
+- For loop: `for i in range(len(lista))`
+- Conditional branches: `if i == 0`, `elif i == len(lista)-1`, `elif`, `else`
+- Comparison operations: `>`, `==`
+- Continue statements for special cases
+
+**Data Processing:**
+- List comprehension for integer conversion
+- Arithmetic operations: subtraction between list elements
+- Index-based element access
+
+**Output Operations:**
+- Formatted string output for first/last elements
+- Space-separated and newline-terminated output for middle elements
+
+**Dependencies:**
+- Built-in functions: `input()`, `print()`, `int()`, `split()`
+- No external libraries required

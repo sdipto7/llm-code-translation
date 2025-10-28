@@ -1,0 +1,16 @@
+Function signature: main() with no parameters and no return type
+
+Variable declarations and data types:
+- N: integer
+- x: integer
+- N_list: list of integers
+- n: list of tuples of integers
+- m: integer
+
+Logic flow in execution order:
+1. Read an integer value from input and assign it to N
+2. Initialize x with value 1
+3. Create a list N_list containing integers from 2 to N+1 using list comprehension
+4. Generate all possible combinations of length 3 from N_list and store them in list n using product function from itertools module
+5. Calculate the length of list n and assign it to m
+6. Print the value of m

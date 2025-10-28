@@ -1,0 +1,37 @@
+Function signature:
+- `main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner in`
+- `String word`
+- `int uppercase`
+- `int lowercase`
+- `int i`
+- `char ch`
+
+Logic flow and control structures:
+1. Initialize `Scanner in` to read input.
+2. Read a `String word` from input.
+3. Initialize `uppercase` to 0.
+4. Initialize `lowercase` to 0.
+5. For `i` from 0 to `word.length() - 1`:
+   - Set `ch` to `word.charAt(i)`.
+   - If `Character.isUpperCase(ch)`:
+     - Increment `uppercase` by 1.
+   - Else:
+     - Increment `lowercase` by 1.
+6. If `uppercase > lowercase`:
+   - Print `word.toUpperCase()`.
+7. Else if `lowercase > uppercase`:
+   - Print `word.toLowerCase()`.
+8. Else:
+   - Print `word.toLowerCase()`.
+
+Input/output operations and data processing logic:
+- Read a single word from standard input.
+- Count the number of uppercase and lowercase letters in the word.
+- Compare the counts of uppercase and lowercase letters.
+- Print the word in uppercase if there are more uppercase letters, otherwise print in lowercase.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

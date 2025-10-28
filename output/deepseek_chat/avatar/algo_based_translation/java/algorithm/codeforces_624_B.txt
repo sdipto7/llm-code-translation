@@ -1,0 +1,30 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner in`: Scanner object for input
+- `int n`: integer input
+- `Long[] ans`: array of Long with size n
+- `Long count`: Long value
+
+**Libraries/Dependencies:**
+- `java.util.Arrays`
+- `java.util.Scanner`
+
+**Algorithm:**
+1. Create Scanner object for reading input
+2. Read integer n from input
+3. Initialize Long array ans of size n
+4. For i from 0 to n-1:
+   - Read next long value into ans[i]
+5. Sort ans array in ascending order
+6. Initialize count with last element of ans (ans[n-1])
+7. For i from n-2 down to 0:
+   - If ans[i] < ans[i+1]:
+     - Add ans[i] to count
+   - Else:
+     - While ans[i] >= ans[i+1]:
+       - Decrement ans[i] by 1
+     - If ans[i] > 0:
+       - Add ans[i] to count
+8. Print count

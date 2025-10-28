@@ -1,0 +1,30 @@
+```
+Function: main()
+    Call run()
+
+Function: run()
+    Declare constant MOD as long with value 1000000007
+    Create Scanner object sc for standard input
+    Read a string from input and convert to character array cs
+    Initialize a 2D array dp of type long with dimensions [cs.length][13]
+    Initialize integer base to 1
+    For integer i from 0 to cs.length - 1, inclusive:
+        If character cs[cs.length - 1 - i] is '?':
+            For integer pre from 0 to 12, inclusive:
+                For integer next from 0 to 9, inclusive:
+                    Update dp[i][(base * next + pre) % 13] by adding 
+                    (if i > 0 then dp[i - 1][pre] else (if pre == 0 then 1 else 0))
+                    Take modulo MOD after addition
+        Else:
+            Calculate integer next as cs[cs.length - 1 - i] - '0'
+            For integer pre from 0 to 12, inclusive:
+                Update dp[i][(base * next + pre) % 13] by adding
+                (if i > 0 then dp[i - 1][pre] else (if pre == 0 then 1 else 0))
+                Take modulo MOD after addition
+        Update base as (base * 10) modulo 13
+    Print dp[dp.length - 1][5]
+
+Required Libraries:
+    java.util.Scanner
+    java.util.Arrays
+```

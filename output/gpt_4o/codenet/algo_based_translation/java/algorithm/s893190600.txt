@@ -1,0 +1,92 @@
+1. **Function Signature:**
+   - `void main(String[] args)`
+
+2. **Variable Declarations:**
+   - `InputStream inputStream` of type `InputStream`
+   - `OutputStream outputStream` of type `OutputStream`
+   - `MyInput in` of type `MyInput`
+   - `PrintWriter out` of type `PrintWriter`
+   - `Solver solver` of type `Solver`
+
+3. **Logic Flow:**
+   - Initialize `inputStream` as `System.in`
+   - Initialize `outputStream` as `System.out`
+   - Initialize `in` with `inputStream`
+   - Initialize `out` with `outputStream`
+   - Instantiate `solver` with `in` and `out`
+   - Invoke `solver.solve()`
+   - Close `out`
+
+4. **Function Signature:**
+   - `void solve()`
+
+5. **Variable Declarations:**
+   - `int H`
+   - `int W`
+   - `char[][] C`
+   - `char[] c`
+
+6. **Logic Flow:**
+   - Read integer `H` using `ni()`
+   - Read integer `W` using `ni()`
+   - Initialize `C` as a 2D array of size `[H+2][W+2]`
+   - Loop `i` from `0` to `H-1`:
+     - Assign `c` the character array of `ns()`
+     - Loop `j` from `0` to `W-1`:
+       - Assign `C[i+1][j+1]` with `c[j]`
+   - If `H == 1` and `W == 1`, print `"No"` and return
+   - Loop `i` from `1` to `H`:
+     - Loop `j` from `1` to `W`:
+       - If `C[i][j] == '#'` and none of `C[i-1][j]`, `C[i+1][j]`, `C[i][j-1]`, `C[i][j+1]` are `'#'`:
+         - Print `"No"` and return
+   - Print `"Yes"`
+
+7. **Function Signature:**
+   - `void prn(String s)`
+
+8. **Logic Flow:**
+   - Print `s` using `out`
+
+9. **Function Signature:**
+   - `void prn(int i)`
+
+10. **Logic Flow:**
+    - Print `i` using `out`
+
+11. **Function Signature:**
+    - `void prn(long i)`
+
+12. **Logic Flow:**
+    - Print `i` using `out`
+
+13. **Function Signature:**
+    - `int ni()`
+
+14. **Logic Flow:**
+    - Return the next integer from input using `in.nextInt()`
+
+15. **Function Signature:**
+    - `long nl()`
+
+16. **Logic Flow:**
+    - Return the next long from input using `in.nextLong()`
+
+17. **Function Signature:**
+    - `double nd()`
+
+18. **Logic Flow:**
+    - Return the next double from input using `in.nextDouble()`
+
+19. **Function Signature:**
+    - `String ns()`
+
+20. **Logic Flow:**
+    - Return the next string from input using `in.nextString()`
+
+21. **Input/Output Operations:**
+    - Uses `System.in` for input and `System.out` for output
+    - Utilizes `BufferedReader` and `PrintWriter` for efficient reading and writing
+
+22. **Required Libraries:**
+    - `java.io.*`
+    - `java.util.*`

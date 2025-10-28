@@ -1,0 +1,52 @@
+Function signatures:
+- main(String[] args): void
+
+Variable declarations and data types:
+- Scanner sc: for input reading
+- int n: number of elements in the array
+- int k: number of queries
+- int[] arr: array to store input numbers
+- StringBuffer res: to accumulate results
+- int o: count of odd numbers in arr
+- int e: count of even numbers in arr
+- int l: left index of each query
+- int r: right index of each query
+
+Logic flow in execution order:
+1. Initialize Scanner object for input reading
+2. Read n and k from input
+3. Initialize array arr of size n
+4. Read n integers from input into arr
+5. Initialize StringBuffer res to accumulate results
+6. Initialize counters o and e to zero
+7. Loop through arr to count odd and even numbers:
+   - If arr[i] == 1, increment o
+   - Else, increment e
+8. Loop k times for each query:
+   - Read l and r for each query
+   - If (r - l + 1) % 2 == 1:
+     - Append "0\n" to res
+   - Else:
+     - If (r - l + 1) / 2 <= o and (r - l + 1) / 2 <= e:
+       - Append "1\n" to res
+     - Else:
+       - Append "0\n" to res
+9. Print res
+10. Close Scanner object
+
+Control structures:
+- For loop to read array elements
+- For loop to process each query
+- If-else conditions to determine the result for each query
+
+Input/output operations and data processing logic:
+- Read integers from input using Scanner
+- Store integers in array arr
+- Count odd and even numbers in arr
+- For each query, determine if the subarray can be split into two equal parts with equal counts of odd and even numbers
+- Accumulate results in StringBuffer res
+- Print final results
+
+Required libraries, modules, or dependencies:
+- java.io.IOException
+- java.util.Scanner

@@ -1,0 +1,19 @@
+```
+Algorithm count_distinct_adjacent_segments:
+    Input: 
+        N (integer) - the number of characters in the string S
+        S (string) - the string of length N consisting of characters
+    
+    Output:
+        integer - the count of distinct adjacent segments in the string S
+    
+    Variables:
+        x (integer) - initialized to 1, to count distinct segments
+    
+    Execution:
+        Set x to 1
+        For i from 0 to N-2, do:
+            If S[i] is not equal to S[i+1], then:
+                Increment x by 1
+        Return x
+```

@@ -1,0 +1,5 @@
+Read integer input from standard input and store in variable n of type int
+If n is greater than or equal to 1000:
+    Print string 'ABD' to standard output
+Else:
+    Print string 'ABC' to standard output

@@ -1,0 +1,111 @@
+```
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.InputStreamReader
+import java.util.StringTokenizer
+
+class Main:
+    colorMtr: list[list[str]]
+    h: int
+    w: int
+    k: int
+
+    def main(args: list[str]) -> None:
+        mainObj = Main()
+        mainObj.solve()
+
+    def solve(self) -> None:
+        fs = FastScanner()
+        
+        self.h = fs.nextInt()
+        self.w = fs.nextInt()
+        self.k = fs.nextInt()
+
+        self.colorMtr = [None] * self.h
+        for i in range(self.h):
+            self.colorMtr[i] = list(fs.next())
+
+        hPattern = self.pow(2, self.h)
+        wPattern = self.pow(2, self.w)
+
+        ans = 0
+
+        for i in range(hPattern):
+            for j in range(wPattern):
+                if self.judge(i, j):
+                    ans += 1
+
+        print(ans)
+
+    def judge(self, hPattern: int, wPattern: int) -> bool:
+        hBitArr = [0] * self.h
+        wBitArr = [0] * self.w
+
+        for i in range(self.h):
+            if ((hPattern >> i) & 1) == 1:
+                hBitArr[i] = 1
+
+        for i in range(self.w):
+            if ((wPattern >> i) & 1) == 1:
+                wBitArr[i] = 1
+
+        black = 0
+
+        for i in range(self.h):
+            for j in range(self.w):
+                if hBitArr[i] == 1 or wBitArr[j] == 1:
+                    continue
+
+                if self.colorMtr[i][j] == "#":
+                    black += 1
+
+        return black == self.k
+
+    def pow(self, base: int, n: int) -> int:
+        retVal = 1
+        while n > 0:
+            if (n & 1) == 1:
+                retVal *= base
+            n >>= 1
+            base *= base
+        return retVal
+
+class FastScanner:
+    reader: BufferedReader
+    st: StringTokenizer
+
+    def __init__(self) -> None:
+        self.st = None
+        self.reader = BufferedReader(InputStreamReader(System.in))
+
+    def next(self) -> str:
+        if self.st is None or not self.st.hasMoreElements():
+            self.st = StringTokenizer(self.reader.readLine())
+        return self.st.nextToken()
+
+    def nextLine(self) -> str:
+        self.st = None
+        readLine = self.reader.readLine()
+        return readLine
+
+    def nextInt(self) -> int:
+        return int(self.next())
+
+    def nextLong(self) -> int:
+        return int(self.next())
+
+    def nextIntArr(self, n: int) -> list[int]:
+        retArr = [0] * n
+        for i in range(n):
+            retArr[i] = self.nextInt()
+        return retArr
+
+    def nextLongArr(self, n: int) -> list[int]:
+        retArr = [0] * n
+        for i in range(n):
+            retArr[i] = self.nextLong()
+        return retArr
+
+    def close(self) -> None:
+        self.reader.close()
+```

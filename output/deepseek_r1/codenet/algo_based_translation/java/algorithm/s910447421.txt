@@ -1,0 +1,71 @@
+**Function Signatures:**
+- `main(String[] args)`: void
+- `solve()`: void
+- `check(int p, int q)`: int
+- `min(double a, double b)`: double
+- `min(long a, long b)`: long
+- `min(int a, int b)`: int
+- `max(long a, long b)`: long
+- `max(int a, int b)`: int
+- `abs(long x)`: long
+- `ceil(long num, long den)`: long
+- `GCD(long a, long b)`: long
+- `FastExp(long base, long exp, long mod)`: long
+- `ModInv(long num,long mod)`: long
+- `pop(long x)`: int
+
+**Variables:**
+- `static int ans`
+- `static int[][] balls`
+- `static int N`
+- `static boolean[] taken`
+- `FastScanner I` (input handler)
+- `OutPut O` (output handler)
+
+**Initialization Flow:**
+1. Read integer N from input
+2. Initialize `ans` to N
+3. Create `balls[N][2]` array and populate with N pairs of integers from input
+4. Sort `balls` array by first element (x-coordinate) in ascending order
+5. Call `solve()`
+6. Swap x/y coordinates for all elements in `balls`
+7. Re-sort `balls` array by new x-coordinate
+8. Call `solve()` again
+9. Print final `ans`
+
+**solve() Logic:**
+- Iterate `add` from 1 to N-1:
+  1. Initialize new `taken` boolean array of size N
+  2. Calculate p = balls[add][0] - balls[0][0]
+  3. Calculate q = balls[add][1] - balls[0][1]
+  4. Update `ans` with minimum between current `ans` and `check(p,q)`
+
+**check(p,q) Logic:**
+1. Initialize `ret` = 0
+2. While true:
+   - Set `added` flag to false
+   - Find first untaken ball (via `taken` array):
+     - Mark as taken
+     - Increment `ret`
+     - Set start index
+     - Calculate target coordinates (x = ball[start][0] + p, y = ball[start][1] + q)
+   - If no balls added, break loop
+   - Iterate through remaining balls from start+1:
+     - If ball matches target coordinates:
+       - Mark as taken
+       - Update target coordinates by adding p and q
+3. Return `ret`
+
+**Helper Functions:**
+- Mathematical utilities for min/max/abs
+- GCD calculation via Euclidean algorithm
+- Fast modular exponentiation
+- Population count for binary 1s
+
+**I/O Operations:**
+- Input handled through custom FastScanner class with tokenization
+- Output handled through OutPut class with print/println methods
+
+**Dependencies:**
+- Java IO classes: BufferedReader, InputStreamReader, PrintWriter, StringTokenizer
+- Java utilities: Arrays, Math

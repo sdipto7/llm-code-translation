@@ -1,0 +1,42 @@
+**Function Signatures:**
+- `void solve()`: No parameters, no return value.
+
+**Variables:**
+- `x` (int) 
+- `t` (int)
+- `a` (int)
+- `b` (int)
+- `da` (int)
+- `db` (int)
+- `first` (int)
+- `second` (int)
+- `ok` (boolean, initialized to false)
+
+**Input Operations:**
+- Read `x`, `t`, `a`, `b`, `da`, `db` from standard input via `nextInt()`.
+
+**Logic Flow:**
+1. Iterate `i` from `0` to `t-1` (inclusive):
+   - Calculate `first = a - (da * i)`
+   - Iterate `j` from `0` to `t-1` (inclusive):
+     - Calculate `second = b - (db * j)`
+     - Check if any condition is true:
+       - `(first + second == x)`
+       - `(second == x)`
+       - `(first == x)`
+       - `(x == 0)`
+     - If true: set `ok = true`, break inner loop.
+2. After all iterations, print "YES" if `ok` is true, else print "NO".
+
+**Output Operations:**
+- Write result ("YES" or "NO") to standard output via `PrintWriter`.
+
+**Control Structures:**
+- Nested `for` loops:
+  - Outer loop: `for (i = 0; i < t; i++)`
+  - Inner loop: `for (j = 0; j < t; j++)`
+- Conditional block with compound OR condition inside inner loop.
+
+**Dependencies:**
+- `java.io.*` (for `BufferedReader`, `InputStreamReader`, `PrintWriter`, `IOException`)
+- `java.util.*` (for `StringTokenizer`)

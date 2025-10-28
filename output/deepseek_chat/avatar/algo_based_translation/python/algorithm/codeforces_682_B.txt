@@ -1,0 +1,10 @@
+import sys
+n: int = int(input())
+l: list[int] = list(map(int, sys.stdin.readline().split()))
+f: int = 1
+l.sort()
+c: int = 0
+for i in l:
+    if i > c:
+        c += 1
+print(c + 1)

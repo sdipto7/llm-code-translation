@@ -1,0 +1,6 @@
+1. Generate a string by concatenating numbers from 1 to 1000.
+2. Convert the generated string into a character array.
+3. Read an integer input from the user.
+4. Use the input integer to index into the character array.
+5. Adjust the index by subtracting 1 from the input integer.
+6. Output the character at the adjusted index.

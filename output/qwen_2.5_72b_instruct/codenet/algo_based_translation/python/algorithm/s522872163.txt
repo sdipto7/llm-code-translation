@@ -1,0 +1,22 @@
+Function signature: `main() -> None`
+
+Variable declarations and data types:
+- `X: int`
+- `A: int`
+
+Logic flow in execution order:
+1. Read input values and split them into two parts.
+2. Convert the split string values to integers and assign them to variables `X` and `A`.
+3. Check if `X` is less than `A`.
+   - If true, print `0`.
+   - Otherwise, print `10`.
+
+Control structures:
+- Conditional: `if X < A`
+
+Input/output operations and data processing logic:
+- Input: Read a single line of input containing two space-separated integers.
+- Output: Print either `0` or `10` based on the comparison of `X` and `A`.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules required.

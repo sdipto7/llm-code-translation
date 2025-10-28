@@ -1,0 +1,19 @@
+1. Define a function `main` with no parameters and no return type.
+2. Declare a variable `br` of type `BufferedReader` and initialize it with `new BufferedReader(new InputStreamReader(System.in))`.
+3. Declare an integer variable `n` and assign it the result of parsing the first line read from `br` to an integer.
+4. Declare a string array `str` and assign it the result of splitting the second line read from `br` by spaces.
+5. Declare an integer array `s` of size 100010 and initialize all elements to 0.
+6. Iterate from `i = 0` to `n-1`:
+   - Parse `str[i]` to an integer `x`.
+   - Increment `s[x]` by 1.
+7. Iterate from `i = 0` to `s.length-1`:
+   - If `s[i]` is not equal to 0:
+     - If `s[i]` is even, set `s[i]` to 2.
+     - Otherwise, set `s[i]` to 1.
+8. Declare two integer variables `one` and `two` and initialize them to 0.
+9. Iterate from `i = 0` to `s.length-1`:
+   - If `s[i]` equals 2, increment `two` by 1.
+   - If `s[i]` equals 1, increment `one` by 1.
+10. If `two` is odd, decrement `one` by 1.
+11. Output the sum of `two` and `one` to the console.
+12. Required libraries: `java.io.BufferedReader`, `java.io.IOException`, `java.io.InputStreamReader`.

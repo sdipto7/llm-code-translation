@@ -1,0 +1,32 @@
+```
+Algorithm Main
+    Input: None
+    Output: Integer
+
+    Declare Scanner stdIn as new Scanner(System.in)
+    
+    Declare Integer n
+    Set n as stdIn.nextInt()
+
+    Declare Integer m
+    Set m as stdIn.nextInt()
+
+    Declare Array Integer dp with size n + 2
+    Set dp[n + 1] to 0
+    Set dp[n] to 1
+
+    For Integer i from 0 to m - 1 do
+        Set dp[stdIn.nextInt()] to -1
+    End For
+
+    For Integer i from n - 1 down to 0 do
+        If dp[i] equals -1 then
+            Set dp[i] to 0
+        Else
+            Set dp[i] to (dp[i + 1] + dp[i + 2]) modulo 1000000007
+        End If
+    End For
+
+    Output dp[0]
+End Algorithm
+```

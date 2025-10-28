@@ -1,0 +1,27 @@
+```
+Function: main
+Parameters: None
+Return Type: void
+
+1. Import the required library: java.util.Scanner
+
+2. Declare an object 'sc' of type Scanner initialized with System.in for reading input.
+
+3. Read an integer from input and store it in variable 'h1' (data type: int).
+
+4. Read an integer from input and store it in variable 'm1' (data type: int).
+
+5. Read an integer from input and store it in variable 'h2' (data type: int).
+
+6. Read an integer from input and store it in variable 'm2' (data type: int).
+
+7. Read an integer from input and store it in variable 'k' (data type: int).
+
+8. Calculate 't1' as the sum of 'h1' multiplied by 60 and 'm1'. Store the result in 't1' (data type: int).
+
+9. Calculate 't2' as the sum of 'h2' multiplied by 60 and 'm2'. Store the result in 't2' (data type: int).
+
+10. Calculate the result as 't2' minus 't1' minus 'k'.
+
+11. Output the result to the console.
+```

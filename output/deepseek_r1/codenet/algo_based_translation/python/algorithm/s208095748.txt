@@ -1,0 +1,31 @@
+**Function Signature:**
+function calculate_result(A: int, B: int, C: int) -> int
+
+**Variables:**
+- A: integer (input)
+- B: integer (input)
+- C: integer (input)
+- result: integer (computed value)
+
+**Algorithm Logic:**
+1. Read three space-separated integers from standard input and assign them to A, B, C
+2. If B < C:
+   1. Set result = 0
+3. Else if (A * C) < B:
+   1. Set result = C
+4. Else:
+   1. Set result = B // A (integer division)
+5. Output result to standard output
+
+**Control Structures:**
+- Single conditional block:
+  1. if B < C: (exact condition)
+  2. elif (A * C) < B: (exact condition)
+  3. else: (default case)
+
+**Input/Output Operations:**
+- Input: Read from stdin via input().split()
+- Output: Print result using print()
+
+**Dependencies:**
+- None required beyond standard input/output handling

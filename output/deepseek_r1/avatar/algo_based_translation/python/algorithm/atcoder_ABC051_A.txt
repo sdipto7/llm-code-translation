@@ -1,0 +1,35 @@
+ALGORITHM SPECIFICATION:
+
+FUNCTIONS:
+1. main()
+   - Parameters: none
+   - Return type: void
+   - Variables:
+     - input_str: string (implicit from input())
+     - processed_str: string (implicit from replace())
+
+STEPS:
+1. Input Operation:
+   1.1 Read line from standard input via input() -> input_str
+
+2. Data Processing:
+   2.1 Call replace(',', ' ') on input_str -> processed_str
+
+3. Output Operation:
+   3.1 Print processed_str via print()
+
+CONTROL FLOW:
+- Linear execution with no loops or conditional branches
+
+INPUT/OUTPUT:
+- Input: Single string from stdin (may contain commas)
+- Output: Single string to stdout with commas replaced by spaces
+
+ERROR HANDLING:
+- None explicitly implemented (assumes valid string input)
+
+EXTERNAL DEPENDENCIES:
+- Relies on Python built-in functions:
+  - input()
+  - str.replace()
+  - print()

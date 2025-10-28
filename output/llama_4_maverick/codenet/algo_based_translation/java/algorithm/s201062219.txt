@@ -1,0 +1,26 @@
+1. Import required libraries: java.io.IOException, java.util.Scanner
+2. Define a class: Main
+3. Define a function: main with parameter args of type String[] and return type void, throwing IOException
+4. Declare variables:
+   - scan of type Scanner
+   - mark of type String
+   - c, b, x of type int
+   - a of type int[] with size 100000
+5. Initialize scan with new Scanner(System.in)
+6. Enter a do-while loop with condition: true
+   - Read c from System.in using scan.nextInt()
+   - Read mark from System.in using scan.next()
+   - Read b from System.in using scan.nextInt()
+   - Check the value of mark:
+     - If mark equals "?", set a[x] to 2000001 and break the loop
+     - If mark equals "+", set a[x] to c + b
+     - If mark equals "-", set a[x] to c - b
+     - If mark equals "*", set a[x] to c * b
+     - If mark equals "/", set a[x] to c / b (integer division)
+   - Increment x
+7. Reset x to 0
+8. Enter a do-while loop with condition: true
+   - Check if a[x] equals 2000001, if so, break the loop
+   - Print a[x] to System.out using System.out.println()
+   - Increment x
+9. Close scan using scan.close()

@@ -1,0 +1,204 @@
+source_lang,target_lang,filename,error_type,error_details
+python,java,atcoder_ABC154_A.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC154_A.java:1: error: class, interface, enum, or record expected
+ Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx.==Arx极抱歉，您的输入似乎包含重复的内容，且无法理解您的具体需求。如果您需要将Python代码翻译成Java代码，请提供清晰的原始代码，我将为您精确翻译。以下是一个示例Python代码及其对应的Java翻译：
+ ^
+1 error
+only showing the first 1 errors, of 18 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_408_B.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/codeforces_408_B.java:1: error: class, interface, enum, or record expected
+ morbipocmigimport java.util.HashMap;
+ ^
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_AGC037_E.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_AGC037_E.java:18: error: incompatible types: possible lossy conversion from int to char
+            char minChar = S.chars().min().getAsInt();
+                                                   ^
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC118_C.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC118_C.java:15: error: cannot find symbol
+                          .reduce(Main::gcd)
+                                  ^
+  symbol:   variable Main
+  location: class atcoder_ABC118_C
+1 error
+"
+python,java,atcoder_ABC178_A.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC178_A.java:1: error: class, interface, enum, or record expected
+itoreimport java.util.Scanner;
+^
+1 error
+"
+python,java,atcoder_ABC114_C.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC114_C.java:1: error: illegal character: '#'
+# Python code
+^
+1 error
+only showing the first 1 errors, of 5 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC147_D.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC147_D.java:12: error: local variables referenced from a lambda expression must be final or effectively final
+            long bs = Arrays.stream(A).map(x -> (x >> b) & 1).sum();
+                                                      ^
+1 error
+"
+python,java,codeforces_397_B.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/codeforces_397_B.java:1: error: illegal character: '#'
+## Understanding the Python Code
+^
+1 error
+only showing the first 1 errors, of 94 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_AGC034_B.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_AGC034_B.java:1: error: class, interface, enum, or record expected
+jat code that corresponds to the provided Python code:
+^
+1 error
+"
+python,java,atcoder_ABC119_B.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC119_B.java:12: error: unreported exception ScriptException; must be caught or declared to be thrown
+            sum += Double.parseDouble(String.valueOf(new javax.script.ScriptEngineManager().getEngineByName(""JavaScript"").eval(input)));
+                                                                                                                              ^
+1 error
+"
+python,java,codeforces_567_A.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/codeforces_567_A.java:25: error: reached end of file while parsing
+                System.out.println(arr[arr.length
+                                                 ^
+1 error
+"
+python,java,atcoder_ABC143_D.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC143_D.java:1: error: class, interface, enum, or record expected
+র্গHere is the corresponding Java code for the provided Python code:
+^
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_400_A.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/codeforces_400_A.java:1: error: class, interface, enum, or record expected
+cousinspection and the program operation, it's essential to understand that the code is designed to process a sequence of operations based on the presence of 'O' and another character in a given string, and then determine the number of valid configurations that satisfy specific conditions. Below is the translated Java code that maintains the logic of the original Python code:
+^
+1 error
+only showing the first 1 errors, of 3 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_AGC005_B.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_AGC005_B.java:1: error: class, interface, enum, or record expected
+Certainly! Here is the corresponding Java code for the provided Python code:
+^
+1 error
+"
+python,java,codeforces_302_A.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/codeforces_302_A.java:1: error: class, interface, enum, or record expected
+**Java Code:**
+^
+1 error
+"
+python,java,codeforces_651_A.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/codeforces_651_A.java:1: error: illegal character: '#'
+## 1. First, let's break down the Python code piece by piece to understand what it's doing.
+^
+1 error
+only showing the first 1 errors, of 116 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC152_C.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC152_C.java:1: error: illegal character: '#'
+## 1. Understanding the Python Code
+^
+1 error
+only showing the first 1 errors, of 227 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC143_A.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC143_A.java:1: error: illegal character: '#'
+## 1. Python 코드 분석
+^
+1 error
+only showing the first 1 errors, of 41 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_678_B.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/codeforces_678_B.java:1: error: reached end of file while parsing
+宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰宰
+^
+1 error
+"
+python,java,atcoder_ABC133_E.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC133_E.java:1: error: class, interface, enum, or record expected
+狼import java.util.*;
+^
+1 error
+only showing the first 1 errors, of 2 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_624_B.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/codeforces_624_B.java:1: error: class, interface, enum, or record expected
+ami tumi1. `import sys` - This line imports the `sys` module in Python, which provides access to some variables used or maintained by the Python interpreter and to functions that interact strongly with the interpreter.
+^
+1 error
+only showing the first 1 errors, of 91 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC169_C.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC169_C.java:1: error: class, interface, enum, or record expected
+fmport java.util.*;
+^
+1 error
+"
+python,java,atcoder_ABC089_C.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC089_C.java:1: error: class, interface, enum, or record expected
+itumport java.util.*;
+^
+1 error
+only showing the first 1 errors, of 3 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_705_B.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/codeforces_705_B.java:1: error: illegal character: '#'
+## Understanding the Python Code
+^
+1 error
+only showing the first 1 errors, of 273 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC172_D.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC172_D.java:1: error: class, interface, enum, or record expected
+剔import java.util.Scanner;
+^
+1 error
+"
+python,java,atcoder_AGC019_A.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_AGC019_A.java:1: error: class, interface, enum, or record expected
+orkaTo translate the given Python code into Java, we need to ensure that the logic and functionality are preserved. Here is the corresponding Java code:
+^
+1 error
+only showing the first 1 errors, of 4 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_203_A.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/codeforces_203_A.java:1: error: class, interface, enum, or record expected
+Here is the corresponding Java code for the provided Python code:
+^
+1 error
+"
+python,java,atcoder_ABC168_B.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC168_B.java:1: error: illegal character: '#'
+# 1. **Understanding the Python Code:**
+^
+1 error
+only showing the first 1 errors, of 118 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC140_F.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC140_F.java:1: error: illegal character: '\uff1a'
+高大上的Java代码来啦：
+            ^
+1 error
+only showing the first 1 errors, of 5 total; use -Xmaxerrs if you would like to see more
+"
+python,java,atcoder_ABC169_D.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC169_D.java:1: error: illegal character: '\uff0c'
+逢来重兴，丁降临别，草草杯盘展登高。恨被莺呼起，且教伊、毕竟为谁相恼。未是断肠时，休认作、悲秋怀抱。奈楚客、淹留久，砧声带愁多少。归计依然杳。指严程、正恐后期蓬岛。容易鬓霜添，西风里、偏与羁人催老。输与菊花开彻，问何事、苦萦吟料。待举觞相劝，又怕隔年重到。
+    ^
+1 error
+only showing the first 1 errors, of 23 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_622_A.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/codeforces_622_A.java:1: error: class, interface, enum, or record expected
+-ui
+^
+1 error
+"
+python,java,atcoder_ABC043_B.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC043_B.java:1: error: illegal character: '#'
+## 理解代码
+^
+1 error
+only showing the first 1 errors, of 276 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_678_A.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/codeforces_678_A.java:1: error: illegal character: '\uff1a'
+对标Java代码为：
+         ^
+1 error
+"
+python,java,atcoder_ABC164_A.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC164_A.java:1: error: class, interface, enum, or record expected
+茨import java.util.Scanner;
+^
+1 error
+"
+python,java,atcoder_ABC110_C.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/atcoder_ABC110_C.java:1: error: class, interface, enum, or record expected
+hto import java.util.HashMap;
+^
+1 error
+only showing the first 1 errors, of 3 total; use -Xmaxerrs if you would like to see more
+"
+python,java,codeforces_106_B.java,Compilation Error,"Error: output/deepseek_chat/avatar/direct_translation/python/java/codeforces_106_B.java:1: error: illegal character: '#'
+### Understanding the Python Code
+^
+1 error
+only showing the first 1 errors, of 94 total; use -Xmaxerrs if you would like to see more
+"

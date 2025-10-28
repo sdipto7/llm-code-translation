@@ -1,0 +1,50 @@
+**Function Signature:**
+- No explicit function defined; main script execution
+
+**Variables and Data Types:**
+- strn: string (input from user)
+- n: integer (converted from strn)
+- shichigolist: list of strings ["3", "5", "7"]
+- shichigo: list of lists of strings (length equal to len(strn))
+- target: integer (len(strn)-1)
+- i, j, k: integer loop counters
+
+**Input Operations:**
+- Read input string from user and store in strn
+
+**Algorithm Logic:**
+1. Convert strn to integer n
+2. Initialize shichigolist with ["3", "5", "7"]
+3. Initialize shichigo as empty list of lists with length len(strn)
+4. For i from 0 to len(strn)-1:
+   - If i == 0:
+     - For each j in shichigolist:
+       - Append j to shichigo[0]
+   - Else:
+     - For each j in shichigo[i-1]:
+       - For each k in shichigolist:
+         - Append j+k to shichigo[i]
+5. Set target = len(strn)-1
+6. For i from 0 to len(strn)-1:
+   - For each j in copy of shichigo[i]:
+     - If i == target:
+       - If int(j) > n OR (j.count("3")==0 OR j.count("5")==0 OR j.count("7")==0):
+         - Remove j from shichigo[target]
+     - Else:
+       - If j.count("3")==0 OR j.count("5")==0 OR j.count("7")==0:
+         - Remove j from shichigo[i]
+7. Calculate sum of lengths of all lists in shichigo
+8. Print the sum
+
+**Output Operations:**
+- Print the sum of lengths of all valid shichigo lists
+
+**Control Structures:**
+- For loops with range(len(strn))
+- Nested for loops
+- If-else conditionals
+- List removal operations
+
+**Dependencies:**
+- Standard input/output operations
+- No external libraries required

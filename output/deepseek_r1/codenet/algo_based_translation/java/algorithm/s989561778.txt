@@ -1,0 +1,36 @@
+- Function signatures:
+  - `public static void main(String[] args) throws IOException`
+
+- Variable declarations:
+  - `Scanner sc = new Scanner(System.in)`
+  - `StringBuilder sb = new StringBuilder("")`
+  - `int a`
+  - `int b`
+  - `int digit`
+
+- Logic flow:
+  1. Initialize Scanner with standard input
+  2. Initialize empty StringBuilder
+  3. Enter loop while Scanner has next integer:
+      a. Read integer `a` from input
+      b. Read integer `b` from input
+      c. Calculate sum `a + b`
+      d. Compute digit count via `(int) Math.log10(sum) + 1`
+      e. Append digit count as string to StringBuilder
+      f. Append newline character to StringBuilder
+  4. After loop exits, print StringBuilder contents to standard output
+
+- Control structures:
+  - `while (sc.hasNextInt())` loop with indefinite iteration
+  - Implicit conditional for log10 calculation (handles sum=0 via input constraints)
+
+- Input/Output operations:
+  - Input: Sequential integer pairs via `Scanner.nextInt()`
+  - Output: String buffer containing digit counts with newline separators
+  - Processing: Mathematical calculation using base-10 logarithm
+
+- Required libraries:
+  - `java.io.IOException`
+  - `java.util.Scanner`
+  - `java.lang.StringBuilder`
+  - `java.lang.Math`

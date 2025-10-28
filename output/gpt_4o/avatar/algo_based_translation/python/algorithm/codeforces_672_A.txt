@@ -1,0 +1,44 @@
+Function Signature:
+- Function: `generate_number_sequence`
+  - Parameters: `n` (int)
+  - Returns: `int`
+
+Variable Declarations:
+- `li`: List[int] - an empty list to store the sequence
+- `ind`: int - initialized to 0 (not used further in the code)
+- `i`: int - loop variable for the range 1 to 370
+- `temp`: List[int] - temporary list for storing digits
+- `p`, `q`: int - variables used to hold the value of `i`
+- `count`: int - counter for the number of digits
+- `x`: int - used to hold individual digits of a number
+- `n`: int - user input indicating the position in the sequence
+
+Algorithm:
+1. Initialize `li` as an empty list.
+2. Set `ind` to 0 (unused).
+3. Loop `i` from 1 to 370 (inclusive):
+   - Initialize `temp` as an empty list.
+   - Set `p` and `q` to the current value of `i`.
+   - Initialize `count` to 0.
+   - While `p` is not 0:
+     - Integer divide `p` by 10.
+     - Increment `count` by 1.
+   - If `count` equals 1:
+     - Append `i` to `li`.
+   - If `count` equals 2:
+     - Initialize `temp` as an empty list.
+     - While `q` is not 0:
+       - Set `x` to `q` modulo 10.
+       - Integer divide `q` by 10.
+       - Append `x` to `temp`.
+     - Concatenate the reverse of `temp` to `li`.
+   - If `count` equals 3:
+     - Initialize `temp` as an empty list.
+     - While `q` is not 0:
+       - Set `x` to `q` modulo 10.
+       - Integer divide `q` by 10.
+       - Append `x` to `temp`.
+     - Concatenate the reverse of `temp` to `li`.
+4. Remove the last two elements from `li`.
+5. Read an integer input `n`.
+6. Return the `(n-1)`th element of `li`.

@@ -1,0 +1,18 @@
+Function signature: main() -> None
+
+Variable declarations:
+- n: int
+- res: float
+- x: str
+- u: str
+
+Logic flow:
+1. Read an integer input and assign it to n
+2. Initialize res to 0.0
+3. For _ in range(n):
+   a. Read a line of input, split it into two parts, and assign the first part to x and the second part to u
+   b. If u is equal to "BTC":
+      i. Convert x to float, multiply it by 380000, and add the result to res
+   c. Else:
+      i. Convert x to int and add it to res
+4. Print the value of res

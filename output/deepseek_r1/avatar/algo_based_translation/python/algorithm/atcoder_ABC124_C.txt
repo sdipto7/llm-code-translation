@@ -1,0 +1,39 @@
+**Structured Algorithm Specification:**
+
+**Function/Method Signatures:**
+- Procedure `main()`
+  - Input: None (reads from standard input)
+  - Output: Integer (writes to standard output)
+
+**Variables:**
+- `s`: List of characters (string converted to list)
+- `even`: Dictionary (Counter) with keys as characters (str), values as integer counts
+- `odd`: Dictionary (Counter) with keys as characters (str), values as integer counts
+
+**Input Operations:**
+1. Read input string from standard input, convert to list of characters `s`.
+
+**Data Processing:**
+2. Create `even` by counting occurrences of each character in `s[0::2]` (even indices).
+3. Create `odd` by counting occurrences of each character in `s[1::2]` (odd indices).
+
+**Logic Flow:**
+4. Calculate `flips_0_start`:
+   - Total flips = length of `s` - (`even["0"]` + `odd["1"]`)
+5. Calculate `flips_1_start`:
+   - Total flips = length of `s` - (`even["1"]` + `odd["0"]`)
+6. Compute `result` as minimum of `flips_0_start` and `flips_1_start`.
+
+**Output Operations:**
+7. Print `result` as integer to standard output.
+
+**Control Structures:**
+- Linear execution flow with no explicit loops or conditionals (implicit iteration via Counter construction).
+
+**Edge Case Handling:**
+- Implicitly handles empty input (returns 0 when `len(s) == 0`).
+- Defaults missing Counter keys to 0 via dictionary-like access.
+
+**External Dependencies:**
+- Requires a Counter/dictionary data structure for frequency counting.
+- Implicit dependency on list slicing and string/list conversion operations.

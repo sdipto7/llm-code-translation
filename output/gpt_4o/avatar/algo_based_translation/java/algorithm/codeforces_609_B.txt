@@ -1,0 +1,21 @@
+1. Import the Scanner class from the java.util package.
+2. Define the main function: `public static void main(String[] args)`
+   - Parameters: `String[] args` (array of strings)
+   - Return type: void
+3. Create a Scanner object `in` to read input from the standard input.
+4. Read two integers `n` and `m` from input using `in.nextInt()`.
+   - `n`: Number of books
+   - `m`: Number of genres
+5. Declare an integer array `arr` of size `n`.
+6. Declare an integer array `gen` of size 11 (assuming genres are numbered from 1 to 10).
+7. For loop to iterate over the range from 0 to `n-1` (inclusive):
+   - Read an integer from input and store it in `arr[i]`.
+   - Increment the count of genre `arr[i]` in the `gen` array.
+8. Declare a long integer `ans` and initialize it to 0.
+9. Nested for loop to iterate over the range from 1 to `m` (inclusive):
+   - Outer loop variable `i`
+   - Inner loop variable `k`
+10. Inside the nested loops, if condition to check if `i` is not equal to `k`:
+    - Multiply `gen[i]` by `gen[k]` and add the result to `ans`.
+11. After the loops, print the result `ans / 2` to standard output.
+12. End of main function.

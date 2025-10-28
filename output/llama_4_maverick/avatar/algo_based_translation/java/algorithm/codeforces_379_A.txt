@@ -1,0 +1,7 @@
+1. Read two integers from the input, a and b.
+2. Initialize a variable res to the value of a.
+3. Check if a is greater than or equal to b.
+4. If true, increment res by the integer division of a by b.
+5. Update a to be the sum of the integer division of a by b and the remainder of a divided by b.
+6. Repeat steps 3-5 until a is less than b.
+7. Output the value of res.

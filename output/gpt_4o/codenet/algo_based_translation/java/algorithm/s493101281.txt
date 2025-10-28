@@ -1,0 +1,44 @@
+```plaintext
+Algorithm:
+1. Define constants and imports:
+   - Import java.util.* and java.io.*
+   - Define MOD as a long with value 1000000007
+
+2. Main function:
+   - Define variables: Integer i, j, k, n, m, h, w, ans; long a, b, c, d, x, y, z
+   - Initialize n, m, h, w, ans, a, b, c, d, x, y, z to 0
+   - Create an ArrayList<Integer> l, ArrayList<String> s, ArrayList<Pair> p
+   - Initialize FastScanner sc and PrintWriter out
+
+3. Input and processing:
+   - Read an integer n from input using sc.nextInt()
+   - Loop from i = 0 to i < n:
+     - Append sc.nextInt() to list l
+   - Sort the list l using Collections.sort(l)
+   
+4. Output:
+   - Print the difference between the (n/2)th element and the (n/2-1)th element in list l
+
+5. Utility functions:
+   - Define static method print(Object o) to output o using System.out.println
+   - Define static method lcm(long m, long n) to return the least common multiple of m and n
+   - Define static method gcd(long m, long n) to return the greatest common divisor of m and n
+
+6. Pair class:
+   - Define private int key and value
+   - Constructor Pair(int key, int value) to initialize key and value
+   - Methods getKey() and getValue() to return key and value respectively
+
+7. FastScanner class:
+   - Define InputStream in as System.in
+   - Define byte[] buffer with size 1024
+   - Define int ptr and buflen initialized to 0
+   - Method hasNextByte() to check and read the next byte
+   - Method readByte() to return the next byte from buffer
+   - Method isPrintableChar(int c) to check if c is a printable character
+   - Method hasNext() to check for the next printable character
+   - Method next() to return the next String token
+   - Method nextLong() to return the next long value
+   - Method nextInt() to return the next int value by converting nextLong
+   - Method nextDouble() to parse and return the next double value
+```

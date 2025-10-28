@@ -1,0 +1,169 @@
+```
+- Import necessary libraries: java.io.*, java.util.*
+
+- Declare main class `Main`
+  - Declare static variables: 
+    - `PrintWriter pw`
+    - `Scanner sc`
+    - `ArrayList<Integer>[] adj`
+    - `boolean[] visit`
+    - `HashMap<Pair, Integer> dp`
+    - `HashMap<Integer, Integer> map`
+    - `int[] least`
+    - `TreeSet<Integer> prime`
+
+- Define method `ceildiv(long x, long y)`: returns long
+  - Return (x+y-1)/y
+
+- Define method `mod(long x, int m)`: returns int
+  - Return (int)((x%m+m)%m)
+
+- Define method `gcd(long x, long y)`: returns long
+  - Return y==0 ? x : gcd(y, x%y)
+
+- Define method `Int(boolean x)`: returns int
+  - Return x ? 1 : 0
+
+- Define method `put(TreeMap<Pair, Integer> map, Pair p)`
+  - If map contains key p, increment its value by 1
+  - Else, add p with value 1 to the map
+
+- Define method `rem(TreeMap<Pair, Integer> map, Pair p)`
+  - If map value at p is 1, remove p
+  - Else, decrement value of p by 1
+
+- Define `main(String[] args)`: throws Exception
+  - Initialize `sc` with `Scanner(System.in)`
+  - Initialize `pw` with `PrintWriter(System.out)`
+  - Read integer `n` from input
+  - Initialize `Integer[] arr` using `sc.nextsort(n)`
+  - Sort `arr` in reverse order
+  - If `n >= 3`:
+    - Initialize `TreeMap<Pair, Integer> map` with reverse order comparator
+    - Initialize `long ans` with `arr[0] + arr[1]`
+    - Add `Pair(arr[0], arr[1])` to map with value 1
+    - Create `Pair p1` with `(arr[2], arr[1])` and `Pair p2` with `(arr[2], arr[0])`
+    - Add `p1` and `p2` to map
+    - For `i` from 3 to `n-1`:
+      - Retrieve first key `p` from map
+      - Remove `p` from map
+      - Add `Math.min(p.x, p.y)` to `ans`
+      - Add new `Pair(p.x, arr[i])` and `Pair(p.y, arr[i])` to map
+    - Print `ans` using `pw`
+  - Else, print `arr[0]` using `pw`
+  - Close `pw`
+
+- Define method `fill(int[] arr, int x)`
+  - For `i` from 0 to 29:
+    - Increment `arr[i]` by `Int(((1<<i)&x)!=0)`
+
+- Define method `pow(long a, long pow)`: returns long
+  - Initialize `long ans` to 1
+  - While `pow > 0`:
+    - If `(pow & 1) == 1`, multiply `ans` by `a`
+    - Square `a`
+    - Right shift `pow` by 1
+  - Return `ans`
+
+- Define method `getpow(int x)`: returns int, throws Exception
+  - Initialize `int pow` to `x`
+  - Print "B " + pow and flush `pw`
+  - Read next token from `sc`
+  - Print "B " + pow and flush `pw`
+  - If `sc.nextInt() == 1`:
+    - Multiply `pow` by `x`
+    - While true:
+      - Print "B " + pow and flush `pw`
+      - If `sc.nextInt() == 0`, return `pow/x`
+      - Multiply `pow` by `x`
+  - Else, return 1
+
+- Define method `linearsieve(int x)`
+  - Initialize `least` with array of size `x+1`
+  - Initialize `prime` with empty `TreeSet<Integer>`
+  - For `i` from 2 to `x`:
+    - If `least[i] == 0`:
+      - Set `least[i]` to `i`
+      - Add `i` to `prime`
+    - For `y` in `prime`:
+      - If `i*y <= x`, set `least[i*y]` to `y`
+      - Else, break loop
+
+- Define method `printArr(int[] arr)`
+  - For `i` from 0 to `arr.length - 1`, print `arr[i]` followed by space
+  - Print `arr[arr.length - 1]`
+
+- Define method `printArr(long[] arr)`
+  - For `i` from 0 to `arr.length - 1`, print `arr[i]` followed by space
+  - Print `arr[arr.length - 1]`
+
+- Define method `printArr(Integer[] arr)`
+  - For `i` from 0 to `arr.length`, print `arr[i]` followed by space
+  - Print newline
+
+- Define method `printArr(char[] arr)`
+  - For `i` from 0 to `arr.length`, print `arr[i] == 0 ? '1' : arr[i]`
+  - Print newline
+
+- Define method `printArr(ArrayList<Integer> list)`
+  - For `i` from 0 to `list.size()`, print `list.get(i)` followed by space
+  - Print newline
+
+- Define class `Scanner`
+  - Declare fields `StringTokenizer st` and `BufferedReader br`
+  - Constructor `Scanner(InputStream s)`
+    - Initialize `br` with `BufferedReader(new InputStreamReader(s))`
+  - Constructor `Scanner(FileReader r)`
+    - Initialize `br` with `BufferedReader(r)`
+  - Define method `next()`: returns String, throws IOException
+    - While `st` is null or `!st.hasMoreTokens()`, initialize `st` with `StringTokenizer(br.readLine())`
+    - Return `st.nextToken()`
+  - Define method `nextInt()`: returns int, throws IOException
+    - Return `Integer.parseInt(next())`
+  - Define method `nextLong()`: returns long, throws IOException
+    - Return `Long.parseLong(next())`
+  - Define method `nextLine()`: returns String, throws IOException
+    - Return `br.readLine()`
+  - Define method `nextDouble()`: returns double, throws IOException
+    - Return `Double.parseDouble(next())`
+  - Define method `nextArr(int n)`: returns int[], throws IOException
+    - Initialize `int[] arr` of size `n`
+    - For `i` from 0 to `arr.length`, set `arr[i]` to `nextInt()`
+    - Return `arr`
+  - Define method `nextsort(int n)`: returns Integer[], throws IOException
+    - Initialize `Integer[] arr` of size `n`
+    - For `i` from 0 to `n`, set `arr[i]` to `nextInt()`
+    - Return `arr`
+  - Define method `nextPair()`: returns Pair, throws IOException
+    - Return new `Pair(nextInt(), nextInt())`
+  - Define method `nextPairArr(int n)`: returns Pair[], throws IOException
+    - Initialize `Pair[] arr` of size `n`
+    - For `i` from 0 to `n`, set `arr[i]` to `nextPair()`
+    - Return `arr`
+  - Define method `ready()`: returns boolean, throws IOException
+    - Return `br.ready()`
+
+- Define class `Pair` implements `Comparable<Pair>`
+  - Declare fields `int x` and `int y`
+  - Constructor `Pair(int x, int y)`
+    - Initialize `this.x` with `x` and `this.y` with `y`
+  - Define method `hashCode()`: returns int
+    - Return `(this.x * 1000 + this.y)`
+  - Define method `compareTo(Pair p)`: returns int
+    - Initialize `int min1` to `Math.min(x, y)` and `int min2` to `Math.min(p.x, p.y)`
+    - If `min1 != min2`, return `min1 - min2`
+    - If `x == p.x`, return `y - p.y`
+    - Return `x - p.x`
+  - Define method `equals(Object obj)`: returns boolean
+    - If `obj` is null, return false
+    - If `this.getClass() != obj.getClass()`, return false
+    - Cast `obj` to `Pair p`
+    - Return `this.x == p.x && this.y == p.y`
+  - Define method `clone()`: returns Pair
+    - Return new `Pair(x, y)`
+  - Define method `toString()`: returns String
+    - Return `this.x + " " + this.y`
+  - Define method `add(Pair p)`
+    - Increment `x` by `p.x`
+    - Increment `y` by `p.y`
+```

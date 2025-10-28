@@ -1,0 +1,31 @@
+Function Signature: `main(String[] args): void`
+Variable Declarations: 
+- `sc: Scanner`
+- `n: int`
+- `s: String[]`
+- `k: char[][]`
+- `i: int`
+- `c: char[]`
+- `l: int`
+- `a: int`
+
+Execution Flow:
+1. Initialize `Scanner` object `sc` to read input.
+2. Read integer `n` from input, representing the number of test cases.
+3. Split the string `",.!?:abc:def:ghi:jkl:mno:pqrs:tuv:wxyz"` by `":"` and store in array `s`.
+4. Initialize 2D character array `k` with 9 rows.
+5. For each index `i` from 0 to 8, convert string `s[i]` to character array and store in `k[i]`.
+6. While `n` is greater than 0:
+   1. Read next input string and convert to character array `c`.
+   2. Initialize `l` to -1 and `a` to 0.
+   3. For each index `i` from 0 to length of `c` - 1:
+      1. If `c[i]` is not '0':
+         1. Set `a` to `c[i] - '1'`.
+         2. Increment `l` by 1 and take modulo with length of `k[a]`.
+      2. Else if `l` is greater than or equal to 0:
+         1. Print character `k[a][l]`.
+         2. Set `l` to -1.
+   4. Print a newline character.
+
+Libraries/Modules/Dependencies:
+- `java.util.Scanner`

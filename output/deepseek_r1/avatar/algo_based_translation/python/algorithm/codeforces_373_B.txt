@@ -1,0 +1,53 @@
+**Structured Algorithm Specification**
+
+**Functions/Methods:**
+1. **Function:** `sum(k: integer) → integer`
+   - **Parameters:**
+     - `k`: integer (input number)
+   - **Return Type:** integer (sum of digit lengths from 1 to `k`)
+   - **Variables:**
+     - `ret: integer` (accumulated sum, initialized to 0)
+     - `pw: integer` (power of 10 tracker, initialized to 10)
+     - `len: integer` (current digit length, initialized to 1)
+   - **Steps:**
+     1. Initialize `ret = 0`, `pw = 10`, `len = 1`.
+     2. Enter infinite loop:
+        1. Compute `cur = min(pw - 1, k)`.
+        2. Compute `prev = pw // 10` (integer division).
+        3. Update `ret += (cur - prev + 1) * len`.
+        4. If `pw - 1 >= k`, break loop.
+        5. Increment `len` by 1.
+        6. Update `pw *= 10`.
+     3. Return `ret`.
+
+**Main Algorithm:**
+- **Input:** 
+  - Read three integers `w`, `m`, `k` from standard input.
+- **Variables:**
+  - `lo: integer` (binary search lower bound, initialized to 0)
+  - `hi: integer` (binary search upper bound, initialized to 1e18)
+  - `md: integer` (midpoint in binary search)
+  - `c: integer` (digit count difference for current midpoint)
+- **Steps:**
+  1. Initialize `lo = 0`, `hi = 1000000000000000000`.
+  2. While `hi - lo > 1`:
+     1. Compute `md = (lo + hi) // 2`.
+     2. Compute `c = sum(m + md - 1) - sum(m - 1)`.
+     3. If `c * k ≤ w`, set `lo = md`.
+     4. Else, set `hi = md`.
+  3. Output `lo`.
+
+**Control Flow:**
+- **Infinite Loop in `sum`:**
+  - Exit condition: `pw - 1 >= k`.
+- **Binary Search in Main:**
+  - Loop continues until `hi - lo ≤ 1`.
+  - Terminates with `lo` as the maximum valid count of numbers.
+
+**Error Handling & Edge Cases:**
+- Assumes valid inputs (non-negative integers for `w`, `m`, `k`).
+- Correctly handles `m = 1` (computes `sum(0)` as 0).
+- Handles very large values via 64-bit integer arithmetic (implicit in Python).
+
+**Dependencies:**
+- No external libraries or imports required.

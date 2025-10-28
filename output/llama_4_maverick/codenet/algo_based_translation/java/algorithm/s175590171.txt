@@ -1,0 +1,65 @@
+1. Import required libraries: 
+   - java.util
+   - java.io
+
+2. Define a class `Main` with a method `main` that takes a `String[]` as input and returns `void`.
+
+3. Within `main`:
+   - Declare a variable `fs` of type `FastScanner` and initialize it using the default constructor.
+   - Declare an integer variable `n` and assign it the value returned by `fs.nextInt()`.
+   - Declare an integer array `a` of size `n`.
+   - Iterate from `0` to `n-1` using a `for` loop:
+     - Assign `a[i]` the value returned by `fs.nextInt()`.
+   - Sort the array `a` using `Arrays.sort(a)`.
+   - Declare a `long` variable `sum` and initialize it to `0`.
+   - Declare an integer variable `count` and initialize it to `0`.
+   - Iterate from `0` to `n-2` using a `for` loop:
+     - Add `a[i]` to `sum`.
+     - Check if `a[i+1]` is less than or equal to `2 * sum`:
+       - If true, increment `count` by `1`.
+       - If false, reset `count` to `0`.
+   - Print `count + 1` to the console using `System.out.println`.
+
+4. Define a static class `FastScanner` with the following methods and variables:
+   - Private variables:
+     - `in` of type `InputStream` initialized with `System.in`.
+     - `buffer` of type `byte[]` with a size of `1024`.
+     - `ptr` of type `int` initialized to `0`.
+     - `buflen` of type `int` initialized to `0`.
+   - Private method `hasNextByte()` that returns a `boolean`:
+     - Check if `ptr` is less than `buflen`. If true, return `true`.
+     - If false, reset `ptr` to `0` and attempt to read from `in` into `buffer`, storing the result in `buflen`.
+     - If `buflen` is less than or equal to `0`, return `false`. Otherwise, return `true`.
+   - Private method `readByte()` that returns an `int`:
+     - Call `hasNextByte()`. If true, return the value at `buffer[ptr]` and increment `ptr`. If false, return `-1`.
+   - Private static method `isPrintableChar(int c)` that returns a `boolean`:
+     - Check if `c` is between `33` and `126` (inclusive). If true, return `true`. Otherwise, return `false`.
+   - Public method `hasNext()` that returns a `boolean`:
+     - Iterate while `hasNextByte()` is true and `buffer[ptr]` is not a printable character, incrementing `ptr`.
+     - Return the result of `hasNextByte()`.
+   - Public method `next()` that returns a `String`:
+     - Check if `hasNext()` is false. If true, throw a `NoSuchElementException`.
+     - Create a `StringBuilder` object `sb`.
+     - Read a byte `b` using `readByte()`.
+     - Iterate while `b` is a printable character:
+       - Append `b` to `sb`.
+       - Read the next byte `b` using `readByte()`.
+     - Return the string representation of `sb`.
+   - Public method `nextLong()` that returns a `long`:
+     - Check if `hasNext()` is false. If true, throw a `NoSuchElementException`.
+     - Declare a `long` variable `n` initialized to `0`.
+     - Declare a `boolean` variable `minus` initialized to `false`.
+     - Read a byte `b` using `readByte()`.
+     - If `b` is `-`, set `minus` to `true` and read the next byte `b`.
+     - Check if `b` is not a digit. If true, throw a `NumberFormatException`.
+     - Iterate:
+       - If `b` is a digit, multiply `n` by `10` and add the digit value to `n`.
+       - If `b` is `-1` or not a printable character, return `n` (negated if `minus` is true).
+       - If `b` is not a digit and not `-1`, throw a `NumberFormatException`.
+       - Read the next byte `b` using `readByte()`.
+   - Public method `nextInt()` that returns an `int`:
+     - Call `nextLong()` and store the result in a `long` variable `nl`.
+     - Check if `nl` is outside the range of `Integer.MIN_VALUE` to `Integer.MAX_VALUE`. If true, throw a `NumberFormatException`.
+     - Return the `int` value of `nl`.
+   - Public method `nextDouble()` that returns a `double`:
+     - Call `next()` and parse the result as a `double` using `Double.parseDouble`. Return the result.

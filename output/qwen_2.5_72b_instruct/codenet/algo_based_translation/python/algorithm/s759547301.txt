@@ -1,0 +1,22 @@
+Function signature: `def determine_weather(S: str) -> None`
+
+Variable declaration: `S: str`
+
+Logic flow in execution order:
+1. Input operation: Read string input and assign to variable `S`
+2. Conditional if `S == 'Sunny'`: 
+   - Print 'Cloudy'
+3. Conditional if `S == 'Cloudy'`:
+   - Print 'Rainy'
+4. Conditional if `S == 'Rainy'`:
+   - Print 'Sunny'
+
+Control structures:
+- Three conditional statements (if)
+
+Input/output operations and data processing logic:
+- Input: Read a string from the standard input
+- Output: Print one of three strings ('Cloudy', 'Rainy', 'Sunny') based on the input value
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required

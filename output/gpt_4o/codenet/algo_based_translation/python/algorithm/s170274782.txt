@@ -1,0 +1,31 @@
+```
+Algorithm:
+
+1. Input:
+   - Read an integer `N` from input, representing the number of elements in each list.
+   - Initialize an empty list `A` of type List[List[int]].
+
+2. Data Collection:
+   - Loop 2 times (to collect two lists):
+     - Read a line of input, split it by spaces, convert each element to an integer, and store the list in `A`.
+
+3. Initialize Variables:
+   - Create an empty list `ans` of type List[int] to store results.
+   - Declare an integer `count` and initialize it to 0.
+
+4. Generate Results:
+   - Loop over each index `i` from 0 to `N-1`:
+     - Assign `A[0]` to `baselis`.
+     - Assign `A[1]` to `groundlis`.
+     - Reset `count` to 0.
+     - Update `count` by adding:
+       - The sum of elements from the start to index `i` (inclusive) in `baselis`.
+       - The sum of elements from index `i` to `N` (inclusive) in `groundlis`.
+     - Append `count` to `ans`.
+
+5. Output:
+   - Print the maximum value in `ans`.
+
+Dependencies:
+- None
+```

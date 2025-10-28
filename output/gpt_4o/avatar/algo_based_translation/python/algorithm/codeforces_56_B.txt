@@ -1,0 +1,32 @@
+```plaintext
+Function signature:
+    Function: find_subarray_to_sort
+    Parameters: None
+    Return type: Tuple[int, int]
+
+Variable declarations and data types:
+    N: int
+    A: List[int]
+    mn: int
+    mx: int
+    i: int
+
+Logic flow:
+    1. Read an integer input and assign it to N.
+    2. Read a line of integer inputs, split it by spaces, convert each to an int, and store in list A.
+    3. Initialize mn with value N + 1.
+    4. Initialize mx with value -1.
+    5. For each integer i in the range from 0 to N-1 (inclusive):
+        a. If the condition (i + 1 != A[i]) is true:
+            i. Update mn to be the minimum of mn and i.
+            ii. Update mx to be the maximum of mx and i.
+    6. If mx equals -1:
+        a. Print '0 0'
+    7. Else (if mx is not -1):
+        a. Reverse the subarray A[mn:(mx+1)] and concatenate it with A[:mn] and A[(mx+1):].
+        b. If the sorted version of A equals A:
+            i. Print mn + 1 and mx + 1.
+        c. Else:
+            i. Print '0 0'.
+```
+

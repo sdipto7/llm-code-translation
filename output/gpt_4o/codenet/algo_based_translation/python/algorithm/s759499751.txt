@@ -1,0 +1,28 @@
+1. Function signature: `main() -> None`
+2. Variable declarations and data types:
+   - `n: int` - Number of elements in the sequence
+   - `k: int` - Number of queries
+   - `a: List[str]` - List of characters representing the sequence
+   - `c: List[int]` - List of integers to accumulate counts of "AC" occurrences
+   - `l: int` - Left index for each query
+   - `r: int` - Right index for each query
+3. Logic flow in execution order:
+   - Read two integers `n` and `k` from input, representing the length of the sequence and number of queries.
+   - Initialize list `a` with characters from input representing the sequence.
+   - Initialize list `c` with zeros, with the same length as `n`.
+   - Iterate over the range from 1 to `n-1`:
+     - If `a[i]` is "C" and `a[i-1]` is "A", set `c[i]` to `c[i-1] + 1`.
+     - Otherwise, set `c[i]` to `c[i-1]`.
+   - Iterate over the range from 0 to `k-1` for each query:
+     - Read two integers `l` and `r` from input, representing the range of the current query.
+     - Output the difference `c[r-1] - c[l-1]`.
+4. Control structures:
+   - A `for` loop iterating from 1 to `n-1` for calculating "AC" occurrences.
+   - A conditional `if` statement checking if `a[i]` is "C" and `a[i-1]` is "A".
+   - A `for` loop iterating from 0 to `k-1` for processing each query.
+5. Input/Output operations and data processing logic:
+   - Use `input()` to read space-separated integers `n` and `k`.
+   - Use `input()` to read the sequence of characters.
+   - Use `input()` to read space-separated integers `l` and `r` for each query.
+   - Use `print()` to output the result of each query.
+6. Required libraries, modules, or dependencies: None.

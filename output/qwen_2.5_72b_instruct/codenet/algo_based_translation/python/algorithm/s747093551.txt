@@ -1,0 +1,32 @@
+Function signature: `main() -> None`
+
+Variable declarations:
+- `N: int`
+- `M: int`
+- `X: int`
+- `Y: int`
+- `x: List[int]`
+- `y: List[int]`
+
+Logic flow:
+1. Read four integers `N`, `M`, `X`, `Y` from standard input.
+2. Read `N` integers into list `x`.
+3. Read `M` integers into list `y`.
+4. Determine the maximum value in list `x` and compare it with `X`, taking the larger value.
+5. Determine the minimum value in list `y` and compare it with `Y`, taking the smaller value.
+6. If the larger value from step 4 is less than the smaller value from step 5, print "No War".
+7. Otherwise, print "War".
+
+Input/output operations:
+- Input: Four integers followed by `N` integers and `M` integers.
+- Output: "No War" or "War" based on the comparison of the maximum value in `x` (or `X`) and the minimum value in `y` (or `Y`).
+
+Libraries/modules:
+- `sys` (implicit via `input()`)
+- `typing` for type annotations (not explicitly used but implied by the types specified)
+
+Data processing logic:
+- Use `map(int, input().split())` to convert input strings to integers.
+- Use `list()` to store the input integers in lists `x` and `y`.
+- Use `max()` and `min()` functions to find the maximum and minimum values in lists `x` and `y` respectively.
+- Use conditional statements to compare the derived values and print the appropriate message.

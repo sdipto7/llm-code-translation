@@ -1,0 +1,51 @@
+Function signatures:
+- `readInts() -> map[int]`
+- `dfs(g: dict[int, set[int]], seen: set[int], i: int) -> tuple[int, int]`
+- `solve() -> bool`
+
+Variable declarations and data types:
+- `line0: list[int]`
+- `n: int`
+- `m: int`
+- `g: dict[int, set[int]]`
+- `seen: set[int]`
+- `nodes: int`
+- `edges: int`
+- `a: int`
+- `b: int`
+- `ans: int`
+- `x: int`
+- `y: int`
+
+Logic flow and control structures:
+- `readInts()` reads a line of input, splits it into strings, converts each to an integer, and returns the result as a map of integers.
+- `solve()` function:
+  - Initializes `line0` as an empty list.
+  - Attempts to read input into `line0` using `readInts()`, catching `EOFError` to return `False`.
+  - Assigns the first two integers from `line0` to `n` and `m`.
+  - Initializes `g` as a dictionary with keys from 1 to `n` and empty sets as values.
+  - Initializes `seen` as an empty set.
+  - For each edge (from 1 to `m`), reads two integers `a` and `b`, and adds `b` to the set in `g` at key `a`, and `a` to the set in `g` at key `b`.
+  - Initializes `ans` to 0.
+  - For each node from 1 to `n`, if the node is not in `seen`, performs a depth-first search (`dfs`) starting from that node.
+  - `dfs(g, seen, i)`:
+    - If `i` is in `seen`, returns `(0, 0)`.
+    - Adds `i` to `seen`.
+    - Initializes `nodes` to 1 and `edges` to the number of elements in the set `g[i]`.
+    - For each element `j` in `g[i]`, recursively calls `dfs(g, seen, j)` and adds the results to `nodes` and `edges`.
+    - Returns `(nodes, edges)`.
+  - After `dfs`, if `nodes` is greater than 1, odd, and `2 * nodes` equals `edges`, increments `ans`.
+  - After checking all nodes, if `(n - ans)` is odd, increments `ans`.
+  - Prints `ans`.
+  - Returns `True`.
+
+Input/output operations:
+- Reads input from standard input.
+- Prints output to standard output.
+
+Data processing logic:
+- Reads graph data and processes it to determine the number of connected components that are odd cycles.
+- Uses depth-first search to explore each component of the graph.
+
+Required libraries, modules, or dependencies:
+- No specific libraries or modules are required. Uses built-in Python functions and data structures.

@@ -1,0 +1,47 @@
+Function signature: 
+```
+public static void main(String[] args)
+```
+
+Variable declarations and data types:
+```
+Scanner sc = new Scanner(System.in)
+String s = sc.nextLine()
+int length = s.length()
+char ch = 0
+```
+
+Logic flow in execution order:
+1. Create a `Scanner` object for reading input.
+2. Read a line of input and store it in the string `s`.
+3. Calculate the length of the string `s` and store it in the integer `length`.
+4. Initialize the character `ch` to 0.
+5. For loop starting from `i = length - 1` down to `0`:
+    - If the character at position `i` in `s` is not a space and not a question mark:
+        - Set `ch` to the character at position `i` in `s`.
+        - Break out of the loop.
+6. Convert the character `ch` to lowercase.
+7. If `ch` is 'a', 'e', 'i', 'o', 'u', or 'y':
+    - Print "YES".
+8. Else:
+    - Print "NO".
+
+Control structures:
+- For loop: `for (int i = length - 1; i >= 0; i--)`
+- If statement: `if (s.charAt(i) != ' ' && s.charAt(i) != '?')`
+- If-else statement: `if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ch == 'y')`
+
+Input/output operations:
+- Input: A single line of text read from standard input.
+- Output: Either "YES" or "NO" printed to standard output.
+
+Data processing logic:
+- Iterate over the string from the end to the beginning.
+- Find the first non-space, non-question mark character.
+- Check if this character is a vowel (including 'y').
+- Output "YES" if true, otherwise "NO".
+
+Required libraries, modules, or dependencies:
+```
+import java.util.Scanner
+```

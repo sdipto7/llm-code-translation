@@ -1,0 +1,45 @@
+Function signatures with parameter and return types:
+- `main(String[] args): void`
+
+Variable declarations and data types:
+- `in: Scanner`
+- `n: int`
+- `m: int`
+- `arr: int[]` of size `n`
+- `gen: int[]` of size 11
+- `ans: long`
+- `i: int`
+- `k: int`
+
+Logic flow in execution order:
+1. Create a new `Scanner` object for reading input.
+2. Read an integer `n` from input.
+3. Read an integer `m` from input.
+4. Initialize an array `arr` of size `n`.
+5. Initialize an array `gen` of size 11 with all elements set to 0.
+6. Loop over each index `i` from 0 to `n-1`:
+   - Read an integer from input and store it in `arr[i]`.
+   - Increment `gen[arr[i]]` by 1.
+7. Initialize `ans` to 0.
+8. Loop over each index `i` from 1 to `m`:
+   - Loop over each index `k` from 1 to `m`:
+     - If `i` is not equal to `k`, add the product of `gen[i]` and `gen[k]` to `ans`.
+9. Print the value of `ans` divided by 2.
+
+Control structures:
+- Loops:
+  - `for (int i = 0; i < n; i++)`
+  - `for (int i = 1; i <= m; i++)`
+  - `for (int k = 1; k <= m; k++)`
+- Conditionals:
+  - `if (i != k)`
+
+Input/output operations and data processing logic:
+- Read integers `n` and `m` from standard input.
+- Read `n` integers from standard input and store them in `arr`.
+- Count occurrences of each integer in `arr` using `gen`.
+- Calculate the number of pairs `(i, k)` where `i` and `k` are different and both exist in `arr`.
+- Output the result divided by 2.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

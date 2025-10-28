@@ -1,0 +1,22 @@
+- Function signature: `public static void main(String[] args)`
+- Variable declarations: 
+  - `Scanner sc` of type `Scanner`
+  - `int i` initialized to `0`
+  - `int n` declared inside the loop
+- Logic flow:
+  - Create a `Scanner` object to read input from standard input
+  - Initialize `i` to `1`
+  - Start a `for` loop that continues as long as `i` is less than or equal to `5`
+    - Read an integer `n` from the input
+    - Check if `n` is equal to `0`
+      - If true, break the loop
+    - Increment `i` by `1`
+  - Print the value of `i`
+- Control structures:
+  - `for` loop with condition `i <= 5`
+  - `if` statement with condition `n == 0`
+- Input/output operations:
+  - Read integer input using `sc.nextInt()`
+  - Print the value of `i` using `System.out.println(i)`
+- Required libraries:
+  - `java.util.Scanner`

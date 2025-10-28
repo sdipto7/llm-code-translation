@@ -1,0 +1,29 @@
+- **Function Signature**: N/A (Script-based execution)
+- **Input Operations**:
+  - Read integers `n` (array size) and `m` (number of operations) from standard input.
+  - Read `n` integers from standard input into list `a`.
+  - Read `m` lines, each containing two integers (count, value) into list `ope`.
+- **Data Types**:
+  - `n`: integer
+  - `m`: integer
+  - `a`: list of integers (initially empty, populated from input)
+  - `ope`: list of lists (each sublist contains two integers: count and value)
+  - `j`: integer (initialized to 0)
+- **Data Processing**:
+  - Sort `a` in ascending order.
+  - Sort `ope` in descending order based on the second element (value) of each sublist.
+- **Control Flow**:
+  - Loop over each element `a[i]` (for `i` from 0 to `n-1`):
+    - If `j` exceeds the length of `ope`, terminate loop.
+    - If `a[i] < ope[j][1]`:
+      - Replace `a[i]` with `ope[j][1]`.
+      - Decrement `ope[j][0]` by 1.
+      - If `ope[j][0]` becomes 0:
+        - Increment `j` by 1.
+        - If `j` equals the length of `ope`, terminate loop.
+    - Else:
+      - Terminate loop (no further replacements needed due to sorted order).
+- **Output Operation**:
+  - Calculate and print the sum of all elements in `a`.
+- **Termination Conditions**:
+  - Loop ends when all elements of `a` are processed, all operations are exhausted, or an element in `a` is >= current operation value.

@@ -1,0 +1,9 @@
+1. Define a function `process_input` with no parameters and return type `None`.
+2. Declare variables `a` and `b` of type `int`.
+3. Read input from the user and split it into two parts.
+4. Convert the input parts to `int` using `map` function and store the results in `a` and `b`.
+5. Check the condition `a <= b`.
+6. If the condition is `True`, print the value of `a`.
+7. If the condition is `False`, print the result of `a - 1`.
+8. The program uses built-in functions `input`, `map`, `int`, and `print`.
+9. The program depends on the Python standard library.

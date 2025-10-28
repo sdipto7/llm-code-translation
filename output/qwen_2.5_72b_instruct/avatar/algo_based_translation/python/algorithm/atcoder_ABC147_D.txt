@@ -1,0 +1,23 @@
+- **Function Signature**: `main()`
+- **Variable Declarations**:
+  - `N: int`
+  - `A: np.ndarray` (numpy array of integers)
+  - `result: int`
+  - `b: int`
+  - `bs: int`
+- **Logic Flow**:
+  - Read integer `N` from input
+  - Read space-separated integers from input, convert to list of integers, and store in numpy array `A` of type `np.int64`
+  - Initialize `result` to 0
+  - For each integer `b` from 0 to 59:
+    - Calculate `bs` as the sum of elements in `A` right-shifted by `b` bits, bitwise AND with 1, and converted to integer
+    - Update `result` as `(result + bs * (N - bs) * (1 << b)) % 1000000007`
+  - Print `result`
+- **Control Structures**:
+  - For loop: `for b in range(60)`
+- **Input/Output Operations**:
+  - Read `N` from standard input
+  - Read space-separated integers from standard input and process them
+  - Print final `result` to standard output
+- **Required Libraries/Modules**:
+  - `numpy`

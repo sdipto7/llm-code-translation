@@ -1,0 +1,22 @@
+- Required library: java.util.Scanner
+- Function signature: public static void main(String[] args)
+- Variables:
+  - Scanner stdIn (instantiated with System.in)
+  - long n (input value)
+- Execution flow:
+  1. Initialize Scanner object with System.in
+  2. Read long integer input from standard input via stdIn.nextLong()
+  3. Store input in variable n
+  4. Compute arithmetic expression:
+     - Calculate n * (n + 1)
+     - Divide intermediate result by 2
+     - Subtract original n value from quotient
+  5. Print computed result to standard output
+- Operations:
+  - Input: Single long integer read from console
+  - Processing: Mathematical calculation following formula (n(n+1)/2) - n
+  - Output: Print final computed integer value
+- Data types:
+  - Input/output: long (64-bit signed integer)
+  - All intermediate calculations use long integer arithmetic
+- Control structures: None (linear execution flow)

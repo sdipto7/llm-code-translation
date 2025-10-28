@@ -1,0 +1,25 @@
+```
+Algorithm:
+1. Define a function `calculate_score(s: str, n: int, sequences: List[str]) -> int`.
+2. Initialize an integer variable `ans` to 0.
+3. Iterate over a range from 0 to `n` using a loop with index `i`:
+   a. Assign `x` as `sequences[i]`.
+   b. Initialize two integer variables `a` and `b` to 0.
+   c. Iterate over each character `j` in the string `s`:
+      i. If `j` is equal to `x[0]`, increment `a` by 1.
+      ii. Else if `j` is equal to `x[1]`, increment `b` by 1.
+      iii. Else, add `min(a, b)` to `ans` and reset `a` and `b` to 0.
+   d. Add `min(a, b)` to `ans` after exiting the inner loop.
+4. Return the value of `ans`.
+
+Input/Output Operations:
+- Inputs:
+  - A string `s` from the user.
+  - An integer `n` from the user representing the number of sequences.
+  - A list `sequences` containing `n` strings input by the user.
+- Outputs:
+  - Print the integer result `ans`.
+
+Required Libraries/Modules:
+- No external libraries or modules are required.
+```

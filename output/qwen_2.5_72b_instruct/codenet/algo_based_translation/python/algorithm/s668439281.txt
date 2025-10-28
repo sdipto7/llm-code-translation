@@ -1,0 +1,39 @@
+Function: main()
+
+Parameters: None
+
+Return Type: None
+
+Variable Declarations and Data Types:
+- n: int
+- ls: list of str
+- c: Counter (from collections module)
+- count: int
+- ans: list of str
+- p: list of tuples (str, int)
+
+Logic Flow and Control Structures:
+
+1. Read integer input from user and assign to n
+2. Initialize empty list ls
+3. For loop runs from 0 to n-1:
+   - Read string input from user and append to ls
+4. Create Counter object c from ls
+5. Assign count to the frequency of the most common element in c using c.most_common()[0][1]
+6. Initialize empty list ans
+7. Assign p to the list of elements and their counts from c in descending order of frequency using c.most_common()
+8. For loop runs from 0 to length of c:
+   - If the count at index i in p is equal to count:
+     - Append the element at index i in p to ans
+   - Else:
+     - Break out of loop
+9. Sort ans in ascending order
+10. For loop iterates over each element i in ans:
+    - Print i
+
+Input/Output Operations and Data Processing Logic:
+- Input: Integer n followed by n strings
+- Output: Strings that have the highest frequency in the input list, sorted alphabetically
+
+Required Libraries, Modules, or Dependencies:
+- collections module for Counter class

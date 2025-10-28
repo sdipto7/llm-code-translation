@@ -1,0 +1,11 @@
+Algorithm:
+- Import: java.util.Scanner
+- Function: main(String[] args) throws Exception
+- Variables: Scanner in, int a, int b
+- Initialize Scanner with System.in
+- Read integer a from input
+- Read integer b from input
+- If a mod 2 equals 0 OR b mod 2 equals 0
+  - Print "No"
+- Else
+  - Print "Yes"

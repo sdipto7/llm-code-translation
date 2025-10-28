@@ -1,0 +1,10 @@
+1. Import the required library: java.util.Scanner
+2. Define a class: Main
+3. Define a function: main with parameter args of type String[] and return type void
+4. Declare a variable: sc of type Scanner and initialize it with a new Scanner object using System.in
+5. Declare two variables: A and B of type int
+6. Read input from the user using sc.nextInt() and store it in A and B
+7. Evaluate the conditional statement: if ((A % 3 == 0) or (B % 3 == 0) or ((A + B) % 3 == 0))
+8. If the condition is true, execute: print "Possible" to the console
+9. If the condition is false, execute: print "Impossible" to the console
+10. End the main function execution.

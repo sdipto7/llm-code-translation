@@ -1,0 +1,19 @@
+1. Import required libraries: java.util.*
+2. Define a class: Main
+3. Define a static method: main with return type void and parameter args of type String[]
+   - Create a new instance of Main
+   - Call the solve method on the new instance
+4. Declare a private final field: sc of type Scanner and initialize it with a new Scanner(System.in)
+5. Define a method: solve with return type void and no parameters
+   - Declare a variable: N of type int
+   - Read an integer from sc into N
+   - Declare variables: max and min of type int
+   - Read an integer from sc into max and assign it to min
+   - Initialize a loop counter: i of type int to 1
+   - Loop while i is less than N
+     - Read an integer from sc into a variable: in of type int
+     - Update max to be the maximum of max and in
+     - Update min to be the minimum of min and in
+     - Increment i by 1
+   - Print the difference between max and min to the console
+6. Required libraries: java.util.* (specifically Scanner)

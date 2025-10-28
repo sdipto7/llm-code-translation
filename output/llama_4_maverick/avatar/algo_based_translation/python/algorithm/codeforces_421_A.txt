@@ -1,0 +1,8 @@
+1. Read n, a, b from input
+2. Read lista of size a from input
+3. Read listb of size b from input
+4. Iterate from k = 0 to n-1
+5. Check if k + 1 is present in lista
+6. If present, output 1
+7. If not present, output 2
+8. Output the result without a newline, followed by a space

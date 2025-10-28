@@ -1,0 +1,41 @@
+Function Signature: `main() -> None`
+
+Variable Declarations:
+- `princess: int`
+- `dragon: int`
+- `t: int`
+- `f: int`
+- `c: int`
+- `result: int`
+- `position: float`
+
+Logic Flow:
+1. Input `princess` as integer
+2. Input `dragon` as integer
+3. Input `t` as integer
+4. Input `f` as integer
+5. Input `c` as integer
+6. If `dragon` is less than or equal to `princess`:
+   - Print `0`
+   - Exit program
+7. Set `result` to `0`
+8. Set `position` to `t * princess`
+9. Update `position` by adding `princess * position / (dragon - princess)`
+10. While `position` is less than `c`:
+    - Increment `result` by `1`
+    - Update `position` by adding `princess * position / dragon`
+    - Update `position` by adding `princess * f`
+    - Update `position` by adding `princess * position / (dragon - princess)`
+11. Print `result`
+
+Input/Output Operations:
+- Read 5 integers from standard input
+- Print an integer to standard output
+
+Data Processing Logic:
+- Calculate initial `position` based on `t`, `princess`, and `dragon`
+- Use a loop to iteratively update `position` and increment `result` until `position` reaches or exceeds `c`
+- Handle special case where `dragon` is not greater than `princess` by immediately exiting with `result` of `0`
+
+Required Libraries, Modules, or Dependencies:
+- No external libraries or modules required

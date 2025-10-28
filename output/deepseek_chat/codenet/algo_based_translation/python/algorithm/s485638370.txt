@@ -1,0 +1,7 @@
+1. Read input string from standard input and store in variable `a` of type string
+2. Check if the character '9' is present in string `a`
+3. If condition is true:
+   - Print "Yes"
+4. Else:
+   - Print "No"
+5. End program

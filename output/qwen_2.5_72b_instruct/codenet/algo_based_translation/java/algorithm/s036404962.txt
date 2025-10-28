@@ -1,0 +1,27 @@
+Function signature: `public static void main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner scan` of type `Scanner`
+- `int X`
+- `int t`
+
+Logic flow in execution order:
+1. Create a `Scanner` object to read input from standard input.
+2. Read the first integer input and assign it to variable `X`.
+3. Read the second integer input and assign it to variable `t`.
+4. If `X` is greater than or equal to `t`, print the result of `X - t`.
+5. Else if `X` is less than `t`, print `0`.
+
+Control structures:
+- `if (X >= t)`
+- `else if (X < t)`
+
+Input operations:
+- Read two integers from standard input using `scan.nextInt()`.
+
+Output operations:
+- Print the result of `X - t` if `X >= t`.
+- Print `0` if `X < t`.
+
+Libraries, modules, or dependencies:
+- `java.util.Scanner`

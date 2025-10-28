@@ -1,0 +1,7 @@
+read integer n from standard input
+declare a set variable of string type
+for i from 0 to n-1:
+    read string from standard input
+    add string to set
+calculate length of set
+print length of set

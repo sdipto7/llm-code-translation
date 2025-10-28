@@ -1,0 +1,44 @@
+1. Import the required library: java.util.Scanner
+2. Define a class Main with a public access modifier
+3. Define a static method main with return type void and parameter args of type String[]
+4. Declare a variable sc of type Scanner and initialize it with a new Scanner object using System.in
+5. Declare two integer variables w and n, and read their values from the input using sc.nextInt()
+6. Declare an integer array values of size w
+7. Iterate from 0 to w-1 using a for loop and assign the value i + 1 to values[i]
+8. Iterate n times using a for loop
+   1. Declare a string variable str and read its value from the input using sc.next()
+   2. Split str into an array of strings ab using "," as the delimiter
+   3. Declare two integer variables a and b, parse the values of ab[0] and ab[1] to integers, and decrement them by 1
+   4. Declare an integer variable x and assign the value of values[a] to it
+   5. Swap the values of values[a] and values[b] using x as a temporary variable
+9. Iterate from 0 to w-1 using a for loop and print the value of values[i] to the output
+10. The program terminates after the main method completes execution. 
+
+Function Signatures:
+- main(String[] args): void 
+
+Variable Declarations:
+- sc: Scanner
+- w, n: int
+- values: int[]
+- i, x, a, b: int
+- str: String
+- ab: String[] 
+
+Control Structures:
+- for (int i = 0; i < values.length; i++)
+- for (int i = 0; i < n; i++)
+- for (int i = 0; i < w; i++)
+
+Input/Output Operations:
+- sc.nextInt(): int
+- sc.next(): String
+- System.out.println(values[i]): void 
+
+Data Processing Logic:
+- values[i] = i + 1
+- a = Integer.parseInt(ab[0]) - 1
+- b = Integer.parseInt(ab[1]) - 1
+- x = values[a]
+- values[a] = values[b]
+- values[b] = x

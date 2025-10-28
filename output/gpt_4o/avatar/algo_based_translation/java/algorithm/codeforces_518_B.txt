@@ -1,0 +1,40 @@
+1. Import `java.util.*` library.
+
+2. Define class `codeforces_518_B`.
+
+3. Define the `main` method with signature `public static void main(String[] args)`:
+   - Declare and initialize a `Scanner` object `scan` to read input.
+   - Declare a `StringBuilder` object `s` and initialize it with the next input token.
+   - Declare a `String` variable `t` and initialize it with the next input token.
+   - Declare integer variables `ura` and `opa`, initialized to 0.
+   - Declare a `Map<Character, Integer>` named `tmap`.
+
+4. Populate `tmap` with characters of `t`:
+   - Iterate over each character `ch` in `t`:
+     - If `ch` is not in `tmap`, put `ch` with value 1 in `tmap`.
+     - Else, increment the count of `ch` in `tmap`.
+
+5. Calculate `ura` by matching characters from `s` with `t`:
+   - Get the length of `s` and store in `length`.
+   - Iterate over each character `ch` in `s`:
+     - Get `num`, the count of `ch` from `tmap`.
+     - If `num` is `null`, continue to the next iteration.
+     - If `num` is 1, remove `ch` from `tmap`.
+     - Else, decrement the count of `ch` in `tmap`.
+     - Set character at index `i` of `s` to 'Я'.
+     - Increment `ura`.
+
+6. Calculate `opa` by matching characters from `s` with reversed case characters in `t`:
+   - Iterate over each character `ch` in `s`:
+     - Get `rch`, the reversed case character of `ch` using `reverse(ch)`.
+     - Get `num`, the count of `rch` from `tmap`.
+     - If `num` is `null`, continue to the next iteration.
+     - If `num` is 1, remove `rch` from `tmap`.
+     - Else, decrement the count of `rch` in `tmap`.
+     - Increment `opa`.
+
+7. Output the values of `ura` and `opa` in the format "ura opa".
+
+8. Define the `reverse` method with signature `public static Character reverse(Character ch)`:
+   - If `ch` is lowercase, return the uppercase equivalent of `ch`.
+   - Else, return the lowercase equivalent of `ch`.

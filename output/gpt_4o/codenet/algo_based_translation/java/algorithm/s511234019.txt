@@ -1,0 +1,21 @@
+1. Import necessary libraries and modules:
+   - Import `java.util.Scanner` for input operations.
+
+2. Define the main function:
+   - Function signature: `public static void main(String[] args) throws java.lang.Exception`
+   - No parameters; the function does not return a value.
+
+3. Declare variables:
+   - `int a, b;` to store two integer inputs.
+
+4. Initialize the scanner for input:
+   - `Scanner in = new Scanner(System.in);`
+
+5. Read input values:
+   - `a = in.nextInt();` to read the first integer.
+   - `b = in.nextInt();` to read the second integer.
+
+6. Conditional logic:
+   - Check if either `a` or `b` is even using the condition `(a % 2 == 0 || b % 2 == 0)`.
+     - If true, execute `System.out.println("No");` to print "No".
+     - Otherwise, execute `System.out.println("Yes");` to print "Yes".

@@ -1,0 +1,10 @@
+- Import required module: `java.util.Scanner`
+- Define function `main` with no parameters and no return type
+  - Declare a `Scanner` object `sc` for standard input
+  - Declare integer variable `a`
+  - Read integer input from user and assign to `a`
+  - Declare integer variable `b`
+  - Read integer input from user and assign to `b`
+  - Declare integer variable `hb` and assign the result of integer division of `b` by 2
+  - Calculate the sum of `a` and `hb`
+  - Print the result of the sum to standard output

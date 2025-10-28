@@ -1,0 +1,100 @@
+**Function Signatures:**
+- `main(String[] args): void`
+- `MyScanner(InputStream in): void`
+- `readByte(): int`
+- `isPrintableCharExceptSpace(int c): boolean`
+- `next(): String`
+- `nextLong(): long`
+- `nextInt(): int`
+- `nextDouble(): double`
+- `nextIntArray(int n): int[]`
+- `allSameLength(int[] a, int[] b, int[]... c): boolean`
+- `allSameLength(char[] a, char[] b, char[]... c): boolean`
+- `nextVerticalIntArrays(int[] a, int[] b, int[]... c): void`
+- `nextLongArray(int n): long[]`
+- `nextChar(): char`
+- `nextCharArray(int n): char[]`
+- `next2dCharArray(int n, int m): char[][]`
+- `nextVerticalCharArrays(char[] a, char[] b, char[]... c): void`
+- `MyWriter(OutputStream out): void`
+- `joinAndPrintln(int[] x): void`
+- `joinAndPrintln(int[] x, String delimiter): void`
+- `joinAndPrintln(long[] x): void`
+- `joinAndPrintln(long[] x, String delimiter): void`
+- `joinAndPrintln(Iterable<?> iterable): void`
+- `joinAndPrintln(Iterable<?> iterable, String delimiter): void`
+
+**Variable Declarations and Data Types:**
+- `out: MyWriter`
+- `sc: MyScanner`
+- `N: int`
+- `M: int`
+- `list: LinkedList<Integer>[]`
+- `res: int`
+- `pqueue: PriorityQueue<Integer>`
+- `i: int`
+- `a: int`
+- `b: int`
+- `BUFFER_SIZE: static final int`
+- `in: InputStream`
+- `buffer: byte[]`
+- `point: int`
+- `readLength: int`
+- `c: int`
+- `minus: boolean`
+- `result: long`
+- `n: int`
+- `b: StringBuilder`
+- `element: int[]`
+- `a: int[]`
+- `b: int[]`
+- `d: int[]`
+- `i: int`
+- `x: int[]`
+- `delimiter: String`
+- `iterable: Iterable<?>`
+- `i: Iterator<?>`
+- `out: OutputStream`
+
+**Logic Flow:**
+
+1. Initialize `out` as `MyWriter` object writing to `System.out`.
+2. Initialize `sc` as `MyScanner` object reading from `System.in`.
+3. Read integers `N` and `M` from input.
+4. Declare `list` as array of `LinkedList<Integer>` with size 100001.
+5. Loop `N` times:
+   - Read integers `a` and `b` from input.
+   - If `list[a]` is null, initialize `list[a]` as new `LinkedList<Integer>`.
+   - Add `b` to `list[a]`.
+6. Initialize `res` to 0.
+7. Initialize `pqueue` as `PriorityQueue<Integer>` with reverse order comparator.
+8. Loop from 1 to `M`:
+   - If `list[i]` is not null, add all elements of `list[i]` to `pqueue`.
+   - If `pqueue` is not empty, poll the maximum element from `pqueue` and add it to `res`.
+9. Print `res` using `out.println`.
+10. Flush `out`.
+
+**Control Structures:**
+- Loops:
+  - `for (int i = 0; i < N; i++)`
+  - `for (int i = 1; i <= M; i++)`
+  - `do-while` inside `next()`, `nextLong()`, `nextInt()`, `nextDouble()`, `nextIntArray()`, `nextLongArray()`, `nextChar()`, `nextCharArray()`, `next2dCharArray()`
+- Conditionals:
+  - `if (list[a] == null)`
+  - `if (c == -1)`
+  - `if (c == '-')`
+  - `if (c < '0' || c > '9')`
+  - `if (n < Integer.MIN_VALUE || n > Integer.MAX_VALUE)`
+  - `if (!allSameLength(a, b, c))`
+  - `if (!pqueue.isEmpty())`
+
+**Input/Output Operations and Data Processing Logic:**
+- Read integers `N` and `M` from input.
+- Populate `list` with pairs of integers `a` and `b`.
+- Use `PriorityQueue` to keep track of maximum values for each index up to `M`.
+- Sum the maximum values from the queue for each index up to `M` and print the result.
+
+**Libraries, Modules, or Dependencies:**
+- `java.util.*`
+- `java.io.*`
+- `java.awt.Point` (not used in logic)

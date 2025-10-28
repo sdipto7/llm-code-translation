@@ -1,0 +1,31 @@
+```
+Function: substract(a: int, b: int) -> int
+    If a > b
+        Declare total as int, initialize to 0
+        While a > 0 and b > 0
+            Increment total by int(a / b)
+            Set a to a % b
+            If a > 0
+                Increment total by int(b / a)
+                Set b to b % a
+        Return total
+    If a < b
+        Declare total as int, initialize to 0
+        While a > 0 and b > 0
+            Increment total by int(b / a)
+            Set b to b % a
+            If b > 0
+                Increment total by int(a / b)
+                Set a to a % b
+        Return total
+    If a == b
+        Return 1
+
+Declare n as int, read from input
+Declare lst as list of int, initialize to empty list
+For i from 0 to n - 1
+    Read a and b as int from input
+    Append substract(a, b) to lst
+For each element i in lst
+    Print i
+```

@@ -1,0 +1,96 @@
+**Structured Algorithm Specification**
+
+**Global Variables:**
+- `mod`: Integer constant, value 998244353
+- `__N`: Integer constant, value 8000
+- `g1`: Array of integers modulo `mod` (size 8001) - factorial values
+- `g2`: Array of integers modulo `mod` (size 8001) - inverse factorial values
+- `inverse`: Array of integers modulo `mod` (size 8001) - modular inverses
+- `ans`: List of integers - stores computed results
+
+**Function Specifications:**
+
+1. **Function:** `compute_combinations(n: int, r: int, mod: int) -> int`
+   - **Parameters:**
+     - `n`: Integer >=0
+     - `r`: Integer >=0
+     - `mod`: Integer constant (998244353)
+   - **Returns:** Combination value C(n, r) mod 998244353
+   - **Steps:**
+     1. If `r < 0` OR `r > n`, return 0
+     2. Set `r = min(r, n - r)`
+     3. Return `(g1[n] * g2[r] % mod) * g2[n - r] % mod`
+
+2. **Function:** `comb_with_repetition(p: int, q: int) -> int`
+   - **Parameters:**
+     - `p`: Non-negative integer
+     - `q`: Positive integer
+   - **Returns:** Combinations with repetition value C(p+q-1, q-1) mod 998244353
+   - **Steps:**
+     1. Call `compute_combinations(p + q - 1, q - 1, mod)`
+
+3. **Function:** `solve(n: int) -> int`
+   - **Precondition:** `n <= K + 1`
+   - **Parameters:** `n`: Integer in range [2, 2K]
+   - **Returns:** Computed value for given `n`
+   - **Variables:**
+     - `kumi`: Integer = (n - 1) // 2
+     - `ans`: Integer accumulator initialized to 0
+   - **Steps:**
+     1. For `p` in 0 to `kumi` (inclusive):
+        1. If `p > N`, break loop
+        2. Calculate term1 = `2^p * compute_combinations(kumi, p, mod) * comb_with_repetition(N - p, p + (K - kumi*2 - (n%2==0)))`
+        3. Add term1 to `ans` modulo `mod`
+        4. If `n` is even AND `N - p - 1 >= 0`:
+           1. Calculate term2 = `2^p * compute_combinations(kumi, p, mod) * comb_with_repetition(N - p - 1, p + (K - kumi*2 - 1))`
+           2. Add term2 to `ans` modulo `mod`
+     2. Return `ans % mod`
+
+**Main Algorithm Flow:**
+
+1. **Input Handling:**
+   1. Read integers `K` and `N` from standard input
+   2. Initialize debug print function `dprint` (no-op)
+
+2. **Precomputation Phase:**
+   1. Initialize `g1` with [1,1]
+   2. Initialize `g2` with [1,1]
+   3. Initialize `inverse` with [0,1]
+   4. For `i` from 2 to 8000:
+      1. Append `(g1[-1] * i) % mod` to `g1`
+      2. Compute new_inverse = `(-inverse[mod % i] * (mod // i)) % mod`
+      3. Append `new_inverse` to `inverse`
+      4. Append `(g2[-1] * inverse[-1]) % mod` to `g2`
+
+3. **Computation Loop:**
+   1. Initialize empty list `ans`
+   2. For `i` from 2 to 2*K (inclusive):
+      1. If `i <= K + 1`:
+         1. Compute `result = solve(i) % mod`
+         2. Append `result` to `ans`
+         3. Print `result`
+      2. Else:
+         1. Print `ans[ (K * 2 + 1) - i - 1 ]`
+
+**Control Flow Structures:**
+- **For loops:** Fixed iterations for precomputation (8000 steps), variable iterations in solve(kumi steps)
+- **Conditionals:** 
+  - Range checks in `compute_combinations`
+  - Break condition when `p > N` in solve()
+  - Parity check for `n` in solve()
+  - Conditional branching for i <= K+1 in main loop
+
+**Edge Case Handling:**
+- Zero returns for invalid combination inputs
+- Input validation via assert in solve()
+- Check for `N - p -1 >= 0` in even case handling
+- Mirroring logic for i > K+1 using previously computed results
+
+**Data Types:**
+- All arithmetic operations use integer types with modulo 998244353
+- Arrays use 0-based indexing
+- Inputs K and N are read as 32/64-bit integers
+
+**Dependencies:**
+- Standard input handling via `input().split()`
+- No external libraries required beyond basic arithmetic operations

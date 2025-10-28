@@ -1,0 +1,28 @@
+1. Define a function `read_input()` with return type `Tuple[int, List[int]]` that reads two lines of input: 
+   - the first line is an integer `n` 
+   - the second line is a list of `n` integers `a`.
+
+2. Declare variables: 
+   - `n` of type `int` to store the number of elements.
+   - `a` of type `List[int]` to store the list of integers.
+
+3. Read the input using `read_input()` and store the values in `n` and `a`.
+
+4. Calculate `m1` of type `int` using the formula: `m1 = sum(a[i] * ((-1)**i) for i in range(n)) / 2`, where `i` is the index and `a[i]` is the corresponding element in the list.
+
+5. Declare a list `m` of type `List[int]` of size `n` to store the result.
+
+6. Initialize `m[0]` with `m1`.
+
+7. Iterate over the range from `1` to `n-1` using a for loop with index `i`. 
+   - For each `i`, calculate `m[i]` using the formula: `m[i] = a[i-1] - m[i-1]`.
+
+8. Multiply each element in `m` by `2` and convert them to strings.
+
+9. Join the string representations of the elements in `m` with a space separator.
+
+10. Output the resulting string.
+
+Required libraries and modules: 
+- `typing` for type hints (Tuple, List) 
+- Built-in Python functions and data types (int, input, split, map, sum)

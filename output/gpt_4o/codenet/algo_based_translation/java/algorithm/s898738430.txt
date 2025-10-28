@@ -1,0 +1,33 @@
+```
+Function Signature:
+- Function: main
+- Parameters: none
+- Return Type: void
+
+Variable Declarations:
+- sc: Scanner (to read input)
+- n: int (to store the number of elements)
+- a: int[] (array to store the input elements)
+- ans: int (to count the number of elements that are neither minimum nor maximum among their neighbors)
+
+Logic Flow:
+1. Initialize a Scanner object `sc` to read input.
+2. Read an integer `n` from input representing the number of elements in the array.
+3. Initialize an integer array `a` of size `n`.
+4. Loop `i` from 0 to `n-1`:
+   - Read the next integer from input and assign it to `a[i]`.
+5. Initialize `ans` to 0.
+6. Loop `i` from 1 to `n-2`:
+   - If `a[i]` is neither the minimum nor the maximum of `a[i-1]`, `a[i]`, and `a[i+1]`:
+     - Increment `ans` by 1.
+7. Print the value of `ans`.
+8. Close the Scanner object `sc`.
+
+Input/Output:
+- Read integer `n` from standard input.
+- Read `n` integers into array `a` from standard input.
+- Output the integer `ans` to standard output.
+
+Dependencies:
+- java.util.Scanner for reading input
+```

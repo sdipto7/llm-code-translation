@@ -1,0 +1,29 @@
+Function signature: `main()`
+Parameters: None
+Return type: None
+
+Variable declarations and data types:
+- `h`: integer
+- `w`: integer
+- `graph`: 2D numpy array of floats
+
+Logic flow:
+1. Read integers `h` and `w` from input, separated by space.
+2. Initialize `graph` as a 2D list of size `h` x `w`. Each element is set to `0` if the corresponding character in the input is `#`; otherwise, it is set to `float('inf')`.
+3. Convert `graph` from a 2D list to a 2D numpy array of floats.
+4. For each column index `x` from `0` to `w - 2`:
+   - Update each element in column `x + 1` to be the minimum of its current value and the value of the element in the same row of column `x` plus `1`.
+5. For each column index `x` from `w - 1` to `1`:
+   - Update each element in column `x - 1` to be the minimum of its current value and the value of the element in the same row of column `x` plus `1`.
+6. For each row index `y` from `0` to `h - 2`:
+   - Update each element in row `y + 1` to be the minimum of its current value and the value of the element in the same column of row `y` plus `1`.
+7. For each row index `y` from `h - 1` to `1`:
+   - Update each element in row `y - 1` to be the minimum of its current value and the value of the element in the same column of row `y` plus `1`.
+8. Print the maximum value in `graph` converted to an integer.
+
+Input/output operations and data processing logic:
+- Input: Reads two integers `h` and `w`, followed by `h` lines of strings representing the grid.
+- Output: Prints the maximum value in the processed `graph` array after all updates.
+
+Required libraries, modules, or dependencies:
+- `numpy`

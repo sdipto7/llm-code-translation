@@ -1,0 +1,18 @@
+Function: main
+Parameters: none
+Return type: void
+
+Variables:
+- x: int
+- a: int
+- b: int
+- result: int
+
+Logic flow:
+1. Read integer input from standard input, assign to x
+2. Read integer input from standard input, assign to a
+3. Read integer input from standard input, assign to b
+4. Calculate result = (x - a) % b
+5. Print result to standard output
+
+Required dependencies: none (uses standard input/output)

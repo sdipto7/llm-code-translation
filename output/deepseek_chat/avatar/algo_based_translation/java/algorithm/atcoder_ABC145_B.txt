@@ -1,0 +1,34 @@
+**Function Signatures:**
+- `public static void cout(String str)`
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner cin = new Scanner(System.in)`
+- `String a = ""`
+- `String b = ""`
+- `String str`
+- `int n`
+
+**Logic Flow:**
+1. Initialize scanner for input
+2. Read integer `n` from input
+3. Consume newline character
+4. Read string `str` from input
+5. Initialize empty string `a`
+6. For loop from i=0 to i<n/2 (exclusive):
+   - Append character at index i of `str` to `a`
+7. Check if `str` equals `a + a` (concatenation of `a` with itself)
+8. If equal: call `cout("Yes")`
+9. Else: call `cout("No")`
+
+**Control Structures:**
+- `for (int i = 0; i < n / 2; i++)`
+- `if (str.equals(a + a))`
+
+**Input/Output:**
+- Input: integer `n` followed by string `str`
+- Output: "Yes" or "No" based on string comparison
+
+**Dependencies:**
+- `java.util.Scanner`
+- `java.math.*` (not actually used)

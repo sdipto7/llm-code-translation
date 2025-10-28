@@ -1,0 +1,33 @@
+Function signature: `public static void main(String[] args)`
+Variable declarations and data types:
+- `Scanner sc`
+- `int n`
+- `int[] array`
+- `int head`
+- `long res`
+
+Logic flow in execution order:
+1. Create a `Scanner` object to read input.
+2. Read an integer `n` from input.
+3. Initialize an integer array `array` of size `3 * n`.
+4. Loop through the array and read integers from input, assigning each to `array[i]`.
+5. Sort `array` in ascending order.
+6. Set `head` to `array.length - 2`.
+7. Initialize `res` to 0.
+8. Loop `n` times:
+   - Add `array[head]` to `res`.
+   - Decrement `head` by 2.
+9. Print the value of `res`.
+
+Control structures:
+- Loop from `i = 0` to `i < array.length`, incrementing `i` by 1.
+- Loop from `i = 0` to `i < n`, incrementing `i` by 1.
+
+Input/output operations and data processing logic:
+- Input: Read an integer `n` and `3 * n` integers to fill the `array`.
+- Output: Print the final value of `res`.
+- Data processing: Sort the array and sum every second element starting from the second last element.
+
+Required libraries, modules, or dependencies:
+- `java.util.*`
+- `static java.lang.Math.*` (though not used in the provided code)

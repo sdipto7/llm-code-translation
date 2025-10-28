@@ -1,0 +1,53 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures**  
+- `main(): void`  
+  - Input: None  
+  - Output: Prints result to stdout  
+
+**Variable Declarations**  
+- `n: int` (user input)  
+- `original_list: List[int]` (user input split into integers)  
+- `parity_list: List[int]` (each element is `original_list[i] % 2`)  
+- `sum_parity: int` (sum of `parity_list` elements)  
+
+**Step-by-Step Logic Flow**  
+1. Read integer `n` from standard input.  
+2. Read a space-separated string of integers from standard input.  
+3. Split the string into `original_list` and convert each element to `int`.  
+4. Create `parity_list` by applying `x % 2` to every element in `original_list`.  
+5. Calculate `sum_parity = sum(parity_list)`.  
+6. If `sum_parity == 1`:  
+   6.1. Find index `i` of first occurrence of `1` in `parity_list`.  
+   6.2. Print `i + 1`.  
+7. Else:  
+   7.1. Find index `i` of first occurrence of `0` in `parity_list`.  
+   7.2. Print `i + 1`.  
+
+**Control Flow Structures**  
+- Conditional:  
+  - `if sum_parity == 1` (checks for single odd element)  
+  - `else` (executes when single even element exists)  
+- Exit criteria: Program terminates after printing result  
+
+**Input/Output Operations**  
+- Input:  
+  - Read `n` via `input()` (unused but required for input format)  
+  - Read list of integers via `input().split()`  
+- Output:  
+  - Print 1-based index of unique parity element  
+
+**Edge Case Handling**  
+- Implicitly assumes:  
+  - Input list contains exactly one element with differing parity  
+  - Input list length matches `n` (not explicitly validated)  
+  - At least one `0` or `1` exists in `parity_list`  
+
+**External Dependencies**  
+- Built-in functions:  
+  - `input()`  
+  - `split()`  
+  - `int()` conversion  
+  - `sum()`  
+  - `list.index()`  
+- No external libraries or imports used

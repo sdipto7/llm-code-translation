@@ -1,0 +1,40 @@
+1. Import necessary libraries:
+   - `java.util.Scanner` for handling user input.
+   - `java.lang.Math` for mathematical operations.
+
+2. Define the main function:
+   - Function signature: `public static void main(String[] args)`
+
+3. Initialize a `Scanner` object for input reading:
+   - `Scanner scan = new Scanner(System.in);`
+
+4. Declare variables for input and processing:
+   - `long N` for the total number of balls.
+   - `long A` for the number of blue balls in each complete set.
+   - `long B` for the number of red balls in each complete set.
+   - `long k` for the number of complete sets.
+
+5. Read inputs using the `Scanner` object:
+   - `N = scan.nextLong();`
+   - `A = scan.nextLong();`
+   - `B = scan.nextLong();`
+
+6. Perform validation on input constraints:
+   - Check if `1 <= N <= 10^18`
+   - Check if `0 <= A` and `0 <= B`
+   - Check if `0 < A + B <= 10^18`
+
+7. Implement the logic for computing the result:
+   - If `A + B <= N`:
+     - Calculate the number of complete sets: `k = N / (A + B);`
+     - Check if the remainder of balls after full sets is greater than `A`:
+       - If `N - k * (A + B) > A`, compute the result using:
+         - `A * k + (N - k * (A + B)) - (N - (k * (A + B) + A))`
+       - Else, compute the result using:
+         - `A * k + (N - k * (A + B))`
+   - Else if `A + B > N` and `A <= N`:
+     - Output the total number of blue balls as `A`.
+   - Otherwise:
+     - Output the total number of balls as `N`.
+
+8. Print the result to the console using `System.out.println()`.

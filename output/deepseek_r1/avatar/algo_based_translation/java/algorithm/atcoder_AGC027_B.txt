@@ -1,0 +1,48 @@
+Algorithm:
+
+Function Signatures:
+- main(String[] args): void
+- solve(): void
+
+Variables:
+- N: int (input value)
+- X: long (input value)
+- x: long[N] (input array)
+- xsum: long[N+1] (prefix sums)
+- ans: long (initialized to X*N + 5*xsum[N])
+- i: int (loop variable 1..N-1)
+- cost: long (temporary calculation)
+- j: int (starts at 5, increments by 2)
+- k: int (starts at N-i, decrements by i)
+- Math.max(k-i, 0): int (boundary check)
+
+Logic Flow:
+1. Read N and X using Scanner
+2. Read N values into x array
+3. Build xsum array:
+   - xsum[0] = 0
+   - xsum[i+1] = xsum[i] + x[i] for 0 ≤ i < N
+4. Initialize ans = X*N + 5*xsum[N]
+5. For i from 1 to N-1:
+   a. Calculate cost = X*i + 5*(xsum[N] - xsum[N-i])
+   b. Initialize j=5, k=N-i
+   c. While k ≥ 0:
+      i. If cost > ans → break loop
+      ii. Add j*(xsum[k] - xsum[Math.max(k-i, 0)]) to cost
+      iii. j += 2
+      iv. k -= i
+   d. Update ans = Math.min(ans, cost)
+6. Print ans + N*X
+
+Control Structures:
+- For loop: i from 1 to N-1 (exclusive upper bound)
+- While loop: while k ≥ 0
+- Conditional break: if cost > ans during inner loop
+
+Input/Output:
+- Reads from System.in: N, X, x array elements
+- Prints final result to System.out
+
+Dependencies:
+- java.util.Scanner (input handling)
+- java.lang.Math (max function)

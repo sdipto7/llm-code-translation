@@ -1,0 +1,60 @@
+- **Function Signatures:**
+  - `void doIt()`
+  - `UnionFindTree(int n)`
+  - `int find(int x)`
+  - `void unite(int x, int y)`
+  - `boolean same(int x, int y)`
+
+- **Variable Declarations and Data Types:**
+  - `Scanner sc`
+  - `final int MOD = 1000000007`
+  - `int n`
+  - `UnionFindTree utf`
+  - `int m`
+  - `int x`
+  - `int y`
+  - `int z`
+  - `int cnt`
+  - `int n` (inside UnionFindTree)
+  - `int[] par` (inside UnionFindTree)
+  - `int[] rank` (inside UnionFindTree)
+
+- **Logic Flow in Execution Order:**
+  1. Create `Scanner` object `sc`.
+  2. Initialize `MOD` to `1000000007`.
+  3. Read integer `n` from input.
+  4. Create `UnionFindTree` object `utf` with `n`.
+  5. Read integer `m` from input.
+  6. For loop from `i = 0` to `i < m`:
+     1. Read integers `x`, `y`, `z` from input.
+     2. Adjust `x` and `y` by subtracting `1`.
+     3. Call `utf.unite(x, y)`.
+  7. Initialize `cnt` to `0`.
+  8. For loop from `i = 0` to `i < n`:
+     1. If `utf.par[i] == i`, increment `cnt`.
+  9. Print `cnt`.
+
+- **Control Structures:**
+  - For loops:
+    - From `i = 0` to `i < m`
+    - From `i = 0` to `i < n`
+  - If statements:
+    - If `par[x] == x`
+    - If `rank[x] < rank[y]`
+    - If `rank[x] == rank[y]`
+    - If `utf.par[i] == i`
+
+- **Input/Output Operations and Data Processing Logic:**
+  - Input:
+    - Read `n` as integer.
+    - Read `m` as integer.
+    - For each edge, read `x`, `y`, `z` as integers.
+  - Output:
+    - Print the count of connected components (`cnt`).
+  - Data Processing:
+    - Initialize `UnionFindTree` with `n`.
+    - Unite nodes based on edges.
+    - Count the number of root nodes in `par`.
+
+- **Required Libraries, Modules, or Dependencies:**
+  - `java.util.*` for `Scanner` class

@@ -1,0 +1,30 @@
+**Algorithm:**
+1. Import sys module.
+2. Import bisect_left and bisect_right from bisect module.
+3. Define input alias: input = sys.stdin.readline.
+4. Define lambda functions:
+   - getS: returns stripped string input
+   - getN: returns integer input
+   - getList: returns list of integers from input
+   - getZList: returns list of integers from input with each element decremented by 1
+5. Define constants:
+   - INF = 10**20
+   - MOD = 1000000007
+6. Function solve() with no parameters and no return:
+   a. Read integer n using getN()
+   b. Initialize list dp with single element [-INF]
+   c. For i in range(n):
+      i. Read integer num using getN()
+      ii. Set num = -num
+      iii. If num >= last element of dp:
+          - Append num to dp
+      iv. Else:
+          - Find index idx using bisect_right(dp, num)
+          - Set dp[idx] = num
+   d. Print length of dp minus 1
+7. Function main() with no parameters and no return:
+   a. Read integer n using getN()
+   b. For n times:
+      i. Call solve()
+8. If __name__ == "__main__":
+   a. Call solve()

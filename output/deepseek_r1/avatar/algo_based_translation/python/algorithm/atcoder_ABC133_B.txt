@@ -1,0 +1,52 @@
+**Structured Algorithm Specification**
+
+**1. Function Signatures**
+- `dist(x: list[int], y: list[int]) -> float`
+- **Parameters:**
+  - `x`: List of integers representing a point's coordinates
+  - `y`: List of integers representing another point's coordinates
+- **Return:** Euclidean distance as float
+
+**2. Variable Declarations**
+- `n`: Integer (number of points)
+- `d`: Integer (dimensionality of points)
+- `points`: List of lists of integers (size `n x d`)
+- `count`: Integer (result counter initialized to 0)
+- `tmp`: Float (temporary distance squared in `dist`)
+
+**3. Input/Output Operations**
+- Read first input line: split into `n` and `d` (integers)
+- Read next `n` lines: split each into `d` integers, stored in `points`
+- Print final `count` value
+
+**4. Step-by-Step Logic Flow**
+1. Read `n` and `d` from standard input.
+2. Populate `points` with `n` entries, each containing `d` integers.
+3. Initialize `count` to 0.
+4. Outer loop: Iterate `i` from 0 to `n-1` (inclusive)
+   1. Inner loop: Iterate `j` from `i+1` to `n-1` (inclusive)
+      1. Compute `distance = dist(points[i], points[j])`
+      2. If `distance.is_integer()` evaluates to `True`, increment `count` by 1
+5. Output `count` via standard output
+
+**5. Control Flow Structures**
+- **Nested loops:**
+  - Outer `for` loop: `i` in range `[0, n)`
+  - Inner `for` loop: `j` in range `[i+1, n)`
+- **Conditional:**
+  - `if distance.is_integer(): count += 1`
+
+**6. Function `dist` Implementation**
+1. Initialize `tmp` to 0.0
+2. Loop over `k` from 0 to `d-1` (inclusive)
+   1. Compute `(x[k] - y[k]) ** 2` and accumulate to `tmp`
+3. Return `math.sqrt(tmp)`
+
+**7. Edge Case Handling**
+- Implicit handling of empty input via loop ranges (no action when `n < 2`)
+- No explicit error checking for invalid input formats or dimensions
+- Distance of 0.0 (identical points) automatically counted via `.is_integer()`
+
+**8. External Dependencies**
+- `math.sqrt()` for Euclidean distance calculation
+- Input parsing via `input().split()` and `map(int, ...)`

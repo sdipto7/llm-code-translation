@@ -1,0 +1,23 @@
+```
+Algorithm:
+1. Declare a function `calculateResult(k: long, a: long, b: long) -> long`.
+2. Check if `b <= a + 2`:
+   - If true, return `1 + k`.
+3. Calculate `x` as `k - (a - 1)`.
+4. Calculate `ans` as `a + (x / 2) * (b - a) + (x % 2)`.
+5. Return `ans`.
+
+Variables:
+- `k`: long
+- `a`: long
+- `b`: long
+- `x`: long
+- `ans`: long
+
+Input/Output:
+- Input three long integers `k`, `a`, and `b`.
+- Output a single long integer as result.
+
+Dependencies:
+- None.
+```

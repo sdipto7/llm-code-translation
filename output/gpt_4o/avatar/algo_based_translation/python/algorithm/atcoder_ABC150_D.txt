@@ -1,0 +1,35 @@
+```
+- Required Libraries:
+  - fractions
+  - math
+
+- Function Signature:
+  - main() -> None
+
+- Variable Declarations:
+  - n: int
+  - num: int
+  - num_set: set[int]
+  - two_times_set: set[int]
+  - i: int
+  - j: int
+  - num_list: list[int]
+  - lcm: int
+
+- Execution Flow:
+  1. Read input values and parse them into integers: `n` and `num`.
+  2. Read a set of integers, `num_set`, from input and parse them using `map`.
+  3. Initialize an empty set `two_times_set`.
+  4. Iterate over each element `i` in `num_set`:
+     - For each `i`, iterate `j` from 1 to 29:
+       - Divide `i` by 2.
+       - If `i` modulo 2 is not 0, add `j` to `two_times_set` and break the loop.
+  5. Check the length of `two_times_set`:
+     - If it is not equal to 1, print 0 and terminate the loop.
+  6. If the loop completes without breaking:
+     - Convert `num_set` to a list `num_list`.
+     - Set `lcm` to the first element of `num_list`.
+     - Iterate over `num_list` starting from the second element:
+       - Update `lcm` to be the least common multiple of current `lcm` and the current element using `fractions.gcd`.
+     - Calculate and print the result using the formula: `(num - lcm // 2) // lcm + 1`.
+```

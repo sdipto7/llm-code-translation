@@ -1,0 +1,8 @@
+1. Read the number of elements n from the input.
+2. Initialize an array of size n to store the input elements.
+3. Read n elements from the input and store them in the array.
+4. Initialize a variable answer with the absolute value of the first element in the array.
+5. Iterate through the array starting from the second element.
+6. For each element, calculate the absolute difference between the current element and the previous element.
+7. Add the calculated absolute difference to the answer.
+8. Output the final value of answer.

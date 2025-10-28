@@ -1,0 +1,93 @@
+- Function signatures:
+  - `yn(b: bool) -> None`
+  - `Yn(b: bool) -> None`
+  - `YN(b: bool) -> None`
+  - `union_find(n: int) -> None`
+  - `find(x: int) -> int`
+  - `same(x: int, y: int) -> bool`
+  - `link(x: int, y: int) -> None`
+  - `unite(x: int, y: int) -> None`
+  - `size() -> int`
+  - `is_power(a: int, b: int) -> bool`
+  - `bin_(num: int, size: int) -> List[int]`
+  - `get_facs(n: int, mod_: int = 0) -> List[int]`
+  - `comb(n: int, r: int, mod: int, fac: List[int]) -> int`
+  - `next_comb(num: int, size: int) -> Union[int, bool]`
+  - `get_primes(n: int, type: str = "int") -> Union[List[bool], List[int]]`
+  - `is_prime(num: int) -> bool`
+  - `ifelse(a: bool, b: Any, c: Any) -> Any`
+  - `join(A: List[Any], c: str = " ") -> str`
+  - `factorize(n: int, type_: str = "dict") -> Union[Dict[int, int], List[int], None]`
+  - `floor_(n: int, x: int = 1) -> int`
+  - `ceil_(n: int, x: int = 1) -> int`
+  - `hani(x: int, min_: int, max_: int) -> int`
+  - `seifu(x: int) -> int`
+  - `main() -> None`
+
+- Variable declarations and data types:
+  - `alphabet: str`
+  - `mod: int`
+  - `inf: int`
+  - `readline: Callable[[], str]`
+  - `N: int`
+  - `P: List[int]`
+  - `rank: List[int]`
+  - `A: List[int]`
+  - `now: int`
+  - `S: List[str]`
+  - `n: int`
+  - `l: int`
+  - `a: int`
+  - `b: int`
+  - `x: int`
+  - `y: int`
+  - `z: int`
+  - `size: int`
+  - `num: int`
+  - `min_: int`
+  - `max_: int`
+  - `ret: int`
+  - `type_: str`
+  - `list_: List[int]`
+  - `dic: Dict[int, int]`
+  - `type: str`
+  - `B: List[int]`
+  - `i: int`
+  - `c: str`
+  - `s: str`
+
+- Complete logic flow in execution order:
+  1. Read `n` and `l` as integers from input.
+  2. Initialize an empty list `S`.
+  3. Loop `n` times, reading a string from input and appending it to `S`.
+  4. Sort list `S`.
+  5. Join sorted list `S` into a single string with no separator and print the result.
+
+- Control structures:
+  - `if` in `yn`, `Yn`, `YN`, `is_power`, `is_prime`, `next_comb`, `hani`
+  - `for` in `bin_`, `get_facs`, `factorize`, `get_primes`
+  - `while` in `is_power`, `get_primes`, `factorize`
+  - `ifelse` as a function
+
+- Input/output operations:
+  - `input()` for reading input
+  - `print()` for output
+
+- Data processing logic:
+  - Sorting a list of strings
+  - Joining a list of strings into one string
+
+- Required libraries:
+  - `re`
+  - `math`
+  - `collections`
+  - `itertools`
+  - `copy`
+  - `random`
+  - `heapq`
+  - `time`
+  - `os`
+  - `queue`
+  - `sys`
+  - `datetime`
+  - `functools`

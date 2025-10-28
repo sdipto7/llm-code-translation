@@ -1,0 +1,27 @@
+1. Read two integer values from input and store them in variables `n` and `m` of type `int`.
+2. Initialize a 2D list `gate_cond` of type `list[list[int]]` with `m` number of sublists, where each sublist contains two `int` values read from input.
+3. Find the maximum value among the first elements of the sublists in `gate_cond` and store it in `max_under_th` of type `int`.
+4. Find the minimum value among the second elements of the sublists in `gate_cond` and store it in `min_upper_th` of type `int`.
+5. Check if the difference between `min_upper_th` and `max_under_th` is greater than or equal to 0.
+6. If the condition in step 5 is true, print the result of `min_upper_th - max_under_th + 1`.
+7. If the condition in step 5 is false, print 0.
+
+Function signature: `def calculate_valid_range() -> None`
+ 
+- `n`: `int`
+- `m`: `int`
+- `gate_cond`: `list[list[int]]`
+- `max_under_th`: `int`
+- `min_upper_th`: `int`
+
+Required libraries: 
+- `sys` (implicitly used for input/output operations, though not directly imported in the given Python code)
+
+Input/Output Operations:
+- Read `int` values from input using `input().split()` and `map(int, ...)`.
+- Print results using `print()`. 
+
+Data Processing Logic:
+- Use list comprehension to process input into a 2D list.
+- Use built-in `max()` and `min()` functions with list comprehensions to find `max_under_th` and `min_upper_th`.
+- Perform a simple conditional check and arithmetic operation to determine the output.

@@ -1,0 +1,39 @@
+**Algorithm:**
+
+**Function Signature:**
+- `void solve(int testNumber, Scanner in, PrintWriter out)`
+
+**Variables:**
+- `int n`: Input count of strings
+- `long[] cnt` (size 5): Counter array for characters 'M','A','R','C','H'
+- `long res`: Resultant sum of all triplet combinations
+
+**Logic Flow:**
+1. Read integer `n` from input
+2. Initialize `cnt` array with 5 elements set to 0
+3. For `i` from 0 to `n-1`:
+   - Read string `str`
+   - Check first character of `str`:
+     - 'M' → increment `cnt[0]`
+     - 'A' → increment `cnt[1]`
+     - 'R' → increment `cnt[2]`
+     - 'C' → increment `cnt[3]`
+     - 'H' → increment `cnt[4]`
+4. Compute all 10 valid triplet combinations of `cnt` indices:
+   - Multiply three distinct elements from `cnt` array
+   - Sum all products into `res`
+5. Output `res`
+
+**Control Structures:**
+- For-loop with `n` iterations
+- 5 consecutive if-else conditions checking first character
+- Explicit enumeration of all 5-choose-3 combinations (10 terms)
+  
+**Input/Output:**
+- Input via `Scanner` reading strings
+- Output via `PrintWriter` using `println`
+
+**Dependencies:**
+- `java.util.Scanner`
+- `java.util.Arrays`
+- `java.io.PrintWriter`

@@ -1,0 +1,48 @@
+**Function Signature:**
+main(String[] args) -> void
+
+**Variables:**
+- Scanner sc (input scanner)
+- int N (number of vectors)
+- int D (dimension of vectors)
+- int[][] vectors (2D array storing N vectors of D dimensions)
+- int answer (count of integer distance pairs)
+- int dist (squared Euclidean distance)
+- int x (temporary difference calculation)
+- double sq (square root of dist)
+
+**Logic Flow:**
+1. Initialize Scanner object for input
+2. Read integer N from input
+3. Read integer D from input
+4. Create 2D array vectors with dimensions [N][D]
+5. For i from 0 to N-1:
+   - For j from 0 to D-1:
+     - Read integer into vectors[i][j]
+6. Initialize answer to 0
+7. For i from 0 to N-2:
+   - For j from i+1 to N-1:
+     - Initialize dist to 0
+     - For d from 0 to D-1:
+       - Calculate x = vectors[i][d] - vectors[j][d]
+       - Add x*x to dist
+     - Calculate sq = square root of dist
+     - If absolute difference between sq and floor(sq) is less than 0.001:
+       - Increment answer by 1
+8. Print answer
+
+**Control Structures:**
+- For loop: i = 0; i < N; i++
+- For loop: j = 0; j < D; j++
+- For loop: i = 0; i < N-1; i++
+- For loop: j = i+1; j < N; j++
+- For loop: d = 0; d < D; d++
+- Conditional: if (Math.abs(sq - Math.floor(sq)) < 0.001
+
+**Input/Output:**
+- Input: Reads integers N, D, and N×D vector components
+- Output: Prints integer count of pairs with integer Euclidean distance
+
+**Dependencies:**
+- java.lang.Math
+- java.util.Scanner

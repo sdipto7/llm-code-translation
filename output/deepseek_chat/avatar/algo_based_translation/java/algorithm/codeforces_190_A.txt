@@ -1,0 +1,29 @@
+```python
+Algorithm:
+Function: main
+Parameters: args (list of strings)
+Return: void
+
+Variables:
+- sc: Scanner object for input
+- n: integer (from input)
+- m: integer (from input)
+
+Logic Flow:
+1. Create Scanner object to read from standard input
+2. Read integer n from input
+3. Read integer m from input
+4. If n equals 0:
+   - If m is not equal to 0: print "Impossible"
+   - Else: print "0 0"
+   - Return from function
+5. If m is less than or equal to n:
+   - If m equals 0: set m to 1
+   - Print n followed by space followed by (m + n - 1)
+   - Return from function
+6. Otherwise: print m followed by space followed by (m + n - 1)
+
+Required Libraries:
+- java.io.*
+- java.util.*
+```

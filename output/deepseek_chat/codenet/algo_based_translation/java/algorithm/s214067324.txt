@@ -1,0 +1,11 @@
+Algorithm:
+- Import java.util.Scanner
+- Define class Main
+- Define method main with parameter String[] args
+  - Declare Scanner sc initialized with System.in
+  - Declare int x initialized with Integer.parseInt(sc.next())
+  - If x < 1200
+    - Print "ABC"
+  - Else
+    - Print "ARC"
+  - Close Scanner sc

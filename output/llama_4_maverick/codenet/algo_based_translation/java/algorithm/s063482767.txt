@@ -1,0 +1,13 @@
+1. Import the required library: java.util.*
+2. Define a public class: Main
+3. Define a public static method: main with parameter (String[] args) and return type void
+4. Declare a variable: sc of type Scanner and initialize it with new Scanner(System.in)
+5. Declare a variable: n of type int and assign it the value returned by sc.nextInt()
+6. Declare a variable: queue of type PriorityQueue<Integer> and initialize it with new PriorityQueue<>()
+7. Loop from i = 0 to n-1 with increment i by 1
+   - Add the value returned by sc.nextInt() to queue
+8. Declare a variable: sum of type int and initialize it with 0
+9. Loop from i = 0 to n-2 with increment i by 1
+   - Add the value returned by queue.poll() to sum
+10. Evaluate the condition: queue.poll() < sum
+11. If the condition is true, output "Yes" else output "No" using System.out.println()

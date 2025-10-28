@@ -1,0 +1,38 @@
+Algorithm:
+
+- Import sys, math, and defaultdict from collections
+- Set recursion limit to 10^7
+- Define input function to read a line from stdin and strip newline character
+- Define mod as 10^9 + 7
+- Define function I to return an integer from input
+- Define function II to return a map of integers from input split by spaces
+- Define function III to return a list of integers from input split by spaces
+- Define function Line to read N lines of input, split by spaces, convert to integers, and return transposed tuples as lists
+- Read input string S
+- Calculate length n of S
+- If n equals 1:
+    - If S equals '5' or '?':
+        - Print 1
+        - Exit program
+    - Else:
+        - Print 0
+        - Exit program
+- Initialize dp as a 2D list of size n x 13 with all elements set to 0
+- For i from 0 to n-1:
+    - If i equals 0:
+        - If S[i] is not '?':
+            - Increment dp[i][int(S[i])] by 1
+        - Else:
+            - For j from 0 to 9:
+                - Increment dp[i][j] by 1
+    - Else:
+        - If S[i] is not '?':
+            - For k from 0 to 12:
+                - Increment dp[i][(k * 10 + int(S[i])) % 13] by dp[i-1][k]
+        - Else:
+            - For j from 0 to 9:
+                - For k from 0 to 12:
+                    - Increment dp[i][(k * 10 + j) % 13] by dp[i-1][k]
+        - For k from 0 to 12:
+            - Update dp[i][k] to dp[i][k] % mod
+- Print dp[n-1][5]

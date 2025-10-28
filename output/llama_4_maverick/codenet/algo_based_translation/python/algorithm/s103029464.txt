@@ -1,0 +1,40 @@
+### Algorithm
+
+1. Define a function `solve(N: int, A: list[int]) -> tuple[int, list[int]]` 
+   - Parameters: `N` of type `int`, `A` of type `list[int]`
+   - Return types: `int`, `list[int]`
+
+2. Declare variables:
+   - `N`: integer
+   - `A`: list of integers
+   - `B`: list of integers of size `N`, initialized with zeros
+
+3. Iterate from `N-1` to `0` (inclusive) with step `-1`:
+   - For each index `i`, perform the following steps:
+     - Initialize `tmp_sum` to `0`
+     - Iterate from `(i + 1) * 2 - 1` to `N-1` (inclusive) with step `i + 1`:
+       - For each index `j` in this range, update `tmp_sum` as follows:
+         - Add `B[j]` to `tmp_sum`
+         - Update `tmp_sum` to be `tmp_sum` modulo `2`
+     - Update `B[i]` to be the bitwise XOR of `tmp_sum` and `A[i]`
+
+4. Calculate the sum of all elements in `B` and store it in a variable.
+
+5. Create a list of indices `i + 1` where `B[i]` equals `1`.
+
+6. Return the sum calculated in step 4 and the list created in step 5.
+
+### Input/Output Operations
+
+1. Read an integer `N` from input.
+2. Read a list of `N` integers from input and store it in `A`.
+3. Output the sum calculated in step 4.
+4. Output the list created in step 5.
+
+### Required Libraries/Modules
+
+- No specific libraries or modules are required beyond basic input/output operations and list manipulation, which are typically available in standard libraries. 
+
+### Data Processing Logic
+
+The data processing logic involves iterating through the list `A` in reverse order, computing values for `B` based on previous values in `B` and corresponding values in `A`, and then computing a sum and a list of indices based on the values in `B`.

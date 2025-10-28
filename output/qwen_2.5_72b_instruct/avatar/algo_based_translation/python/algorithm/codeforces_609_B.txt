@@ -1,0 +1,40 @@
+Function signatures with parameter and return types:
+- `_input(): List[int]`
+
+Variable declarations and data types:
+- `n: int`
+- `m: int`
+- `lst: List[int]`
+- `l: Dict[int, int]`
+- `i: int`
+- `res: int`
+
+Complete logic flow in execution order:
+1. Call `_input()` to read integers from input and split them into a list of integers.
+2. Assign the first integer to `n` and the second to `m`.
+3. Assign the remaining integers to `lst`.
+4. Initialize an empty dictionary `l` to store counts of elements in `lst`.
+5. Loop over each index `i` from 0 to `n-1`:
+   - If `lst[i]` is not in `l`, add it with a count of 1.
+   - Otherwise, increment the count of `lst[i]` in `l` by 1.
+6. Initialize `res` to 0.
+7. Loop over each index `i` from 0 to `n-1`:
+   - If the count of `lst[i]` in `l` is greater than 1:
+     - Add `n - i - l[lst[i]]` to `res`.
+     - Decrement the count of `lst[i]` in `l` by 1.
+   - Otherwise, add `n - i - 1` to `res`.
+8. Print `res`.
+
+Control structures:
+- Loops: Two `for` loops iterating over indices from 0 to `n-1`.
+- Conditionals: 
+  - `if lst[i] not in l`: Checks if an element is not in the dictionary.
+  - `if l[lst[i]] > 1`: Checks if the count of an element is greater than 1.
+
+Input/output operations and data processing logic:
+- Input: Reads a line of input, splits it into integers, and assigns them to `n`, `m`, and `lst`.
+- Output: Prints the final value of `res` after processing.
+- Data processing logic: Counts occurrences of each element in `lst`, calculates a result based on these counts, and updates the counts during the process.
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules are required. The code uses built-in Python functions and data structures.

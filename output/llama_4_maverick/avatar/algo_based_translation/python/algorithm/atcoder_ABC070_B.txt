@@ -1,0 +1,7 @@
+1. READ input values into list A
+2. CONVERT input values to integers
+3. IF A[1] <= A[2] OR A[3] <= A[0] THEN
+4.     PRINT 0
+5. ELSE
+6.     SORT list A in ascending order
+7.     PRINT A[2] - A[1]

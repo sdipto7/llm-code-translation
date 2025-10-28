@@ -1,0 +1,48 @@
+```
+Algorithm
+
+1. Initialize Scanner object `sc` for input
+2. Read a line of input and split by spaces into an array `nums`
+3. Parse `N` as an integer from `nums[0]`
+4. Parse `M` as an integer from `nums[1]`
+5. Initialize a 2D char array `room` of size `N` by `M`
+6. Parse `D` as an integer from `nums[2]`
+7. Initialize integer `num` to 0
+
+Function main():
+   - Call inputRoom()
+   - If `M >= D`, call setWE()
+   - If `N >= D`, call setNS()
+   - Print `num`
+   - Close the scanner `sc`
+
+Function inputRoom():
+   - For each `i` from 0 to `N-1`:
+       - Read a line `str_room` from input
+       - Convert `str_room` to a char array and assign to `room[i]`
+
+Function setWE():
+   - Declare boolean `canPut`
+   - For each `i` from 0 to `N-1`:
+       - For each `j` from 0 to `M-D`:
+           - Set `canPut` to true
+           - For each `k` from 0 to `D-1`:
+               - If `room[i][j+k]` is '#':
+                   - Set `canPut` to false
+                   - Break the loop
+           - If `canPut` is true, increment `num` by 1
+
+Function setNS():
+   - Declare boolean `canPut`
+   - For each `i` from 0 to `M-1`:
+       - For each `j` from 0 to `N-D`:
+           - Set `canPut` to true
+           - For each `k` from 0 to `D-1`:
+               - If `room[j+k][i]` is '#':
+                   - Set `canPut` to false
+                   - Break the loop
+           - If `canPut` is true, increment `num` by 1
+
+Dependencies:
+   - java.util.Scanner
+```

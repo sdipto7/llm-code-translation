@@ -1,0 +1,49 @@
+**Algorithm:**
+
+**Libraries:**
+- java.util.*
+- java.io.*
+- java.math.*
+
+**Classes:**
+- InputIterator class:
+  - Fields: inputLine (ArrayList<String>), index (int), max (int), read (String)
+  - Constructor: Reads all lines from standard input into inputLine
+  - Methods: hasNext() → boolean, next() → String
+
+**Global Variables:**
+- CONVSTR: HashMap<Integer, String> (stores delimiter mappings)
+- ii: InputIterator instance
+- out: PrintWriter instance
+
+**Helper Methods:**
+- flush(): calls out.flush()
+- myout(Object t): prints t followed by newline
+- myerr(Object t): prints debug message with t
+- next(): returns ii.next()
+- hasNext(): returns ii.hasNext()
+- nextInt(): returns Integer.parseInt(next())
+- nextLong(): returns Long.parseLong(next())
+- nextDouble(): returns Double.parseDouble(next())
+- nextStrArray(): returns myconv(next(), 8) → splits by space
+- nextCharArray(): returns myconv(next(), 0) → splits by empty string
+- nextIntArray(): returns ArrayList<Integer> from nextStrArray()
+- nextLongArray(): returns ArrayList<Long> from nextStrArray()
+- myconv(Object list, int no): joins list elements using delimiter from CONVSTR
+- myconv(String str, int no): splits str using delimiter from CONVSTR
+
+**Main Method:**
+- Initialize CONVSTR: map 8→" ", 9→"\n", 0→""
+- Call solve()
+- Call flush()
+
+**solve() Method:**
+- Read integer N from input
+- Read next integer array into list
+- Initialize max = 0
+- Initialize output = 0
+- For i from 0 to N-1:
+  - If max ≤ list[i]:
+    - Set max = list[i]
+    - Increment output by 1
+- Print output

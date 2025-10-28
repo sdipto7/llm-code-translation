@@ -1,0 +1,26 @@
+**Function Signature:**
+```python
+def count_occurrences(s: str) -> int
+```
+
+**Variables:**
+- `s`: input string, type: str
+
+**Algorithm Logic:**
+1. Check if `s` is exactly equal to "RRR":
+   - If true, return 3
+2. Else, check if `s` is exactly equal to "SSS":
+   - If true, return 0
+3. Else, check if `s` is exactly equal to "RRS" or "SRR":
+   - If true, return 2
+4. Else, return 1
+
+**Input/Output Operations:**
+- Read input string via `s = input().strip()`
+- Call `count_occurrences(s)` and print result
+
+**Control Structures:**
+- Sequential if-elif-elif-else conditions with exact string comparisons
+
+**Dependencies:**
+- None required

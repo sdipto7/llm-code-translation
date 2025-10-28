@@ -1,0 +1,62 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`: Entry point function with no parameters and no return value.
+
+**Variable Declarations and Data Types:**
+- `s: string`
+- `n: integer`
+- `ans: integer` (initialized to `0`)
+- `x: string`
+- `a: integer` (initialized to `0` in loop)
+- `b: integer` (initialized to `0` in loop)
+- `i: integer` (loop counter for `n` iterations)
+- `j: char` (loop variable for iterating over `s`)
+
+**Step-by-Step Logic Flow:**
+1. Read `s` from standard input.
+2. Read `n` from standard input and convert to integer.
+3. Initialize `ans` to `0`.
+4. For each `i` in range `0` to `n-1` (inclusive):
+   1. Read `x` from standard input.
+   2. Set `a = 0`, `b = 0`.
+   3. For each character `j` in `s`:
+      1. If `j == x[0]`:
+         - Increment `a` by `1`.
+      2. Else if `j == x[1]`:
+         - Increment `b` by `1`.
+      3. Else:
+         - Add `min(a, b)` to `ans`.
+         - Reset `a = 0`, `b = 0`.
+   4. After processing all characters in `s`:
+      - Add `min(a, b)` to `ans`.
+5. Output `ans` to standard output.
+
+**Control Flow Structures:**
+- **For Loop 1:** Iterates `n` times using loop counter `i`.
+  - Exit Criteria: When `i >= n`
+- **Nested For Loop 2:** Iterates over each character `j` in string `s`.
+  - Exit Criteria: When all characters in `s` are processed
+- **Conditionals in Nested Loop:**
+  - `if j == x[0]` branch
+  - `elif j == x[1]` branch
+  - `else` branch (handles non-matching characters)
+
+**Input/Output Operations:**
+- Input:
+  - Read `s` via `input()` (string)
+  - Read `n` via `input()` converted to integer
+  - Read `x` via `input()` (string) `n` times
+- Output:
+  - Print `ans` via `print()`
+
+**Error Handling and Edge Cases:**
+- Assumes valid input types (string for `s`, integer for `n`, two-character strings for each `x` input)
+- No explicit error handling for invalid inputs
+- Correctly handles empty string `s` (adds `0` to `ans` in each iteration)
+- Correctly handles cases where `x` characters never appear in `s` (adds `0`)
+
+**External Dependencies:**
+- Standard input/output functions only
+- `min()` function for integer comparisons
+- No external libraries or imports required

@@ -1,0 +1,17 @@
+Function signature:
+- `main()`: No parameters, no return type
+
+Variable declarations:
+- `sc`: Scanner object for input
+- `C`: String to store user input
+
+Logic flow:
+1. Instantiate a `Scanner` object `sc` to read input from the standard input stream.
+2. Read a string input using `sc.next()` and assign it to the variable `C`.
+3. Convert the first character of `C` to its ASCII value using `C.charAt(0)`.
+4. Increment this ASCII value by 1.
+5. Convert the resulting ASCII value back to a character.
+6. Output the resulting character using `System.out.println()`.
+
+Libraries, modules, or dependencies:
+- `java.util.Scanner` for reading input.

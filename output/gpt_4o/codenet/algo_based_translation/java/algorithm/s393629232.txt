@@ -1,0 +1,31 @@
+```
+Algorithm: Calculate Maximum Difference
+
+Function Signature:
+- Function: calculateMaxDifference
+- Parameters: None
+- Return Type: void
+
+Variable Declarations:
+- Scanner sc (data type: Scanner)
+- Integer n (data type: int)
+- Integer maxv (data type: int)
+- Integer minv (data type: int)
+- Integer ri (data type: int)
+- Integer i (data type: int)
+
+Required Libraries:
+- java.util.Scanner
+
+Execution Flow:
+1. Initialize a Scanner object `sc` to read from standard input.
+2. Read an integer from input and assign it to variable `n`.
+3. Assign Integer.MIN_VALUE to variable `maxv`.
+4. Read the next integer from input and assign it to variable `minv`.
+5. For loop: Initialize `i` to 1; continue while `i` is less than `n`; increment `i` by 1.
+   5.1. Read the next integer from input and assign it to variable `ri`.
+   5.2. Update `maxv` to the maximum value between `maxv` and `ri - minv`.
+   5.3. Update `minv` to the minimum value between `minv` and `ri`.
+6. Output the value of `maxv`.
+7. Close the Scanner object `sc`.
+```

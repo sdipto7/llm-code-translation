@@ -1,0 +1,81 @@
+```java
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String[] initialInput = scanner.nextLine().split(" ");
+        int t = Integer.parseInt(initialInput[0]);
+        int m = Integer.parseInt(initialInput[1]);
+        
+        ArrayList<Integer> memory = new ArrayList<>();
+        for (int i = 0; i < m; i++) {
+            memory.add(0);
+        }
+        int nextId = 1;
+        
+        for (int i = 0; i < t; i++) {
+            String[] operation = scanner.nextLine().split(" ");
+            switch (operation[0]) {
+                case "alloc":
+                    int size = Integer.parseInt(operation[1]);
+                    boolean allocated = false;
+                    int consecutiveFree = 0;
+                    
+                    for (int j = 0; j < m; j++) {
+                        if (memory.get(j) == 0) {
+                            consecutiveFree++;
+                            if (consecutiveFree == size) {
+                                int start = j - size + 1;
+                                for (int k = start; k <= j; k++) {
+                                    memory.set(k, nextId);
+                                }
+                                System.out.println(nextId);
+                                nextId++;
+                                allocated = true;
+                                break;
+                            }
+                        } else {
+                            consecutiveFree = 0;
+                        }
+                    }
+                    if (!allocated) {
+                        System.out.println("NULL");
+                    }
+                    break;
+                    
+                case "erase":
+                    int target = Integer.parseInt(operation[1]);
+                    if (target == 0 || !memory.contains(target)) {
+                        System.out.println("ILLEGAL_ERASE_ARGUMENT");
+                    } else {
+                        for (int j = 0; j < m; j++) {
+                            if (memory.get(j) == target) {
+                                memory.set(j, 0);
+                            }
+                        }
+                    }
+                    break;
+                    
+                case "defragment":
+                    int zeroCount = 0;
+                    ArrayList<Integer> compacted = new ArrayList<>();
+                    for (int num : memory) {
+                        if (num != 0) {
+                            compacted.add(num);
+                        } else {
+                            zeroCount++;
+                        }
+                    }
+                    for (int j = 0; j < zeroCount; j++) {
+                        compacted.add(0);
+                    }
+                    memory = compacted;
+                    break;
+            }
+        }
+        scanner.close();
+    }
+}
+```

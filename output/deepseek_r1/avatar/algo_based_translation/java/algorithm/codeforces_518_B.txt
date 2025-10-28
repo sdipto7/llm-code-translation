@@ -1,0 +1,38 @@
+```python
+from collections import Counter
+
+def reverse_char(c):
+    return c.upper() if c.islower() else c.lower()
+
+s = input().strip()
+t = input().strip()
+
+ura = 0
+opa = 0
+tmap = Counter(t)
+s_list = list(s)
+
+for i in range(len(s_list)):
+    ch = s_list[i]
+    if ch in tmap:
+        if tmap[ch] == 1:
+            del tmap[ch]
+        else:
+            tmap[ch] -= 1
+        ura += 1
+        s_list[i] = 'Я'
+
+for i in range(len(s_list)):
+    ch = s_list[i]
+    if ch == 'Я':
+        continue
+    rch = reverse_char(ch)
+    if rch in tmap:
+        if tmap[rch] == 1:
+            del tmap[rch]
+        else:
+            tmap[rch] -= 1
+        opa += 1
+
+print(ura, opa)
+```

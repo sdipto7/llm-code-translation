@@ -1,0 +1,29 @@
+1. Required Dependencies:
+   - java.util.Scanner
+
+2. Function Signatures:
+   - public static void main(String[] args)
+
+3. Variables:
+   - Scanner scan: Instance of Scanner initialized with System.in
+   - int r: Stores integer input from user
+   - int res: Stores squared value of r
+
+4. Execution Flow:
+   1. Create Scanner object for reading input
+   2. Read integer from standard input using Scanner.nextInt() -> assign to r
+   3. Calculate square of r using Math.pow() with 2 as exponent
+   4. Explicitly cast result to int (double -> int)
+   5. Print resulting integer to standard output using System.out.println()
+
+5. Data Processing:
+   Input -> Integer (r)
+   Transformation: r² through floating-point calculation with cast to integer
+   Output: Integer result of squaring operation
+
+6. Control Structures:
+   - Linear execution flow with no loops or conditional blocks
+
+7. I/O Operations:
+   - Single integer input from console
+   - Single integer output to console

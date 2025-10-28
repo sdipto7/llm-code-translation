@@ -1,0 +1,25 @@
+```
+Dependencies:
+- Import the Scanner class from the java.util package
+
+Algorithm:
+- Define the main function: `public static void main(String[] args)`
+  - Declare a Scanner object `in` to read input from the standard input
+  - Declare a long variable `number` and initialize it with the next long value from the input
+  - Declare a long variable `ans` and initialize it to -1
+  - Declare a long variable `value` and initialize it to 0
+  - Declare an integer variable `mask` and initialize it to 2
+  - Start a while loop with the condition `value < number`
+    - Convert `mask` to its binary string representation using `Integer.toBinaryString(mask)`
+    - Increment `mask` by 1
+    - Remove the first character from the binary string using `substring(1)`
+    - Assign the result to a string variable `s`
+    - Declare an integer variable `zeros` and initialize it to 0
+    - For each character `c` in the character array of the string `s`
+      - If `c` is equal to '0', increment `zeros` by 1
+    - If `zeros` is not equal to the length of `s` minus `zeros`, continue to the next iteration of the loop
+    - Replace all occurrences of '0' in `s` with '4'
+    - Replace all occurrences of '1' in `s` with '7'
+    - Parse `s` as a long integer and assign it to `value`
+  - Print `value` to the standard output
+```

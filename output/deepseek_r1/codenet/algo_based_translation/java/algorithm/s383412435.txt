@@ -1,0 +1,42 @@
+Function:
+- main(String[] args) returns void
+
+Variables:
+- N: int
+- a: long[]
+- tmp: int
+- ans: int
+- sc: Scanner
+- z: int
+- j: int
+- i: int
+
+Libraries/Dependencies:
+- java.util.Scanner
+- java.util.Arrays
+
+Algorithm:
+
+1. Read integer N from standard input using Scanner
+2. Declare long array a with size N
+3. Read N integers from input and store in array a
+4. Sort array a using Arrays.sort()
+5. If N == 1:
+   a. If a[0] > 1:
+      i. Set ans = 1
+6. Else:
+   a. Initialize ans = 0
+   b. Iterate j from 0 to N-1:
+      i. If j == 0 OR a[j] != a[j-1]:
+         - Initialize tmp = 1
+         - Iterate i from j+1 to N-1:
+             * If a[i] == a[j]:
+                 - tmp += 1
+             * Else:
+                 - Break loop
+         - Compare:
+             * If tmp > a[j]:
+                 - ans += (tmp - a[j])
+             * Else if tmp < a[j]:
+                 - ans += tmp
+7. Print ans to standard output

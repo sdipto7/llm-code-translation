@@ -1,0 +1,18 @@
+```
+Function Signature: main() -> void
+
+- Import required module: java.util.Scanner
+- Declare integer variable: N
+- Declare integer variable: count, initialize to 0
+- Declare integer variable: next, initialize to 10
+
+Begin function main:
+1. Initialize Scanner object: sc
+2. Read integer input from user and assign to variable N
+3. Initialize loop counter: i, starting from 1, iterate while i is less than or equal to N, increment i by 1
+   a. Increment count by 1
+   b. Check if i equals next - 1
+      i. If true, update i to next * 10 - 1
+      ii. Update next to next * 100
+4. Print the value of count
+```

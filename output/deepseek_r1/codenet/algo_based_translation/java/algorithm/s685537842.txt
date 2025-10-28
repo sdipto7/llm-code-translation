@@ -1,0 +1,32 @@
+Function Signature:
+public static void main(String[] args)
+
+Variables:
+- Scanner sc = new Scanner(System.in)
+- int a = sc.nextInt()
+- int b = sc.nextInt()
+- int t = sc.nextInt()
+- double time = 0.0
+- int count = 0
+
+Logic Flow:
+1. Read three integers a, b, t from standard input
+2. Initialize time to 0.0 and count to 0
+3. While time < (t + 0.5):
+   a. Add b to count
+   b. Add a to time
+   c. Check if time > (t + 0.5)
+      i. If true: subtract b from count and exit loop
+4. Print count to standard output
+
+Control Structures:
+- While loop with condition (time < t + 0.5)
+- If statement with condition (time > t + 0.5) inside loop
+
+Input/Output:
+- Uses java.util.Scanner for input
+- System.in for reading integers
+- System.out.println for final output
+
+Dependencies:
+- Requires java.util.Scanner class

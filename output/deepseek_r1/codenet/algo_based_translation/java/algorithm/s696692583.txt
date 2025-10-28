@@ -1,0 +1,66 @@
+**Functions:**
+1. `main(String[] args)`
+   - Static void entry point
+   - Creates Main instance and calls run()
+
+2. `run()`
+   - Manages program flow
+   - Parameters: none
+   - Return: void
+
+3. `solve(int[][] a)`
+   - Analyzes 3x3 grid for winning lines
+   - Parameters: 2D int array (3x3)
+   - Return: char ('d','o','x')
+
+**Variables:**
+- Scanner `sc` for input
+- `my1`, `my2`, `enemy1`: int inputs
+- `used[]`: boolean array[11] (1-based index)
+- `all`: int counter for available cards
+- `safe`: int counter for favorable cards
+- `i`: loop index (1-10 in run(), 0-2 in solve)
+- `side`: int loop variable (1-2)
+- `s[]`: char array {'d','o','x'}
+
+**run() Logic Flow:**
+1. Loop while scanner has input
+2. Read three integers: my1, my2, enemy1
+3. Mark these three values in `used[]` array
+4. Initialize all=0, safe=0
+5. For each i=1 to 10:
+   - Skip used numbers
+   - Increment `all`
+   - If (my1 + my2 + i ≤ 20), increment `safe`
+6. Decision:
+   - If safe*2 ≥ all → print "YES"
+   - Else → print "NO"
+
+**solve() Logic Flow:**
+1. Create char array s with ['d','o','x']
+2. For side=1 then 2:
+   - Check horizontal lines:
+     For i=0 to 2:
+     If a[i][0] == side AND a[i][1] == side AND a[i][2] == side → return s[side]
+   - Check vertical lines:
+     For i=0 to 2:
+     If a[0][i] == side AND a[1][i] == side AND a[2][i] == side → return s[side]
+   - Check diagonal 1 (0,0 1,1 2,2)
+   - Check diagonal 2 (0,2 1,1 2,0)
+3. Return 'd' if no winner found
+
+**Control Structures:**
+- while(sc.hasNext()) loop
+- for(i:1→10) with conditional continue via used[] check
+- if-else for YES/NO decision
+- nested for loops in solve() (side loop + row/col checks)
+- multiple compound conditionals for line checks
+
+**Input/Output:**
+- Scanner reads from System.in
+- System.out.println for YES/NO results
+- Input format: sequence of triplets (my1 my2 enemy1)
+
+**Dependencies:**
+- java.util.Arrays.deepToString (for debug)
+- java.util.Scanner (input handling)

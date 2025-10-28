@@ -1,0 +1,33 @@
+```plaintext
+Algorithm atcoder_ABC169_C
+
+Dependencies:
+- Import Scanner from java.util
+
+Function: main
+- Parameters: args (String array)
+- Return Type: void
+
+Variables:
+- sc: Scanner
+- a: long
+- b: String
+- bChar: char array
+- length: int
+- bStr: String
+- bInt: int
+- result: long
+
+Execution Flow:
+1. Initialize sc as a new Scanner object to read from standard input.
+2. Read a long integer from input and assign it to variable a.
+3. Read a string from input and assign it to variable b.
+4. Convert b to a char array and assign it to bChar.
+5. Determine the length of bChar and assign it to length.
+6. Initialize bStr as an empty string.
+7. For i from 0 to length - 1, do the following:
+   a. If bChar[i] is not a '.', append bChar[i] to bStr.
+8. Parse bStr as an integer and assign it to bInt.
+9. Calculate (a * bInt) / 100 and assign the result to result.
+10. Output the value of result to standard output.
+```

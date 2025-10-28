@@ -1,0 +1,27 @@
+Function signature: main() -> None
+
+Variable declarations and data types:
+- a: int
+- b: int
+- lst: List[int]
+
+Logic flow in execution order:
+1. Read input string from standard input
+2. Split input string by whitespace
+3. Map split strings to integers
+4. Assign first integer to a
+5. Assign second integer to b
+6. Create list lst containing three elements: a+b, a-b, a*b
+7. Find maximum value in lst
+8. Print maximum value
+
+Control structures:
+- No loops or conditionals
+
+Input/output operations and data processing logic:
+- Input: Read space-separated integers from standard input
+- Processing: Calculate sum, difference, and product of the two integers; store them in a list; find the maximum value in the list
+- Output: Print the maximum value
+
+Required libraries, modules, or dependencies:
+- No additional libraries, modules, or dependencies required

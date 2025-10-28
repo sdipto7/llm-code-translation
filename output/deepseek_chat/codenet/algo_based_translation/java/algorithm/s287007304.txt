@@ -1,0 +1,16 @@
+readLine function:
+- Function signature: private static String readLine()
+- Declare BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))
+- Try: return reader.readLine()
+- Catch Exception e: return e.getMessage()
+
+main function:
+- Read input line using readLine()
+- Split input string by space into String array s
+- Parse s[0] to integer a
+- Parse s[1] to integer b
+- If b modulo a equals 0: print a + b
+- Else: print b - a
+- Return
+
+Required: java.io.BufferedReader, java.io.InputStreamReader

@@ -1,0 +1,17 @@
+1. READ number of elements (inp)
+2. READ list of integers (lista) with 'inp' number of elements
+3. FOR each index i in lista
+   3.1 IF i is the first element
+      3.1.1 PRINT difference between next element and current element, and difference between last element and current element
+   3.2 ELSE IF i is the last element
+      3.2.1 PRINT difference between last element and second last element, and difference between last element and first element
+   3.3 ELSE
+      3.3.1 IF difference between current element and previous element is greater than difference between next element and current element
+         3.3.1.1 SET min difference to difference between next element and current element
+      3.3.2 ELSE
+         3.3.2.1 SET min difference to difference between current element and previous element
+      3.3.3 PRINT min difference
+      3.3.4 IF difference between last element and current element is greater than difference between current element and first element
+         3.3.4.1 PRINT difference between last element and current element
+      3.3.5 ELSE
+         3.3.5.1 PRINT difference between current element and first element

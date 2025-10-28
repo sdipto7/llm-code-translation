@@ -1,0 +1,39 @@
+**Function Signature:**
+- `main() -> void`
+
+**Variables:**
+- `q: int`
+- `h: int`
+- `s: int`
+- `d: int`
+- `n: int`
+- `min_1: int`
+- `min_2: int`
+
+**Algorithm Steps:**
+
+1. Read four integers `q`, `h`, `s`, `d` from standard input via `input().split()` and convert to `int`.
+2. Read integer `n` from standard input and convert to `int`.
+3. Compute `min_1` as the minimum of:
+   - `q * 4`
+   - `h * 2`
+   - `q * 2 + h`
+   - `s`
+4. Compute `min_2` as the minimum of:
+   - `min_1 * 2`
+   - `d`
+5. Calculate total cost:
+   - Compute `(n % 2) * min_1`
+   - Compute `(n // 2) * min_2`
+   - Sum both values
+6. Print the total cost via `print()`
+
+**Control Structures:**
+- No explicit loops or conditionals (implicit `min()` function calls perform value comparisons)
+
+**Input/Output:**
+- Input: Single line with four space-separated integers for `q`, `h`, `s`, `d`. Followed by single integer `n`.
+- Output: Single integer representing minimum cost.
+
+**Dependencies:**
+- None beyond standard input/output functions

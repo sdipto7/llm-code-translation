@@ -1,0 +1,38 @@
+- Function Signature: `main()`
+- Variable Declarations:
+  - `n: int`
+  - `input_array: list of tuples (S: int, R: int, H: int, C: int)`
+  - `outdated: set of tuples (S: int, R: int, H: int, C: int)`
+  - `minimum_cost: int`
+  - `input_number: int`
+- Logic Flow:
+  1. Read integer `n` from input.
+  2. Initialize `input_array` as an empty list.
+  3. For `i` from `0` to `n-1`:
+     - Read four integers `S`, `R`, `H`, `C` from input.
+     - Append tuple `(S, R, H, C)` to `input_array`.
+  4. Initialize `outdated` as an empty list.
+  5. For `i` from `0` to `n-1`:
+     - For `j` from `0` to `n-1`:
+        - If `input_array[i][0] < input_array[j][0]` and `input_array[i][1] < input_array[j][1]` and `input_array[i][2] < input_array[j][2]`:
+           - Append `input_array[i]` to `outdated`.
+  6. Convert `outdated` to a set.
+  7. Set `minimum_cost` to `100000`.
+  8. Set `input_number` to `0`.
+  9. For `i` from `0` to `n-1`:
+     - Set `current_item` to `input_array[i]`.
+     - Set `cost` to `current_item[3]`.
+     - If `current_item` is not in `outdated` and `cost < minimum_cost`:
+        - Set `minimum_cost` to `cost`.
+        - Set `input_number` to `i + 1`.
+  10. Print `input_number`.
+- Input/Output Operations:
+  - Read integer `n` from input.
+  - For each of `n` iterations, read four integers `S`, `R`, `H`, `C` from input.
+  - Print `input_number` as output.
+- Data Processing Logic:
+  - Collect `n` items, each with four attributes.
+  - Identify items that are outdated based on attribute comparisons.
+  - Determine the non-outdated item with the minimum cost.
+- Required Libraries/Modules/Dependencies:
+  - No specific libraries or modules required.

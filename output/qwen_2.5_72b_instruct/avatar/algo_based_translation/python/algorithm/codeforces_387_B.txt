@@ -1,0 +1,40 @@
+Function Signature:
+- `main()`: No parameters, No return type
+
+Variable Declarations and Data Types:
+- `n`: Integer
+- `m`: Integer
+- `round_complexity`: List of Integers
+- `george_complexity`: List of Integers
+- `i`: Integer, initialized to 0
+- `j`: Integer, initialized to 0
+
+Execution Order and Logic Flow:
+1. Read two integers `n` and `m` from input, separated by spaces.
+2. Read `n` integers for `round_complexity` list from input, separated by spaces.
+3. Read `m` integers for `george_complexity` list from input, separated by spaces.
+4. Initialize `i` and `j` to 0.
+5. Enter a while loop that continues as long as `i` is less than `n` and `j` is less than `m`.
+6. Inside the loop, check if `round_complexity[i]` is less than or equal to `george_complexity[j]`.
+   - If true, increment `i` by 1.
+7. Always increment `j` by 1.
+8. After the loop, print the result of `n - i`.
+
+Control Structures:
+- While loop with condition `i < n and j < m`
+- Conditional inside the loop: `if round_complexity[i] <= george_complexity[j]`
+
+Input/Output Operations:
+- Input: Three lines from standard input
+  - First line: Two integers `n` and `m`
+  - Second line: `n` integers for `round_complexity`
+  - Third line: `m` integers for `george_complexity`
+- Output: One integer, result of `n - i`, printed to standard output
+
+Data Processing Logic:
+- Compare elements of `round_complexity` and `george_complexity` lists.
+- Count how many elements in `round_complexity` can be "matched" with elements in `george_complexity` in order.
+- Calculate the number of unmatched elements in `round_complexity`.
+
+Required Libraries, Modules, or Dependencies:
+- No specific libraries or modules required

@@ -1,0 +1,10 @@
+1. Read input values: x, t, a, b, da, db.
+2. Initialize a boolean variable 'ok' to False.
+3. Iterate from i = 0 to t-1.
+4. For each i, calculate 'first' as a - (da * i).
+5. For each 'first', iterate from j = 0 to t-1.
+6. For each j, calculate 'second' as b - (db * j).
+7. Check if 'x' equals 0, 'first', 'second', or 'first' + 'second'.
+8. If any condition in step 7 is met, set 'ok' to True and break the inner loop.
+9. If 'ok' is True, break the outer loop.
+10. If 'ok' is True, output "YES"; otherwise, output "NO".

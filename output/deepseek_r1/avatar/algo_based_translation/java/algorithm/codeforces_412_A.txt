@@ -1,0 +1,55 @@
+Algorithm:
+
+Function: main
+Parameters: String[] args (command-line arguments)
+Return Type: void
+
+Variables:
+- Scanner sc: initialized with System.in
+- int n: input integer
+- int k: input integer
+- String a: input string
+- int i: loop index
+
+Execution Flow:
+1. Read integers n and k using Scanner
+2. Read string a using Scanner
+3. Compare k and n/2:
+   - If k > n/2:
+     - While k < n:
+       - Print "RIGHT"
+       - Increment k by 1
+   - Else:
+     - While k > 1:
+       - Print "LEFT"
+       - Decrement k by 1
+4. Check final k value:
+   - If k == 1:
+     - For i from 0 to (a.length() - 1):
+       - Print "PRINT " + a.charAt(i)
+       - If (i + 1) < a.length():
+         - Print "RIGHT"
+   - Else:
+     - For i from (a.length() - 1) downto 0:
+       - Print "PRINT " + a.charAt(i)
+       - If (i - 1) >= 0:
+         - Print "LEFT"
+
+Control Structures:
+- If-else (k > n/2 check)
+- While loop (k adjustment phase)
+- If-else (k final position check)
+- For loops (string traversal)
+- Nested conditionals in string traversal loops
+
+Input Operations:
+- Read n via nextInt()
+- Read k via nextInt()
+- Read a via next()
+
+Output Operations:
+- System.out.println commands for movement ("LEFT", "RIGHT")
+- System.out.println commands for printing characters ("PRINT")
+
+Dependencies:
+- java.util.Scanner (imported)

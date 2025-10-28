@@ -1,0 +1,9 @@
+1. Read input lines from the user until an exception occurs.
+2. Store the input lines in a list.
+3. Retrieve the first line from the list.
+4. Split the retrieved line into two numbers based on a space delimiter.
+5. Convert the first number to an integer representing the count of Sheep.
+6. Convert the second number to an integer representing the count of Wolves.
+7. Compare the count of Wolves with the count of Sheep.
+8. If the count of Wolves is greater than or equal to the count of Sheep, output "unsafe".
+9. If the count of Wolves is less than the count of Sheep, output "safe".

@@ -1,0 +1,41 @@
+Algorithm:
+1. Import necessary modules:
+   - `java.util.*`
+   - `java.io.*`
+
+2. Define the main function `main` with parameters `(String[] args)` and return type `void`.
+
+3. Declare and initialize variables:
+   - `int num = 998244353;` (unused in the program)
+   - `BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));`
+   - `PrintWriter out = new PrintWriter(System.out);`
+   - `int n` to store the number of elements, read from input.
+
+4. Parse input:
+   - Read `n` from input using `Integer.parseInt(bf.readLine())`.
+
+5. Initialize two `ArrayList<Integer>`:
+   - `ai` to store the starting points of intervals.
+   - `bi` to store the ending points of intervals.
+
+6. Loop `for` from `0` to `n - 1`:
+   - Read a line of input and tokenize it using `StringTokenizer`.
+   - Add the first token to `ai` as an integer using `Integer.parseInt`.
+   - Add the second token to `bi` as an integer using `Integer.parseInt`.
+
+7. Sort both lists `ai` and `bi` using `Collections.sort`.
+
+8. Check if `n` is odd using `if (n % 2 == 1)`:
+   - Calculate the median difference when `n` is odd:
+     - Compute the median of `bi` using `bi.get(bi.size() / 2)`.
+     - Compute the median of `ai` using `ai.get(ai.size() / 2)`.
+     - Print the result of `bi.get(bi.size() / 2) - ai.get(ai.size() / 2) + 1` using `out.println`.
+
+9. If `n` is even, use `else`:
+   - Calculate the median difference when `n` is even:
+     - Compute the average of the two middle elements in `ai` and store in `b`.
+     - Compute the average of the two middle elements in `bi` and store in `c`.
+     - Use the formula `(int)(2 * (c - b) + 1)` to calculate the result.
+     - Print the result using `out.println`.
+
+10. Close the `PrintWriter` using `out.close()`.

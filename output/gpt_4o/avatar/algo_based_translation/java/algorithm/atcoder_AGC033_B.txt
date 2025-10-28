@@ -1,0 +1,27 @@
+Algorithm:
+1. Import required libraries: `java.util.Scanner`, `java.lang.String`.
+2. Define the main function `main` with parameters `String[] args`.
+3. Declare a `Scanner` object `scanner` to read input from the standard input.
+4. Declare and read integer variables `h`, `w`, `n`, `sr`, `sc` using `scanner.nextInt()`.
+5. Declare and read string variables `s`, `t` using `scanner.next()`.
+6. Initialize boolean variable `end` to `false`.
+7. Initialize integer variables `usafe` to `1`, `dsafe` to `h`.
+8. Loop through `i` from `n-1` to `0` (inclusive) in reverse order:
+   - If character `s.charAt(i)` is `'U'`, increment `usafe` by `1`.
+   - Else if character `s.charAt(i)` is `'D'`, decrement `dsafe` by `1`.
+   - If `usafe` is greater than `dsafe`, set `end` to `true` and break the loop.
+   - If `i` is greater than `0`:
+     - If character `t.charAt(i-1)` is `'U'`, update `dsafe` to `Math.min(dsafe + 1, h)`.
+     - Else if character `t.charAt(i-1)` is `'D'`, update `usafe` to `Math.max(usafe - 1, 1)`.
+9. Initialize integer variables `lsafe` to `1`, `rsafe` to `w`.
+10. Loop through `i` from `n-1` to `0` (inclusive) in reverse order:
+    - If character `s.charAt(i)` is `'L'`, increment `lsafe` by `1`.
+    - Else if character `s.charAt(i)` is `'R'`, decrement `rsafe` by `1`.
+    - If `lsafe` is greater than `rsafe`, set `end` to `true` and break the loop.
+    - If `i` is greater than `0`:
+      - If character `t.charAt(i-1)` is `'L'`, update `rsafe` to `Math.min(rsafe + 1, w)`.
+      - Else if character `t.charAt(i-1)` is `'R'`, update `lsafe` to `Math.max(lsafe - 1, 1)`.
+11. If `sr` is greater than or equal to `usafe`, `sr` is less than or equal to `dsafe`, `sc` is greater than or equal to `lsafe`, `sc` is less than or equal to `rsafe`, and `end` is `false`:
+    - Print "YES".
+12. Else:
+    - Print "NO".

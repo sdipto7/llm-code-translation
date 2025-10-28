@@ -1,0 +1,10 @@
+H: int = input integer
+count: int = 0
+
+function dfs(h: int) -> int:
+    if h == 1:
+        return 1
+    else:
+        return dfs(h // 2) * 2 + 1
+
+print(dfs(H))

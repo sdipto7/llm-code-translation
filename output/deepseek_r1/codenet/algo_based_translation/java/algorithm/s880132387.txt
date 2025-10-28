@@ -1,0 +1,58 @@
+```java
+import java.math.BigInteger;
+import java.util.Scanner;
+import static java.lang.System.*;
+
+Function Signatures:
+- public void run()
+- public static void main(String[] args)
+- public int[] nextIntArray(int n)
+- public static void pr(Object o)
+- public static void ln(Object o)
+- public static void ln()
+
+Variables:
+- Scanner sc initialized with System.in
+- Random rand
+- int W, H (input dimensions)
+- char[][] map (H rows x W columns)
+- BigInteger[][] dp (H rows x W columns)
+- BigInteger hprev, wprev, max
+
+Logic Flow:
+1. Initialize scanner and random objects
+2. Enter TCase loop:
+   a. Read W and H
+   b. If W=0 and H=0, exit loop and return
+   c. Read H lines to populate char[][] map
+   d. Initialize dp array with H rows and W columns
+   e. Nested loops over h=0 to H-1 and w=0 to W-1:
+      i. Initialize hprev = 0 if h=0, else dp[h-1][w]
+      ii. Initialize wprev = 0 if w=0, else dp[h][w-1]
+      iii. If current cell is digit:
+           - Compare hprev and wprev using compareTo()
+           - Multiply larger value by 10 and add current digit
+           - Store result in dp[h][w]
+      iv. Else set dp[h][w] = 0
+   f. Find maximum value in dp array using nested loops
+   g. Print maximum value
+3. Repeat TCase loop
+
+Control Structures:
+- while(true) loop with break condition (W=0 && H=0)
+- Nested for-loops for grid traversal (h from 0 to H-1, w from 0 to W-1)
+- if-else conditions for hprev/wprev initialization
+- Conditional check Character.isDigit(map[h][w])
+- Ternary logic for selecting max between hprev and wprev
+
+Input/Output:
+- Read W/H via Scanner.nextInt()
+- Read grid rows via Scanner.next().toCharArray()
+- Output maximum value via ln(max)
+
+Dependencies:
+- java.math.BigInteger for number handling
+- java.util.Scanner for input
+- java.util.Random (unused)
+- System.in and System.out via static imports
+```

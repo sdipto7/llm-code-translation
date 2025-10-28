@@ -1,0 +1,39 @@
+Function: main()
+Parameters: None
+Return Type: None
+
+Variables:
+- max_level: integer
+- x: list of integers
+- y: list of integers
+- x: set of integers
+- y: set of integers
+- z: set of integers
+
+Logic Flow:
+1. Read an integer input and assign it to max_level
+2. Read a line of input, split it by spaces, convert each element to an integer, and assign the result to list x
+3. Read a line of input, split it by spaces, convert each element to an integer, and assign the result to list y
+4. Remove the first element from list x
+5. Remove the first element from list y
+6. Convert list x to a set of integers
+7. Convert list y to a set of integers
+8. If 0 is in set x, remove 0 from set x
+9. Otherwise, if 0 is in set y, remove 0 from set y
+10. Create a union of sets x and y and assign it to set z
+11. If the length of set z is not equal to max_level, print "Oh, my keyboard!"
+12. Otherwise, print "I become the guy."
+
+Input/Output Operations:
+- Read three lines of input from the user
+- Print a string to the output
+
+Data Processing Logic:
+- Conversion of input strings to integers
+- Removal of elements from lists
+- Conversion of lists to sets
+- Set operations (union, discard)
+- Comparison of set length with an integer
+
+Required Libraries, Modules, or Dependencies:
+- No specific libraries or modules required

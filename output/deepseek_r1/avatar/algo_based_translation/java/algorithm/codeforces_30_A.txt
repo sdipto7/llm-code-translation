@@ -1,0 +1,50 @@
+**Function Signature:**
+- `void solve(Scanner sc)`
+
+**Input:**
+- Read three integers `A`, `B`, `n` from input.
+
+**Variables:**
+- `int A`, `int B`, `int n`
+- `boolean neg`
+
+**Logic Flow:**
+1. If `A == 0`:
+   - If `B == 0`:
+     - Print `1`
+   - Else:
+     - Print `"No solution"`
+   - Terminate function
+2. If `B % A != 0`:
+   - Print `"No solution"`
+   - Terminate function
+3. Set `B = B / A`
+4. Set `neg = (B < 0)`
+5. If `neg` is `true` and `n % 2 == 0`:
+   - Print `"No solution"`
+   - Terminate function
+6. If `neg` is `true`:
+   - Set `B = -B`
+7. Iterate `x` from `0` to `B` (inclusive):
+   - If `Math.pow(x, n) == B`:
+     - If `neg` is `true`:
+       - Print `-x`
+     - Else:
+       - Print `x`
+     - Terminate function
+8. After loop completion:
+   - Print `"No solution"`
+
+**Control Structures:**
+- Sequential conditionals for edge cases (A=0, B%A≠0, parity of n with negative B)
+- Loop to test integer solutions for `x^n = B`
+- Early termination after printing results
+
+**Data Processing:**
+- Integer division and modulo for input validation
+- Absolute value adjustment when `n` is odd and `B` is negative
+- Exact floating-point comparison in loop (`Math.pow(x,n) == B`)
+
+**Dependencies:**
+- `java.util.Scanner` for input handling
+- `java.lang.Math` for power calculation

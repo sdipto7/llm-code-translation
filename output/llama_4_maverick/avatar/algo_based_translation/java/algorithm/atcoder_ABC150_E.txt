@@ -1,0 +1,22 @@
+1. Read input from the user.
+2. Parse the input into two lines: the first line contains the value of `n`, and the second line contains `n` integers representing the array `c`.
+3. Store the `n` integers in the array `c`.
+4. If `n` equals 1, calculate the result as `(c[0] * 2) mod 1000000007` and output it.
+5. Sort the array `c` in ascending order.
+6. Calculate `b = 2^n mod 1000000007` using the `power` function.
+7. Calculate `a = 2^(n-2) mod 1000000007` using the `power` function.
+8. Initialize a variable `ans` to 0.
+9. Iterate from `i = 2` to `n + 1`:
+   1. Calculate `val = (a * i) mod 1000000007`.
+   2. Multiply `val` by `c[n + 1 - i]`.
+   3. Update `val` to be `val mod 1000000007`.
+   4. Add `val` to `ans` and update `ans` to be `ans mod 1000000007`.
+10. Multiply `ans` by `b` and update `ans` to be `ans mod 1000000007`.
+11. Output the final value of `ans`.
+
+Power Function:
+1. If `n` equals 0, return 1.
+2. Calculate `val = x^(n/2) mod 1000000007` using recursive call to `power`.
+3. Square `val` and update it to be `val mod 1000000007`.
+4. If `n` is odd, multiply `val` by `x` and update it to be `val mod 1000000007`.
+5. Return the final `val`.

@@ -1,0 +1,36 @@
+Function Signature: main() -> None
+
+Variable Declarations:
+- N: int
+- c: str
+- num_w: int
+- num_r: int
+- comp: str
+- ans: int
+- i: int
+
+Execution Order:
+1. Read integer N from input
+2. Read string c from input
+3. Count occurrences of "W" in c and store in num_w
+4. Calculate num_r as N minus num_w
+5. Create string comp consisting of num_r "R" characters followed by num_w "W" characters
+6. Initialize ans to 0
+7. For i from 0 to num_r - 1:
+   a. If character i of c is not equal to character i of comp:
+      i. Increment ans by 1
+8. Set ans to the minimum value among num_w, num_r, and ans
+9. Print ans
+
+Input/Output Operations:
+- Read N and c from standard input
+- Print ans to standard output
+
+Data Processing Logic:
+- Count the number of white ("W") and red ("R") characters in the input string
+- Construct a comparison string with all red characters first followed by all white characters
+- Count the number of mismatches between the input string and the comparison string up to the number of red characters
+- Determine the minimum number of changes needed to sort the string by comparing the counts of red and white characters and the number of mismatches
+
+Required Libraries/Modules/Dependencies:
+- None

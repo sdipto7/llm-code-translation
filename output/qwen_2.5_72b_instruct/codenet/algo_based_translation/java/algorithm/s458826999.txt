@@ -1,0 +1,48 @@
+Function signatures with parameter and return types:
+- main(String args[]) : void
+
+Variable declarations and data types:
+- sc : Scanner
+- S : String
+- MOD : long
+- dp : long[][]
+- i : int
+- j : int
+- k : int
+- x : int
+
+Logic flow in execution order:
+1. Initialize Scanner object sc for reading input.
+2. Read input string S from standard input.
+3. Define constant MOD with value 1000000007.
+4. Initialize 2D array dp of size (length of S + 1) x 13 with all elements set to 0.
+5. Set dp[0][0] to 1.
+6. For each character in string S at index i:
+   a. If character at index i is '?' (indicates a wildcard):
+      i. For each digit j from 0 to 9:
+         1. For each remainder k from 0 to 12:
+            a. Update dp[i + 1][(k * 10 + j) % 13] by adding dp[i][k].
+            b. Take modulo MOD of dp[i + 1][(k * 10 + j) % 13].
+   b. Otherwise (character at index i is a digit):
+      i. Convert character at index i to integer x.
+      ii. For each remainder k from 0 to 12:
+          1. Update dp[i + 1][(k * 10 + x) % 13] by adding dp[i][k].
+          2. Take modulo MOD of dp[i + 1][(k * 10 + x) % 13].
+7. Print value of dp[length of S][5].
+
+Control structures:
+- For loop iterating over each character in string S.
+- If-else conditional checking if character is '?'.
+- Nested for loops iterating over digits 0-9 and remainders 0-12.
+
+Input/output operations:
+- Read string S from standard input using Scanner.
+- Print final result dp[length of S][5] to standard output.
+
+Data processing logic:
+- Use dynamic programming to count the number of ways to form a number from string S such that the number modulo 13 equals 5.
+- Handle wildcard characters '?' by considering all possible digits 0-9.
+- Use modulo operation to prevent overflow and to meet problem constraints.
+
+Required libraries:
+- java.util.Scanner

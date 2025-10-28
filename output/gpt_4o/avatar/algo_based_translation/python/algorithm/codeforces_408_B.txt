@@ -1,0 +1,27 @@
+```
+Import the following modules:
+- defaultdict and deque from collections
+- lru_cache from functools
+- heappush and heappop from heapq
+- Counter from typing
+- bisect_right and bisect_left from bisect
+- math
+
+Define a function named solution with no parameters and no return value.
+    Declare a variable line and assign it the result of input().
+    Declare a variable bought_count and assign it a Counter object initialized with line.
+    Reassign line with the result of input().
+    Declare a variable made_count and assign it a Counter object initialized with line.
+    Declare a variable res and initialize it to 0.
+    Iterate over each element color in made_count.
+        If color is not in bought_count, print -1 and return.
+        Add the minimum of bought_count[color] and made_count[color] to res.
+    Print the value of res.
+
+Define a function named main with no parameters and no return value.
+    Declare a variable t and set it to 1.
+    Iterate over a range of t.
+        Call the solution function.
+
+Call the main function.
+```

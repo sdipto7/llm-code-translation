@@ -1,0 +1,28 @@
+```
+Algorithm codeforces_678_B:
+  Dependencies:
+    - java.sql.Timestamp
+    - java.util.Scanner
+
+  Function main(args: String[]): void
+    Declare in as Scanner initialized with System.in
+    Declare y as integer and assign the next integer input from in
+    Declare leap as boolean and assign the result of check_leap(y)
+    Declare sum as integer and initialize to 0
+    Declare mod as integer and initialize to 0
+    For i from (y + 1) to infinity:
+      If check_leap(i) is true:
+        Increment sum by 366
+      Else:
+        Increment sum by 365
+      If sum modulo 7 equals 0:
+        If (check_leap(i) and leap) or (not check_leap(i) and not leap):
+          Print i
+          Return from function
+        Else:
+          Continue to next iteration of loop
+
+  Function check_leap(y: int): boolean
+    Return true if (y modulo 400 equals 0) or (y modulo 4 equals 0 and y modulo 100 not equals 0)
+    Else return false
+```

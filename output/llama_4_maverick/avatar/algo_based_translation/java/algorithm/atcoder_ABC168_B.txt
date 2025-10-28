@@ -1,0 +1,5 @@
+1. Read an integer K from the input.
+2. Read a string S from the input.
+3. Check if the length of S is less than or equal to K.
+4. If true, output S.
+5. If false, output the substring of S from index 0 to K-1 followed by "...".

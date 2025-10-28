@@ -1,0 +1,36 @@
+Function signature: main() -> None
+
+Variable declarations:
+- n: int
+- k: int
+- v: str
+- d: List[str]
+- f: bool
+- m: int
+- a: List[str]
+
+Logic flow:
+1. Read input values for n and k as integers
+2. Read input string v
+3. Initialize list d with strings "LEFT" and "RIGHT"
+4. Set f to True if k-1 is less than n-k, otherwise False
+5. Set m to the minimum of k-1 and n-k
+6. Initialize empty list a
+7. For loop from 0 to m-1:
+   a. Append d[not f] to a
+8. For loop through reversed v if f is True, or v as is if f is False:
+   a. Append "PRINT " + current character to a
+   b. Append d[f] to a
+9. Print elements of a except the last element, each on a new line
+
+Input/output operations:
+- Read two space-separated integers from input
+- Read a single string from input
+- Print each element of a except the last one, separated by newlines
+
+Data processing logic:
+- Determine the direction based on the position of k relative to the center of n
+- Construct a sequence of movements and print commands based on the determined direction and the input string
+
+Required libraries, modules, or dependencies:
+- No additional libraries or modules required

@@ -1,0 +1,4 @@
+Read integers N and L from input
+Initialize list S with N strings from input
+Sort list S lexicographically
+Concatenate sorted strings and print result

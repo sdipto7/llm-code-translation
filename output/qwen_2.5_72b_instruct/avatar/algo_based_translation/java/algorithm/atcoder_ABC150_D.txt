@@ -1,0 +1,45 @@
+Function Signatures:
+- `public static void main(String[] args)`
+- `public static long getGCD(long a, long b)`
+
+Variable Declarations and Data Types:
+- `Scanner sc`
+- `int n`
+- `int m`
+- `int[] a`
+- `long gcd`
+- `long lcd`
+
+Logic Flow in Execution Order:
+1. Initialize `sc` as new `Scanner(System.in)`
+2. Read `n` as integer from `sc`
+3. Read `m` as integer from `sc`
+4. Initialize `a` as array of integers with size `n`
+5. Loop from `i = 0` to `n - 1`:
+   - Read `a[i]` as integer from `sc`, divide by 2, and store in `a[i]`
+6. Initialize `gcd`
+7. Initialize `lcd` as 1
+8. Loop from `i = 0` to `n - 1`:
+   - Call `getGCD(lcd, a[i])` and store result in `gcd`
+   - Update `lcd` as `lcd * a[i] / gcd`
+   - If `lcd > m`, print `0` and return
+9. Loop from `i = 0` to `n - 1`:
+   - If `(lcd / a[i]) % 2 == 0`, print `0` and return
+10. Print `(m / lcd + 1) / 2`
+
+Control Structures:
+- For loop from `i = 0` to `n - 1` for reading `a[i]`
+- For loop from `i = 0` to `n - 1` for calculating `lcd`
+- For loop from `i = 0` to `n - 1` for checking divisibility
+- If statement checking `lcd > m`
+- If statement checking `(lcd / a[i]) % 2 == 0`
+
+Input/Output Operations and Data Processing Logic:
+- Read `n` and `m` from standard input
+- Read `a[i]` values from standard input, divide each by 2
+- Calculate `lcd` using GCD
+- Check if `lcd` exceeds `m` or if any `(lcd / a[i])` is even
+- Print result based on conditions
+
+Required Libraries, Modules, or Dependencies:
+- `java.util.*`

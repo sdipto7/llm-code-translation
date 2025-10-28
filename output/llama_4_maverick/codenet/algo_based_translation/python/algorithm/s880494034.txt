@@ -1,0 +1,27 @@
+1. Import the `math` module.
+2. Define a function `main()` with no parameters and no return type.
+3. Within `main()`, read an input string `N` and discard its value.
+4. Read a string of space-separated integers, parse them into a list `XS` of integers.
+5. Initialize a variable `m` to 9999999999.
+6. Iterate over a range of integers `i` from 1 to 100 (inclusive).
+7. For each `i`, calculate the sum `c` of the squared differences between each element `x` in `XS` and `i`.
+8. If `c` is less than `m`, update `m` to be equal to `c`.
+9. After iterating over all `i`, print the final value of `m` to the output.
+ 
+ Function signature: `def main() -> None`
+ Variable declarations: 
+ - `N`: string
+ - `XS`: list of integers
+ - `m`: integer
+ - `i`: integer
+ - `c`: integer
+ - `x`: integer
+
+ Required libraries: None (math module is imported but not used) 
+
+ Data processing logic: 
+ - Input is read from the standard input.
+ - The first line is discarded.
+ - The second line is parsed into a list of integers.
+ - The sum of squared differences is calculated for each integer in a given range.
+ - The minimum sum is found and printed to the standard output.

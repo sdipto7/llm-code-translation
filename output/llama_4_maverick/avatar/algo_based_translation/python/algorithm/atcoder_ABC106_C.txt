@@ -1,0 +1,9 @@
+1. Read input string s.
+2. Read integer k.
+3. Initialize counter l to 0.
+4. Iterate through each character c in string s.
+5. If c is not equal to '1', break the loop.
+6. Increment l by 1 for each '1' encountered.
+7. If l is greater than or equal to k, return 1.
+8. Otherwise, return the character at index l in string s.
+9. Print the result.

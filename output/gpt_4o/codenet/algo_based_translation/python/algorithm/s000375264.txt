@@ -1,0 +1,29 @@
+1. Function Signature:
+   - Function name: `calculate_difference`
+   - Parameters: None
+   - Return type: None
+
+2. Variable Declarations:
+   - `X`: integer
+   - `t`: integer
+   - `answer`: integer
+
+3. Logic Flow:
+   - Read input from the user.
+   - Split the input string into two parts based on space separation.
+   - Convert the split strings into integers and assign the first to `X` and the second to `t`.
+   - Compare `X` and `t`:
+     - If `X` is greater than `t`, calculate the difference `X - t` and assign the result to `answer`.
+     - Otherwise, assign `0` to `answer`.
+   - Output the value of `answer`.
+
+4. Control Structures:
+   - Conditional: if `X > t`, execute the difference calculation and assignment.
+   - Conditional: elif `X <= t`, assign `0` to `answer`.
+
+5. Input/Output Operations:
+   - Input: Use `input()` to read a line from the user.
+   - Output: Use `print()` to display the value of `answer`.
+
+6. Required Libraries, Modules, or Dependencies:
+   - None

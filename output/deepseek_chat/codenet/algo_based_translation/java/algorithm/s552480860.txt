@@ -1,0 +1,9 @@
+Read integer h1 from input
+Read integer m1 from input
+Read integer h2 from input
+Read integer m2 from input
+Read integer k from input
+Calculate t1 = h1 × 60 + m1
+Calculate t2 = h2 × 60 + m2
+Calculate result = t2 - t1 - k
+Print result

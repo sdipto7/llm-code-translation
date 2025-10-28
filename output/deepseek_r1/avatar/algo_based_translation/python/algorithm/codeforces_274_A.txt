@@ -1,0 +1,66 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`  
+  (Reads input, processes data, outputs result)
+
+**Variables:**
+- `num: int`  
+  (Unused variable from first input line)
+- `k: int`  
+  (Divisor parameter from first input line)
+- `arr: List[int]`  
+  (Input array of integers)
+- `different: Set[int]`  
+  (Tracks valid elements)
+- `temp: int`  
+  (Stores maximum subset size)
+
+**Logic Flow:**
+1. **Input Operations:**
+   - Read two integers `num` and `k` from the first input line.  
+   - Read `arr` as a list of integers from the second input line.
+
+2. **Preprocessing:**
+   - Sort `arr` in ascending order.
+
+3. **Initialization:**
+   - Initialize `different` as an empty set.  
+   - Initialize `temp` to 0.
+
+4. **Main Loop:**
+   - For each element `x` in sorted `arr`:  
+     a. **Condition Check:**  
+        - If `x % k != 0` OR `(x // k) ∉ different`  
+     b. **Set Update:**  
+        - Add `x` to `different` if the condition holds.  
+     c. **Track Maximum:**  
+        - Update `temp` to `max(temp, len(different))`.
+
+5. **Output Result:**
+   - Print `temp`.
+
+**Control Flow Structures:**
+- **Loop:**  
+  - Iterate over all elements in sorted `arr` (fixed iteration).  
+- **Conditional:**  
+  - Branch based on divisibility by `k` and presence of `x // k` in `different`.
+
+**Input/Output Operations:**
+- Read two lines from standard input.  
+- Print final value of `temp`.
+
+**Error Handling:**
+- **Implicit Assumptions:**  
+  - Inputs are valid integers.  
+  - `k ≠ 0` (no handling for division by zero).  
+  - `num` may not match actual array length (ignored).  
+
+**Edge Case Handling:**
+- **Empty Array:** `temp` remains 0.  
+- `k = 1`: Counts unique elements.  
+- All elements zero: Returns 1 if `k ≠ 0`.  
+
+**External Dependencies:**
+- Uses `input()`, `split()`, `int()`, `set()`, `sort()`, `max()`, and `print()`.  
+- No external libraries beyond standard language features.

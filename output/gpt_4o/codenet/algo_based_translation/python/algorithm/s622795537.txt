@@ -1,0 +1,41 @@
+```
+function process_strings(n: int, inputs: List[str]) -> List[str]:
+    declare arr as Dictionary[str, int]
+    initialize arr as an empty dictionary
+
+    for i from 0 to n - 1:
+        declare s as str
+        set s to inputs[i]
+        
+        if s is not a key in arr:
+            set arr[s] to 1
+        else:
+            increment arr[s] by 1
+
+    declare max_count as int
+    set max_count to the maximum value in arr
+
+    declare dic as List[str]
+    set dic to a list of keys from arr where the corresponding value equals max_count
+
+    declare out_sort as List[str]
+    set out_sort to dic sorted in lexicographical order
+
+    return out_sort
+
+# Input reading and output printing logic
+declare n as int
+set n to the integer value from input
+
+declare inputs as List[str]
+initialize inputs as an empty list
+
+for i from 0 to n - 1:
+    append input string to inputs
+
+declare results as List[str]
+set results to process_strings(n, inputs)
+
+for each element in results:
+    print the element
+```

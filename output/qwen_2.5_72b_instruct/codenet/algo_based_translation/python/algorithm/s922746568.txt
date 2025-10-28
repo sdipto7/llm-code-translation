@@ -1,0 +1,46 @@
+Function Signature:
+- `main() -> None`
+
+Variable Declarations:
+- `n: int`
+- `s: str`
+- `r_cnt: int`
+- `g_cnt: int`
+- `b_cnt: int`
+- `ans: int`
+- `i: int`
+- `d: int`
+- `j: int`
+- `k: int`
+
+Logic Flow:
+1. Read an integer `n` from input.
+2. Read a string `s` from input.
+3. Count occurrences of 'R', 'G', 'B' in `s` and store in `r_cnt`, `g_cnt`, `b_cnt` respectively.
+4. Initialize `ans` to the product of `r_cnt`, `g_cnt`, `b_cnt`.
+5. Loop over `i` from 0 to `n-1`:
+   1. Loop over `d` from 0 to `n-1`:
+      1. Calculate `j` as `i + d`.
+      2. Calculate `k` as `j + d`.
+      3. If `k` is greater than or equal to `n`, break the inner loop.
+      4. If `s[i]` is not equal to `s[j]` and `s[j]` is not equal to `s[k]` and `s[k]` is not equal to `s[i]`, decrement `ans` by 1.
+6. Print the value of `ans`.
+
+Control Structures:
+- For loop: `for i in range(n)`
+- For loop: `for d in range(n)`
+- If condition: `if k >= n`
+- If condition: `if s[i] != s[j] and s[j] != s[k] and s[k] != s[i]`
+
+Input/Output Operations:
+- Read integer `n` using `int(input())`
+- Read string `s` using `input()`
+- Print `ans` using `print(ans)`
+
+Data Processing Logic:
+- Count characters in string `s` using `str.count()`
+- Calculate the number of triplets `(i, j, k)` where `s[i]`, `s[j]`, `s[k]` are all different.
+- Adjust the initial count of possible triplets by subtracting the invalid triplets found.
+
+Required Libraries, Modules, or Dependencies:
+- No specific libraries, modules, or dependencies required.

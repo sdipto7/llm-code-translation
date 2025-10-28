@@ -1,0 +1,33 @@
+1. Import required libraries: java.util.*
+2. Define a class: Main
+3. Define a main function: public static void main(String[] args)
+   - Parameters: String[] args
+   - Return Type: void
+4. Declare variables:
+   - Scanner sc
+   - int N, Q
+   - String s
+   - int[] pre
+5. Execution Order:
+   1. Initialize Scanner sc with System.in
+   2. Read int N and int Q using sc.nextInt()
+   3. Read String s using sc.next()
+   4. Initialize int[] pre of size N+1
+   5. Loop from i = 1 to N-1
+      - Check if s.charAt(i-1) == 'A' and s.charAt(i) == 'C'
+         - If true, pre[i] = 1
+   6. Loop from i = 1 to N-1
+      - pre[i] += pre[i-1]
+   7. Loop while Q > 0
+      - Q--
+      - Read int l and int r using sc.nextInt()
+      - r = r - 1
+      - Print pre[r] - pre[l-1] using System.out.println()
+6. Input/Output Operations:
+   - Read N, Q using sc.nextInt()
+   - Read s using sc.next()
+   - Read l, r using sc.nextInt()
+   - Print result using System.out.println()
+7. Data Processing Logic:
+   - Building prefix sum array pre[]
+   - Querying prefix sum array pre[] for given range [l, r] and calculating result as pre[r] - pre[l-1]

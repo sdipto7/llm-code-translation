@@ -1,0 +1,29 @@
+Function Signature: `calculate_sum(N: int, M: int) -> int`
+
+Variable Declarations:
+- `N: int`
+- `M: int`
+- `a: int`
+- `b: int`
+
+Logic Flow:
+1. Read integers N and M from standard input
+2. Calculate a = N * (N - 1) // 2
+3. Calculate b = M * (M - 1) // 2
+4. Print the sum of a and b
+
+Control Structures:
+- No loops
+- No conditionals
+
+Input/Output Operations:
+- Input: Read space-separated integers N and M from standard input
+- Output: Print the integer result of a + b
+
+Data Processing Logic:
+- Compute the number of ways to choose 2 elements from N elements and store in a
+- Compute the number of ways to choose 2 elements from M elements and store in b
+- Sum the values of a and b and print the result
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries or modules required

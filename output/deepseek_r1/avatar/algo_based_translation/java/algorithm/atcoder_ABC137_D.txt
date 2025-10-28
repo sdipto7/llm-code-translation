@@ -1,0 +1,45 @@
+**Function Signatures:**
+- `class Job implements Comparable<Job>`
+  - Constructor: `Job(int a, int b)`
+  - Method: `int compareTo(Job otherJob)`
+- `public class atcoder_ABC137_D`
+  - `public static void main(String[] args)`
+
+**Variables:**
+- `int N`: Number of jobs
+- `int M`: Maximum days available
+- `PriorityQueue<Job> q`: Stores jobs ordered by ascending `a` then ascending `b`
+- `int cnt`: Accumulates total reward
+- `PriorityQueue<Integer> jobQ`: Max-heap storing eligible job rewards
+- `Scanner sc`: Reads input
+- `String[] line`: Temporary input storage
+
+**Logic Flow:**
+1. Read `N` and `M` from input (split by Unicode character U+2581)
+2. Initialize priority queue `q`
+3. For `N` iterations:
+   - Read job parameters `a` and `b`
+   - Add new `Job(a, b)` to `q`
+4. Initialize `jobQ` as a max-heap and `cnt=0`
+5. For each day `i` from 1 to `M` (inclusive):
+   - While `q` is not empty and the front job's `a` ≤ `i`:
+     - Remove job from `q` and add its `b` to `jobQ`
+   - If `jobQ` is not empty:
+     - Remove max value from `jobQ` and add to `cnt`
+6. Print `cnt`
+
+**Control Structures:**
+- Loop: `for (int i = 0; i < N; i++)` to read jobs
+- Loop: `for (int i = 1; i <= M; i++)` for daily processing
+  - Nested `while (!q.isEmpty() && q.peek().a <= i)` to process eligible jobs
+  - Conditional `if (!jobQ.isEmpty())` to add rewards
+
+**Input/Output:**
+- Input: Lines split by U+2581, first line → `N M`, subsequent lines → job parameters
+- Output: Single integer `cnt` printed
+
+**Dependencies:**
+- `java.util.Collections`
+- `java.util.PriorityQueue`
+- `java.util.Queue`
+- `java.util.Scanner`

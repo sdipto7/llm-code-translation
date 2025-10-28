@@ -1,0 +1,43 @@
+**Function Signature:**
+- main() -> None
+
+**Variables and Data Types:**
+- q: int
+- h: int
+- s: int
+- d: int
+- n: int
+- min_1: int
+- min_2: int
+
+**Input Operations:**
+- Read four integers q, h, s, d from input
+- Read integer n from input
+
+**Logic Flow:**
+1. Calculate min_1 as minimum of:
+   - q * 4
+   - h * 2
+   - q * 2 + h
+   - s
+
+2. Calculate min_2 as minimum of:
+   - min_1 * 2
+   - d
+
+3. Calculate total cost as:
+   - (n % 2) * min_1 + (n // 2) * min_2
+
+4. Print total cost
+
+**Control Structures:**
+- No explicit conditionals (uses min() function for comparisons)
+
+**Output Operations:**
+- Print final calculated cost
+
+**Dependencies:**
+- Standard input/output functions
+- Built-in min() function
+- Built-in input() function
+- Built-in int conversion

@@ -1,0 +1,83 @@
+**Algorithm:**
+- **Main function:**
+  - Initialize inputStream = System.in, outputStream = System.out
+  - Create InputReader object 'in' with inputStream
+  - Create PrintWriter object 'out' with outputStream
+  - Call solve(in, out)
+  - Close PrintWriter
+
+- **solve(InputReader sc, PrintWriter pw):**
+  - Set t = 1
+  - While t > 0 (decrement t each iteration):
+    - Read long n = sc.nextLong()
+    - Read long m = sc.nextLong()
+    - If n == 0:
+      - Print 0
+      - Continue to next iteration
+    - If n == m:
+      - Print 0
+      - Continue to next iteration
+    - If n > m:
+      - Set n = m + (n % m)
+      - Set n = n - m
+      - Print minimum of (m - n) and n
+      - Continue to next iteration
+    - Print minimum of (m - n) and n
+
+- **swap(char[] chrr, int i, int j):**
+  - Swap elements chrr[i] and chrr[j] using temporary variable
+
+- **num(int n):**
+  - Initialize a = 0
+  - While n > 0:
+    - Add (n & 1) to a
+    - Right shift n by 1
+  - Return a
+
+- **Pair class:**
+  - Fields: int u, v, i, val
+  - Constructor: Pair(int a, int b, int i) initializes u=a, v=b, i=i
+
+- **isPrime(int n):**
+  - If n <= 1: return false
+  - If n <= 3: return true
+  - If n divisible by 2 or 3: return false
+  - For i from 5 to sqrt(n), increment by 6:
+    - If n divisible by i or i+2: return false
+  - Return true
+
+- **gcd(long a, long b):**
+  - If b == 0: return a
+  - If a > b: return gcd(b, a % b)
+  - Else: return gcd(a, b % a)
+
+- **fast_pow(long base, long n, long M):**
+  - If n == 0: return 1
+  - If n == 1: return base
+  - Set halfn = fast_pow(base, n/2, M)
+  - If n even: return (halfn * halfn) % M
+  - Else: return ((halfn * halfn) % M * base) % M
+
+- **modInverse(long n, long M):**
+  - Return fast_pow(n, M-2, M)
+
+- **feedArr methods (4 overloads):**
+  - For each index in array: read corresponding type from InputReader
+
+- **printArr methods (4 overloads):**
+  - Build string from array elements separated by spaces
+
+- **InputReader class:**
+  - BufferedReader reader
+  - StringTokenizer tokenizer
+  - Constructor: Initialize reader with InputStreamReader(stream)
+  - next(): Read next token
+  - nextInt(): Parse next token as int
+  - nextLong(): Parse next token as long
+  - nextDouble(): Parse next token as double
+
+**Required libraries:**
+- java.io.*
+- java.util.*
+- java.lang.*
+- java.math.BigInteger

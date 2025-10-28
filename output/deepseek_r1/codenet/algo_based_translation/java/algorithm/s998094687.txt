@@ -1,0 +1,35 @@
+**Function Signature:**
+- `public static void main(String[] args)`
+  - Parameters: `String[] args` (command-line arguments)
+  - Return type: `void`
+
+**Variables:**
+- `Scanner sc = new Scanner(System.in)` (final, reads input)
+- `int n` (number of test cases)
+- `int[] a = new int[3]` (stores three integers per test case)
+- `int i` (loop counter for test cases)
+
+**Libraries/Dependencies:**
+- `java.lang.Math.*` (for `Math.pow`)
+- `java.util.Scanner` (for input handling)
+- `java.util.Arrays` (for `Arrays.sort`)
+
+**Logic Flow:**
+1. Read integer `n` from input.
+2. Loop `i` from `0` to `n-1` (inclusive):
+   - Read three integers into `a[0]`, `a[1]`, `a[2]`.
+   - Sort array `a` in ascending order.
+   - Check if `(a[2]^2 == a[0]^2 + a[1]^2)` using `Math.pow`.
+   - Print "YES" if condition holds, else print "NO".
+
+**Control Structures:**
+- `for` loop: `for (int i = 0; i < n; i++)`
+- `if-else` conditional: `if (Math.pow(a[2], 2) == Math.pow(a[0], 2) + Math.pow(a[1], 2))`
+
+**Input/Output Operations:**
+- Input: Read `n` via `sc.nextInt()`. Read three integers per test case via `sc.nextInt()`.
+- Output: Print "YES" or "NO" via `System.out.println` based on the condition.
+
+**Data Processing:**
+- Sorting array `a` before checking Pythagorean theorem.
+- Explicit type casting from `double` (result of `Math.pow`) to `int` via equality comparison.

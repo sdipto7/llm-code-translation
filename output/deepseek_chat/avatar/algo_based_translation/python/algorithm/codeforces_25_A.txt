@@ -1,0 +1,9 @@
+1. Read integer n from input
+2. Read next line of input, split into tokens, convert each token to integer modulo 2, store in list
+3. Calculate sum of all elements in list
+4. If sum equals 1:
+   - Find index of first occurrence of 1 in list
+   - Print index + 1
+5. Else:
+   - Find index of first occurrence of 0 in list
+   - Print index + 1

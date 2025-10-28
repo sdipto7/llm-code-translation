@@ -1,0 +1,29 @@
+Function signature: `main()`  
+Parameters: None  
+Return type: None  
+
+Variable declarations:  
+- `n: int`  
+- `d: int`  
+- `x: List[int]`  
+- `m: int` initialized to 0  
+- `q: int` initialized to 0  
+
+Logic flow in execution order:  
+1. Read integers `n` and `d` from input, split by space  
+2. Initialize empty list `x`  
+3. Read a line of input, split by space, store in `x` as strings  
+4. Convert each string in `x` to integer  
+5. For each index `a` from 0 to `len(x) - 2`:  
+   a. If `x[a]` is greater than or equal to `x[a + 1]`:  
+      i. Calculate `q` as integer division of `(x[a] - x[a + 1])` by `d` plus 1  
+      ii. Add `q` to `m`  
+      iii. Update `x[a + 1]` to `x[a + 1]` plus `q` times `d`  
+6. Print `m`
+
+Input/output operations and data processing logic:  
+- Input: Two lines of integers  
+- Output: Single integer representing the value of `m`  
+
+Required libraries, modules, or dependencies:  
+- None

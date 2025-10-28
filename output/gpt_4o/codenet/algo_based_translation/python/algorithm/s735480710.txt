@@ -1,0 +1,24 @@
+```
+Algorithm:
+
+1. Import the "deque" class from the "collections" module.
+
+2. Define variables and data types:
+   - `n`: integer, the number of elements in the list.
+   - `a`: list of strings, the input elements.
+   - `b`: list of strings, used for storing the rearranged elements.
+
+3. Input and processing:
+   - Read an integer `n` from input.
+   - Read a sequence of `n` space-separated strings and convert them to a list `a`.
+
+4. List manipulation:
+   - Split the list `a` into two parts:
+     - The sublist containing elements at odd indices (1, 3, 5, ...) is reversed.
+     - The sublist containing elements at even indices (0, 2, 4, ...).
+   - Concatenate the reversed odd-index sublist with the even-index sublist to form the list `b`.
+
+5. Conditional output:
+   - If the length of the list `a` is even, output the elements of list `b` joined by spaces.
+   - If the length of the list `a` is odd, output the elements of list `b` in reverse order, joined by spaces.
+```

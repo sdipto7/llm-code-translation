@@ -1,0 +1,30 @@
+```
+Algorithm atcoder_ABC169_D:
+    Input: None (reads from standard input)
+    Output: Prints an integer to standard output
+
+    Initialize:
+        Import Scanner from java.util
+        Create a Scanner object to read standard input
+        Declare long integer 'n' and assign the next long input value from the scanner
+        Declare integer 'sqrt' and assign the integer square root of 'n'
+        Declare integer 'answer' and initialize to 0
+
+    Loop through integers from 2 to 'sqrt' (inclusive):
+        For each integer 'i':
+            Declare integer 'count' and initialize to 0
+
+            While 'n' modulo 'i' equals 0:
+                Divide 'n' by 'i' and assign the result back to 'n'
+                Increment 'count' by 1
+
+            For integer 'j' starting from 1, incrementing by 1:
+                While 'count' minus 'j' is greater than or equal to 0:
+                    Subtract 'j' from 'count'
+                    Increment 'answer' by 1
+
+    If 'n' is greater than 1:
+        Increment 'answer' by 1
+
+    Print the value of 'answer'
+```

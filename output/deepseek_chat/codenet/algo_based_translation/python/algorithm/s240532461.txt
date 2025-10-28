@@ -1,0 +1,17 @@
+read N and L as integers from input
+initialize empty list aji
+for i from 1 to N inclusive:
+    append (L + i - 1) to aji
+
+if minimum value in aji >= 0:
+    find index of minimum value in aji
+    remove element at that index from aji
+else if maximum value in aji <= 0:
+    find index of maximum value in aji
+    remove element at that index from aji
+else:
+    find index of element with smallest absolute value in aji
+    remove element at that index from aji
+
+calculate sum of remaining elements in aji
+print the sum

@@ -1,0 +1,8 @@
+1. Import the `bisect` module.
+2. Declare a function with no parameters to encapsulate the logic, returning an integer.
+3. Read an integer input from the user and store it in a variable `N` of type integer.
+4. Initialize a list `arr` containing integers: 111, 222, 333, 444, 555, 666, 777, 888, 999.
+5. Use `bisect.bisect_left` function to find the insertion point for `N` in `arr` to maintain sorted order, storing the result in `ans_idx`.
+6. Access the element at index `ans_idx` in `arr` and store or directly print it as the result.
+7. Output the result.
+8. The function returns the output value, but in this case, it's directly printed.

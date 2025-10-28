@@ -1,0 +1,43 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signature:**
+- `main()`: void  
+  (Executes the program logic, no parameters, no return value)
+
+**Variable Declarations:**
+- `n`: int (unused integer input)  
+- `l`: List[int] (list of integers)  
+
+**Input/Output Operations:**
+1. Read integer `n` from standard input (unused).  
+2. Read space-separated integers from standard input, convert to list `l`.  
+3. Print "YES" if three consecutive integers (i, i+1, i+2) exist in `l`; else print "NO".  
+
+**Data Processing Logic:**
+1. Sort `l` in non-decreasing order.  
+2. Iterate through each element `i` in sorted `l`:  
+   a. Check if `i + 1` and `i + 2` exist in `l`.  
+   b. If both exist, print "YES" and terminate loop early.  
+3. If no triplet found after full iteration, print "NO".  
+
+**Control Flow Structures:**
+- Loop:  
+  - `for i in l`:  
+    - **Exit Criteria**: Loop exits early if triplet found (via `break`) or after full iteration.  
+    - **Condition**: `if (i + 1 in l) and (i + 2 in l)` triggers early exit.  
+- Implicit `else` clause attached to `for` loop executes when loop completes without `break`.  
+
+**Edge Case Handling:**
+- Correctly handles empty lists (prints "NO").  
+- Detects triplets even with duplicate values (e.g., `[1, 1, 2, 2, 3]`).  
+- Works for any valid input format (ignores `n` mismatch with list length).  
+
+**Error Handling:**
+- No explicit error handling. Assumes valid integer inputs and properly formatted lines.  
+
+**External Dependencies:**
+- Uses built-in functions:  
+  - `input()`  
+  - `map()`  
+  - `list.sort()`  
+  - `list.split()`

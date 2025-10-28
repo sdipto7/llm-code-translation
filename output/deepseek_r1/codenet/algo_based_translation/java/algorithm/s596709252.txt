@@ -1,0 +1,22 @@
+- Import java.util.Scanner
+- Function: public static void main(String[] args) returns void
+- Declare:
+  - Scanner sc = new Scanner(System.in)
+  - int x
+  - int y
+  - int z
+- Read input sequence:
+  1. x = sc.nextInt()
+  2. y = sc.nextInt()
+  3. z = sc.nextInt()
+- Close Scanner: sc.close()
+- Output formatting:
+  Print concatenated string: z + " " + x + " " + y using System.out.println
+- Logic flow:
+  1. Initialize input scanner
+  2. Read three integers in x,y,z order from standard input
+  3. Release scanner resources
+  4. Output values in z,x,y order separated by spaces
+- Input source: Standard input stream
+- Output destination: Standard output stream
+- Dependencies: Requires java.util package for Scanner class

@@ -1,0 +1,14 @@
+1. Read input number x.
+2. Initialize an empty list to store digits.
+3. While x is greater than 0:
+   1. Calculate remainder r = x modulo 10.
+   2. If (9 - r) is less than r:
+      1. If x divided by 10 equals 0 and (9 - r) equals 0, add r to the list.
+      2. Otherwise, add (9 - r) to the list.
+   3. Otherwise, add r to the list.
+   4. Update x = x divided by 10.
+4. Initialize power = 0 and newNumber = 0.
+5. For i from 0 to the size of the list:
+   1. Update newNumber = newNumber + (list at index i) * 10 raised to the power power.
+   2. Increment power by 1.
+6. Output newNumber.

@@ -1,0 +1,53 @@
+**Algorithm:**
+
+1. **Main Function:**
+   - Input: Command-line arguments (String[])
+   - Output: Print integer result to console
+   - Variables:
+     - Scanner sc = new Scanner(System.in)
+     - int n = sc.nextInt()
+     - ArrayList<Integer> a = new ArrayList<>()
+   - Logic Flow:
+     - If n == 1:
+       - Read single integer and print it
+       - Terminate program
+     - For i from 0 to n-1:
+       - Add sc.nextInt() to list a
+     - Sort list a in ascending order
+     - If last element of a equals 0:
+       - Print 0
+       - Terminate program
+     - Initialize int ans = 0
+     - While true:
+       - If size of a equals 1:
+         - Set ans = first element of a
+         - Break loop
+       - Set a = func(a)
+     - Print ans
+
+2. **Function func:**
+   - Input: ArrayList<Integer> A
+   - Output: ArrayList<Integer>
+   - Variables:
+     - ArrayList<Integer> a = A (reference copy)
+     - int min = 0
+   - Logic Flow:
+     - For i from 0 to size of a - 1:
+       - If a[i] equals 0:
+         - Remove element at index i
+         - Decrement i by 1
+       - Else:
+         - If min != 0:
+           - Set a[i] = a[i] % min
+           - If a[i] equals 1:
+             - Print 1
+             - Terminate program
+         - Else:
+           - Set min = a[i]
+     - Sort list a in ascending order
+     - Return a
+
+3. **Dependencies:**
+   - java.util.ArrayList
+   - java.util.Collections
+   - java.util.Scanner

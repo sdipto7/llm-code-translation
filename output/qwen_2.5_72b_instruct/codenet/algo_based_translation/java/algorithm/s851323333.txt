@@ -1,0 +1,21 @@
+Function: main
+Parameters: String[] args
+Return Type: void
+
+Libraries: java.util.LinkedList, java.util.Scanner
+
+Variable Declarations:
+- Scanner scan
+- LinkedList<Integer> list
+- int a
+
+Logic Flow:
+1. Initialize Scanner object to read input from standard input.
+2. Initialize LinkedList of Integers to store integer values.
+3. Enter a while loop that continues as long as there is an integer to read from input.
+4. Inside loop:
+   a. Read next integer from input and store it in variable a.
+   b. Check if a is equal to 0:
+      - If true, pop the first element from the LinkedList and print it.
+      - If false, push a onto the LinkedList.
+5. Exit loop when there are no more integers to read from input.

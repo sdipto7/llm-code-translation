@@ -1,0 +1,28 @@
+1. READ n
+2. INITIALIZE cake as an EMPTY LIST
+3. INITIALIZE happiness to 0
+4. INITIALIZE chocCount to 0
+5. INITIALIZE nfat to 1
+6. FOR i FROM 0 TO n-1
+   6.1 READ line
+   6.2 APPEND line to cake
+   6.3 FOR EACH character j IN line
+      6.3.1 IF j IS 'C'
+         6.3.1.1 INCREMENT chocCount
+   6.4 IF chocCount IS GREATER THAN 1
+      6.4.1 FOR i FROM chocCount TO chocCount-1
+         6.4.1.1 MULTIPLY nfat BY i
+      6.4.2 ADD nfat/2 TO happiness
+   6.5 RESET nfat to 1
+   6.6 RESET chocCount to 0
+7. FOR j FROM 0 TO n-1
+   7.1 FOR i FROM 0 TO n-1
+      7.1.1 IF cake[i][j] IS 'C'
+         7.1.1.1 INCREMENT chocCount
+   7.2 IF chocCount IS GREATER THAN 1
+      7.2.1 FOR i FROM chocCount TO chocCount-1
+         7.2.1.1 MULTIPLY nfat BY i
+      7.2.2 ADD nfat/2 TO happiness
+   7.3 RESET nfat to 1
+   7.4 RESET chocCount to 0
+8. PRINT happiness AS INTEGER

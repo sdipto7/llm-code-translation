@@ -1,0 +1,22 @@
+1. Set recursion limit to 10^6
+2. Define function dfs with parameters links, n, k, v, p
+   1. Initialize height_from_leaf to 0
+   2. Initialize cut_count to 0
+   3. For each u in links[v]
+      1. If u equals p, continue to next iteration
+      2. Call dfs with parameters links, n, k, u, v and store result in hgt and cut
+      3. Update height_from_leaf to maximum of height_from_leaf and hgt
+      4. Increment cut_count by cut
+   4. Increment height_from_leaf by 1
+   5. If p is not 0 and height_from_leaf equals k
+      1. Reset height_from_leaf to 0
+      2. Increment cut_count by 1
+   6. Return height_from_leaf and cut_count
+3. Read input n, k, and array aaa from standard input
+4. Initialize links as an array of n empty sets
+5. For each i and a in enumerate(aaa)
+   1. Decrement a by 1
+   2. Add i to links[a]
+6. Call dfs with parameters links, n, k, 0, 0 and store result in _ and ans
+7. If aaa[0] is not equal to 1, increment ans by 1
+8. Print ans

@@ -1,0 +1,33 @@
+1. Define a list of input methods: ['clipboard', 'file', 'key']
+2. Initialize the using method index to 0
+3. Determine the input method based on the using method index
+4. Define a lambda function IN to map input to integers split by spaces
+5. Set the modulus value to 1000000007
+6. Define a function main_b:
+   1. Read input string s
+   2. Initialize variables pp to 0 and na to 0
+   3. Iterate through the characters of s in reverse order
+   4. For each character c, calculate cc = na + integer value of c
+   5. Reset na to 0
+   6. If cc <= 4, increment pp by cc
+   7. Otherwise, set na to 1 and increment pp by 10 - cc
+   8. If it's the last character and na is 1, increment pp by 1
+   9. Print pp
+7. Define a function main:
+   1. Read input string s
+   2. Initialize pmin to 1000 and mmin to 0
+   3. Prepend '0' to s
+   4. Iterate through the characters of s in reverse order
+   5. For each character c, calculate its integer value v
+   6. Update npmin and nmmin based on pmin, mmin, and v
+   7. Update pmin and mmin with npmin and nmmin
+   8. Return the minimum of pmin and mmin
+8. Define a flag isTest and initialize it to False
+9. Define a function pa to print value v if isTest is True
+10. Define a function input_clipboard to read input from the clipboard
+11. In the main block:
+    1. Check if the platform is 'ios'
+    2. If 'ios', check the input method and configure input accordingly
+    3. Set isTest to True if 'ios'
+    4. Call the main function and store the result in ret
+    5. If ret is not None, print ret

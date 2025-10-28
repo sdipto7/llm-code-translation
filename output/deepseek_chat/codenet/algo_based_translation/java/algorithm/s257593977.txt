@@ -1,0 +1,12 @@
+Algorithm:
+
+1. Import Scanner class from java.util package
+2. Define public class Main
+3. Declare private static final integer constant BASE with value 3
+4. Define main method with signature: public static void main(String[] args)
+5. Create Scanner object initialized with System.in
+6. Call nextInt() method on Scanner object to read integer input
+7. Pass input value to Math.pow() method with BASE as exponent
+8. Cast Math.pow() result to integer type
+9. Print resulting integer using System.out.println()
+10. Close Scanner object (implicit in this implementation)

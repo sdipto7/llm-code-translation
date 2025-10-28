@@ -1,0 +1,71 @@
+**Function Signatures:**
+- `Node(int i)` constructor
+- `setParent(int K, int parent, int use, Node[] nodes)` method
+- `solve()` method
+- `main(String[] args)` method
+
+**Data Structures:**
+- `Node` class with:
+  - `long pattern`
+  - `int index`
+  - `LinkedList<Integer> children`
+  - `int parent`
+
+**Variables:**
+- `Scanner in`
+- `int N`
+- `int K`
+- `Node[] nodes`
+- `int a, b`
+- `long patterns`
+- `int count`
+- `int n`
+
+**Logic Flow:**
+
+1. **Main execution:**
+   - Create `atcoder_ABC133_E` instance
+   - Call `solve()` method
+
+2. **solve() method:**
+   - Create Scanner reading from System.in
+   - Read integer N
+   - Read integer K
+   - Create array `nodes` of size N
+   - For i from 0 to N-1:
+     - Create new Node(i) at nodes[i]
+   - For i from 0 to N-2:
+     - Read integer a, subtract 1
+     - Read integer b, subtract 1
+     - Add b to nodes[a].children
+     - Add a to nodes[b].children
+   - Close Scanner
+   - Call nodes[0].setParent(K, -1, 0, nodes)
+   - Initialize patterns = 1
+   - For i from 0 to N-1:
+     - Multiply patterns by nodes[i].pattern modulo 1,000,000,007
+   - Print patterns
+
+3. **setParent() method:**
+   - Set this.pattern = K - use
+   - Set this.parent = parent
+   - Initialize count = 1
+   - If parent != -1:
+     - Increment count by 1
+   - For each n in children:
+     - If n == this.parent:
+       - Continue to next iteration
+     - Call nodes[n].setParent(K, index, count, nodes)
+     - Increment count by 1
+
+**Control Structures:**
+- For loops: `for (int i = 0; i < N; i++)`, `for (int i = 0; i < N-1; i++)`, `for (int n : children)`
+- Conditional: `if (parent != -1)`, `if (n == this.parent)`
+
+**Input/Output:**
+- Input: N, K, N-1 pairs of integers
+- Output: Final patterns value
+
+**Dependencies:**
+- `java.util.LinkedList`
+- `java.util.Scanner`

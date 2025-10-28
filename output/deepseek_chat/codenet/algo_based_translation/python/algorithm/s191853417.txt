@@ -1,0 +1,4 @@
+read five integers from standard input, separated by whitespace
+assign them to variables a, b, c, d, e as integers
+calculate: 15 minus the sum of a, b, c, d, e
+print the result as an integer

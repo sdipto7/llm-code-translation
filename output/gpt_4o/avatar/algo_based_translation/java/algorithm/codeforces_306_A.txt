@@ -1,0 +1,36 @@
+```
+Function Signature:
+- Function: main
+- Parameters: args (String array)
+- Return Type: void
+
+Variables:
+- int n
+- int m
+- int[] a
+- int sub
+- int test
+- int count
+
+Libraries:
+- java.util.Arrays
+- java.util.Scanner
+
+Logic Flow:
+1. Initialize Scanner object `input` to read from standard input.
+2. Read integer `n` from input.
+3. Read integer `m` from input.
+4. Create integer array `a` of size `m`.
+5. Check if `n` is divisible by `m` (n % m == 0):
+   - If true, iterate over `a` and set each element to `n / m`.
+6. If `n` is not divisible by `m`:
+   - Compute `sub` as integer division of `n` by `m`.
+   - Iterate over `a` and set each element to `sub`.
+   - Compute `test` as `n` minus the product of `sub` and `m`.
+   - Initialize `count` to 0.
+   - For `i` from 0 to `test - 1`:
+     - Increment `a[count]` by 1.
+     - Increment `count` by 1.
+     - If `count` exceeds `a.length`, reset `count` to 0.
+7. Iterate over `a` in reverse order and print each element followed by a space.
+```

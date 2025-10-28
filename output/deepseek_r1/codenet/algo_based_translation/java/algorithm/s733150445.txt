@@ -1,0 +1,31 @@
+- **Libraries/Modules**: java.io.BufferedReader, java.io.IOException, java.io.InputStreamReader, java.math.BigDecimal, java.util.StringTokenizer
+
+- **Function Signature**:  
+  `public static void main(String[] args) throws IOException`
+
+- **Variables**:  
+  - `BufferedReader in` (input handler)  
+  - `StringTokenizer st` (tokenizer for input/output processing)  
+  - `BigDecimal a`, `BigDecimal b` (input values)  
+  - `BigDecimal mul` (result of multiplication)  
+
+- **Execution Flow**:  
+  1. Initialize `BufferedReader` to read from standard input.  
+  2. Read one line of input using `in.readLine()`.  
+  3. Tokenize the input line using space delimiter via `StringTokenizer`.  
+  4. Parse first token as `BigDecimal a`.  
+  5. Parse second token as `BigDecimal b`.  
+  6. Compute `mul = a.multiply(b)`.  
+  7. Convert `mul` to a string and tokenize it using `.` as the delimiter.  
+  8. Extract the first token from the tokenized `mul` string.  
+  9. Print the extracted token (integer part of product).  
+
+- **Control Structures**: None (no loops/conditionals beyond default tokenization logic).  
+
+- **Input/Output Operations**:  
+  - Read line from `System.in` via `BufferedReader`.  
+  - Write result to `System.out` using `System.out.println()`.  
+
+- **Data Processing**:  
+  - Use `BigDecimal` for precise multiplication.  
+  - String splitting to isolate integer portion of the product.

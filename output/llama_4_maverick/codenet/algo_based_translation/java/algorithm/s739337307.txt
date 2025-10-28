@@ -1,0 +1,21 @@
+1. Import required libraries: java.util and java.math.
+2. Define a class Main with a public static void main method taking a String array as input and returning no value.
+3. Within the main method:
+   - Initialize a try block with a resource (Scanner object sc) to read from System.in.
+   - Declare integer variables n and m.
+   - Parse the next two input tokens as integers and assign them to n and m respectively.
+   - Create a HashMap (map) to store integer key-value pairs.
+   - Initialize integer variables countAc and countWaAll to 0.
+   - Iterate m times using a for loop:
+     - Parse the next input token as an integer and assign it to the variable question.
+     - Read the next input token as a string and assign it to the variable waOrAc.
+     - Check if the map does not contain the key question:
+       - If waOrAc equals "WA", put the key-value pair (question, 1) into the map.
+       - If waOrAc equals "AC", put the key-value pair (question, -1) into the map and increment countAc.
+     - If the map contains the key question:
+       - Retrieve the value associated with question from the map and assign it to countWa.
+       - If countWa is not less than 0:
+         - If waOrAc equals "WA", replace the value associated with question in the map with countWa + 1.
+         - If waOrAc equals "AC", replace the value associated with question in the map with -countWa, increment countAc, and add countWa to countWaAll.
+   - Print the values of countAc and countWaAll separated by a space.
+   - Catch any exceptions that occur during execution and print their stack trace.

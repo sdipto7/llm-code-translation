@@ -1,0 +1,36 @@
+```
+import sys
+
+function solve(H: int, W: int, A: int, B: int) -> None:
+    declare answer as a list of lists of strings, initialized with "0" of size H x W
+    for i from 0 to H - 1:
+        for j from 0 to W - 1:
+            if i < B:
+                if j < A:
+                    set answer[i][j] to "0"
+                else:
+                    set answer[i][j] to "1"
+            else:
+                if j < A:
+                    set answer[i][j] to "1"
+                else:
+                    set answer[i][j] to "0"
+    for i from 0 to H - 1:
+        print the concatenated string of answer[i]
+    return
+
+function main() -> None:
+    define iterate_tokens() as a generator function:
+        for each line in sys.stdin:
+            for each word in line.split():
+                yield word
+    declare tokens as an iterator from iterate_tokens()
+    set H to the integer conversion of the next token
+    set W to the integer conversion of the next token
+    set A to the integer conversion of the next token
+    set B to the integer conversion of the next token
+    call solve with parameters H, W, A, B
+
+if __name__ is '__main__':
+    call main()
+```

@@ -1,0 +1,5 @@
+read input string into variable x
+if x is entirely lowercase:
+    print "a"
+else:
+    print "A"

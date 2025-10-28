@@ -1,0 +1,10 @@
+1. Import required libraries: java.util.*
+2. Define a class: Main
+3. Define a static method: main with parameter args of type String[] and return type void
+4. Declare a variable: sc of type Scanner and initialize it with a new Scanner object using System.in
+5. Declare variables: a and b of type int
+6. Read input from sc into a and b using nextInt()
+7. Check the condition: if (b % a == 0)
+8. If condition is true, execute: System.out.println(a + b)
+9. If condition is false, execute: System.out.println(b - a)
+10. End the program.

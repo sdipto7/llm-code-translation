@@ -1,0 +1,76 @@
+Function Signature: `main(String[] args)`
+
+Variable Declarations:
+- `Scanner sc` of type `Scanner`
+- `int N` of type `int`
+- `int K` of type `int`
+- `String S` of type `String`
+- `char[] c1` of type `char[]`
+- `char[] c3` of type `char[]`
+- `boolean flag` of type `boolean`
+- `int count` of type `int`
+- `String S1` of type `String`
+- `String S3` of type `String`
+- `int sum1` of type `int`
+- `int sum3` of type `int`
+- `char bef` of type `char`
+
+Logic Flow:
+1. Initialize `sc` as new `Scanner` object with `System.in`
+2. Read `N` as integer from `sc.next()`
+3. Read `K` as integer from `sc.next()`
+4. Read `S` as string from `sc.next()`
+5. Convert `S` to character array `c1`
+6. Convert `S` to character array `c3`
+7. Set `flag` to `false`
+8. Set `count` to `0`
+9. For `i` from `0` to `N-1`:
+   - If `flag` is `true` and `c1[i]` is `'R'`:
+     - Set `flag` to `false`
+     - Increment `count`
+   - If `count` equals `K`:
+     - Break loop
+   - If `c1[i]` is `'L'`:
+     - Set `flag` to `true`
+     - Set `c1[i]` to `'R'`
+10. Set `flag` to `false`
+11. Set `count` to `0`
+12. For `i` from `0` to `N-1`:
+    - If `flag` is `true` and `c3[i]` is `'L'`:
+      - Set `flag` to `false`
+      - Increment `count`
+    - If `count` equals `K`:
+      - Break loop
+    - If `c3[i]` is `'R'`:
+      - Set `flag` to `true`
+      - Set `c3[i]` to `'L'`
+13. Convert `c1` to string `S1`
+14. Convert `c3` to string `S3`
+15. Set `count` to `1`
+16. Set `sum1` to `0`
+17. Set `bef` to first character of `S1`
+18. For `i` from `1` to `N-1`:
+    - If `S1[i]` equals `bef`:
+      - Increment `count`
+      - If `i` equals `N-1`:
+        - Add `count - 1` to `sum1`
+    - Else:
+      - Set `bef` to `S1[i]`
+      - Add `count - 1` to `sum1`
+      - Set `count` to `1`
+19. Set `count` to `1`
+20. Set `sum3` to `0`
+21. Set `bef` to first character of `S3`
+22. For `i` from `1` to `N-1`:
+    - If `S3[i]` equals `bef`:
+      - Increment `count`
+      - If `i` equals `N-1`:
+        - Add `count - 1` to `sum3`
+    - Else:
+      - Set `bef` to `S3[i]`
+      - Add `count - 1` to `sum3`
+      - Set `count` to `1`
+23. Print maximum of `sum1` and `sum3`
+
+Libraries:
+- `java.util.*`

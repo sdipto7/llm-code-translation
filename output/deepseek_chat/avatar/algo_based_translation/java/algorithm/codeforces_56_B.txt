@@ -1,0 +1,47 @@
+**Function Signature:**
+- `main(String[] args)`: void
+
+**Variables:**
+- `Scanner scan`: Scanner object for input
+- `int len`: length of array
+- `int[] a`: integer array of size `len`
+- `int l`: integer, initially 0
+- `int r`: integer, initially 0
+- `boolean flag`: boolean, initially false
+- `boolean isTrue`: boolean, initially false
+
+**Logic Flow:**
+1. Read integer `len` from standard input
+2. Initialize integer array `a` of size `len`
+3. For each index `i` from 0 to `len-1`:
+   - Read integer value into `a[i]`
+4. Initialize `l = 0`, `r = 0`, `flag = false`, `isTrue = false`
+5. Labeled loop `loop:` for `i` from 0 to `len-1`:
+   - If `a[i] != i+1` AND `flag` is false:
+     - Set `l = i+1`
+     - Set `flag = true`
+     - Continue to next iteration
+   - If `a[i] != i+1` AND `flag` is true:
+     - Set `r = i+1`
+     - If `a[r-1] - a[r-2] > 0`:
+       - Set `isTrue = true`
+       - Break out of labeled loop
+6. If `isTrue` is false: print `l` and `r`
+   Else: print "0 0"
+
+**Control Structures:**
+- For loop: `for (int i = 0; i < len; i++)`
+- Labeled loop with break: `loop:`
+- Conditional: `if (a[i] != i+1 && !flag)`
+- Conditional: `if (a[i] != i+1 && flag)`
+- Conditional: `if (a[r-1] - a[r-2] > 0)`
+- Ternary conditional for output
+
+**Input/Output:**
+- Input: First integer `len`, then `len` integers for array `a`
+- Output: Either two integers `l r` or "0 0"
+
+**Required Libraries:**
+- `java.util.Scanner`
+- `java.io.*` (implicit)
+- `java.lang.Math` (implicit)

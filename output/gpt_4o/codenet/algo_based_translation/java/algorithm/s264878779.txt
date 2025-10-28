@@ -1,0 +1,29 @@
+```
+Algorithm Main
+    Input: None
+    Output: Integer (printed to console)
+
+    Declare a Scanner object 'sc' for input reading
+    Read a String 's' from input using 'sc'
+    Declare an integer 'n' as the length of String 's'
+    Declare a long integer 'ans' and initialize it to 0
+
+    For each integer 'mask' from 0 to (1 << (n - 1)) - 1, do
+        Declare a long integer 'sum' and initialize it to 0
+        Declare a String 'x' and initialize it to the first character of 's'
+
+        For each integer 'i' from 0 to n - 2, do
+            If (mask & (1 << i)) is greater than or equal to 1, then
+                Append "+" and the character at index i + 1 of 's' to 'x'
+            Else
+                Append the character at index i + 1 of 's' to 'x'
+
+        Split 'x' by "+" and store the result in an array of Strings 'split'
+
+        For each String element in 'split', do
+            Convert the String element to a Long and add it to 'sum'
+
+        Add 'sum' to 'ans'
+
+    Print 'ans' to the console
+```

@@ -1,0 +1,22 @@
+function main() throws IOException {
+    variables:
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in))
+        PrintWriter pw = new PrintWriter(System.out)
+        String[] input_array = br.readLine().split(" ")
+        int result = 0
+
+    logic:
+        for each String str in input_array:
+            result += 1
+            if (str.equals("0")) then break loop
+
+        pw.println(result)
+        br.close()
+        pw.close()
+}
+
+required dependencies:
+    java.io.BufferedReader
+    java.io.IOException
+    java.io.InputStreamReader
+    java.io.PrintWriter

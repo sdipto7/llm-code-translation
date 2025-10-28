@@ -1,0 +1,26 @@
+Function signature: `main()`
+
+Variable declarations and data types:
+- `A, B, C, X, Y` as integers
+- `ans` as integer
+- `k` as integer
+- `total` as integer
+
+Logic flow in execution order:
+1. Read input values for `A, B, C, X, Y` as integers from the standard input.
+2. Initialize `ans` to 10^10.
+3. For each integer `k` from 0 to `max(X, Y)` (inclusive):
+   - Calculate `total` as `2 * C * k + A * max(0, X - k) + B * max(0, Y - k)`.
+   - If `total` is less than `ans`, update `ans` to `total`.
+4. Print the value of `ans`.
+
+Control structures:
+- For loop: `for k in range(max(X, Y) + 1)`
+- Conditional statement: `if total < ans`
+
+Input/output operations and data processing logic:
+- Input: Read five integers from the standard input.
+- Output: Print the minimum calculated `total` value.
+
+Required libraries, modules, or dependencies:
+- None

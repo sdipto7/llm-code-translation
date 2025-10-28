@@ -1,0 +1,45 @@
+1. Import necessary libraries: 
+   - java.io
+   - java.util
+   - java.math
+
+2. Define a class Main with the following components:
+   - Class variables: 
+     - sc of type Scanner
+     - max and cur of type int
+   - Constructor Main() that initializes sc with a new Scanner object reading from System.in
+
+3. Define the main method main(String[] args) that:
+   - Creates a new instance of Main
+   - Calls the solve() method on the new instance
+
+4. Define the solve() method that:
+   - Reads two integers a and b using the ni() method
+   - Prints the maximum of 0 and (a - 2*b) to the console
+
+5. Define utility methods for input/output operations:
+   - ni(): reads an integer from the scanner and returns it
+   - nl(): reads a long from the scanner and returns it
+   - nf(): reads a float from the scanner and returns it
+   - nd(): reads a double from the scanner and returns it
+   - ns(): reads a line from the scanner and returns it as a string
+   - nst(String s): returns a StringTokenizer object for the given string
+   - ia(int a[]): reads integers from the scanner and stores them in the given array
+   - la(long a[]): reads longs from the scanner and stores them in the given array
+   - fa(float a[]): reads floats from the scanner and stores them in the given array
+   - da(double a[]): reads doubles from the scanner and stores them in the given array
+   - sa(String a[], boolean empty): reads strings from the scanner and stores them in the given array, or initializes the array with empty strings if empty is true
+   - ida(int a[][], int n, int m): reads integers from the scanner and stores them in the given 2D array
+   - lda(long a[][], int n, int m): reads longs from the scanner and stores them in the given 2D array
+   - dda(double a[][], int n, int m): reads doubles from the scanner and stores them in the given 2D array
+
+6. Define utility methods for data processing:
+   - stoi(String s): converts a string to an integer and returns it
+   - stod(String s): converts a string to a double and returns it
+   - lmin(long a[]): finds the minimum element in the given long array and returns it
+   - imin(int a[]): finds the minimum element in the given integer array and returns it
+   - lmax(long a[]): finds the maximum element in the given long array and returns it
+   - imax(int a[]): finds the maximum element in the given integer array and returns it
+   - ibs(int a[], int toFind): performs a binary search on the given sorted integer array to find the given element and returns a boolean indicating whether it was found
+   - lbs(long a[], long toFind): performs a binary search on the given sorted long array to find the given element and returns a boolean indicating whether it was found
+   - stb(String s): converts a binary string to an integer and returns it

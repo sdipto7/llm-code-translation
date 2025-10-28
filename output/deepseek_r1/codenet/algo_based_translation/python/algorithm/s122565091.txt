@@ -1,0 +1,39 @@
+**Function Signatures:**
+- None (procedural script)
+
+**Variables:**
+- `a`: int
+- `v`: int
+- `b`: int
+- `w`: int
+- `t`: int
+- `delta`: int (within else block)
+- `required_time`: float (within else block)
+
+**Input Operations:**
+1. Read `a`, `v` from standard input via `map(int, input().split())`
+2. Read `b`, `w` from standard input via `map(int, input().split())`
+3. Read `t` from standard input via `int(input())`
+
+**Logic Flow:**
+1. Check if `a == b`:
+   - If true: Print "YES"
+2. Else, check if `v <= w`:
+   - If true: Print "NO"
+3. Else:
+   - Compute `delta = abs(a - b)`
+   - Compute `required_time = delta / (v - w)`
+   - Check if `t < required_time`:
+     - If true: Print "NO"
+     - Else: Print "YES"
+
+**Control Structures:**
+- **Conditional 1:** `if a == b`
+- **Conditional 2:** `elif v <= w`
+- **Conditional 3 (nested):** `if t < required_time` (within else block)
+
+**Output Operations:**
+- Print "YES" or "NO" based on condition evaluations
+
+**Dependencies:**
+- None (uses standard input/output functions)

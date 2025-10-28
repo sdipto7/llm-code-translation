@@ -1,0 +1,25 @@
+Function signature: `main() -> None`
+
+Variable declarations:
+- `a`, `b`: integers
+- `c`: integer, initialized to 0
+
+Logic flow:
+1. Read input values for `a` and `b` as integers separated by space.
+2. Initialize `c` to 0.
+3. For loop iterates 2 times (`i` ranges from 0 to 1):
+   - Add the maximum value between `a` and `b` to `c`.
+   - If `a` is greater than or equal to `b`, decrement `a` by 1.
+   - Otherwise, decrement `b` by 1.
+4. Print the value of `c`.
+
+Control structures:
+- For loop: Iterates exactly 2 times.
+- If-else conditional: Checks if `a` is greater than or equal to `b`.
+
+Input/Output operations:
+- Input: Reads two space-separated integers from standard input.
+- Output: Prints the final value of `c` to standard output.
+
+Required libraries, modules, or dependencies:
+- No external libraries or modules required. Uses built-in `input()`, `print()`, `max()`, and `range()` functions.

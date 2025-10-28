@@ -1,0 +1,60 @@
+**Structured Algorithm Specification**
+
+**Function Signature**
+```python
+def find_next_prime(X: int) -> int:
+    pass
+```
+
+**Variables**
+- `prime: List[bool]` (size 100010)
+- `i: int` (loop counter)
+- `j: int` (loop counter)
+
+**Steps**
+1. **Input Handling**
+    - Read integer input `X` from standard input
+    - Validate `X` is within sieve range (0 ≤ X < 100010)
+
+2. **Sieve Initialization**
+    - Initialize `prime` list with 100010 `True` values
+    - Set `prime[0] = False` (0 is not prime)
+    - Set `prime[1] = False` (1 is not prime)
+
+3. **Even Number Handling**
+    - For `i` from 4 to 100009 (inclusive) with step 2:
+        - Set `prime[i] = False`
+
+4. **Odd Number Sieve**
+    - Initialize `i = 3`
+    - While `i * i ≤ 100008`:
+        - If `prime[i]` is True:
+            - For `j` from `i*2` to 100008 (exclusive) with step `i`:
+                - Set `prime[j] = False`
+        - Increment `i` by 2
+
+5. **Prime Search**
+    - For `i` from `X` to 100008 (exclusive):
+        - If `prime[i]` is True:
+            - Output `i`
+            - Terminate execution
+    - If no prime found in range, handle overflow (implicit in original code's fixed range)
+
+**Control Flow Structures**
+- Fixed-range `for` loop (even number elimination)
+- Conditional `while` loop with exit condition `i*i > 100008`
+- Nested `for` loop for marking multiples
+- Linear search loop with early termination
+
+**Edge Case Handling**
+- Explicit marking of 0 and 1 as non-prime
+- Automatic handling of X=2 through sieve initialization
+- Implicit range constraint via fixed sieve size (100010 elements)
+
+**Dependencies**
+- Standard input for reading integer
+- No external libraries required
+
+**Error Handling**
+- Implicit assumption of valid integer input
+- No explicit error handling for X beyond sieve range (original code constraint)

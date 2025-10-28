@@ -1,0 +1,57 @@
+**Structured Algorithm Specification:**
+
+**Function:** `main`  
+**Parameters:** None  
+**Return Type:** void  
+
+**Variables:**  
+- `s`: String (input)  
+- `a`: Dictionary (key: char, value: int)  
+- `min_count`: int  
+
+**Steps:**  
+
+1. **Input Handling:**  
+   - Read string `s` from standard input.  
+
+2. **Check Uniform Characters:**  
+   a. Create a set `unique_chars` containing all distinct characters in `s`.  
+   b. If `len(unique_chars) == 1`:  
+      - Print `0`.  
+      - Terminate the program immediately.  
+
+3. **Frequency Calculation:**  
+   a. Count occurrences of each character in `s` using a frequency dictionary `a`.  
+
+4. **Determine Minimum Frequency:**  
+   a. Extract all values (frequencies) from `a` into a list.  
+   b. Assign `min_count` as the minimum value in this list.  
+
+5. **Compute Result:**  
+   - Calculate `ans` as `min_count * 2`.  
+
+6. **Output Result:**  
+   - Print `ans`.  
+
+**Control Flow Structures:**  
+- **Conditional** (Step 2b): Early termination if all characters are identical.  
+- **Data Aggregation** (Step 3a): Frequency counting via dictionary.  
+- **Min-Value Extraction** (Step 4b): Iterate through frequency values.  
+
+**Input/Output Operations:**  
+- Read string `s` from stdin.  
+- Print `0` or `ans` to stdout.  
+
+**Edge Case Handling:**  
+- Explicit check for uniform characters (avoids unnecessary computation).  
+- Assumes non-empty input string (implicit in problem constraints).  
+
+**External Dependencies:**  
+- `sys` module for input reading (`sys.stdin`) and early termination (`sys.exit`).  
+- `collections.Counter` for frequency counting.  
+
+**Library Function Calls:**  
+- `sys.stdin.readline()` for input.  
+- `sys.exit()` for termination.  
+- `Counter(s)` to build frequency dictionary.  
+- `min()` to find smallest frequency.

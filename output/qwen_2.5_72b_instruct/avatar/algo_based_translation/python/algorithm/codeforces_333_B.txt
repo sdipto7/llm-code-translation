@@ -1,0 +1,37 @@
+Function Signature: 
+main()
+
+Variable Declarations:
+n: int
+m: int
+b: List[int]
+i: int
+r: int
+c: int
+
+Logic Flow:
+1. Read input values for n and m as integers.
+2. Initialize list b with 2*n elements, all set to 1.
+3. Set elements b[0], b[n-1], b[n], and b[2*n-1] to 0.
+4. For i from 0 to m-1:
+    a. Read input values for r and c as integers.
+    b. Set elements b[r-1] and b[n+c-1] to 0.
+5. If n is odd and both b[n//2] and b[n+n//2] are non-zero, set b[n//2] to 0.
+6. Print the sum of all elements in list b.
+
+Control Structures:
+- Loop: for i in range(m)
+- Conditionals: 
+    - if n % 2 and b[n // 2] and b[n + n // 2]
+
+Input/Output Operations:
+- Input: Read space-separated integers for n and m, then for each of m lines, read space-separated integers for r and c.
+- Output: Print a single integer representing the sum of the list b.
+
+Data Processing Logic:
+- Initialize and modify the list b based on input values.
+- Apply special conditions if n is odd.
+- Calculate and output the sum of the modified list.
+
+Required Libraries:
+- No external libraries or modules required.

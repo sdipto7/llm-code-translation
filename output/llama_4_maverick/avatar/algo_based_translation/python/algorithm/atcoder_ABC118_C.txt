@@ -1,0 +1,5 @@
+1. READ N from input
+2. READ array A of size N from input
+3. INITIALIZE gcd
+4. COMPUTE gcd of all elements in A using reduction operation with gcd function
+5. PRINT gcd

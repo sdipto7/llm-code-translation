@@ -1,0 +1,26 @@
+Function Signature: main(String[] args) - No return type
+
+Variable Declarations:
+- n: int
+- a: List<Integer>
+- value: int
+- found: boolean
+
+Execution Order and Logic Flow:
+
+1. Import libraries: java.io.PrintWriter, java.util.*, java.util.stream.Collectors
+2. Create Scanner object to read input and PrintWriter object to write output
+3. Read integer n from input
+4. Initialize empty List<Integer> a
+5. Loop from 0 to n-1:
+   a. Read integer value from input
+   b. Add value to list a
+6. Process list a:
+   a. Remove duplicates from list a
+   b. Sort list a in ascending order
+7. Initialize boolean variable found to false
+8. Loop from 0 to size of list a - 1:
+   a. Check if i + 1 and i + 2 are within list bounds
+   b. Check if a.get(i) + 1 equals a.get(i + 1) and a.get(i + 1) + 1 equals a.get(i + 2)
+   c. If true, set found to true
+9. If found is true, print "YES", otherwise print "NO"

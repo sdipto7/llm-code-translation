@@ -1,0 +1,60 @@
+**Structured Algorithm Specification**
+
+**Function/Method Signatures:**
+- `main() -> void`  
+  (Entry point with no parameters, reads input, processes data, outputs result)
+
+**Variable Declarations:**
+- `s: string` (Input string representing a number)  
+- `l: int` (Fixed value `2019`, modulus for computations)  
+- `m: list[int]` (List of integers with length `2020`, initialized to `[1] + 2019 * [0]`)  
+- `a: int` (Running cumulative sum modulo `l`, initialized to `0`)  
+- `r: int` (Result accumulator, initialized to `0`)  
+- `i: int` (Loop index tracking digit position in reversed string)  
+- `e: str` (Current character/digit in reversed input string)  
+
+**Logic Flow:**
+1. **Input Operation:**  
+   1.1 Read input string `s` via `input()` function.  
+   1.2 Assign `l = 2019`.  
+
+2. **Data Structure Initialization:**  
+   2.1 Create list `m` with `1` at index `0` followed by `2019` zeros.  
+
+3. **Pre-loop Initialization:**  
+   3.1 Set `a = 0`, `r = 0`.  
+
+4. **Main Processing Loop:**  
+   **Loop Structure:**  
+   `for i, e in enumerate(reversed(s)):`  
+   **Body:**  
+   4.1 Compute `int(e) * pow(10, i, l)`.  
+   4.2 Update `a = (a + <result from 4.1>) % l`.  
+   4.3 Increment `r` by `m[a]`.  
+   4.4 Increment `m[a]` by `1`.  
+
+5. **Output Operation:**  
+   5.1 Print value of `r` via `print(r)`.  
+
+**Control Flow Structures:**
+- Single `for` loop iterating over reversed input string characters.  
+  - **Exit Criteria:** Loop terminates after processing all characters in `s`.  
+- No explicit conditionals or nested loops.  
+
+**External Dependencies:**
+- Python Standard Library:  
+  - `pow(base, exp, mod)` for modular exponentiation in step 4.1.  
+  - `input()` for reading user input.  
+  - `enumerate()` for iterating with index tracking.  
+  - `reversed()` for reverse string iteration.  
+
+**Error Handling & Edge Cases:**
+- Implicit handling via modulo operations for numeric stability.  
+- Assumes input `s` is a valid non-empty numeric string.  
+- No explicit validation for non-numeric characters in `s`.  
+
+**Data Flow:**
+- Input string processed right-to-left (reversed).  
+- Modular arithmetic ensures values remain within `[0, 2018]`.  
+- List `m` tracks frequency of cumulative remainder occurrences.  
+- Result `r` accumulates valid substring count via prefix remainder matching.

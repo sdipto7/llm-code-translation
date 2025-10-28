@@ -1,0 +1,29 @@
+**Function Signature:**
+- main(): None
+
+**Variables:**
+- n: int
+- s: list[str]
+- t: list[str]
+- cnt: int
+
+**Algorithm:**
+1. Read integer n from standard input
+2. Read string and convert to list of characters s
+3. Read string and convert to list of characters t
+4. Compare s and t for equality
+   - If equal: print n and terminate
+5. Initialize cnt = 0
+6. For i from 0 to n-1:
+   7. For j from 0 to n-i-1:
+       8. Compare s[i+j] with t[j]
+           - If not equal: break inner loop
+       9. If j equals n-i-1: set cnt = n-i
+10. Print result: 2*n - cnt
+
+**Input/Output:**
+- Input: integer n, two strings
+- Output: integer result
+
+**Dependencies:**
+- Standard input/output operations

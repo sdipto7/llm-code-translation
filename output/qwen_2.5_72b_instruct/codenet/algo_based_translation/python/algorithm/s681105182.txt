@@ -1,0 +1,38 @@
+- Function signatures:
+  - `LI()`: Returns a list of integers.
+  - `LI_()`: Returns a list of integers, each decreased by 1.
+  - `LF()`: Returns a list of floats.
+  - `LS()`: Returns a list of strings.
+  - `II()`: Returns an integer.
+  - `SI()`: Returns a string without trailing newline.
+
+- Variable declarations and data types:
+  - `N`: Integer, represents the number of elements.
+  - `a_li`: List of integers, represents the input list of numbers.
+  - `n`: Integer, largest number in `a_li`.
+  - `dif`: Integer, initialized to `INF`, used to track the minimum difference.
+  - `prev_dif`: Integer, initialized to `INF`, used to track the previous minimum difference.
+  - `a`: Integer, iterates through `a_li` except the last element.
+  - `r`: Integer, stores the number that makes the smallest difference with `n/2`.
+
+- Logic flow:
+  - Set recursion limit to `10**7`.
+  - Read integer `N`.
+  - Read list of integers `a_li` of size `N`.
+  - Sort `a_li`.
+  - Assign `n` to the last element of `a_li`.
+  - Initialize `dif` and `prev_dif` to `INF`.
+  - For each `a` in `a_li` except the last element:
+    - Calculate `dif` as the minimum of the absolute difference between `n/2` and `a`, and the current `dif`.
+    - If `dif` is not equal to `prev_dif`, update `r` to `a` and set `prev_dif` to `dif`.
+  - Print `n` and `r`.
+
+- Control structures:
+  - For loop iterates over `a_li[:-1]`.
+
+- Input/output operations and data processing logic:
+  - Input is read from standard input using `sys.stdin.readline()`.
+  - Output is printed to standard output using `print()`.
+
+- Required libraries, modules, or dependencies:
+  - `sys` module for reading input and setting recursion limit.

@@ -1,0 +1,39 @@
+Function signature: `main(String[] args)`
+
+Variable declarations and data types:
+- `Scanner in` of type `Scanner`
+- `double VP`
+- `double VD`
+- `double T`
+- `double F`
+- `double C`
+- `int answer`
+- `double start`
+
+Complete logic flow in execution order:
+1. Create a `Scanner` object named `in` to read input.
+2. Read a double value for `VP` using `in.nextInt()`.
+3. Read a double value for `VD` using `in.nextInt()`.
+4. Read a double value for `T` using `in.nextInt()`.
+5. Read a double value for `F` using `in.nextInt()`.
+6. Read a double value for `C` using `in.nextInt()`.
+7. If `VD` is less than or equal to `VP`, print `0` and return from the function.
+8. Initialize `answer` to `0`.
+9. Set `start` to the value of `T`.
+10. While `true`:
+    1. Calculate `x` as `start * VP / (VD - VP)`.
+    2. If `(start + x) * VP` is greater than or equal to `C`, break the loop.
+    3. Increment `start` by `2 * x + F`.
+    4. Increment `answer` by `1`.
+11. Print the value of `answer`.
+
+Control structures:
+- If statement: `if (VD <= VP)`
+- While loop: `while (true)`
+
+Input/output operations and data processing logic:
+- Input: Read five integer values for `VP`, `VD`, `T`, `F`, and `C` using `Scanner`.
+- Output: Print `0` if `VD` is less than or equal to `VP`. Otherwise, print the number of iterations stored in `answer`.
+
+Required libraries, modules, or dependencies:
+- `java.util.Scanner`

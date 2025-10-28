@@ -1,0 +1,23 @@
+```
+Algorithm to count distinct adjacent characters in a string:
+
+1. Define a function `count_distinct_adjacent_characters` with parameters:
+   - `n: int` (length of the string)
+   - `s: str` (input string)
+   - Returns: `int` (count of distinct adjacent character groups)
+
+2. Declare variable `cnt: int` and initialize it to 1.
+
+3. Loop through integer `i` from 0 to `n-2` (inclusive):
+   - If `s[i]` is equal to `s[i+1]`, then continue to the next iteration.
+   - Else, increment `cnt` by 1.
+
+4. Return `cnt`.
+
+5. Main execution flow:
+   - Read an integer input `n`.
+   - Read a string input `s`.
+   - Call the function `count_distinct_adjacent_characters(n, s)`.
+   - Print the returned result.
+```
+

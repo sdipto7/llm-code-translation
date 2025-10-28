@@ -1,0 +1,43 @@
+Function Signature:
+- `main() -> None`
+
+Variable Declarations and Data Types:
+- `N: int`
+- `mo: list[list[Union[float, str]]]`
+- `x: float`
+- `u: str`
+- `okz: float`
+
+Logic Flow in Execution Order:
+1. Read an integer `N` from the input.
+2. Initialize an empty list `mo`.
+3. For `_` in range `N`:
+   - Read a string `input_line` from the input.
+   - Split `input_line` into `x` and `u`.
+   - Convert `x` to a float.
+   - Append `[x, u]` to `mo`.
+4. Initialize `okz` to 0.
+5. For each element `i` in `mo`:
+   - If `i[1]` is equal to "JPY":
+     - Add `i[0]` to `okz`.
+   - Otherwise:
+     - Add `i[0] * 380000` to `okz`.
+6. Print the value of `okz`.
+
+Control Structures:
+- For loop with condition `_ in range(N)`
+- For loop with condition `i in mo`
+- If-else statement with condition `i[1] == "JPY"`
+
+Input/Output Operations:
+- Read integer `N` from the input.
+- Read strings `x` and `u` from the input.
+- Print the final value of `okz`.
+
+Data Processing Logic:
+- Convert `x` from string to float.
+- Accumulate values in `okz` based on the currency type (`JPY` or other).
+- Convert non-JPY values to a common currency by multiplying by 380000.
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries or modules required.

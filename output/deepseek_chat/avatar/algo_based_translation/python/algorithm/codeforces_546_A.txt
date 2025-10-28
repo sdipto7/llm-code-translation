@@ -1,0 +1,36 @@
+**Function Signature:**
+- No explicit function defined; code executes at top level
+
+**Input:**
+- Read one line from standard input containing three space-separated values
+- Split into three variables: k, n, w (all strings initially)
+
+**Variables and Data Types:**
+- k: string → integer (cost per banana)
+- n: string → integer (initial money)
+- w: string → integer (number of bananas)
+- total: integer (accumulated cost)
+
+**Logic Flow:**
+1. Read input line and split into k, n, w
+2. Convert k, w to integers
+3. Check if k ≥ 1 and w ≤ 1000
+4. Initialize total = 0
+5. For i from 1 to w (inclusive):
+   - Add (i * k) to total
+6. Compare total and n:
+   - If total > n: print (total - n)
+   - Else: print 0
+
+**Control Structures:**
+- If condition: (int(k) >= 1) AND (int(w) <= 1000)
+- For loop: range(1, int(w)+1)
+- If/else: total > int(n)
+
+**Input/Output:**
+- Input: single line with three space-separated integers
+- Output: integer result (either 0 or positive difference)
+
+**Dependencies:**
+- Standard input/output functions
+- No external libraries required

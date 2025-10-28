@@ -1,0 +1,38 @@
+Function Signature: main() -> None
+
+Variable Declarations:
+- N: int
+- M: int
+- A: List[int]
+- S: int
+- a: int
+
+Complete Logic Flow:
+1. Read integers N and M from standard input
+2. Read a list of N integers A from standard input
+3. Sort list A in descending order
+4. Calculate the sum of elements in A and store it in S
+5. For each element a in the first M elements of A:
+   - If (a / S) - (1 / (4 * M)) is less than 0:
+     - Print 'No'
+     - Break out of loop
+6. If loop completes without breaking:
+   - Print 'Yes'
+
+Control Structures:
+- For loop iterating over A[:M] with condition (a / S) - (1 / (4 * M)) < 0
+- If statement inside for loop with condition (a / S) - (1 / (4 * M)) < 0
+
+Input/Output Operations:
+- Read N and M from standard input
+- Read list A from standard input
+- Print 'No' or 'Yes' to standard output
+
+Data Processing Logic:
+- Sorting list A in descending order
+- Calculating sum S of elements in A
+- Iterating through the first M elements of A
+- Performing arithmetic operations to check the condition (a / S) - (1 / (4 * M))
+
+Required Libraries/Modules:
+- sys module for reading input from standard input

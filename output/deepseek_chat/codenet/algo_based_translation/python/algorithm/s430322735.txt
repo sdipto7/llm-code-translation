@@ -1,0 +1,27 @@
+n: integer = read integer from standard input
+lst: list of strings = empty list
+pair: integer = 0
+
+for i from 0 to n-1:
+    st: string = read string from standard input
+    sorted_chars: list = sort characters of st alphabetically
+    st: string = join sorted_chars into single string
+    append st to lst
+
+sort lst alphabetically
+append "end" to lst
+
+pre: string = empty string
+tmp_cnt: integer = 0
+cnt: integer = 0
+
+for each string i in lst:
+    if i equals pre:
+        tmp_cnt = tmp_cnt + 1
+    else:
+        sum_val: integer = sum of integers from 1 to tmp_cnt (inclusive)
+        cnt = cnt + sum_val
+        tmp_cnt = 0
+    pre = i
+
+print cnt

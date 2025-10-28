@@ -1,0 +1,61 @@
+Algorithm:
+
+1. **Import Libraries:**
+   - Import `Iterator` and `LinkedList` from `java.util`.
+   - Import `Scanner` from `java.util`.
+
+2. **Class Definition:**
+   - Define the class `codeforces_216_B`.
+
+3. **Variable Declarations:**
+   - Declare an integer `count`.
+   - Declare a boolean array `seen`.
+   - Declare integer variables `path = 0` and `cycle = 1`.
+   - Declare a `LinkedList` of `LinkedList<Integer>` named `graph`.
+
+4. **Function `dfs`:**
+   - Signature: `public int dfs(int child, int par)`
+   - **Parameters:**
+     - `int child`: the current node being processed.
+     - `int par`: the parent node of the current node.
+   - **Return Type:** `int`
+   - **Logic:**
+     - If `seen[child]` is `true`, return `cycle`.
+     - Set `seen[child]` to `true`.
+     - Iterate over each `Integer i` in `graph.get(child)`:
+       - If `i` is not equal to `par`:
+         - Increment `count`.
+         - If `dfs(i, child)` returns `cycle`, return `cycle`.
+     - Return `path`.
+
+5. **Main Function:**
+   - Signature: `public static void main(String[] args)`
+   
+6. **Input and Initializations:**
+   - Create a `Scanner` object `sc`.
+   - Read integers `m` and `n` using `sc.nextInt()`.
+   - Instantiate `codeforces_216_B` as `ft`.
+   - Initialize `ft.graph` as a `LinkedList` of `LinkedList<Integer>`.
+   - Iterate `i` from `0` to `m` (inclusive):
+     - Add a new `LinkedList<Integer>` to `ft.graph`.
+   - Initialize `ft.seen` as a boolean array of size `m + 1`.
+
+7. **Graph Construction:**
+   - Iterate `i` from `0` to `n` (exclusive):
+     - Read integers `x` and `y` using `sc.nextInt()`.
+     - Add `y` to `ft.graph.get(x)`.
+     - Add `x` to `ft.graph.get(y)`.
+
+8. **Cycle Detection and Counting:**
+   - Initialize `int toremove = 0`.
+   - Iterate `i` from `1` to `m` (inclusive):
+     - If `ft.seen[i]` is `false`:
+       - Set `ft.count = 0`.
+       - If `ft.dfs(i, 0)` equals `ft.cycle`:
+         - If `ft.count % 2` equals `1`, increment `toremove`.
+
+9. **Final Adjustment:**
+   - If `(m - toremove) % 2` equals `1`, increment `toremove`.
+
+10. **Output:**
+    - Print `toremove`.

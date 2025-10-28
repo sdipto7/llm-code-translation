@@ -1,0 +1,53 @@
+**Structured Algorithm Specification:**
+
+**Function/Method Signatures:**
+- **Main Procedure**
+  - **Parameters:** None
+  - **Return Type:** Void
+
+**Variable Declarations:**
+- `k: Integer` (Input value to check divisibility)
+- `t: Integer` (Accumulator initialized to 0)
+- `i: Integer` (Loop iterator from 1 to `k` inclusive)
+
+**Step-by-Step Logic Flow:**
+
+1. **Input Operation:**
+   - Read integer `k` from standard input.
+
+2. **Initialization:**
+   - Set `t = 0`.
+
+3. **Loop Execution:**
+   - Iterate `i` from `1` to `k` (inclusive):
+     1. **Update Accumulator:**
+        - Compute `t = (t % k) * 10 + 7`.
+     2. **Divisibility Check:**
+        - Calculate `remainder = t % k`.
+        - If `remainder == 0`:
+            - Print `i`.
+            - Terminate the program immediately.
+
+4. **Post-Loop Handling:**
+   - If the loop completes without termination (no valid `i` found):
+      - Print `-1`.
+
+**Control Flow Structures:**
+- **For Loop:**
+  - **Range:** `1 ≤ i ≤ k`
+  - **Exit Criteria:** Early termination if `t % k == 0`.
+- **Conditional Branch:**
+  - **Condition:** `t % k == 0` (divisibility check).
+  - **Action:** Output result and exit on true condition.
+
+**Input/Output Operations:**
+- **Input:** Single integer `k` read from standard input.
+- **Output:** Integer representing the smallest valid digit count (if found) or `-1`.
+
+**Edge Case Handling:**
+- **No Valid Solution:** Exhaustively checks all iterations up to `k` (by the pigeonhole principle) before returning `-1`.
+- **Modulo Optimization:** Prevents integer overflow by computing `t` modulo `k` at each step.
+
+**External Dependencies:**
+- **Input Handling:** Requires a method to read integer input (e.g., `sys.stdin` in Python, `Scanner` in Java).
+- **Mathematical Operations:** Relies on modulo arithmetic (`%`) for divisibility checks and accumulator updates.

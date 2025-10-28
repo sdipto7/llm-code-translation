@@ -1,0 +1,26 @@
+Function Signature:
+- No specific function is defined; the code is executed in the global scope.
+
+Variables:
+- `n`: integer, represents the number of input strings.
+- `res`: list of strings, stores the input strings.
+- `a`: string, holds each user input string in the loop.
+
+Logic Flow:
+1. Read an integer from input and assign it to `n`.
+2. Initialize an empty list `res`.
+3. Execute a loop that iterates `n` times:
+   - In each iteration, read a string from input and assign it to `a`.
+   - Append the string `a` to the list `res`.
+4. Convert `res` to a set to remove duplicates and determine the number of unique strings.
+5. Print the length of the set, which represents the number of unique strings.
+
+Control Structures:
+- A `for` loop that iterates from 0 to `n-1`, inclusive.
+
+Input/Output:
+- Input: Reads an integer followed by `n` strings from standard input.
+- Output: Prints the number of unique strings.
+
+Libraries/Modules:
+- No external libraries or modules are required for execution.

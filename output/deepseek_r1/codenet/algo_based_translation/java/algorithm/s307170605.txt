@@ -1,0 +1,33 @@
+- Required libraries/imports:  
+  java.util.Scanner  
+  java.io.*  
+
+- Function signature:  
+  public static void main(String args[])  
+
+- Variable declarations:  
+  Scanner sc = new Scanner(System.in)  
+  int i (loop counter)  
+
+- Logic flow:  
+  1. Initialize scanner for System.in  
+  2. Start for loop:  
+     - Initialize i = 0  
+     - Loop while i < 5  
+     - Increment i after each iteration  
+  3. In each iteration:  
+     a. Read integer input via sc.nextInt()  
+     b. Check if input equals 0  
+     c. If true:  
+        - Print (i + 1)  
+        - Break loop  
+     d. If false: continue loop  
+  4. End program after loop exit  
+
+- Control structures:  
+  For loop: (int i = 0; i < 5; i++)  
+  If condition: (sc.nextInt() == 0)  
+
+- Input/Output:  
+  Input: Sequence of integers from standard input  
+  Output: Integer (i+1) when first 0 is found, printed to stdout

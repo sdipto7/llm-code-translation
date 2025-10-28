@@ -1,0 +1,31 @@
+Algorithm:
+
+1. Import the `Scanner` class from the `java.util` package.
+
+2. Define the `main` function with the signature:
+   - `public static void main(String[] args)`
+
+3. Declare and initialize the following variables:
+   - `Scanner stdIn` to read input from the standard input.
+   - `int N` to store the number of integers to read.
+   - `int X` to store the initial value that will be decremented.
+   - `int[] m` as an array of integers with a length of `N`.
+
+4. Read the integer value for `N` from standard input.
+
+5. Read the integer value for `X` from standard input.
+
+6. Read the first integer and store it in `m[0]`.
+
+7. Subtract `m[0]` from `X`.
+
+8. Initialize `int min` with the value of `m[0]`.
+
+9. Loop from `i = 1` to `i < N`:
+   - Read the next integer and store it in `m[i]`.
+   - Subtract `m[i]` from `X`.
+   - If `m[i]` is less than `min`, update `min` to `m[i]`.
+
+10. Calculate `N + (X / min)`.
+
+11. Output the result of the calculation to the standard output.

@@ -1,0 +1,14 @@
+1. Read an integer `n` from input.
+2. Declare an empty list `a` of type list of lists of integers.
+3. For `i` ranging from 0 to 1 (exclusive), 
+   - Read a list of integers from input, split by spaces, and map to integers.
+   - Append this list to `a`.
+4. Reverse the order of elements in the second sublist `a[1]`.
+5. Import the `numpy` library.
+6. Calculate the cumulative sum of elements in `a[0]` using `numpy.cumsum()` and store in `res_0`.
+7. Calculate the cumulative sum of elements in `a[1]` using `numpy.cumsum()` and store in `res_1`.
+8. Initialize a variable `ans` of type integer to 0.
+9. For `i` ranging from 0 to `n-1` (inclusive),
+   - Calculate `check` as the sum of `res_0[i]` and `res_1[n-1-i]`.
+   - If `check` is greater than `ans`, update `ans` to `check`.
+10. Output the value of `ans`.

@@ -1,0 +1,50 @@
+Function Signature:
+- `find(s: str, ch: str) -> List[int]`
+
+Variable Declarations and Data Types:
+- `s: str` (input string)
+- `ch: str` (character to find in the string)
+- `n: int` (integer input)
+- `indices: List[int]` (list of indices where character '0' is found)
+- `maximum: int` (variable to store the maximum value calculated)
+- `combs: Iterator[Tuple[int, int]]` (combinations of indices)
+- `x: Tuple[int, int]` (pair of indices)
+
+Logic Flow:
+1. If the script is run as the main program:
+    - Read an integer `n` from input.
+    - Read a string `s` from input and replace all empty strings with empty strings (no change).
+    - If '0' is not in `s`:
+        - Print `n - 1`.
+    - Else:
+        - Call `find(s, '0')` to get the list of indices where '0' appears in `s`.
+        - If the length of `indices` is 1:
+            - Print `n`.
+        - Else:
+            - Initialize `maximum` to 0.
+            - Generate all combinations of pairs of indices from `indices` using `itertools.combinations`.
+            - For each pair `x` in `combs`:
+                - Calculate the maximum value based on the formula:
+                  `2 + 2 * (abs(indices.index(x[0]) - indices.index(x[1])) - 1) - (abs(x[0] - x[1]) - 1)`
+                - Update `maximum` if the calculated value is greater than the current `maximum`.
+            - Print the count of '1' in `s` plus `maximum`.
+
+Control Structures:
+- If condition: `if '0' not in s`
+- If condition: `if len(indices) == 1`
+- For loop: `for x in combs`
+
+Input/Output Operations:
+- Read integer `n` from input.
+- Read string `s` from input.
+- Print calculated values based on conditions.
+
+Data Processing Logic:
+- Replace empty strings in `s` (no change).
+- Find indices of '0' in `s`.
+- Calculate combinations of indices.
+- Determine the maximum value based on the given formula.
+- Count occurrences of '1' in `s`.
+
+Required Libraries/Modules:
+- `itertools`

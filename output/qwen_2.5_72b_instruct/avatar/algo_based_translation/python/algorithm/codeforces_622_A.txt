@@ -1,0 +1,35 @@
+Function Signature:
+- main() -> None
+
+Variable Declarations and Data Types:
+- n: int
+- l: int
+- r: int
+- mid: int
+- idxcnt: float
+
+Logic Flow:
+1. Read an integer input from the user and assign it to n
+2. Initialize l to 1
+3. Initialize r to n
+4. While l is less than r:
+   a. Calculate mid as l + (r - l) // 2
+   b. Calculate idxcnt as mid * (mid + 1) / 2
+   c. If idxcnt is less than n:
+      i. Increment l by 1
+   d. Else:
+      i. Assign mid to r
+5. Decrement l by 1
+6. Recalculate idxcnt as l * (l + 1) / 2
+7. Print the integer value of n - idxcnt
+
+Input/Output Operations:
+- Read an integer from standard input
+- Print an integer to standard output
+
+Data Processing Logic:
+- The algorithm uses binary search to find the largest integer l such that the sum of the first l natural numbers is less than or equal to n.
+- After finding l, it calculates the sum of the first l natural numbers and subtracts it from n to find the result.
+
+Required Libraries, Modules, or Dependencies:
+- cmd module (IDENTCHARS is imported but not used in the provided code)

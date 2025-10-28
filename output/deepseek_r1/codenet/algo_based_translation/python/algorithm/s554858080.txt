@@ -1,0 +1,28 @@
+**Algorithm:**
+
+- **Input Operation:**
+  - Read a line of input as a string and split into a list of strings using whitespace as delimiter.
+  - Store result in variable `input` (type: `List[str]`).
+
+- **Data Processing:**
+  - Concatenate all elements of `input` into a single string.
+  - Store concatenated result in variable `num` (type: `str`).
+
+- **Type Conversion:**
+  - Convert `num` to an integer (type: `int`).
+
+- **Conditional Check:**
+  - If the integer value of `num` is divisible by 4 (`int(num) % 4 == 0`):
+    - Print "YES".
+  - Else:
+    - Print "NO".
+
+- **Variables:**
+  - `input`: List of strings from user input.
+  - `num`: Concatenated string of input elements.
+
+- **Control Structures:**
+  - Single `if`-`else` block evaluating divisibility by 4.
+
+- **Dependencies:**
+  - None (uses standard input/output operations).

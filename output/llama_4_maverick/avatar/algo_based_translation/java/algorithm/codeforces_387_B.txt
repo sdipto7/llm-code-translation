@@ -1,0 +1,11 @@
+1. Read two integers n and m from input.
+2. Create two empty lists to store required values and available values.
+3. Read n integers and store them in the required values list.
+4. Read m integers and store them in the available values list.
+5. Initialize two pointers, i and j, to the last elements of the required values list and available values list respectively.
+6. Initialize a variable ans to 0.
+7. While i is greater than or equal to 0 and j is greater than or equal to 0:
+   7.1. If the value at index i in the required values list is greater than the value at index j in the available values list, increment ans.
+   7.2. Else, decrement j.
+   7.3. Decrement i.
+8. Output the sum of ans, i, and 1.

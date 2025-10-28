@@ -1,0 +1,27 @@
+Algorithm:
+
+1. Function Signature:
+   - `def generate_lexicographic_string(s: str) -> str`
+
+2. Variable Declarations:
+   - `s: str` - input string
+   - `c: str` - character variable used in loops
+   - `s1: str` - substring of `s` used in the second loop
+   - `i: int` - loop index
+   - `j: int` - loop index
+
+3. Logic Flow:
+   - Read input string `s`.
+   - Check if the length of `s` is less than 26.
+     - If true, iterate over the range from 0 to 25.
+       - Convert the loop index `i` to a character `c` using `chr(ord("a") + i)`.
+       - Check if character `c` is not in `s`.
+         - If true, return the concatenation of `s` and `c`.
+   - If the length of `s` is 26 or more, iterate over the indices in reversed order from 25 to 1.
+     - Check if the character at `s[i-1]` is less than the character at `s[i]`.
+       - If true, assign substring `s[0:i-1]` to `s1`.
+       - Iterate over the range from 0 to 25.
+         - Convert the loop index `j` to a character `c` using `chr(ord("a") + j)`.
+         - Check if character `c` is greater than `s[i-1]` and not in `s1`.
+           - If true, return the concatenation of `s1` and `c`.
+   - If no valid string is found, return `-1`.

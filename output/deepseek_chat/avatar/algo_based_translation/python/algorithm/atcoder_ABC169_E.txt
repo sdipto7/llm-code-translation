@@ -1,0 +1,39 @@
+**Function Signature:**
+- resolve(): void
+
+**Variables:**
+- n: int
+- low: list[int]
+- high: list[int]
+- i: int
+- a: int
+- b: int
+- hh: float
+- ll: float
+
+**Algorithm:**
+1. Read integer n from standard input
+2. Initialize empty lists low and high
+3. For i from 0 to n-1:
+   - Read two integers a and b from standard input
+   - Append a to low list
+   - Append b to high list
+4. Sort low list in ascending order
+5. Sort high list in ascending order
+6. If n is odd:
+   - Calculate median index = (n + 1) // 2 - 1
+   - Calculate result = high[median_index] - low[median_index] + 1
+   - Print result
+7. Else (n is even):
+   - Calculate hh = (high[n//2 - 1] + high[n//2]) / 2
+   - Calculate ll = (low[n//2 - 1] + low[n//2]) / 2
+   - Calculate result = int((hh - ll) * 2) + 1
+   - Print result
+
+**Input/Output:**
+- Input: First line contains n, subsequent n lines each contain two integers
+- Output: Single integer result
+
+**Dependencies:**
+- Standard input/output operations
+- List sorting functionality

@@ -1,0 +1,49 @@
+```plaintext
+Algorithm codeforces_456_A:
+    Import ArrayList from java.util
+    Import Arrays from java.util
+    Import Scanner from java.util
+
+    Function main(args: Array of String) -> void:
+        Declare md as ArrayList
+        Create Scanner object 'in' for System input
+
+        Read integer 'n' from input
+        Declare integer arrays 'a' and 'b' of size 'n'
+
+        Declare integer 'temp' and initialize to 0
+        Declare integer 'q' and initialize to 0
+        Declare integer 'w' and initialize to 0
+        Declare integer 'e' and initialize to 0
+        Declare boolean 'f' and initialize to false
+
+        For 'i' from 0 to n - 1:
+            Read integers into a[i] and b[i] from input
+
+            If temp < a[i]:
+                If q > b[i]:
+                    Set f to true
+                Set q to b[i]
+                Set temp to a[i]
+
+            If temp > a[i]:
+                If q < b[i]:
+                    Set f to true
+                Set q to b[i]
+                Set temp to a[i]
+
+            If a[i] > w:
+                Set w to a[i]
+                If b[i] < e:
+                    Set f to true
+                Set e to b[i]
+
+            If a[i] < w:
+                If b[i] > e:
+                    Set f to true
+
+        If f is true:
+            Output "Happy Alex"
+        Else:
+            Output "Poor Alex"
+```

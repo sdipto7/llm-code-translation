@@ -1,0 +1,29 @@
+Function: main()
+Parameters: None
+Return Type: None
+
+Variable Declarations:
+- candy: List[int]
+
+Logic Flow:
+1. Read a line of input
+2. Split the input line into a list of strings
+3. Convert each string in the list to an integer
+4. Sort the list of integers and assign it to the variable candy
+5. Check if the sum of the first and second elements of candy is equal to the third element of candy
+6. If the condition is true, print "Yes"
+7. If the condition is false, print "No"
+
+Control Structures:
+- Conditional: if candy[0] + candy[1] == candy[2] then print "Yes" else print "No"
+
+Input/Output Operations:
+- Input: Read a line of input from the user
+- Output: Print "Yes" or "No" based on the condition
+
+Data Processing Logic:
+- Conversion of input strings to integers
+- Sorting the list of integers
+
+Required Libraries, Modules, or Dependencies:
+- No additional libraries or modules required

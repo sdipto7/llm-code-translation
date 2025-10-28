@@ -1,0 +1,58 @@
+**Algorithm Extraction:**
+
+1. **Input:**
+   - Read a single line containing two integers `A` and `B` from standard input.
+
+2. **Variables:**
+   - `A` (int): First input value (target 8% truncated value)
+   - `B` (int): Second input value (base for 10% range calculation)
+   - `min_val` (int): Lower bound of search range → `B * 10`
+   - `max_val` (int): Upper bound of search range → `(B + 1) * 10 - 1`
+   - `ans` (int): Result initialized to `-1`
+   - `i` (int): Loop iterator for range `[min_val, max_val]`
+
+3. **Logic Flow:**
+   - Calculate search range bounds using `B`
+   - Iterate through every integer `i` in `[min_val, max_val]`
+   - For each `i`:
+     - Compute integer part of `i * 0.08` via truncation
+     - If result equals `A`, set `ans = i` and terminate loop
+   - Output final `ans` value
+
+4. **Control Structures:**
+   - `for` loop: `for i in range(min_val, max_val + 1):`
+   - `if` condition: `if int(i * 0.08) == A`
+
+5. **Input/Output:**
+   - Input: Single-line space-separated integers via `input().split()`
+   - Output: Single integer `ans` via `print(ans)`
+
+6. **Dependencies:**
+   - None (uses standard input/output)
+
+---
+
+**Dart Code:**
+
+```dart
+import 'dart:io';
+
+void main() {
+  List<String> input = stdin.readLineSync()!.split(' ');
+  int A = int.parse(input[0]);
+  int B = int.parse(input[1]);
+
+  int minVal = B * 10;
+  int maxVal = (B + 1) * 10 - 1;
+  int ans = -1;
+
+  for (int i = minVal; i <= maxVal; i++) {
+    if ((i * 0.08).toInt() == A) {
+      ans = i;
+      break;
+    }
+  }
+
+  print(ans);
+}
+```

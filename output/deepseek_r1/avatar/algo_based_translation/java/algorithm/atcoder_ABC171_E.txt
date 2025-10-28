@@ -1,0 +1,41 @@
+**Algorithm:**
+
+**Function Signature:**
+- `public static void main(String[] args)`
+
+**Variables:**
+- `Scanner sc`: Input reader (System.in)
+- `int n`: Stores array size (input)
+- `int[] a`: Stores input integers (size `n`)
+- `int r = 0`: Stores cumulative XOR of all elements in `a`
+
+**Logic Flow:**
+1. **Input Reading:**
+   - Read `n` via `sc.nextInt()`
+   - Initialize `a` as `new int[n]`
+
+2. **Compute Cumulative XOR:**
+   - Loop `i` from `0` to `n-1` (inclusive):
+      - Read `a[i]` via `sc.nextInt()`
+      - Update `r` with `r ^ a[i]`
+
+3. **Generate Output:**
+   - Loop `i` from `0` to `n-1` (inclusive):
+      - If `i != 0`, print a space (to separate values)
+      - Print `r ^ a[i]`
+
+**Control Structures:**
+- **For Loop 1:**  
+  `for (int i = 0; i < n; i++)`  
+  (Handles input and XOR accumulation)
+  
+- **For Loop 2:**  
+  `for (int i = 0; i < n; i++)`  
+  (Handles output generation)
+
+**I/O Operations:**
+- Input: Reads `n` followed by `n` integers via `Scanner`
+- Output: Prints space-separated values of `r ^ a[i]` for all `i`
+
+**Dependencies:**
+- `java.util.Scanner` (for input reading)

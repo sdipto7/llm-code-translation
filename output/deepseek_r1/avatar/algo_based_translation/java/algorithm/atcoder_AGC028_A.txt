@@ -1,0 +1,48 @@
+**Function Signatures**:
+- `main(String[] args) : void`
+
+**Variables**:
+- `n : int`
+- `m : int`
+- `gcd : int`
+- `s : String`
+- `t : String`
+
+**Libraries/Dependencies**:
+- `java.math.BigInteger`
+- `java.util.Scanner`
+- `java.util.stream.IntStream`
+
+**Logic Flow**:
+
+1. Read integers `n` and `m` from standard input.
+2. Compute GCD of `n` and `m` using `BigInteger.gcd()`.
+3. Read strings `s` and `t` from standard input.
+4. Iterate over `k` from `0` to `gcd-1` (inclusive):
+   - Calculate index `s_index = k * n / gcd`
+   - Calculate index `t_index = k * m / gcd`
+   - Check if `s.charAt(s_index) != t.charAt(t_index)`
+5. If any iteration in step 4 yields unequal characters:
+   - Output `-1`
+6. If all iterations in step 4 yield equal characters:
+   - Compute LCM via `(n * m) / gcd` using `BigInteger` operations
+   - Output LCM value as long integer
+
+**Control Structures**:
+- Stream processing with `IntStream.range(0, gcd)`
+- `filter()` with condition `s.charAt(...) != t.charAt(...)`
+- Short-circuit evaluation via `findAny()` for first mismatch detection
+- Ternary logic via `mapToLong(-1).orElse(LCM)`
+
+**Input Operations**:
+- `scanner.nextInt()` for `n` and `m`
+- `scanner.next()` for `s` and `t`
+
+**Output Operations**:
+- Print result of stream processing directly to standard output
+
+**Data Processing**:
+- GCD calculation using arbitrary-precision integers
+- Index computation with integer division
+- Character comparison at calculated indices
+- LCM calculation using integer arithmetic

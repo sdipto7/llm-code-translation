@@ -1,0 +1,38 @@
+Function: main()
+Parameters: None
+Return Type: None
+
+Variable Declarations:
+- X: Integer
+- prime: Boolean array of size 100010
+- i: Integer
+- j: Integer
+
+Logic Flow:
+1. Read integer input from standard input and assign it to X
+2. Initialize array prime with True values, size 100010
+3. Set prime[0] to False
+4. Set prime[1] to False
+5. For loop with i from 4 to 100008, step by 2:
+   a. Set prime[i] to False
+6. Initialize i to 3
+7. While loop with condition i * i <= 100008:
+   a. If prime[i] is True:
+      i. For loop with j from i + i to 100008, step by i:
+         1. Set prime[j] to False
+   b. Increment i by 2
+8. For loop with i from X to 100008:
+   a. If prime[i] is True:
+      i. Print i
+      ii. Break loop
+
+Input/Output Operations:
+- Read integer from standard input
+- Print integer to standard output
+
+Data Processing Logic:
+- Sieve of Eratosthenes algorithm to find all prime numbers up to 100008
+- Find and print the first prime number greater than or equal to X
+
+Required Libraries, Modules, or Dependencies:
+- No external libraries required

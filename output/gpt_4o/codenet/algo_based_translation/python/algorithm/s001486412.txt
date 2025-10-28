@@ -1,0 +1,22 @@
+```
+Function Signature:
+    def calculate_harmonic_mean(n: int, a: List[int]) -> float
+
+Variable Declarations:
+    below: float
+
+Execution Logic:
+    1. Initialize 'below' as 0 (float).
+    2. Loop over each integer 'i' from 0 to 'n-1' (inclusive):
+        a. Increment 'below' by the reciprocal of 'a[i]'.
+    3. Calculate the harmonic mean as the reciprocal of 'below'.
+    4. Return the calculated harmonic mean.
+
+Input/Output Operations:
+    - Input: Read an integer 'n' from standard input.
+    - Input: Read a list 'a' of 'n' integers from standard input.
+    - Output: Print the harmonic mean calculated as per the logic.
+
+Required Libraries:
+    - List from typing module for type hinting.
+```

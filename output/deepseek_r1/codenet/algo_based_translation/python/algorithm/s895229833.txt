@@ -1,0 +1,43 @@
+Function signature:
+- main() -> None
+
+Variables:
+- N: integer (user input)
+- H: list of integers (user input)
+- count_best: integer (initialized to 0)
+- count_tmp: integer (initialized to 0)
+- i: integer (loop index from 0 to N-2)
+
+Logic Flow:
+1. Read integer N from standard input
+2. Read and parse space-separated integers into list H
+3. Initialize count_best = 0
+4. Initialize count_tmp = 0
+5. For i in range 0 to N-2 (inclusive):
+    a. If H[i] >= H[i+1]:
+        i. Increment count_tmp by 1
+    b. Else:
+        i. If count_tmp > count_best:
+            - Set count_best = count_tmp
+        ii. Reset count_tmp to 0
+6. After loop completion:
+    a. If count_tmp > count_best:
+        - Set count_best = count_tmp
+7. Print count_best as final output
+
+Control Structures:
+- For loop: Iterates N-1 times (from 0 to N-2)
+- Nested if-else structure inside loop:
+    - Primary condition: H[i] >= H[i+1]
+    - Secondary condition: count_tmp > count_best (in else clause)
+- Post-loop conditional check: count_tmp > count_best
+
+Input/Output:
+- Input operations:
+    - First input line: integer N
+    - Second input line: space-separated integers for H list
+- Output operation:
+    - Print final value of count_best
+
+Dependencies:
+- None required beyond standard input/output functions

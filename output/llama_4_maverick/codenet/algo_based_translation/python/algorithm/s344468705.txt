@@ -1,0 +1,25 @@
+1. Import the `sys` module and `bisect_left` and `bisect_right` functions from the `bisect` module.
+2. Define an input alias `input` as `sys.stdin.readline`.
+3. Define four lambda functions: 
+   - `getS` to read a line of input and strip it.
+   - `getN` to read an integer from input.
+   - `getList` to read a list of integers from input and return them as a list.
+   - `getZList` to read a list of integers from input, subtract 1 from each, and return them as a list.
+4. Define two constants: 
+   - `INF` as 10^20.
+   - `MOD` as 1000000007.
+5. Define a function `solve()` with no parameters and no return value.
+   - Inside `solve()`, read an integer `n` using `getN()`.
+   - Initialize a list `dp` with a single element `-INF`.
+   - Iterate `n` times:
+     - Read an integer `num` using `getN()`.
+     - Negate `num`.
+     - If `num` is greater than or equal to the last element of `dp`, append `num` to `dp`.
+     - Otherwise, find the index `idx` where `num` should be inserted in `dp` to maintain sorted order using `bisect_right(dp, num)`.
+     - Replace the element at index `idx` in `dp` with `num`.
+   - Print the length of `dp` minus 1.
+6. Define a function `main()` with no parameters and no return value.
+   - Inside `main()`, read an integer `n` using `getN()`.
+   - Iterate `n` times, calling `solve()` in each iteration.
+7. Check if the script is being run directly (not being imported).
+   - If so, call `solve()`.

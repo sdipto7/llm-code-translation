@@ -1,0 +1,36 @@
+Function: main
+Parameters: none
+Return: void
+
+Variables:
+- s: list of characters (from input string)
+- x: boolean (initialized to True)
+- dt: dictionary (key: character, value: integer)
+- i: character (loop variable)
+- key: character (dictionary key)
+- value: integer (dictionary value)
+- cnt: integer (initialized to 0)
+
+Logic Flow:
+1. Read input string and convert to list of characters, store in s
+2. Initialize x to True
+3. Initialize empty dictionary dt
+4. For each character i in list s:
+   - If i exists as key in dt:
+        Increment dt[i] by 1
+   - Else:
+        Set dt[i] to 1
+5. Initialize cnt to 0
+6. Set x to True
+7. For each key-value pair in dt.items():
+   - If value is odd AND cnt < 1:
+        Increment cnt by 1
+   - Else if value is odd AND cnt >= 1:
+        Set x to False
+        Break loop
+8. If x is True:
+        Print "First"
+9. Else if x is False AND length of s is even:
+        Print "Second"
+10. Else if x is False AND length of s is odd:
+        Print "First"

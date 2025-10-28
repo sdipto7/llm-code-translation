@@ -1,0 +1,7 @@
+import collections
+s: list[str] = list(input())
+even: collections.Counter = collections.Counter(s[0::2])
+odd: collections.Counter = collections.Counter(s[1::2])
+count1: int = len(s) - (even["0"] + odd["1"])
+count2: int = len(s) - (even["1"] + odd["0"])
+print(min(count1, count2))

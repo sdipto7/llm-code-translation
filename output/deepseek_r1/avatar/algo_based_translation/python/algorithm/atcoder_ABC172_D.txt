@@ -1,0 +1,57 @@
+ALGORITHM SPECIFICATION:
+
+FUNCTIONS:
+1. rs() -> str:
+   - Parameters: None
+   - Returns: String from stdin input stripped of trailing whitespace
+   - Calls: sys.stdin.readline().rstrip()
+
+2. ri() -> int:
+   - Parameters: None
+   - Returns: Integer parsed from rs() output
+   - Calls: rs()
+
+3. rs_() -> List[str]:
+   - Parameters: None
+   - Returns: List of split string tokens from rs() output
+   - Calls: rs().split()
+
+4. ri_() -> List[int]:
+   - Parameters: None
+   - Returns: List of integers parsed from rs_() output
+   - Calls: rs_()
+
+VARIABLES:
+- N: int (Input integer)
+- ans: int (Accumulator initialized to 0)
+- i: int (Loop iterator from 1 to N)
+
+LOGIC FLOW:
+1. Import sys module
+2. Read N via ri()
+3. Initialize ans = 0
+4. For i in range 1 to N (inclusive):
+   4.1 Calculate k = N // i (integer division)
+   4.2 Compute term = i * k * (k + 1) // 2
+   4.3 ans += term
+5. Print ans
+
+CONTROL STRUCTURES:
+- Single loop: for i in 1..N (count up, closed interval)
+- Loop exit when i > N
+
+INPUT/OUTPUT:
+- Input: Single integer read from stdin via ri()
+- Output: Final ans value printed to stdout
+
+ERROR HANDLING:
+- No explicit error handling
+- Assumes valid integer input format
+- Implicit floor division behavior for non-integer quotients
+
+EXTERNAL DEPENDENCIES:
+- Requires Python sys module for input reading
+
+EDGE CASES:
+- Correctly handles N=0 (loop not executed, outputs 0)
+- Handles maximum i=N (k becomes 1, term = N*1*2//2 = N)

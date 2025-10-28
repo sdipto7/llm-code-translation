@@ -1,0 +1,51 @@
+**Function Signatures:**
+- `public static void main(String[] args)`: Entry point, starts a new thread with 128MB stack size
+- `public void run()`: Contains core logic, reads input, computes costs, outputs results
+
+**Variables:**
+- `Scanner sc` (static, System.in)
+- `int n`: Input array size
+- `int[] a`: Input array of size n
+- `long cost1`, `long cost2`: Accumulated costs for forward/backward traversal
+- `int current1`, `int current2`: Current positions for cost calculation
+- `long[] dp1`, `long[] dp2`: Cost arrays storing accumulated values
+
+**Logic Flow:**
+1. Read input:
+   - Read integer n
+   - Read n integers into array a
+
+2. Initialize:
+   - cost1 = 0, current1 = 0
+   - cost2 = 0, current2 = 0
+   - Create dp1 and dp2 arrays of size n
+
+3. Simultaneous forward/backward processing:
+   - Loop i from 0 to n-1 with j = n-1 decrementing:
+     - Update cost1 with |a[i] - current1|
+     - Set current1 = a[i]
+     - Store cost1 in dp1[i]
+     - Update cost2 with |a[j] - current2|
+     - Set current2 = a[j]
+     - Store cost2 in dp2[j]
+
+4. Generate output for each exclusion case:
+   - For each i from 0 to n-1:
+     - If i == 0: Output dp2[1] + |a[1]|
+     - Else if i == n-1: Output dp1[n-2] + |a[n-2]|
+     - Else: Output dp1[i-1] + dp2[i+1] + |a[i-1] - a[i+1]|
+
+**Control Structures:**
+- `for (int i = 0, j = n - 1; i < n; i++, j--)` loop
+- Three conditional branches in output loop:
+  1. `if (i == 0)`
+  2. `else if (i == n - 1)`
+  3. `else`
+
+**Input/Output Operations:**
+- Input via `Scanner.nextInt()`
+- Output via `System.out.println()`
+
+**Dependencies:**
+- `java.util.Scanner` for input handling
+- Java threading (Thread class) for memory allocation

@@ -1,0 +1,49 @@
+1. Import Scanner from java.util
+2. Define Main class with main method
+3. Declare Scanner sc initialized to System.in
+4. Read integer m from input
+5. Declare Node tree initialized to null
+6. For i from 0 to m-1:
+   a. Read string command
+   b. If command equals "insert":
+      i. Read long key
+      ii. If tree is null:
+          - Create new Node
+          - Set tree.value = key
+      iii. Else:
+          - Call tree.insert(key)
+   c. Else (command is not "insert"):
+      i. If tree is not null:
+          - Call tree.printInOrder()
+          - Print newline
+          - Call tree.printPreOrder()
+          - Print newline
+7. Define static class Node with:
+   - long value
+   - Node left
+   - Node right
+8. Define Node.insert(long newValue):
+   a. If newValue < this.value:
+      i. If left is null:
+          - Create new Node
+          - Set left.value = newValue
+      ii. Else:
+          - Call left.insert(newValue)
+   b. Else:
+      i. If right is null:
+          - Create new Node
+          - Set right.value = newValue
+      ii. Else:
+          - Call right.insert(newValue)
+9. Define Node.printInOrder():
+   a. If left is not null:
+      - Call left.printInOrder()
+   b. Print " " + value
+   c. If right is not null:
+      - Call right.printInOrder()
+10. Define Node.printPreOrder():
+    a. Print " " + value
+    b. If left is not null:
+       - Call left.printPreOrder()
+    c. If right is not null:
+       - Call right.printPreOrder()

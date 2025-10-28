@@ -1,0 +1,49 @@
+**Algorithm Specification**
+
+**Function/Method Signatures:**
+- `lcm(a: int, b: int) -> int`
+  - Parameters: Two integers `a` and `b`
+  - Return: Integer representing LCM of `a` and `b`
+- `main() -> void` (implicit main logic)
+
+**Variable Declarations:**
+- `MOD: int` (constant value: \(10^9 + 7\))
+- `N: int` (input size)
+- `A: list[int]` (list of `N` integers from input)
+- `_lcm: int` (initialized to 1)
+- `ans: int` (final result)
+- `sum_inverses: int` (sum of modular inverses)
+
+**Step-by-Step Logic Flow:**
+1. Read integer `N` from standard input.
+2. Read `N` space-separated integers into list `A`.
+3. Initialize `_lcm` to `1`.
+4. Iterate over each element `a` in `A`:
+   1. Compute `current_gcd = gcd(_lcm, a)`
+   2. Update `_lcm = (_lcm * a) // current_gcd`
+5. Initialize `sum_inverses` to `0`.
+6. Iterate over each element `s` in `A`:
+   1. Compute `inverse = pow(s, MOD - 2, MOD)`
+   2. Update `sum_inverses = (sum_inverses + inverse) % MOD`
+7. Compute `ans = ((_lcm % MOD) * sum_inverses) % MOD`
+8. Print `ans` as integer.
+
+**Control Flow Structures:**
+- Sequential execution of steps 1-8.
+- Two loops:
+  - Loop 1 (Step 4): Processes all elements in `A` to compute LCM.
+  - Loop 2 (Step 6): Processes all elements in `A` to compute sum of modular inverses.
+- No explicit conditionals; control flow is purely sequential with iteration.
+
+**Input/Output Operations:**
+- Read `N` and `A` from standard input (assumes valid integer inputs).
+- Print final `ans` to standard output.
+
+**Error Handling & Edge Cases:**
+- Assumes all elements in `A` are non-zero (division by zero in modular inverse undefined).
+- No explicit error handling for invalid inputs (e.g., non-integer values).
+- Handles large integer values via Python-native big integer support.
+
+**External Dependencies:**
+- Requires `gcd` function (implementation-dependent, e.g., `math.gcd` in Python).
+- Uses modular exponentiation via `pow(base, exp, mod)` for inverse calculation.

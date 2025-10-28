@@ -1,0 +1,11 @@
+read integer a from input
+read integer b from input
+read integer c from input
+read integer d from input
+calculate product1 = a * b
+calculate product2 = c * d
+if product1 >= product2 then
+    output product1
+else if product1 <= product2 then
+    output product2
+end if

@@ -1,0 +1,39 @@
+```
+Function main(args: array of String) returns void
+    Import libraries: java.util.*, java.io.*
+    Declare variable sc as Scanner initialized with System.in
+    Read integer n from input using sc.nextInt()
+    Declare integer array arr of size n
+    Assign first element of arr with sc.nextInt()
+    For i from 1 to n-1, do
+        Read integer x from input using sc.nextInt()
+        Assign arr[i] with x + arr[i-1]
+    End for
+    Read integer m from input using sc.nextInt()
+    Declare integer array q of size m
+    For i from 0 to m-1, do
+        Read integer into q[i] from input using sc.nextInt()
+    End for
+    For k from 0 to m-1, do
+        Call function fun with parameters arr, q[k], n, m
+        Print the result of fun + 1
+    End for
+End function
+
+Function fun(arr: array of int, q: int, n: int, m: int) returns int
+    Declare integer res and initialize with 0
+    Declare integer i and initialize with 0
+    Declare integer j and initialize with n
+    While i <= j, do
+        Declare integer md and assign i + (j - i) / 2
+        If arr[md] equals q, then
+            Return md
+        Else if arr[md] greater than q, then
+            Assign res with md
+            Assign j with md - 1
+        Else
+            Assign i with md + 1
+    End while
+    Return res
+End function
+```

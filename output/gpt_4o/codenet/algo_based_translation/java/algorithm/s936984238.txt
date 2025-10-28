@@ -1,0 +1,35 @@
+```
+Algorithm:
+
+1. Import required libraries:
+   - java.util.Scanner
+   - java.util.Arrays
+
+2. Declare a class named Main.
+
+3. Declare a static Scanner object 'sc' for input reading.
+
+4. Declare static integer array 'score'.
+
+5. Declare static integer 'number'.
+
+6. Define the main method:
+   - Continuously execute the following until the read() function returns false:
+     - Call the slove() function.
+
+7. Define the read() function:
+   - Read an integer from input and store it in 'number'.
+   - If 'number' is 0, return false.
+   - Initialize 'score' as an integer array of size 'number'.
+   - For each index 'i' from 0 to 'number - 1':
+     - Read an integer from input and store it in 'score[i]'.
+   - Return true.
+
+8. Define the slove() function:
+   - Sort the 'score' array in ascending order.
+   - Initialize integer 'sum' to 0.
+   - For each index 'i' from 1 to 'number - 2':
+     - Add 'score[i]' to 'sum'.
+   - Print the integer division of 'sum' by ('number' - 2).
+```
+

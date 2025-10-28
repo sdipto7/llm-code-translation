@@ -1,0 +1,27 @@
+```
+Algorithm:
+1. Function Signature:
+   - Name: calculate_product
+   - Parameters: input_str (str)
+   - Return Type: int
+
+2. Variable Declarations:
+   - A (int)
+   - B (int)
+
+3. Input Processing:
+   - Split the input string `input_str` by spaces into a list of strings.
+   - Convert each element of the list to an integer.
+   - Assign the first integer to variable `A`.
+   - Assign the second integer to variable `B`.
+
+4. Conditional Check:
+   - If both `A` and `B` are less than 10:
+     - Calculate the product of `A` and `B`.
+     - Return the product.
+   - Else:
+     - Return -1.
+
+5. Dependencies:
+   - No external libraries or modules are required.
+```

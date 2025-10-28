@@ -1,0 +1,58 @@
+1. Import necessary libraries:
+   - `collections`: `Counter`, `defaultdict`, `deque`
+   - `heapq`: `heappop`, `heappush`, `heapify`
+   - `sys`, `bisect`, `math`, `itertools`, `pprint`, `fractions`
+
+2. Set recursion limit to `10**8`.
+
+3. Define constants:
+   - `mod = 10**9 + 7`
+   - `INF = float('inf')`
+
+4. Define input functions:
+   - `inp() -> int`: Return integer input from standard input.
+   - `inpl() -> List[int]`: Return list of integers from standard input.
+
+5. Read inputs:
+   - `n, ta, ao = inpl()`
+   - Decrement `ta` and `ao` by 1 to convert to zero-based index.
+
+6. Initialize graph representation:
+   - `g = [[] for i in range(n)]`: List of lists for adjacency list.
+
+7. Read and construct the graph:
+   - Loop `i` from `0` to `n-2`:
+     - `a, b = inpl()`
+     - Append `b-1` to `g[a-1]` and append `a-1` to `g[b-1]`.
+
+8. Initialize distance arrays:
+   - `ta_dist = [None] * n`: Distance array for `ta`.
+   - Set `ta_dist[ta] = 0`.
+   - `ao_dist = [None] * n`: Distance array for `ao`.
+   - Set `ao_dist[ao] = 0`.
+
+9. Define depth-first search (DFS) for `ta`:
+   - `ta_dfs(node: int) -> None`:
+     - For each `v` in `g[node]`:
+       - If `ta_dist[v]` is not `None`, continue.
+       - Set `ta_dist[v] = ta_dist[node] + 1`.
+       - Recursively call `ta_dfs(v)`.
+
+10. Define depth-first search (DFS) for `ao`:
+    - `ao_dfs(node: int) -> None`:
+      - For each `v` in `g[node]`:
+        - If `ao_dist[v]` is not `None`, continue.
+        - Set `ao_dist[v] = ao_dist[node] + 1`.
+        - Recursively call `ao_dfs(v)`.
+
+11. Execute DFS for `ao` starting from node `ao`.
+12. Execute DFS for `ta` starting from node `ta`.
+
+13. Compute result:
+    - Initialize `res = 0`.
+    - For each `i` in range `n`:
+      - If `ta_dist[i] > ao_dist[i]`, continue.
+      - Set `res = max(res, ao_dist[i])`.
+
+14. Output result:
+    - Print `res - 1`.

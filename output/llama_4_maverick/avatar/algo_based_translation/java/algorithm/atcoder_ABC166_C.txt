@@ -1,0 +1,14 @@
+1. Read the number of elements N and the number of pairs M from the input.
+2. Initialize an array H of size N to store heights and an array ans of size N with all elements set to true.
+3. Read N heights from the input and store them in the array H.
+4. Iterate M times:
+   4.1. Read a pair of indices (temp1, temp2) from the input.
+   4.2. Adjust the indices by subtracting 1 from both temp1 and temp2.
+   4.3. Compare the heights at the adjusted indices.
+   4.4. If H[temp1] < H[temp2], set ans[temp1] to false.
+   4.5. If H[temp1] > H[temp2], set ans[temp2] to false.
+   4.6. If H[temp1] = H[temp2], set both ans[temp1] and ans[temp2] to false.
+5. Initialize a counter ans2 to 0.
+6. Iterate through the array ans:
+   6.1. For each true value in ans, increment the counter ans2.
+7. Output the value of ans2.

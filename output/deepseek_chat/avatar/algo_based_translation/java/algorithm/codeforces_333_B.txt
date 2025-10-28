@@ -1,0 +1,57 @@
+**Function Signatures:**
+- `public static void main(String[] args)`
+- `public FastReader()`
+- `String next()`
+- `int nextInt()`
+- `long nextLong()`
+- `double nextDouble()`
+- `String nextLine()`
+
+**Variable Declarations and Data Types:**
+- `int n`, `int m`
+- `Set<Integer> bannedRows`, `Set<Integer> bannedCols`
+- `int r`, `int c`
+- `int answer`
+- `int mid`
+- `BufferedReader br`
+- `StringTokenizer st`
+- `String str`
+
+**Logic Flow:**
+1. Read integers `n` and `m` from input
+2. Initialize two empty HashSets: `bannedRows` and `bannedCols`
+3. Loop `m` times:
+   - Read integer `r`
+   - If `r > 1` and `r < n`, add `r` to `bannedRows`
+   - Read integer `c`
+   - If `c > 1` and `c < n`, add `c` to `bannedCols`
+4. Calculate `answer = (n - 2) * 2`
+5. Subtract `bannedRows.size()` from `answer`
+6. Subtract `bannedCols.size()` from `answer`
+7. If `n % 2 != 0`:
+   - Calculate `mid = (n + 1) / 2`
+   - If `mid` is not in `bannedRows` and not in `bannedCols`:
+     - Decrement `answer` by 1
+8. Print `answer`
+9. Close output stream
+
+**Control Structures:**
+- `for (int i = 0; i < m; i++)` loop
+- `if (r > 1 && r < n)` conditional
+- `if (c > 1 && c < n)` conditional
+- `if (n % 2 != 0)` conditional
+- `if (!bannedRows.contains(mid) && !bannedCols.contains(mid))` conditional
+- `while (st == null || !st.hasMoreElements())` loop in `next()` method
+- `try/catch` blocks for IO operations
+
+**Input/Output Operations:**
+- Reading from `System.in` via `BufferedReader`
+- Parsing input with `StringTokenizer`
+- Writing to `System.out` via `PrintWriter`
+- Reading integers, longs, doubles, and strings from input stream
+- Printing integer result to output stream
+
+**Required Libraries:**
+- `java.util.*`
+- `java.io.*`
+- Static import of `java.lang.Math.*`

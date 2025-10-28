@@ -1,0 +1,21 @@
+```
+Function: main() -> None
+
+1. Input:
+   - Read line of input and split into integers to assign to variables `n` (int) and `m` (int).
+   - Read line of input and split into a list of integers assigned to `round_complexity` (List[int]).
+   - Read line of input and split into a list of integers assigned to `george_complexity` (List[int]).
+
+2. Variable Declarations:
+   - `i` (int): initialized to 0, used as an index for `round_complexity`.
+   - `j` (int): initialized to 0, used as an index for `george_complexity`.
+
+3. Logic Flow:
+   - While loop: `while (i < n and j < m)`
+     - Condition: `round_complexity[i] <= george_complexity[j]`
+       - If True: Increment `i` by 1.
+     - Increment `j` by 1 regardless of condition.
+
+4. Output:
+   - Print the result of the expression `n - i` (int).
+```

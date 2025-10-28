@@ -1,0 +1,45 @@
+**Function Signature:**
+main(String[] args)
+
+**Variables:**
+- Scanner scanner (Scanner object for input)
+- char[] s (character array from first input string)
+- char[] t (character array from second input string)
+- boolean check (flag indicating if replacement was successful)
+- int i (outer loop index)
+- boolean check2 (flag for valid replacement position)
+- int j (inner loop index)
+
+**Input Operations:**
+- Read first input string and convert to char array s
+- Read second input string and convert to char array t
+
+**Algorithm Logic:**
+1. Initialize check = false
+2. For i from (s.length - t.length) down to 0:
+   - Initialize check2 = true
+   - For j from 0 to (t.length - 1):
+     - If s[i+j] is not '?' AND s[i+j] ≠ t[j]:
+       - Set check2 = false
+   - If check2 is true:
+     - Set check = true
+     - For j from 0 to (t.length - 1):
+       - Set s[i+j] = t[j]
+     - Break outer loop
+3. If check is true:
+   - For each character in s:
+     - If character is '?', output 'a'
+     - Else output the character
+   - Output newline
+4. Else:
+   - Output "UNRESTORABLE"
+
+**Control Structures:**
+- Outer for loop: i = s.length-t.length; i >= 0; i--
+- Inner for loop: j = 0; j < t.length; j++
+- If condition: s[i+j] != '?' && s[i+j] != t[j]
+- If condition: check2 == true
+- If condition: check == true
+
+**Dependencies:**
+- java.util.Scanner

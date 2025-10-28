@@ -1,0 +1,37 @@
+Function Signature: main(String[] args) -> void
+
+Variable Declarations:
+- sc: Scanner
+- s: String
+- s1: String
+- s2: String
+- s3: String
+- s4: String
+- a: int
+
+Logic Flow:
+1. Initialize sc as new Scanner object for standard input
+2. Read next string input from sc and assign to s
+3. Extract substring from s from index 0 to 1 and assign to s1
+4. Extract substring from s from index 1 to 2 and assign to s2
+5. Extract substring from s from index 2 to 3 and assign to s3
+6. Extract substring from s from index 3 to 4 and assign to s4
+7. Initialize a to 0
+8. If s1 equals s2 then set a to 1
+9. If s2 equals s3 then set a to 1
+10. If s3 equals s4 then set a to 1
+11. If a equals 1 then print "Bad"
+12. Else print "Good"
+
+Control Structures:
+- Conditional: If s1 equals s2 then set a to 1
+- Conditional: If s2 equals s3 then set a to 1
+- Conditional: If s3 equals s4 then set a to 1
+- Conditional: If a equals 1 then print "Bad" else print "Good"
+
+Input/Output Operations:
+- Read string input from standard input
+- Print "Bad" or "Good" based on condition
+
+Libraries/Modules/Dependencies:
+- java.util.Scanner

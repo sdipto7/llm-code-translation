@@ -1,0 +1,10 @@
+1. Initialize N by reading an integer from input.
+2. Read a list of N integers into array A.
+3. Group consecutive equal elements in A and store the result back in A.
+4. Update N to be the length of the new A.
+5. Initialize a variable i to 1 and ans to 0.
+6. While i is less than N - 1:
+   6.1. Check if the element at index i is a peak (A[i-1] < A[i] > A[i+1]) or a trough (A[i-1] > A[i] < A[i+1]).
+   6.2. If the condition is true, increment ans by 1 and i by 1.
+   6.3. Increment i by 1.
+7. Print ans + 1.
