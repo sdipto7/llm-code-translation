@@ -1,6 +1,10 @@
 # Algorithm-Based Pipeline for Reliable and Intent-Preserving Code Translation with LLMs
 
-This repository contains the replication package for the research paper titled "Algorithm-Based Pipeline for Reliable and Intent-Preserving Code Translation with LLMs" submitted at 34th IEEE/ACM International Conference on Program Comprehension (**ICPC 2026**).
+[![Preprint](https://img.shields.io/badge/read-preprint-blue)](https://arxiv.org/abs/2602.16106)
+
+### This repository contains the replication package for the research paper titled [***Algorithm-Based Pipeline for Reliable and Intent-Preserving Code Translation with LLMs***](https://arxiv.org/abs/2602.16106) accepted at 34th IEEE/ACM International Conference on Program Comprehension (**ICPC 2026**), Rio de Janeiro, Brazil.
+
+### **Authors:** [Shahriar Rumi Dipto](https://www.linkedin.com/in/sdipto7/), [Saikat Mondal](https://saikatmondal.github.io/), and [Chanchal K. Roy](https://clones.usask.ca/)
 
 ## LLM Models Evaluated
 
