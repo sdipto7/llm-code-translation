@@ -2,9 +2,31 @@
 
 [![Preprint](https://img.shields.io/badge/read-preprint-blue)](https://arxiv.org/abs/2602.16106)
 
-### This repository contains the replication package for the research paper titled [***Algorithm-Based Pipeline for Reliable and Intent-Preserving Code Translation with LLMs***](https://arxiv.org/abs/2602.16106) accepted at 34th IEEE/ACM International Conference on Program Comprehension (**ICPC 2026**), Rio de Janeiro, Brazil.
+### This repository contains the replication package for the research paper titled [***Algorithm-Based Pipeline for Reliable and Intent-Preserving Code Translation with LLMs***](https://dl.acm.org/doi/10.1145/3794763.3794826) accepted at 34th IEEE/ACM International Conference on Program Comprehension (**ICPC 2026**), Rio de Janeiro, Brazil.
 
 ### **Authors:** [Shahriar Rumi Dipto](https://www.linkedin.com/in/sdipto7/), [Saikat Mondal](https://saikatmondal.github.io/), and [Chanchal K. Roy](https://clones.usask.ca/)
+
+### Please Cite as
+```
+@inproceedings{10.1145/3794763.3794826,
+author = {Dipto, Shahriar Rumi and Mondal, Saikat and Roy, Chanchal K.},
+title = {Algorithm-Based Pipeline for Reliable and Intent-Preserving Code Translation with LLMs},
+year = {2026},
+isbn = {9798400724824},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3794763.3794826},
+doi = {10.1145/3794763.3794826},
+abstract = {Code translation, the automatic conversion of programs between languages, is a growing use case for Large Language Models (LLMs). However, direct one-shot translation often fails to preserve program intent, leading to errors in control flow, type handling, and I/O behavior. We propose an algorithm-based pipeline that introduces a language-neutral intermediate specification to capture these details before code generation. This study empirically evaluates the extent to which structured planning can improve translation accuracy and reliability relative to direct translation. We conduct an automated paired experiment – direct and algorithm-based to translate between Python and Java using five widely used LLMs on the Avatar and CodeNet datasets. For each combination (model, dataset, approach, and direction), we compile and execute the translated program and run the tests provided. We record compilation results, runtime behavior, timeouts (e.g., infinite loop), and test outcomes. We compute accuracy from these tests, counting a translation as correct only if it compiles, runs without exceptions or timeouts, and passes all tests. We then map every failed compile-time and runtime case to a unified, language-aware taxonomy and compare subtype frequencies between the direct and algorithm-based approaches. Overall, the Algorithm-based approach increases micro-average accuracy from 67.7\% to 78.5\% (↑ 10.8\%). It eliminates lexical and token errors by 100\%, reduces incomplete constructs by 72.7\%, and structural and declaration issues by 61.1\%. It also substantially lowers runtime dependency and entry-point failures by 78.4\%. These results demonstrate that algorithm-based pipelines enable more reliable, intent-preserving code translation, providing a foundation for robust multilingual programming assistants.},
+booktitle = {Proceedings of the 2026 34th IEEE/ACM International Conference on Program Comprehension},
+pages = {390–401},
+numpages = {12},
+keywords = {Automated code translation, Large Language Models, Algorithmic representation, Program synthesis},
+location = {
+},
+series = {ICPC '26}
+}
+```
 
 ## LLM Models Evaluated
 
